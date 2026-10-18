@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.TRI.Q.T04_CHECK_3
+familyCode: MAT.TRI.F.T04_CHECK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/cores (T04.check-3)
+aliases:
+  - ns: ITEM
+    value: T04:check-3
+legacyOptionOrder:
+  - acute
+  - right
+  - reference
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sisi miring selalu berada tepat di depan sudut ...
+  options:
+    - id: acute
+      label: yang paling kecil
+    - id: right
+      label: siku-siku (90°)
+    - id: reference
+      label: acuan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: right
+  acceptedForms:
+    - siku-siku (90°)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - check of typed core T04
+    - "composite alias: the frontend never sends these ids to the backend"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

@@ -1,0 +1,215 @@
+schemaVersion: 1
+code: MAT.BAR
+subject: MAT
+title: Barisan & Deret
+subtitle: Pola, aritmetika, geometri
+phase: E
+availability: MAPPED
+bekal:
+  - operasi bilangan
+  - pola bilangan
+  - eksponen dasar
+aliases:
+  - ns: TOPIC
+    value: barisan
+units:
+  - code: MAT.BAR.U1
+    legacyId: bar-u1
+    title: Pola bilangan
+    goal: Mengenali aturan di balik sebuah pola.
+    ordinal: 1
+  - code: MAT.BAR.U2
+    legacyId: bar-u2
+    title: Barisan
+    goal: Menuliskan suku ke-n untuk barisan aritmetika dan geometri.
+    ordinal: 2
+  - code: MAT.BAR.U3
+    legacyId: bar-u3
+    title: Deret
+    goal: Menjumlahkan suku-suku, termasuk yang tak hingga.
+    ordinal: 3
+  - code: MAT.BAR.U4
+    legacyId: bar-u4
+    title: Terapkan
+    goal: Memodelkan bunga majemuk, pertumbuhan, dan peluruhan.
+    ordinal: 4
+concepts:
+  - code: MAT.BAR.PRASYARAT
+    title: Prasyarat
+    subtitle: Operasi bilangan · pola · eksponen dasar
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: true
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-a
+  - code: MAT.BAR.POLA_BILANGAN
+    title: Pola Bilangan
+    subtitle: Membedakan jenis barisan
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U1
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-b
+  - code: MAT.BAR.BARISAN_ARITMETIKA
+    title: Barisan Aritmetika
+    subtitle: Un = a + (n−1)b
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U2
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-c
+  - code: MAT.BAR.BARISAN_GEOMETRI
+    title: Barisan Geometri
+    subtitle: Un = a·rⁿ⁻¹
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U2
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-d
+  - code: MAT.BAR.SUKU_TENGAH_SISIPAN
+    title: Suku Tengah & Sisipan
+    subtitle: Menyisipkan bilangan antar suku
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U2
+    ordinal: 5
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-h
+  - code: MAT.BAR.DERET_ARITMETIKA
+    title: Deret Aritmetika
+    subtitle: Sn = n/2 (2a + (n−1)b)
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U3
+    ordinal: 6
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-e
+  - code: MAT.BAR.DERET_GEOMETRI
+    title: Deret Geometri
+    subtitle: Sn = a(rⁿ−1)/(r−1)
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U3
+    ordinal: 7
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-f
+  - code: MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+    title: Deret Geometri Tak Hingga
+    subtitle: S∞ = a/(1−r), |r| < 1
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U3
+    ordinal: 8
+    estimatedMinutes: 7
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-g
+  - code: MAT.BAR.PENERAPAN
+    title: Penerapan
+    subtitle: Bunga majemuk · pertumbuhan · peluruhan
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U4
+    ordinal: 9
+    estimatedMinutes: 8
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-i
+  - code: MAT.BAR.SOAL_KONTEKSTUAL
+    title: Soal Kontekstual
+    subtitle: Pemodelan masalah nyata
+    objectives: []
+    misconceptions: []
+    unit: MAT.BAR.U4
+    ordinal: 10
+    estimatedMinutes: 10
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bar-j
+prerequisites:
+  - concept: MAT.BAR.POLA_BILANGAN
+    requires: MAT.BAR.PRASYARAT
+    kind: HARD
+  - concept: MAT.BAR.BARISAN_ARITMETIKA
+    requires: MAT.BAR.POLA_BILANGAN
+    kind: HARD
+  - concept: MAT.BAR.BARISAN_GEOMETRI
+    requires: MAT.BAR.POLA_BILANGAN
+    kind: HARD
+  - concept: MAT.BAR.DERET_ARITMETIKA
+    requires: MAT.BAR.BARISAN_ARITMETIKA
+    kind: HARD
+  - concept: MAT.BAR.DERET_GEOMETRI
+    requires: MAT.BAR.BARISAN_GEOMETRI
+    kind: HARD
+  - concept: MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+    requires: MAT.BAR.DERET_GEOMETRI
+    kind: HARD
+  - concept: MAT.BAR.SUKU_TENGAH_SISIPAN
+    requires: MAT.BAR.BARISAN_ARITMETIKA
+    kind: HARD
+  - concept: MAT.BAR.SUKU_TENGAH_SISIPAN
+    requires: MAT.BAR.BARISAN_GEOMETRI
+    kind: HARD
+  - concept: MAT.BAR.PENERAPAN
+    requires: MAT.BAR.DERET_ARITMETIKA
+    kind: HARD
+  - concept: MAT.BAR.PENERAPAN
+    requires: MAT.BAR.DERET_GEOMETRI
+    kind: HARD
+  - concept: MAT.BAR.PENERAPAN
+    requires: MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+    kind: HARD
+  - concept: MAT.BAR.PENERAPAN
+    requires: MAT.BAR.SUKU_TENGAH_SISIPAN
+    kind: HARD
+  - concept: MAT.BAR.SOAL_KONTEKSTUAL
+    requires: MAT.BAR.PENERAPAN
+    kind: HARD

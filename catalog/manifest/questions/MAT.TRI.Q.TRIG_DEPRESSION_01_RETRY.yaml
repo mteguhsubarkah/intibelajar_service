@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.TRI.Q.TRIG_DEPRESSION_01_RETRY
+familyCode: MAT.TRI.F.TOWER_DEPRESSION_30
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: GEDUNG
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: frontend:src/data/questions/trigDepression01.ts
+  note: title "Coba lagi"
+aliases:
+  - ns: ITEM
+    value: trig-depression-01-retry
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah gedung setinggi 12 m diamati dari tanah dengan sudut elevasi 30°. Berapa jarak mendatar pengamat dari gedung?
+  hints: []
+  answerFormat: NUMBER
+  answerExample: 3√2 atau 4,24
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 20.78461
+    unit: m
+    tolerance:
+      relative: 0.02
+      floor: 1
+  acceptedForms:
+    - 12√3 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+review:
+  status: PROPOSED
+  decision: D5
+  fields:
+    - familyCode
+    - concepts
+    - finalAnswerEvidence
+    - misconceptionMap
+  evidence:
+    - "soal-menara (coba.ts/bank.ts) and trig-depression-01 (questions/) are the same 20 m / 30° depression situation with different wording; trig-depression-01-retry is its declared retry. Proposed: separate questions, one family (INV-13: anchor and retries never count as independent transfer)"
+    - retry carries no diagnosis rule; concepts copied from its anchor

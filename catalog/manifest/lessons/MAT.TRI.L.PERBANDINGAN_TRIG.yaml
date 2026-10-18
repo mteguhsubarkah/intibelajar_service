@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.L.PERBANDINGAN_TRIG
+title: Perbandingan Trigonometri
+estimatedMinutes: 6
+aliases:
+  - ns: ROUTE
+    value: perbandingan-trig
+concepts:
+  - MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+  - MAT.TRI.DEFINISI_SIN_COS_TAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Pilih berdasarkan sisi yang kamu punya
+  - type: text
+    slide: 0
+    text: Rumus mana yang dipakai ditentukan oleh **sisi yang kamu ketahui** dan **sisi yang dicari** — bukan oleh hafalan.
+  - type: math
+    slide: 0
+    name: sin θ
+    expression: depan / miring
+  - type: math
+    slide: 0
+    name: cos θ
+    expression: samping / miring
+  - type: math
+    slide: 0
+    name: tan θ
+    expression: depan / samping
+  - type: heading
+    slide: 1
+    text: "Contoh: sisi depan diketahui"
+  - type: text
+    slide: 1
+    text: Diketahui sudut **30°** dan sisi depan **20 m**. Cari sisi samping.
+  - type: text
+    slide: 1
+    text: Yang diketahui depan, yang dicari samping — pasangan itu milik **tan**.
+  - type: math
+    slide: 1
+    name: tan 30°
+    expression: 20 / x
+    highlight: true
+checks:
+  - question: MAT.TRI.Q.PERBANDINGAN_TRIG_C0
+    ordinal: 0
+    slideIndex: 0
+    required: true
+  - question: MAT.TRI.Q.PERBANDINGAN_TRIG_C1
+    ordinal: 1
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.PERBANDINGAN_TRIG
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+  evidence:
+    - coreLessons.ts coreId is tri-e
+    - coba.ts CORE_ROUTES routes tri-d, tri-e here
+    - "playable flag absent: content not yet confirmed to match the map title"
+    - estimatedMinutes taken from the concept, as the frontend does

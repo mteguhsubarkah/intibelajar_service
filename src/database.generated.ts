@@ -1,0 +1,289 @@
+// Generated from a migrated PostgreSQL database by scripts/generate-db-types.mjs.
+import type { Generated } from 'kysely';
+export interface Database {
+  app_user: {
+    id: string;
+    role: string;
+    learner_id: string | null;
+    guardian_id: string | null;
+    status: string;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  audit_event: {
+    id: string;
+    occurred_at: Generated<Date>;
+    actor_type: string;
+    actor_ref: Buffer | null;
+    subject_ref: Buffer | null;
+    action: string;
+    detail: Generated<unknown>;
+  };
+  auth_identity: {
+    id: string;
+    user_id: string;
+    provider: string;
+    subject: string;
+    email_verified: boolean;
+    email_ciphertext: Buffer | null;
+    last_login_at: Date | null;
+    created_at: Generated<Date>;
+  };
+  auth_session: {
+    id: string;
+    token_hash: Buffer;
+    csrf_secret_hash: Buffer;
+    user_id: string | null;
+    created_at: Generated<Date>;
+    last_seen_at: Generated<Date>;
+    idle_expires_at: Date;
+    absolute_expires_at: Date;
+    revoked_at: Date | null;
+  };
+  auth_transaction: {
+    id: string;
+    session_id: string;
+    provider: string;
+    state_hash: Buffer;
+    nonce_hash: Buffer | null;
+    pkce_verifier_ciphertext: Buffer | null;
+    continuation: unknown;
+    expires_at: Date;
+    consumed_at: Date | null;
+    created_at: Generated<Date>;
+  };
+  catalog_alias: {
+    release_id: string;
+    namespace: string;
+    alias: string;
+    subject_id: string | null;
+    topic_id: string | null;
+    concept_id: string | null;
+    question_id: string | null;
+    lesson_id: string | null;
+  };
+  concept: {
+    id: string;
+    topic_id: string;
+    code: string;
+    legacy_map_id: string | null;
+    title: string;
+    subtitle: string | null;
+    definition: string | null;
+    objectives: Generated<unknown>;
+    misconceptions: Generated<unknown>;
+    unit_code: string | null;
+    ordinal: number;
+    estimated_minutes: number;
+    is_hidden: Generated<boolean>;
+    is_capstone: Generated<boolean>;
+    availability: string;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  concept_prerequisite: {
+    concept_id: string;
+    prerequisite_id: string;
+    kind: string;
+  };
+  consent_record: {
+    id: string;
+    learner_id: string;
+    guardian_id: string;
+    purpose: string;
+    status: string;
+    method: string;
+    policy_version: string;
+    policy_text_sha256: Buffer;
+    request_token_hash: Buffer | null;
+    decided_by: string | null;
+    requested_at: Generated<Date>;
+    decided_at: Date | null;
+    revoked_at: Date | null;
+    expires_at: Date;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  curriculum_release: {
+    id: string;
+    version: number;
+    status: string;
+    is_current: Generated<boolean>;
+    snapshot: unknown | null;
+    snapshot_sha256: Buffer | null;
+    published_at: Date | null;
+    created_at: Generated<Date>;
+  };
+  deletion_request: {
+    id: string;
+    learner_id: string;
+    requested_by: string;
+    reason: string;
+    status: string;
+    attempts: Generated<number>;
+    last_error: string | null;
+    requested_at: Generated<Date>;
+    started_at: Date | null;
+    completed_at: Date | null;
+  };
+  erasure_receipt: {
+    receipt_id: string;
+    subject_digest: Buffer;
+    completed_at: Date;
+    backup_purge_after: Date;
+  };
+  guardian: {
+    id: string;
+    email_hash: Buffer;
+    email_ciphertext: Buffer;
+    verified_at: Date | null;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  idempotency_record: {
+    scope_kind: string;
+    scope_id: string;
+    operation: string;
+    key: string;
+    request_sha256: Buffer;
+    status: string;
+    response_status: number | null;
+    response_body: unknown | null;
+    created_at: Generated<Date>;
+    expires_at: Date;
+  };
+  job: {
+    id: string;
+    queue: string;
+    deletion_request_id: string | null;
+    status: string;
+    priority: Generated<number>;
+    available_at: Generated<Date>;
+    lease_token: string | null;
+    lease_until: Date | null;
+    attempts: Generated<number>;
+    max_attempts: Generated<number>;
+    deadline_at: Date;
+    last_error_code: string | null;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  learner: {
+    id: string;
+    status: string;
+    age_band: string;
+    age_band_source: string;
+    consent_deadline_at: Date | null;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+    version: Generated<string>;
+  };
+  lesson_concept: {
+    lesson_id: string;
+    concept_id: string;
+  };
+  micro_assessment: {
+    id: string;
+    lesson_revision_id: string;
+    question_id: string;
+    ordinal: number;
+    required: Generated<boolean>;
+    slide_index: number;
+  };
+  micro_lesson: {
+    id: string;
+    code: string;
+    route_slug: string | null;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  micro_lesson_revision: {
+    id: string;
+    lesson_id: string;
+    revision: number;
+    release_id: string;
+    status: string;
+    title: string;
+    estimated_minutes: number;
+    blocks: unknown;
+    published_at: Date | null;
+    created_at: Generated<Date>;
+  };
+  question: {
+    id: string;
+    code: string;
+    legacy_item_id: string | null;
+    family_code: string;
+    visibility: string;
+    owner_learner_id: string | null;
+    origin: string;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  question_concept: {
+    question_revision_id: string;
+    concept_id: string;
+    role: string;
+    assessable: boolean;
+  };
+  question_revision: {
+    id: string;
+    question_id: string;
+    revision: number;
+    release_id: string | null;
+    status: string;
+    item_type: string;
+    body: unknown;
+    rubric: unknown;
+    review_status: string;
+    context_tag: string;
+    difficulty: number;
+    estimated_minutes: number;
+    provenance: Generated<unknown>;
+    published_at: Date | null;
+    created_at: Generated<Date>;
+  };
+  schema_migration: {
+    name: string;
+    sha256: string;
+    applied_at: Generated<Date>;
+  };
+  student_profile: {
+    learner_id: string;
+    display_name: string | null;
+    grade: number | null;
+    timezone: Generated<string>;
+    preferred_subject_codes: Generated<string[]>;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  subject: {
+    id: string;
+    code: string;
+    title: string;
+    availability: string;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  topic: {
+    id: string;
+    subject_id: string;
+    code: string;
+    legacy_id: string | null;
+    title: string;
+    subtitle: string | null;
+    phase: string;
+    availability: string;
+    units: Generated<unknown>;
+    bekal: Generated<string[]>;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  topic_relation: {
+    from_topic_id: string;
+    to_topic_id: string;
+    kind: string;
+    label: string;
+    source: string;
+  };
+}

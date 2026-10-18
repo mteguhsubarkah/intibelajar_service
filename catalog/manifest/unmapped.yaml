@@ -1,0 +1,39 @@
+schemaVersion: 1
+entries:
+  - ns: TYPED_MAP
+    value: sudut-satuan
+    reason: Display-only "planned" node of the typed trigonometry map ("Sudut & Satuan"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TYPED_MAP
+    value: pythagoras
+    reason: Display-only "planned" node of the typed trigonometry map ("Teorema Pythagoras"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TYPED_MAP
+    value: perbandingan-rasio
+    reason: Display-only "planned" node of the typed trigonometry map ("Perbandingan & Rasio"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TYPED_MAP
+    value: perbandingan-trig
+    reason: Display-only "planned" node of the typed trigonometry map ("Perbandingan Trigonometri"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TYPED_MAP
+    value: soal-serupa
+    reason: Navigation node of the typed map that leads to the retry question; not a concept
+  - ns: TYPED_MAP
+    value: grafik-fungsi
+    reason: Display-only "planned" node of the typed trigonometry map ("Grafik Fungsi"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TYPED_MAP
+    value: sudut-depresi-elevasi
+    reason: Display-only "planned" node of the typed trigonometry map ("Sudut Depresi & Elevasi"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TYPED_MAP
+    value: aturan-sinus-cosinus
+    reason: Display-only "planned" node of the typed trigonometry map ("Aturan Sinus & Cosinus"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TYPED_MAP
+    value: aplikasi-trig
+    reason: Display-only "planned" node of the typed trigonometry map ("Aplikasi Trigonometri"); no content and no exact title match. Reviewer may alias it to a curriculum.ts concept
+  - ns: TOPIC
+    value: aljabar
+    reason: 'coba.ts funnel topic picker "aljabar" (available: false); no curriculum topic exists'
+  - ns: TOPIC
+    value: geometri
+    reason: 'coba.ts funnel topic picker "geometri" (available: false); no curriculum topic exists'
+  - ns: ITEM
+    value: own:*
+    pattern: true
+    reason: Learner-owned questions from Tanya soal (QuestionIntakeView); private intake revisions (Slice 6), never catalog

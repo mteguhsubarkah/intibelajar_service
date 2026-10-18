@@ -1,0 +1,68 @@
+schemaVersion: 1
+code: MAT.TRI.Q.GAB_SIN30_PANGKAT
+familyCode: MAT.TRI.F.GAB_SIN30_PANGKAT
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: frontend:src/data/bank.ts
+aliases:
+  - ns: ITEM
+    value: gab-sin30-pangkat
+legacyOptionOrder:
+  - a
+  - b
+  - c
+  - d
+concepts:
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Berapa nilai (sin 30°)² + 2⁻¹ ?
+  options:
+    - id: a
+      label: ¼
+    - id: b
+      label: ¾
+    - id: c
+      label: "1"
+    - id: d
+      label: 5/4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - ¾
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ISTIMEWA
+    - MAT.EKS.DEFINISI_EKSPONEN
+  feedback:
+    correct: (½)² = ¼ dan 2⁻¹ = ½, jadi ¼ + ½ = ¾.
+    incorrect: (½)² = ¼ dan 2⁻¹ = ½, jadi ¼ + ½ = ¾.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts cores tri-f, eks-b (all proposed PRIMARY and assessable)
+    - "kind gabungan: K02 question application across topics; creates no prerequisite edge (INV-17)"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

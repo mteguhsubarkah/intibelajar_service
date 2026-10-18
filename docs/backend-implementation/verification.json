@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-18",
+  "scope": "Synthetic local development only; no deployment",
+  "node": "v24.19.0",
+  "postgresql": "17.5",
+  "database": "intibelajar_slice0_test",
+  "migrations": [
+    {
+      "name": "0001_slice0.up.sql",
+      "sha256": "79207fa2309c78eeb11d4c157fa1e5efe3efa655928fc6220d62c94c2a5b245a"
+    }
+  ],
+  "backend": {
+    "nodeReportedTests": 16,
+    "namedScenarios": 15,
+    "failures": 0
+  },
+  "frontendConsumerChecks": 29,
+  "architecture": {
+    "pass": 15,
+    "warn": 0,
+    "fail": 0
+  },
+  "localOnlyTrackingScenarios": 3,
+  "baselineSha256": {
+    "01-current-state-audit.md": "b46b9de49652ce1753e197a543e6fc845a458c09c1451920fbfa9ecd65ccedb8",
+    "02-system-architecture.md": "ad86cc404ef004de4b00a37da71ae38b359725973da0e2b1de15d486d46820fc",
+    "03-domain-model.md": "4419f9b28c288fea28c92e4041620b52ceeb8eac6e41c377f490b41d22ba91ad",
+    "04-postgresql-erd.md": "131978f44d90bdd8c41c4f8a6db50290be4408e0d4611fe5ce0446761441098c",
+    "05-learning-state-machine.md": "4bd7e1ee1ea191c1987bc79184ecebe816c9a831c4ea87e37f8658c12c6dd345",
+    "06-diagnosis-evidence-mastery.md": "ac95a406ab179df83e183692b317ffdbafeb450765515142eb86cd9136ae2897",
+    "07-ai-integration.md": "150b49ef5ec2e581a5d86790fa82e195bf4dc6bd5628df0e4335162d05b7ebd6",
+    "08-auth-security-privacy.md": "482297806b3291a378034bb03f0aa78fedf82bfa1d2d38ccfb52943e5284974b",
+    "09-api-design.md": "b21a846bdd5b8b10b8121e1b490d60b8ec37be978536c8c620eadfd4db273209",
+    "10-architecture-decisions.md": "eca55b5278be418dc2c1c8b44d62dbf9bbcddc25f0db90f5976397b2542f219b",
+    "11-test-matrix.md": "88a4e892604a31cd366bc3bd9850c85084784bc7957f9e9a51afe0df53cbef07",
+    "12-implementation-roadmap.md": "98511bff19589d1702374694bdd3e74e31885d09359ebbfa2549ad11c3471094",
+    "openapi.yaml": "1582c84a4a9cd10bd13a3d394214b743d1ee63f9e04f5eb071e5a52a39e0be2d",
+    "validate-spec.py": "9d0f722a89f0cf9657f600fd8a8502f1a787eb05d765ec517470869c825c7992",
+    "verification.json": "b2b375356ec3eb5271ca9c15f118555eddefa5741fa1aeb02d0045a76f6db58d"
+  },
+  "notPerformed": [
+    "Production deployment",
+    "Real identity/guardian verification",
+    "Real student data processing",
+    "External AI calls",
+    "Browser E2E",
+    "Managed backup restore drill",
+    "Hosted CI execution",
+    "Vulnerability audit (registry endpoint 404 NOT_IMPLEMENTED)"
+  ],
+  "productionApproved": false
+}

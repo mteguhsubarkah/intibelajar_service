@@ -1,0 +1,30 @@
+(node:10100) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 0 real PostgreSQL integration and security gates
+  ✔ migration up, rollback, reapply, database version and atomic failure recovery (2372.4452ms)
+  ✔ configuration fails closed for production, remote database and feature enables (1.281ms)
+  ✔ identity sessions: hashes, cookie flags, rotation, reuse and continuation (349.0362ms)
+  ✔ CSRF and Origin matrix on all authenticated Slice 0 mutations (73.2242ms)
+  ✔ pending onboarding minimization, strict fields, age derivation and consent guard (201.3249ms)
+  ✔ multi-purpose consent, policy proof, idempotency replay and immediate session revocation (313.0046ms)
+  ✔ cross-user and guardian ownership, optional revocation and no learning capabilities (288.7091ms)
+  ✔ leased deletion failure, fencing, recovery and complete Slice 0 erasure (202.61ms)
+  ✔ session idle and absolute expiry (55.6446ms)
+  ✔ expired and declined consent: pending bootstrap erased, no relaxed eligibility (386.7107ms)
+  ✔ idempotency concurrency, crash rollback, replay and different payload (181.8071ms)
+  ✔ log canaries: URL tokens, emails, headers, malformed input and raw payloads absent (8.2761ms)
+(node:10100) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+  ✔ logout current/all, deletion request, missing idempotency and adult consent defaults (323.5362ms)
+(node:10100) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(node:10100) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+  ✔ unconfigured integrations fail closed and auth rate limits remain enforced (141.6831ms)
+  ✔ database unavailable produces failed readiness and can recover (47.7495ms)
+✔ Slice 0 real PostgreSQL integration and security gates (5469.6956ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11887.0926

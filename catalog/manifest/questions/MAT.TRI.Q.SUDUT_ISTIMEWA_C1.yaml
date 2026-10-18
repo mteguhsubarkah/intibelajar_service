@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_ISTIMEWA_C1
+familyCode: MAT.TRI.F.SUDUT_ISTIMEWA_C1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-istimewa chunks[1].check
+aliases:
+  - ns: ITEM
+    value: core:sudut-istimewa:c1
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di segitiga 30°–60°–90° (miring 2), berapa cos 30°?
+  options:
+    - id: a
+      label: 1/2
+    - id: b
+      label: √3/2
+    - id: c
+      label: √3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - √3/2
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: Tepat. cos 30° = samping / miring = √3 / 2.
+    incorrect: Belum tepat. cos 30° = samping / miring = √3/2. Nilai 1/2 itu milik sin 30°.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson sudut-istimewa, whose coreId is tri-f
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

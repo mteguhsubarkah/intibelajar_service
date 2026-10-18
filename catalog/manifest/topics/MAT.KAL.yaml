@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: MAT.KAL
+subject: MAT
+title: Kalkulus Dasar
+subtitle: Pilihan
+phase: F+
+availability: PLANNED
+bekal: []
+aliases:
+  - ns: TOPIC
+    value: kalkulus
+units: []
+concepts: []
+prerequisites: []

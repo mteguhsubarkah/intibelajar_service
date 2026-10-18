@@ -1,0 +1,5018 @@
+openapi: 3.1.0
+jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
+info:
+  title: IntiBelajar API
+  version: 1.0.0-draft.1
+  summary: Accounts, consent, catalog, learning sessions, diagnosis, mastery and tutoring for IntiBelajar.
+  description: |
+    Hand-maintained contract of the Backend Architecture Specification v1
+    (`docs/backend-architecture`). **Status: proposed. No server implements it yet.**
+
+    Rules that apply to every operation (details in `09-api-design.md`):
+
+    - Authentication uses the `__Host-ib_session` cookie. Every authenticated
+      mutation also sends `X-CSRF-Token` (from `GET /v1/auth/session`).
+    - Every authenticated `POST` command sends an `Idempotency-Key`. A replay
+      returns the stored status and body with `Idempotency-Replayed: true`.
+    - Session commands send `expectedStateVersion`. The server owns state; the
+      session representation lists `allowedActions`.
+    - Errors use one envelope (`Error`). A resource owned by someone else is `404`.
+    - Operations tagged `legacy` are the deprecated facade for the shipped
+      frontend adapters. Their shapes are frozen.
+servers:
+  - url: /
+    description: Same origin as the single-page app.
+security:
+  - sessionCookie: []
+tags:
+  - name: auth
+    description: Sign-in, session and CSRF token.
+  - name: me
+    description: The signed-in learner's profile, consents, imports and deletion.
+  - name: guardian
+    description: Guardian consent decisions and controls.
+  - name: catalog
+    description: Published curriculum content. Never contains answer keys or rubrics.
+  - name: learning
+    description: Authoritative learning sessions and their commands.
+  - name: diagnosis
+    description: Attempts, diagnosis runs and disputes.
+  - name: progress
+    description: Mastery, XP, streaks and activity.
+  - name: tutor
+    description: IntiBot, asynchronous. Requires AI_PROCESSING consent.
+  - name: intake
+    description: Own questions (photo or typed). Requires IMAGE_UPLOAD and AI_PROCESSING consent for photos.
+  - name: public
+    description: Stateless guest evaluation (OPEN_TRIAL mode only).
+  - name: legacy
+    description: Deprecated facade for the shipped frontend adapters (L1-L9).
+
+paths:
+  # ------------------------------------------------------------------ auth
+  /v1/auth/session:
+    get:
+      operationId: getAuthSession
+      tags: [auth]
+      summary: Current principal, learner status, missing consents and CSRF token.
+      security:
+        - {}
+        - sessionCookie: []
+      responses:
+        '200':
+          description: Session state. `authenticated` is false for visitors.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSession'
+              examples:
+                pendingConsent:
+                  value:
+                    authenticated: true
+                    csrfToken: 'q1W8x2kP9mZ3bT6vN0rL4sYcH7dE5fGu'
+                    user:
+                      id: 0192f6a9-4444-7555-8666-977788880001
+                      role: STUDENT
+                    learner:
+                      id: 0192f6a9-4444-7555-8666-977788889999
+                      status: PENDING_CONSENT
+                      ageBand: AGE_13_15
+                      missingPurposes: [LEARNING_DATA]
+                      consentDeadlineAt: '2026-10-24T03:00:00Z'
+  /v1/auth/start:
+    post:
+      operationId: startAuth
+      tags: [auth, legacy]
+      summary: Start Google or email sign-in with a continuation (legacy-compatible, L5).
+      description: |
+        Creates a pre-auth session and an auth transaction (state, nonce, PKCE verifier,
+        continuation). `continuation.targetPath` must be an allow-listed app route.
+        For `email`, `redirectUrl` is the app's email page, which then calls
+        `POST /v1/auth/email/links`.
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartAuthRequest'
+      responses:
+        '200':
+          description: Where to send the browser.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StartAuthResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/auth/callback/{provider}:
+    get:
+      operationId: completeOAuthCallback
+      tags: [auth]
+      summary: OIDC callback. Verifies the provider response, rotates the session, redirects to the continuation.
+      security:
+        - {}
+        - sessionCookie: []
+      parameters:
+        - $ref: '#/components/parameters/Provider'
+        - name: code
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 2048
+        - name: state
+          in: query
+          required: true
+          schema:
+            type: string
+            maxLength: 512
+        - name: error
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 256
+      responses:
+        '302':
+          description: Redirect to the continuation route (or to onboarding for a new learner, or back with a cancelled flag).
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+            Set-Cookie:
+              $ref: '#/components/headers/SetSessionCookie'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '410':
+          $ref: '#/components/responses/Gone'
+  /v1/auth/email/links:
+    post:
+      operationId: sendEmailSignInLink
+      tags: [auth]
+      summary: Send a one-time sign-in link. The response never reveals whether the address is known.
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailLinkRequest'
+      responses:
+        '202':
+          description: Accepted. A link is sent if the transaction is valid.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailLinkAccepted'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/auth/email/verify:
+    post:
+      operationId: verifyEmailSignInLink
+      tags: [auth]
+      summary: Consume a sign-in link token (by POST, so mail scanners cannot consume it).
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailVerifyRequest'
+      responses:
+        '200':
+          description: Signed in. The session cookie is rotated.
+          headers:
+            Set-Cookie:
+              $ref: '#/components/headers/SetSessionCookie'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailVerifyResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '410':
+          $ref: '#/components/responses/Gone'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/auth/logout:
+    post:
+      operationId: logout
+      tags: [auth]
+      summary: Revoke this session, or every session of the user.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - name: scope
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [current, all]
+            default: current
+      responses:
+        '204':
+          description: Signed out.
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  # -------------------------------------------------------------------- me
+  /v1/me:
+    delete:
+      operationId: deleteMyAccount
+      tags: [me]
+      summary: Delete the account. Processing stops immediately; erasure completes within 7 days.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      responses:
+        '202':
+          description: Deletion accepted. All sessions are revoked.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletionAccepted'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/me/profile:
+    get:
+      operationId: getMyProfile
+      tags: [me]
+      summary: Read the learner profile.
+      responses:
+        '200':
+          description: Profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    patch:
+      operationId: updateMyProfile
+      tags: [me]
+      summary: Onboarding and profile edits. A birth year is turned into an age band and not stored.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileUpdate'
+      responses:
+        '200':
+          description: Updated profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/me/consents:
+    get:
+      operationId: listMyConsents
+      tags: [me]
+      summary: Consent status per purpose.
+      responses:
+        '200':
+          description: One entry per purpose.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentStatusList'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+  /v1/me/consent-requests:
+    post:
+      operationId: createConsentRequest
+      tags: [me]
+      summary: Ask a guardian for consent. Emails a one-time link valid for 7 days.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsentRequestCreate'
+      responses:
+        '201':
+          description: Requests created (one per purpose).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentRequestResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/me/consents/{purpose}/revocation:
+    post:
+      operationId: revokeMyConsent
+      tags: [me]
+      summary: Revoke an optional purpose (AI_PROCESSING, IMAGE_UPLOAD, PRODUCT_ANALYTICS). Use DELETE /v1/me for LEARNING_DATA.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/Purpose'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Revoked. Processing for the purpose stops immediately.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentStatusList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/me/device-imports:
+    post:
+      operationId: importDeviceHistory
+      tags: [me]
+      summary: Import one device session. Imported history is never evidence, XP or mastery.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceImportRequest'
+      responses:
+        '201':
+          description: Imported session, placed at the matching state and checkpoint.
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+            Idempotency-Replayed:
+              $ref: '#/components/headers/IdempotencyReplayed'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceImportResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+  # -------------------------------------------------------------- guardian
+  /v1/guardian-consents/{token}:
+    get:
+      operationId: getGuardianConsentRequest
+      tags: [guardian]
+      summary: Show a consent request to the guardian (one-time link).
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/ConsentToken'
+      responses:
+        '200':
+          description: The exact policy text and purposes being asked for.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardianConsentView'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '410':
+          $ref: '#/components/responses/Gone'
+  /v1/guardian-consents/{token}/decision:
+    post:
+      operationId: decideGuardianConsent
+      tags: [guardian]
+      summary: Grant or decline each purpose. Declining LEARNING_DATA erases the pending account.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/ConsentToken'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GuardianConsentDecision'
+      responses:
+        '200':
+          description: Decision recorded with the policy version and the hash of the text shown.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardianConsentResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+  /v1/guardian/learners:
+    get:
+      operationId: listGuardianLearners
+      tags: [guardian]
+      summary: Learners linked to the signed-in guardian, with consent status. Never answers or messages.
+      responses:
+        '200':
+          description: Linked learners.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardianLearnerList'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/guardian/learners/{learnerId}/consents/{purpose}/revocation:
+    post:
+      operationId: revokeConsentAsGuardian
+      tags: [guardian]
+      summary: Revoke a purpose for a linked learner. Revoking LEARNING_DATA starts erasure.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/LearnerId'
+        - $ref: '#/components/parameters/Purpose'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Revoked.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardianLearner'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/guardian/learners/{learnerId}/deletion-requests:
+    post:
+      operationId: requestDeletionAsGuardian
+      tags: [guardian]
+      summary: Request erasure of a linked learner's account.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/LearnerId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '202':
+          description: Deletion accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletionAccepted'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # --------------------------------------------------------------- catalog
+  /v1/subjects:
+    get:
+      operationId: listSubjects
+      tags: [catalog]
+      summary: Subjects with availability.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/IfNoneMatch'
+      responses:
+        '200':
+          description: Subjects of the current release.
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+            Cache-Control:
+              $ref: '#/components/headers/PublicCache'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubjectList'
+        '304':
+          description: Not modified.
+  /v1/topics:
+    get:
+      operationId: listTopics
+      tags: [catalog]
+      summary: Topics, optionally filtered by subject.
+      security: []
+      parameters:
+        - name: subjectCode
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 16
+        - $ref: '#/components/parameters/IfNoneMatch'
+      responses:
+        '200':
+          description: Topics.
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TopicList'
+        '304':
+          description: Not modified.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /v1/topics/{topicId}:
+    get:
+      operationId: getTopic
+      tags: [catalog]
+      summary: One topic with units, concepts, prerequisite edges and cross-topic relations.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/TopicId'
+        - $ref: '#/components/parameters/IfNoneMatch'
+      responses:
+        '200':
+          description: Topic detail.
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TopicDetail'
+        '304':
+          description: Not modified.
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/concepts:
+    get:
+      operationId: listConcepts
+      tags: [catalog]
+      summary: Concepts by topic or by legacy alias. An unknown alias gives an empty list, never another concept.
+      security: []
+      parameters:
+        - name: topicId
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Uuid'
+        - name: legacyMapId
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 64
+      responses:
+        '200':
+          description: Concepts.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConceptList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /v1/concepts/{conceptId}:
+    get:
+      operationId: getConcept
+      tags: [catalog]
+      summary: One concept with K03 fields (definition, objectives, misconceptions). No rubrics.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/ConceptId'
+      responses:
+        '200':
+          description: Concept.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Concept'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/questions:
+    get:
+      operationId: listQuestions
+      tags: [catalog]
+      summary: Question bank without keys, rubrics or hints.
+      security: []
+      parameters:
+        - name: topicId
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Uuid'
+        - name: conceptId
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Uuid'
+        - name: itemType
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/ItemType'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: One page.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionPage'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /v1/questions/{questionId}:
+    get:
+      operationId: getQuestion
+      tags: [catalog]
+      summary: The published revision of a question. Private (intake) questions are visible to their owner only.
+      security:
+        - {}
+        - sessionCookie: []
+      parameters:
+        - $ref: '#/components/parameters/QuestionId'
+      responses:
+        '200':
+          description: Question.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionView'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/lessons/{lessonId}:
+    get:
+      operationId: getLesson
+      tags: [catalog]
+      summary: Lesson blocks and check placement. Check keys are never included.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/LessonId'
+      responses:
+        '200':
+          description: Lesson.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lesson'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # -------------------------------------------------------------- learning
+  /v1/learning-sessions:
+    post:
+      operationId: createLearningSession
+      tags: [learning]
+      summary: Start a question loop or a practice session (E-01, E-02).
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLearningSessionRequest'
+      responses:
+        '201':
+          description: Session created.
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+            Idempotency-Replayed:
+              $ref: '#/components/headers/IdempotencyReplayed'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LearningSession'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+    get:
+      operationId: listLearningSessions
+      tags: [learning]
+      summary: List the learner's sessions, newest activity first. `status=active` finds sessions to resume.
+      parameters:
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [active, completed, all]
+            default: all
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: One page.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LearningSessionPage'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/learning-sessions/{sessionId}:
+    get:
+      operationId: getLearningSession
+      tags: [learning]
+      summary: Authoritative session state, allowed actions and lesson checkpoint. Terminal sessions stay readable.
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Session.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LearningSession'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/learning-sessions/{sessionId}/attempts:
+    post:
+      operationId: submitAttempt
+      tags: [learning, diagnosis]
+      summary: Submit an answer (E-03, E-04, E-16, E-22). The server derives the attempt kind from the state.
+      description: |
+        Returns `201` with the stored attempt, its diagnosis run and the new session state.
+        Deterministic evaluation finishes inline, so the run is often already `COMPLETED`.
+        Otherwise the run is `QUEUED` and `Retry-After` says when to poll
+        `GET /v1/diagnosis-runs/{diagnosisRunId}`. The `Idempotency-Key` doubles as the
+        blueprint's `clientAttemptId`.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitAttemptRequest'
+            examples:
+              towerFirstAttempt:
+                value:
+                  expectedStateVersion: 1
+                  response:
+                    responseType: TEXT
+                    text: 'sin 30 = 20/x'
+      responses:
+        '201':
+          description: Attempt stored.
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+            Idempotency-Replayed:
+              $ref: '#/components/headers/IdempotencyReplayed'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttemptResult'
+              examples:
+                inlineDiagnosis:
+                  $ref: '#/components/examples/AttemptResultTower'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/learning-sessions/{sessionId}/quick-check-answers:
+    post:
+      operationId: answerQuickCheck
+      tags: [learning]
+      summary: Answer a lesson check, graded inline (E-13). One graded answer per check.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuickCheckAnswerRequest'
+      responses:
+        '201':
+          description: Check answered.
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+            Idempotency-Replayed:
+              $ref: '#/components/headers/IdempotencyReplayed'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttemptResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+  /v1/learning-sessions/{sessionId}/actions:
+    post:
+      operationId: performSessionAction
+      tags: [learning]
+      summary: Lesson, retry, skip and abandon commands (E-11, E-12, E-14, E-15, E-22, E-24).
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionActionRequest'
+            examples:
+              startLesson:
+                value:
+                  type: START_LESSON
+                  expectedStateVersion: 2
+                  conceptId: 0192f6a0-2222-7333-8444-955566667777
+      responses:
+        '200':
+          description: Command applied.
+          headers:
+            Idempotency-Replayed:
+              $ref: '#/components/headers/IdempotencyReplayed'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionActionResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+  /v1/learning-sessions/{sessionId}/hints:
+    post:
+      operationId: requestHint
+      tags: [learning]
+      summary: Reveal one hint step and record the exposure (E-23). No state change.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HintRequest'
+      responses:
+        '200':
+          description: The hint step.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HintResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+  /v1/learning-sessions/{sessionId}/solution:
+    post:
+      operationId: reviewSolution
+      tags: [learning]
+      summary: Review the authored worked solution (E-21). Records FULL_SOLUTION_SHOWN for the question family.
+      description: |
+        Allowed in `RETRY`, `EVALUATION_FAILED` and `COMPLETED`. From `RETRY` and
+        `EVALUATION_FAILED` the session completes with outcome `SOLUTION_REVIEWED`.
+        From `COMPLETED` nothing but the exposure changes.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewSolutionRequest'
+      responses:
+        '200':
+          description: The solution and the session.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SolutionResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+    get:
+      operationId: getSolution
+      tags: [learning]
+      summary: Re-read a solution already revealed in this session (by REVIEW_SOLUTION or the tutor gate).
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Worked solution.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkedSolution'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/learning-sessions/{sessionId}/checkpoint:
+    put:
+      operationId: updateCheckpoint
+      tags: [learning]
+      summary: Store the advisory UI checkpoint (E-26). No version bump.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Continuation'
+      responses:
+        '204':
+          description: Stored.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+
+  # ------------------------------------------------------------- diagnosis
+  /v1/attempts/{attemptId}:
+    get:
+      operationId: getAttempt
+      tags: [diagnosis]
+      summary: One attempt. Raw text may be purged after 180 days; the verdict stays.
+      parameters:
+        - $ref: '#/components/parameters/AttemptId'
+      responses:
+        '200':
+          description: Attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attempt'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/attempts/{attemptId}/diagnosis:
+    post:
+      operationId: requestDiagnosis
+      tags: [diagnosis]
+      summary: Get or re-run the attempt's shared diagnosis (blueprint A01, E-10).
+      description: |
+        Returns the active or completed run unchanged (`200`). Only when the session is
+        `EVALUATION_FAILED` for this attempt does it create the next generation (`201`).
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/AttemptId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: The existing run.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiagnosisRun'
+        '201':
+          description: A new generation was queued.
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiagnosisRun'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/diagnosis-runs/{diagnosisRunId}:
+    get:
+      operationId: getDiagnosisRun
+      tags: [diagnosis]
+      summary: Poll a diagnosis run. Follow Retry-After while it is QUEUED or RUNNING.
+      parameters:
+        - $ref: '#/components/parameters/DiagnosisRunId'
+      responses:
+        '200':
+          description: Run. A terminal run includes the session's new state and version.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiagnosisRun'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/diagnosis-runs/{diagnosisRunId}/reports:
+    post:
+      operationId: reportDiagnosis
+      tags: [diagnosis]
+      summary: '"Hasil keliru? Laporkan": dispute a diagnosis for human review. One report per run.'
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/DiagnosisRunId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiagnosisReportRequest'
+      responses:
+        '201':
+          description: Report filed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiagnosisReport'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  # -------------------------------------------------------------- progress
+  /v1/me/progress:
+    get:
+      operationId: getProgressSnapshot
+      tags: [progress, legacy]
+      summary: Progress snapshot in the shape the shipped frontend validates (L9, canonical). 401 means guest.
+      description: |
+        Only concepts with a frozen legacy alias are listed, because the shipped client
+        discards the whole snapshot on one unknown core ID. `mastery` is derived from the
+        server tier (06 §6.5), so the client's own tier rule reproduces the server's.
+      responses:
+        '200':
+          description: Snapshot.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyProgressSnapshot'
+              examples:
+                developing:
+                  $ref: '#/components/examples/LegacyProgressSnapshotExample'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+  /v1/me/mastery:
+    get:
+      operationId: listMastery
+      tags: [progress]
+      summary: Mastery per concept (mastery-v1 projection).
+      parameters:
+        - name: topicId
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Uuid'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: One page.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MasteryPage'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/me/mastery/{conceptId}:
+    get:
+      operationId: getMastery
+      tags: [progress]
+      summary: Mastery of one concept with a summary of the evidence behind it.
+      parameters:
+        - $ref: '#/components/parameters/ConceptId'
+      responses:
+        '200':
+          description: Mastery detail.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MasteryDetail'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/me/progress-events:
+    get:
+      operationId: listProgressEvents
+      tags: [progress]
+      summary: Activity feed (server facts only, not analytics).
+      parameters:
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: One page.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProgressEventPage'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/me/stats:
+    get:
+      operationId: getStats
+      tags: [progress]
+      summary: XP, level, streak and today's missions.
+      responses:
+        '200':
+          description: Stats.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stats'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  # ----------------------------------------------------------------- tutor
+  /v1/tutor-conversations:
+    post:
+      operationId: createTutorConversation
+      tags: [tutor]
+      summary: Open (or return the open) tutor conversation for a session and concept.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTutorConversationRequest'
+      responses:
+        '200':
+          description: The conversation that was already open.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorConversation'
+        '201':
+          description: Conversation opened. The first message discloses that IntiBot is an AI.
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorConversation'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/tutor-conversations/{conversationId}:
+    get:
+      operationId: getTutorConversation
+      tags: [tutor]
+      summary: A conversation with its messages.
+      parameters:
+        - $ref: '#/components/parameters/ConversationId'
+      responses:
+        '200':
+          description: Conversation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorConversation'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/tutor-conversations/{conversationId}/messages:
+    post:
+      operationId: sendTutorMessage
+      tags: [tutor]
+      summary: Send a message. The reply is produced asynchronously (202 + polling).
+      description: |
+        `requestFullSolution: true` passes the solution-review gate only when the server's
+        hint count is at least 2; it records FULL_SOLUTION_SHOWN. The client's hint count is
+        never trusted.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/ConversationId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TutorMessageRequest'
+      responses:
+        '202':
+          description: Learner message stored; tutor reply pending.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorMessageAccepted'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/tutor-messages/{messageId}:
+    get:
+      operationId: getTutorMessage
+      tags: [tutor]
+      summary: Poll a tutor reply.
+      parameters:
+        - $ref: '#/components/parameters/MessageId'
+      responses:
+        '200':
+          description: Message.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorMessage'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ---------------------------------------------------------------- intake
+  /v1/question-intakes:
+    post:
+      operationId: createQuestionIntake
+      tags: [intake]
+      summary: Start an intake. PHOTO waits for an image upload; TYPED queues concept mapping.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateQuestionIntakeRequest'
+      responses:
+        '201':
+          description: Intake created.
+          headers:
+            Location:
+              $ref: '#/components/headers/Location'
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionIntake'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/question-intakes/{intakeId}:
+    get:
+      operationId: getQuestionIntake
+      tags: [intake]
+      summary: Intake status, draft text and suggestions (advisory until confirmed).
+      parameters:
+        - $ref: '#/components/parameters/IntakeId'
+      responses:
+        '200':
+          description: Intake.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionIntake'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: discardQuestionIntake
+      tags: [intake]
+      summary: Discard an intake. Its image is deleted.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IntakeId'
+      responses:
+        '204':
+          description: Discarded.
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/question-intakes/{intakeId}/image:
+    put:
+      operationId: uploadIntakeImage
+      tags: [intake]
+      summary: Upload the photo (JPEG, PNG or WebP, at most 5 MB). It is quarantined, re-encoded and read asynchronously.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IntakeId'
+      requestBody:
+        required: true
+        content:
+          image/jpeg: {}
+          image/png: {}
+          image/webp: {}
+      responses:
+        '202':
+          description: Image accepted; reading queued.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionIntake'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '415':
+          $ref: '#/components/responses/UnsupportedMediaType'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/question-intakes/{intakeId}/confirmation:
+    post:
+      operationId: confirmQuestionIntake
+      tags: [intake]
+      summary: Confirm the question text and concepts. Creates a private question owned by the learner.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IntakeId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeConfirmationRequest'
+      responses:
+        '201':
+          description: Private question created. Start a QUESTION_LOOP with origin INTAKE.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntakeConfirmationResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+  # ---------------------------------------------------------------- public
+  /v1/public/evaluations:
+    post:
+      operationId: evaluatePublicItem
+      tags: [public]
+      summary: Stateless deterministic evaluation of a public practice item for guests (OPEN_TRIAL only).
+      description: |
+        Nothing is stored, no AI is called and the answer is never logged. In
+        `CONSENT_FIRST` mode the operation returns `403 FEATURE_DISABLED`.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublicEvaluationRequest'
+      responses:
+        '200':
+          description: Evaluation result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicEvaluationResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  # ---------------------------------------------------------------- legacy
+  /v1/learning/diagnosis:
+    post:
+      operationId: legacyCreateDiagnosis
+      tags: [legacy]
+      deprecated: true
+      summary: 'L1: start a diagnosis (facade over SUBMIT_ATTEMPT).'
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LegacyDiagnosisRequest'
+      responses:
+        '200':
+          description: The run in the legacy shape.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+            Deprecation:
+              $ref: '#/components/headers/Deprecation'
+            Sunset:
+              $ref: '#/components/headers/Sunset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyDiagnosisRun'
+              examples:
+                completedGap:
+                  $ref: '#/components/examples/LegacyDiagnosisRunExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/learning/diagnosis/{diagnosisRunId}:
+    get:
+      operationId: legacyGetDiagnosis
+      tags: [legacy]
+      deprecated: true
+      summary: 'L2: poll a run in the legacy shape.'
+      security:
+        - {}
+        - sessionCookie: []
+      parameters:
+        - $ref: '#/components/parameters/LegacyDiagnosisRunId'
+      responses:
+        '200':
+          description: The run.
+          headers:
+            Retry-After:
+              $ref: '#/components/headers/RetryAfter'
+            Deprecation:
+              $ref: '#/components/headers/Deprecation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyDiagnosisRun'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/learning/answers/check:
+    post:
+      operationId: legacyCheckAnswer
+      tags: [legacy]
+      deprecated: true
+      summary: 'L3: check, practice and retry answers (facade over quick checks, practice attempts and retries).'
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LegacyCheckRequest'
+      responses:
+        '200':
+          description: Verdict in the legacy shape. `correct` is null when unreadable.
+          headers:
+            Deprecation:
+              $ref: '#/components/headers/Deprecation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyCheckResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/learning/solution:
+    post:
+      operationId: legacyGetSolution
+      tags: [legacy]
+      deprecated: true
+      summary: 'L4: worked solution (facade over REVIEW_SOLUTION).'
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LegacySolutionRequest'
+      responses:
+        '200':
+          description: Solution in the legacy shape.
+          headers:
+            Deprecation:
+              $ref: '#/components/headers/Deprecation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacySolution'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /v1/learning/tutor:
+    post:
+      operationId: legacyTutor
+      tags: [legacy]
+      deprecated: true
+      summary: 'L6: authored hint ladder, server-side, no AI. Client history and hintsUsed are ignored.'
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LegacyTutorRequest'
+      responses:
+        '200':
+          description: Reply in the legacy shape. `hintsUsed` is the server's count.
+          headers:
+            Deprecation:
+              $ref: '#/components/headers/Deprecation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyTutorReply'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/learning/intake/read:
+    post:
+      operationId: legacyIntakeRead
+      tags: [legacy]
+      deprecated: true
+      summary: 'L7: not served. Image reading needs consent, quarantine and asynchronous AI.'
+      description: |
+        Always answers `403 FEATURE_DISABLED`. The shape the shipped client expects is kept as
+        `LegacyIntakeRead` for reference. Use the asynchronous intake API instead.
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LegacyIntakeReadRequest'
+      responses:
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+  /v1/learning/intake/map:
+    post:
+      operationId: legacyIntakeMap
+      tags: [legacy]
+      deprecated: true
+      summary: 'L8: deterministic keyword mapping to mapped topics only (no AI).'
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LegacyIntakeMapRequest'
+      responses:
+        '200':
+          description: Mapping in the legacy shape (`demo` is false).
+          headers:
+            Deprecation:
+              $ref: '#/components/headers/Deprecation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyIntakeMap'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: __Host-ib_session
+      description: Opaque 256-bit session token. Secure, HttpOnly, SameSite=Lax.
+    csrfToken:
+      type: apiKey
+      in: header
+      name: X-CSRF-Token
+      description: Synchronizer token from GET /v1/auth/session, required on authenticated mutations.
+
+  parameters:
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      description: One key per user intent. Scoped to principal and operation, kept 7 days.
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9_-]{8,128}$'
+    IfNoneMatch:
+      name: If-None-Match
+      in: header
+      required: false
+      schema:
+        type: string
+        maxLength: 128
+    Cursor:
+      name: cursor
+      in: query
+      required: false
+      description: Opaque, signed and bound to the query. Expires after 24 hours.
+      schema:
+        type: string
+        maxLength: 512
+    Limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    Provider:
+      name: provider
+      in: path
+      required: true
+      schema:
+        type: string
+        enum: [google]
+    ConsentToken:
+      name: token
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9_-]{32,128}$'
+    Purpose:
+      name: purpose
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/ConsentPurpose'
+    LearnerId:
+      name: learnerId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    SessionId:
+      name: sessionId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    AttemptId:
+      name: attemptId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    DiagnosisRunId:
+      name: diagnosisRunId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    LegacyDiagnosisRunId:
+      name: diagnosisRunId
+      in: path
+      required: true
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 80
+    TopicId:
+      name: topicId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    ConceptId:
+      name: conceptId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    QuestionId:
+      name: questionId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    LessonId:
+      name: lessonId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    ConversationId:
+      name: conversationId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    MessageId:
+      name: messageId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+    IntakeId:
+      name: intakeId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Uuid'
+
+  headers:
+    RetryAfter:
+      description: Seconds to wait before polling or retrying.
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 3600
+    Location:
+      description: URL of the created or next resource.
+      schema:
+        type: string
+        format: uri-reference
+    IdempotencyReplayed:
+      description: Present and true when the response is a stored replay.
+      schema:
+        type: boolean
+    Deprecation:
+      description: Marks a deprecated facade operation.
+      schema:
+        type: string
+    Sunset:
+      description: Planned removal date of a deprecated operation.
+      schema:
+        type: string
+    ETag:
+      description: Release version of the catalog.
+      schema:
+        type: string
+    NoStore:
+      description: Learner data is never cached.
+      schema:
+        type: string
+        const: no-store
+    PublicCache:
+      description: Catalog caching policy.
+      schema:
+        type: string
+    SetSessionCookie:
+      description: The rotated `__Host-ib_session` cookie.
+      schema:
+        type: string
+
+  responses:
+    BadRequest:
+      description: VALIDATION_FAILED or INVALID_CURSOR.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthenticated:
+      description: UNAUTHENTICATED.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: CSRF_FAILED, CONSENT_REQUIRED, ACCOUNT_UNAVAILABLE, FEATURE_DISABLED, SOLUTION_LOCKED or FORBIDDEN.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            consentRequired:
+              value:
+                code: CONSENT_REQUIRED
+                message: Minta izin orang tua dulu supaya progresmu bisa disimpan.
+                requestId: 0192f6d1-6c1e-7b9a-9f1e-3c1d2b4a5e6f
+                retryable: false
+                details:
+                  missingPurposes: [LEARNING_DATA]
+    NotFound:
+      description: NOT_FOUND. Also returned for resources owned by someone else.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: INVALID_STATE_TRANSITION, STALE_STATE_VERSION, IDEMPOTENCY_KEY_REUSED, IDEMPOTENCY_IN_PROGRESS, CONTENT_UNAVAILABLE, ALREADY_IMPORTED or ALREADY_REPORTED.
+      headers:
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            staleVersion:
+              value:
+                code: STALE_STATE_VERSION
+                message: Sesi ini sudah berubah di tab lain. Muat ulang untuk melanjutkan.
+                requestId: 0192f6d1-6c1e-7b9a-9f1e-3c1d2b4a5e70
+                retryable: false
+                details:
+                  currentStateVersion: 5
+    Gone:
+      description: SESSION_EXPIRED or LINK_EXPIRED.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    PayloadTooLarge:
+      description: PAYLOAD_TOO_LARGE.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    UnsupportedMediaType:
+      description: UNSUPPORTED_MEDIA_TYPE.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    TooManyRequests:
+      description: RATE_LIMITED or AI_BUDGET_EXCEEDED.
+      headers:
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unavailable:
+      description: DEPENDENCY_UNAVAILABLE.
+      headers:
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  examples:
+    AttemptResultTower:
+      summary: Tower question, wrong ratio, diagnosed inline.
+      value:
+        attempt:
+          id: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e01
+          sessionId: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e00
+          questionRevisionId: 0192f6b0-1111-7222-8333-944455556666
+          kind: INITIAL
+          ordinal: 1
+          response:
+            responseType: TEXT
+            text: 'sin 30 = 20/x'
+            inputMode: TYPED
+            purged: false
+          assistance: NONE
+          verdict: INCORRECT
+          source: LIVE
+          submittedAt: '2026-10-17T03:15:20Z'
+          gradedAt: '2026-10-17T03:15:20Z'
+        diagnosisRun:
+          id: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e02
+          attemptId: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e01
+          sessionId: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e00
+          generation: 1
+          purpose: DIAGNOSIS
+          engine: DETERMINISTIC
+          status: COMPLETED
+          evidenceStatus: SUPPORTED
+          verdict: INCORRECT
+          headline: 'Hampir! Meleset sedikit di 1 inti.'
+          lede: 'Pilihan perbandingannya yang meleset.'
+          evidence:
+            - conceptId: 0192f6a0-2222-7333-8444-955566667777
+              conceptCode: MAT.TRI.RATIO_DEF
+              legacyMapId: tri-d
+              conceptTitle: 'Definisi sin, cos, tan'
+              classification: MISCONCEPTION_EVIDENCED
+              misconception:
+                code: RATIO_CHOICE
+                label: 'Memilih sin untuk pasangan sisi depan dan samping'
+              rationale: 'sin memakai sisi miring, padahal yang diketahui sisi depan dan samping.'
+              refs:
+                - kind: SPAN
+                  start: 0
+                  end: 6
+                  quote: 'sin 30'
+              source: DETERMINISTIC
+              uncertaintyReasons: []
+              eligibility:
+                mastery: true
+                transfer: false
+                reasons: [ANCHOR_OR_RETRY]
+          recommendations:
+            - conceptId: 0192f6a0-2222-7333-8444-955566667777
+              conceptCode: MAT.TRI.RATIO_DEF
+              legacyMapId: tri-d
+              conceptTitle: 'Definisi sin, cos, tan'
+              action: LEARN
+              lessonId: 0192f6a1-3333-7444-8555-966677778888
+              lessonRouteSlug: perbandingan-trig
+              reason: 'Sisi yang kamu punya adalah sisi depan dan sisi samping.'
+              keyFormula: 'tan 30° = 20 / x'
+              estimatedMinutes: 4
+          aiAssisted: false
+          session:
+            id: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e00
+            state: DIAGNOSIS_READY
+            stateVersion: 2
+            allowedActions: [START_LESSON, START_RETRY, ABANDON, UPDATE_CHECKPOINT]
+          createdAt: '2026-10-17T03:15:20Z'
+          completedAt: '2026-10-17T03:15:20Z'
+        session:
+          id: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e00
+          kind: QUESTION_LOOP
+          origin: FUNNEL
+          state: DIAGNOSIS_READY
+          stateVersion: 2
+          unsuccessfulRetries: 0
+          releaseVersion: 1
+          activeAttemptId: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e01
+          activeDiagnosisRunId: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e02
+          allowedActions: [START_LESSON, START_RETRY, ABANDON, UPDATE_CHECKPOINT]
+          checkpoint:
+            route: /coba
+            sessionId: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e00
+            step: 4
+          startedAt: '2026-10-17T03:14:02Z'
+          lastActivityAt: '2026-10-17T03:15:20Z'
+          expiresAt: '2026-10-31T03:15:20Z'
+    LegacyDiagnosisRunExample:
+      summary: The same run in the L1/L2 legacy shape.
+      value:
+        diagnosisRunId: 0192f6c4-8a1b-7c3d-9e4f-5a6b7c8d9e02
+        status: completed
+        assessment:
+          tone: gap
+          title: 'Hampir! Meleset sedikit di 1 inti.'
+          gap:
+            label: Core belum kuat
+            name: 'Definisi sin, cos, tan'
+            reason: 'sin memakai sisi miring, padahal yang diketahui sisi depan dan samping.'
+            coreId: perbandingan-trig
+            mapId: tri-d
+          okName: null
+          next:
+            core: 'Definisi sin, cos, tan'
+            reason: 'Sisi yang kamu punya adalah sisi depan dan sisi samping.'
+            formula: 'tan 30° = 20 / x'
+            coreId: perbandingan-trig
+            mapId: tri-d
+        items:
+          - id: tri-c
+            state: rest
+            reason: Belum terlihat di jawabanmu.
+          - id: tri-d
+            state: gap
+            reason: 'sin memakai sisi miring, padahal yang diketahui sisi depan dan samping.'
+          - id: tri-f
+            state: rest
+            reason: Belum terlihat di jawabanmu.
+    LegacyProgressSnapshotExample:
+      summary: One concept in progress.
+      value:
+        user:
+          id: 0192f6a9-4444-7555-8666-977788889999
+          displayName: Pelajar
+        cores:
+          - id: tri-d
+            exploration: VISITED
+            mastery: DEVELOPING
+            lessonComplete: true
+            transferCorrect: 0
+            lastPracticedAt: '2026-10-16T09:00:00Z'
+        activities:
+          - id: 0192f6aa-5555-7666-8777-988899990000
+            title: 'Menyelesaikan materi: Definisi sin, cos, tan'
+            at: '2026-10-16T09:00:00Z'
+        xp: 40
+        streakDays: 2
+
+  schemas:
+    # ------------------------------------------------------------ primitives
+    Uuid:
+      type: string
+      format: uuid
+      description: Server-generated UUIDv7.
+    Timestamp:
+      type: string
+      format: date-time
+    LocalDate:
+      type: string
+      format: date
+
+    # ----------------------------------------------------------------- enums
+    ErrorCode:
+      type: string
+      enum:
+        - VALIDATION_FAILED
+        - INVALID_CURSOR
+        - UNAUTHENTICATED
+        - CSRF_FAILED
+        - CONSENT_REQUIRED
+        - ACCOUNT_UNAVAILABLE
+        - FEATURE_DISABLED
+        - SOLUTION_LOCKED
+        - FORBIDDEN
+        - NOT_FOUND
+        - INVALID_STATE_TRANSITION
+        - STALE_STATE_VERSION
+        - IDEMPOTENCY_KEY_REUSED
+        - IDEMPOTENCY_IN_PROGRESS
+        - CONTENT_UNAVAILABLE
+        - ALREADY_IMPORTED
+        - ALREADY_REPORTED
+        - SESSION_EXPIRED
+        - LINK_EXPIRED
+        - PAYLOAD_TOO_LARGE
+        - UNSUPPORTED_MEDIA_TYPE
+        - RATE_LIMITED
+        - AI_BUDGET_EXCEEDED
+        - INTERNAL
+        - DEPENDENCY_UNAVAILABLE
+    LearnerStatus:
+      type: string
+      enum: [PENDING_CONSENT, ACTIVE, SUSPENDED, DELETION_PENDING]
+    AgeBand:
+      type: string
+      enum: [UNDER_13, AGE_13_15, AGE_16_17, ADULT, UNKNOWN]
+    AgeBandSource:
+      type: string
+      enum: [SELF_DECLARED, GUARDIAN_CONFIRMED, VERIFIED]
+    ConsentPurpose:
+      type: string
+      enum: [LEARNING_DATA, AI_PROCESSING, IMAGE_UPLOAD, PRODUCT_ANALYTICS]
+    ConsentStatus:
+      type: string
+      enum: [PENDING, GRANTED, DECLINED, EXPIRED, REVOKED]
+    ConsentMethod:
+      type: string
+      enum: [GUARDIAN_EMAIL, GUARDIAN_SIGNIN, SELF_WITH_GUARDIAN_NOTICE]
+    SessionKind:
+      type: string
+      enum: [QUESTION_LOOP, PRACTICE]
+    SessionOrigin:
+      type: string
+      enum: [FUNNEL, BANK, CHALLENGE, CONCEPT_LESSON, COMBINED_SET, INTAKE, DEVICE_IMPORT]
+    SessionState:
+      type: string
+      enum:
+        - QUESTION
+        - DIAGNOSING
+        - CLARIFICATION_NEEDED
+        - DIAGNOSIS_READY
+        - MICROLEARNING
+        - QUICK_CHECK
+        - RETRY
+        - VERIFYING
+        - EVALUATION_FAILED
+        - PRACTICING
+        - COMPLETED
+        - ABANDONED
+        - EXPIRED
+    SessionOutcome:
+      type: string
+      enum: [SOLVED_FIRST_TRY, SOLVED_AFTER_LEARNING, SOLUTION_REVIEWED, PRACTICE_FINISHED]
+    ResumeState:
+      type: string
+      enum: [DIAGNOSING, VERIFYING]
+    AllowedAction:
+      type: string
+      enum:
+        - SUBMIT_ATTEMPT
+        - ANSWER_QUICK_CHECK
+        - START_LESSON
+        - ADVANCE_LESSON
+        - FINISH_LESSON
+        - SKIP_LESSON
+        - START_RETRY
+        - SKIP_ITEM
+        - REVIEW_SOLUTION
+        - REQUEST_HINT
+        - REQUEST_DIAGNOSIS
+        - ABANDON
+        - UPDATE_CHECKPOINT
+    AttemptKind:
+      type: string
+      enum: [INITIAL, CLARIFICATION, QUICK_CHECK, RETRY, PRACTICE, TRANSFER]
+    Assistance:
+      type: string
+      enum: [NONE, HINT, LESSON, TUTOR, SOLUTION]
+    Verdict:
+      type: string
+      enum: [PENDING, CORRECT, INCORRECT, UNREADABLE, NOT_GRADED]
+    FinalVerdict:
+      type: string
+      enum: [CORRECT, INCORRECT, UNREADABLE, NOT_GRADED]
+    AttemptSource:
+      type: string
+      enum: [LIVE, DEVICE_IMPORT]
+    RunStatus:
+      type: string
+      enum: [QUEUED, RUNNING, COMPLETED, FAILED, CANCELLED]
+    EvidenceStatus:
+      type: string
+      enum: [SUPPORTED, INSUFFICIENT_EVIDENCE]
+    RunPurpose:
+      type: string
+      enum: [DIAGNOSIS, VERIFICATION, GRADING]
+    Engine:
+      type: string
+      enum: [DETERMINISTIC, AI_ASSISTED, EDUCATOR]
+    FailureCode:
+      type: string
+      x-extensible-enum: true
+      enum: [DEADLINE_EXCEEDED, DEPENDENCY_UNAVAILABLE, INVALID_OUTPUT, PROVIDER_REFUSED, CONSENT_REVOKED, AI_BUDGET_EXCEEDED, INTERNAL]
+    Classification:
+      type: string
+      enum: [UNDERSTANDING_DEMONSTRATED, MISCONCEPTION_EVIDENCED, INSUFFICIENT_EVIDENCE, NOT_ASSESSED]
+    EvidenceSource:
+      type: string
+      enum: [DETERMINISTIC, AI, EDUCATOR]
+    UncertaintyReason:
+      type: string
+      enum: [AMBIGUOUS_NOTATION, INCOMPLETE_WORK, ALTERNATIVE_PATH, LOW_CONFIDENCE, UNREADABLE_INPUT, OUT_OF_SCOPE]
+    EligibilityReason:
+      type: string
+      enum:
+        - NOT_A_CLAIM
+        - AI_ONLY
+        - DEVICE_IMPORT
+        - FORMATIVE_CHECK
+        - SOLUTION_SEEN
+        - NOT_ASSESSABLE
+        - SUPERSEDED
+        - ANCHOR_OR_RETRY
+        - NOT_TRANSFER_ITEM
+        - HINT_USED
+        - FAMILY_NOT_FRESH
+    ItemType:
+      type: string
+      enum: [FREE_RESPONSE, MULTIPLE_CHOICE, NUMERIC]
+    QuestionVisibility:
+      type: string
+      enum: [PUBLIC_PRACTICE, CATALOG, PRIVATE]
+    Phase:
+      type: string
+      enum: [D, E, F, F+]
+    LessonAssignmentStatus:
+      type: string
+      enum: [ASSIGNED, IN_PROGRESS, CHECKS_PENDING, COMPLETED, SKIPPED]
+    SessionItemStatus:
+      type: string
+      enum: [PENDING, ANSWERED, SKIPPED]
+    RecommendationAction:
+      type: string
+      enum: [LEARN, PRACTICE, RETRY]
+    MasteryStatus:
+      type: string
+      enum: [NOT_ASSESSED, DEVELOPING, DEMONSTRATED]
+    Exploration:
+      type: string
+      enum: [UNVISITED, VISITED]
+    NeedsReviewReason:
+      type: string
+      enum: [CONTRADICTION, STALE_14D]
+    ProgressEventType:
+      type: string
+      x-extensible-enum: true
+      enum:
+        - CONCEPT_VISITED
+        - ATTEMPT_GRADED
+        - LESSON_COMPLETED
+        - SESSION_COMPLETED
+        - MASTERY_CHANGED
+        - TIER_CHANGED
+        - XP_AWARDED
+        - STREAK_EXTENDED
+        - STREAK_FREEZE_USED
+        - MISSION_COMPLETED
+        - DEVICE_HISTORY_IMPORTED
+    TutorRole:
+      type: string
+      enum: [LEARNER, TUTOR]
+    TutorMessageStatus:
+      type: string
+      enum: [PENDING, COMPLETED, FAILED, BLOCKED]
+    TutorIntent:
+      type: string
+      enum: [QUESTION, SOCRATIC_PROMPT, HINT, SOLUTION_REVIEW, REDIRECT, REFUSAL]
+    IntakeStatus:
+      type: string
+      enum: [RECEIVED, READING, READ, CONFIRMED, DISCARDED, FAILED, EXPIRED]
+    IntakeInputMode:
+      type: string
+      enum: [PHOTO, TYPED]
+    ReportReason:
+      type: string
+      enum: [ANSWER_WAS_CORRECT, WRONG_CONCEPT, UNCLEAR_EXPLANATION, OTHER]
+    ReportStatus:
+      type: string
+      enum: [OPEN, UPHELD, REJECTED]
+
+    # ---------------------------------------------------------------- errors
+    Error:
+      type: object
+      additionalProperties: false
+      required: [code, message, requestId, retryable]
+      properties:
+        code:
+          $ref: '#/components/schemas/ErrorCode'
+        message:
+          type: string
+          maxLength: 300
+          description: Safe to show (Indonesian). Never echoes input.
+        requestId:
+          $ref: '#/components/schemas/Uuid'
+        retryable:
+          type: boolean
+        details:
+          type: object
+          description: Code-specific, machine-readable fields such as currentStateVersion, missingPurposes, allowedActions or fields.
+
+    # ------------------------------------------------------------------ auth
+    AuthSession:
+      type: object
+      additionalProperties: false
+      required: [authenticated]
+      properties:
+        authenticated:
+          type: boolean
+        csrfToken:
+          type: string
+          minLength: 16
+          maxLength: 128
+          description: Present for signed-in users. Send it as X-CSRF-Token on mutations.
+        user:
+          type: object
+          additionalProperties: false
+          required: [id, role]
+          properties:
+            id:
+              $ref: '#/components/schemas/Uuid'
+            role:
+              type: string
+              enum: [STUDENT, GUARDIAN]
+        learner:
+          type: object
+          additionalProperties: false
+          required: [id, status, missingPurposes]
+          properties:
+            id:
+              $ref: '#/components/schemas/Uuid'
+            status:
+              $ref: '#/components/schemas/LearnerStatus'
+            ageBand:
+              $ref: '#/components/schemas/AgeBand'
+            missingPurposes:
+              type: array
+              uniqueItems: true
+              items:
+                $ref: '#/components/schemas/ConsentPurpose'
+            consentDeadlineAt:
+              $ref: '#/components/schemas/Timestamp'
+    LegacyContinuation:
+      type: object
+      required: [step, targetPath]
+      properties:
+        step:
+          type: integer
+          minimum: 0
+          maximum: 50
+        targetPath:
+          type: string
+          maxLength: 200
+          description: Must be an allow-listed app route, otherwise 400.
+    StartAuthRequest:
+      type: object
+      description: Legacy-compatible (L5). The spread FlowContext fields are accepted as continuation hints; unknown fields are ignored.
+      required: [provider, continuation]
+      properties:
+        provider:
+          type: string
+          enum: [google, email]
+        continuation:
+          $ref: '#/components/schemas/LegacyContinuation'
+        sessionId:
+          type: string
+          maxLength: 64
+        questionId:
+          type: string
+          maxLength: 128
+        topicId:
+          type: [string, 'null']
+          maxLength: 64
+        hintOpened:
+          type: boolean
+        diagnosisRunId:
+          type: [string, 'null']
+          maxLength: 80
+        questionText:
+          type: string
+          maxLength: 2000
+        coreIds:
+          type: array
+          maxItems: 20
+          items:
+            type: string
+            maxLength: 64
+    StartAuthResponse:
+      type: object
+      additionalProperties: false
+      required: [redirectUrl]
+      properties:
+        redirectUrl:
+          type: string
+          format: uri
+          description: https (or http on localhost in development).
+    EmailLinkRequest:
+      type: object
+      additionalProperties: false
+      required: [email, transaction]
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        transaction:
+          type: string
+          minLength: 16
+          maxLength: 128
+    EmailLinkAccepted:
+      type: object
+      additionalProperties: false
+      required: [accepted]
+      properties:
+        accepted:
+          type: boolean
+          const: true
+    EmailVerifyRequest:
+      type: object
+      additionalProperties: false
+      required: [token]
+      properties:
+        token:
+          type: string
+          minLength: 16
+          maxLength: 256
+    EmailVerifyResult:
+      type: object
+      additionalProperties: false
+      required: [continuation]
+      properties:
+        continuation:
+          $ref: '#/components/schemas/Continuation'
+    Continuation:
+      type: object
+      additionalProperties: false
+      required: [route]
+      description: An allow-listed app route plus optional resume hints. Never an arbitrary URL.
+      properties:
+        route:
+          type: string
+          pattern: '^/(|coba|soal-tadi|kenalan|tanya|challenge|latihan/soal|home|pick|latihan|progress|profile|diagnosis|mastery)$|^/core/[a-z0-9-]{1,64}$'
+        sessionId:
+          $ref: '#/components/schemas/Uuid'
+        step:
+          type: integer
+          minimum: 0
+          maximum: 50
+        lessonStep:
+          type: integer
+          minimum: 0
+          maximum: 50
+
+    # -------------------------------------------------------- me and consent
+    Profile:
+      type: object
+      additionalProperties: false
+      required: [learnerId, status, ageBand, ageBandSource, timezone, preferredSubjectCodes]
+      properties:
+        learnerId:
+          $ref: '#/components/schemas/Uuid'
+        status:
+          $ref: '#/components/schemas/LearnerStatus'
+        ageBand:
+          $ref: '#/components/schemas/AgeBand'
+        ageBandSource:
+          $ref: '#/components/schemas/AgeBandSource'
+        displayName:
+          type: string
+          maxLength: 40
+        grade:
+          type: integer
+          minimum: 7
+          maximum: 12
+        timezone:
+          type: string
+          enum: [Asia/Jakarta, Asia/Makassar, Asia/Jayapura]
+        preferredSubjectCodes:
+          type: array
+          maxItems: 6
+          items:
+            type: string
+            maxLength: 16
+        consentDeadlineAt:
+          $ref: '#/components/schemas/Timestamp'
+    ProfileUpdate:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      properties:
+        displayName:
+          type: string
+          minLength: 1
+          maxLength: 40
+        grade:
+          type: integer
+          minimum: 7
+          maximum: 12
+        birthYear:
+          type: integer
+          minimum: 1990
+          maximum: 2030
+          writeOnly: true
+          description: Used once to derive the age band. Not stored.
+        timezone:
+          type: string
+          enum: [Asia/Jakarta, Asia/Makassar, Asia/Jayapura]
+        preferredSubjectCodes:
+          type: array
+          maxItems: 6
+          uniqueItems: true
+          items:
+            type: string
+            maxLength: 16
+    ConsentStatusItem:
+      type: object
+      additionalProperties: false
+      required: [purpose, status]
+      properties:
+        purpose:
+          $ref: '#/components/schemas/ConsentPurpose'
+        status:
+          anyOf:
+            - $ref: '#/components/schemas/ConsentStatus'
+            - type: string
+              const: NOT_REQUESTED
+        method:
+          $ref: '#/components/schemas/ConsentMethod'
+        policyVersion:
+          type: string
+          maxLength: 32
+        requestedAt:
+          $ref: '#/components/schemas/Timestamp'
+        decidedAt:
+          $ref: '#/components/schemas/Timestamp'
+        expiresAt:
+          $ref: '#/components/schemas/Timestamp'
+    ConsentStatusList:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsentStatusItem'
+    ConsentRequestCreate:
+      type: object
+      additionalProperties: false
+      required: [guardianEmail, purposes]
+      properties:
+        guardianEmail:
+          type: string
+          format: email
+          maxLength: 254
+        purposes:
+          type: array
+          minItems: 1
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/ConsentPurpose'
+    ConsentRequestResult:
+      type: object
+      additionalProperties: false
+      required: [purposes, linkExpiresAt]
+      properties:
+        purposes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsentStatusItem'
+        linkExpiresAt:
+          $ref: '#/components/schemas/Timestamp'
+    GuardianConsentView:
+      type: object
+      additionalProperties: false
+      required: [learner, purposes, policyVersion, policyText, policyTextSha256, expiresAt]
+      properties:
+        learner:
+          type: object
+          additionalProperties: false
+          properties:
+            displayName:
+              type: string
+              maxLength: 40
+            grade:
+              type: integer
+              minimum: 7
+              maximum: 12
+        purposes:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            required: [purpose, title, description]
+            properties:
+              purpose:
+                $ref: '#/components/schemas/ConsentPurpose'
+              title:
+                type: string
+                maxLength: 120
+              description:
+                type: string
+                maxLength: 2000
+        policyVersion:
+          type: string
+          maxLength: 32
+        policyText:
+          type: string
+          maxLength: 20000
+        policyTextSha256:
+          type: string
+          pattern: '^[0-9a-f]{64}$'
+        aiProviderDisclosure:
+          type: string
+          maxLength: 1000
+          description: Names the AI provider and the transfer abroad (UU 27/2022 Pasal 56).
+        expiresAt:
+          $ref: '#/components/schemas/Timestamp'
+    GuardianConsentDecision:
+      type: object
+      additionalProperties: false
+      required: [decisions, policyVersion, policyTextSha256, attestation]
+      properties:
+        decisions:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            required: [purpose, granted]
+            properties:
+              purpose:
+                $ref: '#/components/schemas/ConsentPurpose'
+              granted:
+                type: boolean
+        policyVersion:
+          type: string
+          maxLength: 32
+        policyTextSha256:
+          type: string
+          pattern: '^[0-9a-f]{64}$'
+        attestation:
+          type: boolean
+          const: true
+          description: The decider confirms being the learner's parent or guardian.
+    GuardianConsentResult:
+      type: object
+      additionalProperties: false
+      required: [learnerStatus, decisions]
+      properties:
+        learnerStatus:
+          $ref: '#/components/schemas/LearnerStatus'
+        decisions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsentStatusItem'
+    GuardianLearner:
+      type: object
+      additionalProperties: false
+      required: [learnerId, status, consents]
+      properties:
+        learnerId:
+          $ref: '#/components/schemas/Uuid'
+        displayName:
+          type: string
+          maxLength: 40
+        grade:
+          type: integer
+          minimum: 7
+          maximum: 12
+        status:
+          $ref: '#/components/schemas/LearnerStatus'
+        consents:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsentStatusItem'
+    GuardianLearnerList:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/GuardianLearner'
+    DeletionAccepted:
+      type: object
+      additionalProperties: false
+      required: [status, requestedAt, completesBy]
+      properties:
+        status:
+          type: string
+          const: DELETION_PENDING
+        requestedAt:
+          $ref: '#/components/schemas/Timestamp'
+        completesBy:
+          $ref: '#/components/schemas/Timestamp'
+    DeviceImportRequest:
+      type: object
+      additionalProperties: false
+      required: [deviceSessionId, questionAlias, furthestStep, includeAnswerText]
+      properties:
+        deviceSessionId:
+          type: string
+          pattern: '^[A-Za-z0-9_-]{8,64}$'
+        questionAlias:
+          type: string
+          minLength: 1
+          maxLength: 128
+          description: The question's legacy item ID, resolved through the alias manifest.
+        furthestStep:
+          type: string
+          enum: [QUESTION, DIAGNOSIS_SEEN, LESSON_FINISHED, COMPLETED]
+        lessonStep:
+          type: integer
+          minimum: 0
+          maximum: 50
+        includeAnswerText:
+          type: boolean
+        answerText:
+          type: string
+          maxLength: 2000
+          description: Sent only when the learner ticks "sertakan jawabanku".
+        deviceStartedAt:
+          $ref: '#/components/schemas/Timestamp'
+    DeviceImportResult:
+      type: object
+      additionalProperties: false
+      required: [session]
+      properties:
+        session:
+          $ref: '#/components/schemas/LearningSession'
+
+    # --------------------------------------------------------------- catalog
+    Subject:
+      type: object
+      additionalProperties: false
+      required: [id, code, title, availability]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 16
+        title:
+          type: string
+          maxLength: 80
+        availability:
+          type: string
+          enum: [AVAILABLE, COMING_SOON]
+    SubjectList:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subject'
+    Topic:
+      type: object
+      additionalProperties: false
+      required: [id, subjectId, code, title, phase, availability]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        subjectId:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 32
+        legacyId:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 120
+        subtitle:
+          type: string
+          maxLength: 200
+        phase:
+          $ref: '#/components/schemas/Phase'
+        availability:
+          type: string
+          enum: [MAPPED, PLANNED]
+    TopicList:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+    TopicDetail:
+      type: object
+      additionalProperties: false
+      required: [id, subjectId, code, title, phase, availability, units, concepts, prerequisiteEdges, relations]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        subjectId:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 32
+        legacyId:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 120
+        subtitle:
+          type: string
+          maxLength: 200
+        phase:
+          $ref: '#/components/schemas/Phase'
+        availability:
+          type: string
+          enum: [MAPPED, PLANNED]
+        units:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [code, title, ordinal]
+            properties:
+              code:
+                type: string
+                maxLength: 32
+              title:
+                type: string
+                maxLength: 120
+              goal:
+                type: string
+                maxLength: 400
+              ordinal:
+                type: integer
+                minimum: 0
+        concepts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConceptSummary'
+        prerequisiteEdges:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [conceptId, prerequisiteId, kind]
+            properties:
+              conceptId:
+                $ref: '#/components/schemas/Uuid'
+              prerequisiteId:
+                $ref: '#/components/schemas/Uuid'
+              kind:
+                type: string
+                enum: [HARD, SOFT]
+        relations:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [toTopicId, kind, label]
+            properties:
+              toTopicId:
+                $ref: '#/components/schemas/Uuid'
+              kind:
+                type: string
+                enum: [REQUIRES, RELATED]
+              label:
+                type: string
+                maxLength: 200
+    ConceptSummary:
+      type: object
+      additionalProperties: false
+      required: [id, topicId, code, title, ordinal, estimatedMinutes, availability, isHidden, isCapstone]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        topicId:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 64
+        legacyMapId:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 120
+        subtitle:
+          type: string
+          maxLength: 200
+        unitCode:
+          type: string
+          maxLength: 32
+        ordinal:
+          type: integer
+          minimum: 0
+        estimatedMinutes:
+          type: integer
+          minimum: 1
+          maximum: 60
+        availability:
+          type: string
+          enum: [READY, PLANNED]
+        isHidden:
+          type: boolean
+        isCapstone:
+          type: boolean
+    ConceptList:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConceptSummary'
+    Concept:
+      type: object
+      additionalProperties: false
+      required: [id, topicId, code, title, ordinal, estimatedMinutes, availability, isHidden, isCapstone, objectives, misconceptions, prerequisites, lessons, questionCount]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        topicId:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 64
+        legacyMapId:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 120
+        subtitle:
+          type: string
+          maxLength: 200
+        unitCode:
+          type: string
+          maxLength: 32
+        ordinal:
+          type: integer
+          minimum: 0
+        estimatedMinutes:
+          type: integer
+          minimum: 1
+          maximum: 60
+        availability:
+          type: string
+          enum: [READY, PLANNED]
+        isHidden:
+          type: boolean
+        isCapstone:
+          type: boolean
+        definition:
+          type: string
+          maxLength: 2000
+        objectives:
+          type: array
+          items:
+            type: string
+            maxLength: 400
+        misconceptions:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [code, description]
+            properties:
+              code:
+                type: string
+                maxLength: 64
+              description:
+                type: string
+                maxLength: 400
+        prerequisites:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [conceptId, kind]
+            properties:
+              conceptId:
+                $ref: '#/components/schemas/Uuid'
+              kind:
+                type: string
+                enum: [HARD, SOFT]
+        lessons:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [lessonId, title]
+            properties:
+              lessonId:
+                $ref: '#/components/schemas/Uuid'
+              routeSlug:
+                type: string
+                maxLength: 64
+              title:
+                type: string
+                maxLength: 120
+        questionCount:
+          type: integer
+          minimum: 0
+    QuestionSummary:
+      type: object
+      additionalProperties: false
+      required: [id, code, visibility, itemType, difficulty, estimatedMinutes, topicIds, conceptIds, isCombined, promptPreview]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 64
+        legacyItemId:
+          type: string
+          maxLength: 128
+        visibility:
+          $ref: '#/components/schemas/QuestionVisibility'
+        itemType:
+          $ref: '#/components/schemas/ItemType'
+        difficulty:
+          type: integer
+          minimum: 1
+          maximum: 3
+        estimatedMinutes:
+          type: integer
+          minimum: 1
+          maximum: 30
+        topicIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/Uuid'
+        conceptIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/Uuid'
+        isCombined:
+          type: boolean
+          description: Assessable concepts from two or more topics (K02 QUESTION_APPLICATION).
+        promptPreview:
+          type: string
+          maxLength: 160
+    QuestionPage:
+      type: object
+      additionalProperties: false
+      required: [items, nextCursor]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionSummary'
+        nextCursor:
+          type: [string, 'null']
+    QuestionView:
+      type: object
+      additionalProperties: false
+      description: A question as a learner sees it. No keys, rubrics or hint text (hints come from the hint command).
+      required: [id, revisionId, code, itemType, prompt, hintCount, difficulty, estimatedMinutes, concepts]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        revisionId:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 64
+        legacyItemId:
+          type: string
+          maxLength: 128
+        itemType:
+          $ref: '#/components/schemas/ItemType'
+        prompt:
+          type: string
+          maxLength: 4000
+        figureRef:
+          type: string
+          maxLength: 128
+        options:
+          type: array
+          maxItems: 8
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, label]
+            properties:
+              id:
+                type: string
+                maxLength: 32
+              label:
+                type: string
+                maxLength: 400
+        answerFormat:
+          type: string
+          maxLength: 200
+        answerExample:
+          type: string
+          maxLength: 240
+          description: The expected answer's format (e.g. "5√2 atau 7,07"), never this question's answer.
+        hintCount:
+          type: integer
+          minimum: 0
+          maximum: 5
+        difficulty:
+          type: integer
+          minimum: 1
+          maximum: 3
+        estimatedMinutes:
+          type: integer
+          minimum: 1
+          maximum: 30
+        concepts:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [conceptId, role]
+            properties:
+              conceptId:
+                $ref: '#/components/schemas/Uuid'
+              role:
+                type: string
+                enum: [PRIMARY, SUPPORTING]
+    LessonBlock:
+      type: object
+      additionalProperties: false
+      description: "heading/text/tip carry text; math carries name and expression (plain notation, or latex); figure carries figureRef; worked_example carries steps. Text may use **bold**; never HTML."
+      required: [type, slide]
+      properties:
+        type:
+          type: string
+          enum: [heading, text, math, figure, worked_example, tip]
+        slide:
+          type: integer
+          minimum: 0
+        text:
+          type: string
+          maxLength: 4000
+        latex:
+          type: string
+          maxLength: 1000
+        name:
+          type: string
+          maxLength: 120
+        expression:
+          type: string
+          maxLength: 400
+        highlight:
+          type: boolean
+        figureRef:
+          type: string
+          maxLength: 128
+        steps:
+          type: array
+          maxItems: 10
+          items:
+            type: string
+            maxLength: 400
+    Lesson:
+      type: object
+      additionalProperties: false
+      required: [id, code, title, estimatedMinutes, contentVersion, conceptIds, slideCount, blocks, checks]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 64
+        routeSlug:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 120
+        estimatedMinutes:
+          type: integer
+          minimum: 1
+          maximum: 20
+        contentVersion:
+          type: integer
+          minimum: 1
+        conceptIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/Uuid'
+        slideCount:
+          type: integer
+          minimum: 1
+        blocks:
+          type: array
+          items:
+            $ref: '#/components/schemas/LessonBlock'
+        checks:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [microAssessmentId, ordinal, slideIndex, required, question]
+            properties:
+              microAssessmentId:
+                $ref: '#/components/schemas/Uuid'
+              ordinal:
+                type: integer
+                minimum: 0
+              slideIndex:
+                type: integer
+                minimum: 0
+              required:
+                type: boolean
+              question:
+                $ref: '#/components/schemas/QuestionView'
+
+    # -------------------------------------------------------------- learning
+    CreateLearningSessionRequest:
+      oneOf:
+        - $ref: '#/components/schemas/CreateQuestionLoopRequest'
+        - $ref: '#/components/schemas/CreatePracticeRequest'
+      discriminator:
+        propertyName: kind
+        mapping:
+          QUESTION_LOOP: '#/components/schemas/CreateQuestionLoopRequest'
+          PRACTICE: '#/components/schemas/CreatePracticeRequest'
+    CreateQuestionLoopRequest:
+      type: object
+      additionalProperties: false
+      required: [kind, origin, questionId]
+      properties:
+        kind:
+          type: string
+          const: QUESTION_LOOP
+        origin:
+          type: string
+          enum: [FUNNEL, BANK, CHALLENGE, INTAKE]
+        questionId:
+          $ref: '#/components/schemas/Uuid'
+    CreatePracticeRequest:
+      type: object
+      additionalProperties: false
+      required: [kind, origin, spec, withLesson]
+      properties:
+        kind:
+          type: string
+          const: PRACTICE
+        origin:
+          type: string
+          enum: [CONCEPT_LESSON, COMBINED_SET, BANK]
+        withLesson:
+          type: boolean
+        spec:
+          type: object
+          additionalProperties: false
+          minProperties: 1
+          maxProperties: 1
+          description: Exactly one of conceptId, setCode or questionIds. The server chooses and orders the items.
+          properties:
+            conceptId:
+              $ref: '#/components/schemas/Uuid'
+            setCode:
+              type: string
+              maxLength: 64
+            questionIds:
+              type: array
+              minItems: 1
+              maxItems: 20
+              uniqueItems: true
+              items:
+                $ref: '#/components/schemas/Uuid'
+    LearningSession:
+      type: object
+      additionalProperties: false
+      required: [id, kind, origin, state, stateVersion, unsuccessfulRetries, releaseVersion, allowedActions, checkpoint, startedAt, lastActivityAt, expiresAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        kind:
+          $ref: '#/components/schemas/SessionKind'
+        origin:
+          $ref: '#/components/schemas/SessionOrigin'
+        state:
+          $ref: '#/components/schemas/SessionState'
+        stateVersion:
+          type: integer
+          minimum: 1
+        outcome:
+          $ref: '#/components/schemas/SessionOutcome'
+        resumeState:
+          $ref: '#/components/schemas/ResumeState'
+        unsuccessfulRetries:
+          type: integer
+          minimum: 0
+          maximum: 2
+        releaseVersion:
+          type: integer
+          minimum: 1
+        anchorQuestion:
+          $ref: '#/components/schemas/QuestionView'
+        focusConceptId:
+          $ref: '#/components/schemas/Uuid'
+        activeAttemptId:
+          $ref: '#/components/schemas/Uuid'
+        activeDiagnosisRunId:
+          $ref: '#/components/schemas/Uuid'
+        lesson:
+          $ref: '#/components/schemas/LessonProgress'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionItemView'
+        allowedActions:
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/AllowedAction'
+        checkpoint:
+          $ref: '#/components/schemas/Continuation'
+        startedAt:
+          $ref: '#/components/schemas/Timestamp'
+        lastActivityAt:
+          $ref: '#/components/schemas/Timestamp'
+        completedAt:
+          $ref: '#/components/schemas/Timestamp'
+        expiresAt:
+          $ref: '#/components/schemas/Timestamp'
+    LearningSessionSummary:
+      type: object
+      additionalProperties: false
+      required: [id, kind, origin, state, stateVersion, lastActivityAt, expiresAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        kind:
+          $ref: '#/components/schemas/SessionKind'
+        origin:
+          $ref: '#/components/schemas/SessionOrigin'
+        state:
+          $ref: '#/components/schemas/SessionState'
+        stateVersion:
+          type: integer
+          minimum: 1
+        outcome:
+          $ref: '#/components/schemas/SessionOutcome'
+        anchorQuestionId:
+          $ref: '#/components/schemas/Uuid'
+        focusConceptId:
+          $ref: '#/components/schemas/Uuid'
+        lastActivityAt:
+          $ref: '#/components/schemas/Timestamp'
+        expiresAt:
+          $ref: '#/components/schemas/Timestamp'
+    LearningSessionPage:
+      type: object
+      additionalProperties: false
+      required: [items, nextCursor]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LearningSessionSummary'
+        nextCursor:
+          type: [string, 'null']
+    SessionStateView:
+      type: object
+      additionalProperties: false
+      required: [id, state, stateVersion, allowedActions]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        state:
+          $ref: '#/components/schemas/SessionState'
+        stateVersion:
+          type: integer
+          minimum: 1
+        allowedActions:
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/AllowedAction'
+    LessonProgress:
+      type: object
+      additionalProperties: false
+      required: [assignmentId, lessonId, conceptId, status, slideIndex, slideCount, checks]
+      properties:
+        assignmentId:
+          $ref: '#/components/schemas/Uuid'
+        lessonId:
+          $ref: '#/components/schemas/Uuid'
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+        status:
+          $ref: '#/components/schemas/LessonAssignmentStatus'
+        slideIndex:
+          type: integer
+          minimum: 0
+        slideCount:
+          type: integer
+          minimum: 1
+        checks:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [microAssessmentId, questionId, slideIndex, required, answered]
+            properties:
+              microAssessmentId:
+                $ref: '#/components/schemas/Uuid'
+              questionId:
+                $ref: '#/components/schemas/Uuid'
+              slideIndex:
+                type: integer
+                minimum: 0
+              required:
+                type: boolean
+              answered:
+                type: boolean
+              verdict:
+                $ref: '#/components/schemas/FinalVerdict'
+    SessionItemView:
+      type: object
+      additionalProperties: false
+      required: [id, ordinal, questionId, status]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        ordinal:
+          type: integer
+          minimum: 1
+        questionId:
+          $ref: '#/components/schemas/Uuid'
+        status:
+          $ref: '#/components/schemas/SessionItemStatus'
+    StudentResponseInput:
+      oneOf:
+        - $ref: '#/components/schemas/TextResponseInput'
+        - $ref: '#/components/schemas/OptionResponseInput'
+        - $ref: '#/components/schemas/NumericResponseInput'
+        - $ref: '#/components/schemas/SelfReportResponseInput'
+      discriminator:
+        propertyName: responseType
+        mapping:
+          TEXT: '#/components/schemas/TextResponseInput'
+          OPTION: '#/components/schemas/OptionResponseInput'
+          NUMERIC: '#/components/schemas/NumericResponseInput'
+          SELF_REPORT: '#/components/schemas/SelfReportResponseInput'
+    TextResponseInput:
+      type: object
+      additionalProperties: false
+      required: [responseType, text]
+      properties:
+        responseType:
+          type: string
+          const: TEXT
+        text:
+          type: string
+          minLength: 1
+          maxLength: 2000
+    OptionResponseInput:
+      type: object
+      additionalProperties: false
+      required: [responseType, optionId]
+      properties:
+        responseType:
+          type: string
+          const: OPTION
+        optionId:
+          type: string
+          minLength: 1
+          maxLength: 32
+    NumericResponseInput:
+      type: object
+      additionalProperties: false
+      required: [responseType, numeric]
+      properties:
+        responseType:
+          type: string
+          const: NUMERIC
+        numeric:
+          type: string
+          minLength: 1
+          maxLength: 64
+          description: As typed (for example "34,64" or "20√3"); the evaluator parses accepted forms.
+    SelfReportResponseInput:
+      type: object
+      additionalProperties: false
+      required: [responseType, selfReport]
+      properties:
+        responseType:
+          type: string
+          const: SELF_REPORT
+        selfReport:
+          type: string
+          enum: [KNOW, DONT_KNOW]
+    StudentResponseView:
+      type: object
+      additionalProperties: false
+      required: [responseType, inputMode, purged]
+      properties:
+        responseType:
+          type: string
+          enum: [TEXT, OPTION, NUMERIC, SELF_REPORT]
+        text:
+          type: string
+          maxLength: 2000
+        optionId:
+          type: string
+          maxLength: 32
+        numeric:
+          type: string
+          maxLength: 64
+        selfReport:
+          type: string
+          enum: [KNOW, DONT_KNOW]
+        inputMode:
+          type: string
+          enum: [TYPED, OCR_CONFIRMED, DEVICE_IMPORT]
+        purged:
+          type: boolean
+          description: True after the 180-day text purge. The verdict and evidence remain.
+    SubmitAttemptRequest:
+      type: object
+      additionalProperties: false
+      required: [expectedStateVersion, response]
+      properties:
+        expectedStateVersion:
+          type: integer
+          minimum: 1
+        response:
+          $ref: '#/components/schemas/StudentResponseInput'
+        sessionItemId:
+          $ref: '#/components/schemas/Uuid'
+    QuickCheckAnswerRequest:
+      type: object
+      additionalProperties: false
+      required: [expectedStateVersion, microAssessmentId, response]
+      properties:
+        expectedStateVersion:
+          type: integer
+          minimum: 1
+        microAssessmentId:
+          $ref: '#/components/schemas/Uuid'
+        response:
+          $ref: '#/components/schemas/StudentResponseInput'
+    Attempt:
+      type: object
+      additionalProperties: false
+      required: [id, sessionId, questionRevisionId, kind, ordinal, response, assistance, verdict, source, submittedAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        sessionId:
+          $ref: '#/components/schemas/Uuid'
+        questionRevisionId:
+          $ref: '#/components/schemas/Uuid'
+        kind:
+          $ref: '#/components/schemas/AttemptKind'
+        ordinal:
+          type: integer
+          minimum: 1
+        sessionItemId:
+          $ref: '#/components/schemas/Uuid'
+        assignmentId:
+          $ref: '#/components/schemas/Uuid'
+        microAssessmentId:
+          $ref: '#/components/schemas/Uuid'
+        parentAttemptId:
+          $ref: '#/components/schemas/Uuid'
+        response:
+          $ref: '#/components/schemas/StudentResponseView'
+        assistance:
+          $ref: '#/components/schemas/Assistance'
+        verdict:
+          $ref: '#/components/schemas/Verdict'
+        source:
+          $ref: '#/components/schemas/AttemptSource'
+        submittedAt:
+          $ref: '#/components/schemas/Timestamp'
+        gradedAt:
+          $ref: '#/components/schemas/Timestamp'
+    AttemptResult:
+      type: object
+      additionalProperties: false
+      required: [attempt, diagnosisRun, session]
+      properties:
+        attempt:
+          $ref: '#/components/schemas/Attempt'
+        diagnosisRun:
+          $ref: '#/components/schemas/DiagnosisRun'
+        session:
+          $ref: '#/components/schemas/LearningSession'
+    SessionActionRequest:
+      oneOf:
+        - $ref: '#/components/schemas/StartLessonAction'
+        - $ref: '#/components/schemas/AdvanceLessonAction'
+        - $ref: '#/components/schemas/SkipItemAction'
+        - $ref: '#/components/schemas/PlainAction'
+      discriminator:
+        propertyName: type
+        mapping:
+          START_LESSON: '#/components/schemas/StartLessonAction'
+          ADVANCE_LESSON: '#/components/schemas/AdvanceLessonAction'
+          SKIP_ITEM: '#/components/schemas/SkipItemAction'
+          FINISH_LESSON: '#/components/schemas/PlainAction'
+          SKIP_LESSON: '#/components/schemas/PlainAction'
+          START_RETRY: '#/components/schemas/PlainAction'
+          ABANDON: '#/components/schemas/PlainAction'
+    StartLessonAction:
+      type: object
+      additionalProperties: false
+      required: [type, expectedStateVersion, conceptId]
+      properties:
+        type:
+          type: string
+          const: START_LESSON
+        expectedStateVersion:
+          type: integer
+          minimum: 1
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+    AdvanceLessonAction:
+      type: object
+      additionalProperties: false
+      required: [type, expectedStateVersion, slideIndex]
+      properties:
+        type:
+          type: string
+          const: ADVANCE_LESSON
+        expectedStateVersion:
+          type: integer
+          minimum: 1
+        slideIndex:
+          type: integer
+          minimum: 0
+          maximum: 50
+    SkipItemAction:
+      type: object
+      additionalProperties: false
+      required: [type, expectedStateVersion, sessionItemId]
+      properties:
+        type:
+          type: string
+          const: SKIP_ITEM
+        expectedStateVersion:
+          type: integer
+          minimum: 1
+        sessionItemId:
+          $ref: '#/components/schemas/Uuid'
+    PlainAction:
+      type: object
+      additionalProperties: false
+      required: [type, expectedStateVersion]
+      properties:
+        type:
+          type: string
+          enum: [FINISH_LESSON, SKIP_LESSON, START_RETRY, ABANDON]
+        expectedStateVersion:
+          type: integer
+          minimum: 1
+    SessionActionResult:
+      type: object
+      additionalProperties: false
+      required: [session]
+      properties:
+        session:
+          $ref: '#/components/schemas/LearningSession'
+    HintRequest:
+      type: object
+      additionalProperties: false
+      required: [step]
+      properties:
+        step:
+          type: integer
+          minimum: 1
+          maximum: 5
+    HintResult:
+      type: object
+      additionalProperties: false
+      required: [step, totalSteps, lead, session]
+      properties:
+        step:
+          type: integer
+          minimum: 1
+          maximum: 5
+        totalSteps:
+          type: integer
+          minimum: 1
+          maximum: 5
+        lead:
+          type: string
+          maxLength: 400
+        note:
+          type: string
+          maxLength: 400
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+        session:
+          $ref: '#/components/schemas/SessionStateView'
+    ReviewSolutionRequest:
+      type: object
+      additionalProperties: false
+      required: [expectedStateVersion]
+      properties:
+        expectedStateVersion:
+          type: integer
+          minimum: 1
+    WorkedSolution:
+      type: object
+      additionalProperties: false
+      required: [steps, after]
+      properties:
+        steps:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            required: [title, body]
+            properties:
+              title:
+                type: string
+                maxLength: 120
+              body:
+                type: string
+                maxLength: 1000
+        after:
+          type: array
+          items:
+            type: string
+            maxLength: 200
+    SolutionResult:
+      type: object
+      additionalProperties: false
+      required: [solution, session]
+      properties:
+        solution:
+          $ref: '#/components/schemas/WorkedSolution'
+        session:
+          $ref: '#/components/schemas/LearningSession'
+
+    # ------------------------------------------------------------- diagnosis
+    DiagnosisRun:
+      type: object
+      additionalProperties: false
+      required: [id, attemptId, sessionId, generation, purpose, engine, status, evidence, recommendations, aiAssisted, createdAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        attemptId:
+          $ref: '#/components/schemas/Uuid'
+        sessionId:
+          $ref: '#/components/schemas/Uuid'
+        generation:
+          type: integer
+          minimum: 1
+          maximum: 5
+        purpose:
+          $ref: '#/components/schemas/RunPurpose'
+        engine:
+          $ref: '#/components/schemas/Engine'
+        status:
+          $ref: '#/components/schemas/RunStatus'
+        evidenceStatus:
+          $ref: '#/components/schemas/EvidenceStatus'
+        verdict:
+          $ref: '#/components/schemas/FinalVerdict'
+        headline:
+          type: string
+          maxLength: 120
+        lede:
+          type: string
+          maxLength: 240
+        clarificationPrompt:
+          type: string
+          maxLength: 240
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/Evidence'
+        recommendations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Recommendation'
+        aiAssisted:
+          type: boolean
+          description: True when an AI candidate contributed. The UI then shows "Dianalisis dengan bantuan AI".
+        revealedAnswer:
+          type: object
+          additionalProperties: false
+          description: Practice key revealed after grading. Records FINAL_ANSWER_SHOWN.
+          properties:
+            optionId:
+              type: string
+              maxLength: 32
+            value:
+              type: string
+              maxLength: 64
+        failureCode:
+          $ref: '#/components/schemas/FailureCode'
+        report:
+          type: object
+          additionalProperties: false
+          required: [id, status]
+          properties:
+            id:
+              $ref: '#/components/schemas/Uuid'
+            status:
+              $ref: '#/components/schemas/ReportStatus'
+        session:
+          $ref: '#/components/schemas/SessionStateView'
+        createdAt:
+          $ref: '#/components/schemas/Timestamp'
+        completedAt:
+          $ref: '#/components/schemas/Timestamp'
+    Evidence:
+      type: object
+      additionalProperties: false
+      required: [conceptId, conceptCode, conceptTitle, classification, refs, source, uncertaintyReasons, eligibility]
+      properties:
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+        conceptCode:
+          type: string
+          maxLength: 64
+        legacyMapId:
+          type: string
+          maxLength: 64
+        conceptTitle:
+          type: string
+          maxLength: 120
+        classification:
+          $ref: '#/components/schemas/Classification'
+        misconception:
+          type: object
+          additionalProperties: false
+          required: [code, label]
+          properties:
+            code:
+              type: string
+              maxLength: 64
+            label:
+              type: string
+              maxLength: 200
+        rationale:
+          type: string
+          maxLength: 400
+        refs:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceRef'
+        source:
+          $ref: '#/components/schemas/EvidenceSource'
+        uncertaintyReasons:
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/UncertaintyReason'
+        eligibility:
+          type: object
+          additionalProperties: false
+          required: [mastery, transfer, reasons]
+          properties:
+            mastery:
+              type: boolean
+            transfer:
+              type: boolean
+            reasons:
+              type: array
+              uniqueItems: true
+              items:
+                $ref: '#/components/schemas/EligibilityReason'
+    EvidenceRef:
+      oneOf:
+        - $ref: '#/components/schemas/SpanRef'
+        - $ref: '#/components/schemas/OptionRef'
+        - $ref: '#/components/schemas/StepRef'
+      discriminator:
+        propertyName: kind
+        mapping:
+          SPAN: '#/components/schemas/SpanRef'
+          OPTION: '#/components/schemas/OptionRef'
+          STEP: '#/components/schemas/StepRef'
+    SpanRef:
+      type: object
+      additionalProperties: false
+      required: [kind, start, end, quote]
+      properties:
+        kind:
+          type: string
+          const: SPAN
+        start:
+          type: integer
+          minimum: 0
+        end:
+          type: integer
+          minimum: 1
+        quote:
+          type: [string, 'null']
+          maxLength: 200
+          description: Null after the raw text is purged.
+    OptionRef:
+      type: object
+      additionalProperties: false
+      required: [kind, optionId]
+      properties:
+        kind:
+          type: string
+          const: OPTION
+        optionId:
+          type: string
+          maxLength: 32
+    StepRef:
+      type: object
+      additionalProperties: false
+      required: [kind, pathCode, stepCode]
+      properties:
+        kind:
+          type: string
+          const: STEP
+        pathCode:
+          type: string
+          maxLength: 64
+        stepCode:
+          type: string
+          maxLength: 64
+    Recommendation:
+      type: object
+      additionalProperties: false
+      required: [conceptId, conceptCode, conceptTitle, action, reason, estimatedMinutes]
+      properties:
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+        conceptCode:
+          type: string
+          maxLength: 64
+        legacyMapId:
+          type: string
+          maxLength: 64
+        conceptTitle:
+          type: string
+          maxLength: 120
+        action:
+          $ref: '#/components/schemas/RecommendationAction'
+        lessonId:
+          $ref: '#/components/schemas/Uuid'
+        lessonRouteSlug:
+          type: string
+          maxLength: 64
+        reason:
+          type: string
+          maxLength: 240
+        keyFormula:
+          type: string
+          maxLength: 120
+        estimatedMinutes:
+          type: integer
+          minimum: 1
+          maximum: 60
+    DiagnosisReportRequest:
+      type: object
+      additionalProperties: false
+      required: [reason]
+      properties:
+        reason:
+          $ref: '#/components/schemas/ReportReason'
+        note:
+          type: string
+          maxLength: 500
+    DiagnosisReport:
+      type: object
+      additionalProperties: false
+      required: [id, diagnosisRunId, reason, status, createdAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        diagnosisRunId:
+          $ref: '#/components/schemas/Uuid'
+        reason:
+          $ref: '#/components/schemas/ReportReason'
+        status:
+          $ref: '#/components/schemas/ReportStatus'
+        createdAt:
+          $ref: '#/components/schemas/Timestamp'
+        resolvedAt:
+          $ref: '#/components/schemas/Timestamp'
+
+    # -------------------------------------------------------------- progress
+    LegacyProgressSnapshot:
+      type: object
+      description: The exact shape `useLearnerProgress` validates. Frozen.
+      required: [user, cores, activities]
+      properties:
+        user:
+          oneOf:
+            - type: 'null'
+            - type: object
+              required: [id, displayName]
+              properties:
+                id:
+                  type: string
+                displayName:
+                  type: string
+        cores:
+          type: array
+          items:
+            type: object
+            required: [id, exploration, mastery, lessonComplete, transferCorrect]
+            properties:
+              id:
+                type: string
+                description: A frozen legacy alias known to the shipped frontend.
+              exploration:
+                $ref: '#/components/schemas/Exploration'
+              mastery:
+                $ref: '#/components/schemas/MasteryStatus'
+              lessonComplete:
+                type: boolean
+              transferCorrect:
+                type: integer
+                minimum: 0
+              lastPracticedAt:
+                type: string
+                format: date-time
+        activities:
+          type: array
+          items:
+            type: object
+            required: [id, title, at]
+            properties:
+              id:
+                type: string
+              title:
+                type: string
+              at:
+                type: string
+                format: date-time
+        xp:
+          type: integer
+          minimum: 0
+        streakDays:
+          type: integer
+          minimum: 0
+    MasteryView:
+      type: object
+      additionalProperties: false
+      required: [conceptId, conceptCode, title, status, uiTier, exploration, lessonComplete, practiced, transferStreak, transferCorrectTotal, qualifyingContexts, needsReview, policyVersion]
+      properties:
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+        conceptCode:
+          type: string
+          maxLength: 64
+        legacyMapId:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 120
+        status:
+          $ref: '#/components/schemas/MasteryStatus'
+        uiTier:
+          type: integer
+          minimum: -1
+          maximum: 3
+          description: -1 none, 0 Dicoba, 1 Kenal, 2 Mahir, 3 Kuasai (06 §6.5).
+        exploration:
+          $ref: '#/components/schemas/Exploration'
+        lessonComplete:
+          type: boolean
+        practiced:
+          type: boolean
+        transferStreak:
+          type: integer
+          minimum: 0
+          maximum: 3
+        transferCorrectTotal:
+          type: integer
+          minimum: 0
+        qualifyingContexts:
+          type: integer
+          minimum: 0
+        needsReview:
+          type: boolean
+        needsReviewReason:
+          $ref: '#/components/schemas/NeedsReviewReason'
+        demonstratedAt:
+          $ref: '#/components/schemas/Timestamp'
+        lastPracticedAt:
+          $ref: '#/components/schemas/Timestamp'
+        policyVersion:
+          type: string
+          maxLength: 32
+    MasteryPage:
+      type: object
+      additionalProperties: false
+      required: [items, nextCursor]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/MasteryView'
+        nextCursor:
+          type: [string, 'null']
+    MasteryDetail:
+      type: object
+      additionalProperties: false
+      required: [mastery, recentEvidence]
+      properties:
+        mastery:
+          $ref: '#/components/schemas/MasteryView'
+        recentEvidence:
+          type: array
+          maxItems: 20
+          items:
+            type: object
+            additionalProperties: false
+            required: [attemptId, diagnosisRunId, classification, source, masteryEligible, transferEligible, submittedAt]
+            properties:
+              attemptId:
+                $ref: '#/components/schemas/Uuid'
+              diagnosisRunId:
+                $ref: '#/components/schemas/Uuid'
+              questionCode:
+                type: string
+                maxLength: 64
+              classification:
+                $ref: '#/components/schemas/Classification'
+              source:
+                $ref: '#/components/schemas/EvidenceSource'
+              masteryEligible:
+                type: boolean
+              transferEligible:
+                type: boolean
+              submittedAt:
+                $ref: '#/components/schemas/Timestamp'
+        nextStep:
+          $ref: '#/components/schemas/Recommendation'
+    ProgressEvent:
+      type: object
+      additionalProperties: false
+      required: [id, type, title, xpDelta, localDate, occurredAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        type:
+          $ref: '#/components/schemas/ProgressEventType'
+        title:
+          type: string
+          maxLength: 200
+        xpDelta:
+          type: integer
+          minimum: 0
+        sessionId:
+          $ref: '#/components/schemas/Uuid'
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+        localDate:
+          $ref: '#/components/schemas/LocalDate'
+        occurredAt:
+          $ref: '#/components/schemas/Timestamp'
+    ProgressEventPage:
+      type: object
+      additionalProperties: false
+      required: [items, nextCursor]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProgressEvent'
+        nextCursor:
+          type: [string, 'null']
+    Stats:
+      type: object
+      additionalProperties: false
+      required: [xpTotal, level, currentStreakDays, longestStreakDays, streakFreezes, today, policyVersion]
+      properties:
+        xpTotal:
+          type: integer
+          minimum: 0
+        level:
+          type: object
+          additionalProperties: false
+          required: [num, name, min, nextMin]
+          properties:
+            num:
+              type: integer
+              minimum: 1
+            name:
+              type: string
+              maxLength: 40
+            min:
+              type: integer
+              minimum: 0
+            nextMin:
+              type: [integer, 'null']
+        currentStreakDays:
+          type: integer
+          minimum: 0
+        longestStreakDays:
+          type: integer
+          minimum: 0
+        streakFreezes:
+          type: integer
+          minimum: 0
+          maximum: 2
+        today:
+          type: object
+          additionalProperties: false
+          required: [localDate, missions, allDone]
+          properties:
+            localDate:
+              $ref: '#/components/schemas/LocalDate'
+            missions:
+              type: array
+              items:
+                type: object
+                additionalProperties: false
+                required: [code, title, done, target]
+                properties:
+                  code:
+                    type: string
+                    enum: [SOAL, SEGARKAN, GABUNGAN, BARU]
+                  title:
+                    type: string
+                    maxLength: 80
+                  done:
+                    type: integer
+                    minimum: 0
+                  target:
+                    type: integer
+                    minimum: 1
+            allDone:
+              type: boolean
+        policyVersion:
+          type: string
+          maxLength: 32
+
+    # ----------------------------------------------------------------- tutor
+    CreateTutorConversationRequest:
+      type: object
+      additionalProperties: false
+      required: [sessionId]
+      properties:
+        sessionId:
+          $ref: '#/components/schemas/Uuid'
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+    TutorMessage:
+      type: object
+      additionalProperties: false
+      required: [id, conversationId, ordinal, role, status, quickReplies, createdAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        conversationId:
+          $ref: '#/components/schemas/Uuid'
+        ordinal:
+          type: integer
+          minimum: 1
+        role:
+          $ref: '#/components/schemas/TutorRole'
+        status:
+          $ref: '#/components/schemas/TutorMessageStatus'
+        text:
+          type: string
+          maxLength: 2000
+        quickReplies:
+          type: array
+          maxItems: 4
+          items:
+            type: string
+            maxLength: 40
+        intent:
+          $ref: '#/components/schemas/TutorIntent'
+        createdAt:
+          $ref: '#/components/schemas/Timestamp'
+        completedAt:
+          $ref: '#/components/schemas/Timestamp'
+    TutorConversation:
+      type: object
+      additionalProperties: false
+      required: [id, sessionId, questionRevisionId, status, hintsUsed, solutionUnlocked, aiDisclosure, expiresAt, messages]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        sessionId:
+          $ref: '#/components/schemas/Uuid'
+        conceptId:
+          $ref: '#/components/schemas/Uuid'
+        questionRevisionId:
+          $ref: '#/components/schemas/Uuid'
+        status:
+          type: string
+          enum: [OPEN, CLOSED]
+        hintsUsed:
+          type: integer
+          minimum: 0
+        solutionUnlocked:
+          type: boolean
+        aiDisclosure:
+          type: string
+          maxLength: 200
+          description: Always shown in the tutor UI, for example "IntiBot adalah AI".
+        expiresAt:
+          $ref: '#/components/schemas/Timestamp'
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/TutorMessage'
+    TutorMessageRequest:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      properties:
+        text:
+          type: string
+          minLength: 1
+          maxLength: 500
+        quickReply:
+          type: string
+          minLength: 1
+          maxLength: 40
+        requestFullSolution:
+          type: boolean
+    TutorMessageAccepted:
+      type: object
+      additionalProperties: false
+      required: [learnerMessage, reply]
+      properties:
+        learnerMessage:
+          $ref: '#/components/schemas/TutorMessage'
+        reply:
+          $ref: '#/components/schemas/TutorMessage'
+
+    # ---------------------------------------------------------------- intake
+    CreateQuestionIntakeRequest:
+      oneOf:
+        - type: object
+          additionalProperties: false
+          required: [inputMode]
+          properties:
+            inputMode:
+              type: string
+              const: PHOTO
+        - type: object
+          additionalProperties: false
+          required: [inputMode, text]
+          properties:
+            inputMode:
+              type: string
+              const: TYPED
+            text:
+              type: string
+              minLength: 1
+              maxLength: 2000
+    QuestionIntake:
+      type: object
+      additionalProperties: false
+      required: [id, inputMode, status, suggestedConcepts, expiresAt, createdAt]
+      properties:
+        id:
+          $ref: '#/components/schemas/Uuid'
+        inputMode:
+          $ref: '#/components/schemas/IntakeInputMode'
+        status:
+          $ref: '#/components/schemas/IntakeStatus'
+        draftText:
+          type: string
+          maxLength: 2000
+        readConfidence:
+          type: number
+          minimum: 0
+          maximum: 1
+        suggestedTopic:
+          type: object
+          additionalProperties: false
+          required: [topicId, title]
+          properties:
+            topicId:
+              $ref: '#/components/schemas/Uuid'
+            title:
+              type: string
+              maxLength: 120
+        suggestedConcepts:
+          type: array
+          maxItems: 6
+          items:
+            type: object
+            additionalProperties: false
+            required: [conceptId, title]
+            properties:
+              conceptId:
+                $ref: '#/components/schemas/Uuid'
+              title:
+                type: string
+                maxLength: 120
+              legacyMapId:
+                type: string
+                maxLength: 64
+        confirmedQuestionId:
+          $ref: '#/components/schemas/Uuid'
+        failureCode:
+          type: string
+          maxLength: 64
+        expiresAt:
+          $ref: '#/components/schemas/Timestamp'
+        createdAt:
+          $ref: '#/components/schemas/Timestamp'
+    IntakeConfirmationRequest:
+      type: object
+      additionalProperties: false
+      required: [text, conceptIds]
+      properties:
+        text:
+          type: string
+          minLength: 1
+          maxLength: 2000
+        topicId:
+          $ref: '#/components/schemas/Uuid'
+        conceptIds:
+          type: array
+          maxItems: 6
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/Uuid'
+    IntakeConfirmationResult:
+      type: object
+      additionalProperties: false
+      required: [questionId, questionRevisionId]
+      properties:
+        questionId:
+          $ref: '#/components/schemas/Uuid'
+        questionRevisionId:
+          $ref: '#/components/schemas/Uuid'
+
+    # ---------------------------------------------------------------- public
+    PublicEvaluationRequest:
+      type: object
+      additionalProperties: false
+      required: [questionId, response]
+      properties:
+        questionId:
+          $ref: '#/components/schemas/Uuid'
+        response:
+          $ref: '#/components/schemas/StudentResponseInput'
+    PublicEvaluationResult:
+      type: object
+      additionalProperties: false
+      required: [verdict, evidence, workedSolutionAvailable]
+      properties:
+        verdict:
+          $ref: '#/components/schemas/FinalVerdict'
+        headline:
+          type: string
+          maxLength: 120
+        lede:
+          type: string
+          maxLength: 240
+        evidence:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [conceptId, conceptTitle, classification]
+            properties:
+              conceptId:
+                $ref: '#/components/schemas/Uuid'
+              conceptTitle:
+                type: string
+                maxLength: 120
+              legacyMapId:
+                type: string
+                maxLength: 64
+              classification:
+                $ref: '#/components/schemas/Classification'
+              rationale:
+                type: string
+                maxLength: 400
+        correctOptionId:
+          type: string
+          maxLength: 32
+        workedSolutionAvailable:
+          type: boolean
+
+    # ---------------------------------------------------------------- legacy
+    LegacyFlowContext:
+      type: object
+      description: Spread into every legacy request body by the shipped adapters. Client-asserted; never authority.
+      required: [sessionId, questionId, topicId, hintOpened]
+      properties:
+        sessionId:
+          type: string
+          minLength: 1
+          maxLength: 64
+        questionId:
+          type: string
+          minLength: 1
+          maxLength: 128
+        topicId:
+          type: [string, 'null']
+          maxLength: 64
+        hintOpened:
+          type: boolean
+        diagnosisRunId:
+          type: [string, 'null']
+          maxLength: 80
+        questionText:
+          type: string
+          maxLength: 2000
+        coreIds:
+          type: array
+          maxItems: 20
+          items:
+            type: string
+            maxLength: 64
+    LegacyDiagnosisRequest:
+      allOf:
+        - $ref: '#/components/schemas/LegacyFlowContext'
+        - type: object
+          required: [responseMode, rawText]
+          properties:
+            responseMode:
+              type: [string, 'null']
+              enum: [know, blank, null]
+            rawText:
+              type: string
+              maxLength: 2000
+    LegacyGap:
+      type: object
+      required: [label, name, reason, coreId, mapId]
+      properties:
+        label:
+          type: string
+        name:
+          type: string
+        reason:
+          type: string
+        coreId:
+          type: string
+        mapId:
+          type: string
+    LegacyNext:
+      type: object
+      required: [core, reason, formula, coreId, mapId]
+      properties:
+        core:
+          type: string
+        reason:
+          type: string
+        formula:
+          type: string
+        coreId:
+          type: string
+        mapId:
+          type: string
+    LegacyAnalysis:
+      type: object
+      required: [tone, title, gap, okName, next]
+      properties:
+        tone:
+          type: string
+          enum: [gap, kuat]
+        title:
+          type: string
+        gap:
+          oneOf:
+            - $ref: '#/components/schemas/LegacyGap'
+            - type: 'null'
+        okName:
+          type: [string, 'null']
+        next:
+          $ref: '#/components/schemas/LegacyNext'
+      allOf:
+        - if:
+            required: [tone]
+            properties:
+              tone:
+                const: kuat
+          then:
+            properties:
+              gap:
+                type: 'null'
+          else:
+            properties:
+              gap:
+                type: object
+    LegacyCoreReason:
+      type: object
+      required: [id, state, reason]
+      properties:
+        id:
+          type: string
+        state:
+          type: string
+          enum: [ok, gap, rest]
+        reason:
+          type: string
+    LegacyDiagnosisRun:
+      type: object
+      description: The shape `diagnosisRunWithBackend` validates (isRun). Frozen.
+      required: [diagnosisRunId, status]
+      properties:
+        diagnosisRunId:
+          type: string
+          minLength: 1
+          maxLength: 80
+        status:
+          type: string
+          enum: [pending, running, completed, insufficient_evidence, failed]
+        assessment:
+          $ref: '#/components/schemas/LegacyAnalysis'
+        items:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/LegacyCoreReason'
+        clarification:
+          type: string
+      allOf:
+        - if:
+            required: [status]
+            properties:
+              status:
+                const: completed
+          then:
+            required: [assessment, items]
+    LegacyCheckRequest:
+      allOf:
+        - $ref: '#/components/schemas/LegacyFlowContext'
+        - type: object
+          required: [attemptId, kind, itemId, answer]
+          properties:
+            attemptId:
+              type: string
+              maxLength: 80
+              description: Regenerated by the client on every call; ignored for deduplication.
+            kind:
+              type: string
+              enum: [check, practice, retry_original]
+            itemId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            answer:
+              type: [string, number]
+              maxLength: 2000
+    LegacyCheckResult:
+      type: object
+      description: The shape `checkWithBackend` validates (isCheck). Frozen.
+      required: [correct]
+      properties:
+        correct:
+          type: [boolean, 'null']
+        feedback:
+          type: string
+        correctOptionIndex:
+          type: integer
+          minimum: 0
+        unreadable:
+          type: boolean
+    LegacySolutionRequest:
+      allOf:
+        - $ref: '#/components/schemas/LegacyFlowContext'
+        - type: object
+          required: [reason]
+          properties:
+            reason:
+              type: string
+              enum: [requested, review_steps, max_tries, compare]
+    LegacySolution:
+      type: object
+      description: The shape `solutionWithBackend` validates (isSolution). Frozen.
+      required: [steps, after]
+      properties:
+        steps:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [title, body]
+            properties:
+              title:
+                type: string
+              body:
+                type: string
+        after:
+          type: array
+          items:
+            type: string
+    LegacyTutorRequest:
+      allOf:
+        - $ref: '#/components/schemas/LegacyFlowContext'
+        - type: object
+          required: [coreTitle, script, messages, hintsUsed]
+          properties:
+            coreTitle:
+              type: [string, 'null']
+              maxLength: 120
+            script:
+              type: string
+              enum: [menara, tangga, umum]
+            messages:
+              type: array
+              maxItems: 60
+              items:
+                type: object
+                required: [from, text]
+                properties:
+                  from:
+                    type: string
+                    enum: [me, bot]
+                  text:
+                    type: string
+                    maxLength: 2000
+            hintsUsed:
+              type: integer
+              minimum: 0
+              description: Ignored; the server counts hints.
+    LegacyTutorReply:
+      type: object
+      description: The shape `tutorWithBackend` validates (isTutorReply). Frozen.
+      required: [text, quick, hintsUsed]
+      properties:
+        text:
+          type: string
+        quick:
+          type: array
+          items:
+            type: string
+        hintsUsed:
+          type: integer
+          minimum: 0
+        rewrite:
+          type: boolean
+    LegacyIntakeReadRequest:
+      allOf:
+        - $ref: '#/components/schemas/LegacyFlowContext'
+        - type: object
+          required: [imageDataUrl]
+          properties:
+            imageDataUrl:
+              type: string
+              maxLength: 8000000
+    LegacyIntakeRead:
+      type: object
+      description: Reference only. L7 is not served by the facade.
+      required: [text]
+      properties:
+        text:
+          type: string
+          minLength: 1
+        demo:
+          type: boolean
+    LegacyIntakeMapRequest:
+      allOf:
+        - $ref: '#/components/schemas/LegacyFlowContext'
+        - type: object
+          required: [questionText]
+          properties:
+            questionText:
+              type: string
+              minLength: 1
+              maxLength: 2000
+    LegacyIntakeMap:
+      type: object
+      description: The shape `mapQuestionWithBackend` validates (isMap). Frozen.
+      required: [subject, topicId, cores]
+      properties:
+        subject:
+          type: [string, 'null']
+        topicId:
+          type: [string, 'null']
+        cores:
+          type: array
+          items:
+            type: string
+        demo:
+          type: boolean

@@ -1,0 +1,64 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_ISTIMEWA_P0
+familyCode: MAT.TRI.F.SUDUT_ISTIMEWA_P0
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 2
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-istimewa practice[0]
+aliases:
+  - ns: ITEM
+    value: sudut-istimewa:0
+  - ns: ITEM
+    value: core:sudut-istimewa:q0
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tanpa kalkulator. Dalam segitiga siku-siku dengan sudut 30° dan sisi miring 10, berapa panjang sisi di depan sudut 30°?
+  figureRef: tri30
+  options:
+    - id: a
+      label: "10"
+    - id: b
+      label: 5√3
+    - id: c
+      label: "5"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "5"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: sin 30° = ½, jadi sisi depan = ½ × 10 = 5. Pola ini dipakai untuk semua sudut istimewa.
+    incorrect: Sisi depan = sin 30° × sisi miring, dan sin 30° = ½ — jadi 5. Pola ini dipakai untuk semua sudut istimewa.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts LESSON_CORES maps sudut-istimewa practice to tri-f
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

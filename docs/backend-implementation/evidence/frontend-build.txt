@@ -1,0 +1,22 @@
+
+> intibelajar@0.0.0 build
+> npm run check:bindings && vue-tsc && vite build
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  82 komponen diperiksa, 0 bermasalah
+vite v5.4.21 building for production...
+transforming...
+✓ 280 modules transformed.
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/views/Slice0AccountView.vue is dynamically imported by C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts but also statically imported by C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/views/OnboardingView.vue?vue&type=script&setup=true&lang.ts, dynamic import will not move module into another chunk.
+
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.59 kB │ gzip:   0.74 kB
+dist/assets/index-DRT5cmrU.css  301.20 kB │ gzip:  50.18 kB
+dist/assets/index-C3JKnM-a.js   428.93 kB │ gzip: 147.72 kB
+✓ built in 21.41s

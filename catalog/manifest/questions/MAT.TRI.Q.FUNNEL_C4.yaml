@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.FUNNEL_C4
+familyCode: MAT.TRI.F.FUNNEL_C4
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coba.ts CHECKS
+aliases:
+  - ns: ITEM
+    value: c4
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kamu tahu sisi miring dan mencari sisi depan. Pakai apa?
+  options:
+    - id: a
+      label: sin
+    - id: b
+      label: cos
+    - id: c
+      label: tan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sin
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+  feedback:
+    correct: Tepat! depan ÷ miring = sin. Kamu siap kembali ke soal tadi.
+    incorrect: "Belum tepat. Pasangan depan dan miring hanya dipakai sin: depan ÷ miring."
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - "c4: MATERI_CHECK; answering it records progress on FUNNEL_CORE tri-d (useCobaFlow)"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

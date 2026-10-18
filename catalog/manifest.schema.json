@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intibelajar.invalid/catalog/manifest.schema.json",
+  "title": "IntiBelajar catalog alias manifest v1",
+  "description": "One schema per manifest file kind under $defs. Value objects follow docs/backend-architecture/03 §7; size caps follow 04 §6. Semantic rules (aliases, DAG, mappings) live in src/catalog/manifest.ts.",
+  "$defs": {
+    "code": { "type": "string", "pattern": "^[A-Z]{3}(\\.[A-Z0-9][A-Z0-9_]*)*$", "maxLength": 120 },
+    "subjectCode": { "type": "string", "pattern": "^[A-Z]{3}$" },
+    "shortCode": { "type": "string", "pattern": "^[A-Z0-9][A-Z0-9_]*$", "maxLength": 60 },
+    "optionId": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_./-]{0,39}$" },
+    "text": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "phase": { "enum": ["D", "E", "F", "F+"] },
+    "aliasNamespace": { "enum": ["SUBJECT", "TOPIC", "MAP", "TYPED_MAP", "ROUTE", "TYPED_LESSON", "ITEM"] },
+    "alias": {
+      "type": "object", "additionalProperties": false, "required": ["ns", "value"],
+      "properties": { "ns": { "$ref": "#/$defs/aliasNamespace" }, "value": { "type": "string", "minLength": 1, "maxLength": 120 } }
+    },
+    "aliases": { "type": "array", "items": { "$ref": "#/$defs/alias" } },
+    "review": {
+      "description": "Present only while a human decision is open. status PROPOSED fails strict lint (publisher).",
+      "type": "object", "additionalProperties": false, "required": ["status", "evidence"],
+      "properties": {
+        "status": { "enum": ["PROPOSED", "REVIEWED"] },
+        "decision": { "type": "string", "pattern": "^D[0-9]+$" },
+        "fields": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "minItems": 1, "items": { "type": "string", "maxLength": 400 } }
+      }
+    },
+
+    "release": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "version", "source", "signOff", "decisions", "gaps"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "version": { "type": "integer", "minimum": 1 },
+        "source": {
+          "type": "object", "additionalProperties": false, "required": ["extractor", "frontendCommit", "frontendDataDirty"],
+          "properties": {
+            "extractor": { "type": "string" },
+            "frontendCommit": { "type": "string", "pattern": "^([0-9a-f]{40}|unknown)$" },
+            "frontendDataDirty": { "type": "boolean" }
+          }
+        },
+        "signOff": {
+          "type": "object", "additionalProperties": false, "required": ["status", "reviewers"],
+          "properties": {
+            "status": { "enum": ["PENDING", "REVIEWED"] },
+            "reviewers": { "type": "array", "items": {
+              "type": "object", "additionalProperties": false, "required": ["name", "role", "date"],
+              "properties": { "name": { "type": "string" }, "role": { "type": "string" }, "date": { "type": "string", "format": "date" } }
+            } }
+          }
+        },
+        "decisions": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["id", "status", "summary"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^D[0-9]+$" },
+            "status": { "enum": ["PROPOSED", "APPROVED"] },
+            "summary": { "type": "string", "maxLength": 1000 }
+          }
+        } },
+        "gaps": { "type": "array", "items": { "type": "string", "maxLength": 600 } }
+      }
+    },
+
+    "subjects": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "subjects"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "subjects": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false, "required": ["code", "title", "availability", "aliases"],
+          "properties": {
+            "code": { "$ref": "#/$defs/subjectCode" },
+            "title": { "$ref": "#/$defs/shortText" },
+            "availability": { "enum": ["AVAILABLE", "COMING_SOON"] },
+            "aliases": { "$ref": "#/$defs/aliases" }
+          }
+        } }
+      }
+    },
+
+    "topicRelations": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "relations"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "relations": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["from", "to", "kind", "label", "source"],
+          "properties": {
+            "from": { "$ref": "#/$defs/code" }, "to": { "$ref": "#/$defs/code" },
+            "kind": { "enum": ["REQUIRES", "RELATED"] },
+            "label": { "$ref": "#/$defs/shortText" },
+            "source": { "enum": ["CURRICULUM", "MATHEMATICAL"] },
+            "review": { "$ref": "#/$defs/review" }
+          }
+        } }
+      }
+    },
+
+    "sets": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "sets"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "sets": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["code", "title", "origin", "items"],
+          "properties": {
+            "code": { "$ref": "#/$defs/code" },
+            "title": { "$ref": "#/$defs/shortText" },
+            "origin": { "enum": ["FUNNEL", "BANK", "COMBINED_SET", "CONCEPT_LESSON"] },
+            "items": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/code" } },
+            "review": { "$ref": "#/$defs/review" }
+          }
+        } }
+      }
+    },
+
+    "unmapped": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "entries"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "entries": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["ns", "value", "reason"],
+          "properties": {
+            "ns": { "$ref": "#/$defs/aliasNamespace" },
+            "value": { "type": "string", "minLength": 1, "maxLength": 120 },
+            "pattern": { "type": "boolean", "description": "value is a prefix ending in '*'" },
+            "reason": { "type": "string", "minLength": 1, "maxLength": 400 }
+          }
+        } }
+      }
+    },
+
+    "misconception": {
+      "type": "object", "additionalProperties": false, "required": ["code", "description", "indicators"],
+      "properties": {
+        "code": { "$ref": "#/$defs/shortCode" },
+        "description": { "$ref": "#/$defs/shortText" },
+        "example": { "$ref": "#/$defs/shortText" },
+        "indicators": { "type": "array", "items": { "$ref": "#/$defs/shortText" } }
+      }
+    },
+    "concept": {
+      "type": "object", "additionalProperties": false,
+      "required": ["code", "title", "objectives", "misconceptions", "ordinal", "estimatedMinutes", "hidden", "capstone", "availability", "aliases"],
+      "properties": {
+        "code": { "$ref": "#/$defs/code" },
+        "title": { "$ref": "#/$defs/shortText" },
+        "subtitle": { "$ref": "#/$defs/shortText" },
+        "definition": { "$ref": "#/$defs/text" },
+        "objectives": { "type": "array", "items": { "$ref": "#/$defs/text" } },
+        "misconceptions": { "type": "array", "items": { "$ref": "#/$defs/misconception" } },
+        "unit": { "$ref": "#/$defs/code" },
+        "ordinal": { "type": "integer", "minimum": 1, "maximum": 32767 },
+        "estimatedMinutes": { "type": "integer", "minimum": 1, "maximum": 60 },
+        "hidden": { "type": "boolean" },
+        "capstone": { "type": "boolean" },
+        "availability": { "enum": ["READY", "PLANNED"] },
+        "aliases": { "$ref": "#/$defs/aliases" },
+        "review": { "$ref": "#/$defs/review" }
+      }
+    },
+    "topic": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "code", "subject", "title", "phase", "availability", "bekal", "aliases", "units", "concepts", "prerequisites"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "code": { "$ref": "#/$defs/code" },
+        "subject": { "$ref": "#/$defs/subjectCode" },
+        "title": { "$ref": "#/$defs/shortText" },
+        "subtitle": { "$ref": "#/$defs/shortText" },
+        "phase": { "$ref": "#/$defs/phase" },
+        "availability": { "enum": ["MAPPED", "PLANNED"] },
+        "bekal": { "type": "array", "items": { "$ref": "#/$defs/shortText" } },
+        "aliases": { "$ref": "#/$defs/aliases" },
+        "units": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["code", "title", "goal", "ordinal"],
+          "properties": {
+            "code": { "$ref": "#/$defs/code" },
+            "legacyId": { "type": "string", "maxLength": 60 },
+            "title": { "$ref": "#/$defs/shortText" },
+            "goal": { "$ref": "#/$defs/shortText" },
+            "ordinal": { "type": "integer", "minimum": 1 }
+          }
+        } },
+        "concepts": { "type": "array", "items": { "$ref": "#/$defs/concept" } },
+        "prerequisites": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["concept", "requires", "kind"],
+          "properties": {
+            "concept": { "$ref": "#/$defs/code" },
+            "requires": { "$ref": "#/$defs/code" },
+            "kind": { "enum": ["HARD", "SOFT"] },
+            "review": { "$ref": "#/$defs/review" }
+          }
+        } },
+        "review": { "$ref": "#/$defs/review" }
+      }
+    },
+
+    "questionBody": {
+      "description": "QuestionBody VO (03 §7). Learner-facing: never contains keys, so unknown fields are rejected.",
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "prompt", "hints", "answerFormat"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "prompt": { "$ref": "#/$defs/text" },
+        "figureRef": { "type": "string", "pattern": "^[a-z0-9-]{1,40}$" },
+        "options": { "type": "array", "minItems": 2, "maxItems": 8, "items": {
+          "type": "object", "additionalProperties": false, "required": ["id", "label"],
+          "properties": { "id": { "$ref": "#/$defs/optionId" }, "label": { "$ref": "#/$defs/shortText" } }
+        } },
+        "hints": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["step", "conceptCode", "lead"],
+          "properties": {
+            "step": { "type": "integer", "minimum": 1 },
+            "conceptCode": { "$ref": "#/$defs/code" },
+            "lead": { "$ref": "#/$defs/shortText" },
+            "note": { "type": "string", "maxLength": 400 }
+          }
+        } },
+        "answerFormat": { "enum": ["OPTION", "NUMBER", "TEXT"] },
+        "answerExample": { "$ref": "#/$defs/shortText" }
+      }
+    },
+    "rubric": {
+      "description": "Rubric VO (03 §7), private. feedback is a v1 extension needed by the L3 facade (09 §6.2).",
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "evaluator", "answer", "acceptedForms", "solutionPaths", "misconceptionMap", "finalAnswerEvidence"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "evaluator": { "enum": ["option-v1", "numeric-v1", "tower-v1", "ai-assisted-v1"] },
+        "answer": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "optionId": { "$ref": "#/$defs/optionId" },
+            "value": { "type": "number" },
+            "unit": { "type": "string", "maxLength": 20 },
+            "tolerance": {
+              "type": "object", "additionalProperties": false, "required": ["relative", "floor"],
+              "properties": { "relative": { "type": "number", "minimum": 0, "maximum": 0.1 }, "floor": { "type": "number", "minimum": 0 } }
+            }
+          }
+        },
+        "acceptedForms": { "type": "array", "items": { "$ref": "#/$defs/shortText" } },
+        "solutionPaths": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["code", "label", "steps"],
+          "properties": {
+            "code": { "$ref": "#/$defs/shortCode" },
+            "label": { "$ref": "#/$defs/shortText" },
+            "steps": { "type": "array", "minItems": 1, "items": {
+              "type": "object", "additionalProperties": false, "required": ["code", "description", "concepts"],
+              "properties": {
+                "code": { "$ref": "#/$defs/shortCode" },
+                "description": { "$ref": "#/$defs/shortText" },
+                "concepts": { "type": "array", "minItems": 1, "items": {
+                  "type": "object", "additionalProperties": false, "required": ["code", "role"],
+                  "properties": { "code": { "$ref": "#/$defs/code" }, "role": { "enum": ["REQUIRED", "SUPPORTING"] } }
+                } }
+              }
+            } }
+          }
+        } },
+        "misconceptionMap": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["pattern", "conceptCode", "misconceptionCode", "explanation"],
+          "properties": {
+            "pattern": {
+              "type": "object", "additionalProperties": false, "required": ["kind"],
+              "properties": {
+                "kind": { "enum": ["OPTION", "NUMERIC", "TEXT"] },
+                "optionId": { "$ref": "#/$defs/optionId" },
+                "value": { "type": "number" },
+                "regex": { "type": "string", "maxLength": 200 }
+              }
+            },
+            "conceptCode": { "$ref": "#/$defs/code" },
+            "misconceptionCode": { "$ref": "#/$defs/shortCode" },
+            "explanation": { "type": "string", "minLength": 1, "maxLength": 400 }
+          }
+        } },
+        "finalAnswerEvidence": { "type": "array", "items": { "$ref": "#/$defs/code" } },
+        "feedback": {
+          "type": "object", "additionalProperties": false,
+          "properties": { "correct": { "$ref": "#/$defs/text" }, "incorrect": { "$ref": "#/$defs/text" } }
+        },
+        "workedSolution": {
+          "type": "object", "additionalProperties": false, "required": ["steps", "after"],
+          "properties": {
+            "steps": { "type": "array", "items": {
+              "type": "object", "additionalProperties": false, "required": ["title", "body"],
+              "properties": { "title": { "$ref": "#/$defs/shortText" }, "body": { "$ref": "#/$defs/text" } }
+            } },
+            "after": { "type": "array", "items": { "$ref": "#/$defs/shortText" } }
+          }
+        }
+      }
+    },
+    "question": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "code", "familyCode", "visibility", "origin", "itemType", "contextTag", "difficulty", "estimatedMinutes", "provenance", "aliases", "concepts", "body", "rubric"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "code": { "$ref": "#/$defs/code" },
+        "familyCode": { "$ref": "#/$defs/code" },
+        "visibility": { "enum": ["PUBLIC_PRACTICE", "CATALOG"] },
+        "origin": { "const": "AUTHORED" },
+        "itemType": { "enum": ["FREE_RESPONSE", "MULTIPLE_CHOICE", "NUMERIC"] },
+        "contextTag": { "$ref": "#/$defs/shortCode" },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "estimatedMinutes": { "type": "integer", "minimum": 1, "maximum": 30 },
+        "provenance": {
+          "type": "object", "additionalProperties": false, "required": ["source"],
+          "properties": { "source": { "type": "string", "maxLength": 200 }, "note": { "type": "string", "maxLength": 400 } }
+        },
+        "aliases": { "$ref": "#/$defs/aliases" },
+        "legacyOptionOrder": { "type": "array", "items": { "$ref": "#/$defs/optionId" } },
+        "concepts": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false, "required": ["concept", "role", "assessable"],
+          "properties": {
+            "concept": { "$ref": "#/$defs/code" },
+            "role": { "enum": ["PRIMARY", "SUPPORTING"] },
+            "assessable": { "type": "boolean" }
+          }
+        } },
+        "body": { "$ref": "#/$defs/questionBody" },
+        "rubric": { "$ref": "#/$defs/rubric" },
+        "review": { "$ref": "#/$defs/review" }
+      }
+    },
+
+    "lessonBlock": {
+      "description": "LessonBlocks VO (03 §7). Text may use **bold** only; no HTML.",
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["type", "slide", "text"],
+          "properties": { "type": { "const": "heading" }, "slide": { "type": "integer", "minimum": 0 }, "text": { "$ref": "#/$defs/shortText" } } },
+        { "type": "object", "additionalProperties": false, "required": ["type", "slide", "text"],
+          "properties": { "type": { "const": "text" }, "slide": { "type": "integer", "minimum": 0 }, "text": { "$ref": "#/$defs/text" } } },
+        { "type": "object", "additionalProperties": false, "required": ["type", "slide", "name", "expression"],
+          "properties": { "type": { "const": "math" }, "slide": { "type": "integer", "minimum": 0 }, "name": { "$ref": "#/$defs/shortText" }, "expression": { "$ref": "#/$defs/shortText" }, "highlight": { "type": "boolean" } } },
+        { "type": "object", "additionalProperties": false, "required": ["type", "slide", "figureRef"],
+          "properties": { "type": { "const": "figure" }, "slide": { "type": "integer", "minimum": 0 }, "figureRef": { "type": "string", "pattern": "^[a-z0-9-]{1,40}$" } } },
+        { "type": "object", "additionalProperties": false, "required": ["type", "slide", "text"],
+          "properties": { "type": { "const": "tip" }, "slide": { "type": "integer", "minimum": 0 }, "text": { "$ref": "#/$defs/text" } } }
+      ]
+    },
+    "lesson": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "code", "title", "estimatedMinutes", "aliases", "concepts", "blocks", "checks"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "code": { "$ref": "#/$defs/code" },
+        "title": { "$ref": "#/$defs/shortText" },
+        "estimatedMinutes": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "aliases": { "$ref": "#/$defs/aliases" },
+        "concepts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/code" } },
+        "blocks": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/lessonBlock" } },
+        "checks": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["question", "ordinal", "slideIndex", "required"],
+          "properties": {
+            "question": { "$ref": "#/$defs/code" },
+            "ordinal": { "type": "integer", "minimum": 0 },
+            "slideIndex": { "type": "integer", "minimum": 0 },
+            "required": { "type": "boolean" }
+          }
+        } },
+        "practiceSet": { "$ref": "#/$defs/code" },
+        "review": { "$ref": "#/$defs/review" }
+      }
+    }
+  }
+}

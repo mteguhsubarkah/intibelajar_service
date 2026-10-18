@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERBANDINGAN_TRIG_C1
+familyCode: MAT.TRI.F.PERBANDINGAN_TRIG_C1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts perbandingan-trig chunks[1].check
+aliases:
+  - ns: ITEM
+    value: core:perbandingan-trig:c1
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sekarang yang diketahui sisi samping 10 m dan sudut 60°; yang dicari sisi depan. Pakai apa?
+  options:
+    - id: a
+      label: sin
+    - id: b
+      label: cos
+    - id: c
+      label: tan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - tan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+  feedback:
+    correct: "Tepat. Tetap depan dan samping, hanya posisinya ditukar: tan 60° = t / 10."
+    incorrect: Belum tepat. Yang terlibat depan dan samping, tanpa sisi miring — itu tan.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson perbandingan-trig, whose coreId is tri-e
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

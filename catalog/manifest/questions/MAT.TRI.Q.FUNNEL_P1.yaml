@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.FUNNEL_P1
+familyCode: MAT.TRI.F.FUNNEL_P1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: TANGGA
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coba.ts PRACTICE
+aliases:
+  - ns: ITEM
+    value: p1
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah tangga bersandar di dinding dan membentuk sudut 60° dengan tanah. Panjang tangga 4 m. Kamu tahu sisi miring dan ingin mencari tinggi dinding. Perbandingan mana yang dipakai?
+  options:
+    - id: a
+      label: sin 60° = t / 4
+    - id: b
+      label: cos 60° = t / 4
+    - id: c
+      label: tan 60° = t / 4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sin 60° = t / 4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+  feedback:
+    correct: Tinggi dinding berhadapan dengan sudut, dan tangga adalah sisi miring. Depan dibagi miring itu sin.
+    incorrect: Tinggi dinding berhadapan dengan sudut, dan tangga adalah sisi miring. Yang menghubungkan depan dan miring adalah sin.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - "p1: asks which ratio links depan and miring"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag TANGGA from the keyword table

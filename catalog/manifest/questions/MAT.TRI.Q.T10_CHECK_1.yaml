@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.TRI.Q.T10_CHECK_1
+familyCode: MAT.TRI.F.T10_CHECK_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/cores (T10.check-1)
+aliases:
+  - ns: ITEM
+    value: T10:check-1
+legacyOptionOrder:
+  - sin
+  - cos
+  - tan
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui depan = 6 dan samping = 8. Rasio yang paling langsung digunakan?
+  options:
+    - id: sin
+      label: sin
+    - id: cos
+      label: cos
+    - id: tan
+      label: tan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: tan
+  acceptedForms:
+    - tan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - check of typed core T10
+    - "composite alias: the frontend never sends these ids to the backend"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

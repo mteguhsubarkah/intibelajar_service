@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C1
+familyCode: MAT.TRI.F.SUDUT_DEPRESI_ELEVASI_C1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: MENARA
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-depresi-elevasi chunks[1].check
+aliases:
+  - ns: ITEM
+    value: core:sudut-depresi-elevasi:c1
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ELEVASI_DEPRESI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sudut depresi dari puncak menara 30°. Berapa sudut elevasi dari mobil ke puncak?
+  options:
+    - id: a
+      label: 60°
+    - id: b
+      label: 30°
+    - id: c
+      label: 90°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 30°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ELEVASI_DEPRESI
+  feedback:
+    correct: Tepat. Dua garis horizontal itu sejajar, jadi sudut depresi dan elevasinya sama besar.
+    incorrect: "Belum tepat. Garis horizontal di puncak dan di tanah sejajar, jadi sudut depresi dan elevasinya sama besar: 30°."
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson sudut-depresi-elevasi, whose coreId is tri-p
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag MENARA from the keyword table

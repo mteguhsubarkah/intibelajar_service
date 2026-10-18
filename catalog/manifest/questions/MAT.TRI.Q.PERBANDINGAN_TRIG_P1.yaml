@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERBANDINGAN_TRIG_P1
+familyCode: MAT.TRI.F.PERBANDINGAN_TRIG_P1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts perbandingan-trig practice[1]
+aliases:
+  - ns: ITEM
+    value: perbandingan-trig:1
+  - ns: ITEM
+    value: core:perbandingan-trig:q1
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: sin θ menghubungkan sisi...
+  options:
+    - id: a
+      label: depan & miring
+    - id: b
+      label: samping & miring
+    - id: c
+      label: depan & samping
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - depan & miring
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+  feedback:
+    correct: sin = depan / miring.
+    incorrect: sin = depan / miring. Samping dan miring itu milik cos.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts LESSON_CORES maps perbandingan-trig practice to tri-d
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

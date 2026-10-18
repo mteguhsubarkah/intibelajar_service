@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P2
+familyCode: MAT.TRI.F.SUDUT_DEPRESI_ELEVASI_P2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-depresi-elevasi practice[2]
+aliases:
+  - ns: ITEM
+    value: sudut-depresi-elevasi:2
+  - ns: ITEM
+    value: core:sudut-depresi-elevasi:q2
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ELEVASI_DEPRESI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Besar sudut depresi sama dengan sudut...
+  options:
+    - id: a
+      label: istimewa
+    - id: b
+      label: siku-siku
+    - id: c
+      label: elevasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - elevasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ELEVASI_DEPRESI
+  feedback:
+    correct: Garis horizontalnya sejajar, jadi depresi dari atas sama dengan elevasi dari bawah.
+    incorrect: Sudut depresi dari atas sama besar dengan sudut elevasi dari bawah.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts LESSON_CORES maps sudut-depresi-elevasi practice to tri-p
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

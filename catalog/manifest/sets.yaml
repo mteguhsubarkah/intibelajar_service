@@ -1,0 +1,59 @@
+schemaVersion: 1
+sets:
+  - code: MAT.TRI.S.PERBANDINGAN_TRIG
+    title: Latihan Perbandingan Trigonometri
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.PERBANDINGAN_TRIG_P0
+      - MAT.TRI.Q.PERBANDINGAN_TRIG_P1
+      - MAT.TRI.Q.PERBANDINGAN_TRIG_P2
+  - code: MAT.TRI.S.SUDUT_ISTIMEWA
+    title: Latihan Sudut Istimewa
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P0
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P1
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P2
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P3
+  - code: MAT.TRI.S.SUDUT_DEPRESI_ELEVASI
+    title: Latihan Sudut Depresi / Elevasi
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P0
+      - MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P1
+      - MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P2
+  - code: MAT.TRI.S.FUNNEL_PRACTICE
+    title: Latihan funnel /coba
+    origin: FUNNEL
+    items:
+      - MAT.TRI.Q.FUNNEL_P1
+      - MAT.TRI.Q.FUNNEL_P2
+      - MAT.TRI.Q.FUNNEL_P3
+  - code: MAT.S.BANK
+    title: Bank soal pilihan ganda
+    origin: BANK
+    items:
+      - MAT.TRI.Q.TAN60_SIN30
+      - MAT.TRI.Q.TANGGA_6M
+      - MAT.TRI.Q.PERBANDINGAN_TRIG_P0
+      - MAT.TRI.Q.PERBANDINGAN_TRIG_P1
+      - MAT.TRI.Q.PERBANDINGAN_TRIG_P2
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P0
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P1
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P2
+      - MAT.TRI.Q.SUDUT_ISTIMEWA_P3
+      - MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P0
+      - MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P1
+      - MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P2
+      - MAT.TRI.Q.GAB_SIN30_PANGKAT
+      - MAT.EKS.Q.GAB_PANGKAT_COS60
+      - MAT.TRI.Q.GAB_TAN45_PANGKATNOL
+      - MAT.EKS.Q.GAB_3X_SIN
+  - code: MAT.S.COMBINED
+    title: Soal gabungan
+    origin: COMBINED_SET
+    items:
+      - MAT.TRI.Q.GAB_SIN30_PANGKAT
+      - MAT.EKS.Q.GAB_PANGKAT_COS60
+      - MAT.TRI.Q.GAB_TAN45_PANGKATNOL
+      - MAT.EKS.Q.GAB_3X_SIN

@@ -1,0 +1,19 @@
+-- Development rollback only; removes the catalog.
+DROP TABLE catalog_alias;
+DROP TABLE micro_assessment;
+DROP TABLE lesson_concept;
+DROP TABLE micro_lesson_revision;
+DROP TABLE micro_lesson;
+DROP TABLE question_concept;
+DROP TABLE question_revision;
+DROP TABLE question;
+DROP TABLE concept_prerequisite;
+DROP TABLE concept;
+DROP TABLE topic_relation;
+DROP TABLE topic;
+DROP TABLE subject;
+DROP TABLE curriculum_release;
+DROP FUNCTION catalog_identity_stable();
+DROP FUNCTION catalog_child_immutable();
+DROP FUNCTION curriculum_release_immutable();
+DROP FUNCTION catalog_revision_immutable();

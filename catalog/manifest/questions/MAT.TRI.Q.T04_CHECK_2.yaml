@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.TRI.Q.T04_CHECK_2
+familyCode: MAT.TRI.F.T04_CHECK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/cores (T04.check-2)
+aliases:
+  - ns: ITEM
+    value: T04:check-2
+legacyOptionOrder:
+  - changes
+  - stays
+  - none
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Segitiganya diputar 90° searah jarum jam. Sudut acuannya tetap ditandai di titik yang sama. Apa yang terjadi pada sisi depan?
+  options:
+    - id: changes
+      label: Berubah, ikut putaran gambarnya
+    - id: stays
+      label: Tetap, karena sudut acuannya sama
+    - id: none
+      label: Tidak ada sisi depan lagi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: stays
+  acceptedForms:
+    - Tetap, karena sudut acuannya sama
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - check of typed core T04
+    - "composite alias: the frontend never sends these ids to the backend"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

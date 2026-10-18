@@ -1,0 +1,68 @@
+schemaVersion: 1
+code: MAT.EKS.Q.GAB_PANGKAT_COS60
+familyCode: MAT.EKS.F.GAB_PANGKAT_COS60
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/bank.ts
+aliases:
+  - ns: ITEM
+    value: gab-pangkat-cos60
+legacyOptionOrder:
+  - a
+  - b
+  - c
+  - d
+concepts:
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Berapa nilai 2³ × cos 60° ?
+  options:
+    - id: a
+      label: "4"
+    - id: b
+      label: "8"
+    - id: c
+      label: "2"
+    - id: d
+      label: 4√3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "4"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.DEFINISI_EKSPONEN
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: 2³ = 8 dan cos 60° = ½, jadi 8 × ½ = 4.
+    incorrect: 2³ = 8 dan cos 60° = ½, jadi 8 × ½ = 4.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts cores eks-b, tri-f (all proposed PRIMARY and assessable)
+    - "kind gabungan: K02 question application across topics; creates no prerequisite edge (INV-17)"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: MAT.MTX
+subject: MAT
+title: Matriks
+subtitle: Kelas XI–XII
+phase: F
+availability: PLANNED
+bekal: []
+aliases:
+  - ns: TOPIC
+    value: matriks
+units: []
+concepts: []
+prerequisites: []

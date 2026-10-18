@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-10-17T11:30:56Z",
+  "generator": "docs/backend-architecture/validate-spec.py (offline; PyYAML 6.0.3)",
+  "scope": "Specification documents 01-12 and openapi.yaml. No service, database or migration exists.",
+  "summary": {
+    "pass": 15,
+    "warn": 0,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "id": "OAS-1",
+      "title": "openapi.yaml structure (refs, operationIds, parameters, security, responses, discriminators)",
+      "status": "pass",
+      "info": {
+        "operations": 62,
+        "operationIds": 62,
+        "refs": 695
+      }
+    },
+    {
+      "id": "OAS-2",
+      "title": "Examples validate against their schemas (JSON Schema subset) and cite real spans",
+      "status": "pass",
+      "info": {
+        "examplesChecked": 8
+      }
+    },
+    {
+      "id": "DB-1",
+      "title": "ERD relationships match DDL foreign keys; table count matches the text (04)",
+      "status": "pass",
+      "info": {
+        "tables": 42,
+        "foreignKeyPairs": 70,
+        "erdRelationships": 70,
+        "documentedNoFk": 4
+      }
+    },
+    {
+      "id": "DB-2",
+      "title": "DDL CHECK enumerations equal openapi.yaml enums",
+      "status": "pass",
+      "info": {
+        "enumsCompared": 38
+      }
+    },
+    {
+      "id": "SM-1",
+      "title": "State machine (05): states, outcomes, commands and transition table vs DDL and openapi.yaml",
+      "status": "pass",
+      "info": {
+        "diagramStates": 11,
+        "transitions": 26,
+        "commands": 14
+      }
+    },
+    {
+      "id": "API-1",
+      "title": "Operation catalogue (09 §7) equals openapi.yaml",
+      "status": "pass",
+      "info": {
+        "catalogueRows": 62,
+        "openapiOperations": 62
+      }
+    },
+    {
+      "id": "API-2",
+      "title": "Every /v1 path and 'METHOD /v1/...' mentioned in 01-12 exists in openapi.yaml",
+      "status": "pass",
+      "info": {
+        "pathMentions": 197
+      }
+    },
+    {
+      "id": "FE-1",
+      "title": "Shipped frontend adapter endpoints and enums are covered by openapi.yaml",
+      "status": "pass",
+      "info": {
+        "adapterEndpoints": 7,
+        "enumsCompared": 8
+      }
+    },
+    {
+      "id": "API-3",
+      "title": "Error codes: 09 §3 equals openapi.yaml; every '`NNN CODE`' mention matches",
+      "status": "pass",
+      "info": {
+        "codes": 25,
+        "mentions": 43,
+        "blueprintOnlyAllowed": [
+          "GUEST_ALREADY_CLAIMED"
+        ]
+      }
+    },
+    {
+      "id": "API-4",
+      "title": "Authenticated mutations require X-CSRF-Token; POST commands require Idempotency-Key (09 §2, §4)",
+      "status": "pass"
+    },
+    {
+      "id": "TST-1",
+      "title": "Every invariant, transition and T01 scenario has a test in 11",
+      "status": "pass",
+      "info": {
+        "invariants": 22,
+        "transitions": 26,
+        "t01Scenarios": 12
+      }
+    },
+    {
+      "id": "DOC-1",
+      "title": "06 eligibility, uncertainty and classification codes equal openapi.yaml",
+      "status": "pass"
+    },
+    {
+      "id": "DOC-2",
+      "title": "Relative Markdown links and #anchors resolve (GitHub slug rules)",
+      "status": "pass",
+      "info": {
+        "links": 247
+      }
+    },
+    {
+      "id": "FE-2",
+      "title": "npm run test:backend (consumer contract suite, unchanged frontend)",
+      "status": "pass",
+      "info": {
+        "lastLines": [
+          "> intibelajar@0.0.0 test:backend",
+          "> esbuild scripts/backend.test.ts --bundle --platform=node --format=cjs --alias:@=./src --outfile=node_modules/.cache/backend.cjs --log-level=error && node node_modules/.cache/backend.cjs",
+          "29 backend contract checks passed"
+        ]
+      }
+    },
+    {
+      "id": "SELF-1",
+      "title": "Self-test: each check fails on its targeted mutation, and only then",
+      "status": "pass",
+      "info": {
+        "cases": 17,
+        "behavedAsExpected": 17
+      }
+    }
+  ],
+  "notPerformed": [
+    {
+      "item": "Official OpenAPI 3.1 validation",
+      "reason": "No OpenAPI validator is available offline here, and installing one needs approval.",
+      "howToRun": "uvx openapi-spec-validator docs/backend-architecture/openapi.yaml  (or: npx @redocly/cli lint docs/backend-architecture/openapi.yaml); pin the tool version in CI"
+    },
+    {
+      "item": "Executing the DDL against PostgreSQL 16+",
+      "reason": "Specification only; no database in this environment.",
+      "howToRun": "Extract the ```sql blocks of 04 in order into one file and run psql -v ON_ERROR_STOP=1 -f on an empty PostgreSQL 16 database (an acceptance gate in 11/12)."
+    },
+    {
+      "item": "Rendering the Mermaid diagrams",
+      "reason": "No renderer used; diagrams were checked only by the parsers above.",
+      "howToRun": "Open the files on GitHub or run @mermaid-js/mermaid-cli."
+    },
+    {
+      "item": "Legal review",
+      "reason": "Engineering reading of the sources in 08 §7 only; not legal advice.",
+      "howToRun": "Indonesian counsel reviews 08 and the open decisions in 12 §3."
+    }
+  ]
+}

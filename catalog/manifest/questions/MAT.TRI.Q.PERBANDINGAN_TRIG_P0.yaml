@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERBANDINGAN_TRIG_P0
+familyCode: MAT.TRI.F.PERBANDINGAN_TRIG_P0
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts perbandingan-trig practice[0]
+aliases:
+  - ns: ITEM
+    value: perbandingan-trig:0
+  - ns: ITEM
+    value: core:perbandingan-trig:q0
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Untuk mencari sisi samping jika diketahui sisi depan, gunakan...
+  options:
+    - id: a
+      label: sin
+    - id: b
+      label: cos
+    - id: c
+      label: tan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - tan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+  feedback:
+    correct: Depan dan samping hanya dipasangkan oleh tan.
+    incorrect: sin dan cos sama-sama butuh sisi miring; yang memakai depan dan samping hanya tan.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts LESSON_CORES maps perbandingan-trig practice to tri-d
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

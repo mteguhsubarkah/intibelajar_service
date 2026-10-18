@@ -1,0 +1,1 @@
+PASS: 3 frontend local-event/beacon isolation scenarios (network stubbed; no external calls)

@@ -1,0 +1,71 @@
+schemaVersion: 1
+code: MAT.TRI.Q.TANGGA_6M
+familyCode: MAT.TRI.F.TANGGA_6M
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: TANGGA
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: frontend:src/data/bank.ts
+aliases:
+  - ns: ITEM
+    value: tangga-6m
+legacyOptionOrder:
+  - a
+  - b
+  - c
+  - d
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah tangga 6 m bersandar di dinding dan membentuk sudut 60° dengan lantai. Berapa tinggi ujung tangga dari lantai?
+  options:
+    - id: a
+      label: 3 m
+    - id: b
+      label: 3√3 m
+    - id: c
+      label: 6√3 m
+    - id: d
+      label: 2√3 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 3√3 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: Tinggi berhadapan dengan sudut 60° (depan), tangga = miring. sin 60° = t / 6, jadi t = 6 × √3/2 = 3√3 m.
+    incorrect: Tinggi berhadapan dengan sudut 60° (depan), tangga = miring. sin 60° = t / 6, jadi t = 6 × √3/2 = 3√3 m.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts cores tri-c, tri-d, tri-f (all proposed PRIMARY and assessable)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag TANGGA from the keyword table

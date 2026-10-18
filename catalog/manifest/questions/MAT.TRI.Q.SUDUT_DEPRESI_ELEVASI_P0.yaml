@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P0
+familyCode: MAT.TRI.F.SUDUT_DEPRESI_ELEVASI_P0
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-depresi-elevasi practice[0]
+aliases:
+  - ns: ITEM
+    value: sudut-depresi-elevasi:0
+  - ns: ITEM
+    value: core:sudut-depresi-elevasi:q0
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ELEVASI_DEPRESI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sudut depresi diukur dari...
+  options:
+    - id: a
+      label: tembok menara ke bawah
+    - id: b
+      label: garis horizontal ke bawah
+    - id: c
+      label: tanah ke atas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - garis horizontal ke bawah
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ELEVASI_DEPRESI
+  feedback:
+    correct: Depresi = dari garis horizontal ke bawah.
+    incorrect: Patokannya garis horizontal, bukan tembok. Depresi diukur dari garis horizontal ke bawah.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts LESSON_CORES maps sudut-depresi-elevasi practice to tri-p
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

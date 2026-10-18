@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: MAT.BNG
+subject: MAT
+title: Bunga Majemuk & Anuitas
+subtitle: Kelas XI–XII
+phase: F
+availability: PLANNED
+bekal: []
+aliases:
+  - ns: TOPIC
+    value: bunga
+units: []
+concepts: []
+prerequisites: []

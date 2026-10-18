@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.FUNNEL_C3
+familyCode: MAT.TRI.F.FUNNEL_C3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BAYANGAN
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coba.ts CHECKS
+aliases:
+  - ns: ITEM
+    value: c3
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bayangan di tanah panjangnya 8 m. Itu sisi yang mana?
+  options:
+    - id: a
+      label: Depan
+    - id: b
+      label: Samping
+    - id: c
+      label: Miring
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Samping
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+  feedback:
+    correct: Tepat. Bayangan menempel di tanah, jadi ia sisi samping.
+    incorrect: Belum tepat. Bayangan menempel di tanah dan tidak berhadapan dengan sudut — itu sisi samping.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - "c3: asks which side the ground shadow is (side naming)"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BAYANGAN from the keyword table

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.TRI.Q.T10_CHECK_2
+familyCode: MAT.TRI.F.T10_CHECK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/cores (T10.check-2)
+aliases:
+  - ns: ITEM
+    value: T10:check-2
+legacyOptionOrder:
+  - 5/12
+  - 12/5
+  - 5/13
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kalau depan = 5 dan samping = 12, maka tan θ = ...
+  options:
+    - id: 5/12
+      label: 5/12
+    - id: 12/5
+      label: 12/5
+    - id: 5/13
+      label: 5/13
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: 5/12
+  acceptedForms:
+    - 5/12
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - check of typed core T10
+    - "composite alias: the frontend never sends these ids to the backend"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

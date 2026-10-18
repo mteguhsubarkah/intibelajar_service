@@ -1,0 +1,68 @@
+schemaVersion: 1
+code: MAT.TRI.Q.GAB_TAN45_PANGKATNOL
+familyCode: MAT.TRI.F.GAB_TAN45_PANGKATNOL
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/bank.ts
+aliases:
+  - ns: ITEM
+    value: gab-tan45-pangkatnol
+legacyOptionOrder:
+  - a
+  - b
+  - c
+  - d
+concepts:
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Berapa nilai (tan 45°)⁵ + 5⁰ ?
+  options:
+    - id: a
+      label: "1"
+    - id: b
+      label: "2"
+    - id: c
+      label: "5"
+    - id: d
+      label: "6"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "2"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ISTIMEWA
+    - MAT.EKS.DEFINISI_EKSPONEN
+  feedback:
+    correct: tan 45° = 1, dan 1⁵ = 1. Bilangan bukan nol pangkat nol = 1, jadi 1 + 1 = 2.
+    incorrect: tan 45° = 1, dan 1⁵ = 1. Bilangan bukan nol pangkat nol = 1, jadi 1 + 1 = 2.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts cores tri-f, eks-b (all proposed PRIMARY and assessable)
+    - "kind gabungan: K02 question application across topics; creates no prerequisite edge (INV-17)"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

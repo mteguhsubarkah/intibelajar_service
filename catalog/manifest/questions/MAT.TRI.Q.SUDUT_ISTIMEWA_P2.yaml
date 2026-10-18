@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_ISTIMEWA_P2
+familyCode: MAT.TRI.F.SUDUT_ISTIMEWA_P2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-istimewa practice[2]
+aliases:
+  - ns: ITEM
+    value: sudut-istimewa:2
+  - ns: ITEM
+    value: core:sudut-istimewa:q2
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: tan 30° = ...
+  options:
+    - id: a
+      label: √3
+    - id: b
+      label: ½
+    - id: c
+      label: 1/√3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 1/√3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: tan 30° = sin 30° / cos 30° = (½) / (√3/2) = 1/√3.
+    incorrect: tan 30° = 1/√3 (sekitar 0,58). √3 itu tan 60°.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts LESSON_CORES maps sudut-istimewa practice to tri-f
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

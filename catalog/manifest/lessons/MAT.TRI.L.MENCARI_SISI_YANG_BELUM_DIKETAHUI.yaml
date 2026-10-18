@@ -1,0 +1,33 @@
+schemaVersion: 1
+code: MAT.TRI.L.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+title: Mencari Sisi yang Belum Diketahui
+estimatedMinutes: 2
+aliases:
+  - ns: TYPED_LESSON
+    value: T13
+concepts:
+  - MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+blocks:
+  - type: text
+    slide: 0
+    text: "Rasio sudah benar, tapi angkanya belum ketemu. Di sinilah langkah yang paling sering keliru: tan θ = depan / samping itu sebuah **persamaan**, bukan perintah mengali. Sisi yang kamu cari sering berada di penyebut, dan memindahkannya bukan perkalian."
+  - type: text
+    slide: 0
+    text: "Contohnya tan 30° = 20 / x. Karena x ada di bawah, kalikan silang dulu: x · tan 30° = 20. Baru setelah itu x = 20 ÷ tan 30° ≈ 34,6. Kuncinya satu: kalau sisi yang dicari berada di penyebut, langkah terakhirnya selalu membagi."
+checks:
+  - question: MAT.TRI.Q.T13_CHECK_1
+    ordinal: 0
+    slideIndex: 0
+    required: true
+  - question: MAT.TRI.Q.T13_CHECK_2
+    ordinal: 1
+    slideIndex: 0
+    required: true
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+  evidence:
+    - T13 "Mencari Sisi yang Belum Diketahui" (solve the side from a correct ratio) has no counterpart in curriculum.ts; proposed as a new concept without a MAP alias
+    - "single slide: data/cores has no slide boundaries; all checks after slide 0"

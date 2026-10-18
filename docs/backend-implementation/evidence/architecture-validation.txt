@@ -1,0 +1,17 @@
+Frontend sources: C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar
+[PASS] OAS-1 openapi.yaml structure (refs, operationIds, parameters, security, responses, discriminators)
+[PASS] OAS-2 Examples validate against their schemas (JSON Schema subset) and cite real spans
+[PASS] DB-1 ERD relationships match DDL foreign keys; table count matches the text (04)
+[PASS] DB-2 DDL CHECK enumerations equal openapi.yaml enums
+[PASS] SM-1 State machine (05): states, outcomes, commands and transition table vs DDL and openapi.yaml
+[PASS] API-1 Operation catalogue (09 §7) equals openapi.yaml
+[PASS] API-2 Every /v1 path and 'METHOD /v1/...' mentioned in 01-12 exists in openapi.yaml
+[PASS] FE-1 Shipped frontend adapter endpoints and enums are covered by openapi.yaml
+[PASS] API-3 Error codes: 09 §3 equals openapi.yaml; every '`NNN CODE`' mention matches
+[PASS] API-4 Authenticated mutations require X-CSRF-Token; POST commands require Idempotency-Key (09 §2, §4)
+[PASS] TST-1 Every invariant, transition and T01 scenario has a test in 11
+[PASS] DOC-1 06 eligibility, uncertainty and classification codes equal openapi.yaml
+[PASS] DOC-2 Relative Markdown links and #anchors resolve (GitHub slug rules)
+[PASS] FE-2 npm run test:backend (consumer contract suite, unchanged frontend)
+[PASS] SELF-1 Self-test: each check fails on its targeted mutation, and only then
+summary: {'pass': 15, 'warn': 0, 'fail': 0}

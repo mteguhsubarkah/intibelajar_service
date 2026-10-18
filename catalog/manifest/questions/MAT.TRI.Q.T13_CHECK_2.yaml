@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.TRI.Q.T13_CHECK_2
+familyCode: MAT.TRI.F.T13_CHECK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/cores (T13.check-2)
+aliases:
+  - ns: ITEM
+    value: T13:check-2
+legacyOptionOrder:
+  - kali
+  - bagi
+  - sama
+concepts:
+  - concept: MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: tan 30° = 20 / x. Nilai x paling dekat ke...
+  options:
+    - id: kali
+      label: 11,5
+    - id: bagi
+      label: 34,6
+    - id: sama
+      label: 20,0
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: bagi
+  acceptedForms:
+    - 34,6
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - check of typed core T13
+    - "composite alias: the frontend never sends these ids to the backend"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

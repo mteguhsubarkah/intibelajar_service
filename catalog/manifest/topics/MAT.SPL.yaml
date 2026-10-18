@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: MAT.SPL
+subject: MAT
+title: Sistem Persamaan & Pertidaksamaan
+subtitle: SPLTV · SPtLDV
+phase: E
+availability: PLANNED
+bekal: []
+aliases:
+  - ns: TOPIC
+    value: spltv
+units: []
+concepts: []
+prerequisites: []

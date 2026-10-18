@@ -1,0 +1,518 @@
+schemaVersion: 1
+code: MAT.TRI
+subject: MAT
+title: Trigonometri
+subtitle: Perbandingan, identitas, grafik
+phase: E
+availability: MAPPED
+bekal:
+  - geometri
+  - Pythagoras
+  - koordinat
+aliases:
+  - ns: TOPIC
+    value: trigonometri
+units:
+  - code: MAT.TRI.U1
+    legacyId: tri-u1
+    title: Sudut & segitiga siku-siku
+    goal: Menamai sisi-sisi dan mengukur sudut dengan benar.
+    ordinal: 1
+  - code: MAT.TRI.U2
+    legacyId: tri-u2
+    title: Rasio trigonometri
+    goal: Memakai sin, cos, tan — termasuk di sudut istimewa.
+    ordinal: 2
+  - code: MAT.TRI.U3
+    legacyId: tri-u3
+    title: Kuadran & relasi
+    goal: Menentukan tanda dan nilai di semua kuadran.
+    ordinal: 3
+  - code: MAT.TRI.U4
+    legacyId: tri-u4
+    title: Segitiga sembarang
+    goal: Menyelesaikan segitiga yang tidak siku-siku.
+    ordinal: 4
+  - code: MAT.TRI.U5
+    legacyId: tri-u5
+    title: Fungsi & grafik
+    goal: Membaca grafik trigonometri dari lingkaran satuan.
+    ordinal: 5
+  - code: MAT.TRI.U6
+    legacyId: tri-u6
+    title: Terapkan
+    goal: Menyelesaikan persamaan dan soal tinggi, jarak, navigasi.
+    ordinal: 6
+concepts:
+  - code: MAT.TRI.PRASYARAT
+    title: Prasyarat
+    subtitle: Geometri · Pythagoras · koordinat
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: true
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-a
+  - code: MAT.TRI.UKURAN_SUDUT
+    title: Ukuran Sudut
+    subtitle: Derajat, menit, detik
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U1
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-b
+  - code: MAT.TRI.RADIAN
+    title: Radian
+    subtitle: Derajat ↔ radian
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U1
+    ordinal: 3
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-b2
+  - code: MAT.TRI.SEGITIGA_SIKU_SIKU
+    title: Segitiga Siku-siku
+    subtitle: Sisi depan · samping · miring
+    objectives:
+      - Bisa menentukan mana sisi depan dan mana sisi samping terhadap sudut acuan, tanpa bergantung pada posisi gambar.
+    misconceptions: []
+    unit: MAT.TRI.U1
+    ordinal: 4
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: tri-c
+      - ns: TYPED_MAP
+        value: T04
+    review:
+      status: PROPOSED
+      decision: D6
+      fields:
+        - aliases.TYPED_MAP
+        - objectives
+      evidence:
+        - 'T04 "Mengenali Sisi Terhadap Sudut" teaches naming depan/samping/miring against the reference angle; tri-c is "Segitiga Siku-siku: Sisi depan · samping · miring"'
+        - objective copied from data/cores (T04)
+  - code: MAT.TRI.DEFINISI_SIN_COS_TAN
+    title: Definisi sin, cos, tan
+    subtitle: Perbandingan sisi
+    objectives:
+      - Bisa memilih tan ketika sisi depan dan sisi samping terhadap sudut diketahui.
+    misconceptions:
+      - code: MEMAKAI_COS
+        description: Memakai cos
+        indicators:
+          - "trig-depression-01: jawaban 10√3 m"
+      - code: MEMAKAI_SIN
+        description: Memakai sin
+        indicators:
+          - "trig-depression-01: jawaban 10 m"
+    unit: MAT.TRI.U2
+    ordinal: 5
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: tri-d
+      - ns: TYPED_MAP
+        value: T10
+    review:
+      status: PROPOSED
+      decision: D6
+      fields:
+        - aliases.TYPED_MAP
+        - objectives
+      evidence:
+        - 'T10 "Memilih Tan dari Diagram" teaches choosing the ratio from known sides; tri-d is "Definisi sin, cos, tan: Perbandingan sisi"'
+        - objective copied from data/cores (T10)
+  - code: MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+    title: Enam Rasio Trigonometri
+    subtitle: sin · cos · tan · csc · sec · cot
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U2
+    ordinal: 6
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: tri-e
+  - code: MAT.TRI.SUDUT_ISTIMEWA
+    title: Sudut Istimewa
+    subtitle: 0° · 30° · 45° · 60° · 90°
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U2
+    ordinal: 7
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: tri-f
+      - ns: TYPED_MAP
+        value: sudut-istimewa
+    review:
+      status: PROPOSED
+      decision: D6
+      fields:
+        - aliases.TYPED_MAP
+      evidence:
+        - curriculum/trigonometry.ts node "sudut-istimewa" has the same title "Sudut Istimewa"
+  - code: MAT.TRI.KUADRAN_TANDA
+    title: Kuadran & Tanda
+    subtitle: Tanda tiap kuadran
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U3
+    ordinal: 8
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-g
+  - code: MAT.TRI.SUDUT_BERELASI
+    title: Sudut Berelasi
+    subtitle: Relasi antar kuadran
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U3
+    ordinal: 9
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-h
+      - ns: TYPED_MAP
+        value: sudut-berelasi
+    review:
+      status: PROPOSED
+      decision: D6
+      fields:
+        - aliases.TYPED_MAP
+      evidence:
+        - curriculum/trigonometry.ts node "sudut-berelasi" has the same title "Sudut Berelasi"
+  - code: MAT.TRI.IDENTITAS_DASAR
+    title: Identitas Dasar
+    subtitle: sin²+cos² = 1
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U3
+    ordinal: 10
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-i
+  - code: MAT.TRI.ATURAN_SINUS
+    title: Aturan Sinus
+    subtitle: Segitiga sembarang
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U4
+    ordinal: 11
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-j
+  - code: MAT.TRI.ATURAN_COSINUS
+    title: Aturan Cosinus
+    subtitle: Segitiga sembarang
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U4
+    ordinal: 12
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-k
+  - code: MAT.TRI.LUAS_SEGITIGA
+    title: Luas Segitiga
+    subtitle: Segitiga sembarang
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U4
+    ordinal: 13
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-l
+  - code: MAT.TRI.LINGKARAN_SATUAN
+    title: Lingkaran Satuan
+    subtitle: Fungsi trigonometri
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U5
+    ordinal: 14
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-m
+  - code: MAT.TRI.GRAFIK_SIN_COS_TAN
+    title: Grafik sin, cos, tan
+    subtitle: Bentuk grafik
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U5
+    ordinal: 15
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-n
+  - code: MAT.TRI.PERIODE_AMPLITUDO
+    title: Periode & Amplitudo
+    subtitle: Pergeseran grafik
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U5
+    ordinal: 16
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-o
+  - code: MAT.TRI.SUDUT_ELEVASI_DEPRESI
+    title: Sudut Elevasi & Depresi
+    subtitle: Penerapan
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U6
+    ordinal: 17
+    estimatedMinutes: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: tri-p
+  - code: MAT.TRI.PERSAMAAN_SEDERHANA
+    title: Persamaan Sederhana
+    subtitle: sin x = k pada satu putaran
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U6
+    ordinal: 18
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-q
+  - code: MAT.TRI.PERSAMAAN_DENGAN_IDENTITAS
+    title: Persamaan dengan Identitas
+    subtitle: Bentuk kuadrat · sudut ganda
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U6
+    ordinal: 19
+    estimatedMinutes: 7
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-q2
+  - code: MAT.TRI.SOAL_KONTEKSTUAL
+    title: Soal Kontekstual
+    subtitle: Tinggi tiang · jarak · navigasi
+    objectives: []
+    misconceptions: []
+    unit: MAT.TRI.U6
+    ordinal: 20
+    estimatedMinutes: 10
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: tri-r
+  - code: MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+    title: Mencari Sisi yang Belum Diketahui
+    objectives:
+      - Bisa menentukan sisi yang belum diketahui dari rasio yang sudah tepat, tanpa tertukar arah operasinya.
+    misconceptions: []
+    unit: MAT.TRI.U2
+    ordinal: 21
+    estimatedMinutes: 2
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: TYPED_MAP
+        value: T13
+    review:
+      status: PROPOSED
+      decision: D6
+      fields:
+        - whole concept
+        - objectives
+      evidence:
+        - T13 "Mencari Sisi yang Belum Diketahui" (solve the side from a correct ratio) has no counterpart in curriculum.ts; proposed as a new concept without a MAP alias
+        - objective copied from data/cores (T13)
+prerequisites:
+  - concept: MAT.TRI.UKURAN_SUDUT
+    requires: MAT.TRI.PRASYARAT
+    kind: HARD
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    requires: MAT.TRI.PRASYARAT
+    kind: HARD
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    requires: MAT.TRI.UKURAN_SUDUT
+    kind: SOFT
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    requires: MAT.TRI.SEGITIGA_SIKU_SIKU
+    kind: HARD
+  - concept: MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+    requires: MAT.TRI.DEFINISI_SIN_COS_TAN
+    kind: HARD
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    requires: MAT.TRI.DEFINISI_SIN_COS_TAN
+    kind: HARD
+  - concept: MAT.TRI.KUADRAN_TANDA
+    requires: MAT.TRI.DEFINISI_SIN_COS_TAN
+    kind: HARD
+  - concept: MAT.TRI.KUADRAN_TANDA
+    requires: MAT.TRI.UKURAN_SUDUT
+    kind: HARD
+  - concept: MAT.TRI.KUADRAN_TANDA
+    requires: MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+    kind: SOFT
+  - concept: MAT.TRI.SUDUT_BERELASI
+    requires: MAT.TRI.KUADRAN_TANDA
+    kind: HARD
+  - concept: MAT.TRI.IDENTITAS_DASAR
+    requires: MAT.TRI.DEFINISI_SIN_COS_TAN
+    kind: HARD
+  - concept: MAT.TRI.IDENTITAS_DASAR
+    requires: MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+    kind: SOFT
+  - concept: MAT.TRI.IDENTITAS_DASAR
+    requires: MAT.TRI.SUDUT_ISTIMEWA
+    kind: SOFT
+  - concept: MAT.TRI.ATURAN_SINUS
+    requires: MAT.TRI.SUDUT_BERELASI
+    kind: HARD
+  - concept: MAT.TRI.ATURAN_SINUS
+    requires: MAT.TRI.SUDUT_ISTIMEWA
+    kind: SOFT
+  - concept: MAT.TRI.ATURAN_COSINUS
+    requires: MAT.TRI.SUDUT_BERELASI
+    kind: HARD
+  - concept: MAT.TRI.ATURAN_COSINUS
+    requires: MAT.TRI.SUDUT_ISTIMEWA
+    kind: SOFT
+  - concept: MAT.TRI.LUAS_SEGITIGA
+    requires: MAT.TRI.SUDUT_BERELASI
+    kind: HARD
+  - concept: MAT.TRI.LUAS_SEGITIGA
+    requires: MAT.TRI.ATURAN_SINUS
+    kind: SOFT
+  - concept: MAT.TRI.LUAS_SEGITIGA
+    requires: MAT.TRI.ATURAN_COSINUS
+    kind: SOFT
+  - concept: MAT.TRI.LINGKARAN_SATUAN
+    requires: MAT.TRI.DEFINISI_SIN_COS_TAN
+    kind: HARD
+  - concept: MAT.TRI.RADIAN
+    requires: MAT.TRI.UKURAN_SUDUT
+    kind: HARD
+  - concept: MAT.TRI.LINGKARAN_SATUAN
+    requires: MAT.TRI.RADIAN
+    kind: HARD
+  - concept: MAT.TRI.LINGKARAN_SATUAN
+    requires: MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+    kind: SOFT
+  - concept: MAT.TRI.GRAFIK_SIN_COS_TAN
+    requires: MAT.TRI.LINGKARAN_SATUAN
+    kind: HARD
+  - concept: MAT.TRI.PERIODE_AMPLITUDO
+    requires: MAT.TRI.GRAFIK_SIN_COS_TAN
+    kind: HARD
+  - concept: MAT.TRI.SUDUT_ELEVASI_DEPRESI
+    requires: MAT.TRI.DEFINISI_SIN_COS_TAN
+    kind: HARD
+  - concept: MAT.TRI.SUDUT_ELEVASI_DEPRESI
+    requires: MAT.TRI.SUDUT_ISTIMEWA
+    kind: SOFT
+  - concept: MAT.TRI.PERSAMAAN_SEDERHANA
+    requires: MAT.TRI.SUDUT_BERELASI
+    kind: HARD
+  - concept: MAT.TRI.PERSAMAAN_SEDERHANA
+    requires: MAT.TRI.GRAFIK_SIN_COS_TAN
+    kind: SOFT
+  - concept: MAT.TRI.PERSAMAAN_DENGAN_IDENTITAS
+    requires: MAT.TRI.PERSAMAAN_SEDERHANA
+    kind: HARD
+  - concept: MAT.TRI.PERSAMAAN_DENGAN_IDENTITAS
+    requires: MAT.TRI.IDENTITAS_DASAR
+    kind: HARD
+  - concept: MAT.TRI.SOAL_KONTEKSTUAL
+    requires: MAT.TRI.SUDUT_ELEVASI_DEPRESI
+    kind: HARD
+  - concept: MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+    requires: MAT.TRI.SEGITIGA_SIKU_SIKU
+    kind: HARD
+    review:
+      status: PROPOSED
+      decision: D6
+      fields:
+        - kind
+      evidence:
+        - "curriculum/trigonometry.ts: T13 lists T04 as a prerequisite"
+  - concept: MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+    requires: MAT.TRI.DEFINISI_SIN_COS_TAN
+    kind: HARD
+    review:
+      status: PROPOSED
+      decision: D6
+      fields:
+        - kind
+      evidence:
+        - "curriculum/trigonometry.ts: T13 lists T10 as a prerequisite"

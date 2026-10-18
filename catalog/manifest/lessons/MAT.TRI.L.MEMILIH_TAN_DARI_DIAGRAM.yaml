@@ -1,0 +1,33 @@
+schemaVersion: 1
+code: MAT.TRI.L.MEMILIH_TAN_DARI_DIAGRAM
+title: Memilih Tan dari Diagram
+estimatedMinutes: 2
+aliases:
+  - ns: TYPED_LESSON
+    value: T10
+concepts:
+  - MAT.TRI.DEFINISI_SIN_COS_TAN
+blocks:
+  - type: text
+    slide: 0
+    text: Fokus dulu pada sudut acuan. Setelah itu, identifikasi sisi depan dan sisi samping terhadap sudut tersebut.
+  - type: text
+    slide: 0
+    text: "Kalau yang diketahui adalah depan dan samping, tan adalah rasio langsung: tan θ = depan / samping."
+checks:
+  - question: MAT.TRI.Q.T10_CHECK_1
+    ordinal: 0
+    slideIndex: 0
+    required: true
+  - question: MAT.TRI.Q.T10_CHECK_2
+    ordinal: 1
+    slideIndex: 0
+    required: true
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+  evidence:
+    - 'T10 "Memilih Tan dari Diagram" teaches choosing the ratio from known sides; tri-d is "Definisi sin, cos, tan: Perbandingan sisi"'
+    - "single slide: data/cores has no slide boundaries; all checks after slide 0"

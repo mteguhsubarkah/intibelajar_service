@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.FUNNEL_C2
+familyCode: MAT.TRI.F.FUNNEL_C2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coba.ts CHECKS
+aliases:
+  - ns: ITEM
+    value: c2
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kamu tahu sisi depan dan sisi samping. Perbandingan mana yang dipakai?
+  options:
+    - id: a
+      label: sin
+    - id: b
+      label: cos
+    - id: c
+      label: tan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - tan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+  feedback:
+    correct: Tepat. tan itu satu-satunya yang tidak memakai sisi miring.
+    incorrect: Belum tepat. sin butuh miring, cos butuh miring — yang cuma pakai depan dan samping adalah tan.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - "c2: asks which ratio uses depan and samping"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

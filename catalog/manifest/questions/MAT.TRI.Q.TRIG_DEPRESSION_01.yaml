@@ -1,0 +1,87 @@
+schemaVersion: 1
+code: MAT.TRI.Q.TRIG_DEPRESSION_01
+familyCode: MAT.TRI.F.TOWER_DEPRESSION_30
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: MENARA
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: frontend:src/data/questions/trigDepression01.ts
+  note: title "Jarak mendatar"
+aliases:
+  - ns: ITEM
+    value: trig-depression-01
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dari puncak menara setinggi 20 m, seorang pengamat melihat mobil dengan sudut depresi 30°. Berapa jarak mendatar mobil dari kaki menara?
+  hints: []
+  answerFormat: NUMBER
+  answerExample: 5√2 atau 7,07
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 34.641016
+    unit: m
+    tolerance:
+      relative: 0.02
+      floor: 1
+  acceptedForms:
+    - 20√3 m
+  solutionPaths:
+    - code: TAN
+      label: Rantai sudut → sisi → rasio → persamaan
+      steps:
+        - code: ANGLE_REFERENCE
+          description: Sisi depan dan samping sudah dikenali dengan benar.
+          concepts:
+            - code: MAT.TRI.SEGITIGA_SIKU_SIKU
+              role: REQUIRED
+        - code: RATIO_SELECTION
+          description: Rasio sudah dipilih sesuai sisi yang diketahui.
+          concepts:
+            - code: MAT.TRI.DEFINISI_SIN_COS_TAN
+              role: REQUIRED
+        - code: FINAL_ANSWER
+          description: Persamaan menghasilkan jawaban yang benar.
+          concepts:
+            - code: MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 17.320508
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      misconceptionCode: MEMAKAI_COS
+      explanation: Kamu memakai cos.
+    - pattern:
+        kind: NUMERIC
+        value: 10
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      misconceptionCode: MEMAKAI_SIN
+      explanation: Kamu memakai sin.
+  finalAnswerEvidence:
+    - MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI
+review:
+  status: PROPOSED
+  decision: D5
+  fields:
+    - familyCode
+    - concepts
+    - finalAnswerEvidence
+    - misconceptionMap
+  evidence:
+    - "soal-menara (coba.ts/bank.ts) and trig-depression-01 (questions/) are the same 20 m / 30° depression situation with different wording; trig-depression-01-retry is its declared retry. Proposed: separate questions, one family (INV-13: anchor and retries never count as independent transfer)"
+    - concepts and steps from the question's DiagnosticRule (T04 → T10 → T13); misconceptions attributed to the ratio concept (T10)

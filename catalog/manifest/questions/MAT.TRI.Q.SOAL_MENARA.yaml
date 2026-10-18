@@ -1,0 +1,99 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SOAL_MENARA
+familyCode: MAT.TRI.F.TOWER_DEPRESSION_30
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: FREE_RESPONSE
+contextTag: MENARA
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: frontend:src/data/bank.ts + coba.ts QUESTION/SOLUTION/HINT
+aliases:
+  - ns: ITEM
+    value: soal-menara
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah menara setinggi 20 m dilihat dari sebuah titik dengan sudut depresi 30°. Berapa jarak mendatar titik itu ke kaki menara?
+  hints:
+    - step: 1
+      conceptCode: MAT.TRI.SEGITIGA_SIKU_SIKU
+      lead: Namai sisinya dari sudut 30°.
+      note: Menara 20 m berdiri di depan sudut, itu sisi depan. Jarak mendatar menempel di tanah, itu sisi samping.
+    - step: 2
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      lead: Pilih perbandingan yang cocok dengan sisi yang kamu punya.
+    - step: 3
+      conceptCode: MAT.TRI.SUDUT_ISTIMEWA
+      lead: Sudut 30° punya nilai yang rapi.
+      note: Nilainya bisa kamu hitung tanpa kalkulator — dipakai di langkah terakhir, saat angkanya dihitung.
+  answerFormat: TEXT
+rubric:
+  schemaVersion: 1
+  evaluator: tower-v1
+  answer:
+    value: 34.641016
+    unit: m
+    tolerance:
+      relative: 0.02
+      floor: 1
+  acceptedForms:
+    - tan 30° = 20 / x
+    - x = 20√3 ≈ 34,6 m
+  solutionPaths:
+    - code: TAN
+      label: tan dari sisi depan dan samping
+      steps:
+        - code: S1
+          description: "Namai sisinya: 20 m = depan, x = samping"
+          concepts:
+            - code: MAT.TRI.SEGITIGA_SIKU_SIKU
+              role: REQUIRED
+        - code: S2
+          description: "Pilih perbandingan: depan & samping → tan"
+          concepts:
+            - code: MAT.TRI.DEFINISI_SIN_COS_TAN
+              role: REQUIRED
+        - code: S3
+          description: "Hitung: x = 20 / tan 30° = 20√3 ≈ 34,6 m"
+          concepts:
+            - code: MAT.TRI.SUDUT_ISTIMEWA
+              role: REQUIRED
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+    - MAT.TRI.SUDUT_ISTIMEWA
+  workedSolution:
+    steps:
+      - title: Namai sisinya
+        body: 20 m = depan, x = samping
+      - title: Pilih perbandingan
+        body: depan & samping → tan
+      - title: Hitung
+        body: x = 20 / tan 30° = 20√3 ≈ 34,6 m
+    after:
+      - tan 30° = 20 / x
+      - x = 20√3 ≈ 34,6 m
+review:
+  status: PROPOSED
+  decision: D5
+  fields:
+    - familyCode
+    - solutionPaths
+    - finalAnswerEvidence
+    - visibility
+  evidence:
+    - "soal-menara (coba.ts/bank.ts) and trig-depression-01 (questions/) are the same 20 m / 30° depression situation with different wording; trig-depression-01-retry is its declared retry. Proposed: separate questions, one family (INV-13: anchor and retries never count as independent transfer)"
+    - solution steps paired with HINT.steps cores in order (sides → ratio → special angle)
+    - tower-v1 branch rules (services/analysis.ts) are ported in Slice 2; Slice 1 publishes the item but no QUESTION_LOOP uses it

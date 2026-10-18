@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_ISTIMEWA_C0
+familyCode: MAT.TRI.F.SUDUT_ISTIMEWA_C0
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-istimewa chunks[0].check
+aliases:
+  - ns: ITEM
+    value: core:sudut-istimewa:c0
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di segitiga 30°–60°–90° dengan sisi miring 2, berapa panjang sisi di depan sudut 30°?
+  options:
+    - id: a
+      label: √3
+    - id: b
+      label: "1"
+    - id: c
+      label: "2"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: "Tepat. Sudut terkecil berhadapan dengan sisi terpendek: panjangnya 1."
+    incorrect: Belum tepat. Sisi di depan 30° itu yang terpendek, yaitu 1. √3 adalah sisi di depan 60°, dan 2 adalah sisi miring.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson sudut-istimewa, whose coreId is tri-f
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

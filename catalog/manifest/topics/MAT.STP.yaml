@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: MAT.STP
+subject: MAT
+title: Statistika & Peluang
+subtitle: Kelas X
+phase: E
+availability: PLANNED
+bekal: []
+aliases:
+  - ns: TOPIC
+    value: statpel
+units: []
+concepts: []
+prerequisites: []

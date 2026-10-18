@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: MAT.INV
+subject: MAT
+title: Fungsi Invers & Komposisi
+subtitle: Kelas XI–XII
+phase: F
+availability: PLANNED
+bekal: []
+aliases:
+  - ns: TOPIC
+    value: invers
+units: []
+concepts: []
+prerequisites: []

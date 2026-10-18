@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERBANDINGAN_TRIG_C0
+familyCode: MAT.TRI.F.PERBANDINGAN_TRIG_C0
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: TANGGA
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts perbandingan-trig chunks[0].check
+aliases:
+  - ns: ITEM
+    value: core:perbandingan-trig:c0
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tangga 4 m bersandar di dinding dan membentuk sudut 60° dengan tanah. Kamu mau mencari tinggi dinding. Perbandingan mana yang dipakai?
+  options:
+    - id: a
+      label: sin
+    - id: b
+      label: cos
+    - id: c
+      label: tan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sin
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.ENAM_RASIO_TRIGONOMETRI
+  feedback:
+    correct: Tepat. Tinggi dinding berhadapan dengan sudut (depan) dan tangga adalah sisi miring — pasangan itu milik sin.
+    incorrect: Belum tepat. Tinggi dinding berhadapan dengan sudut (depan), tangga adalah sisi miring. Pasangan depan dan miring milik sin.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson perbandingan-trig, whose coreId is tri-e
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag TANGGA from the keyword table

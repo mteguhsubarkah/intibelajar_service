@@ -1,0 +1,279 @@
+schemaVersion: 1
+code: MAT.EKS
+subject: MAT
+title: Eksponen & Logaritma
+subtitle: Pangkat, akar, dan logaritma
+phase: E
+availability: MAPPED
+bekal:
+  - operasi bilangan
+  - akar
+  - persamaan linear
+aliases:
+  - ns: TOPIC
+    value: eksponen
+units:
+  - code: MAT.EKS.U1
+    legacyId: eks-u1
+    title: Dasar pangkat
+    goal: Paham apa arti pangkat dan aturan mainnya.
+    ordinal: 1
+  - code: MAT.EKS.U2
+    legacyId: eks-u2
+    title: Akar & pangkat pecahan
+    goal: Melihat akar sebagai pangkat — dua tulisan, satu makna.
+    ordinal: 2
+  - code: MAT.EKS.U3
+    legacyId: eks-u3
+    title: Fungsi eksponen
+    goal: Memakai pangkat sebagai fungsi dan membaca grafiknya.
+    ordinal: 3
+  - code: MAT.EKS.U4
+    legacyId: eks-u4
+    title: Logaritma
+    goal: Memahami logaritma sebagai kebalikan dari pangkat.
+    ordinal: 4
+  - code: MAT.EKS.U5
+    legacyId: eks-u5
+    title: Persamaan
+    goal: Menyelesaikan persamaan pangkat dan logaritma.
+    ordinal: 5
+  - code: MAT.EKS.U6
+    legacyId: eks-u6
+    title: Terapkan
+    goal: Memakai semuanya di pertumbuhan, peluruhan, pH, dan skala Richter.
+    ordinal: 6
+concepts:
+  - code: MAT.EKS.PRASYARAT
+    title: Prasyarat
+    subtitle: Operasi bilangan · akar · persamaan linear
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: true
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-a
+  - code: MAT.EKS.DEFINISI_EKSPONEN
+    title: Definisi Eksponen
+    subtitle: aⁿ · pangkat positif, nol, negatif
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U1
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: eks-b
+  - code: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    title: Sifat-sifat Eksponen
+    subtitle: Perkalian · pembagian · pangkat dari pangkat
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U1
+    ordinal: 3
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-c
+  - code: MAT.EKS.BENTUK_AKAR
+    title: Bentuk Akar
+    subtitle: Definisi · sifat · operasi
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U2
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-d
+  - code: MAT.EKS.EKSPONEN_RASIONAL
+    title: Eksponen Rasional
+    subtitle: a^(m/n)
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U2
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-e
+  - code: MAT.EKS.FUNGSI_EKSPONEN
+    title: Fungsi Eksponen
+    subtitle: f(x) = aˣ
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U3
+    ordinal: 6
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-f
+  - code: MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+    title: Grafik Fungsi Eksponen
+    subtitle: Monoton · asimtot
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U3
+    ordinal: 7
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-g
+  - code: MAT.EKS.DEFINISI_LOGARITMA
+    title: Definisi Logaritma
+    subtitle: ᵃlog b = c ⇔ aᶜ = b
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U4
+    ordinal: 8
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-h
+  - code: MAT.EKS.SIFAT_SIFAT_LOGARITMA
+    title: Sifat-sifat Logaritma
+    subtitle: log(ab) · log(a/b) · perubahan basis
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U4
+    ordinal: 9
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-i
+  - code: MAT.EKS.PERSAMAAN_EKSPONEN
+    title: Persamaan Eksponen
+    subtitle: Persamaan & pertidaksamaan
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U5
+    ordinal: 10
+    estimatedMinutes: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: eks-j
+  - code: MAT.EKS.PERSAMAAN_LOGARITMA
+    title: Persamaan Logaritma
+    subtitle: Persamaan & pertidaksamaan
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U5
+    ordinal: 11
+    estimatedMinutes: 7
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-k
+  - code: MAT.EKS.PENERAPAN
+    title: Penerapan
+    subtitle: Pertumbuhan · peluruhan · pH · Richter
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U6
+    ordinal: 12
+    estimatedMinutes: 8
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-l
+  - code: MAT.EKS.SOAL_KONTEKSTUAL
+    title: Soal Kontekstual
+    subtitle: Pemodelan masalah nyata
+    objectives: []
+    misconceptions: []
+    unit: MAT.EKS.U6
+    ordinal: 13
+    estimatedMinutes: 10
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: eks-m
+prerequisites:
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    requires: MAT.EKS.PRASYARAT
+    kind: HARD
+  - concept: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    requires: MAT.EKS.DEFINISI_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.BENTUK_AKAR
+    requires: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.EKSPONEN_RASIONAL
+    requires: MAT.EKS.BENTUK_AKAR
+    kind: HARD
+  - concept: MAT.EKS.FUNGSI_EKSPONEN
+    requires: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.FUNGSI_EKSPONEN
+    requires: MAT.EKS.EKSPONEN_RASIONAL
+    kind: HARD
+  - concept: MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+    requires: MAT.EKS.FUNGSI_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.DEFINISI_LOGARITMA
+    requires: MAT.EKS.DEFINISI_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.DEFINISI_LOGARITMA
+    requires: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.SIFAT_SIFAT_LOGARITMA
+    requires: MAT.EKS.DEFINISI_LOGARITMA
+    kind: HARD
+  - concept: MAT.EKS.PERSAMAAN_EKSPONEN
+    requires: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.PERSAMAAN_LOGARITMA
+    requires: MAT.EKS.SIFAT_SIFAT_LOGARITMA
+    kind: HARD
+  - concept: MAT.EKS.PENERAPAN
+    requires: MAT.EKS.PERSAMAAN_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.PENERAPAN
+    requires: MAT.EKS.PERSAMAAN_LOGARITMA
+    kind: HARD
+  - concept: MAT.EKS.PENERAPAN
+    requires: MAT.EKS.FUNGSI_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.PENERAPAN
+    requires: MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+    kind: HARD
+  - concept: MAT.EKS.SOAL_KONTEKSTUAL
+    requires: MAT.EKS.PENERAPAN
+    kind: HARD

@@ -1,0 +1,40 @@
+schemaVersion: 1
+subjects:
+  - code: MAT
+    title: Matematika
+    availability: AVAILABLE
+    aliases:
+      - ns: SUBJECT
+        value: matematika
+  - code: FIS
+    title: Fisika
+    availability: COMING_SOON
+    aliases:
+      - ns: SUBJECT
+        value: fisika
+  - code: KIM
+    title: Kimia
+    availability: COMING_SOON
+    aliases:
+      - ns: SUBJECT
+        value: kimia
+  - code: BIO
+    title: Biologi
+    availability: COMING_SOON
+    aliases:
+      - ns: SUBJECT
+        value: biologi
+  - code: ING
+    title: Bahasa Inggris
+    availability: COMING_SOON
+    aliases:
+      - ns: SUBJECT
+        value: inggris
+  - code: PRO
+    title: Pemrograman
+    availability: COMING_SOON
+    aliases:
+      - ns: SUBJECT
+        value: pemrograman
+      - ns: SUBJECT
+        value: cs

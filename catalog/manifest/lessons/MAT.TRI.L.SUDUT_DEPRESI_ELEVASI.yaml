@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.TRI.L.SUDUT_DEPRESI_ELEVASI
+title: Sudut Depresi / Elevasi
+estimatedMinutes: 7
+aliases:
+  - ns: ROUTE
+    value: sudut-depresi-elevasi
+concepts:
+  - MAT.TRI.SUDUT_ELEVASI_DEPRESI
+  - MAT.TRI.SEGITIGA_SIKU_SIKU
+blocks:
+  - type: heading
+    slide: 0
+    text: Sudut dibaca dari garis horizontal
+  - type: text
+    slide: 0
+    text: Sudut **elevasi** dihitung dari garis horizontal **ke atas**. Sudut **depresi** dihitung dari garis horizontal **ke bawah**.
+  - type: text
+    slide: 0
+    text: Patokannya selalu garis horizontal — bukan tembok, bukan tanah.
+  - type: math
+    slide: 0
+    name: Elevasi
+    expression: horizontal → atas
+  - type: math
+    slide: 0
+    name: Depresi
+    expression: horizontal → bawah
+  - type: heading
+    slide: 1
+    text: Contoh dari puncak menara
+  - type: text
+    slide: 1
+    text: Pengamat di puncak menara melihat mobil dengan sudut depresi **30°**.
+  - type: text
+    slide: 1
+    text: Tarik garis horizontal dari posisi pengamat. Sudut 30° diukur dari garis itu, **bukan dari tembok menara**.
+  - type: math
+    slide: 1
+    name: Depresi dari atas
+    expression: = elevasi dari bawah
+    highlight: true
+checks:
+  - question: MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C0
+    ordinal: 0
+    slideIndex: 0
+    required: true
+  - question: MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C1
+    ordinal: 1
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.SUDUT_DEPRESI_ELEVASI
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+  evidence:
+    - coreLessons.ts coreId is tri-p
+    - coba.ts CORE_ROUTES routes tri-c, tri-p here
+    - estimatedMinutes taken from the concept, as the frontend does

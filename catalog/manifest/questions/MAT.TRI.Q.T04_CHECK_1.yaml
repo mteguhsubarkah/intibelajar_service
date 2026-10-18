@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.TRI.Q.T04_CHECK_1
+familyCode: MAT.TRI.F.T04_CHECK_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/cores (T04.check-1)
+aliases:
+  - ns: ITEM
+    value: T04:check-1
+legacyOptionOrder:
+  - touching
+  - not-touching
+  - longest
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sudut acuan ditandai di titik A. Sisi mana yang berhadapan dengan sudut A?
+  options:
+    - id: touching
+      label: Sisi yang menyentuh titik A
+    - id: not-touching
+      label: Sisi yang tidak menyentuh titik A
+    - id: longest
+      label: Sisi yang paling panjang
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: not-touching
+  acceptedForms:
+    - Sisi yang tidak menyentuh titik A
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - check of typed core T04
+    - "composite alias: the frontend never sends these ids to the backend"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

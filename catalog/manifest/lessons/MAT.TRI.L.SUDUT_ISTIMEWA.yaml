@@ -1,0 +1,83 @@
+schemaVersion: 1
+code: MAT.TRI.L.SUDUT_ISTIMEWA
+title: Sudut Istimewa
+estimatedMinutes: 6
+aliases:
+  - ns: ROUTE
+    value: sudut-istimewa
+concepts:
+  - MAT.TRI.SUDUT_ISTIMEWA
+blocks:
+  - type: heading
+    slide: 0
+    text: Dua segitiga rahasia
+  - type: text
+    slide: 0
+    text: Hampir semua soal sudut istimewa berasal dari **dua segitiga** ini. Hafal sisinya sekali, dan nilai sin, cos, tan-nya ikut ketemu.
+  - type: text
+    slide: 0
+    text: Sisi terpendek selalu **berhadapan dengan sudut terkecil**. Di segitiga 30°–60°–90°, sisi itu panjangnya 1 dan sisi miringnya 2.
+  - type: figure
+    slide: 0
+    figureRef: tri-special
+  - type: heading
+    slide: 1
+    text: Baca nilainya dari gambar
+  - type: text
+    slide: 1
+    text: "Dari dua segitiga tadi, nilainya tinggal dibaca: **sin = depan / miring**, **cos = samping / miring**, **tan = depan / samping**."
+  - type: text
+    slide: 1
+    text: "Contoh: di segitiga 30°–60°–90°, sin 30° = 1/2 dan cos 30° = √3/2. Di segitiga 45°–45°–90°, sin 45° = 1/√2 = √2/2 dan tan 45° = 1."
+  - type: math
+    slide: 1
+    name: sin 30°
+    expression: 1/2
+  - type: math
+    slide: 1
+    name: cos 30°
+    expression: √3/2
+  - type: math
+    slide: 1
+    name: sin 45°
+    expression: √2/2
+    highlight: true
+  - type: math
+    slide: 1
+    name: tan 45°
+    expression: "1"
+  - type: heading
+    slide: 2
+    text: "Cara cepat: pola √k/2"
+  - type: text
+    slide: 2
+    text: Nilai sin untuk 0°, 30°, 45°, 60°, 90° bisa ditulis **√0/2, √1/2, √2/2, √3/2, √4/2**. Angka di dalam akar naik satu-satu.
+  - type: text
+    slide: 2
+    text: Untuk cos, polanya sama tapi **dibalik urutannya**. Jadi kamu tidak perlu menghafal lima nilai — cukup ingat polanya.
+  - type: figure
+    slide: 2
+    figureRef: pola
+checks:
+  - question: MAT.TRI.Q.SUDUT_ISTIMEWA_C0
+    ordinal: 0
+    slideIndex: 0
+    required: true
+  - question: MAT.TRI.Q.SUDUT_ISTIMEWA_C1
+    ordinal: 1
+    slideIndex: 1
+    required: true
+  - question: MAT.TRI.Q.SUDUT_ISTIMEWA_C2
+    ordinal: 2
+    slideIndex: 2
+    required: true
+practiceSet: MAT.TRI.S.SUDUT_ISTIMEWA
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+  evidence:
+    - coreLessons.ts coreId is tri-f
+    - coba.ts CORE_ROUTES routes tri-f here
+    - estimatedMinutes taken from the concept, as the frontend does

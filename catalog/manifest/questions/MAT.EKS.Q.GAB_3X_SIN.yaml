@@ -1,0 +1,68 @@
+schemaVersion: 1
+code: MAT.EKS.Q.GAB_3X_SIN
+familyCode: MAT.EKS.F.GAB_3X_SIN
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: frontend:src/data/bank.ts
+aliases:
+  - ns: ITEM
+    value: gab-3x-sin
+legacyOptionOrder:
+  - a
+  - b
+  - c
+  - d
+concepts:
+  - concept: MAT.EKS.PERSAMAAN_EKSPONEN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika 3ˣ = 9, berapa nilai sin (30° × x) ?
+  options:
+    - id: a
+      label: ½
+    - id: b
+      label: √3/2
+    - id: c
+      label: "1"
+    - id: d
+      label: √2/2
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - √3/2
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.PERSAMAAN_EKSPONEN
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: 3ˣ = 9 = 3², jadi x = 2. sin (30° × 2) = sin 60° = √3/2.
+    incorrect: 3ˣ = 9 = 3², jadi x = 2. sin (30° × 2) = sin 60° = √3/2.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts cores eks-j, tri-f (all proposed PRIMARY and assessable)
+    - "kind gabungan: K02 question application across topics; creates no prerequisite edge (INV-17)"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table

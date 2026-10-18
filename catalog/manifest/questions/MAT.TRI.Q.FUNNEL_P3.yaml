@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.FUNNEL_P3
+familyCode: MAT.TRI.F.FUNNEL_P3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: POHON
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coba.ts PRACTICE
+aliases:
+  - ns: ITEM
+    value: p3
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.DEFINISI_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah pohon setinggi 10 m dilihat dengan sudut elevasi 45°. Kamu tahu sisi depan dan ingin mencari sisi samping. Perbandingan mana yang dipakai?
+  options:
+    - id: a
+      label: sin 45° = 10 / x
+    - id: b
+      label: cos 45° = 10 / x
+    - id: c
+      label: tan 45° = 10 / x
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - tan 45° = 10 / x
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.DEFINISI_SIN_COS_TAN
+  feedback:
+    correct: Depan dan samping — itu tan.
+    incorrect: Depan dan samping dihubungkan oleh tan. sin dan cos dua-duanya butuh sisi miring.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - "p3: asks which ratio links depan and samping"
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag POHON from the keyword table

@@ -1,0 +1,34 @@
+schemaVersion: 1
+version: 1
+source:
+  extractor: extract-from-frontend v1
+  frontendCommit: efe1a9347dcc4b1c50e713f3364cf9b33ff2eb50
+  frontendDataDirty: false
+signOff:
+  status: PENDING
+  reviewers: []
+decisions:
+  - id: D1
+    status: APPROVED
+    summary: Published lessons and concepts are immutable; lessons get micro_lesson_revision (M2); the server numbers revisions (exposed as Lesson.contentVersion).
+  - id: D2
+    status: APPROVED
+    summary: "Secondary aliases live in catalog_alias (release_id, namespace, alias) with UNIQUE (release_id, namespace, alias). Namespaces: SUBJECT, TOPIC, MAP, TYPED_MAP, ROUTE, TYPED_LESSON, ITEM; option indexes via legacyOptionOrder."
+  - id: D3
+    status: PROPOSED
+    summary: "Codes: subject MAT/FIS/...; topic MAT.<3 letters> from a fixed table; concept <topic>.<TITLE_SLUG>; unit <topic>.U<n>; question <topic>.Q.<LEGACY_ID_SLUG>; family <topic>.F.<...>; lesson <topic>.L.<...>; set <topic|subject>.S.<...>. Content lead approves the meaning of each code."
+  - id: D4
+    status: PROPOSED
+    summary: "Every extracted item is PUBLIC_PRACTICE because its key already ships in the bundle. Open: may PUBLIC_PRACTICE attempts be transfer-eligible (proposed: no, reason PUBLIC_KEY)?"
+  - id: D5
+    status: PROPOSED
+    summary: "Tower question: soal-menara, trig-depression-01 and its retry are separate questions in one family MAT.TRI.F.TOWER_DEPRESSION_30 (wording differs, so not one question with two aliases)."
+  - id: D6
+    status: PROPOSED
+    summary: "Inferred mappings: lesson_concept (lesson coreId ∪ CORE_ROUTES), question_concept (all PRIMARY + assessable), typed T04→tri-c, T10→tri-d, new concept for T13, funnel item concepts, contextTag keyword table, concept availability (READY = taught or assessed), subject alias cs→PRO."
+gaps:
+  - curriculum/trigonometry.ts declares its own prerequisite graph (e.g. sudut-depresi-elevasi requires grafik-fungsi) that disagrees with curriculum.ts edges; only curriculum.ts edges and the T13 prerequisites were imported.
+  - trig-depression-01 diagnosticSteps (angle-reference, ratio-selection) are follow-up prompts with their own options; 03 §7 has no value object for them, so they are not imported. Decide in Slice 2 (QUESTION_LOOP clarification).
+  - The /coba funnel lesson ("materi", two slides, check c4) lives in a Vue component, not in src/data; it is not a micro_lesson yet. Its check c4 is imported as a question.
+  - Rubric.feedback (correct/incorrect text) and QuestionBody.answerExample are v1 extensions of the 03 §7 value objects, needed by L3 feedback and the typed answer field.
+  - Practice sets have no table in 04 §3; they are in sets.yaml and will live in the release snapshot until M2 decides (practice_set table or snapshot only).

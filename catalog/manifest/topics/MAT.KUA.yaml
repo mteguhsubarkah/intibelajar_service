@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: MAT.KUA
+subject: MAT
+title: Persamaan & Fungsi Kuadrat
+subtitle: Kelas X
+phase: E
+availability: PLANNED
+bekal: []
+aliases:
+  - ns: TOPIC
+    value: kuadrat
+units: []
+concepts: []
+prerequisites: []

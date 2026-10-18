@@ -1,0 +1,27 @@
+schemaVersion: 1
+relations:
+  - from: MAT.EKS
+    to: MAT.BAR
+    kind: REQUIRES
+    label: pangkat → suku ke-n deret geometri
+    source: CURRICULUM
+  - from: MAT.BAR
+    to: MAT.BNG
+    kind: REQUIRES
+    label: deret → bunga majemuk
+    source: CURRICULUM
+  - from: MAT.TRI
+    to: MAT.VEK
+    kind: REQUIRES
+    label: sin & cos → komponen vektor
+    source: MATHEMATICAL
+  - from: MAT.SPL
+    to: MAT.MTX
+    kind: RELATED
+    label: SPL ↔ matriks
+    source: MATHEMATICAL
+  - from: MAT.INV
+    to: MAT.KAL
+    kind: RELATED
+    label: fungsi → kalkulus
+    source: MATHEMATICAL

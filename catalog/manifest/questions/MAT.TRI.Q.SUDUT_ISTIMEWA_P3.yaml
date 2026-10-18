@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SUDUT_ISTIMEWA_P3
+familyCode: MAT.TRI.F.SUDUT_ISTIMEWA_P3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: BARE_VALUE
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts sudut-istimewa practice[3]
+aliases:
+  - ns: ITEM
+    value: sudut-istimewa:3
+  - ns: ITEM
+    value: core:sudut-istimewa:q3
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: cos 90° = ...
+  options:
+    - id: a
+      label: "1"
+    - id: b
+      label: "0"
+    - id: c
+      label: ½
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "0"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: cos memakai pola yang dibalik, jadi cos 90° = √0/2 = 0. Di 90° sisi samping menyusut jadi 0.
+    incorrect: cos 90° = 0. cos 0° yang bernilai 1, dan cos 60° = ½.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - bank.ts LESSON_CORES maps sudut-istimewa practice to tri-f
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag BARE_VALUE from the keyword table
