@@ -15,6 +15,7 @@ import {saveMailbox} from './development/mailbox.js';
 import {verifyMigrations} from './migrate.js';
 import {restoredSubjects} from './privacy/recovery.js';
 import {catalogReader} from './catalog/read.js';
+import {learningService} from './learning/service.js';
 
 declare module 'fastify' { interface FastifyRequest { principal?: identity.Principal; sessionToken?:string; safeSpan?:Span } }
 export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStream?:NodeJS.WritableStream;spanProcessors?:SpanProcessor[]}={}) {
@@ -72,7 +73,9 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   });
   app.setNotFoundHandler(()=>fail(404,'NOT_FOUND'));
   type Handler=(req:FastifyRequest,reply:FastifyReply)=>Promise<unknown>;
-  const route=(method:'GET'|'POST'|'PATCH'|'DELETE',path:string,access:'public'|'student'|'guardian'|'session',handler:Handler)=>{
+  // Operations of later slices fail closed before any request validation.
+  const disabled=new Set(['POST /v1/learning-sessions/{sessionId}/solution','GET /v1/learning-sessions/{sessionId}/solution','POST /v1/attempts/{attemptId}/diagnosis','POST /v1/diagnosis-runs/{diagnosisRunId}/reports']);
+  const route=(method:'GET'|'POST'|'PUT'|'PATCH'|'DELETE',path:string,access:'public'|'student'|'guardian'|'session',handler:Handler)=>{
     app.route({method,url:path.replace(/\{(\w+)\}/g,':$1'),preValidation:async(req)=>{
       if(access!=='public'){
         req.principal=await identity.authenticate(db,config,req.sessionToken);
@@ -80,7 +83,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
         if(access==='student'&&req.principal.role!=='STUDENT'||access==='guardian'&&req.principal.role!=='GUARDIAN')fail(403,'FORBIDDEN');
         if(method!=='GET'&&!equal(hash(String(req.headers['x-csrf-token']??'')),hash(req.principal.csrf)))fail(403,'CSRF_FAILED');
       }
-      if(path.startsWith('/v1/learning/')||path==='/v1/public/evaluations')fail(403,'FEATURE_DISABLED');
+      if(path.startsWith('/v1/learning/')||path==='/v1/public/evaluations'||disabled.has(method+' '+path))fail(403,'FEATURE_DISABLED');
       validateRequest(path,method,req);
     },handler:async(req,reply)=>{
       const result=await handler(req,reply);
@@ -184,6 +187,35 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
       return command(tx,'GUARDIAN',p.guardianId!,'POST guardian-deletion:'+id,key(req),null,async()=>({status:202,body:await privacy.deletion(tx,config,id,'GUARDIAN')}));
     }));
   });
+  // Learning sessions (Slice 1 M6): PRACTICE only. Commands are idempotent, consent-gated and versioned (04 §7).
+  const learning=learningService(config.key);
+  const learnerId=(req:FastifyRequest)=>req.principal!.learnerId!;
+  const learnLimit=(req:FastifyRequest)=>{
+    const key='learn:'+learnerId(req),time=Date.now(),state=limits.get(key);
+    const next=!state||state.until<=time?{count:0,until:time+60000}:state;next.count++;limits.set(key,next);
+    if(next.count>120)fail(429,'RATE_LIMITED');
+  };
+  const sessionCommand=(name:string,run:(tx:import('./db.js').Tx,req:FastifyRequest)=>Promise<Outcome>)=>async(req:FastifyRequest,reply:FastifyReply)=>{
+    learnLimit(req);
+    return send(reply,await learnerCommand(req,`POST ${name}:${params(req).sessionId}`,req.body,tx=>run(tx,req)));
+  };
+  type Body<T>=T;
+  route('POST','/v1/learning-sessions','student',async(req,reply)=>{learnLimit(req);
+    return send(reply,await learnerCommand(req,'POST /v1/learning-sessions',req.body,tx=>learning.create(tx,learnerId(req),req.body as Body<Parameters<typeof learning.create>[2]>)));});
+  route('GET','/v1/learning-sessions','student',async req=>{const q=req.query as {status?:'active'|'completed'|'all';cursor?:string;limit?:number};
+    return learning.list(db,learnerId(req),q.status??'all',q.cursor,q.limit??20);});
+  route('GET','/v1/learning-sessions/{sessionId}','student',async req=>learning.get(db,learnerId(req),params(req).sessionId!));
+  route('POST','/v1/learning-sessions/{sessionId}/attempts','student',sessionCommand('attempts',(tx,req)=>learning.submitAttempt(tx,learnerId(req),params(req).sessionId!,req.body as Body<Parameters<typeof learning.submitAttempt>[3]>)));
+  route('POST','/v1/learning-sessions/{sessionId}/quick-check-answers','student',sessionCommand('quick-check-answers',(tx,req)=>learning.answerQuickCheck(tx,learnerId(req),params(req).sessionId!,req.body as Body<Parameters<typeof learning.answerQuickCheck>[3]>)));
+  route('POST','/v1/learning-sessions/{sessionId}/actions','student',sessionCommand('actions',(tx,req)=>learning.action(tx,learnerId(req),params(req).sessionId!,req.body as Body<Parameters<typeof learning.action>[3]>)));
+  route('POST','/v1/learning-sessions/{sessionId}/hints','student',sessionCommand('hints',(tx,req)=>learning.hint(tx,learnerId(req),params(req).sessionId!,req.body as {step:number})));
+  route('PUT','/v1/learning-sessions/{sessionId}/checkpoint','student',async(req,reply)=>{learnLimit(req);
+    await learnerTransaction(req,tx=>learning.checkpoint(tx,learnerId(req),params(req).sessionId!,req.body as {route:string;sessionId?:string}));
+    return reply.code(204).send();});
+  route('GET','/v1/attempts/{attemptId}','student',async req=>learning.attempt(db,learnerId(req),params(req).attemptId!));
+  route('GET','/v1/diagnosis-runs/{diagnosisRunId}','student',async req=>learning.diagnosisRun(db,learnerId(req),params(req).diagnosisRunId!));
+  // Question-loop operations arrive with Slice 2; until then they fail closed.
+  for(const operation of disabled){const [method,path]=operation.split(' ') as ['GET'|'POST',string];route(method,path,'student',async()=>fail(403,'FEATURE_DISABLED'));}
   // Public catalog (Slice 1 M3): current release only, never rubrics or keys (INV-05).
   const catalog=catalogReader(config.key);
   const query=(req:FastifyRequest)=>req.query as Record<string,string|undefined>;

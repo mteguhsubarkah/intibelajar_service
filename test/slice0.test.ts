@@ -152,7 +152,8 @@ test('Slice 0 real PostgreSQL integration and security gates',async t=>{
       await assert.rejects(db.transaction().execute(tx=>requireConsent(tx,a.id,['AI_PROCESSING'])),{code:'CONSENT_REQUIRED'});
       a=await signin('learner-a@example.invalid');
       assert.equal((await inject('POST','/v1/me/consents/LEARNING_DATA/revocation',undefined,auth(a))).statusCode,403);
-      assert.equal((await inject('POST','/v1/learning-sessions',{} ,auth(a))).statusCode,404);
+      // Learning sessions exist since Slice 1 M6 (consent gating: test/learning-sessions.test.ts); a malformed create is still refused.
+      assert.equal((await inject('POST','/v1/learning-sessions',{} ,auth(a))).statusCode,400);
       assert.equal((await inject('POST','/v1/learning/intake/read',{imageDataUrl:'data:canary-personal-data'})).statusCode,403);
       const revokedLearning=await inject('POST',`/v1/guardian/learners/${a.id}/consents/LEARNING_DATA/revocation`,undefined,{...g,'idempotency-key':'revoke_learning'});
       assert.equal(revokedLearning.statusCode,200);assert.equal(revokedLearning.json().status,'DELETION_PENDING');

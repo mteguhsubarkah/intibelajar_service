@@ -9,5 +9,7 @@ export const messages: Record<string, string> = {
   LINK_EXPIRED: 'Tautan sudah kedaluwarsa atau digunakan.', FEATURE_DISABLED: 'Fitur belum diaktifkan.',
   DEPENDENCY_UNAVAILABLE: 'Integrasi belum tersedia.', IDEMPOTENCY_KEY_REUSED: 'Kunci permintaan sudah digunakan.',
   IDEMPOTENCY_IN_PROGRESS: 'Permintaan sedang diproses.', RATE_LIMITED: 'Terlalu banyak permintaan.',
+  STALE_STATE_VERSION: 'Sesi sudah berubah di tab lain. Muat ulang dulu.', INVALID_STATE_TRANSITION: 'Langkah ini belum bisa dilakukan sekarang.',
+  SESSION_EXPIRED: 'Sesi sudah berakhir. Mulai sesi baru.', CONTENT_UNAVAILABLE: 'Materi atau soal untuk pilihan ini belum tersedia.',
   INTERNAL_ERROR: 'Terjadi kesalahan. Silakan coba kembali.',
 };

@@ -1,6 +1,6 @@
 # Slice 1 implementation plan: catalog and deterministic practice
 
-Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1 (§7), M2 (§8), M3 (§9), M4 (§10) and M5 (§11) implemented against a synthetic reviewed fixture. M6–M9 not started.**
+Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1–M6 implemented against a synthetic reviewed fixture (§7–§12). M7–M9 not started.**
 Scope stays the same as Slice 0: synthetic learners and local development only.
 No real learner data, deployment or AI.
 
@@ -774,3 +774,56 @@ that branch's existing uncommitted Slice 0 changes.
 **Not covered:** `tower-v1` (Slice 2). The vitest specs in the Vue repo (`tests/unit/*.spec.ts`) are not
 runnable there, because vitest is not installed. The golden runner uses the repo's existing esbuild
 pattern instead.
+
+## 12. M6 status (2026-10-18)
+
+PRACTICE sessions run on the server: creation, lessons with quick checks, ordered practice items,
+inline deterministic grading with evidence and eligibility, hints, checkpoints, resume, abandonment
+and expiry. QUESTION_LOOP is Slice 2: creating one, and the solution, diagnosis-rerun and report
+operations, return `403 FEATURE_DISABLED` before any request validation.
+
+### Structure
+
+| Piece | Role |
+|---|---|
+| `src/learning/machine.ts` | **Pure** PRACTICE machine (E-02, E-12–E-15, E-22–E-26) with `allowedActions`. The version moves by exactly one when the state changes or an attempt is stored (INV-06). Legality never depends on a verdict, so the service grades first and writes nothing on a refusal. |
+| `src/learning/service.ts` | The 04 §7 protocol, inside `learnerCommand`. The order is: idempotency claim, learner lock and session re-check, `LEARNING_DATA` consent, session `FOR UPDATE` (404 for others), expiry (410), `expectedStateVersion` (409 `STALE_STATE_VERSION`), legality (409 `INVALID_STATE_TRANSITION`), and only then writes. Persistence is the difference between the machine's contexts. It also provides views, the signed keyset resume list and the E-25 sweeper (`expireSessions`, run by the worker). |
+| `src/assessment/grading.ts` | Runs `option-v1`/`numeric-v1` inline and writes one completed `GRADING` run plus one evidence row per mapped concept. It decides mastery and transfer eligibility with reason codes (06 §5). It also produces the `DiagnosisRun` view. |
+| `src/catalog/interface.ts`, `src/catalog/grading-source.ts` | Catalog interfaces. Learning gets items, lessons, checks and hints, and never a rubric. Assessment gets the pinned revision's rubric. The boundary checker allows rubric reads only in `grading-source.ts`, the publisher and `src/assessment/`. |
+
+### Decisions taken in M6
+
+- **One lesson slide can carry several required checks** (the typed lessons have 2–3 on slide 0).
+  `QUICK_CHECK` lasts until all of them are graded, instead of returning to `MICROLEARNING` after each one.
+- **`ADVANCE_LESSON {slideIndex}` follows 05 E-12 literally.** Required checks placed on the target
+  slide become due. `FINISH_LESSON` still requires every required check to be graded.
+- **Roles (06 §5.2):** an item is `TRANSFER` when it assesses the focus concept as `PRIMARY` and
+  assessable, and its family is fresh for the learner. Eligibility is re-checked at grading.
+- **Exposure:**
+  - Showing the key after grading records `FINAL_ANSWER_SHOWN` once per session and family.
+  - A practice session with a lesson records `LESSON_VIEWED` at creation.
+  - The attempt stores the strongest exposure in effect.
+- **No grade, no evidence:** `UNREADABLE` and `NOT_GRADED` answers are stored (version +1), keep the item
+  or check pending, and produce no evidence. An unexplained wrong answer completes as
+  `INSUFFICIENT_EVIDENCE` with a neutral clarification prompt. The DDL requires the prompt.
+- **`inputMode` is set by the server** (`TYPED`). The contract's response inputs do not accept it from clients.
+- **Rate limit:** 120 learning commands per learner per minute, in process.
+- **Not yet emitted:** `LESSON_COMPLETED` and the other progress events belong to Slice 3, together
+  with mastery and XP.
+
+### Verification (Node 24.19.0, PostgreSQL 17.5)
+
+| Check | Result |
+|---|---|
+| Full backend suite | **92/92 pass, on two consecutive runs.** Evidence: `evidence/slice1-m6-tests.txt`. |
+| Machine properties (`fast-check` 3.23.2, 300 runs × 25 steps each) | INV-06.1 version rule; terminal states absorb; items finish in order and never revert; completion means none pending; INV-16; checks stay graded; practice starts only after finish or skip; `allowedActions` equals the set of commands that some argument makes legal; question-loop commands are never legal. A coverage probe confirmed every state and command type is reached. |
+| API suite (11) | E-02 guards (consent, feature, content, strict body, INV-01). Lesson flow E-12–E-15 with an unreadable then a wrong check, "answer once", and formative evidence never eligible. E-22 order, grading, eligibility, exposure and completion. E-23 hints are idempotent and block transfer (INV-12). INV-14 replay, reuse, missing key and CSRF. A stale second tab. Resume after refresh, checkpoint and resume-list cursors. Revocation gives 403 with zero writes (INV-02.3). Expiry gives 410 and the sweeper is idempotent. INV-05 has no keys before grading. Log canary. |
+| **INV-06.1 model-based over HTTP** | 15 random sessions with 4–12 commands each, including stale versions. After every legal command the server's session equals the machine's next context, and the version rule holds. Every refused command changes nothing in 8 tables (row and content digest). |
+| Mutation check | Not persisting item status fails both the E-22 test and the model-based test |
+| `tsc`, boundary and rubric checks, OpenAPI validation, golden sync | Pass |
+
+**Slice 0 suite:** one assertion changed. It pinned that `POST /v1/learning-sessions` did not exist
+(404). It now asserts that a malformed create is refused (400). Consent gating is tested in the M6 suite.
+
+**Not covered yet:** QUESTION_LOOP (Slice 2), the frontend calling these endpoints (M8), the L3 facade (M7),
+and load and latency targets.

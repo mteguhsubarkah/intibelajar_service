@@ -21,7 +21,7 @@ for(const group of Object.keys(groups))for(const name of readdirSync('src/'+grou
   }visit(source);
 }
 // INV-05: rubrics (answer keys) are read only by the publisher and, from Slice 2, the assessment module.
-const rubricReaders=['src/catalog/publisher.ts'],rubricModules=['src/assessment/'];
+const rubricReaders=['src/catalog/publisher.ts','src/catalog/grading-source.ts'],rubricModules=['src/assessment/'];
 const walk=dir=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(join(dir,e.name)):e.name.endsWith('.ts')?[join(dir,e.name)]:[]);
 for(const file of walk('src').map(f=>f.replaceAll('\\','/'))) {
   if(file==='src/database.generated.ts'||rubricReaders.includes(file)||rubricModules.some(m=>file.startsWith(m)))continue;

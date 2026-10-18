@@ -41,6 +41,7 @@
     "@types/node": "22.20.5",
     "@types/pg": "8.23.1",
     "esbuild": "0.28.2",
+    "fast-check": "3.23.2",
     "tsx": "4.23.15",
     "typescript": "5.9.3"
   }
