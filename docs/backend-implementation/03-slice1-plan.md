@@ -1,6 +1,6 @@
 # Slice 1 implementation plan: catalog and deterministic practice
 
-Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1–M8 implemented against a synthetic reviewed fixture (§7–§14). M9 (exit verification) not started.**
+Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1–M9 done against a synthetic reviewed fixture (§7–§14; exit report: `04-slice1-report.md`). The engineering exit is met. The real-catalog exit waits for D3–D6.**
 Scope stays the same as Slice 0: synthetic learners and local development only.
 No real learner data, deployment or AI.
 

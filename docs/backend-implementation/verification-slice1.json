@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-18",
+  "scope": "Slice 1 exit verification. Synthetic local development only; no deployment, no real learner data.",
+  "node": "v24.19.0",
+  "postgresql": "17.5",
+  "database": "intibelajar_slice0_test",
+  "publicTables": 35,
+  "migrations": [
+    {
+      "name": "0001_slice0.up.sql",
+      "sha256": "1523e4a65f68cc43e37d3a3a18cd3678dda3d3d3b5718808392853d27dffe3ed"
+    },
+    {
+      "name": "0002_catalog.up.sql",
+      "sha256": "8b05431ba6d334432477807057524dd3e392b5c5dab15921ba2b857756543c7e"
+    },
+    {
+      "name": "0003_learning.up.sql",
+      "sha256": "a72e661c606accfddd61e6c65cbe9382a846d7eeffe1b279e68d5333279379a4"
+    }
+  ],
+  "backendTests": {
+    "total": 98,
+    "pass": 98,
+    "fail": 0,
+    "skipped": 0
+  },
+  "browserE2E": {
+    "passed": 2,
+    "failed": 0
+  },
+  "manifest": {
+    "draftUnreviewed": 58,
+    "strictErrors": 58
+  },
+  "checks": [
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "module-and-rubric-boundaries",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "openapi-validation",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "manifest-lint-draft",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "manifest-lint-strict-refuses-draft",
+      "exit": 1,
+      "expectedExit": 1,
+      "result": "pass"
+    },
+    {
+      "name": "golden-sync",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "alias-coverage-and-freeze",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "migration-extraction-catalog",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "migration-extraction-learning",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "migrations-unchanged-after-regeneration",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "draft-extraction-roundtrip-write",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "frontend-data-unchanged-since-extraction",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "draft-extraction-roundtrip-identical",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "backend-tests",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "architecture-self-test",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "frontend-suite-consumer-golden",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "browser-e2e-canonical",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "dependency-audit-backend",
+      "exit": 0,
+      "expectedExit": 0,
+      "result": "pass"
+    },
+    {
+      "name": "dependency-audit-frontend",
+      "exit": 1,
+      "expectedExit": 0,
+      "result": "finding"
+    }
+  ]
+}

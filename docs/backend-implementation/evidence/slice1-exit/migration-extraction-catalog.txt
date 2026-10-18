@@ -1,0 +1,3 @@
+$ python scripts/extract-migration-catalog.py
+wrote 0002_catalog (14 tables)
+
