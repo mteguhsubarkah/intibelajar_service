@@ -33,6 +33,8 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run validate:contract
+      - run: npm run catalog:lint
+      - run: npm run catalog:golden
       - run: npm test
       - run: pip install PyYAML==6.0.3
       - run: python docs/backend-architecture/validate-spec.py --self-test

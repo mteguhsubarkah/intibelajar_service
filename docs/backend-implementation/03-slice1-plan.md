@@ -1,6 +1,6 @@
 # Slice 1 implementation plan: catalog and deterministic practice
 
-Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1 (§7), M2 (§8), M3 (§9) and M4 (§10) implemented against a synthetic reviewed fixture. M5–M9 not started.**
+Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1 (§7), M2 (§8), M3 (§9), M4 (§10) and M5 (§11) implemented against a synthetic reviewed fixture. M6–M9 not started.**
 Scope stays the same as Slice 0: synthetic learners and local development only.
 No real learner data, deployment or AI.
 
@@ -707,3 +707,70 @@ sweep, rather than as a job row: `job` requires an FK target until Slice 2.
   tree while 0002 and 0003 are LF. The checksum change above makes this harmless for migrations.
   Adding `* text=auto eol=lf` would make the working tree consistent.
 - `.local/` (database cluster, passwords, test env) and `.env` are ignored. No secrets are tracked.
+
+## 11. M5 status (2026-10-18)
+
+`option-v1` and `numeric-v1` are pure evaluators in `src/assessment/evaluators/`:
+`(body, rubric, mapped concepts, response)` gives a verdict, an unreadable reason, the matched
+misconception and candidate evidence per concept. They do no I/O. Eligibility and exposure are added
+when evidence is stored (M6, 06 §5), because they depend on the learner's history, not on the answer.
+
+### Behaviour
+
+- **numeric-v1** is a faithful port of the frontend's `services/answer/answerChecker.ts`. It uses the
+  same closed grammar (decimal comma or point, thousands rule, `√`/`akar`/`sqrt`, implied multiplication
+  only before `√` or `(`), the same unit gate (from the rubric's `answer.unit`), the same 2% relative
+  tolerance with a scale floor of 1, and the same unreadable reason codes. The key is checked before any
+  distractor.
+  - It grades the typed text only, not a pre-parsed `NUMERIC` value. Evidence must quote a span of the
+    response (06 §2.4), and the device and the server must read identical input.
+- **option-v1** grades by option id. An unknown id, or a key that is not an option, is `UNREADABLE`;
+  it is never counted wrong.
+- **Evidence** follows 06 §1–2:
+  - A correct answer demonstrates the rubric's `finalAnswerEvidence` concepts, citing a `SPAN` (the
+    trimmed typed text) or an `OPTION`.
+  - A wrong answer evidences a misconception only when it matches a catalogued pattern within tolerance,
+    with the rubric's explanation as the rationale.
+  - Otherwise the final-answer concepts are `INSUFFICIENT_EVIDENCE` (`INCOMPLETE_WORK`), never an
+    invented gap.
+  - Other mapped concepts, and non-assessable ones, are `NOT_ASSESSED`.
+- **No grade, no evidence.** `UNREADABLE` and self-reports (`NOT_GRADED`) produce no evidence and
+  reveal nothing (INV-16). `revealedAnswer` is returned only for graded answers. It records
+  `FINAL_ANSWER_SHOWN` when it is shown (M6).
+
+### Shared golden file: `catalog/golden/answers.v1.json`
+
+- **81 numeric cases**, taken from the frontend checker's spec tables. They cover the anchor and its
+  retry question: accepted forms, full-width, NBSP and zero-width input (stored as `\u` escapes),
+  distractors with their misconception codes, and every unreadable reason.
+  The frontend's `matchedOptionId` maps to the option's misconception code, so both sides compare the
+  same thing.
+- **37 multiple-choice items** (47 legacy aliases), each with its option count and key index.
+  This section is generated from the manifest by `npm run catalog:golden -- --write`.
+  `npm run catalog:golden` checks it is in sync, both in CI and in the backend tests.
+- **Backend:** `test/evaluators.test.ts` covers the golden numeric and option cases; checks that every
+  deterministic item accepts its own key or first accepted form (all except the tower question, which
+  is `tower-v1` in Slice 2); evidence shape and span validity; the misconception path for both
+  evaluators; refusals; non-assessable concepts; and determinism.
+- **Vue checkout:** a new `scripts/answerGolden.test.ts` and `npm run test:answer-golden`. They read
+  `GOLDEN_FILE`, or the backend checkout next to `mockup/`, and grade with the frontend's own data and
+  `checkAnswer`. They also fail if `src/data` contains a multiple-choice item the catalog does not grade.
+  The backend's `npm run verify:frontend` now runs it, with `GOLDEN_FILE` set to this checkout.
+  CI also runs `catalog:lint` and `catalog:golden`.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| Full backend suite (Node 24.19.0, PostgreSQL 17.5) | **75/75 pass, on two consecutive runs.** Evidence: `evidence/slice1-m5-tests.txt`. |
+| `npm run verify:frontend` | Pass: frontend suite, 29 consumer checks, 81 numeric + 47 multiple-choice golden checks, and the local-only check |
+| Mutation checks | Removing the trailing-dot rule fails the backend golden test. A flipped option key, a flipped verdict and a swapped misconception in a copy of the golden file each fail the frontend runner. |
+| `tsc`, boundary and rubric checks | Pass. Evaluators live in `src/assessment/`, the module allowed to read rubrics. |
+
+**Frontend repository:** `scripts/answerGolden.test.ts` and the `test:answer-golden` entry in
+`package.json` are **uncommitted** in `mockup/intibelajar`, on branch `master-pre-test-1`, next to
+that branch's existing uncommitted Slice 0 changes.
+
+**Not covered:** `tower-v1` (Slice 2). The vitest specs in the Vue repo (`tests/unit/*.spec.ts`) are not
+runnable there, because vitest is not installed. The golden runner uses the repo's existing esbuild
+pattern instead.

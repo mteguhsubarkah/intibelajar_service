@@ -23,6 +23,7 @@
     "catalog:check": "tsx scripts/catalog/extract-from-frontend.ts --check",
     "catalog:lint": "tsx scripts/catalog/lint-manifest.ts",
     "catalog:publish": "tsx scripts/catalog/publish.ts",
+    "catalog:golden": "tsx scripts/catalog/golden.ts",
     "test:catalog": "tsx --test --test-concurrency=1 test/catalog-*.test.ts"
   },
   "dependencies": {

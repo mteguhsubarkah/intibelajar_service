@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "description": "Shared grading cases for numeric-v1 and option-v1. Run by the backend (test/evaluators.test.ts) against the catalog manifest, and by the Vue checkout (npm run test:answer-golden) against its own data and checker, so on-device and server grading cannot drift. Numeric cases are authored expectations (from the frontend checker's spec tables); the option section is generated from the manifest by npm run catalog:golden.",
+  "numeric": [
+    {
+      "question": "MAT.TRI.Q.TRIG_DEPRESSION_01",
+      "item": "trig-depression-01",
+      "cases": [
+        {
+          "typed": "20√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3  m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3 meter",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 akar 3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20akar3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 sqrt 3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√(3)",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 akar 3 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "  20√3  ",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3.",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,641",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,6410",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,6",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,5",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "35",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34.641",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 × √3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20*√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "x = 34,64",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64 meter",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64 mtr",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "２０√３",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20\u00a0√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "\u200b20√3\ufeff",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "17,32",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_COS"
+        },
+        {
+          "typed": "10√3",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_COS"
+        },
+        {
+          "typed": "10√3 m",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_COS"
+        },
+        {
+          "typed": "10",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_SIN"
+        },
+        {
+          "typed": "10 m",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_SIN"
+        },
+        {
+          "typed": "√3",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "20",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "30",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "24",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "0",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "1/2",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "-34,64",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "20√3 + 1",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "34641",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "3.4641",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "0,034641",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "1.234",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "   ",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "\n",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "x =",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "gatau",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "bingung",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "sisi terpanjang",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "x",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "20/tan30",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "20 : tan 30",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "sin30",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "2^3",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "20 x √3",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "3,4e1",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "20√",
+          "verdict": "UNREADABLE",
+          "reason": "root-without-radicand"
+        },
+        {
+          "typed": "√",
+          "verdict": "UNREADABLE",
+          "reason": "root-without-radicand"
+        },
+        {
+          "typed": "√-4",
+          "verdict": "UNREADABLE",
+          "reason": "negative-root"
+        },
+        {
+          "typed": "1/0",
+          "verdict": "UNREADABLE",
+          "reason": "undefined-fraction"
+        },
+        {
+          "typed": "20//3",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "34,64,1",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "1.23,4",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "20 3",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "20 cm",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "34,64 kg",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "20√3°",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "20√3 km",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "34,64 cm",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+          "verdict": "UNREADABLE",
+          "reason": "too-long"
+        }
+      ]
+    },
+    {
+      "question": "MAT.TRI.Q.TRIG_DEPRESSION_01_RETRY",
+      "item": "trig-depression-01-retry",
+      "cases": [
+        {
+          "typed": "12√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20,78",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "21",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "12√3 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "6√3",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "6√3 m",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "4√3 m",
+          "verdict": "INCORRECT",
+          "misconception": null
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "question": "MAT.EKS.Q.GAB_3X_SIN",
+      "items": [
+        "gab-3x-sin"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.EKS.Q.GAB_PANGKAT_COS60",
+      "items": [
+        "gab-pangkat-cos60"
+      ],
+      "optionCount": 4,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C1",
+      "items": [
+        "c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C2",
+      "items": [
+        "c2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C3",
+      "items": [
+        "c3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C4",
+      "items": [
+        "c4"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_P1",
+      "items": [
+        "p1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_P2",
+      "items": [
+        "p2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_P3",
+      "items": [
+        "p3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.GAB_SIN30_PANGKAT",
+      "items": [
+        "gab-sin30-pangkat"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.GAB_TAN45_PANGKATNOL",
+      "items": [
+        "gab-tan45-pangkatnol"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_C0",
+      "items": [
+        "core:perbandingan-trig:c0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_C1",
+      "items": [
+        "core:perbandingan-trig:c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_P0",
+      "items": [
+        "perbandingan-trig:0",
+        "core:perbandingan-trig:q0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_P1",
+      "items": [
+        "perbandingan-trig:1",
+        "core:perbandingan-trig:q1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_P2",
+      "items": [
+        "perbandingan-trig:2",
+        "core:perbandingan-trig:q2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C0",
+      "items": [
+        "core:sudut-depresi-elevasi:c0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C1",
+      "items": [
+        "core:sudut-depresi-elevasi:c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P0",
+      "items": [
+        "sudut-depresi-elevasi:0",
+        "core:sudut-depresi-elevasi:q0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P1",
+      "items": [
+        "sudut-depresi-elevasi:1",
+        "core:sudut-depresi-elevasi:q1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P2",
+      "items": [
+        "sudut-depresi-elevasi:2",
+        "core:sudut-depresi-elevasi:q2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C0",
+      "items": [
+        "core:sudut-istimewa:c0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C1",
+      "items": [
+        "core:sudut-istimewa:c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C2",
+      "items": [
+        "core:sudut-istimewa:c2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P0",
+      "items": [
+        "sudut-istimewa:0",
+        "core:sudut-istimewa:q0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P1",
+      "items": [
+        "sudut-istimewa:1",
+        "core:sudut-istimewa:q1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P2",
+      "items": [
+        "sudut-istimewa:2",
+        "core:sudut-istimewa:q2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P3",
+      "items": [
+        "sudut-istimewa:3",
+        "core:sudut-istimewa:q3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T04_CHECK_1",
+      "items": [
+        "T04:check-1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T04_CHECK_2",
+      "items": [
+        "T04:check-2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T04_CHECK_3",
+      "items": [
+        "T04:check-3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T10_CHECK_1",
+      "items": [
+        "T10:check-1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.T10_CHECK_2",
+      "items": [
+        "T10:check-2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.T13_CHECK_1",
+      "items": [
+        "T13:check-1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.T13_CHECK_2",
+      "items": [
+        "T13:check-2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.TAN60_SIN30",
+      "items": [
+        "tan60-sin30"
+      ],
+      "optionCount": 4,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.TANGGA_6M",
+      "items": [
+        "tangga-6m"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    }
+  ]
+}
