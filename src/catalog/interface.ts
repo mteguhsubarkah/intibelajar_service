@@ -97,3 +97,41 @@ export async function slideCount(db: Connection, lessonRevisionId: string) {
   return (await sql<{ n: number }>`select coalesce(max((b ->> 'slide')::int), 0) + 1 as n from micro_lesson_revision r, jsonb_array_elements(r.blocks) b
     where r.id = ${lessonRevisionId}`.execute(db)).rows[0]?.n ?? 1;
 }
+
+export interface LegacyPlacements {
+  /** A quick check of a published lesson. */
+  check?: { lessonCode: string; practiceSet: string | null; microAssessmentId: string; slide: number };
+  /** An item of a lesson's own practice set. */
+  lessonPractice?: { lessonCode: string; practiceSet: string };
+  /** The first set (snapshot order) that is not a lesson's practice set. */
+  set?: { setCode: string };
+}
+export interface LegacyItem { questionId: string; code: string; itemType: string; legacyOptionOrder: string[] | null; placements: LegacyPlacements }
+
+/**
+ * 09 §6.1 rule 8: a legacy item id (ITEM alias of the current release) and every place the catalog puts it.
+ * The facade chooses among them by how the shipped frontend asked. Only codes, option order and placement
+ * are read from the snapshot; never a question's content.
+ */
+export async function legacyItem(db: Connection, release: Release, itemId: string): Promise<LegacyItem | null> {
+  const q = (await sql<{ question_id: string; code: string; item_type: string }>`select q.id as question_id, q.code, r.item_type from catalog_alias a
+      join question q on q.id = a.question_id join question_revision r on r.question_id = q.id and r.status = 'PUBLISHED'
+    where a.release_id = ${release.id} and a.namespace = 'ITEM' and a.alias = ${itemId}`.execute(db)).rows[0];
+  if (!q) return null;
+  const order = (await sql<{ o: string[] | null }>`select x -> 'legacyOptionOrder' as o from curriculum_release c, jsonb_array_elements(c.snapshot -> 'questions') x
+    where c.id = ${release.id} and x ->> 'code' = ${q.code}`.execute(db)).rows[0]?.o ?? null;
+  const check = (await sql<{ lesson: string; practice_set: string | null; ma: string; slide: number }>`select l.code as lesson, x ->> 'practiceSet' as practice_set, a.id as ma, a.slide_index as slide
+    from micro_assessment a join micro_lesson_revision r on r.id = a.lesson_revision_id and r.status = 'PUBLISHED' join micro_lesson l on l.id = r.lesson_id
+    join curriculum_release c on c.id = ${release.id} cross join lateral jsonb_array_elements(c.snapshot -> 'lessons') x
+    where a.question_id = ${q.question_id} and x ->> 'code' = l.code order by l.code limit 1`.execute(db)).rows[0];
+  const sets = (await sql<{ code: string; lesson: string | null }>`select s ->> 'code' as code,
+      (select x ->> 'code' from jsonb_array_elements(c.snapshot -> 'lessons') x where x ->> 'practiceSet' = s ->> 'code' limit 1) as lesson
+    from curriculum_release c cross join lateral jsonb_array_elements(c.snapshot -> 'sets' -> 'sets') with ordinality as t(s, n)
+    where c.id = ${release.id} and s -> 'items' ? ${q.code} order by n`.execute(db)).rows;
+  const lessonSet = sets.find(x => x.lesson), other = sets.find(x => !x.lesson);
+  return { questionId: q.question_id, code: q.code, itemType: q.item_type, legacyOptionOrder: order, placements: {
+    ...(check ? { check: { lessonCode: check.lesson, practiceSet: check.practice_set, microAssessmentId: check.ma, slide: check.slide } } : {}),
+    ...(lessonSet ? { lessonPractice: { lessonCode: lessonSet.lesson!, practiceSet: lessonSet.code } } : {}),
+    ...(other ? { set: { setCode: other.code } } : {}),
+  } };
+}

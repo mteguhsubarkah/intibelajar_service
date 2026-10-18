@@ -110,3 +110,10 @@ export async function runView(db: Connection, runId: string, learnerId: string, 
     createdAt: run.created_at.toISOString(), ...(run.completed_at ? { completedAt: run.completed_at.toISOString() } : {}),
   };
 }
+
+/** The authored feedback for a graded run, in full (the legacy L3 shape carries it; DiagnosisRun.lede is capped at 240). */
+export async function feedbackFor(db: Connection, revisionId: string, verdict: string) {
+  if (verdict !== 'CORRECT' && verdict !== 'INCORRECT') return undefined;
+  const feedback = (await gradingSource(db, revisionId)).rubric.feedback;
+  return verdict === 'CORRECT' ? feedback?.correct : feedback?.incorrect;
+}

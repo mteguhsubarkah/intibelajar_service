@@ -1,8 +1,8 @@
 import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 import { sql } from 'kysely';
-import { readConfig, features, integrationBlockers, type Config } from './config.js';
+import { readConfig, integrationBlockers, type Config } from './config.js';
 import { connect, type DB } from './db.js';
-import { uuid, equal, hash } from './platform/crypto.js';
+import { uuid, equal, hash, stable } from './platform/crypto.js';
 import { ApiError, fail, messages } from './platform/errors.js';
 import { command, type Outcome } from './platform/idempotency.js';
 import { validateRequest, validateResponse, contract } from './platform/contract.js';
@@ -16,6 +16,7 @@ import {verifyMigrations} from './migrate.js';
 import {restoredSubjects} from './privacy/recovery.js';
 import {catalogReader} from './catalog/read.js';
 import {learningService} from './learning/service.js';
+import {legacyFacade,consentFirst,type LegacyCheck} from './learning/facade.js';
 
 declare module 'fastify' { interface FastifyRequest { principal?: identity.Principal; sessionToken?:string; safeSpan?:Span } }
 export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStream?:NodeJS.WritableStream;spanProcessors?:SpanProcessor[]}={}) {
@@ -83,7 +84,8 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
         if(access==='student'&&req.principal.role!=='STUDENT'||access==='guardian'&&req.principal.role!=='GUARDIAN')fail(403,'FORBIDDEN');
         if(method!=='GET'&&!equal(hash(String(req.headers['x-csrf-token']??'')),hash(req.principal.csrf)))fail(403,'CSRF_FAILED');
       }
-      if(path.startsWith('/v1/learning/')||path==='/v1/public/evaluations'||disabled.has(method+' '+path))fail(403,'FEATURE_DISABLED');
+      const facadeOn=config.features.legacyFacade&&path==='/v1/learning/answers/check';
+      if((path.startsWith('/v1/learning/')&&!facadeOn)||path==='/v1/public/evaluations'||disabled.has(method+' '+path))fail(403,'FEATURE_DISABLED');
       validateRequest(path,method,req);
     },handler:async(req,reply)=>{
       const result=await handler(req,reply);
@@ -107,7 +109,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     const tables=await sql<{count:string}>`select count(*) from information_schema.tables where table_schema='public' and table_name in
       ('learner','guardian','app_user','auth_identity','auth_session','auth_transaction','student_profile','consent_record','deletion_request','erasure_receipt','audit_event','idempotency_record','job')`.execute(db);
     if(result.rows[0]!.version<160000||tables.rows[0]!.count!=='13'||!await verifyMigrations(db)||(await restoredSubjects(db,config)).length)fail(503,'DEPENDENCY_UNAVAILABLE');
-    return {status:'ready',environment:config.mode,syntheticOnly:true,features,blockers:integrationBlockers};
+    return {status:'ready',environment:config.mode,syntheticOnly:true,features:config.features,blockers:integrationBlockers};
     }catch{fail(503,'DEPENDENCY_UNAVAILABLE');}
   });
   route('GET','/v1/auth/session','public',async req=>{
@@ -216,6 +218,22 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   route('GET','/v1/diagnosis-runs/{diagnosisRunId}','student',async req=>learning.diagnosisRun(db,learnerId(req),params(req).diagnosisRunId!));
   // Question-loop operations arrive with Slice 2; until then they fail closed.
   for(const operation of disabled){const [method,path]=operation.split(' ') as ['GET'|'POST',string];route(method,path,'student',async()=>fail(403,'FEATURE_DISABLED'));}
+  // Legacy facade L3 (Slice 1 M7, 09 §6): deprecated, and off unless FEATURE_LEGACY_FACADE=true. The shipped client
+  // sends no CSRF token: exact Origin, Sec-Fetch-Site and JSON content type (onRequest) and SameSite cookies compensate.
+  // Its idempotency key is derived (the client's attemptId changes on every call): a retry of the same answer replays.
+  const facade=legacyFacade(learning);
+  if(config.features.legacyFacade) route('POST','/v1/learning/answers/check','public',async(req,reply)=>{
+    reply.header('Deprecation','true');
+    req.principal=await identity.authenticate(db,config,req.sessionToken);
+    if(req.principal?.role!=='STUDENT')fail(403,'FEATURE_DISABLED'); // guests are not served under CONSENT_FIRST
+    learnLimit(req);
+    const b=req.body as LegacyCheck,payload={sessionId:b.sessionId,kind:b.kind,itemId:b.itemId,answer:b.answer};
+    const derived='legacy_'+hash(stable({learnerId:learnerId(req),...payload})).toString('hex');
+    try {
+      return send(reply,await db.transaction().execute(tx=>command(tx,'LEARNER',learnerId(req),'POST /v1/learning/answers/check',derived,payload,
+        ()=>privacy.authorizeMutation(tx,req.principal!,async()=>({status:200,body:await facade(tx,learnerId(req),b)})))));
+    } catch(error) { throw consentFirst(error); }
+  });
   // Public catalog (Slice 1 M3): current release only, never rubrics or keys (INV-05).
   const catalog=catalogReader(config.key);
   const query=(req:FastifyRequest)=>req.query as Record<string,string|undefined>;
@@ -239,6 +257,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   // No learning endpoints exist in Slice 0. Legacy learning routes fail closed.
   for(const [path,operations]of Object.entries(contract.paths) as [string,Record<string,unknown>][]) {
     if(!path.startsWith('/v1/learning/')&&path!=='/v1/public/evaluations')continue;
+    if(config.features.legacyFacade&&path==='/v1/learning/answers/check')continue;
     for(const method of Object.keys(operations))if(['get','post'].includes(method))route(method.toUpperCase() as 'GET'|'POST',path,'public',async()=>fail(403,'FEATURE_DISABLED'));
   }
   return {app,db,mailbox,config};

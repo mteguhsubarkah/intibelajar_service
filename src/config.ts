@@ -1,6 +1,7 @@
 export interface Config {
   mode: 'development' | 'test'; databaseUrl: string; origin: string; host: string; port: number;
   key: Buffer; synthetic: boolean; idleSeconds: number; absoluteSeconds: number;
+  features: Readonly<Record<keyof typeof features, boolean>>;
 }
 export const integrationBlockers = [
   'GOOGLE_OIDC_NOT_CONFIGURED', 'EMAIL_DELIVERY_NOT_CONFIGURED',
@@ -26,11 +27,13 @@ export function readConfig(env = process.env): Config {
     if (!Number.isSafeInteger(value) || value < 1 || value > max) throw new Error(`Invalid ${name}`);
     return value;
   };
-  for (const [name, value] of Object.entries(env)) if (/^FEATURE_/.test(name) && value !== 'false')
+  // Only the legacy facade (Slice 1 M7, synthetic data) can be switched on; every other feature fails closed.
+  for (const [name, value] of Object.entries(env)) if (/^FEATURE_/.test(name) && value !== 'false' && !(name === 'FEATURE_LEGACY_FACADE' && value === 'true'))
     throw new Error('Features cannot be enabled in this development foundation');
   if (env.HOST && env.HOST !== '127.0.0.1') throw new Error('Only loopback binding is supported');
   return { mode: (env.NODE_ENV ?? 'development') as Config['mode'], databaseUrl: url.href,
     origin: origin.origin, host: '127.0.0.1', port: integer('PORT', 8000, 65535), key,
     synthetic: env.SYNTHETIC_FIXTURES === 'true', idleSeconds: integer('SESSION_IDLE_SECONDS', 604800, 604800),
-    absoluteSeconds: integer('SESSION_ABSOLUTE_SECONDS', 2592000, 2592000) };
+    absoluteSeconds: integer('SESSION_ABSOLUTE_SECONDS', 2592000, 2592000),
+    features: Object.freeze({ ...features, legacyFacade: env.FEATURE_LEGACY_FACADE === 'true' }) };
 }

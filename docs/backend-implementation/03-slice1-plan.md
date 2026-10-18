@@ -1,6 +1,6 @@
 # Slice 1 implementation plan: catalog and deterministic practice
 
-Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1–M6 implemented against a synthetic reviewed fixture (§7–§12). M7–M9 not started.**
+Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1–M7 implemented against a synthetic reviewed fixture (§7–§13). M8–M9 not started.**
 Scope stays the same as Slice 0: synthetic learners and local development only.
 No real learner data, deployment or AI.
 
@@ -827,3 +827,58 @@ operations, return `403 FEATURE_DISABLED` before any request validation.
 
 **Not covered yet:** QUESTION_LOOP (Slice 2), the frontend calling these endpoints (M8), the L3 facade (M7),
 and load and latency targets.
+
+## 13. M7 status (2026-10-18)
+
+`POST /v1/learning/answers/check` (L3) now runs on the M6 engine. It is deprecated, and off unless
+`FEATURE_LEGACY_FACADE=true`. That is the only feature that can be enabled, in development and test
+only; every other `FEATURE_*` still fails closed.
+
+### Mapping (`src/learning/facade.ts`, `catalog.legacyItem`)
+
+- **Callers.** Only signed-in students holding `LEARNING_DATA` are served.
+  - Guests, unconsented learners and guardians get `403 FEATURE_DISABLED` (`CONSENT_FIRST`, rule 4).
+  - No CSRF token is required, because the shipped client sends none. Exact `Origin`, `Sec-Fetch-Site`
+    and JSON content type are enforced instead (rule 3).
+  - Responses carry `Deprecation: true`, and unknown request fields are ignored (rule 7).
+- **Context per screen** (refines 09's single `<sessionId>:practice`). One `FlowContext.sessionId` spans the
+  funnel, PracticeRunView and CoreView, so facade sessions are keyed per context:
+  - `<sid>:lesson:<lesson>` for CoreView ids: `core:<route>:c<i>` checks and `core:<route>:q<i>` practice.
+  - `<sid>:practice:<set>` for every other id. This is the first set that is not a lesson's own practice set:
+    `MAT.TRI.S.FUNNEL_PRACTICE` for `p1`–`p3`, `MAT.S.BANK` for bank items.
+
+  The same question can therefore be lesson practice or bank practice, depending on how the frontend
+  asked for it. A finished session gives its key up, so the set can be practised again.
+- **Implied commands** (rule 6):
+  - a lesson check: `ADVANCE_LESSON` to the check's slide, then `ANSWER_QUICK_CHECK`;
+  - lesson practice: `FINISH_LESSON` when every required check is graded, otherwise `SKIP_LESSON`;
+  - practice items must be answered in server order. An out-of-order item gets `409`; it is never reached
+    by silent skips.
+- **Answers** arrive as an index and are mapped to option ids through the manifest's `legacyOptionOrder`.
+  An index outside the options grades as unreadable (`{correct: null, unreadable: true}`), never wrong.
+  The response carries the full authored feedback and `correctOptionIndex`. Showing the key records
+  `FINAL_ANSWER_SHOWN`, as it does in M6.
+- **Derived idempotency key (deviation from rule 5).** The key is `legacy_` + SHA-256 of
+  (learner, client session, kind, item, answer), **without** the state version.
+  - Rule 5's version-based key cannot replay a response lost after commit, because the commit itself
+    moves the version. Here a retry replays, including on the item that completes a set.
+  - Trade-off: a deliberate identical repeat of an answered item within the 7-day idempotency window also
+    replays. The frontend already blocks re-answering within its screen.
+  - A different answer is a new command. The machine refuses it (answer once), or it starts a fresh
+    session once the set is complete.
+- **Not served yet:**
+  - the funnel's own checks `c1`–`c4` return `409 CONTENT_UNAVAILABLE`: they belong to the
+    question-loop lesson (Slice 2);
+  - `kind: retry_original` returns `403 FEATURE_DISABLED` (Slice 2);
+  - an unknown item returns `404`.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| **Frontend validator as oracle** | The test bundles the Vue checkout's `services/learningBackend.ts` (esbuild) and routes its `fetch` into the app with the learner's cookie and same-origin headers. It calls `checkWithBackend` exactly as PracticeRunView, StepLatihan and CoreView do. Fallback is off outside demo mode, so any response the adapter's `isCheck` rejects would throw. Every response came back `source: 'backend'` with the expected verdict, feedback and key index. The test skips (and says so) only when no Vue checkout is present; nothing was skipped here. |
+| Facade suite (5) | Off by default and the flag rules. Guests, unconsented learners and cross-origin or cross-site calls refused, with nothing written. Bank and funnel practice graded on the server, with separate canonical sessions and eligible evidence. Lesson checks with implied `ADVANCE_LESSON` and `FINISH_LESSON`, then lesson practice. A check after the lesson is refused. Replay, unreadable, lenient input, set re-practice, gaps, and revocation (zero writes). |
+| Mutation check | An off-by-one in the revealed option index fails both oracle tests |
+| Full backend suite | **98/98 pass, 0 skipped, on two consecutive runs.** Evidence: `evidence/slice1-m7-tests.txt`. |
+| `npm run verify:frontend` | Pass: frontend suite, 29 consumer checks, golden cases |
+| `tsc`, boundary and rubric checks, OpenAPI validation | Pass. The contract is unchanged; `LegacyCheckResult` was already frozen to the `isCheck` shape. |

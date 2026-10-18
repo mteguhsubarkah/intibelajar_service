@@ -152,7 +152,7 @@ export function learningService(key: Buffer) {
 
   return {
     // E-02. QUESTION_LOOP sessions arrive with Slice 2.
-    async create(tx: Tx, learnerId: string, body: { kind: string; origin: string; withLesson: boolean; spec: PracticeSpec }) {
+    async create(tx: Tx, learnerId: string, body: { kind: string; origin: string; withLesson: boolean; spec: PracticeSpec }, legacyClientSessionId?: string) {
       if (body.kind !== 'PRACTICE') fail(403, 'FEATURE_DISABLED');
       await requireConsent(tx, learnerId, ['LEARNING_DATA']);
       const release = await currentRelease(tx);
@@ -167,9 +167,9 @@ export function learningService(key: Buffer) {
       const seen = new Set([...(await revisionFacts(tx, (await sql<{ r: string }>`select distinct question_revision_id as r from question_attempt
         where learner_id = ${learnerId}`.execute(tx)).rows.map(x => x.r))).values()].map(f => f.familyCode));
       const id = uuid(), route = lesson?.routeSlug ? `/core/${lesson.routeSlug}` : '/latihan/soal';
-      await sql`insert into learning_session(id, learner_id, kind, origin, release_id, focus_concept_id, state, checkpoint, expires_at)
+      await sql`insert into learning_session(id, learner_id, kind, origin, release_id, focus_concept_id, state, checkpoint, expires_at, legacy_client_session_id)
         values (${id}, ${learnerId}, 'PRACTICE', ${body.origin}, ${release.id}, ${focus}, ${lesson ? 'MICROLEARNING' : 'PRACTICING'},
-          ${JSON.stringify({ route, sessionId: id })}::jsonb, now() + ${sql.raw(PRACTICE_TTL)})`.execute(tx);
+          ${JSON.stringify({ route, sessionId: id })}::jsonb, now() + ${sql.raw(PRACTICE_TTL)}, ${legacyClientSessionId ?? null})`.execute(tx);
       for (const [i, item] of items.entries())
         await sql`insert into session_item(id, session_id, ordinal, question_revision_id, role, status) values (${uuid()}, ${id}, ${i + 1}, ${item.revisionId},
           ${focus && item.primaryConcepts.includes(focus) && !seen.has(item.familyCode) ? 'TRANSFER' : 'PRACTICE'}, 'PENDING')`.execute(tx);
@@ -227,6 +227,20 @@ export function learningService(key: Buffer) {
       const { l } = await guard(tx, learnerId, sessionId, undefined, { type: 'UPDATE_CHECKPOINT' });
       await sql`update learning_session set checkpoint = ${JSON.stringify(body)}::jsonb where id = ${sessionId}`.execute(tx);
       await persist(tx, l, l.ctx);
+    },
+
+    /**
+     * The facade's session for a legacy client session id (09 §6.1 rule 4). A finished session gives its alias up,
+     * so the shipped client can practise the same set again under the same FlowContext.sessionId.
+     */
+    async legacySession(tx: Tx, learnerId: string, legacyId: string) {
+      const row = (await sql<{ id: string; state: State; expired: boolean }>`select id, state, expires_at <= now() as expired from learning_session
+        where learner_id = ${learnerId} and legacy_client_session_id = ${legacyId} for update`.execute(tx)).rows[0];
+      if (row && (TERMINAL.includes(row.state) || row.expired)) {
+        await sql`update learning_session set legacy_client_session_id = null where id = ${row.id}`.execute(tx);
+        return null;
+      }
+      return row ? (await load(tx, row.id, learnerId))! : null;
     },
 
     async get(db: Connection, learnerId: string, sessionId: string) {
