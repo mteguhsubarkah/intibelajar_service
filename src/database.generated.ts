@@ -10,6 +10,18 @@ export interface Database {
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
   };
+  assistance_event: {
+    id: string;
+    learner_id: string;
+    session_id: string | null;
+    concept_id: string | null;
+    question_family_code: string | null;
+    type: string;
+    detail: Generated<unknown>;
+    source: string;
+    dedupe_key: string;
+    occurred_at: Generated<Date>;
+  };
   audit_event: {
     id: string;
     occurred_at: Generated<Date>;
@@ -81,6 +93,28 @@ export interface Database {
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
   };
+  concept_evidence: {
+    id: string;
+    diagnosis_run_id: string;
+    attempt_id: string;
+    learner_id: string;
+    concept_id: string;
+    classification: string;
+    misconception_code: string | null;
+    source: string;
+    confidence: string | null;
+    uncertainty_reasons: Generated<string[]>;
+    refs: Generated<unknown>;
+    solution_path_code: string | null;
+    rationale: string | null;
+    question_family_code: string;
+    context_tag: string;
+    transfer_eligible: boolean;
+    mastery_eligible: boolean;
+    eligibility_reasons: Generated<string[]>;
+    supersedes_id: string | null;
+    created_at: Generated<Date>;
+  };
   concept_prerequisite: {
     concept_id: string;
     prerequisite_id: string;
@@ -125,6 +159,31 @@ export interface Database {
     requested_at: Generated<Date>;
     started_at: Date | null;
     completed_at: Date | null;
+  };
+  diagnosis_run: {
+    id: string;
+    attempt_id: string;
+    learner_id: string;
+    generation: number;
+    purpose: string;
+    engine: string;
+    status: string;
+    evidence_status: string | null;
+    verdict: string | null;
+    headline: string | null;
+    lede: string | null;
+    clarification_prompt: string | null;
+    recommendations: Generated<unknown>;
+    rubric_version: string;
+    policy_version: string;
+    prompt_version: string | null;
+    model: string | null;
+    provenance: Generated<unknown>;
+    failure_code: string | null;
+    deadline_at: Date;
+    started_at: Date | null;
+    completed_at: Date | null;
+    created_at: Generated<Date>;
   };
   erasure_receipt: {
     receipt_id: string;
@@ -178,6 +237,42 @@ export interface Database {
     updated_at: Generated<Date>;
     version: Generated<string>;
   };
+  learning_session: {
+    id: string;
+    learner_id: string;
+    kind: string;
+    origin: string;
+    release_id: string;
+    anchor_question_revision_id: string | null;
+    focus_concept_id: string | null;
+    state: string;
+    state_version: Generated<string>;
+    resume_state: string | null;
+    outcome: string | null;
+    active_attempt_id: string | null;
+    unsuccessful_retries: Generated<number>;
+    checkpoint: Generated<unknown>;
+    legacy_client_session_id: string | null;
+    started_at: Generated<Date>;
+    last_activity_at: Generated<Date>;
+    completed_at: Date | null;
+    expires_at: Date;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  lesson_assignment: {
+    id: string;
+    session_id: string;
+    lesson_id: string;
+    lesson_revision_id: string;
+    concept_id: string;
+    status: string;
+    slide_checkpoint: Generated<number>;
+    pinned_checks: unknown;
+    assigned_at: Generated<Date>;
+    completed_at: Date | null;
+    updated_at: Generated<Date>;
+  };
   lesson_concept: {
     lesson_id: string;
     concept_id: string;
@@ -220,6 +315,25 @@ export interface Database {
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
   };
+  question_attempt: {
+    id: string;
+    session_id: string;
+    learner_id: string;
+    question_revision_id: string;
+    kind: string;
+    ordinal: number;
+    session_item_id: string | null;
+    assignment_id: string | null;
+    micro_assessment_id: string | null;
+    parent_attempt_id: string | null;
+    response: unknown;
+    response_purged_at: Date | null;
+    assistance: string;
+    verdict: Generated<string>;
+    source: string;
+    submitted_at: Generated<Date>;
+    graded_at: Date | null;
+  };
   question_concept: {
     question_revision_id: string;
     concept_id: string;
@@ -247,6 +361,14 @@ export interface Database {
     name: string;
     sha256: string;
     applied_at: Generated<Date>;
+  };
+  session_item: {
+    id: string;
+    session_id: string;
+    ordinal: number;
+    question_revision_id: string;
+    role: string;
+    status: string;
   };
   student_profile: {
     learner_id: string;

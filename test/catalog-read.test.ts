@@ -6,6 +6,7 @@ import { sql } from 'kysely';
 import { readConfig } from '../src/config.js';
 import { connect } from '../src/db.js';
 import { migrate } from '../src/migrate.js';
+import { rollbackTo } from './fixtures/db.js';
 import { buildApp } from '../src/app.js';
 import { contract } from '../src/platform/contract.js';
 import { catalogReader } from '../src/catalog/read.js';
@@ -41,7 +42,7 @@ test('Slice 1 public catalog read API', async t => {
   for (const s of v2.sets.sets) s.items = s.items.filter(i => i !== 'MAT.EKS.Q.GAB_3X_SIN');
   try {
     await t.test('without a current release the catalog is empty, not an error', async () => {
-      await migrate(db); await migrate(db, 'down'); await migrate(db);
+      await migrate(db); await rollbackTo(db, '0001_slice0.up.sql'); await migrate(db);
       const r = await get('/v1/subjects');
       assert.equal(r.status, 200); assert.deepEqual(r.body, { items: [] }); assert.equal(r.headers.etag, '"0"');
       assert.equal((await get('/v1/topics/0192f6b0-1111-7222-8333-944455556666')).status, 404);

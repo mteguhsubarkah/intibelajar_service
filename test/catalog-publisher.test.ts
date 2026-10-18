@@ -5,6 +5,7 @@ import { sql } from 'kysely';
 import { readConfig } from '../src/config.js';
 import { connect } from '../src/db.js';
 import { migrate } from '../src/migrate.js';
+import { rollbackTo } from './fixtures/db.js';
 import { aliasIndex, type Manifest } from '../src/catalog/manifest.js';
 import { publish, PublishError, snapshotOf } from '../src/catalog/publisher.js';
 import { draftManifest, reviewedFixture } from './fixtures/catalog.js';
@@ -36,9 +37,9 @@ test('Slice 1 catalog migration and publisher on PostgreSQL', async t => {
   const withVersion = (m: Manifest, version: number) => { const c = structuredClone(m); c.release.version = version; return c; };
   const q = (m: Manifest, code: string) => m.questions.find(x => x.code === code)!;
   try {
-    await t.test('0002 applies on top of 0001, rolls back alone and reapplies', async () => {
+    await t.test('0002 applies on top of 0001; rolling back to 0001 keeps Slice 0 and reapplies', async () => {
       await migrate(db);
-      await migrate(db, 'down');
+      await rollbackTo(db, '0001_slice0.up.sql');
       assert.equal((await sql<{ t: string | null }>`select to_regclass('curriculum_release')::text t`.execute(db)).rows[0]!.t, null);
       assert.notEqual((await sql<{ t: string | null }>`select to_regclass('learner')::text t`.execute(db)).rows[0]!.t, null, 'rolling back 0002 keeps Slice 0');
       await migrate(db); await migrate(db);
