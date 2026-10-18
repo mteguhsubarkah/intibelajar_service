@@ -65,6 +65,7 @@ test('Slice 1 catalog migration and publisher on PostgreSQL', async t => {
 
     let release1 = '';
     await t.test('publishing the reviewed fixture writes the whole catalog, frozen and current', async () => {
+      const started = (await sql<{ t: Date }>`select clock_timestamp() t`.execute(db)).rows[0]!.t;
       const r = await publish(db, fixture);
       release1 = r.releaseId;
       assert.equal(r.status, 'PUBLISHED');
@@ -87,8 +88,8 @@ test('Slice 1 catalog migration and publisher on PostgreSQL', async t => {
       const t04 = await db.selectFrom('catalog_alias').select('concept_id').where('namespace', '=', 'TYPED_MAP').where('alias', '=', 'T04').executeTakeFirstOrThrow();
       assert.equal(t04.concept_id, triC.id);
       assert.equal((await db.selectFrom('micro_lesson').select('route_slug').where('code', '=', 'MAT.TRI.L.PERBANDINGAN_TRIG').executeTakeFirstOrThrow()).route_slug, 'perbandingan-trig');
-      // audit_event belongs to 0001 and outlives the 0002 rollback above, so scope to this publish.
-      const audit = await sql<{ detail: { version: number; sha256: string } }>`select detail from audit_event where action = 'CATALOG_PUBLISHED' and detail ->> 'sha256' = ${r.sha256}`.execute(db);
+      // audit_event belongs to 0001 and outlives the 0002 rollback (and other suites publish the same fixture), so scope by time.
+      const audit = await sql<{ detail: { version: number; sha256: string } }>`select detail from audit_event where action = 'CATALOG_PUBLISHED' and occurred_at >= ${started}`.execute(db);
       assert.deepEqual(audit.rows.map(a => a.detail), [{ version: 1, sha256: r.sha256 }]);
     });
 

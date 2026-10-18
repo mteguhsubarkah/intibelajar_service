@@ -1,6 +1,6 @@
 # Slice 1 implementation plan: catalog and deterministic practice
 
-Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1 (§7) and M2 (§8) implemented against a synthetic reviewed fixture. M3–M9 not started.**
+Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1 (§7), M2 (§8) and M3 (§9) implemented against a synthetic reviewed fixture. M4–M9 not started.**
 Scope stays the same as Slice 0: synthetic learners and local development only.
 No real learner data, deployment or AI.
 
@@ -542,3 +542,91 @@ open production gate.
   new release that reuses every revision.
 - Removed topics, concepts and questions are never deleted, because attempts and evidence reference them.
   Their live revisions retire. The release snapshot and `catalog_alias` define what a release contains.
+
+## 9. M3 status (2026-10-18)
+
+The eight public catalog operations serve the **current release**: subjects, topics (list and
+detail), concepts (list and detail), questions (list and detail) and lessons.
+
+### How it works
+
+**Membership and content.**
+- Which entities belong to the release comes from its snapshot (codes only).
+- Content comes from the rows the release published.
+- Questions are served from their `PUBLISHED` revision only. `PRIVATE` questions are never listed.
+
+**Cache.**
+- `src/catalog/read.ts` materialises the release once into an in-process view (ADR option a).
+- Every request first runs one indexed `is_current` lookup, so a publish is visible on the next request.
+- A failed load is not cached.
+
+**Projection.**
+- `src/catalog/projection.ts` is an explicit allow-list from rows to the schemas.
+- Misconceptions expose only `code` and `description`. Their examples and indicators can quote wrong-answer values.
+- Hints expose only `hintCount`. Hint text comes from the hint command, which records the exposure.
+
+**Rubric guard.** `npm run lint` now also fails any file outside `src/catalog/publisher.ts`
+(and, later, `src/assessment/`) that names `rubric` in SQL or in a select, or that runs
+`selectAll` on `question_revision`. Canaries confirmed both rules fire.
+
+**ETag.**
+- `subjects`, `topics` and `topic/{id}`: `"<version>-<sha16>"`, with `Cache-Control: public, max-age=60`.
+- `If-None-Match` (including `W/` and `*`) returns `304` with no body.
+- With no release, the ETag is `"0"`.
+- The other catalog operations keep `no-store`, because the contract declares no ETag for them.
+  `getQuestion` may later answer a session-bound private view.
+
+**Cursors.** `listQuestions` uses keyset pagination on question code. The cursor is opaque and
+HMAC-signed with a purpose-derived key. It is bound to the filters and the release, and it expires
+after 24 hours. Any mismatch returns `400 VALIDATION_FAILED`.
+
+**Request strictness.** Undeclared query parameters are now rejected in `src/platform/contract.ts`,
+for all operations. Integer query parameters are coerced only from canonical decimals, so
+`limit=07` and repeated parameters return `400`.
+
+### Contract changes (additive; `validate:contract` and the architecture self-test pass)
+
+- `LessonBlock`: type `heading`, plus `name`, `expression` and `highlight` for `math`. Lesson
+  content uses plain formula notation, not LaTeX, so the alternative was lossy flattening.
+  03 §7 is updated to match.
+- `QuestionView.answerExample`: the format hint for the typed answer field, e.g. "5√2 atau 7,07".
+  It is never the question's answer.
+
+### Verification (Node 24.19.0, PostgreSQL 17.5)
+
+| Check | Result |
+|---|---|
+| Full backend suite | **61/61 pass, on two consecutive runs.** Evidence: `evidence/slice1-m3-tests.txt`. |
+| Catalog read suite (11) | Covers all of the following. |
+| | With no release: an empty catalog, ETag `"0"`, and 404 for detail. |
+| | Every entity answers through every endpoint, with each 2xx body contract-validated by the route wrapper. |
+| | Alias lookup: a known alias, an unknown alias, and an alias combined with a topic filter. |
+| | Question filters, and the 4 combined items. |
+| | Pagination with page size 7 equals the full list. Tampered, re-filtered, garbage and expired cursors, and 8 bad query forms, all return 400. |
+| | **INV-05.1:** a schema walk of all eight operations finds no key, rubric or feedback field. |
+| | **INV-05.2:** every response is checked for forbidden keys at any depth. More than 40 rubric-only strings (feedback, worked solutions, misconception explanations, examples, indicators) never appear. No question's own view contains its own answer forms or value. |
+| | ETag/304 behaviour on the three operations. |
+| | 404 for unknown ids and 400 for malformed ones. |
+| | A new release is served on the next request: new revision, retired item returns 404, renamed concept, new ETag, an old cursor returns 400, and an unchanged lesson keeps `contentVersion` 1. |
+| `tsc`, boundary and rubric checks, OpenAPI validation, architecture 14/14 + self-test, alias coverage | Pass |
+
+**Not covered:**
+- Private-question visibility for the owner (no intake yet, Slice 6).
+- `HEAD` requests.
+- Load or latency targets (k6, before the pilot).
+
+### Content finding for the D6 reviewers
+
+The INV-05.2 scan found that the typed T13 lesson (`MAT.TRI.L.MENCARI_SISI_YANG_BELUM_DIKETAHUI`) and its
+check 2 (`MAT.TRI.Q.T13_CHECK_2`) work the **tower question itself**: "tan 30° = 20 / x … ≈ 34,6". That is
+the worked solution of `SOAL_MENARA` and `TRIG_DEPRESSION_01`, and both are public, so a learner can
+read the answer before attempting the question.
+
+This is not a rubric or key leak; the content is authored that way in the frontend. The test lists it as
+an explicit known exposure, which must keep matching so the entry cannot go stale. The reviewers should
+choose one of the following:
+- re-author the example with other numbers;
+- accept it, because the lesson is only offered after that question's diagnosis, and record a
+  `FULL_SOLUTION_SHOWN`-like exposure when it is opened;
+- move it out of the public catalog.
+

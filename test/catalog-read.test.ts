@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { Writable } from 'node:stream';
 import { sql } from 'kysely';
 import { readConfig } from '../src/config.js';
 import { connect } from '../src/db.js';
@@ -25,7 +26,7 @@ test('Slice 1 public catalog read API', async t => {
   const config = readConfig(env);
   assert.match(new URL(config.databaseUrl).pathname, /_test$/, 'Tests require a dedicated *_test database');
   const db = connect(config.databaseUrl);
-  const { app } = await buildApp(config, { db });
+  const { app } = await buildApp(config, { db, logStream: new Writable({ write(_chunk, _encoding, done) { done(); } }) });
   const get = async (url: string, headers: Record<string, string> = {}) => {
     const r = await app.inject({ method: 'GET', url, headers });
     return { status: r.statusCode, headers: r.headers, body: r.body ? JSON.parse(r.body) : undefined, raw: r.body };
@@ -161,7 +162,20 @@ test('Slice 1 public catalog read API', async t => {
       }
       for (const c of fixture.topics.flatMap(x => x.concepts)) for (const m of c.misconceptions) [m.example, ...m.indicators].forEach(s => s && secrets.add(s));
       assert.ok(secrets.size > 40);
-      for (const b of bodies) for (const s of secrets) assert.ok(!b.text.includes(JSON.stringify(s).slice(1, -1)), `${b.url} leaks rubric text: ${s}`);
+      // Authored content that works the same example as a rubric. Not a key leak, but an exposure the content
+      // reviewers must decide on (plan 03 §9). Each entry must keep matching, so the list cannot go stale.
+      const KNOWN_EXPOSURES = [{ secret: 'tan 30° = 20 / x', codes: ['MAT.TRI.Q.T13_CHECK_2', 'MAT.TRI.L.MENCARI_SISI_YANG_BELUM_DIKETAHUI'],
+        reason: 'The T13 lesson and its check 2 work the tower question itself (20 m, 30°), which is the worked solution of SOAL_MENARA / TRIG_DEPRESSION_01' }];
+      const allowed = new Set(KNOWN_EXPOSURES.flatMap(e => e.codes));
+      const without = (node: unknown): unknown => Array.isArray(node) ? node.map(without)
+        : node && typeof node === 'object' ? ((node as { code?: string }).code && allowed.has((node as { code: string }).code) ? null
+          : Object.fromEntries(Object.entries(node).map(([k, v]) => [k, without(v)]))) : node;
+      for (const b of bodies) {
+        const text = JSON.stringify(without(b.body));
+        for (const s of secrets) assert.ok(!text.includes(JSON.stringify(s).slice(1, -1)), `${b.url} leaks rubric text: ${s}`);
+      }
+      for (const e of KNOWN_EXPOSURES) for (const code of e.codes)
+        assert.ok(bodies.some(b => (b.body as { code?: string }).code === code && b.text.includes(e.secret)), `stale known exposure: ${code}`);
       // Per question: its own views never contain its non-option answer forms or value.
       const answerForms = (q: Manifest['questions'][number]) => q.rubric.evaluator === 'option-v1' ? [] : [
         ...q.rubric.acceptedForms, ...(q.rubric.answer.value === undefined ? [] : [q.rubric.answer.value.toFixed(2), q.rubric.answer.value.toFixed(2).replace('.', ',')])];
