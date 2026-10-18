@@ -1,6 +1,6 @@
 # Slice 1 implementation plan: catalog and deterministic practice
 
-Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1–M7 implemented against a synthetic reviewed fixture (§7–§13). M8–M9 not started.**
+Date: **2026-10-18**. Status: **D1, D2 and D7 approved. M1–M8 implemented against a synthetic reviewed fixture (§7–§14). M9 (exit verification) not started.**
 Scope stays the same as Slice 0: synthetic learners and local development only.
 No real learner data, deployment or AI.
 
@@ -882,3 +882,66 @@ only; every other `FEATURE_*` still fails closed.
 | Full backend suite | **98/98 pass, 0 skipped, on two consecutive runs.** Evidence: `evidence/slice1-m7-tests.txt`. |
 | `npm run verify:frontend` | Pass: frontend suite, 29 consumer checks, golden cases |
 | `tsc`, boundary and rubric checks, OpenAPI validation | Pass. The contract is unchanged; `LegacyCheckResult` was already frozen to the `isCheck` shape. |
+
+## 14. M8 status (2026-10-18)
+
+The Vue app uses canonical sessions for a signed-in learner whose guardian granted `LEARNING_DATA`.
+Both new flags must be set, and the new one is kept separate from the Slice 0 account flag so learning
+can be switched on without the account pages:
+- `VITE_SLICE0=true` (sign-in and the CSRF-aware fetch wrapper);
+- `VITE_CANONICAL_LEARNING=true`.
+
+Everyone else (guests, unconsented learners, flags off) keeps the on-device flow unchanged.
+
+### Frontend (Vue checkout, uncommitted; see below)
+
+| File | Role |
+|---|---|
+| `src/services/learningSessions.ts` | The canonical session client. `canonicalLearner()` never throws: on any doubt the device flow stays. It also provides open-or-resume through a per-screen session pointer (an id in `localStorage`), cached `QuestionView`s, and commands. Each user action gets one `Idempotency-Key`, reused for one retry after a network failure. A stale version (`409 STALE_STATE_VERSION` or `INVALID_STATE_TRANSITION`) returns the re-read session instead of an error. |
+| `src/composables/useCanonicalPractice.ts` + `views/PracticeRunView.vue` | Server-chosen items rendered in the screen's existing shape. The same query choices map to specs: `?set=gabungan` → `MAT.S.COMBINED`, `?core=` → concept, `?ids=` → question ids, default → `MAT.S.BANK`. Keys are known only after grading (`revealedAnswer`). A refresh resumes at the first pending item. A stale tab says the item was answered in another tab and moves on. Per-item results are kept on the device only for the end summary. |
+| `src/services/canonicalLesson.ts` + seam in `useCobaFlow.answerCheckWithBackend` | CoreView checks (`core:<route>:c<i>`) and practice (`core:<route>:q<i>`) are graded in one canonical PRACTICE-with-lesson session per route, found through the new `Lesson.practiceSetCode`. Implied `ADVANCE_LESSON`, then `FINISH_LESSON` or `SKIP_LESSON`, use the server's version. A stale tab re-reads once. |
+| `src/services/canonicalApi.ts` | `import.meta.env` is read defensively, because node-bundled tests import it through `useCobaFlow` |
+| `tests/e2e/canonical-practice.spec.ts`, `@playwright/test` 1.63.0 (pinned; matches the cached Chromium 1243, so no browser download) | See verification below. The repo's existing E2E specs imported `@playwright/test` without declaring it. |
+
+**Not done in M8:**
+- **CoreView UI state after a refresh.** Grading, order and state are on the server and survive a
+  refresh. The lesson screen does not yet restore which option the learner picked, because that needs
+  per-attempt reads. The server refuses a second answer to a graded check either way.
+- **Client-side XP for signed-in learners.** It stays device-only until Slice 3, which makes XP a
+  server rule (INV-15).
+
+### Backend
+
+- **Contract (additive):** `Lesson.practiceSetCode`, the set to start with `spec.setCode` and `withLesson: true`.
+- **`npm run catalog:bundle-check -- --dist <dist> [--self-test]`:** no `CATALOG` item's prompt or rubric
+  text may appear in the built bundle. Every on-device item carries its key, so `CATALOG` content must
+  only arrive through the API. Today there are 0 `CATALOG` items (D4), so the check passes trivially;
+  its self-test proves it fires when a bundled item is relabelled `CATALOG`.
+- **`npm run e2e:canonical`** (needs the isolated PostgreSQL):
+  1. `scripts/e2e-seed.ts` runs on `*_test` databases only. It resets the catalog and learning tables,
+     publishes the synthetic **reviewed fixture** (never the draft), and signs in one consented
+     synthetic learner.
+  2. Starts the API with `APP_ORIGIN=http://localhost:4173`.
+  3. Builds the Vue checkout with both flags, then runs the bundle check and the Playwright spec.
+     `vite preview` proxies `/v1`.
+  4. Stops the API and rebuilds with the default flags.
+
+  The API's request log (route, status, timing) goes to `.local/e2e-api.log`.
+- **Test fixture fix:** a test-fixture learner now has a `student_profile` row, as every real learner
+  does. Without it, `GET /v1/auth/session` returned 404, which the browser exposed.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| **Playwright E2E** (`npm run e2e:canonical`; Chromium 1243, Pixel 5 profile, built app via `vite preview`) | **2 passed, on 3 consecutive runs.** Practice: answer item 1, refresh, and the page resumes at item 2 from the server. A second tab opens the same session at item 2 and answers it. The first, stale tab is refused with `409`; it re-reads the session, says the item was answered in another tab, and moves to item 3. The server then shows `[ANSWERED, ANSWERED, PENDING, PENDING]` at version 3, and a new tab resumes at item 3. CoreView: a lesson check is graded on the server (`answered: true, verdict: CORRECT`). Evidence: `evidence/slice1-m8-e2e.txt`. |
+| What the E2E found (fixed) | **A real race.** PracticeRunView decided between the canonical and device flows only after the sign-in check, and in the meantime showed the device items, which look identical. A fast click was graded by the device flow. With the flag on, the screen now stays in its loading state until the decision is made. A second bug was the fixture learner without a profile (above). |
+| Bundle key check | Pass. 0 `CATALOG` items, and the self-test detects a relabelled bundled item. |
+| Vue checkout `npm test`, `npm run build`, 29 consumer checks, golden cases | Pass |
+| Backend suite | **98/98 pass, 0 skipped, on two consecutive runs** (evidence: `evidence/slice1-m8-tests.txt`). OpenAPI validation, architecture 14/14 + self-test, boundary checks: pass. |
+
+**The Vue repo's older E2E specs are failing, and the cause is not M8.** Run against the default build
+now that `@playwright/test` is installed, 57 of 59 failed. They look for the pre-redesign landing page
+("Coba 1 Soal Gratis", `.hero-product`). A browser probe shows no page errors, and the current landing
+renders the redesigned hero: `LandingHero.vue` still holds the old copy but is no longer mounted. They
+need updating to the Figma redesign. M8 did not touch them.

@@ -3412,6 +3412,10 @@ components:
         routeSlug:
           type: string
           maxLength: 64
+        practiceSetCode:
+          type: string
+          maxLength: 64
+          description: The practice set that follows this lesson; start it with CreatePracticeRequest spec.setCode and withLesson true.
         title:
           type: string
           maxLength: 120

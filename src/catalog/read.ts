@@ -35,7 +35,9 @@ async function load(db: Connection, release: { id: string; version: number; snap
     from question q join question_revision r on r.question_id = q.id and r.status = 'PUBLISHED'
     where q.visibility <> 'PRIVATE' and q.code in (${codes('$.questions[*].code')})`.execute(db)).rows
     .sort((a, b) => a.code < b.code ? -1 : a.code > b.code ? 1 : 0); // keyset order must match the cursor's plain string comparison, not the DB collation
-  const lessons = (await sql<LessonRow>`select l.id, l.code, l.route_slug, r.revision, r.title, r.estimated_minutes, r.blocks,
+  const lessons = (await sql<LessonRow>`select l.id, l.code, l.route_slug,
+      (select x ->> 'practiceSet' from curriculum_release c, jsonb_array_elements(c.snapshot -> 'lessons') x where c.id = ${release.id} and x ->> 'code' = l.code) as practice_set,
+      r.revision, r.title, r.estimated_minutes, r.blocks,
       coalesce((select jsonb_agg(lc.concept_id order by c.ordinal, c.code) from lesson_concept lc join concept c on c.id = lc.concept_id where lc.lesson_id = l.id), '[]') as "conceptIds",
       coalesce((select jsonb_agg(jsonb_build_object('id', a.id, 'ordinal', a.ordinal, 'slide_index', a.slide_index, 'required', a.required, 'question_id', a.question_id))
         from micro_assessment a where a.lesson_revision_id = r.id), '[]') as checks

@@ -13,7 +13,7 @@ export interface ConceptRow { id: string; topic_id: string; code: string; legacy
   availability: string; is_hidden: boolean; is_capstone: boolean }
 export interface QuestionRow { id: string; code: string; legacy_item_id: string | null; visibility: string; revision_id: string; item_type: string; body: QuestionBody;
   difficulty: number; estimated_minutes: number; concepts: { conceptId: string; topicId: string; role: 'PRIMARY'|'SUPPORTING'; assessable: boolean }[] }
-export interface LessonRow { id: string; code: string; route_slug: string | null; revision: number; title: string; estimated_minutes: number; blocks: LessonBlock[];
+export interface LessonRow { id: string; code: string; route_slug: string | null; practice_set: string | null; revision: number; title: string; estimated_minutes: number; blocks: LessonBlock[];
   conceptIds: string[]; checks: { id: string; ordinal: number; slide_index: number; required: boolean; question_id: string }[] }
 
 export const subjectView = (s: SubjectRow) => ({ id: s.id, code: s.code, title: s.title, availability: s.availability });
@@ -77,7 +77,7 @@ const blockView = (b: LessonBlock) => {
 };
 
 export const lessonView = (l: LessonRow, question: (id: string) => QuestionRow | undefined) => ({
-  id: l.id, code: l.code, ...opt('routeSlug', l.route_slug), title: l.title, estimatedMinutes: l.estimated_minutes, contentVersion: l.revision,
+  id: l.id, code: l.code, ...opt('routeSlug', l.route_slug), ...opt('practiceSetCode', l.practice_set), title: l.title, estimatedMinutes: l.estimated_minutes, contentVersion: l.revision,
   conceptIds: l.conceptIds, slideCount: Math.max(0, ...l.blocks.map(b => b.slide)) + 1, blocks: l.blocks.map(blockView),
   checks: [...l.checks].sort((a, b) => a.ordinal - b.ordinal).flatMap(c => {
     const q = question(c.question_id);

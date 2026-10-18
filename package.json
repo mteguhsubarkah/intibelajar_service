@@ -24,6 +24,9 @@
     "catalog:lint": "tsx scripts/catalog/lint-manifest.ts",
     "catalog:publish": "tsx scripts/catalog/publish.ts",
     "catalog:golden": "tsx scripts/catalog/golden.ts",
+    "catalog:bundle-check": "tsx scripts/catalog/check-bundle-keys.ts",
+    "e2e:seed": "tsx scripts/e2e-seed.ts",
+    "e2e:canonical": "node scripts/e2e-canonical.mjs",
     "test:catalog": "tsx --test --test-concurrency=1 test/catalog-*.test.ts"
   },
   "dependencies": {
