@@ -3,7 +3,7 @@ import {readFileSync,readdirSync} from 'node:fs';
 import {join} from 'node:path';
 const groups={identity:['app_user','auth_identity','auth_session','auth_transaction'],privacy:['learner','guardian','student_profile','consent_record','deletion_request','erasure_receipt','audit_event'],platform:['idempotency_record','job'],
   catalog:['curriculum_release','subject','topic','topic_relation','concept','concept_prerequisite','question','question_revision','question_concept','micro_lesson','micro_lesson_revision','lesson_concept','micro_assessment','catalog_alias'],
-  learning:['learning_session','session_item','lesson_assignment','question_attempt','assistance_event'],assessment:['diagnosis_run','concept_evidence']};
+  learning:['learning_session','session_item','lesson_assignment','question_attempt','assistance_event'],assessment:['diagnosis_run','concept_evidence','diagnosis_report']};
 const owner=new Map(Object.entries(groups).flatMap(([group,tables])=>tables.map(t=>[t,group])));
 const failures=[];
 for(const group of Object.keys(groups))for(const name of readdirSync('src/'+group).filter(n=>n.endsWith('.ts'))) {

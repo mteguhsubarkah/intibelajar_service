@@ -20,10 +20,10 @@ import { reviewedFixture } from './fixtures/catalog.js';
 const LEARNER_TABLES: Record<string, string> = {
   learner: 'seeded here', student_profile: 'Slice 0 suite', consent_record: 'Slice 0 suite', deletion_request: 'seeded here (erasure request)', app_user: 'Slice 0 suite',
   learning_session: 'seeded here', session_item: 'seeded here (via session)', lesson_assignment: 'seeded here (via session)', question_attempt: 'seeded here',
-  assistance_event: 'seeded here', diagnosis_run: 'seeded here', concept_evidence: 'seeded here',
+  assistance_event: 'seeded here', diagnosis_run: 'seeded here', concept_evidence: 'seeded here', diagnosis_report: 'seeded here (Slice 2)',
   question: 'deferred to Slice 6: private intake questions (owner_learner_id); none can exist before intake, asserted below',
 };
-const SEEDED = ['learning_session', 'session_item', 'lesson_assignment', 'question_attempt', 'assistance_event', 'diagnosis_run', 'concept_evidence'] as const;
+const SEEDED = ['learning_session', 'session_item', 'lesson_assignment', 'question_attempt', 'assistance_event', 'diagnosis_run', 'concept_evidence', 'diagnosis_report'] as const;
 
 test('Slice 1 learning schema, guards and erasure on PostgreSQL', async t => {
   const env = process.env.DATABASE_URL ? process.env : JSON.parse(readFileSync('.local/test-env.json', 'utf8'));
@@ -64,11 +64,14 @@ test('Slice 1 learning schema, guards and erasure on PostgreSQL', async t => {
         values (${evId}, ${runId}, ${a1}, ${id}, ${catalog.concept}, 'UNDERSTANDING_DEMONSTRATED', ${source}, ${JSON.stringify([{ kind: 'OPTION', optionId: 'a' }])}::jsonb,
           'MAT.TRI.F.TAN60_SIN30', 'BARE_VALUE', false, true, ${supersedes})`.execute(tx);
       await evidence(ev1, run1, 'DETERMINISTIC', null);
+      // Slice 2: a dispute report on the run and the run's job; both reference the run, so erasure removes them first.
+      await sql`insert into diagnosis_report(id, diagnosis_run_id, learner_id, reason, note, status) values (${uuid()}, ${run1}, ${id}, 'OTHER', ${'canary 5521'}, 'OPEN')`.execute(tx);
+      await sql`insert into job(id, queue, diagnosis_run_id, status, deadline_at) values (${uuid()}, 'diagnosis', ${run1}, 'DONE', now() + interval '1 minute')`.execute(tx);
       await evidence(ev2, run2, 'EDUCATOR', ev1);
       // The one permitted evidence update: mark the older row superseded (06 §5.1 rule 7).
       await sql`update concept_evidence set mastery_eligible = false, transfer_eligible = false, eligibility_reasons = array_append(eligibility_reasons, 'SUPERSEDED') where id = ${ev1}`.execute(tx);
     });
-    return { id, session, a1, a2, a3, run1, ev1 };
+    return { id, session, a1, a2, a3, run1, run2, ev1 };
   };
   const rowsOf = async (learner: string, sessions: string[]): Promise<Record<string, number>> => Object.fromEntries(await Promise.all(SEEDED.map(async table => {
     const where = ['session_item', 'lesson_assignment'].includes(table)
@@ -81,7 +84,7 @@ test('Slice 1 learning schema, guards and erasure on PostgreSQL', async t => {
   };
 
   try {
-    await t.test('0003 applies on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings', async () => {
+    await t.test('0003 and 0004 apply on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings', async () => {
       await migrate(db);
       await rollbackTo(db, '0001_slice0.up.sql');
       await migrate(db);
@@ -90,7 +93,7 @@ test('Slice 1 learning schema, guards and erasure on PostgreSQL', async t => {
       assert.notEqual((await sql<{ t: string | null }>`select to_regclass('question_revision')::text t`.execute(db)).rows[0]!.t, null);
       await migrate(db); await migrate(db);
       const recorded = (await sql<{ name: string; sha256: string }>`select name, sha256 from schema_migration order by name`.execute(db)).rows;
-      assert.deepEqual(recorded.map(r => r.name), ['0001_slice0.up.sql', '0002_catalog.up.sql', '0003_learning.up.sql']);
+      assert.deepEqual(recorded.map(r => r.name), ['0001_slice0.up.sql', '0002_catalog.up.sql', '0003_learning.up.sql', '0004_question_loop.up.sql']);
       // A CRLF checkout of the same migration must verify against the recorded checksum.
       const { createHash } = await import('node:crypto');
       const digest = (data: string | Buffer) => createHash('sha256').update(data).digest('hex');
@@ -131,6 +134,7 @@ test('Slice 1 learning schema, guards and erasure on PostgreSQL', async t => {
       const catalogBefore = (await sql<{ n: string }>`select (select count(*) from question_revision) + (select count(*) from micro_assessment) + (select count(*) from concept) n`.execute(db)).rows[0]!.n;
       await eraseCompletely(a.id);
       assert.deepEqual(await rowsOf(a.id, [a.session]), Object.fromEntries(SEEDED.map(t => [t, 0])));
+      assert.equal((await sql<{ n: string }>`select count(*) n from job where diagnosis_run_id = any(${[a.run1, a.run2]}::uuid[])`.execute(db)).rows[0]!.n, '0', 'jobs of the runs');
       // Tables keyed by learner; session_item and lesson_assignment are checked through their session above.
       for (const table of Object.keys(LEARNER_TABLES).filter(t => !['question', 'session_item', 'lesson_assignment'].includes(t))) {
         const column = table === 'learner' ? 'id' : 'learner_id';

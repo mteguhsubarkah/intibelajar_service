@@ -160,6 +160,18 @@ export interface Database {
     started_at: Date | null;
     completed_at: Date | null;
   };
+  diagnosis_report: {
+    id: string;
+    diagnosis_run_id: string;
+    learner_id: string;
+    reason: string;
+    note: string | null;
+    status: string;
+    resolution_code: string | null;
+    resolution_run_id: string | null;
+    created_at: Generated<Date>;
+    resolved_at: Date | null;
+  };
   diagnosis_run: {
     id: string;
     attempt_id: string;
@@ -226,6 +238,7 @@ export interface Database {
     last_error_code: string | null;
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
+    diagnosis_run_id: string | null;
   };
   learner: {
     id: string;

@@ -1,0 +1,120 @@
+# Subtest: committed draft manifest lints clean apart from open review decisions
+ok 1 - committed draft manifest lints clean apart from open review decisions
+# Subtest: mutation: SCHEMA is detected, and only it
+ok 2 - mutation: SCHEMA is detected, and only it
+# Subtest: mutation: KEY_IN_BODY is detected, and only it
+ok 3 - mutation: KEY_IN_BODY is detected, and only it
+# Subtest: mutation: SIZE is detected, and only it
+ok 4 - mutation: SIZE is detected, and only it
+# Subtest: mutation: CODE_DUPLICATE is detected, and only it
+ok 5 - mutation: CODE_DUPLICATE is detected, and only it
+# Subtest: mutation: REF_UNKNOWN is detected, and only it
+ok 6 - mutation: REF_UNKNOWN is detected, and only it
+# Subtest: mutation: ALIAS_AMBIGUOUS is detected, and only it
+ok 7 - mutation: ALIAS_AMBIGUOUS is detected, and only it
+# Subtest: mutation: ALIAS_UNMAPPED_CONFLICT is detected, and only it
+ok 8 - mutation: ALIAS_UNMAPPED_CONFLICT is detected, and only it
+# Subtest: mutation: PREREQ_CYCLE is detected, and only it
+ok 9 - mutation: PREREQ_CYCLE is detected, and only it
+# Subtest: mutation: PREREQ_SELF is detected, and only it
+ok 10 - mutation: PREREQ_SELF is detected, and only it
+# Subtest: mutation: TOPIC_CYCLE is detected, and only it
+ok 11 - mutation: TOPIC_CYCLE is detected, and only it
+# Subtest: mutation: UNIT_UNKNOWN is detected, and only it
+ok 12 - mutation: UNIT_UNKNOWN is detected, and only it
+# Subtest: mutation: QUESTION_NO_PRIMARY is detected, and only it
+ok 13 - mutation: QUESTION_NO_PRIMARY is detected, and only it
+# Subtest: mutation: STEP_CONCEPT_UNMAPPED is detected, and only it
+ok 14 - mutation: STEP_CONCEPT_UNMAPPED is detected, and only it
+# Subtest: mutation: MISCONCEPTION_UNKNOWN is detected, and only it
+ok 15 - mutation: MISCONCEPTION_UNKNOWN is detected, and only it
+# Subtest: mutation: EVALUATOR_SHAPE is detected, and only it
+ok 16 - mutation: EVALUATOR_SHAPE is detected, and only it
+# Subtest: mutation: OPTION_IDS is detected, and only it
+ok 17 - mutation: OPTION_IDS is detected, and only it
+# Subtest: mutation: PRACTICE_NOT_DETERMINISTIC is detected, and only it
+ok 18 - mutation: PRACTICE_NOT_DETERMINISTIC is detected, and only it
+# Subtest: mutation: CHECK_NOT_DETERMINISTIC is detected, and only it
+ok 19 - mutation: CHECK_NOT_DETERMINISTIC is detected, and only it
+# Subtest: mutation: CHECK_PLACEMENT is detected, and only it
+ok 20 - mutation: CHECK_PLACEMENT is detected, and only it
+# Subtest: mutation: FILE_NAME is detected when a file does not match its code
+ok 21 - mutation: FILE_NAME is detected when a file does not match its code
+# Subtest: writeManifest and loadManifest round-trip without loss
+ok 22 - writeManifest and loadManifest round-trip without loss
+# Subtest: extractor is deterministic and every frontend identifier resolves
+ok 23 - extractor is deterministic and every frontend identifier resolves
+# Subtest: Slice 1 catalog migration and publisher on PostgreSQL
+ok 24 - Slice 1 catalog migration and publisher on PostgreSQL
+# (node:28460) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Slice 1 public catalog read API
+ok 25 - Slice 1 public catalog read API
+# Subtest: golden numeric cases: verdict, unreadable reason and misconception match the shared file
+ok 26 - golden numeric cases: verdict, unreadable reason and misconception match the shared file
+# Subtest: golden option section is in sync with the manifest and every index grades as the key says
+ok 27 - golden option section is in sync with the manifest and every index grades as the key says
+# Subtest: every deterministic item accepts its own key and its first accepted form
+ok 28 - every deterministic item accepts its own key and its first accepted form
+# Subtest: evidence: correct answers demonstrate the final-answer concepts and quote what was written
+ok 29 - evidence: correct answers demonstrate the final-answer concepts and quote what was written
+# Subtest: evidence: a catalogued wrong answer evidences its misconception; an unexplained one never invents a gap
+ok 30 - evidence: a catalogued wrong answer evidences its misconception; an unexplained one never invents a gap
+# Subtest: INV-16 and refusals: unreadable, self-reports and malformed inputs produce no evidence and no verdict claim
+ok 31 - INV-16 and refusals: unreadable, self-reports and malformed inputs produce no evidence and no verdict claim
+# Subtest: non-assessable concepts are never claimed, and evaluation is deterministic
+ok 32 - non-assessable concepts are never claimed, and evaluation is deterministic
+# Subtest: Slice 1 learning schema, guards and erasure on PostgreSQL
+ok 33 - Slice 1 learning schema, guards and erasure on PostgreSQL
+# Subtest: INV-06.1: the version moves by exactly one when the state changes or an attempt is stored
+ok 34 - INV-06.1: the version moves by exactly one when the state changes or an attempt is stored
+# Subtest: terminal states absorb every command except re-reading a loop solution; completion has a reason
+ok 35 - terminal states absorb every command except re-reading a loop solution; completion has a reason
+# Subtest: kinds stay apart: practice never enters a loop state, a loop never practises
+ok 36 - kinds stay apart: practice never enters a loop state, a loop never practises
+# Subtest: practice: items finish in order, never revert, and completion means none is pending
+ok 37 - practice: items finish in order, never revert, and completion means none is pending
+# Subtest: lessons: graded checks stay graded; the lesson ends only by finishing (all required graded) or skipping
+ok 38 - lessons: graded checks stay graded; the lesson ends only by finishing (all required graded) or skipping
+# Subtest: loop bounds: at most 2 clarification rounds, 2 unsuccessful retries and 3 run generations
+ok 39 - loop bounds: at most 2 clarification rounds, 2 unsuccessful retries and 3 run generations
+# Subtest: INV-16: only an incorrect verification consumes a retry; unreadable and insufficient results never do
+ok 40 - INV-16: only an incorrect verification consumes a retry; unreadable and insufficient results never do
+# Subtest: SOLUTION_REVIEWED only after the retries are exhausted or through REVIEW_SOLUTION
+ok 41 - SOLUTION_REVIEWED only after the retries are exhausted or through REVIEW_SOLUTION
+# Subtest: 05 §4.4: a self-report never yields a verdict other than NOT_GRADED
+ok 42 - 05 §4.4: a self-report never yields a verdict other than NOT_GRADED
+# Subtest: runs: pending exactly while diagnosing or verifying; results are fenced by generation and status
+ok 43 - runs: pending exactly while diagnosing or verifying; results are fenced by generation and status
+# Subtest: allowedActions lists exactly the commands that some argument makes legal
+ok 44 - allowedActions lists exactly the commands that some argument makes legal
+# Subtest: question-loop commands are never legal in a practice session
+ok 45 - question-loop commands are never legal in a practice session
+# Subtest: question loop paths (E-01–E-21)
+ok 46 - question loop paths (E-01–E-21)
+# (node:31748) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Slice 1 practice sessions over the API
+ok 47 - Slice 1 practice sessions over the API
+# (node:12268) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:12268) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+# Subtest: Slice 1 legacy facade L3 over the M6 engine
+ok 48 - Slice 1 legacy facade L3 over the M6 engine
+# Subtest: Slice 2 question-loop schema and diagnosis queue on PostgreSQL
+ok 49 - Slice 2 question-loop schema and diagnosis queue on PostgreSQL
+# (node:15496) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Slice 0 real PostgreSQL integration and security gates
+# (node:15496) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+# (node:15496) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+# (node:15496) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+ok 50 - Slice 0 real PostgreSQL integration and security gates
+# tests 111
+# suites 0
+# pass 111
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 100536.8038
