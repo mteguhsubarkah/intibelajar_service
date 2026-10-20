@@ -8,6 +8,9 @@ import { deletion } from './service.js';
 import {queueRestoredErasures} from './recovery.js';
 import { eraseLearnerEvidence } from '../assessment/erasure.js';
 import { eraseLearnerLearning } from '../learning/erasure.js';
+import {eraseProgress} from '../progress/service.js';
+import{eraseTutor}from'../tutor/service.js';
+import{eraseIntakes}from'../intake/service.js';import{eraseIntakeQuestions}from'../catalog/intake-interface.js';
 export async function sweep(tx:Tx,config:Config) {
   const expired=await tx.selectFrom('learner').select('id').where('status','=','PENDING_CONSENT').where('consent_deadline_at','<=',sql<Date>`now()`).orderBy('id').forUpdate().skipLocked().execute();
   for(const row of expired) await deletion(tx,config,row.id,'SYSTEM','CONSENT_EXPIRED');
@@ -24,8 +27,10 @@ export async function adoptErasure(tx:Tx,config:Config,lease:Lease) {
   if(!learner || learner.status!=='DELETION_PENDING') return false;
   if(!await validLease(tx,lease)) return false;
   const guardians=(await tx.selectFrom('consent_record').select('guardian_id').distinct().where('learner_id','=',id).execute()).map(r=>r.guardian_id);
+  await eraseTutor(tx,id);await eraseProgress(tx,id);await eraseIntakes(tx,id);
   await eraseLearnerEvidence(tx,id);
   await eraseLearnerLearning(tx,id);
+  await eraseIntakeQuestions(tx,id);
   await eraseLearnerIdentity(tx,id);
   await tx.deleteFrom('student_profile').where('learner_id','=',id).execute();
   await tx.deleteFrom('consent_record').where('learner_id','=',id).execute();

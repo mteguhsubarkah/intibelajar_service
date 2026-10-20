@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-19T13:15:19.837Z",
+  "mode": "full",
+  "versions": {
+    "node": "v24.19.0",
+    "childNode": "v24.19.0",
+    "npm": "11.17.0",
+    "postgresql": "postgres (PostgreSQL) 17.5",
+    "playwright": "Version 1.63.0",
+    "python": "Python 3.13.14",
+    "os": "win32 x64"
+  },
+  "postgresqlCluster": "isolated cluster 127.0.0.1:55432, *_test database",
+  "passed": 25,
+  "total": 25,
+  "runnerExit": 0,
+  "results": [
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 18.4
+    },
+    {
+      "name": "module-and-rubric-boundaries",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 2.3
+    },
+    {
+      "name": "openapi-validation",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 3.4
+    },
+    {
+      "name": "manifest-lint-draft",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 3.2
+    },
+    {
+      "name": "manifest-lint-strict-refuses-draft",
+      "exit": 1,
+      "expectExit": 1,
+      "ok": true,
+      "seconds": 3.2
+    },
+    {
+      "name": "golden-sync-v2",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 2.7
+    },
+    {
+      "name": "alias-coverage-and-freeze",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 3.6
+    },
+    {
+      "name": "migration-extraction-catalog",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 1.2
+    },
+    {
+      "name": "migration-extraction-learning",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 1.2
+    },
+    {
+      "name": "migration-extraction-question-loop",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 1.2
+    },
+    {
+      "name": "migrations-unchanged-after-regeneration",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 0.2
+    },
+    {
+      "name": "draft-extraction-roundtrip-write",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 4.4
+    },
+    {
+      "name": "frontend-data-unchanged-since-extraction",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 0.2
+    },
+    {
+      "name": "draft-extraction-roundtrip-identical",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 0.4
+    },
+    {
+      "name": "m5-question-loop-suite",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 53.2
+    },
+    {
+      "name": "m6-disputes-suite",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 13.1
+    },
+    {
+      "name": "m7-m8-facade-l1-l2-l4-l8-suite-with-idempotency-regression",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 20.5
+    },
+    {
+      "name": "m7-facade-l3-regression-suite",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 14.4
+    },
+    {
+      "name": "backend-tests-run-1",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 236.3
+    },
+    {
+      "name": "backend-tests-run-2",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 159.5
+    },
+    {
+      "name": "architecture-self-test",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 56.5
+    },
+    {
+      "name": "vue-typecheck-alias-mapped-all-files",
+      "exit": 2,
+      "expectExit": 2,
+      "ok": true,
+      "seconds": 25.4
+    },
+    {
+      "name": "vue-typecheck-m8-files",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "frontend-suite-consumer-golden-v2",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 30.9
+    },
+    {
+      "name": "browser-e2e-canonical-practice-and-loop",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 112.2
+    }
+  ]
+}

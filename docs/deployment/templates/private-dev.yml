@@ -1,0 +1,111 @@
+# TEMPLATE ONLY. Copy to .github/workflows/private-dev.yml after following the runbook.
+# Manual trigger; this is a basic private-dev pipeline, not the Slice 2/M9 exit suite.
+name: Private Ubuntu dev
+on:
+  workflow_dispatch:
+    inputs:
+      frontend_sha:
+        description: Full 40-character frontend commit SHA on main
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: private-ubuntu-dev
+  cancel-in-progress: false
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: slice0
+          POSTGRES_PASSWORD: synthetic-ci-only
+          POSTGRES_DB: intibelajar_ci_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U slice0 -d intibelajar_ci_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      NODE_ENV: test
+      DATABASE_URL: postgresql://slice0:synthetic-ci-only@127.0.0.1:5432/intibelajar_ci_test
+      APP_ORIGIN: http://localhost:5173
+      APP_KEY: 9e624b5894764717ba9a9a771bff96377647e2d18776112ba1ea909ce9b69994
+      SYNTHETIC_FIXTURES: 'true'
+      FRONTEND_DIR: ${{ github.workspace }}/frontend
+      FRONTEND_SHA: ${{ inputs.frontend_sha }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: backend
+          persist-credentials: false
+      - name: Validate frontend SHA
+        run: '[[ "$FRONTEND_SHA" =~ ^[a-f0-9]{40}$ ]]'
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.FRONTEND_REPOSITORY }}
+          ref: ${{ inputs.frontend_sha }}
+          path: frontend
+          token: ${{ secrets.FRONTEND_READ_TOKEN || github.token }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.19.0'
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
+            frontend/package-lock.json
+      - run: mkdir -p .local && npm ci
+      - run: npm ci --prefix "$FRONTEND_DIR"
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run validate:contract
+      - run: npm run catalog:lint
+      - run: npm run catalog:golden
+      - run: npm test
+      - run: npm run verify:frontend
+      - name: Build guest demo
+        run: npm run build --prefix "$FRONTEND_DIR"
+        env:
+          NODE_ENV: production
+          VITE_LEARNING_MODE: demo
+          VITE_API_BASE_URL: ''
+          VITE_BACKEND_FALLBACK: 'true'
+          VITE_SLICE0: 'false'
+          VITE_CANONICAL_LEARNING: 'false'
+          VITE_TRACK_URL: ''
+  deploy:
+    needs: checks
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment: private-dev
+    env:
+      SSH_HOST: ${{ secrets.DEV_SSH_HOST }}
+      SSH_PORT: ${{ secrets.DEV_SSH_PORT }}
+      SSH_USER: deploy
+      SSH_KEY: ${{ secrets.DEV_SSH_KEY }}
+      SSH_KNOWN_HOSTS: ${{ secrets.DEV_SSH_KNOWN_HOSTS }}
+      BACKEND_SHA: ${{ github.sha }}
+      FRONTEND_SHA: ${{ inputs.frontend_sha }}
+    steps:
+      - name: Update private Ubuntu environment over SSH
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          : "${SSH_HOST:?}" "${SSH_KEY:?}" "${SSH_KNOWN_HOSTS:?}"
+          [[ "$BACKEND_SHA" =~ ^[a-f0-9]{40}$ && "$FRONTEND_SHA" =~ ^[a-f0-9]{40}$ ]]
+          install -d -m 700 "$HOME/.ssh"
+          umask 077
+          printf '%s\n' "$SSH_KEY" > "$HOME/.ssh/private-dev"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          ssh -i "$HOME/.ssh/private-dev" -p "${SSH_PORT:-22}" \
+            -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "$SSH_USER@$SSH_HOST" \
+            "/srv/intibelajar/deploy-private-dev.sh $BACKEND_SHA $FRONTEND_SHA"

@@ -1,0 +1,25 @@
+schemaVersion: 1
+code: MAT.TRI.L.FUNNEL_RATIO_CHOICE
+title: Memilih perbandingan dari dua sisi
+estimatedMinutes: 2
+aliases: []
+concepts: [MAT.TRI.DEFINISI_SIN_COS_TAN]
+blocks:
+  - {type: heading, slide: 0, text: Tiap perbandingan butuh dua sisi tertentu.}
+  - {type: text, slide: 0, text: 'Terhadap sudut acuan: depan berhadapan dengan sudut; samping menempel pada sudut; miring berhadapan dengan siku-siku.'}
+  - {type: math, slide: 0, name: sin, expression: 'sin = depan / miring'}
+  - {type: math, slide: 0, name: cos, expression: 'cos = samping / miring'}
+  - {type: math, slide: 0, name: tan, expression: 'tan = depan / samping'}
+  - {type: tip, slide: 0, text: 'Lihat dulu sisi mana yang diketahui dan dicari, baru pilih perbandingannya.'}
+  - {type: heading, slide: 1, text: 'Contoh: soal berbeda, cara yang sama'}
+  - {type: text, slide: 1, text: 'Bayangan sebuah tiang 8 m, sudut matahari 45°. Berapa tinggi tiang? Yang diketahui samping (8 m), yang dicari depan (tinggi tiang). Depan dan samping memakai tan.'}
+  - {type: math, slide: 1, name: Model, expression: 'tan 45° = t / 8'}
+checks:
+  - {question: MAT.TRI.Q.FUNNEL_C4, ordinal: 1, slideIndex: 1, required: true}
+review:
+  status: PROPOSED
+  decision: S2-D3
+  fields: [whole entry]
+  evidence:
+    - User authorized D3 implementation on 2026-10-20 for local synthetic development. Production content review remains separate.
+    - Authored from StepMateri.vue; c4 required on slide index 1. c1-c3 retired from funnel only, retained in practice catalog.

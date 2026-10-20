@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { parse, stringify } from 'yaml';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
+import { patternTokens } from './text-pattern.js';
 // Alias manifest (Slice 1 M1): the reviewed source of every catalog entity and every legacy identifier.
 // Pure: no database access. The publisher (M2) runs lintManifest(..., {strict:true}) before writing.
 
@@ -28,12 +29,17 @@ export interface QuestionBody {
   hints: { step: number; conceptCode: string; lead: string; note?: string }[]; answerFormat: 'OPTION'|'NUMBER'|'TEXT'; answerExample?: string;
 }
 export interface Rubric {
+  tutorLadder?: { hints: [string, string]; nodes: { ask: string; text: string; quick: string[] }[] };
   schemaVersion: 1; evaluator: 'option-v1'|'numeric-v1'|'tower-v1'|'ai-assisted-v1';
   answer: { optionId?: string; value?: number; unit?: string; tolerance?: { relative: number; floor: number } };
   acceptedForms: string[];
-  solutionPaths: { code: string; label: string; steps: { code: string; description: string; concepts: { code: string; role: 'REQUIRED'|'SUPPORTING' }[] }[] }[];
-  misconceptionMap: { pattern: { kind: 'OPTION'|'NUMERIC'|'TEXT'; optionId?: string; value?: number; regex?: string }; conceptCode: string; misconceptionCode: string; explanation: string }[];
+  solutionPaths: { code: string; label: string; steps: { code: string; description: string; patterns?: string[]; concepts: { code: string; role: 'REQUIRED'|'SUPPORTING' }[] }[] }[];
+  misconceptionMap: { pattern: { kind: 'OPTION'|'NUMERIC'|'TEXT'; optionId?: string; value?: number; regex?: string; tokens?: string[] }; conceptCode: string; misconceptionCode: string; explanation: string }[];
   finalAnswerEvidence: string[];
+  /** Slice 2 D2: concept code → the lesson START_LESSON assigns for it in a question loop. */
+  lessonFor?: Record<string, string>;
+  /** Slice 2 M1: per catalogued misconception, the concept to learn next and its key formula. */
+  recommend?: { conceptCode: string; misconceptionCode: string; keyFormula: string }[];
   feedback?: { correct?: string; incorrect?: string };
   workedSolution?: { steps: { title: string; body: string }[]; after: string[] };
 }
@@ -60,6 +66,11 @@ export interface Release {
   gaps: string[];
 }
 export interface UnmappedEntry { ns: Namespace; value: string; pattern?: boolean; reason: string }
+/** A hand-authored overlay (catalog/authored/), applied over extractor-owned entries at load time. */
+export interface Authored {
+  schemaVersion: 1; kind: 'QUESTION_RUBRIC'|'CONCEPT_MISCONCEPTIONS'; target: string; provenance: { source: 'authored'; note?: string }; review: Review;
+  rubric?: Pick<Rubric, 'solutionPaths'|'misconceptionMap'|'lessonFor'|'recommend'|'tutorLadder'>; misconceptions?: Misconception[];
+}
 export interface Manifest {
   release: Release;
   subjects: { schemaVersion: 1; subjects: { code: string; title: string; availability: 'AVAILABLE'|'COMING_SOON'; aliases: Alias[] }[] };
@@ -67,17 +78,22 @@ export interface Manifest {
   sets: { schemaVersion: 1; sets: PracticeSet[] };
   unmapped: { schemaVersion: 1; entries: UnmappedEntry[] };
   topics: Topic[]; questions: Question[]; lessons: Lesson[];
+  /** Overlays as loaded, already applied to topics and questions; kept for lint and review. */
+  authored?: Authored[];
 }
 
 export type Rule =
   | 'SCHEMA'|'FILE_NAME'|'KEY_IN_BODY'|'SIZE'|'CODE_DUPLICATE'|'REF_UNKNOWN'|'ALIAS_AMBIGUOUS'|'ALIAS_UNMAPPED_CONFLICT'
   | 'PREREQ_CYCLE'|'PREREQ_SELF'|'TOPIC_CYCLE'|'UNIT_UNKNOWN'|'QUESTION_NO_PRIMARY'|'STEP_CONCEPT_UNMAPPED'|'MISCONCEPTION_UNKNOWN'
-  | 'EVALUATOR_SHAPE'|'OPTION_IDS'|'PRACTICE_NOT_DETERMINISTIC'|'CHECK_NOT_DETERMINISTIC'|'CHECK_PLACEMENT'|'UNREVIEWED';
+  | 'EVALUATOR_SHAPE'|'OPTION_IDS'|'PRACTICE_NOT_DETERMINISTIC'|'CHECK_NOT_DETERMINISTIC'|'CHECK_PLACEMENT'|'UNREVIEWED'
+  | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET';
 export interface Finding { rule: Rule; severity: 'error'|'warning'; file: string; message: string }
 
 const KINDS = { release: 'release.yaml', subjects: 'subjects.yaml', topicRelations: 'topic-relations.yaml', sets: 'sets.yaml', unmapped: 'unmapped.yaml' } as const;
 const DIRS = { topics: 'topics', questions: 'questions', lessons: 'lessons' } as const;
-const SCHEMA_DEFS: Record<string, string> = { release: 'release', subjects: 'subjects', topicRelations: 'topicRelations', sets: 'sets', unmapped: 'unmapped', topics: 'topic', questions: 'question', lessons: 'lesson' };
+const SCHEMA_DEFS: Record<string, string> = { release: 'release', subjects: 'subjects', topicRelations: 'topicRelations', sets: 'sets', unmapped: 'unmapped', topics: 'topic', questions: 'question', lessons: 'lesson', authored: 'authored' };
+/** Overlays live beside the extracted manifest, so the extractor's output directory never contains them. */
+export const AUTHORED_DIR = '../authored';
 // 04 §6 caps. The snapshot cap applies to the whole manifest serialised as one JSON document.
 export const SIZE_CAPS = { rubric: 64 * 1024, lessonBlocks: 64 * 1024, snapshot: 20 * 1024 * 1024 };
 // Field names that would carry a key into the learner-facing body (INV-05 at authoring time).
@@ -91,17 +107,44 @@ ajv.addSchema(schema);
 const validators = new Map(Object.values(SCHEMA_DEFS).map(def => [def, ajv.getSchema(`${schema.$id}#/$defs/${def}`)!]));
 
 const fileOf = (kind: keyof typeof DIRS, code: string) => `${DIRS[kind]}/${code}.yaml`;
+const authoredFile = (a: Authored) => (a as unknown as Record<symbol, string>)[FILE] ?? `authored/${a.target}.${a.kind === 'QUESTION_RUBRIC' ? 'rubric' : 'misconceptions'}.yaml`;
 
-export function loadManifest(dir: string): Manifest {
+/** Loads the extracted files and, unless `authored: false`, applies the overlays in `catalog/authored/` beside them. */
+export function loadManifest(dir: string, { authored: withAuthored = true } = {}): Manifest {
   const read = (file: string) => parse(readFileSync(join(dir, file), 'utf8'));
   const readDir = (sub: string) => existsSync(join(dir, sub))
     ? readdirSync(join(dir, sub)).filter(n => n.endsWith('.yaml')).sort().map(n => ({ ...read(join(sub, n)), [FILE]: `${sub}/${n}` }))
     : [];
-  return {
+  const authoredDir = join(dir, AUTHORED_DIR);
+  const authored = withAuthored && existsSync(authoredDir)
+    ? readdirSync(authoredDir).filter(n => n.endsWith('.yaml')).sort().map(n => ({ ...parse(readFileSync(join(authoredDir, n), 'utf8')), [FILE]: `authored/${n}` }))
+    : [];
+  return applyAuthored({
+    authored,
     release: read(KINDS.release), subjects: read(KINDS.subjects), topicRelations: read(KINDS.topicRelations),
     sets: read(KINDS.sets), unmapped: read(KINDS.unmapped),
-    topics: readDir(DIRS.topics), questions: readDir(DIRS.questions), lessons: readDir(DIRS.lessons),
-  };
+    topics: readDir(DIRS.topics), questions: readDir(DIRS.questions), lessons: [...readDir(DIRS.lessons),
+      ...(withAuthored && existsSync(join(authoredDir, 'lessons')) ? readdirSync(join(authoredDir, 'lessons')).filter(n => n.endsWith('.yaml')).sort()
+        .map(n => parse(readFileSync(join(authoredDir, 'lessons', n), 'utf8'))) : [])],
+  });
+}
+
+/**
+ * Apply hand-authored overlays (Slice 2 M1). A rubric overlay replaces the extracted solutionPaths and
+ * misconceptionMap when it sets them, and adds lessonFor and recommend; a misconception overlay appends to a
+ * concept. Unknown targets are left for lint (AUTHORED_TARGET), never silently dropped from review.
+ */
+export function applyAuthored(m: Manifest): Manifest {
+  for (const a of m.authored ?? []) {
+    if (a.kind === 'QUESTION_RUBRIC') {
+      const q = m.questions.find(x => x.code === a.target);
+      if (q && a.rubric) q.rubric = { ...q.rubric, ...structuredClone(a.rubric) };
+    } else {
+      const c = m.topics.flatMap(t => t.concepts).find(x => x.code === a.target);
+      if (c && a.misconceptions) c.misconceptions = [...c.misconceptions, ...structuredClone(a.misconceptions)];
+    }
+  }
+  return m;
 }
 // The file an entity was loaded from, kept off the serialised shape so FILE_NAME can compare it with the code.
 const FILE = Symbol('file');
@@ -109,6 +152,8 @@ const FILE = Symbol('file');
 const dump = (value: unknown) => stringify(value, { lineWidth: 0, aliasDuplicateObjects: false });
 // Deterministic output: fixed file layout, fixed key order from the caller, sorted file names.
 export function writeManifest(dir: string, m: Manifest) {
+  // A loaded manifest has its overlays applied; writing it would bake authored content into extractor files.
+  if (m.authored?.length) throw new Error('writeManifest takes an extracted manifest, not one with authored overlays applied');
   for (const sub of Object.values(DIRS)) rmSync(join(dir, sub), { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
   for (const [kind, file] of Object.entries(KINDS)) writeFileSync(join(dir, file), dump(m[kind as keyof typeof KINDS]));
@@ -157,6 +202,7 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
     if (loaded && loaded !== file) add('FILE_NAME', loaded, `file must be named ${file} after its code`);
     schemaCheck(SCHEMA_DEFS[kind]!, e, file);
   }
+  for (const a of m.authored ?? []) schemaCheck('authored', a, authoredFile(a));
   // Semantic rules assume the shapes the schema promises; stop here rather than report noise.
   if (findings.some(f => f.rule === 'SCHEMA')) return findings;
 
@@ -250,6 +296,36 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
       const concept = concepts.get(x.conceptCode);
       if (concept && !concept.misconceptions.some(mc => mc.code === x.misconceptionCode)) add('MISCONCEPTION_UNKNOWN', file, `misconception ${x.misconceptionCode} is not catalogued on ${x.conceptCode}`);
     }
+    // Slice 2: text patterns (tower-v1), lesson links (D2) and recommendations.
+    const tower = q.rubric.evaluator === 'tower-v1';
+    for (const p of q.rubric.solutionPaths) for (const step of p.steps) {
+      if (step.patterns && !tower) add('PATTERN', file, `step ${p.code}.${step.code} has patterns, which only tower-v1 reads`);
+      if (tower && !step.patterns) add('PATTERN', file, `tower-v1 step ${p.code}.${step.code} needs patterns, or its path can never be shown`);
+      for (const pattern of step.patterns ?? []) if (!patternTokens(pattern)) add('PATTERN', file, `step ${p.code}.${step.code} pattern "${pattern}" has no usable token run`);
+    }
+    for (const x of q.rubric.misconceptionMap) {
+      if (tower && (x.pattern.kind !== 'TEXT' || !x.pattern.tokens || x.pattern.regex !== undefined))
+        add('PATTERN', file, `tower-v1 misconception ${x.misconceptionCode} must be a TEXT pattern with tokens (no regex, no bare value: a wrong number alone shows no concept, T01-3)`);
+      if (x.pattern.tokens && !tower) add('PATTERN', file, `misconception ${x.misconceptionCode} has tokens, which only tower-v1 reads`);
+      for (const pattern of x.pattern.tokens ?? []) if (!patternTokens(pattern)) add('PATTERN', file, `misconception ${x.misconceptionCode} pattern "${pattern}" has no usable token run`);
+    }
+    for (const [concept, lesson] of Object.entries(q.rubric.lessonFor ?? {})) {
+      mustBeMapped(concept, 'lessonFor');
+      if (ref(lessons, 'lesson', lesson, file, `lessonFor ${concept}`) && !lessons.get(lesson)!.concepts.includes(concept))
+        add('LESSON_LINK', file, `lessonFor ${concept} names ${lesson}, which does not teach that concept`);
+    }
+    for (const r of q.rubric.recommend ?? []) {
+      mustBeMapped(r.conceptCode, 'recommend');
+      if (!q.rubric.misconceptionMap.some(x => x.misconceptionCode === r.misconceptionCode))
+        add('RECOMMEND', file, `recommend names ${r.misconceptionCode}, which no misconception pattern of this question produces`);
+    }
+    const recommends = (q.rubric.recommend ?? []).map(r => r.misconceptionCode);
+    if (new Set(recommends).size !== recommends.length) add('RECOMMEND', file, 'one recommendation per misconception code');
+    if (tower) {
+      // D2: every concept a loop can recommend (primary assessable concepts for E-06, and every recommend target) has an authored lesson.
+      const recommendable = new Set([...q.concepts.filter(c => c.role === 'PRIMARY' && c.assessable).map(c => c.concept), ...(q.rubric.recommend ?? []).map(r => r.conceptCode)]);
+      for (const c of [...recommendable].sort()) if (!q.rubric.lessonFor?.[c]) add('LESSON_LINK', file, `tower-v1 can recommend ${c} but rubric.lessonFor has no lesson for it (D2)`);
+    }
     const options = q.body.options ?? [], ids = options.map(o => o.id), { answer, evaluator } = q.rubric;
     if (new Set(ids).size !== ids.length) add('OPTION_IDS', file, 'option ids must be unique');
     if (q.legacyOptionOrder && (q.legacyOptionOrder.length !== ids.length || [...q.legacyOptionOrder].sort().join() !== [...ids].sort().join()))
@@ -259,7 +335,8 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
       ? q.itemType === 'MULTIPLE_CHOICE' && q.body.answerFormat === 'OPTION' && options.length >= 2 && answer.optionId !== undefined && answer.value === undefined
       : evaluator === 'numeric-v1'
         ? q.itemType === 'NUMERIC' && q.body.answerFormat === 'NUMBER' && typeof answer.value === 'number' && answer.tolerance !== undefined && answer.optionId === undefined
-        : evaluator === 'tower-v1' ? q.itemType === 'FREE_RESPONSE' && q.body.answerFormat === 'TEXT' : q.itemType === 'FREE_RESPONSE';
+        : evaluator === 'tower-v1' ? q.itemType === 'FREE_RESPONSE' && q.body.answerFormat === 'TEXT' && typeof answer.value === 'number' && answer.tolerance !== undefined && answer.optionId === undefined
+        : q.itemType === 'FREE_RESPONSE';
     if (!shape) add('EVALUATOR_SHAPE', file, `${evaluator} does not fit itemType ${q.itemType}, answerFormat ${q.body.answerFormat} and the answer fields`);
     if (answer.optionId !== undefined && !ids.includes(answer.optionId)) add('OPTION_IDS', file, `answer option ${answer.optionId} is not an option`);
   }
@@ -282,6 +359,20 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
   for (const s of m.sets.sets) for (const item of s.items)
     if (ref(questions, 'question', item, KINDS.sets, `set ${s.code}`) && !deterministic(item)) add('PRACTICE_NOT_DETERMINISTIC', KINDS.sets, `set ${s.code} contains ${item}, which is not deterministically gradable`);
 
+  // 7b. Overlays: a known target of the right kind, once per target and kind, no duplicate misconception codes.
+  const overlayKeys = new Set<string>();
+  for (const a of m.authored ?? []) {
+    const file = authoredFile(a), key = `${a.kind}:${a.target}`;
+    if (overlayKeys.has(key)) add('CODE_DUPLICATE', file, `a second ${a.kind} overlay for ${a.target}`);
+    overlayKeys.add(key);
+    if (a.kind === 'QUESTION_RUBRIC' ? !questions.has(a.target) : !concepts.has(a.target))
+      add('AUTHORED_TARGET', file, `${a.kind} overlay targets unknown ${a.kind === 'QUESTION_RUBRIC' ? 'question' : 'concept'} ${a.target}`);
+    if (a.kind === 'CONCEPT_MISCONCEPTIONS' && concepts.has(a.target)) {
+      const codes = concepts.get(a.target)!.misconceptions.map(x => x.code);
+      if (new Set(codes).size !== codes.length) add('CODE_DUPLICATE', file, `${a.target} lists a misconception code twice after the overlay`);
+    }
+  }
+
   // 8. Open human decisions. Strict mode (publisher) refuses them.
   const severity = strict ? 'error' : 'warning';
   const reviews: [Review | undefined, string, string][] = [
@@ -292,6 +383,7 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
     ...m.lessons.map(l => [l.review, fileOf('lessons', l.code), `lesson ${l.code}`] as [Review | undefined, string, string]),
     ...m.sets.sets.map(s => [s.review, KINDS.sets, `set ${s.code}`] as [Review | undefined, string, string]),
     ...m.topicRelations.relations.map(r => [r.review, KINDS.topicRelations, `relation ${r.from} → ${r.to}`] as [Review | undefined, string, string]),
+    ...(m.authored ?? []).map(a => [a.review, authoredFile(a), `authored ${a.kind} ${a.target}`] as [Review | undefined, string, string]),
   ];
   for (const [review, file, what] of reviews) if (review?.status === 'PROPOSED')
     add('UNREVIEWED', file, `${what}: ${review.decision ? `${review.decision} ` : ''}proposal (${(review.fields ?? []).join(', ') || 'whole entry'}) awaits review`, severity);

@@ -68,3 +68,15 @@ export async function lease(db:Connection,queue:Queue):Promise<Lease|undefined> 
     order by priority desc,available_at limit 1 for update skip locked) returning id,queue,deletion_request_id,diagnosis_run_id,lease_token,attempts`.execute(db)).rows[0];
 }
 export const leaseDeletion=(db:Connection)=>lease(db,'deletion');
+/** Diagnosis runs whose job gave up (attempts or deadline): the worker exhausts them (E-09). */
+export async function failedRunJobs(db:Connection) {
+  return (await sql<{diagnosis_run_id:string}>`select diagnosis_run_id from job where queue='diagnosis' and status='FAILED' and diagnosis_run_id is not null`.execute(db)).rows.map(r=>r.diagnosis_run_id);
+}
+/** The last error a run's job recorded (INVALID_OUTPUT, JOB_FAILED, LEASE_EXPIRED), for the run's failure code. */
+export async function runJobError(db:Connection,runId:string) {
+  return (await sql<{code:string|null}>`select last_error_code as code from job where diagnosis_run_id=${runId}`.execute(db)).rows[0]?.code??null;
+}
+/** Close a diagnosis job whose result was discarded by a fence (late result): it must not run again. */
+export async function closeRunJob(tx:Tx,lease:Pick<Lease,'id'|'lease_token'>) {
+  await sql`update job set status='CANCELLED',lease_token=null,lease_until=null,updated_at=now() where id=${lease.id} and lease_token=${lease.lease_token}`.execute(tx);
+}

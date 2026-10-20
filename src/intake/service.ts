@@ -1,0 +1,34 @@
+import{sql}from'kysely';import type{Connection,Tx,DB}from'../db.js';import{uuid,hash,encrypt,decrypt}from'../platform/crypto.js';import{fail}from'../platform/errors.js';import{intakeSuggestions,privateIntakeQuestion}from'../catalog/intake-interface.js';import{holdLearner,requireConsent}from'../privacy/service.js';import{readFreeOcr,type OcrConfig}from'./openrouter-ocr.js';import{redactAnswer}from'../assessment/ai-diagnosis.js';
+async function owned(db:Connection,id:string,learner:string){const r=(await sql<any>`select * from question_intake where id=${id} and learner_id=${learner}`.execute(db)).rows[0];if(!r)fail(404,'NOT_FOUND');if(new Date(r.expires_at)<=new Date())fail(410,'LINK_EXPIRED');return r;}
+export async function intakeView(db:Connection,id:string,learner:string){const r=await owned(db,id,learner),s=r.draft_text?await intakeSuggestions(db,r.draft_text):{concepts:[],topic:undefined};return{id:r.id,inputMode:r.input_mode,status:r.status,suggestedConcepts:s.concepts,...(s.topic?{suggestedTopic:s.topic}:{}),...(r.draft_text?{draftText:r.draft_text}:{}),...(r.confirmed_question_id?{confirmedQuestionId:r.confirmed_question_id}:{}),...(r.failure_code?{failureCode:r.failure_code}:{}),createdAt:new Date(r.created_at).toISOString(),expiresAt:new Date(r.expires_at).toISOString()};}
+export async function createIntake(tx:Tx,learner:string,b:{inputMode:'PHOTO'|'TYPED';text?:string},ocr:OcrConfig|null){
+ if(b.inputMode==='PHOTO'){await requireConsent(tx,learner,['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD']);if(!ocr)fail(503,'DEPENDENCY_UNAVAILABLE',{blockers:['OPENROUTER_OCR_NOT_CONFIGURED']});}
+ const id=uuid(),asset=b.inputMode==='PHOTO'?uuid():null;
+ if(asset)await sql`insert into private_asset(id,learner_id,storage_key,media_type,byte_size,sha256,status,expires_at)values(${asset},${learner},${'pending/'+asset},'image/png',1,${hash('')},'QUARANTINED',now()+interval '24 hours')`.execute(tx);
+ await sql`insert into question_intake(id,learner_id,input_mode,asset_id,status,draft_text,expires_at)values(${id},${learner},${b.inputMode},${asset},${b.inputMode==='TYPED'?'READ':'RECEIVED'},${b.text??null},now()+interval '24 hours')`.execute(tx);
+ return intakeView(tx,id,learner);
+}
+export async function uploadIntake(tx:Tx,learner:string,id:string,image:Buffer,mime:string,key:Buffer,ocr:OcrConfig|null){
+ await requireConsent(tx,learner,['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD']);if(!ocr)fail(503,'DEPENDENCY_UNAVAILABLE',{blockers:['OPENROUTER_OCR_NOT_CONFIGURED']});
+ const r=await owned(tx,id,learner);if(r.status!=='RECEIVED'||!r.asset_id)fail(409,'INVALID_STATE_TRANSITION');if(image.length>5242880)fail(413,'PAYLOAD_TOO_LARGE');
+ const {createHash}=await import('node:crypto');if(createHash('sha256').update(image).digest('hex')!==ocr.allowedImageSha256)fail(403,'FORBIDDEN',{blockers:['OCR_SYNTHETIC_IMAGE_REQUIRED']});
+ await sql`insert into development_intake_image(asset_id,ciphertext)values(${r.asset_id},${encrypt(key,image.toString('base64'))})`.execute(tx);
+ await sql`update private_asset set media_type=${mime},byte_size=${image.length},sha256=${createHash('sha256').update(image).digest()} where id=${r.asset_id}`.execute(tx);
+ await sql`update question_intake set status='READING' where id=${id}`.execute(tx);return intakeView(tx,id,learner);
+}
+export async function discardIntake(tx:Tx,learner:string,id:string){const r=await owned(tx,id,learner);await sql`update question_intake set status='DISCARDED',draft_text=null where id=${id}`.execute(tx);if(r.asset_id){await sql`delete from development_intake_image where asset_id=${r.asset_id}`.execute(tx);await sql`update private_asset set status='DELETED' where id=${r.asset_id}`.execute(tx);}}
+export async function confirmIntake(tx:Tx,learner:string,id:string,b:{text:string;topicId?:string;conceptIds:string[]}){const r=await owned(tx,id,learner);if(r.status!=='READ')fail(409,'INVALID_STATE_TRANSITION');const q=await privateIntakeQuestion(tx,learner,b);await sql`update question_intake set status='CONFIRMED',draft_text=${b.text},confirmed_question_id=${q.questionId} where id=${id}`.execute(tx);return q;}
+export async function intakeTick(db:DB,key:Buffer,ocr:OcrConfig|null){
+ await sql`delete from development_intake_image where asset_id in(select id from private_asset where expires_at<=now())`.execute(db);
+ await sql`update question_intake set status='EXPIRED',draft_text=null where expires_at<=now() and status not in('DISCARDED','EXPIRED')`.execute(db);
+ if(!ocr)return;const r=(await sql<any>`select i.id,i.learner_id,i.asset_id from question_intake i join development_intake_image a on a.asset_id=i.asset_id where i.status='READING' and i.expires_at>now() and (a.lease_until is null or a.lease_until<now()) order by i.created_at limit 1`.execute(db)).rows[0];if(!r)return;
+ const lease=uuid();try{
+  const image=await db.transaction().execute(async tx=>{await holdLearner(tx,r.learner_id);await requireConsent(tx,r.learner_id,['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD']);return(await sql<any>`update development_intake_image set lease=${lease},lease_until=now()+interval '40 seconds' where asset_id=${r.asset_id} and (lease_until is null or lease_until<now()) returning ciphertext`.execute(tx)).rows[0]?.ciphertext;});if(!image)return;
+  const result=await readFreeOcr(Buffer.from(decrypt(key,image),'base64'),ocr);
+  await db.transaction().execute(async tx=>{await holdLearner(tx,r.learner_id);await requireConsent(tx,r.learner_id,['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD']);const current=await owned(tx,r.id,r.learner_id);if(current.status!=='READING')return;
+   const held=(await sql`select 1 from development_intake_image where asset_id=${r.asset_id} and lease=${lease} and lease_until>now() for update`.execute(tx)).rows.length;if(!held)return;
+   await sql`update question_intake set status='READ',draft_text=${redactAnswer(result.text)} where id=${r.id}`.execute(tx);await sql`delete from development_intake_image where asset_id=${r.asset_id}`.execute(tx);await sql`update private_asset set status='DELETED' where id=${r.asset_id}`.execute(tx);
+  });
+ }catch{await sql`update question_intake set status='FAILED',failure_code='OCR_UNAVAILABLE' where id=${r.id} and status='READING' and exists(select 1 from development_intake_image where asset_id=${r.asset_id} and (lease=${lease} or lease is null))`.execute(db);await sql`delete from development_intake_image where asset_id=${r.asset_id} and (lease=${lease} or lease is null)`.execute(db);}
+}
+export async function eraseIntakes(tx:Tx,id:string){await sql`delete from development_intake_image where asset_id in(select id from private_asset where learner_id=${id})`.execute(tx);await sql`delete from question_intake where learner_id=${id}`.execute(tx);await sql`delete from private_asset where learner_id=${id}`.execute(tx);}

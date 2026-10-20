@@ -20,8 +20,13 @@ try {
   await rollbackTo(db, '0001_slice0.up.sql');
   await migrate(db);
   await publish(db, reviewedFixture());
-  const learner = await consentedLearner(db, config);
-  const value = learner.headers.cookie.slice(cookieName.length + 1);
-  writeFileSync('.local/e2e-learner.json', JSON.stringify({ name: cookieName, value, learnerId: learner.learnerId }, null, 2));
-  console.log('E2E seed ready: reviewed fixture published, one synthetic consented learner (.local/e2e-learner.json)');
+  // One synthetic learner per E2E test that needs its own (the API limits a learner to 120 requests a minute);
+  // the first is also written at the top level for the Slice 1 practice spec.
+  const learners = [];
+  for (let i = 0; i < 10; i++) {
+    const learner = await consentedLearner(db, config);
+    learners.push({ name: cookieName, value: learner.headers.cookie.slice(cookieName.length + 1), learnerId: learner.learnerId });
+  }
+  writeFileSync('.local/e2e-learner.json', JSON.stringify({ ...learners[0], learners }, null, 2));
+  console.log('E2E seed ready: reviewed fixture published, 10 synthetic consented learners (.local/e2e-learner.json)');
 } finally { await db.destroy(); }

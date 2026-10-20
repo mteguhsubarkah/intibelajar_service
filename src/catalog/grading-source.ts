@@ -1,5 +1,9 @@
 import { sql } from 'kysely';
-import type { Connection } from '../db.js';
+import type { Connection,Tx } from '../db.js';
+export async function writePrivateIntakeRevision(tx:Tx,revisionId:string,questionId:string,prompt:string){
+ const body={schemaVersion:1,prompt,hints:[],answerFormat:'TEXT'},rubric={schemaVersion:1,evaluator:'ai-assisted-v1',answer:{},acceptedForms:[],solutionPaths:[],misconceptionMap:[],finalAnswerEvidence:[]};
+ await sql`insert into question_revision(id,question_id,revision,status,item_type,body,rubric,review_status,context_tag,difficulty,estimated_minutes)values(${revisionId},${questionId},1,'DRAFT','FREE_RESPONSE',${JSON.stringify(body)}::jsonb,${JSON.stringify(rubric)}::jsonb,'UNREVIEWED','PRIVATE',1,5)`.execute(tx);
+}
 import type { QuestionBody, Rubric } from './manifest.js';
 // The one catalog interface that hands a rubric out, and only to assessment (INV-05; the boundary
 // checker allows rubric reads here, in the publisher and in src/assessment/). Pinned by revision id,

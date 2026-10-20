@@ -1,0 +1,4 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs scripts/catalog/extract-from-frontend.ts --check
+Note: manifest was extracted from efe1a9347dcc4b1c50e713f3364cf9b33ff2eb50, frontend is at eafa168e784ff2bb25a4dd1993c8d1db4242f078
+Alias coverage: 150 frontend identifiers, 0 unresolved, 0 outside the freeze
+

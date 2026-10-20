@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-19T06:23:33.911Z",
+  "node": "v24.19.0",
+  "childNode": "v24.19.0",
+  "postgresql": "17.5 (isolated cluster 127.0.0.1:55432, *_test database)",
+  "results": [
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "module-and-rubric-boundaries",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "openapi-validation",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "manifest-lint-draft",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "manifest-lint-strict-refuses-draft",
+      "exit": 1,
+      "expectExit": 1,
+      "ok": true
+    },
+    {
+      "name": "golden-sync-v2",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "alias-coverage-and-freeze",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "migration-extraction-catalog",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "migration-extraction-learning",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "migration-extraction-question-loop",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "migrations-unchanged-after-regeneration",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "draft-extraction-roundtrip-write",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "frontend-data-unchanged-since-extraction",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "draft-extraction-roundtrip-identical",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "m5-question-loop-suite",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "backend-tests-run-1",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "backend-tests-run-2",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "architecture-self-test",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "frontend-suite-consumer-golden-v2",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    },
+    {
+      "name": "browser-e2e-canonical",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true
+    }
+  ]
+}

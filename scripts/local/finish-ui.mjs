@@ -1,0 +1,13 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+const file='../mockup/intibelajar/src/components/coba/TutorDialog.vue';
+let s=readFileSync(file,'utf8');
+s=s.replace('Setelah {{ MAX_HINTS }} petunjuk, pembahasan lengkap terbuka.', 'Setelah {{ MAX_HINTS }} petunjuk, pembahasan mengikuti tahap belajar yang diizinkan server.');
+s=s.replace('<p v-if="DEMO_MODE" class="demo-tag">','<p v-if="flowState.canonical" class="demo-tag">Uji lokal · petunjuk bernaskah dari server, belum chatbot AI.</p>\n    <p v-else-if="DEMO_MODE" class="demo-tag">');
+writeFileSync(file,s);
+const materi='../mockup/intibelajar/src/components/coba/StepMateri.vue';
+writeFileSync(materi,readFileSync(materi,'utf8').replace("const busy = ref(false), serverError = ref('');", "const busy = ref(false);\nconst serverError = ref('');"));
+const loop='../mockup/intibelajar/src/services/canonicalLoop.ts';
+let l=readFileSync(loop,'utf8');
+l=l.replace("  verdict?: 'CORRECT'", "  engine?: 'DETERMINISTIC' | 'AI_ASSISTED';\n  verdict?: 'CORRECT'");
+l=l.replace("title: run.headline ?? ''", "title: (run.engine === 'AI_ASSISTED' ? 'Dibantu AI · ' : '') + (run.headline ?? '')");
+writeFileSync(loop,l);

@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-19T18:25:54.207Z",
+  "node": "v24.19.0",
+  "syntheticOnly": true,
+  "database": "intibelajar_local_dev",
+  "origin": "http://localhost:5180",
+  "total": 9,
+  "expected": 9,
+  "passed": 9,
+  "exit": 0,
+  "results": [
+    {
+      "name": "readiness through frontend proxy and no live integrations",
+      "ok": true,
+      "seconds": 0.54
+    },
+    {
+      "name": "fixture sign-in rejects cross-origin and invalid CSRF",
+      "ok": true,
+      "seconds": 1.252
+    },
+    {
+      "name": "browser selects a synthetic consented account via same-origin form",
+      "ok": true,
+      "seconds": 11.624
+    },
+    {
+      "name": "diagnosis is persisted by PostgreSQL and survives refresh",
+      "ok": true,
+      "seconds": 3.218
+    },
+    {
+      "name": "second tab resumes the existing answer without duplicate submission",
+      "ok": true,
+      "seconds": 2.202
+    },
+    {
+      "name": "API rejects missing CSRF, foreign ownership, and missing consent",
+      "ok": true,
+      "seconds": 5.698
+    },
+    {
+      "name": "practice answers use backend and resume after refresh",
+      "ok": true,
+      "seconds": 2.814
+    },
+    {
+      "name": "server failures remain visible instead of becoming demo verdicts",
+      "ok": true,
+      "seconds": 1.776
+    },
+    {
+      "name": "guest demo keeps learning local and never creates a canonical session",
+      "ok": true,
+      "seconds": 2.056
+    }
+  ]
+}

@@ -10,6 +10,6 @@ export const messages: Record<string, string> = {
   DEPENDENCY_UNAVAILABLE: 'Integrasi belum tersedia.', IDEMPOTENCY_KEY_REUSED: 'Kunci permintaan sudah digunakan.',
   IDEMPOTENCY_IN_PROGRESS: 'Permintaan sedang diproses.', RATE_LIMITED: 'Terlalu banyak permintaan.',
   STALE_STATE_VERSION: 'Sesi sudah berubah di tab lain. Muat ulang dulu.', INVALID_STATE_TRANSITION: 'Langkah ini belum bisa dilakukan sekarang.',
-  SESSION_EXPIRED: 'Sesi sudah berakhir. Mulai sesi baru.', CONTENT_UNAVAILABLE: 'Materi atau soal untuk pilihan ini belum tersedia.',
+  SESSION_EXPIRED: 'Sesi sudah berakhir. Mulai sesi baru.', SOLUTION_LOCKED: 'Pembahasan terbuka setelah kamu mencoba lagi.', ALREADY_REPORTED: 'Hasil ini sudah kamu laporkan.', CONTENT_UNAVAILABLE: 'Materi atau soal untuk pilihan ini belum tersedia.',
   INTERNAL_ERROR: 'Terjadi kesalahan. Silakan coba kembali.',
 };

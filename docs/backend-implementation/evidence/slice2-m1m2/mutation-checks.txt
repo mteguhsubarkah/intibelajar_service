@@ -1,0 +1,11 @@
+KILLED   K01 guard removed: misconceptions applied to a correct result (backend fails)
+KILLED   T01-3 removed: a bare wrong number credits or blames concepts (backend fails)
+KILLED   D07 broken: unexplained working blames the first concept (backend fails)
+KILLED   substring matching instead of whole tokens (backend fails)
+KILLED   understanding credited after the first error (never reached) (backend fails)
+KILLED   golden: one delta label removed (T06) (backend fails, Vue runner fails)
+KILLED   golden: a delta label added to an agreeing case (T14) (backend fails, Vue runner fails)
+KILLED   golden: delta marked approved (backend fails, Vue runner fails)
+KILLED   lint: lessonFor teaching check removed (backend fails)
+KILLED   lint: overlay reviews no longer reported (backend fails)
+10/10 mutations killed

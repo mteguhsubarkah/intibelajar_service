@@ -1,6 +1,6 @@
 // Typed-number reader for numeric-v1. A faithful port of the frontend's services/answer/answerChecker.ts
 // (parseAnswerValue, withinTolerance): guests are graded on the device and learners on the server, so the
-// two must agree on every input. catalog/golden/answers.v1.json is run against both implementations.
+// two must agree on every input. catalog/golden/answers.v2.json (numeric section unchanged from v1) is run against both implementations.
 //
 // The governing rule is the frontend's: never penalise what cannot be read. Anything outside the small,
 // closed grammar (digits, decimal comma or point, √/akar/sqrt, × · *, ÷ /, + -, parentheses, accepted

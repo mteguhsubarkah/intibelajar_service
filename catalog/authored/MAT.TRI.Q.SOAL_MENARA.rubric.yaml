@@ -1,0 +1,141 @@
+schemaVersion: 1
+kind: QUESTION_RUBRIC
+target: MAT.TRI.Q.SOAL_MENARA
+provenance:
+  source: authored
+  note: "Slice 2 M1/M2 (plan 05, D1 and D2 approved 2026-10-19). tower-v1 rules ported from the frontend's services/analysis.ts: its structure and Indonesian copy are kept; its evidence rules are replaced by D1 (understanding only from a matched step span or a correct final value; misconceptions only from a catalogued pattern; everything else INSUFFICIENT_EVIDENCE). Each behaviour change is a case labelled \"delta from analysis.ts\" in catalog/golden/answers.v2.json, for content review."
+review:
+  status: PROPOSED
+  decision: S2-D1
+  fields:
+    - solutionPaths.steps.patterns
+    - misconceptionMap
+    - recommend
+    - lessonFor
+    - tutorLadder
+  evidence:
+    - "Step patterns: S1 from analysis.ts demoCoreEvidence (20 on top of the fraction names the sides), S2 'tan 30' (analysis.ts branch 4 accepted tan with 20, x or √3; D1 needs the ratio with its angle), S3 from the special value and the result forms in coba.ts SOLUTION."
+    - "Misconceptions: sin and cos (analysis.ts branches 1–2, existing codes MEMAKAI_SIN, MEMAKAI_COS), tan 30 = 1/2 (branch 3), and the inverted equation tan 30 = x/20 (plan 05 §1.2; on DEFINISI_SIN_COS_TAN because T13 is not mapped on this question and stays unrouted, D5 open)."
+    - lessonFor follows the coreId each analysis.ts branch routes to (perbandingan-trig, sudut-istimewa, sudut-depresi-elevasi). If D3 approves the funnel lesson, DEFINISI_SIN_COS_TAN may point to it instead.
+    - recommend keyFormula copied from analysis.ts next.formula; PERSAMAAN_TERBALIK copy is new and needs content review.
+    - D3/D6 implementation authorized 2026-10-20, local synthetic scope. Tutor full response derives from the private workedSolution after two server-counted hints. Production review remains pending.
+rubric:
+  solutionPaths:
+    - code: TAN
+      label: tan dari sisi depan dan samping
+      steps:
+        - code: S1
+          description: "Namai sisinya: 20 m = depan, x = samping"
+          patterns:
+            - 20 / x
+            - 20 / tan
+          concepts:
+            - code: MAT.TRI.SEGITIGA_SIKU_SIKU
+              role: REQUIRED
+        - code: S2
+          description: "Pilih perbandingan: depan & samping → tan"
+          patterns:
+            - tan 30
+          concepts:
+            - code: MAT.TRI.DEFINISI_SIN_COS_TAN
+              role: REQUIRED
+        - code: S3
+          description: "Hitung: x = 20 / tan 30° = 20√3 ≈ 34,6 m"
+          patterns:
+            - 20 √ 3
+            - 1 / √ 3
+            - √ 3 / 3
+            - 34,64
+            - 34,6
+          concepts:
+            - code: MAT.TRI.SUDUT_ISTIMEWA
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: TEXT
+        tokens:
+          - sin 30
+          - sin
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      misconceptionCode: MEMAKAI_SIN
+      explanation: "Pilihan perbandingannya yang meleset: sin butuh sisi miring, padahal yang kamu punya sisi depan dan samping."
+    - pattern:
+        kind: TEXT
+        tokens:
+          - cos 30
+          - cos
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      misconceptionCode: MEMAKAI_COS
+      explanation: cos memakai sisi samping, sedangkan yang diketahui di soal adalah tinggi menara.
+    - pattern:
+        kind: TEXT
+        tokens:
+          - tan 30 = 1 / 2
+          - tan 30 = 0,5
+          - tan 30 = ½
+      conceptCode: MAT.TRI.SUDUT_ISTIMEWA
+      misconceptionCode: TAN30_BUKAN_SETENGAH
+      explanation: tan 30° bukan 1/2 — itu nilai sin 30°. tan 30° = 1/√3.
+    - pattern:
+        kind: TEXT
+        tokens:
+          - tan 30 = x / 20
+          - x / 20 = tan 30
+          - x = 20 tan 30
+          - x = 20 * tan 30
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      misconceptionCode: PERSAMAAN_TERBALIK
+      explanation: "Persamaannya terbalik: tan 30° = depan / samping, jadi 20 m (depan) di atas dan x (samping) di bawah."
+  recommend:
+    - misconceptionCode: MEMAKAI_SIN
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      keyFormula: tan 30° = 20 / x
+    - misconceptionCode: MEMAKAI_COS
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      keyFormula: tan 30° = 20 / x
+    - misconceptionCode: TAN30_BUKAN_SETENGAH
+      conceptCode: MAT.TRI.SUDUT_ISTIMEWA
+      keyFormula: tan 30° = 1 / √3
+    - misconceptionCode: PERSAMAAN_TERBALIK
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      keyFormula: tan 30° = depan / samping = 20 / x
+  lessonFor:
+    MAT.TRI.SEGITIGA_SIKU_SIKU: MAT.TRI.L.SUDUT_DEPRESI_ELEVASI
+    MAT.TRI.DEFINISI_SIN_COS_TAN: MAT.TRI.L.FUNNEL_RATIO_CHOICE
+    MAT.TRI.SUDUT_ISTIMEWA: MAT.TRI.L.SUDUT_ISTIMEWA
+  tutorLadder:
+    hints:
+      - "Petunjuk 1: tinggi menara adalah sisi depan terhadap sudut acuan. Jarak mendatar adalah sisi samping. Perbandingan mana yang memakai keduanya?"
+      - "Petunjuk 2: tan = depan / samping. Cocokkan tinggi yang diketahui dengan jarak yang dicari, lalu tulis persamaanmu."
+    nodes:
+      - ask: Kenapa sin nggak bisa? Kan sudutnya ada.
+        text: Sin memakai depan dan miring. Di soal ini panjang garis pandang (miring) belum diketahui. Dua sisi mana yang diketahui dan dicari?
+        quick:
+          - Depan & samping
+          - Sisi miring itu yang mana?
+          - Kasih petunjuk
+      - ask: Sisi miring itu yang mana?
+        text: "Sisi miring berhadapan dengan siku-siku: garis pandang dari puncak menara. Panjangnya belum diketahui. Bagaimana posisi tinggi menara terhadap sudut acuan?"
+        quick:
+          - Depan & samping
+          - Kasih petunjuk
+      - ask: Depan & samping
+        text: Pasangan itu dipakai oleh tan. Coba bangun persamaan dari depan dibagi samping. Mana yang sudah diketahui dan mana yang dicari?
+        quick:
+          - tan
+          - Kasih petunjuk
+      - ask: tan
+        text: Tan menghubungkan depan dan samping. Sekarang tulis sendiri persamaan berdasarkan posisi tinggi dan jarak mendatar.
+        quick:
+          - Hubungkan soal dengan inti
+          - Kasih petunjuk
+      - ask: Hubungkan soal dengan inti
+        text: Mulai dari segitiga siku-siku, tentukan sudut acuan, lalu beri nama depan dan samping. Inti perbandingan trigonometri menghubungkan kedua sisi. Dua besaran apa yang perlu kamu hubungkan?
+        quick:
+          - Bangun soal dari inti
+          - Depan & samping
+      - ask: Bangun soal dari inti
+        text: Gunakan inti segitiga siku-siku untuk menggambar hubungan menara dan tanah. Gunakan inti rasio untuk menghubungkan tinggi dengan jarak. Setelah model terbentuk, nilai sudut membantu menghitung. Coba tulis hubungan simboliknya dahulu.
+        quick:
+          - Hubungkan soal dengan inti
+          - Kasih petunjuk

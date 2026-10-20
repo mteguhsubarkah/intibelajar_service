@@ -1,0 +1,1460 @@
+{
+  "schemaVersion": 2,
+  "description": "Shared grading cases, v2 (Slice 2 M2). The numeric and option sections are carried over from answers.v1.json unchanged (v1 stays for history); the option section is regenerated from the manifest by npm run catalog:golden. The tower section holds tower-v1 cases for MAT.TRI.Q.SOAL_MENARA: the backend checks expected against tower-v1 (test/evaluators.test.ts); the Vue checkout (npm run test:answer-golden) checks analysisTs against services/analysis.ts and that exactly the cases labelled \"delta from analysis.ts\" differ from it. Deltas are proposals for content review, not approved behaviour.",
+  "numeric": [
+    {
+      "question": "MAT.TRI.Q.TRIG_DEPRESSION_01",
+      "item": "trig-depression-01",
+      "cases": [
+        {
+          "typed": "20√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3  m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3 meter",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 akar 3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20akar3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 sqrt 3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√(3)",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 akar 3 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "  20√3  ",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20√3.",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,641",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,6410",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,6",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,5",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "35",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34.641",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20 × √3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20*√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "x = 34,64",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64 meter",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "34,64 mtr",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "２０√３",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20\u00a0√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "\u200b20√3\ufeff",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "17,32",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_COS"
+        },
+        {
+          "typed": "10√3",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_COS"
+        },
+        {
+          "typed": "10√3 m",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_COS"
+        },
+        {
+          "typed": "10",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_SIN"
+        },
+        {
+          "typed": "10 m",
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_SIN"
+        },
+        {
+          "typed": "√3",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "20",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "30",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "24",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "0",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "1/2",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "-34,64",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "20√3 + 1",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "34641",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "3.4641",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "0,034641",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "1.234",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "   ",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "\n",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "x =",
+          "verdict": "UNREADABLE",
+          "reason": "empty"
+        },
+        {
+          "typed": "gatau",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "bingung",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "sisi terpanjang",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "x",
+          "verdict": "UNREADABLE",
+          "reason": "no-number"
+        },
+        {
+          "typed": "20/tan30",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "20 : tan 30",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "sin30",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "2^3",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "20 x √3",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "3,4e1",
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
+        },
+        {
+          "typed": "20√",
+          "verdict": "UNREADABLE",
+          "reason": "root-without-radicand"
+        },
+        {
+          "typed": "√",
+          "verdict": "UNREADABLE",
+          "reason": "root-without-radicand"
+        },
+        {
+          "typed": "√-4",
+          "verdict": "UNREADABLE",
+          "reason": "negative-root"
+        },
+        {
+          "typed": "1/0",
+          "verdict": "UNREADABLE",
+          "reason": "undefined-fraction"
+        },
+        {
+          "typed": "20//3",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "34,64,1",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "1.23,4",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "20 3",
+          "verdict": "UNREADABLE",
+          "reason": "malformed-number"
+        },
+        {
+          "typed": "20 cm",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "34,64 kg",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "20√3°",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "20√3 km",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "34,64 cm",
+          "verdict": "UNREADABLE",
+          "reason": "unknown-unit"
+        },
+        {
+          "typed": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+          "verdict": "UNREADABLE",
+          "reason": "too-long"
+        }
+      ]
+    },
+    {
+      "question": "MAT.TRI.Q.TRIG_DEPRESSION_01_RETRY",
+      "item": "trig-depression-01-retry",
+      "cases": [
+        {
+          "typed": "12√3",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20,78",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "21",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "12√3 m",
+          "verdict": "CORRECT"
+        },
+        {
+          "typed": "20",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "6√3",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "6√3 m",
+          "verdict": "INCORRECT",
+          "misconception": null
+        },
+        {
+          "typed": "4√3 m",
+          "verdict": "INCORRECT",
+          "misconception": null
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "question": "MAT.EKS.Q.GAB_3X_SIN",
+      "items": [
+        "gab-3x-sin"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.EKS.Q.GAB_PANGKAT_COS60",
+      "items": [
+        "gab-pangkat-cos60"
+      ],
+      "optionCount": 4,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C1",
+      "items": [
+        "c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C2",
+      "items": [
+        "c2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C3",
+      "items": [
+        "c3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_C4",
+      "items": [
+        "c4"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_P1",
+      "items": [
+        "p1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_P2",
+      "items": [
+        "p2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.FUNNEL_P3",
+      "items": [
+        "p3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.GAB_SIN30_PANGKAT",
+      "items": [
+        "gab-sin30-pangkat"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.GAB_TAN45_PANGKATNOL",
+      "items": [
+        "gab-tan45-pangkatnol"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_C0",
+      "items": [
+        "core:perbandingan-trig:c0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_C1",
+      "items": [
+        "core:perbandingan-trig:c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_P0",
+      "items": [
+        "perbandingan-trig:0",
+        "core:perbandingan-trig:q0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_P1",
+      "items": [
+        "perbandingan-trig:1",
+        "core:perbandingan-trig:q1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.PERBANDINGAN_TRIG_P2",
+      "items": [
+        "perbandingan-trig:2",
+        "core:perbandingan-trig:q2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C0",
+      "items": [
+        "core:sudut-depresi-elevasi:c0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C1",
+      "items": [
+        "core:sudut-depresi-elevasi:c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P0",
+      "items": [
+        "sudut-depresi-elevasi:0",
+        "core:sudut-depresi-elevasi:q0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P1",
+      "items": [
+        "sudut-depresi-elevasi:1",
+        "core:sudut-depresi-elevasi:q1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P2",
+      "items": [
+        "sudut-depresi-elevasi:2",
+        "core:sudut-depresi-elevasi:q2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C0",
+      "items": [
+        "core:sudut-istimewa:c0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C1",
+      "items": [
+        "core:sudut-istimewa:c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C2",
+      "items": [
+        "core:sudut-istimewa:c2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P0",
+      "items": [
+        "sudut-istimewa:0",
+        "core:sudut-istimewa:q0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P1",
+      "items": [
+        "sudut-istimewa:1",
+        "core:sudut-istimewa:q1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P2",
+      "items": [
+        "sudut-istimewa:2",
+        "core:sudut-istimewa:q2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_P3",
+      "items": [
+        "sudut-istimewa:3",
+        "core:sudut-istimewa:q3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T04_CHECK_1",
+      "items": [
+        "T04:check-1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T04_CHECK_2",
+      "items": [
+        "T04:check-2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T04_CHECK_3",
+      "items": [
+        "T04:check-3"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.T10_CHECK_1",
+      "items": [
+        "T10:check-1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.T10_CHECK_2",
+      "items": [
+        "T10:check-2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.T13_CHECK_1",
+      "items": [
+        "T13:check-1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.T13_CHECK_2",
+      "items": [
+        "T13:check-2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.TAN60_SIN30",
+      "items": [
+        "tan60-sin30"
+      ],
+      "optionCount": 4,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.TANGGA_6M",
+      "items": [
+        "tangga-6m"
+      ],
+      "optionCount": 4,
+      "correctIndex": 1
+    }
+  ],
+  "tower": {
+    "question": "MAT.TRI.Q.SOAL_MENARA",
+    "item": "soal-menara",
+    "inputRule": "A case with empty text and response \"blank\" or \"know\" is a SELF_REPORT (DONT_KNOW or KNOW); every other case is TEXT working (facade L1, 09 §6).",
+    "comparison": "Agreement: analysis.ts tone \"kuat\" exactly when the verdict is CORRECT, and per concept demoCoreEvidence ok/gap/rest equals UNDERSTANDING_DEMONSTRATED / MISCONCEPTION_EVIDENCED / anything else.",
+    "cases": [
+      {
+        "id": "T01",
+        "input": {
+          "response": null,
+          "text": "sin 30 = 20/x"
+        },
+        "source": "analysis.ts branch 1; 06 §10 row 3",
+        "expected": {
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_SIN",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20/x"
+            },
+            "tri-d": {
+              "classification": "MISCONCEPTION_EVIDENCED",
+              "misconception": "MEMAKAI_SIN",
+              "quote": "sin 30"
+            },
+            "tri-f": {
+              "classification": "NOT_ASSESSED"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-d",
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "gap",
+            "tri-f": "rest"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T02",
+        "input": {
+          "response": null,
+          "text": "sin 30 = x/20"
+        },
+        "source": "analysis.ts branch 1 (20 not on top)",
+        "expected": {
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_SIN",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "MISCONCEPTION_EVIDENCED",
+              "misconception": "MEMAKAI_SIN",
+              "quote": "sin 30"
+            },
+            "tri-f": {
+              "classification": "NOT_ASSESSED"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-d",
+          "items": {
+            "tri-c": "rest",
+            "tri-d": "gap",
+            "tri-f": "rest"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T03",
+        "input": {
+          "response": null,
+          "text": "cos 30 = 20/x"
+        },
+        "source": "analysis.ts branch 2",
+        "expected": {
+          "verdict": "INCORRECT",
+          "misconception": "MEMAKAI_COS",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20/x"
+            },
+            "tri-d": {
+              "classification": "MISCONCEPTION_EVIDENCED",
+              "misconception": "MEMAKAI_COS",
+              "quote": "cos 30"
+            },
+            "tri-f": {
+              "classification": "NOT_ASSESSED"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-d",
+          "items": {
+            "tri-c": "rest",
+            "tri-d": "gap",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "tri-c is shown as understood from the span \"20/x\"; analysis.ts credits naming the sides only next to sin (demoCoreEvidence)."
+        }
+      },
+      {
+        "id": "T04",
+        "input": {
+          "response": null,
+          "text": "tan 30 = 1/2"
+        },
+        "source": "analysis.ts branch 3; 06 §10 row 4",
+        "expected": {
+          "verdict": "INCORRECT",
+          "misconception": "TAN30_BUKAN_SETENGAH",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "MISCONCEPTION_EVIDENCED",
+              "misconception": "TAN30_BUKAN_SETENGAH",
+              "quote": "tan 30 = 1/2"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-f",
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "gap"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "tri-c is not credited without a span that shows the sides (D1); analysis.ts marks it ok whenever the gap is tri-f."
+        }
+      },
+      {
+        "id": "T05",
+        "input": {
+          "response": null,
+          "text": "tan 30 = 0,5 jadi 20/x = 0,5"
+        },
+        "source": "analysis.ts branch 3 (sides shown)",
+        "expected": {
+          "verdict": "INCORRECT",
+          "misconception": "TAN30_BUKAN_SETENGAH",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20/x"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "MISCONCEPTION_EVIDENCED",
+              "misconception": "TAN30_BUKAN_SETENGAH",
+              "quote": "tan 30 = 0,5"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-f",
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "gap"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T06",
+        "input": {
+          "response": null,
+          "text": "tan 30 = 20/x"
+        },
+        "source": "analysis.ts branch 4a",
+        "expected": {
+          "verdict": "UNREADABLE",
+          "reason": "insufficient-working",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20/x"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "The set-up equation alone is not graded CORRECT until x is computed: UNREADABLE (insufficient-working) and a clarification, with tri-c and tri-d understood. analysis.ts says \"kuat\". The rubric lists this equation in acceptedForms, so content review decides whether it should count as CORRECT."
+        }
+      },
+      {
+        "id": "T07",
+        "input": {
+          "response": null,
+          "text": "tan x"
+        },
+        "source": "analysis.ts branch 4a; plan 05 §1.2",
+        "expected": {
+          "verdict": "UNREADABLE",
+          "reason": "insufficient-working",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-f": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "\"tan\" without its angle or the sides shows no step: INSUFFICIENT_EVIDENCE and a clarification instead of \"kuat\"."
+        }
+      },
+      {
+        "id": "T08",
+        "input": {
+          "response": null,
+          "text": "tan 30 = x/20"
+        },
+        "source": "analysis.ts branch 4a; plan 05 §1.2",
+        "expected": {
+          "verdict": "INCORRECT",
+          "misconception": "PERSAMAAN_TERBALIK",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "MISCONCEPTION_EVIDENCED",
+              "misconception": "PERSAMAAN_TERBALIK",
+              "quote": "tan 30 = x/20"
+            },
+            "tri-f": {
+              "classification": "NOT_ASSESSED"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "The inverted equation is INCORRECT with misconception PERSAMAAN_TERBALIK on tri-d (proposed code); analysis.ts says \"kuat\"."
+        }
+      },
+      {
+        "id": "T09",
+        "input": {
+          "response": null,
+          "text": "x = 20 tan 30"
+        },
+        "source": "analysis.ts branch 4a (inverted solve)",
+        "expected": {
+          "verdict": "INCORRECT",
+          "misconception": "PERSAMAAN_TERBALIK",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "MISCONCEPTION_EVIDENCED",
+              "misconception": "PERSAMAAN_TERBALIK",
+              "quote": "x = 20 tan 30"
+            },
+            "tri-f": {
+              "classification": "NOT_ASSESSED"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "Solving the inverted equation is INCORRECT with PERSAMAAN_TERBALIK on tri-d; analysis.ts says \"kuat\" because tan and 20 appear."
+        }
+      },
+      {
+        "id": "T10",
+        "input": {
+          "response": null,
+          "text": "tan 30 = 20/x, x = 20/√3"
+        },
+        "source": "analysis.ts branch 4a (wrong result with working)",
+        "expected": {
+          "verdict": "INCORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20/x"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "A wrong result with working is INCORRECT; tri-c and tri-d are understood from their spans, tri-f is INSUFFICIENT_EVIDENCE (no catalogued pattern). analysis.ts says \"kuat\"."
+        }
+      },
+      {
+        "id": "T11",
+        "input": {
+          "response": null,
+          "text": "x = 20√3"
+        },
+        "source": "analysis.ts branch 4b",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "x = 20√3"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "x = 20√3"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T12",
+        "input": {
+          "response": null,
+          "text": "34,6"
+        },
+        "source": "analysis.ts branch 4b; 06 §10 row 2",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "34,6"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "34,6"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "34,6"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T13",
+        "input": {
+          "response": null,
+          "text": "x ≈ 34.64 m"
+        },
+        "source": "analysis.ts branch 4b (decimal point, unit)",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "34.64 m"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "34.64 m"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "34.64"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T14",
+        "input": {
+          "response": null,
+          "text": "tan 30 = 20/x, x = 20√3"
+        },
+        "source": "analysis.ts branch 4; 06 §10 row 1",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20/x"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T15",
+        "input": {
+          "response": null,
+          "text": "tan 60 = x/20, x = 20√3"
+        },
+        "source": "K01: another valid path (the angle at the top of the tower)",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T16",
+        "input": {
+          "response": null,
+          "text": "sin 30 = 20/m, m = 40, cos 30 = x/40, x = 20√3"
+        },
+        "source": "K01: a longer valid path through the hypotenuse",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-d",
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "gap",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "A correct result through another valid path is never a mistake (K01): CORRECT with no misconception. analysis.ts flags tri-d because sin appears."
+        }
+      },
+      {
+        "id": "T17",
+        "input": {
+          "response": null,
+          "text": "jaraknya 20√3 m"
+        },
+        "source": "analysis.ts branch 4b (result inside a sentence)",
+        "expected": {
+          "verdict": "UNREADABLE",
+          "reason": "insufficient-working",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "tower-v1 reads a final value only alone or as \"x = …\"; inside a sentence it credits tri-f from the span \"20√3\" and asks for the rest (UNREADABLE). analysis.ts says \"kuat\". Content review: should \"jaraknya …\" count as a final value?"
+        }
+      },
+      {
+        "id": "T18",
+        "input": {
+          "response": "blank",
+          "text": ""
+        },
+        "source": "analysis.ts branch 5; 06 §10 row 6",
+        "expected": {
+          "verdict": "NOT_GRADED",
+          "evidence": {}
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-d",
+          "items": {
+            "tri-c": "rest",
+            "tri-d": "gap",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "Not knowing is not a misconception: NOT_GRADED with no evidence. The demo marks tri-d as a gap; the route to tri-d first is kept as the E-06 recommendation (M5)."
+        }
+      },
+      {
+        "id": "T19",
+        "input": {
+          "response": "know",
+          "text": ""
+        },
+        "source": "analysis.ts branch 6; 06 §10 row 7",
+        "expected": {
+          "verdict": "NOT_GRADED",
+          "evidence": {}
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-e",
+          "items": {
+            "tri-c": "rest",
+            "tri-d": "rest",
+            "tri-f": "rest"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T20",
+        "input": {
+          "response": null,
+          "text": "saya bingung"
+        },
+        "source": "analysis.ts branch 7",
+        "expected": {
+          "verdict": "UNREADABLE",
+          "reason": "insufficient-working",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-f": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-c",
+          "items": {
+            "tri-c": "gap",
+            "tri-d": "rest",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "Never an invented gap (blueprint D07): INSUFFICIENT_EVIDENCE for every concept and a clarification. analysis.ts blames tri-c."
+        }
+      },
+      {
+        "id": "T21",
+        "input": {
+          "response": null,
+          "text": "40"
+        },
+        "source": "analysis.ts branch 7; 06 §10 row 5; T01-3",
+        "expected": {
+          "verdict": "INCORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-f": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "gap",
+          "gap": "tri-c",
+          "items": {
+            "tri-c": "gap",
+            "tri-d": "rest",
+            "tri-f": "rest"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "A wrong value with no working is INCORRECT with INSUFFICIENT_EVIDENCE for every concept (T01-3). analysis.ts blames tri-c."
+        }
+      }
+    ]
+  }
+}

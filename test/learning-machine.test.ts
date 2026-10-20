@@ -27,7 +27,7 @@ const created = fc.oneof(practice, loop);
 
 const outcome = fc.oneof(
   fc.constantFrom<RunOutcome>({ type: 'RUN_DIAGNOSED' }, { type: 'RUN_CORRECT' }, { type: 'RUN_EXHAUSTED' }),
-  fc.constantFrom('UNREADABLE', 'NOT_GRADED').map((v): RunOutcome => ({ type: 'RUN_INSUFFICIENT', verdict: v as 'UNREADABLE' | 'NOT_GRADED' })));
+  fc.constantFrom('UNREADABLE', 'NOT_GRADED', 'INCORRECT').map((v): RunOutcome => ({ type: 'RUN_INSUFFICIENT', verdict: v as 'UNREADABLE' | 'NOT_GRADED' | 'INCORRECT' })));
 // Commands are drawn against the current context, so most are plausible and some are deliberately not.
 const lessonSteps = fc.oneof(
   fc.integer({ min: -1, max: 4 }).map((slideIndex): Command => ({ type: 'ADVANCE_LESSON', slideIndex })),

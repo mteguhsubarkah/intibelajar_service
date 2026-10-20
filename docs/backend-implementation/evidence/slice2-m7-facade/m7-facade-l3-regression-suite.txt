@@ -1,0 +1,17 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs --test --test-concurrency=1 test/legacy-facade.test.ts
+▶ Slice 1 legacy facade L3 over the M6 engine
+  ✔ setup: catalog (2518.0862ms)
+  ✔ off by default; only FEATURE_LEGACY_FACADE can be enabled; guests and unconsented learners are not served (1560.4435ms)
+  ✔ practice (PracticeRunView, StepLatihan): graded on the server, judged by the frontend validator (1321.5593ms)
+  ✔ lessons (CoreView): implied lesson commands, then lesson practice (1105.1095ms)
+  ✔ derived idempotency: a retried call replays; unreadable keeps the item; refusals and gaps (1621.2044ms)
+✔ Slice 1 legacy facade L3 over the M6 engine (10080.4101ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15299.6701
+

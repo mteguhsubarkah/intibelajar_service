@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-20",
+  "ok": false,
+  "confirmedHttpStatus": 402,
+  "callsReserved": 4,
+  "reservedIdr": 11724,
+  "remainingIdr": 68276,
+  "liveEnabled": false,
+  "note": "Reservations are conservative ceilings, not invoice. Browser run failed; one additional probe confirmed 402. No successful real AI response."
+}

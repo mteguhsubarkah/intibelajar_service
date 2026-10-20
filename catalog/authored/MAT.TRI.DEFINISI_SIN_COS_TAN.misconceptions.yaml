@@ -1,0 +1,19 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: MAT.TRI.DEFINISI_SIN_COS_TAN
+provenance:
+  source: authored
+  note: Slice 2 M1, for the tower-v1 rubric of MAT.TRI.Q.SOAL_MENARA (plan 05 §1.2, inverted equation).
+review:
+  status: PROPOSED
+  decision: S2-D1
+  fields:
+    - misconceptions
+  evidence:
+    - "analysis.ts grades tan 30 = x/20 as correct (branch 4). Plan 05 §1.2 makes it INCORRECT with an equation-setup misconception, attributed here because T13 (MENCARI_SISI_YANG_BELUM_DIKETAHUI) is not mapped on the tower question and its typed flow is unrouted (D5 open)."
+misconceptions:
+  - code: PERSAMAAN_TERBALIK
+    description: Perbandingan ditulis terbalik (samping/depan untuk tan)
+    example: tan 30 = x/20
+    indicators:
+      - "soal-menara: tan 30 = x/20 (plan 05 §1.2)"

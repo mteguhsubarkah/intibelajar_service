@@ -33,7 +33,9 @@ export interface Context { state: State; version: number; outcome: Outcome | nul
 
 /** A run's result. Inline runs (deterministic) complete in the submitting command; queued ones arrive later. */
 export type RunOutcome =
-  | { type: 'RUN_INSUFFICIENT'; verdict: 'UNREADABLE' | 'NOT_GRADED' }   // E-05, E-06, E-20
+  // E-05, E-06, E-20. INCORRECT only in diagnosis: a wrong value without working shows no concept (T01-3), so it asks
+  // for working; in verification an incorrect answer is RUN_DIAGNOSED (E-18), never a free retry.
+  | { type: 'RUN_INSUFFICIENT'; verdict: 'UNREADABLE' | 'NOT_GRADED' | 'INCORRECT' }
   | { type: 'RUN_DIAGNOSED' }                                            // verdict INCORRECT: E-07, E-18, E-19
   | { type: 'RUN_CORRECT' }                                              // E-08, E-17
   | { type: 'RUN_EXHAUSTED' };                                           // E-09
@@ -100,7 +102,7 @@ function judge(ctx: Draft, loop: Loop, outcome: RunOutcome): Draft | null {
   }
   switch (outcome.type) {
     // E-20 (INV-16): no retry consumed.
-    case 'RUN_INSUFFICIENT': return { ...ctx, state: 'RETRY', loop: { ...loop, run: done(outcome.verdict) } };
+    case 'RUN_INSUFFICIENT': return outcome.verdict === 'INCORRECT' ? null : { ...ctx, state: 'RETRY', loop: { ...loop, run: done(outcome.verdict) } };
     case 'RUN_CORRECT': return { ...ctx, state: 'COMPLETED', outcome: 'SOLVED_AFTER_LEARNING', loop: { ...loop, run: done('CORRECT') } };
     case 'RUN_DIAGNOSED': {
       // E-18 then E-19: the second unsuccessful retry ends the loop with the solution.

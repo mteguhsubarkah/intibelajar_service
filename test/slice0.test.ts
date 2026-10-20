@@ -124,6 +124,8 @@ test('Slice 0 real PostgreSQL integration and security gates',async t=>{
       const c=await consent(a);
       const replay=await inject('POST','/v1/me/consent-requests',{purposes:['LEARNING_DATA','AI_PROCESSING'],guardianEmail:'guardian@example.invalid'},c.headers);
       assert.equal(replay.statusCode,201);assert.equal(replay.headers['idempotency-replayed'],'true');assert.deepEqual(replay.json(),c.r.json());
+      // 09 §1: a 201 names its resource, and a replay names the same one.
+      assert.deepEqual([c.r.headers.location,replay.headers.location],['/v1/me/consents','/v1/me/consents']);
       const conflict=await inject('POST','/v1/me/consent-requests',{purposes:['LEARNING_DATA'],guardianEmail:'guardian@example.invalid'},c.headers);
       assert.equal(conflict.statusCode,409);
       const view=(await inject('GET','/v1/guardian-consents/'+c.token)).json();assert.match(view.policyText,/SIMULASI DEVELOPMENT/);assert.equal(view.purposes.length,2);

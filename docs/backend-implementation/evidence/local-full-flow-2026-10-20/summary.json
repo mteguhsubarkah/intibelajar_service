@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "checks": [
+    "diagnosis",
+    "server lesson",
+    "quick check",
+    "strict tutor",
+    "server hint",
+    "return to retry",
+    "correct retry completes loop"
+  ],
+  "events": []
+}

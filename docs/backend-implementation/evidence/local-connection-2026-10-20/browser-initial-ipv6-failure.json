@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-19T18:16:54.666Z",
+  "node": "v24.19.0",
+  "syntheticOnly": true,
+  "database": "intibelajar_local_dev",
+  "origin": "http://localhost:5173",
+  "total": 2,
+  "expected": 9,
+  "passed": 1,
+  "exit": 1,
+  "results": [
+    {
+      "name": "readiness through frontend proxy and no live integrations",
+      "ok": true,
+      "seconds": 0.416
+    },
+    {
+      "name": "fixture sign-in rejects cross-origin and invalid CSRF",
+      "ok": false,
+      "error": "locator.inputValue: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=csrf]').first()\u001b[22m\n",
+      "seconds": 32.341
+    }
+  ]
+}

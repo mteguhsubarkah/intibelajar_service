@@ -4,6 +4,7 @@ import { hash, stable, uuid } from '../platform/crypto.js';
 import { gradingSource } from '../catalog/grading-source.js';
 import { conceptLabels } from '../catalog/interface.js';
 import { evaluate, type CandidateEvidence, type Evaluation, type StudentResponse } from './evaluators/index.js';
+import { reportOf } from './disputes.js';
 // Inline deterministic grading (Slice 1 M6; 06 §2.3 step 1, §5). One completed GRADING run per attempt,
 // one evidence row per mapped concept, with mastery and transfer eligibility decided and explained here.
 // Exposure facts come from the learning module, which owns attempts and assistance events.
@@ -18,15 +19,21 @@ export interface Graded { runId: string; evaluation: Evaluation; familyCode: str
 
 type Reason = 'NOT_A_CLAIM' | 'AI_ONLY' | 'DEVICE_IMPORT' | 'FORMATIVE_CHECK' | 'SOLUTION_SEEN' | 'NOT_ASSESSABLE' | 'ANCHOR_OR_RETRY' | 'NOT_TRANSFER_ITEM' | 'HINT_USED' | 'FAMILY_NOT_FRESH';
 
-/** 06 §5.1 and §5.2. Every failing rule adds its code, so the decision stays explainable. */
-export function eligibility(e: CandidateEvidence, assessable: boolean, req: Pick<GradeRequest, 'kind' | 'source' | 'exposure'>) {
+/**
+ * 06 §5.1 and §5.2. Every failing rule adds its code, so the decision stays explainable. A question loop's own
+ * attempts (INITIAL, CLARIFICATION, RETRY) never transfer (INV-13); AI-only evidence never counts for mastery (INV-10).
+ */
+export function eligibility(e: CandidateEvidence, assessable: boolean,
+    req: { kind: GradeRequest['kind'] | 'INITIAL' | 'CLARIFICATION' | 'RETRY'; source: GradeRequest['source']; exposure: Exposure; engine?: 'DETERMINISTIC' | 'AI_ASSISTED' }) {
   const mastery: Reason[] = [], transfer: Reason[] = [];
   if (!['UNDERSTANDING_DEMONSTRATED', 'MISCONCEPTION_EVIDENCED'].includes(e.classification)) mastery.push('NOT_A_CLAIM');
+  if (req.engine === 'AI_ASSISTED') mastery.push('AI_ONLY');
   if (req.source !== 'LIVE') mastery.push('DEVICE_IMPORT');
   if (req.kind === 'QUICK_CHECK') mastery.push('FORMATIVE_CHECK');
   if (req.exposure.solutionSeen) mastery.push('SOLUTION_SEEN');
   if (!assessable) mastery.push('NOT_ASSESSABLE');
-  if (req.kind !== 'TRANSFER') transfer.push('NOT_TRANSFER_ITEM');
+  if (['INITIAL', 'CLARIFICATION', 'RETRY'].includes(req.kind)) transfer.push('ANCHOR_OR_RETRY');
+  else if (req.kind !== 'TRANSFER') transfer.push('NOT_TRANSFER_ITEM');
   if (req.exposure.hintUsed) transfer.push('HINT_USED');
   if (!req.exposure.familyFresh) transfer.push('FAMILY_NOT_FRESH');
   const masteryEligible = mastery.length === 0;
@@ -75,9 +82,9 @@ const revealedOf = (e: Evaluation) => !e.revealedAnswer ? null : 'optionId' in e
 export async function runView(db: Connection, runId: string, learnerId: string, attemptOf: (attemptId: string) => Promise<{ sessionId: string; revisionId: string }>) {
   const row = (await sql<{ id: string; attempt_id: string; generation: number; purpose: string; engine: string; status: string;
       evidence_status: string | null; verdict: string | null; headline: string | null; lede: string | null; clarification_prompt: string | null; failure_code: string | null;
-      created_at: Date; completed_at: Date | null }>`
+      recommendations: unknown[]; created_at: Date; completed_at: Date | null }>`
     select d.id, d.attempt_id, d.generation, d.purpose, d.engine, d.status, d.evidence_status, d.verdict,
-      d.headline, d.lede, d.clarification_prompt, d.failure_code, d.created_at, d.completed_at
+      d.headline, d.lede, d.clarification_prompt, d.failure_code, d.recommendations, d.created_at, d.completed_at
     from diagnosis_run d where d.id = ${runId} and d.learner_id = ${learnerId}`.execute(db)).rows[0];
   if (!row) return null;
   const attempt = await attemptOf(row.attempt_id), run = { ...row, session_id: attempt.sessionId, revision_id: attempt.revisionId };
@@ -86,9 +93,11 @@ export async function runView(db: Connection, runId: string, learnerId: string, 
     select concept_id, classification, misconception_code, rationale, refs, source, uncertainty_reasons, mastery_eligible, transfer_eligible, eligibility_reasons
     from concept_evidence where diagnosis_run_id = ${runId} order by created_at, concept_id`.execute(db)).rows;
   const labels = await conceptLabels(db, evidence.map(e => e.concept_id));
-  // The key is shown only for a graded answer; showing it is recorded as FINAL_ANSWER_SHOWN by the learning module.
+  const report = await reportOf(db, runId, learnerId);
+  // The key is shown only for a graded practice answer; showing it is recorded as FINAL_ANSWER_SHOWN by the learning
+  // module. A question loop never reveals it here: its answer is part of the worked solution (E-19, E-21; 06 §2.4 rule 7).
   let revealed: ReturnType<typeof revealedOf> = null;
-  if (run.verdict === 'CORRECT' || run.verdict === 'INCORRECT') {
+  if (run.purpose === 'GRADING' && (run.verdict === 'CORRECT' || run.verdict === 'INCORRECT')) {
     const source = await gradingSource(db, run.revision_id);
     revealed = source.rubric.answer.optionId ? { optionId: source.rubric.answer.optionId } : source.rubric.acceptedForms[0] ? { value: source.rubric.acceptedForms[0].slice(0, 64) } : null;
   }
@@ -106,8 +115,8 @@ export async function runView(db: Connection, runId: string, learnerId: string, 
         eligibility: { mastery: e.mastery_eligible, transfer: e.transfer_eligible, reasons: e.eligibility_reasons },
       };
     }),
-    recommendations: [], aiAssisted: false, ...(revealed ? { revealedAnswer: revealed } : {}), ...(run.failure_code ? { failureCode: run.failure_code } : {}),
-    createdAt: run.created_at.toISOString(), ...(run.completed_at ? { completedAt: run.completed_at.toISOString() } : {}),
+    recommendations: run.recommendations, aiAssisted: run.engine === 'AI_ASSISTED' && run.status === 'COMPLETED', ...(revealed ? { revealedAnswer: revealed } : {}), ...(run.failure_code ? { failureCode: run.failure_code } : {}),
+    ...(report ? { report } : {}), createdAt: run.created_at.toISOString(), ...(run.completed_at ? { completedAt: run.completed_at.toISOString() } : {}),
   };
 }
 

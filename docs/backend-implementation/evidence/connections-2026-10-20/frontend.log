@@ -1,0 +1,514 @@
+
+> intibelajar-service@0.1.0 verify:frontend
+> node scripts/verify-frontend.mjs
+
+
+> intibelajar@0.0.0 test
+> npm run check:bindings && npm run test:curriculum && npm run test:graph && npm run test:analysis && npm run test:flow && npm run test:math-input && npm run test:demo-safety && npm run test:gamification && npm run test:canonical-loop
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  82 komponen diperiksa, 0 bermasalah
+
+> intibelajar@0.0.0 test:curriculum
+> esbuild scripts/check-curriculum.mjs --bundle --platform=node --format=cjs --outfile=node_modules/.cache/cc.cjs --log-level=error && node node_modules/.cache/cc.cjs
+
+✓ eksponen: 13 inti dalam 6 bagian
+✓ barisan: 10 inti dalam 4 bagian
+✓ trigonometri: 20 inti dalam 6 bagian
+✓ vektor: 17 inti dalam 5 bagian
+✓ 5 hubungan antar materi, 7 materi belum dipetakan
+
+> intibelajar@0.0.0 test:graph
+> esbuild scripts/graph.test.ts --bundle --platform=node --format=cjs --alias:@=./src --outfile=node_modules/.cache/graph.cjs --log-level=error && node node_modules/.cache/graph.cjs
+
+
+=== eksponen ===
+  ok    semua garis menunjuk inti yang ada
+  ok    jenis garis sah
+  ok    tidak ada garis ganda
+  ok    graf keras tidak bersiklus
+
+=== barisan ===
+  ok    semua garis menunjuk inti yang ada
+  ok    jenis garis sah
+  ok    tidak ada garis ganda
+  ok    graf keras tidak bersiklus
+
+=== trigonometri ===
+  ok    semua garis menunjuk inti yang ada
+  ok    jenis garis sah
+  ok    tidak ada garis ganda
+  ok    graf keras tidak bersiklus
+  ok    tidak ada garis keras yang sudah tersirat
+  ok    tidak ada inti dengan leluhur keras lebih dari 9
+  ok    garis lunak tidak menggandakan prasyarat keras yang sudah ada
+
+--- soal pertama funnel memakai inti yang terbuka di awal ---
+  ok    tri-c: prasyarat kerasnya sudah selesai sesudah materi funnel
+  ok    tri-d: prasyarat kerasnya sudah selesai sesudah materi funnel
+  ok    tri-f: prasyarat kerasnya sudah selesai sesudah materi funnel
+  ok    tri-p: prasyarat kerasnya sudah selesai sesudah materi funnel
+  ok    persimpangan setelah materi funnel memuat Sudut Istimewa
+  ok    persimpangan setelah materi funnel memuat Elevasi & Depresi
+
+--- penerapan tidak digerbang inti yang bukan prasyaratnya ---
+  ok    Elevasi & Depresi hanya butuh segitiga siku-siku dan definisinya
+  ok    Luas Segitiga tidak butuh aturan sinus/cosinus
+  ok    Enam Rasio tidak menggerbang inti lain
+
+=== vektor ===
+  ok    semua garis menunjuk inti yang ada
+  ok    jenis garis sah
+  ok    tidak ada garis ganda
+  ok    graf keras tidak bersiklus
+
+=== pelajaran yang boleh ditawarkan ===
+  ok    perbandingan-trig: inti tri-e ada di kurikulum
+  ok    perbandingan-trig: tiap cek materi punya tepat satu jawaban benar
+  ok    perbandingan-trig: kunci soal latihan valid
+  ok    sudut-istimewa: inti tri-f ada di kurikulum
+  ok    sudut-istimewa: dipetakan dari tri-f
+  ok    sudut-istimewa: tiap cek materi punya tepat satu jawaban benar
+  ok    sudut-istimewa: kunci soal latihan valid
+  ok    sudut-depresi-elevasi: inti tri-p ada di kurikulum
+  ok    sudut-depresi-elevasi: dipetakan dari tri-p
+  ok    sudut-depresi-elevasi: tiap cek materi punya tepat satu jawaban benar
+  ok    sudut-depresi-elevasi: kunci soal latihan valid
+  ok    tri-f: kartu tahu rute yang ada
+
+=== lencana ===
+  ok    rak lencana = jumlah inti yang dihitung ke level
+  ok    tiap inti Trigonometri punya lencana
+  ok    nama lencana unik
+
+  semua lulus
+
+> intibelajar@0.0.0 test:analysis
+> esbuild scripts/analysis.test.ts --bundle --platform=node --format=cjs --alias:@=./src --outfile=node_modules/.cache/analysis.cjs --log-level=error && node node_modules/.cache/analysis.cjs
+
+  ok    benar: tan + 20/x
+  ok    salah rasio: sin
+  ok    salah rasio: cos
+  ok    nilai sudut salah: tan = 1/2
+  ok    tekan nggak tahu
+  ok    merasa tahu, kosong
+  ok    benar: x = 20 akar 3
+  ok    benar: tan 30 = 1/akar 3
+  ok    benar: pakai √3
+  ok    benar: 20√3 tanpa x
+  ok    benar: nilai desimal 34,6
+  ok    JEBAKAN '20/x' tanpa rasio
+  ok    benar walau tombolnya nggak tahu
+  ok    JEBAKAN 'saya tidak tahu'
+  ok    JEBAKAN 'tanpa rumus'
+  ok    JEBAKAN 'sini bingung'
+  ok    JEBAKAN 'tangan saya dingin'
+  ok    JEBAKAN 'cosong' tidak kena cos
+  ok    tanpa spasi: tan30=20/x
+  ok    huruf besar: TAN 30
+  ok    koma desimal: tan 30 = 0,5
+
+  21/21 lulus
+  framing: 0 kombinasi kosong yang tidak seharusnya
+
+=== kurikulum: apa yang menunggu di jalur ===
+  ok    trigonometri punya 20 inti
+  ok    tri-e ketemu
+  ok    tri-e posisi ke-6
+  ok    sesudah tri-e tersisa 14
+  ok    yang berikutnya setelah tri-e
+  ok    inti terakhir tidak menyisakan apa pun
+  ok    id tak dikenal -> null
+  ok    id tak dikenal tidak menyisakan apa pun
+  ok    mapId "tri-e" ada di kurikulum
+  ok    mapId "tri-d" ada di kurikulum
+  ok    mapId "tri-f" ada di kurikulum
+  ok    mapId "tri-c" ada di kurikulum
+  ok    mapId "tri-p" ada di kurikulum
+
+=== level ===
+  ok    total core
+  ok    level tertinggi berakhir tepat di total core
+  ok    capstone dan prasyarat tersembunyi tidak dihitung
+  ok    jumlah level
+  ok    nama tiap level
+  ok    ikon tiap level unik
+  ok    0 core -> Lv.1
+  ok    2 core -> Lv.1
+  ok    3 core -> Lv.2
+  ok    5 core -> Lv.2
+  ok    6 core -> Lv.3
+  ok    9 core -> Lv.3
+  ok    10 core -> Lv.4
+  ok    13 core -> Lv.4
+  ok    14 core -> Lv.5
+  ok    17 core -> Lv.5
+  ok    18 core -> Lv.6
+  ok    tidak ada jumlah core yang jatuh di luar level
+  ok    tidak ada jumlah core yang masuk dua level
+  ok    dari 1, berikutnya Lv.2
+  ok    dari 1, sisa 2 core
+  ok    dari 3, sisa 3 core
+  ok    dari 18, tidak ada level berikutnya
+  ok    dari 18, sisa 0
+  ok    1 dari 18
+  ok    18 dari 18
+  ok    tidak pernah lebih dari 1
+  ok    tidak pernah negatif
+
+> intibelajar@0.0.0 test:flow
+> esbuild scripts/flow.test.ts --bundle --platform=node --format=cjs --alias:@=./src --outfile=node_modules/.cache/flow.cjs --log-level=error && node node_modules/.cache/flow.cjs
+
+=== perjalanan 1: salah rasio, kerjakan semuanya, pilih akun ===
+  ok    mulai di langkah 1
+  ok    label awal
+  ok    progress awal
+  ok    topik tersimpan
+  ok    maju ke langkah 2
+  ok    label langkah 2
+  ok    level tersimpan
+  ok    maju ke langkah 3
+  ok    tombol blank menyala
+  ok    mengetik membatalkan tombol
+  ok    analisis jalan
+  ok    nada hasil
+  ok    core yang ditandai
+  ok    progress jadi penuh
+  ok    tidak bisa mundur dari langkah 4 oleh reset
+  ok    cek pertama terkunci
+  ok    cek tidak bisa ditimpa
+  ok    label fase latihan
+  ok    belum ada yang dijawab
+  ok    soal 1 terkunci
+  ok    terjawab semua
+  ok    skor
+  ok    label selesai
+  ok    tersimpan
+  ok    gap disimpan sebagai nama core
+  ok    nextCore
+  ok    topik ikut tersimpan
+  ok    level ikut tersimpan
+  ok    skor latihan ikut tersimpan
+  ok    tombol yang ditekan tercatat
+  ok    ada stempel waktu
+  ok    id core untuk /core/:id
+  ok    id simpul untuk peta
+  ok    id core yang ditandai
+  ok    alasan langkah berikutnya ikut tersimpan
+  ok    alasan tidak kosong
+
+=== perjalanan 2: caranya tepat, lewati level, pilih nanti saja ===
+  ok    kembali ke langkah 1
+  ok    topik dibersihkan
+  ok    hasil dibersihkan
+  ok    latihan dibersihkan
+  ok    lewati menandai level ragu
+  ok    langsung ke langkah 3
+  ok    nada hasil
+  ok    gap kosong saat kuat
+  ok    core yang dikuasai
+  ok    hasil ada selama sesi
+  ok    tidak ditulis ke localStorage
+  ok    gap null saat kuat
+  ok    id core saat kuat punya nilai
+  ok    peta menandai langkah berikutnya saat kuat
+  ok    gapCoreId null saat kuat
+  ok    tombolnya tercatat
+  ok    skor latihan nol
+
+=== perjalanan 3: kosong semua, tekan Cek ===
+  ok    analisis ditolak saat kosong
+  ok    tidak ada hasil
+  ok    tombol tahu tanpa tulisan tetap boleh
+  ok    core yang ditandai
+
+=== intip peta (overlay, bukan navigasi) ===
+  ok    peta tertutup di awal
+  ok    peta terbuka
+  ok    peta tertutup lagi
+  ok    pindah langkah menutup peta
+  ok    reset menutup peta
+
+=== jalur: apa yang menunggu ===
+  ok    ada jalur
+  ok    topiknya
+  ok    total inti di jalur
+  ok    inti berikutnya
+  ok    berapa yang menunggu
+  ok    belum terbukti -> belum dikuasai
+  ok    sebelum ada hasil -> jalur kosong
+  ok    sebelum ada hasil -> nol dikuasai
+
+=== simpan: dengan akun vs tanpa akun ===
+  ok    tanpa akun -> hidup selama sesi
+  ok    tanpa akun -> TIDAK ditulis ke localStorage
+  ok    dengan akun -> ditulis ke localStorage
+  ok    tombolnya tercatat
+  ok    id rute ikut tersimpan
+
+=== rute lanjut ===
+  ok    tri-f punya rute
+  ok    tri-e punya rute
+
+=== kedua tombol lewat tawaran akun ===
+  ok    pop up terbuka
+  ok    aksi DITAHAN, belum jalan
+  ok    aksi jalan setelah memilih
+  ok    pop up tertutup
+  ok    tanpa akun -> tidak ditulis ke localStorage
+  ok    tapi hidup selama sesi
+  ok    tawaran kedua langsung jalan
+  ok    pop up tidak terbuka lagi
+  ok    dengan akun -> ditulis ke localStorage
+  ok    tombolnya tercatat
+  ok    reset menutup pop up
+  ok    reset membersihkan penanda tawaran
+
+=== batas langkah ===
+  ok    tidak melewati langkah terakhir
+  ok    tidak mundur di bawah 1
+
+=== topik yang soalnya belum ada ===
+  ok    aljabar tidak bisa dipilih
+  ok    tetap di langkah 1
+  ok    geometri tidak bisa dipilih
+  ok    trigonometri bisa
+  ok    lanjut ke langkah 2
+
+=== layar hasil mengikuti hasil latihan ===
+  ok    latihan dilewati -> skip
+  ok    skip tidak dihitung dikuasai
+  ok    skip tidak dihitung diperkuat
+  ok    sebagian benar -> part
+  ok    part belum dikuasai
+  ok    part dihitung sedang diperkuat
+  ok    ulangi latihan -> kembali ke langkah 5
+  ok    ulangi latihan mengosongkan jawaban
+  ok    semua benar -> ok
+  ok    ok dihitung dikuasai
+  ok    nada kuat tanpa latihan -> kuat
+  ok    kuat dihitung dikuasai
+
+=== event funnel ===
+  ok    dimulai dengan coba_start
+  ok    topik tercatat
+  ok    level tercatat
+  ok    soal dikirim tercatat
+  ok    diagnosis tercatat
+  ok    cek materi tercatat
+  ok    latihan tercatat
+  ok    latihan dilewati tercatat (baru 1 dari 3)
+  ok    layar hasil tercatat
+  ok    klik tombol tercatat
+  ok    tembok muncul tercatat
+  ok    pilihan tembok tercatat
+  ok    pilihan tembok membawa via
+  ok    event membawa id sesi
+  ok    event tidak membawa data pribadi (kunci data terbatas)
+  ok    keluar di tengah tercatat sekali
+  ok    membawa langkah terakhir
+  ok    sudah memilih di tembok -> bukan keluar
+  ok    via perangkat tercatat
+
+=== soal pembuka inti berikutnya (funnel berhenti di titik terbuka) ===
+  ok    inti berikutnya punya soal pembuka
+  ok    rute tujuan
+  ok    langkah terakhir sekarang 7 (inti berikutnya dikerjakan di /core)
+  ok    pratinjau dicatat sekali
+  ok    pilihan arah tercatat
+  ok    pilihan arah mencatat disarankan atau tidak
+  ok    layar hasil tidak dicatat ulang
+  ok    tetap di langkah hasil (materi dikerjakan di /core)
+  ok    inti funnel terhitung selesai
+  ok    inti dari /core ikut terhitung
+  ok    tembok konteks core2
+  ok    tembok membawa konteks
+
+=== persimpangan (pilihan inti berikutnya) ===
+  ok    paling banyak tiga pilihan
+  ok    tiga inti terbuka sekaligus setelah Definisi sin, cos, tan
+  ok    Sudut Istimewa disarankan (LEAD_TO)
+  ok    yang disarankan paling atas
+  ok    yang disarankan bisa dimulai
+  ok    rute yang disarankan
+  ok    Elevasi & Depresi bisa dipilih sebagai jalan kedua
+  ok    yang bukan disarankan tidak ditandai disarankan
+  ok    prasyarat lunak jadi saran, bukan kunci
+  ok    Enam Rasio terlihat tapi belum bisa dimulai
+  ok    yang belum ada materinya tidak punya rute
+  ok    sesudah Sudut Istimewa: ada yang bisa dimulai
+  ok    sesudah Sudut Istimewa: yang bisa dimulai disarankan
+  ok    inti yang sudah selesai tidak ditawarkan lagi
+  ok    yang sudah dikerjakan tidak lagi disarankan sebagai saran
+  ok    sesudah keduanya: tidak ada yang bisa dimulai (materinya belum ada)
+  ok    sesudah keduanya: tetap terlihat apa yang menunggu
+  ok    ada satu pratinjau terkunci bila ruang tersisa
+  ok    terkunci menyebut yang harus selesai dulu
+  ok    hanya pelajaran yang sesuai judulnya yang dijanjikan
+  ok    pelajaran yang belum sesuai tidak dijanjikan
+  ok    Elevasi & Depresi dijanjikan (isinya sesuai)
+  ok    pemetaan salah tri-c tidak dijanjikan
+  ok    jumlah soal di kartu = jumlah soal di pelajaran
+
+=== pengingat email ===
+  ok    waktu dipilih
+  ok    pilihan waktu tercatat
+  ok    email tidak sah ditolak
+  ok    belum dianggap selesai
+  ok    email sah diterima
+  ok    selesai setelah email sah
+  ok    kedua percobaan tercatat
+  ok    alamat email TIDAK pernah masuk event
+  ok    email tetap menyimpan posisi di perangkat
+  ok    pilihan tembok = email
+  ok    membawa waktu pengingat
+  ok    alamat email tidak ditulis ke localStorage
+
+=== 'Nanti saja' dan 'Lihat Perjalananku' ===
+  ok    tembok dari hasil -> konteks result
+  ok    tembok dari hasil tercatat
+  ok    ke peta: hasil hidup di sesi
+  ok    ke peta: tidak ditulis ke localStorage
+  ok    ke peta bukan dianggap keluar
+  ok    ke peta tidak membuka tembok
+
+=== inti berikutnya tanpa soal pembuka -> perilaku lama ===
+  ok    inti berikutnya (Kuadran) belum punya soal pembuka
+
+=== soal tadi (jalur ada celah) ===
+  ok    soal pertama salah -> ada celah
+  ok    jawaban pertama tetap tersimpan
+  ok    masuk soal tadi
+  ok    label langkah soal tadi
+  ok    soal tadi dicatat dimulai
+  ok    jawaban salah ditolak
+  ok    belum selesai setelah salah sekali
+  ok    percobaan tercatat
+  ok    jawaban benar diterima
+  ok    soal tadi selesai
+  ok    selesai menutup soal tadi
+  ok    kedua percobaan tercatat
+  ok    nomor percobaan tercatat
+  ok    dua kali salah -> solusi ditampilkan
+  ok    solusi bukan berarti selesai benar
+  ok    solusi tercatat dengan alasan
+  ok    minta solusi -> ditampilkan
+  ok    alasan: diminta
+  ok    tidak menjawab setelah solusi
+
+=== soal tadi: jalan kembali dari luar funnel ===
+  ok    celah ada, soal belum ditutup -> menunggu
+  ok    klik chip dicatat dengan asalnya
+  ok    disembunyikan -> tidak menunggu lagi
+  ok    menyembunyikan tidak menutup soalnya
+  ok    menyembunyikan dicatat
+  ok    putaran baru -> penanda kembali
+  ok    soal ditutup -> tidak menunggu
+  ok    kembali dicatat dengan status tertutup
+  ok    sebelum soal tadi: belum ada inti terkuasai
+  ok    soal tadi beres -> satu inti terkuasai
+  ok    tidak lagi 'sedang diperkuat'
+  ok    hanya melihat solusi -> belum terkuasai
+  ok    inti funnel terhitung
+  ok    inti dari /core menambah satu
+  ok    menandai dua kali tidak menggandakan
+  ok    core_done dicatat sekali
+  ok    inti yang sama dengan inti funnel tidak dobel
+  ok    singgah dari latihan -> langkah soal tadi
+  ok    langkah asal diingat
+  ok    klik dari dalam funnel dicatat
+  ok    kembali ke latihan
+  ok    penanda singgah dibersihkan
+  ok    progres latihan tetap
+  ok    di luar materi/latihan tidak bisa singgah
+  ok    tanpa hasil diagnosis -> tidak menunggu
+
+=== jalur sudah tahu: solusi pembanding ===
+  ok    tahu caranya dianggap benar
+  ok    tidak ada jawaban tertulis
+  ok    tercatat sebagai mode know
+  ok    langkah 7 untuk jalur tahu = solusi pembanding
+  ok    jalur tahu tidak memulai soal tadi
+  ok    pilihan tercatat
+  ok    sama -> layar hasil
+  ok    hasil kuat tanpa latihan
+  ok    kuat dihitung dikuasai
+  ok    belum yakin -> materi
+  ok    fallback tercatat
+  ok    tombol Cek nonaktif sampai ada isi: analisis kosong ditolak
+
+=== pemilih mata pelajaran ===
+  ok    mulai di Matematika
+  ok    pindah ke Fisika
+  ok    pilihan tercatat (belum tersedia)
+  ok    mata pelajaran tak dikenal diabaikan
+  ok    email tidak sah ditolak
+  ok    belum tercatat minat
+  ok    email sah diterima
+  ok    minat tercatat
+  ok    minat tidak ganda
+  ok    event minat tercatat
+  ok    alamat email TIDAK pernah masuk event
+  ok    reset mengembalikan ke Matematika
+  ok    reset mengosongkan minat
+
+=== pita perjalanan ===
+  ok    tidak ada pita di awal
+  ok    pita mulai di Soal
+  ok    setelah dianalisis: Ketemu
+  ok    jalur biasa 5 titik
+  ok    materi = titik 3
+  ok    latihan = titik 4
+  ok    hasil = Simpan
+  ok    jalur kuat 4 titik (tanpa materi/latihan)
+
+=== saklar demo: soal tadi dilewati ===
+  ok    jawaban apa pun dianggap benar saat saklar aktif
+  ok    soal tadi selesai
+  ok    jawaban kosong tetap ditolak
+
+=== pengingat pasif sesudah tembok dilewati ===
+  ok    belum ada pilihan -> tidak ada pengingat
+  ok    memilih tanpa menyimpan, belum ada inti -> tidak ada pengingat
+  ok    sesudah ada inti terkumpul -> pengingat muncul
+  ok    ditutup -> tidak muncul lagi di sesi ini
+  ok    sudah memilih akun -> tidak ada pengingat
+
+  semua lulus
+
+> intibelajar@0.0.0 test:math-input
+> esbuild scripts/mathInput.test.ts --bundle --platform=node --format=cjs --outfile=node_modules/.cache/mathInput.cjs --log-level=error && node node_modules/.cache/mathInput.cjs
+
+7 math insertion checks passed
+
+> intibelajar@0.0.0 test:demo-safety
+> node scripts/run-demo-safety.mjs
+
+PASS: 7 demo safety and selector assertions
+
+> intibelajar@0.0.0 test:gamification
+> esbuild scripts/gamification.test.ts --bundle --platform=node --format=cjs --alias:@=./src --outfile=node_modules/.cache/gamification.cjs --log-level=error && node node_modules/.cache/gamification.cjs
+
+PASS: 27 gamification, session, tutor, and bank assertions
+
+> intibelajar@0.0.0 test:canonical-loop
+> esbuild scripts/canonicalLoop.test.ts --bundle --platform=node --format=cjs --alias:@=./src --define:import.meta.env=globalThis.__VITE_ENV__ --outfile=node_modules/.cache/canonicalLoop.cjs --log-level=error && node node_modules/.cache/canonicalLoop.cjs
+
+canonical loop client: 10 checks passed
+
+> intibelajar@0.0.0 test:backend
+> esbuild scripts/backend.test.ts --bundle --platform=node --format=cjs --alias:@=./src --outfile=node_modules/.cache/backend.cjs --log-level=error && node node_modules/.cache/backend.cjs
+
+29 backend contract checks passed
+
+> intibelajar@0.0.0 test:answer-golden
+> esbuild scripts/answerGolden.test.ts --bundle --platform=node --format=cjs --alias:@=./src --outfile=node_modules/.cache/answerGolden.cjs --log-level=error && node node_modules/.cache/answerGolden.cjs
+
+81 numeric, 47 multiple-choice and 21 tower golden checks passed; 12 tower cases are labelled deltas from analysis.ts, proposed for content review (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\catalog\golden\answers.v2.json)
+PASS: 3 frontend local-event/beacon isolation scenarios (network stubbed; no external calls)
+(node:32296) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)

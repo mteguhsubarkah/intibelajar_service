@@ -1,0 +1,39 @@
+(node:3680) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 2 disputes (learner side) over the API
+  ✔ setup: migrations and the reviewed catalog (6809.8831ms)
+  ✔ 06 §9.3 rule 1: one OPEN report per completed run, idempotent, with Location to the run (09 §1); the run shows it (1738.0939ms)
+  ✔ guards: consent, ownership, strict schema, and only a completed run can be reported; refusals write nothing (1303.4452ms)
+  ✔ 06 §9.3 rule 5: an OPEN report changes no evidence or eligibility; practice gradings can be reported too (691.647ms)
+✔ Slice 2 disputes (learner side) over the API (11055.6334ms)
+(node:28040) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 2 question loops over the API
+  ✔ setup: migrations, reviewed catalog with the authored tower rubric (3869.5417ms)
+  ✔ E-01 creation guards: consent, feature, content, strict schemas and replay (1012.3093ms)
+  ✔ 09 §1: every 201 carries Location to a resource that reads back, also on replay; a 200 carries none (1912.773ms)
+  ✔ E-03 + E-08 inline (T01-1, T01-5, INV-04, INV-13): a correct first try completes; the solution stays locked until reviewed (953.9886ms)
+  ✔ E-07 with recommendations: a catalogued misconception points to its authored lesson and key formula (354.7932ms)
+  ✔ T01-3 with E-05, E-04 and E-06: a bare wrong value asks for working; two clarifications, then the learner chooses (861.5463ms)
+  ✔ 05 §4.4 self-reports: "Saya tahu caranya" asks for proof, "belum tahu" starts from the basics; neither is graded (688.8413ms)
+  ✔ E-11 to E-14 and E-16 + E-17 (T01-6): a lesson from a recommendation, its checks, then a correct retry (1570.6905ms)
+  ✔ E-15, E-18, E-20, E-19 (INV-16.1): only an incorrect retry uses an allowance; the second ends with the solution (1160.0988ms)
+  ✔ E-21 from RETRY and its illegal forms; T01-9: a family attempt after the solution is not independent (1447.5902ms)
+  ✔ E-23 on the anchor: hints are idempotent, change no state and mark the next attempt (741.5264ms)
+  ✔ T01-11 and INV-22: two tabs on one version get one 201 and one 409; client timestamps and verdicts are refused (784.4886ms)
+  ✔ queued path (D4 fake engine): no AI consent → inline insufficient; with consent → queued, polled, adopted as AI evidence (1127.4214ms)
+  ✔ T01-4 and E-09/E-10: failures produce no diagnosis; the loop resumes by generation, at most three (1669.2534ms)
+  ✔ INV-08.1: concurrent REQUEST_DIAGNOSIS creates one new generation (1192.7428ms)
+  ✔ fencing: lease recovery adopts once; late results after abandon, expiry, a new generation, revocation and deletion are discarded (3703.9906ms)
+  ✔ 04 §7 fences one at a time: a stale lease holder, an attempt that is not the active one, another generation (904.8182ms)
+  ✔ E-25 expiry of a waiting loop cancels its run and job; later commands are 410 (910.2884ms)
+  ✔ T01-GO: every loop run links attempt → run → evidence references → pinned revision (55.2323ms)
+✔ Slice 2 question loops over the API (26170.3454ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 64962.1921

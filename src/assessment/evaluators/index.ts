@@ -1,5 +1,6 @@
 import type { QuestionBody, Rubric } from '../../catalog/manifest.js';
 import { normalizeAnswerText, parseAnswerValue, unitKindOf, withinTolerance, type UnreadableReason } from './numeric-parse.js';
+import { evaluateTower } from './tower-v1.js';
 // Deterministic evaluators (Slice 1 M5; 06 §1–§2). Pure functions: (question, response) → verdict and
 // candidate evidence per concept. No I/O, no clock, no exposure or eligibility: assessment adds those
 // when it stores evidence (06 §5), because they depend on the learner's history, not on the answer.
@@ -24,8 +25,9 @@ export interface CandidateEvidence {
 }
 export interface Evaluation {
   verdict: 'CORRECT' | 'INCORRECT' | 'UNREADABLE' | 'NOT_GRADED';
-  /** Why the answer could not be read; null otherwise. Codes match the frontend checker. */
-  reason: UnreadableReason | null;
+  /** Why the answer could not be graded; null otherwise. Codes match the frontend checker, plus tower-v1's
+   *  'insufficient-working' (readable working that shows neither a result nor a catalogued error). */
+  reason: UnreadableReason | 'insufficient-working' | null;
   /** The value read from a numeric answer. */
   value: number | null;
   /** The catalogued misconception the wrong answer matches, if any. */
@@ -35,7 +37,7 @@ export interface Evaluation {
   revealedAnswer: { optionId: string } | { forms: string[] } | null;
 }
 
-const ungraded = (verdict: 'UNREADABLE' | 'NOT_GRADED', reason: UnreadableReason | null): Evaluation =>
+const ungraded = (verdict: 'UNREADABLE' | 'NOT_GRADED', reason: Evaluation['reason']): Evaluation =>
   ({ verdict, reason, value: null, misconceptionCode: null, evidence: [], revealedAnswer: null });
 
 /**
@@ -92,7 +94,8 @@ export function evaluateNumeric(input: EvaluationInput): Evaluation {
     evidence: evidenceFor(input, correct, refs, miss), revealedAnswer: { forms: rubric.acceptedForms } };
 }
 
-export const EVALUATORS = { 'option-v1': evaluateOption, 'numeric-v1': evaluateNumeric } as const;
+export const EVALUATORS = { 'option-v1': evaluateOption, 'numeric-v1': evaluateNumeric, 'tower-v1': evaluateTower } as const;
+export { evaluateTower };
 export function evaluate(input: EvaluationInput): Evaluation {
   const evaluator = EVALUATORS[input.rubric.evaluator as keyof typeof EVALUATORS];
   if (!evaluator) throw new Error(`No deterministic evaluator ${input.rubric.evaluator}`);

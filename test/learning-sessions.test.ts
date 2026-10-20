@@ -66,7 +66,9 @@ test('Slice 1 practice sessions over the API', async t => {
       assert.deepEqual(await state(), before, 'INV-02.1: zero rows without consent');
       const learner = await consentedLearner(db, config), post = client(app, config, learner);
       const create = (spec: object, withLesson = false, origin = 'BANK') => post('POST', '/v1/learning-sessions', { kind: 'PRACTICE', origin, withLesson, spec });
-      assert.equal((await post('POST', '/v1/learning-sessions', { kind: 'QUESTION_LOOP', origin: 'FUNNEL', questionId: c.menara })).body.code, 'FEATURE_DISABLED');
+      // Slice 2 M5: question loops exist; own questions (origin INTAKE) wait for Slice 6. The loop itself is tested in question-loop.test.ts.
+      assert.equal((await post('POST', '/v1/learning-sessions', { kind: 'QUESTION_LOOP', origin: 'INTAKE', questionId: c.menara })).body.code, 'FEATURE_DISABLED');
+      assert.equal((await post('POST', '/v1/learning-sessions', { kind: 'QUESTION_LOOP', origin: 'FUNNEL', questionId: c.menara })).body.state, 'QUESTION');
       assert.equal((await create({ questionIds: [c.menara] })).body.code, 'CONTENT_UNAVAILABLE', 'a tower-v1 item is not deterministically gradable yet');
       assert.equal((await create({ questionIds: ['0192f6b0-1111-7222-8333-944455556666'] })).status, 404);
       assert.equal((await create({ setCode: 'NOPE' })).status, 404);
@@ -164,8 +166,34 @@ test('Slice 1 practice sessions over the API', async t => {
       const other = client(app, config, await consentedLearner(db, config));
       assert.equal((await other('GET', `/v1/attempts/${attempt.id}`)).status, 404);
       assert.equal((await other('GET', `/v1/diagnosis-runs/${run.id}`)).status, 404);
-      for (const [method, url] of [['POST', `/v1/learning-sessions/${s.id}/solution`], ['GET', `/v1/learning-sessions/${s.id}/solution`], ['POST', `/v1/attempts/${attempt.id}/diagnosis`]] as const)
-        assert.equal((await call(method, url, method === 'POST' && url.endsWith('solution') ? { expectedStateVersion: 1, reason: 'max_tries' } : undefined)).body?.code ?? 'FEATURE_DISABLED', 'FEATURE_DISABLED');
+      // A practice session has no worked solution (E-21 is a loop command), and A01 returns a practice attempt's run unchanged.
+      const done = (await call('GET', `/v1/learning-sessions/${s.id}`)).body;
+      assert.equal((await call('POST', `/v1/learning-sessions/${s.id}/solution`, { expectedStateVersion: done.stateVersion })).body.code, 'INVALID_STATE_TRANSITION');
+      assert.equal((await call('POST', `/v1/learning-sessions/${s.id}/solution`, { expectedStateVersion: 1, reason: 'max_tries' })).body.code, 'VALIDATION_FAILED');
+      assert.equal((await call('GET', `/v1/learning-sessions/${s.id}/solution`)).status, 404);
+      const again = await call('POST', `/v1/attempts/${attempt.id}/diagnosis`);
+      assert.deepEqual([again.status, again.body.id, again.body.generation], [200, run.id, 1]);
+    });
+
+    await t.test('09 §1: practice 201s (session, quick-check answer, attempt) carry Location to a resource that reads back', async () => {
+      const call = client(app, config, await consentedLearner(db, config));
+      const reads = async (r: { headers: Record<string, unknown> }, path: string, id: string) => {
+        assert.equal(r.headers.location, path + id);
+        const back = await call('GET', path + id);
+        assert.deepEqual([back.status, back.body.id], [200, id]);
+      };
+      const created = await call('POST', '/v1/learning-sessions', { kind: 'PRACTICE', origin: 'CONCEPT_LESSON', withLesson: true, spec: { setCode: 'MAT.TRI.S.SUDUT_ISTIMEWA' } });
+      await reads(created, '/v1/learning-sessions/', created.body.id);
+      let s = created.body;
+      const check = s.lesson.checks.find((x: { required: boolean }) => x.required);
+      s = (await call('POST', `/v1/learning-sessions/${s.id}/actions`, { type: 'ADVANCE_LESSON', expectedStateVersion: s.stateVersion, slideIndex: check.slideIndex })).body.session;
+      const answered = await call('POST', `/v1/learning-sessions/${s.id}/quick-check-answers`, { expectedStateVersion: s.stateVersion, microAssessmentId: check.microAssessmentId,
+        response: option(keyOf(await codeOfQuestion(check.questionId))) });
+      assert.equal(answered.status, 201);
+      await reads(answered, '/v1/attempts/', answered.body.attempt.id);
+      const plain = (await call('POST', '/v1/learning-sessions', { kind: 'PRACTICE', origin: 'BANK', withLesson: false, spec: { questionIds: [c.tan] } })).body;
+      const attempt = await call('POST', `/v1/learning-sessions/${plain.id}/attempts`, { expectedStateVersion: plain.stateVersion, response: option(keyOf('MAT.TRI.Q.TAN60_SIN30')) });
+      await reads(attempt, '/v1/attempts/', attempt.body.attempt.id);
     });
 
     await t.test('E-23 hints: idempotent per step, no version bump, and they block transfer (INV-12)', async () => {
@@ -263,7 +291,7 @@ test('Slice 1 practice sessions over the API', async t => {
     });
 
     await t.test('INV-06.1 model-based: random command sequences over HTTP agree with the machine; illegal ones write nothing', async () => {
-      const learner = await consentedLearner(db, config), call = client(app, config, learner);
+      let call = client(app, config, await consentedLearner(db, config));
       const toContext = (v: { state: Context['state']; stateVersion: number; outcome?: 'PRACTICE_FINISHED'; lesson?: { status: never; slideIndex: number; slideCount: number;
         checks: { microAssessmentId: string; slideIndex: number; required: boolean; answered: boolean; verdict?: never }[] }; items: { id: string; ordinal: number; status: never; questionId: string }[] },
         hints: Map<string, number>): Context => ({
@@ -277,7 +305,11 @@ test('Slice 1 practice sessions over the API', async t => {
       let runs = 0, legalSteps = 0, illegalSteps = 0;
       await fc.assert(fc.asyncProperty(fc.boolean(), fc.array(step, { minLength: 4, maxLength: 12 }), async (withLesson, steps: Step[]) => {
         runs++;
-        let view = (await call('POST', '/v1/learning-sessions', { kind: 'PRACTICE', origin: 'CONCEPT_LESSON', withLesson, spec: { setCode: 'MAT.TRI.S.SUDUT_ISTIMEWA' } })).body;
+        // One learner per run: the per-learner rate limit (120 requests a minute) is not what this property tests.
+        call = client(app, config, await consentedLearner(db, config));
+        const created = await call('POST', '/v1/learning-sessions', { kind: 'PRACTICE', origin: 'CONCEPT_LESSON', withLesson, spec: { setCode: 'MAT.TRI.S.SUDUT_ISTIMEWA' } });
+        assert.equal(created.status, 201, JSON.stringify(created.body));
+        let view = created.body;
         for (const s of steps) {
           const ctx = toContext(view, hints), version = s.stale && ctx.version > 1 ? ctx.version - 1 : ctx.version;
           const pending = view.items.find((i: { status: string }) => i.status === 'PENDING'), check = view.lesson?.checks[(s.arg + 4) % Math.max(1, view.lesson.checks.length)];

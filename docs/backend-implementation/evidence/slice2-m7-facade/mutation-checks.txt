@@ -1,0 +1,15 @@
+$ node mutate-m7.mjs   (Node v24.19.0; test/legacy-loop-facade.test.ts; one mutation at a time; sources restored and compared byte-for-byte)
+KILLED   §6.3: insufficient evidence reported as completed — L1: correct, bare wrong value (T01-3), self-reports; all accepted by
+KILLED   §6.3: gap mapped from the first recommendation even with a misconception — 09 §6.3 as a unit: items follow curriculum order whatever the storag
+KILLED   §6.3: items in storage order, not curriculum order — 09 §6.3 as a unit: items follow curriculum order whatever the storag
+KILLED   rule 6: no implied START_RETRY — L1 rule 6: "Coba soal tadi lagi" after a diagnosis implies START_RET | L4 (oracle isSolution): in RETRY it ends the loop; after two wrong r
+KILLED   rule 4: CONSENT_FIRST mapping dropped — off by default; L6 and L7 stay closed; guests, unconsented learners 
+KILLED   rule 5: no derived key (every call a new command) — L1 (oracle isRun): a misconception maps to the legacy gap, next and 
+KILLED   hintOpened ignored — L1 rule 6: "Coba soal tadi lagi" after a diagnosis implies START_RET
+KILLED   own questions served — off by default; L6 and L7 stay closed; guests, unconsented learners 
+KILLED   Retry-After missing while pending — L2 (oracle polling): a queued run is polled with Retry-After until a
+KILLED   L8: frozen-alias filter removed — L8 (oracle isMap): the server port equals detectLocally on any text,
+KILLED   L8: port drifts from detectLocally (menara dropped) — L8 (oracle isMap): the server port equals detectLocally on any text,
+11/11 mutations killed
+
+# First round: 9/11. Two mutations were equivalent for the current content (gap vs first recommendation; storage vs curriculum order). A unit test of legacyRun with synthetic variations of a real run now kills both.

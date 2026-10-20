@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-19T18:20:40.751Z",
+  "node": "v24.19.0",
+  "syntheticOnly": true,
+  "database": "intibelajar_local_dev",
+  "origin": "http://localhost:5180",
+  "total": 3,
+  "expected": 9,
+  "passed": 2,
+  "exit": 1,
+  "results": [
+    {
+      "name": "readiness through frontend proxy and no live integrations",
+      "ok": true,
+      "seconds": 0.871
+    },
+    {
+      "name": "fixture sign-in rejects cross-origin and invalid CSRF",
+      "ok": true,
+      "seconds": 1.321
+    },
+    {
+      "name": "browser selects a synthetic consented account via same-origin form",
+      "ok": false,
+      "error": "expect(locator).toBeVisible() failed\n\nLocator: locator('#formula')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" locator('#formula') with timeout 5000ms\n  - waiting for locator('#formula')\n",
+      "seconds": 6.153
+    }
+  ]
+}

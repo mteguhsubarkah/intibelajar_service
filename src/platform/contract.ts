@@ -21,7 +21,7 @@ export function validateRequest(path:string,method:string,request:FastifyRequest
   if(!op) return;
   const schema=op.requestBody?.content?.['application/json']?.schema;
   if(schema && !validateSchema(schema,request.body)) fail(400,'VALIDATION_FAILED');
-  if(!schema && request.body!==undefined) fail(400,'VALIDATION_FAILED');
+  if(!schema && request.body!==undefined && !(Buffer.isBuffer(request.body)&&op.requestBody?.content?.[request.headers['content-type']??''])) fail(400,'VALIDATION_FAILED');
   const params=[...(contract.paths[path].parameters??[]),...(op.parameters??[])].map(p=>p.$ref?contract.components.parameters[p.$ref.split('/').pop()]:p);
   // Strict queries: undeclared parameters are rejected like unknown body fields.
   const query=(request.query??{}) as Record<string,unknown>;

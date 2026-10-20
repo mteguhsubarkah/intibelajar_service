@@ -1,0 +1,17 @@
+KILLED   [facade] rule 5: derived key without the loop version (same text after the state moved on replays) (exit 1) — 09 §6.1 rule 5: a network retry replays, but the same text after the state moved on is a
+KILLED   [facade] rule 5: outcome not remembered under the version after (a network retry after commit acts twice) (exit 1) — L1 (oracle isRun): a misconception maps to the legacy gap, next and items (09 §6.3); a n | 09 §6.1 rule 5: a network retry replays, but the same text after the state moved on is a
+KILLED   [client] a new Idempotency-Key on the network retry (exit 1) — AssertionError [ERR_ASSERTION]: the retry reuses the key, so the server replays + actual - expected
+KILLED   [client] a stale version is retried instead of re-reading the loop (exit 1)
+KILLED   [client] solution gate ignores allowedActions (exit 1) — AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false 
+KILLED   [client] polling ignores Retry-After (exit 1) — AssertionError [ERR_ASSERTION]: first wait 1 s, then the server's Retry-After + actual - expected
+KILLED   [client] checkpoint always saved as /coba (exit 1) — AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal: + actual - expected
+KILLED   [e2e] a failure becomes the device demo result (exit 1) — backend gagal: tampil sebagai gagal, tidak pernah jadi hasil demo (7.1s)
+KILLED   [e2e] second tab: no notice when the loop already moved on (exit 1) — tab kedua melihat hasil tab pertama dan tidak menjawab dua kali (13.5s)
+KILLED   [e2e] resume ignores the server checkpoint (retry step lost on refresh) (exit 1) — soal tadi: dua percobaan salah membuka solusi dari server; sebelumnya gerbangnya tertutup  | soal tadi: jawaban yang benar setelah diagnosis menuntaskan loop di server (30.1s)
+KILLED   [e2e] guest routed to the canonical loop (exit 1) — tamu tetap di alur perangkat: tidak ada sesi kanonik (3.1s)
+restored-source rebuild exit 0
+11/11 mutations killed
+exit 0
+src/app.ts: OK
+../mockup/intibelajar/src/composables/useCobaFlow.ts: OK
+../mockup/intibelajar/src/services/canonicalLoop.ts: OK

@@ -1,0 +1,19 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: MAT.TRI.SUDUT_ISTIMEWA
+provenance:
+  source: authored
+  note: Slice 2 M1, for the tower-v1 rubric of MAT.TRI.Q.SOAL_MENARA (analysis.ts branch 3).
+review:
+  status: PROPOSED
+  decision: S2-D1
+  fields:
+    - misconceptions
+  evidence:
+    - "services/analysis.ts branch 3 (tan with 1/2, 0,5 or 0.5) names this gap on tri-f with the reason that 1/2 is sin 30°. Code and wording are proposed for content review."
+misconceptions:
+  - code: TAN30_BUKAN_SETENGAH
+    description: Nilai tan 30° tertukar dengan sin 30° (1/2)
+    example: tan 30 = 1/2
+    indicators:
+      - "soal-menara: services/analysis.ts cabang 3"

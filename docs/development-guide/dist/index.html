@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urutan Development IntiBelajar</title>
+  <meta name="description" content="Kita sedang di mana, apa yang perlu dibereskan, lalu lanjut ke mana.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="plan-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="#">IntiBelajar <span>/ plan development</span></a><nav aria-label="Bagian halaman"><a href="#berikutnya">Next apa?</a><a href="#plan">Plan lengkap</a><a href="#istilah">Arti kode</a></nav></header>
+  <main>
+    <div class="snapshot" id="snapshot">Snapshot plan lokal</div>
+    <h1>Kita di mana,<br>habis ini ngapain?</h1>
+    <p class="intro">Sekarang di <strong>Slice 2: alur soal sampai coba lagi.</strong><br>Kodenya sudah banyak tersedia, tetapi beberapa masalah dan keputusan masih terbuka.</p>
+
+    <section id="berikutnya" aria-labelledby="next-title">
+      <div class="section-label">01 · URUTAN YANG DISARANKAN SEKARANG</div>
+      <h2 id="next-title">FE + BE sudah bisa dites lokal.</h2>
+      <div class="explain"><strong><a href="http://localhost:5180/__local">Buka halaman uji lokal →</a></strong><p>Pilih akun Uji Lokal A untuk diagnosis dan latihan lewat backend. B-03 sudah ditutup. Yang masih menahan pemeriksaan akhir M5 adalah B-01/B-02; materi dan tutor lengkap menunggu D3/D6.</p></div>
+      <ol class="next-list">
+        <li><span class="step">1</span><div><div class="task-heading"><h3><code>Lokal</code> Coba FE dan BE bersama</h3><span class="tag next">Sudah tersedia</span></div><p>Di <a href="http://localhost:5180/__local">localhost:5180/__local</a>, pilih akun A, coba diagnosis soal, latihan, lalu refresh. Data uji disimpan di database lokal terpisah.</p><p class="done"><strong>Bukti:</strong> 9/9 cek koneksi browser dan 29 consumer checks lulus. Ini belum menyelesaikan semua bagian Slice 2.</p></div></li>
+        <li><span class="step">2</span><div><div class="task-heading"><h3><code>B-01 + B-02</code> Cari dan perbaiki penyebab kegagalan</h3><span class="tag open">Masih terbuka</span></div><p>B-01: uji dua tab pernah mendapat error 500. B-02: model test pernah membaca daftar yang tidak ada. Akar masalah keduanya belum terbukti.</p><p class="done"><strong>Selesai kalau:</strong> penyebab diketahui, perbaikan diuji, dan syarat pengujian ulang masing-masing temuan terpenuhi.</p></div></li>
+        <li><span class="step">3</span><div><div class="task-heading"><h3><code>Slice 2 / M5</code> Verifikasi ulang dan tutup gate-nya</h3><span class="tag wait">Setelah temuan ditutup</span></div><p>Gunakan hasil perbaikan tadi untuk menyelesaikan pemeriksaan M5. Satu run hijau saja tidak otomatis menutup temuan lama.</p><p class="done"><strong>Sesudahnya:</strong> lanjutkan bagian M6/M7 yang belum selesai sesuai keputusan di bawah, lalu M8 dan M9 sesuai dependensinya.</p></div></li>
+      </ol>
+      <div class="action-line"><button id="copy-task" type="button">Salin tugas B-01/B-02 untuk agent</button><span id="copy-status" role="status"></span></div>
+      <details id="task-text"><summary>Lihat teks tugas B-01/B-02</summary><pre id="next-prompt"></pre></details>
+      <p class="note">Fokus saat ini mencoba lokal dulu, deploy kemudian. Menutup B-01/B-02 dan menetapkan keputusan konten adalah pekerjaan terpisah dari membuktikan FE–BE saling terhubung.</p>
+    </section>
+
+    <section aria-labelledby="decisions-title">
+      <div class="section-label">02 · YANG BISA DIPUTUSKAN SAMBIL ENGINEERING BERJALAN</div>
+      <h2 id="decisions-title">Ada pekerjaan yang menunggu keputusan.</h2>
+      <p class="sub">Ini keputusan milik <strong>Slice 2</strong>. Statusnya belum approved di plan.</p>
+      <div class="decision-paths">
+        <div><code>D3 + D6 + OD-11</code><span>Putuskan materi funnel, hint tutor, dan copy “Saya tahu caranya”.</span><strong>Melengkapi bagian M1/M7 dan membuka jalan ke M8.</strong></div>
+        <div><code>D7</code><span>Putuskan alat staf untuk menangani laporan hasil yang keliru.</span><strong>Melengkapi sisi staf M6; perhatikan juga OD-16.</strong></div>
+        <div><code>D8</code><span>Putuskan izin push dan akses CI remote.</span><strong>Diperlukan untuk exit M9, bersama syarat lainnya.</strong></div>
+      </div>
+      <p class="note">Review konten asli juga masih diperlukan. Lulus tes dengan data sintetis tidak sama dengan konten sudah disetujui atau aplikasi siap produksi.</p>
+    </section>
+
+    <section id="plan" aria-labelledby="plan-title">
+      <div class="section-label">03 · PLAN DARI AWAL SAMPAI BERIKUTNYA</div>
+      <h2 id="plan-title">Slice = tahap besar. M = pekerjaan di dalamnya.</h2>
+      <p class="sub">Buka tahap untuk melihat pekerjaannya. Slice 1 dan Slice 2 punya nomor M dan D masing-masing.</p>
+      <div id="slice-list" class="slice-list"></div>
+      <p class="note">Setelah Slice 2, Slice 3 dan 4 dapat dikerjakan paralel. Gate pilot memerlukan keduanya dan syarat privasi/keamanan. Slice 5 menyusul setelah gate pilot, lalu Slice 6.</p>
+    </section>
+
+    <section id="istilah" aria-labelledby="terms-title">
+      <div class="section-label">04 · CARA MEMBACA KODENYA</div>
+      <h2 id="terms-title">Baca kode bersama konteksnya.</h2>
+      <div class="example"><code>Slice 2 / M5 → T01-11 → B-01</code><p>Di tahap alur belajar (<strong>Slice 2</strong>), kita membuat service loop (<strong>M5</strong>). Uji dua tab (<strong>T01-11</strong>) menemukan error 500, lalu dicatat sebagai pekerjaan perbaikan (<strong>B-01</strong>).</p></div>
+      <dl class="terms">
+        <div><dt>Slice</dt><dd>Tahap besar produk. Contoh: Slice 1 = latihan; Slice 2 = alur soal, diagnosis, materi, dan retry.</dd></div>
+        <div><dt>M1, M2…</dt><dd>Milestone: pekerjaan di dalam Slice. <strong>Slice 1/M5 berbeda dengan Slice 2/M5.</strong></dd></div>
+        <div><dt>D1, D2…</dt><dd>Decision: pilihan yang perlu disepakati di Slice itu. <strong>D02 biasanya cara menulis D2</strong>; ikuti ID sumber. D2 pada Slice 1 berbeda dengan D2 pada Slice 2.</dd></div>
+        <div><dt>B-01, B-03…</dt><dd>Backlog temuan: masalah yang harus dituntaskan. Bisa muncul ketika mengerjakan atau menguji milestone.</dd></div>
+        <div><dt>T01-11</dt><dd>Skenario tes. T01 adalah kelompok tes; -11 adalah salah satu kasusnya. Ini bukan urutan development.</dd></div>
+        <div><dt>OD-11</dt><dd>Open decision dari roadmap arsitektur. Bisa memengaruhi beberapa Slice.</dd></div>
+      </dl>
+      <details><summary>Istilah tambahan yang kadang muncul di log / plan</summary><dl class="terms compact"><div><dt>INV</dt><dd>Aturan yang harus selalu benar. Contoh: pengguna tidak boleh mengakses data pengguna lain.</dd></div><div><dt>E-01…</dt><dd>Nomor transisi alur belajar; bukan milestone pengerjaan.</dd></div><div><dt>L1…L9</dt><dd>Panggilan API frontend lama yang disambungkan ke backend.</dd></div><div><dt>Size S/M/L</dt><dd>Ukuran pekerjaan: kecil/sedang/besar. M di kolom Size bukan milestone.</dd></div><div><dt>ADR</dt><dd>Catatan alasan keputusan arsitektur. K/A/D pada blueprint harus dibaca bersama dokumen asalnya.</dd></div><div><dt>Gate</dt><dd>Syarat yang harus terpenuhi sebelum tahap dinyatakan tuntas atau boleh dirilis.</dd></div><div><dt>KILLED</dt><dd>Pada mutation test: tes berhasil menangkap cacat yang sengaja disuntikkan. Bukan berarti semua backlog selesai.</dd></div></dl></details>
+    </section>
+    <footer><p><strong>Patokan:</strong> kode tersedia ≠ tes cukup ≠ keputusan disetujui ≠ boleh rilis.</p><p id="source-note"></p><a href="../../backend-implementation/05-slice2-plan.md" target="_blank" rel="noopener">Plan Slice 2</a> · <a href="../../backend-implementation/03-slice1-plan.md" target="_blank" rel="noopener">Plan Slice 1</a> · <a href="../../backend-architecture/12-implementation-roadmap.md" target="_blank" rel="noopener">Roadmap arsitektur</a></footer>
+  </main>
+</body>
+</html>

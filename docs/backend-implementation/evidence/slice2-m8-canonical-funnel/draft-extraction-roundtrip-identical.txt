@@ -1,0 +1,3 @@
+$ git -c core.autocrlf=false diff --no-index --exit-code --stat catalog/manifest C:\Users\User\AppData\Local\Temp\ib-roundtrip-Z74sbi\manifest
+
+exit 0

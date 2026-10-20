@@ -139,7 +139,11 @@ test('Slice 1 catalog migration and publisher on PostgreSQL', async t => {
       const dropped = withVersion(fixture, current + 1);
       const ratio = dropped.topics.find(x => x.code === 'MAT.TRI')!.concepts.find(c => c.code === 'MAT.TRI.DEFINISI_SIN_COS_TAN')!;
       ratio.misconceptions = ratio.misconceptions.filter(x => x.code !== 'MEMAKAI_COS');
-      for (const x of dropped.questions) x.rubric.misconceptionMap = x.rubric.misconceptionMap.filter(e => e.misconceptionCode !== 'MEMAKAI_COS');
+      // Removed from all content, including Slice 2 recommendations, so only the publisher's rule can refuse it.
+      for (const x of dropped.questions) {
+        x.rubric.misconceptionMap = x.rubric.misconceptionMap.filter(e => e.misconceptionCode !== 'MEMAKAI_COS');
+        if (x.rubric.recommend) x.rubric.recommend = x.rubric.recommend.filter(e => e.misconceptionCode !== 'MEMAKAI_COS');
+      }
       await rejects(dropped, 'MISCONCEPTION_REMOVED');
     });
 

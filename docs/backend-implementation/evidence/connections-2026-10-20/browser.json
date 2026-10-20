@@ -1,0 +1,130 @@
+{
+  "ok": true,
+  "checks": [
+    "report persists after refresh",
+    "canonical conversation tutor",
+    "Home uses account progress",
+    "import UI explicit opt-in",
+    "import creates no XP",
+    "no browser runtime errors"
+  ],
+  "errors": [],
+  "calls": [
+    {
+      "method": "GET",
+      "path": "/v1/auth/session"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/questions"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions/01a157ef-c15c-79ff-9d79-d7241b09c003/attempts"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/diagnosis-runs/01a157ef-c293-73c4-8184-ef13f0c42d39"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/topics"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/concepts"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/diagnosis-runs/01a157ef-c293-73c4-8184-ef13f0c42d39/reports"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/learning-sessions/01a157ef-c15c-79ff-9d79-d7241b09c003"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/attempts/01a157ef-c28b-7c5a-a213-43698c524374"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/diagnosis-runs/01a157ef-c293-73c4-8184-ef13f0c42d39"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/diagnosis-runs/01a157ef-c293-73c4-8184-ef13f0c42d39"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/learning-sessions/01a157ef-c15c-79ff-9d79-d7241b09c003"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/topics"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/concepts"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/tutor-conversations"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/tutor-conversations/01a157ef-d29f-708c-b892-6f75982c635d/messages"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/tutor-conversations/01a157ef-d29f-708c-b892-6f75982c635d"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/progress"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/profile"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/mastery"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/stats"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/me/device-imports"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/learning-sessions/01a157ef-f3f8-747d-94e8-fcadee0d999e"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/learning-sessions/01a157ef-f3f8-747d-94e8-fcadee0d999e/checkpoint"
+    }
+  ]
+}

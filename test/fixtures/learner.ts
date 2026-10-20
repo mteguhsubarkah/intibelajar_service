@@ -6,10 +6,10 @@ import type { DB } from '../../src/db.js';
 import { createSession, cookieName } from '../../src/identity/service.js';
 import { uuid } from '../../src/platform/crypto.js';
 import { policyHash, policyVersion } from '../../src/privacy/service.js';
-// A synthetic learner with a granted LEARNING_DATA consent (synthetic-dev-v1) and a signed-in session.
+// A synthetic learner with granted consents (LEARNING_DATA by default; synthetic-dev-v1) and a signed-in session.
 // Inserted directly: the consent flow itself is covered by the Slice 0 suite.
 
-export async function consentedLearner(db: DB, config: Config, { consent = true } = {}) {
+export async function consentedLearner(db: DB, config: Config, { consent = true, purposes = ['LEARNING_DATA'] as string[] } = {}) {
   const learnerId = uuid(), userId = uuid(), guardianId = uuid();
   await sql`insert into learner(id, status, age_band, age_band_source, consent_deadline_at) values (${learnerId}, ${consent ? 'ACTIVE' : 'PENDING_CONSENT'}, 'AGE_13_15', 'SELF_DECLARED',
     ${consent ? null : sql`now() + interval '7 days'`})`.execute(db);
@@ -17,8 +17,8 @@ export async function consentedLearner(db: DB, config: Config, { consent = true 
   await sql`insert into student_profile(learner_id, display_name, grade) values (${learnerId}, null, null)`.execute(db);
   await sql`insert into app_user(id, role, learner_id, status) values (${userId}, 'STUDENT', ${learnerId}, 'ACTIVE')`.execute(db);
   await sql`insert into guardian(id, email_hash, email_ciphertext) values (${guardianId}, ${randomBytes(32)}, ${randomBytes(48)})`.execute(db);
-  if (consent) await sql`insert into consent_record(id, learner_id, guardian_id, purpose, status, method, policy_version, policy_text_sha256, decided_by, decided_at, expires_at)
-    values (${uuid()}, ${learnerId}, ${guardianId}, 'LEARNING_DATA', 'GRANTED', 'GUARDIAN_EMAIL', ${policyVersion}, ${policyHash}, 'GUARDIAN', now(), now() + interval '30 days')`.execute(db);
+  if (consent) for (const purpose of purposes) await sql`insert into consent_record(id, learner_id, guardian_id, purpose, status, method, policy_version, policy_text_sha256, decided_by, decided_at, expires_at)
+    values (${uuid()}, ${learnerId}, ${guardianId}, ${purpose}, 'GRANTED', 'GUARDIAN_EMAIL', ${policyVersion}, ${policyHash}, 'GUARDIAN', now(), now() + interval '30 days')`.execute(db);
   const session = await createSession(db, config, userId);
   return { learnerId, userId, guardianId, headers: { cookie: `${cookieName}=${session.raw}`, 'x-csrf-token': session.csrf } };
 }

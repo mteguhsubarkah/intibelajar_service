@@ -1,0 +1,12 @@
+$ node mutate-m6.mjs   (Node v24.19.0; test/disputes.test.ts; one mutation at a time; sources restored and compared byte-for-byte)
+KILLED   only completed runs: check removed — guards: consent, ownership, strict schema, and only a completed run 
+KILLED   one per run: pre-check removed (unique index only) — 06 §9.3 rule 1: one OPEN report per completed run, idempotent, with 
+KILLED   consent not required — guards: consent, ownership, strict schema, and only a completed run 
+KILLED   ownership not checked — setup: migrations and the reviewed catalog (40843.1885ms) | 06 §9.3 rule 1: one OPEN report per completed run, idempotent, with  | guards: consent, ownership, strict schema, and only a completed run  | 06 §9.3 rule 5: an OPEN report changes no evidence or eligibility; p
+KILLED   run view without report — 06 §9.3 rule 1: one OPEN report per completed run, idempotent, with  | 06 §9.3 rule 5: an OPEN report changes no evidence or eligibility; p
+KILLED   Location names the report instead of the run — 06 §9.3 rule 1: one OPEN report per completed run, idempotent, with 
+KILLED   rule 5 broken: filing marks evidence not mastery-eligible — 06 §9.3 rule 5: an OPEN report changes no evidence or eligibility; p
+7/7 mutations killed
+
+# First round: 6/7 (rule 5 survived: the practice run used had no evidence rows). The test now uses the key and asserts mastery-eligible evidence exists first.
+# "ownership not checked" rerun alone: setup passed (7.3 s); caught by "INV-01: another learner cannot see the run" (actual 500, expected 404).

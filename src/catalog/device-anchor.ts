@@ -1,0 +1,2 @@
+import{sql}from'kysely';import type{Connection}from'../db.js';
+export async function deviceAnchor(db:Connection,alias:string){return(await sql<{revisionId:string;questionId:string}>`select r.id as "revisionId",q.id as "questionId" from question q join question_revision r on r.question_id=q.id and r.status='PUBLISHED' where q.legacy_item_id=${alias} and q.visibility<>'PRIVATE'`.execute(db)).rows[0];}

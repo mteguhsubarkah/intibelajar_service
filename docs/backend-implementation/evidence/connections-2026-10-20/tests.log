@@ -1,0 +1,27 @@
+✔ free OCR transport: synthetic allowlist, free vision metadata, stripped image and no paid fallback (178.8378ms)
+✔ mastery-v1 K05, contradictions, decay and non-eligible facts (15.4152ms)
+(node:20612) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ connected progress/import/tutor on PostgreSQL preserve consent, ownership and no imported evidence
+  ✔ progress/stat/mastery contract and pending-consent rejection (1653.1612ms)
+  ✔ import opt-in, idempotency and cross-user claiming rejected; zero evidence or XP (780.7186ms)
+  ✔ canonical tutor scripted replies reject unrelated scope and enforce ownership (586.2615ms)
+  ✔ typed intake private ownership, confirmation is advisory and photo fails closed without consent/provider (775.4706ms)
+  ✔ real grading awards server XP once; rebuild is identical; revealed families do not award again (2023.9406ms)
+  ✔ erasure removes new projection, conversation, intake and private question dependencies (219.6473ms)
+✔ connected progress/import/tutor on PostgreSQL preserve consent, ownership and no imported evidence (9233.9419ms)
+(node:25960) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP
+  ✔ model may select only server-authored scaffold; no arbitrary generated text (1437.8003ms)
+  ✔ revocation during call prevents adoption (268.5983ms)
+  ✔ revoked AI consent rejects new AI message; unrelated request stays scoped without external call (255.3493ms)
+✔ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP (4640.6111ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 31386.871

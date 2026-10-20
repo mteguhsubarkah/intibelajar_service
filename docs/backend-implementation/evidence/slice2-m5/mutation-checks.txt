@@ -1,0 +1,24 @@
+$ node mutate-m5.mjs   (Node v24.19.0; question-loop suite with --test-skip-pattern=model-based; one mutation at a time, source restored after each)
+KILLED   fence: run generation not checked — setup: migrations, reviewed catalog with the authored tower rubric ( | E-01 creation guards: consent, feature, content, strict schemas and 
+KILLED   fence: active attempt not checked — 04 §7 fences one at a time: a stale lease holder, an attempt that is
+KILLED   fence: lease not validated before adoption — 04 §7 fences one at a time: a stale lease holder, an attempt that is
+KILLED   fence: consent not re-checked at adoption — fencing: lease recovery adopts once; late results after abandon, exp
+KILLED   fence: deletion treated like revocation — fencing: lease recovery adopts once; late results after abandon, exp
+KILLED   E-24: abandon does not cancel the pending run — fencing: lease recovery adopts once; late results after abandon, exp | E-25 expiry of a waiting loop cancels its run and job; later command
+KILLED   06 §2.4 rule 7: loop runs reveal the key — E-03 + E-08 inline (T01-1, T01-5, INV-04, INV-13): a correct first t | E-07 with recommendations: a catalogued misconception points to its 
+KILLED   INV-13: loop attempts lose ANCHOR_OR_RETRY — E-03 + E-08 inline (T01-1, T01-5, INV-04, INV-13): a correct first t | E-11 to E-14 and E-16 + E-17 (T01-6): a lesson from a recommendation
+KILLED   INV-10: AI evidence not marked AI_ONLY — queued path (D4 fake engine): no AI consent → inline insufficient; w | fencing: lease recovery adopts once; late results after abandon, exp
+KILLED   06 §2.3: queued without AI_PROCESSING consent — T01-3 with E-05, E-04 and E-06: a bare wrong value asks for working; | E-15, E-18, E-20, E-19 (INV-16.1): only an incorrect retry uses an a
+KILLED   E-18: an incorrect retry treated as insufficient — E-15, E-18, E-20, E-19 (INV-16.1): only an incorrect retry uses an a | T01-GO: every loop run links attempt → run → evidence references → p
+KILLED   T01-3: a bare wrong value diagnosed instead of asking — T01-3 with E-05, E-04 and E-06: a bare wrong value asks for working; | 04 §7 fences one at a time: a stale lease holder, an attempt that is
+KILLED   E-19: solution not revealed after the second retry — E-03 + E-08 inline (T01-1, T01-5, INV-04, INV-13): a correct first t | E-15, E-18, E-20, E-19 (INV-16.1): only an incorrect retry uses an a
+KILLED   06 §2.4: low-confidence claims kept — queued path (D4 fake engine): no AI consent → inline insufficient; w
+KILLED   06 §2.4: span quotes not checked — queued path (D4 fake engine): no AI consent → inline insufficient; w
+KILLED   E-06: recommendations not most basic first — T01-3 with E-05, E-04 and E-06: a bare wrong value asks for working; | 05 §4.4 self-reports: "Saya tahu caranya" asks for proof, "belum tah
+KILLED   E-10: no generation cap — T01-4 and E-09/E-10: failures produce no diagnosis; the loop resumes | INV-08.1: concurrent REQUEST_DIAGNOSIS creates one new generation (5
+17/17 mutations killed
+
+[exited with code 0]
+
+# First round (before the isolated fence test): 14/17; the three fence mutations survived.
+# Mutation 1 rerun alone: killed by "04 §7 fences one at a time" (assertion "another generation is fenced out").

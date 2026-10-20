@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "postgresql": "16+ checked by existing migration",
+  "phases": [
+    "all migrations up",
+    "0008/0007/0006 rollback",
+    "reapply all",
+    "transaction failure leaves no partial table",
+    "recovery verify"
+  ],
+  "isolatedDatabase": "ib_connect_fad7cea439d1_test"
+}

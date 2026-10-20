@@ -1,0 +1,16 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs --test --test-concurrency=1 test/disputes.test.ts
+▶ Slice 2 disputes (learner side) over the API
+  ✔ setup: migrations and the reviewed catalog (6386.3401ms)
+  ✔ 06 §9.3 rule 1: one OPEN report per completed run, idempotent, with Location to the run (09 §1); the run shows it (1727.9578ms)
+  ✔ guards: consent, ownership, strict schema, and only a completed run can be reported; refusals write nothing (1559.1794ms)
+  ✔ 06 §9.3 rule 5: an OPEN report changes no evidence or eligibility; practice gradings can be reported too (518.8448ms)
+✔ Slice 2 disputes (learner side) over the API (10867.0708ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19911.7598
+

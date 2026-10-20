@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-19T13:02:05.485Z",
+  "mode": "negative-control",
+  "versions": {
+    "node": "v24.19.0",
+    "childNode": "v24.19.0",
+    "npm": "11.17.0",
+    "postgresql": "postgres (PostgreSQL) 17.5",
+    "playwright": "Version 1.63.0",
+    "python": "Python 3.13.14",
+    "os": "win32 x64"
+  },
+  "postgresqlCluster": "isolated cluster 127.0.0.1:55432, *_test database",
+  "passed": 1,
+  "total": 2,
+  "runnerExit": 1,
+  "results": [
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "expectExit": 0,
+      "ok": true,
+      "seconds": 16.6
+    },
+    {
+      "name": "negative-control-deliberately-failing-test",
+      "exit": 1,
+      "expectExit": 0,
+      "ok": false,
+      "seconds": 1.5
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+▶ real OIDC library verifies signed tokens, nonce, issuer, audience, expiry, PKCE and test-account restriction without network
+  ✔ authorization code with PKCE S256, state, nonce and minimal scopes (106.1241ms)
+  ✔ valid signed ID token accepted (32.8994ms)
+  ✔ reject nonce (6.9506ms)
+  ✔ reject issuer (4.6645ms)
+  ✔ reject audience (5.3376ms)
+  ✔ reject expiry (4.0295ms)
+  ✔ reject unverified (22.2168ms)
+  ✔ reject otherAccount (18.0942ms)
+  ✔ reject forged signature (43.8576ms)
+  ✔ reject bad state before code exchange (1.4716ms)
+✔ real OIDC library verifies signed tokens, nonce, issuer, audience, expiry, PKCE and test-account restriction without network (832.8939ms)
+(node:13580) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13580) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+▶ Swagger and Google routes against PostgreSQL: fail closed, cookie binding, rotation, single use and consent pending
+  ✔ Swagger serves authoritative contract and local assets only (153.2478ms)
+  ✔ Google unconfigured returns explicit blocker; origin and continuation remain guarded (114.9627ms)
+  ✔ wrong cookie/state and expired transaction rejected before provider (176.8647ms)
+  ✔ register rotates session, stores no email/tokens, creates no consent (384.5492ms)
+  ✔ repeat sign-in resolves same sub and returns existing continuation (78.1667ms)
+  ✔ cancellation consumes transaction without calling provider (67.2073ms)
+  ✔ only verified email identities link; synthetic/unverified email never links (218.018ms)
+  ✔ provider failure cannot create a user and consumes the callback attempt (78.4324ms)
+  ✔ disabled accounts cannot sign in again (63.7784ms)
+  ✔ Google environment defaults off and rejects incomplete/production settings (1.6031ms)
+✔ Swagger and Google routes against PostgreSQL: fail closed, cookie binding, rotation, single use and consent pending (2065.4677ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10729.8475

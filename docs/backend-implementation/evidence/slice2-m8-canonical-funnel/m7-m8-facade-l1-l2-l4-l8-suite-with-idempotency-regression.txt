@@ -1,0 +1,23 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs --test --test-concurrency=1 test/legacy-loop-facade.test.ts
+▶ Slice 2 legacy facade L1, L2, L4, L8 over the question loop
+  ✔ setup: catalog (3025.2126ms)
+  ✔ off by default; L6 and L7 stay closed; guests, unconsented learners and own questions are not served, with zero writes (1618.9161ms)
+  ✔ L1 (oracle isRun): a misconception maps to the legacy gap, next and items (09 §6.3); a network retry replays (399.2796ms)
+  ✔ L1: correct, bare wrong value (T01-3), self-reports; all accepted by the shipped validator (759.3447ms)
+  ✔ 09 §6.1 rule 5: a network retry replays, but the same text after the state moved on is a new command (557.9158ms)
+  ✔ L1 rule 6: "Coba soal tadi lagi" after a diagnosis implies START_RETRY and verifies; hintOpened is recorded conservatively (358.7131ms)
+  ✔ 09 §6.3 as a unit: items follow curriculum order whatever the storage order; gap is the misconception, next the first recommendation (178.3236ms)
+  ✔ L4 (oracle isSolution): in RETRY it ends the loop; after two wrong retries (max_tries) it reads; before the retry phase it is refused (1751.8852ms)
+  ✔ L2 (oracle polling): a queued run is polled with Retry-After until adopted; foreign and device ids are not found (2747.5623ms)
+  ✔ L8 (oracle isMap): the server port equals detectLocally on any text, demo false; nothing outside the frozen aliases (1471.8224ms)
+✔ Slice 2 legacy facade L1, L2, L4, L8 over the question loop (13616.5485ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19767.0817
+
+exit 0

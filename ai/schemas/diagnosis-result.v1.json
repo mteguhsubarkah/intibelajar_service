@@ -1,0 +1,27 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "verdict", "concepts"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "verdict": {"enum": ["CORRECT", "INCORRECT", "UNREADABLE"]},
+    "concepts": {"type": "array", "maxItems": 20, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conceptIndex", "classification", "confidence", "misconceptionCode", "rationale", "refs"],
+      "properties": {
+        "conceptIndex": {"type": "integer", "minimum": 1},
+        "classification": {"enum": ["UNDERSTANDING_DEMONSTRATED", "MISCONCEPTION_EVIDENCED", "INSUFFICIENT_EVIDENCE", "NOT_ASSESSED"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "misconceptionCode": {"type": ["string", "null"], "maxLength": 120},
+        "rationale": {"type": ["string", "null"], "maxLength": 240},
+        "refs": {"type": "array", "maxItems": 10, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "start", "end", "quote"],
+          "properties": {
+            "kind": {"const": "SPAN"}, "start": {"type": "integer", "minimum": 0},
+            "end": {"type": "integer", "minimum": 1}, "quote": {"type": "string", "minLength": 1, "maxLength": 2000}
+          }
+        }}
+      }
+    }}
+  }
+}

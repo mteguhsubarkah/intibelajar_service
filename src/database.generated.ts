@@ -160,6 +160,21 @@ export interface Database {
     started_at: Date | null;
     completed_at: Date | null;
   };
+  development_ai_call: {
+    id: string;
+    reserved_idr: number;
+    status: string;
+    input_tokens: Generated<number>;
+    output_tokens: Generated<number>;
+    created_at: Generated<Date>;
+    completed_at: Date | null;
+  };
+  development_intake_image: {
+    asset_id: string;
+    ciphertext: Buffer;
+    lease: string | null;
+    lease_until: Date | null;
+  };
   diagnosis_report: {
     id: string;
     diagnosis_run_id: string;
@@ -250,6 +265,17 @@ export interface Database {
     updated_at: Generated<Date>;
     version: Generated<string>;
   };
+  learner_stats: {
+    learner_id: string;
+    xp_total: Generated<number>;
+    current_streak_days: Generated<number>;
+    longest_streak_days: Generated<number>;
+    last_active_local_date: Date | null;
+    streak_freezes: Generated<number>;
+    policy_version: string;
+    version: Generated<string>;
+    updated_at: Generated<Date>;
+  };
   learning_session: {
     id: string;
     learner_id: string;
@@ -290,6 +316,25 @@ export interface Database {
     lesson_id: string;
     concept_id: string;
   };
+  mastery_state: {
+    learner_id: string;
+    concept_id: string;
+    status: string;
+    exploration: string;
+    lesson_complete: Generated<boolean>;
+    practiced: Generated<boolean>;
+    transfer_streak: Generated<number>;
+    transfer_correct_total: Generated<number>;
+    qualifying_contexts: Generated<number>;
+    needs_review: Generated<boolean>;
+    needs_review_reason: string | null;
+    ui_tier: Generated<number>;
+    demonstrated_at: Date | null;
+    last_practiced_at: Date | null;
+    policy_version: string;
+    version: Generated<string>;
+    updated_at: Generated<Date>;
+  };
   micro_assessment: {
     id: string;
     lesson_revision_id: string;
@@ -316,6 +361,29 @@ export interface Database {
     blocks: unknown;
     published_at: Date | null;
     created_at: Generated<Date>;
+  };
+  private_asset: {
+    id: string;
+    learner_id: string;
+    storage_key: string;
+    media_type: string;
+    byte_size: number;
+    sha256: Buffer;
+    status: string;
+    expires_at: Date;
+    created_at: Generated<Date>;
+  };
+  progress_event: {
+    id: string;
+    learner_id: string;
+    session_id: string | null;
+    evidence_id: string | null;
+    event_key: string;
+    type: string;
+    xp_delta: Generated<number>;
+    payload: Generated<unknown>;
+    local_date: Date;
+    occurred_at: Generated<Date>;
   };
   question: {
     id: string;
@@ -352,6 +420,22 @@ export interface Database {
     concept_id: string;
     role: string;
     assessable: boolean;
+  };
+  question_intake: {
+    id: string;
+    learner_id: string;
+    input_mode: string;
+    asset_id: string | null;
+    status: string;
+    draft_text: string | null;
+    read_confidence: string | null;
+    suggested_topic_id: string | null;
+    suggested_concept_ids: Generated<string[]>;
+    confirmed_question_id: string | null;
+    failure_code: string | null;
+    expires_at: Date;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
   };
   question_revision: {
     id: string;
@@ -420,5 +504,35 @@ export interface Database {
     kind: string;
     label: string;
     source: string;
+  };
+  tutor_conversation: {
+    id: string;
+    learner_id: string;
+    session_id: string;
+    concept_id: string | null;
+    question_revision_id: string;
+    status: string;
+    hints_used: Generated<number>;
+    solution_unlocked: Generated<boolean>;
+    context_version: Generated<string>;
+    expires_at: Date;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
+  };
+  tutor_message: {
+    id: string;
+    conversation_id: string;
+    ordinal: number;
+    role: string;
+    status: string;
+    text: string | null;
+    quick_replies: Generated<unknown>;
+    intent: string | null;
+    reply_to_id: string | null;
+    moderation: Generated<unknown>;
+    prompt_version: string | null;
+    model: string | null;
+    created_at: Generated<Date>;
+    completed_at: Date | null;
   };
 }

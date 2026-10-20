@@ -1,6 +1,6 @@
 import type { Tx } from '../db.js';
 import { ApiError, fail } from '../platform/errors.js';
-import { currentRelease, legacyItem } from '../catalog/interface.js';
+import { currentRelease, legacyItem, releaseVersion } from '../catalog/interface.js';
 import { feedbackFor } from '../assessment/grading.js';
 import type { StudentResponse } from '../assessment/evaluators/index.js';
 import type { learningService } from './service.js';
@@ -18,7 +18,31 @@ export interface LegacyCheckResult { correct: boolean | null; feedback?: string;
 
 export function legacyFacade(learning: ReturnType<typeof learningService>) {
   return async function check(tx: Tx, learnerId: string, body: LegacyCheck): Promise<LegacyCheckResult> {
-    if (body.kind === 'retry_original') fail(403, 'FEATURE_DISABLED'); // the question loop is Slice 2
+    if (body.kind === 'retry_original' || body.kind==='check' && body.itemId==='c4') {
+      let loop=await learning.legacyLoop(tx,learnerId,`${body.sessionId}:loop:soal-menara`);
+      if(!loop) return fail(409,'CONTENT_UNAVAILABLE');
+      const act=async(type:string,extra:object={})=>{await learning.action(tx,learnerId,loop!.row.id,{type,expectedStateVersion:loop!.ctx.version,...extra});loop=(await learning.legacyLoop(tx,learnerId,`${body.sessionId}:loop:soal-menara`))!;};
+      if(body.kind==='retry_original') {
+        if(body.itemId!=='soal-menara')return fail(403,'FEATURE_DISABLED');
+        if(loop.ctx.state==='MICROLEARNING')await act('FINISH_LESSON');
+        if(loop.ctx.state==='DIAGNOSIS_READY')await act('START_RETRY');
+        const r=await learning.submitAttempt(tx,learnerId,loop.row.id,{expectedStateVersion:loop.ctx.version,response:{schemaVersion:1,responseType:'TEXT',inputMode:'TYPED',text:String(body.answer)}});
+        const verdict=r.body.diagnosisRun.verdict;
+        return {correct:verdict==='CORRECT'?true:verdict==='INCORRECT'?false:null,...(!['CORRECT','INCORRECT'].includes(verdict??'')?{unreadable:true as const}:{})};
+      }
+      const release={id:loop.row.release_id,version:await releaseVersion(tx,loop.row.release_id)};
+      const item=await legacyItem(tx,release,'c4');if(!item)return fail(409,'CONTENT_UNAVAILABLE');
+      if(!loop.assignment){
+        const concept=loop.anchor?.conceptIds.get('MAT.TRI.DEFINISI_SIN_COS_TAN');
+        if(!concept)return fail(409,'CONTENT_UNAVAILABLE');await act('START_LESSON',{conceptId:concept});
+      }
+      const check=loop.assignment!.pinned_checks.find(c=>c.questionId===item.questionId);if(!check)return fail(409,'CONTENT_UNAVAILABLE');
+      if(loop.ctx.state==='MICROLEARNING')await act('ADVANCE_LESSON',{slideIndex:check.slide});
+      if(typeof body.answer!=='number'||!Number.isInteger(body.answer))return fail(400,'VALIDATION_FAILED');
+      const option=item.legacyOptionOrder?.[body.answer];if(!option)return fail(400,'VALIDATION_FAILED');
+      const r=await learning.answerQuickCheck(tx,learnerId,loop.row.id,{expectedStateVersion:loop.ctx.version,microAssessmentId:check.microAssessmentId,response:{schemaVersion:1,responseType:'OPTION',inputMode:'TYPED',optionId:option}});
+      return {correct:r.body.attempt.verdict==='CORRECT'};
+    }
     const release = await currentRelease(tx);
     if (!release) return fail(409, 'CONTENT_UNAVAILABLE');
     const item = await legacyItem(tx, release, body.itemId);

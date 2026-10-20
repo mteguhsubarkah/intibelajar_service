@@ -9,6 +9,21 @@ Requires Node 22+ (verified with bundled Node 24.19.0), PostgreSQL 16+
 (verified with local PostgreSQL 17.5), and npm. Dependencies are pinned in
 `package-lock.json`. There is no production deployment configuration.
 
+## Try the connected frontend and backend locally
+
+From this backend checkout on Windows:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\dev-local.ps1
+```
+
+Open **http://localhost:5180/__local**, then choose synthetic account A. This starts
+the Vue checkout at `../mockup/intibelajar`, API, and worker with a separate persistent
+`intibelajar_local_dev` database. It retains the guest demo and does not reset the
+test database. Requires the existing local PostgreSQL setup and installed dependencies.
+See [the local walkthrough and verification](docs/backend-implementation/07-local-development.md).
+This does not close the pending content decisions or the M5 release gate.
+
 ## Run locally
 
 1. Use a **dedicated synthetic** PostgreSQL database on loopback. Migrations run
@@ -103,3 +118,19 @@ separate Vue checkout. It never rewrites the authoritative `verification.json`.
 
 CLI down migrations require `ALLOW_DESTRUCTIVE_DEV_ROLLBACK=true`. They are a test
 tool; production recovery would use reviewed forward fixes and restore drills.
+
+## Local Swagger and Google sign-in
+
+Open http://localhost:5180/docs after starting the local frontend and API.
+The UI reads the authoritative OpenAPI contract and uses same-origin session cookies/CSRF.
+Future operations are also documented; this does not imply every endpoint is implemented.
+
+For separate terminals, after local preparation use `node scripts/local/component.mjs api`,
+`node scripts/local/component.mjs worker`, and `node scripts/local/component.mjs frontend`.
+
+Google OIDC is implemented but disabled until developer OAuth credentials and an adult test
+account are configured. See [setup and FE/BE connection inventory](docs/backend-implementation/10-swagger-google-and-connection-status.md).
+
+Progress/mastery/stats, report UI, opt-in device imports, canonical tutor and intake now have
+local connections. See [current status and DeepSeek/OpenRouter setup](docs/backend-implementation/11-connected-fe-be-progress-tutor-ocr.md).
+External providers remain opt-in; only authored synthetic fixtures are eligible for development egress.

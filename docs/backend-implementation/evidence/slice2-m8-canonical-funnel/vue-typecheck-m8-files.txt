@@ -1,0 +1,4 @@
+files: useCobaFlow.ts, canonicalLoop.ts, StepSoalTadi.vue, StepQuestion.vue, CobaView.vue
+errors in those files: 0
+
+errors in the whole checkout: 40

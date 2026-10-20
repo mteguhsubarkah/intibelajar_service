@@ -1,0 +1,5 @@
+Node runner v24.19.0, child v24.19.0
+PASS typecheck (exit 0)
+FAIL negative-control-deliberately-failing-test (exit 1)
+
+1/2 checks passed

@@ -54,9 +54,15 @@ export async function resolvePractice(db: Connection, release: Release, spec: Pr
 export interface LessonSource { lessonId: string; revisionId: string; revision: number; slideCount: number; conceptIds: string[]; routeSlug: string | null;
   checks: { microAssessmentId: string; questionId: string; questionRevisionId: string; slide: number; required: boolean }[] }
 
-/** The published lesson for a concept (lesson_concept) or for a practice set (the lesson whose practiceSet it is). */
-export async function lessonFor(db: Connection, release: Release, by: { conceptId: string } | { setCode: string }): Promise<LessonSource | null> {
-  const lesson = 'conceptId' in by
+/**
+ * The published lesson for a concept (lesson_concept), for a practice set (the lesson whose practiceSet it is), or by
+ * code (a question's authored lesson link, Slice 2 D2). A lesson found by code must still teach the concept asked for.
+ */
+export async function lessonFor(db: Connection, release: Release, by: { conceptId: string } | { setCode: string } | { lessonCode: string; conceptId: string }): Promise<LessonSource | null> {
+  const lesson = 'lessonCode' in by
+    ? (await sql<{ id: string }>`select l.id from micro_lesson l join lesson_concept lc on lc.lesson_id = l.id
+        where l.code = ${by.lessonCode} and lc.concept_id = ${by.conceptId}`.execute(db)).rows[0]
+    : 'conceptId' in by
     ? (await sql<{ id: string }>`select l.id from micro_lesson l join lesson_concept lc on lc.lesson_id = l.id
         where lc.concept_id = ${by.conceptId} and exists (select 1 from micro_lesson_revision r where r.lesson_id = l.id and r.status = 'PUBLISHED') order by l.code limit 1`.execute(db)).rows[0]
     : (await sql<{ id: string }>`select l.id from curriculum_release c, jsonb_array_elements(c.snapshot -> 'lessons') x join micro_lesson l on l.code = x ->> 'code'
@@ -96,6 +102,44 @@ export async function conceptLabels(db: Connection, conceptIds: string[]) {
 export async function slideCount(db: Connection, lessonRevisionId: string) {
   return (await sql<{ n: number }>`select coalesce(max((b ->> 'slide')::int), 0) + 1 as n from micro_lesson_revision r, jsonb_array_elements(r.blocks) b
     where r.id = ${lessonRevisionId}`.execute(db)).rows[0]?.n ?? 1;
+}
+
+/**
+ * E-01: the anchor of a question loop, a published, non-private question of the current release. Private intake
+ * questions (owner_learner_id) arrive in Slice 6.
+ */
+export async function loopAnchor(db: Connection, questionId: string) {
+  return (await sql<{ revisionId: string; questionId: string; familyCode: string; itemType: string }>`select r.id as "revisionId", q.id as "questionId",
+      q.family_code as "familyCode", r.item_type as "itemType"
+    from question q join question_revision r on r.question_id = q.id and r.status = 'PUBLISHED'
+    where q.id = ${questionId} and q.visibility <> 'PRIVATE' and q.owner_learner_id is null`.execute(db)).rows[0] ?? null;
+}
+
+/** Concepts mapped on a revision, with what recommendations need (no rubric). */
+export async function mappedConcepts(db: Connection, revisionId: string) {
+  return (await sql<{ id: string; code: string; title: string; legacyMapId: string | null; role: 'PRIMARY' | 'SUPPORTING'; assessable: boolean; ordinal: number; minutes: number }>`
+    select c.id, c.code, c.title, c.legacy_map_id as "legacyMapId", qc.role, qc.assessable, c.ordinal, c.estimated_minutes as minutes
+    from question_concept qc join concept c on c.id = qc.concept_id where qc.question_revision_id = ${revisionId} order by c.ordinal, c.code`.execute(db)).rows;
+}
+
+/**
+ * Most basic first (E-06, 06 Recommendations): a concept comes after its hard prerequisites among the given ones,
+ * then by curriculum ordinal and code. Hard prerequisites form a DAG (INV-17), so the order is total.
+ */
+export async function basicFirst(db: Connection, conceptIds: string[]) {
+  if (!conceptIds.length) return [];
+  const edges = (await sql<{ concept_id: string; prerequisite_id: string }>`select concept_id, prerequisite_id from concept_prerequisite
+    where kind = 'HARD' and concept_id in (${sql.join(conceptIds)}) and prerequisite_id in (${sql.join(conceptIds)})`.execute(db)).rows;
+  const order = new Map((await sql<{ id: string; ordinal: number; code: string }>`select id, ordinal, code from concept where id in (${sql.join(conceptIds)})`.execute(db)).rows
+    .map(r => [r.id, r]));
+  const rank = (id: string) => order.get(id)!;
+  const remaining = new Set(conceptIds), out: string[] = [];
+  while (remaining.size) {
+    const ready = [...remaining].filter(id => !edges.some(e => e.concept_id === id && remaining.has(e.prerequisite_id)))
+      .sort((a, b) => rank(a).ordinal - rank(b).ordinal || (rank(a).code < rank(b).code ? -1 : 1));
+    out.push(ready[0]!); remaining.delete(ready[0]!);
+  }
+  return out;
 }
 
 export interface LegacyPlacements {

@@ -1,0 +1,3 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs scripts/catalog/extract-from-frontend.ts --out C:\Users\User\AppData\Local\Temp\ib-roundtrip-oOl2uQ\manifest --force
+Draft manifest written to C:\Users\User\AppData\Local\Temp\ib-roundtrip-oOl2uQ\manifest: 11 topics, 61 concepts, 40 questions, 6 lessons, 6 sets
+

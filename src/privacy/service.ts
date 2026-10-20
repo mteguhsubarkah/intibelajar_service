@@ -1,4 +1,5 @@
 import { sql } from 'kysely';
+export async function projectionLearners(db:import('../db.js').Connection){return(await sql<{id:string}>`select id from learner where status='ACTIVE' and exists(select 1 from consent_record c where c.learner_id=learner.id and c.purpose='LEARNING_DATA' and c.status='GRANTED' and c.expires_at>now())`.execute(db)).rows.map(r=>r.id);}
 import { now, type Connection, type Tx } from '../db.js';
 import type { Config } from '../config.js';
 import { encrypt, hash, hmac, token, uuid } from '../platform/crypto.js';
@@ -28,6 +29,10 @@ export async function lockLearner(tx: Tx, id: string, bootstrap=true) {
   if (!bootstrap) await requireConsent(tx,id,['LEARNING_DATA']);
   return learner;
 }
+/** The learner lock alone, whatever the status (04 §7 lock order for system writes); the status, or null when erased. */
+export async function holdLearner(tx: Tx, id: string) {
+  return (await tx.selectFrom('learner').select('status').where('id','=',id).forUpdate().executeTakeFirst())?.status ?? null;
+}
 export async function requireConsent(tx: Tx, id: string, required: string[]) {
   const learner=await tx.selectFrom('learner').selectAll().where('id','=',id).forUpdate().executeTakeFirst();
   if (!learner) fail(404,'NOT_FOUND');
@@ -36,6 +41,11 @@ export async function requireConsent(tx: Tx, id: string, required: string[]) {
     .where('expires_at','>',sql<Date>`now()`).where('policy_version','=',policyVersion).execute();
   const missing=required.filter(p=>!grants.some(g=>g.purpose===p));
   if (learner.status!=='ACTIVE' || missing.length) fail(403,'CONSENT_REQUIRED',{missingPurposes:missing.length?missing:required});
+}
+/** Whether one purpose is granted now (06 §2.3 step 2: AI_PROCESSING decides whether a run may be queued). */
+export async function hasConsent(db: Connection, id: string, purpose: typeof purposes[number]) {
+  return Boolean(await db.selectFrom('consent_record').select('id').where('learner_id','=',id).where('purpose','=',purpose).where('status','=','GRANTED')
+    .where('expires_at','>',sql<Date>`now()`).where('policy_version','=',policyVersion).executeTakeFirst());
 }
 export async function profile(db: Connection, id: string) {
   const row=await db.selectFrom('learner as l').innerJoin('student_profile as p','p.learner_id','l.id').selectAll()

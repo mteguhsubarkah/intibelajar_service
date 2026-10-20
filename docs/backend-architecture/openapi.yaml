@@ -142,6 +142,38 @@ paths:
           schema:
             type: string
             maxLength: 256
+        # Additive compatibility review: Google may return these metadata parameters.
+        # They are never identity/consent authority; only the verified ID token is.
+        - name: scope
+          in: query
+          schema:
+            type: string
+            maxLength: 2048
+        - name: authuser
+          in: query
+          schema:
+            type: string
+            pattern: '^[0-9]{1,4}$'
+        - name: prompt
+          in: query
+          schema:
+            type: string
+            maxLength: 256
+        - name: hd
+          in: query
+          schema:
+            type: string
+            maxLength: 253
+        - name: iss
+          in: query
+          schema:
+            type: string
+            maxLength: 2048
+        - name: error_description
+          in: query
+          schema:
+            type: string
+            maxLength: 512
       responses:
         '302':
           description: Redirect to the continuation route (or to onboarding for a new learner, or back with a cancelled flag).

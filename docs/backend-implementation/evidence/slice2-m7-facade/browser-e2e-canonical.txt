@@ -1,0 +1,47 @@
+$ npm run e2e:canonical
+
+> intibelajar-service@0.1.0 e2e:canonical
+> node scripts/e2e-canonical.mjs
+
+E2E seed ready: reviewed fixture published, one synthetic consented learner (.local/e2e-learner.json)
+
+> intibelajar@0.0.0 build
+> npm run check:bindings && vue-tsc && vite build
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  82 komponen diperiksa, 0 bermasalah
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+[32m✓ built in 25.17s[39m
+Bundle key check: 2 files, 0 CATALOG items, no CATALOG prompt or rubric text in the bundle
+
+Running 2 tests using 2 workers
+
+  ok 2 tests\e2e\canonical-practice.spec.ts:80:3 › latihan kanonik › cek di pelajaran inti dinilai di server (CoreView) (7.9s)
+  ok 1 tests\e2e\canonical-practice.spec.ts:44:3 › latihan kanonik › refresh melanjutkan sesi; tab kedua tidak bisa menjawab dua kali (10.4s)
+
+  2 passed (30.0s)
+
+> intibelajar@0.0.0 build
+> npm run check:bindings && vue-tsc && vite build
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  82 komponen diperiksa, 0 bermasalah
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+[32m✓ built in 17.02s[39m
+(node:31500) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+(!) C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/views/Slice0AccountView.vue is dynamically imported by C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts but also statically imported by C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/views/OnboardingView.vue?vue&type=script&setup=true&lang.ts, dynamic import will not move module into another chunk.
+[39m
+[1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+(!) C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/views/Slice0AccountView.vue is dynamically imported by C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts, C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/router/index.ts but also statically imported by C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/views/OnboardingView.vue?vue&type=script&setup=true&lang.ts, dynamic import will not move module into another chunk.
+[39m
+

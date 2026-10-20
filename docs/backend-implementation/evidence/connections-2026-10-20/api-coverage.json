@@ -1,0 +1,439 @@
+{
+  "scope": "Static route registration with local facade enabled; not a claim of runtime/production readiness",
+  "items": [
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "operationId": "getAuthSession",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/auth/start",
+      "operationId": "startAuth",
+      "registered": true,
+      "status": "PARTIAL_PROVIDER_CONFIGURATION"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/callback/{provider}",
+      "operationId": "completeOAuthCallback",
+      "registered": true,
+      "status": "PARTIAL_PROVIDER_CONFIGURATION"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/auth/email/links",
+      "operationId": "sendEmailSignInLink",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/auth/email/verify",
+      "operationId": "verifyEmailSignInLink",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/auth/logout",
+      "operationId": "logout",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/me",
+      "operationId": "deleteMyAccount",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/profile",
+      "operationId": "getMyProfile",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/me/profile",
+      "operationId": "updateMyProfile",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/consents",
+      "operationId": "listMyConsents",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/me/consent-requests",
+      "operationId": "createConsentRequest",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/me/consents/{purpose}/revocation",
+      "operationId": "revokeMyConsent",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/me/device-imports",
+      "operationId": "importDeviceHistory",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/guardian-consents/{token}",
+      "operationId": "getGuardianConsentRequest",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/guardian-consents/{token}/decision",
+      "operationId": "decideGuardianConsent",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/guardian/learners",
+      "operationId": "listGuardianLearners",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/guardian/learners/{learnerId}/consents/{purpose}/revocation",
+      "operationId": "revokeConsentAsGuardian",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/guardian/learners/{learnerId}/deletion-requests",
+      "operationId": "requestDeletionAsGuardian",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/subjects",
+      "operationId": "listSubjects",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/topics",
+      "operationId": "listTopics",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/topics/{topicId}",
+      "operationId": "getTopic",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/concepts",
+      "operationId": "listConcepts",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/concepts/{conceptId}",
+      "operationId": "getConcept",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/questions",
+      "operationId": "listQuestions",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/questions/{questionId}",
+      "operationId": "getQuestion",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/lessons/{lessonId}",
+      "operationId": "getLesson",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions",
+      "operationId": "createLearningSession",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/learning-sessions",
+      "operationId": "listLearningSessions",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/learning-sessions/{sessionId}",
+      "operationId": "getLearningSession",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions/{sessionId}/attempts",
+      "operationId": "submitAttempt",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions/{sessionId}/quick-check-answers",
+      "operationId": "answerQuickCheck",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions/{sessionId}/actions",
+      "operationId": "performSessionAction",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions/{sessionId}/hints",
+      "operationId": "requestHint",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning-sessions/{sessionId}/solution",
+      "operationId": "reviewSolution",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/learning-sessions/{sessionId}/solution",
+      "operationId": "getSolution",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/learning-sessions/{sessionId}/checkpoint",
+      "operationId": "updateCheckpoint",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/attempts/{attemptId}",
+      "operationId": "getAttempt",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/attempts/{attemptId}/diagnosis",
+      "operationId": "requestDiagnosis",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/diagnosis-runs/{diagnosisRunId}",
+      "operationId": "getDiagnosisRun",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/diagnosis-runs/{diagnosisRunId}/reports",
+      "operationId": "reportDiagnosis",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/progress",
+      "operationId": "getProgressSnapshot",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/mastery",
+      "operationId": "listMastery",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/mastery/{conceptId}",
+      "operationId": "getMastery",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/progress-events",
+      "operationId": "listProgressEvents",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/me/stats",
+      "operationId": "getStats",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/tutor-conversations",
+      "operationId": "createTutorConversation",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/tutor-conversations/{conversationId}",
+      "operationId": "getTutorConversation",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/tutor-conversations/{conversationId}/messages",
+      "operationId": "sendTutorMessage",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/tutor-messages/{messageId}",
+      "operationId": "getTutorMessage",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/question-intakes",
+      "operationId": "createQuestionIntake",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/question-intakes/{intakeId}",
+      "operationId": "getQuestionIntake",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/question-intakes/{intakeId}",
+      "operationId": "discardQuestionIntake",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/question-intakes/{intakeId}/image",
+      "operationId": "uploadIntakeImage",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/question-intakes/{intakeId}/confirmation",
+      "operationId": "confirmQuestionIntake",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/public/evaluations",
+      "operationId": "evaluatePublicItem",
+      "registered": true,
+      "status": "FEATURE_DISABLED"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning/diagnosis",
+      "operationId": "legacyCreateDiagnosis",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/learning/diagnosis/{diagnosisRunId}",
+      "operationId": "legacyGetDiagnosis",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning/answers/check",
+      "operationId": "legacyCheckAnswer",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning/solution",
+      "operationId": "legacyGetSolution",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning/tutor",
+      "operationId": "legacyTutor",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning/intake/read",
+      "operationId": "legacyIntakeRead",
+      "registered": true,
+      "status": "FEATURE_DISABLED"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/learning/intake/map",
+      "operationId": "legacyIntakeMap",
+      "registered": true,
+      "status": "REGISTERED_REQUIRES_AUTH_CONSENT_OR_OTHER_GATES"
+    }
+  ]
+}

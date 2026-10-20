@@ -1,0 +1,8 @@
+$ git diff --exit-code --stat -- migrations
+warning: in the working copy of 'migrations/0002_catalog.down.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'migrations/0002_catalog.up.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'migrations/0003_learning.down.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'migrations/0003_learning.up.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'migrations/0004_question_loop.down.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'migrations/0004_question_loop.up.sql', LF will be replaced by CRLF the next time Git touches it
+

@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "checks": [
+    "Swagger renders locally",
+    "Try it out returns session through same-origin proxy",
+    "automatic CSRF",
+    "reject external target",
+    "Google button shows unconfigured blocker"
+  ],
+  "errors": [],
+  "external": [],
+  "frontendExternal": [
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap",
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+  ],
+  "note": "Existing frontend Google Fonts requests are recorded separately; Swagger itself uses local assets only."
+}

@@ -1,0 +1,33 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs --test C:\Users\User\AppData\Local\Temp\claude\C--Users-User-Documents-teguh-learningJourney-intibelajar-service\c95e0028-d28d-44b4-91a5-45640af8c8d7\scratchpad\negative-control.test.ts
+✖ negative control: this check fails on purpose (8.1046ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 639.2229
+
+✖ failing tests:
+
+test at ..\..\..\..\AppData\Local\Temp\claude\C--Users-User-Documents-teguh-learningJourney-intibelajar-service\c95e0028-d28d-44b4-91a5-45640af8c8d7\scratchpad\negative-control.test.ts:5:1
+✖ negative control: this check fails on purpose (8.1046ms)
+  AssertionError [ERR_ASSERTION]: deliberate failure: the runner must report it and exit non-zero
+  
+  2 !== 3
+  
+      at TestContext.<anonymous> (C:\Users\User\AppData\Local\Temp\claude\C--Users-User-Documents-teguh-learningJourney-intibelajar-service\c95e0028-d28d-44b4-91a5-45640af8c8d7\scratchpad\negative-control.test.ts:6:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+exit 1

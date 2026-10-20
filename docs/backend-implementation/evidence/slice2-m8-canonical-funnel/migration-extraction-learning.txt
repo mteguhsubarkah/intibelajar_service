@@ -1,0 +1,4 @@
+$ python scripts/extract-migration-learning.py
+wrote 0003_learning (7 tables)
+
+exit 0

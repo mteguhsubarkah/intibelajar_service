@@ -1,0 +1,8 @@
+date: 2026-10-19T13:00:37Z
+node: v24.19.0
+bash: 5.2.37(1)-release
+A direct: runner exit 1 (expected 1)
+A summary.json: runnerExit, failing check exit, failing ok, passing check exit, passing ok = 1 1 false 0 true (expected 1 1 false 0 true)
+B pipefail: pipeline exit 1, PIPESTATUS[0] 1 (expected 1 1)
+C no pipefail: pipeline exit 0, PIPESTATUS[0] 1 (expected 0 1: the masking B-03 reported)
+negative control result: PASS

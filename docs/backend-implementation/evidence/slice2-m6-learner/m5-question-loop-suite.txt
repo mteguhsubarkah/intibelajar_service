@@ -1,0 +1,32 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs --test --test-concurrency=1 test/question-loop.test.ts
+▶ Slice 2 question loops over the API
+  ✔ setup: migrations, reviewed catalog with the authored tower rubric (5507.042ms)
+  ✔ E-01 creation guards: consent, feature, content, strict schemas and replay (1498.9115ms)
+  ✔ 09 §1: every 201 carries Location to a resource that reads back, also on replay; a 200 carries none (1803.5109ms)
+  ✔ E-03 + E-08 inline (T01-1, T01-5, INV-04, INV-13): a correct first try completes; the solution stays locked until reviewed (819.9754ms)
+  ✔ E-07 with recommendations: a catalogued misconception points to its authored lesson and key formula (250.5393ms)
+  ✔ T01-3 with E-05, E-04 and E-06: a bare wrong value asks for working; two clarifications, then the learner chooses (760.8862ms)
+  ✔ 05 §4.4 self-reports: "Saya tahu caranya" asks for proof, "belum tahu" starts from the basics; neither is graded (487.5135ms)
+  ✔ E-11 to E-14 and E-16 + E-17 (T01-6): a lesson from a recommendation, its checks, then a correct retry (1549.6298ms)
+  ✔ E-15, E-18, E-20, E-19 (INV-16.1): only an incorrect retry uses an allowance; the second ends with the solution (949.7276ms)
+  ✔ E-21 from RETRY and its illegal forms; T01-9: a family attempt after the solution is not independent (1118.2691ms)
+  ✔ E-23 on the anchor: hints are idempotent, change no state and mark the next attempt (519.5643ms)
+  ✔ T01-11 and INV-22: two tabs on one version get one 201 and one 409; client timestamps and verdicts are refused (760.3398ms)
+  ✔ queued path (D4 fake engine): no AI consent → inline insufficient; with consent → queued, polled, adopted as AI evidence (1144.7692ms)
+  ✔ T01-4 and E-09/E-10: failures produce no diagnosis; the loop resumes by generation, at most three (1519.4948ms)
+  ✔ INV-08.1: concurrent REQUEST_DIAGNOSIS creates one new generation (1287.9174ms)
+  ✔ fencing: lease recovery adopts once; late results after abandon, expiry, a new generation, revocation and deletion are discarded (3435.2835ms)
+  ✔ 04 §7 fences one at a time: a stale lease holder, an attempt that is not the active one, another generation (649.3597ms)
+  ✔ E-25 expiry of a waiting loop cancels its run and job; later commands are 410 (629.618ms)
+  ✔ model-based (INV-06, 05 §1.5): random command sequences agree with the pure machine, and refusals write nothing (40424.3406ms)
+  ✔ T01-GO: every loop run links attempt → run → evidence references → pinned revision (168.9612ms)
+✔ Slice 2 question loops over the API (67388.1028ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77696.4444
+

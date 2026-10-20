@@ -1,0 +1,675 @@
+$ node node_modules/tsx/dist/cli.mjs --test --test-concurrency=1 test/*.test.ts  (glob expanded by bash; Node v20.19.4 has no --test glob)
+TAP version 13
+# Subtest: committed draft manifest lints clean apart from open review decisions
+ok 1 - committed draft manifest lints clean apart from open review decisions
+  ---
+  duration_ms: 668.8393
+  ...
+# Subtest: mutation 1: SCHEMA is detected, and only it
+ok 2 - mutation 1: SCHEMA is detected, and only it
+  ---
+  duration_ms: 117.4116
+  ...
+# Subtest: mutation 2: KEY_IN_BODY is detected, and only it
+ok 3 - mutation 2: KEY_IN_BODY is detected, and only it
+  ---
+  duration_ms: 185.1589
+  ...
+# Subtest: mutation 3: SIZE is detected, and only it
+ok 4 - mutation 3: SIZE is detected, and only it
+  ---
+  duration_ms: 813.989
+  ...
+# Subtest: mutation 4: CODE_DUPLICATE is detected, and only it
+ok 5 - mutation 4: CODE_DUPLICATE is detected, and only it
+  ---
+  duration_ms: 201.9345
+  ...
+# Subtest: mutation 5: REF_UNKNOWN is detected, and only it
+ok 6 - mutation 5: REF_UNKNOWN is detected, and only it
+  ---
+  duration_ms: 102.6041
+  ...
+# Subtest: mutation 6: ALIAS_AMBIGUOUS is detected, and only it
+ok 7 - mutation 6: ALIAS_AMBIGUOUS is detected, and only it
+  ---
+  duration_ms: 73.0911
+  ...
+# Subtest: mutation 7: ALIAS_UNMAPPED_CONFLICT is detected, and only it
+ok 8 - mutation 7: ALIAS_UNMAPPED_CONFLICT is detected, and only it
+  ---
+  duration_ms: 83.5395
+  ...
+# Subtest: mutation 8: PREREQ_CYCLE is detected, and only it
+ok 9 - mutation 8: PREREQ_CYCLE is detected, and only it
+  ---
+  duration_ms: 58.0243
+  ...
+# Subtest: mutation 9: PREREQ_SELF is detected, and only it
+ok 10 - mutation 9: PREREQ_SELF is detected, and only it
+  ---
+  duration_ms: 76.7393
+  ...
+# Subtest: mutation 10: TOPIC_CYCLE is detected, and only it
+ok 11 - mutation 10: TOPIC_CYCLE is detected, and only it
+  ---
+  duration_ms: 188.6165
+  ...
+# Subtest: mutation 11: UNIT_UNKNOWN is detected, and only it
+ok 12 - mutation 11: UNIT_UNKNOWN is detected, and only it
+  ---
+  duration_ms: 198.562
+  ...
+# Subtest: mutation 12: QUESTION_NO_PRIMARY is detected, and only it
+ok 13 - mutation 12: QUESTION_NO_PRIMARY is detected, and only it
+  ---
+  duration_ms: 126.0068
+  ...
+# Subtest: mutation 13: STEP_CONCEPT_UNMAPPED is detected, and only it
+ok 14 - mutation 13: STEP_CONCEPT_UNMAPPED is detected, and only it
+  ---
+  duration_ms: 84.1651
+  ...
+# Subtest: mutation 14: MISCONCEPTION_UNKNOWN is detected, and only it
+ok 15 - mutation 14: MISCONCEPTION_UNKNOWN is detected, and only it
+  ---
+  duration_ms: 53.0314
+  ...
+# Subtest: mutation 15: EVALUATOR_SHAPE is detected, and only it
+ok 16 - mutation 15: EVALUATOR_SHAPE is detected, and only it
+  ---
+  duration_ms: 128.3087
+  ...
+# Subtest: mutation 16: OPTION_IDS is detected, and only it
+ok 17 - mutation 16: OPTION_IDS is detected, and only it
+  ---
+  duration_ms: 567.4846
+  ...
+# Subtest: mutation 17: PRACTICE_NOT_DETERMINISTIC is detected, and only it
+ok 18 - mutation 17: PRACTICE_NOT_DETERMINISTIC is detected, and only it
+  ---
+  duration_ms: 152.7754
+  ...
+# Subtest: mutation 18: CHECK_NOT_DETERMINISTIC is detected, and only it
+ok 19 - mutation 18: CHECK_NOT_DETERMINISTIC is detected, and only it
+  ---
+  duration_ms: 180.3909
+  ...
+# Subtest: mutation 19: CHECK_PLACEMENT is detected, and only it
+ok 20 - mutation 19: CHECK_PLACEMENT is detected, and only it
+  ---
+  duration_ms: 132.1607
+  ...
+# Subtest: mutation 20: PATTERN is detected, and only it
+ok 21 - mutation 20: PATTERN is detected, and only it
+  ---
+  duration_ms: 322.6777
+  ...
+# Subtest: mutation 21: PATTERN is detected, and only it
+ok 22 - mutation 21: PATTERN is detected, and only it
+  ---
+  duration_ms: 228.6615
+  ...
+# Subtest: mutation 22: PATTERN is detected, and only it
+ok 23 - mutation 22: PATTERN is detected, and only it
+  ---
+  duration_ms: 182.5097
+  ...
+# Subtest: mutation 23: PATTERN is detected, and only it
+ok 24 - mutation 23: PATTERN is detected, and only it
+  ---
+  duration_ms: 283.7037
+  ...
+# Subtest: mutation 24: LESSON_LINK is detected, and only it
+ok 25 - mutation 24: LESSON_LINK is detected, and only it
+  ---
+  duration_ms: 146.0791
+  ...
+# Subtest: mutation 25: LESSON_LINK is detected, and only it
+ok 26 - mutation 25: LESSON_LINK is detected, and only it
+  ---
+  duration_ms: 165.6635
+  ...
+# Subtest: mutation 26: RECOMMEND is detected, and only it
+ok 27 - mutation 26: RECOMMEND is detected, and only it
+  ---
+  duration_ms: 85.3486
+  ...
+# Subtest: mutation 27: AUTHORED_TARGET is detected, and only it
+ok 28 - mutation 27: AUTHORED_TARGET is detected, and only it
+  ---
+  duration_ms: 82.1219
+  ...
+# Subtest: mutation: FILE_NAME is detected when a file does not match its code
+ok 29 - mutation: FILE_NAME is detected when a file does not match its code
+  ---
+  duration_ms: 2325.2359
+  ...
+# Subtest: writeManifest and loadManifest round-trip without loss
+ok 30 - writeManifest and loadManifest round-trip without loss
+  ---
+  duration_ms: 1806.3532
+  ...
+# Subtest: extractor is deterministic and every frontend identifier resolves
+ok 31 - extractor is deterministic and every frontend identifier resolves
+  ---
+  duration_ms: 1585.3467
+  ...
+# Subtest: Slice 2 overlays: applied over the extracted tower question, reviewed on their own, extractor files untouched
+ok 32 - Slice 2 overlays: applied over the extracted tower question, reviewed on their own, extractor files untouched
+  ---
+  duration_ms: 45.575
+  ...
+# Subtest: D3 stays open: the synthetic funnel lesson exercises lessonFor in memory only and is refused by strict lint
+ok 33 - D3 stays open: the synthetic funnel lesson exercises lessonFor in memory only and is refused by strict lint
+  ---
+  duration_ms: 165.5043
+  ...
+# Subtest: Slice 1 catalog migration and publisher on PostgreSQL
+    # Subtest: 0002 applies on top of 0001; rolling back to 0001 keeps Slice 0 and reapplies
+    ok 1 - 0002 applies on top of 0001; rolling back to 0001 keeps Slice 0 and reapplies
+      ---
+      duration_ms: 3386.7391
+      ...
+    # Subtest: the committed draft is refused because its review decisions are open
+    ok 2 - the committed draft is refused because its review decisions are open
+      ---
+      duration_ms: 2767.5941
+      ...
+    # Subtest: lint failures publish nothing: cycle, ambiguous alias, unmapped step concept, unknown misconception, oversized rubric
+    ok 3 - lint failures publish nothing: cycle, ambiguous alias, unmapped step concept, unknown misconception, oversized rubric
+      ---
+      duration_ms: 423.1632
+      ...
+    # Subtest: publishing the reviewed fixture writes the whole catalog, frozen and current
+    ok 4 - publishing the reviewed fixture writes the whole catalog, frozen and current
+      ---
+      duration_ms: 1494.2456
+      ...
+    # Subtest: re-publishing the identical manifest is a no-op
+    ok 5 - re-publishing the identical manifest is a no-op
+      ---
+      duration_ms: 216.9965
+      ...
+    # Subtest: changed content becomes a new revision; the old one is retired and still readable
+    ok 6 - changed content becomes a new revision; the old one is retired and still readable
+      ---
+      duration_ms: 797.2853
+      ...
+    # Subtest: version and identity rules publish nothing
+    not ok 7 - version and identity rules publish nothing
+      ---
+      duration_ms: 1151.642
+      location: 'C:\\Users\\User\\Documents\\teguh\\learningJourney\\intibelajar_service\\test\\catalog-publisher.test.ts:126:13'
+      failureType: 'testCodeFailure'
+      error: |-
+        The validation function is expected to return "true". Received false
+        
+        Caught error:
+        
+        Error: Manifest lint failed with 1 finding(s)
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      stack: |-
+        process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        async rejects (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\catalog-publisher.test.ts:32:5)
+        async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\catalog-publisher.test.ts:143:7)
+        async Test.run (node:internal/test_runner/test:797:9)
+        async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\catalog-publisher.test.ts:126:5)
+        async Test.run (node:internal/test_runner/test:797:9)
+        async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+      ...
+    # Subtest: an alias may move to another entity in a later release; earlier releases keep their mapping
+    ok 8 - an alias may move to another entity in a later release; earlier releases keep their mapping
+      ---
+      duration_ms: 936.7103
+      ...
+    # Subtest: concurrent publishes of one manifest serialise: one publishes, the other sees it unchanged
+    ok 9 - concurrent publishes of one manifest serialise: one publishes, the other sees it unchanged
+      ---
+      duration_ms: 955.5149
+      ...
+    # Subtest: INV-04.2: the database rejects in-place edits of published content
+    ok 10 - INV-04.2: the database rejects in-place edits of published content
+      ---
+      duration_ms: 283.8585
+      ...
+    1..10
+not ok 34 - Slice 1 catalog migration and publisher on PostgreSQL
+  ---
+  duration_ms: 14798.7819
+  location: 'C:\\Users\\User\\Documents\\teguh\\learningJourney\\intibelajar_service\\test\\catalog-publisher.test.ts:18:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Slice 1 public catalog read API
+    # Subtest: without a current release the catalog is empty, not an error
+    ok 1 - without a current release the catalog is empty, not an error
+      ---
+      duration_ms: 4889.86
+      ...
+    # Subtest: every catalog endpoint answers within the contract for every entity
+    ok 2 - every catalog endpoint answers within the contract for every entity
+      ---
+      duration_ms: 1052.9303
+      ...
+    # Subtest: legacy alias lookup: a known alias gives its concept, an unknown one gives an empty list
+    ok 3 - legacy alias lookup: a known alias gives its concept, an unknown one gives an empty list
+      ---
+      duration_ms: 38.8972
+      ...
+    # Subtest: question filters and combined items
+    ok 4 - question filters and combined items
+      ---
+      duration_ms: 37.8429
+      ...
+    # Subtest: pagination is complete, ordered and tamper-proof
+    ok 5 - pagination is complete, ordered and tamper-proof
+      ---
+      duration_ms: 129.6241
+      ...
+    # Subtest: INV-05.1: no catalog response schema can carry a key, rubric or graded feedback
+    ok 6 - INV-05.1: no catalog response schema can carry a key, rubric or graded feedback
+      ---
+      duration_ms: 3.0472
+      ...
+    # Subtest: INV-05.2: no catalog response contains a key, rubric text or graded feedback
+    ok 7 - INV-05.2: no catalog response contains a key, rubric text or graded feedback
+      ---
+      duration_ms: 833.7708
+      ...
+    # Subtest: ETag revalidation on subjects, topics and topic detail
+    ok 8 - ETag revalidation on subjects, topics and topic detail
+      ---
+      duration_ms: 117.1641
+      ...
+    # Subtest: unknown ids are a safe 404; malformed ids are 400
+    ok 9 - unknown ids are a safe 404; malformed ids are 400
+      ---
+      duration_ms: 42.9011
+      ...
+    # Subtest: a new release is served on the next request: new revisions, retired items, new ETag
+    ok 10 - a new release is served on the next request: new revisions, retired items, new ETag
+      ---
+      duration_ms: 722.9321
+      ...
+    1..10
+ok 35 - Slice 1 public catalog read API
+  ---
+  duration_ms: 14437.5419
+  ...
+# Subtest: golden numeric cases: verdict, unreadable reason and misconception match the shared file
+ok 36 - golden numeric cases: verdict, unreadable reason and misconception match the shared file
+  ---
+  duration_ms: 33.8897
+  ...
+# Subtest: golden option section is in sync with the manifest and every index grades as the key says
+ok 37 - golden option section is in sync with the manifest and every index grades as the key says
+  ---
+  duration_ms: 12.107
+  ...
+# Subtest: every deterministic item accepts its own key and its first accepted form
+ok 38 - every deterministic item accepts its own key and its first accepted form
+  ---
+  duration_ms: 20.387
+  ...
+# Subtest: evidence: correct answers demonstrate the final-answer concepts and quote what was written
+ok 39 - evidence: correct answers demonstrate the final-answer concepts and quote what was written
+  ---
+  duration_ms: 10.4825
+  ...
+# Subtest: evidence: a catalogued wrong answer evidences its misconception; an unexplained one never invents a gap
+ok 40 - evidence: a catalogued wrong answer evidences its misconception; an unexplained one never invents a gap
+  ---
+  duration_ms: 16.0203
+  ...
+# Subtest: INV-16 and refusals: unreadable, self-reports and malformed inputs produce no evidence and no verdict claim
+ok 41 - INV-16 and refusals: unreadable, self-reports and malformed inputs produce no evidence and no verdict claim
+  ---
+  duration_ms: 1.6996
+  ...
+# Subtest: non-assessable concepts are never claimed, and evaluation is deterministic
+ok 42 - non-assessable concepts are never claimed, and evaluation is deterministic
+  ---
+  duration_ms: 1.3591
+  ...
+# Subtest: golden v2 carries the v1 numeric and option sections unchanged
+ok 43 - golden v2 carries the v1 numeric and option sections unchanged
+  ---
+  duration_ms: 3.0655
+  ...
+# Subtest: golden tower cases: verdict, reason, misconception and per-concept evidence with exact quotes
+ok 44 - golden tower cases: verdict, reason, misconception and per-concept evidence with exact quotes
+  ---
+  duration_ms: 63.6714
+  ...
+# Subtest: golden tower deltas: exactly the labelled cases differ from the recorded analysis.ts output, and none is approved
+ok 45 - golden tower deltas: exactly the labelled cases differ from the recorded analysis.ts output, and none is approved
+  ---
+  duration_ms: 2.5317
+  ...
+# Subtest: 06 §10 and T01-3 rows hold for tower-v1
+ok 46 - 06 §10 and T01-3 rows hold for tower-v1
+  ---
+  duration_ms: 5.4156
+  ...
+# Subtest: whole tokens, never substrings: tanpa, sinus and cosinus match nothing
+ok 47 - whole tokens, never substrings: tanpa, sinus and cosinus match nothing
+  ---
+  duration_ms: 1.786
+  ...
+# Subtest: INV-09 and spans: only mapped concepts, claims only on assessable ones, every quote is the exact substring
+ok 48 - INV-09 and spans: only mapped concepts, claims only on assessable ones, every quote is the exact substring
+  ---
+  duration_ms: 2389.1989
+  ...
+# Subtest: Slice 1 learning schema, guards and erasure on PostgreSQL
+    # Subtest: 0003 and 0004 apply on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings
+    ok 1 - 0003 and 0004 apply on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings
+      ---
+      duration_ms: 4587.9994
+      ...
+    # Subtest: INV-19 coverage: every table with a learner column is accounted for
+    ok 2 - INV-19 coverage: every table with a learner column is accounted for
+      ---
+      duration_ms: 92.3303
+      ...
+    # Subtest: INV-19: erasure removes every learning and assessment row, leaves a receipt and the catalog
+    ok 3 - INV-19: erasure removes every learning and assessment row, leaves a receipt and the catalog
+      ---
+      duration_ms: 1538.8158
+      ...
+    # Subtest: restore replay: learning rows that come back with an erased learner are erased again
+    ok 4 - restore replay: learning rows that come back with an erased learner are erased again
+      ---
+      duration_ms: 231.5437
+      ...
+    # Subtest: INV-07: a stored attempt is immutable apart from grading once and the retention purge
+    ok 5 - INV-07: a stored attempt is immutable apart from grading once and the retention purge
+      ---
+      duration_ms: 466.2318
+      ...
+    # Subtest: INV-08 and append-only evidence
+    ok 6 - INV-08 and append-only evidence
+      ---
+      duration_ms: 111.0333
+      ...
+    1..6
+ok 49 - Slice 1 learning schema, guards and erasure on PostgreSQL
+  ---
+  duration_ms: 7045.9746
+  ...
+# Subtest: INV-06.1: the version moves by exactly one when the state changes or an attempt is stored
+ok 50 - INV-06.1: the version moves by exactly one when the state changes or an attempt is stored
+  ---
+  duration_ms: 764.799
+  ...
+# Subtest: terminal states absorb every command except re-reading a loop solution; completion has a reason
+ok 51 - terminal states absorb every command except re-reading a loop solution; completion has a reason
+  ---
+  duration_ms: 523.6138
+  ...
+# Subtest: kinds stay apart: practice never enters a loop state, a loop never practises
+ok 52 - kinds stay apart: practice never enters a loop state, a loop never practises
+  ---
+  duration_ms: 374.0208
+  ...
+# Subtest: practice: items finish in order, never revert, and completion means none is pending
+ok 53 - practice: items finish in order, never revert, and completion means none is pending
+  ---
+  duration_ms: 289.1887
+  ...
+# Subtest: lessons: graded checks stay graded; the lesson ends only by finishing (all required graded) or skipping
+ok 54 - lessons: graded checks stay graded; the lesson ends only by finishing (all required graded) or skipping
+  ---
+  duration_ms: 414.896
+  ...
+# Subtest: loop bounds: at most 2 clarification rounds, 2 unsuccessful retries and 3 run generations
+ok 55 - loop bounds: at most 2 clarification rounds, 2 unsuccessful retries and 3 run generations
+  ---
+  duration_ms: 495.1802
+  ...
+# Subtest: INV-16: only an incorrect verification consumes a retry; unreadable and insufficient results never do
+ok 56 - INV-16: only an incorrect verification consumes a retry; unreadable and insufficient results never do
+  ---
+  duration_ms: 460.9288
+  ...
+# Subtest: SOLUTION_REVIEWED only after the retries are exhausted or through REVIEW_SOLUTION
+ok 57 - SOLUTION_REVIEWED only after the retries are exhausted or through REVIEW_SOLUTION
+  ---
+  duration_ms: 689.2598
+  ...
+# Subtest: 05 §4.4: a self-report never yields a verdict other than NOT_GRADED
+ok 58 - 05 §4.4: a self-report never yields a verdict other than NOT_GRADED
+  ---
+  duration_ms: 602.2324
+  ...
+# Subtest: runs: pending exactly while diagnosing or verifying; results are fenced by generation and status
+ok 59 - runs: pending exactly while diagnosing or verifying; results are fenced by generation and status
+  ---
+  duration_ms: 433.9747
+  ...
+# Subtest: allowedActions lists exactly the commands that some argument makes legal
+ok 60 - allowedActions lists exactly the commands that some argument makes legal
+  ---
+  duration_ms: 1041.4563
+  ...
+# Subtest: question-loop commands are never legal in a practice session
+ok 61 - question-loop commands are never legal in a practice session
+  ---
+  duration_ms: 79.7221
+  ...
+# Subtest: question loop paths (E-01–E-21)
+ok 62 - question loop paths (E-01–E-21)
+  ---
+  duration_ms: 5.0867
+  ...
+# Subtest: Slice 1 practice sessions over the API
+    # Subtest: setup: migrations, reviewed catalog with one hint
+    ok 1 - setup: migrations, reviewed catalog with one hint
+      ---
+      duration_ms: 2440.2069
+      ...
+    # Subtest: E-02 creation guards: consent, feature, content and ownership
+    ok 2 - E-02 creation guards: consent, feature, content and ownership
+      ---
+      duration_ms: 841.9871
+      ...
+    # Subtest: E-02, E-12–E-15: a lesson with quick checks, then practice; formative evidence never counts
+    ok 3 - E-02, E-12–E-15: a lesson with quick checks, then practice; formative evidence never counts
+      ---
+      duration_ms: 899.8533
+      ...
+    # Subtest: E-22: items in order; grading, evidence, eligibility and exposure; completion
+    ok 4 - E-22: items in order; grading, evidence, eligibility and exposure; completion
+      ---
+      duration_ms: 1048.1279
+      ...
+    # Subtest: E-23 hints: idempotent per step, no version bump, and they block transfer (INV-12)
+    ok 5 - E-23 hints: idempotent per step, no version bump, and they block transfer (INV-12)
+      ---
+      duration_ms: 238.6385
+      ...
+    # Subtest: INV-14 idempotency and the stale second tab
+    ok 6 - INV-14 idempotency and the stale second tab
+      ---
+      duration_ms: 221.9213
+      ...
+    # Subtest: resume after refresh (T02), checkpoint without a version bump, and the resume list
+    ok 7 - resume after refresh (T02), checkpoint without a version bump, and the resume list
+      ---
+      duration_ms: 375.912
+      ...
+    # Subtest: consent revocation and erasure stop processing; expiry gives 410 (E-25)
+    ok 8 - consent revocation and erasure stop processing; expiry gives 410 (E-25)
+      ---
+      duration_ms: 191.6696
+      ...
+    # Subtest: INV-05 and log canaries: no keys before grading, no answer text in logs
+    ok 9 - INV-05 and log canaries: no keys before grading, no answer text in logs
+      ---
+      duration_ms: 172.0547
+      ...
+    # Subtest: INV-06.1 model-based: random command sequences over HTTP agree with the machine; illegal ones write nothing
+    ok 10 - INV-06.1 model-based: random command sequences over HTTP agree with the machine; illegal ones write nothing
+      ---
+      duration_ms: 8640.2453
+      ...
+    1..10
+ok 63 - Slice 1 practice sessions over the API
+  ---
+  duration_ms: 16518.2743
+  ...
+# Subtest: Slice 1 legacy facade L3 over the M6 engine
+    # Subtest: setup: catalog
+    ok 1 - setup: catalog
+      ---
+      duration_ms: 2766.0454
+      ...
+    # Subtest: off by default; only FEATURE_LEGACY_FACADE can be enabled; guests and unconsented learners are not served
+    ok 2 - off by default; only FEATURE_LEGACY_FACADE can be enabled; guests and unconsented learners are not served
+      ---
+      duration_ms: 914.8608
+      ...
+    # Subtest: practice (PracticeRunView, StepLatihan): graded on the server, judged by the frontend validator
+    ok 3 - practice (PracticeRunView, StepLatihan): graded on the server, judged by the frontend validator
+      ---
+      duration_ms: 715.6206
+      ...
+    # Subtest: lessons (CoreView): implied lesson commands, then lesson practice
+    ok 4 - lessons (CoreView): implied lesson commands, then lesson practice
+      ---
+      duration_ms: 611.6323
+      ...
+    # Subtest: derived idempotency: a retried call replays; unreadable keeps the item; refusals and gaps
+    ok 5 - derived idempotency: a retried call replays; unreadable keeps the item; refusals and gaps
+      ---
+      duration_ms: 776.6426
+      ...
+    1..5
+ok 64 - Slice 1 legacy facade L3 over the M6 engine
+  ---
+  duration_ms: 7374.5547
+  ...
+# Subtest: Slice 2 question-loop schema and diagnosis queue on PostgreSQL
+    # Subtest: 0004 applies, rolls back to the Slice 0 job check, and re-applies
+    ok 1 - 0004 applies, rolls back to the Slice 0 job check, and re-applies
+      ---
+      duration_ms: 3582.698
+      ...
+    # Subtest: 04 §9: a job references exactly one target; one job per run
+    ok 2 - 04 §9: a job references exactly one target; one job per run
+      ---
+      duration_ms: 104.9885
+      ...
+    # Subtest: diagnosis_report: one per run, owner-bound, resolved once, note purgeable
+    ok 3 - diagnosis_report: one per run, owner-bound, resolved once, note purgeable
+      ---
+      duration_ms: 79.2852
+      ...
+    # Subtest: diagnosis queue: lease, heartbeat, backoff, recovery, max attempts, deadline
+    ok 4 - diagnosis queue: lease, heartbeat, backoff, recovery, max attempts, deadline
+      ---
+      duration_ms: 96.802
+      ...
+    # Subtest: adoption is fenced: complete once under a valid lease; cancellation fences out late results
+    ok 5 - adoption is fenced: complete once under a valid lease; cancellation fences out late results
+      ---
+      duration_ms: 67.7286
+      ...
+    1..5
+ok 65 - Slice 2 question-loop schema and diagnosis queue on PostgreSQL
+  ---
+  duration_ms: 3948.4629
+  ...
+# Subtest: Slice 0 real PostgreSQL integration and security gates
+    # Subtest: migration up, rollback, reapply, database version and atomic failure recovery
+    ok 1 - migration up, rollback, reapply, database version and atomic failure recovery
+      ---
+      duration_ms: 3744.6036
+      ...
+    # Subtest: configuration fails closed for production, remote database and feature enables
+    ok 2 - configuration fails closed for production, remote database and feature enables
+      ---
+      duration_ms: 1.2717
+      ...
+    # Subtest: identity sessions: hashes, cookie flags, rotation, reuse and continuation
+    ok 3 - identity sessions: hashes, cookie flags, rotation, reuse and continuation
+      ---
+      duration_ms: 423.2684
+      ...
+    # Subtest: CSRF and Origin matrix on all authenticated Slice 0 mutations
+    ok 4 - CSRF and Origin matrix on all authenticated Slice 0 mutations
+      ---
+      duration_ms: 90.8688
+      ...
+    # Subtest: pending onboarding minimization, strict fields, age derivation and consent guard
+    ok 5 - pending onboarding minimization, strict fields, age derivation and consent guard
+      ---
+      duration_ms: 211.565
+      ...
+    # Subtest: multi-purpose consent, policy proof, idempotency replay and immediate session revocation
+    ok 6 - multi-purpose consent, policy proof, idempotency replay and immediate session revocation
+      ---
+      duration_ms: 372.1596
+      ...
+    # Subtest: cross-user and guardian ownership, optional revocation and no learning capabilities
+    ok 7 - cross-user and guardian ownership, optional revocation and no learning capabilities
+      ---
+      duration_ms: 345.29
+      ...
+    # Subtest: leased deletion failure, fencing, recovery and complete Slice 0 erasure
+    ok 8 - leased deletion failure, fencing, recovery and complete Slice 0 erasure
+      ---
+      duration_ms: 360.4245
+      ...
+    # Subtest: session idle and absolute expiry
+    ok 9 - session idle and absolute expiry
+      ---
+      duration_ms: 61.2359
+      ...
+    # Subtest: expired and declined consent: pending bootstrap erased, no relaxed eligibility
+    ok 10 - expired and declined consent: pending bootstrap erased, no relaxed eligibility
+      ---
+      duration_ms: 331.8822
+      ...
+    # Subtest: idempotency concurrency, crash rollback, replay and different payload
+    ok 11 - idempotency concurrency, crash rollback, replay and different payload
+      ---
+      duration_ms: 134.7106
+      ...
+    # Subtest: log canaries: URL tokens, emails, headers, malformed input and raw payloads absent
+    ok 12 - log canaries: URL tokens, emails, headers, malformed input and raw payloads absent
+      ---
+      duration_ms: 29.8685
+      ...
+    # Subtest: logout current/all, deletion request, missing idempotency and adult consent defaults
+    ok 13 - logout current/all, deletion request, missing idempotency and adult consent defaults
+      ---
+      duration_ms: 267.6331
+      ...
+    # Subtest: unconfigured integrations fail closed and auth rate limits remain enforced
+    ok 14 - unconfigured integrations fail closed and auth rate limits remain enforced
+      ---
+      duration_ms: 193.1897
+      ...
+    # Subtest: database unavailable produces failed readiness and can recover
+    ok 15 - database unavailable produces failed readiness and can recover
+      ---
+      duration_ms: 62.0922
+      ...
+    1..15
+ok 66 - Slice 0 real PostgreSQL integration and security gates
+  ---
+  duration_ms: 6986.2708
+  ...
+1..66
+# tests 127
+# suites 0
+# pass 125
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 181136.7455

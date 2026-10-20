@@ -1,0 +1,5 @@
+{
+  "extends": "C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/tsconfig.app.json",
+  "compilerOptions": { "noEmit": true, "types": [], "baseUrl": "C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar", "paths": { "@/*": ["src/*"] }, "tsBuildInfoFile": null, "composite": false, "incremental": false },
+  "files": ["C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/node_modules/vite/client.d.ts"], "include": ["C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/**/*.ts", "C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/**/*.vue", "C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/scripts/**/*.ts", "C:/Users/User/Documents/teguh/learningJourney/mockup/intibelajar/src/**/*.d.ts"]
+}

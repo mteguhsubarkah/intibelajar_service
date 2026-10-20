@@ -1,0 +1,7 @@
+  ✖ 04 §7 fences one at a time: a stale lease holder, an attempt that is not the active one, another generation (1918.9322ms)
+✖ Slice 2 question loops over the API (79165.7166ms)
+ℹ pass 17
+ℹ fail 2
+✖ failing tests:
+✖ 04 §7 fences one at a time: a stale lease holder, an attempt that is not the active one, another generation (1918.9322ms)
+  AssertionError [ERR_ASSERTION]: another generation is fenced out

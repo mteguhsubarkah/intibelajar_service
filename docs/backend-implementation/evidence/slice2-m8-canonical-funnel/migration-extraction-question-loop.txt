@@ -1,0 +1,4 @@
+$ python scripts/extract-migration-question-loop.py
+wrote 0004_question_loop
+
+exit 0

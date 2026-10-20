@@ -1,0 +1,64 @@
+$ C:\Users\User\AppData\Local\nvm\v24.19.0\node.exe C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\node_modules\tsx\dist\cli.mjs scripts/catalog/lint-manifest.ts
+WARNING UNREVIEWED                 topics/MAT.TRI.yaml: concept MAT.TRI.SEGITIGA_SIKU_SIKU: D6 proposal (aliases.TYPED_MAP, objectives) awaits review
+WARNING UNREVIEWED                 topics/MAT.TRI.yaml: concept MAT.TRI.DEFINISI_SIN_COS_TAN: D6 proposal (aliases.TYPED_MAP, objectives) awaits review
+WARNING UNREVIEWED                 topics/MAT.TRI.yaml: concept MAT.TRI.SUDUT_ISTIMEWA: D6 proposal (aliases.TYPED_MAP) awaits review
+WARNING UNREVIEWED                 topics/MAT.TRI.yaml: concept MAT.TRI.SUDUT_BERELASI: D6 proposal (aliases.TYPED_MAP) awaits review
+WARNING UNREVIEWED                 topics/MAT.TRI.yaml: concept MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI: D6 proposal (whole concept, objectives) awaits review
+WARNING UNREVIEWED                 topics/MAT.TRI.yaml: prerequisite MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI ← MAT.TRI.SEGITIGA_SIKU_SIKU: D6 proposal (kind) awaits review
+WARNING UNREVIEWED                 topics/MAT.TRI.yaml: prerequisite MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI ← MAT.TRI.DEFINISI_SIN_COS_TAN: D6 proposal (kind) awaits review
+WARNING UNREVIEWED                 questions/MAT.EKS.Q.GAB_3X_SIN.yaml: question MAT.EKS.Q.GAB_3X_SIN: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.EKS.Q.GAB_PANGKAT_COS60.yaml: question MAT.EKS.Q.GAB_PANGKAT_COS60: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.FUNNEL_C1.yaml: question MAT.TRI.Q.FUNNEL_C1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.FUNNEL_C2.yaml: question MAT.TRI.Q.FUNNEL_C2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.FUNNEL_C3.yaml: question MAT.TRI.Q.FUNNEL_C3: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.FUNNEL_C4.yaml: question MAT.TRI.Q.FUNNEL_C4: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.FUNNEL_P1.yaml: question MAT.TRI.Q.FUNNEL_P1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.FUNNEL_P2.yaml: question MAT.TRI.Q.FUNNEL_P2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.FUNNEL_P3.yaml: question MAT.TRI.Q.FUNNEL_P3: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.GAB_SIN30_PANGKAT.yaml: question MAT.TRI.Q.GAB_SIN30_PANGKAT: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.GAB_TAN45_PANGKATNOL.yaml: question MAT.TRI.Q.GAB_TAN45_PANGKATNOL: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.PERBANDINGAN_TRIG_C0.yaml: question MAT.TRI.Q.PERBANDINGAN_TRIG_C0: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.PERBANDINGAN_TRIG_C1.yaml: question MAT.TRI.Q.PERBANDINGAN_TRIG_C1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.PERBANDINGAN_TRIG_P0.yaml: question MAT.TRI.Q.PERBANDINGAN_TRIG_P0: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.PERBANDINGAN_TRIG_P1.yaml: question MAT.TRI.Q.PERBANDINGAN_TRIG_P1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.PERBANDINGAN_TRIG_P2.yaml: question MAT.TRI.Q.PERBANDINGAN_TRIG_P2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SOAL_MENARA.yaml: question MAT.TRI.Q.SOAL_MENARA: D5 proposal (familyCode, solutionPaths, finalAnswerEvidence, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C0.yaml: question MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C0: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C1.yaml: question MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P0.yaml: question MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P0: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P1.yaml: question MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P2.yaml: question MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_P2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_ISTIMEWA_C0.yaml: question MAT.TRI.Q.SUDUT_ISTIMEWA_C0: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_ISTIMEWA_C1.yaml: question MAT.TRI.Q.SUDUT_ISTIMEWA_C1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_ISTIMEWA_C2.yaml: question MAT.TRI.Q.SUDUT_ISTIMEWA_C2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_ISTIMEWA_P0.yaml: question MAT.TRI.Q.SUDUT_ISTIMEWA_P0: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_ISTIMEWA_P1.yaml: question MAT.TRI.Q.SUDUT_ISTIMEWA_P1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_ISTIMEWA_P2.yaml: question MAT.TRI.Q.SUDUT_ISTIMEWA_P2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.SUDUT_ISTIMEWA_P3.yaml: question MAT.TRI.Q.SUDUT_ISTIMEWA_P3: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.T04_CHECK_1.yaml: question MAT.TRI.Q.T04_CHECK_1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.T04_CHECK_2.yaml: question MAT.TRI.Q.T04_CHECK_2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.T04_CHECK_3.yaml: question MAT.TRI.Q.T04_CHECK_3: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.T10_CHECK_1.yaml: question MAT.TRI.Q.T10_CHECK_1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.T10_CHECK_2.yaml: question MAT.TRI.Q.T10_CHECK_2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.T13_CHECK_1.yaml: question MAT.TRI.Q.T13_CHECK_1: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.T13_CHECK_2.yaml: question MAT.TRI.Q.T13_CHECK_2: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.TAN60_SIN30.yaml: question MAT.TRI.Q.TAN60_SIN30: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.TANGGA_6M.yaml: question MAT.TRI.Q.TANGGA_6M: D6 proposal (concepts, finalAnswerEvidence, contextTag, visibility) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.TRIG_DEPRESSION_01.yaml: question MAT.TRI.Q.TRIG_DEPRESSION_01: D5 proposal (familyCode, concepts, finalAnswerEvidence, misconceptionMap) awaits review
+WARNING UNREVIEWED                 questions/MAT.TRI.Q.TRIG_DEPRESSION_01_RETRY.yaml: question MAT.TRI.Q.TRIG_DEPRESSION_01_RETRY: D5 proposal (familyCode, concepts, finalAnswerEvidence, misconceptionMap) awaits review
+WARNING UNREVIEWED                 lessons/MAT.TRI.L.MEMILIH_TAN_DARI_DIAGRAM.yaml: lesson MAT.TRI.L.MEMILIH_TAN_DARI_DIAGRAM: D6 proposal (concepts) awaits review
+WARNING UNREVIEWED                 lessons/MAT.TRI.L.MENCARI_SISI_YANG_BELUM_DIKETAHUI.yaml: lesson MAT.TRI.L.MENCARI_SISI_YANG_BELUM_DIKETAHUI: D6 proposal (concepts) awaits review
+WARNING UNREVIEWED                 lessons/MAT.TRI.L.MENGENALI_SISI_TERHADAP_SUDUT.yaml: lesson MAT.TRI.L.MENGENALI_SISI_TERHADAP_SUDUT: D6 proposal (concepts) awaits review
+WARNING UNREVIEWED                 lessons/MAT.TRI.L.PERBANDINGAN_TRIG.yaml: lesson MAT.TRI.L.PERBANDINGAN_TRIG: D6 proposal (concepts) awaits review
+WARNING UNREVIEWED                 lessons/MAT.TRI.L.SUDUT_DEPRESI_ELEVASI.yaml: lesson MAT.TRI.L.SUDUT_DEPRESI_ELEVASI: D6 proposal (concepts) awaits review
+WARNING UNREVIEWED                 lessons/MAT.TRI.L.SUDUT_ISTIMEWA.yaml: lesson MAT.TRI.L.SUDUT_ISTIMEWA: D6 proposal (concepts) awaits review
+WARNING UNREVIEWED                 authored/MAT.TRI.DEFINISI_SIN_COS_TAN.misconceptions.yaml: authored CONCEPT_MISCONCEPTIONS MAT.TRI.DEFINISI_SIN_COS_TAN: S2-D1 proposal (misconceptions) awaits review
+WARNING UNREVIEWED                 authored/MAT.TRI.Q.SOAL_MENARA.rubric.yaml: authored QUESTION_RUBRIC MAT.TRI.Q.SOAL_MENARA: S2-D1 proposal (solutionPaths.steps.patterns, misconceptionMap, recommend, lessonFor) awaits review
+WARNING UNREVIEWED                 authored/MAT.TRI.SUDUT_ISTIMEWA.misconceptions.yaml: authored CONCEPT_MISCONCEPTIONS MAT.TRI.SUDUT_ISTIMEWA: S2-D1 proposal (misconceptions) awaits review
+WARNING UNREVIEWED                 release.yaml: decision D3 is not approved
+WARNING UNREVIEWED                 release.yaml: decision D4 is not approved
+WARNING UNREVIEWED                 release.yaml: decision D5 is not approved
+WARNING UNREVIEWED                 release.yaml: decision D6 is not approved
+WARNING UNREVIEWED                 release.yaml: release sign-off is pending
+Manifest lint (draft): 0 error(s), 61 warning(s) [UNREVIEWED=61]
+
