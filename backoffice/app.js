@@ -4,7 +4,7 @@ const $ = s => document.querySelector(s);
 const el = (tag, text, cls) => { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (cls) n.className = cls; return n; };
 function notice(text, error = false) { $('#notice').textContent = text; $('#notice').className = error ? 'error' : ''; }
 async function api(path, data) {
-  const r = await fetch('/api/' + path, { method: data ? 'POST' : 'GET', headers: { Authorization: 'Bearer ' + token, ...(data ? { 'Content-Type': 'application/json' } : {}) }, ...(data ? { body: JSON.stringify({ ...data, revision: state?.revision }) } : {}) });
+  const r = await fetch('api/' + path, { method: data ? 'POST' : 'GET', headers: { 'X-Backoffice-Key': token, ...(data ? { 'Content-Type': 'application/json' } : {}) }, ...(data ? { body: JSON.stringify({ ...data, revision: state?.revision }) } : {}) });
   const b = await r.json(); if (!r.ok) throw new Error(b.message + (b.details ? '\n' + b.details.slice(0, 5).map(x => x.rule + ': ' + x.message).join('\n') : '')); return b;
 }
 function show(name) {

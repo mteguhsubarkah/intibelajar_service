@@ -113,3 +113,24 @@ test('backoffice: structured lesson and later-slide checks cannot be silently fl
 test('backoffice: standalone OpenAPI 3.1 contract validates', async () => {
   await Parser.validate('backoffice/openapi.yaml');
 });
+test('backoffice HTTPS proxy: exact domain, transport, authenticated proxy, separate access key and Origin', async () => {
+  const f = fixture(), token = 'b'.repeat(64);
+  assert.throws(() => buildBackoffice(f.store, token, 8010, 'http://intibelajar.com'), /HTTPS/);
+  assert.throws(() => buildBackoffice(f.store, token, 8010, 'https://intibelajar.com/'), /HTTPS/);
+  const app = buildBackoffice(f.store, token, 8010, 'https://intibelajar.com');
+  const h = { host: 'intibelajar.com', 'x-forwarded-proto': 'https', 'x-backoffice-user': 'owner', 'x-backoffice-key': token,
+    authorization: 'Basic dXNlcjpwYXNz' };
+  try {
+    assert.equal((await app.inject({url:'/',headers:{host:'localhost:8010'}})).statusCode,403);
+    for (const overrides of [{host:'www.intibelajar.com'},{'x-forwarded-proto':'http'},{'x-backoffice-user':''}])
+      assert.equal((await app.inject({url:'/',headers:{...h,...overrides}})).statusCode,403);
+    assert.equal((await app.inject({url:'/',headers:h,remoteAddress:'192.0.2.10'})).statusCode,403);
+    assert.equal((await app.inject({url:'/api/state',headers:{...h,'x-backoffice-key':''}})).statusCode,401);
+    assert.equal((await app.inject({url:'/api/state',headers:h})).statusCode,200);
+    const page = await app.inject({url:'/',headers:h});
+    assert.equal(page.statusCode,200); assert.match(page.body,/src="app.js"/); assert.match(page.body,/href="style.css"/);
+    for (const origin of ['http://intibelajar.com','https://evil.example','http://localhost:8010'])
+      assert.equal((await app.inject({method:'POST',url:'/api/commands',headers:{...h,origin},payload:{revision:0,...topic()}})).statusCode,403);
+    assert.equal((await app.inject({method:'POST',url:'/api/commands',headers:{...h,origin:'https://intibelajar.com'},payload:{revision:0,...topic()}})).statusCode,200);
+  } finally { await app.close(); f.done(); }
+});

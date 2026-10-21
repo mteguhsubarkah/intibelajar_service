@@ -6,19 +6,33 @@ import { pathToFileURL } from 'node:url';
 import { lintManifest } from '../../src/catalog/manifest.js';
 import { Store, OfficeError, command, enqueue } from './store.js';
 
-export function buildBackoffice(store: Store, token: string, port = 8010) {
+export function buildBackoffice(store: Store, token: string, port = 8010, publicOrigin?: string) {
+  let domain: URL | undefined;
+  if (publicOrigin) {
+    domain = new URL(publicOrigin);
+    if (domain.protocol !== 'https:' || domain.origin !== publicOrigin || domain.username || domain.password)
+      throw new Error('BACKOFFICE_PUBLIC_ORIGIN must be an exact HTTPS origin');
+  }
   const app = Fastify({ logger: false, bodyLimit: 32_768 });
   const hosts = [`127.0.0.1:${port}`, `localhost:${port}`];
+  const origins = domain ? [domain.origin] : hosts.map(h => `http://${h}`);
   app.addHook('onRequest', async (req, reply) => {
     reply.header('Cache-Control', 'no-store').header('X-Content-Type-Options', 'nosniff')
       .header('Referrer-Policy', 'no-referrer').header('X-Frame-Options', 'DENY')
       .header('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'none'; form-action 'self'");
-    if (!hosts.includes(req.headers.host ?? '')) throw new OfficeError(403, 'Host ditolak; gunakan SSH tunnel localhost');
+    if (domain) {
+      // Forwarded headers are accepted only from the same-host TLS/authenticated reverse proxy.
+      if (!['127.0.0.1','::1','::ffff:127.0.0.1'].includes(req.ip) || req.headers.host !== domain.host
+        || req.headers['x-forwarded-proto'] !== 'https' || typeof req.headers['x-backoffice-user'] !== 'string'
+        || !req.headers['x-backoffice-user'].trim()) throw new OfficeError(403, 'Proxy HTTPS dan login admin diperlukan');
+    } else if (!hosts.includes(req.headers.host ?? '')) throw new OfficeError(403, 'Host ditolak; gunakan SSH tunnel localhost');
     if (req.url.startsWith('/api/')) {
-      const sent = Buffer.from(req.headers.authorization ?? '');
-      const expected = Buffer.from(`Bearer ${token}`);
+      // Separate header preserves the browser's HTTP Basic Authorization for Nginx.
+      const custom = req.headers['x-backoffice-key'];
+      const sent = Buffer.from(typeof custom === 'string' ? custom : req.headers.authorization ?? '');
+      const expected = Buffer.from(typeof custom === 'string' ? token : `Bearer ${token}`);
       if (sent.length !== expected.length || !timingSafeEqual(sent, expected)) throw new OfficeError(401, 'Access key salah');
-      if (!['GET','HEAD'].includes(req.method) && !hosts.some(h => req.headers.origin === `http://${h}`)) throw new OfficeError(403, 'Origin ditolak');
+      if (!['GET','HEAD'].includes(req.method) && !origins.includes(req.headers.origin ?? '')) throw new OfficeError(403, 'Origin ditolak');
     }
   });
   app.setErrorHandler((e, _req, reply) => {
@@ -55,8 +69,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   if (!existsSync(keyFile)) writeFileSync(keyFile, randomBytes(32).toString('hex'), { mode: 0o600 });
   const key = readFileSync(keyFile, 'utf8').trim();
   if (!/^[a-f0-9]{64}$/.test(key)) throw new Error('Invalid access-key file');
-  const app = buildBackoffice(store, key, port);
+  const publicOrigin = process.env.BACKOFFICE_PUBLIC_ORIGIN || undefined;
+  const app = buildBackoffice(store, key, port, publicOrigin);
   process.once('SIGTERM', () => { void app.close(); }); process.once('SIGINT', () => { void app.close(); });
   await app.listen({ host: '127.0.0.1', port });
-  console.log(`Backoffice privat: http://localhost:${port}; access key tersimpan di ${keyFile}. Jangan proxy ke publik.`);
+  console.log(publicOrigin ? `Backoffice protected proxy: ${publicOrigin}/backoffice/; access key: ${keyFile}`
+    : `Backoffice privat: http://localhost:${port}; access key tersimpan di ${keyFile}. Jangan proxy ke publik tanpa konfigurasi mode HTTPS.`);
 }

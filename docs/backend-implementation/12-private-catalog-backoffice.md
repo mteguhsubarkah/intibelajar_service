@@ -1,5 +1,7 @@
 # Studio katalog privat — 21 Oktober 2026
 
+**Update akses domain:** mode opt-in HTTPS dengan login Nginx + access key kini disiapkan. Lihat [panduan domain backoffice](../deployment/backoffice-domain.md). Larangan proxy publik di panduan awal ini berlaku untuk mode loopback default; jangan mengeksposnya tanpa konfigurasi HTTPS/auth yang baru.
+
 ## Hasil
 
 Backoffice mandiri tersedia di `http://localhost:8010`, bukan di domain siswa. Editor topik/bab, inti/core, relasi antartopik, prasyarat antarinti, graf SVG yang dapat diklik, editor materi teks dua slide dengan pratinjau, impor awal lewat worker, dan ekspor manifest. Tidak memerlukan perubahan atau build repository Vue.

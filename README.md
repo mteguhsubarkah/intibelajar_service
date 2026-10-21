@@ -142,3 +142,5 @@ once to import the reviewed-source curriculum **draft**, or keep `npm run backof
 running for queued imports. Topic/core editors, relation graphs, two-slide lesson preview and
 manifest export are isolated from learner data. The existing publisher still requires content review.
 See [backoffice, official sources, API and Ubuntu update guide](docs/backend-implementation/12-private-catalog-backoffice.md).
+For explicitly enabled HTTPS domain access with Nginx login plus studio access key, see
+[protected domain setup](docs/deployment/backoffice-domain.md).
