@@ -1,0 +1,47 @@
+$ node node_modules/typescript/bin/tsc --noEmit
+
+<--- Last few GCs --->
+
+[28188:000001CB0C81F000]    20867 ms: Scavenge (interleaved) 324.8 (392.2) -> 284.8 (412.2) MB, pooled: 0 MB, 50.16 / 0.00 ms  (average mu = 0.991, current mu = 0.992) allocation failure; 
+[28188:000001CB0C81F000]    22232 ms: Scavenge (interleaved) 347.8 (414.6) -> 293.9 (419.3) MB, pooled: 0 MB, 66.74 / 0.00 ms  (average mu = 0.991, current mu = 0.992) allocation failure; 
+
+
+<--- Last few GCs --->
+
+[28188:000001CB0C81F000]    20867 ms: Scavenge (interleaved) 324.8 (392.2) -> 284.8 (412.2) MB, pooled: 0 MB, 50.16 / 0.00 ms  (average mu = 0.991, current mu = 0.992) allocation failure; 
+[28188:000001CB0C81F000]    22232 ms: Scavenge (interleaved) 347.8 (414.6) -> 293.9 (419.3) MB, pooled: 0 MB, 66.74 / 0.00 ms  (average mu = 0.991, current mu = 0.992) allocation failure; 
+
+FATAL ERROR: Zone Allocation failed - process out of memory
+----- Native stack trace -----
+
+FATAL ERROR: Zone Allocation failed - process out of memory
+----- Native stack trace -----
+
+ 1: 00007FF742F950BF 
+ 2: 00007FF741BBDD27 
+ 3: 00007FF741535BC6 
+ 4: 00007FF74238B3B8 
+ 5: 00007FF74238834C 
+ 6: 00007FF742378198 
+ 7: 00007FF7413DFB69 
+ 8: 00007FF74238EE59 
+ 9: 00007FF7423498BD 
+10: 00007FF74234B077 
+11: 00007FF74237DC01 
+12: 00007FF741385B38 
+13: 00007FF741385FFF 
+14: 00007FF7413BED4A 
+15: 00007FF7413949EB 
+16: 00007FF74140CA56 
+17: 00007FF74140B770 
+18: 00007FF74140956A 
+19: 00007FF741B319DF 
+20: 00007FF74140B04B 
+21: 00007FF7423AF2CF 
+22: 00007FF742ED954B 
+23: 00007FF741C13136 
+24: 00007FF7432D35B3 
+25: 00007FF848AE7374 
+26: 00007FF84AAFCC91 
+
+Exit: 134

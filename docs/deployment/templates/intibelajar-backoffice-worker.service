@@ -1,0 +1,20 @@
+[Unit]
+Description=IntiBelajar private curriculum draft worker
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/intibelajar_service
+# Replace with the absolute output of command -v node on this server.
+ExecStart=/usr/bin/node --import tsx scripts/backoffice/worker.ts
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

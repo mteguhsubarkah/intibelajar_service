@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-21",
+  "checks": [
+    "Private login succeeded",
+    "Imported workspace visible: 23 topics / 97 cores / 8 lessons",
+    "Graph: 3 trigonometry cores / 2 prerequisite arrows",
+    "Two-slide lesson opened and saved through UI; draft confirmation visible"
+  ],
+  "screenshot": "graph.png",
+  "published": false
+}

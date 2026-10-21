@@ -1,0 +1,133 @@
+openapi: 3.1.0
+info:
+  title: IntiBelajar private catalog backoffice
+  version: 0.1.0
+  description: |
+    Standalone loopback authoring server, accessed through SSH tunnel on port 8010.
+    Separate from canonical /v1. Draft JSON workspace only; no learner access or publication endpoint.
+    Authorization uses the local access-key file. POST requests also require an exact loopback Origin.
+servers:
+  - url: http://localhost:8010
+security:
+  - AccessKey: []
+paths:
+  /api/state:
+    get:
+      operationId: getDraftWorkspace
+      summary: Topics, cores, lessons, relations, provenance, jobs and strict publication findings.
+      responses:
+        '200':
+          description: Current workspace; question bodies and answer keys are excluded.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [revision, topics, lessons, topicRelations, subjects, sources, jobs, findings, audit]
+                properties:
+                  revision: {type: integer, minimum: 0}
+                  topics: {type: array, items: {type: object}}
+                  lessons: {type: array, items: {type: object}}
+                  topicRelations: {type: object}
+                  subjects: {type: object}
+                  sources: {type: object}
+                  jobs: {type: array, items: {type: object}}
+                  findings: {type: array, items: {type: object}}
+                  audit: {type: array, items: {type: object}}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+  /api/commands:
+    post:
+      operationId: saveDraftEntity
+      summary: Upsert a topic, core, relation, prerequisite or two-slide text lesson.
+      description: |
+        All changes reset review to PROPOSED and release sign-off to PENDING.
+        Cycle, reference, schema and alias validation runs before atomic persistence.
+        code identifies the entity; core.topic selects its topic; lesson.concepts is comma-separated.
+        relation.code is the requiring/source topic, relation.to its target; prerequisite.code is the dependent core.
+      parameters:
+        - $ref: '#/components/parameters/Origin'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [revision, kind, code]
+              properties:
+                revision: {type: integer, minimum: 0}
+                kind: {enum: [topic, core, relation, prerequisite, lesson]}
+                code: {type: string, maxLength: 120}
+                title: {type: string, maxLength: 240}
+                phase: {enum: [D, E, F, F+]}
+                source: {type: string, maxLength: 2000}
+                topic: {type: string}
+                definition: {type: string, maxLength: 2000}
+                objectives: {type: string, description: One objective per line.}
+                to: {type: string}
+                type: {enum: [REQUIRES, RELATED, HARD, SOFT]}
+                label: {type: string, maxLength: 200}
+                concepts: {type: string}
+                slide1: {type: string, maxLength: 2000}
+                slide2: {type: string, maxLength: 2000}
+      responses:
+        '200': {description: 'Draft saved, with new revision.'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '422': {$ref: '#/components/responses/Error'}
+  /api/imports:
+    post:
+      operationId: enqueueCurriculumSeed
+      summary: Enqueue the checked-in, version-pinned official-source seed; idempotent by SHA256.
+      parameters:
+        - $ref: '#/components/parameters/Origin'
+      requestBody: {$ref: '#/components/requestBodies/Revision'}
+      responses:
+        '202': {description: Existing or newly queued import job.}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+  /api/exports:
+    post:
+      operationId: exportDraftManifest
+      summary: Write a new manifest directory and return path plus strict review blockers; does not publish.
+      parameters:
+        - $ref: '#/components/parameters/Origin'
+      requestBody: {$ref: '#/components/requestBodies/Revision'}
+      responses:
+        '200': {description: 'Export directory, revision, and strict findings.'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+components:
+  securitySchemes:
+    AccessKey: {type: http, scheme: bearer, description: 'Random 32-byte local access key, not a JWT.'}
+  parameters:
+    Origin:
+      name: Origin
+      in: header
+      required: true
+      schema: {type: string}
+      description: Exact loopback origin matching the configured backoffice port, normally http://localhost:8010.
+  requestBodies:
+    Revision:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [revision]
+            properties:
+              revision: {type: integer, minimum: 0}
+  responses:
+    Error:
+      description: Explicit auth, origin, validation, revision conflict, or filesystem error.
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [message]
+            properties:
+              message: {type: string}
+              details: {type: array, items: {type: object}}

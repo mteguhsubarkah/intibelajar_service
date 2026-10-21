@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "version": "2026-10-21.1",
+  "scope": "Peta awal Matematika umum SMA fase E/F; bukan seluruh jenjang, bukan Matematika Tingkat Lanjut.",
+  "interpretation": "Nama bab, pemecahan menjadi inti, definisi, contoh slide, dan hubungan adalah usulan editorial IntiBelajar berdasarkan cakupan CP. Bukan susunan bab wajib pemerintah. Semua PROPOSED; tidak memuat soal evaluasi atau review fiktif.",
+  "sources": [
+    { "title": "Keputusan Kepala BSKAP 046/H/KR/2025, Lampiran II Matematika, bagian 5 dan 6", "url": "https://bpmpbabel.kemendikdasmen.go.id/PPID/wp-content/uploads/2025/07/KepKaBSKAP-046_2025-ttg-CP.pdf", "pdfPages": [118,119,120], "sha256": "45809d2c88a612f90ee5adbd60d71a8952527d6924c626d126ea6926ae3d3394", "checkedAt": "2026-10-21" },
+    { "title": "Kemendikdasmen 23 Juni 2026: perubahan CP 020/2026 terbatas Agama dan Budi Pekerti; CP mapel lain tetap 046/2025", "url": "https://www.kemendikdasmen.go.id/siaran-pers/15636-capaian-pembelajaran-baru-telah-terbit-yang-berubah-hanya-mata-pelajaran-agama-dan-budi-pekerti", "checkedAt": "2026-10-21" }
+  ],
+  "topics": [
+    { "code": "MAT.CP25.E.PANGKAT", "title": "Bilangan berpangkat", "phase": "E", "cores": [
+      { "code": "MAT.CP25.E.PANGKAT.SIFAT", "title": "Sifat operasi pangkat", "definition": "Perkalian dan pembagian bentuk berpangkat dapat disederhanakan dengan memperhatikan basis serta syarat operasinya.", "objectives": "Menjelaskan alasan aturan perkalian pangkat dengan basis sama" },
+      { "code": "MAT.CP25.E.PANGKAT.PECAHAN", "title": "Pangkat pecahan dan akar", "definition": "Pangkat rasional menghubungkan bentuk pangkat dengan akar, dengan pembatasan domain bilangan real yang sesuai.", "objectives": "Mengubah pangkat pecahan menjadi bentuk akar dan menjelaskan domainnya" },
+      { "code": "MAT.CP25.E.PANGKAT.MODEL", "title": "Penerapan bilangan berpangkat", "definition": "Bentuk berpangkat dapat menyatakan besaran dan perubahan berulang dalam masalah kontekstual.", "objectives": "Menggunakan sifat pangkat untuk menyelesaikan masalah" }
+    ]},
+    { "code": "MAT.CP25.E.LINEAR", "title": "Sistem pertidaksamaan linear dua variabel", "phase": "E", "cores": [
+      { "code": "MAT.CP25.E.LINEAR.BATAS", "title": "Garis batas pertidaksamaan", "definition": "Persamaan garis menjadi batas dua daerah; ketaksamaan menentukan sisi daerah dan apakah batasnya disertakan.", "objectives": "Menentukan garis batas dan menguji titik untuk memilih daerah" },
+      { "code": "MAT.CP25.E.LINEAR.IRISAN", "title": "Daerah penyelesaian sistem", "definition": "Penyelesaian sebuah sistem harus memenuhi seluruh pertidaksamaannya sekaligus.", "objectives": "Menentukan irisan daerah yang memenuhi sistem" },
+      { "code": "MAT.CP25.E.LINEAR.MODEL", "title": "Memodelkan kendala", "definition": "Kendala pada dua besaran dapat dituliskan sebagai sistem pertidaksamaan linear dua variabel.", "objectives": "Menyusun model kendala dan menafsirkan penyelesaiannya" }
+    ]},
+    { "code": "MAT.CP25.E.KUADRAT", "title": "Persamaan dan fungsi kuadrat", "phase": "E", "cores": [
+      { "code": "MAT.CP25.E.KUADRAT.AKAR", "title": "Akar persamaan kuadrat", "definition": "Akar membuat nilai polinom kuadrat menjadi nol; diskriminan membantu mengidentifikasi jenis akarnya, termasuk akar nonreal.", "objectives": "Menentukan akar persamaan kuadrat dan menafsirkan diskriminan" },
+      { "code": "MAT.CP25.E.KUADRAT.GRAFIK", "title": "Grafik dan titik puncak", "definition": "Grafik fungsi kuadrat berupa parabola dengan arah buka, sumbu simetri, dan titik puncak tertentu.", "objectives": "Menghubungkan bentuk aljabar dengan ciri grafik parabola" },
+      { "code": "MAT.CP25.E.KUADRAT.MODEL", "title": "Model kuadrat kontekstual", "definition": "Hubungan kuadrat dapat dipakai untuk memodelkan masalah dengan tetap memeriksa satuan dan domain konteks.", "objectives": "Membentuk model kuadrat dan menafsirkan solusi yang sesuai konteks" }
+    ]},
+    { "code": "MAT.CP25.E.EKSPONEN", "title": "Persamaan dan fungsi eksponensial", "phase": "E", "cores": [
+      { "code": "MAT.CP25.E.EKSPONEN.PERSAMAAN", "title": "Persamaan eksponensial berbasis sama", "definition": "Untuk basis positif selain satu, kesamaan nilai pangkat berbasis sama dapat dihubungkan dengan kesamaan eksponennya.", "objectives": "Menyelesaikan persamaan eksponensial dengan basis sama" },
+      { "code": "MAT.CP25.E.EKSPONEN.FUNGSI", "title": "Fungsi eksponensial", "definition": "Pada fungsi eksponensial, variabel berada pada eksponen; perubahan input yang sama memberikan faktor perubahan nilai tertentu.", "objectives": "Membedakan pertumbuhan eksponensial dari pertumbuhan linear" },
+      { "code": "MAT.CP25.E.EKSPONEN.MODEL", "title": "Pertumbuhan dan peluruhan", "definition": "Perubahan dengan faktor tetap per periode dapat dimodelkan dengan fungsi eksponensial.", "objectives": "Menafsirkan faktor pertumbuhan atau peluruhan dalam model" }
+    ]},
+    { "code": "MAT.CP25.E.TRIG", "title": "Perbandingan trigonometri sudut lancip", "phase": "E", "cores": [
+      { "code": "MAT.CP25.E.TRIG.SISI", "title": "Sisi relatif terhadap sudut", "definition": "Pada segitiga siku-siku, nama sisi depan dan samping bergantung pada sudut acuan; hipotenusa berhadapan dengan sudut siku-siku.", "objectives": "Mengidentifikasi depan, samping, dan hipotenusa terhadap sudut acuan" },
+      { "code": "MAT.CP25.E.TRIG.RASIO", "title": "Rasio sinus, cosinus, tangen", "definition": "Sinus, cosinus, dan tangen menghubungkan perbandingan panjang sisi segitiga siku-siku dengan sudut lancipnya.", "objectives": "Memilih rasio yang menghubungkan sisi diketahui dan sisi dicari" },
+      { "code": "MAT.CP25.E.TRIG.APLIKASI", "title": "Penerapan rasio trigonometri", "definition": "Masalah jarak atau tinggi dapat dimodelkan dengan segitiga siku-siku dan sudut acuan yang jelas.", "objectives": "Membuat sketsa model dan menggunakan rasio untuk menentukan panjang" }
+    ]},
+    { "code": "MAT.CP25.E.DATA", "title": "Representasi dan interpretasi data", "phase": "E", "cores": [
+      { "code": "MAT.CP25.E.DATA.KUARTIL", "title": "Kuartil dan jangkauan interkuartil", "definition": "Kuartil membagi data terurut menjadi bagian-bagian; selisih kuartil atas dan bawah merangkum sebaran bagian tengah data.", "objectives": "Menghitung dan menafsirkan kuartil serta jangkauan interkuartil" },
+      { "code": "MAT.CP25.E.DATA.DIAGRAM", "title": "Box plot, histogram, dan dot plot", "definition": "Pilihan diagram perlu disesuaikan dengan jenis data dan tujuan perbandingan agar informasi tidak menyesatkan.", "objectives": "Memilih dan membaca diagram yang sesuai karakteristik data" },
+      { "code": "MAT.CP25.E.DATA.PENCAR", "title": "Diagram pencar dan evaluasi laporan", "definition": "Diagram pencar menunjukkan pola dua variabel numerik; laporan statistik perlu dinilai dari representasi, ukuran, dan konteksnya.", "objectives": "Menjelaskan pola dua variabel dan mengevaluasi penyajian laporan statistik" }
+    ]},
+    { "code": "MAT.CP25.F.BARISAN", "title": "Barisan dan deret", "phase": "F", "cores": [
+      { "code": "MAT.CP25.F.BARISAN.ARITMETIKA", "title": "Barisan dan deret aritmetika", "definition": "Barisan aritmetika mempunyai beda tetap, sedangkan deretnya menjumlahkan suku-suku barisan tersebut.", "objectives": "Menentukan suku dan jumlah suku barisan aritmetika" },
+      { "code": "MAT.CP25.F.BARISAN.GEOMETRI", "title": "Barisan dan deret geometri", "definition": "Barisan geometri mempunyai rasio tetap; deret geometri menjumlahkan suku-sukunya.", "objectives": "Menghubungkan rasio tetap dengan rumus suku dan jumlah deret" },
+      { "code": "MAT.CP25.F.BARISAN.MODEL", "title": "Pemodelan dengan barisan", "definition": "Pola perubahan diskret dapat diuji sebagai model beda tetap atau rasio tetap sesuai situasinya.", "objectives": "Memilih model barisan yang sesuai dan memeriksa asumsi model" }
+    ]},
+    { "code": "MAT.CP25.F.FINANSIAL", "title": "Bunga, pinjaman, dan anuitas", "phase": "F", "cores": [
+      { "code": "MAT.CP25.F.FINANSIAL.BUNGA", "title": "Bunga tunggal dan majemuk", "definition": "Bunga tunggal dihitung dari pokok awal, sedangkan bunga majemuk memperhitungkan akumulasi saldo pada setiap periode.", "objectives": "Membandingkan pertumbuhan saldo pada kedua model bunga" },
+      { "code": "MAT.CP25.F.FINANSIAL.ANUITAS", "title": "Pinjaman dan anuitas", "definition": "Pembayaran berkala dalam model anuitas terkait saldo pinjaman, bunga per periode, dan jumlah periode.", "objectives": "Memodelkan pembayaran berkala dan perubahan saldo pinjaman" },
+      { "code": "MAT.CP25.F.FINANSIAL.PARAMETER", "title": "Pengaruh parameter finansial", "definition": "Perubahan tingkat bunga dan periode pembayaran dapat dibandingkan secara numerik atau grafis pada model yang sama.", "objectives": "Menyelidiki dampak perubahan bunga dan periode terhadap hasil model" }
+    ]},
+    { "code": "MAT.CP25.F.FUNGSI", "title": "Invers, komposisi, dan transformasi fungsi", "phase": "F", "cores": [
+      { "code": "MAT.CP25.F.FUNGSI.KOMPOSISI", "title": "Komposisi fungsi", "definition": "Komposisi memakai keluaran sebuah fungsi sebagai masukan fungsi berikutnya dengan memperhatikan domain.", "objectives": "Menentukan komposisi dan menafsirkan urutan proses" },
+      { "code": "MAT.CP25.F.FUNGSI.INVERS", "title": "Fungsi invers", "definition": "Invers membalik hubungan masukan dan keluaran ketika fungsi memenuhi syarat keberadaan invers pada domain yang dipilih.", "objectives": "Menentukan invers dan memeriksa domain serta range" },
+      { "code": "MAT.CP25.F.FUNGSI.TRANSFORMASI", "title": "Transformasi fungsi", "definition": "Perubahan pada bentuk fungsi dapat menggeser, merefleksikan, atau menskalakan grafiknya.", "objectives": "Menggunakan transformasi fungsi linear, kuadrat, atau eksponensial untuk memodelkan situasi" }
+    ]},
+    { "code": "MAT.CP25.F.LINGKARAN", "title": "Hubungan unsur-unsur lingkaran", "phase": "F", "cores": [
+      { "code": "MAT.CP25.F.LINGKARAN.UNSUR", "title": "Unsur dan sudut lingkaran", "definition": "Pusat, jari-jari, tali busur, dan sudut membentuk hubungan geometris yang dapat dijelaskan dalam satu lingkaran.", "objectives": "Mengidentifikasi unsur lingkaran dan menjelaskan hubungannya" },
+      { "code": "MAT.CP25.F.LINGKARAN.HUBUNGAN", "title": "Hubungan sudut dan busur", "definition": "Sudut dan busur yang bersesuaian dapat dihubungkan untuk menyelesaikan masalah geometri lingkaran.", "objectives": "Menjelaskan alasan hubungan sudut yang menghadap busur yang sama" },
+      { "code": "MAT.CP25.F.LINGKARAN.MASALAH", "title": "Masalah geometri lingkaran", "definition": "Pemecahan masalah lingkaran memerlukan pemilihan hubungan unsur yang relevan dan penjelasan alasan geometris.", "objectives": "Menyusun penyelesaian masalah lingkaran dengan alasan yang dapat diperiksa" }
+    ]},
+    { "code": "MAT.CP25.F.STATISTIKA", "title": "Penyelidikan statistika dua variabel", "phase": "F", "cores": [
+      { "code": "MAT.CP25.F.STATISTIKA.ASOSIASI", "title": "Asosiasi dua variabel", "definition": "Asosiasi dapat diselidiki pada dua variabel kategorikal maupun numerikal menggunakan representasi yang sesuai.", "objectives": "Menyelidiki dan menjelaskan pola asosiasi dua variabel" },
+      { "code": "MAT.CP25.F.STATISTIKA.REGRESI", "title": "Model linear terbaik", "definition": "Garis yang mendekati pola data numerik dapat membantu menjelaskan hubungan dan membuat perkiraan dalam batas konteks data.", "objectives": "Memperkirakan model linear yang sesuai dan menafsirkan parameternya" },
+      { "code": "MAT.CP25.F.STATISTIKA.KAUSAL", "title": "Asosiasi dan sebab akibat", "definition": "Hubungan statistik dua variabel tidak dengan sendirinya membuktikan hubungan sebab akibat.", "objectives": "Membedakan temuan asosiasi dari klaim sebab akibat" }
+    ]},
+    { "code": "MAT.CP25.F.PELUANG", "title": "Peluang majemuk dan bersyarat", "phase": "F", "cores": [
+      { "code": "MAT.CP25.F.PELUANG.CACAH", "title": "Permutasi dan kombinasi", "definition": "Permutasi memperhatikan urutan, sedangkan kombinasi menghitung pilihan tanpa membedakan urutan.", "objectives": "Memilih aturan pencacahan sesuai makna hasil percobaan" },
+      { "code": "MAT.CP25.F.PELUANG.MAJEMUK", "title": "Kejadian majemuk dan frekuensi harapan", "definition": "Hubungan antar kejadian menentukan cara menghitung peluang gabungan dan frekuensi harapan.", "objectives": "Membedakan kejadian saling lepas dan saling bebas serta menghitung peluangnya" },
+      { "code": "MAT.CP25.F.PELUANG.BERSYARAT", "title": "Peluang bersyarat", "definition": "Informasi bahwa suatu kejadian telah terjadi mengubah ruang acuan ketika menentukan peluang kejadian lainnya.", "objectives": "Menghitung peluang bersyarat dan menghubungkannya dengan kebebasan kejadian" }
+    ]}
+  ],
+  "relations": [
+    { "code": "MAT.CP25.E.EKSPONEN", "to": "MAT.CP25.E.PANGKAT", "type": "REQUIRES", "label": "Usulan editorial: aturan pangkat membantu persamaan eksponensial" },
+    { "code": "MAT.CP25.F.FINANSIAL", "to": "MAT.CP25.F.BARISAN", "type": "REQUIRES", "label": "Usulan editorial: pola barisan mendukung model pembayaran" },
+    { "code": "MAT.CP25.F.STATISTIKA", "to": "MAT.CP25.E.DATA", "type": "REQUIRES", "label": "Usulan editorial: membaca data mendukung penyelidikan dua variabel" },
+    { "code": "MAT.CP25.F.FUNGSI", "to": "MAT.CP25.E.KUADRAT", "type": "RELATED", "label": "Usulan editorial: kuadrat sebagai salah satu contoh transformasi fungsi" }
+  ],
+  "prerequisites": [
+    { "code": "MAT.CP25.E.TRIG.RASIO", "to": "MAT.CP25.E.TRIG.SISI", "type": "HARD" },
+    { "code": "MAT.CP25.E.TRIG.APLIKASI", "to": "MAT.CP25.E.TRIG.RASIO", "type": "HARD" },
+    { "code": "MAT.CP25.E.EKSPONEN.PERSAMAAN", "to": "MAT.CP25.E.PANGKAT.SIFAT", "type": "HARD" },
+    { "code": "MAT.CP25.F.STATISTIKA.REGRESI", "to": "MAT.CP25.E.DATA.PENCAR", "type": "SOFT" },
+    { "code": "MAT.CP25.F.PELUANG.BERSYARAT", "to": "MAT.CP25.F.PELUANG.MAJEMUK", "type": "HARD" }
+  ],
+  "lessons": [
+    { "code": "MAT.CP25.E.TRIG.L01", "title": "Memilih rasio trigonometri", "concepts": "MAT.CP25.E.TRIG.SISI,MAT.CP25.E.TRIG.RASIO", "slide1": "Mulai dari sudut acuan pada segitiga siku-siku. Sisi depan berhadapan dengan sudut acuan. Sisi samping menempel pada sudut acuan selain hipotenusa. Hipotenusa berhadapan dengan sudut siku-siku. Ketika sudut acuan berubah, nama depan dan samping dapat bertukar.", "slide2": "Hubungkan sisi yang diketahui dan dicari. sin = depan / hipotenusa; cos = samping / hipotenusa; tan = depan / samping. Contoh buatan: sebuah segitiga memiliki depan 3, samping 4, dan hipotenusa 5 terhadap sudut acuan. Maka sin = 3/5, cos = 4/5, dan tan = 3/4. Jelaskan alasan memilih rasionya, bukan hanya menghafal hasil." }
+  ]
+}

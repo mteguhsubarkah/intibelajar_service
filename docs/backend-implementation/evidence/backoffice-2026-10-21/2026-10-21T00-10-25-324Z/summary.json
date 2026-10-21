@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-21T00:11:05.765Z",
+  "node": "v24.19.0",
+  "results": [
+    {
+      "name": "typecheck",
+      "exit": 134,
+      "pass": false
+    },
+    {
+      "name": "module-boundaries",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "name": "browser-script-syntax",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "name": "backoffice-tests",
+      "exit": 0,
+      "pass": true
+    }
+  ]
+}

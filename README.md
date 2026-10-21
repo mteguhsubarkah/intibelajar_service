@@ -134,3 +134,11 @@ account are configured. See [setup and FE/BE connection inventory](docs/backend-
 Progress/mastery/stats, report UI, opt-in device imports, canonical tutor and intake now have
 local connections. See [current status and DeepSeek/OpenRouter setup](docs/backend-implementation/11-connected-fe-be-progress-tutor-ocr.md).
 External providers remain opt-in; only authored synthetic fixtures are eligible for development egress.
+
+## Private catalog backoffice
+
+Run `npm run backoffice` and open http://localhost:8010. Run `npm run backoffice:seed`
+once to import the reviewed-source curriculum **draft**, or keep `npm run backoffice:worker`
+running for queued imports. Topic/core editors, relation graphs, two-slide lesson preview and
+manifest export are isolated from learner data. The existing publisher still requires content review.
+See [backoffice, official sources, API and Ubuntu update guide](docs/backend-implementation/12-private-catalog-backoffice.md).

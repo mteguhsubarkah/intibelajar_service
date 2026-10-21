@@ -1,0 +1,18 @@
+$ node --import tsx --test --test-concurrency=1 test/backoffice.test.ts
+✔ backoffice: auth, exact Host, CSRF Origin, private data and response headers (1677.0198ms)
+✔ backoffice: reject cyclic and unknown references atomically, no revision lost (1052.4325ms)
+✔ backoffice: exactly two lesson slides, preservation of canonical manifest and strict review gate (2448.0657ms)
+✔ backoffice worker: durable idempotent seed, lease fencing, recovery and no overwrite of edits (2444.4895ms)
+✔ backoffice: failed mutation cannot partially persist, review cannot be supplied by client (1684.9267ms)
+✔ backoffice: structured lesson and later-slide checks cannot be silently flattened (872.9992ms)
+✔ backoffice: standalone OpenAPI 3.1 contract validates (712.1401ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14266.9941
+
+Exit: 0

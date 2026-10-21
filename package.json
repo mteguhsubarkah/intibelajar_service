@@ -7,6 +7,10 @@
     "node": ">=22"
   },
   "scripts": {
+    "backoffice": "tsx scripts/backoffice/server.ts",
+    "backoffice:worker": "tsx scripts/backoffice/worker.ts",
+    "backoffice:seed": "tsx scripts/backoffice/worker.ts --enqueue --once",
+    "backoffice:verify": "node scripts/backoffice/verify.mjs",
     "local:dev": "node scripts/local-dev.mjs",
     "local:check": "node scripts/local/smoke.mjs",
     "dev": "tsx src/main.ts",
