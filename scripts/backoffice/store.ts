@@ -103,10 +103,13 @@ export function command(s: State, input: Record<string, unknown>) {
   }
   if (kind === 'topic') {
     const old = m.topics.find(t => t.code === c);
+    const subject = input.subject === undefined ? old?.subject ?? 'MAT' : str(input.subject, 3);
+    if (!m.subjects.subjects.some(s => s.code === subject)) throw new OfficeError(422, 'Pelajaran tidak dikenal');
+    if (old && old.subject !== subject) throw new OfficeError(422, 'Topik lama tidak boleh dipindahkan antar pelajaran');
     const phase = str(input.phase);
     if (!['D','E','F','F+'].includes(phase)) throw new OfficeError(422, 'Fase tidak valid');
     upsert(m.topics, { ...(old ?? { schemaVersion: 1, subject: 'MAT', availability: 'PLANNED', bekal: [], aliases: [], units: [], concepts: [], prerequisites: [] }),
-      code: c, title: str(input.title, 240), phase: phase as 'E', review: proposed(evidence) }, x => x.code);
+      code: c, subject, title: str(input.title, 240), phase: phase as 'E', review: proposed(evidence) }, x => x.code);
   } else if (kind === 'core') {
     const topic = m.topics.find(t => t.code === input.topic);
     if (!topic) throw new OfficeError(422, 'Topik tidak ditemukan');

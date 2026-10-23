@@ -41,7 +41,7 @@ export function buildBackoffice(store: Store, token: string, port = 8010, public
       return reply.code((e as {statusCode:number}).statusCode).send({message:'Body tidak valid / terlalu besar'});
     return reply.code(500).send({ message: 'Gagal menyimpan draf; tidak ada publikasi dilakukan' });
   });
-  for (const [url, file, type] of [['/', 'index.html', 'text/html'], ['/app.js', 'app.js', 'text/javascript'], ['/style.css', 'style.css', 'text/css'], ['/openapi.yaml', 'openapi.yaml', 'application/yaml']])
+  for (const [url, file, type] of [['/', 'index.html', 'text/html'], ['/app.js', 'app.js', 'text/javascript'], ['/catalog-view.js','catalog-view.js','text/javascript'], ['/report.css','report.css','text/css'], ['/style.css', 'style.css', 'text/css'], ['/openapi.yaml', 'openapi.yaml', 'application/yaml']])
     app.get(url!, async (_req, reply) => reply.type(type!).send(readFileSync(new URL(`../../backoffice/${file}`, import.meta.url), 'utf8')));
   app.get('/api/state', async () => {
     const s = store.read();

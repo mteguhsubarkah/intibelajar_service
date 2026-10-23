@@ -62,6 +62,7 @@ paths:
                 code: {type: string, maxLength: 120}
                 title: {type: string, maxLength: 240}
                 phase: {enum: [D, E, F, F+]}
+                subject: {type: string, description: Existing subject code. Defaults to existing subject or MAT; changing an existing topic subject is rejected.}
                 source: {type: string, maxLength: 2000}
                 topic: {type: string}
                 definition: {type: string, maxLength: 2000}

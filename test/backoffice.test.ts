@@ -14,6 +14,18 @@ const fixture = () => {
 };
 const topic = (code = 'MAT.TEST') => ({ kind: 'topic', code, title: 'Topik uji', phase: 'E' });
 const core = (code = 'MAT.TEST.C01') => ({ kind: 'core', code, topic: 'MAT.TEST', title: 'Inti uji', definition: 'Definisi yang ditulis editor', objectives: 'Menjelaskan inti' });
+
+test('backoffice: explicit subject on create, retained on edit, unknown and reassignment rejected', () => {
+  const f=fixture();try{
+    f.store.change(0,'create',s=>command(s,{...topic('FIS.TEST'),subject:'FIS'}));
+    assert.equal(f.store.read().manifest.topics.find(t=>t.code==='FIS.TEST')?.subject,'FIS');
+    f.store.change(1,'edit',s=>command(s,{...topic('FIS.TEST'),title:'Updated'}));
+    assert.equal(f.store.read().manifest.topics.find(t=>t.code==='FIS.TEST')?.subject,'FIS');
+    assert.throws(()=>f.store.change(2,'bad',s=>command(s,{...topic('FIS.TEST'),subject:'MAT'})));
+    assert.throws(()=>f.store.change(2,'bad',s=>command(s,{...topic('ZZZ.TEST'),subject:'ZZZ'})));
+    assert.equal(f.store.read().revision,2);
+  }finally{f.done();}
+});
 test('backoffice: auth, exact Host, CSRF Origin, private data and response headers', async () => {
   const f = fixture(), app = buildBackoffice(f.store, 'a'.repeat(64));
   const headers = { host: 'localhost:8010', authorization: 'Bearer ' + 'a'.repeat(64) };

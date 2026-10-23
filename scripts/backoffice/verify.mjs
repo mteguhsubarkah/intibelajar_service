@@ -2,13 +2,14 @@ import { spawnSync } from 'node:child_process';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 
-const dir = resolve('docs/backend-implementation/evidence/backoffice-2026-10-21', new Date().toISOString().replace(/[:.]/g, '-'));
+const dir = resolve('docs/backend-implementation/evidence/backoffice-' + new Date().toISOString().slice(0,10), new Date().toISOString().replace(/[:.]/g, '-'));
 mkdirSync(dir, { recursive: true });
 const checks = [
   ['typecheck', ['node_modules/typescript/bin/tsc', '--noEmit']],
   ['module-boundaries', ['scripts/check-boundaries.mjs']],
   ['browser-script-syntax', ['--check', 'backoffice/app.js']],
-  ['backoffice-tests', ['--import', 'tsx', '--test', '--test-concurrency=1', 'test/backoffice.test.ts']],
+  ['report-script-syntax', ['--check', 'backoffice/catalog-view.js']],
+  ['backoffice-tests', ['--import', 'tsx', '--test', '--test-concurrency=1', 'test/backoffice.test.ts', 'test/backoffice-view.test.ts']],
 ];
 const results = [];
 for (const [name, args] of checks) {

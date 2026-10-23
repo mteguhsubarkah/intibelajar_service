@@ -1,0 +1,23 @@
+$ node --import tsx --test --test-concurrency=1 test/backoffice.test.ts test/backoffice-view.test.ts
+✔ subject and phase filter selects topics, cores, lessons, sources and cross-scope relations (5.3132ms)
+✔ report separates subjects and levels, includes graph, all cores, and escapes authored text (124.3346ms)
+✔ large report retains every node and cross-page dependency without oversized graphs (2.5932ms)
+✔ backoffice: explicit subject on create, retained on edit, unknown and reassignment rejected (822.7395ms)
+✔ backoffice: auth, exact Host, CSRF Origin, private data and response headers (923.4742ms)
+✔ backoffice: reject cyclic and unknown references atomically, no revision lost (642.5495ms)
+✔ backoffice: exactly two lesson slides, preservation of canonical manifest and strict review gate (1204.5581ms)
+✔ backoffice worker: durable idempotent seed, lease fencing, recovery and no overwrite of edits (942.9154ms)
+✔ backoffice: failed mutation cannot partially persist, review cannot be supplied by client (529.1479ms)
+✔ backoffice: structured lesson and later-slide checks cannot be silently flattened (449.1929ms)
+✔ backoffice: standalone OpenAPI 3.1 contract validates (315.7716ms)
+✔ backoffice HTTPS proxy: exact domain, transport, authenticated proxy, separate access key and Origin (483.5768ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9469.12
+
+Exit: 0
