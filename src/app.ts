@@ -43,7 +43,8 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   const db=options.db??connect(config.databaseUrl), mailbox:identity.Mailbox=new Map();
   const ocr=ocrConfiguration();
   const traces=telemetry(options.spanProcessors);
-  const app=Fastify({bodyLimit:32768,requestTimeout:10000,connectionTimeout:10000,trustProxy:false,
+  // Pilot: only the local Nginx is trusted, so req.ip is the client (per-IP rate limits) and req.protocol its scheme.
+  const app=Fastify({bodyLimit:32768,requestTimeout:10000,connectionTimeout:10000,trustProxy:config.trustProxy,
     disableRequestLogging:true,genReqId:()=>uuid(),logger:{level:'info',
       redact:{paths:['req','res','err','body','headers','email','guardianEmail','token','cookie','authorization','password','displayName'],remove:true},
       serializers:{req:()=>({}),res:()=>({}),err:()=>({type:'Error',message:'Request failed',stack:''})},...(options.logStream?{stream:options.logStream}:{})}});
@@ -73,6 +74,8 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
       next.count++;limits.set(key,next);if(next.count>(authCommand?20:60))fail(429,'RATE_LIMITED');
     }
     if(!['GET','HEAD','OPTIONS'].includes(req.method)) {
+      // Pilot: a write must arrive over https at Nginx; the Origin check below stays exact.
+      if(config.mode==='pilot'&&req.protocol!=='https') fail(403,'CSRF_FAILED');
       if(req.headers.origin!==config.origin || (req.headers['sec-fetch-site']!==undefined&&req.headers['sec-fetch-site']!=='same-origin')) fail(403,'CSRF_FAILED');
       const imageUpload=req.method==='PUT'&&route==='/v1/question-intakes/:intakeId/image'&&['image/jpeg','image/png','image/webp'].includes(req.headers['content-type']??'');
       if(!imageUpload&&req.headers['content-type']?.split(';')[0]?.trim()!=='application/json') fail(415,'UNSUPPORTED_MEDIA_TYPE');
@@ -146,7 +149,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     const tables=await sql<{count:string}>`select count(*) from information_schema.tables where table_schema='public' and table_name in
       ('learner','guardian','app_user','auth_identity','auth_session','auth_transaction','student_profile','consent_record','deletion_request','erasure_receipt','audit_event','idempotency_record','job')`.execute(db);
     if(result.rows[0]!.version<160000||tables.rows[0]!.count!=='13'||!await verifyMigrations(db)||(await restoredSubjects(db,config)).length)fail(503,'DEPENDENCY_UNAVAILABLE');
-    return {status:'ready',environment:config.mode,syntheticOnly:true,features:config.features,blockers:integrationBlockers.filter(b=>(!config.google||b!=='GOOGLE_OIDC_NOT_CONFIGURED')&&(!config.email||b!=='EMAIL_DELIVERY_NOT_CONFIGURED'))};
+    return {status:'ready',environment:config.mode,syntheticOnly:config.mode!=='pilot',features:config.features,blockers:integrationBlockers.filter(b=>(!config.google||b!=='GOOGLE_OIDC_NOT_CONFIGURED')&&(!config.email||b!=='EMAIL_DELIVERY_NOT_CONFIGURED'))};
     }catch{fail(503,'DEPENDENCY_UNAVAILABLE');}
   });
   route('GET','/v1/auth/session','public',async req=>{

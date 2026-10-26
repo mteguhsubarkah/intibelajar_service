@@ -1,0 +1,13 @@
+KILLED   writes over http accepted in pilot (exit 1) — CSRF is not weakened: wrong or missing Origin, cross-site, or a writ | only the local proxy is believed: a forged X-Forwarded-For or -Proto | pilot app: exact Origin and https for writes, per-client rate limits
+KILLED   proxy never trusted (real IP lost) (exit 1) — the exact Origin over https passes the CSRF check (and the guest tri | rate limits count the real client: one IP is limited, another is not | the session cookie stays __Host-, Secure, HttpOnly, SameSite=Lax, an | pilot app: exact Origin and https for writes, per-client rate limits
+KILLED   Origin check loosened to the domain suffix (exit 1) — CSRF is not weakened: wrong or missing Origin, cross-site, or a writ | pilot app: exact Origin and https for writes, per-client rate limits
+KILLED   pilot accepts an http origin (exit 1) — pilot configuration: accepted only as an exact https origin behind t
+KILLED   pilot accepts automatic onboarding consent (exit 1) — pilot configuration: accepted only as an exact https origin behind t
+KILLED   pilot accepts the guest trial (exit 1) — pilot configuration: accepted only as an exact https origin behind t
+KILLED   pilot accepts synthetic fixtures (exit 1) — pilot configuration: accepted only as an exact https origin behind t
+KILLED   any trusted proxy accepted (exit 1) — pilot configuration: accepted only as an exact https origin behind t
+KILLED   development accepts TRUST_PROXY (exit 1) — development and test are unchanged: loopback origin only, no proxy t
+9/9 mutations killed
+exit 0
+src/config.ts: OK
+src/app.ts: OK

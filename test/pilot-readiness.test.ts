@@ -8,3 +8,15 @@ test('pilot check never treats configured credentials or adult test acknowledgme
  assert.equal(pilotReadiness({APP_ORIGIN:'http://example.com'}).checks[0]?.ready,false);
  assert.equal(pilotReadiness({APP_ORIGIN:'https://user:pass@example.com'}).checks[0]?.ready,false);
 });
+test('a valid pilot runtime passes only the runtime gate; the consent, enrollment, privacy and AI gates stay closed',()=>{
+ const env={NODE_ENV:'production',RUNTIME_MODE:'pilot',APP_ORIGIN:'https://intibelajar.com',TRUST_PROXY:'127.0.0.1',
+  DATABASE_URL:'postgresql://u:p@127.0.0.1:5432/intibelajar_pilot',APP_KEY:'a'.repeat(64)};
+ const report=pilotReadiness(env);
+ assert.equal(report.checks.find(c=>c.id==='PRODUCTION_RUNTIME')?.ready,true);
+ assert.equal(report.syntheticRuntimeOnly,false);
+ assert.equal(report.ready,false);
+ for(const id of ['REAL_CONSENT_POLICY','ADULT_ENROLLMENT','EMAIL_ENROLLMENT','PRIVACY_OPERATIONS','REAL_AI_DATA'])assert.equal(report.checks.find(c=>c.id===id)?.ready,false,id);
+ // Automatic consent makes the runtime itself invalid.
+ assert.equal(pilotReadiness({...env,SELF_ONBOARDING_CONSENT:'true'}).checks.find(c=>c.id==='PRODUCTION_RUNTIME')?.ready,false);
+ assert.equal(pilotReadiness({...env,FEATURE_GUEST_TRIAL:'true'}).checks.find(c=>c.id==='PRODUCTION_RUNTIME')?.ready,false);
+});

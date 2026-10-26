@@ -1,6 +1,9 @@
 export interface Config {
   google?: {clientId:string;clientSecret:string;testEmail:string};
-  mode: 'development' | 'test'; databaseUrl: string; origin: string; host: string; port: number;
+  /** 'pilot': the private adult pilot on a public HTTPS origin behind the local Nginx (RUNTIME_MODE=pilot, NODE_ENV=production). */
+  mode: 'development' | 'test' | 'pilot'; databaseUrl: string; origin: string; host: string; port: number;
+  /** The proxy whose X-Forwarded-For/-Proto is believed: the local Nginx in pilot mode, nobody otherwise. */
+  trustProxy: string | false;
   key: Buffer; synthetic: boolean; idleSeconds: number; absoluteSeconds: number;
   /** SELF_ONBOARDING_CONSENT=true: siswa memberi izin sendiri saat onboarding, tanpa guardian. */
   selfConsent: boolean;
@@ -17,16 +20,36 @@ export const features = Object.freeze({ aiDiagnosis: false, aiTutor: false, inta
   legacyFacade: false, productAnalytics: false, streakFreeze: false, guestEvaluation: false,
   /** FEATURE_GUEST_TRIAL=true: a visitor of /coba gets a 24-hour trial account so the server grades them like a learner. */
   guestTrial: false });
+const LOOPBACK = ['localhost', '127.0.0.1', '[::1]'];
 export function readConfig(env = process.env): Config {
-  if (!['development', 'test'].includes(env.NODE_ENV ?? 'development'))
-    throw new Error('Production is disabled: Slice 0 supports synthetic development/test only');
+  // Pilot: an explicit pair, NODE_ENV=production and RUNTIME_MODE=pilot. Every development-only integration keys on
+  // NODE_ENV=development (local Google, DeepSeek, OCR, the synthetic mailbox, the grading log), so all of them stay off.
+  const pilot = env.RUNTIME_MODE === 'pilot';
+  if (env.RUNTIME_MODE !== undefined && !pilot) throw new Error('RUNTIME_MODE supports pilot only');
+  if (pilot ? env.NODE_ENV !== 'production' : !['development', 'test'].includes(env.NODE_ENV ?? 'development'))
+    throw new Error(pilot ? 'RUNTIME_MODE=pilot requires NODE_ENV=production'
+      : 'Production is disabled: use RUNTIME_MODE=pilot for the private pilot, otherwise development/test only');
   const safeUrl=(value:string)=>{try{return new URL(value);}catch{throw new Error('Invalid URL configuration');}};
   const url = safeUrl(env.DATABASE_URL ?? '');
   if (!['postgres:', 'postgresql:'].includes(url.protocol) || !['localhost', '127.0.0.1', '[::1]'].includes(url.hostname))
     throw new Error('A loopback PostgreSQL DATABASE_URL is required');
-  const origin = safeUrl(env.APP_ORIGIN ?? 'http://localhost:5173');
-  if (!['localhost', '127.0.0.1', '[::1]'].includes(origin.hostname) || origin.origin !== (env.APP_ORIGIN ?? origin.origin))
-    throw new Error('APP_ORIGIN must be an exact loopback origin');
+  const origin = safeUrl(env.APP_ORIGIN ?? (pilot ? '' : 'http://localhost:5173'));
+  if (pilot) {
+    // Exactly one public HTTPS origin, written as an origin (no path, port defaults, credentials or IP address).
+    if (origin.protocol !== 'https:' || origin.origin !== env.APP_ORIGIN || origin.username || origin.password
+        || LOOPBACK.includes(origin.hostname) || /^[\d.]+$|^\[/.test(origin.hostname) || !origin.hostname.includes('.'))
+      throw new Error('Pilot APP_ORIGIN must be an exact public https origin such as https://intibelajar.com');
+    // No synthetic identities and no automatic consent for real people.
+    if (env.SYNTHETIC_FIXTURES === 'true') throw new Error('SYNTHETIC_FIXTURES must be off in pilot mode');
+    if (env.SELF_ONBOARDING_CONSENT === 'true') throw new Error('SELF_ONBOARDING_CONSENT grants consent automatically; refused in pilot mode');
+    if (env.FEATURE_GUEST_TRIAL === 'true') throw new Error('FEATURE_GUEST_TRIAL grants consent automatically; refused in pilot mode');
+    // Only the local Nginx may speak for the client (real IP for rate limits, https for writes).
+    if (!['127.0.0.1', '::1'].includes(env.TRUST_PROXY ?? '')) throw new Error('Pilot mode requires TRUST_PROXY=127.0.0.1 (the local Nginx)');
+  } else {
+    if (!LOOPBACK.includes(origin.hostname) || origin.origin !== (env.APP_ORIGIN ?? origin.origin))
+      throw new Error('APP_ORIGIN must be an exact loopback origin');
+    if (env.TRUST_PROXY !== undefined) throw new Error('TRUST_PROXY is for pilot mode only');
+  }
   const key = Buffer.from(env.APP_KEY ?? '', 'hex');
   if (key.length !== 32 || !/^[a-f0-9]{64}$/i.test(env.APP_KEY ?? '')) throw new Error('APP_KEY must be 32 random bytes encoded as hex');
   const integer = (name: string, fallback: number, max: number) => {
@@ -60,7 +83,7 @@ export function readConfig(env = process.env): Config {
   }
   if((localAi||localTutor||localOcr) && ((env.NODE_ENV??'development')!=='development'||env.SYNTHETIC_FIXTURES!=='true'||url.pathname!=='/intibelajar_local_dev'))
     throw new Error('DeepSeek requires the isolated synthetic development database');
-  return { mode: (env.NODE_ENV ?? 'development') as Config['mode'], databaseUrl: url.href,
+  return { mode: pilot ? 'pilot' : (env.NODE_ENV ?? 'development') as Config['mode'], databaseUrl: url.href, trustProxy: pilot ? env.TRUST_PROXY! : false,
     origin: origin.origin, host: '127.0.0.1', port: integer('PORT', 8000, 65535), key,...(google?{google}:{}),
     synthetic: env.SYNTHETIC_FIXTURES === 'true', selfConsent: env.SELF_ONBOARDING_CONSENT === 'true',...(email?{email}:{}), idleSeconds: integer('SESSION_IDLE_SECONDS', 604800, 604800),
     absoluteSeconds: integer('SESSION_ABSOLUTE_SECONDS', 2592000, 2592000),

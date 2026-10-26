@@ -1,0 +1,20 @@
+✔ pilot configuration: accepted only as an exact https origin behind the local proxy, never with automatic consent (7.1861ms)
+✔ development and test are unchanged: loopback origin only, no proxy trust, production still refused without pilot (0.932ms)
+(node:15544) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ pilot app: exact Origin and https for writes, per-client rate limits, Secure session cookie
+  ✔ health reports the pilot, not a synthetic-only environment (233.9459ms)
+  ✔ the exact Origin over https passes the CSRF check (and the guest trial is off) (34.8746ms)
+  ✔ CSRF is not weakened: wrong or missing Origin, cross-site, or a write over http are refused (58.6062ms)
+  ✔ rate limits count the real client: one IP is limited, another is not (182.8842ms)
+  ✔ only the local proxy is believed: a forged X-Forwarded-For or -Proto from elsewhere changes nothing (179.7173ms)
+  ✔ the session cookie stays __Host-, Secure, HttpOnly, SameSite=Lax, and links use the public origin (112.2251ms)
+✔ pilot app: exact Origin and https for writes, per-client rate limits, Secure session cookie (1509.0902ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8241.0551
