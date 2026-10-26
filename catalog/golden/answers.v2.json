@@ -1454,6 +1454,183 @@
           "status": "PROPOSED — awaiting content review (not approved)",
           "summary": "A wrong value with no working is INCORRECT with INSUFFICIENT_EVIDENCE for every concept (T01-3). analysis.ts blames tri-c."
         }
+      },
+      {
+        "id": "T22",
+        "input": {
+          "response": null,
+          "text": "tan 30 = tinggi menara / jarak mendatar . tan 30 = 2/d . d = 20 / 1 / akar 3 = 20 akar 3 ,"
+        },
+        "source": "Learner answer from local testing (synthetic account). tower-v1 change 2026-10-26 (proposed, not yet content-reviewed): a final value named by another letter the working uses as the unknown, or by \"jarak\", is read; before, only \"x = …\" counted, and clauses also split at \". \"; trailing punctuation is not part of the value. Was UNREADABLE.",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20 akar 3"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20 akar 3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T23",
+        "input": {
+          "response": null,
+          "text": "tan 30 = 20/d, d = 20√3"
+        },
+        "source": "T14 with the distance named d. tower-v1 change 2026-10-26 (proposed, not yet content-reviewed): a final value named by another letter the working uses as the unknown, or by \"jarak\", is read; before, only \"x = …\" counted. Was UNREADABLE.",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T24",
+        "input": {
+          "response": null,
+          "text": "jarak = 20√3"
+        },
+        "source": "T11 with the distance named \"jarak\" (the word the question uses). tower-v1 change 2026-10-26 (proposed, not yet content-reviewed): a final value named by another letter the working uses as the unknown, or by \"jarak\", is read; before, only \"x = …\" counted. Was UNREADABLE.",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
+      },
+      {
+        "id": "T25",
+        "input": {
+          "response": null,
+          "text": "tan 30 = 20/d, d = 20/√3"
+        },
+        "source": "T10 with the distance named d: the wrong final value is now read. tower-v1 change 2026-10-26 (proposed, not yet content-reviewed): a final value named by another letter the working uses as the unknown, or by \"jarak\", is read; before, only \"x = …\" counted. Was UNREADABLE.",
+        "expected": {
+          "verdict": "INCORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "INSUFFICIENT_EVIDENCE"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": {
+          "label": "delta from analysis.ts",
+          "status": "PROPOSED — awaiting content review (not approved)",
+          "summary": "tower-v1 reads the stated \"d = 20/√3\" as the final value and grades it wrong (INCORRECT); analysis.ts says \"kuat\" because \"√3\" appears. Same reading as T10 with x."
+        }
+      },
+      {
+        "id": "T26",
+        "input": {
+          "response": null,
+          "text": "t = 20, tan 30 = 20/x, x = 20√3"
+        },
+        "source": "Guard for the 2026-10-26 change: \"t = 20\" restates the given height (t is not an unknown in any ratio) and an \"x = …\" clause always wins, so the result stays the x value.",
+        "expected": {
+          "verdict": "CORRECT",
+          "evidence": {
+            "tri-c": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20/x"
+            },
+            "tri-d": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "tan 30"
+            },
+            "tri-f": {
+              "classification": "UNDERSTANDING_DEMONSTRATED",
+              "quote": "20√3"
+            }
+          }
+        },
+        "analysisTs": {
+          "tone": "kuat",
+          "gap": null,
+          "items": {
+            "tri-c": "ok",
+            "tri-d": "ok",
+            "tri-f": "ok"
+          }
+        },
+        "delta": null
       }
     ]
   }

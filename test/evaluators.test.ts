@@ -137,7 +137,7 @@ test('golden tower cases: verdict, reason, misconception and per-concept evidenc
   const cases = golden.tower!.cases;
   assert.equal(golden.tower!.question, tower.code);
   assert.ok(tower.aliases.some(a => a.ns === 'ITEM' && a.value === golden.tower!.item));
-  assert.equal(cases.length, 21);
+  assert.equal(cases.length, 26);
   for (const c of cases) {
     const r = evaluateTower(input(tower, towerResponse(c.input)));
     const label = `${c.id} ${JSON.stringify(c.input.text || c.input.response)}`;
@@ -162,7 +162,20 @@ test('golden tower deltas: exactly the labelled cases differ from the recorded a
       assert.ok(!/approved/i.test(c.delta.status.replace(/not approved/i, '')), c.id);
     }
   }
-  assert.equal(golden.tower!.cases.filter(c => c.delta).length, 12);
+  assert.equal(golden.tower!.cases.filter(c => c.delta).length, 13);
+});
+
+test('tower-v1 final value under another name (2026-10-26): only an unknown of the working, and "x" always wins', () => {
+  const verdictOf = (t: string) => evaluateTower(input(tower, text(t))).verdict;
+  // Inside working, a letter that is no unknown in any ratio states no result: restating the height is not a wrong
+  // answer. (A whole answer "t = 20" is read by the numeric parser as a bare value, as before this change.)
+  assert.equal(verdictOf('t = 20, tan 30 = 20/d'), 'UNREADABLE');
+  // An intermediate value under another letter never replaces the stated "x = …" result, either way round.
+  assert.equal(verdictOf('tan 30 = 20/d, d = 40, x = 20√3'), 'CORRECT');
+  assert.equal(verdictOf('tan 30 = 20/d, d = 20√3, x = 40'), 'INCORRECT');
+  // Sentence ends split clauses; a decimal point does not.
+  assert.equal(verdictOf('tan 30 = 20/d. d = 34.64'), 'CORRECT');
+  assert.equal(verdictOf('jarak mendatar = 34,6 m.'), 'CORRECT');
 });
 
 test('06 §10 and T01-3 rows hold for tower-v1', () => {

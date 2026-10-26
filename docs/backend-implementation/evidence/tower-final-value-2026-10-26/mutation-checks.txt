@@ -1,0 +1,9 @@
+KILLED   sentence ends do not split clauses (exit 1) — golden tower cases: verdict, reason, misconception and per-concept e | tower-v1 final value under another name (2026-10-26): only an unknow
+KILLED   another letter is never read (exit 1) — golden tower cases: verdict, reason, misconception and per-concept e | tower-v1 final value under another name (2026-10-26): only an unknow
+KILLED   any letter is read (no unknown check) (exit 1) — tower-v1 final value under another name (2026-10-26): only an unknow
+KILLED   another letter wins over x (exit 1) — golden tower cases: verdict, reason, misconception and per-concept e | tower-v1 final value under another name (2026-10-26): only an unknow
+KILLED   trailing punctuation kept in the value (exit 1) — golden tower cases: verdict, reason, misconception and per-concept e
+KILLED   "jarak" is not a name of the unknown (exit 1) — golden tower cases: verdict, reason, misconception and per-concept e | tower-v1 final value under another name (2026-10-26): only an unknow
+6/6 mutations killed
+exit 0
+src/assessment/evaluators/tower-v1.ts: OK

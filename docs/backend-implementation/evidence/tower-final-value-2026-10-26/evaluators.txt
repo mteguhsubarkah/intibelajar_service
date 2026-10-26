@@ -1,0 +1,22 @@
+✔ golden numeric cases: verdict, unreadable reason and misconception match the shared file (19.5288ms)
+✔ golden option section is in sync with the manifest and every index grades as the key says (11.1189ms)
+✔ every deterministic item accepts its own key and its first accepted form (5.8173ms)
+✔ evidence: correct answers demonstrate the final-answer concepts and quote what was written (5.2022ms)
+✔ evidence: a catalogued wrong answer evidences its misconception; an unexplained one never invents a gap (2.1901ms)
+✔ INV-16 and refusals: unreadable, self-reports and malformed inputs produce no evidence and no verdict claim (1.2596ms)
+✔ non-assessable concepts are never claimed, and evaluation is deterministic (0.7564ms)
+✔ golden v2 carries the v1 numeric and option sections unchanged (1.438ms)
+✔ golden tower cases: verdict, reason, misconception and per-concept evidence with exact quotes (14.1196ms)
+✔ golden tower deltas: exactly the labelled cases differ from the recorded analysis.ts output, and none is approved (1.7133ms)
+✔ 06 §10 and T01-3 rows hold for tower-v1 (2.3345ms)
+✔ whole tokens, never substrings: tanpa, sinus and cosinus match nothing (0.8746ms)
+✔ INV-09 and spans: only mapped concepts, claims only on assessable ones, every quote is the exact substring (600.8929ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3693.2936
+exit 0

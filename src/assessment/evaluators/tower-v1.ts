@@ -21,9 +21,14 @@ const ungraded = (verdict: 'UNREADABLE' | 'NOT_GRADED', reason: Evaluation['reas
 const span = (m: { start: number; end: number; quote: string }): EvidenceRef => ({ kind: 'SPAN', start: m.start, end: m.end, quote: m.quote });
 
 /**
- * The learner's final value: the whole response when it is just a value ("34,6", "x = 20√3"), or the value of an
- * "x = …" clause (the unknown the question names). Each side of a chained "x = 20√3 ≈ 34,6" counts; a clause
- * whose sides do not parse (x = 20 / tan 30) states no value. Clauses split at line breaks, ";" and ", ".
+ * The learner's final value: the whole response when it is just a value ("34,6", "x = 20√3"), or the value of a
+ * clause that names the unknown. Each side of a chained "x = 20√3 ≈ 34,6" counts; a clause whose sides do not parse
+ * (x = 20 / tan 30) states no value. Clauses split at line breaks, ";", ", " and ". " (a sentence end, not "34.6").
+ *
+ * The unknown is "x" or "jarak (mendatar)". Change of 2026-10-26 (proposed, golden T22–T26): when no such clause exists,
+ * another single letter counts if the working uses it as the unknown in a ratio ("tan 30 = 20/d … d = 20√3"), so a
+ * learner who names the distance d is read like one who names it x. An "x"/"jarak" clause always wins over another
+ * letter, so an intermediate value ("m = 40" for the hypotenuse) never replaces the stated result.
  */
 function finalValue(text: string, rubric: Rubric): { correct: boolean; ref: EvidenceRef; bare: boolean } | null {
   const kind = unitKindOf(rubric.answer.unit), expected = rubric.answer.value!;
@@ -32,25 +37,31 @@ function finalValue(text: string, rubric: Rubric): { correct: boolean; ref: Evid
   const whole = parseAnswerValue(text, kind);
   if (whole.kind === 'value')
     return { correct: withinTolerance(whole.value, expected, relative, floor), bare: true, ref: span({ start: trimmedStart, end: trimmedEnd, quote: text.slice(trimmedStart, trimmedEnd) }) };
-  let found: { correct: boolean; ref: EvidenceRef; bare: boolean } | null = null;
+  // Letters the working uses as an unknown inside a ratio: "20/d", "d/20", "tinggi / d".
+  const unknowns = new Set([...text.matchAll(/\/\s*([a-z])(?![a-z])|(?<![a-z])([a-z])\s*\//gi)].map(m => (m[1] ?? m[2])!.toLowerCase()));
+  const best = { named: null as { correct: boolean; ref: EvidenceRef; bare: boolean } | null, other: null as { correct: boolean; ref: EvidenceRef; bare: boolean } | null };
   let cursor = 0;
-  for (const body of text.split(/(,\s+|\n|;)/)) {
+  for (const body of text.split(/(,\s+|\.\s+|\n|;)/)) {
     const at = cursor; cursor += body.length;
-    const head = /^\s*(?:jadi|maka)?\s*x\s*[=≈]/i.exec(body);
+    const head = /^\s*(?:jadi|maka)?\s*(?:(x|jarak(?:nya)?(?:\s+mendatar(?:nya)?)?)|([a-z]))\s*[=≈]/i.exec(body);
     if (!head) continue;
-    // Each side after the first "=": "20√3 ≈ 34,6 m" gives "20√3" and "34,6 m".
+    const slot = head[1] ? 'named' : unknowns.has(head[2]!.toLowerCase()) ? 'other' : null;
+    if (!slot) continue;
+    // Each side after the first "=": "20√3 ≈ 34,6 m" gives "20√3" and "34,6 m". Trailing punctuation ("20√3 ,") is not part of the value.
     let offset = head[0].length;
     for (const side of body.slice(offset).split(/[=≈]/)) {
-      const parsed = parseAnswerValue(side, kind);
-      const s = at + offset + (side.length - side.trimStart().length), e = at + offset + side.trimEnd().length;
+      const value = side.replace(/[\s,.;:]+$/, '');
+      const parsed = parseAnswerValue(value, kind);
+      const s = at + offset + (value.length - value.trimStart().length), e = at + offset + value.length;
       offset += side.length + 1;
       if (parsed.kind !== 'value' || e <= s) continue;
       const correct = withinTolerance(parsed.value, expected, relative, floor);
       // A correct side wins over a wrong one in the same chain (rounding in "≈ 34" must not undo "20√3").
-      if (!found || (correct && !found.correct)) found = { correct, bare: false, ref: span({ start: s, end: e, quote: text.slice(s, e) }) };
+      const found = best[slot];
+      if (!found || (correct && !found.correct)) best[slot] = { correct, bare: false, ref: span({ start: s, end: e, quote: text.slice(s, e) }) };
     }
   }
-  return found;
+  return best.named ?? best.other;
 }
 
 interface PathMatch { code: string; steps: { concepts: string[]; match: Match | null }[]; matched: number }
