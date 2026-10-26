@@ -14,7 +14,9 @@ export const integrationBlockers = [
   'AGE_ASSURANCE_NOT_APPROVED', 'DPIA_AND_PRIVACY_REVIEW_PENDING',
 ] as const;
 export const features = Object.freeze({ aiDiagnosis: false, aiTutor: false, intake: false,
-  legacyFacade: false, productAnalytics: false, streakFreeze: false, guestEvaluation: false });
+  legacyFacade: false, productAnalytics: false, streakFreeze: false, guestEvaluation: false,
+  /** FEATURE_GUEST_TRIAL=true: a visitor of /coba gets a 24-hour trial account so the server grades them like a learner. */
+  guestTrial: false });
 export function readConfig(env = process.env): Config {
   if (!['development', 'test'].includes(env.NODE_ENV ?? 'development'))
     throw new Error('Production is disabled: Slice 0 supports synthetic development/test only');
@@ -32,8 +34,10 @@ export function readConfig(env = process.env): Config {
     if (!Number.isSafeInteger(value) || value < 1 || value > max) throw new Error(`Invalid ${name}`);
     return value;
   };
-  // Only the legacy facade (Slice 1 M7, synthetic data) can be switched on; every other feature fails closed.
-  for (const [name, value] of Object.entries(env)) if (/^FEATURE_/.test(name) && value !== 'false' && !(name === 'FEATURE_LEGACY_FACADE' && value === 'true'))
+  // Only the legacy facade (Slice 1 M7, synthetic data) and the /coba guest trial can be switched on; every other
+  // feature fails closed.
+  const switchable = ['FEATURE_LEGACY_FACADE', 'FEATURE_GUEST_TRIAL'];
+  for (const [name, value] of Object.entries(env)) if (/^FEATURE_/.test(name) && value !== 'false' && !(switchable.includes(name) && value === 'true'))
     throw new Error('Features cannot be enabled in this development foundation');
   if (env.HOST && env.HOST !== '127.0.0.1') throw new Error('Only loopback binding is supported');
   const localAi=env.LOCAL_DEEPSEEK==='true',localTutor=env.LOCAL_DEEPSEEK_TUTOR==='true',localOcr=env.LOCAL_OPENROUTER_OCR==='true';
@@ -60,5 +64,5 @@ export function readConfig(env = process.env): Config {
     origin: origin.origin, host: '127.0.0.1', port: integer('PORT', 8000, 65535), key,...(google?{google}:{}),
     synthetic: env.SYNTHETIC_FIXTURES === 'true', selfConsent: env.SELF_ONBOARDING_CONSENT === 'true',...(email?{email}:{}), idleSeconds: integer('SESSION_IDLE_SECONDS', 604800, 604800),
     absoluteSeconds: integer('SESSION_ABSOLUTE_SECONDS', 2592000, 2592000),
-    features: Object.freeze({ ...features, aiDiagnosis:localAi,aiTutor:localTutor,intake:localOcr, legacyFacade: env.FEATURE_LEGACY_FACADE === 'true' }) };
+    features: Object.freeze({ ...features, aiDiagnosis:localAi,aiTutor:localTutor,intake:localOcr, legacyFacade: env.FEATURE_LEGACY_FACADE === 'true', guestTrial: env.FEATURE_GUEST_TRIAL === 'true' }) };
 }

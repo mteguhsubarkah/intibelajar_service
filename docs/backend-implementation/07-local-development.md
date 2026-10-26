@@ -32,7 +32,7 @@ Ctrl+C menghentikan FE/API/worker pada terminal launcher. PostgreSQL dan data lo
 3. **Challenge:** `/challenge` mempunyai loop sendiri, terpisah dari `/coba`.
 4. **Pemisahan akun:** pilih akun B dari `/__local`. Data milik akun A ditolak oleh backend.
 5. **Consent:** akun **Uji Tanpa Izin** tidak boleh membuat sesi belajar canonical; API mengembalikan `403 CONSENT_REQUIRED`. FE masih dapat memperlihatkan alur perangkat untuk pengunjung yang tidak eligible; itu bukan bukti backend mengizinkannya.
-6. **Guest:** pilih **Coba sebagai tamu**. Cookie akun dihapus dan demo tetap berjalan di perangkat, tanpa membuat sesi belajar canonical.
+6. **Guest (diperbarui 26 Oktober 2026):** pilih **Coba sebagai tamu**, lalu `/coba` → isi jawaban → **Cek jawabanku**. Tamu mendapat **akun percobaan 24 jam** dari server (`POST /v1/auth/guest`, `FEATURE_GUEST_TRIAL=true`, dinyalakan launcher) dan dinilai server persis seperti siswa: aturan, antrean DeepSeek untuk jawaban yang tidak tercakup aturan, retry, solusi, tutor. UI tetap menampilkannya sebagai tamu (tidak ada profil atau tombol keluar; tawaran daftar tetap ada). Akun percobaan dihapus otomatis lewat erasure setelah 24 jam. Ini jalan pintas development: izin data belajar, AI dan gambar diberikan otomatis tanpa layar persetujuan, jadi jangan dinyalakan untuk pengguna nyata sebelum ada pemberitahuan privasi yang disetujui.
 
 Identitas, consent awal, serta review katalog dibuat dari fixture pengujian yang sudah ada. Halaman pemilih menyatakan bahwa semuanya simulasi development. Tidak ada verifikasi guardian/identity atau content approval produksi. Pada identitas yang sudah tersimpan, launcher **tidak memperbarui/mengembalikan consent** yang dicabut; status database tetap berlaku.
 

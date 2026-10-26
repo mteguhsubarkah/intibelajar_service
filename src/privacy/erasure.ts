@@ -2,9 +2,9 @@ import { sql } from 'kysely';
 import type { DB, Tx } from '../db.js';
 import type { Config } from '../config.js';
 import { hmac, uuid } from '../platform/crypto.js';
-import { eraseGuardianIdentity, eraseLearnerIdentity } from '../identity/service.js';
+import { eraseGuardianIdentity, eraseLearnerIdentity, expiredTrialLearners } from '../identity/service.js';
 import { removeDeletionJobs, purgeIdempotency, purgeExpiredIdempotency, retryLease, recoverLeases, leaseDeletion, validLease, type Lease } from '../platform/jobs.js';
-import { deletion } from './service.js';
+import { deletion, dueTrials } from './service.js';
 import {queueRestoredErasures} from './recovery.js';
 import { eraseLearnerEvidence } from '../assessment/erasure.js';
 import { eraseLearnerLearning } from '../learning/erasure.js';
@@ -14,6 +14,8 @@ import{eraseIntakes}from'../intake/service.js';import{eraseIntakeQuestions}from'
 export async function sweep(tx:Tx,config:Config) {
   const expired=await tx.selectFrom('learner').select('id').where('status','=','PENDING_CONSENT').where('consent_deadline_at','<=',sql<Date>`now()`).orderBy('id').forUpdate().skipLocked().execute();
   for(const row of expired) await deletion(tx,config,row.id,'SYSTEM','CONSENT_EXPIRED');
+  // /coba trial accounts are erased when the trial ends (FEATURE_GUEST_TRIAL).
+  for(const id of await dueTrials(tx,await expiredTrialLearners(tx))) await deletion(tx,config,id,'SYSTEM','TRIAL_EXPIRED');
   await sql`update consent_record set status='EXPIRED',updated_at=now() where status in ('PENDING','GRANTED') and expires_at<=now()`.execute(tx);
   await sql`update learner set status='SUSPENDED',version=version+1,updated_at=now() where status='ACTIVE' and not exists
     (select 1 from consent_record where learner_id=learner.id and purpose='LEARNING_DATA' and status='GRANTED' and expires_at>now())`.execute(tx);

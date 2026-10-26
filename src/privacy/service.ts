@@ -55,6 +55,27 @@ export async function profile(db: Connection, id: string) {
     preferredSubjectCodes:row.preferred_subject_codes,...(row.display_name?{displayName:row.display_name}:{}),
     ...(row.grade?{grade:row.grade}:{}),...(row.consent_deadline_at?{consentDeadlineAt:row.consent_deadline_at.toISOString()}: {})};
 }
+/** How long a /coba trial account lives before it is erased (FEATURE_GUEST_TRIAL). */
+export const trialHours=24;
+/**
+ * A /coba visitor's trial learner: active at once, with the purposes /coba needs (learning data, AI reading of the
+ * answer, photo of a question), for trialHours only. It is erased with the usual erasure when the trial ends.
+ */
+export async function createTrialLearner(tx:Tx,config:Config) {
+  const id=uuid(),time=await now(tx),expires=new Date(time.getTime()+trialHours*3600000);
+  await sql`insert into learner(id,status,age_band,age_band_source,consent_deadline_at) values (${id},'ACTIVE','UNKNOWN','SELF_DECLARED',null)`.execute(tx);
+  await tx.insertInto('student_profile').values({learner_id:id,display_name:null,grade:null}).execute();
+  for(const purpose of selfPurposes)
+    await tx.insertInto('consent_record').values({id:uuid(),learner_id:id,guardian_id:null,purpose,status:'GRANTED',method:'GUEST_TRIAL',
+      policy_version:policyVersion,policy_text_sha256:policyHash,request_token_hash:null,decided_by:'SYSTEM',decided_at:time,revoked_at:null,expires_at:expires}).execute();
+  await audit(tx,config,id,'GUEST_TRIAL_STARTED');
+  return id;
+}
+/** Trial learners whose trial is over and that are not yet being erased. */
+export async function dueTrials(tx:Tx,ids:string[]) {
+  if(!ids.length)return [];
+  return (await tx.selectFrom('learner').select('id').where('id','in',ids).where('status','<>','DELETION_PENDING').orderBy('id').forUpdate().skipLocked().execute()).map(r=>r.id);
+}
 export interface ProfilePatch { displayName?:string; grade?:number; birthYear?:number; timezone?:string; preferredSubjectCodes?:string[] }
 /** Izin yang diberikan siswa sendiri saat onboarding (SELF_ONBOARDING_CONSENT=true). Analitik produk tidak termasuk. */
 export const selfPurposes=['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD'] as const;

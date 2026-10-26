@@ -10,7 +10,8 @@ import { resolve } from 'node:path';
 const frontend = resolve(process.env.FRONTEND_DIR ?? '../mockup/intibelajar');
 const origin = 'http://localhost:4173';
 const testEnv = process.env.DATABASE_URL ? {} : JSON.parse(readFileSync('.local/test-env.json', 'utf8'));
-const env = { ...process.env, ...testEnv, APP_ORIGIN: origin, PORT: '8000' };
+// FEATURE_GUEST_TRIAL: /coba visitors get a trial account and are graded by the server (as in npm run local:dev).
+const env = { ...process.env, ...testEnv, APP_ORIGIN: origin, PORT: '8000', FEATURE_GUEST_TRIAL: 'true' };
 const win = process.platform === 'win32';
 const run = (cmd, args, options = {}) => {
   const r = spawnSync(win ? `${cmd}.cmd` : cmd, args, { stdio: 'inherit', shell: win, ...options });

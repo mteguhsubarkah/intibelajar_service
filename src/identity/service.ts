@@ -28,6 +28,22 @@ export async function authenticate(db: Connection, config: Config, raw?: string)
   await sql`update auth_session set last_seen_at=now(),idle_expires_at=least(absolute_expires_at,now()+${config.idleSeconds}*interval '1 second') where id=${row.sessionId}`.execute(db);
   return { sessionId: row.sessionId, userId:row.userId, role:row.role, learnerId:row.learnerId, guardianId:row.guardianId, csrf };
 }
+/** A /coba trial account for a trial learner (privacy.createTrialLearner): a STUDENT user and a session, both ending with the trial. */
+export async function startTrial(tx: Tx, config: Config, learnerId: string, hours: number) {
+  const user = uuid();
+  await sql`insert into app_user(id,role,learner_id,guardian_id,status,trial_expires_at) values (${user},'STUDENT',${learnerId},null,'ACTIVE',now()+${hours}*interval '1 hour')`.execute(tx);
+  const session = await createSession(tx, config, user);
+  await sql`update auth_session set absolute_expires_at=least(absolute_expires_at,now()+${hours}*interval '1 hour'),
+    idle_expires_at=least(idle_expires_at,now()+${hours}*interval '1 hour') where id=${session.id}`.execute(tx);
+  return session;
+}
+export async function isTrial(db: Connection, userId: string) {
+  return !!(await sql<{t:Date|null}>`select trial_expires_at t from app_user where id=${userId}`.execute(db)).rows[0]?.t;
+}
+/** Learners of trial accounts whose trial is over (erased by the privacy sweep). */
+export async function expiredTrialLearners(tx: Tx) {
+  return (await sql<{learner_id:string}>`select learner_id from app_user where trial_expires_at<=now() and learner_id is not null`.execute(tx)).rows.map(r=>r.learner_id);
+}
 export async function revokeLearner(tx: Connection, learnerId: string) {
   await sql`update auth_session set revoked_at=now() where user_id in (select id from app_user where learner_id=${learnerId}) and revoked_at is null`.execute(tx);
 }

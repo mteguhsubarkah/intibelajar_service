@@ -1,0 +1,2 @@
+Module table ownership and rubric boundaries passed
+exit 0

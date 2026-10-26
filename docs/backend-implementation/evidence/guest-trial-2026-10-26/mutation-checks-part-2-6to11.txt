@@ -1,0 +1,16 @@
+KILLED   [api] trial without AI consent (no DeepSeek path) (exit 1) — a visitor gets a 24-hour trial: active learner, the /coba purposes, a session  | an answer the rules do not cover is queued for AI and adopted (the DeepSeek pa
+KILLED   [client] a real account without consent is replaced by a trial (exit 1) — AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+KILLED   [client] every trial failure is swallowed (exit 1) — AssertionError [ERR_ASSERTION]: Missing expected rejection.
+KILLED   [client] a trial counts as signed in (exit 1) — AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+KILLED   [client] trial requested without a JSON body (exit 1)
+KILLED   [e2e] /coba guests are not given a trial (exit 1) — tamu tanpa akun: akun percobaan dari server, dinilai server, tetap tampil sebaga
+restored-source rebuild exit 0
+6/6 mutations killed (from #6)
+exit 0
+src/app.ts: OK
+src/privacy/service.ts: OK
+src/privacy/erasure.ts: OK
+src/identity/service.ts: OK
+../mockup/intibelajar/src/services/learningSessions.ts: OK
+../mockup/intibelajar/src/composables/useAuth.ts: OK
+../mockup/intibelajar/src/composables/useCobaFlow.ts: OK

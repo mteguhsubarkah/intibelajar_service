@@ -9,6 +9,7 @@ export interface Database {
     status: string;
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
+    trial_expires_at: Date | null;
   };
   assistance_event: {
     id: string;

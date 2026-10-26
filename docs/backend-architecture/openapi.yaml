@@ -241,6 +241,40 @@ paths:
           $ref: '#/components/responses/Gone'
         '429':
           $ref: '#/components/responses/TooManyRequests'
+  /v1/auth/guest:
+    post:
+      operationId: startGuestTrial
+      tags: [auth]
+      summary: Start a 24-hour trial account for a /coba visitor (FEATURE_GUEST_TRIAL).
+      description: >
+        Without a session, creates a trial learner (learning data, AI reading and photo purposes, 24 hours) and sets the
+        session cookie, so /coba is graded by the server like any learner. With a session nothing is created. Trial
+        accounts are erased when the trial ends. Off unless FEATURE_GUEST_TRIAL=true.
+      security: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+      responses:
+        '200':
+          description: The visitor now has a session; guest says whether it is a trial account.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [guest]
+                properties:
+                  guest:
+                    type: boolean
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
   /v1/auth/logout:
     post:
       operationId: logout
@@ -2582,6 +2616,9 @@ components:
           minLength: 16
           maxLength: 128
           description: Present for signed-in users. Send it as X-CSRF-Token on mutations.
+        guest:
+          type: boolean
+          description: True for a /coba trial account (FEATURE_GUEST_TRIAL). Absent for real accounts.
         user:
           type: object
           additionalProperties: false

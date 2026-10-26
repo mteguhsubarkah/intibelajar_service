@@ -84,7 +84,7 @@ try {
   for (const name of Object.keys(env)) if (name.startsWith('FEATURE_') || name.startsWith('VITE_')) delete env[name];
   const local = { NODE_ENV: 'development', DATABASE_URL: base.href, APP_ORIGIN: origin,
     APP_KEY: previous.APP_KEY ?? randomBytes(32).toString('hex'), SYNTHETIC_FIXTURES: 'true',
-    HOST: '127.0.0.1', PORT: '8000', FEATURE_LEGACY_FACADE: 'true' };
+    HOST: '127.0.0.1', PORT: '8000', FEATURE_LEGACY_FACADE: 'true', FEATURE_GUEST_TRIAL: 'true' };
   writeFileSync(envFile, JSON.stringify(local, null, 2), { mode: 0o600 });
   Object.assign(env, local, { FRONTEND_DIR: frontend });
   run(['--import', 'tsx', 'scripts/local/prepare.ts'], { env });

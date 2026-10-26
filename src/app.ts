@@ -155,8 +155,19 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     // Authentication remains true before consent. Eligibility must use the same
     // expiry/policy-version predicate as protected learning endpoints.
     const learningConsent=p.learnerId?await privacy.hasConsent(db,p.learnerId,'LEARNING_DATA'):false;
-    return {authenticated:true,csrfToken:p.csrf,user:{id:p.userId,role:p.role},...(learner?{learner:{id:learner.learnerId,status:learner.status,ageBand:learner.ageBand,
+    return {authenticated:true,csrfToken:p.csrf,...(await identity.isTrial(db,p.userId)?{guest:true}:{}),user:{id:p.userId,role:p.role},...(learner?{learner:{id:learner.learnerId,status:learner.status,ageBand:learner.ageBand,
       missingPurposes:learningConsent?[]:['LEARNING_DATA'],...('consentDeadlineAt'in learner?{consentDeadlineAt:learner.consentDeadlineAt}:{})}}:{})};
+  });
+  // /coba for everyone (FEATURE_GUEST_TRIAL): a visitor without a session gets a 24-hour trial account, so the server grades
+  // their answers exactly as for a learner (rules, DeepSeek, retry, solution, tutor). A signed-in user or an existing
+  // trial is left as it is. Origin checks and the /v1/auth/* rate limit (20 per hour per IP) apply as for every auth call.
+  route('POST','/v1/auth/guest','public',async(req,reply)=>{
+    if(!config.features.guestTrial)fail(403,'FEATURE_DISABLED');
+    const current=await identity.authenticate(db,config,req.sessionToken);
+    if(current)return {guest:await identity.isTrial(db,current.userId)};
+    const session=await db.transaction().execute(async tx=>identity.startTrial(tx,config,await privacy.createTrialLearner(tx,config),privacy.trialHours));
+    reply.header('Set-Cookie',identity.cookie(session.raw,privacy.trialHours*3600));
+    return {guest:true};
   });
   route('POST','/v1/auth/start','public',async(req,reply)=>{
     const b=req.body as {provider:string;continuation:{targetPath:string;step:number}};

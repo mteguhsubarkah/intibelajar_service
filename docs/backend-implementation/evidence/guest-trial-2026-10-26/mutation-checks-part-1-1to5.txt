@@ -1,0 +1,31 @@
+KILLED   [api] feature flag ignored (exit 1) — off by default: 403 FEATURE_DISABLED and nothing is created (243.6024ms)
+KILLED   [api] a signed-in user gets a trial too (exit 1) — a visitor gets a 24-hour trial: active learner, the /coba purposes, a session  | a real account is never replaced by a trial, and has no guest flag (70.494ms)
+KILLED   [api] session view without the guest flag (exit 1) — a visitor gets a 24-hour trial: active learner, the /coba purposes, a session 
+KILLED   [api] trial session outlives the trial (exit 1) — a visitor gets a 24-hour trial: active learner, the /coba purposes, a session 
+KILLED   [api] expired trials are never erased (exit 1) — an expired trial is erased by the usual erasure; its session stops working at 
+node:fs:2483
+    return binding.writeFileUtf8(
+                   ^
+
+Error: UNKNOWN: unknown error, open 'C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\src\privacy\erasure.ts'
+    at writeFileSync (node:fs:2483:20)
+    at file:///C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Documents-teguh-learningJourney-intibelajar-service/c95e0028-d28d-44b4-91a5-45640af8c8d7/scratchpad/mutate-guest.mjs:40:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  errno: -4094,
+  code: 'UNKNOWN',
+  syscall: 'open',
+  path: 'C:\\Users\\User\\Documents\\teguh\\learningJourney\\intibelajar_service\\src\\privacy\\erasure.ts'
+}
+
+Node.js v24.19.0
+exit 1
+src/app.ts: OK
+src/privacy/service.ts: OK
+src/privacy/erasure.ts: FAILED
+src/identity/service.ts: OK
+../mockup/intibelajar/src/services/learningSessions.ts: OK
+../mockup/intibelajar/src/composables/useAuth.ts: OK
+../mockup/intibelajar/src/composables/useCobaFlow.ts: OK
+sha256sum: WARNING: 1 computed checksum did NOT match
