@@ -28,8 +28,8 @@ export function createGoogleProvider(config:Config,http:typeof fetch=fetch):Goog
    try{
     const tokens=await oidc.authorizationCodeGrant(await client(),url,{expectedState:state,expectedNonce:nonce,pkceCodeVerifier:verifier,idTokenExpected:true});
     const claims=tokens.claims();
-    if(!claims||typeof claims.sub!=='string'||!claims.sub||claims.sub.length>255||claims.email_verified!==true||typeof claims.email!=='string')throw Error();
-    if(claims.email.trim().toLowerCase()!==settings.testEmail)fail(403,'FORBIDDEN');
+    if(!claims||typeof claims.sub!=='string'||!claims.sub||claims.sub.length>255||claims.email_verified!==true||typeof claims.email!=='string'||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(claims.email.trim()))throw Error();
+    if(settings.testEmail && claims.email.trim().toLowerCase()!==settings.testEmail)fail(403,'FORBIDDEN');
     // Access/refresh/ID tokens and email are never persisted or returned to the browser.
     return{sub:claims.sub,email:claims.email.trim().toLowerCase(),email_verified:true};
    }catch(error){if(error instanceof ApiError)throw error;fail(400,'VALIDATION_FAILED');}

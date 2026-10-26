@@ -49,6 +49,19 @@ test('real OIDC library verifies signed tokens, nonce, issuer, audience, expiry,
  for(const [name,change]of Object.entries({nonce:{nonce:'wrong'},issuer:{iss:'https://attacker.invalid'},audience:{aud:'wrong'},expiry:{exp:1},unverified:{email_verified:false},otherAccount:{email:'other@example.invalid'}})){
   await t.test('reject '+name,async()=>{delta=change;await assert.rejects(verify());delta={};});
  }
+ await t.test('pilot accepts other verified accounts and still rejects unverified tokens',async()=>{
+  const publicConfig={...config,origin:'https://intibelajar.com',google:{clientId:config.google!.clientId,clientSecret:config.google!.clientSecret}};
+  // The token mock checks redirect_uri against the outer config.
+  const oldOrigin=config.origin;config.origin=publicConfig.origin;
+  try{
+   const publicProvider=createGoogleProvider(publicConfig,http);
+   const callback=new URL(publicConfig.origin+'/v1/auth/callback/google?code=synthetic&state=expected-state');
+   delta={email:'other@example.invalid'};
+   assert.equal((await publicProvider.verify(callback,'expected-state','expected-nonce','a'.repeat(43))).email,'other@example.invalid');
+   delta={email_verified:false};
+   await assert.rejects(publicProvider.verify(callback,'expected-state','expected-nonce','a'.repeat(43)));
+  }finally{delta={};config.origin=oldOrigin;}
+ });
  await t.test('reject forged signature',async()=>{badSignature=true;await assert.rejects(verify());badSignature=false;});
  await t.test('reject bad state before code exchange',async()=>{const before=tokenCalls;await assert.rejects(provider.verify(url,'wrong','expected-nonce','a'.repeat(43)));assert.equal(tokenCalls,before);});
 });

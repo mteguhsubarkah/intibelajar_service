@@ -1,5 +1,5 @@
 export interface Config {
-  google?: {clientId:string;clientSecret:string;testEmail:string};
+  google?: {clientId:string;clientSecret:string;testEmail?:string};
   /** 'pilot': the private adult pilot on a public HTTPS origin behind the local Nginx (RUNTIME_MODE=pilot, NODE_ENV=production). */
   mode: 'development' | 'test' | 'pilot'; databaseUrl: string; origin: string; host: string; port: number;
   /** The proxy whose X-Forwarded-For/-Proto is believed: the local Nginx in pilot mode, nobody otherwise. */
@@ -72,6 +72,17 @@ export function readConfig(env = process.env): Config {
        ||env.GOOGLE_TEST_ADULT_ACK!=='true'||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(env.GOOGLE_TEST_EMAIL))
       throw new Error('Google client credentials and an explicitly acknowledged adult test account are required');
     google={clientId:env.GOOGLE_CLIENT_ID,clientSecret:env.GOOGLE_CLIENT_SECRET,testEmail:env.GOOGLE_TEST_EMAIL.trim().toLowerCase()};
+  }
+  // Public server OIDC uses separate credentials from the isolated local test account.
+  if (env.GOOGLE_OIDC_ENABLED !== undefined && !['true', 'false'].includes(env.GOOGLE_OIDC_ENABLED))
+    throw new Error('GOOGLE_OIDC_ENABLED must be true or false');
+  if (env.GOOGLE_OIDC_ENABLED === 'true') {
+    if (!pilot || env.LOCAL_GOOGLE_OIDC === 'true')
+      throw new Error('GOOGLE_OIDC_ENABLED requires pilot mode without LOCAL_GOOGLE_OIDC');
+    if (!/^[A-Za-z0-9_-]+\.apps\.googleusercontent\.com$/.test(env.GOOGLE_CLIENT_ID ?? '')
+        || !env.GOOGLE_CLIENT_SECRET?.trim() || /[\r\n]/.test(env.GOOGLE_CLIENT_SECRET))
+      throw new Error('Google server sign-in requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET');
+    google = {clientId: env.GOOGLE_CLIENT_ID!, clientSecret: env.GOOGLE_CLIENT_SECRET};
   }
   let email:Config['email'];
   if(env.EMAIL_PROVIDER){
