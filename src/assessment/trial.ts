@@ -1,3 +1,4 @@
+import type { TrialAi } from './trial-ai.js';
 import type { GradingSource } from '../catalog/grading-source.js';
 import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
@@ -34,10 +35,10 @@ export async function loadTrialItem(db: Connection, alias: string, revisionId?: 
 }
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
-  hints: number; openedHint:boolean; solutionSeen:boolean; latestRun?: string;
+  hints: number; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string;
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
-  guide: (revision: string, text: string, used: number) => ReturnType<typeof tutorStep>, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
+  guide: (revision: string, text: string, used: number) => ReturnType<typeof tutorStep>, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined, ai?: TrialAi) {
   const contexts = new Map<string, TrialContext>();
   const ttl = 2 * 60 * 60 * 1000;
   function context(owner: string, session: string) {
@@ -68,11 +69,12 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const fingerprint = hash(stable({ revision: i.revisionId, response })).toString('hex');
       const existing = c.runs.get(fingerprint);
       if (existing) return existing.output;
-      const result = evaluate({ ...i.source, response });
+      const result = ai ? await ai.evaluate(i, response) : evaluate({ ...i.source, response });
+      c.answer = response.text?.slice(0,1000) ?? '';
       const id = uuid();
       const demonstrated = result.evidence.find(e => e.classification === 'UNDERSTANDING_DEMONSTRATED');
       const misconception = result.evidence.find(e => e.classification === 'MISCONCEPTION_EVIDENCED');
-      const supported = !!(demonstrated || misconception);
+      const supported = result.verdict === 'CORRECT' ? !!demonstrated : result.verdict === 'INCORRECT' && !!misconception;
       let output: any = { diagnosisRunId: id, status: 'insufficient_evidence',
         clarification: response.responseType === 'SELF_REPORT' ? 'Tulis langkah yang kamu tahu, atau pelajari inti soalnya dulu.' : 'Tambahkan rumus atau langkahmu supaya bagian yang perlu diperkuat terlihat.' };
       if (supported) {
@@ -93,8 +95,8 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
           next: { core: focus.title, reason, formula: authored?.keyFormula ?? '', coreId: focus.route, mapId: focus.legacyMapId ?? '' }
         } };
       }
-      if(result.verdict==='CORRECT' && response.responseType==='TEXT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
-      // Only bounded evaluation results and a hash are held in memory, not raw answers.
+      if(result.verdict==='CORRECT' && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
+      // Bounded results and the latest answer (for tutor context) expire with the anonymous session.
       if (c.runs.size >= 32) c.runs.delete(c.runs.keys().next().value!);
       c.runs.set(fingerprint, { id, output }); c.latestRun = id;
       return output;
@@ -109,7 +111,8 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const response: StudentResponse = typeof body.answer === 'number'
         ? { schemaVersion: 1, responseType: 'OPTION', optionId: i.optionOrder?.[body.answer] ?? '', inputMode: 'TYPED' }
         : { schemaVersion: 1, responseType: 'TEXT', text: body.answer, inputMode: 'TYPED' };
-      const r = evaluate({ ...i.source, response });
+      const r = ai ? await ai.evaluate(i, response) : evaluate({ ...i.source, response });
+      if(response.responseType==='TEXT')c.answer=response.text?.slice(0,1000) ?? '';
       const correct = r.verdict === 'CORRECT' ? true : r.verdict === 'INCORRECT' ? false : null;
       const option = r.revealedAnswer && 'optionId' in r.revealedAnswer ? r.revealedAnswer.optionId : undefined;
       const index = option ? i.optionOrder?.indexOf(option) : undefined;
@@ -118,7 +121,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
         return {id:x.legacyMapId!, state:e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'ok' : e?.classification === 'MISCONCEPTION_EVIDENCED' ? 'gap' : 'rest',
           reason:e?.rationale ?? (e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum cukup bukti dari jawaban ini.')};
       });
-      const claimToken = correct===true && response.responseType==='TEXT' ? proof?.({owner,session:body.sessionId,questionId:body.itemId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen}) : undefined;
+      const claimToken = correct===true && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT' ? proof?.({owner,session:body.sessionId,questionId:body.itemId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen}) : undefined;
       return { correct, ...(claimToken ? {claimToken} : {}), ...(items.length ? {items} : {}), ...(index !== undefined && index >= 0 ? { correctOptionIndex: index } : {}), ...(correct === null ? { unreadable: true } : {}),
         ...(correct !== null && i.source.rubric.feedback ? { feedback: correct ? i.source.rubric.feedback.correct : i.source.rubric.feedback.incorrect } : {}) };
     },
@@ -131,6 +134,11 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const c = context(owner, body.sessionId), i = await item(c, body.questionId);
       const last = body.messages.at(-1);
       if (last?.from !== 'me' || !last.text.trim()) return fail(400, 'VALIDATION_FAILED');
+      if(ai) {
+        const reply=await ai.tutor(i,body.messages,c.answer ?? '',c.hints);
+        c.hints=reply.hintsUsed;
+        return reply;
+      }
       const step = await guide(i.revisionId, last.text, c.hints);
       if (!step) return fail(409, 'CONTENT_UNAVAILABLE');
       c.hints = step.hintsUsed;

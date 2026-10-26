@@ -1,6 +1,8 @@
 import type { FastifyInstance, FastifyRequest } from 'fastify';
 import type { Connection } from '../db.js';
 import { trialAssessment, loadTrialItem } from '../assessment/trial.js';
+import type { Config } from '../config.js';
+import { trialDeepSeek, type TrialAi } from '../assessment/trial-ai.js';
 import { tutorStep } from '../assessment/tutor-ladder.js';
 import {sealTrialProof} from '../assessment/trial-proof.js';
 import { uuid } from './crypto.js';
@@ -9,8 +11,10 @@ import { validateRequest, validateResponse } from './contract.js';
 // A browser-bound anonymous trial. Never a login cookie or a learner identity.
 // Existing global same-origin, JSON, body size and rate checks still apply.
 export function registerTrialRoutes(app: FastifyInstance, db: Connection,
-  trial = trialAssessment((alias, revision) => loadTrialItem(db, alias, revision),
-    (revision, text, used) => tutorStep(db, revision, text, used), Date.now, input=>proofKey ? sealTrialProof(proofKey,input) : undefined), proofKey?:Buffer) {
+  providedTrial?: ReturnType<typeof trialAssessment>, proofKey?:Buffer, guideConfig?:Config['guide'], ai?:TrialAi) {
+  const trial=providedTrial ?? trialAssessment((alias,revision)=>loadTrialItem(db,alias,revision),
+    (revision,text,used)=>tutorStep(db,revision,text,used),Date.now,
+    input=>proofKey ? sealTrialProof(proofKey,input) : undefined,ai ?? trialDeepSeek(db,guideConfig));
   app.addHook('onClose', async () => trial.close());
   const owner = (req: FastifyRequest, reply: any) => {
     const cookies = req.headers.cookie?.split(';').map(x => x.trim()).filter(x => x.startsWith('inti_trial=')) ?? [];

@@ -1,3 +1,4 @@
+import {evaluate} from '../src/assessment/evaluators/index.js';
 import {guideCore} from '../src/catalog/intake-interface.js';
 import {legacyIntakeMap} from '../src/catalog/intake-map.js';
 import {currentRelease} from '../src/catalog/interface.js';
@@ -22,7 +23,7 @@ test('IntiGuide sends the current context and preserves provider failures',async
 test('claim real trial once and expose three evidenced cores in account progress',async()=>{
  const config=readConfig(JSON.parse(readFileSync('.local/test-env.json','utf8')));assert.match(new URL(config.databaseUrl).pathname,/_test$/);
  const db=connect(config.databaseUrl);await migrate(db);const manifest=reviewedFixture();manifest.release.version=Number((await sql<{v:number}>`select coalesce(max(version),0)+1 as v from curriculum_release`.execute(db)).rows[0]!.v);await publish(db,manifest);
- const {app}=await buildApp(config,{db,logStream:new Writable({write(_a,_b,next){next();}})});
+ const {app}=await buildApp(config,{db,trialAi:{evaluate:async(i,r)=>evaluate({...i.source,response:r}),tutor:async()=>({text:'test',quick:[],hintsUsed:1})},logStream:new Writable({write(_a,_b,next){next();}})});
  try{
   const core=await guideCore(db,'tri-d');assert.ok(core?.title);
   for(const text of ['tentukan cos30','trigonometri sinus sudut 30 derajat','tangen 45°']){const mapped=await legacyIntakeMap(db,(await currentRelease(db))!,text);assert.equal(mapped.topicId,'trigonometri');assert.deepEqual(mapped.cores,['tri-f']);}

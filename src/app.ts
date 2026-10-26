@@ -1,6 +1,7 @@
 import {guideReply,type GuideInput} from './tutor/context-guide.js';
 import {claimTrial} from './learning/trial-claim.js';
 import {readTrialProof} from './assessment/trial-proof.js';
+import type { TrialAi } from './assessment/trial-ai.js';
 import { registerTrialRoutes } from './platform/trial-routes.js';
 import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 import { sql } from 'kysely';
@@ -36,7 +37,7 @@ import{createIntake,intakeView,uploadIntake,discardIntake,confirmIntake}from'./i
 import{privateQuestionView}from'./catalog/intake-interface.js';
 
 declare module 'fastify' { interface FastifyRequest { principal?: identity.Principal; sessionToken?:string; safeSpan?:Span } }
-export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStream?:NodeJS.WritableStream;spanProcessors?:SpanProcessor[];diagnosisEngine?:DiagnosisEngine;googleProvider?:GoogleProvider}={}) {
+export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStream?:NodeJS.WritableStream;spanProcessors?:SpanProcessor[];diagnosisEngine?:DiagnosisEngine;trialAi?:TrialAi;googleProvider?:GoogleProvider}={}) {
   if(options.googleProvider&&config.mode!=='test')throw new Error('A fake Google provider is test-only');
   let google:GoogleProvider|undefined=options.googleProvider;
   const googleProvider=()=>google??=createGoogleProvider(config);
@@ -431,7 +432,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     const proof=readTrialProof(config.key,(req.body as {proof:string}).proof,owner!);
     return send(reply,await learnerCommand(req,'POST trial-claim', {proofId:proof.id}, async tx=>({status:200,body:await claimTrial(tx,config.key,req.principal!.learnerId!,proof)})));
   });
-  registerTrialRoutes(app, db, undefined, config.key);
+  registerTrialRoutes(app, db, undefined, config.key, config.guide, options.trialAi);
   // Public catalog (Slice 1 M3): current release only, never rubrics or keys (INV-05).
   const catalog=catalogReader(config.key);
   const query=(req:FastifyRequest)=>req.query as Record<string,string|undefined>;
