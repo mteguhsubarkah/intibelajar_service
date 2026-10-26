@@ -49,6 +49,196 @@ tags:
     description: Deprecated facade for the shipped frontend adapters (L1-L9).
 
 paths:
+  /v1/trial/diagnosis:
+    post:
+      operationId: publicTriallegacyCreateDiagnosispost
+      tags:
+        - Public trial
+      deprecated: false
+      summary: "Anonymous public trial: diagnosis"
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LegacyDiagnosisRequest"
+      responses:
+        "200":
+          description: The run in the legacy shape.
+          headers:
+            Retry-After:
+              $ref: "#/components/headers/RetryAfter"
+            Deprecation:
+              $ref: "#/components/headers/Deprecation"
+            Sunset:
+              $ref: "#/components/headers/Sunset"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LegacyDiagnosisRun"
+              examples:
+                completedGap:
+                  $ref: "#/components/examples/LegacyDiagnosisRunExample"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+      description: Available before registration in development and pilot. Uses
+        published public catalog and deterministic server evaluation.
+        Browser-bound temporary results; no learner account, consent grants or
+        durable progress. No local-response fallback. Same-origin/HTTPS checks
+        still apply.
+  /v1/trial/diagnosis/{diagnosisRunId}:
+    get:
+      operationId: publicTriallegacyGetDiagnosisget
+      tags:
+        - Public trial
+      deprecated: false
+      summary: "Anonymous public trial: diagnosis/{diagnosisRunId}"
+      security: []
+      parameters:
+        - $ref: "#/components/parameters/LegacyDiagnosisRunId"
+      responses:
+        "200":
+          description: The run.
+          headers:
+            Retry-After:
+              $ref: "#/components/headers/RetryAfter"
+            Deprecation:
+              $ref: "#/components/headers/Deprecation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LegacyDiagnosisRun"
+        "404":
+          $ref: "#/components/responses/NotFound"
+      description: Available before registration in development and pilot. Uses
+        published public catalog and deterministic server evaluation.
+        Browser-bound temporary results; no learner account, consent grants or
+        durable progress. No local-response fallback. Same-origin/HTTPS checks
+        still apply.
+  /v1/trial/answers/check:
+    post:
+      operationId: publicTriallegacyCheckAnswerpost
+      tags:
+        - Public trial
+      deprecated: false
+      summary: "Anonymous public trial: answers/check"
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LegacyCheckRequest"
+      responses:
+        "200":
+          description: Verdict in the legacy shape. `correct` is null when unreadable.
+          headers:
+            Deprecation:
+              $ref: "#/components/headers/Deprecation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LegacyCheckResult"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+      description: Available before registration in development and pilot. Uses
+        published public catalog and deterministic server evaluation.
+        Browser-bound temporary results; no learner account, consent grants or
+        durable progress. No local-response fallback. Same-origin/HTTPS checks
+        still apply.
+  /v1/trial/solution:
+    post:
+      operationId: publicTriallegacyGetSolutionpost
+      tags:
+        - Public trial
+      deprecated: false
+      summary: "Anonymous public trial: solution"
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LegacySolutionRequest"
+      responses:
+        "200":
+          description: Solution in the legacy shape.
+          headers:
+            Deprecation:
+              $ref: "#/components/headers/Deprecation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LegacySolution"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+      description: Available before registration in development and pilot. Uses
+        published public catalog and deterministic server evaluation.
+        Browser-bound temporary results; no learner account, consent grants or
+        durable progress. No local-response fallback. Same-origin/HTTPS checks
+        still apply.
+  /v1/trial/tutor:
+    post:
+      operationId: publicTriallegacyTutorpost
+      tags:
+        - Public trial
+      deprecated: false
+      summary: "Anonymous public trial: tutor"
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LegacyTutorRequest"
+      responses:
+        "200":
+          description: Reply in the legacy shape. `hintsUsed` is the server's count.
+          headers:
+            Deprecation:
+              $ref: "#/components/headers/Deprecation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LegacyTutorReply"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+      description: Available before registration in development and pilot. Uses
+        published public catalog and deterministic server evaluation.
+        Browser-bound temporary results; no learner account, consent grants or
+        durable progress. No local-response fallback. Same-origin/HTTPS checks
+        still apply.
   # ------------------------------------------------------------------ auth
   /v1/auth/session:
     get:

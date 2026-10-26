@@ -1,3 +1,4 @@
+import { registerTrialRoutes } from './platform/trial-routes.js';
 import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 import { sql } from 'kysely';
 import { readConfig, integrationBlockers, type Config } from './config.js';
@@ -416,6 +417,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
       return legacyIntakeMap(db,release!,(req.body as {questionText:string}).questionText);
     });
   }
+  registerTrialRoutes(app, db);
   // Public catalog (Slice 1 M3): current release only, never rubrics or keys (INV-05).
   const catalog=catalogReader(config.key);
   const query=(req:FastifyRequest)=>req.query as Record<string,string|undefined>;
