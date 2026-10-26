@@ -1,3 +1,6 @@
+import {guideReply,type GuideInput} from './tutor/context-guide.js';
+import {claimTrial} from './learning/trial-claim.js';
+import {readTrialProof} from './assessment/trial-proof.js';
 import { registerTrialRoutes } from './platform/trial-routes.js';
 import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 import { sql } from 'kysely';
@@ -222,7 +225,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   });
   route('GET','/v1/me/progress','student',async req=>{const{projection:p,profile,events}=await projected(req);
     return{user:{id:req.principal!.userId,displayName:profile.displayName??'Pelajar'},cores:p.views.filter(v=>v.legacyMapId).map(v=>({id:v.legacyMapId,exploration:v.exploration,
-      mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
+      understandingDemonstrated:(p.evidence.filter(e=>e.concept_id===v.conceptId && e.mastery_eligible).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime())[0]?.classification==='UNDERSTANDING_DEMONSTRATED'),mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
   route('GET','/v1/me/stats','student',async req=>(await projected(req)).projection.stats);
   route('GET','/v1/me/mastery','student',async req=>{const{projection:p}=await projected(req),q=req.query as{topicId?:string;cursor?:string;limit?:number};
     return progressPage(p.views.filter(v=>!q.topicId||p.catalog.concepts.find(c=>c.id===v.conceptId)?.topic_id===q.topicId),q.cursor,q.limit??20,config.key,'mastery:'+req.principal!.learnerId+':'+(q.topicId??''));});
@@ -417,7 +420,18 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
       return legacyIntakeMap(db,release!,(req.body as {questionText:string}).questionText);
     });
   }
-  registerTrialRoutes(app, db);
+  route('POST','/v1/guide/messages','student',async req=>{
+    learnLimit(req);
+    await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
+    return guideReply(db,config.guide,req.body as GuideInput);
+  });
+  route('POST','/v1/trial/claim','student',async(req,reply)=>{
+    const owner=req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>/^inti_trial=[a-f0-9-]{36}$/.test(x))?.slice(11);
+    if(!owner)fail(400,'VALIDATION_FAILED');
+    const proof=readTrialProof(config.key,(req.body as {proof:string}).proof,owner!);
+    return send(reply,await learnerCommand(req,'POST trial-claim', {proofId:proof.id}, async tx=>({status:200,body:await claimTrial(tx,config.key,req.principal!.learnerId!,proof)})));
+  });
+  registerTrialRoutes(app, db, undefined, config.key);
   // Public catalog (Slice 1 M3): current release only, never rubrics or keys (INV-05).
   const catalog=catalogReader(config.key);
   const query=(req:FastifyRequest)=>req.query as Record<string,string|undefined>;

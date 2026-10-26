@@ -1,4 +1,5 @@
 export interface Config {
+  guide?: {apiKey:string;model:string};
   google?: {clientId:string;clientSecret:string;testEmail?:string};
   /** 'pilot': the private adult pilot on a public HTTPS origin behind the local Nginx (RUNTIME_MODE=pilot, NODE_ENV=production). */
   mode: 'development' | 'test' | 'pilot'; databaseUrl: string; origin: string; host: string; port: number;
@@ -83,6 +84,13 @@ export function readConfig(env = process.env): Config {
       throw new Error('Google server sign-in requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET');
     google = {clientId: env.GOOGLE_CLIENT_ID!, clientSecret: env.GOOGLE_CLIENT_SECRET};
   }
+  let guide:Config['guide'];
+  if(env.INTIGUIDE_PROVIDER){
+    if(env.INTIGUIDE_PROVIDER!=='deepseek'||!env.DEEPSEEK_API_KEY?.trim())throw new Error('IntiGuide requires INTIGUIDE_PROVIDER=deepseek and DEEPSEEK_API_KEY');
+    const model=env.INTIGUIDE_MODEL??'deepseek-flash';
+    if(!['deepseek-flash','deepseek-v4-pro'].includes(model))throw new Error('Unsupported INTIGUIDE_MODEL');
+    guide={apiKey:env.DEEPSEEK_API_KEY,model};
+  }
   let email:Config['email'];
   if(env.EMAIL_PROVIDER){
     if(env.EMAIL_PROVIDER!=='resend')throw new Error('EMAIL_PROVIDER supports resend only');
@@ -94,7 +102,7 @@ export function readConfig(env = process.env): Config {
   if((localAi||localTutor||localOcr) && ((env.NODE_ENV??'development')!=='development'||env.SYNTHETIC_FIXTURES!=='true'||url.pathname!=='/intibelajar_local_dev'))
     throw new Error('DeepSeek requires the isolated synthetic development database');
   return { mode: pilot ? 'pilot' : (env.NODE_ENV ?? 'development') as Config['mode'], databaseUrl: url.href, trustProxy: pilot ? env.TRUST_PROXY! : false,
-    origin: origin.origin, host: '127.0.0.1', port: integer('PORT', 8000, 65535), key,...(google?{google}:{}),
+    origin: origin.origin, host: '127.0.0.1', port: integer('PORT', 8000, 65535), key,...(google?{google}:{}),...(guide?{guide}:{}),
     synthetic: env.SYNTHETIC_FIXTURES === 'true', selfConsent: env.SELF_ONBOARDING_CONSENT === 'true',...(email?{email}:{}), idleSeconds: integer('SESSION_IDLE_SECONDS', 604800, 604800),
     absoluteSeconds: integer('SESSION_ABSOLUTE_SECONDS', 2592000, 2592000),
     features: Object.freeze({ ...features, aiDiagnosis:localAi,aiTutor:localTutor,intake:localOcr, legacyFacade: env.FEATURE_LEGACY_FACADE === 'true', guestTrial: env.FEATURE_GUEST_TRIAL === 'true' }) };

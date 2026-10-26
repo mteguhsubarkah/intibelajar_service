@@ -34,10 +34,10 @@ export async function loadTrialItem(db: Connection, alias: string, revisionId?: 
 }
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
-  hints: number; latestRun?: string;
+  hints: number; openedHint:boolean; solutionSeen:boolean; latestRun?: string;
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
-  guide: (revision: string, text: string, used: number) => ReturnType<typeof tutorStep>, now = Date.now) {
+  guide: (revision: string, text: string, used: number) => ReturnType<typeof tutorStep>, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
   const contexts = new Map<string, TrialContext>();
   const ttl = 2 * 60 * 60 * 1000;
   function context(owner: string, session: string) {
@@ -46,7 +46,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
     let c = contexts.get(key);
     if (!c) {
       if (contexts.size >= 2000) return fail(503, 'DEPENDENCY_UNAVAILABLE');
-      c = { expires: now() + ttl, pins: new Map(), runs: new Map(), hints: 0 };
+      c = { expires: now() + ttl, pins: new Map(), runs: new Map(), hints: 0, openedHint:false, solutionSeen:false };
       contexts.set(key, c);
     }
     return c;
@@ -57,8 +57,9 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
     return value;
   }
   return {
-    async diagnose(owner: string, body: { sessionId: string; questionId: string; rawText: string; responseMode: 'know' | 'blank' | null }) {
+    async diagnose(owner: string, body: { sessionId: string; questionId: string; rawText: string; responseMode: 'know' | 'blank' | null; hintOpened?:boolean }) {
       const c = context(owner, body.sessionId);
+      if(body.hintOpened)c.openedHint=true;
       const i = await item(c, body.questionId);
       const response: StudentResponse = body.rawText.trim()
         ? { schemaVersion: 1, responseType: 'TEXT', text: body.rawText, inputMode: 'TYPED' }
@@ -92,6 +93,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
           next: { core: focus.title, reason, formula: authored?.keyFormula ?? '', coreId: focus.route, mapId: focus.legacyMapId ?? '' }
         } };
       }
+      if(result.verdict==='CORRECT' && response.responseType==='TEXT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
       // Only bounded evaluation results and a hash are held in memory, not raw answers.
       if (c.runs.size >= 32) c.runs.delete(c.runs.keys().next().value!);
       c.runs.set(fingerprint, { id, output }); c.latestRun = id;
@@ -116,11 +118,13 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
         return {id:x.legacyMapId!, state:e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'ok' : e?.classification === 'MISCONCEPTION_EVIDENCED' ? 'gap' : 'rest',
           reason:e?.rationale ?? (e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum cukup bukti dari jawaban ini.')};
       });
-      return { correct, ...(items.length ? {items} : {}), ...(index !== undefined && index >= 0 ? { correctOptionIndex: index } : {}), ...(correct === null ? { unreadable: true } : {}),
+      const claimToken = correct===true && response.responseType==='TEXT' ? proof?.({owner,session:body.sessionId,questionId:body.itemId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen}) : undefined;
+      return { correct, ...(claimToken ? {claimToken} : {}), ...(items.length ? {items} : {}), ...(index !== undefined && index >= 0 ? { correctOptionIndex: index } : {}), ...(correct === null ? { unreadable: true } : {}),
         ...(correct !== null && i.source.rubric.feedback ? { feedback: correct ? i.source.rubric.feedback.correct : i.source.rubric.feedback.incorrect } : {}) };
     },
     async solution(owner: string, body: { sessionId: string; questionId: string }) {
-      const i = await item(context(owner, body.sessionId), body.questionId);
+      const c=context(owner,body.sessionId); c.solutionSeen=true;
+      const i = await item(c, body.questionId);
       return i.source.rubric.workedSolution ?? fail(409, 'CONTENT_UNAVAILABLE');
     },
     async tutor(owner: string, body: { sessionId: string; questionId: string; messages: { from: string; text: string }[] }) {
@@ -131,6 +135,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       if (!step) return fail(409, 'CONTENT_UNAVAILABLE');
       c.hints = step.hintsUsed;
       if (step.full) {
+        c.solutionSeen=true;
         const solution = i.source.rubric.workedSolution ?? fail(409, 'CONTENT_UNAVAILABLE');
         return { text: solution.steps.map(x => x.title + ': ' + x.body).join('\n'), quick: [], hintsUsed: c.hints };
       }

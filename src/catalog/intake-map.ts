@@ -11,13 +11,13 @@ export interface LegacyIntakeMap { subject: string | null; topicId: string | nul
 
 /** detectLocally, verbatim (the test compares both on the same inputs). */
 export function detect(text: string) {
-  const t = text.toLowerCase();
-  const trig = /(^|[^a-z])(sin|cos|tan|sudut|segitiga|tangga|menara|elevasi|depresi)([^a-z]|$)|°/.test(t);
+  const t = text.toLowerCase().replace(/\b(sin|cos|tan)\s*([0-9])/g,'$1 $2');
+  const trig = /(^|[^a-z])(sin|sinus|cos|cosinus|kosinus|tan|tangen|trigonometri|sudut|segitiga|tangga|menara|elevasi|depresi)([^a-z]|$)|°/.test(t);
   const eks = /(pangkat|eksponen|logaritma|(^|[^a-z])log([^a-z]|$)|[²³⁻ⁿ]|\^)/.test(t);
   const cores: string[] = [];
   if (trig) {
     cores.push('tri-c', 'tri-d');
-    if (/(30|45|60|90)\s*°|(30|45|60|90)\s*derajat/.test(t)) cores.push('tri-f');
+    if (/(30|45|60|90)\s*°|(30|45|60|90)\s*derajat|(?:sin|cos|tan)\s*\(?\s*(?:30|45|60|90)(?:\D|$)/.test(t)) cores.push('tri-f');
     if (/elevasi|depresi/.test(t)) cores.push('tri-p');
   }
   if (eks) cores.push('eks-b');

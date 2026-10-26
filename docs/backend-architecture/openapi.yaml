@@ -49,6 +49,90 @@ tags:
     description: Deprecated facade for the shipped frontend adapters (L1-L9).
 
 paths:
+  /v1/guide/messages:
+    post:
+      operationId: contextGuide
+      summary: IntiGuide for the current question or published core
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - messages
+              additionalProperties: false
+              properties:
+                questionText:
+                  type: string
+                  maxLength: 2000
+                answer:
+                  type: string
+                  maxLength: 2000
+                coreAlias:
+                  type: string
+                  maxLength: 80
+                messages:
+                  type: array
+                  minItems: 1
+                  maxItems: 12
+                  items:
+                    type: object
+                    required:
+                      - from
+                      - text
+                    additionalProperties: false
+                    properties:
+                      from:
+                        type: string
+                        enum:
+                          - me
+                          - bot
+                      text:
+                        type: string
+                        minLength: 1
+                        maxLength: 1000
+      responses:
+        "200":
+          description: Tutor response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LegacyTutorReply"
+  /v1/trial/claim:
+    post:
+      operationId: claimTrial
+      summary: Save a verified anonymous trial after onboarding
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - proof
+              additionalProperties: false
+              properties:
+                proof:
+                  type: string
+                  minLength: 1
+                  maxLength: 6000
+      responses:
+        "200":
+          description: Claimed
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - claimed
+                  - sessionId
+                properties:
+                  claimed:
+                    type: boolean
+                  sessionId:
+                    type: string
+                    format: uuid
   /v1/trial/diagnosis:
     post:
       operationId: publicTriallegacyCreateDiagnosispost
@@ -4514,6 +4598,7 @@ components:
                 description: A frozen legacy alias known to the shipped frontend.
               exploration:
                 $ref: '#/components/schemas/Exploration'
+              understandingDemonstrated: {type: boolean}
               mastery:
                 $ref: '#/components/schemas/MasteryStatus'
               lessonComplete:
@@ -5103,6 +5188,7 @@ components:
       description: The shape `diagnosisRunWithBackend` validates (isRun). Frozen.
       required: [diagnosisRunId, status]
       properties:
+        claimToken: {type: string, maxLength: 6000}
         diagnosisRunId:
           type: string
           minLength: 1
@@ -5152,6 +5238,7 @@ components:
       description: The shape `checkWithBackend` validates (isCheck). Frozen.
       required: [correct]
       properties:
+        claimToken: {type: string, maxLength: 6000}
         items:
           type: array
           minItems: 1

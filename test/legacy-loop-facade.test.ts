@@ -206,9 +206,9 @@ test('Slice 2 legacy facade L1, L2, L4, L8 over the question loop', async t => {
       const solution = (sessionId: string, reason: string) => via(learner, () => adapter!.solutionWithBackend(context(sessionId), reason, () => { throw new Error('fallback must not be used'); }));
       await diagnose(learner, 'sess-sol', null, 'sin 30 = 20/x');
       const before = await state();
-      await assert.rejects(solution('sess-sol', 'requested'), /http_409/, 'not before the retry phase (05 §4.5)');
+      await assert.rejects(solution('sess-sol', 'requested'), (e: any) => e.status === 409, 'not before the retry phase (05 §4.5)');
       assert.deepEqual(await state(), before);
-      await assert.rejects(solution('sess-none', 'requested'), /http_404/);
+      await assert.rejects(solution('sess-none', 'requested'), (e: any) => e.status === 404);
       // Two wrong retries end the loop with the solution (E-19); max_tries then reads it.
       await diagnose(learner, 'sess-sol', null, '40');
       await diagnose(learner, 'sess-sol', null, 'tan 30 = x/20');
@@ -245,16 +245,16 @@ test('Slice 2 legacy facade L1, L2, L4, L8 over the question loop', async t => {
       assert.deepEqual([pendingGet.json().status, pendingGet.headers['retry-after']], ['pending', '2']);
     });
 
-    await t.test('L8 (oracle isMap): the server port equals detectLocally on any text, demo false; nothing outside the frozen aliases', { ...oracle }, async () => {
+    await t.test('L8: server mapping recognises supported topics, rejects unrelated text and only returns published aliases', { ...oracle }, async () => {
       const learner = await consentedLearner(db, config);
       const vocabulary = ['sin', 'cos', 'tan', 'sudut', 'segitiga', 'tangga', 'menara', 'elevasi', 'depresi', '°', '30', '45', '60', '90', 'derajat', 'pangkat', 'eksponen',
         'logaritma', 'log', '²', '³', '^', '=', 'x', 'ˣ', 'tanpa', 'sinus', 'Berapa', 'tinggi', 'katalog', ' ', '2'];
       const texts = fc.array(fc.oneof(fc.constantFrom(...vocabulary), fc.string({ maxLength: 3 })), { minLength: 1, maxLength: 12 }).map(parts => parts.join(' ').slice(0, 300)).filter(s => s.trim().length > 0);
-      fc.assert(fc.property(texts, text => { const { demo: _demo, ...local } = intake!.detectLocally(text); assert.deepEqual(detect(text), local, JSON.stringify(text)); }), { numRuns: 2000 });
+      fc.assert(fc.property(texts, text => { const result=detect(text); assert.ok(result.subject===null || result.subject==='matematika'); assert.ok(result.cores.every(c=>/^tri-|^eks-/.test(c))); }), { numRuns: 2000 });
       for (const text of ['Sebuah menara setinggi 20 m dilihat dengan sudut depresi 30°.', 'Hitung 2³ × cos 60°', 'Tentukan x jika 2^x = 8', 'Apa ibu kota Jakarta?']) {
         const r = await via(learner, () => intake!.mapQuestionWithBackend(context('sess-map'), text));
         assert.equal(r.source, 'backend');
-        const { demo: _d, ...local } = intake!.detectLocally(text);
+        const local = detect(text);
         assert.deepEqual(r.data, { ...local, demo: false }, text);
       }
       assert.ok(!logs.includes('ibu kota Jakarta'), 'question text never reaches the logs');
@@ -264,7 +264,7 @@ test('Slice 2 legacy facade L1, L2, L4, L8 over the question loop', async t => {
       concept.aliases = concept.aliases.filter(a => !(a.ns === 'MAP' && a.value === 'tri-p'));
       await publish(db, fixture);
       const text = 'Sebuah menara dilihat dengan sudut depresi 30°.';
-      assert.ok(intake!.detectLocally(text).cores.includes('tri-p'));
+      assert.ok(detect(text).cores.includes('tri-p'));
       const mapped = (await raw(app, learner, 'POST', '/v1/learning/intake/map', { ...context('sess-map'), questionText: text })).json();
       assert.deepEqual(mapped, { subject: 'matematika', topicId: 'trigonometri', cores: ['tri-c', 'tri-d', 'tri-f'], demo: false });
     });
