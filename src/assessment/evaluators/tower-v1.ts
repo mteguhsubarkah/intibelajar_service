@@ -94,6 +94,19 @@ export function evaluateTower(input: EvaluationInput): Evaluation {
     if (m) misses.set(x.conceptCode, { code: x.misconceptionCode, explanation: x.explanation, match: m });
   }
 
+  // A learner may substitute a special value on the next line instead of writing "tan 30 = 1/2".
+  // Tie the substitution to the same ratio, numerator and unknown. Do not blame unrelated fractions.
+  if (!finalCorrect && /tan\s*30\s*°?\s*=\s*20\s*\/\s*([a-z])(?![a-z])/i.test(text)) {
+    const variable = /tan\s*30\s*°?\s*=\s*20\s*\/\s*([a-z])(?![a-z])/i.exec(text)![1]!;
+    const substitution = new RegExp('\\b' + variable + '\\s*=\\s*20\\s*\\/\\s*\\(?\\s*(?:1\\s*\\/\\s*2|½|0[.,]5)(?![\\d.])\\s*\\)?', 'i').exec(text);
+    const authored = rubric.misconceptionMap.find(x => x.pattern.kind === 'TEXT'
+      && findAny('tan 30 = 1 / 2', tokenize('tan 30 = 1 / 2'), x.pattern.tokens ?? []));
+    if (substitution && authored && !misses.has(authored.conceptCode)) {
+      misses.set(authored.conceptCode, {code: authored.misconceptionCode, explanation: authored.explanation,
+        match: {start: substitution.index, end: substitution.index + substitution[0].length, quote: substitution[0]} as Match});
+    }
+  }
+
   const verdict: Evaluation['verdict'] = finalCorrect || (complete && misses.size === 0) ? 'CORRECT'
     : misses.size > 0 || final ? 'INCORRECT'
     : 'UNREADABLE';

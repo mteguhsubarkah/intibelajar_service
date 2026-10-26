@@ -5152,6 +5152,16 @@ components:
       description: The shape `checkWithBackend` validates (isCheck). Frozen.
       required: [correct]
       properties:
+        items:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [id, state, reason]
+            properties:
+              id: {type: string}
+              state: {type: string, enum: [ok, gap, rest]}
+              reason: {type: string}
         correct:
           type: [boolean, 'null']
         feedback:

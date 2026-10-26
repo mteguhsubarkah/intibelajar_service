@@ -255,3 +255,17 @@ test('INV-09 and spans: only mapped concepts, claims only on assessable ones, ev
     assert.deepEqual(evaluateTower(input(tower, text(t), concepts)), r, 'deterministic');
   }), { numRuns: 1500 });
 });
+
+
+test('tower substitution identifies special-angle misconception in the next clause',()=>{
+ for (const typed of ['tan 30 = 20 / x, x = 20 / 1/2','tan 30° = 20/d, d = 20 / (1/2)','tan 30 = 20/x, x = 20 / 0,5']) {
+  const r=evaluateTower(input(tower,text(typed)));
+  assert.equal(r.verdict,'INCORRECT',typed);
+  assert.equal(r.evidence.find(e=>e.conceptCode==='MAT.TRI.SUDUT_ISTIMEWA')?.classification,'MISCONCEPTION_EVIDENCED',typed);
+  assert.equal(r.evidence.find(e=>e.conceptCode==='MAT.TRI.DEFINISI_SIN_COS_TAN')?.classification,'UNDERSTANDING_DEMONSTRATED',typed);
+ }
+ for (const typed of ['tan 30 = 20/x, y = 20 / (1/2)','tan 45 = 20/x, x = 20 / (1/2)','tan 30 = 20/x, x = 20 / 12']) {
+  assert.notEqual(evaluateTower(input(tower,text(typed))).evidence.find(e=>e.conceptCode==='MAT.TRI.SUDUT_ISTIMEWA')?.classification,'MISCONCEPTION_EVIDENCED',typed);
+ }
+ assert.equal(evaluateTower(input(tower,text('tan 30 = 20/x, x = 20/(1/2), x = 20√3'))).verdict,'CORRECT');
+});

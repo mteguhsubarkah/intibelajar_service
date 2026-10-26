@@ -111,7 +111,12 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const correct = r.verdict === 'CORRECT' ? true : r.verdict === 'INCORRECT' ? false : null;
       const option = r.revealedAnswer && 'optionId' in r.revealedAnswer ? r.revealedAnswer.optionId : undefined;
       const index = option ? i.optionOrder?.indexOf(option) : undefined;
-      return { correct, ...(index !== undefined && index >= 0 ? { correctOptionIndex: index } : {}), ...(correct === null ? { unreadable: true } : {}),
+      const items = i.concepts.filter(x => x.legacyMapId).map(x => {
+        const e = r.evidence.find(e => e.conceptCode === x.code);
+        return {id:x.legacyMapId!, state:e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'ok' : e?.classification === 'MISCONCEPTION_EVIDENCED' ? 'gap' : 'rest',
+          reason:e?.rationale ?? (e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum cukup bukti dari jawaban ini.')};
+      });
+      return { correct, ...(items.length ? {items} : {}), ...(index !== undefined && index >= 0 ? { correctOptionIndex: index } : {}), ...(correct === null ? { unreadable: true } : {}),
         ...(correct !== null && i.source.rubric.feedback ? { feedback: correct ? i.source.rubric.feedback.correct : i.source.rubric.feedback.incorrect } : {}) };
     },
     async solution(owner: string, body: { sessionId: string; questionId: string }) {

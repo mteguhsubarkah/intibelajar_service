@@ -77,6 +77,7 @@ test('trial routes: first visit has no login, no consent, no legacy flag; schema
     const check = await app.inject({ method: 'POST', url: '/v1/trial/answers/check', headers: { cookie }, payload: { ...body, attemptId: 'attempt-1', kind: 'retry_original', itemId: 'soal-menara', answer: '20√3' } });
     assert.equal(check.statusCode, 200, check.body);
     assert.equal(check.json().correct, true);
+    assert.deepEqual(check.json().items.filter((i: any) => i.state === "ok").map((i: any) => i.id).sort(), ["tri-c", "tri-d", "tri-f"]);
     const solution = await app.inject({ method: 'POST', url: '/v1/trial/solution', headers: { cookie }, payload: { ...body, reason: 'requested' } });
     assert.equal(solution.statusCode, 200, solution.body);
   } finally { await app.close(); }
