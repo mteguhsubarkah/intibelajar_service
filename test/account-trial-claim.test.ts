@@ -25,7 +25,7 @@ test('claim real trial once and expose three evidenced cores in account progress
  const {app}=await buildApp(config,{db,logStream:new Writable({write(_a,_b,next){next();}})});
  try{
   const core=await guideCore(db,'tri-d');assert.ok(core?.title);
-  for(const text of ['tentukan cos30','trigonometri sinus sudut 30 derajat','tangen 45°']){const mapped=await legacyIntakeMap(db,(await currentRelease(db))!,text);assert.equal(mapped.topicId,'trigonometri');assert.ok(mapped.cores.length>=2);}
+  for(const text of ['tentukan cos30','trigonometri sinus sudut 30 derajat','tangen 45°']){const mapped=await legacyIntakeMap(db,(await currentRelease(db))!,text);assert.equal(mapped.topicId,'trigonometri');assert.deepEqual(mapped.cores,['tri-f']);}
   const learner=await consentedLearner(db,config),another=await consentedLearner(db,config);const c=client(app,config,learner),other=client(app,config,another);
   const body={sessionId:'claim-integration',questionId:'soal-menara',topicId:'trigonometri',hintOpened:false,responseMode:null,rawText:'tan 30 = 20/x, x = 20√3'};
   const run=await app.inject({method:'POST',url:'/v1/trial/diagnosis',headers:{origin:config.origin,'content-type':'application/json'},payload:body});assert.equal(run.statusCode,200,run.body);

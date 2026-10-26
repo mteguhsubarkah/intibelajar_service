@@ -1,23 +1,24 @@
 import { sql } from 'kysely';
 import type { Connection } from '../db.js';
 import type { Release } from './interface.js';
-// Legacy facade L8 (Slice 2 M7; 09 §6.2): POST /v1/learning/intake/map. A server port of the shipped frontend's
-// detectLocally (services/intake.ts): a deterministic keyword mapper that maps only to topics the catalog maps and never
-// guesses a concept for a question it does not recognise. No AI, no storage. The port keeps the frontend's rules
-// verbatim; the only differences are `demo: false` and that every id is checked against the current release's frozen
-// aliases (rule 8), so an alias the catalog does not carry is dropped rather than sent to a client that would discard it.
-
+// Deterministic catalog mapping, not an AI diagnosis. Map concepts needed by the task;
+// do not automatically display all their prerequisite concepts for a numeric evaluation.
 export interface LegacyIntakeMap { subject: string | null; topicId: string | null; cores: string[]; demo: false }
 
-/** detectLocally, verbatim (the test compares both on the same inputs). */
+/** Suggest catalog concepts from supported question wording; this does not assess mastery. */
 export function detect(text: string) {
   const t = text.toLowerCase().replace(/\b(sin|cos|tan)\s*([0-9])/g,'$1 $2');
   const trig = /(^|[^a-z])(sin|sinus|cos|cosinus|kosinus|tan|tangen|trigonometri|sudut|segitiga|tangga|menara|elevasi|depresi)([^a-z]|$)|°/.test(t);
   const eks = /(pangkat|eksponen|logaritma|(^|[^a-z])log([^a-z]|$)|[²³⁻ⁿ]|\^)/.test(t);
   const cores: string[] = [];
   if (trig) {
-    cores.push('tri-c', 'tri-d');
-    if (/(30|45|60|90)\s*°|(30|45|60|90)\s*derajat|(?:sin|cos|tan)\s*\(?\s*(?:30|45|60|90)(?:\D|$)/.test(t)) cores.push('tri-f');
+    const specialAngle = /(?:^|[^\d.])(0|30|45|60|90)\s*(?:°|derajat)|(?:sinus|cosinus|kosinus|tangen|sin|cos|tan)\s*\(?\s*(?:0|30|45|60|90)(?![\d.])/.test(t);
+    const geometry = /segitiga|siku|sisi|miring|depan|samping|hipotenusa|hypotenuse|tangga|menara|tiang|papan|bayangan|tinggi|jarak|panjang|elevasi|depresi|diagram/.test(t);
+    const symbolic = /(?:sinus|cosinus|kosinus|tangen|sin|cos|tan)\b\s*\(?\s*[a-zα-ω](?![a-zα-ω])|identitas|buktikan/.test(t);
+    // cos 30 is a special-angle lookup. Triangle modelling and symbolic ratio tasks
+    // still need the triangle/ratio concepts; do not confuse prerequisites with task scope.
+    if (!specialAngle || geometry || symbolic) cores.push('tri-c', 'tri-d');
+    if (specialAngle) cores.push('tri-f');
     if (/elevasi|depresi/.test(t)) cores.push('tri-p');
   }
   if (eks) cores.push('eks-b');
