@@ -1,0 +1,52 @@
+scripts/analysis.test.ts(78,44): error TS2554: Expected 2 arguments, but got 3.
+scripts/analysis.test.ts(217,19): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/answerGolden.test.ts(1,20): error TS2307: Cannot find module 'node:assert/strict' or its corresponding type declarations.
+scripts/answerGolden.test.ts(2,42): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.
+scripts/answerGolden.test.ts(3,25): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.
+scripts/answerGolden.test.ts(19,14): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/answerGolden.test.ts(19,49): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/answerGolden.test.ts(43,32): error TS2345: Argument of type 'LearningQuestion | null' is not assignable to parameter of type 'LearningQuestion'.
+  Type 'null' is not assignable to type 'LearningQuestion'.
+scripts/answerGolden.test.ts(48,23): error TS18047: 'question' is possibly 'null'.
+scripts/authState.test.ts(2,20): error TS2307: Cannot find module 'node:assert/strict' or its corresponding type declarations.
+scripts/authState.test.ts(25,35): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/backend.test.ts(35,9): error TS2367: This comparison appears to be unintentional because the types '0' and '1' have no overlap.
+scripts/backend.test.ts(52,52): error TS2367: This comparison appears to be unintentional because the types '"clarification"' and '"error"' have no overlap.
+scripts/backend.test.ts(80,43): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/canonicalLoop.test.ts(2,20): error TS2307: Cannot find module 'node:assert/strict' or its corresponding type declarations.
+scripts/canonicalLoop.test.ts(117,47): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/demoSafety.test.ts(1,32): error TS2307: Cannot find module 'node:assert' or its corresponding type declarations.
+scripts/flow.test.ts(1108,12): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/gamification.test.ts(5,34): error TS2307: Cannot find module 'node:assert' or its corresponding type declarations.
+scripts/graph.test.ts(164,12): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/guestTrial.test.ts(2,20): error TS2307: Cannot find module 'node:assert/strict' or its corresponding type declarations.
+scripts/guestTrial.test.ts(62,47): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+scripts/intiverse.test.ts(1,20): error TS2307: Cannot find module 'node:assert/strict' or its corresponding type declarations.
+scripts/mathInput.test.ts(1,20): error TS2307: Cannot find module 'node:assert/strict' or its corresponding type declarations.
+scripts/noFallback.test.ts(2,20): error TS2307: Cannot find module 'node:assert/strict' or its corresponding type declarations.
+scripts/noFallback.test.ts(20,202): error TS18046: 'e' is of type 'unknown'.
+scripts/noFallback.test.ts(20,237): error TS18046: 'e' is of type 'unknown'.
+scripts/noFallback.test.ts(20,299): error TS18046: 'e' is of type 'unknown'.
+scripts/noFallback.test.ts(25,232): error TS18046: 'e' is of type 'unknown'.
+scripts/noFallback.test.ts(25,259): error TS18046: 'e' is of type 'unknown'.
+scripts/noFallback.test.ts(25,298): error TS18046: 'e' is of type 'unknown'.
+scripts/noFallback.test.ts(30,43): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+src/components/coba/CoreSheet.vue(89,9): error TS6133: 'state' is declared but its value is never read.
+src/components/core/LearningMapLegacy.vue(279,30): error TS6133: 'reactive' is declared but its value is never read.
+src/components/core/LearningMapLegacy.vue(290,3): error TS2305: Module '"@/data/curriculum"' has no exported member 'FOUNDATION'.
+src/components/core/LearningMapLegacy.vue(291,3): error TS2305: Module '"@/data/curriculum"' has no exported member 'TOPIC_EDGES'.
+src/components/core/LearningMapLegacy.vue(519,9): error TS6133: 'mid' is declared but its value is never read.
+src/components/core/LearningMapLegacy.vue(635,24): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/landing/CoreBreakdownShowcase.vue(225,3): error TS6133: 'reactive' is declared but its value is never read.
+src/components/landing/CoreBreakdownShowcase.vue(484,7): error TS6133: 'questionAnswerPrompt' is declared but its value is never read.
+src/components/landing/CoreBreakdownShowcase.vue(1055,29): error TS2493: Tuple type 'readonly [1100, 1650, 1650, 5200]' of length '4' has no element at index '4'.
+src/components/landing/DemoWindow.vue(484,1): error TS6133: 'Mascot' is declared but its value is never read.
+src/components/landing/LandingHero.vue(322,3): error TS6133: 'STATUS_ICON' is declared but its value is never read.
+src/components/landing/LandingHero.vue(323,3): error TS6133: 'STATUS_LABEL' is declared but its value is never read.
+src/components/landing/LandingHero.vue(509,7): error TS6133: 'ROW_CLASS' is declared but its value is never read.
+src/components/landing/LandingHero.vue(597,7): error TS6133: 'groups' is declared but its value is never read.
+src/components/landing/LandingHero.vue(684,7): error TS6133: 'allRevealed' is declared but its value is never read.
+src/components/landing/LandingHero.vue(761,7): error TS6133: 'statusLabel' is declared but its value is never read.
+src/composables/useJourney.ts(70,10): error TS6133: 'ancestorsOf' is declared but its value is never read.
+src/views/Slice0AccountView.vue(66,35): error TS6133: 'readSession' is declared but its value is never read.
+src/views/TryView.vue(12,10): error TS2305: Module '"@/services/progress"' has no exported member 'summarizeProgress'.

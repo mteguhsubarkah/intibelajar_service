@@ -1,6 +1,7 @@
 import { spawn, spawnSync } from 'node:child_process';
 import { randomBytes } from 'node:crypto';
-import { existsSync, mkdirSync, openSync, closeSync, readFileSync, writeFileSync } from 'node:fs';
+import { createWriteStream, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { createInterface } from 'node:readline';
 import { createServer } from 'node:net';
 import { dirname, join, resolve, delimiter } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -84,18 +85,38 @@ try {
   for (const name of Object.keys(env)) if (name.startsWith('FEATURE_') || name.startsWith('VITE_')) delete env[name];
   const local = { NODE_ENV: 'development', DATABASE_URL: base.href, APP_ORIGIN: origin,
     APP_KEY: previous.APP_KEY ?? randomBytes(32).toString('hex'), SYNTHETIC_FIXTURES: 'true',
-    HOST: '127.0.0.1', PORT: '8000', FEATURE_LEGACY_FACADE: 'true', FEATURE_GUEST_TRIAL: 'true' };
+    HOST: '127.0.0.1', PORT: '8000', FEATURE_LEGACY_FACADE: 'true', FEATURE_GUEST_TRIAL: 'true',
+    // One line per graded run on this terminal (engine, verdict, each concept). Local development only.
+    GRADING_LOG: 'true' };
   writeFileSync(envFile, JSON.stringify(local, null, 2), { mode: 0o600 });
   Object.assign(env, local, { FRONTEND_DIR: frontend });
   run(['--import', 'tsx', 'scripts/local/prepare.ts'], { env });
   if (process.argv.includes('--prepare-only')) { console.log('Local fixture prepared; no API or frontend started.'); }
   else {
+    // One terminal for everything: each line of API, worker and frontend is shown with its name, and also kept in
+    // .local/local-dev/<name>.log. API request logs are shortened to "status method route ms"; nothing else is changed.
+    const colors = { api: 36, worker: 35, frontend: 32 };
+    const show = (name, line) => {
+      let text = line;
+      try {
+        const j = JSON.parse(line);
+        if (j && j.msg === 'request') text = `${j.status} ${j.method} ${j.route} ${Math.round(j.durationMs)}ms`;
+        else if (j && typeof j.msg === 'string') text = (j.level >= 50 ? 'ERROR ' : j.level >= 40 ? 'WARN ' : '') + j.msg + (j.code ? ' ' + j.code : '');
+        else if (j && j.code) text = (j.level === 'error' ? 'ERROR ' : '') + j.code;
+      } catch { /* not JSON: print as it is */ }
+      process.stdout.write(`\x1b[${colors[name]}m[${name.padEnd(8)}]\x1b[0m ${text}\n`);
+    };
     function start(name, args) {
-      const fd = openSync(join(dir, `${name}.log`), 'a', 0o600);
+      const log = createWriteStream(join(dir, `${name}.log`), { flags: 'a', mode: 0o600 });
       const childEnv={...env};
       if(name==='frontend')for(const k of ['DEEPSEEK_API_KEY','GOOGLE_CLIENT_SECRET','GOOGLE_CLIENT_ID','GOOGLE_TEST_EMAIL','OPENROUTER_API_KEY','RESEND_API_KEY'])delete childEnv[k];
-      const child = spawn(process.execPath, args, { cwd: root, env:childEnv, stdio: ['ignore', fd, fd], windowsHide: true });
-      closeSync(fd); children.push(child);
+      const child = spawn(process.execPath, args, { cwd: root, env:childEnv, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
+      for (const stream of [child.stdout, child.stderr]) {
+        stream.pipe(log, { end: false });
+        createInterface({ input: stream }).on('line', line => { if (line.trim()) show(name, line); });
+      }
+      child.once('close', () => log.end());
+      children.push(child);
       child.once('error', () => { console.error(`${name} could not start; see .local/local-dev/${name}.log`); cleanup(1); });
       child.once('exit', (code, signal) => { if (!closing) { console.error(`${name} stopped unexpectedly (${code ?? signal}); see its local log.`); cleanup(1); } });
       return child;

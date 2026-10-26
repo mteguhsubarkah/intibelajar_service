@@ -99,6 +99,20 @@ async function recommendationsFor(tx: Tx, source: GradingSource, release: Releas
   return out;
 }
 
+/**
+ * Local development only (GRADING_LOG=true, set by npm run dev / local:dev, refused outside NODE_ENV=development):
+ * one line per graded run on the terminal: engine, rubric, verdict, and each concept's classification with its quote.
+ * Quotes are parts of the learner's answer, which is why this never runs in any other environment.
+ */
+const gradingLog = () => process.env.GRADING_LOG === 'true' && process.env.NODE_ENV === 'development';
+export function logGrading(runId: string, engine: string, rubric: string, verdict: string, supported: boolean, evidence: CandidateEvidence[]) {
+  if (!gradingLog()) return;
+  const short: Record<string, string> = { UNDERSTANDING_DEMONSTRATED: 'ok', MISCONCEPTION_EVIDENCED: 'gap', INSUFFICIENT_EVIDENCE: 'insufficient', NOT_ASSESSED: 'not-assessed' };
+  const parts = evidence.map(e => `${e.conceptCode.replace(/^[A-Z]+\.[A-Z]+\./, '')}=${short[e.classification] ?? e.classification}`
+    + (e.misconceptionCode ? `(${e.misconceptionCode})` : '') + (e.refs[0]?.kind === 'SPAN' ? ` "${e.refs[0].quote}"` : ''));
+  console.log(`grade run=${runId.slice(-8)} engine=${engine} rubric=${rubric} verdict=${verdict} evidence=${supported ? 'SUPPORTED' : 'INSUFFICIENT'} | ${parts.join(' | ')}`);
+}
+
 /** Store a completed run with its evidence (inline or adopted). Eligibility per 06 §5; loop attempts never transfer (INV-13). */
 async function complete(tx: Tx, runId: string, req: Pick<RunRequest, 'attemptId' | 'learnerId' | 'release' | 'kind' | 'response' | 'exposure'>, source: GradingSource,
     verdict: Verdict, evidence: CandidateEvidence[], engine: 'DETERMINISTIC' | 'AI_ASSISTED', insert: boolean, purpose?: Purpose, generation?: number) {
@@ -126,6 +140,7 @@ async function complete(tx: Tx, runId: string, req: Pick<RunRequest, 'attemptId'
         ${(e as CandidateEvidence & { confidence?: number }).confidence ?? null}, ${e.uncertaintyReasons}::text[], ${JSON.stringify(e.refs)}::jsonb, ${e.rationale ?? null},
         ${source.familyCode}, ${source.contextTag}, ${eligible.transferEligible}, ${eligible.masteryEligible}, ${eligible.reasons}::text[])`.execute(tx);
   }
+  logGrading(runId, engine, source.rubric.evaluator, verdict, supported, evidence);
   return { supported };
 }
 
@@ -141,6 +156,7 @@ export async function diagnose(tx: Tx, req: RunRequest): Promise<RunResult> {
       values (${runId}, ${req.attemptId}, ${req.learnerId}, ${req.generation}, ${req.purpose}, 'AI_ASSISTED', 'QUEUED', ${source.rubric.evaluator}, ${POLICY_VERSION},
         ${JSON.stringify({ engine: 'AI_ASSISTED', queued: true, inputHash: hash(stable(req.response)).toString('hex') })}::jsonb, ${deadline})`.execute(tx);
     await enqueueDiagnosis(tx, runId, deadline, MAX_CALLS);
+    if (gradingLog()) console.log(`grade run=${runId.slice(-8)} rules=${source.rubric.evaluator} verdict=${evaluation.verdict} → queued for AI (the worker logs the result)`);
     return { runId, status: 'QUEUED', verdict: null, evidenceStatus: null };
   }
   const { supported } = await complete(tx, runId, req, source, evaluation.verdict, evaluation.evidence, 'DETERMINISTIC', true, req.purpose, req.generation);

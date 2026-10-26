@@ -1,0 +1,554 @@
+(node:34500) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ session authentication is independent from learning consent; policy, expiry and revocation stay enforced
+  ✔ anonymous has no session and progress rejects authentication (168.4606ms)
+  ✔ new pending learner stays signed in while progress requires consent (101.3511ms)
+  ✔ valid grant is reflected consistently in session and progress (501.3769ms)
+  ✔ expired grant is reflected consistently in session and progress (40.8181ms)
+  ✔ old-policy grant is reflected consistently in session and progress (43.8455ms)
+  ✔ revoked grant is reflected consistently in session and progress (54.671ms)
+✔ session authentication is independent from learning consent; policy, expiry and revocation stay enforced (3176.5615ms)
+✔ offline engine runs prompt and validates grounded candidate in domain shape (37.7638ms)
+✔ random delimiter and stable context isolate untrusted learner text (6.535ms)
+✔ strict schema rejects malformed JSON, extras, unknown and duplicate indices (5.4268ms)
+✔ domain validation rejects fabricated spans, unknown misconceptions and non-assessable claims (2.1322ms)
+✔ low confidence becomes insufficient; correct cannot blame a misconception (5.4723ms)
+✔ PII masking preserves offsets; private text and keys cannot enter rationale (3.4423ms)
+✔ non-text input stays deterministic and aborted fixture never runs (1.5508ms)
+✔ subject and phase filter selects topics, cores, lessons, sources and cross-scope relations (4.2618ms)
+✔ report separates subjects and levels, includes graph, all cores, and escapes authored text (386.7857ms)
+✔ large report retains every node and cross-page dependency without oversized graphs (4.3169ms)
+✔ backoffice: explicit subject on create, retained on edit, unknown and reassignment rejected (1279.9322ms)
+✔ backoffice: auth, exact Host, CSRF Origin, private data and response headers (933.399ms)
+✔ backoffice: reject cyclic and unknown references atomically, no revision lost (625.9568ms)
+✔ backoffice: exactly two lesson slides, preservation of canonical manifest and strict review gate (1072.5752ms)
+✔ backoffice worker: durable idempotent seed, lease fencing, recovery and no overwrite of edits (725.4026ms)
+✔ backoffice: failed mutation cannot partially persist, review cannot be supplied by client (481.7233ms)
+✔ backoffice: structured lesson and later-slide checks cannot be silently flattened (312.9861ms)
+✔ backoffice: standalone OpenAPI 3.1 contract validates (246.3454ms)
+✔ backoffice HTTPS proxy: exact domain, transport, authenticated proxy, separate access key and Origin (331.204ms)
+✔ committed draft manifest lints clean apart from open review decisions (50.1438ms)
+✔ mutation 1: SCHEMA is detected, and only it (6.6523ms)
+✔ mutation 2: KEY_IN_BODY is detected, and only it (6.7727ms)
+✔ mutation 3: SIZE is detected, and only it (9.7076ms)
+✔ mutation 4: CODE_DUPLICATE is detected, and only it (8.3812ms)
+✔ mutation 5: REF_UNKNOWN is detected, and only it (7.7266ms)
+✔ mutation 6: ALIAS_AMBIGUOUS is detected, and only it (7.542ms)
+✔ mutation 7: ALIAS_UNMAPPED_CONFLICT is detected, and only it (8.9896ms)
+✔ mutation 8: PREREQ_CYCLE is detected, and only it (16.4637ms)
+✔ mutation 9: PREREQ_SELF is detected, and only it (15.9443ms)
+✔ mutation 10: TOPIC_CYCLE is detected, and only it (9.6598ms)
+✔ mutation 11: UNIT_UNKNOWN is detected, and only it (24.8457ms)
+✔ mutation 12: QUESTION_NO_PRIMARY is detected, and only it (18.3127ms)
+✔ mutation 13: STEP_CONCEPT_UNMAPPED is detected, and only it (20.8988ms)
+✔ mutation 14: MISCONCEPTION_UNKNOWN is detected, and only it (18.6675ms)
+✔ mutation 15: EVALUATOR_SHAPE is detected, and only it (14.9667ms)
+✔ mutation 16: OPTION_IDS is detected, and only it (6.6532ms)
+✔ mutation 17: PRACTICE_NOT_DETERMINISTIC is detected, and only it (5.8672ms)
+✔ mutation 18: CHECK_NOT_DETERMINISTIC is detected, and only it (10.1776ms)
+✔ mutation 19: CHECK_PLACEMENT is detected, and only it (8.6508ms)
+✔ mutation 20: PATTERN is detected, and only it (8.2052ms)
+✔ mutation 21: PATTERN is detected, and only it (7.933ms)
+✔ mutation 22: PATTERN is detected, and only it (6.0573ms)
+✔ mutation 23: PATTERN is detected, and only it (6.1078ms)
+✔ mutation 24: LESSON_LINK is detected, and only it (11.5839ms)
+✔ mutation 25: LESSON_LINK is detected, and only it (6.2017ms)
+✔ mutation 26: RECOMMEND is detected, and only it (4.9283ms)
+✔ mutation 27: AUTHORED_TARGET is detected, and only it (7.6298ms)
+✔ mutation: FILE_NAME is detected when a file does not match its code (494.8033ms)
+✔ writeManifest and loadManifest round-trip without loss (590.8074ms)
+✔ extractor is deterministic and every frontend identifier resolves (635.6835ms)
+✔ Slice 2 overlays: applied over the extracted tower question, reviewed on their own, extractor files untouched (16.4415ms)
+✔ D3 stays open: the synthetic funnel lesson exercises lessonFor in memory only and is refused by strict lint (45.828ms)
+▶ Slice 1 catalog migration and publisher on PostgreSQL
+  ✔ 0002 applies on top of 0001; rolling back to 0001 keeps Slice 0 and reapplies (2024.1255ms)
+  ✔ the committed draft is refused because its review decisions are open (390.2485ms)
+  ✔ lint failures publish nothing: cycle, ambiguous alias, unmapped step concept, unknown misconception, oversized rubric (146.9426ms)
+  ✔ publishing the reviewed fixture writes the whole catalog, frozen and current (599.1423ms)
+  ✔ re-publishing the identical manifest is a no-op (102.4661ms)
+  ✔ changed content becomes a new revision; the old one is retired and still readable (320.234ms)
+  ✔ version and identity rules publish nothing (770.9624ms)
+  ✔ an alias may move to another entity in a later release; earlier releases keep their mapping (224.3648ms)
+  ✔ concurrent publishes of one manifest serialise: one publishes, the other sees it unchanged (275.014ms)
+  ✔ INV-04.2: the database rejects in-place edits of published content (134.6534ms)
+✔ Slice 1 catalog migration and publisher on PostgreSQL (5359.6145ms)
+(node:14444) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 1 public catalog read API
+  ✔ without a current release the catalog is empty, not an error (3346.4677ms)
+  ✔ every catalog endpoint answers within the contract for every entity (796.4097ms)
+  ✔ legacy alias lookup: a known alias gives its concept, an unknown one gives an empty list (35.4818ms)
+  ✔ question filters and combined items (25.6127ms)
+  ✔ pagination is complete, ordered and tamper-proof (95.9946ms)
+  ✔ INV-05.1: no catalog response schema can carry a key, rubric or graded feedback (1.676ms)
+  ✔ INV-05.2: no catalog response contains a key, rubric text or graded feedback (746.6707ms)
+  ✔ ETag revalidation on subjects, topics and topic detail (128.7092ms)
+  ✔ unknown ids are a safe 404; malformed ids are 400 (39.6304ms)
+  ✔ a new release is served on the next request: new revisions, retired items, new ETag (627.0716ms)
+✔ Slice 1 public catalog read API (9127.2741ms)
+✔ one provider call with JSON mode, private key, fixed host/model, spend reserved first (96.4375ms)
+✔ nonfixture input and exhausted budget never call network (2.4689ms)
+✔ failure retains reservation, hides provider body, circuit stops after three failures (5.9443ms)
+✔ empty/truncated/invalid output is failure, never mock success (5.5443ms)
+✔ authentication or balance failure stops further HTTP and reservations until restart (2.8311ms)
+(node:27448) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 2 disputes (learner side) over the API
+  ✔ setup: migrations and the reviewed catalog (4326.8482ms)
+  ✔ 06 §9.3 rule 1: one OPEN report per completed run, idempotent, with Location to the run (09 §1); the run shows it (1113.6911ms)
+  ✔ guards: consent, ownership, strict schema, and only a completed run can be reported; refusals write nothing (487.3032ms)
+  ✔ 06 §9.3 rule 5: an OPEN report changes no evidence or eligibility; practice gradings can be reported too (288.2496ms)
+✔ Slice 2 disputes (learner side) over the API (6757.4149ms)
+(node:28404) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ email sign-in outbox
+  ✔ the request only queues, in the login transaction; the worker sends once with a fixed Idempotency-Key (370.2814ms)
+  ✔ unknown transactions and synthetic addresses add nothing to the outbox (202 either way) (34.8129ms)
+{"level":"warn","code":"EMAIL_DELIVERY_RETRY","outbox":"01a1766a-605c-7f63-aedd-720e440a9204","attempts":1,"cause":"PROVIDER_UNAVAILABLE"}
+{"level":"warn","code":"EMAIL_DELIVERY_RETRY","outbox":"01a1766a-605c-7f63-aedd-720e440a9204","attempts":2,"cause":"PROVIDER_UNAVAILABLE"}
+  ✔ a provider outage is retried later with the same key and link, then the link works (98.9113ms)
+{"level":"error","code":"EMAIL_DELIVERY_FAILED","outbox":"01a1766a-60be-73dd-8d65-3b22e61ad7bd","attempts":1,"cause":"PROVIDER_REJECTED"}
+  ✔ a permanent rejection fails at once, drops the payload and is not retried (36.2327ms)
+{"level":"warn","code":"EMAIL_DELIVERY_RETRY","outbox":"01a1766a-60e4-761f-a3f8-25ded67dd19c","attempts":1,"cause":"TRANSPORT_ERROR"}
+{"level":"error","code":"EMAIL_DELIVERY_FAILED","outbox":"01a1766a-60e4-761f-a3f8-25ded67dd19c","attempts":2,"cause":"TRANSPORT_ERROR"}
+  ✔ retries stop at max_attempts (54.6582ms)
+  ✔ an expired link is never sent, even without a configured transport (29.5264ms)
+{"level":"warn","code":"EMAIL_DELIVERY_RETRY","outbox":"01a1766a-6139-7100-8a0a-f12b9c676d0e","attempts":1,"cause":"PROVIDER_UNAVAILABLE"}
+  ✔ a lost lease is recovered; the resend reuses the key and the stale worker cannot overwrite the result (44.7946ms)
+  ✔ two workers at the same time send each email exactly once (245.3308ms)
+  ✔ a worker skips an email another worker holds, instead of waiting and sending it again (63.9663ms)
+  ✔ the emailed link is single-use and bound to the browser that asked (109.7077ms)
+  ✔ no address or token in the API log (0.6177ms)
+✔ email sign-in outbox (1472.5317ms)
+✔ Resend adapter: fixed endpoint, Idempotency-Key, fragment link, error classes without data (75.6648ms)
+✔ golden numeric cases: verdict, unreadable reason and misconception match the shared file (18.2503ms)
+✔ golden option section is in sync with the manifest and every index grades as the key says (5.5746ms)
+✔ every deterministic item accepts its own key and its first accepted form (6.9275ms)
+✔ evidence: correct answers demonstrate the final-answer concepts and quote what was written (3.2295ms)
+✔ evidence: a catalogued wrong answer evidences its misconception; an unexplained one never invents a gap (1.1179ms)
+✔ INV-16 and refusals: unreadable, self-reports and malformed inputs produce no evidence and no verdict claim (1.0656ms)
+✔ non-assessable concepts are never claimed, and evaluation is deterministic (0.6865ms)
+✔ golden v2 carries the v1 numeric and option sections unchanged (2.3196ms)
+✔ golden tower cases: verdict, reason, misconception and per-concept evidence with exact quotes (11.7607ms)
+✔ golden tower deltas: exactly the labelled cases differ from the recorded analysis.ts output, and none is approved (1.5463ms)
+✔ tower-v1 final value under another name (2026-10-26): only an unknown of the working, and "x" always wins (2.3279ms)
+✔ 06 §10 and T01-3 rows hold for tower-v1 (6.7938ms)
+✔ whole tokens, never substrings: tanpa, sinus and cosinus match nothing (1.4186ms)
+✔ INV-09 and spans: only mapped concepts, claims only on assessable ones, every quote is the exact substring (418.1811ms)
+▶ real OIDC library verifies signed tokens, nonce, issuer, audience, expiry, PKCE and test-account restriction without network
+  ✔ authorization code with PKCE S256, state, nonce and minimal scopes (60.7372ms)
+  ✔ valid signed ID token accepted (23.269ms)
+  ✔ reject nonce (3.5605ms)
+  ✔ reject issuer (5.8963ms)
+  ✔ reject audience (2.7445ms)
+  ✔ reject expiry (1.9924ms)
+  ✔ reject unverified (8.3699ms)
+  ✔ reject otherAccount (4.3387ms)
+  ✔ reject forged signature (6.0874ms)
+  ✔ reject bad state before code exchange (1.1004ms)
+✔ real OIDC library verifies signed tokens, nonce, issuer, audience, expiry, PKCE and test-account restriction without network (397.3453ms)
+(node:7556) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7556) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+▶ Swagger and Google routes against PostgreSQL: fail closed, cookie binding, rotation, single use and consent pending
+  ✔ Swagger serves authoritative contract and local assets only (93.6473ms)
+  ✔ Google unconfigured returns explicit blocker; origin and continuation remain guarded (55.4306ms)
+  ✔ wrong cookie/state and expired transaction rejected before provider (95.6801ms)
+  ✔ register rotates session, stores no email/tokens, creates no consent (205.9857ms)
+  ✔ repeat sign-in resolves same sub and returns existing continuation (30.5579ms)
+  ✔ cancellation consumes transaction without calling provider (21.517ms)
+  ✔ only verified email identities link; synthetic/unverified email never links (85.9961ms)
+  ✔ provider failure cannot create a user and consumes the callback attempt (20.2797ms)
+  ✔ disabled accounts cannot sign in again (22.7701ms)
+  ✔ Google environment defaults off and rejects incomplete/production settings (1.4331ms)
+✔ Swagger and Google routes against PostgreSQL: fail closed, cookie binding, rotation, single use and consent pending (1137.8181ms)
+✔ grading log: one line in local development only, never in test or with the flag off (2.9162ms)
+(node:8324) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8324) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+▶ guest trial accounts for /coba
+  ✔ setup: catalog (2270.6952ms)
+  ✔ off by default: 403 FEATURE_DISABLED and nothing is created (94.8704ms)
+  ✔ a visitor gets a 24-hour trial: active learner, the /coba purposes, a session that ends with it, guest: true (84.6068ms)
+  ✔ a real account is never replaced by a trial, and has no guest flag (38.4631ms)
+  ✔ the trial needs the exact Origin, like every auth call (5.7938ms)
+  ✔ a guest is graded by the server on the canonical loop, and the legacy /coba calls serve them (728.14ms)
+  ✔ an answer the rules do not cover is queued for AI and adopted (the DeepSeek path, with a fake engine) (310.0011ms)
+  ✔ an expired trial is erased by the usual erasure; its session stops working at once (161.5467ms)
+✔ guest trial accounts for /coba (4016.5093ms)
+▶ Slice 1 learning schema, guards and erasure on PostgreSQL
+  ✖ 0003 and 0004 apply on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings (2467.8399ms)
+  ✖ INV-19 coverage: every table with a learner column is accounted for (51.7482ms)
+  ✖ INV-19: erasure removes every learning and assessment row, leaves a receipt and the catalog (6.9712ms)
+  ✖ restore replay: learning rows that come back with an erased learner are erased again (4.1095ms)
+  ✖ INV-07: a stored attempt is immutable apart from grading once and the retention purge (3.0591ms)
+  ✖ INV-08 and append-only evidence (3.6752ms)
+✖ Slice 1 learning schema, guards and erasure on PostgreSQL (2545.5399ms)
+✔ INV-06.1: the version moves by exactly one when the state changes or an attempt is stored (294.2036ms)
+✔ terminal states absorb every command except re-reading a loop solution; completion has a reason (138.7879ms)
+✔ kinds stay apart: practice never enters a loop state, a loop never practises (131.3529ms)
+✔ practice: items finish in order, never revert, and completion means none is pending (130.2484ms)
+✔ lessons: graded checks stay graded; the lesson ends only by finishing (all required graded) or skipping (153.5284ms)
+✔ loop bounds: at most 2 clarification rounds, 2 unsuccessful retries and 3 run generations (160.7762ms)
+✔ INV-16: only an incorrect verification consumes a retry; unreadable and insufficient results never do (114.5951ms)
+✔ SOLUTION_REVIEWED only after the retries are exhausted or through REVIEW_SOLUTION (113.0685ms)
+✔ 05 §4.4: a self-report never yields a verdict other than NOT_GRADED (120.7381ms)
+✔ runs: pending exactly while diagnosing or verifying; results are fenced by generation and status (145.7356ms)
+✔ allowedActions lists exactly the commands that some argument makes legal (217.5948ms)
+✔ question-loop commands are never legal in a practice session (13.5651ms)
+✔ question loop paths (E-01–E-21) (1.4245ms)
+(node:21512) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 1 practice sessions over the API
+  ✔ setup: migrations, reviewed catalog with one hint (2225.3869ms)
+  ✔ E-02 creation guards: consent, feature, content and ownership (912.4366ms)
+  ✔ E-02, E-12–E-15: a lesson with quick checks, then practice; formative evidence never counts (2007.8631ms)
+  ✔ E-22: items in order; grading, evidence, eligibility and exposure; completion (1856.8233ms)
+  ✔ 09 §1: practice 201s (session, quick-check answer, attempt) carry Location to a resource that reads back (475.7471ms)
+  ✔ E-23 hints: idempotent per step, no version bump, and they block transfer (INV-12) (342.5236ms)
+  ✔ INV-14 idempotency and the stale second tab (278.3088ms)
+  ✔ resume after refresh (T02), checkpoint without a version bump, and the resume list (558.7404ms)
+  ✔ consent revocation and erasure stop processing; expiry gives 410 (E-25) (277.5381ms)
+  ✔ INV-05 and log canaries: no keys before grading, no answer text in logs (405.0246ms)
+  ✔ INV-06.1 model-based: random command sequences over HTTP agree with the machine; illegal ones write nothing (8170.0606ms)
+✔ Slice 1 practice sessions over the API (18186.4415ms)
+(node:3768) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3768) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+▶ Slice 1 legacy facade L3 over the M6 engine
+  ✔ setup: catalog (2688.0746ms)
+  ✔ off by default; only FEATURE_LEGACY_FACADE can be enabled; guests and unconsented learners are not served (884.2924ms)
+  ✔ practice (PracticeRunView, StepLatihan): graded on the server, judged by the frontend validator (609.5347ms)
+  ✔ lessons (CoreView): implied lesson commands, then lesson practice (447.8079ms)
+  ✖ derived idempotency: a retried call replays; unreadable keeps the item; refusals and gaps (552.4612ms)
+✖ Slice 1 legacy facade L3 over the M6 engine (6353.5502ms)
+(node:34736) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34736) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+▶ Slice 2 legacy facade L1, L2, L4, L8 over the question loop
+  ✔ setup: catalog (3789.132ms)
+  ✔ off by default; L7 stays closed; guests, unconsented learners and own questions are not served, with zero writes (1052.552ms)
+  ✔ L1 (oracle isRun): a misconception maps to the legacy gap, next and items (09 §6.3); a network retry replays (284.9755ms)
+  ✔ L1: correct, bare wrong value (T01-3), self-reports; all accepted by the shipped validator (478.2259ms)
+  ✔ 09 §6.1 rule 5: a network retry replays, but the same text after the state moved on is a new command (255.9817ms)
+  ✔ L1 rule 6: "Coba soal tadi lagi" after a diagnosis implies START_RETRY and verifies; hintOpened is recorded conservatively (191.7429ms)
+  ✔ 09 §6.3 as a unit: items follow curriculum order whatever the storage order; gap is the misconception, next the first recommendation (118.6142ms)
+  ✖ L4 (oracle isSolution): in RETRY it ends the loop; after two wrong retries (max_tries) it reads; before the retry phase it is refused (253.8894ms)
+  ✔ L2 (oracle polling): a queued run is polled with Retry-After until adopted; foreign and device ids are not found (2369.6616ms)
+  ✖ L8 (oracle isMap): the server port equals detectLocally on any text, demo false; nothing outside the frozen aliases (26.4924ms)
+✖ Slice 2 legacy facade L1, L2, L4, L8 over the question loop (9471.2397ms)
+(node:34876) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ D3/D6 and durable budget against isolated PostgreSQL
+  ✔ ownership and consent block tutor (80.6514ms)
+  ✔ strict scope, server hint counter, idempotency, solution remains locked (156.6624ms)
+  ✔ lesson pins c4; cannot finish before check; check then retry succeeds (686.8202ms)
+  ✔ atomic total budget prevents concurrent overspend and survives connection recreation (136.4357ms)
+✔ D3/D6 and durable budget against isolated PostgreSQL (3222.9059ms)
+✔ free OCR transport: synthetic allowlist, free vision metadata, stripped image and no paid fallback (86.5854ms)
+✔ pilot check never treats configured credentials or adult test acknowledgment as production approval (1.6971ms)
+✔ mastery-v1 K05, contradictions, decay and non-eligible facts (4.7814ms)
+(node:3752) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ connected progress/import/tutor on PostgreSQL preserve consent, ownership and no imported evidence
+  ✔ progress/stat/mastery contract and pending-consent rejection (655.4685ms)
+  ✔ import opt-in, idempotency and cross-user claiming rejected; zero evidence or XP (417.9179ms)
+  ✔ canonical tutor scripted replies reject unrelated scope and enforce ownership (313.0227ms)
+  ✔ typed intake private ownership, confirmation is advisory and photo fails closed without consent/provider (366.6418ms)
+  ✔ real grading awards server XP once; rebuild is identical; revealed families do not award again (889.158ms)
+  ✔ erasure removes new projection, conversation, intake and private question dependencies (137.0406ms)
+✔ connected progress/import/tutor on PostgreSQL preserve consent, ownership and no imported evidence (4138.7705ms)
+▶ Slice 2 question-loop schema and diagnosis queue on PostgreSQL
+  ✔ 0004 applies, rolls back to the Slice 0 job check, and re-applies (2933.4324ms)
+  ✔ 04 §9: a job references exactly one target; one job per run (55.8004ms)
+  ✔ diagnosis_report: one per run, owner-bound, resolved once, note purgeable (44.6084ms)
+  ✔ diagnosis queue: lease, heartbeat, backoff, recovery, max attempts, deadline (59.2785ms)
+  ✔ adoption is fenced: complete once under a valid lease; cancellation fences out late results (34.5556ms)
+✔ Slice 2 question-loop schema and diagnosis queue on PostgreSQL (3135.0058ms)
+(node:5904) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 2 question loops over the API
+  ✔ setup: migrations, reviewed catalog with the authored tower rubric (2241.9652ms)
+  ✔ E-01 creation guards: consent, feature, content, strict schemas and replay (854.4266ms)
+  ✔ 09 §1: every 201 carries Location to a resource that reads back, also on replay; a 200 carries none (1604.5024ms)
+  ✔ E-03 + E-08 inline (T01-1, T01-5, INV-04, INV-13): a correct first try completes; the solution stays locked until reviewed (812.059ms)
+  ✔ E-07 with recommendations: a catalogued misconception points to its authored lesson and key formula (327.3647ms)
+  ✔ T01-3 with E-05, E-04 and E-06: a bare wrong value asks for working; two clarifications, then the learner chooses (764.5539ms)
+  ✔ 05 §4.4 self-reports: "Saya tahu caranya" asks for proof, "belum tahu" starts from the basics; neither is graded (658.0508ms)
+  ✔ E-11 to E-14 and E-16 + E-17 (T01-6): a lesson from a recommendation, its checks, then a correct retry (1127.617ms)
+  ✔ E-15, E-18, E-20, E-19 (INV-16.1): only an incorrect retry uses an allowance; the second ends with the solution (888.8415ms)
+  ✔ E-21 from RETRY and its illegal forms; T01-9: a family attempt after the solution is not independent (1092.3341ms)
+  ✔ E-23 on the anchor: hints are idempotent, change no state and mark the next attempt (574.3734ms)
+  ✔ T01-11 and INV-22: two tabs on one version get one 201 and one 409; client timestamps and verdicts are refused (388.9646ms)
+  ✔ queued path (D4 fake engine): no AI consent → inline insufficient; with consent → queued, polled, adopted as AI evidence (787.2114ms)
+  ✔ T01-4 and E-09/E-10: failures produce no diagnosis; the loop resumes by generation, at most three (1083.6491ms)
+  ✔ INV-08.1: concurrent REQUEST_DIAGNOSIS creates one new generation (848.112ms)
+  ✔ fencing: lease recovery adopts once; late results after abandon, expiry, a new generation, revocation and deletion are discarded (2182.8222ms)
+  ✔ 04 §7 fences one at a time: a stale lease holder, an attempt that is not the active one, another generation (490.0362ms)
+  ✔ E-25 expiry of a waiting loop cancels its run and job; later commands are 410 (451.9255ms)
+  ✔ model-based (INV-06, 05 §1.5): random command sequences agree with the pure machine, and refusals write nothing (19260.8005ms)
+  ✔ T01-GO: every loop run links attempt → run → evidence references → pinned revision (37.575ms)
+✔ Slice 2 question loops over the API (37171.514ms)
+(node:23320) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ self onboarding consent and real email sign-in
+  ✔ a real address is emailed through Resend, and its identity is verified (357.712ms)
+(node:23320) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+  ✔ onboarding with username and grade activates the account without a guardian (503.7094ms)
+  ✔ without Resend, a real address is refused and the synthetic mailbox stays the only transport (72.6562ms)
+✔ self onboarding consent and real email sign-in (1338.4286ms)
+(node:30084) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Slice 0 real PostgreSQL integration and security gates
+  ✔ migration up, rollback, reapply, database version and atomic failure recovery (4001.9138ms)
+  ✔ configuration fails closed for production, remote database and feature enables (1.2702ms)
+  ✔ identity sessions: hashes, cookie flags, rotation, reuse and continuation (320.0687ms)
+  ✔ CSRF and Origin matrix on all authenticated Slice 0 mutations (42.0506ms)
+  ✔ pending onboarding minimization, strict fields, age derivation and consent guard (94.1296ms)
+  ✔ multi-purpose consent, policy proof, idempotency replay and immediate session revocation (186.0937ms)
+  ✔ cross-user and guardian ownership, optional revocation and no learning capabilities (274.8963ms)
+  ✔ leased deletion failure, fencing, recovery and complete Slice 0 erasure (226.0697ms)
+  ✔ session idle and absolute expiry (43.1418ms)
+  ✔ expired and declined consent: pending bootstrap erased, no relaxed eligibility (223.8377ms)
+  ✔ idempotency concurrency, crash rollback, replay and different payload (167.5246ms)
+  ✔ log canaries: URL tokens, emails, headers, malformed input and raw payloads absent (6.3143ms)
+(node:30084) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+  ✔ logout current/all, deletion request, missing idempotency and adult consent defaults (176.0968ms)
+(node:30084) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(node:30084) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+  ✔ unconfigured integrations fail closed and auth rate limits remain enforced (87.1217ms)
+  ✔ database unavailable produces failed readiness and can recover (31.8328ms)
+✔ Slice 0 real PostgreSQL integration and security gates (6262.824ms)
+(node:30572) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP (542.8867ms)
+ℹ tests 262
+ℹ suites 0
+ℹ pass 249
+ℹ fail 13
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 219145.1698
+
+✖ failing tests:
+
+test at test\learning-erasure.test.ts:87:13
+✖ 0003 and 0004 apply on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings (2467.8399ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      '0001_slice0.up.sql',
+      '0002_catalog.up.sql',
+      '0003_learning.up.sql',
+      '0004_question_loop.up.sql',
+  +   '0005-development-ai-budget.up.sql',
+  +   '0006-progress.up.sql',
+  +   '0007-tutor.up.sql',
+  +   '0008-intake.up.sql',
+  +   '0009-self-onboarding.up.sql',
+  +   '0010-email-outbox.up.sql',
+  +   '0011-guest-trial.up.sql'
+    ]
+  
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:96:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '0001_slice0.up.sql', '0002_catalog.up.sql', '0003_learning.up.sql', '0004_question_loop.up.sql', '0005-development-ai-budget.up.sql', '0006-progress.up.sql', '0007-tutor.up.sql', '0008-intake.up.sql', '0009-self-onboarding.up.sql', '0010-email-outbox.up.sql', '0011-guest-trial.up.sql' ],
+    expected: [ '0001_slice0.up.sql', '0002_catalog.up.sql', '0003_learning.up.sql', '0004_question_loop.up.sql' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\learning-erasure.test.ts:120:13
+✖ INV-19 coverage: every table with a learner column is accounted for (51.7482ms)
+  AssertionError [ERR_ASSERTION]: add each new learner-owned table to the erasure and to LEARNER_TABLES
+  + actual - expected
+  
+  + [
+  +   'learner_stats',
+  +   'mastery_state',
+  +   'private_asset',
+  +   'progress_event',
+  +   'question_intake',
+  +   'tutor_conversation'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:127:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:120:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'learner_stats', 'mastery_state', 'private_asset', 'progress_event', 'question_intake', 'tutor_conversation' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\learning-erasure.test.ts:131:13
+✖ INV-19: erasure removes every learning and assessment row, leaves a receipt and the catalog (6.9712ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:132:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:131:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\learning-erasure.test.ts:149:13
+✖ restore replay: learning rows that come back with an erased learner are erased again (4.1095ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:150:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:149:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\learning-erasure.test.ts:164:13
+✖ INV-07: a stored attempt is immutable apart from grading once and the retention purge (3.0591ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:165:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:164:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\learning-erasure.test.ts:187:13
+✖ INV-08 and append-only evidence (3.6752ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:188:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:187:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\legacy-facade.test.ts:135:13
+✖ derived idempotency: a retried call replays; unreadable keeps the item; refusals and gaps (552.4612ms)
+  AssertionError [ERR_ASSERTION]: {"sessionId":"client-3","kind":"retry_original","itemId":"soal-menara","answer":"20√3"}
+  + actual - expected
+  
+    [
+  +   409,
+  +   'CONTENT_UNAVAILABLE'
+  -   403,
+  -   'FEATURE_DISABLED'
+    ]
+  
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-facade.test.ts:163:92)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-facade.test.ts:135:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 409, 'CONTENT_UNAVAILABLE' ],
+    expected: [ 403, 'FEATURE_DISABLED' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\legacy-loop-facade.test.ts:204:13
+✖ L4 (oracle isSolution): in RETRY it ends the loop; after two wrong retries (max_tries) it reads; before the retry phase it is refused (253.8894ms)
+  AssertionError [ERR_ASSERTION]: not before the retry phase (05 §4.5)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:209:7)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:204:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: ServiceFailure: Langkah ini belum bisa dilakukan sekarang. (HTTP 409).
+        at responseFailure (file:///C:/Users/User/AppData/Local/Temp/ib-adapter-t4WLBy/adapter.mjs:23:10)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async readResponseJson (file:///C:/Users/User/AppData/Local/Temp/ib-adapter-t4WLBy/adapter.mjs:42:27)
+        at async backendFirst (file:///C:/Users/User/AppData/Local/Temp/ib-adapter-t4WLBy/adapter.mjs:139:18)
+        at async via (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:86:18)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:209:7)
+        at async Test.run (node:internal/test_runner/test:1389:7)
+        at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:204:5),
+    expected: /http_409/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\legacy-loop-facade.test.ts:248:13
+✖ L8 (oracle isMap): the server port equals detectLocally on any text, demo false; nothing outside the frozen aliases (26.4924ms)
+  Error: Property failed after 1 tests
+  { seed: 1739449034, path: "0:0:0:0:0:0:0", endOnFailure: true }
+  Counterexample: ["!"]
+  Shrunk 6 time(s)
+  Got TypeError: intake.detectLocally is not a function
+      at text (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:253:88)
+      at Property.predicate (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/property/Property.js:14:54)
+      at Property.run (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/property/Property.generic.js:46:33)
+      at runIt (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/runner/Runner.js:18:30)
+      at check (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/runner/Runner.js:62:11)
+      at Module.assert (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/runner/Runner.js:65:17)
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:253:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:248:5)
+  
+  Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+      at buildError (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/runner/utils/RunDetailsFormatter.js:126:15)
+      at throwIfFailed (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/runner/utils/RunDetailsFormatter.js:138:11)
+      at reportRunDetails (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/runner/utils/RunDetailsFormatter.js:151:16)
+      at Module.assert (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/fast-check/lib/esm/check/runner/Runner.js:69:9)
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:253:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-loop-facade.test.ts:248:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\tutor-ai-connection.test.ts:3:1
+✖ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP (542.8867ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(q)
+  
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\tutor-ai-connection.test.ts:8:120)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+exit 1

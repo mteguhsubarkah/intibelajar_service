@@ -14,7 +14,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\dev-local.ps1
 
 Lalu buka **http://localhost:5180/__local**. Pilih **Masuk sebagai Uji Lokal A**.
 
-Launcher memakai Node yang tersedia, atau menemukan runtime Node 24 lokal jika symlink nvm belum berfungsi. ExecutionPolicy Bypass hanya berlaku untuk proses PowerShell itu; tidak mengubah policy Windows global. Jika Node/npm sudah normal, alternatifnya `npm run local:dev`.
+Launcher memakai Node yang tersedia, atau menemukan runtime Node 24 lokal jika symlink nvm belum berfungsi. ExecutionPolicy Bypass hanya berlaku untuk proses PowerShell itu; tidak mengubah policy Windows global. Jika Node/npm sudah normal, cukup **`npm run dev`** (sama dengan `npm run local:dev`): satu perintah menyalakan PostgreSQL, migrasi, API, worker dan FE dengan semua file `.local/local-dev/*.env`. Log ketiganya tampil di terminal yang sama dengan label `[api]`, `[worker]`, `[frontend]` (request API diringkas menjadi `status method route ms`), dan tetap disimpan di `.local/local-dev/<nama>.log`. `npm run dev:api` menjalankan API saja (tanpa worker, FE, atau file konfigurasi lokal), untuk kebutuhan khusus.
 
 Yang otomatis dinyalakan:
 
