@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-25",
+  "node": "v24.19.0",
+  "scope": "auth/progress bugfix and private adult pilot preparation",
+  "results": [
+    {"name": "account-progress-session + google-docs + email-delivery + pilot-readiness", "exit": 0, "tests": 33, "pass": 33},
+    {"name": "slice0 + progress-connection", "exit": 0, "tests": 24, "pass": 24},
+    {"name": "backend typecheck + boundaries + OpenAPI 3.1", "exit": 0},
+    {"name": "frontend suite including auth regression", "exit": 0},
+    {"name": "consumer contracts", "exit": 0, "checks": 29},
+    {"name": "shared golden", "exit": 0, "numeric": 81, "option": 47, "tower": 21, "proposedDeltas": 12},
+    {"name": "frontend binding/typecheck/build", "exit": 0, "components": 87},
+    {"name": "browser pending/valid/offline/forbidden/anonymous", "exit": 0, "checks": 5},
+    {"name": "pilot readiness audit", "exit": 2, "expectedExit": 2, "status": "blocked"}
+  ],
+  "browserInitialFailure": "Selector expected 'Catatan belum'; actual message is 'Catatan akun belum bisa dimuat'. Corrected test selector, then five cases passed.",
+  "database": "dedicated *_test only",
+  "liveGoogleRetested": false,
+  "liveEmailSent": false,
+  "liveAiCalled": false,
+  "deployed": false,
+  "fullBackendStressOrMutationSuiteRun": false,
+  "notes": "Summary of completed tool runs, not raw stdout. Runtime remains synthetic; credentials are not approval. Existing unrelated frontend edits retained."
+}

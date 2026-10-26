@@ -136,7 +136,7 @@ test('Slice 0 real PostgreSQL integration and security gates',async t=>{
       assert.equal((await inject('GET','/v1/guardian-consents/'+c.token)).statusCode,410);
       assert.equal((await inject('POST',`/v1/guardian-consents/${c.token}/decision`,d.body,{'idempotency-key':'new_decision'})).statusCode,410);
       const records=await db.selectFrom('consent_record').selectAll().where('learner_id','=',a.id).execute();
-      assert.ok(records.every(r=>r.decided_by==='GUARDIAN'&&r.decided_at&&r.policy_text_sha256.equals(policyHash)));guardianId=records[0]!.guardian_id;
+      assert.ok(records.every(r=>r.decided_by==='GUARDIAN'&&r.decided_at&&r.policy_text_sha256.equals(policyHash)));guardianId=records[0]!.guardian_id!;
       assert.equal((await inject('GET','/v1/auth/session',undefined,{cookie:a.cookie})).json().authenticated,false);
       a=await signin('learner-a@example.invalid');await db.transaction().execute(tx=>requireConsent(tx,a.id,['LEARNING_DATA']));
       assert.equal((await inject('GET','/v1/me/profile',undefined,auth(a))).json().ageBandSource,'SELF_DECLARED');

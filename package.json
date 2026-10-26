@@ -34,7 +34,8 @@
     "e2e:seed": "tsx scripts/e2e-seed.ts",
     "e2e:canonical": "node scripts/e2e-canonical.mjs",
     "verify:slice1": "node scripts/verify-slice1.mjs",
-    "test:catalog": "tsx --test --test-concurrency=1 test/catalog-*.test.ts"
+    "test:catalog": "tsx --test --test-concurrency=1 test/catalog-*.test.ts",
+    "pilot:check": "tsx scripts/pilot-readiness.ts"
   },
   "dependencies": {
     "@opentelemetry/api": "1.9.1",

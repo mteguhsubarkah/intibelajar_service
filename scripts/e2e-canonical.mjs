@@ -30,7 +30,7 @@ try {
   }
   run('npm', ['run', 'build'], { cwd: frontend, env: { ...process.env, VITE_SLICE0: 'true', VITE_CANONICAL_LEARNING: 'true' } });
   run('npx', ['tsx', 'scripts/catalog/check-bundle-keys.ts', '--dist', resolve(frontend, 'dist')]);
-  run('npx', ['playwright', 'test', ...(process.env.E2E_SPEC ? process.env.E2E_SPEC.split(',') : ['tests/e2e/canonical-practice.spec.ts', 'tests/e2e/canonical-loop.spec.ts'])], { cwd: frontend, env: { ...process.env, E2E_LEARNER_FILE: resolve('.local/e2e-learner.json'), CI: '' } });
+  run('npx', ['playwright', 'test', ...(process.env.E2E_SPEC ? process.env.E2E_SPEC.split(',') : ['tests/e2e/canonical-practice.spec.ts', 'tests/e2e/canonical-loop.spec.ts', 'tests/e2e/email-link.spec.ts'])], { cwd: frontend, env: { ...process.env, E2E_LEARNER_FILE: resolve('.local/e2e-learner.json'), CI: '' } });
 } catch (error) { failed = true; console.error(String(error)); }
 finally {
   api.kill();

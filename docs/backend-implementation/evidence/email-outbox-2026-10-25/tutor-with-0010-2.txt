@@ -1,0 +1,16 @@
+(node:29128) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP
+  ✔ model may select only server-authored scaffold; no arbitrary generated text (1074.7336ms)
+  ✔ revocation during call prevents adoption (259.0889ms)
+  ✔ revoked AI consent rejects new AI message; unrelated request stays scoped without external call (234.8929ms)
+✔ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP (3101.903ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10335.7264
+run 2 exit 0

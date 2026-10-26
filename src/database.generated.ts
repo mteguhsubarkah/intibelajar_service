@@ -123,7 +123,7 @@ export interface Database {
   consent_record: {
     id: string;
     learner_id: string;
-    guardian_id: string;
+    guardian_id: string | null;
     purpose: string;
     status: string;
     method: string;
@@ -211,6 +211,24 @@ export interface Database {
     started_at: Date | null;
     completed_at: Date | null;
     created_at: Generated<Date>;
+  };
+  email_outbox: {
+    id: string;
+    auth_transaction_id: string;
+    kind: string;
+    delivery_key: string;
+    payload_ciphertext: Buffer | null;
+    status: Generated<string>;
+    attempts: Generated<number>;
+    max_attempts: Generated<number>;
+    available_at: Generated<Date>;
+    lease_token: string | null;
+    lease_until: Date | null;
+    expires_at: Date;
+    sent_at: Date | null;
+    last_error_code: string | null;
+    created_at: Generated<Date>;
+    updated_at: Generated<Date>;
   };
   erasure_receipt: {
     receipt_id: string;

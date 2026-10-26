@@ -26,7 +26,9 @@ export async function adoptErasure(tx:Tx,config:Config,lease:Lease) {
   const learner=await tx.selectFrom('learner').selectAll().where('id','=',id).forUpdate().executeTakeFirst();
   if(!learner || learner.status!=='DELETION_PENDING') return false;
   if(!await validLease(tx,lease)) return false;
-  const guardians=(await tx.selectFrom('consent_record').select('guardian_id').distinct().where('learner_id','=',id).execute()).map(r=>r.guardian_id);
+  const guardians=(await tx.selectFrom('consent_record').select('guardian_id').distinct().where('learner_id','=',id).execute())
+    // Self-declared consent has no guardian to clean up.
+    .flatMap(r=>r.guardian_id?[r.guardian_id]:[]);
   await eraseTutor(tx,id);await eraseProgress(tx,id);await eraseIntakes(tx,id);
   await eraseLearnerEvidence(tx,id);
   await eraseLearnerLearning(tx,id);

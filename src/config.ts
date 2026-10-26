@@ -2,6 +2,10 @@ export interface Config {
   google?: {clientId:string;clientSecret:string;testEmail:string};
   mode: 'development' | 'test'; databaseUrl: string; origin: string; host: string; port: number;
   key: Buffer; synthetic: boolean; idleSeconds: number; absoluteSeconds: number;
+  /** SELF_ONBOARDING_CONSENT=true: siswa memberi izin sendiri saat onboarding, tanpa guardian. */
+  selfConsent: boolean;
+  /** Pengirim email masuk sungguhan (Resend). Tanpa ini hanya kotak surat sintetis lokal. */
+  email?: {provider:'resend';apiKey:string;from:string};
   features: Readonly<Record<keyof typeof features, boolean>>;
 }
 export const integrationBlockers = [
@@ -42,11 +46,19 @@ export function readConfig(env = process.env): Config {
       throw new Error('Google client credentials and an explicitly acknowledged adult test account are required');
     google={clientId:env.GOOGLE_CLIENT_ID,clientSecret:env.GOOGLE_CLIENT_SECRET,testEmail:env.GOOGLE_TEST_EMAIL.trim().toLowerCase()};
   }
+  let email:Config['email'];
+  if(env.EMAIL_PROVIDER){
+    if(env.EMAIL_PROVIDER!=='resend')throw new Error('EMAIL_PROVIDER supports resend only');
+    const from=(env.EMAIL_FROM??'').trim();
+    if(!/^re_[A-Za-z0-9_]+$/.test(env.RESEND_API_KEY??'')||/[\r\n]/.test(from)||!/^(?:[^<>@]*<)?[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+>?$/.test(from))
+      throw new Error('Resend requires RESEND_API_KEY and a valid EMAIL_FROM');
+    email={provider:'resend',apiKey:env.RESEND_API_KEY!,from};
+  }
   if((localAi||localTutor||localOcr) && ((env.NODE_ENV??'development')!=='development'||env.SYNTHETIC_FIXTURES!=='true'||url.pathname!=='/intibelajar_local_dev'))
     throw new Error('DeepSeek requires the isolated synthetic development database');
   return { mode: (env.NODE_ENV ?? 'development') as Config['mode'], databaseUrl: url.href,
     origin: origin.origin, host: '127.0.0.1', port: integer('PORT', 8000, 65535), key,...(google?{google}:{}),
-    synthetic: env.SYNTHETIC_FIXTURES === 'true', idleSeconds: integer('SESSION_IDLE_SECONDS', 604800, 604800),
+    synthetic: env.SYNTHETIC_FIXTURES === 'true', selfConsent: env.SELF_ONBOARDING_CONSENT === 'true',...(email?{email}:{}), idleSeconds: integer('SESSION_IDLE_SECONDS', 604800, 604800),
     absoluteSeconds: integer('SESSION_ABSOLUTE_SECONDS', 2592000, 2592000),
     features: Object.freeze({ ...features, aiDiagnosis:localAi,aiTutor:localTutor,intake:localOcr, legacyFacade: env.FEATURE_LEGACY_FACADE === 'true' }) };
 }

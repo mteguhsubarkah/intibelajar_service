@@ -1,5 +1,5 @@
 import { sql } from 'kysely';
-export async function projectionLearners(db:import('../db.js').Connection){return(await sql<{id:string}>`select id from learner where status='ACTIVE' and exists(select 1 from consent_record c where c.learner_id=learner.id and c.purpose='LEARNING_DATA' and c.status='GRANTED' and c.expires_at>now())`.execute(db)).rows.map(r=>r.id);}
+export async function projectionLearners(db:import('../db.js').Connection){return(await sql<{id:string}>`select id from learner where status='ACTIVE' and exists(select 1 from consent_record c where c.learner_id=learner.id and c.purpose='LEARNING_DATA' and c.status='GRANTED' and c.expires_at>now() and c.policy_version=${policyVersion})`.execute(db)).rows.map(r=>r.id);}
 import { now, type Connection, type Tx } from '../db.js';
 import type { Config } from '../config.js';
 import { encrypt, hash, hmac, token, uuid } from '../platform/crypto.js';
@@ -56,10 +56,32 @@ export async function profile(db: Connection, id: string) {
     ...(row.grade?{grade:row.grade}:{}),...(row.consent_deadline_at?{consentDeadlineAt:row.consent_deadline_at.toISOString()}: {})};
 }
 export interface ProfilePatch { displayName?:string; grade?:number; birthYear?:number; timezone?:string; preferredSubjectCodes?:string[] }
-export async function updateProfile(tx:Tx,id:string,input:ProfilePatch) {
+/** Izin yang diberikan siswa sendiri saat onboarding (SELF_ONBOARDING_CONSENT=true). Analitik produk tidak termasuk. */
+export const selfPurposes=['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD'] as const;
+/**
+ * Onboarding mandiri: begitu username dan kelas terisi, siswa memberi izin sendiri (tanpa guardian)
+ * dan akunnya langsung aktif. Data yang disimpan hanya email (dari login), username, dan kelas.
+ */
+async function selfActivate(tx:Tx,config:Config,id:string,time:Date) {
+  await tx.updateTable('consent_record').set({status:'EXPIRED',updated_at:time}).where('learner_id','=',id)
+    .where('purpose','in',[...selfPurposes]).where('status','=','PENDING').execute();
+  const live=await tx.selectFrom('consent_record').select('purpose').where('learner_id','=',id).where('status','=','GRANTED')
+    .where('expires_at','>',time).where('policy_version','=',policyVersion).execute();
+  for(const purpose of selfPurposes){
+    if(live.some(r=>r.purpose===purpose))continue;
+    await tx.updateTable('consent_record').set({status:'EXPIRED',updated_at:time}).where('learner_id','=',id).where('purpose','=',purpose).where('status','=','GRANTED').execute();
+    await tx.insertInto('consent_record').values({id:uuid(),learner_id:id,guardian_id:null,purpose,status:'GRANTED',method:'SELF_DECLARED',
+      policy_version:policyVersion,policy_text_sha256:policyHash,request_token_hash:null,decided_by:'LEARNER',decided_at:time,revoked_at:null,
+      expires_at:new Date(time.getTime()+365*86400000)}).execute();
+  }
+  await tx.updateTable('learner').set({status:'ACTIVE',consent_deadline_at:null,updated_at:time,version:sql<string>`version+1`}).where('id','=',id).execute();
+  await audit(tx,config,id,'SELF_CONSENT_GRANTED','LEARNER');
+}
+export async function updateProfile(tx:Tx,id:string,input:ProfilePatch,config?:Config) {
   const learner=await lockLearner(tx,id);
+  const selfConsent=!!config?.selfConsent;
   if(learner.status==='ACTIVE')await requireConsent(tx,id,['LEARNING_DATA']);
-  if (learner.status==='PENDING_CONSENT' && (input.displayName!==undefined || input.preferredSubjectCodes!==undefined))
+  if (!selfConsent && learner.status==='PENDING_CONSENT' && (input.displayName!==undefined || input.preferredSubjectCodes!==undefined))
     fail(403,'CONSENT_REQUIRED',{missingPurposes:['LEARNING_DATA']});
   const time=await now(tx);
   if (input.birthYear!==undefined) {
@@ -71,6 +93,10 @@ export async function updateProfile(tx:Tx,id:string,input:ProfilePatch) {
     ...(input.grade===undefined?{}:{grade:input.grade}),...(input.displayName===undefined?{}:{display_name:input.displayName}),
     ...(input.timezone===undefined?{}:{timezone:input.timezone}),...(input.preferredSubjectCodes===undefined?{}:{preferred_subject_codes:input.preferredSubjectCodes})})
     .where('learner_id','=',id).execute();
+  if(selfConsent && learner.status==='PENDING_CONSENT'){
+    const p=await tx.selectFrom('student_profile').select(['display_name','grade']).where('learner_id','=',id).executeTakeFirstOrThrow();
+    if(p.display_name && p.grade) await selfActivate(tx,config!,id,time);
+  }
   return profile(tx,id);
 }
 function item(row: {purpose:string;status:string;method:string;policy_version:string;requested_at:Date;decided_at:Date|null;expires_at:Date}) {
@@ -138,7 +164,7 @@ export async function decide(tx:Tx,config:Config,link:string,input:Decision) {
     // Seven-day request expiry is distinct from grant validity; dev grants last 30 days only.
     await tx.updateTable('consent_record').set({status:granted?'GRANTED':'DECLINED',decided_by:'GUARDIAN',decided_at:time,updated_at:time,
       expires_at:new Date(time.getTime()+30*86400000)}).where('id','=',r.id).execute();
-    await audit(tx,config,id,granted?'SYNTHETIC_CONSENT_GRANTED':'SYNTHETIC_CONSENT_DECLINED','GUARDIAN',r.guardian_id);
+    await audit(tx,config,id,granted?'SYNTHETIC_CONSENT_GRANTED':'SYNTHETIC_CONSENT_DECLINED','GUARDIAN',r.guardian_id??undefined);
   }
   const learning=input.decisions.find(d=>d.purpose==='LEARNING_DATA');
   if(learning?.granted) {

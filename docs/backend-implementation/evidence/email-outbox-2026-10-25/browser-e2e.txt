@@ -1,0 +1,273 @@
+E2E seed ready: reviewed fixture published, 10 synthetic consented learners (.local/e2e-learner.json)
+(node:212) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+> intibelajar@0.0.0 build
+> npm run check:bindings && vue-tsc && vite build
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  88 komponen diperiksa, 0 bermasalah
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 289 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                             [39m[1m[2m  1.59 kB[22m[1m[22m[2m │ gzip:   0.74 kB[22m
+[2mdist/[22m[35massets/Slice0AccountView-sve52heR.css  [39m[1m[2m  0.68 kB[22m[1m[22m[2m │ gzip:   0.36 kB[22m
+[2mdist/[22m[35massets/SignInView-NcVO1-Wm.css         [39m[1m[2m  2.57 kB[22m[1m[22m[2m │ gzip:   0.79 kB[22m
+[2mdist/[22m[35massets/index-CyzR3dXD.css              [39m[1m[2m294.95 kB[22m[1m[22m[2m │ gzip:  49.66 kB[22m
+[2mdist/[22m[36massets/SignInView-C8-GFKz-.js          [39m[1m[2m  6.18 kB[22m[1m[22m[2m │ gzip:   2.90 kB[22m
+[2mdist/[22m[36massets/Slice0AccountView-fDi7ANjy.js   [39m[1m[2m 11.28 kB[22m[1m[22m[2m │ gzip:   4.30 kB[22m
+[2mdist/[22m[36massets/index-5elDZ2Fw.js               [39m[1m[2m485.21 kB[22m[1m[22m[2m │ gzip: 163.10 kB[22m
+[32m✓ built in 24.84s[39m
+Bundle key check: 5 files, 0 CATALOG items, no CATALOG prompt or rubric text in the bundle
+
+Running 11 tests using 2 workers
+
+  x   1 tests\e2e\canonical-loop.spec.ts:57:3 › soal menara di server › diagnosis dari server; refresh melanjutkan hasil yang sama tanpa jawaban kedua (8.9s)
+  x   2 tests\e2e\canonical-loop.spec.ts:74:3 › soal menara di server › tab kedua melihat hasil tab pertama dan tidak menjawab dua kali (9.9s)
+  x   4 tests\e2e\canonical-loop.spec.ts:126:3 › soal menara di server › soal tadi: jawaban yang benar setelah diagnosis menuntaskan loop di server (7.5s)
+  x   3 tests\e2e\canonical-loop.spec.ts:96:3 › soal menara di server › soal tadi: dua percobaan salah membuka solusi dari server; sebelumnya gerbangnya tertutup (8.1s)
+  x   6 tests\e2e\canonical-loop.spec.ts:151:3 › soal menara di server › backend gagal: tampil sebagai gagal, tidak pernah jadi hasil demo (4.2s)
+  x   5 tests\e2e\canonical-loop.spec.ts:141:3 › soal menara di server › /challenge memakai loop sendiri (origin CHALLENGE) (7.5s)
+  ok  7 tests\e2e\canonical-loop.spec.ts:176:3 › soal menara di server › tamu tetap di alur perangkat: tidak ada sesi kanonik (3.1s)
+  x   8 tests\e2e\canonical-practice.spec.ts:80:3 › latihan kanonik › cek di pelajaran inti dinilai di server (CoreView) (6.4s)
+  x   9 tests\e2e\canonical-practice.spec.ts:44:3 › latihan kanonik › refresh melanjutkan sesi; tab kedua tidak bisa menjawab dua kali (6.2s)
+  ok 10 tests\e2e\email-link.spec.ts:15:1 › email link: token from the fragment, cleaned from the address bar, sent only in the verify body (1.4s)
+  ok 11 tests\e2e\email-link.spec.ts:46:1 › a link with the token in the query string is not used (1.1s)
+
+
+  1) tests\e2e\canonical-loop.spec.ts:57:3 › soal menara di server › diagnosis dari server; refresh melanjutkan hasil yang sama tanpa jawaban kedua 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.r-filled')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.r-filled') with timeout 5000ms
+      - waiting for locator('.r-filled')
+
+
+      59 |     await page.goto('/coba')
+      60 |     await answer(page, 'sin 30 = 20/x')
+    > 61 |     await expect(page.locator('.r-filled')).toBeVisible()
+         |                                             ^
+      62 |     await expect(page.locator('.r-filled h3')).toHaveText('Hampir! Meleset sedikit di 1 inti.')
+      63 |
+      64 |     const before = await loopOf(page)
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-loop.spec.ts:61:45
+
+    Error Context: test-results\canonical-loop-soal-menara-b921e-ng-sama-tanpa-jawaban-kedua\error-context.md
+
+  2) tests\e2e\canonical-loop.spec.ts:74:3 › soal menara di server › tab kedua melihat hasil tab pertama dan tidak menjawab dua kali 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.r-filled')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.r-filled') with timeout 5000ms
+      - waiting for locator('.r-filled')
+
+
+      81 |     await page.bringToFront()
+      82 |     await answer(page, 'sin 30 = 20/x')
+    > 83 |     await expect(page.locator('.r-filled')).toBeVisible()
+         |                                             ^
+      84 |
+      85 |     // The second tab still shows the empty question; its answer is not submitted, the server's result is shown.
+      86 |     await other.bringToFront()
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-loop.spec.ts:83:45
+
+    Error Context: test-results\canonical-loop-soal-menara-3247e-dan-tidak-menjawab-dua-kali\error-context.md
+
+  3) tests\e2e\canonical-loop.spec.ts:96:3 › soal menara di server › soal tadi: dua percobaan salah membuka solusi dari server; sebelumnya gerbangnya tertutup 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.r-filled')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.r-filled') with timeout 5000ms
+      - waiting for locator('.r-filled')
+
+
+       98 |     await page.goto('/coba')
+       99 |     await answer(page, 'sin 30 = 20/x')
+    > 100 |     await expect(page.locator('.r-filled')).toBeVisible()
+          |                                             ^
+      101 |     const loop = await loopOf(page)
+      102 |
+      103 |     // The gate is closed before the retry phase (E-21, 05 §4.5).
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-loop.spec.ts:100:45
+
+    Error Context: test-results\canonical-loop-soal-menara-7af12-elumnya-gerbangnya-tertutup\error-context.md
+
+  4) tests\e2e\canonical-loop.spec.ts:126:3 › soal menara di server › soal tadi: jawaban yang benar setelah diagnosis menuntaskan loop di server 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.r-filled')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.r-filled') with timeout 5000ms
+      - waiting for locator('.r-filled')
+
+
+      128 |     await page.goto('/coba')
+      129 |     await answer(page, 'sin 30 = 20/x')
+    > 130 |     await expect(page.locator('.r-filled')).toBeVisible()
+          |                                             ^
+      131 |     const loop = await loopOf(page)
+      132 |     await checkpointRetry(page, loop.id)
+      133 |     await page.reload()
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-loop.spec.ts:130:45
+
+    Error Context: test-results\canonical-loop-soal-menara-1850b--menuntaskan-loop-di-server\error-context.md
+
+  5) tests\e2e\canonical-loop.spec.ts:141:3 › soal menara di server › /challenge memakai loop sendiri (origin CHALLENGE) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.r-filled')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.r-filled') with timeout 5000ms
+      - waiting for locator('.r-filled')
+
+
+      143 |     await page.goto('/challenge')
+      144 |     await answer(page, 'tan 30 = 20/x, x = 20√3')
+    > 145 |     await expect(page.locator('.r-filled')).toBeVisible()
+          |                                             ^
+      146 |     const loop = await loopOf(page, 'challenge')
+      147 |     expect([loop.origin, loop.state, loop.outcome]).toEqual(['CHALLENGE', 'COMPLETED', 'SOLVED_FIRST_TRY'])
+      148 |     expect(await pointer(page, 'coba')).toBeNull()
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-loop.spec.ts:145:45
+
+    Error Context: test-results\canonical-loop-soal-menara-49937-p-sendiri-origin-CHALLENGE-\error-context.md
+
+  6) tests\e2e\canonical-loop.spec.ts:151:3 › soal menara di server › backend gagal: tampil sebagai gagal, tidak pernah jadi hasil demo 
+
+    Error: the page keeps a pointer to its loop
+
+    expect(received).toBeTruthy()
+
+    Received: null
+
+      37 | async function loopOf(page: Page, channel = 'coba') {
+      38 |   const id = await pointer(page, channel)
+    > 39 |   expect(id, 'the page keeps a pointer to its loop').toBeTruthy()
+         |                                                      ^
+      40 |   return (await page.request.get(`/v1/learning-sessions/${id}`)).json()
+      41 | }
+      42 |
+        at loopOf (C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-loop.spec.ts:39:54)
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-loop.spec.ts:159:18
+
+    Error Context: test-results\canonical-loop-soal-menara-31e2d-idak-pernah-jadi-hasil-demo\error-context.md
+
+  7) tests\e2e\canonical-practice.spec.ts:44:3 › latihan kanonik › refresh melanjutkan sesi; tab kedua tidak bisa menjawab dua kali 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.feedback.ok')
+    Expected substring: "Tepat!"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" locator('.feedback.ok') with timeout 5000ms
+      - waiting for locator('.feedback.ok')
+
+
+      48 |
+      49 |     await answerShown(page)
+    > 50 |     await expect(page.locator('.feedback.ok')).toContainText('Tepat!')
+         |                                                ^
+      51 |
+      52 |     // Refresh before pressing "Lanjut": the server already has the answer, so the page resumes at item 2.
+      53 |     await page.reload()
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-practice.spec.ts:50:48
+
+    Error Context: test-results\canonical-practice-latihan-d3adf-idak-bisa-menjawab-dua-kali\error-context.md
+
+  8) tests\e2e\canonical-practice.spec.ts:80:3 › latihan kanonik › cek di pelajaran inti dinilai di server (CoreView) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.check-fb.right')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.check-fb.right') with timeout 5000ms
+      - waiting for locator('.check-fb.right')
+
+
+      84 |     await expect(page.locator('.check-q').first()).toHaveText(check.question)
+      85 |     await page.locator('.check-opt', { hasText: check.options.find((o) => o.ok)!.text }).first().click()
+    > 86 |     await expect(page.locator('.check-fb.right')).toBeVisible()
+         |                                                   ^
+      87 |
+      88 |     const lesson = (await activeSession(page)).find((s) => s.lesson)
+      89 |     expect(lesson?.lesson?.checks[0]).toMatchObject({ answered: true, verdict: 'CORRECT' })
+        at C:\Users\User\Documents\teguh\learningJourney\mockup\intibelajar\tests\e2e\canonical-practice.spec.ts:86:51
+
+    Error Context: test-results\canonical-practice-latihan-82475-dinilai-di-server-CoreView-\error-context.md
+
+  8 failed
+    tests\e2e\canonical-loop.spec.ts:57:3 › soal menara di server › diagnosis dari server; refresh melanjutkan hasil yang sama tanpa jawaban kedua 
+    tests\e2e\canonical-loop.spec.ts:74:3 › soal menara di server › tab kedua melihat hasil tab pertama dan tidak menjawab dua kali 
+    tests\e2e\canonical-loop.spec.ts:96:3 › soal menara di server › soal tadi: dua percobaan salah membuka solusi dari server; sebelumnya gerbangnya tertutup 
+    tests\e2e\canonical-loop.spec.ts:126:3 › soal menara di server › soal tadi: jawaban yang benar setelah diagnosis menuntaskan loop di server 
+    tests\e2e\canonical-loop.spec.ts:141:3 › soal menara di server › /challenge memakai loop sendiri (origin CHALLENGE) 
+    tests\e2e\canonical-loop.spec.ts:151:3 › soal menara di server › backend gagal: tampil sebagai gagal, tidak pernah jadi hasil demo 
+    tests\e2e\canonical-practice.spec.ts:44:3 › latihan kanonik › refresh melanjutkan sesi; tab kedua tidak bisa menjawab dua kali 
+    tests\e2e\canonical-practice.spec.ts:80:3 › latihan kanonik › cek di pelajaran inti dinilai di server (CoreView) 
+  3 passed (1.2m)
+Error: npx playwright test tests/e2e/canonical-practice.spec.ts tests/e2e/canonical-loop.spec.ts tests/e2e/email-link.spec.ts failed (1)
+
+> intibelajar@0.0.0 build
+> npm run check:bindings && vue-tsc && vite build
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  88 komponen diperiksa, 0 bermasalah
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 289 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                             [39m[1m[2m  1.59 kB[22m[1m[22m[2m │ gzip:   0.74 kB[22m
+[2mdist/[22m[35massets/Slice0AccountView-sve52heR.css  [39m[1m[2m  0.68 kB[22m[1m[22m[2m │ gzip:   0.36 kB[22m
+[2mdist/[22m[35massets/SignInView-NcVO1-Wm.css         [39m[1m[2m  2.57 kB[22m[1m[22m[2m │ gzip:   0.79 kB[22m
+[2mdist/[22m[35massets/index-CyzR3dXD.css              [39m[1m[2m294.95 kB[22m[1m[22m[2m │ gzip:  49.66 kB[22m
+[2mdist/[22m[36massets/SignInView-BmYtnbmD.js          [39m[1m[2m  6.18 kB[22m[1m[22m[2m │ gzip:   2.90 kB[22m
+[2mdist/[22m[36massets/Slice0AccountView-CRaWG_Pl.js   [39m[1m[2m 11.28 kB[22m[1m[22m[2m │ gzip:   4.30 kB[22m
+[2mdist/[22m[36massets/index-YUXvQKNa.js               [39m[1m[2m485.40 kB[22m[1m[22m[2m │ gzip: 163.16 kB[22m
+[32m✓ built in 9.00s[39m
+exit 1

@@ -1,0 +1,50 @@
+{
+  "scope": "private adult pilot",
+  "ready": false,
+  "syntheticRuntimeOnly": true,
+  "checks": [
+    {
+      "id": "PUBLIC_HTTPS_ORIGIN",
+      "ready": false,
+      "reason": "Public pilot requires an exact HTTPS origin and same-origin reverse proxy."
+    },
+    {
+      "id": "PRODUCTION_RUNTIME",
+      "ready": false,
+      "reason": "Current runtime deliberately accepts development/test and loopback origins only."
+    },
+    {
+      "id": "REAL_CONSENT_POLICY",
+      "ready": false,
+      "reason": "Current policy is synthetic-dev-v1. Adult self-consent and age assurance remain OD-02/OD-03 approval gates."
+    },
+    {
+      "id": "ADULT_ENROLLMENT",
+      "ready": false,
+      "reason": "Test email allowlist is not a verified-adult pilot enrollment process; do not infer age from a Google account or birth year."
+    },
+    {
+      "id": "EMAIL_ENROLLMENT",
+      "ready": false,
+      "reason": "Resend transport is prepared and off by default. Durable delivery/outbox, real-email verification, account linking and UI are not wired for real enrollment."
+    },
+    {
+      "id": "PRIVACY_OPERATIONS",
+      "ready": false,
+      "reason": "Approved notice/retention, processor and transfer review, deletion/restore drills, and an incident owner are required before real data."
+    },
+    {
+      "id": "REAL_AI_DATA",
+      "ready": false,
+      "reason": "DeepSeek still permits synthetic inputs only. A configured key does not authorize real learner text or remove AI consent."
+    }
+  ],
+  "configuration": {
+    "googleClientPresent": true,
+    "googleSecretPresent": true,
+    "deepseekKeyPresent": true,
+    "emailProvider": "disabled",
+    "emailKeyPresent": false
+  },
+  "note": "No network calls, database mutations, emails, deployment, or approval recorded by this check."
+}

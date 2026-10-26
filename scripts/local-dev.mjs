@@ -12,6 +12,7 @@ process.chdir(root);
 // Optional private key file, ignored by Git. Never serialize its contents into env.json or logs.
 if (existsSync(join(root,'.local/local-dev/deepseek.env'))) process.loadEnvFile(join(root,'.local/local-dev/deepseek.env'));
 if (existsSync(join(root,'.local/local-dev/google.env'))) process.loadEnvFile(join(root,'.local/local-dev/google.env'));
+if (existsSync(join(root,'.local/local-dev/email.env'))) process.loadEnvFile(join(root,'.local/local-dev/email.env'));
 if (existsSync(join(root,'.local/local-dev/ocr.env'))) process.loadEnvFile(join(root,'.local/local-dev/ocr.env'));
 const dir = join(root, '.local', 'local-dev');
 const frontend = resolve(process.env.FRONTEND_DIR ?? join(root, '../mockup/intibelajar'));
@@ -92,7 +93,7 @@ try {
     function start(name, args) {
       const fd = openSync(join(dir, `${name}.log`), 'a', 0o600);
       const childEnv={...env};
-      if(name==='frontend')for(const k of ['DEEPSEEK_API_KEY','GOOGLE_CLIENT_SECRET','GOOGLE_CLIENT_ID','GOOGLE_TEST_EMAIL','OPENROUTER_API_KEY'])delete childEnv[k];
+      if(name==='frontend')for(const k of ['DEEPSEEK_API_KEY','GOOGLE_CLIENT_SECRET','GOOGLE_CLIENT_ID','GOOGLE_TEST_EMAIL','OPENROUTER_API_KEY','RESEND_API_KEY'])delete childEnv[k];
       const child = spawn(process.execPath, args, { cwd: root, env:childEnv, stdio: ['ignore', fd, fd], windowsHide: true });
       closeSync(fd); children.push(child);
       child.once('error', () => { console.error(`${name} could not start; see .local/local-dev/${name}.log`); cleanup(1); });

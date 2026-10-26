@@ -1,0 +1,67 @@
+E2E seed ready: reviewed fixture published, 10 synthetic consented learners (.local/e2e-learner.json)
+(node:30384) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+> intibelajar@0.0.0 build
+> npm run check:bindings && vue-tsc && vite build
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  88 komponen diperiksa, 0 bermasalah
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 289 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                             [39m[1m[2m  1.59 kB[22m[1m[22m[2m │ gzip:   0.74 kB[22m
+[2mdist/[22m[35massets/Slice0AccountView-sve52heR.css  [39m[1m[2m  0.68 kB[22m[1m[22m[2m │ gzip:   0.36 kB[22m
+[2mdist/[22m[35massets/SignInView-NcVO1-Wm.css         [39m[1m[2m  2.57 kB[22m[1m[22m[2m │ gzip:   0.79 kB[22m
+[2mdist/[22m[35massets/index-CyzR3dXD.css              [39m[1m[2m294.95 kB[22m[1m[22m[2m │ gzip:  49.66 kB[22m
+[2mdist/[22m[36massets/SignInView-C8-GFKz-.js          [39m[1m[2m  6.18 kB[22m[1m[22m[2m │ gzip:   2.90 kB[22m
+[2mdist/[22m[36massets/Slice0AccountView-fDi7ANjy.js   [39m[1m[2m 11.28 kB[22m[1m[22m[2m │ gzip:   4.30 kB[22m
+[2mdist/[22m[36massets/index-5elDZ2Fw.js               [39m[1m[2m485.21 kB[22m[1m[22m[2m │ gzip: 163.10 kB[22m
+[32m✓ built in 10.96s[39m
+Bundle key check: 5 files, 0 CATALOG items, no CATALOG prompt or rubric text in the bundle
+
+Running 11 tests using 2 workers
+
+  ok  1 tests\e2e\canonical-loop.spec.ts:57:3 › soal menara di server › diagnosis dari server; refresh melanjutkan hasil yang sama tanpa jawaban kedua (6.9s)
+  ok  2 tests\e2e\canonical-loop.spec.ts:74:3 › soal menara di server › tab kedua melihat hasil tab pertama dan tidak menjawab dua kali (8.3s)
+  ok  3 tests\e2e\canonical-loop.spec.ts:96:3 › soal menara di server › soal tadi: dua percobaan salah membuka solusi dari server; sebelumnya gerbangnya tertutup (6.1s)
+  ok  4 tests\e2e\canonical-loop.spec.ts:126:3 › soal menara di server › soal tadi: jawaban yang benar setelah diagnosis menuntaskan loop di server (5.3s)
+  ok  5 tests\e2e\canonical-loop.spec.ts:141:3 › soal menara di server › /challenge memakai loop sendiri (origin CHALLENGE) (3.6s)
+  ok  7 tests\e2e\canonical-loop.spec.ts:176:3 › soal menara di server › tamu tetap di alur perangkat: tidak ada sesi kanonik (2.8s)
+  ok  6 tests\e2e\canonical-loop.spec.ts:151:3 › soal menara di server › backend gagal: tampil sebagai gagal, tidak pernah jadi hasil demo (6.0s)
+  ok  9 tests\e2e\canonical-practice.spec.ts:80:3 › latihan kanonik › cek di pelajaran inti dinilai di server (CoreView) (3.0s)
+  ok  8 tests\e2e\canonical-practice.spec.ts:44:3 › latihan kanonik › refresh melanjutkan sesi; tab kedua tidak bisa menjawab dua kali (3.9s)
+  ok 10 tests\e2e\email-link.spec.ts:15:1 › email link: token from the fragment, cleaned from the address bar, sent only in the verify body (864ms)
+  ok 11 tests\e2e\email-link.spec.ts:46:1 › a link with the token in the query string is not used (807ms)
+
+  11 passed (31.9s)
+
+> intibelajar@0.0.0 build
+> npm run check:bindings && vue-tsc && vite build
+
+
+> intibelajar@0.0.0 check:bindings
+> node scripts/check-bindings.mjs
+
+
+  88 komponen diperiksa, 0 bermasalah
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 289 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                             [39m[1m[2m  1.59 kB[22m[1m[22m[2m │ gzip:   0.74 kB[22m
+[2mdist/[22m[35massets/Slice0AccountView-sve52heR.css  [39m[1m[2m  0.68 kB[22m[1m[22m[2m │ gzip:   0.36 kB[22m
+[2mdist/[22m[35massets/SignInView-NcVO1-Wm.css         [39m[1m[2m  2.57 kB[22m[1m[22m[2m │ gzip:   0.79 kB[22m
+[2mdist/[22m[35massets/index-CyzR3dXD.css              [39m[1m[2m294.95 kB[22m[1m[22m[2m │ gzip:  49.66 kB[22m
+[2mdist/[22m[36massets/SignInView-BmYtnbmD.js          [39m[1m[2m  6.18 kB[22m[1m[22m[2m │ gzip:   2.90 kB[22m
+[2mdist/[22m[36massets/Slice0AccountView-CRaWG_Pl.js   [39m[1m[2m 11.28 kB[22m[1m[22m[2m │ gzip:   4.30 kB[22m
+[2mdist/[22m[36massets/index-YUXvQKNa.js               [39m[1m[2m485.40 kB[22m[1m[22m[2m │ gzip: 163.16 kB[22m
+[32m✓ built in 12.41s[39m
+exit 0

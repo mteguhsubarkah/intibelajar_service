@@ -146,15 +146,17 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     const tables=await sql<{count:string}>`select count(*) from information_schema.tables where table_schema='public' and table_name in
       ('learner','guardian','app_user','auth_identity','auth_session','auth_transaction','student_profile','consent_record','deletion_request','erasure_receipt','audit_event','idempotency_record','job')`.execute(db);
     if(result.rows[0]!.version<160000||tables.rows[0]!.count!=='13'||!await verifyMigrations(db)||(await restoredSubjects(db,config)).length)fail(503,'DEPENDENCY_UNAVAILABLE');
-    return {status:'ready',environment:config.mode,syntheticOnly:true,features:config.features,blockers:integrationBlockers.filter(b=>!config.google||b!=='GOOGLE_OIDC_NOT_CONFIGURED')};
+    return {status:'ready',environment:config.mode,syntheticOnly:true,features:config.features,blockers:integrationBlockers.filter(b=>(!config.google||b!=='GOOGLE_OIDC_NOT_CONFIGURED')&&(!config.email||b!=='EMAIL_DELIVERY_NOT_CONFIGURED'))};
     }catch{fail(503,'DEPENDENCY_UNAVAILABLE');}
   });
   route('GET','/v1/auth/session','public',async req=>{
     const p=await identity.authenticate(db,config,req.sessionToken);if(!p)return {authenticated:false};
     const learner=p.learnerId?await privacy.profile(db,p.learnerId):undefined;
-    const c=p.learnerId?await privacy.consents(db,p.learnerId):undefined;
+    // Authentication remains true before consent. Eligibility must use the same
+    // expiry/policy-version predicate as protected learning endpoints.
+    const learningConsent=p.learnerId?await privacy.hasConsent(db,p.learnerId,'LEARNING_DATA'):false;
     return {authenticated:true,csrfToken:p.csrf,user:{id:p.userId,role:p.role},...(learner?{learner:{id:learner.learnerId,status:learner.status,ageBand:learner.ageBand,
-      missingPurposes:c!.items.find(i=>i.purpose==='LEARNING_DATA')?.status==='GRANTED'?[]:['LEARNING_DATA'],...('consentDeadlineAt'in learner?{consentDeadlineAt:learner.consentDeadlineAt}:{})}}:{})};
+      missingPurposes:learningConsent?[]:['LEARNING_DATA'],...('consentDeadlineAt'in learner?{consentDeadlineAt:learner.consentDeadlineAt}:{})}}:{})};
   });
   route('POST','/v1/auth/start','public',async(req,reply)=>{
     const b=req.body as {provider:string;continuation:{targetPath:string;step:number}};
@@ -180,7 +182,8 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     const state=limits.get(addressKey),next=!state||state.until<=time?{count:0,until:time+3600000}:state;
     next.count++;limits.set(addressKey,next);if(next.count>5)fail(429,'RATE_LIMITED');
     const sent=await db.transaction().execute(tx=>identity.sendEmail(tx,config,req.sessionToken,b.transaction,b.email));
-    if(sent){identity.deliver(mailbox,sent.address,{kind:'signin',token:sent.link});saveMailbox(config,mailbox);}
+    // A real address was queued in that transaction (email_outbox, sent by the worker); only .invalid goes to the synthetic mailbox.
+    if(sent&&!identity.deliveredForReal(config,sent.address)){identity.deliver(mailbox,sent.address,{kind:'signin',token:sent.link});saveMailbox(config,mailbox);}
     reply.status(202);return {accepted:true};
   });
   // Accepted is 202, even for unknown/expired transactions; account enumeration stays impossible.
@@ -211,7 +214,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   route('GET','/v1/me/mastery/{conceptId}','student',async req=>{const{projection:p}=await projected(req),id=params(req).conceptId!;const mastery=p.views.find(v=>v.conceptId===id);if(!mastery)fail(404,'NOT_FOUND');
     return{mastery,recentEvidence:p.evidence.filter(e=>e.concept_id===id).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime()).slice(0,20).map(e=>({attemptId:e.attempt_id,diagnosisRunId:e.diagnosis_run_id,classification:e.classification,source:e.source,masteryEligible:e.mastery_eligible,transferEligible:e.transfer_eligible,submittedAt:new Date(p.attempts.get(e.attempt_id)!.submitted_at).toISOString()}))};});
   route('GET','/v1/me/progress-events','student',async req=>{const{events}=await projected(req),q=req.query as{cursor?:string;limit?:number};return progressPage(events,q.cursor,q.limit??20,config.key,'events:'+req.principal!.learnerId);});
-  route('PATCH','/v1/me/profile','student',async req=>learnerTransaction(req,tx=>privacy.updateProfile(tx,req.principal!.learnerId!,req.body as privacy.ProfilePatch)));
+  route('PATCH','/v1/me/profile','student',async req=>learnerTransaction(req,tx=>privacy.updateProfile(tx,req.principal!.learnerId!,req.body as privacy.ProfilePatch,config)));
   route('GET','/v1/me/consents','student',async req=>privacy.consents(db,req.principal!.learnerId!));
   route('POST','/v1/me/consent-requests','student',async(req,reply)=>{
     const p=req.principal!,b=req.body as {guardianEmail:string;purposes:string[]};
@@ -225,7 +228,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   route('GET','/v1/guardian-consents/{token}','public',async req=>{identity.requireSynthetic(config);return privacy.consentView(db,params(req).token!);});
   route('POST','/v1/guardian-consents/{token}/decision','public',async(req,reply)=>{
     identity.requireSynthetic(config);const link=params(req).token!,rows=await privacy.tokenRecords(db,link),first=rows[0]!;
-    const out=await db.transaction().execute(tx=>command(tx,'GUARDIAN',first.guardian_id,'POST guardian-decision:'+first.learner_id+':'+hash(link).toString('hex'),key(req),req.body,
+    const out=await db.transaction().execute(tx=>command(tx,'GUARDIAN',first.guardian_id!,'POST guardian-decision:'+first.learner_id+':'+hash(link).toString('hex'),key(req),req.body,
       async()=>({status:200,body:await privacy.decide(tx,config,link,req.body as privacy.Decision)})));
     return send(reply,out);
   });

@@ -2386,7 +2386,7 @@ components:
       enum: [PENDING, GRANTED, DECLINED, EXPIRED, REVOKED]
     ConsentMethod:
       type: string
-      enum: [GUARDIAN_EMAIL, GUARDIAN_SIGNIN, SELF_WITH_GUARDIAN_NOTICE]
+      enum: [GUARDIAN_EMAIL, GUARDIAN_SIGNIN, SELF_WITH_GUARDIAN_NOTICE, SELF_DECLARED]
     SessionKind:
       type: string
       enum: [QUESTION_LOOP, PRACTICE]

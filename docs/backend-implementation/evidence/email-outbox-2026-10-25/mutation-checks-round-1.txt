@@ -1,0 +1,19 @@
+KILLED   login does not queue the email (exit 1) — the request only queues, in the login transaction; the worker sends once with  | a provider outage is retried later with the same key and link, then the link w | a permanent rejection fails at once, drops the payload and is not retried (22. | retries stop at max_attempts (19.0588ms) | an expired link is never sent, even without a configured transport (25.4308ms) | a lost lease is recovered; the resend reuses the key and the stale worker cann | two workers at the same time send each email exactly once (174.7146ms) | the emailed link is single-use and bound to the browser that asked (68.7602ms) | a real address is emailed through Resend, and its identity is verified (257.93 | onboarding with username and grade activates the account without a guardian (4
+KILLED   a new Idempotency-Key per attempt (exit 1) — the request only queues, in the login transaction; the worker sends once with  | a provider outage is retried later with the same key and link, then the link w | a lost lease is recovered; the resend reuses the key and the stale worker cann
+KILLED   permanent errors treated as transient (exit 1) — a permanent rejection fails at once, drops the payload and is not retried (49. | a real address is emailed through Resend, and its identity is verified (255.63
+KILLED   retries never stop (exit 1) — retries stop at max_attempts (51.5135ms)
+KILLED   no backoff (exit 1) — a provider outage is retried later with the same key and link, then the link w
+KILLED   stale worker not fenced on failure (exit 1) — a provider outage is retried later with the same key and link, then the link w | retries stop at max_attempts (22.2338ms) | a lost lease is recovered; the resend reuses the key and the stale worker cann
+KILLED   payload kept after sending (exit 1) — the request only queues, in the login transaction; the worker sends once with  | a provider outage is retried later with the same key and link, then the link w | a lost lease is recovered; the resend reuses the key and the stale worker cann | two workers at the same time send each email exactly once (131.8532ms) | the emailed link is single-use and bound to the browser that asked (92.9861ms) | a real address is emailed through Resend, and its identity is verified (258.57 | onboarding with username and grade activates the account without a guardian (3
+KILLED   expired rows are not closed (exit 1) — an expired link is never sent, even without a configured transport (50.809ms)
+KILLED   lost leases are not recovered (exit 1) — a lost lease is recovered; the resend reuses the key and the stale worker cann
+SURVIVED no row locking between workers (exit 0)
+KILLED   token in the query string (exit 1) — the request only queues, in the login transaction; the worker sends once with  | a provider outage is retried later with the same key and link, then the link w | the emailed link is single-use and bound to the browser that asked (49.5205ms) | a real address is emailed through Resend, and its identity is verified (184.60 | onboarding with username and grade activates the account without a guardian (2
+KILLED   adapter forgets the Idempotency-Key header (exit 1) — a real address is emailed through Resend, and its identity is verified (175.43 | onboarding with username and grade activates the account without a guardian (2
+SURVIVED adapter accepts a query-string token (exit 0)
+KILLED   429 treated as permanent (exit 1) — ✖ Resend adapter: fixed endpoint, Idempotency-Key, fragment link, error classes 
+12/14 mutations killed
+exit 1
+src/identity/email-outbox.ts: OK
+src/identity/email-transport.ts: OK
+src/identity/service.ts: OK

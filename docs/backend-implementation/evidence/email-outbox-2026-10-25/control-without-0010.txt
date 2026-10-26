@@ -1,0 +1,178 @@
+▶ Slice 1 learning schema, guards and erasure on PostgreSQL
+  ✖ 0003 and 0004 apply on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings (3110.4163ms)
+  ✖ INV-19 coverage: every table with a learner column is accounted for (83.8357ms)
+  ✖ INV-19: erasure removes every learning and assessment row, leaves a receipt and the catalog (12.2683ms)
+  ✖ restore replay: learning rows that come back with an erased learner are erased again (8.2383ms)
+  ✖ INV-07: a stored attempt is immutable apart from grading once and the retention purge (5.4857ms)
+  ✖ INV-08 and append-only evidence (5.2672ms)
+✖ Slice 1 learning schema, guards and erasure on PostgreSQL (3237.4645ms)
+(node:33516) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33516) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+▶ Slice 1 legacy facade L3 over the M6 engine
+  ✔ setup: catalog (4723.4071ms)
+  ✔ off by default; only FEATURE_LEGACY_FACADE can be enabled; guests and unconsented learners are not served (1002.9837ms)
+  ✔ practice (PracticeRunView, StepLatihan): graded on the server, judged by the frontend validator (840.622ms)
+  ✔ lessons (CoreView): implied lesson commands, then lesson practice (714.456ms)
+  ✖ derived idempotency: a retried call replays; unreadable keeps the item; refusals and gaps (765.3126ms)
+✖ Slice 1 legacy facade L3 over the M6 engine (10738.53ms)
+(node:29768) [FSTDEP023] FastifyDeprecation: disableRequestLogging option is deprecated. Use the logController option with disableRequestLogging or isLogDisabled override instead. The disableRequestLogging top-level option will be removed in `fastify@6`.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP
+  ✔ model may select only server-authored scaffold; no arbitrary generated text (1125.3729ms)
+  ✔ revocation during call prevents adoption (258.8301ms)
+  ✔ revoked AI consent rejects new AI message; unrelated request stays scoped without external call (227.93ms)
+✔ queued tutor: validated DeepSeek transport, atomic spend, consent fencing and no mastery/XP (4594.2976ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 8
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 43316.3959
+
+✖ failing tests:
+
+test at test\learning-erasure.test.ts:87:13
+✖ 0003 and 0004 apply on top of the catalog; rolling back to 0002 keeps it; checksums ignore line endings (3110.4163ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      '0001_slice0.up.sql',
+      '0002_catalog.up.sql',
+      '0003_learning.up.sql',
+      '0004_question_loop.up.sql',
+  +   '0005-development-ai-budget.up.sql',
+  +   '0006-progress.up.sql',
+  +   '0007-tutor.up.sql',
+  +   '0008-intake.up.sql',
+  +   '0009-self-onboarding.up.sql'
+    ]
+  
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:96:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '0001_slice0.up.sql', '0002_catalog.up.sql', '0003_learning.up.sql', '0004_question_loop.up.sql', '0005-development-ai-budget.up.sql', '0006-progress.up.sql', '0007-tutor.up.sql', '0008-intake.up.sql', '0009-self-onboarding.up.sql' ],
+    expected: [ '0001_slice0.up.sql', '0002_catalog.up.sql', '0003_learning.up.sql', '0004_question_loop.up.sql' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\learning-erasure.test.ts:120:13
+✖ INV-19 coverage: every table with a learner column is accounted for (83.8357ms)
+  AssertionError [ERR_ASSERTION]: add each new learner-owned table to the erasure and to LEARNER_TABLES
+  + actual - expected
+  
+  + [
+  +   'learner_stats',
+  +   'mastery_state',
+  +   'private_asset',
+  +   'progress_event',
+  +   'question_intake',
+  +   'tutor_conversation'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:127:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:120:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'learner_stats', 'mastery_state', 'private_asset', 'progress_event', 'question_intake', 'tutor_conversation' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\learning-erasure.test.ts:131:13
+✖ INV-19: erasure removes every learning and assessment row, leaves a receipt and the catalog (12.2683ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:132:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:131:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\learning-erasure.test.ts:149:13
+✖ restore replay: learning rows that come back with an erased learner are erased again (8.2383ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:150:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:149:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\learning-erasure.test.ts:164:13
+✖ INV-07: a stored attempt is immutable apart from grading once and the retention purge (5.4857ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:165:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:164:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\learning-erasure.test.ts:187:13
+✖ INV-08 and append-only evidence (5.2672ms)
+  TypeError: Cannot read properties of undefined (reading 'releaseId')
+      at <anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:43:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/kysely.js:582:32
+      at async DefaultConnectionProvider.provideConnection (file:///C:/Users/User/Documents/teguh/learningJourney/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+      at async seed (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:40:5)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:188:17)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\learning-erasure.test.ts:187:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test\legacy-facade.test.ts:135:13
+✖ derived idempotency: a retried call replays; unreadable keeps the item; refusals and gaps (765.3126ms)
+  AssertionError [ERR_ASSERTION]: {"sessionId":"client-3","kind":"retry_original","itemId":"soal-menara","answer":"20√3"}
+  + actual - expected
+  
+    [
+  +   409,
+  +   'CONTENT_UNAVAILABLE'
+  -   403,
+  -   'FEATURE_DISABLED'
+    ]
+  
+      at TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-facade.test.ts:163:92)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (C:\Users\User\Documents\teguh\learningJourney\intibelajar_service\test\legacy-facade.test.ts:135:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 409, 'CONTENT_UNAVAILABLE' ],
+    expected: [ 403, 'FEATURE_DISABLED' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+exit 1
