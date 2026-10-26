@@ -19,7 +19,7 @@ const base = process.env.DATABASE_URL ? process.env : JSON.parse(readFileSync('.
 const ORIGIN = 'https://intibelajar.com';
 const pilotEnv = { DATABASE_URL: base.DATABASE_URL, APP_KEY: base.APP_KEY, NODE_ENV: 'production', RUNTIME_MODE: 'pilot', APP_ORIGIN: ORIGIN, TRUST_PROXY: '127.0.0.1' };
 
-test('pilot configuration: accepted only as an exact https origin behind the local proxy, never with automatic consent', () => {
+test('pilot configuration: accepted only as an exact https origin behind the local proxy, without automatic guest consent', () => {
   const config = readConfig(pilotEnv);
   assert.deepEqual([config.mode, config.origin, config.trustProxy, config.synthetic, config.selfConsent, config.features.guestTrial],
     ['pilot', ORIGIN, '127.0.0.1', false, false, false]);
@@ -33,7 +33,6 @@ test('pilot configuration: accepted only as an exact https origin behind the loc
     ['credentials in origin', { APP_ORIGIN: 'https://user:pw@intibelajar.com' }],
     ['no origin', { APP_ORIGIN: undefined }],
     ['synthetic fixtures', { SYNTHETIC_FIXTURES: 'true' }],
-    ['automatic onboarding consent', { SELF_ONBOARDING_CONSENT: 'true' }],
     ['guest trial (automatic consent)', { FEATURE_GUEST_TRIAL: 'true' }],
     ['no trusted proxy', { TRUST_PROXY: undefined }],
     ['a remote trusted proxy', { TRUST_PROXY: '10.0.0.5' }],

@@ -39,9 +39,8 @@ export function readConfig(env = process.env): Config {
     if (origin.protocol !== 'https:' || origin.origin !== env.APP_ORIGIN || origin.username || origin.password
         || LOOPBACK.includes(origin.hostname) || /^[\d.]+$|^\[/.test(origin.hostname) || !origin.hostname.includes('.'))
       throw new Error('Pilot APP_ORIGIN must be an exact public https origin such as https://intibelajar.com');
-    // No synthetic identities and no automatic consent for real people.
+    // No synthetic identities or automatic guest consent. Explicit self-onboarding remains opt-in.
     if (env.SYNTHETIC_FIXTURES === 'true') throw new Error('SYNTHETIC_FIXTURES must be off in pilot mode');
-    if (env.SELF_ONBOARDING_CONSENT === 'true') throw new Error('SELF_ONBOARDING_CONSENT grants consent automatically; refused in pilot mode');
     if (env.FEATURE_GUEST_TRIAL === 'true') throw new Error('FEATURE_GUEST_TRIAL grants consent automatically; refused in pilot mode');
     // Only the local Nginx may speak for the client (real IP for rate limits, https for writes).
     if (!['127.0.0.1', '::1'].includes(env.TRUST_PROXY ?? '')) throw new Error('Pilot mode requires TRUST_PROXY=127.0.0.1 (the local Nginx)');

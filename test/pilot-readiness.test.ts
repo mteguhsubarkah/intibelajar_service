@@ -16,7 +16,8 @@ test('a valid pilot runtime passes only the runtime gate; the consent, enrollmen
  assert.equal(report.syntheticRuntimeOnly,false);
  assert.equal(report.ready,false);
  for(const id of ['REAL_CONSENT_POLICY','ADULT_ENROLLMENT','EMAIL_ENROLLMENT','PRIVACY_OPERATIONS','REAL_AI_DATA'])assert.equal(report.checks.find(c=>c.id===id)?.ready,false,id);
- // Automatic consent makes the runtime itself invalid.
- assert.equal(pilotReadiness({...env,SELF_ONBOARDING_CONSENT:'true'}).checks.find(c=>c.id==='PRODUCTION_RUNTIME')?.ready,false);
+ // Explicit self-onboarding is a supported pilot runtime option; readiness is still assessed separately.
+ assert.equal(pilotReadiness({...env,SELF_ONBOARDING_CONSENT:'true'}).checks.find(c=>c.id==='PRODUCTION_RUNTIME')?.ready,true);
+ assert.equal(pilotReadiness({...env,SELF_ONBOARDING_CONSENT:'true'}).ready,false);
  assert.equal(pilotReadiness({...env,FEATURE_GUEST_TRIAL:'true'}).checks.find(c=>c.id==='PRODUCTION_RUNTIME')?.ready,false);
 });
