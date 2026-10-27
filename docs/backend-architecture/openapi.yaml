@@ -49,6 +49,25 @@ tags:
     description: Deprecated facade for the shipped frontend adapters (L1-L9).
 
 paths:
+  /v1/own/hints:
+    post:
+      operationId: ownQuestionCoreHints
+      summary: Catalog cores used by a question, with one short relationship sentence per core
+      description: Requires learner, CSRF and AI consent. Uses the same cached AI outline as diagnosis. Process-local TTL 2 hours; learner, question, release and model scoped. No answer evaluation and no final answer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/OwnQuestionMapRequest'}
+      responses:
+        '200':
+          description: Catalog-backed core titles and question relationships; empty items is a valid no-match result
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/OwnQuestionHints'}
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '403': {$ref: '#/components/responses/Forbidden'}
+        '503': {$ref: '#/components/responses/Unavailable'}
   /v1/own/map:
     post:
       operationId: mapOwnQuestion
@@ -2678,6 +2697,23 @@ components:
         streakDays: 2
 
   schemas:
+    OwnQuestionHints:
+      type: object
+      additionalProperties: false
+      required: [catalogReleaseId, items]
+      properties:
+        catalogReleaseId: {type: string, format: uuid}
+        items:
+          type: array
+          maxItems: 6
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, title, relation]
+            properties:
+              id: {type: string, minLength: 1, maxLength: 80}
+              title: {type: string, minLength: 1}
+              relation: {type: string, minLength: 1, maxLength: 320}
     OwnQuestionMapRequest:
       type: object
       additionalProperties: false

@@ -12,9 +12,9 @@ test('own mapping is AI selection constrained to catalog, not keyword expansion 
  const picked=await matchOwnQuestion(guide,'tentukan cos30',[core],async(_url,options)=>{
   const p=JSON.parse(String(options?.body));assert.equal(p.response_format.type,'json_object');assert.equal(p.model,guide.model);
   const data=JSON.parse(p.messages[1].content);assert.deepEqual(data.catalog,[{mapId:'tri-f',title:core.title,description:core.description}]);assert.equal(data.question,'tentukan cos30');
-  return envelope({cores:['tri-f']});
- });assert.deepEqual(picked,[core]);
- for(const ids of [['foreign'],['tri-f','tri-f']])await assert.rejects(matchOwnQuestion(guide,'q',[core],async()=>envelope({cores:ids})),(e:any)=>e.status===503);
+  return envelope({cores:[{id:'tri-f',relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]});
+ });assert.deepEqual(picked,[{core,relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]);
+ for(const ids of [['foreign'],['tri-f','tri-f']])await assert.rejects(matchOwnQuestion(guide,'q',[core],async()=>envelope({cores:ids.map(id=>({id,relation:'Peran inti pada soal.'}))})),(e:any)=>e.status===503);
  await assert.rejects(matchOwnQuestion(guide,'q',[core],async()=>new Response('',{status:500})),(e:any)=>e.status===503);
  await assert.rejects(matchOwnQuestion(undefined,'q',[core]),(e:any)=>e.status===503);
 });
@@ -33,13 +33,20 @@ test('typed question diagnoses through AI without catalog alias lookup, fake XP,
   const service=ownQuestionService(db,guide,async(_url,options)=>{
    calls++;const body=JSON.parse(String(options?.body));const data=JSON.parse(body.messages[1].content);
    assert.ok(!JSON.stringify(data).includes('rubric'));assert.ok(!JSON.stringify(data).includes('acceptedForms'));assert.ok(!JSON.stringify(data).includes('test-secret'));
-   if(data.catalog)return envelope({cores:['tri-f']});
+   if(data.catalog)return envelope({cores:[{id:'tri-f',relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]});
    assert.equal(data.question.prompt,'Tentukan nilai cos30');assert.equal(data.response.text,'√3/2');
    return envelope({correct:true,items:data.concepts.map((c:any)=>({code:c.code,state:'ok',reason:'Nilai sudut istimewa sudah tepat.',quote:'√3/2'}))});
   });
-  const result:any=await service.diagnose({questionText:'Tentukan nilai cos30',rawText:'√3/2',sessionId:'own-typed',hintOpened:false});
+  const [hint1,hint2]=await Promise.all([service.hints('Tentukan nilai cos30','learner-a'),service.hints('Tentukan nilai cos30','learner-a')]);
+  assert.deepEqual(hint1,hint2);assert.equal(calls,1);assert.equal(hint1.items[0]?.title,catalog.cores.find(c=>c.mapId==='tri-f')?.title);
+  assert.match(hint1.items[0]!.relation,/cos 30/);validateResponse('/v1/own/hints','POST',200,hint1);
+  assert.deepEqual((await service.map('Tentukan nilai cos30','learner-a')).cores,['tri-f']);assert.equal(calls,1);
+  const result:any=await service.diagnose({questionText:'Tentukan nilai cos30',rawText:'√3/2',sessionId:'own-typed',hintOpened:false},'learner-a');
   assert.equal(result.status,'completed');assert.equal(result.assessment.tone,'kuat');assert.deepEqual(result.items.map((i:any)=>i.id),['tri-f']);assert.equal(result.claimToken,undefined);assert.equal(calls,2);
   validateResponse('/v1/own/diagnosis','POST',200,result);assert.deepEqual(await counts(),before);
+  await service.hints('Tentukan nilai cos30','learner-b');assert.equal(calls,3,'another learner has a separate cache');
+  const next=reviewedFixture();next.release.version=manifest.release.version+1;await publish(db,next);
+  const changed=await service.hints('Tentukan nilai cos30','learner-a');assert.notEqual(changed.catalogReleaseId,hint1.catalogReleaseId);assert.equal(calls,4,'new release invalidates cached mapping');
   const outside=ownQuestionService(db,guide,async()=>envelope({cores:[]}));const unknown=await outside.diagnose({questionText:'Pertanyaan di luar katalog',rawText:'Jawabanku',sessionId:'out',hintOpened:false});
   assert.equal(unknown.status,'insufficient_evidence');
  }finally{await db.destroy();}

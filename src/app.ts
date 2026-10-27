@@ -423,15 +423,21 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     });
   }
   const ownQuestions=ownQuestionService(db,config.guide);
+  app.addHook('onClose',async()=>ownQuestions.close());
+  route('POST','/v1/own/hints','student',async req=>{
+    learnLimit(req);
+    await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
+    return ownQuestions.hints((req.body as {questionText:string}).questionText,req.principal!.learnerId!);
+  });
   route('POST','/v1/own/map','student',async req=>{
     learnLimit(req);
     await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
-    return ownQuestions.map((req.body as {questionText:string}).questionText);
+    return ownQuestions.map((req.body as {questionText:string}).questionText,req.principal!.learnerId!);
   });
   route('POST','/v1/own/diagnosis','student',async req=>{
     learnLimit(req);
     await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
-    return ownQuestions.diagnose(req.body as {questionText:string;rawText:string;sessionId:string;hintOpened:boolean});
+    return ownQuestions.diagnose(req.body as {questionText:string;rawText:string;sessionId:string;hintOpened:boolean},req.principal!.learnerId!);
   });
   route('POST','/v1/guide/messages','student',async req=>{
     learnLimit(req);
