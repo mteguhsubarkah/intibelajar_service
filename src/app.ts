@@ -1,3 +1,4 @@
+import {ownQuestionService} from './assessment/own-question.js';
 import {guideReply,type GuideInput} from './tutor/context-guide.js';
 import {claimTrial} from './learning/trial-claim.js';
 import {readTrialProof} from './assessment/trial-proof.js';
@@ -421,6 +422,17 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
       return legacyIntakeMap(db,release!,(req.body as {questionText:string}).questionText);
     });
   }
+  const ownQuestions=ownQuestionService(db,config.guide);
+  route('POST','/v1/own/map','student',async req=>{
+    learnLimit(req);
+    await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
+    return ownQuestions.map((req.body as {questionText:string}).questionText);
+  });
+  route('POST','/v1/own/diagnosis','student',async req=>{
+    learnLimit(req);
+    await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
+    return ownQuestions.diagnose(req.body as {questionText:string;rawText:string;sessionId:string;hintOpened:boolean});
+  });
   route('POST','/v1/guide/messages','student',async req=>{
     learnLimit(req);
     await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));

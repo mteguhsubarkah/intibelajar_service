@@ -1,3 +1,4 @@
+import {evaluate} from '../src/assessment/evaluators/index.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import Fastify from 'fastify';
@@ -20,11 +21,17 @@ const load = async (alias: string): Promise<TrialItem> => {
       return { code: c.concept, title: v.title, legacyMapId: v.aliases.find(a => a.ns === 'MAP')?.value ?? null, route: 'definisi-sin-cos-tan' };
     }) };
 };
-const service = (now?: () => number) => trialAssessment(load, async (revision, text, used) => {
-  const ladder = manifest.questions.find(q => q.code === revision)!.rubric.tutorLadder!;
-  const node = ladder.nodes.find(n => n.ask.toLowerCase() === text.toLowerCase()) ?? ladder.nodes[0]!;
-  return { full: false, hint: false, text: node.text, quick: node.quick, hintsUsed: used };
-}, now);
+// Explicit deterministic test double, never selected by production trial routes.
+const fixtureAi = {
+ evaluate: async (i:TrialItem,response:Parameters<typeof evaluate>[0]['response']) => evaluate({...i.source,response}),
+ tutor: async(i:TrialItem,messages:{from:string;text:string}[],_answer:string,used:number)=>{
+  const ladder=manifest.questions.find(q=>q.code===i.revisionId)!.rubric.tutorLadder!;
+  const text=messages.at(-1)!.text;
+  const node=ladder.nodes.find(n=>n.ask.toLowerCase()===text.toLowerCase()) ?? ladder.nodes[0]!;
+  return {text:node.text,quick:node.quick,hintsUsed:used};
+ }
+};
+const service = (now?:()=>number) => trialAssessment(load,fixtureAi,now);
 const body = { sessionId: 'guest-first-visit', questionId: 'soal-menara', topicId: 'trigonometri', hintOpened: false, responseMode: null, rawText: 'sin 30 = 20/x' };
 
 test('trial: genuine catalog evaluation without user, learner or consent', async () => {
@@ -56,7 +63,7 @@ test('trial: expiry and catalog/service failure are never replaced by a syntheti
   const s = service(() => now), run = await s.diagnose('browser', body);
   now = 3 * 60 * 60 * 1000;
   assert.throws(() => s.run('browser', run.diagnosisRunId), (e: any) => e.status === 404);
-  const broken = trialAssessment(async () => { throw new Error('database unavailable'); }, async () => null);
+  const broken = trialAssessment(async () => { throw new Error('database unavailable'); }, fixtureAi);
   await assert.rejects(broken.diagnose('browser', body), /database unavailable/);
   await assert.rejects(broken.check('browser', { ...body, itemId: 'c1', answer: 0 }), /database unavailable/);
 });

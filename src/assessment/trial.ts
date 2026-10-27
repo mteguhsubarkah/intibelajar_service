@@ -4,11 +4,10 @@ import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
 import { gradingSource } from '../catalog/grading-source.js';
 import { evaluate, type StudentResponse } from './evaluators/index.js';
-import { tutorStep } from './tutor-ladder.js';
 import { fail } from '../platform/errors.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
-// Trial assessment uses the SAME published content/evaluator as account learning.
+// Public trial uses published content with an injected AI engine; no authored-response fallback.
 // It never creates an account, consent, mastery or permanent response record.
 export interface TrialItem {
   revisionId: string; source: GradingSource; optionOrder: string[] | null;
@@ -35,10 +34,10 @@ export async function loadTrialItem(db: Connection, alias: string, revisionId?: 
 }
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
-  hints: number; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string;
+  hints: number; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
-  guide: (revision: string, text: string, used: number) => ReturnType<typeof tutorStep>, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined, ai?: TrialAi) {
+  ai: TrialAi, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
   const contexts = new Map<string, TrialContext>();
   const ttl = 2 * 60 * 60 * 1000;
   function context(owner: string, session: string) {
@@ -47,7 +46,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
     let c = contexts.get(key);
     if (!c) {
       if (contexts.size >= 2000) return fail(503, 'DEPENDENCY_UNAVAILABLE');
-      c = { expires: now() + ttl, pins: new Map(), runs: new Map(), hints: 0, openedHint:false, solutionSeen:false };
+      c = { expires: now() + ttl, pins: new Map(), runs: new Map(), pending:new Map(), hints: 0, openedHint:false, solutionSeen:false };
       contexts.set(key, c);
     }
     return c;
@@ -69,14 +68,17 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const fingerprint = hash(stable({ revision: i.revisionId, response })).toString('hex');
       const existing = c.runs.get(fingerprint);
       if (existing) return existing.output;
-      const result = ai ? await ai.evaluate(i, response) : evaluate({ ...i.source, response });
+      const pending=c.pending.get(fingerprint);
+      if(pending)return pending;
+      const work=(async()=>{
+      const result = await ai.evaluate(i, response);
       c.answer = response.text?.slice(0,1000) ?? '';
       const id = uuid();
       const demonstrated = result.evidence.find(e => e.classification === 'UNDERSTANDING_DEMONSTRATED');
       const misconception = result.evidence.find(e => e.classification === 'MISCONCEPTION_EVIDENCED');
       const supported = result.verdict === 'CORRECT' ? !!demonstrated : result.verdict === 'INCORRECT' && !!misconception;
       let output: any = { diagnosisRunId: id, status: 'insufficient_evidence',
-        clarification: response.responseType === 'SELF_REPORT' ? 'Tulis langkah yang kamu tahu, atau pelajari inti soalnya dulu.' : 'Tambahkan rumus atau langkahmu supaya bagian yang perlu diperkuat terlihat.' };
+        clarification: result.clarification ?? (response.responseType === 'SELF_REPORT' ? 'Tulis langkah yang kamu tahu, atau pelajari inti soalnya dulu.' : 'Tambahkan rumus atau langkahmu supaya bagian yang perlu diperkuat terlihat.') };
       if (supported) {
         const correct = result.verdict === 'CORRECT';
         const focus = i.concepts.find(x => x.code === (misconception?.conceptCode ?? demonstrated?.conceptCode))!;
@@ -95,11 +97,14 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
           next: { core: focus.title, reason, formula: authored?.keyFormula ?? '', coreId: focus.route, mapId: focus.legacyMapId ?? '' }
         } };
       }
-      if(result.verdict==='CORRECT' && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
+      if(proof && result.verdict==='CORRECT' && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
       // Bounded results and the latest answer (for tutor context) expire with the anonymous session.
       if (c.runs.size >= 32) c.runs.delete(c.runs.keys().next().value!);
       c.runs.set(fingerprint, { id, output }); c.latestRun = id;
       return output;
+      })();
+      c.pending.set(fingerprint,work);
+      try{return await work;}finally{c.pending.delete(fingerprint);}
     },
     run(owner: string, id: string) {
       for (const [key, c] of contexts) if (key.startsWith(owner + ':') && c.expires > now())
@@ -121,7 +126,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
         return {id:x.legacyMapId!, state:e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'ok' : e?.classification === 'MISCONCEPTION_EVIDENCED' ? 'gap' : 'rest',
           reason:e?.rationale ?? (e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum cukup bukti dari jawaban ini.')};
       });
-      const claimToken = correct===true && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT' ? proof?.({owner,session:body.sessionId,questionId:body.itemId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen}) : undefined;
+      const claimToken = proof && correct===true && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT' ? proof?.({owner,session:body.sessionId,questionId:body.itemId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen}) : undefined;
       return { correct, ...(claimToken ? {claimToken} : {}), ...(items.length ? {items} : {}), ...(index !== undefined && index >= 0 ? { correctOptionIndex: index } : {}), ...(correct === null ? { unreadable: true } : {}),
         ...(correct !== null && i.source.rubric.feedback ? { feedback: correct ? i.source.rubric.feedback.correct : i.source.rubric.feedback.incorrect } : {}) };
     },
@@ -130,24 +135,13 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const i = await item(c, body.questionId);
       return i.source.rubric.workedSolution ?? fail(409, 'CONTENT_UNAVAILABLE');
     },
-    async tutor(owner: string, body: { sessionId: string; questionId: string; messages: { from: string; text: string }[] }) {
+    async tutor(owner: string, body: { sessionId: string; questionId: string; messages: { from: string; text: string }[]; currentAnswer?:string }) {
       const c = context(owner, body.sessionId), i = await item(c, body.questionId);
       const last = body.messages.at(-1);
       if (last?.from !== 'me' || !last.text.trim()) return fail(400, 'VALIDATION_FAILED');
-      if(ai) {
-        const reply=await ai.tutor(i,body.messages,c.answer ?? '',c.hints);
-        c.hints=reply.hintsUsed;
-        return reply;
-      }
-      const step = await guide(i.revisionId, last.text, c.hints);
-      if (!step) return fail(409, 'CONTENT_UNAVAILABLE');
-      c.hints = step.hintsUsed;
-      if (step.full) {
-        c.solutionSeen=true;
-        const solution = i.source.rubric.workedSolution ?? fail(409, 'CONTENT_UNAVAILABLE');
-        return { text: solution.steps.map(x => x.title + ': ' + x.body).join('\n'), quick: [], hintsUsed: c.hints };
-      }
-      return { text: step.text, quick: step.quick, hintsUsed: c.hints };
+      const reply=await ai.tutor(i,body.messages,(body.currentAnswer ?? c.answer ?? '').slice(0,1000),c.hints);
+      c.hints=reply.hintsUsed;
+      return reply;
     },
     close() { contexts.clear(); }
   };

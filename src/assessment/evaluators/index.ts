@@ -24,6 +24,7 @@ export interface CandidateEvidence {
   uncertaintyReasons: ('AMBIGUOUS_NOTATION' | 'INCOMPLETE_WORK' | 'ALTERNATIVE_PATH' | 'LOW_CONFIDENCE' | 'UNREADABLE_INPUT' | 'OUT_OF_SCOPE')[];
 }
 export interface Evaluation {
+  clarification?: string;
   verdict: 'CORRECT' | 'INCORRECT' | 'UNREADABLE' | 'NOT_GRADED';
   /** Why the answer could not be graded; null otherwise. Codes match the frontend checker, plus tower-v1's
    *  'insufficient-working' (readable working that shows neither a result nor a catalogued error). */
