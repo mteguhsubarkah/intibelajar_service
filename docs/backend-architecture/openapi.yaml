@@ -49,6 +49,28 @@ tags:
     description: Deprecated facade for the shipped frontend adapters (L1-L9).
 
 paths:
+  /v1/own/photo:
+    post:
+      operationId: readOwnQuestionPhoto
+      summary: Read the question text from a photo with the DeepSeek vision model
+      description: Requires learner, CSRF and LEARNING_DATA, AI_PROCESSING and IMAGE_UPLOAD consent. The photo (JPEG, PNG or WebP, at most 5 MB) is re-encoded without metadata, sent once to the IntiGuide provider and never stored or cached. Returns only transcribed text; the learner confirms or edits it before hints, IntiGuide or diagnosis. At most 10 photos per learner per minute.
+      requestBody:
+        required: true
+        content:
+          image/jpeg: {}
+          image/png: {}
+          image/webp: {}
+      responses:
+        '200':
+          description: READ with the transcribed question, or UNREADABLE when no question could be read
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/OwnQuestionPhoto'}
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '403': {$ref: '#/components/responses/Forbidden'}
+        '413': {$ref: '#/components/responses/PayloadTooLarge'}
+        '415': {$ref: '#/components/responses/UnsupportedMediaType'}
+        '503': {$ref: '#/components/responses/Unavailable'}
   /v1/own/hints:
     post:
       operationId: ownQuestionCoreHints
@@ -2714,6 +2736,19 @@ components:
               id: {type: string, minLength: 1, maxLength: 80}
               title: {type: string, minLength: 1}
               relation: {type: string, minLength: 1, maxLength: 320}
+    OwnQuestionPhoto:
+      oneOf:
+        - type: object
+          additionalProperties: false
+          required: [status, text]
+          properties:
+            status: {type: string, enum: [READ]}
+            text: {type: string, minLength: 1, maxLength: 2000}
+        - type: object
+          additionalProperties: false
+          required: [status]
+          properties:
+            status: {type: string, enum: [UNREADABLE]}
     OwnQuestionMapRequest:
       type: object
       additionalProperties: false
