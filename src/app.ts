@@ -36,6 +36,7 @@ import {importDevice,type DeviceHistory}from'./learning/device-import.js';
 import{openTutor,tutorConversation,sendTutor,tutorMessage}from'./tutor/service.js';
 import{createIntake,intakeView,uploadIntake,discardIntake,confirmIntake}from'./intake/service.js';import{ocrConfiguration}from'./intake/openrouter-ocr.js';
 import{privateQuestionView}from'./catalog/intake-interface.js';
+import{readOwnPhoto}from'./assessment/own-photo.js';
 
 declare module 'fastify' { interface FastifyRequest { principal?: identity.Principal; sessionToken?:string; safeSpan?:Span } }
 export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStream?:NodeJS.WritableStream;spanProcessors?:SpanProcessor[];diagnosisEngine?:DiagnosisEngine;trialAi?:TrialAi;googleProvider?:GoogleProvider}={}) {
@@ -83,7 +84,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
       // Pilot: a write must arrive over https at Nginx; the Origin check below stays exact.
       if(config.mode==='pilot'&&req.protocol!=='https') fail(403,'CSRF_FAILED');
       if(req.headers.origin!==config.origin || (req.headers['sec-fetch-site']!==undefined&&req.headers['sec-fetch-site']!=='same-origin')) fail(403,'CSRF_FAILED');
-      const imageUpload=req.method==='PUT'&&route==='/v1/question-intakes/:intakeId/image'&&['image/jpeg','image/png','image/webp'].includes(req.headers['content-type']??'');
+      const imageUpload=(req.method==='PUT'&&route==='/v1/question-intakes/:intakeId/image'||req.method==='POST'&&route==='/v1/own/photo')&&['image/jpeg','image/png','image/webp'].includes(req.headers['content-type']??'');
       if(!imageUpload&&req.headers['content-type']?.split(';')[0]?.trim()!=='application/json') fail(415,'UNSUPPORTED_MEDIA_TYPE');
     }
     if(req.method==='OPTIONS') fail(403,'CSRF_FAILED');
@@ -111,7 +112,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   // Operations of later slices fail closed before any request validation.
   const disabled=new Set<string>();
   const route=(method:'GET'|'POST'|'PUT'|'PATCH'|'DELETE',path:string,access:'public'|'student'|'guardian'|'session',handler:Handler)=>{
-    app.route({method,url:path.replace(/\{(\w+)\}/g,':$1'),...(path==='/v1/question-intakes/{intakeId}/image'?{bodyLimit:5242880}:{}),preValidation:async(req)=>{
+    app.route({method,url:path.replace(/\{(\w+)\}/g,':$1'),...(['/v1/question-intakes/{intakeId}/image','/v1/own/photo'].includes(path)?{bodyLimit:5242880}:{}),preValidation:async(req)=>{
       if(access!=='public'){
         req.principal=await identity.authenticate(db,config,req.sessionToken);
         if(!req.principal)fail(401,'UNAUTHENTICATED');
@@ -298,10 +299,10 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     const run=(body as {diagnosisRun?:{status?:string};status?:string}|undefined);const status=run?.diagnosisRun?.status??run?.status;
     if(status==='QUEUED'||status==='RUNNING')reply.header('Retry-After','2');return body;};
   const learnerId=(req:FastifyRequest)=>req.principal!.learnerId!;
-  const learnLimit=(req:FastifyRequest)=>{
-    const key='learn:'+learnerId(req),time=Date.now(),state=limits.get(key);
+  const learnLimit=(req:FastifyRequest,scope='learn',max=120)=>{
+    const key=scope+':'+learnerId(req),time=Date.now(),state=limits.get(key);
     const next=!state||state.until<=time?{count:0,until:time+60000}:state;next.count++;limits.set(key,next);
-    if(next.count>120)fail(429,'RATE_LIMITED');
+    if(next.count>max)fail(429,'RATE_LIMITED');
   };
   const sessionCommand=(name:string,run:(tx:import('./db.js').Tx,req:FastifyRequest)=>Promise<Outcome>,locate?:Locate)=>async(req:FastifyRequest,reply:FastifyReply)=>{
     learnLimit(req);
@@ -424,6 +425,11 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   }
   const ownQuestions=ownQuestionService(db,config.guide);
   app.addHook('onClose',async()=>ownQuestions.close());
+  route('POST','/v1/own/photo','student',async req=>{
+    learnLimit(req);learnLimit(req,'photo',10);
+    await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD']));
+    return readOwnPhoto(config.guide,req.body as Buffer);
+  });
   route('POST','/v1/own/hints','student',async req=>{
     learnLimit(req);
     await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));

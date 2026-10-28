@@ -14,7 +14,7 @@ test('trial proofs are browser-bound, expire and reject tampering',()=>{
  assert.equal(sealTrialProof(key,{...input,solutionSeen:true}),undefined);
 });
 test('IntiGuide sends the current context and preserves provider failures',async()=>{
- const config={apiKey:'synthetic-key',model:'deepseek-flash'};
+ const config={apiKey:'synthetic-key',model:'deepseek-flash',visionModel:'deepseek-v4-flash-vision-exp'};
  const http=(async(url,options)=>{assert.equal(String(url),'https://api.deepseek.com/chat/completions');const body=JSON.parse(String(options?.body));assert.ok(body.messages[1].content.includes('soal tangga'));assert.ok(!JSON.stringify(body).includes('synthetic-key'));return Response.json({choices:[{message:{content:'Sisi mana yang diketahui?'}}]});}) as typeof fetch;
  assert.ok((await guideReply(null as any,config,{questionText:'soal tangga',messages:[{from:'me',text:'Mulai dari mana?'}]},http)).text.includes('Sisi'));
  await assert.rejects(guideReply(null as any,undefined,{questionText:'soal',messages:[{from:'me',text:'Halo'}]},http));

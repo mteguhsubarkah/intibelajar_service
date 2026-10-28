@@ -1,5 +1,5 @@
 export interface Config {
-  guide?: {apiKey:string;model:string};
+  guide?: {apiKey:string;model:string;visionModel:string};
   google?: {clientId:string;clientSecret:string;testEmail?:string};
   /** 'pilot': the private adult pilot on a public HTTPS origin behind the local Nginx (RUNTIME_MODE=pilot, NODE_ENV=production). */
   mode: 'development' | 'test' | 'pilot'; databaseUrl: string; origin: string; host: string; port: number;
@@ -89,7 +89,10 @@ export function readConfig(env = process.env): Config {
     if(env.INTIGUIDE_PROVIDER!=='deepseek'||!env.DEEPSEEK_API_KEY?.trim())throw new Error('IntiGuide requires INTIGUIDE_PROVIDER=deepseek and DEEPSEEK_API_KEY');
     const model=env.INTIGUIDE_MODEL??'deepseek-flash';
     if(!['deepseek-flash','deepseek-v4-pro'].includes(model))throw new Error('Unsupported INTIGUIDE_MODEL');
-    guide={apiKey:env.DEEPSEEK_API_KEY,model};
+    // Foto soal needs a DeepSeek model that accepts image input; the text models reject images.
+    const visionModel=env.INTIGUIDE_VISION_MODEL??'deepseek-v4-flash-vision-exp';
+    if(!/^deepseek-[a-z0-9.-]{1,60}$/.test(visionModel))throw new Error('Unsupported INTIGUIDE_VISION_MODEL');
+    guide={apiKey:env.DEEPSEEK_API_KEY,model,visionModel};
   }
   let email:Config['email'];
   if(env.EMAIL_PROVIDER){

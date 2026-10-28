@@ -5,7 +5,7 @@ import {ownCatalog,type OwnCore} from '../src/catalog/own-catalog.js';
 import {readConfig} from '../src/config.js';import {connect} from '../src/db.js';import {migrate} from '../src/migrate.js';
 import {publish} from '../src/catalog/publisher.js';import {reviewedFixture} from './fixtures/catalog.js';
 import {validateRequest,validateResponse} from '../src/platform/contract.js';
-const guide={apiKey:'test-secret',model:'deepseek-flash'};
+const guide={apiKey:'test-secret',model:'deepseek-flash',visionModel:'deepseek-v4-flash-vision-exp'};
 const core:OwnCore={id:'id',code:'SPECIAL',title:'Sudut Istimewa',description:'Nilai sudut istimewa',mapId:'tri-f',topicId:'trigonometri',subject:'matematika'};
 const envelope=(v:unknown)=>Response.json({choices:[{message:{content:JSON.stringify(v)}}]});
 test('own mapping is AI selection constrained to catalog, not keyword expansion or learner mastery',async()=>{

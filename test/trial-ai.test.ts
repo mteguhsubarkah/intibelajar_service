@@ -9,7 +9,7 @@ const all=manifest.topics.flatMap(t=>t.concepts);
 const item:TrialItem={revisionId:q.code,optionOrder:q.legacyOptionOrder??null,
  source:{revisionId:q.code,itemType:q.itemType,body:{...q.body,answerExample:'PRIVATE_EXAMPLE'},rubric:{...q.rubric,acceptedForms:['PRIVATE_KEY']},familyCode:q.familyCode,contextTag:q.contextTag,concepts:q.concepts.map(c=>({id:c.concept,code:c.concept,role:c.role,assessable:c.assessable}))},
  concepts:q.concepts.map(c=>{const core=all.find(x=>x.code===c.concept)!;return {code:c.concept,title:core.title,legacyMapId:core.aliases.find(a=>a.ns==='MAP')?.value??null,route:'lesson'};})};
-const config={apiKey:'test-secret',model:'deepseek-flash'};
+const config={apiKey:'test-secret',model:'deepseek-flash',visionModel:'deepseek-v4-flash-vision-exp'};
 const raw='tan 30 = 20/x; x = 20/(1/2)';
 const entries=(state:string,quote:string)=>item.concepts.map(c=>({code:c.code,state,quote,reason:'Bukti langkah siswa.'}));
 const envelope=(data:unknown)=>Response.json({choices:[{message:{content:JSON.stringify(data)}}]});
