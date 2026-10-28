@@ -731,7 +731,7 @@ CREATE TABLE progress_event (
   session_id    uuid REFERENCES learning_session(id),
   evidence_id   uuid REFERENCES concept_evidence(id),
   event_key     text NOT NULL,                       -- deterministic, e.g. 'xp:SOAL_BENAR:<familyCode>'
-  type          text NOT NULL CHECK (type IN ('CONCEPT_VISITED','ATTEMPT_GRADED','LESSON_COMPLETED','SESSION_COMPLETED','MASTERY_CHANGED','TIER_CHANGED','XP_AWARDED','STREAK_EXTENDED','STREAK_FREEZE_USED','MISSION_COMPLETED','DEVICE_HISTORY_IMPORTED')),
+  type          text NOT NULL CHECK (type IN ('CONCEPT_VISITED','ATTEMPT_GRADED','LESSON_COMPLETED','SESSION_COMPLETED','MASTERY_CHANGED','TIER_CHANGED','XP_AWARDED','STREAK_EXTENDED','STREAK_FREEZE_USED','MISSION_COMPLETED','DEVICE_HISTORY_IMPORTED','CORE_COMPLETED')),  -- CORE_COMPLETED: 0012, inti tuntas (bukan bukti, tanpa XP)
   xp_delta      int NOT NULL DEFAULT 0 CHECK (xp_delta >= 0),
   payload       jsonb NOT NULL DEFAULT '{}',          -- ≤ 4 KB, ids and enums only
   local_date    date NOT NULL,                        -- learner timezone bucket for streaks/missions

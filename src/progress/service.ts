@@ -3,12 +3,13 @@ import{progressEvidence}from'../assessment/progress-facts.js';import{progressLea
 import{masteryPolicy,type Fact}from'./policy.js';import{uuid,hmac,equal}from'../platform/crypto.js';import{fail}from'../platform/errors.js';
 const levels=[[0,'Pemula'],[200,'Penjelajah'],[600,'Perintis'],[1500,'Navigator'],[3000,'Arsitek'],[5000,'Pemandu'],[8000,'Perancang'],[12000,'Cendekia'],[17000,'Pakar'],[24000,'Mahaguru']]as const;
 const day=(date:Date,tz:string)=>new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit'}).format(date);
-const labels:Record<string,string>={CONCEPT_VISITED:'Inti dikunjungi',ATTEMPT_GRADED:'Jawaban diperiksa',LESSON_COMPLETED:'Materi selesai',SESSION_COMPLETED:'Sesi selesai',MASTERY_CHANGED:'Pemahaman diperbarui',TIER_CHANGED:'Tingkat inti berubah',XP_AWARDED:'XP diperoleh',STREAK_EXTENDED:'Hari belajar',MISSION_COMPLETED:'Misi selesai',DEVICE_HISTORY_IMPORTED:'Riwayat perangkat diimpor'};
+const labels:Record<string,string>={CONCEPT_VISITED:'Inti dikunjungi',ATTEMPT_GRADED:'Jawaban diperiksa',LESSON_COMPLETED:'Materi selesai',SESSION_COMPLETED:'Sesi selesai',MASTERY_CHANGED:'Pemahaman diperbarui',TIER_CHANGED:'Tingkat inti berubah',XP_AWARDED:'XP diperoleh',STREAK_EXTENDED:'Hari belajar',MISSION_COMPLETED:'Misi selesai',DEVICE_HISTORY_IMPORTED:'Riwayat perangkat diimpor',CORE_COMPLETED:'Inti dituntaskan'};
 export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Date()){
  await sql`select pg_advisory_xact_lock(hashtextextended(${'progress:'+id},0))`.execute(tx);
  const [learning,evidence,catalog]=await Promise.all([progressLearning(tx,id),progressEvidence(tx,id),progressCatalog(tx)]);
  const attempts=new Map(learning.attempts.map(a=>[a.id,a])),revisions=new Map(catalog.revisions.map(r=>[r.id,r]));
  const imported=(await sql<any>`select payload from progress_event where learner_id=${id} and type='DEVICE_HISTORY_IMPORTED'`.execute(tx)).rows;
+ const completed=await completedConcepts(tx,id);
  const views:any[]=[];const activeDates=new Set<string>();let dailyCorrect=0,dailyCombined=0,dailyLessons=0,dailyRefresh=0,reviewMission=false;const today=day(now,timezone);
  const dayStart=new Date(Date.parse(today+'T00:00:00Z')-({'Asia/Jakarta':7,'Asia/Makassar':8,'Asia/Jayapura':9}[timezone]??7)*3600000);
  const event=async(key:string,type:string,at:Date,session:string|null,payload:Record<string,unknown>={},xp=0)=>{
@@ -57,10 +58,20 @@ export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Da
  await sql`insert into learner_stats(learner_id,xp_total,current_streak_days,longest_streak_days,last_active_local_date,policy_version) values(${id},${xp},${current},${longest},${prev||null}::date,'mastery-v1')
   on conflict(learner_id) do update set xp_total=excluded.xp_total,current_streak_days=excluded.current_streak_days,longest_streak_days=excluded.longest_streak_days,last_active_local_date=excluded.last_active_local_date,version=learner_stats.version+1,updated_at=now()`.execute(tx);
  let i=0;while(i+1<levels.length&&xp>=levels[i+1]![0])i++;const l=levels[i]!;
- return{views,catalog,evidence,attempts,stats:{xpTotal:xp,level:{num:i+1,name:l[1],min:l[0],nextMin:levels[i+1]?.[0]??null},currentStreakDays:current,longestStreakDays:longest,streakFreezes:0,today:{localDate:today,missions,allDone},policyVersion:'mastery-v1'}};
+ return{views,catalog,evidence,attempts,completed,stats:{xpTotal:xp,level:{num:i+1,name:l[1],min:l[0],nextMin:levels[i+1]?.[0]??null},currentStreakDays:current,longestStreakDays:longest,streakFreezes:0,today:{localDate:today,missions,allDone},policyVersion:'mastery-v1'}};
 }
 export async function progressEvents(db:Connection,id:string){return(await sql<any>`select id,type,xp_delta,session_id,payload,local_date::text,occurred_at from progress_event where learner_id=${id} order by occurred_at desc,id desc`.execute(db)).rows.map(e=>({id:e.id,type:e.type,title:labels[e.type]??'Aktivitas belajar',xpDelta:e.xp_delta,...(e.session_id?{sessionId:e.session_id}:{}),...(e.payload.conceptId?{conceptId:e.payload.conceptId}:{}),localDate:e.local_date,occurredAt:new Date(e.occurred_at).toISOString()}));}
 export function progressPage(items:any[],cursor:string|undefined,limit:number,key:Buffer,binding:string){let start=0;if(cursor){try{const [payload,signature]=cursor.split('.');if(!payload||!signature||!equal(hmac(key,binding+payload),Buffer.from(signature,'base64url')))throw Error();const d=JSON.parse(Buffer.from(payload,'base64url').toString());if(d.exp<Date.now()||!Number.isInteger(d.n)||d.n<0)throw Error();start=d.n;}catch{fail(400,'VALIDATION_FAILED');}}
  const end=start+limit,payload=Buffer.from(JSON.stringify({n:end,exp:Date.now()+86400000})).toString('base64url');return{items:items.slice(start,end),nextCursor:end<items.length?payload+'.'+hmac(key,binding+payload).toString('base64url'):null};}
 export async function eraseProgress(tx:Tx,id:string){await sql`delete from learner_stats where learner_id=${id}`.execute(tx);await sql`delete from mastery_state where learner_id=${id}`.execute(tx);await sql`delete from progress_event where learner_id=${id}`.execute(tx);}
 export async function recordDeviceHistory(tx:Tx,id:string,sessionId:string,conceptId:string|undefined,step:string){await sql`insert into progress_event(id,learner_id,session_id,event_key,type,payload,local_date)values(${uuid()},${id},${sessionId},${'device-history:'+sessionId},'DEVICE_HISTORY_IMPORTED',${JSON.stringify({...(conceptId?{conceptId}:{}),furthestStep:step,lessonComplete:['LESSON_FINISHED','COMPLETED'].includes(step)})}::jsonb,current_date)on conflict(learner_id,event_key)do nothing`.execute(tx);}
+/** Concepts whose core practice the learner finished with every answer correct. Not mastery-v1 evidence and no XP. */
+export async function completedConcepts(db:Connection,id:string){return new Set((await sql<{concept_id:string}>`select payload->>'conceptId' as concept_id from progress_event where learner_id=${id} and type='CORE_COMPLETED'`.execute(db)).rows.map(r=>r.concept_id));}
+/** Records a finished core practice once per concept, then returns every core counted as mastered (completed or DEMONSTRATED). */
+export async function completeCore(tx:Tx,id:string,timezone:string,b:{coreId:string;score:number;total:number},now=new Date()){
+ if(b.score!==b.total)fail(400,'VALIDATION_FAILED',{fields:['score']});
+ const{concepts}=await progressCatalog(tx),concept=concepts.find((c:{alias:string|null})=>c.alias===b.coreId);if(!concept)fail(404,'NOT_FOUND');
+ await sql`insert into progress_event(id,learner_id,event_key,type,payload,local_date,occurred_at)values(${uuid()},${id},${'core-completed:'+concept.id},'CORE_COMPLETED',${JSON.stringify({conceptId:concept.id,score:b.score,total:b.total})}::jsonb,${day(now,timezone)}::date,${now})on conflict(learner_id,event_key)do nothing`.execute(tx);
+ const counted=new Set([...await completedConcepts(tx,id),...(await sql<{concept_id:string}>`select concept_id from mastery_state where learner_id=${id} and status='DEMONSTRATED'`.execute(tx)).rows.map(r=>r.concept_id)]);
+ return{coreId:b.coreId,masteredCoreIds:concepts.filter((c:{id:string;alias:string|null})=>c.alias&&counted.has(c.id)).map((c:{alias:string})=>c.alias).sort()};
+}

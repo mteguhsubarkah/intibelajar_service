@@ -830,6 +830,43 @@ paths:
         '409':
           $ref: '#/components/responses/Conflict'
 
+  /v1/me/core-completions:
+    post:
+      operationId: completeCore
+      tags: [me]
+      summary: Record a core practice finished with every answer correct. Counted as a mastered core (inti dikuasai) on every device; never mastery-v1 evidence and never XP.
+      security:
+        - sessionCookie: []
+          csrfToken: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoreCompletionRequest'
+      responses:
+        '200':
+          description: Recorded once per core; replays and repeats return the same list.
+          headers:
+            Idempotency-Replayed:
+              $ref: '#/components/headers/IdempotencyReplayed'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoreCompletionResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
   # -------------------------------------------------------------- guardian
   /v1/guardian-consents/{token}:
     get:
@@ -4700,6 +4737,24 @@ components:
           $ref: '#/components/schemas/Timestamp'
 
     # -------------------------------------------------------------- progress
+    CoreCompletionRequest:
+      type: object
+      additionalProperties: false
+      required: [coreId, score, total]
+      properties:
+        coreId: {type: string, minLength: 1, maxLength: 64, description: Legacy core alias (e.g. tri-f).}
+        score: {type: integer, minimum: 1, maximum: 50}
+        total: {type: integer, minimum: 1, maximum: 50}
+    CoreCompletionResult:
+      type: object
+      additionalProperties: false
+      required: [coreId, masteredCoreIds]
+      properties:
+        coreId: {type: string}
+        masteredCoreIds:
+          type: array
+          description: Every legacy core alias counted as mastered, completed practice or DEMONSTRATED.
+          items: {type: string}
     LegacyProgressSnapshot:
       type: object
       description: The exact shape `useLearnerProgress` validates. Frozen.
@@ -4731,6 +4786,9 @@ components:
                 $ref: '#/components/schemas/MasteryStatus'
               lessonComplete:
                 type: boolean
+              coreCompleted:
+                type: boolean
+                description: Core practice finished with every answer correct (POST /v1/me/core-completions).
               transferCorrect:
                 type: integer
                 minimum: 0
