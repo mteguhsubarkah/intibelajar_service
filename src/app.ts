@@ -31,7 +31,7 @@ import {fileReport,type ReportReason} from './assessment/disputes.js';
 import {registerApiDocs} from './platform/api-docs.js';
 import {createGoogleProvider,type GoogleProvider} from './identity/google-provider.js';
 import {startGoogle,finishGoogle} from './identity/google.js';
-import {rebuildProgress,progressEvents,progressPage,recordDeviceHistory} from './progress/service.js';
+import {rebuildProgress,progressEvents,progressPage,recordDeviceHistory,completeCore} from './progress/service.js';
 import {importDevice,type DeviceHistory}from'./learning/device-import.js';
 import{openTutor,tutorConversation,sendTutor,tutorMessage}from'./tutor/service.js';
 import{createIntake,intakeView,uploadIntake,discardIntake,confirmIntake}from'./intake/service.js';import{ocrConfiguration}from'./intake/openrouter-ocr.js';
@@ -228,7 +228,11 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   });
   route('GET','/v1/me/progress','student',async req=>{const{projection:p,profile,events}=await projected(req);
     return{user:{id:req.principal!.userId,displayName:profile.displayName??'Pelajar'},cores:p.views.filter(v=>v.legacyMapId).map(v=>({id:v.legacyMapId,exploration:v.exploration,
-      understandingDemonstrated:(p.evidence.filter(e=>e.concept_id===v.conceptId && e.mastery_eligible).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime())[0]?.classification==='UNDERSTANDING_DEMONSTRATED'),mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
+      understandingDemonstrated:(p.evidence.filter(e=>e.concept_id===v.conceptId && e.mastery_eligible).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime())[0]?.classification==='UNDERSTANDING_DEMONSTRATED'),mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,coreCompleted:p.completed.has(v.conceptId),transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
+  route('POST','/v1/me/core-completions','student',async(req,reply)=>send(reply,await learnerCommand(req,'POST /v1/me/core-completions',req.body,async tx=>{
+    const id=req.principal!.learnerId!;await privacy.requireConsent(tx,id,['LEARNING_DATA']);const p=await privacy.profile(tx,id);
+    return{status:200,body:await completeCore(tx,id,p.timezone,req.body as {coreId:string;score:number;total:number})};
+  })));
   route('GET','/v1/me/stats','student',async req=>(await projected(req)).projection.stats);
   route('GET','/v1/me/mastery','student',async req=>{const{projection:p}=await projected(req),q=req.query as{topicId?:string;cursor?:string;limit?:number};
     return progressPage(p.views.filter(v=>!q.topicId||p.catalog.concepts.find(c=>c.id===v.conceptId)?.topic_id===q.topicId),q.cursor,q.limit??20,config.key,'mastery:'+req.principal!.learnerId+':'+(q.topicId??''));});
