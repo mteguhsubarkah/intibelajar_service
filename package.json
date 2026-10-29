@@ -32,6 +32,7 @@
     "catalog:publish": "tsx scripts/catalog/publish.ts",
     "catalog:pilot": "tsx scripts/catalog/pilot.ts",
     "catalog:signoff": "tsx scripts/catalog/sign-off.ts",
+    "catalog:status": "tsx scripts/catalog/status.ts",
     "catalog:golden": "tsx scripts/catalog/golden.ts",
     "catalog:bundle-check": "tsx scripts/catalog/check-bundle-keys.ts",
     "e2e:seed": "tsx scripts/e2e-seed.ts",
