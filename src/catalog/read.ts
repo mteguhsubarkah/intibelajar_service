@@ -50,7 +50,7 @@ async function load(db: Connection, release: { id: string; version: number; snap
     mapAlias: new Map(aliases.map(a => [a.alias, a.concept_id])) };
 }
 
-export interface QuestionFilter { topicId?: string; conceptId?: string; itemType?: string }
+export interface QuestionFilter { topicId?: string; conceptId?: string; itemType?: string; subjectCode?: string; phase?: string }
 
 export function catalogReader(key: Buffer) {
   let cached: { releaseId: string | null; catalog: Promise<Catalog> } | undefined;
@@ -109,12 +109,31 @@ export function catalogReader(key: Buffer) {
     },
     questions: async (db: Connection, f: QuestionFilter, cursor?: string, limit = 20) => {
       const c = await current(db), after = cursor === undefined ? undefined : decodeCursor(cursor, f, c.releaseId);
+      // Pelajaran dan fase dibaca dari bab tiap inti soal: soal ikut tersaring bila salah satu babnya cocok.
+      const subjectId = f.subjectCode === undefined ? undefined : c.subjects.find(x => x.code === f.subjectCode)?.id ?? null;
+      const topicOk = (topicId: string) => { const t = c.topics.find(x => x.id === topicId);
+        return !!t && (subjectId === undefined || t.subject_id === subjectId) && (f.phase === undefined || t.phase === f.phase); };
       const matching = c.questions.filter(q => (f.itemType === undefined || q.item_type === f.itemType)
         && (f.conceptId === undefined || q.concepts.some(x => x.conceptId === f.conceptId))
         && (f.topicId === undefined || q.concepts.some(x => x.topicId === f.topicId))
+        && ((subjectId === undefined && f.phase === undefined) || q.concepts.some(x => topicOk(x.topicId)))
         && (after === undefined || q.code > after));
       const page = matching.slice(0, limit);
       return { items: page.map(questionSummary), nextCursor: matching.length > limit && c.releaseId ? encodeCursor(page.at(-1)!.code, f, c.releaseId) : null };
+    },
+    /**
+     * Soal mirip = soal yang memakai inti yang sama (alias peta, mis. tri-f). Urutan: paling banyak inti sama,
+     * lalu paling sedikit inti tambahan (paling dekat), lalu termudah. Inti yang tidak dikenal diabaikan.
+     */
+    similar: async (db: Connection, aliases: string[], excludeId?: string, limit = 6) => {
+      const c = await current(db), wanted = new Set(aliases.map(a => c.mapAlias.get(a)).filter((x): x is string => !!x));
+      const aliasOf = new Map([...c.mapAlias].map(([alias, id]) => [id, alias]));
+      const ranked = c.questions.filter(q => q.id !== excludeId).map(q => {
+        const ids = new Set(q.concepts.map(x => x.conceptId)), shared = [...ids].filter(id => wanted.has(id));
+        return { q, shared, extra: ids.size - shared.length };
+      }).filter(r => r.shared.length > 0)
+        .sort((a, b) => b.shared.length - a.shared.length || a.extra - b.extra || a.q.difficulty - b.q.difficulty || (a.q.code < b.q.code ? -1 : 1));
+      return { items: ranked.slice(0, limit).map(r => ({ question: questionSummary(r.q), sharedCoreIds: r.shared.map(id => aliasOf.get(id)).filter((x): x is string => !!x) })) };
     },
     question: async (db: Connection, id: string) => {
       const q = (await current(db)).questions.find(x => x.id === id);

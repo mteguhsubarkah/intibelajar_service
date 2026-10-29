@@ -476,8 +476,12 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   route('GET','/v1/concepts','public',async req=>catalog.concepts(db,{topicId:query(req).topicId,legacyMapId:query(req).legacyMapId}));
   route('GET','/v1/concepts/{conceptId}','public',async req=>catalog.concept(db,params(req).conceptId!));
   route('GET','/v1/questions','public',async req=>{
-    const q=query(req),filter=Object.fromEntries(Object.entries({topicId:q.topicId,conceptId:q.conceptId,itemType:q.itemType}).filter(([,v])=>v!==undefined));
+    const q=query(req),filter=Object.fromEntries(Object.entries({topicId:q.topicId,conceptId:q.conceptId,itemType:q.itemType,subjectCode:q.subjectCode,phase:q.phase}).filter(([,v])=>v!==undefined));
     return catalog.questions(db,filter,q.cursor,(req.query as {limit?:number}).limit??20);
+  });
+  route('GET','/v1/questions/similar','public',async req=>{
+    const q=query(req);
+    return catalog.similar(db,(q.cores??'').split(',').map(x=>x.trim()).filter(Boolean).slice(0,8),q.excludeId,(req.query as {limit?:number}).limit??6);
   });
   route('GET','/v1/questions/{questionId}','public',async req=>{const p=await identity.authenticate(db,config,req.sessionToken);if(p?.learnerId&&await privacy.hasConsent(db,p.learnerId,'LEARNING_DATA')){const q=await privateQuestionView(db,params(req).questionId!,p.learnerId);if(q)return q;}return catalog.question(db,params(req).questionId!);});
   route('GET','/v1/lessons/{lessonId}','public',async req=>catalog.lesson(db,params(req).lessonId!));
