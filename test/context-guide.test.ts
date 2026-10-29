@@ -3,7 +3,8 @@ import {guideReply,plainMath} from '../src/tutor/context-guide.js';
 import {validateRequest,validateResponse} from '../src/platform/contract.js';
 const config={apiKey:'synthetic-key',model:'deepseek-flash',visionModel:'deepseek-v4-flash-vision-exp'};
 const cores=[{id:'tri-i',title:'Identitas Dasar'},{id:'tri-g',title:'Kuadran & Tanda'}];
-const answer=(content:unknown)=>(async()=>Response.json({choices:[{message:{content:typeof content==='string'?content:JSON.stringify(content)}}]})) as typeof fetch;
+const envelope=(content:unknown)=>Response.json({choices:[{message:{content:typeof content==='string'?content:JSON.stringify(content)}}]});
+const answer=(content:unknown)=>(async()=>envelope(content)) as typeof fetch;
 test('LaTeX from the model is rewritten as plain math text',()=>{
  assert.equal(plainMath('Soalmu: \\(\\sin x = \\frac{9}{12}\\)'),'Soalmu: sin x = 9/12');
  assert.equal(plainMath('dari \\(s^2 + 3^2 = 4^2\\)'),'dari s² + 3² = 4²');
@@ -14,7 +15,7 @@ test('LaTeX from the model is rewritten as plain math text',()=>{
 });
 test('IntiGuide is told to stay on the listed cores, refuse off-topic chat, and never write LaTeX',async()=>{
  let sent:any;
- const reply=await guideReply(null as any,config,{questionText:'sin x = 9/12, x kuadran 2, tan x = ?',cores,messages:[{from:'me',text:'Tulisan frac itu apa namanya di programming?'}]},(async(_u,o)=>{sent=JSON.parse(String(o?.body));return answer({reply:'Aku fokus ke soal ini dulu ya. Dari \\(\\sin^2 x + \\cos^2 x = 1\\), cos²x berapa?',active:'tri-i',done:['tri-x']})();}) as typeof fetch);
+ const reply=await guideReply(null as any,config,{questionText:'sin x = 9/12, x kuadran 2, tan x = ?',cores,messages:[{from:'me',text:'Tulisan frac itu apa namanya di programming?'}]},(async(_u,o)=>{sent=JSON.parse(String(o?.body));return envelope({reply:'Aku fokus ke soal ini dulu ya. Dari \\(\\sin^2 x + \\cos^2 x = 1\\), cos²x berapa?',active:'tri-i',done:['tri-x']});}) as typeof fetch);
  assert.equal(sent.response_format.type,'json_object');
  const system=sent.messages[0].content;
  for(const rule of [/DAFTAR INTI/,/satu inti per giliran/,/menyederhanakan pecahan/,/pemrograman, LaTeX/,/DILARANG LaTeX/,/Jangan memberikan jawaban akhir/])assert.match(system,rule);
