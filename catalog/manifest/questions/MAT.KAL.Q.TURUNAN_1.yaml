@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.TURUNAN_1
+familyCode: MAT.KAL.F.TURUNAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai lim (h→0) [(2 + h)² − 4] / h adalah …
+  options:
+    - id: a
+      label: "0"
+    - id: b
+      label: "2"
+    - id: c
+      label: "4"
+    - id: d
+      label: tidak ada
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "4"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+  feedback:
+    correct: (4 + 4h + h² − 4)/h = 4 + h, yang menuju 4 saat h → 0.
+    incorrect: Jawabannya 4. (4 + 4h + h² − 4)/h = 4 + h, yang menuju 4 saat h → 0.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

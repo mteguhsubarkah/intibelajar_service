@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.SOAL_KONTEKSTUAL_1
+familyCode: MAT.VEK.F.SOAL_KONTEKSTUAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.SOAL_KONTEKSTUAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Seseorang berjalan 6 km ke timur, lalu 8 km ke utara. Jarak orang itu dari titik awal adalah …
+  options:
+    - id: a
+      label: 2 km
+    - id: b
+      label: 10 km
+    - id: c
+      label: 14 km
+    - id: d
+      label: 48 km
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 10 km
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.SOAL_KONTEKSTUAL
+  feedback:
+    correct: Perpindahannya (6, 8), panjangnya √(36 + 64) = 10 km.
+    incorrect: Jawabannya 10 km. Perpindahannya (6, 8), panjangnya √(36 + 64) = 10 km.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

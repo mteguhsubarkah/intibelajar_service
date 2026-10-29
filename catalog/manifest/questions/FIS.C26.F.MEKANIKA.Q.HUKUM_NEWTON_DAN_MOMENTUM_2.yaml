@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.Q.HUKUM_NEWTON_DAN_MOMENTUM_2
+familyCode: FIS.C26.F.MEKANIKA.F.HUKUM_NEWTON_DAN_MOMENTUM_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Balok A (2 kg) dan balok B (3 kg) dihubungkan tali di lantai licin. Balok B ditarik dengan gaya 20 N sehingga keduanya bergerak bersama. Tegangan tali penghubung adalah …
+  options:
+    - id: a
+      label: 4 N
+    - id: b
+      label: 8 N
+    - id: c
+      label: 12 N
+    - id: d
+      label: 20 N
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 8 N
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+  feedback:
+    correct: "a = 20 / (2 + 3) = 4 m/s². Tali menarik balok A: T = 2 × 4 = 8 N."
+    incorrect: "Jawabannya 8 N. a = 20 / (2 + 3) = 4 m/s². Tali menarik balok A: T = 2 × 4 = 8 N."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

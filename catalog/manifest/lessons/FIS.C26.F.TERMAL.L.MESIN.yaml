@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL.L.MESIN
+title: Mesin kalor & batas efisiensi
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Mesin kalor
+  - type: text
+    slide: 0
+    text: Mesin menyerap kalor Q₁ dari reservoir panas, membuang Q₂ ke reservoir dingin, dan menghasilkan usaha **W = Q₁ − Q₂**.
+  - type: text
+    slide: 0
+    text: Efisiensi **η = W / Q₁**.
+  - type: math
+    slide: 0
+    name: W
+    expression: Q₁ − Q₂
+    highlight: true
+  - type: math
+    slide: 0
+    name: η
+    expression: W / Q₁
+  - type: heading
+    slide: 1
+    text: Batas Carnot
+  - type: text
+    slide: 1
+    text: "Efisiensi terbesar yang mungkin (mesin Carnot): **η = 1 − T₂/T₁**, suhu dalam kelvin."
+  - type: text
+    slide: 1
+    text: "Contoh: 600 K dan 300 K ⇒ η = 50%. Mesin nyata selalu di bawah batas ini."
+  - type: math
+    slide: 1
+    name: η Carnot
+    expression: 1 − T₂ / T₁
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ubah °C ke kelvin dengan menambah 273 sebelum memakai rumus Carnot.
+checks:
+  - question: FIS.C26.F.TERMAL.Q.MESIN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.TERMAL.S.MESIN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

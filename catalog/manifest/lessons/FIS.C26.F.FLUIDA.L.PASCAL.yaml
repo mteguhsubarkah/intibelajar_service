@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA.L.PASCAL
+title: Hukum Pascal
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.F.FLUIDA.HUKUM_PASCAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Tekanan diteruskan ke segala arah
+  - type: text
+    slide: 0
+    text: "Tekanan pada zat cair tertutup diteruskan sama besar ke segala arah. Pada dua pengisap: **F₁/A₁ = F₂/A₂**."
+  - type: math
+    slide: 0
+    name: F₁ / A₁
+    expression: F₂ / A₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Gaya kecil, beban besar
+  - type: text
+    slide: 1
+    text: "Dongkrak hidrolik: A₁ = 10 cm², A₂ = 500 cm², F₁ = 200 N ⇒ F₂ = 200 × 50 = 10.000 N."
+  - type: text
+    slide: 1
+    text: "Penerapan lain: rem hidrolik, kursi dokter gigi, mesin press."
+  - type: math
+    slide: 1
+    name: F₂
+    expression: F₁ × A₂ / A₁
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Satuan luas tidak perlu diubah selama keduanya sama.
+checks:
+  - question: FIS.C26.F.FLUIDA.Q.PASCAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.FLUIDA.S.PASCAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,47 @@
+schemaVersion: 1
+code: MAT.STP.L.KRITIS
+title: Mengevaluasi laporan data
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.STP.MENGEVALUASI_LAPORAN_DATA
+blocks:
+  - type: heading
+    slide: 0
+    text: Pertanyaan kritis
+  - type: text
+    slide: 0
+    text: Siapa sampelnya? Apakah mewakili populasi? Apakah grafik memotong sumbu sehingga perbedaan tampak besar? Ukuran pemusatan apa yang dipakai?
+  - type: math
+    slide: 0
+    name: sampel bias
+    expression: tidak mewakili populasi
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Rata-rata atau median?
+  - type: text
+    slide: 1
+    text: "Bila ada pencilan, **median** lebih mewakili. Contoh gaji 4, 4, 5, 5, 32 juta: rata-rata 10 juta, padahal 4 dari 5 orang bergaji ≤ 5 juta. Median 5 juta lebih jujur."
+  - type: math
+    slide: 1
+    name: ada pencilan
+    expression: pakai median
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Laporan yang hanya menyebut "rata-rata" patut dicek sebarannya.
+checks:
+  - question: MAT.STP.Q.KRITIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.STP.S.KRITIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

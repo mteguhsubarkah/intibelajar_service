@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.INVERS_1
+familyCode: MAT.MTX.F.INVERS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.INVERS_MATRIKS_2_2
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Invers matriks [4 3; 1 1] adalah …
+  options:
+    - id: a
+      label: "[1 −3; −1 4]"
+    - id: b
+      label: "[1 3; 1 4]"
+    - id: c
+      label: "[−1 3; 1 −4]"
+    - id: d
+      label: "[4 −3; −1 1]"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "[1 −3; −1 4]"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.INVERS_MATRIKS_2_2
+  feedback:
+    correct: "det = 4 − 3 = 1. Tukar 4 dan 1, ubah tanda 3 dan 1: [1 −3; −1 4]."
+    incorrect: "Jawabannya [1 −3; −1 4]. det = 4 − 3 = 1. Tukar 4 dan 1, ubah tanda 3 dan 1: [1 −3; −1 4]."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

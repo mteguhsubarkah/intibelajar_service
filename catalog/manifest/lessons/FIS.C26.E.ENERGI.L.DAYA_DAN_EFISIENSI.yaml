@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.L.DAYA_DAN_EFISIENSI
+title: Daya dan efisiensi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Daya = usaha per waktu
+  - type: text
+    slide: 0
+    text: "**P = W / t**, satuannya watt (J/s). Mengangkat beban: W = m · g · h."
+  - type: text
+    slide: 0
+    text: "Contoh: 50 kg diangkat 10 m dalam 20 s ⇒ P = 50 × 10 × 10 / 20 = 250 W."
+  - type: math
+    slide: 0
+    name: P
+    expression: W / t
+    highlight: true
+  - type: math
+    slide: 0
+    name: W angkat
+    expression: m · g · h
+  - type: heading
+    slide: 1
+    text: Efisiensi
+  - type: text
+    slide: 1
+    text: Tidak ada mesin yang mengubah seluruh energi menjadi energi berguna. **η = energi keluaran berguna / energi masukan × 100%**.
+  - type: text
+    slide: 1
+    text: "Contoh: lampu 60 W memancarkan 9 W cahaya ⇒ η = 15%; sisanya menjadi panas."
+  - type: math
+    slide: 1
+    name: η
+    expression: P keluaran / P masukan × 100%
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Efisiensi selalu kurang dari 100%.
+checks:
+  - question: FIS.C26.E.ENERGI.Q.DAYA_DAN_EFISIENSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.ENERGI.S.DAYA_DAN_EFISIENSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

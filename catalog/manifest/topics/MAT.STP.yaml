@@ -2,13 +2,92 @@ schemaVersion: 1
 code: MAT.STP
 subject: MAT
 title: Statistika & Peluang
-subtitle: Kelas X
+subtitle: Kuartil, box plot, histogram, diagram pencar
 phase: E
-availability: PLANNED
-bekal: []
+availability: MAPPED
+bekal:
+  - rata-rata, median, modus
+  - membaca tabel dan diagram
 aliases:
   - ns: TOPIC
     value: statpel
 units: []
-concepts: []
-prerequisites: []
+concepts:
+  - code: MAT.STP.KUARTIL_DAN_IQR
+    title: Kuartil dan IQR
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-stp-kuartil
+  - code: MAT.STP.MEMBACA_BOX_PLOT
+    title: Membaca box plot
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-stp-boxplot
+  - code: MAT.STP.HISTOGRAM_DAN_DOT_PLOT
+    title: Histogram & dot plot
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-stp-histogram
+  - code: MAT.STP.DIAGRAM_PENCAR
+    title: Diagram pencar
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-stp-pencar
+  - code: MAT.STP.MENGEVALUASI_LAPORAN_DATA
+    title: Mengevaluasi laporan data
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-stp-kritis
+prerequisites:
+  - concept: MAT.STP.MEMBACA_BOX_PLOT
+    requires: MAT.STP.KUARTIL_DAN_IQR
+    kind: SOFT
+  - concept: MAT.STP.MENGEVALUASI_LAPORAN_DATA
+    requires: MAT.STP.HISTOGRAM_DAN_DOT_PLOT
+    kind: SOFT
+  - concept: MAT.STP.MENGEVALUASI_LAPORAN_DATA
+    requires: MAT.STP.DIAGRAM_PENCAR
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

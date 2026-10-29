@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.CP25.F.LINGKARAN.L.MASALAH
+title: Masalah geometri lingkaran
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Garis singgung
+  - type: text
+    slide: 0
+    text: "Garis singgung **tegak lurus** jari-jari di titik singgungnya. Dari titik P di luar lingkaran: **panjang garis singgung = √(d² − r²)**, d = jarak P ke pusat."
+  - type: text
+    slide: 0
+    text: "Contoh: d = 13 cm, r = 5 cm ⇒ √(169 − 25) = 12 cm."
+  - type: math
+    slide: 0
+    name: garis singgung
+    expression: √(d² − r²)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Segitiga di dalam setengah lingkaran
+  - type: text
+    slide: 1
+    text: "Jika AB diameter dan C pada lingkaran, maka ∠ACB = 90°, sehingga Pythagoras berlaku: AB² = AC² + BC²."
+  - type: text
+    slide: 1
+    text: "Contoh: AB = 10, AC = 6 ⇒ BC = 8."
+  - type: math
+    slide: 1
+    name: AB diameter
+    expression: ∠ACB = 90°
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sudut siku-siku tersembunyi di lingkaran sering menjadi kunci soal.
+checks:
+  - question: MAT.CP25.F.LINGKARAN.Q.MASALAH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.CP25.F.LINGKARAN.S.MASALAH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

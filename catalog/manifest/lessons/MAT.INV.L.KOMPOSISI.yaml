@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.INV.L.KOMPOSISI
+title: Komposisi fungsi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.INV.KOMPOSISI_FUNGSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Fungsi di dalam fungsi
+  - type: text
+    slide: 0
+    text: "**(f ∘ g)(x) = f(g(x))**: kerjakan g dulu, hasilnya dimasukkan ke f."
+  - type: text
+    slide: 0
+    text: "Contoh: f(x) = 2x + 1, g(x) = x² − 3 ⇒ (f ∘ g)(x) = 2(x² − 3) + 1 = 2x² − 5."
+  - type: math
+    slide: 0
+    name: (f ∘ g)(x)
+    expression: f(g(x))
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Urutan menentukan hasil
+  - type: text
+    slide: 1
+    text: "Umumnya **f ∘ g ≠ g ∘ f**. Untuk nilai tertentu, hitung dari dalam: (g ∘ f)(1) = g(f(1)) = g(3) = 6."
+  - type: math
+    slide: 1
+    name: (g ∘ f)(1)
+    expression: g(f(1))
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Baca dari kanan ke kiri: fungsi paling kanan dikerjakan pertama."
+checks:
+  - question: MAT.INV.Q.KOMPOSISI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.INV.S.KOMPOSISI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

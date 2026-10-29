@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.L.GERAK_PELURU_IDEAL
+title: Gerak peluru ideal
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Dua gerak dalam satu lintasan
+  - type: text
+    slide: 0
+    text: Tanpa hambatan udara, gerak peluru = **GLB pada sumbu x** (vₓ tetap) + **GLBB pada sumbu y** (percepatan −g).
+  - type: text
+    slide: 0
+    text: Di titik tertinggi, **vᵧ = 0** dan kecepatannya hanya vₓ.
+  - type: math
+    slide: 0
+    name: tₘₐₖₛ
+    expression: v₀ sin θ / g
+    highlight: true
+  - type: math
+    slide: 0
+    name: H
+    expression: v₀² sin² θ / 2g
+  - type: heading
+    slide: 1
+    text: Jangkauan
+  - type: text
+    slide: 1
+    text: "Jarak mendatar terjauh: **R = v₀² sin 2θ / g**. Jangkauan terbesar dicapai pada **θ = 45°**."
+  - type: text
+    slide: 1
+    text: "Contoh: v₀ = 40 m/s, θ = 30° ⇒ H = 20 m, R = 80√3 m."
+  - type: math
+    slide: 1
+    name: R
+    expression: v₀² sin 2θ / g
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sudut θ dan 90° − θ memberi jangkauan yang sama.
+checks:
+  - question: FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.GERAK2D.S.GERAK_PELURU_IDEAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

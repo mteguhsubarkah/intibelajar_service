@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.RATA_RATA_2
+familyCode: MAT.KAL.F.RATA_RATA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.LAJU_PERUBAHAN_RATA_RATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Posisi benda s(t) = t² + 2t meter. Kecepatan rata-ratanya dari t = 0 sampai t = 2 detik adalah …
+  options:
+    - id: a
+      label: 2 m/s
+    - id: b
+      label: 4 m/s
+    - id: c
+      label: 6 m/s
+    - id: d
+      label: 8 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 4 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.LAJU_PERUBAHAN_RATA_RATA
+  feedback:
+    correct: s(2) = 8 dan s(0) = 0, jadi (8 − 0)/2 = 4 m/s.
+    incorrect: Jawabannya 4 m/s. s(2) = 8 dan s(0) = 0, jadi (8 − 0)/2 = 4 m/s.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

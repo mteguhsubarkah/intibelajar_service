@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.Q.SATU_SATU_1
+familyCode: MAT.INV.F.SATU_SATU_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.INV.FUNGSI_SATU_SATU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fungsi berikut yang merupakan fungsi satu-satu pada himpunan bilangan real adalah …
+  options:
+    - id: a
+      label: f(x) = x²
+    - id: b
+      label: f(x) = |x|
+    - id: c
+      label: f(x) = 2x + 3
+    - id: d
+      label: f(x) = cos x
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - f(x) = 2x + 3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.INV.FUNGSI_SATU_SATU
+  feedback:
+    correct: Fungsi linear 2x + 3 selalu naik, sehingga setiap y berasal dari tepat satu x. Fungsi lain memberi nilai sama untuk x berbeda.
+    incorrect: Jawabannya f(x) = 2x + 3. Fungsi linear 2x + 3 selalu naik, sehingga setiap y berasal dari tepat satu x. Fungsi lain memberi nilai sama untuk x berbeda.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.Q.IDENTIFIKASI_2
+familyCode: BIO.C26.E.BIODIVERSITAS.F.IDENTIFIKASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan takson dari tingkat tertinggi ke terendah yang benar adalah …
+  options:
+    - id: a
+      label: kingdom – kelas – filum – ordo – famili – genus – spesies
+    - id: b
+      label: kingdom – filum – kelas – ordo – famili – genus – spesies
+    - id: c
+      label: kingdom – filum – ordo – kelas – genus – famili – spesies
+    - id: d
+      label: filum – kingdom – kelas – ordo – famili – spesies – genus
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - kingdom – filum – kelas – ordo – famili – genus – spesies
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI
+  feedback:
+    correct: Urutannya kingdom, filum, kelas, ordo, famili, genus, spesies.
+    incorrect: Jawabannya kingdom – filum – kelas – ordo – famili – genus – spesies. Urutannya kingdom, filum, kelas, ordo, famili, genus, spesies.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

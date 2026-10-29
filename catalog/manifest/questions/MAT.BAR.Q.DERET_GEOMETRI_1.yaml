@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.DERET_GEOMETRI_1
+familyCode: MAT.BAR.F.DERET_GEOMETRI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.DERET_GEOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah 6 suku pertama deret 2 + 6 + 18 + … adalah …
+  options:
+    - id: a
+      label: "364"
+    - id: b
+      label: "728"
+    - id: c
+      label: "1.456"
+    - id: d
+      label: "486"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "728"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.DERET_GEOMETRI
+  feedback:
+    correct: "a = 2, r = 3: S₆ = 2(3⁶ − 1)/(3 − 1) = 3⁶ − 1 = 728."
+    incorrect: "Jawabannya 728. a = 2, r = 3: S₆ = 2(3⁶ − 1)/(3 − 1) = 3⁶ − 1 = 728."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

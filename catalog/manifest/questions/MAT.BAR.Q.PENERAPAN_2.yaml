@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.PENERAPAN_2
+familyCode: MAT.BAR.F.PENERAPAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.PENERAPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tinggi tanaman 50 cm dan bertambah 10% dari tinggi sebelumnya setiap minggu. Tinggi tanaman setelah 2 minggu adalah …
+  options:
+    - id: a
+      label: 60 cm
+    - id: b
+      label: 60,5 cm
+    - id: c
+      label: 61 cm
+    - id: d
+      label: 55 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 60,5 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.PENERAPAN
+  feedback:
+    correct: "Pertumbuhan persentase: 50 × 1,1² = 50 × 1,21 = 60,5 cm."
+    incorrect: "Jawabannya 60,5 cm. Pertumbuhan persentase: 50 × 1,1² = 50 × 1,21 = 60,5 cm."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

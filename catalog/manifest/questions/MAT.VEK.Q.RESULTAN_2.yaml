@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.RESULTAN_2
+familyCode: MAT.VEK.F.RESULTAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.RESULTAN_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua gaya masing-masing 5 N membentuk sudut 60°. Besar resultannya adalah …
+  options:
+    - id: a
+      label: 5 N
+    - id: b
+      label: 5√3 N
+    - id: c
+      label: 10 N
+    - id: d
+      label: 5√2 N
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 5√3 N
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.RESULTAN_VEKTOR
+  feedback:
+    correct: "|R| = √(25 + 25 + 2 · 25 · ½) = √75 = 5√3 N."
+    incorrect: Jawabannya 5√3 N. |R| = √(25 + 25 + 2 · 25 · ½) = √75 = 5√3 N.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.EKOSISTEM.Q.SIKLUS_KARBON_DAN_LINGKUNGAN_2
+familyCode: BIO.C26.E.EKOSISTEM.F.SIKLUS_KARBON_DAN_LINGKUNGAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.EKOSISTEM.SIKLUS_KARBON_DAN_LINGKUNGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penebangan hutan secara besar-besaran meningkatkan kadar CO₂ di atmosfer karena …
+  options:
+    - id: a
+      label: hutan menghasilkan CO₂ saat tumbuh
+    - id: b
+      label: fotosintesis berkurang dan karbon dari kayu dilepaskan saat dibakar atau membusuk
+    - id: c
+      label: tanah menyerap lebih banyak CO₂
+    - id: d
+      label: hewan hutan berhenti bernapas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - fotosintesis berkurang dan karbon dari kayu dilepaskan saat dibakar atau membusuk
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.EKOSISTEM.SIKLUS_KARBON_DAN_LINGKUNGAN
+  feedback:
+    correct: Penyerap CO₂ berkurang, sementara karbon yang tersimpan di kayu kembali ke udara.
+    incorrect: Jawabannya fotosintesis berkurang dan karbon dari kayu dilepaskan saat dibakar atau membusuk. Penyerap CO₂ berkurang, sementara karbon yang tersimpan di kayu kembali ke udara.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

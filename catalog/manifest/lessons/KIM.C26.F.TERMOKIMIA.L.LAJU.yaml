@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.L.LAJU
+title: Hukum laju dari data
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+blocks:
+  - type: heading
+    slide: 0
+    text: Persamaan laju
+  - type: text
+    slide: 0
+    text: "**v = k [A]ᵐ [B]ⁿ**. Orde m dan n ditentukan dari **data percobaan**, bukan dari koefisien reaksi."
+  - type: math
+    slide: 0
+    name: v
+    expression: k [A]ᵐ [B]ⁿ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Membaca data
+  - type: text
+    slide: 1
+    text: Bandingkan dua percobaan yang hanya satu konsentrasinya berubah.
+  - type: text
+    slide: 1
+    text: Jika [A] dua kali lipat dan laju dua kali ⇒ orde 1. Laju empat kali ⇒ orde 2. Laju tetap ⇒ orde 0.
+  - type: math
+    slide: 1
+    name: 2ᵐ = rasio laju
+    expression: orde m
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pilih pasangan percobaan yang konsentrasi zat lainnya sama.
+checks:
+  - question: KIM.C26.F.TERMOKIMIA.Q.LAJU_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.TERMOKIMIA.S.LAJU
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

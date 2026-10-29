@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.KAL.L.TURUNAN
+title: Turunan sbg laju sesaat
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari rata-rata ke sesaat
+  - type: text
+    slide: 0
+    text: "Perkecil selangnya sampai h → 0: **f′(x) = lim (h→0) [f(x + h) − f(x)] / h**. Ini laju perubahan **sesaat**, yaitu gradien garis singgung."
+  - type: math
+    slide: 0
+    name: f′(x)
+    expression: lim (h→0) [f(x + h) − f(x)] / h
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh limit
+  - type: text
+    slide: 1
+    text: "Untuk f(x) = x² di x = 2: [(2 + h)² − 4]/h = (4h + h²)/h = 4 + h → 4."
+  - type: text
+    slide: 1
+    text: "Kecepatan sesaat adalah turunan posisi: v(t) = s′(t)."
+  - type: math
+    slide: 1
+    name: v(t)
+    expression: s′(t)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sederhanakan pembilang dulu sampai h bisa dicoret.
+checks:
+  - question: MAT.KAL.Q.TURUNAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KAL.S.TURUNAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.BNG.L.NILAI_KINI
+title: Nilai kini & mendatang
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BNG.NILAI_KINI_DAN_MENDATANG
+blocks:
+  - type: heading
+    slide: 0
+    text: Nilai mendatang
+  - type: text
+    slide: 0
+    text: "**Nilai mendatang** (future value) adalah nilai uang di masa depan: **FV = PV(1 + i)ⁿ**."
+  - type: text
+    slide: 0
+    text: "Contoh: Rp4.000.000, 5% per tahun, 2 tahun ⇒ 4.000.000 × 1,1025 = Rp4.410.000."
+  - type: math
+    slide: 0
+    name: FV
+    expression: PV(1 + i)ⁿ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Nilai kini
+  - type: text
+    slide: 1
+    text: "**Nilai kini** (present value) menjawab: berapa yang perlu ditabung sekarang? **PV = FV / (1 + i)ⁿ**."
+  - type: text
+    slide: 1
+    text: "Contoh: ingin Rp12.100.000 dalam 2 tahun dengan bunga 10% ⇒ PV = 12.100.000 / 1,21 = Rp10.000.000."
+  - type: math
+    slide: 1
+    name: PV
+    expression: FV / (1 + i)ⁿ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Nilai kini selalu lebih kecil dari nilai mendatang bila bunganya positif.
+checks:
+  - question: MAT.BNG.Q.NILAI_KINI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BNG.S.NILAI_KINI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

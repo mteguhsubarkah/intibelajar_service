@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.PENJUMLAHAN
+title: Penjumlahan Vektor
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.PENJUMLAHAN_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Ujung bertemu pangkal
+  - type: text
+    slide: 0
+    text: "**Aturan segitiga**: letakkan pangkal b di ujung a; a + b adalah panah dari pangkal a ke ujung b. **Aturan jajargenjang** memberi hasil yang sama."
+  - type: math
+    slide: 0
+    name: a + b
+    expression: (a₁ + b₁, a₂ + b₂)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Secara komponen
+  - type: text
+    slide: 1
+    text: "Jumlahkan komponen yang sejenis. Contoh: (2, −3) + (−1, 5) = (1, 2)."
+  - type: text
+    slide: 1
+    text: (i + 2j − k) + (3i − j + 4k) = 4i + j + 3k.
+  - type: math
+    slide: 1
+    name: (2, −3) + (−1, 5)
+    expression: (1, 2)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hati-hati dengan tanda negatif saat menjumlah.
+checks:
+  - question: MAT.VEK.Q.PENJUMLAHAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.PENJUMLAHAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

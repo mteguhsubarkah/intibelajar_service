@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.TRANSFORMASI_2
+familyCode: MAT.MTX.F.TRANSFORMASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bayangan titik (2, 5) oleh rotasi 90° berlawanan arah jarum jam dengan pusat O adalah …
+  options:
+    - id: a
+      label: (5, −2)
+    - id: b
+      label: (−5, 2)
+    - id: c
+      label: (−2, −5)
+    - id: d
+      label: (5, 2)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - (−5, 2)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI
+  feedback:
+    correct: "Rotasi 90°: (x, y) → (−y, x), jadi (2, 5) → (−5, 2)."
+    incorrect: "Jawabannya (−5, 2). Rotasi 90°: (x, y) → (−y, x), jadi (2, 5) → (−5, 2)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

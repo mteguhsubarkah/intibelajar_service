@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.SUDUT_ANTAR
+title: Sudut Antar Vektor
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.VEK.SUDUT_ANTAR_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Rumus kosinus sudut
+  - type: text
+    slide: 0
+    text: "**cos θ = (a · b) / (|a||b|)**. Hitung perkalian titik, hitung kedua panjang, lalu cari sudut dari nilai cos."
+  - type: math
+    slide: 0
+    name: cos θ
+    expression: (a · b) / (|a||b|)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Membaca nilai cos
+  - type: text
+    slide: 1
+    text: cos θ = 1 ⇒ 0° (searah). cos θ = 0 ⇒ 90°. cos θ = −1 ⇒ 180° (berlawanan). cos θ = ½√2 ⇒ 45°.
+  - type: text
+    slide: 1
+    text: "Contoh: a = (1, 0), b = (1, 1) ⇒ cos θ = 1/√2 ⇒ θ = 45°."
+  - type: math
+    slide: 1
+    name: cos θ = 1/√2
+    expression: θ = 45°
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bila a · b = 0, langsung simpulkan 90° tanpa menghitung panjang.
+checks:
+  - question: MAT.VEK.Q.SUDUT_ANTAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.SUDUT_ANTAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

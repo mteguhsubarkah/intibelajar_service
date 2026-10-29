@@ -1,0 +1,80 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR
+subject: KIM
+title: Struktur atom, periodisitas & ikatan
+subtitle: Konfigurasi elektron, tren periodik, ikatan, bentuk molekul
+phase: F
+availability: MAPPED
+bekal:
+  - partikel penyusun atom
+aliases:
+  - ns: TOPIC
+    value: ikatan-kimia
+units: []
+concepts:
+  - code: KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+    title: Struktur elektron & periodik
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-struktur-c1
+  - code: KIM.C26.F.STRUKTUR.TREN_PERIODIK
+    title: Tren periodik
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-struktur-periodik
+  - code: KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+    title: Ikatan & gaya antarmolekul
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-struktur-c2
+  - code: KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+    title: Bentuk molekul & kepolaran
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-struktur-bentuk
+prerequisites:
+  - concept: KIM.C26.F.STRUKTUR.TREN_PERIODIK
+    requires: KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+    kind: SOFT
+  - concept: KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+    requires: KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+    kind: SOFT
+  - concept: KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+    requires: KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

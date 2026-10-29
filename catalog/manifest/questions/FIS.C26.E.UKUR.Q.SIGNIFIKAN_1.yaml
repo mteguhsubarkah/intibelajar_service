@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.Q.SIGNIFIKAN_1
+familyCode: FIS.C26.E.UKUR.F.SIGNIFIKAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Banyak angka penting pada hasil pengukuran 0,005020 kg adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "4"
+    - id: c
+      label: "6"
+    - id: d
+      label: "7"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "4"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+  feedback:
+    correct: Nol di depan tidak penting; 5, 0, 2, dan 0 di belakang penting. Jadi 4 angka penting.
+    incorrect: Jawabannya 4. Nol di depan tidak penting; 5, 0, 2, dan 0 di belakang penting. Jadi 4 angka penting.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.Q.ATOM_ION_DAN_MOLEKUL_2
+familyCode: KIM.C26.E.ATOM.F.ATOM_ION_DAN_MOLEKUL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.ATOM.ATOM_ION_DAN_MOLEKUL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Zat berikut yang merupakan molekul senyawa adalah …
+  options:
+    - id: a
+      label: O₂
+    - id: b
+      label: H₂O
+    - id: c
+      label: N₂
+    - id: d
+      label: Fe
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - H₂O
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.ATOM.ATOM_ION_DAN_MOLEKUL
+  feedback:
+    correct: H₂O tersusun atas atom H dan O yang berbeda jenis. O₂ dan N₂ adalah molekul unsur, Fe adalah atom logam.
+    incorrect: Jawabannya H₂O. H₂O tersusun atas atom H dan O yang berbeda jenis. O₂ dan N₂ adalah molekul unsur, Fe adalah atom logam.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

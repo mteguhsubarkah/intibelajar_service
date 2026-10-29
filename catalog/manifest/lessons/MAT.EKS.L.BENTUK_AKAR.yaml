@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.EKS.L.BENTUK_AKAR
+title: Bentuk Akar
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.BENTUK_AKAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Menyederhanakan akar
+  - type: text
+    slide: 0
+    text: "Pakai **√(ab) = √a · √b**: cari faktor kuadrat sempurna. √12 = √4 · √3 = 2√3."
+  - type: text
+    slide: 0
+    text: "Akar hanya bisa dijumlah bila **sejenis**: 2√3 + 5√3 = 7√3, tetapi √2 + √3 tidak bisa digabung."
+  - type: math
+    slide: 0
+    name: √(ab)
+    expression: √a · √b
+    highlight: true
+  - type: math
+    slide: 0
+    name: √12
+    expression: 2√3
+  - type: heading
+    slide: 1
+    text: Merasionalkan penyebut
+  - type: text
+    slide: 1
+    text: "Penyebut berbentuk √b: kalikan dengan √b/√b. Penyebut berbentuk √a − √b: kalikan dengan **sekawannya** √a + √b."
+  - type: text
+    slide: 1
+    text: "Contoh: 6/(√5 − √2) = 6(√5 + √2)/(5 − 2) = 2√5 + 2√2."
+  - type: math
+    slide: 1
+    name: a/√b
+    expression: a√b / b
+    highlight: true
+  - type: math
+    slide: 1
+    name: (√a − √b)(√a + √b)
+    expression: a − b
+checks:
+  - question: MAT.EKS.Q.BENTUK_AKAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.BENTUK_AKAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

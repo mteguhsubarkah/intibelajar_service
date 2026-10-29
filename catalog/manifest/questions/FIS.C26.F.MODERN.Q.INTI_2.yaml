@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.Q.INTI_2
+familyCode: FIS.C26.F.MODERN.F.INTI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sampel radioaktif 64 g meluruh menjadi 4 g dalam 20 hari. Waktu paruh unsur tersebut adalah …
+  options:
+    - id: a
+      label: 4 hari
+    - id: b
+      label: 5 hari
+    - id: c
+      label: 10 hari
+    - id: d
+      label: 16 hari
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 5 hari
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+  feedback:
+    correct: 64 → 4 g berarti 4 kali paruh. T = 20 / 4 = 5 hari.
+    incorrect: Jawabannya 5 hari. 64 → 4 g berarti 4 kali paruh. T = 20 / 4 = 5 hari.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.L.PERIODIK
+title: Tren periodik
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.STRUKTUR.TREN_PERIODIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Jari-jari atom
+  - type: text
+    slide: 0
+    text: Dalam satu **periode** (kiri → kanan), jari-jari **mengecil** karena muatan inti bertambah. Dalam satu **golongan** (atas → bawah), jari-jari **membesar** karena kulit bertambah.
+  - type: math
+    slide: 0
+    name: periode →
+    expression: jari-jari mengecil
+    highlight: true
+  - type: math
+    slide: 0
+    name: golongan ↓
+    expression: jari-jari membesar
+  - type: heading
+    slide: 1
+    text: Energi ionisasi dan keelektronegatifan
+  - type: text
+    slide: 1
+    text: "Keduanya berlawanan dengan jari-jari: makin besar ke kanan, makin kecil ke bawah."
+  - type: text
+    slide: 1
+    text: Unsur paling elektronegatif adalah **fluorin (F)**.
+  - type: math
+    slide: 1
+    name: keelektronegatifan tertinggi
+    expression: F
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Atom kecil memegang elektronnya lebih kuat.
+checks:
+  - question: KIM.C26.F.STRUKTUR.Q.PERIODIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.STRUKTUR.S.PERIODIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

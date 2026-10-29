@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.Q.RUMUS_KIMIA_2
+familyCode: KIM.C26.E.ATOM.F.RUMUS_KIMIA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.ATOM.RUMUS_KIMIA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rumus empiris dari glukosa (C₆H₁₂O₆) adalah …
+  options:
+    - id: a
+      label: CHO
+    - id: b
+      label: CH₂O
+    - id: c
+      label: C₂H₄O₂
+    - id: d
+      label: C₆H₁₂O₆
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - CH₂O
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.ATOM.RUMUS_KIMIA
+  feedback:
+    correct: "Semua indeks dibagi 6: C₁H₂O₁ = CH₂O."
+    incorrect: "Jawabannya CH₂O. Semua indeks dibagi 6: C₁H₂O₁ = CH₂O."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

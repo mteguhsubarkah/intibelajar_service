@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK.L.REKAYASA_DAN_ANALISIS_DNA
+title: Rekayasa dan analisis DNA
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.BIOTEK.REKAYASA_DAN_ANALISIS_DNA
+blocks:
+  - type: heading
+    slide: 0
+    text: DNA rekombinan
+  - type: text
+    slide: 0
+    text: Gen yang diinginkan dipotong dengan **enzim restriksi**, disisipkan ke **plasmid** bakteri, lalu disambung dengan **enzim ligase**. Bakteri yang membawa plasmid itu memproduksi protein yang diinginkan.
+  - type: text
+    slide: 0
+    text: "Contoh: insulin manusia diproduksi oleh *E. coli*."
+  - type: math
+    slide: 0
+    name: enzim restriksi
+    expression: memotong DNA
+    highlight: true
+  - type: math
+    slide: 0
+    name: ligase
+    expression: menyambung DNA
+  - type: heading
+    slide: 1
+    text: Analisis DNA
+  - type: text
+    slide: 1
+    text: Potongan DNA dipisahkan dengan **elektroforesis** menurut ukurannya. Pola pita DNA dipakai untuk tes paternitas dan forensik.
+  - type: math
+    slide: 1
+    name: elektroforesis
+    expression: memisahkan potongan DNA
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bioteknologi modern memanipulasi gen; bioteknologi konvensional memakai organisme apa adanya (tempe, tapai).
+checks:
+  - question: BIO.C26.F.BIOTEK.Q.REKAYASA_DAN_ANALISIS_DNA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.BIOTEK.S.REKAYASA_DAN_ANALISIS_DNA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

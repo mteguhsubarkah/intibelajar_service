@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.L.ISOTOP
+title: Nomor atom dan isotop
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.E.ATOM.NOMOR_ATOM_DAN_ISOTOP
+blocks:
+  - type: heading
+    slide: 0
+    text: Membaca lambang atom
+  - type: text
+    slide: 0
+    text: "Pada lambang ᴬ_Z X: **Z (nomor atom) = jumlah proton**, **A (nomor massa) = proton + neutron**. Atom netral: elektron = proton."
+  - type: text
+    slide: 0
+    text: "Ion: elektron = proton − muatan. Contoh S²⁻ (Z = 16) punya 18 elektron."
+  - type: math
+    slide: 0
+    name: neutron
+    expression: A − Z
+    highlight: true
+  - type: math
+    slide: 0
+    name: elektron ion
+    expression: Z − muatan
+  - type: heading
+    slide: 1
+    text: Isotop dan massa atom relatif
+  - type: text
+    slide: 1
+    text: "**Isotop**: nomor atom sama, nomor massa berbeda (jumlah neutron berbeda)."
+  - type: text
+    slide: 1
+    text: "Ar adalah rata-rata berbobot kelimpahan. Contoh: 75% ³⁵Cl dan 25% ³⁷Cl ⇒ Ar = 0,75 × 35 + 0,25 × 37 = 35,5."
+  - type: math
+    slide: 1
+    name: Ar
+    expression: Σ(kelimpahan × massa isotop)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Muatan negatif berarti elektron bertambah; positif berarti berkurang.
+checks:
+  - question: KIM.C26.E.ATOM.Q.ISOTOP_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.ATOM.S.ISOTOP
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

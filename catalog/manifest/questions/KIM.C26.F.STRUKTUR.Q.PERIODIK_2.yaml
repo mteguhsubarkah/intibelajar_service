@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.PERIODIK_2
+familyCode: KIM.C26.F.STRUKTUR.F.PERIODIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.TREN_PERIODIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di antara unsur berikut, yang memiliki keelektronegatifan paling besar adalah …
+  options:
+    - id: a
+      label: Na
+    - id: b
+      label: Cl
+    - id: c
+      label: F
+    - id: d
+      label: I
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - F
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.TREN_PERIODIK
+  feedback:
+    correct: Keelektronegatifan makin besar ke kanan dan ke atas; F berada di kanan atas (tanpa gas mulia).
+    incorrect: Jawabannya F. Keelektronegatifan makin besar ke kanan dan ke atas; F berada di kanan atas (tanpa gas mulia).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

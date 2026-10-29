@@ -2,13 +2,95 @@ schemaVersion: 1
 code: MAT.KUA
 subject: MAT
 title: Persamaan & Fungsi Kuadrat
-subtitle: Kelas X
+subtitle: Akar, diskriminan, titik puncak, dan pemodelan
 phase: E
-availability: PLANNED
-bekal: []
+availability: MAPPED
+bekal:
+  - operasi aljabar
+  - persamaan linear
 aliases:
   - ns: TOPIC
     value: kuadrat
 units: []
-concepts: []
-prerequisites: []
+concepts:
+  - code: MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT
+    title: Bentuk & koefisien kuadrat
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kua-koefisien
+  - code: MAT.KUA.FAKTORISASI_DAN_AKAR
+    title: Faktorisasi dan akar
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kua-faktor
+  - code: MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+    title: Rumus kuadrat & diskriminan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kua-diskriminan
+  - code: MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+    title: Melengkapkan kuadrat & puncak
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kua-puncak
+  - code: MAT.KUA.PEMODELAN_KUADRAT
+    title: Pemodelan kuadrat
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kua-model
+prerequisites:
+  - concept: MAT.KUA.FAKTORISASI_DAN_AKAR
+    requires: MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT
+    kind: SOFT
+  - concept: MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+    requires: MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT
+    kind: SOFT
+  - concept: MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+    requires: MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT
+    kind: SOFT
+  - concept: MAT.KUA.PEMODELAN_KUADRAT
+    requires: MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.L.KUANTUM_DAN_INTI_ATOM
+title: Kuantum dan inti atom
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
+blocks:
+  - type: heading
+    slide: 0
+    text: Cahaya sebagai paket energi
+  - type: text
+    slide: 0
+    text: Cahaya terdiri dari foton dengan energi **E = h · f** (h tetapan Planck). Energi foton sebanding dengan frekuensinya.
+  - type: math
+    slide: 0
+    name: E
+    expression: h · f
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Efek fotolistrik
+  - type: text
+    slide: 1
+    text: "Elektron lepas dari logam hanya jika energi foton lebih besar dari fungsi kerja W₀: **Ekₘₐₖₛ = h·f − W₀**."
+  - type: text
+    slide: 1
+    text: "Contoh: foton 5 eV pada logam W₀ = 2 eV ⇒ Ek maksimum 3 eV. Intensitas hanya menambah jumlah elektron, bukan energinya."
+  - type: math
+    slide: 1
+    name: Ekₘₐₖₛ
+    expression: h · f − W₀
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Frekuensi menentukan apakah elektron lepas; intensitas menentukan berapa banyak.
+checks:
+  - question: FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MODERN.S.KUANTUM_DAN_INTI_ATOM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

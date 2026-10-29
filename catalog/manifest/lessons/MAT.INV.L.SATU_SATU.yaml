@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.INV.L.SATU_SATU
+title: Fungsi satu-satu
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.INV.FUNGSI_SATU_SATU
+blocks:
+  - type: heading
+    slide: 0
+    text: Satu hasil, satu asal
+  - type: text
+    slide: 0
+    text: "Fungsi **satu-satu** (injektif): setiap nilai y berasal dari paling banyak satu nilai x."
+  - type: text
+    slide: 0
+    text: "**Uji garis horizontal**: jika setiap garis mendatar memotong grafik paling banyak sekali, fungsinya satu-satu."
+  - type: math
+    slide: 0
+    name: injektif
+    expression: x₁ ≠ x₂ ⇒ f(x₁) ≠ f(x₂)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Membatasi domain
+  - type: text
+    slide: 1
+    text: f(x) = x² tidak satu-satu karena f(2) = f(−2) = 4. Dengan domain **x ≥ 0**, f menjadi satu-satu.
+  - type: text
+    slide: 1
+    text: Hanya fungsi satu-satu (pada domainnya) yang mempunyai invers berupa fungsi.
+  - type: math
+    slide: 1
+    name: x² pada x ≥ 0
+    expression: satu-satu
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Fungsi linear dengan gradien tidak nol selalu satu-satu.
+checks:
+  - question: MAT.INV.Q.SATU_SATU_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.INV.S.SATU_SATU
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

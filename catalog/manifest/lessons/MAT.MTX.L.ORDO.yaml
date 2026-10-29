@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.MTX.L.ORDO
+title: Elemen, ordo & kesamaan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Baris kali kolom
+  - type: text
+    slide: 0
+    text: "Matriks adalah susunan bilangan dalam baris dan kolom. **Ordo m × n**: m baris, n kolom. Di sini matriks ditulis per baris: [1 2 3; 4 5 6] punya 2 baris dan 3 kolom."
+  - type: math
+    slide: 0
+    name: ordo
+    expression: baris × kolom
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kesamaan matriks
+  - type: text
+    slide: 1
+    text: Dua matriks sama jika ordonya sama dan **setiap elemen seletak sama**.
+  - type: text
+    slide: 1
+    text: "Contoh: [x + 1  4; 2  y] = [3  4; 2  5] ⇒ x = 2, y = 5."
+  - type: math
+    slide: 1
+    name: A = B
+    expression: aᵢⱼ = bᵢⱼ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Baris disebut dulu, baru kolom.
+checks:
+  - question: MAT.MTX.Q.ORDO_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.MTX.S.ORDO
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

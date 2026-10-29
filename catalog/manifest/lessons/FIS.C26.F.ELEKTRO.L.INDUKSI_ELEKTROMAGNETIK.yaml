@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.L.INDUKSI_ELEKTROMAGNETIK
+title: Induksi elektromagnetik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
+blocks:
+  - type: heading
+    slide: 0
+    text: GGL induksi
+  - type: text
+    slide: 0
+    text: "Perubahan fluks magnet menimbulkan GGL: **ε = −N · ΔΦ / Δt** (Hukum Faraday). Tanda minus menunjukkan arah yang melawan perubahan (Hukum Lenz)."
+  - type: text
+    slide: 0
+    text: "Contoh: 100 lilitan, ΔΦ = 0,02 Wb dalam 0,1 s ⇒ ε = 20 V."
+  - type: math
+    slide: 0
+    name: ε
+    expression: N · ΔΦ / Δt
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Transformator
+  - type: text
+    slide: 1
+    text: "Trafo mengubah tegangan bolak-balik: **Vₚ / Vₛ = Nₚ / Nₛ**. Ideal: **Vₚ · Iₚ = Vₛ · Iₛ**."
+  - type: text
+    slide: 1
+    text: "Contoh: Nₚ = 1.000, Nₛ = 200, Vₚ = 220 V ⇒ Vₛ = 44 V (trafo step-down)."
+  - type: math
+    slide: 1
+    name: Vₚ / Vₛ
+    expression: Nₚ / Nₛ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Lilitan sekunder lebih sedikit berarti tegangan turun, arus naik.
+checks:
+  - question: FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.ELEKTRO.S.INDUKSI_ELEKTROMAGNETIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

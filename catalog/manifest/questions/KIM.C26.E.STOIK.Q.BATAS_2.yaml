@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.BATAS_2
+familyCode: KIM.C26.E.STOIK.F.BATAS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Sebanyak 5,4 g aluminium (Ar = 27) direaksikan dengan 0,9 mol HCl: 2Al + 6HCl → 2AlCl₃ + 3H₂. Volume gas H₂ yang terbentuk pada STP adalah …"
+  options:
+    - id: a
+      label: 2,24 L
+    - id: b
+      label: 4,48 L
+    - id: c
+      label: 6,72 L
+    - id: d
+      label: 10,08 L
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 6,72 L
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+  feedback:
+    correct: Al = 0,2 mol (0,2/2 = 0,1) dan HCl 0,9/6 = 0,15, jadi Al pembatas. H₂ = 3/2 × 0,2 = 0,3 mol = 6,72 L.
+    incorrect: Jawabannya 6,72 L. Al = 0,2 mol (0,2/2 = 0,1) dan HCl 0,9/6 = 0,15, jadi Al pembatas. H₂ = 3/2 × 0,2 = 0,3 mol = 6,72 L.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

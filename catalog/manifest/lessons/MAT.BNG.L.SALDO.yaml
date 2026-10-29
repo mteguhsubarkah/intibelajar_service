@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.BNG.L.SALDO
+title: Saldo pinjaman & parameter
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.BNG.SALDO_PINJAMAN_DAN_PARAMETER
+blocks:
+  - type: heading
+    slide: 0
+    text: Sisa pinjaman
+  - type: text
+    slide: 0
+    text: Setelah pembayaran ke-n, **sisa pinjaman = sisa sebelumnya − angsuran ke-n**.
+  - type: text
+    slide: 0
+    text: "Contoh: 10.000.000 − 800.000 = Rp9.200.000 setelah bulan pertama."
+  - type: math
+    slide: 0
+    name: sisa
+    expression: Mₙ₋₁ − aₙ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Angsuran naik geometris
+  - type: text
+    slide: 1
+    text: "Pada anuitas, angsuran membentuk barisan geometri: **aₙ = a₁(1 + i)ⁿ⁻¹**."
+  - type: text
+    slide: 1
+    text: "Contoh: a₁ = Rp800.000, i = 2% ⇒ a₂ = 816.000."
+  - type: math
+    slide: 1
+    name: aₙ
+    expression: a₁(1 + i)ⁿ⁻¹
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bunga bulan kedua dihitung dari sisa pinjaman, bukan dari pinjaman awal.
+checks:
+  - question: MAT.BNG.Q.SALDO_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BNG.S.SALDO
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.E.EKOSISTEM.L.SIKLUS_KARBON_DAN_LINGKUNGAN
+title: Siklus karbon & lingkungan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.EKOSISTEM.SIKLUS_KARBON_DAN_LINGKUNGAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Perjalanan karbon
+  - type: text
+    slide: 0
+    text: "**Fotosintesis** memindahkan CO₂ dari udara ke tumbuhan. **Respirasi**, **pembusukan**, dan **pembakaran** mengembalikan CO₂ ke udara."
+  - type: text
+    slide: 0
+    text: Bahan bakar fosil adalah karbon yang tersimpan jutaan tahun.
+  - type: math
+    slide: 0
+    name: fotosintesis
+    expression: menyerap CO₂
+    highlight: true
+  - type: math
+    slide: 0
+    name: pembakaran
+    expression: melepas CO₂
+  - type: heading
+    slide: 1
+    text: Perubahan iklim
+  - type: text
+    slide: 1
+    text: CO₂ berlebih memperkuat **efek rumah kaca** sehingga suhu bumi naik.
+  - type: text
+    slide: 1
+    text: "Penebangan hutan memperparah: penyerap CO₂ berkurang, dan kayu yang dibakar atau membusuk melepaskan karbon."
+  - type: math
+    slide: 1
+    name: deforestasi
+    expression: CO₂ atmosfer naik
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hutan adalah penyimpan karbon; kehilangannya berdampak dua kali.
+checks:
+  - question: BIO.C26.E.EKOSISTEM.Q.SIKLUS_KARBON_DAN_LINGKUNGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.EKOSISTEM.S.SIKLUS_KARBON_DAN_LINGKUNGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

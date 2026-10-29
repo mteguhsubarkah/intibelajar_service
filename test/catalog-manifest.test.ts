@@ -24,7 +24,9 @@ test('committed draft manifest lints clean apart from open review decisions', ()
   assert.deepEqual(draft.filter(f => f.severity === 'error'), []);
   assert.ok(draft.every(f => f.rule === 'UNREVIEWED' && f.severity === 'warning'));
   const strict = lintManifest(base, { strict: true });
-  assert.ok(strict.length > 0 && strict.every(f => f.rule === 'UNREVIEWED' && f.severity === 'error'), 'the publisher must refuse an unreviewed manifest');
+  // Setelah sign-off manusia (npm run catalog:signoff) manifest yang dikomit boleh lolos strict; sebelum itu publisher wajib menolak.
+  if (base.release.signOff.status === 'REVIEWED') assert.deepEqual(strict, []);
+  else assert.ok(strict.length > 0 && strict.every(f => f.rule === 'UNREVIEWED' && f.severity === 'error'), 'the publisher must refuse an unreviewed manifest');
 });
 
 const mutations: [Rule, (m: Manifest) => void][] = [

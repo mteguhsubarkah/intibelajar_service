@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.L.STRUKTUR_ELEKTRON_DAN_PERIODIK
+title: Struktur elektron & periodik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Konfigurasi elektron
+  - type: text
+    slide: 0
+    text: "Elektron mengisi subkulit dengan urutan energi: **1s 2s 2p 3s 3p 4s 3d 4p …** (s maks 2, p maks 6, d maks 10)."
+  - type: text
+    slide: 0
+    text: "Contoh: ₁₂Mg = 1s² 2s² 2p⁶ 3s²."
+  - type: math
+    slide: 0
+    name: urutan
+    expression: 1s 2s 2p 3s 3p 4s 3d
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Letak dalam tabel periodik
+  - type: text
+    slide: 1
+    text: "**Periode** = nomor kulit terbesar. **Golongan A** = jumlah elektron valensi (s + p kulit terluar)."
+  - type: text
+    slide: 1
+    text: "Contoh: ₁₇Cl = 1s² 2s² 2p⁶ 3s² 3p⁵ ⇒ periode 3, golongan VIIA."
+  - type: math
+    slide: 1
+    name: periode
+    expression: kulit terbesar
+    highlight: true
+  - type: math
+    slide: 1
+    name: golongan A
+    expression: elektron valensi
+  - type: tip
+    slide: 1
+    text: Pastikan jumlah semua elektron sama dengan nomor atom.
+checks:
+  - question: KIM.C26.F.STRUKTUR.Q.STRUKTUR_ELEKTRON_DAN_PERIODIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.STRUKTUR.S.STRUKTUR_ELEKTRON_DAN_PERIODIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

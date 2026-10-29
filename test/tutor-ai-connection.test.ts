@@ -5,7 +5,8 @@ test('queued tutor: validated DeepSeek transport, atomic spend, consent fencing 
  const db=connect(config.databaseUrl);await migrate(db);const{app}=await buildApp(config,{db,logStream:new Writable({write(_c,_e,next){next();}})});
  const a=await consentedLearner(db,config,{purposes:['LEARNING_DATA','AI_PROCESSING']}),b=await consentedLearner(db,config),api=client(app,config,a),other=client(app,config,b);
  try{
-  const q=(await api('GET','/v1/questions?limit=100')).body.items.find((q:any)=>q.legacyItemId==='soal-menara');assert.ok(q);
+  let q:any,cursor:string|null=null;
+  do{const page:any=(await api('GET','/v1/questions?limit=100'+(cursor?'&cursor='+encodeURIComponent(cursor):''))).body;q=page.items.find((x:any)=>x.legacyItemId==='soal-menara');cursor=page.nextCursor;}while(!q&&cursor);assert.ok(q);
   const loop=(await api('POST','/v1/learning-sessions',{kind:'QUESTION_LOOP',origin:'FUNNEL',questionId:q.id})).body;
   const c=(await api('POST','/v1/tutor-conversations',{sessionId:loop.id})).body;
   const send=()=>api('POST','/v1/tutor-conversations/'+c.id+'/messages',{text:'Hubungkan soal dengan inti'});

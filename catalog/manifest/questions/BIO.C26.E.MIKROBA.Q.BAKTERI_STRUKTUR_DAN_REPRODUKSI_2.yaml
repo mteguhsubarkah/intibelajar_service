@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.BAKTERI_STRUKTUR_DAN_REPRODUKSI_2
+familyCode: BIO.C26.E.MIKROBA.F.BAKTERI_STRUKTUR_DAN_REPRODUKSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bakteri berkembang biak secara aseksual dengan cara …
+  options:
+    - id: a
+      label: bertunas
+    - id: b
+      label: membentuk spora seksual
+    - id: c
+      label: pembelahan biner
+    - id: d
+      label: fragmentasi hifa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - pembelahan biner
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+  feedback:
+    correct: Bakteri membelah diri menjadi dua sel anak yang identik (pembelahan biner).
+    incorrect: Jawabannya pembelahan biner. Bakteri membelah diri menjadi dua sel anak yang identik (pembelahan biner).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

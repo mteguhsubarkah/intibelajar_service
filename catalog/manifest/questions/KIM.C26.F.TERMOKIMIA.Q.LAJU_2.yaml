@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.LAJU_2
+familyCode: KIM.C26.F.TERMOKIMIA.F.LAJU_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Data reaksi A + B → C: (1) [A] = 0,1, [B] = 0,1, v = 4; (2) [A] = 0,2, [B] = 0,1, v = 8; (3) [A] = 0,1, [B] = 0,2, v = 16. Persamaan laju reaksinya adalah …"
+  options:
+    - id: a
+      label: v = k[A][B]
+    - id: b
+      label: v = k[A]²[B]
+    - id: c
+      label: v = k[A][B]²
+    - id: d
+      label: v = k[A]²[B]²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - v = k[A][B]²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+  feedback:
+    correct: "Dari (1) ke (2): [A] × 2, v × 2 ⇒ orde A = 1. Dari (1) ke (3): [B] × 2, v × 4 ⇒ orde B = 2."
+    incorrect: "Jawabannya v = k[A][B]². Dari (1) ke (2): [A] × 2, v × 2 ⇒ orde A = 1. Dari (1) ke (3): [B] × 2, v × 4 ⇒ orde B = 2."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_1
+familyCode: FIS.C26.F.ELEKTRO.F.INDUKSI_ELEKTROMAGNETIK_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah kumparan 100 lilitan mengalami perubahan fluks magnet 0,02 Wb dalam 0,1 s. Besar GGL induksi yang timbul adalah …
+  options:
+    - id: a
+      label: 0,2 V
+    - id: b
+      label: 2 V
+    - id: c
+      label: 20 V
+    - id: d
+      label: 200 V
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 20 V
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
+  feedback:
+    correct: ε = N · ΔΦ/Δt = 100 × 0,02 / 0,1 = 20 V.
+    incorrect: Jawabannya 20 V. ε = N · ΔΦ/Δt = 100 × 0,02 / 0,1 = 20 V.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

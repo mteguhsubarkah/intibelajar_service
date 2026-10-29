@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.Q.TRANSFORMASI_2
+familyCode: MAT.INV.F.TRANSFORMASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.INV.TRANSFORMASI_FUNGSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil pencerminan grafik y = f(x) terhadap sumbu x adalah …
+  options:
+    - id: a
+      label: y = f(−x)
+    - id: b
+      label: y = −f(x)
+    - id: c
+      label: y = f(x) − 1
+    - id: d
+      label: y = −f(−x)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - y = −f(x)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.INV.TRANSFORMASI_FUNGSI
+  feedback:
+    correct: "Cermin terhadap sumbu x membalik tanda setiap nilai y: y = −f(x)."
+    incorrect: "Jawabannya y = −f(x). Cermin terhadap sumbu x membalik tanda setiap nilai y: y = −f(x)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.L.KOMPONEN_GERAK
+title: Komponen gerak
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.GERAK2D.KOMPONEN_GERAK
+blocks:
+  - type: heading
+    slide: 0
+    text: Dua gerak yang berjalan sendiri-sendiri
+  - type: text
+    slide: 0
+    text: Gerak dua dimensi dapat diuraikan menjadi gerak pada sumbu x dan sumbu y yang **tidak saling memengaruhi**.
+  - type: text
+    slide: 0
+    text: "Contoh: perahu menyeberangi sungai. Waktu menyeberang hanya ditentukan kecepatan yang tegak lurus arus."
+  - type: math
+    slide: 0
+    name: t menyeberang
+    expression: lebar sungai / v tegak lurus arus
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Hanyut oleh arus
+  - type: text
+    slide: 1
+    text: Selama waktu itu, arus menghanyutkan perahu sejauh **v arus × t**.
+  - type: text
+    slide: 1
+    text: "Contoh: lebar 60 m, perahu 3 m/s, arus 4 m/s ⇒ t = 20 s, hanyut 80 m, kecepatan resultan 5 m/s."
+  - type: math
+    slide: 1
+    name: hanyut
+    expression: v arus × t
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hitung waktu dari arah yang lebarnya diketahui, lalu pakai waktu itu untuk arah lain.
+checks:
+  - question: FIS.C26.E.GERAK2D.Q.KOMPONEN_GERAK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.GERAK2D.S.KOMPONEN_GERAK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

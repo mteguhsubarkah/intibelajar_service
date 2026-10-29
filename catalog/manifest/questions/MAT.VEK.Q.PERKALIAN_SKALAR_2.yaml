@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.PERKALIAN_SKALAR_2
+familyCode: MAT.VEK.F.PERKALIAN_SKALAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.PERKALIAN_SKALAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui a = (1, 2) dan b = (3, −1). Hasil 2a − 3b adalah …
+  options:
+    - id: a
+      label: (−7, 7)
+    - id: b
+      label: (7, −7)
+    - id: c
+      label: (−7, 1)
+    - id: d
+      label: (11, 1)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (−7, 7)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.PERKALIAN_SKALAR
+  feedback:
+    correct: 2a = (2, 4), 3b = (9, −3). 2a − 3b = (2 − 9, 4 + 3) = (−7, 7).
+    incorrect: Jawabannya (−7, 7). 2a = (2, 4), 3b = (9, −3). 2a − 3b = (2 − 9, 4 + 3) = (−7, 7).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

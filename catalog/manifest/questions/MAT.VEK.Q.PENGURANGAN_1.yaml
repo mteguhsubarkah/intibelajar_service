@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.PENGURANGAN_1
+familyCode: MAT.VEK.F.PENGURANGAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.PENGURANGAN_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui a = (5, 2) dan b = (1, −3). Hasil a − b adalah …
+  options:
+    - id: a
+      label: (4, 5)
+    - id: b
+      label: (4, −1)
+    - id: c
+      label: (6, −1)
+    - id: d
+      label: (−4, −5)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (4, 5)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.PENGURANGAN_VEKTOR
+  feedback:
+    correct: (5 − 1, 2 − (−3)) = (4, 5).
+    incorrect: Jawabannya (4, 5). (5 − 1, 2 − (−3)) = (4, 5).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

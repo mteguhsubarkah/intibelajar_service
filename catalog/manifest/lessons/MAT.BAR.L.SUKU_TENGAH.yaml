@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.L.SUKU_TENGAH
+title: Suku Tengah & Sisipan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BAR.SUKU_TENGAH_SISIPAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Suku tengah
+  - type: text
+    slide: 0
+    text: "Untuk banyak suku ganjil, suku tengah aritmetika adalah **rata-rata suku pertama dan terakhir**: Uₜ = (a + Uₙ)/2. Pada geometri: Uₜ = √(a · Uₙ)."
+  - type: math
+    slide: 0
+    name: aritmetika
+    expression: Uₜ = (a + Uₙ)/2
+    highlight: true
+  - type: math
+    slide: 0
+    name: geometri
+    expression: Uₜ = √(a · Uₙ)
+  - type: heading
+    slide: 1
+    text: Menyisipkan bilangan
+  - type: text
+    slide: 1
+    text: "Menyisipkan k bilangan di antara x dan y membuat **k + 1 langkah**. Aritmetika: b′ = (y − x)/(k + 1). Geometri: r′ = (y/x)^(1/(k + 1))."
+  - type: text
+    slide: 1
+    text: "Contoh: 3 bilangan di antara 2 dan 162 membentuk geometri: r⁴ = 81 ⇒ r = 3."
+  - type: math
+    slide: 1
+    name: b′
+    expression: (y − x)/(k + 1)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hitung langkahnya, bukan banyak bilangan sisipan.
+checks:
+  - question: MAT.BAR.Q.SUKU_TENGAH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.SUKU_TENGAH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

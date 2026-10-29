@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.FUNGSI_EKSPONEN_3
+familyCode: MAT.EKS.F.FUNGSI_EKSPONEN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.FUNGSI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fungsi f(x) = a · bˣ (b > 0) memenuhi f(0) = 4 dan f(2) = 36. Nilai b adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "9"
+    - id: c
+      label: "4"
+    - id: d
+      label: "6"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "3"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.FUNGSI_EKSPONEN
+  feedback:
+    correct: f(0) = a = 4. f(2) = 4b² = 36, jadi b² = 9 dan b = 3.
+    incorrect: Jawabannya 3. f(0) = a = 4. f(2) = 4b² = 36, jadi b² = 9 dan b = 3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

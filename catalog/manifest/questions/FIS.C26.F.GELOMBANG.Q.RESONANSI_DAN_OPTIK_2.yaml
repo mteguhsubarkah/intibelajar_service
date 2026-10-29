@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_2
+familyCode: FIS.C26.F.GELOMBANG.F.RESONANSI_DAN_OPTIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 20 cm. Jarak bayangan dari lensa adalah …
+  options:
+    - id: a
+      label: 12 cm
+    - id: b
+      label: 24 cm
+    - id: c
+      label: 50 cm
+    - id: d
+      label: 60 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 60 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+  feedback:
+    correct: 1/s′ = 1/20 − 1/30 = 1/60, jadi s′ = 60 cm (nyata).
+    incorrect: Jawabannya 60 cm. 1/s′ = 1/20 − 1/30 = 1/60, jadi s′ = 60 cm (nyata).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

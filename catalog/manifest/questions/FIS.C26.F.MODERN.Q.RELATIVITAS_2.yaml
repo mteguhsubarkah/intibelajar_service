@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.Q.RELATIVITAS_2
+familyCode: FIS.C26.F.MODERN.F.RELATIVITAS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah batang yang panjangnya 5 m bergerak searah panjangnya dengan kecepatan 0,8c. Panjang batang menurut pengamat diam adalah …
+  options:
+    - id: a
+      label: 3 m
+    - id: b
+      label: 4 m
+    - id: c
+      label: 5 m
+    - id: d
+      label: 8,3 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 3 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
+  feedback:
+    correct: √(1 − 0,64) = 0,6, jadi L = 5 × 0,6 = 3 m.
+    incorrect: Jawabannya 3 m. √(1 − 0,64) = 0,6, jadi L = 5 × 0,6 = 3 m.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

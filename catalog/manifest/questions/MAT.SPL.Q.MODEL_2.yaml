@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.SPL.Q.MODEL_2
+familyCode: MAT.SPL.F.MODEL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.SPL.VARIABEL_DAN_MODEL_KENDALA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Harga tiket dewasa Rp10.000 dan anak Rp5.000. Uang yang terkumpul tidak lebih dari Rp200.000. Jika x dewasa dan y anak, model yang tepat adalah …
+  options:
+    - id: a
+      label: 2x + y ≤ 40
+    - id: b
+      label: x + 2y ≤ 40
+    - id: c
+      label: 2x + y ≥ 40
+    - id: d
+      label: x + y ≤ 40
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2x + y ≤ 40
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.SPL.VARIABEL_DAN_MODEL_KENDALA
+  feedback:
+    correct: 10.000x + 5.000y ≤ 200.000, dibagi 5.000 menjadi 2x + y ≤ 40.
+    incorrect: Jawabannya 2x + y ≤ 40. 10.000x + 5.000y ≤ 200.000, dibagi 5.000 menjadi 2x + y ≤ 40.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,66 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK
+subject: BIO
+title: Bioteknologi modern
+subtitle: DNA rekombinan, PCR, manfaat dan dampak
+phase: F
+availability: MAPPED
+bekal:
+  - DNA dan gen
+  - mikroorganisme
+aliases:
+  - ns: TOPIC
+    value: bioteknologi
+units: []
+concepts:
+  - code: BIO.C26.F.BIOTEK.REKAYASA_DAN_ANALISIS_DNA
+    title: Rekayasa dan analisis DNA
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-biotek-c1
+  - code: BIO.C26.F.BIOTEK.PRINSIP_PCR
+    title: Prinsip PCR
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-biotek-pcr
+  - code: BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK
+    title: Evaluasi manfaat dan dampak
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-biotek-c2
+prerequisites:
+  - concept: BIO.C26.F.BIOTEK.PRINSIP_PCR
+    requires: BIO.C26.F.BIOTEK.REKAYASA_DAN_ANALISIS_DNA
+    kind: SOFT
+  - concept: BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK
+    requires: BIO.C26.F.BIOTEK.REKAYASA_DAN_ANALISIS_DNA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_2
+familyCode: KIM.C26.F.STRUKTUR.F.IKATAN_DAN_GAYA_ANTARMOLEKUL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Titik didih air jauh lebih tinggi daripada H₂S karena …
+  options:
+    - id: a
+      label: massa molekul air lebih besar
+    - id: b
+      label: ada ikatan hidrogen antarmolekul air
+    - id: c
+      label: air merupakan senyawa ion
+    - id: d
+      label: ikatan O–H lebih lemah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - ada ikatan hidrogen antarmolekul air
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+  feedback:
+    correct: H yang terikat pada O membentuk ikatan hidrogen antarmolekul. H₂S tidak, padahal massanya lebih besar.
+    incorrect: Jawabannya ada ikatan hidrogen antarmolekul air. H yang terikat pada O membentuk ikatan hidrogen antarmolekul. H₂S tidak, padahal massanya lebih besar.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

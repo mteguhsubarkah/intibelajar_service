@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.FAKTOR_1
+familyCode: MAT.KUA.F.FAKTOR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.FAKTORISASI_DAN_AKAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Akar-akar persamaan x² − 5x + 6 = 0 adalah …
+  options:
+    - id: a
+      label: 2 dan 3
+    - id: b
+      label: −2 dan −3
+    - id: c
+      label: 1 dan 6
+    - id: d
+      label: −1 dan 6
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2 dan 3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.FAKTORISASI_DAN_AKAR
+  feedback:
+    correct: x² − 5x + 6 = (x − 2)(x − 3), jadi x = 2 atau x = 3.
+    incorrect: Jawabannya 2 dan 3. x² − 5x + 6 = (x − 2)(x − 3), jadi x = 2 atau x = 3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

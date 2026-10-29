@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SOAL_KONTEKSTUAL_3
+familyCode: MAT.EKS.F.SOAL_KONTEKSTUAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SOAL_KONTEKSTUAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suatu populasi menjadi 3 kali lipat setiap 4 tahun. Waktu yang dibutuhkan agar populasi menjadi 9 kali lipat adalah …
+  options:
+    - id: a
+      label: 6 tahun
+    - id: b
+      label: 8 tahun
+    - id: c
+      label: 12 tahun
+    - id: d
+      label: 36 tahun
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 8 tahun
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SOAL_KONTEKSTUAL
+  feedback:
+    correct: 9 = 3², artinya dua periode tiga kali lipat, yaitu 2 × 4 = 8 tahun.
+    incorrect: Jawabannya 8 tahun. 9 = 3², artinya dua periode tiga kali lipat, yaitu 2 × 4 = 8 tahun.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

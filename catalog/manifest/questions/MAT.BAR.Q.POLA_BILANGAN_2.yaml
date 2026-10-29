@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.POLA_BILANGAN_2
+familyCode: MAT.BAR.F.POLA_BILANGAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.POLA_BILANGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Banyak noktah pada pola ke-10 dari pola bilangan segitiga 1, 3, 6, 10, … adalah …
+  options:
+    - id: a
+      label: "45"
+    - id: b
+      label: "55"
+    - id: c
+      label: "66"
+    - id: d
+      label: "100"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "55"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.POLA_BILANGAN
+  feedback:
+    correct: "Pola segitiga: n(n + 1)/2 = 10 × 11 / 2 = 55."
+    incorrect: "Jawabannya 55. Pola segitiga: n(n + 1)/2 = 10 × 11 / 2 = 55."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

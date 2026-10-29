@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.TURUNAN_2
+familyCode: MAT.KAL.F.TURUNAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Posisi benda s(t) = 5t² meter. Kecepatan benda pada t = 3 detik adalah …
+  options:
+    - id: a
+      label: 15 m/s
+    - id: b
+      label: 30 m/s
+    - id: c
+      label: 45 m/s
+    - id: d
+      label: 10 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 30 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+  feedback:
+    correct: v(t) = s′(t) = 10t, jadi v(3) = 30 m/s.
+    incorrect: Jawabannya 30 m/s. v(t) = s′(t) = 10t, jadi v(3) = 30 m/s.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

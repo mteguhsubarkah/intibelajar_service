@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.PENERAPAN_1
+familyCode: MAT.VEK.F.PENERAPAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.PENERAPAN_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gaya F = (3, 4) N memindahkan benda dengan perpindahan s = (5, 0) m. Usaha yang dilakukan gaya adalah …
+  options:
+    - id: a
+      label: 15 J
+    - id: b
+      label: 20 J
+    - id: c
+      label: 25 J
+    - id: d
+      label: 35 J
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 15 J
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.PENERAPAN_VEKTOR
+  feedback:
+    correct: W = F · s = 3 × 5 + 4 × 0 = 15 J.
+    incorrect: Jawabannya 15 J. W = F · s = 3 × 5 + 4 × 0 = 15 J.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

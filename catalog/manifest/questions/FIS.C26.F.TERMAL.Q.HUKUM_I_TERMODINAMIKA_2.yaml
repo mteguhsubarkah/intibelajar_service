@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL.Q.HUKUM_I_TERMODINAMIKA_2
+familyCode: FIS.C26.F.TERMAL.F.HUKUM_I_TERMODINAMIKA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gas pada tekanan tetap 2 × 10⁵ Pa memuai dari 2 liter menjadi 5 liter. Usaha yang dilakukan gas adalah …
+  options:
+    - id: a
+      label: 60 J
+    - id: b
+      label: 600 J
+    - id: c
+      label: 6.000 J
+    - id: d
+      label: 1.000 J
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 600 J
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA
+  feedback:
+    correct: W = P · ΔV = 2 × 10⁵ × 3 × 10⁻³ m³ = 600 J.
+    incorrect: Jawabannya 600 J. W = P · ΔV = 2 × 10⁵ × 3 × 10⁻³ m³ = 600 J.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

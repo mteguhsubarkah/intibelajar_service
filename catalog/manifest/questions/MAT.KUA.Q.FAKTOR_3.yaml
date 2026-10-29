@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.FAKTOR_3
+familyCode: MAT.KUA.F.FAKTOR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.FAKTORISASI_DAN_AKAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan kuadrat yang akar-akarnya 3 dan −2 adalah …
+  options:
+    - id: a
+      label: x² − x − 6 = 0
+    - id: b
+      label: x² + x − 6 = 0
+    - id: c
+      label: x² − 5x + 6 = 0
+    - id: d
+      label: x² + x + 6 = 0
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - x² − x − 6 = 0
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.FAKTORISASI_DAN_AKAR
+  feedback:
+    correct: x² − (3 + (−2))x + 3 · (−2) = x² − x − 6 = 0.
+    incorrect: Jawabannya x² − x − 6 = 0. x² − (3 + (−2))x + 3 · (−2) = x² − x − 6 = 0.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

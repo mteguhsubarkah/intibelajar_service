@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.EKS.L.FUNGSI_EKSPONEN
+title: Fungsi Eksponen
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.FUNGSI_EKSPONEN
+blocks:
+  - type: heading
+    slide: 0
+    text: Bentuk f(x) = a · bˣ
+  - type: text
+    slide: 0
+    text: Variabelnya ada di **pangkat**. a adalah nilai awal (f(0) = a), b adalah faktor pengali tiap kali x naik 1.
+  - type: text
+    slide: 0
+    text: "Syarat: b > 0 dan b ≠ 1."
+  - type: math
+    slide: 0
+    name: f(x)
+    expression: a · bˣ
+    highlight: true
+  - type: math
+    slide: 0
+    name: f(0)
+    expression: a
+  - type: heading
+    slide: 1
+    text: Tumbuh atau meluruh
+  - type: text
+    slide: 1
+    text: Bila **b > 1**, nilainya tumbuh (contoh 2ˣ). Bila **0 < b < 1**, nilainya meluruh (contoh (0,8)ˣ).
+  - type: text
+    slide: 1
+    text: "Contoh: f(x) = 3 · 2ˣ, maka f(3) = 3 · 8 = 24."
+  - type: math
+    slide: 1
+    name: b > 1
+    expression: pertumbuhan
+    highlight: true
+  - type: math
+    slide: 1
+    name: 0 < b < 1
+    expression: peluruhan
+checks:
+  - question: MAT.EKS.Q.FUNGSI_EKSPONEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.FUNGSI_EKSPONEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

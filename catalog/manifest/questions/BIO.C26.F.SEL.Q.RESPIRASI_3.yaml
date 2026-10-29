@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.RESPIRASI_3
+familyCode: BIO.C26.F.SEL.F.RESPIRASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Otot yang bekerja berat dan kekurangan oksigen melakukan fermentasi yang menghasilkan …
+  options:
+    - id: a
+      label: alkohol
+    - id: b
+      label: asam laktat
+    - id: c
+      label: asam asetat
+    - id: d
+      label: glukosa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - asam laktat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
+  feedback:
+    correct: Fermentasi pada sel otot manusia menghasilkan asam laktat yang menyebabkan rasa pegal.
+    incorrect: Jawabannya asam laktat. Fermentasi pada sel otot manusia menghasilkan asam laktat yang menyebabkan rasa pegal.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

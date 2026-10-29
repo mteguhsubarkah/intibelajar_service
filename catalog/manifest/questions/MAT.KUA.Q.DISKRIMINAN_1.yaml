@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.DISKRIMINAN_1
+familyCode: MAT.KUA.F.DISKRIMINAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Akar-akar persamaan 2x² + 3x − 2 = 0 adalah …
+  options:
+    - id: a
+      label: 1/2 dan −2
+    - id: b
+      label: −1/2 dan 2
+    - id: c
+      label: 1 dan −2
+    - id: d
+      label: 2 dan −1
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 1/2 dan −2
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+  feedback:
+    correct: D = 3² − 4 · 2 · (−2) = 25. x = (−3 ± 5)/4 memberi 1/2 dan −2.
+    incorrect: Jawabannya 1/2 dan −2. D = 3² − 4 · 2 · (−2) = 25. x = (−3 ± 5)/4 memberi 1/2 dan −2.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

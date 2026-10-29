@@ -1,0 +1,81 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK
+subject: KIM
+title: Stoikiometri dan reaksi kimia
+subtitle: Mol, persamaan reaksi, pereaksi pembatas
+phase: E
+availability: MAPPED
+bekal:
+  - rumus kimia
+  - perbandingan
+aliases:
+  - ns: TOPIC
+    value: stoikiometri
+units: []
+concepts:
+  - code: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    title: Mol dan massa molar
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-stoik-c1
+  - code: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    title: Menyetarakan reaksi
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-stoik-setara
+  - code: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+    title: Perhitungan dari persamaan reaksi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-stoik-c2
+  - code: KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+    title: Pereaksi pembatas dan hasil
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-stoik-batas
+prerequisites:
+  - concept: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    requires: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    kind: SOFT
+  - concept: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+    requires: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    kind: SOFT
+  - concept: KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+    requires: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

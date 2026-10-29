@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.L.STRATEGI_KONSERVASI
+title: Strategi konservasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.BIODIVERSITAS.STRATEGI_KONSERVASI
+blocks:
+  - type: heading
+    slide: 0
+    text: In situ dan ex situ
+  - type: text
+    slide: 0
+    text: "**In situ**: perlindungan di habitat aslinya, misalnya taman nasional, cagar alam, suaka margasatwa."
+  - type: text
+    slide: 0
+    text: "**Ex situ**: perlindungan di luar habitat asli, misalnya kebun raya, kebun binatang, bank biji, penangkaran."
+  - type: math
+    slide: 0
+    name: in situ
+    expression: di habitat asli
+    highlight: true
+  - type: math
+    slide: 0
+    name: ex situ
+    expression: di luar habitat asli
+  - type: heading
+    slide: 1
+    text: Contoh di Indonesia
+  - type: text
+    slide: 1
+    text: Taman Nasional **Ujung Kulon** melindungi badak jawa; Taman Nasional **Komodo** melindungi komodo (hewan endemik NTT). Kebun Raya Bogor adalah konservasi ex situ.
+  - type: math
+    slide: 1
+    name: endemik
+    expression: hanya ada di daerah tertentu
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kata kunci "taman nasional" atau "cagar alam" ⇒ in situ.
+checks:
+  - question: BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.BIODIVERSITAS.S.STRATEGI_KONSERVASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

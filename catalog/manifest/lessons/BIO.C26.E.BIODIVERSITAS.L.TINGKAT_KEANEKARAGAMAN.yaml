@@ -1,0 +1,51 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.L.TINGKAT_KEANEKARAGAMAN
+title: Tingkat keanekaragaman
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Tiga tingkat
+  - type: text
+    slide: 0
+    text: "**Gen**: variasi dalam satu spesies (warna bunga mawar, jenis mangga). **Spesies**: perbedaan antarspesies dalam satu kelompok (harimau, singa, kucing). **Ekosistem**: perbedaan lingkungan beserta penghuninya (hutan hujan, padang rumput, terumbu karang)."
+  - type: math
+    slide: 0
+    name: satu spesies, bervariasi
+    expression: tingkat gen
+    highlight: true
+  - type: math
+    slide: 0
+    name: beda spesies
+    expression: tingkat spesies
+  - type: heading
+    slide: 1
+    text: Cara cepat membedakan
+  - type: text
+    slide: 1
+    text: "Tanyakan: apakah semuanya satu spesies? Jika ya ⇒ gen. Jika berbeda spesies ⇒ spesies. Jika yang dibandingkan lingkungan utuh ⇒ ekosistem."
+  - type: math
+    slide: 1
+    name: lingkungan berbeda
+    expression: tingkat ekosistem
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Varietas atau kultivar (mangga harum manis, mangga golek) selalu tingkat gen.
+checks:
+  - question: BIO.C26.E.BIODIVERSITAS.Q.TINGKAT_KEANEKARAGAMAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.BIODIVERSITAS.S.TINGKAT_KEANEKARAGAMAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

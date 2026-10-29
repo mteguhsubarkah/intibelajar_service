@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.PENERAPAN_1
+familyCode: MAT.EKS.F.PENERAPAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.PENERAPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah bakteri membelah menjadi dua setiap 20 menit. Jika awalnya ada 500 bakteri, banyak bakteri setelah 1 jam adalah …
+  options:
+    - id: a
+      label: "1.500"
+    - id: b
+      label: "3.000"
+    - id: c
+      label: "4.000"
+    - id: d
+      label: "8.000"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "4.000"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.PENERAPAN
+  feedback:
+    correct: 1 jam = 3 kali pembelahan, jadi 500 × 2³ = 4.000.
+    incorrect: Jawabannya 4.000. 1 jam = 3 kali pembelahan, jadi 500 × 2³ = 4.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

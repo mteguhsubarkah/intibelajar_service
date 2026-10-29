@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.DERET_ARITMETIKA_2
+familyCode: MAT.BAR.F.DERET_ARITMETIKA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.DERET_ARITMETIKA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah n suku pertama suatu deret aritmetika adalah Sₙ = n² + 3n. Suku ke-10 deret itu adalah …
+  options:
+    - id: a
+      label: "20"
+    - id: b
+      label: "22"
+    - id: c
+      label: "24"
+    - id: d
+      label: "130"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "22"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.DERET_ARITMETIKA
+  feedback:
+    correct: U₁₀ = S₁₀ − S₉ = (100 + 30) − (81 + 27) = 130 − 108 = 22.
+    incorrect: Jawabannya 22. U₁₀ = S₁₀ − S₉ = (100 + 30) − (81 + 27) = 130 − 108 = 22.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

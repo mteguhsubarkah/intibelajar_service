@@ -2,13 +2,95 @@ schemaVersion: 1
 code: MAT.INV
 subject: MAT
 title: Fungsi Invers & Komposisi
-subtitle: Kelas XI–XII
+subtitle: Domain, komposisi, invers, transformasi
 phase: F
-availability: PLANNED
-bekal: []
+availability: MAPPED
+bekal:
+  - fungsi linear dan kuadrat
+  - operasi aljabar
 aliases:
   - ns: TOPIC
     value: invers
 units: []
-concepts: []
-prerequisites: []
+concepts:
+  - code: MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE
+    title: Domain, kodomain & range
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-inv-domain
+  - code: MAT.INV.KOMPOSISI_FUNGSI
+    title: Komposisi fungsi
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-inv-komposisi
+  - code: MAT.INV.FUNGSI_SATU_SATU
+    title: Fungsi satu-satu
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-inv-satu-satu
+  - code: MAT.INV.MENENTUKAN_DAN_MEMERIKSA_INVERS
+    title: Menentukan & memeriksa invers
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-inv-invers
+  - code: MAT.INV.TRANSFORMASI_FUNGSI
+    title: Transformasi fungsi
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-inv-transformasi
+prerequisites:
+  - concept: MAT.INV.KOMPOSISI_FUNGSI
+    requires: MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE
+    kind: SOFT
+  - concept: MAT.INV.FUNGSI_SATU_SATU
+    requires: MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE
+    kind: SOFT
+  - concept: MAT.INV.MENENTUKAN_DAN_MEMERIKSA_INVERS
+    requires: MAT.INV.FUNGSI_SATU_SATU
+    kind: SOFT
+  - concept: MAT.INV.TRANSFORMASI_FUNGSI
+    requires: MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

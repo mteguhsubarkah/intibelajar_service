@@ -1,0 +1,51 @@
+schemaVersion: 1
+code: MAT.VEK.L.SIFAT_OPERASI
+title: Sifat Operasi Vektor
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.SIFAT_OPERASI_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Seperti bilangan biasa
+  - type: text
+    slide: 0
+    text: "**Komutatif**: a + b = b + a. **Asosiatif**: (a + b) + c = a + (b + c)."
+  - type: math
+    slide: 0
+    name: komutatif
+    expression: a + b = b + a
+    highlight: true
+  - type: math
+    slide: 0
+    name: asosiatif
+    expression: (a + b) + c = a + (b + c)
+  - type: heading
+    slide: 1
+    text: Identitas dan invers
+  - type: text
+    slide: 1
+    text: "**Vektor nol** 0 adalah identitas: a + 0 = a. **Invers** a adalah −a: a + (−a) = 0."
+  - type: math
+    slide: 1
+    name: a + (−a)
+    expression: "0"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sifat ini membuat kita bebas mengatur urutan saat menjumlah banyak vektor.
+checks:
+  - question: MAT.VEK.Q.SIFAT_OPERASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.SIFAT_OPERASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

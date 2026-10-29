@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.KESETIMBANGAN_DINAMIS_1
+familyCode: KIM.C26.F.SETIMBANG.F.KESETIMBANGAN_DINAMIS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada kesetimbangan N₂(g) + 3H₂(g) ⇌ 2NH₃(g), jika tekanan diperbesar, kesetimbangan bergeser ke …
+  options:
+    - id: a
+      label: kiri, NH₃ berkurang
+    - id: b
+      label: kanan, NH₃ bertambah
+    - id: c
+      label: tidak bergeser
+    - id: d
+      label: kiri, N₂ berkurang
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - kanan, NH₃ bertambah
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+  feedback:
+    correct: Kiri 4 mol gas, kanan 2 mol gas. Tekanan naik menggeser ke jumlah mol lebih sedikit, yaitu kanan.
+    incorrect: Jawabannya kanan, NH₃ bertambah. Kiri 4 mol gas, kanan 2 mol gas. Tekanan naik menggeser ke jumlah mol lebih sedikit, yaitu kanan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.EKS.L.PERSAMAAN_LOGARITMA
+title: Persamaan Logaritma
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.PERSAMAAN_LOGARITMA
+blocks:
+  - type: heading
+    slide: 0
+    text: Samakan bentuknya
+  - type: text
+    slide: 0
+    text: Jika **ᵃlog f(x) = ᵃlog g(x)**, maka **f(x) = g(x)**. Bila ruas kanan berupa angka, ubah ke bentuk pangkat.
+  - type: text
+    slide: 0
+    text: "Contoh: ²log (x + 3) = 3 ⇒ x + 3 = 2³ ⇒ x = 5."
+  - type: math
+    slide: 0
+    name: ᵃlog f(x) = c
+    expression: f(x) = aᶜ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Wajib cek syarat numerus
+  - type: text
+    slide: 1
+    text: Numerus harus **positif**. Setelah dapat calon jawaban, masukkan kembali ke setiap logaritma.
+  - type: text
+    slide: 1
+    text: "Contoh: log (x + 2) + log (x − 1) = 1 memberi x = 3 atau x = −4. Nilai −4 membuat x − 1 negatif, jadi dibuang."
+  - type: math
+    slide: 1
+    name: syarat
+    expression: f(x) > 0, g(x) > 0
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jawaban yang tidak memenuhi syarat numerus adalah jebakan paling umum.
+checks:
+  - question: MAT.EKS.Q.PERSAMAAN_LOGARITMA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.PERSAMAAN_LOGARITMA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

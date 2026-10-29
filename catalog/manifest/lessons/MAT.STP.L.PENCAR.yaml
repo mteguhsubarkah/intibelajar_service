@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.STP.L.PENCAR
+title: Diagram pencar
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.STP.DIAGRAM_PENCAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Membaca hubungan
+  - type: text
+    slide: 0
+    text: "Diagram pencar memplot pasangan data (x, y). Titik naik dari kiri bawah ke kanan atas: **korelasi positif**. Turun: **korelasi negatif**. Tersebar acak: tidak ada korelasi."
+  - type: math
+    slide: 0
+    name: naik
+    expression: korelasi positif
+    highlight: true
+  - type: math
+    slide: 0
+    name: turun
+    expression: korelasi negatif
+  - type: heading
+    slide: 1
+    text: Korelasi bukan sebab-akibat
+  - type: text
+    slide: 1
+    text: Dua besaran bisa naik bersama karena dipengaruhi faktor ketiga.
+  - type: text
+    slide: 1
+    text: "Contoh: penjualan es krim dan kasus tenggelam sama-sama naik di musim panas; penyebabnya cuaca, bukan es krim."
+  - type: math
+    slide: 1
+    name: korelasi
+    expression: ≠ sebab-akibat
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Cari faktor ketiga sebelum menyimpulkan sebab-akibat.
+checks:
+  - question: MAT.STP.Q.PENCAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.STP.S.PENCAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

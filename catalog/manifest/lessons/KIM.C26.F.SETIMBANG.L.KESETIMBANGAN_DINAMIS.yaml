@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.L.KESETIMBANGAN_DINAMIS
+title: Kesetimbangan dinamis
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Reaksi bolak-balik
+  - type: text
+    slide: 0
+    text: Pada kesetimbangan, **laju reaksi maju = laju reaksi balik**. Reaksi tetap berlangsung, tetapi konsentrasinya tidak berubah.
+  - type: math
+    slide: 0
+    name: setimbang
+    expression: v maju = v balik
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Asas Le Chatelier
+  - type: text
+    slide: 1
+    text: Bila diganggu, kesetimbangan bergeser untuk mengurangi gangguan. **Tekanan naik** ⇒ ke arah jumlah mol gas lebih sedikit. **Suhu naik** ⇒ ke arah **endoterm**.
+  - type: text
+    slide: 1
+    text: "Contoh: N₂ + 3H₂ ⇌ 2NH₃ (ΔH = −92 kJ): tekanan naik ⇒ ke kanan; suhu naik ⇒ ke kiri."
+  - type: math
+    slide: 1
+    name: tekanan naik
+    expression: ke mol gas sedikit
+    highlight: true
+  - type: math
+    slide: 1
+    name: suhu naik
+    expression: ke arah endoterm
+  - type: tip
+    slide: 1
+    text: Jika ΔH reaksi maju negatif, reaksi balik endoterm.
+checks:
+  - question: KIM.C26.F.SETIMBANG.Q.KESETIMBANGAN_DINAMIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.SETIMBANG.S.KESETIMBANGAN_DINAMIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

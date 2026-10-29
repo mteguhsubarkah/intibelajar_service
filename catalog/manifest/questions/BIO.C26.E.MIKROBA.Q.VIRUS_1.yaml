@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.VIRUS_1
+familyCode: BIO.C26.E.MIKROBA.F.VIRUS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Virus disebut aseluler karena …
+  options:
+    - id: a
+      label: berukuran sangat kecil
+    - id: b
+      label: tidak memiliki struktur sel
+    - id: c
+      label: dapat dikristalkan
+    - id: d
+      label: hanya memiliki DNA
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - tidak memiliki struktur sel
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+  feedback:
+    correct: Virus hanya terdiri dari asam nukleat dan selubung protein, tanpa membran sel, sitoplasma, atau organel.
+    incorrect: Jawabannya tidak memiliki struktur sel. Virus hanya terdiri dari asam nukleat dan selubung protein, tanpa membran sel, sitoplasma, atau organel.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

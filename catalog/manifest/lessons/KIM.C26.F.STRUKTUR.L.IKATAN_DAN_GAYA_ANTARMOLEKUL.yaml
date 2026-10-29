@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.L.IKATAN_DAN_GAYA_ANTARMOLEKUL
+title: Ikatan & gaya antarmolekul
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+blocks:
+  - type: heading
+    slide: 0
+    text: Ion atau kovalen
+  - type: text
+    slide: 0
+    text: "**Ikatan ion**: serah-terima elektron, biasanya logam + nonlogam (NaCl). **Ikatan kovalen**: pemakaian bersama pasangan elektron, nonlogam + nonlogam (H₂O, CO₂)."
+  - type: math
+    slide: 0
+    name: logam + nonlogam
+    expression: ikatan ion
+    highlight: true
+  - type: math
+    slide: 0
+    name: nonlogam + nonlogam
+    expression: ikatan kovalen
+  - type: heading
+    slide: 1
+    text: Ikatan hidrogen
+  - type: text
+    slide: 1
+    text: Molekul yang memiliki H terikat pada **F, O, atau N** membentuk **ikatan hidrogen** antarmolekul yang kuat, sehingga titik didihnya tinggi.
+  - type: text
+    slide: 1
+    text: Itulah sebabnya H₂O (100°C) mendidih jauh di atas H₂S.
+  - type: math
+    slide: 1
+    name: ikatan hidrogen
+    expression: H–F, H–O, H–N
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gaya antarmolekul memengaruhi titik didih; ikatan dalam molekul tidak putus saat mendidih.
+checks:
+  - question: KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.STRUKTUR.S.IKATAN_DAN_GAYA_ANTARMOLEKUL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

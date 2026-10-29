@@ -1,0 +1,51 @@
+schemaVersion: 1
+code: MAT.BAR.L.SOAL_KONTEKSTUAL
+title: Soal Kontekstual Barisan dan Deret
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.BAR.SOAL_KONTEKSTUAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Empat langkah
+  - type: text
+    slide: 0
+    text: "1) Kenali jenisnya (tetap ditambah atau dikali). 2) Tentukan a dan b atau r. 3) Tentukan yang ditanya: suku atau jumlah. 4) Hitung dan cek satuannya."
+  - type: math
+    slide: 0
+    name: suku
+    expression: Uₙ
+    highlight: true
+  - type: math
+    slide: 0
+    name: jumlah
+    expression: Sₙ
+  - type: heading
+    slide: 1
+    text: Contoh tali dipotong
+  - type: text
+    slide: 1
+    text: "Tali dipotong 5 bagian membentuk barisan geometri, terpendek 4 cm dan terpanjang 64 cm: r⁴ = 16 ⇒ r = 2. Panjang tali = 4 + 8 + 16 + 32 + 64 = 124 cm."
+  - type: math
+    slide: 1
+    name: r⁴
+    expression: 64/4 = 16
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Panjang seluruh tali adalah jumlah, bukan suku terakhir.
+checks:
+  - question: MAT.BAR.Q.SOAL_KONTEKSTUAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.SOAL_KONTEKSTUAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.Q.DAYA_DAN_EFISIENSI_1
+familyCode: FIS.C26.E.ENERGI.F.DAYA_DAN_EFISIENSI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah motor listrik mengangkat beban 50 kg setinggi 10 m dalam waktu 20 s (g = 10 m/s²). Daya motor adalah …
+  options:
+    - id: a
+      label: 25 W
+    - id: b
+      label: 100 W
+    - id: c
+      label: 250 W
+    - id: d
+      label: 5.000 W
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 250 W
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
+  feedback:
+    correct: W = mgh = 50 × 10 × 10 = 5.000 J. P = 5.000 / 20 = 250 W.
+    incorrect: Jawabannya 250 W. W = mgh = 50 × 10 × 10 = 5.000 J. P = 5.000 / 20 = 250 W.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

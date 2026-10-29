@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.L.KONSTANTA
+title: Konstanta kesetimbangan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Menulis Kc
+  - type: text
+    slide: 0
+    text: "**Kc = [produk]^koefisien / [pereaksi]^koefisien**. Zat **padat dan cair murni tidak** dimasukkan."
+  - type: text
+    slide: 0
+    text: "Contoh: 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) ⇒ Kc = [SO₃]² / ([SO₂]² [O₂])."
+  - type: math
+    slide: 0
+    name: Kc
+    expression: "[produk]ᵏᵒᵉᶠ / [pereaksi]ᵏᵒᵉᶠ"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Menghitung Kc
+  - type: text
+    slide: 1
+    text: Ubah mol menjadi konsentrasi (mol / volume), lalu masukkan.
+  - type: text
+    slide: 1
+    text: "Contoh: wadah 1 L berisi 0,1 mol H₂, 0,1 mol I₂, 0,8 mol HI ⇒ Kc = 0,8² / (0,1 × 0,1) = 64."
+  - type: math
+    slide: 1
+    name: H₂ + I₂ ⇌ 2HI
+    expression: Kc = [HI]² / ([H₂][I₂])
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Konsentrasi pada keadaan setimbang, bukan konsentrasi awal.
+checks:
+  - question: KIM.C26.F.SETIMBANG.Q.KONSTANTA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.SETIMBANG.S.KONSTANTA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

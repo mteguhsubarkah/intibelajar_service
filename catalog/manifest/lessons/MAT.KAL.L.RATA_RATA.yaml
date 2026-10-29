@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.KAL.L.RATA_RATA
+title: Laju perubahan rata-rata
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.KAL.LAJU_PERUBAHAN_RATA_RATA
+blocks:
+  - type: heading
+    slide: 0
+    text: Gradien garis potong
+  - type: text
+    slide: 0
+    text: Laju perubahan rata-rata f dari x = a sampai x = b adalah **(f(b) − f(a)) / (b − a)**, yaitu gradien garis yang menghubungkan dua titik grafik.
+  - type: text
+    slide: 0
+    text: "Contoh: f(x) = x² dari 1 ke 3 ⇒ (9 − 1)/2 = 4."
+  - type: math
+    slide: 0
+    name: laju rata-rata
+    expression: (f(b) − f(a)) / (b − a)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kecepatan rata-rata
+  - type: text
+    slide: 1
+    text: Jika s(t) adalah posisi, kecepatan rata-rata = perubahan posisi / selang waktu.
+  - type: text
+    slide: 1
+    text: "Contoh: s(t) = t² + 2t, dari t = 0 ke t = 2 ⇒ (8 − 0)/2 = 4 m/s."
+  - type: math
+    slide: 1
+    name: v rata-rata
+    expression: Δs / Δt
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hitung nilai fungsi di kedua ujung dulu, baru bagi.
+checks:
+  - question: MAT.KAL.Q.RATA_RATA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KAL.S.RATA_RATA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

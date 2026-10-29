@@ -1,0 +1,47 @@
+schemaVersion: 1
+code: MAT.VEK.L.NOTASI
+title: Notasi Vektor
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.NOTASI_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Vektor dari titik A ke B
+  - type: text
+    slide: 0
+    text: "Vektor **AB = B − A**: kurangkan koordinat ujung dengan pangkal. Contoh: A(1, 2), B(4, 6) ⇒ AB = (3, 4)."
+  - type: math
+    slide: 0
+    name: AB
+    expression: B − A
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Tiga cara menulis
+  - type: text
+    slide: 1
+    text: Bentuk kolom/baris (3, 4), bentuk basis **3i + 4j**, atau huruf tebal **a**. Semuanya menyatakan vektor yang sama.
+  - type: math
+    slide: 1
+    name: (x, y)
+    expression: xi + yj
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Ujung dikurangi pangkal, bukan sebaliknya: BA = A − B = −AB."
+checks:
+  - question: MAT.VEK.Q.NOTASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.NOTASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

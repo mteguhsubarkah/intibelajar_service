@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.EKS.L.DEFINISI_EKSPONEN
+title: Definisi Eksponen
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.DEFINISI_EKSPONEN
+blocks:
+  - type: heading
+    slide: 0
+    text: Pangkat = perkalian berulang
+  - type: text
+    slide: 0
+    text: "**aⁿ** berarti a dikalikan dengan dirinya sendiri sebanyak **n faktor**. a disebut basis, n disebut pangkat."
+  - type: text
+    slide: 0
+    text: "Contoh: 2⁵ = 2 × 2 × 2 × 2 × 2 = 32. Bukan 2 × 5."
+  - type: math
+    slide: 0
+    name: aⁿ
+    expression: a × a × … × a (n faktor)
+    highlight: true
+  - type: math
+    slide: 0
+    name: 2⁵
+    expression: "32"
+  - type: heading
+    slide: 1
+    text: Pangkat nol dan negatif
+  - type: text
+    slide: 1
+    text: "Untuk a ≠ 0, **a⁰ = 1**. Pangkat negatif berarti kebalikan: **a⁻ⁿ = 1/aⁿ**."
+  - type: text
+    slide: 1
+    text: "Contoh: 2⁻³ = 1/2³ = 1/8."
+  - type: math
+    slide: 1
+    name: a⁰
+    expression: "1"
+    highlight: true
+  - type: math
+    slide: 1
+    name: a⁻ⁿ
+    expression: 1/aⁿ
+  - type: tip
+    slide: 1
+    text: "Perhatikan tanda kurung: (−2)⁴ = 16, tetapi −2⁴ = −16."
+checks:
+  - question: MAT.EKS.Q.DEFINISI_EKSPONEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.DEFINISI_EKSPONEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

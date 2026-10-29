@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.CP25.F.PELUANG.Q.MAJEMUK_2
+familyCode: MAT.CP25.F.PELUANG.F.MAJEMUK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah dadu dilempar 120 kali. Frekuensi harapan muncul mata dadu bilangan prima adalah …
+  options:
+    - id: a
+      label: 20 kali
+    - id: b
+      label: 40 kali
+    - id: c
+      label: 60 kali
+    - id: d
+      label: 80 kali
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 60 kali
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+  feedback:
+    correct: "Mata prima: 2, 3, 5, peluangnya 3/6 = 1/2. Fₕ = 120 × 1/2 = 60."
+    incorrect: "Jawabannya 60 kali. Mata prima: 2, 3, 5, peluangnya 3/6 = 1/2. Fₕ = 120 × 1/2 = 60."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

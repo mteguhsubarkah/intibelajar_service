@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.MODEL_2
+familyCode: MAT.KUA.F.MODEL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.PEMODELAN_KUADRAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Keliling sebuah persegi panjang 40 cm. Luas maksimum persegi panjang itu adalah …
+  options:
+    - id: a
+      label: 96 cm²
+    - id: b
+      label: 100 cm²
+    - id: c
+      label: 400 cm²
+    - id: d
+      label: 80 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 100 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.PEMODELAN_KUADRAT
+  feedback:
+    correct: L = p(20 − p) maksimum saat p = 10, sehingga L = 10 × 10 = 100 cm².
+    incorrect: Jawabannya 100 cm². L = p(20 − p) maksimum saat p = 10, sehingga L = 10 × 10 = 100 cm².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

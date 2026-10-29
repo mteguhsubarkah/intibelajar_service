@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.L.RUMUS_KIMIA
+title: Rumus kimia
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.ATOM.RUMUS_KIMIA
+blocks:
+  - type: heading
+    slide: 0
+    text: Rumus senyawa ion
+  - type: text
+    slide: 0
+    text: Jumlah muatan positif dan negatif harus **nol**. Silangkan angka muatan sebagai indeks.
+  - type: text
+    slide: 0
+    text: "Contoh: Al³⁺ dan O²⁻ ⇒ Al₂O₃ (2 × 3 = 6 dan 3 × 2 = 6)."
+  - type: math
+    slide: 0
+    name: Al³⁺ + O²⁻
+    expression: Al₂O₃
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Rumus molekul dan rumus empiris
+  - type: text
+    slide: 1
+    text: "**Rumus molekul** menyatakan jumlah atom sebenarnya. **Rumus empiris** adalah perbandingan paling sederhana."
+  - type: text
+    slide: 1
+    text: "Contoh: glukosa C₆H₁₂O₆ memiliki rumus empiris CH₂O."
+  - type: math
+    slide: 1
+    name: C₆H₁₂O₆
+    expression: empiris CH₂O
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bagi semua indeks dengan FPB-nya untuk mendapat rumus empiris.
+checks:
+  - question: KIM.C26.E.ATOM.Q.RUMUS_KIMIA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.ATOM.S.RUMUS_KIMIA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

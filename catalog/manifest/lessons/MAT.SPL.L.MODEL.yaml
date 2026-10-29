@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.SPL.L.MODEL
+title: Variabel & model kendala
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.SPL.VARIABEL_DAN_MODEL_KENDALA
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari cerita ke model
+  - type: text
+    slide: 0
+    text: Tentukan variabel (x dan y), tulis setiap batasan sebagai pertidaksamaan, dan tulis **fungsi objektif** yang dimaksimumkan atau diminimumkan.
+  - type: text
+    slide: 0
+    text: "Contoh: tiket dewasa Rp10.000 dan anak Rp5.000, uang paling banyak Rp200.000 ⇒ 10.000x + 5.000y ≤ 200.000 ⇒ 2x + y ≤ 40."
+  - type: math
+    slide: 0
+    name: kendala
+    expression: 2x + y ≤ 40
+    highlight: true
+  - type: math
+    slide: 0
+    name: objektif
+    expression: f(x, y) = px + qy
+  - type: heading
+    slide: 1
+    text: Uji titik pojok
+  - type: text
+    slide: 1
+    text: Nilai optimum fungsi objektif selalu terjadi di **titik pojok** daerah penyelesaian. Hitung f di setiap titik pojok, lalu bandingkan.
+  - type: math
+    slide: 1
+    name: optimum
+    expression: di titik pojok
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sederhanakan kendala dengan membagi angka yang sama supaya titik potong mudah dicari.
+checks:
+  - question: MAT.SPL.Q.MODEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.SPL.S.MODEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.Q.DOMAIN_2
+familyCode: MAT.INV.F.DOMAIN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Range fungsi f(x) = x² + 1 untuk x bilangan real adalah …
+  options:
+    - id: a
+      label: y ≥ 0
+    - id: b
+      label: y ≥ 1
+    - id: c
+      label: y ≤ 1
+    - id: d
+      label: semua bilangan real
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - y ≥ 1
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE
+  feedback:
+    correct: "x² paling kecil 0, jadi f(x) paling kecil 1: range y ≥ 1."
+    incorrect: "Jawabannya y ≥ 1. x² paling kecil 0, jadi f(x) paling kecil 1: range y ≥ 1."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

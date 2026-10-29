@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.TRANSPORT_2
+familyCode: BIO.C26.F.SEL.F.TRANSPORT_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.TRANSPORT_MEMBRAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Perbedaan transpor aktif dengan difusi adalah transpor aktif …
+  options:
+    - id: a
+      label: tidak memerlukan energi
+    - id: b
+      label: memerlukan ATP dan dapat melawan gradien konsentrasi
+    - id: c
+      label: hanya memindahkan air
+    - id: d
+      label: hanya terjadi pada tumbuhan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - memerlukan ATP dan dapat melawan gradien konsentrasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.TRANSPORT_MEMBRAN
+  feedback:
+    correct: Transpor aktif memakai energi ATP untuk memindahkan zat dari konsentrasi rendah ke tinggi.
+    incorrect: Jawabannya memerlukan ATP dan dapat melawan gradien konsentrasi. Transpor aktif memakai energi ATP untuk memindahkan zat dari konsentrasi rendah ke tinggi.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

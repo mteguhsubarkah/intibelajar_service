@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.ENZIM_DAN_METABOLISME_2
+familyCode: BIO.C26.F.SEL.F.ENZIM_DAN_METABOLISME_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.ENZIM_DAN_METABOLISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Amilase dapat menguraikan amilum tetapi tidak dapat menguraikan protein. Hal ini menunjukkan sifat enzim yang …
+  options:
+    - id: a
+      label: bekerja bolak-balik
+    - id: b
+      label: bekerja secara spesifik
+    - id: c
+      label: tidak tahan panas
+    - id: d
+      label: diperlukan dalam jumlah sedikit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - bekerja secara spesifik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.ENZIM_DAN_METABOLISME
+  feedback:
+    correct: "Enzim hanya bekerja pada substrat yang bentuknya cocok dengan sisi aktifnya: spesifik."
+    incorrect: "Jawabannya bekerja secara spesifik. Enzim hanya bekerja pada substrat yang bentuknya cocok dengan sisi aktifnya: spesifik."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

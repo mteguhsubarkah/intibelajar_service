@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.L.NERACA
+title: Neraca kebutuhan energi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
+blocks:
+  - type: heading
+    slide: 0
+    text: Energi listrik di rumah
+  - type: text
+    slide: 0
+    text: "Energi = daya × waktu: **W = P · t**. Dalam tagihan listrik dipakai satuan **kWh** (1 kWh = 1.000 W × 1 jam)."
+  - type: text
+    slide: 0
+    text: "Contoh: 4 lampu 10 W menyala 10 jam = 400 Wh = 0,4 kWh."
+  - type: math
+    slide: 0
+    name: W
+    expression: P · t
+    highlight: true
+  - type: math
+    slide: 0
+    name: 1 kWh
+    expression: 1.000 W × 1 jam
+  - type: heading
+    slide: 1
+    text: Menghitung biaya
+  - type: text
+    slide: 1
+    text: Biaya = energi (kWh) × tarif per kWh.
+  - type: text
+    slide: 1
+    text: "Contoh: setrika 400 W, 30 menit sehari, 30 hari ⇒ 0,4 × 0,5 × 30 = 6 kWh. Dengan tarif Rp1.500/kWh ⇒ Rp9.000."
+  - type: math
+    slide: 1
+    name: biaya
+    expression: kWh × tarif
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ubah watt ke kilowatt dan menit ke jam sebelum mengalikan.
+checks:
+  - question: FIS.C26.E.ENERGI.Q.NERACA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.ENERGI.S.NERACA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

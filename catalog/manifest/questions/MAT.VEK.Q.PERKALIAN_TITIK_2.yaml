@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.PERKALIAN_TITIK_2
+familyCode: MAT.VEK.F.PERKALIAN_TITIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.PERKALIAN_TITIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui |a| = 4, |b| = 3, dan sudut antara a dan b adalah 60°. Nilai a · b adalah …
+  options:
+    - id: a
+      label: "6"
+    - id: b
+      label: 6√3
+    - id: c
+      label: "12"
+    - id: d
+      label: "3"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "6"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.PERKALIAN_TITIK
+  feedback:
+    correct: a · b = 4 × 3 × cos 60° = 12 × ½ = 6.
+    incorrect: Jawabannya 6. a · b = 4 × 3 × cos 60° = 12 × ½ = 6.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

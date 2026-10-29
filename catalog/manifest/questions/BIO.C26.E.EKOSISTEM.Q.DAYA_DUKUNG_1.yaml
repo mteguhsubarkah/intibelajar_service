@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_1
+familyCode: BIO.C26.E.EKOSISTEM.F.DAYA_DUKUNG_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Populasi rusa di sebuah pulau meningkat pesat lalu stabil pada jumlah tertentu. Jumlah maksimum yang dapat didukung lingkungan itu disebut …
+  options:
+    - id: a
+      label: densitas
+    - id: b
+      label: daya dukung
+    - id: c
+      label: natalitas
+    - id: d
+      label: mortalitas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - daya dukung
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+  feedback:
+    correct: Daya dukung adalah jumlah populasi maksimum yang dapat dipertahankan oleh sumber daya lingkungan.
+    incorrect: Jawabannya daya dukung. Daya dukung adalah jumlah populasi maksimum yang dapat dipertahankan oleh sumber daya lingkungan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.L.IDENTIFIKASI
+title: Kunci determinasi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Klasifikasi dan nama ilmiah
+  - type: text
+    slide: 0
+    text: "Urutan takson: **kingdom – filum – kelas – ordo – famili – genus – spesies**. Makin rendah takson, makin banyak persamaan ciri."
+  - type: text
+    slide: 0
+    text: "Nama ilmiah (binomial nomenklatur): **Genus** huruf besar, **spesies** huruf kecil, dicetak miring. Contoh: *Oryza sativa* (padi)."
+  - type: math
+    slide: 0
+    name: binomial
+    expression: Genus spesies
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kunci dikotom
+  - type: text
+    slide: 1
+    text: Kunci determinasi berisi **pasangan ciri yang berlawanan**. Ikuti nomor yang sesuai sampai menemukan nama organisme.
+  - type: text
+    slide: 1
+    text: "Contoh: 1a bersayap → 2; 1b tidak bersayap → laba-laba. 2a sayap bersisik → kupu-kupu; 2b sayap tidak bersisik → lalat."
+  - type: math
+    slide: 1
+    name: dikotom
+    expression: dua pilihan berlawanan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Baca setiap pasangan sampai habis sebelum memilih.
+checks:
+  - question: BIO.C26.E.BIODIVERSITAS.Q.IDENTIFIKASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.BIODIVERSITAS.S.IDENTIFIKASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

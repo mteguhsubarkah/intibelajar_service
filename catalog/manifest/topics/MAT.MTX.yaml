@@ -2,13 +2,125 @@ schemaVersion: 1
 code: MAT.MTX
 subject: MAT
 title: Matriks
-subtitle: Kelas XI–XII
+subtitle: Operasi, determinan, invers, transformasi
 phase: F
-availability: PLANNED
-bekal: []
+availability: MAPPED
+bekal:
+  - sistem persamaan linear
+  - koordinat Kartesius
 aliases:
   - ns: TOPIC
     value: matriks
 units: []
-concepts: []
-prerequisites: []
+concepts:
+  - code: MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN
+    title: Elemen, ordo & kesamaan
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-mtx-ordo
+  - code: MAT.MTX.JENIS_MATRIKS_DAN_TRANSPOSE
+    title: Jenis matriks & transpose
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-mtx-transpose
+  - code: MAT.MTX.PENJUMLAHAN_DAN_SKALAR
+    title: Penjumlahan & skalar
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-mtx-operasi
+  - code: MAT.MTX.PERKALIAN_MATRIKS
+    title: Perkalian matriks
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-mtx-kali
+  - code: MAT.MTX.DETERMINAN_MATRIKS_2_2
+    title: Determinan matriks 2×2
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-mtx-determinan
+  - code: MAT.MTX.INVERS_MATRIKS_2_2
+    title: Invers matriks 2×2
+    objectives: []
+    misconceptions: []
+    ordinal: 6
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-mtx-invers
+  - code: MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI
+    title: Matriks transformasi geometri
+    objectives: []
+    misconceptions: []
+    ordinal: 7
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-mtx-transformasi
+prerequisites:
+  - concept: MAT.MTX.JENIS_MATRIKS_DAN_TRANSPOSE
+    requires: MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN
+    kind: SOFT
+  - concept: MAT.MTX.PENJUMLAHAN_DAN_SKALAR
+    requires: MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN
+    kind: SOFT
+  - concept: MAT.MTX.PERKALIAN_MATRIKS
+    requires: MAT.MTX.PENJUMLAHAN_DAN_SKALAR
+    kind: SOFT
+  - concept: MAT.MTX.DETERMINAN_MATRIKS_2_2
+    requires: MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN
+    kind: SOFT
+  - concept: MAT.MTX.INVERS_MATRIKS_2_2
+    requires: MAT.MTX.DETERMINAN_MATRIKS_2_2
+    kind: SOFT
+  - concept: MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI
+    requires: MAT.MTX.PERKALIAN_MATRIKS
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

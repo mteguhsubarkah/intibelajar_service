@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SOAL_KONTEKSTUAL_1
+familyCode: MAT.EKS.F.SOAL_KONTEKSTUAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SOAL_KONTEKSTUAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penduduk sebuah kota 100.000 jiwa dan bertambah 2% setiap tahun. Model jumlah penduduk setelah t tahun adalah …
+  options:
+    - id: a
+      label: 100.000 · (1,02)ᵗ
+    - id: b
+      label: 100.000 · (0,02)ᵗ
+    - id: c
+      label: 100.000 + 2t
+    - id: d
+      label: 100.000 · (1,2)ᵗ
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 100.000 · (1,02)ᵗ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SOAL_KONTEKSTUAL
+  feedback:
+    correct: Naik 2% berarti dikali 1,02 setiap tahun, sehingga P(t) = 100.000 · (1,02)ᵗ.
+    incorrect: Jawabannya 100.000 · (1,02)ᵗ. Naik 2% berarti dikali 1,02 setiap tahun, sehingga P(t) = 100.000 · (1,02)ᵗ.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

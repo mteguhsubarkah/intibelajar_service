@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.EKS.L.SOAL_KONTEKSTUAL
+title: Soal Kontekstual Eksponen
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.EKS.SOAL_KONTEKSTUAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari cerita ke model
+  - type: text
+    slide: 0
+    text: "Cari tiga hal: **nilai awal**, **faktor pengali per periode** (naik r% berarti × (1 + r), turun r% berarti × (1 − r)), dan **banyak periode**."
+  - type: text
+    slide: 0
+    text: "Contoh: 100.000 penduduk tumbuh 2% per tahun ⇒ P(t) = 100.000 · (1,02)ᵗ."
+  - type: math
+    slide: 0
+    name: naik r%
+    expression: × (1 + r)
+    highlight: true
+  - type: math
+    slide: 0
+    name: turun r%
+    expression: × (1 − r)
+  - type: heading
+    slide: 1
+    text: Mencari waktu
+  - type: text
+    slide: 1
+    text: Jika yang ditanya lamanya waktu, samakan basis atau pakai logaritma.
+  - type: text
+    slide: 1
+    text: "Contoh: populasi menjadi 3 kali tiap 4 tahun; menjadi 9 = 3² kali berarti 2 periode, yaitu 8 tahun."
+  - type: math
+    slide: 1
+    name: 3^(t/4) = 9
+    expression: t = 8
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tulis modelnya dulu sebelum menghitung; jawaban sering cukup dibaca dari model.
+checks:
+  - question: MAT.EKS.Q.SOAL_KONTEKSTUAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.SOAL_KONTEKSTUAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

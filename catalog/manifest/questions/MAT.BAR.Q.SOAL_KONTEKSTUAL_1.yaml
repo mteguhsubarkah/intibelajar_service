@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.SOAL_KONTEKSTUAL_1
+familyCode: MAT.BAR.F.SOAL_KONTEKSTUAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.SOAL_KONTEKSTUAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gaji seorang karyawan pada tahun pertama Rp36 juta dan naik Rp2 juta setiap tahun. Total gaji yang diterimanya selama 10 tahun adalah …
+  options:
+    - id: a
+      label: Rp360 juta
+    - id: b
+      label: Rp400 juta
+    - id: c
+      label: Rp450 juta
+    - id: d
+      label: Rp540 juta
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - Rp450 juta
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.SOAL_KONTEKSTUAL
+  feedback:
+    correct: S₁₀ = 10/2 × (2 × 36 + 9 × 2) = 5 × 90 = 450 juta.
+    incorrect: Jawabannya Rp450 juta. S₁₀ = 10/2 × (2 × 36 + 9 × 2) = 5 × 90 = 450 juta.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

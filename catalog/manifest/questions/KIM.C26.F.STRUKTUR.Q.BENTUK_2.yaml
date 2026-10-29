@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.BENTUK_2
+familyCode: KIM.C26.F.STRUKTUR.F.BENTUK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Molekul H₂O bersifat polar karena …
+  options:
+    - id: a
+      label: bentuknya linear
+    - id: b
+      label: bentuknya V sehingga momen dipol tidak saling meniadakan
+    - id: c
+      label: tidak memiliki pasangan elektron bebas
+    - id: d
+      label: merupakan senyawa ion
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - bentuknya V sehingga momen dipol tidak saling meniadakan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+  feedback:
+    correct: Dua PEB pada O membuat molekul berbentuk V, sehingga dipolnya tidak saling meniadakan.
+    incorrect: Jawabannya bentuknya V sehingga momen dipol tidak saling meniadakan. Dua PEB pada O membuat molekul berbentuk V, sehingga dipolnya tidak saling meniadakan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

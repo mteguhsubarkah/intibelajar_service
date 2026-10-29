@@ -1,0 +1,66 @@
+schemaVersion: 1
+code: MAT.CP25.F.LINGKARAN
+subject: MAT
+title: Hubungan Unsur Lingkaran
+subtitle: Sudut pusat, sudut keliling, garis singgung
+phase: F
+availability: MAPPED
+bekal:
+  - keliling dan luas lingkaran
+  - Teorema Pythagoras
+aliases:
+  - ns: TOPIC
+    value: lingkaran
+units: []
+concepts:
+  - code: MAT.CP25.F.LINGKARAN.UNSUR_DAN_SUDUT_LINGKARAN
+    title: Unsur & sudut lingkaran
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-f-lingkaran-unsur
+  - code: MAT.CP25.F.LINGKARAN.HUBUNGAN_SUDUT_DAN_BUSUR
+    title: Hubungan sudut dan busur
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-f-lingkaran-hubungan
+  - code: MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN
+    title: Masalah geometri lingkaran
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-f-lingkaran-masalah
+prerequisites:
+  - concept: MAT.CP25.F.LINGKARAN.HUBUNGAN_SUDUT_DAN_BUSUR
+    requires: MAT.CP25.F.LINGKARAN.UNSUR_DAN_SUDUT_LINGKARAN
+    kind: SOFT
+  - concept: MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN
+    requires: MAT.CP25.F.LINGKARAN.HUBUNGAN_SUDUT_DAN_BUSUR
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

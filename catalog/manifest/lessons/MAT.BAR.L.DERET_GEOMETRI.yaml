@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.BAR.L.DERET_GEOMETRI
+title: Deret Geometri
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BAR.DERET_GEOMETRI
+blocks:
+  - type: heading
+    slide: 0
+    text: Jumlah n suku geometri
+  - type: text
+    slide: 0
+    text: "**Sₙ = a(rⁿ − 1)/(r − 1)** untuk r > 1, atau **Sₙ = a(1 − rⁿ)/(1 − r)** untuk r < 1."
+  - type: text
+    slide: 0
+    text: "Contoh: 1 + 2 + 4 + … + 2⁹ = (2¹⁰ − 1)/(2 − 1) = 1.023."
+  - type: math
+    slide: 0
+    name: Sₙ (r > 1)
+    expression: a(rⁿ − 1)/(r − 1)
+    highlight: true
+  - type: math
+    slide: 0
+    name: Sₙ (r < 1)
+    expression: a(1 − rⁿ)/(1 − r)
+  - type: heading
+    slide: 1
+    text: Pilih bentuk yang nyaman
+  - type: text
+    slide: 1
+    text: Kedua bentuk memberi hasil sama; pilih yang penyebutnya positif agar tidak keliru tanda.
+  - type: text
+    slide: 1
+    text: "Contoh: 64 + 32 + 16 + 8 + 4 = 64(1 − (1/2)⁵)/(1/2) = 124."
+  - type: math
+    slide: 1
+    name: 64 + 32 + … (5 suku)
+    expression: "124"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Untuk sedikit suku, menjumlah langsung juga sah dan cepat.
+checks:
+  - question: MAT.BAR.Q.DERET_GEOMETRI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.DERET_GEOMETRI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

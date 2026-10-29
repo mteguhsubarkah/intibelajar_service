@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_2
+familyCode: BIO.C26.E.EKOSISTEM.F.DAYA_DUKUNG_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada rantai makanan padi → tikus → ular → elang, elang diburu hingga habis. Dampak yang paling cepat terjadi adalah populasi ular …
+  options:
+    - id: a
+      label: meningkat
+    - id: b
+      label: menurun
+    - id: c
+      label: tetap
+    - id: d
+      label: punah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - meningkat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+  feedback:
+    correct: Elang adalah pemangsa ular. Tanpa elang, ular tidak lagi dimangsa sehingga populasinya meningkat.
+    incorrect: Jawabannya meningkat. Elang adalah pemangsa ular. Tanpa elang, ular tidak lagi dimangsa sehingga populasinya meningkat.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

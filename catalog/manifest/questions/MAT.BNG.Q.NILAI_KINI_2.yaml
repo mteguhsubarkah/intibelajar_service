@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BNG.Q.NILAI_KINI_2
+familyCode: MAT.BNG.F.NILAI_KINI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BNG.NILAI_KINI_DAN_MENDATANG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai mendatang uang Rp4.000.000 dengan bunga majemuk 5% per tahun selama 2 tahun adalah …
+  options:
+    - id: a
+      label: Rp4.400.000
+    - id: b
+      label: Rp4.410.000
+    - id: c
+      label: Rp4.200.000
+    - id: d
+      label: Rp4.420.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp4.410.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BNG.NILAI_KINI_DAN_MENDATANG
+  feedback:
+    correct: 4.000.000 × 1,05² = 4.000.000 × 1,1025 = Rp4.410.000.
+    incorrect: Jawabannya Rp4.410.000. 4.000.000 × 1,05² = 4.000.000 × 1,1025 = Rp4.410.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

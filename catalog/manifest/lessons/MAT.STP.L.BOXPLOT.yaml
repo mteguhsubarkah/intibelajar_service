@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.STP.L.BOXPLOT
+title: Membaca box plot
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.STP.MEMBACA_BOX_PLOT
+blocks:
+  - type: heading
+    slide: 0
+    text: Lima angka ringkasan
+  - type: text
+    slide: 0
+    text: Box plot menampilkan **minimum, Q₁, median, Q₃, maksimum**. Kotak = Q₁ sampai Q₃, garis di dalam kotak = median.
+  - type: math
+    slide: 0
+    name: kotak
+    expression: Q₁ sampai Q₃
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pencilan
+  - type: text
+    slide: 1
+    text: Nilai disebut **pencilan** jika kurang dari Q₁ − 1,5·IQR atau lebih dari Q₃ + 1,5·IQR.
+  - type: text
+    slide: 1
+    text: "Contoh: Q₁ = 20, Q₃ = 30 ⇒ IQR = 10 ⇒ batas atas 45."
+  - type: math
+    slide: 1
+    name: batas atas
+    expression: Q₃ + 1,5 · IQR
+    highlight: true
+  - type: math
+    slide: 1
+    name: batas bawah
+    expression: Q₁ − 1,5 · IQR
+  - type: tip
+    slide: 1
+    text: Panjang kotak = IQR, bukan jangkauan seluruh data.
+checks:
+  - question: MAT.STP.Q.BOXPLOT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.STP.S.BOXPLOT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

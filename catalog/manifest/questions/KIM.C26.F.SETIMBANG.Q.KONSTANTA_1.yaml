@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.KONSTANTA_1
+familyCode: KIM.C26.F.SETIMBANG.F.KONSTANTA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rumus Kc untuk reaksi 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) adalah …
+  options:
+    - id: a
+      label: "[SO₃]² / ([SO₂]²[O₂])"
+    - id: b
+      label: "[SO₂]²[O₂] / [SO₃]²"
+    - id: c
+      label: "[SO₃] / ([SO₂][O₂])"
+    - id: d
+      label: 2[SO₃] / (2[SO₂] + [O₂])
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "[SO₃]² / ([SO₂]²[O₂])"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN
+  feedback:
+    correct: Produk di pembilang, pereaksi di penyebut, masing-masing dipangkatkan koefisiennya.
+    incorrect: Jawabannya [SO₃]² / ([SO₂]²[O₂]). Produk di pembilang, pereaksi di penyebut, masing-masing dipangkatkan koefisiennya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

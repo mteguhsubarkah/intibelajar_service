@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON.Q.POLIMER_2
+familyCode: KIM.C26.F.KARBON.F.POLIMER_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KARBON.POLIMERISASI_DAN_STRUKTUR_BAHAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ciri polimerisasi kondensasi adalah …
+  options:
+    - id: a
+      label: monomer memiliki ikatan rangkap
+    - id: b
+      label: terlepas molekul kecil seperti H₂O
+    - id: c
+      label: tidak ada zat lain yang terbentuk
+    - id: d
+      label: hanya terjadi pada plastik
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - terlepas molekul kecil seperti H₂O
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KARBON.POLIMERISASI_DAN_STRUKTUR_BAHAN
+  feedback:
+    correct: Pada kondensasi, setiap ikatan baru melepas molekul kecil seperti air.
+    incorrect: Jawabannya terlepas molekul kecil seperti H₂O. Pada kondensasi, setiap ikatan baru melepas molekul kecil seperti air.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

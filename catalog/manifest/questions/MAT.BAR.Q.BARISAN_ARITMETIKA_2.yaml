@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.BARISAN_ARITMETIKA_2
+familyCode: MAT.BAR.F.BARISAN_ARITMETIKA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.BARISAN_ARITMETIKA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suku ke-15 dari barisan 5, 9, 13, … adalah …
+  options:
+    - id: a
+      label: "57"
+    - id: b
+      label: "61"
+    - id: c
+      label: "65"
+    - id: d
+      label: "60"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "61"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.BARISAN_ARITMETIKA
+  feedback:
+    correct: a = 5, b = 4, U₁₅ = 5 + 14 × 4 = 61.
+    incorrect: Jawabannya 61. a = 5, b = 4, U₁₅ = 5 + 14 × 4 = 61.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

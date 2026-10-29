@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.Q.NERACA_2
+familyCode: FIS.C26.E.ENERGI.F.NERACA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Setrika 400 W dipakai 30 menit setiap hari selama 30 hari. Jika tarif listrik Rp1.500 per kWh, biaya pemakaian setrika adalah …
+  options:
+    - id: a
+      label: Rp6.000
+    - id: b
+      label: Rp9.000
+    - id: c
+      label: Rp18.000
+    - id: d
+      label: Rp90.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp9.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
+  feedback:
+    correct: 0,4 kW × 0,5 jam × 30 hari = 6 kWh. Biaya = 6 × 1.500 = Rp9.000.
+    incorrect: Jawabannya Rp9.000. 0,4 kW × 0,5 jam × 30 hari = 6 kWh. Biaya = 6 × 1.500 = Rp9.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

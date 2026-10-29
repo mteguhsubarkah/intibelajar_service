@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SOAL_KONTEKSTUAL_2
+familyCode: MAT.EKS.F.SOAL_KONTEKSTUAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SOAL_KONTEKSTUAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Harga sebuah mobil Rp200 juta dan nilainya turun 10% setiap tahun. Nilai mobil setelah 2 tahun adalah …
+  options:
+    - id: a
+      label: Rp160 juta
+    - id: b
+      label: Rp162 juta
+    - id: c
+      label: Rp180 juta
+    - id: d
+      label: Rp164 juta
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp162 juta
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SOAL_KONTEKSTUAL
+  feedback:
+    correct: "Turun 10% berarti dikali 0,9 tiap tahun: 200 × 0,9² = 200 × 0,81 = 162 juta."
+    incorrect: "Jawabannya Rp162 juta. Turun 10% berarti dikali 0,9 tiap tahun: 200 × 0,9² = 200 × 0,81 = 162 juta."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

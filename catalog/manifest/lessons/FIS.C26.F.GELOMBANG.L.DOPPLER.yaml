@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.L.DOPPLER
+title: Efek Doppler
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+blocks:
+  - type: heading
+    slide: 0
+    text: Frekuensi berubah karena gerak
+  - type: text
+    slide: 0
+    text: Saat sumber bunyi dan pendengar saling mendekat, frekuensi yang terdengar **lebih tinggi**; saat menjauh, **lebih rendah**.
+  - type: text
+    slide: 0
+    text: "**fₚ = (v ± vₚ) / (v ∓ vₛ) · fₛ**."
+  - type: math
+    slide: 0
+    name: fₚ
+    expression: (v ± vₚ)/(v ∓ vₛ) · fₛ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Aturan tanda
+  - type: text
+    slide: 1
+    text: "Pembilang (pendengar): **+vₚ** jika pendengar mendekati sumber. Penyebut (sumber): **−vₛ** jika sumber mendekati pendengar."
+  - type: text
+    slide: 1
+    text: "Contoh: ambulans 680 Hz mendekat 20 m/s, v = 340 m/s ⇒ fₚ = 340/320 × 680 = 722,5 Hz."
+  - type: math
+    slide: 1
+    name: mendekat
+    expression: frekuensi naik
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Cek hasil: mendekat harus memberi frekuensi lebih besar dari sumber."
+checks:
+  - question: FIS.C26.F.GELOMBANG.Q.DOPPLER_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.GELOMBANG.S.DOPPLER
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

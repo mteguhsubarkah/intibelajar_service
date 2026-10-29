@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK.L.PCR
+title: Prinsip PCR
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.BIOTEK.PRINSIP_PCR
+blocks:
+  - type: heading
+    slide: 0
+    text: Memperbanyak DNA
+  - type: text
+    slide: 0
+    text: "**PCR (Polymerase Chain Reaction)** menggandakan DNA dalam siklus berulang: **denaturasi** (±94°C, untai terpisah) → **annealing** (±55°C, primer menempel) → **ekstensi** (±72°C, DNA polimerase tahan panas memperpanjang untai)."
+  - type: math
+    slide: 0
+    name: siklus PCR
+    expression: denaturasi → annealing → ekstensi
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pertumbuhan berlipat
+  - type: text
+    slide: 1
+    text: "Setiap siklus ideal **menggandakan** jumlah DNA: setelah n siklus ada **2ⁿ** kali lipat."
+  - type: text
+    slide: 1
+    text: "Contoh: 1 molekul setelah 5 siklus ⇒ 32 molekul. Dipakai untuk tes diagnosis penyakit dan forensik."
+  - type: math
+    slide: 1
+    name: jumlah DNA
+    expression: 2ⁿ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Enzim yang dipakai harus tahan panas (misalnya Taq polimerase).
+checks:
+  - question: BIO.C26.F.BIOTEK.Q.PCR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.BIOTEK.S.PCR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.HIDROLISIS_2
+familyCode: KIM.C26.F.SETIMBANG.F.HIDROLISIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Larutan berisi 0,1 mol CH₃COOH dan 0,1 mol CH₃COONa (Ka = 10⁻⁵). pH larutan tersebut adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "5"
+    - id: c
+      label: "7"
+    - id: d
+      label: "9"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "5"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+  feedback:
+    correct: "[H⁺] = 10⁻⁵ × 0,1/0,1 = 10⁻⁵, jadi pH = 5."
+    incorrect: Jawabannya 5. [H⁺] = 10⁻⁵ × 0,1/0,1 = 10⁻⁵, jadi pH = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

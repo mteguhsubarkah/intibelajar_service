@@ -2,13 +2,110 @@ schemaVersion: 1
 code: MAT.KAL
 subject: MAT
 title: Kalkulus Dasar
-subtitle: Pilihan
+subtitle: Turunan, optimasi, dan integral
 phase: F+
-availability: PLANNED
-bekal: []
+availability: MAPPED
+bekal:
+  - fungsi aljabar
+  - gradien garis
 aliases:
   - ns: TOPIC
     value: kalkulus
 units: []
-concepts: []
-prerequisites: []
+concepts:
+  - code: MAT.KAL.LAJU_PERUBAHAN_RATA_RATA
+    title: Laju perubahan rata-rata
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kal-rata-rata
+  - code: MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+    title: Turunan sbg laju sesaat
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kal-turunan
+  - code: MAT.KAL.ATURAN_TURUNAN_FUNGSI
+    title: Aturan turunan fungsi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kal-aturan
+  - code: MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+    title: Garis singgung & optimasi
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kal-optimasi
+  - code: MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+    title: Antiturunan & konstanta
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kal-antiturunan
+  - code: MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+    title: Integral tentu dan luas
+    objectives: []
+    misconceptions: []
+    ordinal: 6
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-kal-integral
+prerequisites:
+  - concept: MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+    requires: MAT.KAL.LAJU_PERUBAHAN_RATA_RATA
+    kind: SOFT
+  - concept: MAT.KAL.ATURAN_TURUNAN_FUNGSI
+    requires: MAT.KAL.TURUNAN_SBG_LAJU_SESAAT
+    kind: SOFT
+  - concept: MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+    requires: MAT.KAL.ATURAN_TURUNAN_FUNGSI
+    kind: SOFT
+  - concept: MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+    requires: MAT.KAL.ATURAN_TURUNAN_FUNGSI
+    kind: SOFT
+  - concept: MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+    requires: MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

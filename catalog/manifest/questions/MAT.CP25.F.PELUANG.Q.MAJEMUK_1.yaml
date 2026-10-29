@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.CP25.F.PELUANG.Q.MAJEMUK_1
+familyCode: MAT.CP25.F.PELUANG.F.MAJEMUK_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua dadu dilempar bersamaan. Peluang muncul jumlah mata 7 atau 11 adalah …
+  options:
+    - id: a
+      label: 1/6
+    - id: b
+      label: 2/9
+    - id: c
+      label: 1/18
+    - id: d
+      label: 7/36
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2/9
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+  feedback:
+    correct: "Jumlah 7: 6 pasangan, jumlah 11: 2 pasangan. Saling lepas: (6 + 2)/36 = 8/36 = 2/9."
+    incorrect: "Jawabannya 2/9. Jumlah 7: 6 pasangan, jumlah 11: 2 pasangan. Saling lepas: (6 + 2)/36 = 8/36 = 2/9."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.DERET_TAK_HINGGA_1
+familyCode: MAT.BAR.F.DERET_TAK_HINGGA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah deret tak hingga 12 + 6 + 3 + … adalah …
+  options:
+    - id: a
+      label: "21"
+    - id: b
+      label: "24"
+    - id: c
+      label: "36"
+    - id: d
+      label: tak terhingga
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "24"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+  feedback:
+    correct: "a = 12, r = 1/2: S∞ = 12/(1 − 1/2) = 24."
+    incorrect: "Jawabannya 24. a = 12, r = 1/2: S∞ = 12/(1 − 1/2) = 24."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

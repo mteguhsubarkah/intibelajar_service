@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.CP25.F.PELUANG.L.BERSYARAT
+title: Peluang bersyarat
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.CP25.F.PELUANG.PELUANG_BERSYARAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Peluang jika sudah diketahui sesuatu
+  - type: text
+    slide: 0
+    text: "**P(A | B) = P(A ∩ B) / P(B)**: peluang A jika B sudah pasti terjadi. Ruang sampelnya menyusut menjadi B."
+  - type: text
+    slide: 0
+    text: "Contoh: 15 siswa suka fisika, 10 di antaranya juga suka matematika ⇒ P(suka matematika | suka fisika) = 10/15 = 2/3."
+  - type: math
+    slide: 0
+    name: P(A | B)
+    expression: P(A ∩ B) / P(B)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Tanpa pengembalian
+  - type: text
+    slide: 1
+    text: Pada pengambilan **tanpa pengembalian**, peluang kedua bergantung pada hasil pertama.
+  - type: text
+    slide: 1
+    text: "Contoh: 5 merah dan 3 putih, ambil 2 berturut-turut ⇒ P(merah, merah) = 5/8 × 4/7 = 5/14."
+  - type: math
+    slide: 1
+    name: P(M₁ ∩ M₂)
+    expression: 5/8 × 4/7
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Setelah satu bola diambil, isi kantong berkurang satu.
+checks:
+  - question: MAT.CP25.F.PELUANG.Q.BERSYARAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.CP25.F.PELUANG.S.BERSYARAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

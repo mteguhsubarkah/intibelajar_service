@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.SOAL_KONTEKSTUAL_2
+familyCode: MAT.BAR.F.SOAL_KONTEKSTUAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.SOAL_KONTEKSTUAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Seutas tali dipotong menjadi 5 bagian yang panjangnya membentuk barisan geometri. Potongan terpendek 4 cm dan terpanjang 64 cm. Panjang tali semula adalah …
+  options:
+    - id: a
+      label: 120 cm
+    - id: b
+      label: 124 cm
+    - id: c
+      label: 128 cm
+    - id: d
+      label: 132 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 124 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.SOAL_KONTEKSTUAL
+  feedback:
+    correct: "r⁴ = 64/4 = 16, r = 2: 4 + 8 + 16 + 32 + 64 = 124 cm."
+    incorrect: "Jawabannya 124 cm. r⁴ = 64/4 = 16, r = 2: 4 + 8 + 16 + 32 + 64 = 124 cm."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

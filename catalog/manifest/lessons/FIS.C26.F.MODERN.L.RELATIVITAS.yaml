@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.L.RELATIVITAS
+title: Relativitas khusus
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
+blocks:
+  - type: heading
+    slide: 0
+    text: Faktor γ
+  - type: text
+    slide: 0
+    text: Benda yang bergerak mendekati kecepatan cahaya mengalami efek relativistik dengan faktor **γ = 1 / √(1 − v²/c²)**.
+  - type: text
+    slide: 0
+    text: Untuk v = 0,6c ⇒ γ = 1,25. Untuk v = 0,8c ⇒ γ = 5/3.
+  - type: math
+    slide: 0
+    name: γ
+    expression: 1 / √(1 − v²/c²)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Waktu memanjang, panjang memendek
+  - type: text
+    slide: 1
+    text: "**Dilatasi waktu**: Δt = γ · Δt₀ (jam yang bergerak tampak lambat). **Kontraksi panjang**: L = L₀ / γ."
+  - type: text
+    slide: 1
+    text: "Contoh: batang 5 m bergerak 0,8c ⇒ L = 5 × 0,6 = 3 m."
+  - type: math
+    slide: 1
+    name: Δt
+    expression: γ · Δt₀
+    highlight: true
+  - type: math
+    slide: 1
+    name: L
+    expression: L₀ / γ
+  - type: tip
+    slide: 1
+    text: Δt₀ dan L₀ adalah besaran yang diukur oleh pengamat yang diam terhadap benda.
+checks:
+  - question: FIS.C26.F.MODERN.Q.RELATIVITAS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MODERN.S.RELATIVITAS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.Q.INTI_1
+familyCode: FIS.C26.F.MODERN.F.INTI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suatu unsur radioaktif memiliki waktu paruh 2 jam. Setelah 6 jam, bagian yang tersisa adalah …
+  options:
+    - id: a
+      label: 1/3
+    - id: b
+      label: 1/4
+    - id: c
+      label: 1/6
+    - id: d
+      label: 1/8
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 1/8
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+  feedback:
+    correct: 6 jam = 3 waktu paruh, jadi tersisa (1/2)³ = 1/8.
+    incorrect: Jawabannya 1/8. 6 jam = 3 waktu paruh, jadi tersisa (1/2)³ = 1/8.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

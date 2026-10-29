@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.L.RESONANSI_DAN_OPTIK
+title: Resonansi dan optik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Pipa organa
+  - type: text
+    slide: 0
+    text: "Pipa **terbuka** (kedua ujung terbuka): fₙ = n · v / 2L. Pipa **tertutup**: f = (2n − 1) · v / 4L, hanya harmonik ganjil."
+  - type: text
+    slide: 0
+    text: "Contoh: pipa terbuka 50 cm, v = 340 m/s ⇒ nada dasar 340 Hz."
+  - type: math
+    slide: 0
+    name: terbuka
+    expression: f₁ = v / 2L
+    highlight: true
+  - type: math
+    slide: 0
+    name: tertutup
+    expression: f₁ = v / 4L
+  - type: heading
+    slide: 1
+    text: Lensa
+  - type: text
+    slide: 1
+    text: "Persamaan lensa: **1/f = 1/s + 1/s′**. Lensa cembung f positif. s′ positif berarti bayangan nyata di belakang lensa."
+  - type: text
+    slide: 1
+    text: "Contoh: s = 30 cm, f = 20 cm ⇒ s′ = 60 cm."
+  - type: math
+    slide: 1
+    name: 1/f
+    expression: 1/s + 1/s′
+    highlight: true
+  - type: math
+    slide: 1
+    name: perbesaran
+    expression: M = s′ / s
+  - type: tip
+    slide: 1
+    text: Pakai satuan yang sama (cm) untuk s, s′, dan f.
+checks:
+  - question: FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.GELOMBANG.S.RESONANSI_DAN_OPTIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

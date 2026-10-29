@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.L.ATOM_ION_DAN_MOLEKUL
+title: Atom, ion, dan molekul
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.ATOM.ATOM_ION_DAN_MOLEKUL
+blocks:
+  - type: heading
+    slide: 0
+    text: Tiga jenis partikel
+  - type: text
+    slide: 0
+    text: "**Atom** adalah partikel terkecil unsur dan netral. **Ion** adalah atom yang bermuatan karena melepas atau menerima elektron. **Molekul** adalah gabungan dua atom atau lebih."
+  - type: text
+    slide: 0
+    text: Melepas elektron ⇒ ion positif (**kation**), misalnya Na⁺. Menerima elektron ⇒ ion negatif (**anion**), misalnya Cl⁻.
+  - type: math
+    slide: 0
+    name: kation
+    expression: melepas elektron
+    highlight: true
+  - type: math
+    slide: 0
+    name: anion
+    expression: menerima elektron
+  - type: heading
+    slide: 1
+    text: Molekul unsur dan molekul senyawa
+  - type: text
+    slide: 1
+    text: "**Molekul unsur** tersusun atas atom sejenis (O₂, N₂). **Molekul senyawa** tersusun atas atom berbeda jenis (H₂O, CO₂)."
+  - type: math
+    slide: 1
+    name: O₂
+    expression: molekul unsur
+    highlight: true
+  - type: math
+    slide: 1
+    name: H₂O
+    expression: molekul senyawa
+  - type: tip
+    slide: 1
+    text: Logam seperti Fe ditulis sebagai atom, bukan molekul.
+checks:
+  - question: KIM.C26.E.ATOM.Q.ATOM_ION_DAN_MOLEKUL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.ATOM.S.ATOM_ION_DAN_MOLEKUL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

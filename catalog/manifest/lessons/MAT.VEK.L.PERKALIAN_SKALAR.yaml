@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.PERKALIAN_SKALAR
+title: Perkalian Skalar dengan Vektor
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.PERKALIAN_SKALAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Memperpanjang dan membalik
+  - type: text
+    slide: 0
+    text: "**k · a** mengalikan setiap komponen dengan k. Bila k > 0 arahnya tetap; bila k < 0 arahnya **berlawanan**."
+  - type: text
+    slide: 0
+    text: "Contoh: 3(2, −1) = (6, −3)."
+  - type: math
+    slide: 0
+    name: k · (x, y)
+    expression: (kx, ky)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kombinasi linear
+  - type: text
+    slide: 1
+    text: "Gabungkan perkalian skalar dan penjumlahan. Contoh: a = (1, 2), b = (3, −1) ⇒ 2a − 3b = (2, 4) − (9, −3) = (−7, 7)."
+  - type: math
+    slide: 1
+    name: 2a − 3b
+    expression: (−7, 7)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kalikan dulu, baru jumlahkan atau kurangkan.
+checks:
+  - question: MAT.VEK.Q.PERKALIAN_SKALAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.PERKALIAN_SKALAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

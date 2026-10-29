@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_2
+familyCode: FIS.C26.F.MEKANIKA.F.TORSI_DAN_KESEIMBANGAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Seorang anak bermassa 30 kg duduk 2 m dari poros jungkat-jungkit. Agar seimbang, anak bermassa 40 kg harus duduk pada jarak … dari poros di sisi lain.
+  options:
+    - id: a
+      label: 1 m
+    - id: b
+      label: 1,5 m
+    - id: c
+      label: 2 m
+    - id: d
+      label: 2,67 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 1,5 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN
+  feedback:
+    correct: "Στ = 0: 30 × 2 = 40 × x, jadi x = 1,5 m."
+    incorrect: "Jawabannya 1,5 m. Στ = 0: 30 × 2 = 40 × x, jadi x = 1,5 m."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

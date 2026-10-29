@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.KALI_3
+familyCode: MAT.MTX.F.KALI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.PERKALIAN_MATRIKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Matriks A berordo 2 × 3 dan B berordo 3 × 4. Ordo matriks AB adalah …
+  options:
+    - id: a
+      label: 3 × 3
+    - id: b
+      label: 2 × 4
+    - id: c
+      label: 4 × 2
+    - id: d
+      label: tidak terdefinisi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2 × 4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.PERKALIAN_MATRIKS
+  feedback:
+    correct: "(2 × 3)(3 × 4): angka tengah sama, hasilnya 2 × 4."
+    incorrect: "Jawabannya 2 × 4. (2 × 3)(3 × 4): angka tengah sama, hasilnya 2 × 4."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON.L.POLIMER
+title: Polimerisasi & struktur bahan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KARBON.POLIMERISASI_DAN_STRUKTUR_BAHAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Polimerisasi adisi
+  - type: text
+    slide: 0
+    text: Monomer dengan **ikatan rangkap** saling bergabung tanpa melepas zat lain.
+  - type: text
+    slide: 0
+    text: "Contoh: etena → **polietilena** (plastik kantong), vinil klorida → PVC."
+  - type: math
+    slide: 0
+    name: etena
+    expression: polietilena
+    highlight: true
+  - type: math
+    slide: 0
+    name: vinil klorida
+    expression: PVC
+  - type: heading
+    slide: 1
+    text: Polimerisasi kondensasi
+  - type: text
+    slide: 1
+    text: Monomer bergabung sambil **melepas molekul kecil** seperti H₂O.
+  - type: text
+    slide: 1
+    text: "Contoh: nilon, poliester, protein (dari asam amino), amilum (dari glukosa)."
+  - type: math
+    slide: 1
+    name: kondensasi
+    expression: melepas H₂O
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ada ikatan rangkap pada monomer ⇒ biasanya adisi.
+checks:
+  - question: KIM.C26.F.KARBON.Q.POLIMER_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KARBON.S.POLIMER
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

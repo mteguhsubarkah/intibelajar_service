@@ -1,0 +1,78 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN
+subject: FIS
+title: Fisika modern & teknologi digital
+subtitle: Kuantum, relativitas, inti, logika biner
+phase: F
+availability: MAPPED
+bekal:
+  - energi
+  - gelombang cahaya
+aliases:
+  - ns: TOPIC
+    value: fisika-modern
+units: []
+concepts:
+  - code: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
+    title: Kuantum dan inti atom
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-modern-c1
+  - code: FIS.C26.F.MODERN.REPRESENTASI_BINER_DAN_LOGIKA
+    title: Representasi biner & logika
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-modern-c2
+  - code: FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
+    title: Relativitas khusus
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-modern-relativitas
+  - code: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+    title: Peluruhan dan waktu paruh
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-modern-inti
+prerequisites:
+  - concept: FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
+    requires: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
+    kind: SOFT
+  - concept: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+    requires: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.L.ASAM_BASA_DAN_PH
+title: Asam-basa dan pH
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+blocks:
+  - type: heading
+    slide: 0
+    text: pH asam kuat dan basa kuat
+  - type: text
+    slide: 0
+    text: "**pH = −log [H⁺]**. Asam kuat: [H⁺] = valensi × M. Basa kuat: [OH⁻] = valensi × M, **pOH = −log [OH⁻]**, lalu **pH = 14 − pOH**."
+  - type: text
+    slide: 0
+    text: "Contoh: HCl 0,01 M ⇒ pH 2. NaOH 0,001 M ⇒ pOH 3 ⇒ pH 11."
+  - type: math
+    slide: 0
+    name: pH
+    expression: −log [H⁺]
+    highlight: true
+  - type: math
+    slide: 0
+    name: pH + pOH
+    expression: "14"
+  - type: heading
+    slide: 1
+    text: Asam bervalensi dua
+  - type: text
+    slide: 1
+    text: "H₂SO₄ melepas 2 H⁺: [H⁺] = 2 × M."
+  - type: text
+    slide: 1
+    text: "Contoh: H₂SO₄ 0,005 M ⇒ [H⁺] = 0,01 M ⇒ pH 2."
+  - type: math
+    slide: 1
+    name: H₂SO₄
+    expression: "[H⁺] = 2M"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: pH < 7 asam, pH = 7 netral, pH > 7 basa (pada 25°C).
+checks:
+  - question: KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.SETIMBANG.S.ASAM_BASA_DAN_PH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

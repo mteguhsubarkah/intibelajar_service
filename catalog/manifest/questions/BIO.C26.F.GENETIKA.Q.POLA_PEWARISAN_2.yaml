@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.Q.POLA_PEWARISAN_2
+familyCode: BIO.C26.F.GENETIKA.F.POLA_PEWARISAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GENETIKA.POLA_PEWARISAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persilangan dua individu bergenotipe BbKk × BbKk (dominan penuh) menghasilkan perbandingan fenotipe …
+  options:
+    - id: a
+      label: "3 : 1"
+    - id: b
+      label: "1 : 2 : 1"
+    - id: c
+      label: "9 : 3 : 3 : 1"
+    - id: d
+      label: "1 : 1 : 1 : 1"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "9 : 3 : 3 : 1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GENETIKA.POLA_PEWARISAN
+  feedback:
+    correct: "Persilangan dihibrid heterozigot menghasilkan fenotipe 9 : 3 : 3 : 1."
+    incorrect: "Jawabannya 9 : 3 : 3 : 1. Persilangan dihibrid heterozigot menghasilkan fenotipe 9 : 3 : 3 : 1."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

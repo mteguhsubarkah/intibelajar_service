@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.Q.DOPPLER_2
+familyCode: FIS.C26.F.GELOMBANG.F.DOPPLER_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ketika sumber bunyi bergerak menjauhi pendengar yang diam, frekuensi yang didengar …
+  options:
+    - id: a
+      label: lebih tinggi dari frekuensi sumber
+    - id: b
+      label: lebih rendah dari frekuensi sumber
+    - id: c
+      label: sama dengan frekuensi sumber
+    - id: d
+      label: menjadi nol
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - lebih rendah dari frekuensi sumber
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+  feedback:
+    correct: Saat menjauh, gelombang yang sampai ke pendengar lebih renggang, sehingga frekuensinya lebih rendah.
+    incorrect: Jawabannya lebih rendah dari frekuensi sumber. Saat menjauh, gelombang yang sampai ke pendengar lebih renggang, sehingga frekuensinya lebih rendah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

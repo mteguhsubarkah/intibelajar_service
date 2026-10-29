@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.STP.Q.KRITIS_1
+familyCode: MAT.STP.F.KRITIS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.STP.MENGEVALUASI_LAPORAN_DATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah survei kepuasan restoran hanya dilakukan pada pelanggan yang datang kembali. Kelemahan utama survei ini adalah …
+  options:
+    - id: a
+      label: jumlah responden terlalu banyak
+    - id: b
+      label: sampelnya bias karena hanya pelanggan yang puas cenderung kembali
+    - id: c
+      label: pertanyaannya terlalu sedikit
+    - id: d
+      label: tidak memakai diagram
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - sampelnya bias karena hanya pelanggan yang puas cenderung kembali
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.STP.MENGEVALUASI_LAPORAN_DATA
+  feedback:
+    correct: Pelanggan yang tidak puas jarang kembali, sehingga sampel tidak mewakili semua pelanggan.
+    incorrect: Jawabannya sampelnya bias karena hanya pelanggan yang puas cenderung kembali. Pelanggan yang tidak puas jarang kembali, sehingga sampel tidak mewakili semua pelanggan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

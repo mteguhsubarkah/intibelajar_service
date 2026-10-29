@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.L.MOL_DAN_MASSA_MOLAR
+title: Mol dan massa molar
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Mol sebagai jembatan
+  - type: text
+    slide: 0
+    text: "**Mol** menghubungkan massa, jumlah partikel, dan volume gas: **n = m / Mr**, **n = N / (6,02 × 10²³)**, dan pada STP **V = n × 22,4 L**."
+  - type: text
+    slide: 0
+    text: "Mr adalah jumlah Ar semua atom. Contoh: Mr H₂SO₄ = 2(1) + 32 + 4(16) = 98."
+  - type: math
+    slide: 0
+    name: n
+    expression: m / Mr
+    highlight: true
+  - type: math
+    slide: 0
+    name: V (STP)
+    expression: n × 22,4 L
+  - type: heading
+    slide: 1
+    text: Contoh cepat
+  - type: text
+    slide: 1
+    text: 9 g air (Mr = 18) = 0,5 mol. 0,25 mol CO₂ pada STP = 0,25 × 22,4 = 5,6 L.
+  - type: math
+    slide: 1
+    name: 9 g H₂O
+    expression: 0,5 mol
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ubah semua besaran ke mol dulu, baru ke besaran lain.
+checks:
+  - question: KIM.C26.E.STOIK.Q.MOL_DAN_MASSA_MOLAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.STOIK.S.MOL_DAN_MASSA_MOLAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

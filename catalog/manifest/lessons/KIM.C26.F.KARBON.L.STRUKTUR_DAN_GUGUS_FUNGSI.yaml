@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON.L.STRUKTUR_DAN_GUGUS_FUNGSI
+title: Struktur & gugus fungsi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Gugus fungsi menentukan sifat
+  - type: text
+    slide: 0
+    text: "**–OH** alkohol, **–O–** eter, **–CHO** aldehida, **–CO–** keton, **–COOH** asam karboksilat, **–COO–** ester."
+  - type: text
+    slide: 0
+    text: "Contoh: CH₃–CH₂–OH adalah etanol (alkohol)."
+  - type: math
+    slide: 0
+    name: –OH
+    expression: alkohol
+    highlight: true
+  - type: math
+    slide: 0
+    name: –COOH
+    expression: asam karboksilat
+  - type: heading
+    slide: 1
+    text: Penamaan alkana bercabang
+  - type: text
+    slide: 1
+    text: Pilih rantai terpanjang, beri nomor dari ujung terdekat cabang, sebut cabang dulu lalu nama rantai induk.
+  - type: text
+    slide: 1
+    text: "Contoh: CH₃–CH(CH₃)–CH₃ = 2-metilpropana."
+  - type: math
+    slide: 1
+    name: CH₃–CH(CH₃)–CH₃
+    expression: 2-metilpropana
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Alkana: CₙH₂ₙ₊₂, berakhiran -ana."
+checks:
+  - question: KIM.C26.F.KARBON.Q.STRUKTUR_DAN_GUGUS_FUNGSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KARBON.S.STRUKTUR_DAN_GUGUS_FUNGSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

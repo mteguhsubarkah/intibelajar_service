@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.L.SETARA
+title: Menyetarakan reaksi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Jumlah atom harus sama
+  - type: text
+    slide: 0
+    text: "Hukum kekekalan massa: jumlah setiap jenis atom di ruas kiri **sama** dengan di ruas kanan. Yang diubah hanya **koefisien**, bukan indeks rumus."
+  - type: math
+    slide: 0
+    name: kekekalan massa
+    expression: atom kiri = atom kanan
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Urutan menyetarakan
+  - type: text
+    slide: 1
+    text: Setarakan atom selain O dan H dulu, lalu H, terakhir O.
+  - type: text
+    slide: 1
+    text: "Contoh: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O (C: 3, H: 8, O: 10)."
+  - type: math
+    slide: 1
+    name: C₃H₈ + 5O₂
+    expression: 3CO₂ + 4H₂O
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hitung ulang semua atom setelah selesai.
+checks:
+  - question: KIM.C26.E.STOIK.Q.SETARA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.STOIK.S.SETARA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

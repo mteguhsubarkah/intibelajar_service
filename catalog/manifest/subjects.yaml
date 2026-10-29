@@ -8,19 +8,19 @@ subjects:
         value: matematika
   - code: FIS
     title: Fisika
-    availability: COMING_SOON
+    availability: AVAILABLE
     aliases:
       - ns: SUBJECT
         value: fisika
   - code: KIM
     title: Kimia
-    availability: COMING_SOON
+    availability: AVAILABLE
     aliases:
       - ns: SUBJECT
         value: kimia
   - code: BIO
     title: Biologi
-    availability: COMING_SOON
+    availability: AVAILABLE
     aliases:
       - ns: SUBJECT
         value: biologi

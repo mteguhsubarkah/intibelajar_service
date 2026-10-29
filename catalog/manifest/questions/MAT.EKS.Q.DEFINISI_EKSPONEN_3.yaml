@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.DEFINISI_EKSPONEN_3
+familyCode: MAT.EKS.F.DEFINISI_EKSPONEN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari (−2)⁴ − 2⁴ adalah …
+  options:
+    - id: a
+      label: "0"
+    - id: b
+      label: "32"
+    - id: c
+      label: −32
+    - id: d
+      label: "16"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "0"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.DEFINISI_EKSPONEN
+  feedback:
+    correct: (−2)⁴ = 16 karena tanda negatif ikut dipangkatkan, dan 2⁴ = 16. Selisihnya 0.
+    incorrect: Jawabannya 0. (−2)⁴ = 16 karena tanda negatif ikut dipangkatkan, dan 2⁴ = 16. Selisihnya 0.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

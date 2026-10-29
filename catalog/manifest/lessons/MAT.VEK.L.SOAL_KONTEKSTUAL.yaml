@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.L.SOAL_KONTEKSTUAL
+title: Soal Kontekstual Vektor
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.VEK.SOAL_KONTEKSTUAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Cerita jadi panah
+  - type: text
+    slide: 0
+    text: "Ubah setiap gerakan atau gaya menjadi vektor komponen: timur = +x, utara = +y. Lalu jumlahkan."
+  - type: text
+    slide: 0
+    text: "Contoh: 6 km ke timur lalu 8 km ke utara ⇒ (6, 8), jaraknya 10 km."
+  - type: math
+    slide: 0
+    name: timur
+    expression: +x
+    highlight: true
+  - type: math
+    slide: 0
+    name: utara
+    expression: +y
+  - type: heading
+    slide: 1
+    text: Besar resultan
+  - type: text
+    slide: 1
+    text: "Setelah menjumlah komponen, hitung panjangnya. Contoh: F₁ = (4, 3) N, F₂ = (2, 5) N ⇒ R = (6, 8) ⇒ |R| = 10 N."
+  - type: math
+    slide: 1
+    name: "|R|"
+    expression: √(Rx² + Ry²)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jarak (besar) berbeda dengan perpindahan (vektor); baca yang ditanya.
+checks:
+  - question: MAT.VEK.Q.SOAL_KONTEKSTUAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.SOAL_KONTEKSTUAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

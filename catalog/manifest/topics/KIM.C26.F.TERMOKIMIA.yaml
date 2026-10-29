@@ -1,0 +1,81 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA
+subject: KIM
+title: Termokimia dan laju reaksi
+subtitle: Entalpi, Hukum Hess, laju reaksi
+phase: F
+availability: MAPPED
+bekal:
+  - stoikiometri
+  - kalor
+aliases:
+  - ns: TOPIC
+    value: termokimia
+units: []
+concepts:
+  - code: KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+    title: Entalpi reaksi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-termokimia-c1
+  - code: KIM.C26.F.TERMOKIMIA.HUKUM_HESS
+    title: Hukum Hess
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-termokimia-hess
+  - code: KIM.C26.F.TERMOKIMIA.LAJU_DAN_ENERGI_AKTIVASI
+    title: Laju dan energi aktivasi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-termokimia-c2
+  - code: KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+    title: Hukum laju dari data
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-termokimia-laju
+prerequisites:
+  - concept: KIM.C26.F.TERMOKIMIA.HUKUM_HESS
+    requires: KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+    kind: SOFT
+  - concept: KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+    requires: KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+    kind: SOFT
+  - concept: KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+    requires: KIM.C26.F.TERMOKIMIA.LAJU_DAN_ENERGI_AKTIVASI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON.Q.ISOMER_1
+familyCode: KIM.C26.F.KARBON.F.ISOMER_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KARBON.ISOMER_DAN_GUGUS_FUNGSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Isomer fungsi dari 1-propanol (C₃H₈O) adalah …
+  options:
+    - id: a
+      label: propanal
+    - id: b
+      label: propanon
+    - id: c
+      label: metoksietana
+    - id: d
+      label: asam propanoat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - metoksietana
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KARBON.ISOMER_DAN_GUGUS_FUNGSI
+  feedback:
+    correct: Alkohol berisomer fungsi dengan eter. Metoksietana (CH₃–O–C₂H₅) juga C₃H₈O.
+    incorrect: Jawabannya metoksietana. Alkohol berisomer fungsi dengan eter. Metoksietana (CH₃–O–C₂H₅) juga C₃H₈O.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

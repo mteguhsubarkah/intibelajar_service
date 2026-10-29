@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.STRUKTUR_ELEKTRON_DAN_PERIODIK_2
+familyCode: KIM.C26.F.STRUKTUR.F.STRUKTUR_ELEKTRON_DAN_PERIODIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Unsur ₁₇Cl dalam tabel periodik terletak pada …
+  options:
+    - id: a
+      label: golongan VA, periode 3
+    - id: b
+      label: golongan VIIA, periode 3
+    - id: c
+      label: golongan VIIA, periode 2
+    - id: d
+      label: golongan IIIA, periode 3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - golongan VIIA, periode 3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+  feedback:
+    correct: "1s² 2s² 2p⁶ 3s² 3p⁵: kulit terbesar 3 (periode 3), elektron valensi 7 (golongan VIIA)."
+    incorrect: "Jawabannya golongan VIIA, periode 3. 1s² 2s² 2p⁶ 3s² 3p⁵: kulit terbesar 3 (periode 3), elektron valensi 7 (golongan VIIA)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

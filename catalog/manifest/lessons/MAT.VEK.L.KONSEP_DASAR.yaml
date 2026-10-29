@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.KONSEP_DASAR
+title: Konsep Dasar Vektor
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.KONSEP_DASAR_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Skalar dan vektor
+  - type: text
+    slide: 0
+    text: "**Skalar** hanya punya besar (massa, suhu, waktu). **Vektor** punya besar dan **arah** (perpindahan, kecepatan, gaya)."
+  - type: text
+    slide: 0
+    text: "Vektor digambar sebagai anak panah: panjangnya menyatakan besar, ujungnya menyatakan arah."
+  - type: math
+    slide: 0
+    name: vektor
+    expression: besar + arah
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kapan dua vektor sama?
+  - type: text
+    slide: 1
+    text: Dua vektor **sama** bila besar dan arahnya sama, walaupun letaknya berbeda. Vektor yang besarnya sama tapi arahnya berlawanan disebut **vektor negatif**.
+  - type: math
+    slide: 1
+    name: −a
+    expression: besar sama, arah berlawanan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Menggeser anak panah tanpa memutarnya tidak mengubah vektornya.
+checks:
+  - question: MAT.VEK.Q.KONSEP_DASAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.KONSEP_DASAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

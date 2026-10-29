@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.MOL_DAN_MASSA_MOLAR_1
+familyCode: KIM.C26.E.STOIK.F.MOL_DAN_MASSA_MOLAR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah mol 9 gram air (Mr = 18) adalah …
+  options:
+    - id: a
+      label: 0,2 mol
+    - id: b
+      label: 0,5 mol
+    - id: c
+      label: 2 mol
+    - id: d
+      label: 162 mol
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 0,5 mol
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+  feedback:
+    correct: n = 9 / 18 = 0,5 mol.
+    incorrect: Jawabannya 0,5 mol. n = 9 / 18 = 0,5 mol.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

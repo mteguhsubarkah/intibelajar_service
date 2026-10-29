@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.BNG.L.MAJEMUK
+title: Bunga majemuk
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BNG.BUNGA_MAJEMUK
+blocks:
+  - type: heading
+    slide: 0
+    text: Bunga berbunga
+  - type: text
+    slide: 0
+    text: "Pada bunga majemuk, bunga periode sebelumnya ikut berbunga: **Mₙ = M(1 + i)ⁿ**."
+  - type: text
+    slide: 0
+    text: "Contoh: Rp10.000.000, 10% per tahun, 2 tahun ⇒ 10.000.000 × 1,21 = Rp12.100.000."
+  - type: math
+    slide: 0
+    name: Mₙ
+    expression: M(1 + i)ⁿ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Majemuk vs tunggal
+  - type: text
+    slide: 1
+    text: Untuk modal, bunga, dan waktu yang sama (lebih dari satu periode), bunga majemuk selalu **lebih besar** karena bunga ikut berbunga.
+  - type: text
+    slide: 1
+    text: Dari contoh tadi, bunga tunggal hanya memberi Rp12.000.000.
+  - type: math
+    slide: 1
+    name: tunggal
+    expression: Mₙ = M(1 + in)
+    highlight: true
+  - type: math
+    slide: 1
+    name: majemuk
+    expression: Mₙ = M(1 + i)ⁿ
+  - type: tip
+    slide: 1
+    text: Bunga majemuk = barisan geometri dengan rasio (1 + i).
+checks:
+  - question: MAT.BNG.Q.MAJEMUK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BNG.S.MAJEMUK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

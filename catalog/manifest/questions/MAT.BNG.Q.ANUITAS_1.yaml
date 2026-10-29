@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BNG.Q.ANUITAS_1
+familyCode: MAT.BNG.F.ANUITAS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BNG.PEMBAYARAN_ANUITAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Besar anuitas sebuah pinjaman Rp500.000 per bulan. Bunga pada bulan pertama Rp200.000. Besar angsuran pertama adalah …
+  options:
+    - id: a
+      label: Rp200.000
+    - id: b
+      label: Rp300.000
+    - id: c
+      label: Rp500.000
+    - id: d
+      label: Rp700.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp300.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BNG.PEMBAYARAN_ANUITAS
+  feedback:
+    correct: Angsuran = anuitas − bunga = 500.000 − 200.000 = Rp300.000.
+    incorrect: Jawabannya Rp300.000. Angsuran = anuitas − bunga = 500.000 − 200.000 = Rp300.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.Q.VEKTOR_2
+familyCode: FIS.C26.E.GERAK2D.F.VEKTOR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Komponen kecepatan sebuah benda adalah vₓ = 6 m/s dan vᵧ = 8 m/s. Besar kecepatan benda adalah …
+  options:
+    - id: a
+      label: 7 m/s
+    - id: b
+      label: 10 m/s
+    - id: c
+      label: 14 m/s
+    - id: d
+      label: 48 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 10 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+  feedback:
+    correct: v = √(6² + 8²) = √100 = 10 m/s.
+    incorrect: Jawabannya 10 m/s. v = √(6² + 8²) = √100 = 10 m/s.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

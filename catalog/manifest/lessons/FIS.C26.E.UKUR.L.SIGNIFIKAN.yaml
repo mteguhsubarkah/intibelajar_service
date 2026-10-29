@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.L.SIGNIFIKAN
+title: Angka penting & pelaporan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Menghitung angka penting
+  - type: text
+    slide: 0
+    text: Semua angka bukan nol penting. Nol **di antara** angka bukan nol penting. Nol **di depan** tidak penting. Nol **di belakang koma** penting.
+  - type: text
+    slide: 0
+    text: "Contoh: 0,005020 memiliki 4 angka penting (5, 0, 2, 0)."
+  - type: math
+    slide: 0
+    name: 0,005020
+    expression: 4 angka penting
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Aturan berhitung
+  - type: text
+    slide: 1
+    text: "**Perkalian/pembagian**: hasil mengikuti angka penting **paling sedikit**. **Penjumlahan/pengurangan**: hasil mengikuti angka desimal paling sedikit."
+  - type: text
+    slide: 1
+    text: "Contoh: 12,5 cm × 4,2 cm = 52,5 → dibulatkan menjadi 53 cm² (2 angka penting)."
+  - type: math
+    slide: 1
+    name: kali/bagi
+    expression: AP paling sedikit
+    highlight: true
+  - type: math
+    slide: 1
+    name: tambah/kurang
+    expression: desimal paling sedikit
+  - type: tip
+    slide: 1
+    text: Hasil hitung tidak boleh tampak lebih teliti daripada alat ukurnya.
+checks:
+  - question: FIS.C26.E.UKUR.Q.SIGNIFIKAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.UKUR.S.SIGNIFIKAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

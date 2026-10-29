@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.HUKUM_RANGKAIAN_2
+familyCode: FIS.C26.F.ELEKTRO.F.HUKUM_RANGKAIAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Resistor 2 Ω dan 4 Ω disusun seri lalu dihubungkan ke baterai 12 V. Tegangan pada resistor 4 Ω adalah …
+  options:
+    - id: a
+      label: 4 V
+    - id: b
+      label: 6 V
+    - id: c
+      label: 8 V
+    - id: d
+      label: 12 V
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 8 V
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+  feedback:
+    correct: Rₛ = 6 Ω, I = 12/6 = 2 A, V₄ = 2 × 4 = 8 V.
+    incorrect: Jawabannya 8 V. Rₛ = 6 Ω, I = 12/6 = 2 A, V₄ = 2 × 4 = 8 V.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

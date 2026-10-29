@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.ORDO_2
+familyCode: MAT.MTX.F.ORDO_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui [x + 1  4; 2  y] = [3  4; 2  5]. Nilai x + y adalah …
+  options:
+    - id: a
+      label: "5"
+    - id: b
+      label: "6"
+    - id: c
+      label: "7"
+    - id: d
+      label: "8"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "7"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN
+  feedback:
+    correct: x + 1 = 3 ⇒ x = 2 dan y = 5, jadi x + y = 7.
+    incorrect: Jawabannya 7. x + 1 = 3 ⇒ x = 2 dan y = 5, jadi x + y = 7.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

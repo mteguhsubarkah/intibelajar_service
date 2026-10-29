@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.BARISAN_GEOMETRI_2
+familyCode: MAT.BAR.F.BARISAN_GEOMETRI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.BARISAN_GEOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suku ke-2 suatu barisan geometri adalah 6 dan suku ke-5 adalah 162. Suku ke-4 barisan itu adalah …
+  options:
+    - id: a
+      label: "18"
+    - id: b
+      label: "54"
+    - id: c
+      label: "81"
+    - id: d
+      label: "108"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "54"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.BARISAN_GEOMETRI
+  feedback:
+    correct: r³ = 162/6 = 27, jadi r = 3 dan a = 2. U₄ = 2 × 3³ = 54.
+    incorrect: Jawabannya 54. r³ = 162/6 = 27, jadi r = 3 dan a = 2. U₄ = 2 × 3³ = 54.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

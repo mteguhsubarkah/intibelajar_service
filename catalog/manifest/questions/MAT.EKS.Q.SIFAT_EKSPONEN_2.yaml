@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SIFAT_EKSPONEN_2
+familyCode: MAT.EKS.F.SIFAT_EKSPONEN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari (2⁵ × 4²) / 8³ adalah …
+  options:
+    - id: a
+      label: 1/2
+    - id: b
+      label: "1"
+    - id: c
+      label: "2"
+    - id: d
+      label: "4"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SIFAT_SIFAT_EKSPONEN
+  feedback:
+    correct: "Ubah ke basis 2: 2⁵ × 2⁴ / 2⁹ = 2⁹ / 2⁹ = 1."
+    incorrect: "Jawabannya 1. Ubah ke basis 2: 2⁵ × 2⁴ / 2⁹ = 2⁹ / 2⁹ = 1."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

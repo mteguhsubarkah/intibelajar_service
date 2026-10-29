@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.PERAN_MIKROORGANISME_1
+familyCode: BIO.C26.E.MIKROBA.F.PERAN_MIKROORGANISME_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.MIKROBA.PERAN_MIKROORGANISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bakteri yang dimanfaatkan dalam pembuatan nata de coco adalah …
+  options:
+    - id: a
+      label: Lactobacillus bulgaricus
+    - id: b
+      label: Acetobacter xylinum
+    - id: c
+      label: Rhizobium leguminosarum
+    - id: d
+      label: Escherichia coli
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Acetobacter xylinum
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.PERAN_MIKROORGANISME
+  feedback:
+    correct: Acetobacter xylinum mengubah gula dalam air kelapa menjadi selulosa (nata).
+    incorrect: Jawabannya Acetobacter xylinum. Acetobacter xylinum mengubah gula dalam air kelapa menjadi selulosa (nata).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

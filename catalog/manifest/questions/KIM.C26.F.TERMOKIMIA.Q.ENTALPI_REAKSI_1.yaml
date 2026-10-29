@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_1
+familyCode: KIM.C26.F.TERMOKIMIA.F.ENTALPI_REAKSI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Saat dua larutan dicampur, suhu campuran naik. Reaksi tersebut termasuk …
+  options:
+    - id: a
+      label: eksoterm, ΔH negatif
+    - id: b
+      label: eksoterm, ΔH positif
+    - id: c
+      label: endoterm, ΔH negatif
+    - id: d
+      label: endoterm, ΔH positif
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - eksoterm, ΔH negatif
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+  feedback:
+    correct: "Suhu lingkungan naik karena sistem melepas kalor: eksoterm dengan ΔH < 0."
+    incorrect: "Jawabannya eksoterm, ΔH negatif. Suhu lingkungan naik karena sistem melepas kalor: eksoterm dengan ΔH < 0."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

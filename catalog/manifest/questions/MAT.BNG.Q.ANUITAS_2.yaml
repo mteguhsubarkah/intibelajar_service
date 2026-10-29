@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BNG.Q.ANUITAS_2
+familyCode: MAT.BNG.F.ANUITAS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BNG.PEMBAYARAN_ANUITAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pinjaman Rp10.000.000 dilunasi dengan anuitas Rp1.000.000 per bulan dan bunga 2% per bulan. Besar angsuran pertama adalah …
+  options:
+    - id: a
+      label: Rp200.000
+    - id: b
+      label: Rp800.000
+    - id: c
+      label: Rp1.000.000
+    - id: d
+      label: Rp1.200.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp800.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BNG.PEMBAYARAN_ANUITAS
+  feedback:
+    correct: Bunga pertama = 2% × 10.000.000 = 200.000; angsuran = 1.000.000 − 200.000 = Rp800.000.
+    incorrect: Jawabannya Rp800.000. Bunga pertama = 2% × 10.000.000 = 200.000; angsuran = 1.000.000 − 200.000 = Rp800.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

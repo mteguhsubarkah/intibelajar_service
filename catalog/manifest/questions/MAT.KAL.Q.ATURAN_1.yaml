@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.ATURAN_1
+familyCode: MAT.KAL.F.ATURAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.ATURAN_TURUNAN_FUNGSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Turunan pertama f(x) = 3x⁴ − 2x² + 5x − 7 adalah …
+  options:
+    - id: a
+      label: 12x³ − 4x + 5
+    - id: b
+      label: 12x³ − 4x − 7
+    - id: c
+      label: 3x³ − 2x + 5
+    - id: d
+      label: 12x⁴ − 4x² + 5x
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 12x³ − 4x + 5
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.ATURAN_TURUNAN_FUNGSI
+  feedback:
+    correct: "Turunkan per suku: 12x³ − 4x + 5. Konstanta −7 hilang."
+    incorrect: "Jawabannya 12x³ − 4x + 5. Turunkan per suku: 12x³ − 4x + 5. Konstanta −7 hilang."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

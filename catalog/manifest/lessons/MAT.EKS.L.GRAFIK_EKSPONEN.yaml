@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.EKS.L.GRAFIK_EKSPONEN
+title: Grafik Fungsi Eksponen
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+blocks:
+  - type: heading
+    slide: 0
+    text: Ciri grafik y = aˣ
+  - type: text
+    slide: 0
+    text: Grafik y = aˣ selalu melewati **(0, 1)** karena a⁰ = 1, selalu di atas sumbu x, dan punya **asimtot datar y = 0**.
+  - type: text
+    slide: 0
+    text: "a > 1: naik dari kiri ke kanan. 0 < a < 1: turun."
+  - type: math
+    slide: 0
+    name: titik potong sumbu y
+    expression: (0, 1)
+    highlight: true
+  - type: math
+    slide: 0
+    name: asimtot
+    expression: y = 0
+  - type: heading
+    slide: 1
+    text: Menggeser grafik
+  - type: text
+    slide: 1
+    text: "**y = aˣ + k** menggeser grafik ke atas sejauh k, sehingga asimtotnya y = k. **y = a^(x − h)** menggeser ke kanan sejauh h."
+  - type: math
+    slide: 1
+    name: y = aˣ + k
+    expression: asimtot y = k
+    highlight: true
+  - type: math
+    slide: 1
+    name: y = a^(x − h)
+    expression: geser kanan h
+  - type: tip
+    slide: 1
+    text: Untuk mencari asimtot, lihat konstanta yang ditambahkan di luar pangkat.
+checks:
+  - question: MAT.EKS.Q.GRAFIK_EKSPONEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.GRAFIK_EKSPONEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

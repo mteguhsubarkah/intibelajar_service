@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL.L.HUKUM_I_TERMODINAMIKA
+title: Hukum I termodinamika
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA
+blocks:
+  - type: heading
+    slide: 0
+    text: Kekekalan energi untuk gas
+  - type: text
+    slide: 0
+    text: "**Q = ΔU + W**. Q positif bila gas menerima kalor; W positif bila gas melakukan usaha (memuai)."
+  - type: text
+    slide: 0
+    text: "Contoh: gas menyerap 500 J dan melakukan usaha 200 J ⇒ ΔU = 300 J."
+  - type: math
+    slide: 0
+    name: Q
+    expression: ΔU + W
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Usaha pada tekanan tetap
+  - type: text
+    slide: 1
+    text: "Proses **isobarik**: **W = P · ΔV**. Ubah liter ke m³: 1 L = 10⁻³ m³."
+  - type: text
+    slide: 1
+    text: "Contoh: P = 2 × 10⁵ Pa, volume 2 L → 5 L ⇒ W = 2 × 10⁵ × 3 × 10⁻³ = 600 J."
+  - type: math
+    slide: 1
+    name: W isobarik
+    expression: P · ΔV
+    highlight: true
+  - type: math
+    slide: 1
+    name: 1 L
+    expression: 10⁻³ m³
+  - type: tip
+    slide: 1
+    text: "Perhatikan tanda: gas ditekan berarti W negatif."
+checks:
+  - question: FIS.C26.F.TERMAL.Q.HUKUM_I_TERMODINAMIKA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.TERMAL.S.HUKUM_I_TERMODINAMIKA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

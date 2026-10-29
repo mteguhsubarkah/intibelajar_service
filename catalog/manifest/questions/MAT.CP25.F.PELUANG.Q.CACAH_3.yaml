@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.CP25.F.PELUANG.Q.CACAH_3
+familyCode: MAT.CP25.F.PELUANG.F.CACAH_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.CP25.F.PELUANG.PERMUTASI_DAN_KOMBINASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dari angka 1, 2, 3, 4, 5 akan dibuat bilangan ganjil tiga angka dengan angka berbeda. Banyak bilangan yang dapat dibuat adalah …
+  options:
+    - id: a
+      label: "24"
+    - id: b
+      label: "36"
+    - id: c
+      label: "48"
+    - id: d
+      label: "60"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "36"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.CP25.F.PELUANG.PERMUTASI_DAN_KOMBINASI
+  feedback:
+    correct: "Satuan: 3 pilihan (1, 3, 5). Puluhan: 4 pilihan. Ratusan: 3 pilihan. Total 3 × 4 × 3 = 36."
+    incorrect: "Jawabannya 36. Satuan: 3 pilihan (1, 3, 5). Puluhan: 4 pilihan. Ratusan: 3 pilihan. Total 3 × 4 × 3 = 36."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

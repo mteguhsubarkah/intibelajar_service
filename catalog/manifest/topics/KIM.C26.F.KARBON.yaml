@@ -1,0 +1,80 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON
+subject: KIM
+title: Senyawa karbon & makromolekul
+subtitle: Gugus fungsi, isomer, polimer, biomolekul
+phase: F
+availability: MAPPED
+bekal:
+  - ikatan kovalen
+aliases:
+  - ns: TOPIC
+    value: senyawa-karbon
+units: []
+concepts:
+  - code: KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI
+    title: Struktur & gugus fungsi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-karbon-c1
+  - code: KIM.C26.F.KARBON.BIOMOLEKUL
+    title: Biomolekul
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-karbon-c2
+  - code: KIM.C26.F.KARBON.ISOMER_DAN_GUGUS_FUNGSI
+    title: Isomer dan gugus fungsi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-karbon-isomer
+  - code: KIM.C26.F.KARBON.POLIMERISASI_DAN_STRUKTUR_BAHAN
+    title: Polimerisasi & struktur bahan
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-karbon-polimer
+prerequisites:
+  - concept: KIM.C26.F.KARBON.BIOMOLEKUL
+    requires: KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI
+    kind: SOFT
+  - concept: KIM.C26.F.KARBON.ISOMER_DAN_GUGUS_FUNGSI
+    requires: KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI
+    kind: SOFT
+  - concept: KIM.C26.F.KARBON.POLIMERISASI_DAN_STRUKTUR_BAHAN
+    requires: KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

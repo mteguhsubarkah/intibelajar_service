@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.SUKU_TENGAH_2
+familyCode: MAT.BAR.F.SUKU_TENGAH_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.SUKU_TENGAH_SISIPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di antara 2 dan 162 disisipkan 3 bilangan sehingga terbentuk barisan geometri. Rasio barisan baru itu adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "4"
+    - id: c
+      label: "9"
+    - id: d
+      label: "27"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "3"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.SUKU_TENGAH_SISIPAN
+  feedback:
+    correct: "Ada 4 langkah: r⁴ = 162/2 = 81, jadi r = 3."
+    incorrect: "Jawabannya 3. Ada 4 langkah: r⁴ = 162/2 = 81, jadi r = 3."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

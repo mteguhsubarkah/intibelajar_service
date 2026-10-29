@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.KUA.L.KOEFISIEN
+title: Bentuk & koefisien kuadrat
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Bentuk umum
+  - type: text
+    slide: 0
+    text: "Fungsi kuadrat: **f(x) = ax² + bx + c** dengan a ≠ 0. Urutkan dulu sukunya sebelum membaca a, b, c."
+  - type: text
+    slide: 0
+    text: "Contoh: f(x) = 3 − 2x + 5x² berarti a = 5, b = −2, c = 3."
+  - type: math
+    slide: 0
+    name: f(x)
+    expression: ax² + bx + c
+    highlight: true
+  - type: math
+    slide: 0
+    name: syarat
+    expression: a ≠ 0
+  - type: heading
+    slide: 1
+    text: Arti setiap koefisien
+  - type: text
+    slide: 1
+    text: "**a > 0**: parabola terbuka ke atas (punya minimum). **a < 0**: terbuka ke bawah (punya maksimum)."
+  - type: text
+    slide: 1
+    text: "**c** adalah titik potong dengan sumbu y, yaitu (0, c)."
+  - type: math
+    slide: 1
+    name: a > 0
+    expression: terbuka ke atas
+    highlight: true
+  - type: math
+    slide: 1
+    name: titik potong sumbu y
+    expression: (0, c)
+  - type: tip
+    slide: 1
+    text: Tanda a langsung memberi tahu apakah soal mencari nilai maksimum atau minimum.
+checks:
+  - question: MAT.KUA.Q.KOEFISIEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KUA.S.KOEFISIEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

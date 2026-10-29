@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.INTEGRAL_1
+familyCode: MAT.KAL.F.INTEGRAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai ∫₁³ 2x dx adalah …
+  options:
+    - id: a
+      label: "4"
+    - id: b
+      label: "6"
+    - id: c
+      label: "8"
+    - id: d
+      label: "9"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "8"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+  feedback:
+    correct: "[x²] dari 1 sampai 3 = 9 − 1 = 8."
+    incorrect: Jawabannya 8. [x²] dari 1 sampai 3 = 9 − 1 = 8.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.KAL.L.OPTIMASI
+title: Garis singgung & optimasi
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Persamaan garis singgung
+  - type: text
+    slide: 0
+    text: Gradien garis singgung di x = a adalah **m = f′(a)**. Persamaannya **y − f(a) = m(x − a)**.
+  - type: text
+    slide: 0
+    text: "Contoh: y = x² − 3x di (2, −2): m = 2·2 − 3 = 1 ⇒ y = x − 4."
+  - type: math
+    slide: 0
+    name: m
+    expression: f′(a)
+    highlight: true
+  - type: math
+    slide: 0
+    name: garis singgung
+    expression: y − f(a) = m(x − a)
+  - type: heading
+    slide: 1
+    text: Titik stasioner
+  - type: text
+    slide: 1
+    text: Nilai maksimum atau minimum terjadi saat **f′(x) = 0**.
+  - type: text
+    slide: 1
+    text: "Contoh: f(x) = −x² + 6x − 5 ⇒ f′(x) = −2x + 6 = 0 ⇒ x = 3 ⇒ f(3) = 4 (maksimum)."
+  - type: math
+    slide: 1
+    name: stasioner
+    expression: f′(x) = 0
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Cari x dari f′(x) = 0, lalu nilai optimumnya f(x), bukan x.
+checks:
+  - question: MAT.KAL.Q.OPTIMASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KAL.S.OPTIMASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

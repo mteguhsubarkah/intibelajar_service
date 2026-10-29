@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.SPL.Q.BATAS_1
+familyCode: MAT.SPL.F.BATAS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Daerah penyelesaian 2x + y < 8 dibatasi oleh garis …
+  options:
+    - id: a
+      label: penuh, titik pada garis termasuk
+    - id: b
+      label: putus-putus, titik pada garis tidak termasuk
+    - id: c
+      label: penuh, titik pada garis tidak termasuk
+    - id: d
+      label: putus-putus, titik pada garis termasuk
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - putus-putus, titik pada garis tidak termasuk
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP
+  feedback:
+    correct: Tanda < tidak memasukkan titik pada garis, sehingga garisnya digambar putus-putus.
+    incorrect: Jawabannya putus-putus, titik pada garis tidak termasuk. Tanda < tidak memasukkan titik pada garis, sehingga garisnya digambar putus-putus.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

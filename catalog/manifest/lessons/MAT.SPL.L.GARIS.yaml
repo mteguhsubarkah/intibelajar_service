@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.SPL.L.GARIS
+title: Persamaan garis batas
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.SPL.PERSAMAAN_GARIS_BATAS
+blocks:
+  - type: heading
+    slide: 0
+    text: Garis dari dua titik potong
+  - type: text
+    slide: 0
+    text: Garis yang memotong sumbu x di (a, 0) dan sumbu y di (0, b) mempunyai persamaan **bx + ay = ab**.
+  - type: text
+    slide: 0
+    text: "Contoh: melalui (4, 0) dan (0, 3) ⇒ 3x + 4y = 12."
+  - type: math
+    slide: 0
+    name: melalui (a, 0) dan (0, b)
+    expression: bx + ay = ab
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Dari persamaan ke gambar
+  - type: text
+    slide: 1
+    text: "Untuk menggambar 2x + 5y = 10, cari titik potongnya: x = 0 ⇒ y = 2, y = 0 ⇒ x = 5. Hubungkan kedua titik."
+  - type: math
+    slide: 1
+    name: 2x + 5y = 10
+    expression: (5, 0) dan (0, 2)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Angka di depan x berpasangan dengan titik potong sumbu y, dan sebaliknya.
+checks:
+  - question: MAT.SPL.Q.GARIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.SPL.S.GARIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

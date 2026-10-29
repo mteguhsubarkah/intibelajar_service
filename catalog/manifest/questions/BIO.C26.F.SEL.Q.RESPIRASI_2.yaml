@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.RESPIRASI_2
+familyCode: BIO.C26.F.SEL.F.RESPIRASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Glikolisis berlangsung di …
+  options:
+    - id: a
+      label: sitoplasma
+    - id: b
+      label: matriks mitokondria
+    - id: c
+      label: membran dalam mitokondria
+    - id: d
+      label: nukleus
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sitoplasma
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
+  feedback:
+    correct: Glikolisis memecah glukosa menjadi asam piruvat di sitoplasma.
+    incorrect: Jawabannya sitoplasma. Glikolisis memecah glukosa menjadi asam piruvat di sitoplasma.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

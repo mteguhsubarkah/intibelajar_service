@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_3
+familyCode: KIM.C26.F.SETIMBANG.F.ASAM_BASA_DAN_PH_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: pH larutan H₂SO₄ 0,005 M adalah …
+  options:
+    - id: a
+      label: "2"
+    - id: b
+      label: 2,3
+    - id: c
+      label: "3"
+    - id: d
+      label: "5"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "2"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+  feedback:
+    correct: "[H⁺] = 2 × 0,005 = 0,01 M, jadi pH = 2."
+    incorrect: Jawabannya 2. [H⁺] = 2 × 0,005 = 0,01 M, jadi pH = 2.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

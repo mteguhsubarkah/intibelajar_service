@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_2
+familyCode: KIM.C26.F.TERMOKIMIA.F.ENTALPI_REAKSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Reaksi 0,05 mol zat dalam kalorimeter menaikkan suhu 100 g larutan sebesar 5°C (c = 4,2 J/g°C). Perubahan entalpi reaksinya adalah …
+  options:
+    - id: a
+      label: −42 kJ/mol
+    - id: b
+      label: +42 kJ/mol
+    - id: c
+      label: −2,1 kJ/mol
+    - id: d
+      label: −105 kJ/mol
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −42 kJ/mol
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+  feedback:
+    correct: q = 100 × 4,2 × 5 = 2.100 J = 2,1 kJ. ΔH = −2,1 / 0,05 = −42 kJ/mol.
+    incorrect: Jawabannya −42 kJ/mol. q = 100 × 4,2 × 5 = 2.100 J = 2,1 kJ. ΔH = −2,1 / 0,05 = −42 kJ/mol.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

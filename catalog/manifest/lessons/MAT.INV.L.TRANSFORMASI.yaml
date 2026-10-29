@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.L.TRANSFORMASI
+title: Transformasi fungsi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.INV.TRANSFORMASI_FUNGSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Menggeser grafik
+  - type: text
+    slide: 0
+    text: "**y = f(x − h) + k** menggeser grafik f sejauh h ke kanan dan k ke atas."
+  - type: text
+    slide: 0
+    text: "Contoh: y = x² digeser 3 ke kanan dan 2 ke atas ⇒ y = (x − 3)² + 2."
+  - type: math
+    slide: 0
+    name: geser kanan h, atas k
+    expression: y = f(x − h) + k
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mencerminkan dan meregangkan
+  - type: text
+    slide: 1
+    text: "**y = −f(x)**: cermin terhadap sumbu x. **y = f(−x)**: cermin terhadap sumbu y. **y = a · f(x)**: regang vertikal dengan faktor a."
+  - type: math
+    slide: 1
+    name: cermin sumbu x
+    expression: y = −f(x)
+    highlight: true
+  - type: math
+    slide: 1
+    name: cermin sumbu y
+    expression: y = f(−x)
+  - type: tip
+    slide: 1
+    text: Geser ke kanan berarti x dikurangi, bukan ditambah.
+checks:
+  - question: MAT.INV.Q.TRANSFORMASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.INV.S.TRANSFORMASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

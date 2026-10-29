@@ -1,0 +1,66 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL
+subject: FIS
+title: Kalor dan termodinamika
+subtitle: Asas Black, Hukum I, mesin Carnot
+phase: F
+availability: MAPPED
+bekal:
+  - suhu dan kalor
+  - usaha dan energi
+aliases:
+  - ns: TOPIC
+    value: termodinamika
+units: []
+concepts:
+  - code: FIS.C26.F.TERMAL.KALOR_DAN_PERUBAHAN_WUJUD
+    title: Kalor & perubahan wujud
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-termal-c1
+  - code: FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA
+    title: Hukum I termodinamika
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-termal-c2
+  - code: FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI
+    title: Mesin kalor & batas efisiensi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-termal-mesin
+prerequisites:
+  - concept: FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA
+    requires: FIS.C26.F.TERMAL.KALOR_DAN_PERUBAHAN_WUJUD
+    kind: SOFT
+  - concept: FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI
+    requires: FIS.C26.F.TERMAL.KALOR_DAN_PERUBAHAN_WUJUD
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

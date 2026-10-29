@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.L.ROTASI
+title: Dinamika rotasi
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Hukum Newton untuk rotasi
+  - type: text
+    slide: 0
+    text: "**τ = I · α**: torsi menghasilkan percepatan sudut. I adalah momen inersia, makin besar makin sulit diputar."
+  - type: text
+    slide: 0
+    text: "Silinder pejal: I = ½mR². Contoh: m = 4 kg, R = 0,5 m ⇒ I = 0,5 kg·m²; τ = 2 N·m ⇒ α = 4 rad/s²."
+  - type: math
+    slide: 0
+    name: τ
+    expression: I · α
+    highlight: true
+  - type: math
+    slide: 0
+    name: silinder pejal
+    expression: I = ½mR²
+  - type: heading
+    slide: 1
+    text: Kekekalan momentum sudut
+  - type: text
+    slide: 1
+    text: "Tanpa torsi luar: **I₁ω₁ = I₂ω₂**."
+  - type: text
+    slide: 1
+    text: Penari yang merapatkan lengan memperkecil I sehingga berputar lebih cepat.
+  - type: math
+    slide: 1
+    name: L
+    expression: I · ω tetap
+    highlight: true
+  - type: tip
+    slide: 1
+    text: I mengecil setengah ⇒ ω menjadi dua kali.
+checks:
+  - question: FIS.C26.F.MEKANIKA.Q.ROTASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MEKANIKA.S.ROTASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.BNG.L.ANUITAS
+title: Pembayaran anuitas
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BNG.PEMBAYARAN_ANUITAS
+blocks:
+  - type: heading
+    slide: 0
+    text: Angsuran tetap setiap periode
+  - type: text
+    slide: 0
+    text: "**Anuitas** adalah pembayaran tetap tiap periode yang terdiri dari **bunga + angsuran** (pelunasan pokok): A = bₙ + aₙ."
+  - type: text
+    slide: 0
+    text: Bunga periode ke-n dihitung dari sisa pinjaman saat itu.
+  - type: math
+    slide: 0
+    name: A
+    expression: bunga + angsuran
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh periode pertama
+  - type: text
+    slide: 1
+    text: Pinjaman Rp10.000.000, bunga 2% per bulan, anuitas Rp1.000.000.
+  - type: text
+    slide: 1
+    text: Bunga bulan pertama = 2% × 10.000.000 = Rp200.000, angsuran pertama = 1.000.000 − 200.000 = Rp800.000.
+  - type: math
+    slide: 1
+    name: a₁
+    expression: A − i · M
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bunga makin kecil setiap bulan, angsuran makin besar; jumlahnya tetap A.
+checks:
+  - question: MAT.BNG.Q.ANUITAS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BNG.S.ANUITAS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

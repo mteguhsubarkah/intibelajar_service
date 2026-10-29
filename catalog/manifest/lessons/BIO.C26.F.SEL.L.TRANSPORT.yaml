@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.L.TRANSPORT
+title: Transport membran
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.SEL.TRANSPORT_MEMBRAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Transpor pasif
+  - type: text
+    slide: 0
+    text: "**Difusi**: zat berpindah dari konsentrasi tinggi ke rendah. **Osmosis**: perpindahan **air** melalui membran semipermeabel dari larutan **hipotonis** (encer) ke **hipertonis** (pekat). Tidak memerlukan energi."
+  - type: math
+    slide: 0
+    name: osmosis
+    expression: "air: hipotonis → hipertonis"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Transpor aktif
+  - type: text
+    slide: 1
+    text: "**Transpor aktif** memindahkan zat **melawan gradien konsentrasi** dan **memerlukan ATP**, misalnya pompa natrium–kalium."
+  - type: text
+    slide: 1
+    text: Sel darah merah di air murni menggembung lalu pecah (lisis) karena air terus masuk.
+  - type: math
+    slide: 1
+    name: transpor aktif
+    expression: melawan gradien, perlu ATP
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Air selalu bergerak menuju larutan yang lebih pekat.
+checks:
+  - question: BIO.C26.F.SEL.Q.TRANSPORT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.SEL.S.TRANSPORT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

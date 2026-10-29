@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.HUKUM_RANGKAIAN_1
+familyCode: FIS.C26.F.ELEKTRO.F.HUKUM_RANGKAIAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua resistor 4 Ω dan 12 Ω disusun paralel. Hambatan penggantinya adalah …
+  options:
+    - id: a
+      label: 3 Ω
+    - id: b
+      label: 8 Ω
+    - id: c
+      label: 16 Ω
+    - id: d
+      label: 48 Ω
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 3 Ω
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+  feedback:
+    correct: 1/Rₚ = 1/4 + 1/12 = 4/12, jadi Rₚ = 3 Ω.
+    incorrect: Jawabannya 3 Ω. 1/Rₚ = 1/4 + 1/12 = 4/12, jadi Rₚ = 3 Ω.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

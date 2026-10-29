@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.L.BENTUK
+title: Bentuk molekul & kepolaran
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Teori VSEPR
+  - type: text
+    slide: 0
+    text: Pasangan elektron di sekitar atom pusat saling tolak sejauh mungkin. Hitung **PEI** (pasangan terikat) dan **PEB** (pasangan bebas).
+  - type: text
+    slide: 0
+    text: "4 PEI, 0 PEB: tetrahedral (CH₄). 3 PEI, 1 PEB: piramida trigonal (NH₃). 2 PEI, 2 PEB: bentuk V (H₂O)."
+  - type: math
+    slide: 0
+    name: CH₄
+    expression: tetrahedral
+    highlight: true
+  - type: math
+    slide: 0
+    name: NH₃
+    expression: piramida trigonal
+  - type: math
+    slide: 0
+    name: H₂O
+    expression: bentuk V
+  - type: heading
+    slide: 1
+    text: Polar atau nonpolar
+  - type: text
+    slide: 1
+    text: Molekul **polar** bila bentuknya tidak simetris sehingga momen dipol tidak saling meniadakan (H₂O, NH₃).
+  - type: text
+    slide: 1
+    text: Molekul simetris seperti CH₄ dan CO₂ **nonpolar** walau ikatannya polar.
+  - type: math
+    slide: 1
+    name: tidak simetris
+    expression: polar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pasangan elektron bebas pada atom pusat biasanya membuat molekul tidak simetris.
+checks:
+  - question: KIM.C26.F.STRUKTUR.Q.BENTUK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.STRUKTUR.S.BENTUK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

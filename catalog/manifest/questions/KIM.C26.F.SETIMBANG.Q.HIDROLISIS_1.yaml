@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.HIDROLISIS_1
+familyCode: KIM.C26.F.SETIMBANG.F.HIDROLISIS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pasangan zat berikut yang dapat membentuk larutan penyangga adalah …
+  options:
+    - id: a
+      label: HCl dan NaCl
+    - id: b
+      label: CH₃COOH dan CH₃COONa
+    - id: c
+      label: NaOH dan NaCl
+    - id: d
+      label: HNO₃ dan KNO₃
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - CH₃COOH dan CH₃COONa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+  feedback:
+    correct: Penyangga terdiri dari asam lemah (CH₃COOH) dan basa konjugasinya (CH₃COO⁻ dari CH₃COONa).
+    incorrect: Jawabannya CH₃COOH dan CH₃COONa. Penyangga terdiri dari asam lemah (CH₃COOH) dan basa konjugasinya (CH₃COO⁻ dari CH₃COONa).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

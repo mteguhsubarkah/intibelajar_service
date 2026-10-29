@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.SPL.Q.BATAS_2
+familyCode: MAT.SPL.F.BATAS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Daerah penyelesaian 3x + 2y ≥ 12 adalah daerah …
+  options:
+    - id: a
+      label: yang memuat titik O(0, 0)
+    - id: b
+      label: yang tidak memuat titik O(0, 0)
+    - id: c
+      label: pada garisnya saja
+    - id: d
+      label: seluruh bidang
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - yang tidak memuat titik O(0, 0)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP
+  feedback:
+    correct: "Uji O: 3 · 0 + 2 · 0 = 0 ≥ 12 salah, jadi daerahnya tidak memuat O."
+    incorrect: "Jawabannya yang tidak memuat titik O(0, 0). Uji O: 3 · 0 + 2 · 0 = 0 ≥ 12 salah, jadi daerahnya tidak memuat O."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

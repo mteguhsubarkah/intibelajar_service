@@ -8,11 +8,20 @@ test('question bank filters by subject and phase, and similar questions share co
  if(!(await sql`select 1 from concept where legacy_map_id='tri-f'`.execute(db)).rows.length){const m=reviewedFixture();m.release.version=Number((await sql<any>`select coalesce(max(version),0)+1 v from curriculum_release`.execute(db)).rows[0].v);await publish(db,m);}
  const{app}=await buildApp(config,{db,logStream:new Writable({write(_c,_e,next){next();}})});
  const get=async(url:string)=>{const r=await app.inject({method:'GET',url});return{status:r.statusCode,body:JSON.parse(r.body)};};
+ // The shared database may hold an earlier test's release, so check each returned item against its topics instead of fixed counts.
+ const items=async(query:string)=>{const out:{id:string;topicIds:string[]}[]=[];let cursor:string|null=null;do{const r=await get(`/v1/questions?limit=100${query}${cursor?`&cursor=${encodeURIComponent(cursor)}`:''}`);assert.equal(r.status,200);out.push(...r.body.items);cursor=r.body.nextCursor;}while(cursor);return out;};
  try{
-  const all=await get('/v1/questions?limit=100');assert.equal(all.status,200);assert.ok(all.body.items.length>0);
-  const mat=await get('/v1/questions?limit=100&subjectCode=MAT&phase=E');assert.equal(mat.status,200);assert.equal(mat.body.items.length,all.body.items.length,'the fixture is all Matematika fase E');
-  assert.equal((await get('/v1/questions?limit=100&subjectCode=FIS')).body.items.length,0);
-  assert.equal((await get('/v1/questions?limit=100&phase=F')).body.items.length,0);
+  const topics=new Map(((await get('/v1/topics')).body.items as {id:string;subjectId:string;phase:string}[]).map(t=>[t.id,t]));
+  const subjects=new Map(((await get('/v1/subjects')).body.items as {id:string;code:string}[]).map(x=>[x.code,x.id]));
+  const all=await items('');assert.ok(all.length>0);
+  for(const code of['MAT','FIS','KIM','BIO']){
+   const got=await items(`&subjectCode=${code}`);assert.ok(got.length>0,`${code} has questions`);
+   assert.ok(got.every(q=>q.topicIds.some(id=>topics.get(id)?.subjectId===subjects.get(code))),`${code} items belong to ${code} topics`);
+  }
+  const matE=await items('&subjectCode=MAT&phase=E');
+  assert.ok(matE.length>0&&matE.every(q=>q.topicIds.some(id=>topics.get(id)?.subjectId===subjects.get('MAT')&&topics.get(id)?.phase==='E')));
+  const phaseF=await items('&phase=F');assert.ok(phaseF.length>0&&phaseF.every(q=>q.topicIds.some(id=>topics.get(id)?.phase==='F')));
+  assert.equal((await items('&subjectCode=NOPE')).length,0);
   assert.equal((await get('/v1/questions?phase=Z')).status,400);
   const concepts=(await get('/v1/concepts')).body.items as {id:string;legacyMapId?:string}[];
   const triF=concepts.find(c=>c.legacyMapId==='tri-f')!;assert.ok(triF);

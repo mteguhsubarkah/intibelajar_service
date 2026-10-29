@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.Q.KOMPOSISI_2
+familyCode: MAT.INV.F.KOMPOSISI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.INV.KOMPOSISI_FUNGSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dengan f(x) = 2x + 1 dan g(x) = x² − 3, nilai (g ∘ f)(1) adalah …
+  options:
+    - id: a
+      label: "6"
+    - id: b
+      label: −1
+    - id: c
+      label: "3"
+    - id: d
+      label: "9"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "6"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.INV.KOMPOSISI_FUNGSI
+  feedback:
+    correct: f(1) = 3, lalu g(3) = 9 − 3 = 6.
+    incorrect: Jawabannya 6. f(1) = 3, lalu g(3) = 9 − 3 = 6.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

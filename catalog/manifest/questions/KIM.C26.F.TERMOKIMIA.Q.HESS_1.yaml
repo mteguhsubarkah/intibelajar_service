@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.HESS_1
+familyCode: KIM.C26.F.TERMOKIMIA.F.HESS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.HUKUM_HESS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui C + O₂ → CO₂ ΔH = −394 kJ dan CO + ½O₂ → CO₂ ΔH = −283 kJ. Perubahan entalpi untuk C + ½O₂ → CO adalah …
+  options:
+    - id: a
+      label: −111 kJ
+    - id: b
+      label: −677 kJ
+    - id: c
+      label: +111 kJ
+    - id: d
+      label: −283 kJ
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −111 kJ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.HUKUM_HESS
+  feedback:
+    correct: "Reaksi pertama ditambah kebalikan reaksi kedua: −394 + 283 = −111 kJ."
+    incorrect: "Jawabannya −111 kJ. Reaksi pertama ditambah kebalikan reaksi kedua: −394 + 283 = −111 kJ."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.L.PENERAPAN
+title: Penerapan Barisan dan Deret
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BAR.PENERAPAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Aritmetika atau geometri?
+  - type: text
+    slide: 0
+    text: Bertambah **jumlah tetap** (Rp50.000 per bulan, 15 unit per bulan) ⇒ aritmetika. Bertambah **persentase tetap** (10% per tahun) ⇒ geometri.
+  - type: math
+    slide: 0
+    name: + tetap
+    expression: aritmetika
+    highlight: true
+  - type: math
+    slide: 0
+    name: × tetap
+    expression: geometri
+  - type: heading
+    slide: 1
+    text: Total atau satu waktu?
+  - type: text
+    slide: 1
+    text: '"Produksi bulan ke-12" menanyakan **suku** Uₙ. "Total produksi selama setahun" menanyakan **jumlah** Sₙ.'
+  - type: text
+    slide: 1
+    text: "Contoh: 120 unit bulan pertama, naik 15 per bulan: S₁₂ = 6 × (240 + 165) = 2.430."
+  - type: math
+    slide: 1
+    name: S₁₂
+    expression: 6(2a + 11b)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Garis bawahi kata "selama" (jumlah) dan "pada" (suku).
+checks:
+  - question: MAT.BAR.Q.PENERAPAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.PENERAPAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

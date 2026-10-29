@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK.Q.EVALUASI_MANFAAT_DAN_DAMPAK_1
+familyCode: BIO.C26.F.BIOTEK.F.EVALUASI_MANFAAT_DAN_DAMPAK_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Contoh penerapan bioteknologi modern adalah …
+  options:
+    - id: a
+      label: pembuatan tempe
+    - id: b
+      label: pembuatan yoghurt
+    - id: c
+      label: jagung transgenik tahan hama
+    - id: d
+      label: pembuatan tapai
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - jagung transgenik tahan hama
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK
+  feedback:
+    correct: Tanaman transgenik dibuat dengan rekayasa genetika (bioteknologi modern). Tempe, yoghurt, dan tapai adalah bioteknologi konvensional.
+    incorrect: Jawabannya jagung transgenik tahan hama. Tanaman transgenik dibuat dengan rekayasa genetika (bioteknologi modern). Tempe, yoghurt, dan tapai adalah bioteknologi konvensional.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

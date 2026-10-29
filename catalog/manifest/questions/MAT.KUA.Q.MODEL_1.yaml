@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.MODEL_1
+familyCode: MAT.KUA.F.MODEL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.PEMODELAN_KUADRAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah bola dilempar ke atas dengan ketinggian h(t) = 20t − 5t² meter setelah t detik. Tinggi maksimum bola adalah …
+  options:
+    - id: a
+      label: 10 m
+    - id: b
+      label: 20 m
+    - id: c
+      label: 40 m
+    - id: d
+      label: 15 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 20 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.PEMODELAN_KUADRAT
+  feedback:
+    correct: tₚ = −20/(2 · (−5)) = 2 detik, h(2) = 40 − 20 = 20 m.
+    incorrect: Jawabannya 20 m. tₚ = −20/(2 · (−5)) = 2 detik, h(2) = 40 − 20 = 20 m.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

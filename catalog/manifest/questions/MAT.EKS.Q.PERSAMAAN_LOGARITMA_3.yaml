@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.PERSAMAAN_LOGARITMA_3
+familyCode: MAT.EKS.F.PERSAMAAN_LOGARITMA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.PERSAMAAN_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai x yang memenuhi ³log (2x + 1) = ³log (x + 5) adalah …
+  options:
+    - id: a
+      label: "2"
+    - id: b
+      label: "4"
+    - id: c
+      label: "6"
+    - id: d
+      label: −4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "4"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.PERSAMAAN_LOGARITMA
+  feedback:
+    correct: 2x + 1 = x + 5, jadi x = 4. Kedua numerus bernilai 9, positif.
+    incorrect: Jawabannya 4. 2x + 1 = x + 5, jadi x = 4. Kedua numerus bernilai 9, positif.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

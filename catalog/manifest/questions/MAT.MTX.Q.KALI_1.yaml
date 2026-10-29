@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.KALI_1
+familyCode: MAT.MTX.F.KALI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.PERKALIAN_MATRIKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil dari [1 2; 3 4] · [2; 1] adalah …
+  options:
+    - id: a
+      label: "[4; 10]"
+    - id: b
+      label: "[2; 6]"
+    - id: c
+      label: "[5; 7]"
+    - id: d
+      label: "[4 10]"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "[4; 10]"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.PERKALIAN_MATRIKS
+  feedback:
+    correct: "Baris 1: 1·2 + 2·1 = 4. Baris 2: 3·2 + 4·1 = 10."
+    incorrect: "Jawabannya [4; 10]. Baris 1: 1·2 + 2·1 = 4. Baris 2: 3·2 + 4·1 = 10."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

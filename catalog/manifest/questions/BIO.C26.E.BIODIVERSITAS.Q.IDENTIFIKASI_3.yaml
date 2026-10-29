@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.Q.IDENTIFIKASI_3
+familyCode: BIO.C26.E.BIODIVERSITAS.F.IDENTIFIKASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Perhatikan kunci dikotom: 1a bersayap → 2; 1b tidak bersayap → laba-laba; 2a sayap bersisik → kupu-kupu; 2b sayap tidak bersisik → lalat. Hewan bersayap yang sayapnya tidak bersisik adalah …"
+  options:
+    - id: a
+      label: laba-laba
+    - id: b
+      label: kupu-kupu
+    - id: c
+      label: lalat
+    - id: d
+      label: tidak dapat ditentukan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - lalat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI
+  feedback:
+    correct: Bersayap ⇒ ke nomor 2. Sayap tidak bersisik ⇒ 2b, yaitu lalat.
+    incorrect: Jawabannya lalat. Bersayap ⇒ ke nomor 2. Sayap tidak bersisik ⇒ 2b, yaitu lalat.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

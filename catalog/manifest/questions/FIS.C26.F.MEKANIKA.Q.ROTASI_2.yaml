@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.Q.ROTASI_2
+familyCode: FIS.C26.F.MEKANIKA.F.ROTASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Silinder pejal bermassa 4 kg dan berjari-jari 0,5 m (I = ½mR²) diberi torsi 2 N·m. Percepatan sudutnya adalah …
+  options:
+    - id: a
+      label: 1 rad/s²
+    - id: b
+      label: 2 rad/s²
+    - id: c
+      label: 4 rad/s²
+    - id: d
+      label: 8 rad/s²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 4 rad/s²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+  feedback:
+    correct: I = ½ × 4 × 0,25 = 0,5 kg·m². α = τ / I = 2 / 0,5 = 4 rad/s².
+    incorrect: Jawabannya 4 rad/s². I = ½ × 4 × 0,25 = 0,5 kg·m². α = τ / I = 2 / 0,5 = 4 rad/s².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

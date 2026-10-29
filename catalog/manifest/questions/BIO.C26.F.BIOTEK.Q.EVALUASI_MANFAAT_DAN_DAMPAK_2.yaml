@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK.Q.EVALUASI_MANFAAT_DAN_DAMPAK_2
+familyCode: BIO.C26.F.BIOTEK.F.EVALUASI_MANFAAT_DAN_DAMPAK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kekhawatiran utama penanaman tanaman transgenik di alam terbuka adalah …
+  options:
+    - id: a
+      label: tanaman menjadi lebih kecil
+    - id: b
+      label: gen sisipan dapat menyebar ke tumbuhan liar dan mengganggu ekosistem
+    - id: c
+      label: tanaman tidak dapat berfotosintesis
+    - id: d
+      label: hasil panen pasti menurun
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - gen sisipan dapat menyebar ke tumbuhan liar dan mengganggu ekosistem
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK
+  feedback:
+    correct: Penyerbukan silang dapat memindahkan gen sisipan ke kerabat liar dengan dampak yang sulit dikendalikan.
+    incorrect: Jawabannya gen sisipan dapat menyebar ke tumbuhan liar dan mengganggu ekosistem. Penyerbukan silang dapat memindahkan gen sisipan ke kerabat liar dengan dampak yang sulit dikendalikan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

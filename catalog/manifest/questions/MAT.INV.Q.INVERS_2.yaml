@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.Q.INVERS_2
+familyCode: MAT.INV.F.INVERS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.INV.MENENTUKAN_DAN_MEMERIKSA_INVERS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui f(x) = (2x + 1)/(x − 3), x ≠ 3. Invers fungsi f adalah f⁻¹(x) = …
+  options:
+    - id: a
+      label: (3x + 1)/(x − 2)
+    - id: b
+      label: (3x − 1)/(x + 2)
+    - id: c
+      label: (x + 3)/(2x − 1)
+    - id: d
+      label: (2x − 1)/(x + 3)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (3x + 1)/(x − 2)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.INV.MENENTUKAN_DAN_MEMERIKSA_INVERS
+  feedback:
+    correct: y(x − 3) = 2x + 1 ⇒ x(y − 2) = 3y + 1 ⇒ x = (3y + 1)/(y − 2).
+    incorrect: Jawabannya (3x + 1)/(x − 2). y(x − 3) = 2x + 1 ⇒ x(y − 2) = 3y + 1 ⇒ x = (3y + 1)/(y − 2).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

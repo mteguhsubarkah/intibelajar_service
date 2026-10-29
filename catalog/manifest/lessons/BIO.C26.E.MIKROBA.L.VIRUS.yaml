@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.L.VIRUS
+title: Struktur dan replikasi virus
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+blocks:
+  - type: heading
+    slide: 0
+    text: Aseluler
+  - type: text
+    slide: 0
+    text: "Virus **tidak memiliki struktur sel**: hanya asam nukleat (DNA atau RNA) yang diselubungi protein (**kapsid**). Virus hanya dapat bereplikasi di dalam **sel hidup** (parasit obligat)."
+  - type: math
+    slide: 0
+    name: virus
+    expression: asam nukleat + kapsid
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Siklus litik
+  - type: text
+    slide: 1
+    text: "Urutan: **adsorpsi** (menempel) → **penetrasi** (memasukkan materi genetik) → **sintesis** (membuat komponen virus) → **perakitan** → **lisis** (sel pecah, virus baru keluar)."
+  - type: text
+    slide: 1
+    text: Pada siklus lisogenik, materi genetik virus bergabung dengan DNA inang dan ikut terbawa saat sel membelah.
+  - type: math
+    slide: 1
+    name: litik
+    expression: A → P → S → P → L
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Litik diakhiri sel pecah; lisogenik "bersembunyi" dulu di DNA inang.
+checks:
+  - question: BIO.C26.E.MIKROBA.Q.VIRUS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.MIKROBA.S.VIRUS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran
