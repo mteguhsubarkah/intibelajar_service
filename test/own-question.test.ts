@@ -13,10 +13,22 @@ test('own mapping is AI selection constrained to catalog, not keyword expansion 
   const p=JSON.parse(String(options?.body));assert.equal(p.response_format.type,'json_object');assert.equal(p.model,guide.model);
   const data=JSON.parse(p.messages[1].content);assert.deepEqual(data.catalog,[{mapId:'tri-f',title:core.title,description:core.description}]);assert.equal(data.question,'tentukan cos30');
   return envelope({cores:[{id:'tri-f',relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]});
- });assert.deepEqual(picked,[{core,relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]);
+ });assert.deepEqual(picked.outline,[{core,relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]);assert.deepEqual(picked.scope,{status:'IN_CATALOG',subject:null,message:''});
  for(const ids of [['foreign'],['tri-f','tri-f']])await assert.rejects(matchOwnQuestion(guide,'q',[core],async()=>envelope({cores:ids.map(id=>({id,relation:'Peran inti pada soal.'}))})),(e:any)=>e.status===503);
  await assert.rejects(matchOwnQuestion(guide,'q',[core],async()=>new Response('',{status:500})),(e:any)=>e.status===503);
  await assert.rejects(matchOwnQuestion(undefined,'q',[core]),(e:any)=>e.status===503);
+});
+test('questions outside the catalog or the supported subjects are refused with a reason, never with invented cores',async()=>{
+ const ask=(v:unknown)=>matchOwnQuestion(guide,'q',[core],async()=>envelope(v));
+ const fisika=await ask({scope:'OUT_OF_CATALOG',subject:'fisika',reason:'Ini soal gerak lurus.',cores:[]});
+ assert.equal(fisika.scope.status,'OUT_OF_CATALOG');assert.match(fisika.scope.message,/Soal Fisika belum bisa dikerjakan karena intinya belum ada di katalog/);assert.match(fisika.scope.message,/gerak lurus/);
+ const sejarah=await ask({scope:'UNSUPPORTED_SUBJECT',subject:'lainnya',reason:'Ini soal sejarah.',cores:[]});
+ assert.equal(sejarah.scope.status,'UNSUPPORTED_SUBJECT');assert.equal(sejarah.scope.subject,null);assert.match(sejarah.scope.message,/di luar pelajaran yang didukung IntiBelajar \(Matematika, Fisika, Kimia, Biologi, dan Bahasa Inggris\)/);
+ const hai=await ask({scope:'NOT_A_QUESTION',subject:null,reason:'',cores:[]});
+ assert.equal(hai.scope.status,'NOT_A_QUESTION');assert.match(hai.scope.message,/belum terlihat seperti soal/);
+ assert.equal((await ask({scope:'IN_CATALOG',subject:'matematika',cores:[]})).scope.status,'OUT_OF_CATALOG','no cores is never in catalog');
+ assert.equal((await ask({scope:'UNSUPPORTED_SUBJECT',subject:'lainnya',cores:[{id:'tri-f',relation:'Nilai sudut istimewa dipakai.'}]})).scope.status,'IN_CATALOG','matched cores win');
+ assert.equal((await ask({scope:'OUT_OF_CATALOG',subject:'matematika',reason:'pakai \\frac{1}{2}',cores:[]})).scope.message.includes('frac'),false,'LaTeX reasons are dropped');
 });
 test('own question has a dedicated validated contract, not a catalog questionId',()=>{
  validateRequest('/v1/own/diagnosis','POST',{body:{questionText:'cos30',rawText:'√3/2',sessionId:'a',hintOpened:false},query:{},headers:{}} as any);
@@ -39,7 +51,7 @@ test('typed question diagnoses through AI without catalog alias lookup, fake XP,
   });
   const [hint1,hint2]=await Promise.all([service.hints('Tentukan nilai cos30','learner-a'),service.hints('Tentukan nilai cos30','learner-a')]);
   assert.deepEqual(hint1,hint2);assert.equal(calls,1);assert.equal(hint1.items[0]?.title,catalog.cores.find(c=>c.mapId==='tri-f')?.title);
-  assert.match(hint1.items[0]!.relation,/cos 30/);validateResponse('/v1/own/hints','POST',200,hint1);
+  assert.match(hint1.items[0]!.relation,/cos 30/);validateResponse('/v1/own/hints','POST',200,hint1);assert.equal(hint1.scope.status,'IN_CATALOG');
   assert.deepEqual((await service.map('Tentukan nilai cos30','learner-a')).cores,['tri-f']);assert.equal(calls,1);
   const result:any=await service.diagnose({questionText:'Tentukan nilai cos30',rawText:'√3/2',sessionId:'own-typed',hintOpened:false},'learner-a');
   assert.equal(result.status,'completed');assert.equal(result.assessment.tone,'kuat');assert.deepEqual(result.items.map((i:any)=>i.id),['tri-f']);assert.equal(result.claimToken,undefined);assert.equal(calls,2);
@@ -47,7 +59,8 @@ test('typed question diagnoses through AI without catalog alias lookup, fake XP,
   await service.hints('Tentukan nilai cos30','learner-b');assert.equal(calls,3,'another learner has a separate cache');
   const next=reviewedFixture();next.release.version=manifest.release.version+1;await publish(db,next);
   const changed=await service.hints('Tentukan nilai cos30','learner-a');assert.notEqual(changed.catalogReleaseId,hint1.catalogReleaseId);assert.equal(calls,4,'new release invalidates cached mapping');
-  const outside=ownQuestionService(db,guide,async()=>envelope({cores:[]}));const unknown=await outside.diagnose({questionText:'Pertanyaan di luar katalog',rawText:'Jawabanku',sessionId:'out',hintOpened:false});
-  assert.equal(unknown.status,'insufficient_evidence');
+  const outside=ownQuestionService(db,guide,async()=>envelope({scope:'UNSUPPORTED_SUBJECT',subject:'lainnya',reason:'',cores:[]}));const unknown:any=await outside.diagnose({questionText:'Pertanyaan di luar katalog',rawText:'Jawabanku',sessionId:'out',hintOpened:false});
+  assert.equal(unknown.status,'insufficient_evidence');assert.match(unknown.clarification,/di luar pelajaran yang didukung/);
+  const refused=await outside.hints('Siapa presiden pertama Indonesia?','learner-a');assert.equal(refused.scope.status,'UNSUPPORTED_SUBJECT');assert.deepEqual(refused.items,[]);validateResponse('/v1/own/hints','POST',200,refused);
  }finally{await db.destroy();}
 });

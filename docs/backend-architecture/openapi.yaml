@@ -1144,6 +1144,17 @@ paths:
           required: false
           schema:
             $ref: '#/components/schemas/ItemType'
+        - name: subjectCode
+          in: query
+          required: false
+          description: Subject code (MAT, FIS, ...). A question matches when one of its concepts belongs to a topic of this subject.
+          schema: {type: string, maxLength: 16}
+        - name: phase
+          in: query
+          required: false
+          description: Kurikulum Merdeka phase of the concept's topic (E = kelas 10, F = kelas 11-12).
+          schema:
+            $ref: '#/components/schemas/Phase'
         - $ref: '#/components/parameters/Cursor'
         - $ref: '#/components/parameters/Limit'
       responses:
@@ -1153,6 +1164,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/QuestionPage'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /v1/questions/similar:
+    get:
+      operationId: listSimilarQuestions
+      tags: [catalog]
+      summary: Published questions that use the same cores, most shared cores first.
+      description: Similar means the same cores, not the same wording. Ranked by shared cores, then fewest extra cores, then easiest. Unknown aliases are ignored.
+      security: []
+      parameters:
+        - name: cores
+          in: query
+          required: true
+          description: Comma-separated core aliases (e.g. tri-f,tri-g), at most 8.
+          schema: {type: string, minLength: 1, maxLength: 400}
+        - name: excludeId
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Uuid'
+        - name: limit
+          in: query
+          required: false
+          schema: {type: integer, minimum: 1, maximum: 20}
+      responses:
+        '200':
+          description: Similar questions, possibly empty.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimilarQuestionList'
         '400':
           $ref: '#/components/responses/BadRequest'
   /v1/questions/{questionId}:
@@ -2775,9 +2817,18 @@ components:
     OwnQuestionHints:
       type: object
       additionalProperties: false
-      required: [catalogReleaseId, items]
+      required: [catalogReleaseId, scope, items]
       properties:
         catalogReleaseId: {type: string, format: uuid}
+        scope:
+          type: object
+          additionalProperties: false
+          required: [status, subject, message]
+          description: Whether the question can be worked here. Anything but IN_CATALOG has no items and a message that says why, for the student.
+          properties:
+            status: {type: string, enum: [IN_CATALOG, OUT_OF_CATALOG, UNSUPPORTED_SUBJECT, NOT_A_QUESTION]}
+            subject: {type: ['string', 'null'], enum: [matematika, fisika, kimia, biologi, inggris, null]}
+            message: {type: string, maxLength: 500}
         items:
           type: array
           maxItems: 6
@@ -3769,6 +3820,23 @@ components:
         questionCount:
           type: integer
           minimum: 0
+    SimilarQuestionList:
+      type: object
+      additionalProperties: false
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [question, sharedCoreIds]
+            properties:
+              question:
+                $ref: '#/components/schemas/QuestionSummary'
+              sharedCoreIds:
+                type: array
+                items: {type: string}
     QuestionSummary:
       type: object
       additionalProperties: false
