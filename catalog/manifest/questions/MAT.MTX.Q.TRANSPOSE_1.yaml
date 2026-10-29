@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.TRANSPOSE_1
+familyCode: MAT.MTX.F.TRANSPOSE_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.JENIS_MATRIKS_DAN_TRANSPOSE
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Transpose dari A = [1 2; 3 4] adalah …
+  options:
+    - id: a
+      label: "[1 3; 2 4]"
+    - id: b
+      label: "[4 3; 2 1]"
+    - id: c
+      label: "[2 1; 4 3]"
+    - id: d
+      label: "[1 2; 3 4]"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "[1 3; 2 4]"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.JENIS_MATRIKS_DAN_TRANSPOSE
+  feedback:
+    correct: Baris pertama (1, 2) menjadi kolom pertama, baris kedua (3, 4) menjadi kolom kedua.
+    incorrect: Jawabannya [1 3; 2 4]. Baris pertama (1, 2) menjadi kolom pertama, baris kedua (3, 4) menjadi kolom kedua.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.EKS.L.PERSAMAAN_EKSPONEN
+title: Persamaan Eksponen
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.PERSAMAAN_EKSPONEN
+blocks:
+  - type: heading
+    slide: 0
+    text: Samakan basisnya
+  - type: text
+    slide: 0
+    text: Jika **a^f(x) = a^g(x)**, maka **f(x) = g(x)**. Kuncinya menulis kedua ruas dengan basis yang sama.
+  - type: text
+    slide: 0
+    text: "Contoh: 4^(x+1) = 8ˣ ⇒ 2^(2x+2) = 2^(3x) ⇒ 2x + 2 = 3x ⇒ x = 2."
+  - type: math
+    slide: 0
+    name: a^f(x) = a^g(x)
+    expression: f(x) = g(x)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Bentuk kuadrat
+  - type: text
+    slide: 1
+    text: Bila muncul 2^(2x) dan 2ˣ sekaligus, misalkan **p = 2ˣ** sehingga 2^(2x) = p². Selesaikan persamaan kuadratnya, lalu kembalikan ke x.
+  - type: math
+    slide: 1
+    name: 2^(2x)
+    expression: (2ˣ)² = p²
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ingat p = 2ˣ selalu positif; buang nilai p yang negatif.
+checks:
+  - question: MAT.EKS.Q.PERSAMAAN_EKSPONEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.PERSAMAAN_EKSPONEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

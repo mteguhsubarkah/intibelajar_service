@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_1
+familyCode: KIM.C26.E.STOIK.F.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada reaksi N₂ + 3H₂ → 2NH₃, sebanyak 3 mol H₂ bereaksi habis. Jumlah NH₃ yang terbentuk adalah …
+  options:
+    - id: a
+      label: 1 mol
+    - id: b
+      label: 2 mol
+    - id: c
+      label: 3 mol
+    - id: d
+      label: 6 mol
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2 mol
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+  feedback:
+    correct: "Perbandingan H₂ : NH₃ = 3 : 2, jadi 3 mol H₂ menghasilkan 2 mol NH₃."
+    incorrect: "Jawabannya 2 mol. Perbandingan H₂ : NH₃ = 3 : 2, jadi 3 mol H₂ menghasilkan 2 mol NH₃."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

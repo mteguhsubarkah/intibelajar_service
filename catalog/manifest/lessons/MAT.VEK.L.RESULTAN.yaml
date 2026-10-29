@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.RESULTAN
+title: Resultan Vektor
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.VEK.RESULTAN_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Resultan dua gaya
+  - type: text
+    slide: 0
+    text: "Resultan adalah jumlah vektor. Untuk dua vektor yang membentuk sudut θ: **|R| = √(F₁² + F₂² + 2F₁F₂ cos θ)**."
+  - type: math
+    slide: 0
+    name: "|R|"
+    expression: √(F₁² + F₂² + 2F₁F₂ cos θ)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kasus khusus
+  - type: text
+    slide: 1
+    text: "θ = 90°: |R| = √(F₁² + F₂²). θ = 0°: |R| = F₁ + F₂. θ = 180°: |R| = |F₁ − F₂|."
+  - type: text
+    slide: 1
+    text: "Contoh: 6 N dan 8 N saling tegak lurus ⇒ |R| = 10 N."
+  - type: math
+    slide: 1
+    name: θ = 90°
+    expression: √(F₁² + F₂²)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: cos 90° = 0, jadi suku tengahnya hilang.
+checks:
+  - question: MAT.VEK.Q.RESULTAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.RESULTAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.L.BATAS
+title: Pereaksi pembatas dan hasil
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+blocks:
+  - type: heading
+    slide: 0
+    text: Siapa yang habis duluan?
+  - type: text
+    slide: 0
+    text: Bagi mol setiap pereaksi dengan koefisiennya. **Hasil bagi terkecil = pereaksi pembatas** (habis), yang lain bersisa.
+  - type: text
+    slide: 0
+    text: "Contoh: 2H₂ + O₂ → 2H₂O dengan 2 mol H₂ dan 2 mol O₂: H₂ → 2/2 = 1, O₂ → 2/1 = 2. H₂ pembatas."
+  - type: math
+    slide: 0
+    name: pembatas
+    expression: mol/koefisien terkecil
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Hitung hasil dari pembatas
+  - type: text
+    slide: 1
+    text: "Semua produk dihitung dari pereaksi pembatas. Dari contoh tadi: H₂O = 2 mol, O₂ terpakai 1 mol, sisa O₂ 1 mol."
+  - type: math
+    slide: 1
+    name: produk
+    expression: dari pereaksi pembatas
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tabel mula–reaksi–sisa (MRS) membantu agar tidak salah hitung.
+checks:
+  - question: KIM.C26.E.STOIK.Q.BATAS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.STOIK.S.BATAS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

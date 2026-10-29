@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.KUA.L.PUNCAK
+title: Melengkapkan kuadrat & puncak
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+blocks:
+  - type: heading
+    slide: 0
+    text: Bentuk puncak
+  - type: text
+    slide: 0
+    text: Fungsi kuadrat bisa ditulis **f(x) = a(x − h)² + k** dengan puncak **(h, k)**.
+  - type: text
+    slide: 0
+    text: "Melengkapkan kuadrat: x² − 6x + 5 = (x − 3)² − 9 + 5 = (x − 3)² − 4, puncaknya (3, −4)."
+  - type: math
+    slide: 0
+    name: f(x)
+    expression: a(x − h)² + k
+    highlight: true
+  - type: math
+    slide: 0
+    name: puncak
+    expression: (h, k)
+  - type: heading
+    slide: 1
+    text: Rumus cepat puncak
+  - type: text
+    slide: 1
+    text: "**xₚ = −b/2a**, lalu yₚ = f(xₚ). Nilai yₚ adalah nilai minimum (a > 0) atau maksimum (a < 0)."
+  - type: text
+    slide: 1
+    text: "Contoh: f(x) = −2x² + 8x + 1 ⇒ xₚ = 2 ⇒ f(2) = 9 (maksimum)."
+  - type: math
+    slide: 1
+    name: xₚ
+    expression: −b / 2a
+    highlight: true
+  - type: math
+    slide: 1
+    name: yₚ
+    expression: −D / 4a
+  - type: tip
+    slide: 1
+    text: Hitung xₚ dulu, lalu substitusikan; lebih jarang salah daripada menghafal −D/4a.
+checks:
+  - question: MAT.KUA.Q.PUNCAK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KUA.S.PUNCAK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

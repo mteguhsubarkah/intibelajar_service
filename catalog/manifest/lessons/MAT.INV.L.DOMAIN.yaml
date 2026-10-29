@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.INV.L.DOMAIN
+title: Domain, kodomain & range
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE
+blocks:
+  - type: heading
+    slide: 0
+    text: Domain alami
+  - type: text
+    slide: 0
+    text: "**Domain** adalah nilai x yang boleh dimasukkan. Dua larangan utama: bilangan di dalam akar kuadrat tidak boleh negatif, penyebut tidak boleh nol."
+  - type: text
+    slide: 0
+    text: "Contoh: f(x) = √(2x − 6) ⇒ 2x − 6 ≥ 0 ⇒ x ≥ 3."
+  - type: math
+    slide: 0
+    name: √g(x)
+    expression: g(x) ≥ 0
+    highlight: true
+  - type: math
+    slide: 0
+    name: 1/g(x)
+    expression: g(x) ≠ 0
+  - type: heading
+    slide: 1
+    text: Range
+  - type: text
+    slide: 1
+    text: "**Range** adalah himpunan hasil f(x). Kodomain adalah himpunan tujuan yang disediakan; range bagian dari kodomain."
+  - type: text
+    slide: 1
+    text: "Contoh: f(x) = x² + 1 untuk x real ⇒ x² ≥ 0 ⇒ range y ≥ 1."
+  - type: math
+    slide: 1
+    name: x² + 1
+    expression: range y ≥ 1
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Untuk range, pikirkan nilai terkecil dan terbesar yang bisa dicapai.
+checks:
+  - question: MAT.INV.Q.DOMAIN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.INV.S.DOMAIN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

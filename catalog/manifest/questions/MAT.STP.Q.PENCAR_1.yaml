@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.STP.Q.PENCAR_1
+familyCode: MAT.STP.F.PENCAR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.STP.DIAGRAM_PENCAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diagram pencar jam belajar dan nilai ujian menunjukkan titik-titik naik dari kiri bawah ke kanan atas. Hubungan keduanya adalah …
+  options:
+    - id: a
+      label: korelasi negatif
+    - id: b
+      label: korelasi positif
+    - id: c
+      label: tidak ada korelasi
+    - id: d
+      label: sebab-akibat pasti
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - korelasi positif
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.STP.DIAGRAM_PENCAR
+  feedback:
+    correct: "Pola naik berarti nilai cenderung lebih tinggi saat jam belajar lebih banyak: korelasi positif."
+    incorrect: "Jawabannya korelasi positif. Pola naik berarti nilai cenderung lebih tinggi saat jam belajar lebih banyak: korelasi positif."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

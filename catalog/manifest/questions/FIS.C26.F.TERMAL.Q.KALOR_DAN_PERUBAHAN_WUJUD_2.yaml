@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL.Q.KALOR_DAN_PERUBAHAN_WUJUD_2
+familyCode: FIS.C26.F.TERMAL.F.KALOR_DAN_PERUBAHAN_WUJUD_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.TERMAL.KALOR_DAN_PERUBAHAN_WUJUD
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebanyak 200 g air bersuhu 80°C dicampur dengan 300 g air bersuhu 20°C. Jika tidak ada kalor yang hilang, suhu akhir campuran adalah …
+  options:
+    - id: a
+      label: 44°C
+    - id: b
+      label: 50°C
+    - id: c
+      label: 56°C
+    - id: d
+      label: 40°C
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 44°C
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.TERMAL.KALOR_DAN_PERUBAHAN_WUJUD
+  feedback:
+    correct: "Asas Black: 200(80 − T) = 300(T − 20) ⇒ 16.000 + 6.000 = 500T ⇒ T = 44°C."
+    incorrect: "Jawabannya 44°C. Asas Black: 200(80 − T) = 300(T − 20) ⇒ 16.000 + 6.000 = 500T ⇒ T = 44°C."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

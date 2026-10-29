@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.PENGURANGAN
+title: Pengurangan Vektor
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.PENGURANGAN_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Menambah lawannya
+  - type: text
+    slide: 0
+    text: "**a − b = a + (−b)**: balik arah b, lalu jumlahkan. Secara komponen, kurangkan komponen yang sejenis."
+  - type: math
+    slide: 0
+    name: a − b
+    expression: (a₁ − b₁, a₂ − b₂)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Hubungan dengan dua titik
+  - type: text
+    slide: 1
+    text: AB = OB − OA = b − a. Jadi pengurangan vektor posisi memberi vektor antara dua titik.
+  - type: text
+    slide: 1
+    text: "Contoh: A(2, 3), B(6, 1) ⇒ BA = a − b = (−4, 2)."
+  - type: math
+    slide: 1
+    name: AB
+    expression: b − a
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Urutan penting: a − b tidak sama dengan b − a."
+checks:
+  - question: MAT.VEK.Q.PENGURANGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.PENGURANGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

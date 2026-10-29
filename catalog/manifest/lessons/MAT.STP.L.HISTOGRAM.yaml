@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.STP.L.HISTOGRAM
+title: Histogram & dot plot
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.STP.HISTOGRAM_DAN_DOT_PLOT
+blocks:
+  - type: heading
+    slide: 0
+    text: Rata-rata dari tabel frekuensi
+  - type: text
+    slide: 0
+    text: Rata-rata = **Σ(f · x) / Σf**. Kalikan setiap nilai dengan frekuensinya, jumlahkan, lalu bagi banyak data.
+  - type: text
+    slide: 0
+    text: "Contoh: nilai 6 (3 siswa), 7 (5 siswa), 8 (2 siswa) ⇒ (18 + 35 + 16)/10 = 6,9."
+  - type: math
+    slide: 0
+    name: x̄
+    expression: Σ(f · x) / Σf
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Bentuk sebaran
+  - type: text
+    slide: 1
+    text: "Histogram **simetris**: rata-rata ≈ median. **Menceng ke kanan** (ekor panjang di kanan): rata-rata > median. Menceng ke kiri: rata-rata < median."
+  - type: math
+    slide: 1
+    name: menceng kanan
+    expression: rata-rata > median
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ekor menarik rata-rata ke arahnya; median lebih tahan.
+checks:
+  - question: MAT.STP.Q.HISTOGRAM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.STP.S.HISTOGRAM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

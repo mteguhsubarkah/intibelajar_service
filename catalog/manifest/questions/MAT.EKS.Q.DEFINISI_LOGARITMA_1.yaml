@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.DEFINISI_LOGARITMA_1
+familyCode: MAT.EKS.F.DEFINISI_LOGARITMA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.DEFINISI_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari ²log 32 adalah …
+  options:
+    - id: a
+      label: "4"
+    - id: b
+      label: "5"
+    - id: c
+      label: "6"
+    - id: d
+      label: "16"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "5"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.DEFINISI_LOGARITMA
+  feedback:
+    correct: 2⁵ = 32, jadi ²log 32 = 5.
+    incorrect: Jawabannya 5. 2⁵ = 32, jadi ²log 32 = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

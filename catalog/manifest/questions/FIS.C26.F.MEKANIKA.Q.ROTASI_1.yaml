@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.Q.ROTASI_1
+familyCode: FIS.C26.F.MEKANIKA.F.ROTASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Seorang penari berputar dengan kecepatan sudut 2 putaran/s. Ia merapatkan lengan sehingga momen inersianya menjadi setengah semula. Kecepatan sudutnya menjadi …
+  options:
+    - id: a
+      label: 1 putaran/s
+    - id: b
+      label: 2 putaran/s
+    - id: c
+      label: 4 putaran/s
+    - id: d
+      label: 8 putaran/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 4 putaran/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+  feedback:
+    correct: "I₁ω₁ = I₂ω₂: I × 2 = ½I × ω₂, jadi ω₂ = 4 putaran/s."
+    incorrect: "Jawabannya 4 putaran/s. I₁ω₁ = I₂ω₂: I × 2 = ½I × ω₂, jadi ω₂ = 4 putaran/s."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

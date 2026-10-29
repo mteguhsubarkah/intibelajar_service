@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SIFAT_EKSPONEN_1
+familyCode: MAT.EKS.F.SIFAT_EKSPONEN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk sederhana dari (a³b⁻²)² / (a⁴b⁻³) adalah …
+  options:
+    - id: a
+      label: a²/b
+    - id: b
+      label: a²b
+    - id: c
+      label: a¹⁰/b⁷
+    - id: d
+      label: ab
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - a²/b
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SIFAT_SIFAT_EKSPONEN
+  feedback:
+    correct: (a³b⁻²)² = a⁶b⁻⁴. Dibagi a⁴b⁻³ menjadi a⁶⁻⁴ b⁻⁴⁺³ = a²b⁻¹ = a²/b.
+    incorrect: Jawabannya a²/b. (a³b⁻²)² = a⁶b⁻⁴. Dibagi a⁴b⁻³ menjadi a⁶⁻⁴ b⁻⁴⁺³ = a²b⁻¹ = a²/b.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

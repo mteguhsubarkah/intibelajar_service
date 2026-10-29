@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.Q.RELATIVITAS_1
+familyCode: FIS.C26.F.MODERN.F.RELATIVITAS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah pesawat bergerak dengan kecepatan 0,6c. Menurut awak pesawat, perjalanan berlangsung 8 tahun. Menurut pengamat di bumi, perjalanan itu berlangsung …
+  options:
+    - id: a
+      label: 6,4 tahun
+    - id: b
+      label: 8 tahun
+    - id: c
+      label: 10 tahun
+    - id: d
+      label: 12,5 tahun
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 10 tahun
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
+  feedback:
+    correct: γ = 1/√(1 − 0,36) = 1,25. Δt = 1,25 × 8 = 10 tahun.
+    incorrect: Jawabannya 10 tahun. γ = 1/√(1 − 0,36) = 1,25. Δt = 1,25 × 8 = 10 tahun.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

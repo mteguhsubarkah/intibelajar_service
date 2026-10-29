@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.L.ENZIM_DAN_METABOLISME
+title: Enzim dan metabolisme
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.SEL.ENZIM_DAN_METABOLISME
+blocks:
+  - type: heading
+    slide: 0
+    text: Biokatalis
+  - type: text
+    slide: 0
+    text: "**Enzim** adalah protein yang mempercepat reaksi metabolisme tanpa ikut bereaksi. Enzim bekerja **spesifik**: satu enzim untuk substrat tertentu (model gembok–kunci)."
+  - type: text
+    slide: 0
+    text: "Contoh: amilase menguraikan amilum, tetapi tidak menguraikan protein."
+  - type: math
+    slide: 0
+    name: enzim
+    expression: protein, spesifik
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Faktor yang memengaruhi
+  - type: text
+    slide: 1
+    text: Suhu, pH, konsentrasi substrat, dan inhibitor. Suhu terlalu tinggi menyebabkan **denaturasi** (struktur protein rusak), sehingga enzim tidak berfungsi lagi.
+  - type: math
+    slide: 1
+    name: suhu tinggi
+    expression: denaturasi
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Setiap enzim punya suhu dan pH optimum.
+checks:
+  - question: BIO.C26.F.SEL.Q.ENZIM_DAN_METABOLISME_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.SEL.S.ENZIM_DAN_METABOLISME
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

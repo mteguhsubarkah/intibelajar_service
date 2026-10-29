@@ -1,0 +1,51 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.L.ORGANEL_SEL
+title: Organel sel
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.SEL.ORGANEL_SEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Fungsi organel
+  - type: text
+    slide: 0
+    text: "**Mitokondria**: respirasi sel, menghasilkan ATP. **Ribosom**: sintesis protein. **Retikulum endoplasma**: transpor dan sintesis. **Badan Golgi**: sekresi. **Lisosom**: pencernaan intrasel. **Nukleus**: pengendali sel."
+  - type: math
+    slide: 0
+    name: mitokondria
+    expression: respirasi, ATP
+    highlight: true
+  - type: math
+    slide: 0
+    name: ribosom
+    expression: sintesis protein
+  - type: heading
+    slide: 1
+    text: Sel hewan dan tumbuhan
+  - type: text
+    slide: 1
+    text: "Hanya sel tumbuhan: **dinding sel**, **kloroplas**, **vakuola besar**. Hanya sel hewan: **sentriol** dan lisosom yang menonjol."
+  - type: math
+    slide: 1
+    name: khas tumbuhan
+    expression: dinding sel, kloroplas, vakuola besar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Mitokondria ada di sel hewan dan tumbuhan.
+checks:
+  - question: BIO.C26.F.SEL.Q.ORGANEL_SEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.SEL.S.ORGANEL_SEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

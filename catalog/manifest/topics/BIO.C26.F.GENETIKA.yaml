@@ -1,0 +1,81 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA
+subject: BIO
+title: Pewarisan sifat & informasi genetik
+subtitle: DNA, pembelahan sel, Mendel, sintesis protein
+phase: F
+availability: MAPPED
+bekal:
+  - sel
+  - peluang sederhana
+aliases:
+  - ns: TOPIC
+    value: genetika
+units: []
+concepts:
+  - code: BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM
+    title: DNA, gen, dan kromosom
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-genetika-c1
+  - code: BIO.C26.F.GENETIKA.POLA_PEWARISAN
+    title: Pola pewarisan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-genetika-c2
+  - code: BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS
+    title: Mitosis dan meiosis
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-genetika-meiosis
+  - code: BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+    title: Transkripsi dan translasi
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-genetika-ekspresi
+prerequisites:
+  - concept: BIO.C26.F.GENETIKA.POLA_PEWARISAN
+    requires: BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM
+    kind: SOFT
+  - concept: BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS
+    requires: BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM
+    kind: SOFT
+  - concept: BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+    requires: BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

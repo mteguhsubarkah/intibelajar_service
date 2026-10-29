@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.SATUAN_2
+familyCode: MAT.VEK.F.SATUAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.VEKTOR_SATUAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Vektor satuan dari a = i + 2j + 2k adalah …
+  options:
+    - id: a
+      label: (1/3)(i + 2j + 2k)
+    - id: b
+      label: (1/5)(i + 2j + 2k)
+    - id: c
+      label: (1/9)(i + 2j + 2k)
+    - id: d
+      label: i + j + k
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (1/3)(i + 2j + 2k)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.VEKTOR_SATUAN
+  feedback:
+    correct: "|a| = √(1 + 4 + 4) = 3, jadi â = a/3."
+    incorrect: Jawabannya (1/3)(i + 2j + 2k). |a| = √(1 + 4 + 4) = 3, jadi â = a/3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

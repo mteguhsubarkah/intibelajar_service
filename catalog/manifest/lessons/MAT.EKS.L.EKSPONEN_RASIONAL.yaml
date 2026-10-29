@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.EKS.L.EKSPONEN_RASIONAL
+title: Eksponen Rasional
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.EKSPONEN_RASIONAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Akar sebagai pangkat pecahan
+  - type: text
+    slide: 0
+    text: "Akar pangkat n sama dengan pangkat 1/n: **a^(1/n) = ⁿ√a**. Pangkat m/n berarti akar n lalu pangkat m."
+  - type: math
+    slide: 0
+    name: a^(m/n)
+    expression: ⁿ√(aᵐ) = (ⁿ√a)ᵐ
+    highlight: true
+  - type: math
+    slide: 0
+    name: ∛(x²)
+    expression: x^(2/3)
+  - type: heading
+    slide: 1
+    text: Menghitung tanpa kalkulator
+  - type: text
+    slide: 1
+    text: "Hitung akarnya dulu supaya angkanya kecil: 8^(2/3) = (∛8)² = 2² = 4."
+  - type: text
+    slide: 1
+    text: "Pangkat negatif tetap berarti kebalikan: 16^(−3/4) = 1/(⁴√16)³ = 1/8."
+  - type: math
+    slide: 1
+    name: 8^(2/3)
+    expression: "4"
+    highlight: true
+  - type: math
+    slide: 1
+    name: 16^(−3/4)
+    expression: 1/8
+  - type: tip
+    slide: 1
+    text: Akar dulu, pangkat kemudian. Lebih ringan daripada memangkatkan bilangan besar.
+checks:
+  - question: MAT.EKS.Q.EKSPONEN_RASIONAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.EKSPONEN_RASIONAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

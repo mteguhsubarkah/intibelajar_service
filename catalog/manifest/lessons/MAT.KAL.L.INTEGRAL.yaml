@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.KAL.L.INTEGRAL
+title: Integral tentu dan luas
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+blocks:
+  - type: heading
+    slide: 0
+    text: Integral tentu
+  - type: text
+    slide: 0
+    text: "**∫ₐᵇ f(x) dx = F(b) − F(a)**, dengan F antiturunan f. Konstanta C saling menghapus."
+  - type: text
+    slide: 0
+    text: "Contoh: ∫₁³ 2x dx = [x²]₁³ = 9 − 1 = 8."
+  - type: math
+    slide: 0
+    name: ∫ₐᵇ f(x) dx
+    expression: F(b) − F(a)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Luas di bawah kurva
+  - type: text
+    slide: 1
+    text: Jika f(x) ≥ 0 pada [a, b], integral tentu sama dengan **luas** daerah di antara kurva dan sumbu x.
+  - type: text
+    slide: 1
+    text: "Contoh: luas di bawah y = x² dari 0 sampai 3 = [x³/3]₀³ = 9."
+  - type: math
+    slide: 1
+    name: luas
+    expression: ∫ₐᵇ f(x) dx (f ≥ 0)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bila kurva di bawah sumbu x, ambil nilai mutlaknya untuk luas.
+checks:
+  - question: MAT.KAL.Q.INTEGRAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KAL.S.INTEGRAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

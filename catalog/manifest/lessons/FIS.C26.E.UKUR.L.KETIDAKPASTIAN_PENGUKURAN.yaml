@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.L.KETIDAKPASTIAN_PENGUKURAN
+title: Ketidakpastian pengukuran
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Membaca alat ukur
+  - type: text
+    slide: 0
+    text: "**Jangka sorong** (ketelitian 0,01 cm): hasil = skala utama + (garis nonius yang berimpit × 0,01 cm)."
+  - type: text
+    slide: 0
+    text: "**Mikrometer sekrup** (ketelitian 0,01 mm): hasil = skala utama + (skala putar × 0,01 mm)."
+  - type: math
+    slide: 0
+    name: jangka sorong
+    expression: SU + nonius × 0,01 cm
+    highlight: true
+  - type: math
+    slide: 0
+    name: mikrometer
+    expression: SU + putar × 0,01 mm
+  - type: heading
+    slide: 1
+    text: Menulis hasil ukur
+  - type: text
+    slide: 1
+    text: "Hasil pengukuran selalu ditulis dengan ketidakpastiannya: **x = x₀ ± Δx**. Untuk pengukuran tunggal, Δx biasanya setengah skala terkecil."
+  - type: text
+    slide: 1
+    text: Ketidakpastian relatif **Δx/x₀ × 100%** menunjukkan seberapa teliti hasilnya.
+  - type: math
+    slide: 1
+    name: hasil
+    expression: x₀ ± Δx
+    highlight: true
+  - type: math
+    slide: 1
+    name: relatif
+    expression: Δx / x₀ × 100%
+  - type: tip
+    slide: 1
+    text: Alat dengan skala terkecil lebih kecil memberi hasil yang lebih teliti.
+checks:
+  - question: FIS.C26.E.UKUR.Q.KETIDAKPASTIAN_PENGUKURAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.UKUR.S.KETIDAKPASTIAN_PENGUKURAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

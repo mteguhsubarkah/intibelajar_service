@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.EKS.L.DEFINISI_LOGARITMA
+title: Definisi Logaritma
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.DEFINISI_LOGARITMA
+blocks:
+  - type: heading
+    slide: 0
+    text: Logaritma = mencari pangkat
+  - type: text
+    slide: 0
+    text: '**ᵃlog b = c** artinya **aᶜ = b**. Logaritma menjawab: "a dipangkatkan berapa supaya hasilnya b?"'
+  - type: text
+    slide: 0
+    text: "Syarat: a > 0, a ≠ 1, dan b > 0."
+  - type: math
+    slide: 0
+    name: ᵃlog b = c
+    expression: aᶜ = b
+    highlight: true
+  - type: math
+    slide: 0
+    name: ²log 8
+    expression: "3"
+  - type: heading
+    slide: 1
+    text: Nilai-nilai khusus
+  - type: text
+    slide: 1
+    text: ᵃlog 1 = 0, ᵃlog a = 1, dan ᵃlog aⁿ = n. Tulisan **log** tanpa basis berarti basis 10.
+  - type: text
+    slide: 1
+    text: "Contoh: log 1000 = 3 karena 10³ = 1000, dan log 0,01 = −2."
+  - type: math
+    slide: 1
+    name: ᵃlog aⁿ
+    expression: n
+    highlight: true
+  - type: math
+    slide: 1
+    name: log 1000
+    expression: "3"
+checks:
+  - question: MAT.EKS.Q.DEFINISI_LOGARITMA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.DEFINISI_LOGARITMA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

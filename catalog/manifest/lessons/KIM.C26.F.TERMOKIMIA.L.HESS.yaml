@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.L.HESS
+title: Hukum Hess
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.TERMOKIMIA.HUKUM_HESS
+blocks:
+  - type: heading
+    slide: 0
+    text: Jalan berbeda, ΔH sama
+  - type: text
+    slide: 0
+    text: ΔH reaksi hanya bergantung pada keadaan awal dan akhir. Reaksi bisa dijumlahkan; **membalik reaksi membalik tanda ΔH**.
+  - type: text
+    slide: 0
+    text: "Contoh: C + O₂ → CO₂ (−394) dikurangi CO + ½O₂ → CO₂ (−283) memberi C + ½O₂ → CO, ΔH = −111 kJ."
+  - type: math
+    slide: 0
+    name: ΔH total
+    expression: ΣΔH tahap
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Dari entalpi pembentukan
+  - type: text
+    slide: 1
+    text: "**ΔH reaksi = ΣΔHf° produk − ΣΔHf° pereaksi** (unsur bebas = 0)."
+  - type: text
+    slide: 1
+    text: "Contoh: CH₄ + 2O₂ → CO₂ + 2H₂O ⇒ (−394 + 2(−286)) − (−75) = −891 kJ."
+  - type: math
+    slide: 1
+    name: ΔH
+    expression: ΣΔHf produk − ΣΔHf pereaksi
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kalikan ΔHf dengan koefisiennya.
+checks:
+  - question: KIM.C26.F.TERMOKIMIA.Q.HESS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.TERMOKIMIA.S.HESS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

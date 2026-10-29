@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.CP25.F.LINGKARAN.Q.UNSUR_2
+familyCode: MAT.CP25.F.LINGKARAN.F.UNSUR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.CP25.F.LINGKARAN.UNSUR_DAN_SUDUT_LINGKARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Panjang busur dengan sudut pusat 90° pada lingkaran berjari-jari 14 cm (π = 22/7) adalah …
+  options:
+    - id: a
+      label: 11 cm
+    - id: b
+      label: 22 cm
+    - id: c
+      label: 44 cm
+    - id: d
+      label: 88 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 22 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.CP25.F.LINGKARAN.UNSUR_DAN_SUDUT_LINGKARAN
+  feedback:
+    correct: 90/360 × 2 × 22/7 × 14 = 1/4 × 88 = 22 cm.
+    incorrect: Jawabannya 22 cm. 90/360 × 2 × 22/7 × 14 = 1/4 × 88 = 22 cm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

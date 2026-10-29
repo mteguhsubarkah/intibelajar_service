@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.SETARA_2
+familyCode: KIM.C26.E.STOIK.F.SETARA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Koefisien reaksi a Fe + b O₂ → c Fe₂O₃ yang setara adalah …
+  options:
+    - id: a
+      label: a = 2, b = 3, c = 1
+    - id: b
+      label: a = 4, b = 3, c = 2
+    - id: c
+      label: a = 2, b = 1, c = 1
+    - id: d
+      label: a = 4, b = 6, c = 2
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - a = 4, b = 3, c = 2
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+  feedback:
+    correct: "4Fe + 3O₂ → 2Fe₂O₃: Fe 4 = 4, O 6 = 6."
+    incorrect: "Jawabannya a = 4, b = 3, c = 2. 4Fe + 3O₂ → 2Fe₂O₃: Fe 4 = 4, O 6 = 6."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

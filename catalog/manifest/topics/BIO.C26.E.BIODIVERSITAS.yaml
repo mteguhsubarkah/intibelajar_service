@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS
+subject: BIO
+title: Keanekaragaman dan konservasi
+subtitle: Tingkat keanekaragaman, konservasi, klasifikasi
+phase: E
+availability: MAPPED
+bekal:
+  - ciri makhluk hidup
+  - klasifikasi sederhana
+aliases:
+  - ns: TOPIC
+    value: keanekaragaman-hayati
+units: []
+concepts:
+  - code: BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+    title: Tingkat keanekaragaman
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-biodiversitas-c1
+  - code: BIO.C26.E.BIODIVERSITAS.STRATEGI_KONSERVASI
+    title: Strategi konservasi
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-biodiversitas-c2
+  - code: BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI
+    title: Kunci determinasi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-biodiversitas-identifikasi
+prerequisites:
+  - concept: BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI
+    requires: BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

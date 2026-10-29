@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.PENERAPAN
+title: Penerapan Vektor
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.VEK.PENERAPAN_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Usaha sebagai perkalian titik
+  - type: text
+    slide: 0
+    text: "Usaha oleh gaya F yang memindahkan benda sejauh s: **W = F · s**. Hanya komponen gaya yang searah perpindahan yang melakukan usaha."
+  - type: math
+    slide: 0
+    name: W
+    expression: F · s = |F||s| cos θ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kecepatan relatif
+  - type: text
+    slide: 1
+    text: Kecepatan perahu di sungai = kecepatan perahu + kecepatan arus (jumlah vektor).
+  - type: text
+    slide: 1
+    text: "Contoh: 4 m/s ke timur dan arus 3 m/s ke utara ⇒ 5 m/s."
+  - type: math
+    slide: 1
+    name: v total
+    expression: v perahu + v arus
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gambar sketsa panahnya dulu; sering membentuk segitiga siku-siku.
+checks:
+  - question: MAT.VEK.Q.PENERAPAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.PENERAPAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

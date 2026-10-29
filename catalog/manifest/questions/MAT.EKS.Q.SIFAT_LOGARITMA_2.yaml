@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SIFAT_LOGARITMA_2
+familyCode: MAT.EKS.F.SIFAT_LOGARITMA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SIFAT_SIFAT_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika log 2 = p dan log 3 = q, maka log 12 = …
+  options:
+    - id: a
+      label: 2p + q
+    - id: b
+      label: p + 2q
+    - id: c
+      label: 2pq
+    - id: d
+      label: p² + q
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2p + q
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SIFAT_SIFAT_LOGARITMA
+  feedback:
+    correct: 12 = 2² × 3, jadi log 12 = 2 log 2 + log 3 = 2p + q.
+    incorrect: Jawabannya 2p + q. 12 = 2² × 3, jadi log 12 = 2 log 2 + log 3 = 2p + q.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SIFAT_EKSPONEN_3
+familyCode: MAT.EKS.F.SIFAT_EKSPONEN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SIFAT_SIFAT_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk sederhana dari (3x²y)³ adalah …
+  options:
+    - id: a
+      label: 9x⁵y³
+    - id: b
+      label: 27x⁶y³
+    - id: c
+      label: 27x⁵y³
+    - id: d
+      label: 3x⁶y³
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 27x⁶y³
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SIFAT_SIFAT_EKSPONEN
+  feedback:
+    correct: "Setiap faktor dipangkatkan 3: 3³ = 27, (x²)³ = x⁶, y³. Hasilnya 27x⁶y³."
+    incorrect: "Jawabannya 27x⁶y³. Setiap faktor dipangkatkan 3: 3³ = 27, (x²)³ = x⁶, y³. Hasilnya 27x⁶y³."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

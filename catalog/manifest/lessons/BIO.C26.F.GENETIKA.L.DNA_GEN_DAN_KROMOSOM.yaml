@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.L.DNA_GEN_DAN_KROMOSOM
+title: DNA, gen, dan kromosom
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM
+blocks:
+  - type: heading
+    slide: 0
+    text: Struktur DNA
+  - type: text
+    slide: 0
+    text: "DNA berbentuk **heliks ganda**. Basa nitrogennya berpasangan: **A dengan T**, **G dengan C**. **Gen** adalah segmen DNA yang membawa informasi satu sifat; DNA tergulung dalam **kromosom**."
+  - type: math
+    slide: 0
+    name: pasangan basa
+    expression: A–T, G–C
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Untai komplemen
+  - type: text
+    slide: 1
+    text: Untai pasangan ditulis dengan mengganti setiap basa dengan pasangannya.
+  - type: text
+    slide: 1
+    text: "Contoh: ATG CCA ⇒ TAC GGT."
+  - type: math
+    slide: 1
+    name: ATG CCA
+    expression: TAC GGT
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pada RNA, T diganti U (urasil).
+checks:
+  - question: BIO.C26.F.GENETIKA.Q.DNA_GEN_DAN_KROMOSOM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.GENETIKA.S.DNA_GEN_DAN_KROMOSOM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

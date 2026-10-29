@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA.L.TEKANAN_DAN_GAYA_APUNG
+title: Tekanan dan gaya apung
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+blocks:
+  - type: heading
+    slide: 0
+    text: Tekanan hidrostatis
+  - type: text
+    slide: 0
+    text: "Tekanan zat cair bertambah dengan kedalaman: **Pₕ = ρ · g · h**."
+  - type: text
+    slide: 0
+    text: "Contoh: kedalaman 5 m di air (ρ = 1.000 kg/m³) ⇒ Pₕ = 50.000 Pa."
+  - type: math
+    slide: 0
+    name: Pₕ
+    expression: ρ · g · h
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Hukum Archimedes
+  - type: text
+    slide: 1
+    text: "Benda yang tercelup mendapat gaya ke atas sebesar berat zat cair yang dipindahkan: **Fₐ = ρ_f · g · V_tercelup**."
+  - type: text
+    slide: 1
+    text: "Benda terapung: berat = Fₐ, sehingga ρ_benda · V = ρ_f · V_tercelup."
+  - type: math
+    slide: 1
+    name: Fₐ
+    expression: ρ_f · g · V_tercelup
+    highlight: true
+  - type: math
+    slide: 1
+    name: terapung
+    expression: ρ_b / ρ_f = V_tercelup / V
+  - type: tip
+    slide: 1
+    text: Yang dipakai adalah volume yang tercelup, bukan volume seluruh benda.
+checks:
+  - question: FIS.C26.F.FLUIDA.Q.TEKANAN_DAN_GAYA_APUNG_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.FLUIDA.S.TEKANAN_DAN_GAYA_APUNG
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.MTX.L.TRANSFORMASI
+title: Matriks transformasi geometri
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI
+blocks:
+  - type: heading
+    slide: 0
+    text: Transformasi sebagai perkalian
+  - type: text
+    slide: 0
+    text: Bayangan titik (x, y) oleh matriks M adalah **M · [x; y]**.
+  - type: text
+    slide: 0
+    text: "Pencerminan terhadap sumbu x: [1 0; 0 −1]. Terhadap sumbu y: [−1 0; 0 1]. Dilatasi faktor k: [k 0; 0 k]."
+  - type: math
+    slide: 0
+    name: cermin sumbu x
+    expression: "[1 0; 0 −1]"
+    highlight: true
+  - type: math
+    slide: 0
+    name: dilatasi k
+    expression: "[k 0; 0 k]"
+  - type: heading
+    slide: 1
+    text: Rotasi
+  - type: text
+    slide: 1
+    text: "Rotasi 90° berlawanan arah jarum jam terhadap O: **[0 −1; 1 0]**, sehingga (x, y) → (−y, x)."
+  - type: text
+    slide: 1
+    text: "Contoh: (2, 5) → (−5, 2)."
+  - type: math
+    slide: 1
+    name: rotasi 90°
+    expression: (x, y) → (−y, x)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Uji matriks dengan titik (1, 0) untuk memastikan arahnya benar.
+checks:
+  - question: MAT.MTX.Q.TRANSFORMASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.MTX.S.TRANSFORMASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

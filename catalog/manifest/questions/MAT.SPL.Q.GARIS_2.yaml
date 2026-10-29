@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.SPL.Q.GARIS_2
+familyCode: MAT.SPL.F.GARIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.SPL.PERSAMAAN_GARIS_BATAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan garis yang melalui titik (0, 2) dan (5, 0) adalah …
+  options:
+    - id: a
+      label: 5x + 2y = 10
+    - id: b
+      label: 2x + 5y = 10
+    - id: c
+      label: 2x − 5y = 10
+    - id: d
+      label: x + y = 7
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2x + 5y = 10
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.SPL.PERSAMAAN_GARIS_BATAS
+  feedback:
+    correct: "a = 5 dan b = 2: 2x + 5y = 10. Cek: (5, 0) ⇒ 10 ✓, (0, 2) ⇒ 10 ✓."
+    incorrect: "Jawabannya 2x + 5y = 10. a = 5 dan b = 2: 2x + 5y = 10. Cek: (5, 0) ⇒ 10 ✓, (0, 2) ⇒ 10 ✓."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

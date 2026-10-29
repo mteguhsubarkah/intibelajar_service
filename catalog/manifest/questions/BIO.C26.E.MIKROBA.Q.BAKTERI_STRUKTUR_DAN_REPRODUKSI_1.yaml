@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.BAKTERI_STRUKTUR_DAN_REPRODUKSI_1
+familyCode: BIO.C26.E.MIKROBA.F.BAKTERI_STRUKTUR_DAN_REPRODUKSI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ciri khas bakteri yang membedakannya dari jamur adalah …
+  options:
+    - id: a
+      label: memiliki dinding sel
+    - id: b
+      label: tidak memiliki membran inti
+    - id: c
+      label: berkembang biak
+    - id: d
+      label: bersifat heterotrof
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - tidak memiliki membran inti
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+  feedback:
+    correct: Bakteri prokariotik, tidak memiliki membran inti. Jamur eukariotik.
+    incorrect: Jawabannya tidak memiliki membran inti. Bakteri prokariotik, tidak memiliki membran inti. Jamur eukariotik.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

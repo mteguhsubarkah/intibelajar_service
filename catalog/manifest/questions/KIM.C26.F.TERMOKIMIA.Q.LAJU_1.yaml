@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.LAJU_1
+familyCode: KIM.C26.F.TERMOKIMIA.F.LAJU_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada suatu reaksi, ketika konsentrasi A dinaikkan dua kali (konsentrasi lain tetap), laju reaksi menjadi empat kali. Orde reaksi terhadap A adalah …
+  options:
+    - id: a
+      label: "0"
+    - id: b
+      label: "1"
+    - id: c
+      label: "2"
+    - id: d
+      label: "4"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "2"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA
+  feedback:
+    correct: 2ᵐ = 4, jadi m = 2.
+    incorrect: Jawabannya 2. 2ᵐ = 4, jadi m = 2.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

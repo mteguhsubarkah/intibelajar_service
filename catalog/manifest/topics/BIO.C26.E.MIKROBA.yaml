@@ -1,0 +1,78 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA
+subject: BIO
+title: Virus, bakteri, dan jamur
+subtitle: Struktur, reproduksi, dan peran mikroorganisme
+phase: E
+availability: MAPPED
+bekal:
+  - sel
+  - klasifikasi makhluk hidup
+aliases:
+  - ns: TOPIC
+    value: mikroorganisme
+units: []
+concepts:
+  - code: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    title: "Bakteri: struktur dan reproduksi"
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-mikroba-c1
+  - code: BIO.C26.E.MIKROBA.PERAN_MIKROORGANISME
+    title: Peran mikroorganisme
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-mikroba-c2
+  - code: BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+    title: Struktur dan replikasi virus
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-mikroba-virus
+  - code: BIO.C26.E.MIKROBA.CIRI_DAN_PERAN_JAMUR
+    title: Ciri dan peran jamur
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-mikroba-jamur
+prerequisites:
+  - concept: BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+    requires: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    kind: SOFT
+  - concept: BIO.C26.E.MIKROBA.CIRI_DAN_PERAN_JAMUR
+    requires: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

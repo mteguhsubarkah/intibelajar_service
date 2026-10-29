@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.VIRUS_2
+familyCode: BIO.C26.E.MIKROBA.F.VIRUS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan tahap siklus litik virus yang benar adalah …
+  options:
+    - id: a
+      label: penetrasi – adsorpsi – sintesis – perakitan – lisis
+    - id: b
+      label: adsorpsi – penetrasi – sintesis – perakitan – lisis
+    - id: c
+      label: adsorpsi – sintesis – penetrasi – lisis – perakitan
+    - id: d
+      label: sintesis – adsorpsi – penetrasi – perakitan – lisis
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - adsorpsi – penetrasi – sintesis – perakitan – lisis
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+  feedback:
+    correct: Virus menempel dulu (adsorpsi), memasukkan materi genetik (penetrasi), membuat komponen (sintesis), merakit, lalu sel pecah (lisis).
+    incorrect: Jawabannya adsorpsi – penetrasi – sintesis – perakitan – lisis. Virus menempel dulu (adsorpsi), memasukkan materi genetik (penetrasi), membuat komponen (sintesis), merakit, lalu sel pecah (lisis).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

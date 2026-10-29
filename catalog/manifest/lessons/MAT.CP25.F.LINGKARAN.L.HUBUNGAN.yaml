@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.CP25.F.LINGKARAN.L.HUBUNGAN
+title: Hubungan sudut dan busur
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.CP25.F.LINGKARAN.HUBUNGAN_SUDUT_DAN_BUSUR
+blocks:
+  - type: heading
+    slide: 0
+    text: Sudut pusat dan sudut keliling
+  - type: text
+    slide: 0
+    text: Sudut keliling yang menghadap busur yang sama besarnya **setengah sudut pusat**.
+  - type: text
+    slide: 0
+    text: Sudut keliling yang menghadap **diameter** selalu **90°**. Sudut-sudut keliling yang menghadap busur yang sama besarnya sama.
+  - type: math
+    slide: 0
+    name: sudut keliling
+    expression: ½ × sudut pusat
+    highlight: true
+  - type: math
+    slide: 0
+    name: menghadap diameter
+    expression: 90°
+  - type: heading
+    slide: 1
+    text: Segiempat tali busur
+  - type: text
+    slide: 1
+    text: "Segiempat yang keempat titik sudutnya pada lingkaran: **sudut yang berhadapan berjumlah 180°**."
+  - type: text
+    slide: 1
+    text: "Contoh: ∠A = 75° ⇒ ∠C = 105°."
+  - type: math
+    slide: 1
+    name: ∠A + ∠C
+    expression: 180°
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tandai busur yang dihadap sudut; dua sudut yang menghadap busur sama saling terhubung.
+checks:
+  - question: MAT.CP25.F.LINGKARAN.Q.HUBUNGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.CP25.F.LINGKARAN.S.HUBUNGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.FAKTOR_2
+familyCode: MAT.KUA.F.FAKTOR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.FAKTORISASI_DAN_AKAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Akar-akar persamaan 2x² − 6x + 1 = 0 adalah x₁ dan x₂. Nilai x₁² + x₂² adalah …
+  options:
+    - id: a
+      label: "7"
+    - id: b
+      label: "8"
+    - id: c
+      label: "9"
+    - id: d
+      label: "10"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "8"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.FAKTORISASI_DAN_AKAR
+  feedback:
+    correct: x₁ + x₂ = 3 dan x₁x₂ = 1/2. x₁² + x₂² = 3² − 2 · 1/2 = 9 − 1 = 8.
+    incorrect: Jawabannya 8. x₁ + x₂ = 3 dan x₁x₂ = 1/2. x₁² + x₂² = 3² − 2 · 1/2 = 9 − 1 = 8.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

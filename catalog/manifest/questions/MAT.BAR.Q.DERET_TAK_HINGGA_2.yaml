@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.DERET_TAK_HINGGA_2
+familyCode: MAT.BAR.F.DERET_TAK_HINGGA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah bola dijatuhkan dari ketinggian 10 m dan memantul 3/4 kali tinggi sebelumnya, terus-menerus sampai berhenti. Panjang seluruh lintasan bola adalah …
+  options:
+    - id: a
+      label: 40 m
+    - id: b
+      label: 60 m
+    - id: c
+      label: 70 m
+    - id: d
+      label: 80 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 70 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+  feedback:
+    correct: "Turun: 10/(1 − 3/4) = 40 m. Naik: 7,5/(1 − 3/4) = 30 m. Total 70 m."
+    incorrect: "Jawabannya 70 m. Turun: 10/(1 − 3/4) = 40 m. Naik: 7,5/(1 − 3/4) = 30 m. Total 70 m."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

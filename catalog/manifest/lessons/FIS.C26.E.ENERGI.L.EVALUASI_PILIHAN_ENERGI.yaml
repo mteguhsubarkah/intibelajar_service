@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.L.EVALUASI_PILIHAN_ENERGI
+title: Evaluasi pilihan energi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.ENERGI.EVALUASI_PILIHAN_ENERGI
+blocks:
+  - type: heading
+    slide: 0
+    text: Terbarukan dan tidak terbarukan
+  - type: text
+    slide: 0
+    text: "Energi **terbarukan**: matahari, angin, air, panas bumi, biomassa. **Tidak terbarukan**: batu bara, minyak bumi, gas alam (bahan bakar fosil)."
+  - type: text
+    slide: 0
+    text: Pembakaran bahan bakar fosil melepaskan CO₂ yang memperkuat efek rumah kaca.
+  - type: math
+    slide: 0
+    name: fosil
+    expression: menghasilkan CO₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pilih sesuai kondisi
+  - type: text
+    slide: 1
+    text: "Setiap sumber punya syarat: PLTS butuh sinar matahari, PLTB butuh angin stabil, **PLTMH (mikrohidro)** butuh aliran sungai yang deras sepanjang tahun."
+  - type: text
+    slide: 1
+    text: Pertimbangkan ketersediaan, biaya, dan dampak lingkungan.
+  - type: math
+    slide: 1
+    name: sungai deras
+    expression: PLTMH
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jawaban terbaik bergantung pada sumber daya yang benar-benar ada di lokasi.
+checks:
+  - question: FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.ENERGI.S.EVALUASI_PILIHAN_ENERGI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

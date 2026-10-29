@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.Q.BARISAN_ARITMETIKA_1
+familyCode: MAT.BAR.F.BARISAN_ARITMETIKA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.BARISAN_ARITMETIKA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suku ke-3 suatu barisan aritmetika adalah 11 dan suku ke-7 adalah 23. Suku ke-20 barisan itu adalah …
+  options:
+    - id: a
+      label: "59"
+    - id: b
+      label: "62"
+    - id: c
+      label: "65"
+    - id: d
+      label: "68"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "62"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.BARISAN_ARITMETIKA
+  feedback:
+    correct: 4b = 23 − 11 = 12, jadi b = 3 dan a = 5. U₂₀ = 5 + 19 × 3 = 62.
+    incorrect: Jawabannya 62. 4b = 23 − 11 = 12, jadi b = 3 dan a = 5. U₂₀ = 5 + 19 × 3 = 62.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

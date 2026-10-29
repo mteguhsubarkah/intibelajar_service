@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.PENERAPAN_3
+familyCode: MAT.EKS.F.PENERAPAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.PENERAPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Zat radioaktif memiliki waktu paruh 5 hari. Jika massa awalnya 80 gram, massa yang tersisa setelah 15 hari adalah …
+  options:
+    - id: a
+      label: 10 gram
+    - id: b
+      label: 20 gram
+    - id: c
+      label: 26,7 gram
+    - id: d
+      label: 40 gram
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 10 gram
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.PENERAPAN
+  feedback:
+    correct: 15 hari = 3 waktu paruh, jadi 80 × (1/2)³ = 10 gram.
+    incorrect: Jawabannya 10 gram. 15 hari = 3 waktu paruh, jadi 80 × (1/2)³ = 10 gram.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.CP25.F.PELUANG.Q.CACAH_2
+familyCode: MAT.CP25.F.PELUANG.F.CACAH_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.CP25.F.PELUANG.PERMUTASI_DAN_KOMBINASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dari 8 siswa akan dipilih 3 siswa untuk mengikuti lomba (tanpa jabatan). Banyak cara memilih adalah …
+  options:
+    - id: a
+      label: "24"
+    - id: b
+      label: "56"
+    - id: c
+      label: "336"
+    - id: d
+      label: "512"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "56"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.CP25.F.PELUANG.PERMUTASI_DAN_KOMBINASI
+  feedback:
+    correct: "Urutan tidak penting: C(8, 3) = 8 × 7 × 6 / 6 = 56."
+    incorrect: "Jawabannya 56. Urutan tidak penting: C(8, 3) = 8 × 7 × 6 / 6 = 56."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

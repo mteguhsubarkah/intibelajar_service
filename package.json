@@ -30,6 +30,8 @@
     "catalog:check": "tsx scripts/catalog/extract-from-frontend.ts --check",
     "catalog:lint": "tsx scripts/catalog/lint-manifest.ts",
     "catalog:publish": "tsx scripts/catalog/publish.ts",
+    "catalog:pilot": "tsx scripts/catalog/pilot.ts",
+    "catalog:signoff": "tsx scripts/catalog/sign-off.ts",
     "catalog:golden": "tsx scripts/catalog/golden.ts",
     "catalog:bundle-check": "tsx scripts/catalog/check-bundle-keys.ts",
     "e2e:seed": "tsx scripts/e2e-seed.ts",

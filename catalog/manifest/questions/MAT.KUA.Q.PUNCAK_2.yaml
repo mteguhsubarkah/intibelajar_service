@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.PUNCAK_2
+familyCode: MAT.KUA.F.PUNCAK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai maksimum fungsi f(x) = −2x² + 8x + 1 adalah …
+  options:
+    - id: a
+      label: "7"
+    - id: b
+      label: "9"
+    - id: c
+      label: "17"
+    - id: d
+      label: "1"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "9"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+  feedback:
+    correct: xₚ = −8/(2 · (−2)) = 2, f(2) = −8 + 16 + 1 = 9.
+    incorrect: Jawabannya 9. xₚ = −8/(2 · (−2)) = 2, f(2) = −8 + 16 + 1 = 9.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

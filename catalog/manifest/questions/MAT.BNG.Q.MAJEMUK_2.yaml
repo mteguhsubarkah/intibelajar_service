@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BNG.Q.MAJEMUK_2
+familyCode: MAT.BNG.F.MAJEMUK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BNG.BUNGA_MAJEMUK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua tabungan bermodal sama, satu dengan bunga tunggal 10% dan satu dengan bunga majemuk 10% per tahun. Setelah 2 tahun, pernyataan yang benar adalah …
+  options:
+    - id: a
+      label: keduanya sama besar
+    - id: b
+      label: bunga majemuk lebih besar
+    - id: c
+      label: bunga tunggal lebih besar
+    - id: d
+      label: tidak bisa dibandingkan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - bunga majemuk lebih besar
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BNG.BUNGA_MAJEMUK
+  feedback:
+    correct: Pada tahun kedua, bunga majemuk juga menghitung bunga dari bunga tahun pertama, jadi hasilnya lebih besar.
+    incorrect: Jawabannya bunga majemuk lebih besar. Pada tahun kedua, bunga majemuk juga menghitung bunga dari bunga tahun pertama, jadi hasilnya lebih besar.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

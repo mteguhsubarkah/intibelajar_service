@@ -2,13 +2,80 @@ schemaVersion: 1
 code: MAT.SPL
 subject: MAT
 title: Sistem Persamaan & Pertidaksamaan
-subtitle: SPLTV · SPtLDV
+subtitle: Garis batas, daerah penyelesaian, program linear
 phase: E
-availability: PLANNED
-bekal: []
+availability: MAPPED
+bekal:
+  - persamaan linear dua variabel
+  - koordinat Kartesius
 aliases:
   - ns: TOPIC
     value: spltv
 units: []
-concepts: []
-prerequisites: []
+concepts:
+  - code: MAT.SPL.PERSAMAAN_GARIS_BATAS
+    title: Persamaan garis batas
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-spl-garis
+  - code: MAT.SPL.IRISAN_KENDALA
+    title: Irisan kendala
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-spl-irisan
+  - code: MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP
+    title: Batas terbuka & tertutup
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-spl-batas
+  - code: MAT.SPL.VARIABEL_DAN_MODEL_KENDALA
+    title: Variabel & model kendala
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-spl-model
+prerequisites:
+  - concept: MAT.SPL.IRISAN_KENDALA
+    requires: MAT.SPL.PERSAMAAN_GARIS_BATAS
+    kind: SOFT
+  - concept: MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP
+    requires: MAT.SPL.PERSAMAAN_GARIS_BATAS
+    kind: SOFT
+  - concept: MAT.SPL.VARIABEL_DAN_MODEL_KENDALA
+    requires: MAT.SPL.IRISAN_KENDALA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

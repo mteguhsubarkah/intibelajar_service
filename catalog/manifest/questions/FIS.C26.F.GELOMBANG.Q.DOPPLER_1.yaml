@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.Q.DOPPLER_1
+familyCode: FIS.C26.F.GELOMBANG.F.DOPPLER_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ambulans membunyikan sirene 680 Hz sambil bergerak mendekati pendengar yang diam dengan kecepatan 20 m/s. Jika cepat rambat bunyi 340 m/s, frekuensi yang didengar adalah …
+  options:
+    - id: a
+      label: 640 Hz
+    - id: b
+      label: 680 Hz
+    - id: c
+      label: 720 Hz
+    - id: d
+      label: 722,5 Hz
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 722,5 Hz
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+  feedback:
+    correct: fₚ = 340 / (340 − 20) × 680 = 340/320 × 680 = 722,5 Hz.
+    incorrect: Jawabannya 722,5 Hz. fₚ = 340 / (340 − 20) × 680 = 340/320 × 680 = 722,5 Hz.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

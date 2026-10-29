@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.ANTITURUNAN_2
+familyCode: MAT.KAL.F.ANTITURUNAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui F′(x) = 2x + 1 dan F(1) = 5. Fungsi F(x) adalah …
+  options:
+    - id: a
+      label: x² + x + 3
+    - id: b
+      label: x² + x + 5
+    - id: c
+      label: x² + x
+    - id: d
+      label: 2x² + x + 2
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - x² + x + 3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+  feedback:
+    correct: F(x) = x² + x + C, F(1) = 2 + C = 5 ⇒ C = 3.
+    incorrect: Jawabannya x² + x + 3. F(x) = x² + x + C, F(1) = 2 + C = 5 ⇒ C = 3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

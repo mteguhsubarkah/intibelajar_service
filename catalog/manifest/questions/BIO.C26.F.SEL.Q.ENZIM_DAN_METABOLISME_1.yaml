@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.ENZIM_DAN_METABOLISME_1
+familyCode: BIO.C26.F.SEL.F.ENZIM_DAN_METABOLISME_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.ENZIM_DAN_METABOLISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Enzim rusak (mengalami denaturasi) pada suhu tinggi karena enzim tersusun atas …
+  options:
+    - id: a
+      label: lemak
+    - id: b
+      label: karbohidrat
+    - id: c
+      label: protein
+    - id: d
+      label: asam nukleat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - protein
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.ENZIM_DAN_METABOLISME
+  feedback:
+    correct: Enzim adalah protein; panas merusak struktur tiga dimensinya.
+    incorrect: Jawabannya protein. Enzim adalah protein; panas merusak struktur tiga dimensinya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.KONSEP_DASAR_2
+familyCode: MAT.VEK.F.KONSEP_DASAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.KONSEP_DASAR_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua vektor dikatakan sama jika …
+  options:
+    - id: a
+      label: letak titik pangkalnya sama
+    - id: b
+      label: besar dan arahnya sama
+    - id: c
+      label: besarnya sama saja
+    - id: d
+      label: arahnya berlawanan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - besar dan arahnya sama
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.KONSEP_DASAR_VEKTOR
+  feedback:
+    correct: Vektor ditentukan oleh besar dan arah; letaknya tidak berpengaruh.
+    incorrect: Jawabannya besar dan arahnya sama. Vektor ditentukan oleh besar dan arah; letaknya tidak berpengaruh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

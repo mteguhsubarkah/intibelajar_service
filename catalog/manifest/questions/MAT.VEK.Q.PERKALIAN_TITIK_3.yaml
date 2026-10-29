@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.PERKALIAN_TITIK_3
+familyCode: MAT.VEK.F.PERKALIAN_TITIK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.PERKALIAN_TITIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Vektor a = (2, p) tegak lurus dengan b = (3, −6). Nilai p adalah …
+  options:
+    - id: a
+      label: −1
+    - id: b
+      label: "1"
+    - id: c
+      label: "2"
+    - id: d
+      label: "3"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.PERKALIAN_TITIK
+  feedback:
+    correct: "Tegak lurus berarti a · b = 0: 6 − 6p = 0, jadi p = 1."
+    incorrect: "Jawabannya 1. Tegak lurus berarti a · b = 0: 6 − 6p = 0, jadi p = 1."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

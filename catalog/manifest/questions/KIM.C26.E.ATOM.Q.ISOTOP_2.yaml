@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.Q.ISOTOP_2
+familyCode: KIM.C26.E.ATOM.F.ISOTOP_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.ATOM.NOMOR_ATOM_DAN_ISOTOP
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ion ³²₁₆S²⁻ memiliki jumlah proton, elektron, dan neutron berturut-turut …
+  options:
+    - id: a
+      label: 16, 16, 16
+    - id: b
+      label: 16, 18, 16
+    - id: c
+      label: 16, 14, 16
+    - id: d
+      label: 18, 16, 14
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 16, 18, 16
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.ATOM.NOMOR_ATOM_DAN_ISOTOP
+  feedback:
+    correct: Proton 16, elektron 16 + 2 = 18 (muatan 2−), neutron 32 − 16 = 16.
+    incorrect: Jawabannya 16, 18, 16. Proton 16, elektron 16 + 2 = 18 (muatan 2−), neutron 32 − 16 = 16.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

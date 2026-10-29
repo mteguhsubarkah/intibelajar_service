@@ -25,3 +25,289 @@ relations:
     kind: RELATED
     label: fungsi → kalkulus
     source: MATHEMATICAL
+  - from: MAT.EKS
+    to: MAT.BNG
+    kind: REQUIRES
+    label: eksponen → bunga majemuk
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.STP
+    to: MAT.CP25.F.PELUANG
+    kind: REQUIRES
+    label: data dan peluang → peluang bersyarat
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.KUA
+    to: MAT.KAL
+    kind: RELATED
+    label: titik puncak ↔ turunan sama dengan nol
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.E.UKUR
+    to: FIS.C26.E.GERAK2D
+    kind: REQUIRES
+    label: pengukuran dan grafik → analisis gerak
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.E.GERAK2D
+    to: FIS.C26.F.MEKANIKA
+    kind: REQUIRES
+    label: gerak dua dimensi → dinamika dan momentum
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.E.ENERGI
+    to: FIS.C26.F.TERMAL
+    kind: REQUIRES
+    label: efisiensi energi → mesin kalor
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.F.GELOMBANG
+    to: FIS.C26.F.MODERN
+    kind: REQUIRES
+    label: gelombang → fisika kuantum
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.E.GERAK2D
+    to: MAT.TRI
+    kind: RELATED
+    label: gerak peluru ↔ sinus dan kosinus
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.VEK
+    to: FIS.C26.E.GERAK2D
+    kind: RELATED
+    label: vektor ↔ komponen kecepatan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.ATOM
+    to: KIM.C26.E.STOIK
+    kind: REQUIRES
+    label: rumus kimia → stoikiometri
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.ATOM
+    to: KIM.C26.F.STRUKTUR
+    kind: REQUIRES
+    label: partikel atom → konfigurasi elektron dan ikatan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.STOIK
+    to: KIM.C26.F.TERMOKIMIA
+    kind: REQUIRES
+    label: mol → entalpi per mol
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.STOIK
+    to: KIM.C26.F.SETIMBANG
+    kind: REQUIRES
+    label: mol dan konsentrasi → kesetimbangan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.STRUKTUR
+    to: KIM.C26.F.KARBON
+    kind: REQUIRES
+    label: ikatan kovalen → senyawa karbon
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.F.TERMAL
+    to: KIM.C26.F.TERMOKIMIA
+    kind: RELATED
+    label: kalor ↔ entalpi reaksi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.EKS
+    to: KIM.C26.F.SETIMBANG
+    kind: RELATED
+    label: logaritma ↔ pH
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.E.BIODIVERSITAS
+    to: BIO.C26.E.MIKROBA
+    kind: REQUIRES
+    label: klasifikasi → mikroorganisme
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.SEL
+    to: BIO.C26.F.GENETIKA
+    kind: REQUIRES
+    label: sel dan nukleus → informasi genetik
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.GENETIKA
+    to: BIO.C26.F.BIOTEK
+    kind: REQUIRES
+    label: DNA dan gen → rekayasa genetika
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.E.MIKROBA
+    to: BIO.C26.F.BIOTEK
+    kind: REQUIRES
+    label: bakteri dan plasmid → DNA rekombinan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.SEL
+    to: KIM.C26.F.KARBON
+    kind: RELATED
+    label: enzim dan biomolekul ↔ senyawa karbon
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.E.EKOSISTEM
+    to: FIS.C26.E.ENERGI
+    kind: RELATED
+    label: siklus karbon ↔ energi dan iklim
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse

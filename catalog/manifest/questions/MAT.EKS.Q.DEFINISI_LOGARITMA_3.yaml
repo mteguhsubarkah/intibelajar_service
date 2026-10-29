@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.DEFINISI_LOGARITMA_3
+familyCode: MAT.EKS.F.DEFINISI_LOGARITMA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.DEFINISI_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari log 0,001 adalah …
+  options:
+    - id: a
+      label: −3
+    - id: b
+      label: "3"
+    - id: c
+      label: −2
+    - id: d
+      label: 1/3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.DEFINISI_LOGARITMA
+  feedback:
+    correct: 0,001 = 10⁻³, jadi log 0,001 = −3.
+    incorrect: Jawabannya −3. 0,001 = 10⁻³, jadi log 0,001 = −3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

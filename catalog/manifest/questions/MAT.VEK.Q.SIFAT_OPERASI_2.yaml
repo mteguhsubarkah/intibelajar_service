@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.SIFAT_OPERASI_2
+familyCode: MAT.VEK.F.SIFAT_OPERASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.SIFAT_OPERASI_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil dari a + (−a) adalah …
+  options:
+    - id: a
+      label: 2a
+    - id: b
+      label: a
+    - id: c
+      label: vektor nol
+    - id: d
+      label: −2a
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - vektor nol
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.SIFAT_OPERASI_VEKTOR
+  feedback:
+    correct: Sebuah vektor dijumlahkan dengan inversnya menghasilkan vektor nol.
+    incorrect: Jawabannya vektor nol. Sebuah vektor dijumlahkan dengan inversnya menghasilkan vektor nol.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

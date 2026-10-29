@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.KOEFISIEN_2
+familyCode: MAT.KUA.F.KOEFISIEN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Grafik f(x) = −x² + 4x + 5 terbuka ke … dan memotong sumbu y di titik …
+  options:
+    - id: a
+      label: atas, (0, 5)
+    - id: b
+      label: bawah, (0, 5)
+    - id: c
+      label: bawah, (5, 0)
+    - id: d
+      label: atas, (0, −5)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - bawah, (0, 5)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT
+  feedback:
+    correct: a = −1 < 0 sehingga terbuka ke bawah; c = 5 sehingga memotong sumbu y di (0, 5).
+    incorrect: Jawabannya bawah, (0, 5). a = −1 < 0 sehingga terbuka ke bawah; c = 5 sehingga memotong sumbu y di (0, 5).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

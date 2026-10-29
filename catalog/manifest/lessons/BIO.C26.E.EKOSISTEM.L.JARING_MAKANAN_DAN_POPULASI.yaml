@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.E.EKOSISTEM.L.JARING_MAKANAN_DAN_POPULASI
+title: Jaring makanan & populasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.EKOSISTEM.JARING_MAKANAN_DAN_POPULASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Tingkat trofik
+  - type: text
+    slide: 0
+    text: "**Produsen** (tumbuhan) → **konsumen I** (herbivora) → **konsumen II** → **konsumen III**. **Pengurai** menguraikan sisa makhluk hidup."
+  - type: text
+    slide: 0
+    text: "Contoh: padi → tikus → ular → elang. Ular adalah konsumen II."
+  - type: math
+    slide: 0
+    name: padi → tikus → ular → elang
+    expression: ular = konsumen II
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Aliran energi
+  - type: text
+    slide: 1
+    text: Hanya sekitar **10%** energi berpindah ke tingkat trofik berikutnya; sisanya hilang sebagai panas.
+  - type: text
+    slide: 1
+    text: "Contoh: produsen 10.000 kkal ⇒ konsumen I 1.000 kkal ⇒ konsumen II 100 kkal."
+  - type: math
+    slide: 1
+    name: energi tingkat berikut
+    expression: ≈ 10%
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Itulah sebabnya piramida energi selalu mengecil ke atas.
+checks:
+  - question: BIO.C26.E.EKOSISTEM.Q.JARING_MAKANAN_DAN_POPULASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.EKOSISTEM.S.JARING_MAKANAN_DAN_POPULASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

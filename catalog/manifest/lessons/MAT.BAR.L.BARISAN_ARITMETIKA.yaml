@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.L.BARISAN_ARITMETIKA
+title: Barisan Aritmetika
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BAR.BARISAN_ARITMETIKA
+blocks:
+  - type: heading
+    slide: 0
+    text: Beda yang tetap
+  - type: text
+    slide: 0
+    text: "Barisan aritmetika bertambah dengan **beda b** yang sama. Suku ke-n: **Uₙ = a + (n − 1)b**."
+  - type: text
+    slide: 0
+    text: "Contoh: 5, 9, 13, … memiliki a = 5 dan b = 4, sehingga U₁₅ = 5 + 14 × 4 = 61."
+  - type: math
+    slide: 0
+    name: Uₙ
+    expression: a + (n − 1)b
+    highlight: true
+  - type: math
+    slide: 0
+    name: b
+    expression: Uₙ − Uₙ₋₁
+  - type: heading
+    slide: 1
+    text: Dari dua suku yang diketahui
+  - type: text
+    slide: 1
+    text: "Kurangkan dua suku untuk mendapat b. Contoh: U₃ = 11 dan U₇ = 23 ⇒ 4b = 12 ⇒ b = 3, lalu a = 11 − 2 × 3 = 5."
+  - type: math
+    slide: 1
+    name: U₇ − U₃
+    expression: 4b
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Selisih indeks (7 − 3 = 4) adalah banyaknya b di antara dua suku.
+checks:
+  - question: MAT.BAR.Q.BARISAN_ARITMETIKA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.BARISAN_ARITMETIKA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BNG.Q.SALDO_2
+familyCode: MAT.BNG.F.SALDO_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BNG.SALDO_PINJAMAN_DAN_PARAMETER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Angsuran pertama sebuah anuitas Rp800.000 dengan bunga 2% per bulan. Besar angsuran kedua adalah …
+  options:
+    - id: a
+      label: Rp800.000
+    - id: b
+      label: Rp816.000
+    - id: c
+      label: Rp832.000
+    - id: d
+      label: Rp784.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp816.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BNG.SALDO_PINJAMAN_DAN_PARAMETER
+  feedback:
+    correct: a₂ = a₁ × (1 + i) = 800.000 × 1,02 = Rp816.000.
+    incorrect: Jawabannya Rp816.000. a₂ = a₁ × (1 + i) = 800.000 × 1,02 = Rp816.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

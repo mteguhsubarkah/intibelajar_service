@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.Q.SATU_SATU_2
+familyCode: MAT.INV.F.SATU_SATU_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.INV.FUNGSI_SATU_SATU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fungsi f(x) = x² dengan domain x ≥ 0 …
+  options:
+    - id: a
+      label: satu-satu, karena setiap y berasal dari satu x
+    - id: b
+      label: bukan satu-satu, karena f(2) = f(−2)
+    - id: c
+      label: bukan fungsi
+    - id: d
+      label: satu-satu hanya untuk x bulat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - satu-satu, karena setiap y berasal dari satu x
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.INV.FUNGSI_SATU_SATU
+  feedback:
+    correct: Dengan domain x ≥ 0, nilai negatif tidak termasuk, sehingga setiap y ≥ 0 berasal dari satu x saja.
+    incorrect: Jawabannya satu-satu, karena setiap y berasal dari satu x. Dengan domain x ≥ 0, nilai negatif tidak termasuk, sehingga setiap y ≥ 0 berasal dari satu x saja.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

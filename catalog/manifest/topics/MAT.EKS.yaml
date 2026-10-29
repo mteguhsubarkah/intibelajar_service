@@ -81,7 +81,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-c
@@ -95,7 +95,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-d
@@ -109,7 +109,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-e
@@ -123,7 +123,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-f
@@ -137,7 +137,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-g
@@ -151,7 +151,7 @@ concepts:
     estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-h
@@ -165,7 +165,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-i
@@ -193,7 +193,7 @@ concepts:
     estimatedMinutes: 7
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-k
@@ -207,7 +207,7 @@ concepts:
     estimatedMinutes: 8
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-l
@@ -221,7 +221,7 @@ concepts:
     estimatedMinutes: 10
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: eks-m

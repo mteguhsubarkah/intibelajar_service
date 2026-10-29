@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.BAR.L.DERET_ARITMETIKA
+title: Deret Aritmetika
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BAR.DERET_ARITMETIKA
+blocks:
+  - type: heading
+    slide: 0
+    text: Jumlah n suku
+  - type: text
+    slide: 0
+    text: "Jumlahkan pasangan ujung: **Sₙ = n/2 (a + Uₙ) = n/2 (2a + (n − 1)b)**."
+  - type: text
+    slide: 0
+    text: "Contoh terkenal: 1 + 2 + … + 100 = 100/2 × 101 = 5.050."
+  - type: math
+    slide: 0
+    name: Sₙ
+    expression: n/2 (2a + (n − 1)b)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Dari Sₙ ke Uₙ
+  - type: text
+    slide: 1
+    text: Jika rumus Sₙ diketahui, suku ke-n adalah **Uₙ = Sₙ − Sₙ₋₁**.
+  - type: text
+    slide: 1
+    text: "Contoh: Sₙ = n² + 3n ⇒ U₁₀ = S₁₀ − S₉ = 130 − 108 = 22."
+  - type: math
+    slide: 1
+    name: Uₙ
+    expression: Sₙ − Sₙ₋₁
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jangan langsung memasukkan n ke rumus Sₙ bila yang ditanya suku, bukan jumlah.
+checks:
+  - question: MAT.BAR.Q.DERET_ARITMETIKA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.DERET_ARITMETIKA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

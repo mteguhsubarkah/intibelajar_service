@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA.Q.PASCAL_2
+familyCode: FIS.C26.F.FLUIDA.F.PASCAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.FLUIDA.HUKUM_PASCAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Prinsip kerja rem hidrolik pada kendaraan berdasarkan hukum …
+  options:
+    - id: a
+      label: Archimedes
+    - id: b
+      label: Pascal
+    - id: c
+      label: Bernoulli
+    - id: d
+      label: Boyle
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Pascal
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.FLUIDA.HUKUM_PASCAL
+  feedback:
+    correct: "Tekanan dari pedal diteruskan oleh minyak rem ke semua roda: Hukum Pascal."
+    incorrect: "Jawabannya Pascal. Tekanan dari pedal diteruskan oleh minyak rem ke semua roda: Hukum Pascal."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

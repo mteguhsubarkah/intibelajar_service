@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.Q.DAYA_DAN_EFISIENSI_2
+familyCode: FIS.C26.E.ENERGI.F.DAYA_DAN_EFISIENSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah lampu menerima daya listrik 60 W dan memancarkan cahaya 9 W. Efisiensi lampu adalah …
+  options:
+    - id: a
+      label: 9%
+    - id: b
+      label: 15%
+    - id: c
+      label: 51%
+    - id: d
+      label: 85%
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 15%
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
+  feedback:
+    correct: η = 9 / 60 × 100% = 15%.
+    incorrect: Jawabannya 15%. η = 9 / 60 × 100% = 15%.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

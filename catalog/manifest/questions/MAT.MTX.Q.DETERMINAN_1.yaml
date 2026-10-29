@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.DETERMINAN_1
+familyCode: MAT.MTX.F.DETERMINAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.DETERMINAN_MATRIKS_2_2
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Determinan matriks [5 3; 2 4] adalah …
+  options:
+    - id: a
+      label: "14"
+    - id: b
+      label: "26"
+    - id: c
+      label: "2"
+    - id: d
+      label: −14
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "14"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.DETERMINAN_MATRIKS_2_2
+  feedback:
+    correct: det = 5 · 4 − 3 · 2 = 20 − 6 = 14.
+    incorrect: Jawabannya 14. det = 5 · 4 − 3 · 2 = 20 − 6 = 14.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

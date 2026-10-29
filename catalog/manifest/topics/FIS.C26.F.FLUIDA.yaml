@@ -1,0 +1,66 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA
+subject: FIS
+title: Fluida statis dan dinamis
+subtitle: Tekanan, Archimedes, Pascal, Bernoulli
+phase: F
+availability: MAPPED
+bekal:
+  - massa jenis
+  - gaya dan tekanan
+aliases:
+  - ns: TOPIC
+    value: fluida
+units: []
+concepts:
+  - code: FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+    title: Tekanan dan gaya apung
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-fluida-c1
+  - code: FIS.C26.F.FLUIDA.HUKUM_PASCAL
+    title: Hukum Pascal
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-fluida-pascal
+  - code: FIS.C26.F.FLUIDA.KONTINUITAS_DAN_BERNOULLI
+    title: Kontinuitas dan Bernoulli
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-fluida-c2
+prerequisites:
+  - concept: FIS.C26.F.FLUIDA.HUKUM_PASCAL
+    requires: FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+    kind: SOFT
+  - concept: FIS.C26.F.FLUIDA.KONTINUITAS_DAN_BERNOULLI
+    requires: FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

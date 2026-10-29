@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.TRANSPOSE_2
+familyCode: MAT.MTX.F.TRANSPOSE_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.JENIS_MATRIKS_DAN_TRANSPOSE
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Matriks identitas berordo 2 × 2 adalah …
+  options:
+    - id: a
+      label: "[1 1; 1 1]"
+    - id: b
+      label: "[0 1; 1 0]"
+    - id: c
+      label: "[1 0; 0 1]"
+    - id: d
+      label: "[0 0; 0 0]"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "[1 0; 0 1]"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.JENIS_MATRIKS_DAN_TRANSPOSE
+  feedback:
+    correct: Matriks identitas memiliki 1 pada diagonal utama dan 0 di tempat lain.
+    incorrect: Jawabannya [1 0; 0 1]. Matriks identitas memiliki 1 pada diagonal utama dan 0 di tempat lain.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

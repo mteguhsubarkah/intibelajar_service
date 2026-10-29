@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.BENTUK_AKAR_3
+familyCode: MAT.EKS.F.BENTUK_AKAR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.BENTUK_AKAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil dari √8 × √18 adalah …
+  options:
+    - id: a
+      label: "12"
+    - id: b
+      label: 6√2
+    - id: c
+      label: "26"
+    - id: d
+      label: "24"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "12"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.BENTUK_AKAR
+  feedback:
+    correct: √8 × √18 = √144 = 12.
+    incorrect: Jawabannya 12. √8 × √18 = √144 = 12.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

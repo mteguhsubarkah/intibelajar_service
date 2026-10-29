@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.JAMUR_3
+familyCode: BIO.C26.E.MIKROBA.F.JAMUR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.MIKROBA.CIRI_DAN_PERAN_JAMUR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jamur bersifat heterotrof, artinya jamur …
+  options:
+    - id: a
+      label: dapat berfotosintesis
+    - id: b
+      label: tidak dapat membuat makanan sendiri
+    - id: c
+      label: hidup di tempat kering
+    - id: d
+      label: berkembang biak secara seksual saja
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - tidak dapat membuat makanan sendiri
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.CIRI_DAN_PERAN_JAMUR
+  feedback:
+    correct: Jamur tidak memiliki klorofil sehingga memperoleh makanan dari organisme lain atau sisa organik.
+    incorrect: Jawabannya tidak dapat membuat makanan sendiri. Jamur tidak memiliki klorofil sehingga memperoleh makanan dari organisme lain atau sisa organik.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

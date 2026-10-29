@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.OPTIMASI_1
+familyCode: MAT.KAL.F.OPTIMASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan garis singgung kurva y = x² − 3x di titik (2, −2) adalah …
+  options:
+    - id: a
+      label: y = x − 4
+    - id: b
+      label: y = x + 4
+    - id: c
+      label: y = −x
+    - id: d
+      label: y = 2x − 6
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - y = x − 4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+  feedback:
+    correct: y′ = 2x − 3, di x = 2 gradiennya 1. y + 2 = 1(x − 2) ⇒ y = x − 4.
+    incorrect: Jawabannya y = x − 4. y′ = 2x − 3, di x = 2 gradiennya 1. y + 2 = 1(x − 2) ⇒ y = x − 4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

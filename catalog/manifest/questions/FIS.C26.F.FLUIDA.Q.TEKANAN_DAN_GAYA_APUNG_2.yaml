@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA.Q.TEKANAN_DAN_GAYA_APUNG_2
+familyCode: FIS.C26.F.FLUIDA.F.TEKANAN_DAN_GAYA_APUNG_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah balok bervolume 0,002 m³ tercelup seluruhnya di dalam air (ρ = 1.000 kg/m³). Gaya apung yang dialami balok adalah …
+  options:
+    - id: a
+      label: 2 N
+    - id: b
+      label: 20 N
+    - id: c
+      label: 200 N
+    - id: d
+      label: 2.000 N
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 20 N
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+  feedback:
+    correct: Fₐ = 1.000 × 10 × 0,002 = 20 N.
+    incorrect: Jawabannya 20 N. Fₐ = 1.000 × 10 × 0,002 = 20 N.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

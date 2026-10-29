@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.OPTIMASI_2
+familyCode: MAT.KAL.F.OPTIMASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai maksimum fungsi f(x) = −x² + 6x − 5 adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "4"
+    - id: c
+      label: "5"
+    - id: d
+      label: "9"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "4"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+  feedback:
+    correct: f′(x) = −2x + 6 = 0 ⇒ x = 3, f(3) = −9 + 18 − 5 = 4.
+    incorrect: Jawabannya 4. f′(x) = −2x + 6 = 0 ⇒ x = 3, f(3) = −9 + 18 − 5 = 4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

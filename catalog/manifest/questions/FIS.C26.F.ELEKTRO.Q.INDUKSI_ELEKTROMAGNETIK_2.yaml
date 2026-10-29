@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_2
+familyCode: FIS.C26.F.ELEKTRO.F.INDUKSI_ELEKTROMAGNETIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Transformator ideal memiliki 1.000 lilitan primer dan 200 lilitan sekunder. Jika tegangan primer 220 V, tegangan sekundernya adalah …
+  options:
+    - id: a
+      label: 22 V
+    - id: b
+      label: 44 V
+    - id: c
+      label: 440 V
+    - id: d
+      label: 1.100 V
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 44 V
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
+  feedback:
+    correct: Vₛ = Vₚ × Nₛ/Nₚ = 220 × 200/1.000 = 44 V.
+    incorrect: Jawabannya 44 V. Vₛ = Vₚ × Nₛ/Nₚ = 220 × 200/1.000 = 44 V.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

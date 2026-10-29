@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.BAR.L.DERET_TAK_HINGGA
+title: Deret Geometri Tak Hingga
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BAR.DERET_GEOMETRI_TAK_HINGGA
+blocks:
+  - type: heading
+    slide: 0
+    text: Jumlah yang tidak pernah habis tapi terbatas
+  - type: text
+    slide: 0
+    text: Bila **−1 < r < 1**, suku-sukunya makin kecil dan jumlahnya menuju **S∞ = a/(1 − r)**.
+  - type: text
+    slide: 0
+    text: "Contoh: 12 + 6 + 3 + … = 12/(1 − 1/2) = 24."
+  - type: math
+    slide: 0
+    name: S∞
+    expression: a/(1 − r)
+    highlight: true
+  - type: math
+    slide: 0
+    name: syarat
+    expression: −1 < r < 1
+  - type: heading
+    slide: 1
+    text: Bola memantul
+  - type: text
+    slide: 1
+    text: "Bola jatuh dari h dan memantul r kali tinggi sebelumnya. Lintasan turun: h/(1 − r). Lintasan naik: hr/(1 − r). Total = turun + naik."
+  - type: text
+    slide: 1
+    text: "Contoh: h = 10 m, r = 3/4: turun 40 m, naik 30 m, total 70 m."
+  - type: math
+    slide: 1
+    name: lintasan total
+    expression: h(1 + r)/(1 − r)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Lintasan naik dimulai dari pantulan pertama, jadi suku pertamanya hr, bukan h.
+checks:
+  - question: MAT.BAR.Q.DERET_TAK_HINGGA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.DERET_TAK_HINGGA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

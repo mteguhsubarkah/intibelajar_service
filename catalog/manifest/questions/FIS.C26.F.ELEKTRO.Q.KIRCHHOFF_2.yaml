@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_2
+familyCode: FIS.C26.F.ELEKTRO.F.KIRCHHOFF_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dalam satu loop terdapat baterai 12 V dan 6 V yang dipasang berlawanan arah serta hambatan total 3 Ω. Kuat arus dalam loop adalah …
+  options:
+    - id: a
+      label: 2 A
+    - id: b
+      label: 3 A
+    - id: c
+      label: 4 A
+    - id: d
+      label: 6 A
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2 A
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+  feedback:
+    correct: GGL total 12 − 6 = 6 V. I = 6 / 3 = 2 A.
+    incorrect: Jawabannya 2 A. GGL total 12 − 6 = 6 V. I = 6 / 3 = 2 A.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

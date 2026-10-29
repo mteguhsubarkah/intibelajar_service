@@ -64,8 +64,8 @@ test('Slice 1 public catalog read API', async t => {
     await t.test('every catalog endpoint answers within the contract for every entity', async () => {
       assert.deepEqual(((await ok('/v1/subjects')).items as { code: string }[]).map(s => s.code).sort(), fixture.subjects.subjects.map(s => s.code).sort());
       assert.equal(topics.length, fixture.topics.length);
-      assert.deepEqual(((await ok('/v1/topics?subjectCode=MAT')).items as unknown[]).length, fixture.topics.length);
-      assert.deepEqual(await ok('/v1/topics?subjectCode=FIS'), { items: [] });
+      for (const code of ['MAT', 'FIS', 'KIM', 'BIO'])
+        assert.equal(((await ok(`/v1/topics?subjectCode=${code}`)).items as unknown[]).length, fixture.topics.filter(x => x.subject === code).length);
       assert.deepEqual(await ok('/v1/topics?subjectCode=NOPE'), { items: [] });
       for (const topic of topics) {
         const d = await ok(`/v1/topics/${topic.id}`);
@@ -97,7 +97,9 @@ test('Slice 1 public catalog read API', async t => {
       assert.deepEqual(numeric.map(q => q.code), ['MAT.TRI.Q.TRIG_DEPRESSION_01', 'MAT.TRI.Q.TRIG_DEPRESSION_01_RETRY']);
       const inEks = await allQuestions(`&topicId=${eks.id}`);
       assert.ok(inEks.length > 0 && inEks.every(q => q.topicIds.includes(eks.id)));
-      assert.ok(inEks.every(q => q.isCombined), 'every item touching Eksponen is a gabungan item with assessable concepts in two topics');
+      const combinedEks = inEks.filter(q => q.isCombined);
+      assert.ok(combinedEks.length > 0 && combinedEks.every(q => q.topicIds.length === 2), 'gabungan items touching Eksponen have assessable concepts in two topics');
+      assert.ok(inEks.filter(q => !q.isCombined).every(q => q.topicIds.length === 1), 'every other Eksponen item stays inside its topic');
       const triC = concepts.find(c => c.legacyMapId === 'tri-c')!;
       const byConcept = await allQuestions(`&conceptId=${triC.id}`);
       assert.ok(byConcept.length > 0 && byConcept.every(q => q.conceptIds.includes(triC.id)));

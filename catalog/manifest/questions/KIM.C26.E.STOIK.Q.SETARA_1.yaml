@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.SETARA_1
+familyCode: KIM.C26.E.STOIK.F.SETARA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Pada reaksi pembakaran propana: C₃H₈ + b O₂ → 3CO₂ + 4H₂O, nilai b agar reaksi setara adalah …"
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "4"
+    - id: c
+      label: "5"
+    - id: d
+      label: "7"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "5"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+  feedback:
+    correct: Di kanan ada 3 × 2 + 4 × 1 = 10 atom O, jadi b = 5.
+    incorrect: Jawabannya 5. Di kanan ada 3 × 2 + 4 × 1 = 10 atom O, jadi b = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

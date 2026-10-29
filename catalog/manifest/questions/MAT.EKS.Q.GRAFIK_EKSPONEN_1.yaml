@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.GRAFIK_EKSPONEN_1
+familyCode: MAT.EKS.F.GRAFIK_EKSPONEN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Grafik y = 2ˣ memotong sumbu y di titik …
+  options:
+    - id: a
+      label: (0, 0)
+    - id: b
+      label: (0, 1)
+    - id: c
+      label: (1, 0)
+    - id: d
+      label: (0, 2)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - (0, 1)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+  feedback:
+    correct: Saat x = 0, y = 2⁰ = 1. Jadi titik potongnya (0, 1).
+    incorrect: Jawabannya (0, 1). Saat x = 0, y = 2⁰ = 1. Jadi titik potongnya (0, 1).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

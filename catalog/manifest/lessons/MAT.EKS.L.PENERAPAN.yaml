@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.L.PENERAPAN
+title: Penerapan Eksponen dan Logaritma
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.PENERAPAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Tumbuh dan meluruh
+  - type: text
+    slide: 0
+    text: "Pertumbuhan dengan persentase tetap: **N(t) = N₀(1 + r)ᵗ**. Peluruhan dengan waktu paruh T: **N(t) = N₀ (1/2)^(t/T)**."
+  - type: math
+    slide: 0
+    name: N(t)
+    expression: N₀(1 + r)ᵗ
+    highlight: true
+  - type: math
+    slide: 0
+    name: waktu paruh
+    expression: N₀ (1/2)^(t/T)
+  - type: heading
+    slide: 1
+    text: Logaritma di sekitar kita
+  - type: text
+    slide: 1
+    text: "Keasaman: **pH = −log [H⁺]**. Skala Richter: naik 1 angka berarti amplitudo gempa **10 kali** lebih besar."
+  - type: text
+    slide: 1
+    text: "Contoh: [H⁺] = 10⁻³ M memberi pH = 3."
+  - type: math
+    slide: 1
+    name: pH
+    expression: −log [H⁺]
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hitung berapa kali periode terjadi (t/T) sebelum memangkatkan.
+checks:
+  - question: MAT.EKS.Q.PENERAPAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.PENERAPAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

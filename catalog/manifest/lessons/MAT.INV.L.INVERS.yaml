@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.INV.L.INVERS
+title: Menentukan & memeriksa invers
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.INV.MENENTUKAN_DAN_MEMERIKSA_INVERS
+blocks:
+  - type: heading
+    slide: 0
+    text: Tukar peran x dan y
+  - type: text
+    slide: 0
+    text: Tulis y = f(x), nyatakan x dalam y, lalu ganti y dengan x.
+  - type: text
+    slide: 0
+    text: "Contoh: y = 3x − 6 ⇒ x = (y + 6)/3 ⇒ f⁻¹(x) = (x + 6)/3."
+  - type: math
+    slide: 0
+    name: f⁻¹
+    expression: balik operasi f
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Fungsi pecahan dan pemeriksaan
+  - type: text
+    slide: 1
+    text: Untuk f(x) = (ax + b)/(cx + d), inversnya **f⁻¹(x) = (−dx + b)/(cx − a)**.
+  - type: text
+    slide: 1
+    text: "Periksa: (f ∘ f⁻¹)(x) = x. Nilai f⁻¹(k) adalah x yang membuat f(x) = k."
+  - type: math
+    slide: 1
+    name: (ax + b)/(cx + d)
+    expression: invers (−dx + b)/(cx − a)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Untuk mencari f⁻¹(6), cukup selesaikan f(x) = 6.
+checks:
+  - question: MAT.INV.Q.INVERS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.INV.S.INVERS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

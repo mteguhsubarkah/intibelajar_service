@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.KUA.L.DISKRIMINAN
+title: Rumus kuadrat & diskriminan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Rumus ABC
+  - type: text
+    slide: 0
+    text: "Bila sulit difaktorkan: **x = (−b ± √D) / 2a** dengan **D = b² − 4ac**."
+  - type: text
+    slide: 0
+    text: "Contoh: 2x² + 3x − 2 = 0 ⇒ D = 9 + 16 = 25 ⇒ x = (−3 ± 5)/4, yaitu 1/2 atau −2."
+  - type: math
+    slide: 0
+    name: x₁,₂
+    expression: (−b ± √D) / 2a
+    highlight: true
+  - type: math
+    slide: 0
+    name: D
+    expression: b² − 4ac
+  - type: heading
+    slide: 1
+    text: Membaca jenis akar dari D
+  - type: text
+    slide: 1
+    text: "**D > 0**: dua akar real berbeda. **D = 0**: akar kembar. **D < 0**: tidak punya akar real (parabola tidak memotong sumbu x)."
+  - type: math
+    slide: 1
+    name: D = 0
+    expression: akar kembar
+    highlight: true
+  - type: math
+    slide: 1
+    name: D < 0
+    expression: tidak ada akar real
+  - type: tip
+    slide: 1
+    text: Soal "akar kembar" atau "menyinggung sumbu x" selalu berarti D = 0.
+checks:
+  - question: MAT.KUA.Q.DISKRIMINAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KUA.S.DISKRIMINAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

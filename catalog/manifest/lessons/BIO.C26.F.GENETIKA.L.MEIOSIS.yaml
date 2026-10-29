@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.L.MEIOSIS
+title: Mitosis dan meiosis
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Mitosis
+  - type: text
+    slide: 0
+    text: Mitosis menghasilkan **2 sel anak diploid (2n)** yang identik dengan induk. Terjadi pada sel tubuh untuk pertumbuhan dan perbaikan jaringan.
+  - type: math
+    slide: 0
+    name: mitosis
+    expression: 2 sel, 2n, identik
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Meiosis
+  - type: text
+    slide: 1
+    text: Meiosis menghasilkan **4 sel anak haploid (n)** dan terjadi pada pembentukan gamet. Terjadi **pindah silang** yang menambah variasi.
+  - type: text
+    slide: 1
+    text: Sel tubuh manusia 46 kromosom (2n) ⇒ sperma dan ovum 23 kromosom (n).
+  - type: math
+    slide: 1
+    name: meiosis
+    expression: 4 sel, n
+    highlight: true
+  - type: math
+    slide: 1
+    name: gamet manusia
+    expression: 23 kromosom
+  - type: tip
+    slide: 1
+    text: Meiosis mengurangi jumlah kromosom menjadi setengah.
+checks:
+  - question: BIO.C26.F.GENETIKA.Q.MEIOSIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.GENETIKA.S.MEIOSIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

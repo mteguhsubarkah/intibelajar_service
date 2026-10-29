@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.CP25.F.LINGKARAN.L.UNSUR
+title: Unsur & sudut lingkaran
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.CP25.F.LINGKARAN.UNSUR_DAN_SUDUT_LINGKARAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Nama-nama bagian
+  - type: text
+    slide: 0
+    text: "**Jari-jari** (r) dari pusat ke lingkaran, **diameter** = 2r, **tali busur** menghubungkan dua titik pada lingkaran, **busur** adalah bagian keliling, **juring** daerah antara dua jari-jari dan busur, **tembereng** daerah antara tali busur dan busur."
+  - type: math
+    slide: 0
+    name: diameter
+    expression: 2r
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Busur dan juring
+  - type: text
+    slide: 1
+    text: Panjang busur dan luas juring sebanding dengan sudut pusatnya.
+  - type: text
+    slide: 1
+    text: "Contoh: sudut 90°, r = 14 cm, π = 22/7 ⇒ busur = 90/360 × 2 × 22/7 × 14 = 22 cm."
+  - type: math
+    slide: 1
+    name: panjang busur
+    expression: (α/360°) × 2πr
+    highlight: true
+  - type: math
+    slide: 1
+    name: luas juring
+    expression: (α/360°) × πr²
+  - type: tip
+    slide: 1
+    text: Sederhanakan α/360 dulu (90/360 = 1/4) supaya hitungan ringan.
+checks:
+  - question: MAT.CP25.F.LINGKARAN.Q.UNSUR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.CP25.F.LINGKARAN.S.UNSUR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

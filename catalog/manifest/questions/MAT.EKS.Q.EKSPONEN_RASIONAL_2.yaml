@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.EKSPONEN_RASIONAL_2
+familyCode: MAT.EKS.F.EKSPONEN_RASIONAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.EKSPONEN_RASIONAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari 16^(3/4) × 4^(−1/2) adalah …
+  options:
+    - id: a
+      label: "2"
+    - id: b
+      label: "4"
+    - id: c
+      label: "8"
+    - id: d
+      label: "16"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "4"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.EKSPONEN_RASIONAL
+  feedback:
+    correct: 16^(3/4) = (⁴√16)³ = 8 dan 4^(−1/2) = 1/2. Hasilnya 8 × 1/2 = 4.
+    incorrect: Jawabannya 4. 16^(3/4) = (⁴√16)³ = 8 dan 4^(−1/2) = 1/2. Hasilnya 8 × 1/2 = 4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

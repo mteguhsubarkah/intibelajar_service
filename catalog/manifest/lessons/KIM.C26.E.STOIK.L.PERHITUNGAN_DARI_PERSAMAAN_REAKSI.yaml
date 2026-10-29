@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.L.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+title: Perhitungan dari persamaan reaksi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Koefisien = perbandingan mol
+  - type: text
+    slide: 0
+    text: Dalam persamaan setara, **perbandingan koefisien = perbandingan mol**.
+  - type: text
+    slide: 0
+    text: "Contoh: N₂ + 3H₂ → 2NH₃. 3 mol H₂ menghasilkan 2 mol NH₃."
+  - type: math
+    slide: 0
+    name: mol B
+    expression: (koef B / koef A) × mol A
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Massa ke massa
+  - type: text
+    slide: 1
+    text: Massa A → mol A → (perbandingan koefisien) → mol B → massa B.
+  - type: text
+    slide: 1
+    text: "Contoh: 2H₂ + O₂ → 2H₂O. 8 g O₂ = 0,25 mol ⇒ H₂O = 0,5 mol = 9 g."
+  - type: math
+    slide: 1
+    name: 8 g O₂
+    expression: 9 g H₂O
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jangan membandingkan massa langsung; yang sebanding adalah mol.
+checks:
+  - question: KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.STOIK.S.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

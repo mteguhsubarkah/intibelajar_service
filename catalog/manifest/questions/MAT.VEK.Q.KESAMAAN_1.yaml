@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.KESAMAAN_1
+familyCode: MAT.VEK.F.KESAMAAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.KESAMAAN_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika (2x − 1, 6) = (5, 3y), nilai x + y adalah …
+  options:
+    - id: a
+      label: "4"
+    - id: b
+      label: "5"
+    - id: c
+      label: "6"
+    - id: d
+      label: "7"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "5"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.KESAMAAN_VEKTOR
+  feedback:
+    correct: 2x − 1 = 5 ⇒ x = 3; 3y = 6 ⇒ y = 2. Jadi x + y = 5.
+    incorrect: Jawabannya 5. 2x − 1 = 5 ⇒ x = 3; 3y = 6 ⇒ y = 2. Jadi x + y = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

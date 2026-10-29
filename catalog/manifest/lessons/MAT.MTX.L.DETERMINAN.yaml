@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.MTX.L.DETERMINAN
+title: Determinan matriks 2×2
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.MTX.DETERMINAN_MATRIKS_2_2
+blocks:
+  - type: heading
+    slide: 0
+    text: ad − bc
+  - type: text
+    slide: 0
+    text: "Untuk A = [a b; c d]: **det A = ad − bc** (diagonal utama dikurangi diagonal samping)."
+  - type: text
+    slide: 0
+    text: "Contoh: det [5 3; 2 4] = 20 − 6 = 14."
+  - type: math
+    slide: 0
+    name: det [a b; c d]
+    expression: ad − bc
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Matriks singular
+  - type: text
+    slide: 1
+    text: Matriks dengan **determinan 0** disebut singular dan **tidak punya invers**.
+  - type: text
+    slide: 1
+    text: "Contoh: [x 4; 3 6] singular ⇒ 6x − 12 = 0 ⇒ x = 2."
+  - type: math
+    slide: 1
+    name: singular
+    expression: det A = 0
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Determinan juga menyatakan faktor perubahan luas pada transformasi.
+checks:
+  - question: MAT.MTX.Q.DETERMINAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.MTX.S.DETERMINAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

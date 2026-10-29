@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.NOTASI_1
+familyCode: MAT.VEK.F.NOTASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.NOTASI_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui A(1, 2) dan B(4, 6). Vektor AB adalah …
+  options:
+    - id: a
+      label: (3, 4)
+    - id: b
+      label: (5, 8)
+    - id: c
+      label: (−3, −4)
+    - id: d
+      label: (4, 3)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (3, 4)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.NOTASI_VEKTOR
+  feedback:
+    correct: AB = B − A = (4 − 1, 6 − 2) = (3, 4).
+    incorrect: Jawabannya (3, 4). AB = B − A = (4 − 1, 6 − 2) = (3, 4).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

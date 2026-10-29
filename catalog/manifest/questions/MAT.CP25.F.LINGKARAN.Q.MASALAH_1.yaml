@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.CP25.F.LINGKARAN.Q.MASALAH_1
+familyCode: MAT.CP25.F.LINGKARAN.F.MASALAH_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Titik P berjarak 13 cm dari pusat lingkaran yang jari-jarinya 5 cm. Panjang garis singgung dari P ke lingkaran adalah …
+  options:
+    - id: a
+      label: 8 cm
+    - id: b
+      label: 12 cm
+    - id: c
+      label: 18 cm
+    - id: d
+      label: √194 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 12 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN
+  feedback:
+    correct: "Jari-jari tegak lurus garis singgung: √(13² − 5²) = √144 = 12 cm."
+    incorrect: "Jawabannya 12 cm. Jari-jari tegak lurus garis singgung: √(13² − 5²) = √144 = 12 cm."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL.L.KALOR_DAN_PERUBAHAN_WUJUD
+title: Kalor & perubahan wujud
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.TERMAL.KALOR_DAN_PERUBAHAN_WUJUD
+blocks:
+  - type: heading
+    slide: 0
+    text: Kalor untuk menaikkan suhu
+  - type: text
+    slide: 0
+    text: "**Q = m · c · ΔT** (c kalor jenis). Saat berubah wujud suhu tetap: **Q = m · L** (L kalor laten)."
+  - type: text
+    slide: 0
+    text: "Contoh: 2 kg air dari 20°C ke 70°C (c = 4.200 J/kg°C) ⇒ Q = 420.000 J."
+  - type: math
+    slide: 0
+    name: Q
+    expression: m · c · ΔT
+    highlight: true
+  - type: math
+    slide: 0
+    name: berubah wujud
+    expression: Q = m · L
+  - type: heading
+    slide: 1
+    text: Asas Black
+  - type: text
+    slide: 1
+    text: "Saat dua zat dicampur: **kalor dilepas = kalor diterima**. Untuk zat yang sama: T campuran = (m₁T₁ + m₂T₂) / (m₁ + m₂)."
+  - type: text
+    slide: 1
+    text: "Contoh: 200 g air 80°C + 300 g air 20°C ⇒ T = 44°C."
+  - type: math
+    slide: 1
+    name: Q lepas
+    expression: Q terima
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Suhu campuran selalu di antara dua suhu awal.
+checks:
+  - question: FIS.C26.F.TERMAL.Q.KALOR_DAN_PERUBAHAN_WUJUD_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.TERMAL.S.KALOR_DAN_PERUBAHAN_WUJUD
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

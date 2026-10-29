@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR
+subject: FIS
+title: Pengukuran ilmiah & analisis data
+subtitle: Alat ukur, grafik, dan angka penting
+phase: E
+availability: MAPPED
+bekal:
+  - besaran dan satuan SI
+  - membaca skala
+aliases:
+  - ns: TOPIC
+    value: pengukuran
+units: []
+concepts:
+  - code: FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN
+    title: Ketidakpastian pengukuran
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-ukur-c1
+  - code: FIS.C26.E.UKUR.GRAFIK_DAN_MODEL
+    title: Grafik dan model
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-ukur-c2
+  - code: FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+    title: Angka penting & pelaporan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-ukur-signifikan
+prerequisites:
+  - concept: FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+    requires: FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

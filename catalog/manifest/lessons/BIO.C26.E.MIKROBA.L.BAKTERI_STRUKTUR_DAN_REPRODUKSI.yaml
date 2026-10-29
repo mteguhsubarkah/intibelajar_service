@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.L.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+title: "Bakteri: struktur dan reproduksi"
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Sel prokariotik
+  - type: text
+    slide: 0
+    text: "Bakteri adalah organisme **prokariotik**: tidak memiliki **membran inti**; materi genetiknya berada di sitoplasma. Dinding selnya mengandung peptidoglikan."
+  - type: text
+    slide: 0
+    text: "Bentuk bakteri: **kokus** (bulat), **basil** (batang), **spiral**."
+  - type: math
+    slide: 0
+    name: prokariotik
+    expression: tanpa membran inti
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Berkembang biak dengan cepat
+  - type: text
+    slide: 1
+    text: "Bakteri bereproduksi aseksual dengan **pembelahan biner**: satu sel membelah menjadi dua."
+  - type: text
+    slide: 1
+    text: Pertukaran materi genetik bisa terjadi lewat konjugasi, transformasi, dan transduksi.
+  - type: math
+    slide: 1
+    name: reproduksi
+    expression: pembelahan biner
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Karena membelah dua, jumlah bakteri bertambah secara eksponensial.
+checks:
+  - question: BIO.C26.E.MIKROBA.Q.BAKTERI_STRUKTUR_DAN_REPRODUKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.MIKROBA.S.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

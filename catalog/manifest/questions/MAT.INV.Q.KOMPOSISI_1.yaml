@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.INV.Q.KOMPOSISI_1
+familyCode: MAT.INV.F.KOMPOSISI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.INV.KOMPOSISI_FUNGSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui f(x) = 2x + 1 dan g(x) = x² − 3. Fungsi (f ∘ g)(x) adalah …
+  options:
+    - id: a
+      label: 2x² − 5
+    - id: b
+      label: 2x² − 2
+    - id: c
+      label: 4x² + 4x − 2
+    - id: d
+      label: 2x² + 1
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2x² − 5
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.INV.KOMPOSISI_FUNGSI
+  feedback:
+    correct: f(g(x)) = 2(x² − 3) + 1 = 2x² − 5.
+    incorrect: Jawabannya 2x² − 5. f(g(x)) = 2(x² − 3) + 1 = 2x² − 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

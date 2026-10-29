@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.L.VEKTOR
+title: Proyeksi vektor gerak
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+blocks:
+  - type: heading
+    slide: 0
+    text: Mengurai kecepatan
+  - type: text
+    slide: 0
+    text: Kecepatan v yang membentuk sudut θ terhadap horizontal diuraikan menjadi **vₓ = v cos θ** dan **vᵧ = v sin θ**.
+  - type: text
+    slide: 0
+    text: "Contoh: v = 20 m/s, θ = 30° ⇒ vₓ = 10√3 m/s, vᵧ = 10 m/s."
+  - type: math
+    slide: 0
+    name: vₓ
+    expression: v cos θ
+    highlight: true
+  - type: math
+    slide: 0
+    name: vᵧ
+    expression: v sin θ
+  - type: heading
+    slide: 1
+    text: Menggabungkan kembali
+  - type: text
+    slide: 1
+    text: "Besar kecepatan dari komponennya: **v = √(vₓ² + vᵧ²)**, arahnya tan θ = vᵧ/vₓ."
+  - type: text
+    slide: 1
+    text: "Contoh: vₓ = 6 m/s, vᵧ = 8 m/s ⇒ v = 10 m/s."
+  - type: math
+    slide: 1
+    name: v
+    expression: √(vₓ² + vᵧ²)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Komponen yang bersebelahan dengan sudut memakai cos, yang berseberangan memakai sin.
+checks:
+  - question: FIS.C26.E.GERAK2D.Q.VEKTOR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.GERAK2D.S.VEKTOR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

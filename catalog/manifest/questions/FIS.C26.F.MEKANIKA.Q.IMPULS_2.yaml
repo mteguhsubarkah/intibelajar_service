@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.Q.IMPULS_2
+familyCode: FIS.C26.F.MEKANIKA.F.IMPULS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Balok 2 kg yang bergerak 6 m/s menumbuk balok 4 kg yang diam. Setelah tumbukan keduanya menyatu. Kecepatan kedua balok setelah tumbukan adalah …
+  options:
+    - id: a
+      label: 1 m/s
+    - id: b
+      label: 2 m/s
+    - id: c
+      label: 3 m/s
+    - id: d
+      label: 4 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+  feedback:
+    correct: "Kekekalan momentum: 2 × 6 = (2 + 4)v′, jadi v′ = 2 m/s."
+    incorrect: "Jawabannya 2 m/s. Kekekalan momentum: 2 × 6 = (2 + 4)v′, jadi v′ = 2 m/s."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

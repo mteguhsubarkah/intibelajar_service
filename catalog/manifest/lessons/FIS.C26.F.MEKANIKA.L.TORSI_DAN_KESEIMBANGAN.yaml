@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.L.TORSI_DAN_KESEIMBANGAN
+title: Torsi dan keseimbangan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Torsi = gaya × lengan
+  - type: text
+    slide: 0
+    text: "Torsi (momen gaya) membuat benda berputar: **τ = F · r · sin θ**. Jika gaya tegak lurus lengan, τ = F · r."
+  - type: text
+    slide: 0
+    text: "Contoh: 10 N tegak lurus kunci inggris 0,2 m ⇒ τ = 2 N·m."
+  - type: math
+    slide: 0
+    name: τ
+    expression: F · r · sin θ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Syarat seimbang
+  - type: text
+    slide: 1
+    text: Benda seimbang bila **ΣF = 0** dan **Στ = 0** terhadap titik mana pun.
+  - type: text
+    slide: 1
+    text: "Jungkat-jungkit: m₁ · r₁ = m₂ · r₂. Contoh: 30 kg pada 2 m seimbang dengan 40 kg pada 1,5 m."
+  - type: math
+    slide: 1
+    name: seimbang
+    expression: ΣF = 0 dan Στ = 0
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pilih poros di titik yang gayanya tidak diketahui agar torsinya nol.
+checks:
+  - question: FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MEKANIKA.S.TORSI_DAN_KESEIMBANGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

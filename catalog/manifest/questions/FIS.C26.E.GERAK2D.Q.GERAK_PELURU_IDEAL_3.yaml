@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_3
+familyCode: FIS.C26.E.GERAK2D.F.GERAK_PELURU_IDEAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tanpa hambatan udara, sudut elevasi yang menghasilkan jangkauan mendatar paling jauh adalah …
+  options:
+    - id: a
+      label: 30°
+    - id: b
+      label: 45°
+    - id: c
+      label: 60°
+    - id: d
+      label: 90°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 45°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+  feedback:
+    correct: R sebanding dengan sin 2θ, yang bernilai maksimum 1 saat 2θ = 90°, yaitu θ = 45°.
+    incorrect: Jawabannya 45°. R sebanding dengan sin 2θ, yang bernilai maksimum 1 saat 2θ = 90°, yaitu θ = 45°.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

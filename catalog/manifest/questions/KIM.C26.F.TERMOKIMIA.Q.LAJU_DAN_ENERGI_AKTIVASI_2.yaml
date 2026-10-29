@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.LAJU_DAN_ENERGI_AKTIVASI_2
+familyCode: KIM.C26.F.TERMOKIMIA.F.LAJU_DAN_ENERGI_AKTIVASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.LAJU_DAN_ENERGI_AKTIVASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Serbuk CaCO₃ bereaksi lebih cepat dengan HCl dibandingkan bongkahan CaCO₃ yang massanya sama karena …
+  options:
+    - id: a
+      label: suhunya lebih tinggi
+    - id: b
+      label: luas permukaan bidang sentuhnya lebih besar
+    - id: c
+      label: konsentrasinya lebih besar
+    - id: d
+      label: energi aktivasinya lebih tinggi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - luas permukaan bidang sentuhnya lebih besar
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.LAJU_DAN_ENERGI_AKTIVASI
+  feedback:
+    correct: Serbuk memiliki luas permukaan lebih besar sehingga tumbukan dengan HCl lebih sering.
+    incorrect: Jawabannya luas permukaan bidang sentuhnya lebih besar. Serbuk memiliki luas permukaan lebih besar sehingga tumbukan dengan HCl lebih sering.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

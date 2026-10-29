@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK.L.EVALUASI_MANFAAT_DAN_DAMPAK
+title: Evaluasi manfaat dan dampak
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK
+blocks:
+  - type: heading
+    slide: 0
+    text: Manfaat
+  - type: text
+    slide: 0
+    text: Tanaman **transgenik** tahan hama (misalnya jagung Bt) mengurangi penggunaan pestisida. Obat seperti insulin dan vaksin rekombinan menjadi lebih mudah diproduksi.
+  - type: math
+    slide: 0
+    name: transgenik
+    expression: organisme dengan gen sisipan
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Dampak dan etika
+  - type: text
+    slide: 1
+    text: "Kekhawatiran: gen sisipan **menyebar ke tumbuhan liar**, hama menjadi resisten, berkurangnya keanekaragaman varietas lokal, dan isu keamanan pangan."
+  - type: text
+    slide: 1
+    text: Karena itu produk transgenik harus melalui uji keamanan hayati sebelum dilepas.
+  - type: math
+    slide: 1
+    name: risiko
+    expression: penyebaran gen ke alam
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Evaluasi yang baik menimbang manfaat dan risiko, tidak hanya salah satunya.
+checks:
+  - question: BIO.C26.F.BIOTEK.Q.EVALUASI_MANFAAT_DAN_DAMPAK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.BIOTEK.S.EVALUASI_MANFAAT_DAN_DAMPAK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

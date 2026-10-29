@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.FUNGSI_EKSPONEN_2
+familyCode: MAT.EKS.F.FUNGSI_EKSPONEN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.FUNGSI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fungsi manakah yang menggambarkan peluruhan?
+  options:
+    - id: a
+      label: f(x) = 5 · (1,2)ˣ
+    - id: b
+      label: f(x) = 5 · (0,8)ˣ
+    - id: c
+      label: f(x) = 0,8 · 5ˣ
+    - id: d
+      label: f(x) = 2ˣ + 5
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - f(x) = 5 · (0,8)ˣ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.FUNGSI_EKSPONEN
+  feedback:
+    correct: Peluruhan terjadi bila basis pangkatnya di antara 0 dan 1. Hanya 5 · (0,8)ˣ yang basisnya 0,8.
+    incorrect: Jawabannya f(x) = 5 · (0,8)ˣ. Peluruhan terjadi bila basis pangkatnya di antara 0 dan 1. Hanya 5 · (0,8)ˣ yang basisnya 0,8.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

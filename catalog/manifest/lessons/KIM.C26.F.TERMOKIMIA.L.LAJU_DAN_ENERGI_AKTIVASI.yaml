@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.L.LAJU_DAN_ENERGI_AKTIVASI
+title: Laju dan energi aktivasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.TERMOKIMIA.LAJU_DAN_ENERGI_AKTIVASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Faktor yang memengaruhi laju
+  - type: text
+    slide: 0
+    text: Laju bertambah bila **konsentrasi** naik, **luas permukaan** besar (serbuk), **suhu** naik, atau ada **katalis**.
+  - type: text
+    slide: 0
+    text: Semuanya memperbanyak tumbukan efektif antarpartikel.
+  - type: math
+    slide: 0
+    name: faktor
+    expression: konsentrasi, luas permukaan, suhu, katalis
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Energi aktivasi
+  - type: text
+    slide: 1
+    text: "**Energi aktivasi (Ea)** adalah energi minimum agar tumbukan menghasilkan reaksi."
+  - type: text
+    slide: 1
+    text: Katalis mempercepat reaksi dengan **menurunkan Ea**, tanpa ikut habis dan tanpa mengubah ΔH.
+  - type: math
+    slide: 1
+    name: katalis
+    expression: menurunkan Ea
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Katalis tidak menggeser kesetimbangan dan tidak mengubah ΔH.
+checks:
+  - question: KIM.C26.F.TERMOKIMIA.Q.LAJU_DAN_ENERGI_AKTIVASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.TERMOKIMIA.S.LAJU_DAN_ENERGI_AKTIVASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

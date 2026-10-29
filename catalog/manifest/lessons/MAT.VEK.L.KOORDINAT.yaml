@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.VEK.L.KOORDINAT
+title: Vektor di Koordinat
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.VEKTOR_DI_KOORDINAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Vektor posisi
+  - type: text
+    slide: 0
+    text: Vektor posisi titik A adalah **a = OA**, dari titik asal O ke A. Komponennya sama dengan koordinat A.
+  - type: text
+    slide: 0
+    text: "Di ruang tiga dimensi: A(x, y, z) ⇒ a = xi + yj + zk."
+  - type: math
+    slide: 0
+    name: a = OA
+    expression: (x, y, z)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Vektor antara dua titik di ruang
+  - type: text
+    slide: 1
+    text: "Sama seperti di bidang: **PQ = q − p**. Contoh: P(2, −1, 3), Q(5, 3, 1) ⇒ PQ = (3, 4, −2)."
+  - type: math
+    slide: 1
+    name: PQ
+    expression: q − p
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Kurangkan komponen yang sejenis: x dengan x, y dengan y, z dengan z."
+checks:
+  - question: MAT.VEK.Q.KOORDINAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.KOORDINAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

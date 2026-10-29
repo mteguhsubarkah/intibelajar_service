@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.VEK.L.PERKALIAN_TITIK
+title: Perkalian Titik (Dot)
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.VEK.PERKALIAN_TITIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Hasilnya skalar
+  - type: text
+    slide: 0
+    text: "**a · b = a₁b₁ + a₂b₂ (+ a₃b₃)**. Hasil perkalian titik adalah bilangan, bukan vektor."
+  - type: text
+    slide: 0
+    text: "Contoh: (2, 3) · (4, −1) = 8 − 3 = 5."
+  - type: math
+    slide: 0
+    name: a · b
+    expression: a₁b₁ + a₂b₂ + a₃b₃
+    highlight: true
+  - type: math
+    slide: 0
+    name: a · b
+    expression: "|a||b| cos θ"
+  - type: heading
+    slide: 1
+    text: Tegak lurus
+  - type: text
+    slide: 1
+    text: Karena a · b = |a||b| cos θ dan cos 90° = 0, dua vektor **tegak lurus jika a · b = 0**.
+  - type: text
+    slide: 1
+    text: "Contoh: (2, p) · (3, −6) = 6 − 6p = 0 ⇒ p = 1."
+  - type: math
+    slide: 1
+    name: a ⊥ b
+    expression: a · b = 0
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gunakan rumus komponen bila komponen diketahui, rumus cos θ bila panjang dan sudut diketahui.
+checks:
+  - question: MAT.VEK.Q.PERKALIAN_TITIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.PERKALIAN_TITIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

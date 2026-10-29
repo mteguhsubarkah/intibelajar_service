@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.L.POLA_PEWARISAN
+title: Pola pewarisan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.GENETIKA.POLA_PEWARISAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Hukum Mendel
+  - type: text
+    slide: 0
+    text: "**Monohibrid**: BB × bb ⇒ F1 semua Bb (bulat). F1 × F1 ⇒ F2 fenotipe **3 bulat : 1 keriput**."
+  - type: text
+    slide: 0
+    text: "**Dihibrid**: BbKk × BbKk ⇒ fenotipe **9 : 3 : 3 : 1**."
+  - type: math
+    slide: 0
+    name: F2 monohibrid
+    expression: "3 : 1"
+    highlight: true
+  - type: math
+    slide: 0
+    name: F2 dihibrid
+    expression: "9 : 3 : 3 : 1"
+  - type: heading
+    slide: 1
+    text: Pewarisan terpaut kromosom X
+  - type: text
+    slide: 1
+    text: "Buta warna terpaut kromosom X. Ibu carrier (XᴮXᵇ) × ayah normal (XᴮY): anak perempuan normal semua (setengahnya carrier), **50% anak laki-laki buta warna**."
+  - type: math
+    slide: 1
+    name: XᴮXᵇ × XᴮY
+    expression: anak laki-laki 50% buta warna
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Buat papan Punnett; jangan menebak dari pola.
+checks:
+  - question: BIO.C26.F.GENETIKA.Q.POLA_PEWARISAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.GENETIKA.S.POLA_PEWARISAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.CP25.F.PELUANG.L.MAJEMUK
+title: Kejadian majemuk & harapan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Gabungan kejadian
+  - type: text
+    slide: 0
+    text: "**P(A ∪ B) = P(A) + P(B) − P(A ∩ B)**. Untuk kejadian **saling lepas** (tidak bisa terjadi bersamaan), P(A ∩ B) = 0."
+  - type: text
+    slide: 0
+    text: "Kejadian **saling bebas**: P(A ∩ B) = P(A) × P(B)."
+  - type: math
+    slide: 0
+    name: P(A ∪ B)
+    expression: P(A) + P(B) − P(A ∩ B)
+    highlight: true
+  - type: math
+    slide: 0
+    name: saling bebas
+    expression: P(A ∩ B) = P(A)P(B)
+  - type: heading
+    slide: 1
+    text: Frekuensi harapan
+  - type: text
+    slide: 1
+    text: Jika percobaan dilakukan n kali, kejadian A diharapkan muncul **Fₕ = n × P(A)** kali.
+  - type: text
+    slide: 1
+    text: "Contoh: dadu dilempar 120 kali, mata prima (2, 3, 5) peluangnya 1/2 ⇒ harapan 60 kali."
+  - type: math
+    slide: 1
+    name: Fₕ
+    expression: n × P(A)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Untuk dua dadu, buat tabel 6 × 6 supaya tidak ada pasangan yang terlewat.
+checks:
+  - question: MAT.CP25.F.PELUANG.Q.MAJEMUK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.CP25.F.PELUANG.S.MAJEMUK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

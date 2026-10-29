@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.Q.KETIDAKPASTIAN_PENGUKURAN_2
+familyCode: FIS.C26.E.UKUR.F.KETIDAKPASTIAN_PENGUKURAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Mikrometer sekrup menunjukkan skala utama 4,5 mm dan skala putar pada angka 28. Hasil pengukurannya adalah …
+  options:
+    - id: a
+      label: 4,78 mm
+    - id: b
+      label: 4,528 mm
+    - id: c
+      label: 7,30 mm
+    - id: d
+      label: 4,28 mm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 4,78 mm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN
+  feedback:
+    correct: 4,5 mm + 28 × 0,01 mm = 4,5 + 0,28 = 4,78 mm.
+    incorrect: Jawabannya 4,78 mm. 4,5 mm + 28 × 0,01 mm = 4,5 + 0,28 = 4,78 mm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.Q.TINGKAT_KEANEKARAGAMAN_1
+familyCode: BIO.C26.E.BIODIVERSITAS.F.TINGKAT_KEANEKARAGAMAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bunga mawar berwarna merah, putih, dan kuning menunjukkan keanekaragaman tingkat …
+  options:
+    - id: a
+      label: gen
+    - id: b
+      label: spesies
+    - id: c
+      label: ekosistem
+    - id: d
+      label: bioma
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - gen
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+  feedback:
+    correct: Semuanya mawar dari spesies yang sama; perbedaan warnanya berasal dari variasi gen.
+    incorrect: Jawabannya gen. Semuanya mawar dari spesies yang sama; perbedaan warnanya berasal dari variasi gen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

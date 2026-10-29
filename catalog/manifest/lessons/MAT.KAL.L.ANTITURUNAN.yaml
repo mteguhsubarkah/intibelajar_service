@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.KAL.L.ANTITURUNAN
+title: Antiturunan & konstanta
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+blocks:
+  - type: heading
+    slide: 0
+    text: Membalik turunan
+  - type: text
+    slide: 0
+    text: "Antiturunan (integral tak tentu): **∫xⁿ dx = xⁿ⁺¹/(n + 1) + C**, n ≠ −1."
+  - type: text
+    slide: 0
+    text: "Contoh: ∫(6x² − 4x + 3) dx = 2x³ − 2x² + 3x + C."
+  - type: math
+    slide: 0
+    name: ∫xⁿ dx
+    expression: xⁿ⁺¹/(n + 1) + C
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mencari konstanta C
+  - type: text
+    slide: 1
+    text: C ditentukan dari satu nilai yang diketahui.
+  - type: text
+    slide: 1
+    text: "Contoh: F′(x) = 2x + 1 dan F(1) = 5 ⇒ F(x) = x² + x + C ⇒ 2 + C = 5 ⇒ C = 3."
+  - type: math
+    slide: 1
+    name: F(x)
+    expression: x² + x + 3
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Cek jawaban dengan menurunkannya kembali.
+checks:
+  - question: MAT.KAL.Q.ANTITURUNAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KAL.S.ANTITURUNAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

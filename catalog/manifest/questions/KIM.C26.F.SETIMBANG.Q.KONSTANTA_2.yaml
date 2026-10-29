@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.KONSTANTA_2
+familyCode: KIM.C26.F.SETIMBANG.F.KONSTANTA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dalam wadah 1 liter, kesetimbangan H₂ + I₂ ⇌ 2HI mengandung 0,1 mol H₂, 0,1 mol I₂, dan 0,8 mol HI. Nilai Kc adalah …
+  options:
+    - id: a
+      label: "8"
+    - id: b
+      label: "16"
+    - id: c
+      label: "64"
+    - id: d
+      label: "80"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "64"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN
+  feedback:
+    correct: Kc = (0,8)² / (0,1 × 0,1) = 0,64 / 0,01 = 64.
+    incorrect: Jawabannya 64. Kc = (0,8)² / (0,1 × 0,1) = 0,64 / 0,01 = 64.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.L.INTI
+title: Peluruhan dan waktu paruh
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+blocks:
+  - type: heading
+    slide: 0
+    text: Waktu paruh
+  - type: text
+    slide: 0
+    text: "Setiap **waktu paruh** T, jumlah inti radioaktif tinggal setengahnya: **N = N₀ · (1/2)^(t/T)**."
+  - type: text
+    slide: 0
+    text: "Contoh: T = 2 jam, setelah 6 jam (3 kali paruh) tersisa 1/8 bagian."
+  - type: math
+    slide: 0
+    name: N
+    expression: N₀ (1/2)^(t/T)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mencari waktu paruh
+  - type: text
+    slide: 1
+    text: Hitung berapa kali dibagi dua, lalu bagi waktunya.
+  - type: text
+    slide: 1
+    text: "Contoh: 64 g menjadi 4 g = 64 → 32 → 16 → 8 → 4 (4 kali). Dalam 20 hari ⇒ T = 5 hari."
+  - type: math
+    slide: 1
+    name: 64 → 4 g
+    expression: 4 kali paruh
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Penerapan: penanggalan karbon-14, kedokteran nuklir, PLTN."
+checks:
+  - question: FIS.C26.F.MODERN.Q.INTI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MODERN.S.INTI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.BENTUK_1
+familyCode: KIM.C26.F.STRUKTUR.F.BENTUK_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk molekul CH₄ adalah …
+  options:
+    - id: a
+      label: linear
+    - id: b
+      label: segitiga datar
+    - id: c
+      label: tetrahedral
+    - id: d
+      label: bentuk V
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - tetrahedral
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+  feedback:
+    correct: C memiliki 4 pasangan elektron ikatan tanpa pasangan bebas, sehingga bentuknya tetrahedral.
+    incorrect: Jawabannya tetrahedral. C memiliki 4 pasangan elektron ikatan tanpa pasangan bebas, sehingga bentuknya tetrahedral.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

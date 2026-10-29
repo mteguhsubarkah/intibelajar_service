@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.L.HUKUM_RANGKAIAN
+title: Hukum rangkaian
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Hukum Ohm dan susunan resistor
+  - type: text
+    slide: 0
+    text: "**V = I · R**. Seri: **Rₛ = R₁ + R₂**, arusnya sama. Paralel: **1/Rₚ = 1/R₁ + 1/R₂**, tegangannya sama."
+  - type: text
+    slide: 0
+    text: "Contoh: 4 Ω paralel 12 Ω ⇒ Rₚ = 3 Ω."
+  - type: math
+    slide: 0
+    name: V
+    expression: I · R
+    highlight: true
+  - type: math
+    slide: 0
+    name: paralel
+    expression: 1/Rₚ = 1/R₁ + 1/R₂
+  - type: heading
+    slide: 1
+    text: Membagi tegangan
+  - type: text
+    slide: 1
+    text: Pada rangkaian seri, tegangan terbagi sebanding dengan hambatan.
+  - type: text
+    slide: 1
+    text: "Contoh: 2 Ω dan 4 Ω seri pada 12 V ⇒ I = 2 A ⇒ V pada 4 Ω = 8 V. Daya **P = V · I = I²R**."
+  - type: math
+    slide: 1
+    name: P
+    expression: V · I = I² · R
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hambatan paralel selalu lebih kecil dari hambatan terkecilnya.
+checks:
+  - question: FIS.C26.F.ELEKTRO.Q.HUKUM_RANGKAIAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.ELEKTRO.S.HUKUM_RANGKAIAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

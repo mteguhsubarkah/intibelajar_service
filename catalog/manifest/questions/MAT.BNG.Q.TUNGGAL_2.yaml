@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BNG.Q.TUNGGAL_2
+familyCode: MAT.BNG.F.TUNGGAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BNG.BUNGA_TUNGGAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pinjaman Rp5.000.000 dikenai bunga tunggal 1% per bulan. Total bunga selama 8 bulan adalah …
+  options:
+    - id: a
+      label: Rp40.000
+    - id: b
+      label: Rp400.000
+    - id: c
+      label: Rp500.000
+    - id: d
+      label: Rp4.000.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp400.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BNG.BUNGA_TUNGGAL
+  feedback:
+    correct: B = 5.000.000 × 0,01 × 8 = 400.000.
+    incorrect: Jawabannya Rp400.000. B = 5.000.000 × 0,01 × 8 = 400.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

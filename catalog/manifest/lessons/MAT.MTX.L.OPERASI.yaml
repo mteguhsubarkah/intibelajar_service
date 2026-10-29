@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.MTX.L.OPERASI
+title: Penjumlahan & skalar
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.MTX.PENJUMLAHAN_DAN_SKALAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Jumlah elemen seletak
+  - type: text
+    slide: 0
+    text: Dua matriks berordo sama dijumlah dengan menjumlahkan **elemen yang seletak**.
+  - type: text
+    slide: 0
+    text: "Contoh: [2 −1; 0 3] + [1 4; 5 −2] = [3 3; 5 1]."
+  - type: math
+    slide: 0
+    name: (A + B)ᵢⱼ
+    expression: aᵢⱼ + bᵢⱼ
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Perkalian dengan skalar
+  - type: text
+    slide: 1
+    text: "**kA** mengalikan setiap elemen dengan k. Contoh: 3 · [1 −2; 0 4] = [3 −6; 0 12]."
+  - type: math
+    slide: 1
+    name: (kA)ᵢⱼ
+    expression: k · aᵢⱼ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Matriks dengan ordo berbeda tidak dapat dijumlahkan.
+checks:
+  - question: MAT.MTX.Q.OPERASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.MTX.S.OPERASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

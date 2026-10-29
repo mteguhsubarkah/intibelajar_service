@@ -1,0 +1,66 @@
+schemaVersion: 1
+code: MAT.CP25.F.PELUANG
+subject: MAT
+title: Peluang Majemuk & Bersyarat
+subtitle: Kaidah pencacahan, kejadian majemuk, peluang bersyarat
+phase: F
+availability: MAPPED
+bekal:
+  - peluang sederhana
+  - pecahan
+aliases:
+  - ns: TOPIC
+    value: peluang
+units: []
+concepts:
+  - code: MAT.CP25.F.PELUANG.PERMUTASI_DAN_KOMBINASI
+    title: Permutasi dan kombinasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-f-peluang-cacah
+  - code: MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+    title: Kejadian majemuk & harapan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-f-peluang-majemuk
+  - code: MAT.CP25.F.PELUANG.PELUANG_BERSYARAT
+    title: Peluang bersyarat
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-f-peluang-bersyarat
+prerequisites:
+  - concept: MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+    requires: MAT.CP25.F.PELUANG.PERMUTASI_DAN_KOMBINASI
+    kind: SOFT
+  - concept: MAT.CP25.F.PELUANG.PELUANG_BERSYARAT
+    requires: MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

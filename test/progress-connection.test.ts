@@ -51,7 +51,8 @@ test('connected progress/import/tutor on PostgreSQL preserve consent, ownership 
   });
   await t.test('real grading awards server XP once; rebuild is identical; revealed families do not award again',async()=>{
    const x=await consentedLearner(db,config),xc=client(app,config,x),authored=manifest.questions.find(q=>q.code==='MAT.TRI.Q.TAN60_SIN30')!;
-   const question=(await xc('GET','/v1/questions?limit=100')).body.items.find((q:any)=>q.code===authored.code);assert.ok(question);
+   let question:any,cursor:string|null=null;
+   do{const page:any=(await xc('GET','/v1/questions?limit=100'+(cursor?'&cursor='+encodeURIComponent(cursor):''))).body;question=page.items.find((q:any)=>q.code===authored.code);cursor=page.nextCursor;}while(!question&&cursor);assert.ok(question);
    const solve=async()=>{const s=(await xc('POST','/v1/learning-sessions',{kind:'PRACTICE',origin:'BANK',withLesson:false,spec:{questionIds:[question.id]}})).body;
     const result=await xc('POST','/v1/learning-sessions/'+s.id+'/attempts',{expectedStateVersion:s.stateVersion,response:{responseType:'OPTION',optionId:authored.rubric.answer.optionId}});assert.equal(result.status,201,JSON.stringify(result.body));assert.equal(result.body.attempt.verdict,'CORRECT');};
    await solve();const first=(await xc('GET','/v1/me/stats')).body;assert.ok(first.xpTotal>=10);

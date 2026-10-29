@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.SPL.L.IRISAN
+title: Irisan kendala
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.SPL.IRISAN_KENDALA
+blocks:
+  - type: heading
+    slide: 0
+    text: Daerah penyelesaian
+  - type: text
+    slide: 0
+    text: Setiap pertidaksamaan membagi bidang menjadi dua. **Daerah penyelesaian sistem** adalah irisan semua daerah yang memenuhi.
+  - type: text
+    slide: 0
+    text: Titik pojok daerah itu adalah titik potong garis-garis batas.
+  - type: math
+    slide: 0
+    name: titik pojok
+    expression: perpotongan garis batas
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mencari titik potong
+  - type: text
+    slide: 1
+    text: Selesaikan dua persamaan garis dengan eliminasi atau substitusi.
+  - type: text
+    slide: 1
+    text: "Contoh: x + y = 6 dan x − y = 2 ⇒ 2x = 8 ⇒ x = 4, y = 2."
+  - type: math
+    slide: 1
+    name: x + y = 6, x − y = 2
+    expression: (4, 2)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sebuah titik ada di daerah penyelesaian jika memenuhi semua pertidaksamaan sekaligus.
+checks:
+  - question: MAT.SPL.Q.IRISAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.SPL.S.IRISAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.STP.Q.KRITIS_2
+familyCode: MAT.STP.F.KRITIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.STP.MENGEVALUASI_LAPORAN_DATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Gaji lima karyawan (juta rupiah): 4, 4, 5, 5, 32. Ukuran pemusatan yang paling mewakili gaji karyawan adalah …"
+  options:
+    - id: a
+      label: rata-rata, 10 juta
+    - id: b
+      label: median, 5 juta
+    - id: c
+      label: modus, 4 dan 5 juta
+    - id: d
+      label: jangkauan, 28 juta
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - median, 5 juta
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.STP.MENGEVALUASI_LAPORAN_DATA
+  feedback:
+    correct: Gaji 32 juta adalah pencilan yang menarik rata-rata ke 10 juta. Median 5 juta lebih mewakili.
+    incorrect: Jawabannya median, 5 juta. Gaji 32 juta adalah pencilan yang menarik rata-rata ke 10 juta. Median 5 juta lebih mewakili.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

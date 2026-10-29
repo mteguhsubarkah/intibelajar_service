@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA.Q.TEKANAN_DAN_GAYA_APUNG_1
+familyCode: FIS.C26.F.FLUIDA.F.TEKANAN_DAN_GAYA_APUNG_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tekanan hidrostatis pada kedalaman 5 m di bawah permukaan air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
+  options:
+    - id: a
+      label: 500 Pa
+    - id: b
+      label: 5.000 Pa
+    - id: c
+      label: 50.000 Pa
+    - id: d
+      label: 500.000 Pa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 50.000 Pa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG
+  feedback:
+    correct: Pₕ = 1.000 × 10 × 5 = 50.000 Pa.
+    incorrect: Jawabannya 50.000 Pa. Pₕ = 1.000 × 10 × 5 = 50.000 Pa.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

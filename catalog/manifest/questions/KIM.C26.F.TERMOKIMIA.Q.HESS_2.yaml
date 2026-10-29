@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.HESS_2
+familyCode: KIM.C26.F.TERMOKIMIA.F.HESS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.HUKUM_HESS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui ΔHf° CO₂ = −394 kJ/mol, H₂O = −286 kJ/mol, dan CH₄ = −75 kJ/mol. ΔH pembakaran CH₄ + 2O₂ → CO₂ + 2H₂O adalah …
+  options:
+    - id: a
+      label: −891 kJ
+    - id: b
+      label: −605 kJ
+    - id: c
+      label: −1.041 kJ
+    - id: d
+      label: +891 kJ
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −891 kJ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.HUKUM_HESS
+  feedback:
+    correct: (−394 + 2 × (−286)) − (−75) = −966 + 75 = −891 kJ.
+    incorrect: Jawabannya −891 kJ. (−394 + 2 × (−286)) − (−75) = −966 + 75 = −891 kJ.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

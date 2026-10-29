@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BNG.L.TUNGGAL
+title: Bunga tunggal
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.BNG.BUNGA_TUNGGAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Bunga dari modal awal saja
+  - type: text
+    slide: 0
+    text: "Bunga tunggal dihitung dari **modal awal** setiap periode: **B = M · i · n**. Nilai akhir **Mₙ = M(1 + i·n)**."
+  - type: text
+    slide: 0
+    text: "Contoh: Rp2.000.000, 6% per tahun, 3 tahun ⇒ bunga Rp360.000, nilai akhir Rp2.360.000."
+  - type: math
+    slide: 0
+    name: B
+    expression: M · i · n
+    highlight: true
+  - type: math
+    slide: 0
+    name: Mₙ
+    expression: M(1 + i · n)
+  - type: heading
+    slide: 1
+    text: Samakan satuan waktu
+  - type: text
+    slide: 1
+    text: "Jika bunga per bulan dan waktu dalam bulan, langsung kalikan. Jika bunga per tahun dan waktu dalam bulan, ubah dulu: 8 bulan = 8/12 tahun."
+  - type: math
+    slide: 1
+    name: 1% per bulan × 8 bulan
+    expression: 8%
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bunga tunggal bertambah sama besar setiap periode, seperti barisan aritmetika.
+checks:
+  - question: MAT.BNG.Q.TUNGGAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BNG.S.TUNGGAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

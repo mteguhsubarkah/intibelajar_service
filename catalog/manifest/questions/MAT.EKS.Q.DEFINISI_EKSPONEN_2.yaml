@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.DEFINISI_EKSPONEN_2
+familyCode: MAT.EKS.F.DEFINISI_EKSPONEN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari 2⁻³ + 5⁰ adalah …
+  options:
+    - id: a
+      label: −7
+    - id: b
+      label: 1/8
+    - id: c
+      label: 9/8
+    - id: d
+      label: "6"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 9/8
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.DEFINISI_EKSPONEN
+  feedback:
+    correct: 2⁻³ = 1/8 dan 5⁰ = 1, jadi jumlahnya 1/8 + 1 = 9/8.
+    incorrect: Jawabannya 9/8. 2⁻³ = 1/8 dan 5⁰ = 1, jadi jumlahnya 1/8 + 1 = 9/8.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

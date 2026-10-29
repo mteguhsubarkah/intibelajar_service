@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.L.KIRCHHOFF
+title: Hukum Kirchhoff
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+blocks:
+  - type: heading
+    slide: 0
+    text: "Hukum I: titik cabang"
+  - type: text
+    slide: 0
+    text: "Jumlah arus yang **masuk** titik cabang sama dengan jumlah arus yang **keluar**: **ΣI masuk = ΣI keluar**."
+  - type: text
+    slide: 0
+    text: "Contoh: masuk 5 A dan 3 A, satu keluar 6 A ⇒ cabang lain keluar 2 A."
+  - type: math
+    slide: 0
+    name: Hukum I
+    expression: ΣI masuk = ΣI keluar
+    highlight: true
+  - type: heading
+    slide: 1
+    text: "Hukum II: loop"
+  - type: text
+    slide: 1
+    text: "Dalam satu loop tertutup: **Σε = ΣI · R**. Baterai yang dipasang berlawanan saling mengurangi."
+  - type: text
+    slide: 1
+    text: "Contoh: 12 V dan 6 V berlawanan, hambatan total 3 Ω ⇒ I = (12 − 6)/3 = 2 A."
+  - type: math
+    slide: 1
+    name: Hukum II
+    expression: Σε = ΣIR
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tentukan arah loop dulu, lalu konsisten dengan tandanya.
+checks:
+  - question: FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.ELEKTRO.S.KIRCHHOFF
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.MTX.Q.TRANSFORMASI_1
+familyCode: MAT.MTX.F.TRANSFORMASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bayangan titik (3, 2) oleh pencerminan terhadap sumbu x adalah …
+  options:
+    - id: a
+      label: (3, −2)
+    - id: b
+      label: (−3, 2)
+    - id: c
+      label: (2, 3)
+    - id: d
+      label: (−3, −2)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (3, −2)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI
+  feedback:
+    correct: "Cermin sumbu x: x tetap, y berubah tanda. Bayangannya (3, −2)."
+    incorrect: "Jawabannya (3, −2). Cermin sumbu x: x tetap, y berubah tanda. Bayangannya (3, −2)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.STP.L.KUARTIL
+title: Kuartil dan IQR
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.STP.KUARTIL_DAN_IQR
+blocks:
+  - type: heading
+    slide: 0
+    text: Membagi data menjadi empat
+  - type: text
+    slide: 0
+    text: Urutkan data. **Q₂** adalah median. **Q₁** median bagian bawah, **Q₃** median bagian atas.
+  - type: text
+    slide: 0
+    text: "Contoh: 3, 5, 6, 7, 8, 9, 10, 12 ⇒ Q₂ = 7,5; Q₁ = 5,5; Q₃ = 9,5."
+  - type: math
+    slide: 0
+    name: Q₂
+    expression: median
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Jangkauan antarkuartil
+  - type: text
+    slide: 1
+    text: "**IQR = Q₃ − Q₁** mengukur sebaran 50% data di tengah. Tidak terpengaruh nilai ekstrem."
+  - type: text
+    slide: 1
+    text: "Dari contoh tadi: IQR = 9,5 − 5,5 = 4."
+  - type: math
+    slide: 1
+    name: IQR
+    expression: Q₃ − Q₁
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Selalu urutkan data dulu; kesalahan paling sering adalah menghitung dari data acak.
+checks:
+  - question: MAT.STP.Q.KUARTIL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.STP.S.KUARTIL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

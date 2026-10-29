@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.KOORDINAT_2
+familyCode: MAT.VEK.F.KOORDINAT_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.VEKTOR_DI_KOORDINAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Vektor posisi titik A(−3, 4) adalah …
+  options:
+    - id: a
+      label: −3i + 4j
+    - id: b
+      label: 3i − 4j
+    - id: c
+      label: 4i − 3j
+    - id: d
+      label: −3i − 4j
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −3i + 4j
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.VEKTOR_DI_KOORDINAT
+  feedback:
+    correct: "Vektor posisi memiliki komponen yang sama dengan koordinat titiknya: −3i + 4j."
+    incorrect: "Jawabannya −3i + 4j. Vektor posisi memiliki komponen yang sama dengan koordinat titiknya: −3i + 4j."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK.Q.REKAYASA_DAN_ANALISIS_DNA_1
+familyCode: BIO.C26.F.BIOTEK.F.REKAYASA_DAN_ANALISIS_DNA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.BIOTEK.REKAYASA_DAN_ANALISIS_DNA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Enzim yang digunakan untuk memotong DNA pada urutan basa tertentu dalam rekayasa genetika adalah …
+  options:
+    - id: a
+      label: ligase
+    - id: b
+      label: enzim restriksi
+    - id: c
+      label: amilase
+    - id: d
+      label: DNA polimerase
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - enzim restriksi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.BIOTEK.REKAYASA_DAN_ANALISIS_DNA
+  feedback:
+    correct: Enzim restriksi (endonuklease) memotong DNA pada urutan pengenalan tertentu.
+    incorrect: Jawabannya enzim restriksi. Enzim restriksi (endonuklease) memotong DNA pada urutan pengenalan tertentu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

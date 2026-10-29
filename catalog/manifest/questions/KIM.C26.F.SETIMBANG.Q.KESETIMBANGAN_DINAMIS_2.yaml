@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.KESETIMBANGAN_DINAMIS_2
+familyCode: KIM.C26.F.SETIMBANG.F.KESETIMBANGAN_DINAMIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada kesetimbangan N₂ + 3H₂ ⇌ 2NH₃ dengan ΔH = −92 kJ, jika suhu dinaikkan, kesetimbangan bergeser ke …
+  options:
+    - id: a
+      label: kanan
+    - id: b
+      label: kiri
+    - id: c
+      label: tidak bergeser
+    - id: d
+      label: kanan lalu kiri
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - kiri
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+  feedback:
+    correct: Reaksi maju eksoterm, sehingga reaksi balik endoterm. Suhu naik menggeser ke arah endoterm, yaitu kiri.
+    incorrect: Jawabannya kiri. Reaksi maju eksoterm, sehingga reaksi balik endoterm. Suhu naik menggeser ke arah endoterm, yaitu kiri.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

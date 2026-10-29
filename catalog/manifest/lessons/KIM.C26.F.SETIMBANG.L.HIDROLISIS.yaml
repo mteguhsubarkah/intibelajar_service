@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.L.HIDROLISIS
+title: Hidrolisis dan penyangga
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+blocks:
+  - type: heading
+    slide: 0
+    text: Larutan penyangga
+  - type: text
+    slide: 0
+    text: Penyangga mempertahankan pH saat ditambah sedikit asam, basa, atau air. Isinya **asam lemah + basa konjugasinya** (CH₃COOH + CH₃COONa) atau basa lemah + asam konjugasinya.
+  - type: text
+    slide: 0
+    text: "pH penyangga asam: **[H⁺] = Ka × (mol asam / mol garam)**."
+  - type: math
+    slide: 0
+    name: "[H⁺]"
+    expression: Ka × n asam / n garam
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Hidrolisis garam
+  - type: text
+    slide: 1
+    text: Garam dari **asam kuat + basa lemah** (NH₄Cl) bersifat **asam**. Garam dari **asam lemah + basa kuat** (CH₃COONa) bersifat **basa**. Garam dari asam kuat + basa kuat (NaCl) netral.
+  - type: math
+    slide: 1
+    name: NH₄Cl
+    expression: asam
+    highlight: true
+  - type: math
+    slide: 1
+    name: CH₃COONa
+    expression: basa
+  - type: tip
+    slide: 1
+    text: Sifat garam mengikuti induk yang kuat.
+checks:
+  - question: KIM.C26.F.SETIMBANG.Q.HIDROLISIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.SETIMBANG.S.HIDROLISIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.L.HUKUM_NEWTON_DAN_MOMENTUM
+title: Hukum Newton & momentum
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+blocks:
+  - type: heading
+    slide: 0
+    text: ΣF = m · a
+  - type: text
+    slide: 0
+    text: "Hukum II Newton: percepatan sebanding dengan gaya total dan berbanding terbalik dengan massa: **ΣF = m · a**."
+  - type: text
+    slide: 0
+    text: "Contoh: 20 N pada benda 4 kg di lantai licin ⇒ a = 5 m/s²."
+  - type: math
+    slide: 0
+    name: ΣF
+    expression: m · a
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Sistem benda terhubung
+  - type: text
+    slide: 1
+    text: "Untuk benda yang dihubungkan tali, hitung dulu percepatan **seluruh sistem**: a = F / (m₁ + m₂). Lalu tinjau satu benda untuk mencari tegangan tali."
+  - type: text
+    slide: 1
+    text: "Contoh: 2 kg dan 3 kg ditarik 20 N ⇒ a = 4 m/s² ⇒ tegangan tali yang menarik balok 2 kg = 2 × 4 = 8 N."
+  - type: math
+    slide: 1
+    name: a sistem
+    expression: F / Σm
+    highlight: true
+  - type: math
+    slide: 1
+    name: T
+    expression: m₁ · a
+  - type: tip
+    slide: 1
+    text: Pilih benda yang gayanya paling sedikit untuk mencari tegangan tali.
+checks:
+  - question: FIS.C26.F.MEKANIKA.Q.HUKUM_NEWTON_DAN_MOMENTUM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MEKANIKA.S.HUKUM_NEWTON_DAN_MOMENTUM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.Q.TINGKAT_KEANEKARAGAMAN_3
+familyCode: BIO.C26.E.BIODIVERSITAS.F.TINGKAT_KEANEKARAGAMAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Contoh keanekaragaman tingkat ekosistem adalah …
+  options:
+    - id: a
+      label: variasi warna kulit manusia
+    - id: b
+      label: mangga harum manis dan mangga golek
+    - id: c
+      label: hutan hujan tropis, padang rumput, dan terumbu karang
+    - id: d
+      label: kelapa gading dan kelapa hijau
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - hutan hujan tropis, padang rumput, dan terumbu karang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+  feedback:
+    correct: Yang dibandingkan adalah lingkungan utuh beserta makhluk hidupnya, yaitu ekosistem.
+    incorrect: Jawabannya hutan hujan tropis, padang rumput, dan terumbu karang. Yang dibandingkan adalah lingkungan utuh beserta makhluk hidupnya, yaitu ekosistem.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KAL.Q.INTEGRAL_2
+familyCode: MAT.KAL.F.INTEGRAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Luas daerah yang dibatasi kurva y = x², sumbu x, garis x = 0, dan x = 3 adalah …
+  options:
+    - id: a
+      label: 3 satuan luas
+    - id: b
+      label: 6 satuan luas
+    - id: c
+      label: 9 satuan luas
+    - id: d
+      label: 27 satuan luas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 9 satuan luas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+  feedback:
+    correct: ∫₀³ x² dx = [x³/3]₀³ = 27/3 = 9.
+    incorrect: Jawabannya 9 satuan luas. ∫₀³ x² dx = [x³/3]₀³ = 27/3 = 9.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

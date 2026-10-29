@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.Q.SUPERPOSISI_DAN_INTERFERENSI_2
+familyCode: FIS.C26.F.GELOMBANG.F.SUPERPOSISI_DAN_INTERFERENSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada percobaan celah ganda, jarak antarcelah 0,2 mm dan layar berjarak 1 m. Jarak terang pertama dari terang pusat 3 mm. Panjang gelombang cahaya adalah …
+  options:
+    - id: a
+      label: 300 nm
+    - id: b
+      label: 450 nm
+    - id: c
+      label: 600 nm
+    - id: d
+      label: 750 nm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 600 nm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+  feedback:
+    correct: λ = d · y / L = (0,2 × 10⁻³)(3 × 10⁻³)/1 = 6 × 10⁻⁷ m = 600 nm.
+    incorrect: Jawabannya 600 nm. λ = d · y / L = (0,2 × 10⁻³)(3 × 10⁻³)/1 = 6 × 10⁻⁷ m = 600 nm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

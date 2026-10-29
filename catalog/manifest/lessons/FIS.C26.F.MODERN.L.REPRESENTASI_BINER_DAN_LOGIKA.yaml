@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.L.REPRESENTASI_BINER_DAN_LOGIKA
+title: Representasi biner & logika
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.F.MODERN.REPRESENTASI_BINER_DAN_LOGIKA
+blocks:
+  - type: heading
+    slide: 0
+    text: Bilangan biner
+  - type: text
+    slide: 0
+    text: "Komputer menyimpan data dengan dua keadaan: 0 dan 1. Nilai posisi biner dari kanan: 1, 2, 4, 8, 16, …"
+  - type: text
+    slide: 0
+    text: "Contoh: 1011₂ = 8 + 0 + 2 + 1 = 11."
+  - type: math
+    slide: 0
+    name: 1011₂
+    expression: "11"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Gerbang logika
+  - type: text
+    slide: 1
+    text: "**AND**: keluaran 1 hanya jika semua masukan 1. **OR**: 1 jika salah satu masukan 1. **NOT**: membalik masukan."
+  - type: math
+    slide: 1
+    name: AND (1, 0)
+    expression: "0"
+    highlight: true
+  - type: math
+    slide: 1
+    name: OR (1, 0)
+    expression: "1"
+  - type: tip
+    slide: 1
+    text: Buat tabel kebenaran kecil bila masukannya lebih dari dua.
+checks:
+  - question: FIS.C26.F.MODERN.Q.REPRESENTASI_BINER_DAN_LOGIKA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MODERN.S.REPRESENTASI_BINER_DAN_LOGIKA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

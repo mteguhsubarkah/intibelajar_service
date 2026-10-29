@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.L.IMPULS
+title: Impuls dan momentum
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+blocks:
+  - type: heading
+    slide: 0
+    text: Impuls mengubah momentum
+  - type: text
+    slide: 0
+    text: Momentum **p = m · v** (vektor). Impuls **I = F · Δt = Δp = m(v₂ − v₁)**.
+  - type: text
+    slide: 0
+    text: "Perhatikan arah: bola yang berbalik arah mengalami perubahan kecepatan yang besar."
+  - type: math
+    slide: 0
+    name: p
+    expression: m · v
+    highlight: true
+  - type: math
+    slide: 0
+    name: I
+    expression: F · Δt = m(v₂ − v₁)
+  - type: heading
+    slide: 1
+    text: Kekekalan momentum
+  - type: text
+    slide: 1
+    text: "Saat tumbukan tanpa gaya luar: **m₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′**. Jika menyatu: (m₁ + m₂)v′."
+  - type: text
+    slide: 1
+    text: "Contoh: 2 kg bergerak 6 m/s menumbuk 4 kg diam lalu menyatu ⇒ v′ = 12/6 = 2 m/s."
+  - type: math
+    slide: 1
+    name: tumbukan
+    expression: Σp sebelum = Σp sesudah
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tetapkan arah positif dulu; kecepatan berlawanan arah diberi tanda negatif.
+checks:
+  - question: FIS.C26.F.MEKANIKA.Q.IMPULS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MEKANIKA.S.IMPULS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

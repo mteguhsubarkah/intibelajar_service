@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.Q.MEIOSIS_2
+familyCode: BIO.C26.F.GENETIKA.F.MEIOSIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sel tubuh manusia memiliki 46 kromosom. Jumlah kromosom pada sel sperma adalah …
+  options:
+    - id: a
+      label: "92"
+    - id: b
+      label: "46"
+    - id: c
+      label: "23"
+    - id: d
+      label: "22"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "23"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS
+  feedback:
+    correct: Sperma terbentuk melalui meiosis sehingga jumlah kromosomnya setengah, yaitu 23.
+    incorrect: Jawabannya 23. Sperma terbentuk melalui meiosis sehingga jumlah kromosomnya setengah, yaitu 23.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

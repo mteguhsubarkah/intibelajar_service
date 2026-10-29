@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON.L.ISOMER
+title: Isomer dan gugus fungsi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KARBON.ISOMER_DAN_GUGUS_FUNGSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Rumus sama, struktur beda
+  - type: text
+    slide: 0
+    text: "**Isomer** memiliki rumus molekul sama tetapi struktur berbeda. Isomer **rantai**: kerangka berbeda (butana dan 2-metilpropana). Isomer **posisi**: letak gugus berbeda."
+  - type: math
+    slide: 0
+    name: C₄H₁₀
+    expression: 2 isomer
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Isomer fungsi
+  - type: text
+    slide: 1
+    text: "Golongan berbeda dengan rumus umum sama: **alkohol ⇄ eter**, **aldehida ⇄ keton**, **asam karboksilat ⇄ ester**."
+  - type: text
+    slide: 1
+    text: "Contoh: propanol (C₃H₈O) berisomer fungsi dengan metoksietana."
+  - type: math
+    slide: 1
+    name: alkohol
+    expression: eter
+    highlight: true
+  - type: math
+    slide: 1
+    name: aldehida
+    expression: keton
+  - type: tip
+    slide: 1
+    text: Hitung jumlah atom setiap struktur untuk memastikan rumusnya benar-benar sama.
+checks:
+  - question: KIM.C26.F.KARBON.Q.ISOMER_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KARBON.S.ISOMER
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

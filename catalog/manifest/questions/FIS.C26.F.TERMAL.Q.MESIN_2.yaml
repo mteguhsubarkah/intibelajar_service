@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL.Q.MESIN_2
+familyCode: FIS.C26.F.TERMAL.F.MESIN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah mesin kalor menyerap 1.000 J dari reservoir panas dan membuang 600 J ke reservoir dingin. Efisiensi mesin adalah …
+  options:
+    - id: a
+      label: 37,5%
+    - id: b
+      label: 40%
+    - id: c
+      label: 60%
+    - id: d
+      label: 160%
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 40%
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI
+  feedback:
+    correct: W = 1.000 − 600 = 400 J. η = 400 / 1.000 = 40%.
+    incorrect: Jawabannya 40%. W = 1.000 − 600 = 400 J. η = 400 / 1.000 = 40%.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

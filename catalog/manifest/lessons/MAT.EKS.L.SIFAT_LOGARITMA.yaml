@@ -1,0 +1,62 @@
+schemaVersion: 1
+code: MAT.EKS.L.SIFAT_LOGARITMA
+title: Sifat-sifat Logaritma
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.EKS.SIFAT_SIFAT_LOGARITMA
+blocks:
+  - type: heading
+    slide: 0
+    text: Kali jadi tambah, bagi jadi kurang
+  - type: text
+    slide: 0
+    text: Logaritma mengubah perkalian menjadi penjumlahan dan pangkat menjadi pengali.
+  - type: math
+    slide: 0
+    name: log (bc)
+    expression: log b + log c
+    highlight: true
+  - type: math
+    slide: 0
+    name: log (b/c)
+    expression: log b − log c
+  - type: math
+    slide: 0
+    name: log bⁿ
+    expression: n · log b
+  - type: heading
+    slide: 1
+    text: Mengganti basis
+  - type: text
+    slide: 1
+    text: "**ᵃlog b = log b / log a**. Rantai basis saling menghapus: **ᵃlog b · ᵇlog c = ᵃlog c**."
+  - type: text
+    slide: 1
+    text: "Contoh: ²log 9 · ³log 16 = 2 · ²log 3 · 4 · ³log 2 = 8."
+  - type: math
+    slide: 1
+    name: ᵃlog b
+    expression: log b / log a
+    highlight: true
+  - type: math
+    slide: 1
+    name: ᵃlog b · ᵇlog c
+    expression: ᵃlog c
+  - type: tip
+    slide: 1
+    text: Gabungkan semua suku menjadi satu logaritma dulu, baru hitung.
+checks:
+  - question: MAT.EKS.Q.SIFAT_LOGARITMA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.EKS.S.SIFAT_LOGARITMA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

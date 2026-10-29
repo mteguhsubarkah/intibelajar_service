@@ -1,0 +1,51 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON.L.BIOMOLEKUL
+title: Biomolekul
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.KARBON.BIOMOLEKUL
+blocks:
+  - type: heading
+    slide: 0
+    text: Karbohidrat, protein, lemak
+  - type: text
+    slide: 0
+    text: "**Karbohidrat** tersusun atas monosakarida (glukosa). **Protein** tersusun atas **asam amino** yang dihubungkan ikatan peptida. **Lemak** adalah ester dari gliserol dan asam lemak."
+  - type: math
+    slide: 0
+    name: protein
+    expression: polimer asam amino
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Uji makanan
+  - type: text
+    slide: 1
+    text: "**Biuret** → ungu: protein. **Benedict/Fehling** → endapan merah bata: gula pereduksi (glukosa). **Iodin** → biru kehitaman: amilum."
+  - type: math
+    slide: 1
+    name: biuret ungu
+    expression: protein
+    highlight: true
+  - type: math
+    slide: 1
+    name: iodin biru
+    expression: amilum
+  - type: tip
+    slide: 1
+    text: Hafalkan pasangan pereaksi–warna–zat; sering muncul dalam soal.
+checks:
+  - question: KIM.C26.F.KARBON.Q.BIOMOLEKUL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KARBON.S.BIOMOLEKUL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

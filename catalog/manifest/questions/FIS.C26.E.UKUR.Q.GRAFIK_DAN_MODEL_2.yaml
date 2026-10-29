@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.Q.GRAFIK_DAN_MODEL_2
+familyCode: FIS.C26.E.UKUR.F.GRAFIK_DAN_MODEL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.UKUR.GRAFIK_DAN_MODEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kecepatan benda naik beraturan dari 0 menjadi 10 m/s dalam 5 s. Perpindahan benda selama 5 s itu adalah …
+  options:
+    - id: a
+      label: 2 m
+    - id: b
+      label: 10 m
+    - id: c
+      label: 25 m
+    - id: d
+      label: 50 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 25 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.UKUR.GRAFIK_DAN_MODEL
+  feedback:
+    correct: Perpindahan = luas segitiga di bawah grafik v–t = ½ × 5 × 10 = 25 m.
+    incorrect: Jawabannya 25 m. Perpindahan = luas segitiga di bawah grafik v–t = ½ × 5 × 10 = 25 m.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

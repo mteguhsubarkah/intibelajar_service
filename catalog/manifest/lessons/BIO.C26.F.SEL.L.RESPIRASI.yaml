@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.L.RESPIRASI
+title: Respirasi sel dan ATP
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
+blocks:
+  - type: heading
+    slide: 0
+    text: Empat tahap respirasi aerob
+  - type: text
+    slide: 0
+    text: "**Glikolisis** (sitoplasma) → **dekarboksilasi oksidatif** → **siklus Krebs** (matriks mitokondria) → **transpor elektron** (membran dalam mitokondria)."
+  - type: text
+    slide: 0
+    text: ATP terbanyak dihasilkan pada **transpor elektron**; totalnya sekitar 36–38 ATP per glukosa.
+  - type: math
+    slide: 0
+    name: glikolisis
+    expression: sitoplasma
+    highlight: true
+  - type: math
+    slide: 0
+    name: ATP terbanyak
+    expression: transpor elektron
+  - type: heading
+    slide: 1
+    text: "Tanpa oksigen: fermentasi"
+  - type: text
+    slide: 1
+    text: Jika oksigen kurang, sel melakukan **fermentasi**. Pada otot manusia menghasilkan **asam laktat** (pegal). Pada ragi menghasilkan **alkohol** dan CO₂.
+  - type: math
+    slide: 1
+    name: otot kekurangan O₂
+    expression: asam laktat
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Fermentasi hanya menghasilkan 2 ATP dari glikolisis.
+checks:
+  - question: BIO.C26.F.SEL.Q.RESPIRASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.SEL.S.RESPIRASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

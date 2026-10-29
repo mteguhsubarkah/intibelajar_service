@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.KAL.L.ATURAN
+title: Aturan turunan fungsi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.KAL.ATURAN_TURUNAN_FUNGSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Aturan pangkat
+  - type: text
+    slide: 0
+    text: "**(xⁿ)′ = n · xⁿ⁻¹**. Turunan konstanta = 0. Konstanta pengali ikut: (k · xⁿ)′ = k · n · xⁿ⁻¹. Turunan jumlah = jumlah turunan."
+  - type: text
+    slide: 0
+    text: "Contoh: (3x⁴ − 2x² + 5x − 7)′ = 12x³ − 4x + 5."
+  - type: math
+    slide: 0
+    name: (xⁿ)′
+    expression: n · xⁿ⁻¹
+    highlight: true
+  - type: math
+    slide: 0
+    name: (k)′
+    expression: "0"
+  - type: heading
+    slide: 1
+    text: Jabarkan dulu
+  - type: text
+    slide: 1
+    text: "Bentuk seperti (2x − 1)² bisa dijabarkan menjadi 4x² − 4x + 1, lalu diturunkan: 8x − 4."
+  - type: text
+    slide: 1
+    text: Nilai f′(2) = 16 − 4 = 12.
+  - type: math
+    slide: 1
+    name: ((2x − 1)²)′
+    expression: 8x − 4
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Turunan suku bx adalah b; konstanta hilang.
+checks:
+  - question: MAT.KAL.Q.ATURAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KAL.S.ATURAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

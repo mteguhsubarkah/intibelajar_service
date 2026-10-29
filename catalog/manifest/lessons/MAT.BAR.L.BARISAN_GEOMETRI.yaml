@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.BAR.L.BARISAN_GEOMETRI
+title: Barisan Geometri
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.BAR.BARISAN_GEOMETRI
+blocks:
+  - type: heading
+    slide: 0
+    text: Rasio yang tetap
+  - type: text
+    slide: 0
+    text: "Barisan geometri dikalikan **rasio r** yang sama. Suku ke-n: **Uₙ = a · rⁿ⁻¹**."
+  - type: text
+    slide: 0
+    text: "Contoh: 3, 6, 12, … memiliki r = 2, sehingga U₈ = 3 × 2⁷ = 384."
+  - type: math
+    slide: 0
+    name: Uₙ
+    expression: a · rⁿ⁻¹
+    highlight: true
+  - type: math
+    slide: 0
+    name: r
+    expression: Uₙ / Uₙ₋₁
+  - type: heading
+    slide: 1
+    text: Dari dua suku yang diketahui
+  - type: text
+    slide: 1
+    text: "Bagi dua suku untuk mendapat r. Contoh: U₂ = 6 dan U₅ = 162 ⇒ r³ = 27 ⇒ r = 3, lalu a = 6/3 = 2."
+  - type: math
+    slide: 1
+    name: U₅ / U₂
+    expression: r³
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pada barisan geometri, suku dibagi, bukan dikurangi.
+checks:
+  - question: MAT.BAR.Q.BARISAN_GEOMETRI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.BAR.S.BARISAN_GEOMETRI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

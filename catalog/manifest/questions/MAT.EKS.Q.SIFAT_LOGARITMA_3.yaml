@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.SIFAT_LOGARITMA_3
+familyCode: MAT.EKS.F.SIFAT_LOGARITMA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.SIFAT_SIFAT_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari ²log 9 · ³log 16 adalah …
+  options:
+    - id: a
+      label: "6"
+    - id: b
+      label: "8"
+    - id: c
+      label: "12"
+    - id: d
+      label: "36"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "8"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.SIFAT_SIFAT_LOGARITMA
+  feedback:
+    correct: ²log 9 = 2 · ²log 3 dan ³log 16 = 4 · ³log 2. Hasil kalinya 8 · (²log 3 · ³log 2) = 8 · 1 = 8.
+    incorrect: Jawabannya 8. ²log 9 = 2 · ²log 3 dan ³log 16 = 4 · ³log 2. Hasil kalinya 8 · (²log 3 · ³log 2) = 8 · 1 = 8.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

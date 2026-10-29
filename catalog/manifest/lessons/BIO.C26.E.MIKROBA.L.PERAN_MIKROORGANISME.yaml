@@ -1,0 +1,51 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.L.PERAN_MIKROORGANISME
+title: Peran mikroorganisme
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.MIKROBA.PERAN_MIKROORGANISME
+blocks:
+  - type: heading
+    slide: 0
+    text: Menguntungkan
+  - type: text
+    slide: 0
+    text: "*Lactobacillus* → yoghurt. *Acetobacter xylinum* → nata de coco. *Rhizobium* → mengikat nitrogen di bintil akar kacang-kacangan. Bakteri pengurai mengembalikan unsur hara ke tanah."
+  - type: math
+    slide: 0
+    name: Acetobacter xylinum
+    expression: nata de coco
+    highlight: true
+  - type: math
+    slide: 0
+    name: Rhizobium
+    expression: fiksasi nitrogen
+  - type: heading
+    slide: 1
+    text: Merugikan
+  - type: text
+    slide: 1
+    text: "*Salmonella typhi* → tifus. *Mycobacterium tuberculosis* → TBC. Beberapa bakteri merusak makanan atau menyebabkan penyakit tanaman."
+  - type: math
+    slide: 1
+    name: Mycobacterium tuberculosis
+    expression: TBC
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hafalkan pasangan nama bakteri dan perannya; sering muncul langsung di soal.
+checks:
+  - question: BIO.C26.E.MIKROBA.Q.PERAN_MIKROORGANISME_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.MIKROBA.S.PERAN_MIKROORGANISME
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

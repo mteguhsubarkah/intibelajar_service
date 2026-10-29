@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_1
+familyCode: KIM.C26.F.STRUKTUR.F.IKATAN_DAN_GAYA_ANTARMOLEKUL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pasangan unsur yang membentuk ikatan ion adalah …
+  options:
+    - id: a
+      label: ₁H dan ₁₇Cl
+    - id: b
+      label: ₁₁Na dan ₁₇Cl
+    - id: c
+      label: ₆C dan ₈O
+    - id: d
+      label: ₇N dan ₁H
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - ₁₁Na dan ₁₇Cl
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+  feedback:
+    correct: "Na adalah logam yang mudah melepas elektron, Cl nonlogam yang mudah menerima elektron: ikatan ion."
+    incorrect: "Jawabannya ₁₁Na dan ₁₇Cl. Na adalah logam yang mudah melepas elektron, Cl nonlogam yang mudah menerima elektron: ikatan ion."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

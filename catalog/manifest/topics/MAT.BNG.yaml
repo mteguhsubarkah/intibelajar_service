@@ -2,13 +2,96 @@ schemaVersion: 1
 code: MAT.BNG
 subject: MAT
 title: Bunga Majemuk & Anuitas
-subtitle: Kelas XI–XII
+subtitle: Matematika keuangan
 phase: F
-availability: PLANNED
-bekal: []
+availability: MAPPED
+bekal:
+  - persen
+  - barisan geometri
+  - eksponen
 aliases:
   - ns: TOPIC
     value: bunga
 units: []
-concepts: []
-prerequisites: []
+concepts:
+  - code: MAT.BNG.BUNGA_TUNGGAL
+    title: Bunga tunggal
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-bng-tunggal
+  - code: MAT.BNG.BUNGA_MAJEMUK
+    title: Bunga majemuk
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-bng-majemuk
+  - code: MAT.BNG.NILAI_KINI_DAN_MENDATANG
+    title: Nilai kini & mendatang
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-bng-nilai-kini
+  - code: MAT.BNG.PEMBAYARAN_ANUITAS
+    title: Pembayaran anuitas
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-bng-anuitas
+  - code: MAT.BNG.SALDO_PINJAMAN_DAN_PARAMETER
+    title: Saldo pinjaman & parameter
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-bng-saldo
+prerequisites:
+  - concept: MAT.BNG.BUNGA_MAJEMUK
+    requires: MAT.BNG.BUNGA_TUNGGAL
+    kind: SOFT
+  - concept: MAT.BNG.NILAI_KINI_DAN_MENDATANG
+    requires: MAT.BNG.BUNGA_MAJEMUK
+    kind: SOFT
+  - concept: MAT.BNG.PEMBAYARAN_ANUITAS
+    requires: MAT.BNG.BUNGA_MAJEMUK
+    kind: SOFT
+  - concept: MAT.BNG.SALDO_PINJAMAN_DAN_PARAMETER
+    requires: MAT.BNG.PEMBAYARAN_ANUITAS
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

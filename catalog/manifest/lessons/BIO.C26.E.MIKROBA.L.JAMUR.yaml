@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.L.JAMUR
+title: Ciri dan peran jamur
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.E.MIKROBA.CIRI_DAN_PERAN_JAMUR
+blocks:
+  - type: heading
+    slide: 0
+    text: Ciri jamur
+  - type: text
+    slide: 0
+    text: Jamur **eukariotik**, **heterotrof** (tidak berklorofil), dinding selnya tersusun atas **kitin**. Tubuhnya berupa benang **hifa** yang membentuk **miselium**, kecuali ragi yang bersel satu.
+  - type: math
+    slide: 0
+    name: dinding sel jamur
+    expression: kitin
+    highlight: true
+  - type: math
+    slide: 0
+    name: heterotrof
+    expression: tidak membuat makanan sendiri
+  - type: heading
+    slide: 1
+    text: Peran jamur
+  - type: text
+    slide: 1
+    text: "*Saccharomyces cerevisiae* (ragi) → roti dan tapai. *Rhizopus* → tempe. Jamur merang dan tiram → bahan pangan. *Penicillium notatum* → antibiotik penisilin."
+  - type: text
+    slide: 1
+    text: "Merugikan: panu, kutu air, dan racun aflatoksin dari *Aspergillus flavus*."
+  - type: math
+    slide: 1
+    name: Rhizopus
+    expression: tempe
+    highlight: true
+  - type: math
+    slide: 1
+    name: Saccharomyces
+    expression: roti dan tapai
+  - type: tip
+    slide: 1
+    text: "Jamur ≠ tumbuhan: tidak berklorofil dan dinding selnya kitin, bukan selulosa."
+checks:
+  - question: BIO.C26.E.MIKROBA.Q.JAMUR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.MIKROBA.S.JAMUR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

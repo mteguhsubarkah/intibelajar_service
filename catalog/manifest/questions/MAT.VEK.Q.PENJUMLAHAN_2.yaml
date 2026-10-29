@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.PENJUMLAHAN_2
+familyCode: MAT.VEK.F.PENJUMLAHAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.PENJUMLAHAN_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil dari (i + 2j − k) + (3i − j + 4k) adalah …
+  options:
+    - id: a
+      label: 4i + j + 3k
+    - id: b
+      label: 4i + 3j + 3k
+    - id: c
+      label: 2i + j + 5k
+    - id: d
+      label: 4i − j + 3k
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 4i + j + 3k
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.PENJUMLAHAN_VEKTOR
+  feedback:
+    correct: "Jumlahkan per komponen: (1 + 3)i + (2 − 1)j + (−1 + 4)k = 4i + j + 3k."
+    incorrect: "Jawabannya 4i + j + 3k. Jumlahkan per komponen: (1 + 3)i + (2 − 1)j + (−1 + 4)k = 4i + j + 3k."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

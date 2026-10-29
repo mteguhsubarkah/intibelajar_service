@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA.Q.KONTINUITAS_DAN_BERNOULLI_2
+familyCode: FIS.C26.F.FLUIDA.F.KONTINUITAS_DAN_BERNOULLI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.FLUIDA.KONTINUITAS_DAN_BERNOULLI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah tangki air bocor pada lubang yang berada 5 m di bawah permukaan air (g = 10 m/s²). Kecepatan air yang keluar dari lubang adalah …
+  options:
+    - id: a
+      label: 5 m/s
+    - id: b
+      label: 10 m/s
+    - id: c
+      label: 50 m/s
+    - id: d
+      label: 100 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 10 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.FLUIDA.KONTINUITAS_DAN_BERNOULLI
+  feedback:
+    correct: v = √(2gh) = √(2 × 10 × 5) = √100 = 10 m/s.
+    incorrect: Jawabannya 10 m/s. v = √(2gh) = √(2 × 10 × 5) = √100 = 10 m/s.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

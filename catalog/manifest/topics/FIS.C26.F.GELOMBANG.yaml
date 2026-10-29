@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG
+subject: FIS
+title: Gelombang dan penerapannya
+subtitle: Interferensi, resonansi, optik, Doppler
+phase: F
+availability: MAPPED
+bekal:
+  - getaran
+  - cepat rambat
+aliases:
+  - ns: TOPIC
+    value: gelombang
+units: []
+concepts:
+  - code: FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+    title: Superposisi & interferensi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-gelombang-c1
+  - code: FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+    title: Resonansi dan optik
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-gelombang-c2
+  - code: FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+    title: Efek Doppler
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-gelombang-doppler
+prerequisites:
+  - concept: FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+    requires: FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

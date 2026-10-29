@@ -1,0 +1,78 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA
+subject: FIS
+title: Dinamika, momentum & keseimbangan
+subtitle: Hukum Newton, impuls, torsi, rotasi
+phase: F
+availability: MAPPED
+bekal:
+  - gerak lurus
+  - vektor gaya
+aliases:
+  - ns: TOPIC
+    value: dinamika
+units: []
+concepts:
+  - code: FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+    title: Hukum Newton & momentum
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-mekanika-c1
+  - code: FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN
+    title: Torsi dan keseimbangan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-mekanika-c2
+  - code: FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+    title: Impuls dan momentum
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-mekanika-impuls
+  - code: FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+    title: Dinamika rotasi
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-mekanika-rotasi
+prerequisites:
+  - concept: FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+    requires: FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+    kind: SOFT
+  - concept: FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+    requires: FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.KUA.Q.DISKRIMINAN_2
+familyCode: MAT.KUA.F.DISKRIMINAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan x² + (m − 1)x + 4 = 0 mempunyai akar kembar. Nilai m yang memenuhi adalah …
+  options:
+    - id: a
+      label: m = 5 atau m = −3
+    - id: b
+      label: m = −5 atau m = 3
+    - id: c
+      label: m = 4
+    - id: d
+      label: m = 1
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - m = 5 atau m = −3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+  feedback:
+    correct: "Akar kembar: D = (m − 1)² − 16 = 0 ⇒ m − 1 = ±4 ⇒ m = 5 atau m = −3."
+    incorrect: "Jawabannya m = 5 atau m = −3. Akar kembar: D = (m − 1)² − 16 = 0 ⇒ m − 1 = ±4 ⇒ m = 5 atau m = −3."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

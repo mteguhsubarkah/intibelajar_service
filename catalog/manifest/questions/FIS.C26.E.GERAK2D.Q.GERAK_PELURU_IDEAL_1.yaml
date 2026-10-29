@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_1
+familyCode: FIS.C26.E.GERAK2D.F.GERAK_PELURU_IDEAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah peluru ditembakkan dengan kecepatan awal 40 m/s dan sudut elevasi 30° (g = 10 m/s²). Tinggi maksimum peluru adalah …
+  options:
+    - id: a
+      label: 10 m
+    - id: b
+      label: 20 m
+    - id: c
+      label: 40 m
+    - id: d
+      label: 80 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 20 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+  feedback:
+    correct: v₀ sin 30° = 20 m/s. H = 20² / (2 × 10) = 20 m.
+    incorrect: Jawabannya 20 m. v₀ sin 30° = 20 m/s. H = 20² / (2 × 10) = 20 m.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

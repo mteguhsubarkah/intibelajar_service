@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.KESAMAAN_2
+familyCode: MAT.VEK.F.KESAMAAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.KESAMAAN_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui a = (p, 4) dan b = (3, q + 1). Jika a = b, nilai p · q adalah …
+  options:
+    - id: a
+      label: "9"
+    - id: b
+      label: "12"
+    - id: c
+      label: "6"
+    - id: d
+      label: "15"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "9"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.KESAMAAN_VEKTOR
+  feedback:
+    correct: p = 3 dan q + 1 = 4 ⇒ q = 3. Jadi p · q = 9.
+    incorrect: Jawabannya 9. p = 3 dan q + 1 = 4 ⇒ q = 3. Jadi p · q = 9.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

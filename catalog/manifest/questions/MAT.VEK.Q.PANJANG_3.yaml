@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.VEK.Q.PANJANG_3
+familyCode: MAT.VEK.F.PANJANG_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.VEK.PANJANG_VEKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jarak titik A(1, 2) ke B(7, 10) adalah …
+  options:
+    - id: a
+      label: "8"
+    - id: b
+      label: "10"
+    - id: c
+      label: "14"
+    - id: d
+      label: "100"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "10"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.VEK.PANJANG_VEKTOR
+  feedback:
+    correct: AB = (6, 8), |AB| = √(36 + 64) = 10.
+    incorrect: Jawabannya 10. AB = (6, 8), |AB| = √(36 + 64) = 10.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.KUA.L.FAKTOR
+title: Faktorisasi dan akar
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.KUA.FAKTORISASI_DAN_AKAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Memfaktorkan
+  - type: text
+    slide: 0
+    text: x² + bx + c = (x + p)(x + q) dengan **p + q = b** dan **p · q = c**. Setiap faktor yang bernilai nol memberi satu akar.
+  - type: text
+    slide: 0
+    text: "Contoh: x² − 5x + 6 = (x − 2)(x − 3) ⇒ x = 2 atau x = 3."
+  - type: math
+    slide: 0
+    name: x² − 5x + 6
+    expression: (x − 2)(x − 3)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Jumlah dan hasil kali akar
+  - type: text
+    slide: 1
+    text: "Tanpa mencari akarnya: **x₁ + x₂ = −b/a** dan **x₁ · x₂ = c/a**."
+  - type: text
+    slide: 1
+    text: Bentuk lain dihitung dari keduanya, misalnya x₁² + x₂² = (x₁ + x₂)² − 2x₁x₂.
+  - type: math
+    slide: 1
+    name: x₁ + x₂
+    expression: −b/a
+    highlight: true
+  - type: math
+    slide: 1
+    name: x₁ · x₂
+    expression: c/a
+  - type: tip
+    slide: 1
+    text: "Persamaan kuadrat berakar p dan q: x² − (p + q)x + pq = 0."
+checks:
+  - question: MAT.KUA.Q.FAKTOR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KUA.S.FAKTOR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

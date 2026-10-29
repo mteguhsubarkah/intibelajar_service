@@ -1,0 +1,62 @@
+schemaVersion: 1
+code: BIO.C26.E.EKOSISTEM
+subject: BIO
+title: Keseimbangan ekosistem dan iklim
+subtitle: Jaring makanan, siklus karbon, daya dukung
+phase: E
+availability: MAPPED
+bekal:
+  - komponen biotik dan abiotik
+aliases:
+  - ns: TOPIC
+    value: ekosistem
+units: []
+concepts:
+  - code: BIO.C26.E.EKOSISTEM.JARING_MAKANAN_DAN_POPULASI
+    title: Jaring makanan & populasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-ekosistem-c1
+  - code: BIO.C26.E.EKOSISTEM.SIKLUS_KARBON_DAN_LINGKUNGAN
+    title: Siklus karbon & lingkungan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-ekosistem-c2
+  - code: BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+    title: Faktor pembatas populasi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-ekosistem-daya-dukung
+prerequisites:
+  - concept: BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+    requires: BIO.C26.E.EKOSISTEM.JARING_MAKANAN_DAN_POPULASI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

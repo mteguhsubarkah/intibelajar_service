@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO
+subject: FIS
+title: Rangkaian & elektromagnetisme
+subtitle: Hukum Ohm, Kirchhoff, induksi
+phase: F
+availability: MAPPED
+bekal:
+  - arus dan tegangan
+  - magnet
+aliases:
+  - ns: TOPIC
+    value: listrik
+units: []
+concepts:
+  - code: FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+    title: Hukum rangkaian
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-elektro-c1
+  - code: FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
+    title: Induksi elektromagnetik
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-elektro-c2
+  - code: FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+    title: Hukum Kirchhoff
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-elektro-kirchhoff
+prerequisites:
+  - concept: FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+    requires: FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

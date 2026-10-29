@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.STP.Q.HISTOGRAM_2
+familyCode: MAT.STP.F.HISTOGRAM_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.STP.HISTOGRAM_DAN_DOT_PLOT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Histogram pendapatan warga menceng ke kanan (ekor panjang di sebelah kanan). Pernyataan yang paling tepat adalah …
+  options:
+    - id: a
+      label: rata-rata lebih kecil dari median
+    - id: b
+      label: rata-rata lebih besar dari median
+    - id: c
+      label: rata-rata sama dengan median
+    - id: d
+      label: modus lebih besar dari rata-rata
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - rata-rata lebih besar dari median
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.STP.HISTOGRAM_DAN_DOT_PLOT
+  feedback:
+    correct: Beberapa nilai sangat besar di ekor kanan menarik rata-rata ke atas, sehingga rata-rata > median.
+    incorrect: Jawabannya rata-rata lebih besar dari median. Beberapa nilai sangat besar di ekor kanan menarik rata-rata ke atas, sehingga rata-rata > median.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

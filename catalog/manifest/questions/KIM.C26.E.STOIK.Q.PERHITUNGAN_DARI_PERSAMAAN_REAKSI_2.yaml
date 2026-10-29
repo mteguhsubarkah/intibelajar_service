@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_2
+familyCode: KIM.C26.E.STOIK.F.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada reaksi 2H₂ + O₂ → 2H₂O, sebanyak 8 gram O₂ (Mr = 32) bereaksi habis. Massa air yang terbentuk (Mr = 18) adalah …
+  options:
+    - id: a
+      label: 4,5 g
+    - id: b
+      label: 9 g
+    - id: c
+      label: 18 g
+    - id: d
+      label: 36 g
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 9 g
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+  feedback:
+    correct: n O₂ = 8/32 = 0,25 mol. n H₂O = 2 × 0,25 = 0,5 mol = 0,5 × 18 = 9 g.
+    incorrect: Jawabannya 9 g. n O₂ = 8/32 = 0,25 mol. n H₂O = 2 × 0,25 = 0,5 mol = 0,5 × 18 = 9 g.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

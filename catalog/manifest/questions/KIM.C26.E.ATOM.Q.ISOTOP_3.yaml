@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.Q.ISOTOP_3
+familyCode: KIM.C26.E.ATOM.F.ISOTOP_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.ATOM.NOMOR_ATOM_DAN_ISOTOP
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Klorin di alam terdiri atas 75% ³⁵Cl dan 25% ³⁷Cl. Massa atom relatif klorin adalah …
+  options:
+    - id: a
+      label: 35,0
+    - id: b
+      label: 35,5
+    - id: c
+      label: 36,0
+    - id: d
+      label: 36,5
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 35,5
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.ATOM.NOMOR_ATOM_DAN_ISOTOP
+  feedback:
+    correct: Ar = 0,75 × 35 + 0,25 × 37 = 26,25 + 9,25 = 35,5.
+    incorrect: Jawabannya 35,5. Ar = 0,75 × 35 + 0,25 × 37 = 26,25 + 9,25 = 35,5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

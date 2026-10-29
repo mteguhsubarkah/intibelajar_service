@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.L.ENTALPI_REAKSI
+title: Entalpi reaksi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Eksoterm dan endoterm
+  - type: text
+    slide: 0
+    text: "**Eksoterm**: sistem melepas kalor, suhu lingkungan naik, **ΔH < 0**. **Endoterm**: sistem menyerap kalor, suhu lingkungan turun, **ΔH > 0**."
+  - type: math
+    slide: 0
+    name: eksoterm
+    expression: ΔH negatif
+    highlight: true
+  - type: math
+    slide: 0
+    name: endoterm
+    expression: ΔH positif
+  - type: heading
+    slide: 1
+    text: Kalorimeter
+  - type: text
+    slide: 1
+    text: "Kalor yang diserap larutan: **q = m · c · ΔT**. Untuk reaksi eksoterm: **ΔH = −q / n**."
+  - type: text
+    slide: 1
+    text: "Contoh: 100 g larutan naik 5°C (c = 4,2 J/g°C) ⇒ q = 2.100 J; untuk 0,05 mol ⇒ ΔH = −42 kJ/mol."
+  - type: math
+    slide: 1
+    name: q
+    expression: m · c · ΔT
+    highlight: true
+  - type: math
+    slide: 1
+    name: ΔH
+    expression: −q / n
+  - type: tip
+    slide: 1
+    text: Suhu naik berarti reaksi melepas kalor, jadi tanda ΔH negatif.
+checks:
+  - question: KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.TERMOKIMIA.S.ENTALPI_REAKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

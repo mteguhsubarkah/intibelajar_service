@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KARBON.Q.STRUKTUR_DAN_GUGUS_FUNGSI_3
+familyCode: KIM.C26.F.KARBON.F.STRUKTUR_DAN_GUGUS_FUNGSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nama IUPAC senyawa CH₃–CH(CH₃)–CH₃ adalah …
+  options:
+    - id: a
+      label: butana
+    - id: b
+      label: 2-metilpropana
+    - id: c
+      label: 1-metilpropana
+    - id: d
+      label: isopropana
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2-metilpropana
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI
+  feedback:
+    correct: Rantai terpanjang 3 karbon (propana) dengan cabang metil di karbon nomor 2.
+    incorrect: Jawabannya 2-metilpropana. Rantai terpanjang 3 karbon (propana) dengan cabang metil di karbon nomor 2.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

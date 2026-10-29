@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.ATOM.Q.RUMUS_KIMIA_1
+familyCode: KIM.C26.E.ATOM.F.RUMUS_KIMIA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.ATOM.RUMUS_KIMIA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rumus senyawa yang terbentuk dari ion Al³⁺ dan O²⁻ adalah …
+  options:
+    - id: a
+      label: AlO
+    - id: b
+      label: Al₃O₂
+    - id: c
+      label: Al₂O₃
+    - id: d
+      label: AlO₃
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - Al₂O₃
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.ATOM.RUMUS_KIMIA
+  feedback:
+    correct: "Muatan total harus nol: 2 × (+3) + 3 × (−2) = 0, jadi Al₂O₃."
+    incorrect: "Jawabannya Al₂O₃. Muatan total harus nol: 2 × (+3) + 3 × (−2) = 0, jadi Al₂O₃."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

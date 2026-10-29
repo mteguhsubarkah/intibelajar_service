@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_2
+familyCode: BIO.C26.E.BIODIVERSITAS.F.STRATEGI_KONSERVASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.BIODIVERSITAS.STRATEGI_KONSERVASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hewan endemik Indonesia yang dilindungi di habitat aslinya di Nusa Tenggara Timur adalah …
+  options:
+    - id: a
+      label: komodo
+    - id: b
+      label: harimau benggala
+    - id: c
+      label: panda raksasa
+    - id: d
+      label: gajah afrika
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - komodo
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.BIODIVERSITAS.STRATEGI_KONSERVASI
+  feedback:
+    correct: Komodo hanya hidup secara alami di beberapa pulau di NTT dan dilindungi di Taman Nasional Komodo.
+    incorrect: Jawabannya komodo. Komodo hanya hidup secara alami di beberapa pulau di NTT dan dilindungi di Taman Nasional Komodo.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

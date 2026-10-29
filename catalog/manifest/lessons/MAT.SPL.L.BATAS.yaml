@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.SPL.L.BATAS
+title: Batas terbuka & tertutup
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP
+blocks:
+  - type: heading
+    slide: 0
+    text: Garis penuh atau putus-putus
+  - type: text
+    slide: 0
+    text: "Tanda **≤ atau ≥**: titik pada garis termasuk penyelesaian, digambar **garis penuh**. Tanda **< atau >**: tidak termasuk, digambar **garis putus-putus**."
+  - type: math
+    slide: 0
+    name: ≤, ≥
+    expression: garis penuh
+    highlight: true
+  - type: math
+    slide: 0
+    name: <, >
+    expression: garis putus-putus
+  - type: heading
+    slide: 1
+    text: Uji titik
+  - type: text
+    slide: 1
+    text: Pilih titik yang tidak terletak pada garis, biasanya O(0, 0). Jika memenuhi, daerahnya memuat O; jika tidak, daerahnya di seberang.
+  - type: text
+    slide: 1
+    text: "Contoh: 3x + 2y ≥ 12 ⇒ 0 ≥ 12 salah, jadi daerahnya tidak memuat O."
+  - type: math
+    slide: 1
+    name: uji O(0, 0)
+    expression: benar ⇒ daerah memuat O
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jika garis melewati O, uji dengan titik lain seperti (1, 0).
+checks:
+  - question: MAT.SPL.Q.BATAS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.SPL.S.BATAS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

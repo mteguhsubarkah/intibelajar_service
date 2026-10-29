@@ -170,8 +170,10 @@ async function publishQuestions(tx: Tx, m: Manifest, releaseId: string, conceptI
       estimatedMinutes: live.estimated_minutes, provenance: live.provenance, concepts: live.concepts }) === questionContent(q)) { stats.reused++; continue; }
     if (live) { await sql`update question_revision set status = 'RETIRED' where id = ${live.id}`.execute(tx); stats.retired++; }
     const revisionId = uuid();
+    // A question that left an earlier manifest has only RETIRED revisions; number after the highest one, not after "none".
+    const revision = (await sql<{ n: number }>`select coalesce(max(revision), 0) + 1 as n from question_revision where question_id = ${row.id}`.execute(tx)).rows[0]!.n;
     await tx.insertInto('question_revision').values({
-      id: revisionId, question_id: row.id, revision: (live?.revision ?? 0) + 1, release_id: releaseId, status: 'DRAFT', item_type: q.itemType, body: json(q.body), rubric: json(q.rubric),
+      id: revisionId, question_id: row.id, revision, release_id: releaseId, status: 'DRAFT', item_type: q.itemType, body: json(q.body), rubric: json(q.rubric),
       review_status: 'REVIEWED', context_tag: q.contextTag, difficulty: q.difficulty, estimated_minutes: q.estimatedMinutes, provenance: json(q.provenance),
     }).execute();
     await tx.insertInto('question_concept').values(q.concepts.map(c => ({ question_revision_id: revisionId, concept_id: conceptId.get(c.concept)!, role: c.role, assessable: c.assessable }))).execute();
@@ -202,7 +204,8 @@ async function publishLessons(tx: Tx, m: Manifest, releaseId: string, conceptId:
     if (live && lessonContent({ title: live.title, estimatedMinutes: live.estimated_minutes, blocks: live.blocks, checks: live.checks }) === lessonContent(l)) { stats.reused++; continue; }
     if (live) { await sql`update micro_lesson_revision set status = 'RETIRED' where id = ${live.id}`.execute(tx); stats.retired++; }
     const revisionId = uuid();
-    await tx.insertInto('micro_lesson_revision').values({ id: revisionId, lesson_id: row.id, revision: (live?.revision ?? 0) + 1, release_id: releaseId, status: 'DRAFT',
+    const revision = (await sql<{ n: number }>`select coalesce(max(revision), 0) + 1 as n from micro_lesson_revision where lesson_id = ${row.id}`.execute(tx)).rows[0]!.n;
+    await tx.insertInto('micro_lesson_revision').values({ id: revisionId, lesson_id: row.id, revision, release_id: releaseId, status: 'DRAFT',
       title: l.title, estimated_minutes: l.estimatedMinutes, blocks: json(l.blocks) }).execute();
     if (l.checks.length) await tx.insertInto('micro_assessment').values(l.checks.map(c => ({ id: uuid(), lesson_revision_id: revisionId, question_id: questionId.get(c.question)!,
       ordinal: c.ordinal, required: c.required, slide_index: c.slideIndex }))).execute();

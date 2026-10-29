@@ -1,0 +1,47 @@
+schemaVersion: 1
+code: MAT.VEK.L.KESAMAAN
+title: Kesamaan Vektor
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.VEK.KESAMAAN_VEKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Komponen demi komponen
+  - type: text
+    slide: 0
+    text: Dua vektor sama bila **setiap komponen yang bersesuaian sama**. (a₁, a₂) = (b₁, b₂) ⇔ a₁ = b₁ dan a₂ = b₂.
+  - type: math
+    slide: 0
+    name: a = b
+    expression: a₁ = b₁, a₂ = b₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mencari variabel
+  - type: text
+    slide: 1
+    text: "Contoh: (2x − 1, 6) = (5, 3y) ⇒ 2x − 1 = 5 dan 6 = 3y ⇒ x = 3, y = 2."
+  - type: math
+    slide: 1
+    name: 2x − 1 = 5
+    expression: x = 3
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Setiap komponen memberi satu persamaan.
+checks:
+  - question: MAT.VEK.Q.KESAMAAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.VEK.S.KESAMAAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

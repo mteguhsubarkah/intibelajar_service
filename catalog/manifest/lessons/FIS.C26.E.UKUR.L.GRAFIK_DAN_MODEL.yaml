@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.L.GRAFIK_DAN_MODEL
+title: Grafik dan model
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.UKUR.GRAFIK_DAN_MODEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Gradien punya arti
+  - type: text
+    slide: 0
+    text: Pada grafik posisi–waktu (s–t), **gradien = kecepatan**. Garis lurus berarti kecepatan tetap.
+  - type: text
+    slide: 0
+    text: "Contoh: garis dari (0 s, 0 m) ke (4 s, 20 m) ⇒ v = 20/4 = 5 m/s."
+  - type: math
+    slide: 0
+    name: v
+    expression: Δs / Δt (gradien s–t)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Luas juga punya arti
+  - type: text
+    slide: 1
+    text: Pada grafik kecepatan–waktu (v–t), **gradien = percepatan** dan **luas di bawah grafik = perpindahan**.
+  - type: text
+    slide: 1
+    text: "Contoh: v naik dari 0 ke 10 m/s dalam 5 s ⇒ luas segitiga = ½ × 5 × 10 = 25 m."
+  - type: math
+    slide: 1
+    name: a
+    expression: gradien v–t
+    highlight: true
+  - type: math
+    slide: 1
+    name: s
+    expression: luas di bawah v–t
+  - type: tip
+    slide: 1
+    text: Selalu baca label sumbu dan satuannya sebelum menghitung.
+checks:
+  - question: FIS.C26.E.UKUR.Q.GRAFIK_DAN_MODEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.UKUR.S.GRAFIK_DAN_MODEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

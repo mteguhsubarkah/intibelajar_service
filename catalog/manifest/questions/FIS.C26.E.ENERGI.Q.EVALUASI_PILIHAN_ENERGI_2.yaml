@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_2
+familyCode: FIS.C26.E.ENERGI.F.EVALUASI_PILIHAN_ENERGI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.ENERGI.EVALUASI_PILIHAN_ENERGI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah desa terpencil di pegunungan memiliki sungai berarus deras sepanjang tahun dan belum terjangkau jaringan listrik. Pembangkit yang paling tepat adalah …
+  options:
+    - id: a
+      label: PLTU batu bara
+    - id: b
+      label: PLTMH (mikrohidro)
+    - id: c
+      label: PLTD solar
+    - id: d
+      label: PLTN
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - PLTMH (mikrohidro)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.ENERGI.EVALUASI_PILIHAN_ENERGI
+  feedback:
+    correct: "Aliran sungai yang deras dan tetap cocok untuk mikrohidro: terbarukan, murah dioperasikan, dan sesuai skala desa."
+    incorrect: "Jawabannya PLTMH (mikrohidro). Aliran sungai yang deras dan tetap cocok untuk mikrohidro: terbarukan, murah dioperasikan, dan sesuai skala desa."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

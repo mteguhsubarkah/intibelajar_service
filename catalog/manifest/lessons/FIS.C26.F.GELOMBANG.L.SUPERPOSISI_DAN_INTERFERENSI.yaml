@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.L.SUPERPOSISI_DAN_INTERFERENSI
+title: Superposisi & interferensi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Persamaan dasar gelombang
+  - type: text
+    slide: 0
+    text: "Cepat rambat gelombang **v = λ · f**. Dua gelombang yang bertemu saling menjumlah (superposisi): bisa saling menguatkan atau melemahkan."
+  - type: text
+    slide: 0
+    text: "Contoh: f = 50 Hz, λ = 2 m ⇒ v = 100 m/s."
+  - type: math
+    slide: 0
+    name: v
+    expression: λ · f
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Interferensi celah ganda
+  - type: text
+    slide: 1
+    text: "Pola terang pada layar: **d · y / L = n · λ** (d jarak celah, y jarak terang ke-n dari terang pusat, L jarak layar)."
+  - type: text
+    slide: 1
+    text: "Contoh: d = 0,2 mm, L = 1 m, y₁ = 3 mm ⇒ λ = 6 × 10⁻⁷ m = 600 nm."
+  - type: math
+    slide: 1
+    name: terang ke-n
+    expression: d · y / L = n · λ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Samakan semua satuan ke meter sebelum menghitung.
+checks:
+  - question: FIS.C26.F.GELOMBANG.Q.SUPERPOSISI_DAN_INTERFERENSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.GELOMBANG.S.SUPERPOSISI_DAN_INTERFERENSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

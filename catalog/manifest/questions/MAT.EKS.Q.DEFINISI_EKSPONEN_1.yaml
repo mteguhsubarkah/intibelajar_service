@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.DEFINISI_EKSPONEN_1
+familyCode: MAT.EKS.F.DEFINISI_EKSPONEN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari 3⁴ adalah …
+  options:
+    - id: a
+      label: "12"
+    - id: b
+      label: "27"
+    - id: c
+      label: "64"
+    - id: d
+      label: "81"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "81"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.DEFINISI_EKSPONEN
+  feedback:
+    correct: 3⁴ = 3 × 3 × 3 × 3 = 81. Pangkat bukan perkalian basis dengan pangkatnya.
+    incorrect: Jawabannya 81. 3⁴ = 3 × 3 × 3 × 3 = 81. Pangkat bukan perkalian basis dengan pangkatnya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

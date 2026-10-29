@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.FLUIDA.Q.KONTINUITAS_DAN_BERNOULLI_3
+familyCode: FIS.C26.F.FLUIDA.F.KONTINUITAS_DAN_BERNOULLI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.FLUIDA.KONTINUITAS_DAN_BERNOULLI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gaya angkat pada sayap pesawat terjadi karena …
+  options:
+    - id: a
+      label: udara di atas sayap lebih lambat sehingga tekanannya lebih besar
+    - id: b
+      label: udara di atas sayap lebih cepat sehingga tekanannya lebih kecil
+    - id: c
+      label: massa jenis udara di bawah sayap lebih kecil
+    - id: d
+      label: gaya apung udara sama dengan berat pesawat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - udara di atas sayap lebih cepat sehingga tekanannya lebih kecil
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.FLUIDA.KONTINUITAS_DAN_BERNOULLI
+  feedback:
+    correct: Menurut Bernoulli, aliran yang lebih cepat di atas sayap bertekanan lebih kecil, sehingga ada selisih tekanan ke atas.
+    incorrect: Jawabannya udara di atas sayap lebih cepat sehingga tekanannya lebih kecil. Menurut Bernoulli, aliran yang lebih cepat di atas sayap bertekanan lebih kecil, sehingga ada selisih tekanan ke atas.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

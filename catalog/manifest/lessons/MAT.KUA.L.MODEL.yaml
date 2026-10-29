@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.KUA.L.MODEL
+title: Pemodelan kuadrat
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.KUA.PEMODELAN_KUADRAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Masalah maksimum dan minimum
+  - type: text
+    slide: 0
+    text: "Banyak masalah nyata berbentuk kuadrat: tinggi benda yang dilempar, luas dengan keliling tetap, keuntungan dari harga jual."
+  - type: text
+    slide: 0
+    text: "Langkah: tulis besaran yang dicari sebagai fungsi satu variabel, lalu cari puncaknya."
+  - type: math
+    slide: 0
+    name: tinggi
+    expression: h(t) = v₀t − 5t²
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh luas maksimum
+  - type: text
+    slide: 1
+    text: Keliling persegi panjang 40 cm ⇒ p + l = 20 ⇒ L = p(20 − p) = −p² + 20p.
+  - type: text
+    slide: 1
+    text: Puncak di p = 10, jadi L maksimum = 100 cm² (persegi).
+  - type: math
+    slide: 1
+    name: L(p)
+    expression: −p² + 20p
+    highlight: true
+  - type: math
+    slide: 1
+    name: Lmaks
+    expression: 100 cm²
+  - type: tip
+    slide: 1
+    text: Ganti satu variabel dengan variabel lain memakai syarat yang diketahui.
+checks:
+  - question: MAT.KUA.Q.MODEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.KUA.S.MODEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.STP.Q.PENCAR_2
+familyCode: MAT.STP.F.PENCAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.STP.DIAGRAM_PENCAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Data menunjukkan penjualan es krim dan kasus tenggelam naik bersamaan. Penjelasan yang paling masuk akal adalah …
+  options:
+    - id: a
+      label: es krim menyebabkan tenggelam
+    - id: b
+      label: tenggelam menyebabkan orang membeli es krim
+    - id: c
+      label: keduanya dipengaruhi cuaca panas
+    - id: d
+      label: data pasti salah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - keduanya dipengaruhi cuaca panas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.STP.DIAGRAM_PENCAR
+  feedback:
+    correct: Korelasi tidak sama dengan sebab-akibat. Cuaca panas membuat orang membeli es krim dan berenang.
+    incorrect: Jawabannya keduanya dipengaruhi cuaca panas. Korelasi tidak sama dengan sebab-akibat. Cuaca panas membuat orang membeli es krim dan berenang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

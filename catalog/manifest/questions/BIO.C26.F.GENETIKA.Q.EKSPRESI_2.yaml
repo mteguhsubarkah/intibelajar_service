@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.Q.EKSPRESI_2
+familyCode: BIO.C26.F.GENETIKA.F.EKSPRESI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Proses translasi dalam sintesis protein berlangsung di …
+  options:
+    - id: a
+      label: nukleus
+    - id: b
+      label: ribosom
+    - id: c
+      label: mitokondria
+    - id: d
+      label: lisosom
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - ribosom
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+  feedback:
+    correct: Ribosom membaca kodon mRNA dan merangkai asam amino menjadi protein.
+    incorrect: Jawabannya ribosom. Ribosom membaca kodon mRNA dan merangkai asam amino menjadi protein.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

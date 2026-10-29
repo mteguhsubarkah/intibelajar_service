@@ -1,0 +1,84 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG
+subject: KIM
+title: Kesetimbangan & asam-basa
+subtitle: Le Chatelier, Kc, pH, penyangga
+phase: F
+availability: MAPPED
+bekal:
+  - stoikiometri
+  - logaritma
+aliases:
+  - ns: TOPIC
+    value: kesetimbangan
+units: []
+concepts:
+  - code: KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+    title: Kesetimbangan dinamis
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-setimbang-c1
+  - code: KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN
+    title: Konstanta kesetimbangan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-setimbang-konstanta
+  - code: KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    title: Asam-basa dan pH
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-setimbang-c2
+  - code: KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+    title: Hidrolisis dan penyangga
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-setimbang-hidrolisis
+prerequisites:
+  - concept: KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN
+    requires: KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+    kind: SOFT
+  - concept: KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    requires: KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+    kind: SOFT
+  - concept: KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+    requires: KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS
+    kind: SOFT
+  - concept: KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+    requires: KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)

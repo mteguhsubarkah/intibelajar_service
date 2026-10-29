@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.EKS.Q.GRAFIK_EKSPONEN_2
+familyCode: MAT.EKS.F.GRAFIK_EKSPONEN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Asimtot datar grafik y = 3ˣ − 4 adalah …
+  options:
+    - id: a
+      label: y = 0
+    - id: b
+      label: y = −4
+    - id: c
+      label: y = 4
+    - id: d
+      label: x = −4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - y = −4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.GRAFIK_FUNGSI_EKSPONEN
+  feedback:
+    correct: 3ˣ mendekati 0 untuk x sangat kecil, jadi y mendekati −4. Asimtotnya y = −4.
+    incorrect: Jawabannya y = −4. 3ˣ mendekati 0 untuk x sangat kecil, jadi y mendekati −4. Asimtotnya y = −4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

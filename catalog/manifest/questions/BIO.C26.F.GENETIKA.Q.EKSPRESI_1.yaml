@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.Q.EKSPRESI_1
+familyCode: BIO.C26.F.GENETIKA.F.EKSPRESI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan DNA cetakan TAC GGA akan menghasilkan mRNA dengan urutan …
+  options:
+    - id: a
+      label: ATG CCT
+    - id: b
+      label: AUG CCU
+    - id: c
+      label: UAC GGA
+    - id: d
+      label: TAC GGA
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - AUG CCU
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+  feedback:
+    correct: T → A, A → U, C → G, G → C. Jadi TAC GGA menjadi AUG CCU.
+    incorrect: Jawabannya AUG CCU. T → A, A → U, C → G, G → C. Jadi TAC GGA menjadi AUG CCU.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

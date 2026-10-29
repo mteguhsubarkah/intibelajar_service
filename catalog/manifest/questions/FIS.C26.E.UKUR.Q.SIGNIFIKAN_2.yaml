@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.Q.SIGNIFIKAN_2
+familyCode: FIS.C26.E.UKUR.F.SIGNIFIKAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Panjang dan lebar pelat diukur 12,5 cm dan 4,2 cm. Luas pelat menurut aturan angka penting adalah …
+  options:
+    - id: a
+      label: 52,5 cm²
+    - id: b
+      label: 52,50 cm²
+    - id: c
+      label: 53 cm²
+    - id: d
+      label: 52 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 53 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+  feedback:
+    correct: 12,5 × 4,2 = 52,5. Angka penting paling sedikit adalah 2 (dari 4,2), jadi dibulatkan menjadi 53 cm².
+    incorrect: Jawabannya 53 cm². 12,5 × 4,2 = 52,5. Angka penting paling sedikit adalah 2 (dari 4,2), jadi dibulatkan menjadi 53 cm².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,5 +1,5 @@
 schemaVersion: 1
-version: 1
+version: 2
 source:
   extractor: extract-from-frontend v1
   frontendCommit: efe1a9347dcc4b1c50e713f3364cf9b33ff2eb50
@@ -26,6 +26,9 @@ decisions:
   - id: D6
     status: PROPOSED
     summary: "Inferred mappings: lesson_concept (lesson coreId ∪ CORE_ROUTES), question_concept (all PRIMARY + assessable), typed T04→tri-c, T10→tri-d, new concept for T13, funnel item concepts, contextTag keyword table, concept availability (READY = taught or assessed), subject alias cs→PRO."
+  - id: D7
+    status: PROPOSED
+    summary: "Konten pilot MaFiKiBio (scripts/catalog/pilot): topik dan inti dari peta IntiVerse, soal pilihan ganda bergaya UN/UTBK-SNBT yang disusun ulang (bukan salinan soal resmi), dan materi dua slide per inti. Guru mata pelajaran memeriksa kunci, pembahasan, dan bahasa; daftar periksa di catalog/pilot-review.md."
 gaps:
   - curriculum/trigonometry.ts declares its own prerequisite graph (e.g. sudut-depresi-elevasi requires grafik-fungsi) that disagrees with curriculum.ts edges; only curriculum.ts edges and the T13 prerequisites were imported.
   - trig-depression-01 diagnosticSteps (angle-reference, ratio-selection) are follow-up prompts with their own options; 03 §7 has no value object for them, so they are not imported. Decide in Slice 2 (QUESTION_LOOP clarification).
