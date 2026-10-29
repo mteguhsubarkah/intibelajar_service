@@ -13,24 +13,39 @@ test('LaTeX from the model is rewritten as plain math text',()=>{
  assert.equal(plainMath('\\tan x = \\frac{-3}{\\sqrt{7}}'),'tan x = (-3)/√7');
  assert.equal(plainMath('Inti **Kuadran** ✅'),'Inti **Kuadran** ✅');
 });
-test('IntiGuide is told to stay on the listed cores, refuse off-topic chat, and never write LaTeX',async()=>{
+test('IntiGuide works the cores in order: the server picks the active core, the model only reports it finished',async()=>{
  let sent:any;
- const reply=await guideReply(null as any,config,{questionText:'sin x = 9/12, x kuadran 2, tan x = ?',cores,messages:[{from:'me',text:'Tulisan frac itu apa namanya di programming?'}]},(async(_u,o)=>{sent=JSON.parse(String(o?.body));return envelope({reply:'Aku fokus ke soal ini dulu ya. Dari \\(\\sin^2 x + \\cos^2 x = 1\\), cos²x berapa?',active:'tri-i',done:['tri-x']});}) as typeof fetch);
+ const reply=await guideReply(null as any,config,{questionText:'sin x = 9/12, x kuadran 2, tan x = ?',cores,messages:[{from:'me',text:'Tulisan frac itu apa namanya di programming?'}]},(async(_u,o)=>{sent=JSON.parse(String(o?.body));return envelope({reply:'Aku fokus ke soal ini dulu ya. Dari \\(\\sin^2 x + \\cos^2 x = 1\\), cos²x berapa?',intiAktifSelesai:false});}) as typeof fetch);
  assert.equal(sent.response_format.type,'json_object');
  const system=sent.messages[0].content;
- for(const rule of [/DAFTAR INTI/,/satu inti per giliran/,/menyederhanakan pecahan/,/pemrograman, LaTeX/,/DILARANG LaTeX/,/Jangan memberikan jawaban akhir/])assert.match(system,rule);
- assert.deepEqual(JSON.parse(sent.messages[1].content.replace('Konteks belajar: ','')).daftarInti,[{id:'tri-i',judul:'Identitas Dasar'},{id:'tri-g',judul:'Kuadran & Tanda'}]);
+ for(const rule of [/BERURUTAN/,/Bahas HANYA intiAktif/,/Jangan melompat/,/menyederhanakan pecahan/,/pemrograman, LaTeX/,/DILARANG LaTeX/,/Jangan memberikan jawaban akhir/])assert.match(system,rule);
+ const context=JSON.parse(sent.messages[1].content.replace('Konteks belajar: ',''));
+ assert.deepEqual(context.intiAktif,{id:'tri-i',judul:'Identitas Dasar'});
+ assert.deepEqual(context.daftarInti.map((c:any)=>c.nomor),[1,2]);
  assert.equal(reply.text,'Aku fokus ke soal ini dulu ya. Dari sin² x + cos² x = 1, cos²x berapa?');
- assert.deepEqual(reply.coreProgress,{active:'tri-i',done:[]},'unknown core ids are dropped');
+ assert.deepEqual(reply.coreProgress,{active:'tri-i',done:[]});
  validateResponse('/v1/guide/messages','POST',200,reply);
- validateRequest('/v1/guide/messages','POST',{body:{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},query:{},headers:{}} as any);
+ validateRequest('/v1/guide/messages','POST',{body:{questionText:'q',cores,done:['tri-i'],messages:[{from:'me',text:'hai'}]},query:{},headers:{}} as any);
 });
-test('progress reports finished cores; plain-text replies still work without progress',async()=>{
- const done=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'cos x = -√7/4'}]},answer({reply:'Tepat! Sekarang **Kuadran & Tanda**.',active:'tri-g',done:['tri-i','tri-i']}));
- assert.deepEqual(done.coreProgress,{active:'tri-g',done:['tri-i']});
+test('finishing the active core moves to the next one; unknown done ids are ignored',async()=>{
+ let context:any;
+ const http=(content:unknown)=>(async(_u:unknown,o?:RequestInit)=>{context=JSON.parse(JSON.parse(String(o?.body)).messages[1].content.replace('Konteks belajar: ',''));return envelope(content);}) as typeof fetch;
+ const first=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'cos²x = 7/16'}]},http({reply:'Tepat! Sekarang **Kuadran & Tanda**.',intiAktifSelesai:true}));
+ assert.deepEqual(first.coreProgress,{active:'tri-g',done:['tri-i']});
+ const second=await guideReply(null as any,config,{questionText:'q',cores,done:['tri-i','tri-x'],messages:[{from:'me',text:'negatif'}]},http({reply:'Mantap, tulis ulang langkahmu.',intiAktifSelesai:true}));
+ assert.equal(context.intiAktif.id,'tri-g');assert.deepEqual(second.coreProgress,{active:null,done:['tri-i','tri-g']});
  const plain=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},answer('Halo, kita mulai dari identitas dasar ya.'));
- assert.equal(plain.text,'Halo, kita mulai dari identitas dasar ya.');assert.deepEqual(plain.coreProgress,{active:null,done:[]});
- const noCores=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'hai'}]},answer({reply:'Halo',active:null,done:[]}));
+ assert.equal(plain.text,'Halo, kita mulai dari identitas dasar ya.');assert.deepEqual(plain.coreProgress,{active:'tri-i',done:[]});
+ const cut=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},answer('{"reply":"Kita mulai dari **Identitas Dasar**: cos²x berapa?","intiAktifSel'));
+ assert.equal(cut.text,'Kita mulai dari **Identitas Dasar**: cos²x berapa?','a cut-off JSON reply still shows the text, never raw JSON');
+ const noCores=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'hai'}]},answer({reply:'Halo',intiAktifSelesai:false}));
  assert.equal(noCores.coreProgress,undefined);
- await assert.rejects(guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},answer({reply:'  ',active:null,done:[]})),(e:any)=>e.status===503);
+});
+test('a busy or empty provider reply is retried once without JSON mode; two failures are 503',async()=>{
+ const calls:any[]=[];
+ const flaky=(async(_u:unknown,o?:RequestInit)=>{calls.push(JSON.parse(String(o?.body)));return calls.length===1?envelope(''):envelope('Kita mulai dari **Identitas Dasar** ya.');}) as typeof fetch;
+ const ok=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},flaky);
+ assert.equal(ok.text,'Kita mulai dari **Identitas Dasar** ya.');assert.equal(calls.length,2);assert.equal(calls[0].response_format.type,'json_object');assert.equal(calls[1].response_format,undefined);
+ let n=0;await assert.rejects(guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},(async()=>{n++;return new Response('',{status:503});}) as typeof fetch),(e:any)=>e.status===503);assert.equal(n,2);
+ n=0;await assert.rejects(guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},(async()=>{n++;return new Response('',{status:401});}) as typeof fetch),(e:any)=>e.status===503);assert.equal(n,1,'auth errors are not retried');
 });

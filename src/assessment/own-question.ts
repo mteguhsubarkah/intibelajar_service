@@ -32,7 +32,9 @@ export function ownQuestionService(db:Connection,config:Config['guide'],http:typ
   const catalog=await ownCatalog(db);
   const key=hash(stable({scope,question,release:catalog.release.id,model:config?.model??null,prompt:'own-outline-v2'})).toString('hex');
   const entries=await cache.get(key,async()=> (await matchOwnQuestion(config,question,catalog.cores,http)).map(p=>({id:p.core.mapId,relation:p.relation})));
-  const outline=entries.map(p=>({core:catalog.cores.find(c=>c.mapId===p.id)!,relation:p.relation}));
+  // Urutan katalog (prasyarat dulu), bukan urutan pilihan AI: petunjuk, IntiGuide, dan diagnosis memakai urutan yang sama.
+  const order=(id:string)=>catalog.cores.findIndex(c=>c.mapId===id);
+  const outline=[...entries].sort((a,b)=>order(a.id)-order(b.id)).map(p=>({core:catalog.cores.find(c=>c.mapId===p.id)!,relation:p.relation}));
   return {...catalog,cores:outline.map(p=>p.core),outline};
  }
  return {

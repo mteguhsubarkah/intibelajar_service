@@ -34,7 +34,7 @@ export async function loadTrialItem(db: Connection, alias: string, revisionId?: 
 }
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
-  hints: number; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
+  hints: number; guideDone?: string[]; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
   ai: TrialAi, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
@@ -139,8 +139,10 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const c = context(owner, body.sessionId), i = await item(c, body.questionId);
       const last = body.messages.at(-1);
       if (last?.from !== 'me' || !last.text.trim()) return fail(400, 'VALIDATION_FAILED');
-      const reply=await ai.tutor(i,body.messages,(body.currentAnswer ?? c.answer ?? '').slice(0,1000),c.hints);
+      const reply=await ai.tutor(i,body.messages,(body.currentAnswer ?? c.answer ?? '').slice(0,1000),c.hints,c.guideDone ?? []);
       c.hints=reply.hintsUsed;
+      // inti yang sudah lewat di chat ini disimpan di sesi trial, supaya IntiGuide melanjutkan urutannya
+      if(reply.coreProgress)c.guideDone=reply.coreProgress.done;
       return reply;
     },
     close() { contexts.clear(); }

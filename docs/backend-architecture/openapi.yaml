@@ -162,6 +162,11 @@ paths:
                     properties:
                       id: {type: string, minLength: 1, maxLength: 80}
                       title: {type: string, minLength: 1, maxLength: 120}
+                done:
+                  type: array
+                  maxItems: 8
+                  description: Core ids already finished in this conversation (from the previous coreProgress). The guide works on the first listed core not in done.
+                  items: {type: string, minLength: 1, maxLength: 80}
                 messages:
                   type: array
                   minItems: 1
