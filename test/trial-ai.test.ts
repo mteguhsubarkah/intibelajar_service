@@ -33,8 +33,8 @@ test('trial check and tutor use provider; chat carries the latest answer and bou
  const answer='20√3';let grading=0,chat=0;
  const ai=trialDeepSeek(null as any,config,async(_url,options)=>{
   const body=JSON.parse(String(options?.body));
-  if(body.response_format){grading++;return envelope({correct:true,items:entries('ok',answer)});}
-  chat++;const context=JSON.parse(body.messages[1].content.replace('Konteks belajar: ',''));
+  if(body.messages[0].content.includes('penilai')){grading++;return envelope({correct:true,items:entries('ok',answer)});}
+  chat++;const context=JSON.parse(body.messages[1].content.replace('Konteks belajar: ',''));assert.deepEqual(context.daftarInti.map((c:any)=>c.judul),item.concepts.map(c=>c.title));
   assert.equal(context.jawabanSaatIni,'draft yang baru diedit');assert.equal(context.soal,q.body.prompt);assert.ok(body.messages.length<=14);
   return Response.json({choices:[{message:{content:'Tepat, sekarang sisi mana yang kamu pakai? 📐'}}]});
  });

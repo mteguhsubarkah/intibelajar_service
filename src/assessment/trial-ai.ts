@@ -6,7 +6,7 @@ import { guideReply } from '../tutor/context-guide.js';
 import { fail } from '../platform/errors.js';
 export interface TrialAi {
   evaluate(item: TrialItem, response: StudentResponse): Promise<Evaluation>;
-  tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number): Promise<{text:string;quick:string[];hintsUsed:number}>;
+  tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[]}}>;
 }
 const unavailable = () => fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
 /** Provider sees only the public question, public core labels and student response; no answer keys or rubric. */
@@ -51,7 +51,7 @@ correct=true hanya bila jawaban soal sudah benar dan tuntas; false jika terbukti
       return {...(value.correct===null && value.clarification?.trim()?{clarification:value.clarification.trim()}:{}),verdict:value.correct===true?'CORRECT':value.correct===false?'INCORRECT':'NOT_GRADED',reason:value.correct===null?'insufficient-working':null,value:null,misconceptionCode:null,evidence,revealedAnswer:null};
     },
     async tutor(item,messages,answer,used) {
-      const reply=await guideReply(db,config,{questionText:item.source.body.prompt,answer,messages:messages.slice(-12).map(m=>({from:m.from==='me'?'me':'bot',text:m.text.slice(0,1000)}))},http);
+      const reply=await guideReply(db,config,{questionText:item.source.body.prompt,answer,cores:item.concepts.map(c=>({id:c.legacyMapId??c.code,title:c.title})),messages:messages.slice(-12).map(m=>({from:m.from==='me'?'me':'bot',text:m.text.slice(0,1000)}))},http);
       return {...reply,hintsUsed:used+1};
     }
   };
