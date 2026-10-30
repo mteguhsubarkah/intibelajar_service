@@ -8,9 +8,7 @@ availability: MAPPED
 bekal:
   - operasi aljabar
   - persamaan linear
-aliases:
-  - ns: TOPIC
-    value: kuadrat
+aliases: []
 units: []
 concepts:
   - code: MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT

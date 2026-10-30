@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_3
+familyCode: BIO.C26.E.BIODIVERSITAS.F.STRATEGI_KONSERVASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.BIODIVERSITAS.STRATEGI_KONSERVASI
+    role: PRIMARY
+    assessable: true
+  - concept: BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Berbagai varietas padi lokal disimpan di bank benih nasional. Upaya ini melestarikan keanekaragaman tingkat … dengan cara …
+  options:
+    - id: a
+      label: gen, secara ex situ
+    - id: b
+      label: gen, secara in situ
+    - id: c
+      label: spesies, secara ex situ
+    - id: d
+      label: ekosistem, secara in situ
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - gen, secara ex situ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.BIODIVERSITAS.STRATEGI_KONSERVASI
+    - BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN
+  feedback:
+    correct: "Varietas padi masih satu spesies, jadi tingkat gen. Bank benih berada di luar habitat asli: ex situ."
+    incorrect: "Jawabannya gen, secara ex situ. Varietas padi masih satu spesies, jadi tingkat gen. Bank benih berada di luar habitat asli: ex situ."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

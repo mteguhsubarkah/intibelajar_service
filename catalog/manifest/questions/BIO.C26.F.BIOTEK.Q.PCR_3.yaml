@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.F.BIOTEK.Q.PCR_3
+familyCode: BIO.C26.F.BIOTEK.F.PCR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.BIOTEK.PRINSIP_PCR
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.BAR.BARISAN_GEOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Setiap siklus PCR menggandakan jumlah DNA. Jika mula-mula ada 3 molekul DNA, jumlah DNA setelah 4 siklus adalah …
+  options:
+    - id: a
+      label: "12"
+    - id: b
+      label: "24"
+    - id: c
+      label: "48"
+    - id: d
+      label: "81"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "48"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.BIOTEK.PRINSIP_PCR
+    - MAT.BAR.BARISAN_GEOMETRI
+  feedback:
+    correct: "Jumlah DNA membentuk barisan geometri dengan rasio 2: 3 × 2⁴ = 48."
+    incorrect: "Jawabannya 48. Jumlah DNA membentuk barisan geometri dengan rasio 2: 3 × 2⁴ = 48."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

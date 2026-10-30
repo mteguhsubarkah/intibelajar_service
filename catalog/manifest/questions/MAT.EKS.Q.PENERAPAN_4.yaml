@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.EKS.Q.PENERAPAN_4
+familyCode: MAT.EKS.F.PENERAPAN_4
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.EKS.PENERAPAN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.EKS.DEFINISI_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gempa A berkekuatan 7 skala Richter dan gempa B 5 skala Richter. Amplitudo gempa A dibandingkan gempa B adalah …
+  options:
+    - id: a
+      label: 2 kali
+    - id: b
+      label: 20 kali
+    - id: c
+      label: 100 kali
+    - id: d
+      label: 1.000 kali
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 100 kali
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.EKS.PENERAPAN
+    - MAT.EKS.DEFINISI_LOGARITMA
+  feedback:
+    correct: "Skala Richter logaritmik basis 10: selisih 2 berarti 10² = 100 kali."
+    incorrect: "Jawabannya 100 kali. Skala Richter logaritmik basis 10: selisih 2 berarti 10² = 100 kali."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

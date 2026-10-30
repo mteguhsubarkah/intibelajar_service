@@ -8,9 +8,7 @@ availability: MAPPED
 bekal:
   - fungsi aljabar
   - gradien garis
-aliases:
-  - ns: TOPIC
-    value: kalkulus
+aliases: []
 units: []
 concepts:
   - code: MAT.KAL.LAJU_PERUBAHAN_RATA_RATA

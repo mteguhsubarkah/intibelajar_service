@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.E.ENERGI.Q.NERACA_3
+familyCode: FIS.C26.E.ENERGI.F.NERACA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Panel surya menerima daya cahaya 1.000 W dengan efisiensi 20% dan bekerja 5 jam sehari. Energi listrik yang dihasilkan per hari adalah …
+  options:
+    - id: a
+      label: 0,2 kWh
+    - id: b
+      label: 1 kWh
+    - id: c
+      label: 4 kWh
+    - id: d
+      label: 5 kWh
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 1 kWh
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
+    - FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
+  feedback:
+    correct: Daya listrik = 20% × 1.000 W = 200 W. Energi = 0,2 kW × 5 jam = 1 kWh.
+    incorrect: Jawabannya 1 kWh. Daya listrik = 20% × 1.000 W = 200 W. Energi = 0,2 kW × 5 jam = 1 kWh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

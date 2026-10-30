@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.E.UKUR.Q.SIGNIFIKAN_3
+familyCode: FIS.C26.E.UKUR.F.SIGNIFIKAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Panjang dan lebar sebuah keping diukur dengan jangka sorong: 2,35 cm dan 1,2 cm. Luas keping menurut aturan angka penting adalah …"
+  options:
+    - id: a
+      label: 2,82 cm²
+    - id: b
+      label: 2,8 cm²
+    - id: c
+      label: 2,820 cm²
+    - id: d
+      label: 3 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2,8 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN
+    - FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN
+  feedback:
+    correct: 2,35 × 1,2 = 2,82. Angka penting paling sedikit 2 (dari 1,2), jadi hasilnya 2,8 cm².
+    incorrect: Jawabannya 2,8 cm². 2,35 × 1,2 = 2,82. Angka penting paling sedikit 2 (dari 1,2), jadi hasilnya 2,8 cm².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

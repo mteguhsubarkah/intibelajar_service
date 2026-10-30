@@ -11,7 +11,7 @@ const envelope=(v:unknown)=>Response.json({choices:[{message:{content:JSON.strin
 test('own mapping is AI selection constrained to catalog, not keyword expansion or learner mastery',async()=>{
  const picked=await matchOwnQuestion(guide,'tentukan cos30',[core],async(_url,options)=>{
   const p=JSON.parse(String(options?.body));assert.equal(p.response_format.type,'json_object');assert.equal(p.model,guide.model);
-  const data=JSON.parse(p.messages[1].content);assert.deepEqual(data.catalog,[{mapId:'tri-f',title:core.title,description:core.description}]);assert.equal(data.question,'tentukan cos30');
+  const data=JSON.parse(p.messages[1].content);assert.deepEqual(data.catalog,[{mapId:'tri-f',title:core.title,description:core.description,subject:'matematika',topic:'trigonometri'}]);assert.equal(data.question,'tentukan cos30');
   return envelope({cores:[{id:'tri-f',relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]});
  });assert.deepEqual(picked.outline,[{core,relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]);assert.deepEqual(picked.scope,{status:'IN_CATALOG',subject:null,message:''});
  for(const ids of [['foreign'],['tri-f','tri-f']])await assert.rejects(matchOwnQuestion(guide,'q',[core],async()=>envelope({cores:ids.map(id=>({id,relation:'Peran inti pada soal.'}))})),(e:any)=>e.status===503);
@@ -22,6 +22,10 @@ test('questions outside the catalog or the supported subjects are refused with a
  const ask=(v:unknown)=>matchOwnQuestion(guide,'q',[core],async()=>envelope(v));
  const fisika=await ask({scope:'OUT_OF_CATALOG',subject:'fisika',reason:'Ini soal gerak lurus.',cores:[]});
  assert.equal(fisika.scope.status,'OUT_OF_CATALOG');assert.match(fisika.scope.message,/Soal Fisika belum bisa dikerjakan karena intinya belum ada di katalog/);assert.match(fisika.scope.message,/gerak lurus/);
+ // Fisika sudah punya inti di katalog: alasannya soal ini, bukan "baru Matematika".
+ const gerak:OwnCore={...core,id:'g',mapId:'fis-e-gerak2d-glbb',subject:'fisika',topicId:'gerak-parabola'};
+ const mapped=await matchOwnQuestion(guide,'q',[core,gerak],async()=>envelope({scope:'OUT_OF_CATALOG',subject:'fisika',reason:'',cores:[]}));
+ assert.match(mapped.scope.message,/^Soal Fisika ini belum bisa dikerjakan karena inti yang dipakainya belum ada di katalog kami\.$/);assert.doesNotMatch(mapped.scope.message,/baru Matematika/);
  const sejarah=await ask({scope:'UNSUPPORTED_SUBJECT',subject:'lainnya',reason:'Ini soal sejarah.',cores:[]});
  assert.equal(sejarah.scope.status,'UNSUPPORTED_SUBJECT');assert.equal(sejarah.scope.subject,null);assert.match(sejarah.scope.message,/di luar pelajaran yang didukung IntiBelajar \(Matematika, Fisika, Kimia, Biologi, dan Bahasa Inggris\)/);
  const hai=await ask({scope:'NOT_A_QUESTION',subject:null,reason:'',cores:[]});

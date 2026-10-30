@@ -1,0 +1,62 @@
+schemaVersion: 1
+code: MAT.KUA.Q.MODEL_3
+familyCode: MAT.KUA.F.MODEL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.PEMODELAN_KUADRAT
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Laba sebuah usaha L(x) = −2x² + 40x (ribu rupiah) untuk x barang. Laba maksimum yang dapat diperoleh adalah …
+  options:
+    - id: a
+      label: Rp100 ribu
+    - id: b
+      label: Rp200 ribu
+    - id: c
+      label: Rp400 ribu
+    - id: d
+      label: Rp800 ribu
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Rp200 ribu
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.PEMODELAN_KUADRAT
+    - MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK
+    - MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI
+  feedback:
+    correct: Puncak di x = −40/(2 × (−2)) = 10 (sama dengan L′(x) = 0). L(10) = −200 + 400 = 200 ribu.
+    incorrect: Jawabannya Rp200 ribu. Puncak di x = −40/(2 × (−2)) = 10 (sama dengan L′(x) = 0). L(10) = −200 + 400 = 200 ribu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

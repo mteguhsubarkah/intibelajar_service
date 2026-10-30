@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.Q.DOPPLER_3
+familyCode: FIS.C26.F.GELOMBANG.F.DOPPLER_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sirene 400 Hz bergerak mendekati pendengar yang diam dengan kecepatan 20 m/s. Cepat rambat bunyi 340 m/s. Panjang gelombang bunyi yang diterima pendengar adalah …
+  options:
+    - id: a
+      label: 0,80 m
+    - id: b
+      label: 0,85 m
+    - id: c
+      label: 0,90 m
+    - id: d
+      label: 1,00 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 0,80 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+    - FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+  feedback:
+    correct: fₚ = 340/(340 − 20) × 400 = 425 Hz. λ = v/f = 340/425 = 0,80 m.
+    incorrect: Jawabannya 0,80 m. fₚ = 340/(340 − 20) × 400 = 425 Hz. λ = v/f = 340/425 = 0,80 m.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_4
+familyCode: KIM.C26.F.SETIMBANG.F.ASAM_BASA_DAN_PH_4
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.EKS.SIFAT_SIFAT_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: pH larutan HCl 0,002 M adalah … (log 2 = 0,3)
+  options:
+    - id: a
+      label: 2,3
+    - id: b
+      label: 2,7
+    - id: c
+      label: 3,0
+    - id: d
+      label: 3,3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2,7
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    - MAT.EKS.SIFAT_SIFAT_LOGARITMA
+  feedback:
+    correct: "[H⁺] = 2 × 10⁻³ M. pH = −log (2 × 10⁻³) = 3 − log 2 = 3 − 0,3 = 2,7."
+    incorrect: Jawabannya 2,7. [H⁺] = 2 × 10⁻³ M. pH = −log (2 × 10⁻³) = 3 − log 2 = 3 − 0,3 = 2,7.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

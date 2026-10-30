@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_3
+familyCode: KIM.C26.F.STRUKTUR.F.IKATAN_DAN_GAYA_ANTARMOLEKUL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Unsur golongan IA periode 3 bereaksi dengan unsur golongan VIIA periode 3. Jenis ikatan yang terbentuk adalah …
+  options:
+    - id: a
+      label: ikatan ion
+    - id: b
+      label: kovalen polar
+    - id: c
+      label: kovalen nonpolar
+    - id: d
+      label: ikatan logam
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - ikatan ion
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL
+    - KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+  feedback:
+    correct: "Golongan IA periode 3 adalah Na (logam), VIIA periode 3 adalah Cl (nonlogam). Na melepas elektron ke Cl: ikatan ion (NaCl)."
+    incorrect: "Jawabannya ikatan ion. Golongan IA periode 3 adalah Na (logam), VIIA periode 3 adalah Cl (nonlogam). Na melepas elektron ke Cl: ikatan ion (NaCl)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

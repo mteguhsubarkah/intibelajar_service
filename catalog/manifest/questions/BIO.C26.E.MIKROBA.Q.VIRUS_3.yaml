@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.VIRUS_3
+familyCode: BIO.C26.E.MIKROBA.F.VIRUS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+    role: PRIMARY
+    assessable: true
+  - concept: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Antibiotik dapat menyembuhkan infeksi bakteri tetapi tidak efektif untuk infeksi virus. Penjelasan yang tepat adalah …
+  options:
+    - id: a
+      label: virus lebih besar dari bakteri
+    - id: b
+      label: virus tidak memiliki dinding sel dan metabolisme sendiri yang menjadi sasaran antibiotik
+    - id: c
+      label: virus memiliki membran inti
+    - id: d
+      label: bakteri tidak memiliki DNA
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - virus tidak memiliki dinding sel dan metabolisme sendiri yang menjadi sasaran antibiotik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS
+    - BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+  feedback:
+    correct: Antibiotik menyerang struktur atau proses sel bakteri, misalnya dinding sel peptidoglikan. Virus aseluler dan menumpang metabolisme sel inang.
+    incorrect: Jawabannya virus tidak memiliki dinding sel dan metabolisme sendiri yang menjadi sasaran antibiotik. Antibiotik menyerang struktur atau proses sel bakteri, misalnya dinding sel peptidoglikan. Virus aseluler dan menumpang metabolisme sel inang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

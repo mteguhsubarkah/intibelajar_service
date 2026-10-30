@@ -8,9 +8,7 @@ availability: MAPPED
 bekal:
   - sistem persamaan linear
   - koordinat Kartesius
-aliases:
-  - ns: TOPIC
-    value: matriks
+aliases: []
 units: []
 concepts:
   - code: MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN

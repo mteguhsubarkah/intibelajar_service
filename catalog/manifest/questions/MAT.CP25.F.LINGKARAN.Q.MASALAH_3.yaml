@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.CP25.F.LINGKARAN.Q.MASALAH_3
+familyCode: MAT.CP25.F.LINGKARAN.F.MASALAH_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Titik P berjarak 10 cm dari pusat O lingkaran berjari-jari 5 cm. Besar sudut antara garis singgung dari P dan garis PO adalah …
+  options:
+    - id: a
+      label: 30°
+    - id: b
+      label: 45°
+    - id: c
+      label: 60°
+    - id: d
+      label: 90°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 30°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: Jari-jari tegak lurus garis singgung, membentuk segitiga siku-siku dengan sisi miring PO = 10 dan sisi depan 5. sin θ = 5/10 = ½, jadi θ = 30°.
+    incorrect: Jawabannya 30°. Jari-jari tegak lurus garis singgung, membentuk segitiga siku-siku dengan sisi miring PO = 10 dan sisi depan 5. sin θ = 5/10 = ½, jadi θ = 30°.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

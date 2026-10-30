@@ -8,9 +8,7 @@ availability: MAPPED
 bekal:
   - fungsi linear dan kuadrat
   - operasi aljabar
-aliases:
-  - ns: TOPIC
-    value: invers
+aliases: []
 units: []
 concepts:
   - code: MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE

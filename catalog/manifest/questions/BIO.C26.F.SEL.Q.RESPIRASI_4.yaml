@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.RESPIRASI_4
+familyCode: BIO.C26.F.SEL.F.RESPIRASI_4
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
+    role: PRIMARY
+    assessable: true
+  - concept: BIO.C26.F.SEL.ORGANEL_SEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sel otot jantung memiliki sangat banyak organel X karena membutuhkan energi besar. Organel X dan tahap respirasi yang berlangsung di dalamnya adalah …
+  options:
+    - id: a
+      label: ribosom; glikolisis
+    - id: b
+      label: mitokondria; siklus Krebs dan transpor elektron
+    - id: c
+      label: badan Golgi; fermentasi
+    - id: d
+      label: mitokondria; glikolisis
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - mitokondria; siklus Krebs dan transpor elektron
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
+    - BIO.C26.F.SEL.ORGANEL_SEL
+  feedback:
+    correct: "Energi (ATP) terutama dihasilkan di mitokondria: siklus Krebs di matriks dan transpor elektron di membran dalam. Glikolisis di sitoplasma."
+    incorrect: "Jawabannya mitokondria; siklus Krebs dan transpor elektron. Energi (ATP) terutama dihasilkan di mitokondria: siklus Krebs di matriks dan transpor elektron di membran dalam. Glikolisis di sitoplasma."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

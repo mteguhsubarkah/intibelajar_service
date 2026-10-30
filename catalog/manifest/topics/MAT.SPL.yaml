@@ -8,9 +8,7 @@ availability: MAPPED
 bekal:
   - persamaan linear dua variabel
   - koordinat Kartesius
-aliases:
-  - ns: TOPIC
-    value: spltv
+aliases: []
 units: []
 concepts:
   - code: MAT.SPL.PERSAMAAN_GARIS_BATAS

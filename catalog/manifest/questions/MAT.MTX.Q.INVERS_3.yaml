@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.MTX.Q.INVERS_3
+familyCode: MAT.MTX.F.INVERS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.MTX.INVERS_MATRIKS_2_2
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.MTX.PERKALIAN_MATRIKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui A = [2 1; 5 3] dan AB = I (matriks identitas). Matriks B adalah …
+  options:
+    - id: a
+      label: "[3 −1; −5 2]"
+    - id: b
+      label: "[3 1; 5 2]"
+    - id: c
+      label: "[−3 1; 5 −2]"
+    - id: d
+      label: "[2 −1; −5 3]"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "[3 −1; −5 2]"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.MTX.INVERS_MATRIKS_2_2
+    - MAT.MTX.PERKALIAN_MATRIKS
+  feedback:
+    correct: AB = I berarti B = A⁻¹. det A = 6 − 5 = 1, sehingga A⁻¹ = [3 −1; −5 2].
+    incorrect: Jawabannya [3 −1; −5 2]. AB = I berarti B = A⁻¹. det A = 6 − 5 = 1, sehingga A⁻¹ = [3 −1; −5 2].
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran
