@@ -1,3 +1,4 @@
+import { practiceData, practiceList, questionHistory, type PracticeFilter } from './progress/practice.js';
 import {ownQuestionService} from './assessment/own-question.js';
 import {guideReply,type GuideInput} from './tutor/context-guide.js';
 import {claimTrial} from './learning/trial-claim.js';
@@ -225,6 +226,21 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   const projected=(req:FastifyRequest)=>learnerTransaction(req,async tx=>{
     const id=req.principal!.learnerId!;await privacy.requireConsent(tx,id,['LEARNING_DATA']);const p=await privacy.profile(tx,id);
     return{projection:await rebuildProgress(tx,id,p.timezone),profile:p,events:await progressEvents(tx,id)};
+  });
+  route('GET','/v1/me/questions','student',async req=>{
+    return learnerTransaction(req,async tx=>{
+      const id=req.principal!.learnerId!;await privacy.requireConsent(tx,id,['LEARNING_DATA']);const profile=await privacy.profile(tx,id);
+      const p=await rebuildProgress(tx,id,profile.timezone),c=await catalog.current(tx);
+      const data=await practiceData(tx,id,c,p);
+      return practiceList(data,c,p,req.query as PracticeFilter,config.key,id);
+    });
+  });
+  route('GET','/v1/me/questions/{questionId}/history','student',async req=>{
+    return learnerTransaction(req,async tx=>{
+      const id=req.principal!.learnerId!;await privacy.requireConsent(tx,id,['LEARNING_DATA']);const profile=await privacy.profile(tx,id);
+      const p=await rebuildProgress(tx,id,profile.timezone),c=await catalog.current(tx),q=req.query as {cursor?:string;limit?:number};
+      return questionHistory(await practiceData(tx,id,c,p),params(req).questionId!,q.cursor,q.limit??10,config.key,id);
+    });
   });
   route('GET','/v1/me/progress','student',async req=>{const{projection:p,profile,events}=await projected(req);
     return{user:{id:req.principal!.userId,displayName:profile.displayName??'Pelajar'},cores:p.views.filter(v=>v.legacyMapId).map(v=>({id:v.legacyMapId,exploration:v.exploration,
