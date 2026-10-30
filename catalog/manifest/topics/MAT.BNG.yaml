@@ -9,9 +9,7 @@ bekal:
   - persen
   - barisan geometri
   - eksponen
-aliases:
-  - ns: TOPIC
-    value: bunga
+aliases: []
 units: []
 concepts:
   - code: MAT.BNG.BUNGA_TUNGGAL

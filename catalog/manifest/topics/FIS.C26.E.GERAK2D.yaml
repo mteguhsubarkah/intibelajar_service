@@ -2,7 +2,7 @@ schemaVersion: 1
 code: FIS.C26.E.GERAK2D
 subject: FIS
 title: Gerak dua dimensi
-subtitle: Perpaduan gerak dan gerak parabola
+subtitle: Gerak lurus, perpaduan gerak, dan gerak parabola
 phase: E
 availability: MAPPED
 bekal:
@@ -13,11 +13,23 @@ aliases:
     value: gerak-parabola
 units: []
 concepts:
+  - code: FIS.C26.E.GERAK2D.GERAK_LURUS_GLB_DAN_GLBB
+    title: Gerak lurus (GLB dan GLBB)
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-gerak2d-glbb
   - code: FIS.C26.E.GERAK2D.KOMPONEN_GERAK
     title: Komponen gerak
     objectives: []
     misconceptions: []
-    ordinal: 1
+    ordinal: 2
     estimatedMinutes: 4
     hidden: false
     capstone: false
@@ -29,7 +41,7 @@ concepts:
     title: Proyeksi vektor gerak
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 3
     estimatedMinutes: 4
     hidden: false
     capstone: false
@@ -41,7 +53,7 @@ concepts:
     title: Gerak peluru ideal
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 4
     estimatedMinutes: 6
     hidden: false
     capstone: true
@@ -50,6 +62,9 @@ concepts:
       - ns: MAP
         value: fis-e-gerak2d-c2
 prerequisites:
+  - concept: FIS.C26.E.GERAK2D.KOMPONEN_GERAK
+    requires: FIS.C26.E.GERAK2D.GERAK_LURUS_GLB_DAN_GLBB
+    kind: SOFT
   - concept: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
     requires: FIS.C26.E.GERAK2D.KOMPONEN_GERAK
     kind: SOFT

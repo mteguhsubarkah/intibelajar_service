@@ -1,0 +1,62 @@
+schemaVersion: 1
+code: MAT.STP.Q.KRITIS_3
+familyCode: MAT.STP.F.KRITIS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.STP.MENGEVALUASI_LAPORAN_DATA
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.STP.MEMBACA_BOX_PLOT
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.STP.KUARTIL_DAN_IQR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Data: 2, 4, 5, 6, 7, 8, 30. Pernyataan yang tepat adalah …"
+  options:
+    - id: a
+      label: 30 bukan pencilan karena masih bilangan bulat
+    - id: b
+      label: 30 pencilan karena lebih dari Q₃ + 1,5 × IQR = 14
+    - id: c
+      label: rata-rata lebih mewakili daripada median
+    - id: d
+      label: median data adalah 7
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 30 pencilan karena lebih dari Q₃ + 1,5 × IQR = 14
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.STP.MENGEVALUASI_LAPORAN_DATA
+    - MAT.STP.MEMBACA_BOX_PLOT
+    - MAT.STP.KUARTIL_DAN_IQR
+  feedback:
+    correct: Q₁ = 4, Q₃ = 8, IQR = 4, batas atas 8 + 6 = 14. Jadi 30 pencilan, dan median (6) lebih mewakili daripada rata-rata.
+    incorrect: Jawabannya 30 pencilan karena lebih dari Q₃ + 1,5 × IQR = 14. Q₁ = 4, Q₃ = 8, IQR = 4, batas atas 8 + 6 = 14. Jadi 30 pencilan, dan median (6) lebih mewakili daripada rata-rata.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

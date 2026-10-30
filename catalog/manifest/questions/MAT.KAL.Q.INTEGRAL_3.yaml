@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.KAL.Q.INTEGRAL_3
+familyCode: MAT.KAL.F.INTEGRAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Luas daerah yang dibatasi kurva y = x² dan garis y = 2x adalah …
+  options:
+    - id: a
+      label: 4/3 satuan luas
+    - id: b
+      label: 2 satuan luas
+    - id: c
+      label: 8/3 satuan luas
+    - id: d
+      label: 4 satuan luas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 4/3 satuan luas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KAL.INTEGRAL_TENTU_DAN_LUAS
+    - MAT.KAL.ANTITURUNAN_DAN_KONSTANTA
+  feedback:
+    correct: Titik potong x = 0 dan x = 2. Luas = ∫₀² (2x − x²) dx = [x² − x³/3]₀² = 4 − 8/3 = 4/3.
+    incorrect: Jawabannya 4/3 satuan luas. Titik potong x = 0 dan x = 2. Luas = ∫₀² (2x − x²) dx = [x² − x³/3]₀² = 4 − 8/3 = 4/3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

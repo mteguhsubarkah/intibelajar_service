@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.SPL.Q.MODEL_3
+familyCode: MAT.SPL.F.MODEL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.SPL.VARIABEL_DAN_MODEL_KENDALA
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.SPL.IRISAN_KENDALA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai maksimum f(x, y) = 3x + 2y pada daerah x + y ≤ 5, x ≤ 3, x ≥ 0, y ≥ 0 adalah …
+  options:
+    - id: a
+      label: "9"
+    - id: b
+      label: "10"
+    - id: c
+      label: "13"
+    - id: d
+      label: "15"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "13"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.SPL.VARIABEL_DAN_MODEL_KENDALA
+    - MAT.SPL.IRISAN_KENDALA
+  feedback:
+    correct: "Titik pojok: (0, 0), (3, 0), (3, 2), (0, 5). Nilainya 0, 9, 13, 10. Maksimum 13 di (3, 2)."
+    incorrect: "Jawabannya 13. Titik pojok: (0, 0), (3, 0), (3, 2), (0, 5). Nilainya 0, 9, 13, 10. Maksimum 13 di (3, 2)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

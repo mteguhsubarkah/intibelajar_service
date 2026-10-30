@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.Q.GLBB_3
+familyCode: FIS.C26.E.GERAK2D.F.GLBB_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.GERAK2D.GERAK_LURUS_GLB_DAN_GLBB
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah motor bergerak dari diam dengan percepatan 2 m/s² selama 5 s, lalu bergerak dengan kecepatan tetap selama 6 s. Jarak total yang ditempuh motor adalah …
+  options:
+    - id: a
+      label: 60 m
+    - id: b
+      label: 75 m
+    - id: c
+      label: 85 m
+    - id: d
+      label: 110 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 85 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.GERAK2D.GERAK_LURUS_GLB_DAN_GLBB
+  feedback:
+    correct: "Tahap 1: v = 10 m/s, s₁ = ½ × 2 × 25 = 25 m. Tahap 2: s₂ = 10 × 6 = 60 m. Total 85 m."
+    incorrect: "Jawabannya 85 m. Tahap 1: v = 10 m/s, s₁ = ½ × 2 × 25 = 25 m. Tahap 2: s₂ = 10 × 6 = 60 m. Total 85 m."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -5,6 +5,7 @@ import type { Lesson, LessonBlock, PracticeSet, Question, Review, Topic } from '
 import type { PilotExisting, PilotQuestion, PilotSlide, PilotTopic } from './pilot/types.js';
 import { MAT_TOPICS, MAT_RELATIONS } from './pilot/mat.js';
 import { MAT_EXISTING } from './pilot/mat-existing.js';
+import { MULTI } from './pilot/multi.js';
 import { FIS_TOPICS, FIS_RELATIONS } from './pilot/fis.js';
 import { KIM_TOPICS, KIM_RELATIONS } from './pilot/kim.js';
 import { BIO_TOPICS, BIO_RELATIONS } from './pilot/bio.js';
@@ -33,20 +34,21 @@ const SOURCE: Record<NonNullable<PilotQuestion['src']>, string> = {
   KM: 'Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024)',
 };
 
-function question(topic: string, concept: string, key: string, n: number, q: PilotQuestion): Question {
+function question(topic: string, concept: string, key: string, n: number, q: PilotQuestion, resolve: (ref: string) => string = c => c): Question {
   if (q.o.length < 2 || q.o.length > 5 || q.a < 0 || q.a >= q.o.length) throw new Error(`${topic} ${key} soal ${n}: opsi/kunci tidak valid`);
   if (new Set(q.o).size !== q.o.length) throw new Error(`${topic} ${key} soal ${n}: opsi kembar`);
   const code = `${topic}.Q.${key}_${n}`;
+  const all = [...new Set([concept, ...(q.also ?? []).map(resolve)])];
   return {
     schemaVersion: 1, code, familyCode: `${topic}.F.${key}_${n}`, visibility: 'PUBLIC_PRACTICE', origin: 'AUTHORED',
     itemType: 'MULTIPLE_CHOICE', contextTag: 'PILOT', difficulty: q.d ?? 2, estimatedMinutes: q.min ?? 2,
     provenance: { source: 'authored:pilot', note: `${SOURCE[q.src ?? 'UN']}; disusun ulang untuk IntiBelajar, bukan salinan soal resmi.` },
     aliases: [],
-    concepts: [{ concept, role: 'PRIMARY', assessable: true }],
+    concepts: all.map(c => ({ concept: c, role: 'PRIMARY' as const, assessable: true })),
     body: { schemaVersion: 1, prompt: q.p, options: q.o.map((label, i) => ({ id: OPTION_IDS[i]!, label })), hints: [], answerFormat: 'OPTION' },
     rubric: {
       schemaVersion: 1, evaluator: 'option-v1', answer: { optionId: OPTION_IDS[q.a]! }, acceptedForms: [q.o[q.a]!],
-      solutionPaths: [], misconceptionMap: [], finalAnswerEvidence: [concept],
+      solutionPaths: [], misconceptionMap: [], finalAnswerEvidence: all,
       feedback: { correct: q.why, incorrect: `Jawabannya ${q.o[q.a]}. ${q.why}` },
     },
     review: review(['body', 'rubric', 'concepts'], ['soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran']),
@@ -76,14 +78,33 @@ function lesson(topic: string, concept: string, key: string, title: string, minu
 
 export function buildPilot() {
   const topics: Topic[] = [], questions: Question[] = [], lessons: Lesson[] = [], sets: PracticeSet[] = [];
+  // Kode konsep semua inti pilot dulu, supaya soal multi-inti bisa merujuk inti di topik lain.
+  const codes = new Map<string, Map<string, string>>();
   for (const t of TOPICS) {
-    const codes = new Map<string, string>();
+    const own = new Map<string, string>();
     for (const c of t.cores) {
       const code = `${t.code}.${slug(c.title)}`;
-      if ([...codes.values()].includes(code)) throw new Error(`${t.code}: dua inti bernama ${c.title}`);
-      codes.set(c.id, code);
+      if ([...own.values()].includes(code)) throw new Error(`${t.code}: dua inti bernama ${c.title}`);
+      own.set(c.id, code);
     }
-    const ref = (id: string) => { const code = codes.get(id); if (!code) throw new Error(`${t.code}: inti ${id} tidak ada`); return code; };
+    codes.set(t.code, own);
+  }
+  const resolver = (topic: string | null) => (ref: string) => {
+    const [t, id] = ref.includes(':') ? ref.split(':') as [string, string] : ref.includes('.') ? [null, ref] : [topic, ref];
+    if (t === null) return id;
+    const code = codes.get(t)?.get(id);
+    if (!code) throw new Error(`inti ${ref} tidak ada (dirujuk dari ${topic ?? 'konsep lama'})`);
+    return code;
+  };
+  // Soal multi-inti ditempel di belakang soal inti utamanya (nomor soal lama tidak bergeser).
+  const extra = (at: string) => MULTI.filter(m => m.at === at).map(m => m.q);
+  for (const m of MULTI) {
+    const [t, id] = m.at.split(':');
+    const known = id ? TOPICS.some(x => x.code === t && x.cores.some(c => c.id === id)) : EXISTING.some(e => e.concept === m.at);
+    if (!known) throw new Error(`soal multi-inti: inti utama ${m.at} tidak ada`);
+  }
+  for (const t of TOPICS) {
+    const ref = resolver(t.code);
     topics.push({
       schemaVersion: 1, code: t.code, subject: t.subject, title: t.title, subtitle: t.subtitle, phase: t.phase, availability: 'MAPPED',
       bekal: t.bekal, aliases: t.alias ? [{ ns: 'TOPIC', value: t.alias }] : [], units: [],
@@ -97,13 +118,13 @@ export function buildPilot() {
     });
     for (const c of t.cores) {
       const key = slug(c.id === 'C1' || c.id === 'C2' ? c.title : c.id), concept = ref(c.id);
-      const qs = c.q.map((q, i) => question(t.code, concept, key, i + 1, q));
+      const qs = [...c.q, ...extra(`${t.code}:${c.id}`)].map((q, i) => question(t.code, concept, key, i + 1, q, ref));
       const [l, s] = lesson(t.code, concept, key, c.title, c.min ?? 5, c.slides, qs);
       questions.push(...qs); lessons.push(l); sets.push(s);
     }
   }
   for (const e of EXISTING) {
-    const qs = e.q.map((q, i) => question(e.topic, e.concept, e.key, i + 1, q));
+    const qs = [...e.q, ...extra(e.concept)].map((q, i) => question(e.topic, e.concept, e.key, i + 1, q, resolver(null)));
     const [l, s] = lesson(e.topic, e.concept, e.key, e.title, e.min ?? 5, e.slides, qs);
     questions.push(...qs); lessons.push(l); sets.push(s);
   }

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.Q.VEKTOR_3
+familyCode: FIS.C26.E.GERAK2D.F.VEKTOR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah balok ditarik dengan gaya 10 N yang membentuk sudut 60° terhadap lantai. Komponen gaya yang sejajar lantai adalah …
+  options:
+    - id: a
+      label: 5 N
+    - id: b
+      label: 5√3 N
+    - id: c
+      label: 10 N
+    - id: d
+      label: 5√2 N
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 5 N
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+    - MAT.TRI.SUDUT_ISTIMEWA
+  feedback:
+    correct: Komponen mendatar = F cos 60° = 10 × ½ = 5 N.
+    incorrect: Jawabannya 5 N. Komponen mendatar = F cos 60° = 10 × ½ = 5 N.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_4
+familyCode: FIS.C26.E.GERAK2D.F.GERAK_PELURU_IDEAL_4
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bola ditendang dengan kecepatan 20 m/s membentuk sudut 53° terhadap tanah (sin 53° = 0,8; cos 53° = 0,6). Kecepatan bola di titik tertinggi adalah …
+  options:
+    - id: a
+      label: 0 m/s
+    - id: b
+      label: 12 m/s
+    - id: c
+      label: 16 m/s
+    - id: d
+      label: 20 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 12 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+    - FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+  feedback:
+    correct: Di titik tertinggi vᵧ = 0, tinggal komponen mendatar vₓ = 20 cos 53° = 20 × 0,6 = 12 m/s.
+    incorrect: Jawabannya 12 m/s. Di titik tertinggi vᵧ = 0, tinggal komponen mendatar vₓ = 20 cos 53° = 20 × 0,6 = 12 m/s.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

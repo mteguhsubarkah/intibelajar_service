@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.Q.EKSPRESI_3
+familyCode: BIO.C26.F.GENETIKA.F.EKSPRESI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+    role: PRIMARY
+    assessable: true
+  - concept: BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Untai DNA cetakan memiliki urutan TAC CGA. Urutan mRNA hasil transkripsi dan banyak kodonnya adalah …
+  options:
+    - id: a
+      label: ATG GCT, 2 kodon
+    - id: b
+      label: AUG GCU, 2 kodon
+    - id: c
+      label: AUG GCU, 6 kodon
+    - id: d
+      label: UAC CGA, 2 kodon
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - AUG GCU, 2 kodon
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI
+    - BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM
+  feedback:
+    correct: "Pasangan basa ke RNA: T→A, A→U, C→G, G→C, jadi AUG GCU. Satu kodon = 3 basa, jadi 2 kodon."
+    incorrect: "Jawabannya AUG GCU, 2 kodon. Pasangan basa ke RNA: T→A, A→U, C→G, G→C, jadi AUG GCU. Satu kodon = 3 basa, jadi 2 kodon."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

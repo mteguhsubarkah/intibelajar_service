@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.KUA.Q.DISKRIMINAN_3
+familyCode: MAT.KUA.F.DISKRIMINAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.KUA.FAKTORISASI_DAN_AKAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan x² + px + 9 = 0 memiliki akar kembar yang positif. Nilai p dan akar tersebut adalah …
+  options:
+    - id: a
+      label: p = −6, akar 3
+    - id: b
+      label: p = 6, akar 3
+    - id: c
+      label: p = 6, akar −3
+    - id: d
+      label: p = −3, akar 3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - p = −6, akar 3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN
+    - MAT.KUA.FAKTORISASI_DAN_AKAR
+  feedback:
+    correct: "Akar kembar: D = p² − 36 = 0 ⇒ p = ±6. Untuk p = −6: x² − 6x + 9 = (x − 3)² = 0, akarnya 3 (positif)."
+    incorrect: "Jawabannya p = −6, akar 3. Akar kembar: D = p² − 36 = 0 ⇒ p = ±6. Untuk p = −6: x² − 6x + 9 = (x − 3)² = 0, akarnya 3 (positif)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

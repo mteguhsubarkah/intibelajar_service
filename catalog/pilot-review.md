@@ -4,7 +4,7 @@ Dibuat oleh `npm run catalog:pilot`. Centang setelah kunci, pembahasan, dan baha
 
 ## Persamaan & Fungsi Kuadrat (MAT.KUA)
 
-Materi: 5 · Soal: 11
+Materi: 5 · Soal: 13
 
 - [ ] **MAT.KUA.Q.KOEFISIEN_1** — Pada fungsi f(x) = 3 − 2x + 5x², nilai a, b, dan c berturut-turut adalah …
   A. a = 3, b = −2, c = 5 · B. a = 5, b = −2, c = 3 · C. a = 5, b = 2, c = 3 · D. a = −2, b = 5, c = 3
@@ -27,6 +27,9 @@ Materi: 5 · Soal: 11
 - [ ] **MAT.KUA.Q.DISKRIMINAN_2** — Persamaan x² + (m − 1)x + 4 = 0 mempunyai akar kembar. Nilai m yang memenuhi adalah …
   A. m = 5 atau m = −3 · B. m = −5 atau m = 3 · C. m = 4 · D. m = 1
   Kunci: **A** · Akar kembar: D = (m − 1)² − 16 = 0 ⇒ m − 1 = ±4 ⇒ m = 5 atau m = −3.
+- [ ] **MAT.KUA.Q.DISKRIMINAN_3** — Persamaan x² + px + 9 = 0 memiliki akar kembar yang positif. Nilai p dan akar tersebut adalah …
+  A. p = −6, akar 3 · B. p = 6, akar 3 · C. p = 6, akar −3 · D. p = −3, akar 3
+  Kunci: **A** · Akar kembar: D = p² − 36 = 0 ⇒ p = ±6. Untuk p = −6: x² − 6x + 9 = (x − 3)² = 0, akarnya 3 (positif).
 - [ ] **MAT.KUA.Q.PUNCAK_1** — Titik puncak grafik y = x² − 6x + 5 adalah …
   A. (3, −4) · B. (−3, −4) · C. (3, 4) · D. (6, 5)
   Kunci: **A** · xₚ = −(−6)/2 = 3, yₚ = 9 − 18 + 5 = −4. Puncaknya (3, −4).
@@ -39,10 +42,13 @@ Materi: 5 · Soal: 11
 - [ ] **MAT.KUA.Q.MODEL_2** — Keliling sebuah persegi panjang 40 cm. Luas maksimum persegi panjang itu adalah …
   A. 96 cm² · B. 100 cm² · C. 400 cm² · D. 80 cm²
   Kunci: **B** · L = p(20 − p) maksimum saat p = 10, sehingga L = 10 × 10 = 100 cm².
+- [ ] **MAT.KUA.Q.MODEL_3** — Laba sebuah usaha L(x) = −2x² + 40x (ribu rupiah) untuk x barang. Laba maksimum yang dapat diperoleh adalah …
+  A. Rp100 ribu · B. Rp200 ribu · C. Rp400 ribu · D. Rp800 ribu
+  Kunci: **B** · Puncak di x = −40/(2 × (−2)) = 10 (sama dengan L′(x) = 0). L(10) = −200 + 400 = 200 ribu.
 
 ## Sistem Persamaan & Pertidaksamaan (MAT.SPL)
 
-Materi: 4 · Soal: 8
+Materi: 4 · Soal: 9
 
 - [ ] **MAT.SPL.Q.GARIS_1** — Persamaan garis yang melalui titik (4, 0) dan (0, 3) adalah …
   A. 3x + 4y = 12 · B. 4x + 3y = 12 · C. 3x − 4y = 12 · D. x + y = 7
@@ -68,10 +74,13 @@ Materi: 4 · Soal: 8
 - [ ] **MAT.SPL.Q.MODEL_2** — Harga tiket dewasa Rp10.000 dan anak Rp5.000. Uang yang terkumpul tidak lebih dari Rp200.000. Jika x dewasa dan y anak, model yang tepat adalah …
   A. 2x + y ≤ 40 · B. x + 2y ≤ 40 · C. 2x + y ≥ 40 · D. x + y ≤ 40
   Kunci: **A** · 10.000x + 5.000y ≤ 200.000, dibagi 5.000 menjadi 2x + y ≤ 40.
+- [ ] **MAT.SPL.Q.MODEL_3** — Nilai maksimum f(x, y) = 3x + 2y pada daerah x + y ≤ 5, x ≤ 3, x ≥ 0, y ≥ 0 adalah …
+  A. 9 · B. 10 · C. 13 · D. 15
+  Kunci: **C** · Titik pojok: (0, 0), (3, 0), (3, 2), (0, 5). Nilainya 0, 9, 13, 10. Maksimum 13 di (3, 2).
 
 ## Statistika & Peluang (MAT.STP)
 
-Materi: 5 · Soal: 10
+Materi: 5 · Soal: 11
 
 - [ ] **MAT.STP.Q.KUARTIL_1** — Jangkauan antarkuartil dari data 3, 5, 6, 7, 8, 9, 10, 12 adalah …
   A. 3 · B. 4 · C. 5 · D. 9
@@ -103,10 +112,13 @@ Materi: 5 · Soal: 10
 - [ ] **MAT.STP.Q.KRITIS_2** — Gaji lima karyawan (juta rupiah): 4, 4, 5, 5, 32. Ukuran pemusatan yang paling mewakili gaji karyawan adalah …
   A. rata-rata, 10 juta · B. median, 5 juta · C. modus, 4 dan 5 juta · D. jangkauan, 28 juta
   Kunci: **B** · Gaji 32 juta adalah pencilan yang menarik rata-rata ke 10 juta. Median 5 juta lebih mewakili.
+- [ ] **MAT.STP.Q.KRITIS_3** — Data: 2, 4, 5, 6, 7, 8, 30. Pernyataan yang tepat adalah …
+  A. 30 bukan pencilan karena masih bilangan bulat · B. 30 pencilan karena lebih dari Q₃ + 1,5 × IQR = 14 · C. rata-rata lebih mewakili daripada median · D. median data adalah 7
+  Kunci: **B** · Q₁ = 4, Q₃ = 8, IQR = 4, batas atas 8 + 6 = 14. Jadi 30 pencilan, dan median (6) lebih mewakili daripada rata-rata.
 
 ## Bunga Majemuk & Anuitas (MAT.BNG)
 
-Materi: 5 · Soal: 10
+Materi: 5 · Soal: 11
 
 - [ ] **MAT.BNG.Q.TUNGGAL_1** — Tabungan Rp2.000.000 mendapat bunga tunggal 6% per tahun. Besar tabungan setelah 3 tahun adalah …
   A. Rp2.120.000 · B. Rp2.360.000 · C. Rp2.382.032 · D. Rp2.600.000
@@ -120,6 +132,9 @@ Materi: 5 · Soal: 10
 - [ ] **MAT.BNG.Q.MAJEMUK_2** — Dua tabungan bermodal sama, satu dengan bunga tunggal 10% dan satu dengan bunga majemuk 10% per tahun. Setelah 2 tahun, pernyataan yang benar adalah …
   A. keduanya sama besar · B. bunga majemuk lebih besar · C. bunga tunggal lebih besar · D. tidak bisa dibandingkan
   Kunci: **B** · Pada tahun kedua, bunga majemuk juga menghitung bunga dari bunga tahun pertama, jadi hasilnya lebih besar.
+- [ ] **MAT.BNG.Q.MAJEMUK_3** — Modal Rp1.000.000 dibungakan dengan bunga majemuk 10% per tahun hingga menjadi Rp2.000.000 setelah n tahun. Nilai n adalah …
+  A. log 2 / log 1,1 · B. log 1,1 / log 2 · C. 2 / 1,1 · D. log 2 − log 1,1
+  Kunci: **A** · 1.000.000 × 1,1ⁿ = 2.000.000 ⇒ 1,1ⁿ = 2 ⇒ n = log 2 / log 1,1 (sekitar 7,3 tahun).
 - [ ] **MAT.BNG.Q.NILAI_KINI_1** — Agar 2 tahun lagi memiliki Rp12.100.000 dengan bunga majemuk 10% per tahun, uang yang harus ditabung sekarang adalah …
   A. Rp10.000.000 · B. Rp10.100.000 · C. Rp9.900.000 · D. Rp11.000.000
   Kunci: **A** · PV = 12.100.000 / 1,1² = 12.100.000 / 1,21 = Rp10.000.000.
@@ -141,7 +156,7 @@ Materi: 5 · Soal: 10
 
 ## Fungsi Invers & Komposisi (MAT.INV)
 
-Materi: 5 · Soal: 11
+Materi: 5 · Soal: 12
 
 - [ ] **MAT.INV.Q.DOMAIN_1** — Domain fungsi f(x) = √(2x − 6) adalah …
   A. x ≥ 3 · B. x > 3 · C. x ≥ −3 · D. x ≤ 3
@@ -170,6 +185,9 @@ Materi: 5 · Soal: 11
 - [ ] **MAT.INV.Q.INVERS_3** — Jika f(x) = 2x − 4, nilai f⁻¹(6) adalah …
   A. 8 · B. 5 · C. 1 · D. 10
   Kunci: **B** · f⁻¹(6) adalah x yang memenuhi 2x − 4 = 6, yaitu x = 5.
+- [ ] **MAT.INV.Q.INVERS_4** — Diketahui f(x) = 2x + 1 dan g(x) = x − 3. Nilai (f ∘ g)⁻¹(5) adalah …
+  A. 0 · B. 3 · C. 5 · D. 10
+  Kunci: **C** · (f ∘ g)(x) = 2(x − 3) + 1 = 2x − 5. (f ∘ g)⁻¹(5) adalah x dengan 2x − 5 = 5, yaitu x = 5.
 - [ ] **MAT.INV.Q.TRANSFORMASI_1** — Grafik y = x² digeser 3 satuan ke kanan dan 2 satuan ke atas. Persamaan grafik hasilnya adalah …
   A. y = (x − 3)² + 2 · B. y = (x + 3)² + 2 · C. y = (x − 2)² + 3 · D. y = (x + 3)² − 2
   Kunci: **A** · Geser kanan 3: ganti x dengan x − 3. Geser atas 2: tambah 2.
@@ -179,7 +197,7 @@ Materi: 5 · Soal: 11
 
 ## Hubungan Unsur Lingkaran (MAT.CP25.F.LINGKARAN)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **MAT.CP25.F.LINGKARAN.Q.UNSUR_1** — Ruas garis yang menghubungkan dua titik pada lingkaran tetapi tidak melalui pusat disebut …
   A. jari-jari · B. diameter · C. tali busur · D. apotema
@@ -199,10 +217,13 @@ Materi: 3 · Soal: 6
 - [ ] **MAT.CP25.F.LINGKARAN.Q.MASALAH_2** — AB adalah diameter lingkaran dengan panjang 10 cm dan C terletak pada lingkaran. Jika AC = 6 cm, panjang BC adalah …
   A. 4 cm · B. 8 cm · C. √136 cm · D. 16 cm
   Kunci: **B** · ∠ACB = 90° karena menghadap diameter, jadi BC = √(10² − 6²) = 8 cm.
+- [ ] **MAT.CP25.F.LINGKARAN.Q.MASALAH_3** — Titik P berjarak 10 cm dari pusat O lingkaran berjari-jari 5 cm. Besar sudut antara garis singgung dari P dan garis PO adalah …
+  A. 30° · B. 45° · C. 60° · D. 90°
+  Kunci: **A** · Jari-jari tegak lurus garis singgung, membentuk segitiga siku-siku dengan sisi miring PO = 10 dan sisi depan 5. sin θ = 5/10 = ½, jadi θ = 30°.
 
 ## Peluang Majemuk & Bersyarat (MAT.CP25.F.PELUANG)
 
-Materi: 3 · Soal: 7
+Materi: 3 · Soal: 8
 
 - [ ] **MAT.CP25.F.PELUANG.Q.CACAH_1** — Dari 5 siswa akan dipilih ketua, sekretaris, dan bendahara. Banyak susunan yang mungkin adalah …
   A. 10 · B. 15 · C. 60 · D. 125
@@ -213,6 +234,9 @@ Materi: 3 · Soal: 7
 - [ ] **MAT.CP25.F.PELUANG.Q.CACAH_3** — Dari angka 1, 2, 3, 4, 5 akan dibuat bilangan ganjil tiga angka dengan angka berbeda. Banyak bilangan yang dapat dibuat adalah …
   A. 24 · B. 36 · C. 48 · D. 60
   Kunci: **B** · Satuan: 3 pilihan (1, 3, 5). Puluhan: 4 pilihan. Ratusan: 3 pilihan. Total 3 × 4 × 3 = 36.
+- [ ] **MAT.CP25.F.PELUANG.Q.CACAH_4** — Dari 5 laki-laki dan 4 perempuan dipilih 3 orang secara acak. Peluang terpilih tepat 2 perempuan adalah …
+  A. 2/9 · B. 1/3 · C. 5/14 · D. 10/21
+  Kunci: **C** · Cara yang diinginkan C(4, 2) × C(5, 1) = 30. Semua cara C(9, 3) = 84. Peluang 30/84 = 5/14.
 - [ ] **MAT.CP25.F.PELUANG.Q.MAJEMUK_1** — Dua dadu dilempar bersamaan. Peluang muncul jumlah mata 7 atau 11 adalah …
   A. 1/6 · B. 2/9 · C. 1/18 · D. 7/36
   Kunci: **B** · Jumlah 7: 6 pasangan, jumlah 11: 2 pasangan. Saling lepas: (6 + 2)/36 = 8/36 = 2/9.
@@ -228,7 +252,7 @@ Materi: 3 · Soal: 7
 
 ## Kalkulus Dasar (MAT.KAL)
 
-Materi: 6 · Soal: 12
+Materi: 6 · Soal: 13
 
 - [ ] **MAT.KAL.Q.RATA_RATA_1** — Laju perubahan rata-rata f(x) = x² dari x = 1 sampai x = 3 adalah …
   A. 2 · B. 4 · C. 8 · D. 9
@@ -266,10 +290,13 @@ Materi: 6 · Soal: 12
 - [ ] **MAT.KAL.Q.INTEGRAL_2** — Luas daerah yang dibatasi kurva y = x², sumbu x, garis x = 0, dan x = 3 adalah …
   A. 3 satuan luas · B. 6 satuan luas · C. 9 satuan luas · D. 27 satuan luas
   Kunci: **C** · ∫₀³ x² dx = [x³/3]₀³ = 27/3 = 9.
+- [ ] **MAT.KAL.Q.INTEGRAL_3** — Luas daerah yang dibatasi kurva y = x² dan garis y = 2x adalah …
+  A. 4/3 satuan luas · B. 2 satuan luas · C. 8/3 satuan luas · D. 4 satuan luas
+  Kunci: **A** · Titik potong x = 0 dan x = 2. Luas = ∫₀² (2x − x²) dx = [x² − x³/3]₀² = 4 − 8/3 = 4/3.
 
 ## Matriks (MAT.MTX)
 
-Materi: 7 · Soal: 15
+Materi: 7 · Soal: 17
 
 - [ ] **MAT.MTX.Q.ORDO_1** — Matriks [1 2 3; 4 5 6] berordo …
   A. 3 × 2 · B. 2 × 3 · C. 6 × 1 · D. 2 × 2
@@ -310,16 +337,22 @@ Materi: 7 · Soal: 15
 - [ ] **MAT.MTX.Q.INVERS_2** — Diketahui A = [2 1; 1 1] dan B = [5; 3]. Matriks X yang memenuhi AX = B adalah …
   A. [2; 1] · B. [1; 2] · C. [3; −1] · D. [8; 1]
   Kunci: **A** · A⁻¹ = [1 −1; −1 2], X = A⁻¹B = [5 − 3; −5 + 6] = [2; 1]. Cek: 2·2 + 1 = 5 dan 2 + 1 = 3.
+- [ ] **MAT.MTX.Q.INVERS_3** — Diketahui A = [2 1; 5 3] dan AB = I (matriks identitas). Matriks B adalah …
+  A. [3 −1; −5 2] · B. [3 1; 5 2] · C. [−3 1; 5 −2] · D. [2 −1; −5 3]
+  Kunci: **A** · AB = I berarti B = A⁻¹. det A = 6 − 5 = 1, sehingga A⁻¹ = [3 −1; −5 2].
 - [ ] **MAT.MTX.Q.TRANSFORMASI_1** — Bayangan titik (3, 2) oleh pencerminan terhadap sumbu x adalah …
   A. (3, −2) · B. (−3, 2) · C. (2, 3) · D. (−3, −2)
   Kunci: **A** · Cermin sumbu x: x tetap, y berubah tanda. Bayangannya (3, −2).
 - [ ] **MAT.MTX.Q.TRANSFORMASI_2** — Bayangan titik (2, 5) oleh rotasi 90° berlawanan arah jarum jam dengan pusat O adalah …
   A. (5, −2) · B. (−5, 2) · C. (−2, −5) · D. (5, 2)
   Kunci: **B** · Rotasi 90°: (x, y) → (−y, x), jadi (2, 5) → (−5, 2).
+- [ ] **MAT.MTX.Q.TRANSFORMASI_3** — Sebuah segitiga dengan luas 6 satuan ditransformasi oleh matriks [2 1; 1 3]. Luas bayangannya adalah …
+  A. 6 · B. 11 · C. 30 · D. 36
+  Kunci: **C** · Luas bayangan = |det M| × luas awal. det = 2 × 3 − 1 × 1 = 5, jadi 5 × 6 = 30.
 
 ## Pengukuran ilmiah & analisis data (FIS.C26.E.UKUR)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **FIS.C26.E.UKUR.Q.KETIDAKPASTIAN_PENGUKURAN_1** — Pada pengukuran dengan jangka sorong, skala utama menunjukkan 2,3 cm dan garis nonius ke-6 berimpit dengan skala utama. Hasil pengukurannya adalah …
   A. 2,36 cm · B. 2,30 cm · C. 2,96 cm · D. 2,306 cm
@@ -339,11 +372,23 @@ Materi: 3 · Soal: 6
 - [ ] **FIS.C26.E.UKUR.Q.SIGNIFIKAN_2** — Panjang dan lebar pelat diukur 12,5 cm dan 4,2 cm. Luas pelat menurut aturan angka penting adalah …
   A. 52,5 cm² · B. 52,50 cm² · C. 53 cm² · D. 52 cm²
   Kunci: **C** · 12,5 × 4,2 = 52,5. Angka penting paling sedikit adalah 2 (dari 4,2), jadi dibulatkan menjadi 53 cm².
+- [ ] **FIS.C26.E.UKUR.Q.SIGNIFIKAN_3** — Panjang dan lebar sebuah keping diukur dengan jangka sorong: 2,35 cm dan 1,2 cm. Luas keping menurut aturan angka penting adalah …
+  A. 2,82 cm² · B. 2,8 cm² · C. 2,820 cm² · D. 3 cm²
+  Kunci: **B** · 2,35 × 1,2 = 2,82. Angka penting paling sedikit 2 (dari 1,2), jadi hasilnya 2,8 cm².
 
 ## Gerak dua dimensi (FIS.C26.E.GERAK2D)
 
-Materi: 3 · Soal: 7
+Materi: 4 · Soal: 13
 
+- [ ] **FIS.C26.E.GERAK2D.Q.GLBB_1** — Sebuah mobil bergerak dari keadaan diam dengan percepatan tetap 3 m/s² selama 4 s. Jarak yang ditempuh mobil adalah …
+  A. 12 m · B. 24 m · C. 36 m · D. 48 m
+  Kunci: **B** · s = ½ × 3 × 4² = 24 m.
+- [ ] **FIS.C26.E.GERAK2D.Q.GLBB_2** — Benda yang bergerak 20 m/s direm beraturan hingga berhenti dalam 4 s. Jarak pengereman adalah …
+  A. 20 m · B. 40 m · C. 60 m · D. 80 m
+  Kunci: **B** · Perlambatan 20/4 = 5 m/s². s = 20 × 4 − ½ × 5 × 16 = 40 m (sama dengan rata-rata kecepatan 10 m/s × 4 s).
+- [ ] **FIS.C26.E.GERAK2D.Q.GLBB_3** — Sebuah motor bergerak dari diam dengan percepatan 2 m/s² selama 5 s, lalu bergerak dengan kecepatan tetap selama 6 s. Jarak total yang ditempuh motor adalah …
+  A. 60 m · B. 75 m · C. 85 m · D. 110 m
+  Kunci: **C** · Tahap 1: v = 10 m/s, s₁ = ½ × 2 × 25 = 25 m. Tahap 2: s₂ = 10 × 6 = 60 m. Total 85 m.
 - [ ] **FIS.C26.E.GERAK2D.Q.KOMPONEN_GERAK_1** — Sebuah perahu menyeberangi sungai selebar 60 m dengan kecepatan 3 m/s tegak lurus arus. Kecepatan arus 4 m/s. Waktu yang diperlukan untuk menyeberang adalah …
   A. 12 s · B. 15 s · C. 20 s · D. 30 s
   Kunci: **C** · Waktu menyeberang hanya bergantung kecepatan tegak lurus arus: 60 / 3 = 20 s.
@@ -356,6 +401,9 @@ Materi: 3 · Soal: 7
 - [ ] **FIS.C26.E.GERAK2D.Q.VEKTOR_2** — Komponen kecepatan sebuah benda adalah vₓ = 6 m/s dan vᵧ = 8 m/s. Besar kecepatan benda adalah …
   A. 7 m/s · B. 10 m/s · C. 14 m/s · D. 48 m/s
   Kunci: **B** · v = √(6² + 8²) = √100 = 10 m/s.
+- [ ] **FIS.C26.E.GERAK2D.Q.VEKTOR_3** — Sebuah balok ditarik dengan gaya 10 N yang membentuk sudut 60° terhadap lantai. Komponen gaya yang sejajar lantai adalah …
+  A. 5 N · B. 5√3 N · C. 10 N · D. 5√2 N
+  Kunci: **A** · Komponen mendatar = F cos 60° = 10 × ½ = 5 N.
 - [ ] **FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_1** — Sebuah peluru ditembakkan dengan kecepatan awal 40 m/s dan sudut elevasi 30° (g = 10 m/s²). Tinggi maksimum peluru adalah …
   A. 10 m · B. 20 m · C. 40 m · D. 80 m
   Kunci: **B** · v₀ sin 30° = 20 m/s. H = 20² / (2 × 10) = 20 m.
@@ -365,10 +413,16 @@ Materi: 3 · Soal: 7
 - [ ] **FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_3** — Tanpa hambatan udara, sudut elevasi yang menghasilkan jangkauan mendatar paling jauh adalah …
   A. 30° · B. 45° · C. 60° · D. 90°
   Kunci: **B** · R sebanding dengan sin 2θ, yang bernilai maksimum 1 saat 2θ = 90°, yaitu θ = 45°.
+- [ ] **FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_4** — Bola ditendang dengan kecepatan 20 m/s membentuk sudut 53° terhadap tanah (sin 53° = 0,8; cos 53° = 0,6). Kecepatan bola di titik tertinggi adalah …
+  A. 0 m/s · B. 12 m/s · C. 16 m/s · D. 20 m/s
+  Kunci: **B** · Di titik tertinggi vᵧ = 0, tinggal komponen mendatar vₓ = 20 cos 53° = 20 × 0,6 = 12 m/s.
+- [ ] **FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_5** — Sebuah bola dilempar mendatar dengan kecepatan 5 m/s dari ketinggian 20 m (g = 10 m/s²). Jarak mendatar bola saat menyentuh tanah adalah …
+  A. 5 m · B. 10 m · C. 20 m · D. 40 m
+  Kunci: **B** · Gerak vertikal seperti jatuh bebas: 20 = ½ × 10 × t² ⇒ t = 2 s. Gerak mendatar GLB: x = 5 × 2 = 10 m.
 
 ## Energi alternatif & perubahan iklim (FIS.C26.E.ENERGI)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **FIS.C26.E.ENERGI.Q.DAYA_DAN_EFISIENSI_1** — Sebuah motor listrik mengangkat beban 50 kg setinggi 10 m dalam waktu 20 s (g = 10 m/s²). Daya motor adalah …
   A. 25 W · B. 100 W · C. 250 W · D. 5.000 W
@@ -388,10 +442,13 @@ Materi: 3 · Soal: 6
 - [ ] **FIS.C26.E.ENERGI.Q.NERACA_2** — Setrika 400 W dipakai 30 menit setiap hari selama 30 hari. Jika tarif listrik Rp1.500 per kWh, biaya pemakaian setrika adalah …
   A. Rp6.000 · B. Rp9.000 · C. Rp18.000 · D. Rp90.000
   Kunci: **B** · 0,4 kW × 0,5 jam × 30 hari = 6 kWh. Biaya = 6 × 1.500 = Rp9.000.
+- [ ] **FIS.C26.E.ENERGI.Q.NERACA_3** — Panel surya menerima daya cahaya 1.000 W dengan efisiensi 20% dan bekerja 5 jam sehari. Energi listrik yang dihasilkan per hari adalah …
+  A. 0,2 kWh · B. 1 kWh · C. 4 kWh · D. 5 kWh
+  Kunci: **B** · Daya listrik = 20% × 1.000 W = 200 W. Energi = 0,2 kW × 5 jam = 1 kWh.
 
 ## Dinamika, momentum & keseimbangan (FIS.C26.F.MEKANIKA)
 
-Materi: 4 · Soal: 8
+Materi: 4 · Soal: 9
 
 - [ ] **FIS.C26.F.MEKANIKA.Q.HUKUM_NEWTON_DAN_MOMENTUM_1** — Gaya 20 N bekerja pada benda bermassa 4 kg di atas lantai licin. Percepatan benda adalah …
   A. 0,2 m/s² · B. 5 m/s² · C. 16 m/s² · D. 80 m/s²
@@ -411,6 +468,9 @@ Materi: 4 · Soal: 8
 - [ ] **FIS.C26.F.MEKANIKA.Q.IMPULS_2** — Balok 2 kg yang bergerak 6 m/s menumbuk balok 4 kg yang diam. Setelah tumbukan keduanya menyatu. Kecepatan kedua balok setelah tumbukan adalah …
   A. 1 m/s · B. 2 m/s · C. 3 m/s · D. 4 m/s
   Kunci: **B** · Kekekalan momentum: 2 × 6 = (2 + 4)v′, jadi v′ = 2 m/s.
+- [ ] **FIS.C26.F.MEKANIKA.Q.IMPULS_3** — Gaya tetap 10 N bekerja pada benda 2 kg yang mula-mula diam selama 3 s di lantai licin. Kecepatan akhir benda adalah …
+  A. 5 m/s · B. 15 m/s · C. 30 m/s · D. 60 m/s
+  Kunci: **B** · Impuls = F · Δt = 30 N·s = Δp = 2 × v, jadi v = 15 m/s. Sama dengan a = F/m = 5 m/s² selama 3 s.
 - [ ] **FIS.C26.F.MEKANIKA.Q.ROTASI_1** — Seorang penari berputar dengan kecepatan sudut 2 putaran/s. Ia merapatkan lengan sehingga momen inersianya menjadi setengah semula. Kecepatan sudutnya menjadi …
   A. 1 putaran/s · B. 2 putaran/s · C. 4 putaran/s · D. 8 putaran/s
   Kunci: **C** · I₁ω₁ = I₂ω₂: I × 2 = ½I × ω₂, jadi ω₂ = 4 putaran/s.
@@ -449,7 +509,7 @@ Materi: 3 · Soal: 8
 
 ## Kalor dan termodinamika (FIS.C26.F.TERMAL)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **FIS.C26.F.TERMAL.Q.KALOR_DAN_PERUBAHAN_WUJUD_1** — Kalor yang diperlukan untuk memanaskan 2 kg air dari 20°C menjadi 70°C (c air = 4.200 J/kg°C) adalah …
   A. 42.000 J · B. 210.000 J · C. 420.000 J · D. 840.000 J
@@ -469,10 +529,13 @@ Materi: 3 · Soal: 6
 - [ ] **FIS.C26.F.TERMAL.Q.MESIN_2** — Sebuah mesin kalor menyerap 1.000 J dari reservoir panas dan membuang 600 J ke reservoir dingin. Efisiensi mesin adalah …
   A. 37,5% · B. 40% · C. 60% · D. 160%
   Kunci: **B** · W = 1.000 − 600 = 400 J. η = 400 / 1.000 = 40%.
+- [ ] **FIS.C26.F.TERMAL.Q.MESIN_3** — Sebuah mesin kalor menyerap 2.000 J dari reservoir panas setiap siklus dengan efisiensi 30%. Kalor yang dibuang ke reservoir dingin setiap siklus adalah …
+  A. 600 J · B. 1.400 J · C. 2.000 J · D. 2.600 J
+  Kunci: **B** · W = 30% × 2.000 = 600 J. Menurut Hukum I, Q₂ = Q₁ − W = 2.000 − 600 = 1.400 J.
 
 ## Gelombang dan penerapannya (FIS.C26.F.GELOMBANG)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **FIS.C26.F.GELOMBANG.Q.SUPERPOSISI_DAN_INTERFERENSI_1** — Sebuah gelombang memiliki frekuensi 50 Hz dan panjang gelombang 2 m. Cepat rambat gelombang adalah …
   A. 25 m/s · B. 52 m/s · C. 100 m/s · D. 200 m/s
@@ -492,10 +555,13 @@ Materi: 3 · Soal: 6
 - [ ] **FIS.C26.F.GELOMBANG.Q.DOPPLER_2** — Ketika sumber bunyi bergerak menjauhi pendengar yang diam, frekuensi yang didengar …
   A. lebih tinggi dari frekuensi sumber · B. lebih rendah dari frekuensi sumber · C. sama dengan frekuensi sumber · D. menjadi nol
   Kunci: **B** · Saat menjauh, gelombang yang sampai ke pendengar lebih renggang, sehingga frekuensinya lebih rendah.
+- [ ] **FIS.C26.F.GELOMBANG.Q.DOPPLER_3** — Sirene 400 Hz bergerak mendekati pendengar yang diam dengan kecepatan 20 m/s. Cepat rambat bunyi 340 m/s. Panjang gelombang bunyi yang diterima pendengar adalah …
+  A. 0,80 m · B. 0,85 m · C. 0,90 m · D. 1,00 m
+  Kunci: **A** · fₚ = 340/(340 − 20) × 400 = 425 Hz. λ = v/f = 340/425 = 0,80 m.
 
 ## Rangkaian & elektromagnetisme (FIS.C26.F.ELEKTRO)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **FIS.C26.F.ELEKTRO.Q.HUKUM_RANGKAIAN_1** — Dua resistor 4 Ω dan 12 Ω disusun paralel. Hambatan penggantinya adalah …
   A. 3 Ω · B. 8 Ω · C. 16 Ω · D. 48 Ω
@@ -515,6 +581,9 @@ Materi: 3 · Soal: 6
 - [ ] **FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_2** — Dalam satu loop terdapat baterai 12 V dan 6 V yang dipasang berlawanan arah serta hambatan total 3 Ω. Kuat arus dalam loop adalah …
   A. 2 A · B. 3 A · C. 4 A · D. 6 A
   Kunci: **A** · GGL total 12 − 6 = 6 V. I = 6 / 3 = 2 A.
+- [ ] **FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_3** — Baterai 12 V dengan hambatan dalam 1 Ω dihubungkan ke dua resistor 6 Ω dan 3 Ω yang disusun paralel. Kuat arus yang keluar dari baterai adalah …
+  A. 2 A · B. 3 A · C. 4 A · D. 6 A
+  Kunci: **C** · Rₚ = 6 × 3/(6 + 3) = 2 Ω. Hukum II Kirchhoff: 12 = I(2 + 1), jadi I = 4 A.
 
 ## Fisika modern & teknologi digital (FIS.C26.F.MODERN)
 
@@ -547,7 +616,7 @@ Materi: 4 · Soal: 8
 
 ## Partikel penyusun materi (KIM.C26.E.ATOM)
 
-Materi: 3 · Soal: 7
+Materi: 3 · Soal: 8
 
 - [ ] **KIM.C26.E.ATOM.Q.ATOM_ION_DAN_MOLEKUL_1** — Ion Na⁺ terbentuk ketika atom natrium …
   A. menerima 1 elektron · B. melepas 1 elektron · C. menerima 1 proton · D. melepas 1 neutron
@@ -570,10 +639,13 @@ Materi: 3 · Soal: 7
 - [ ] **KIM.C26.E.ATOM.Q.ISOTOP_3** — Klorin di alam terdiri atas 75% ³⁵Cl dan 25% ³⁷Cl. Massa atom relatif klorin adalah …
   A. 35,0 · B. 35,5 · C. 36,0 · D. 36,5
   Kunci: **B** · Ar = 0,75 × 35 + 0,25 × 37 = 26,25 + 9,25 = 35,5.
+- [ ] **KIM.C26.E.ATOM.Q.ISOTOP_4** — Ion X³⁺ memiliki 10 elektron dan 14 neutron. Nomor massa unsur X adalah …
+  A. 23 · B. 24 · C. 27 · D. 30
+  Kunci: **C** · Ion bermuatan 3+ kehilangan 3 elektron, jadi proton = 10 + 3 = 13. Nomor massa = 13 + 14 = 27.
 
 ## Stoikiometri dan reaksi kimia (KIM.C26.E.STOIK)
 
-Materi: 4 · Soal: 9
+Materi: 4 · Soal: 11
 
 - [ ] **KIM.C26.E.STOIK.Q.MOL_DAN_MASSA_MOLAR_1** — Jumlah mol 9 gram air (Mr = 18) adalah …
   A. 0,2 mol · B. 0,5 mol · C. 2 mol · D. 162 mol
@@ -596,16 +668,22 @@ Materi: 4 · Soal: 9
 - [ ] **KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_2** — Pada reaksi 2H₂ + O₂ → 2H₂O, sebanyak 8 gram O₂ (Mr = 32) bereaksi habis. Massa air yang terbentuk (Mr = 18) adalah …
   A. 4,5 g · B. 9 g · C. 18 g · D. 36 g
   Kunci: **B** · n O₂ = 8/32 = 0,25 mol. n H₂O = 2 × 0,25 = 0,5 mol = 0,5 × 18 = 9 g.
+- [ ] **KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_3** — Sebanyak 6,5 g seng (Ar Zn = 65) direaksikan dengan HCl berlebih: Zn + 2HCl → ZnCl₂ + H₂. Volume gas H₂ yang dihasilkan pada STP adalah …
+  A. 1,12 L · B. 2,24 L · C. 4,48 L · D. 22,4 L
+  Kunci: **B** · n Zn = 6,5/65 = 0,1 mol. Perbandingan Zn : H₂ = 1 : 1, jadi H₂ = 0,1 mol = 0,1 × 22,4 = 2,24 L.
 - [ ] **KIM.C26.E.STOIK.Q.BATAS_1** — Sebanyak 2 mol H₂ direaksikan dengan 2 mol O₂ menurut reaksi 2H₂ + O₂ → 2H₂O. Pereaksi pembatas dan sisa pereaksinya adalah …
   A. H₂, sisa O₂ 1 mol · B. O₂, sisa H₂ 1 mol · C. H₂, tidak ada sisa · D. O₂, sisa H₂ 2 mol
   Kunci: **A** · H₂: 2/2 = 1, O₂: 2/1 = 2. H₂ habis dan memakai 1 mol O₂, jadi O₂ bersisa 1 mol.
 - [ ] **KIM.C26.E.STOIK.Q.BATAS_2** — Sebanyak 5,4 g aluminium (Ar = 27) direaksikan dengan 0,9 mol HCl: 2Al + 6HCl → 2AlCl₃ + 3H₂. Volume gas H₂ yang terbentuk pada STP adalah …
   A. 2,24 L · B. 4,48 L · C. 6,72 L · D. 10,08 L
   Kunci: **C** · Al = 0,2 mol (0,2/2 = 0,1) dan HCl 0,9/6 = 0,15, jadi Al pembatas. H₂ = 3/2 × 0,2 = 0,3 mol = 6,72 L.
+- [ ] **KIM.C26.E.STOIK.Q.BATAS_3** — Sebanyak 4 mol besi direaksikan dengan 4 mol gas oksigen menurut reaksi (belum setara) Fe + O₂ → Fe₂O₃. Jumlah Fe₂O₃ maksimum yang terbentuk adalah …
+  A. 1 mol · B. 2 mol · C. 3 mol · D. 4 mol
+  Kunci: **B** · Setarakan: 4Fe + 3O₂ → 2Fe₂O₃. Fe: 4/4 = 1, O₂: 4/3 ≈ 1,33, jadi Fe pembatas. Fe₂O₃ = 2/4 × 4 = 2 mol.
 
 ## Struktur atom, periodisitas & ikatan (KIM.C26.F.STRUKTUR)
 
-Materi: 4 · Soal: 9
+Materi: 4 · Soal: 11
 
 - [ ] **KIM.C26.F.STRUKTUR.Q.STRUKTUR_ELEKTRON_DAN_PERIODIK_1** — Konfigurasi elektron atom ₁₂Mg adalah …
   A. 1s² 2s² 2p⁶ 3s² · B. 1s² 2s² 2p⁸ · C. 1s² 2s² 2p⁶ 3p² · D. 1s² 2s⁶ 2p⁴
@@ -625,6 +703,9 @@ Materi: 4 · Soal: 9
 - [ ] **KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_2** — Titik didih air jauh lebih tinggi daripada H₂S karena …
   A. massa molekul air lebih besar · B. ada ikatan hidrogen antarmolekul air · C. air merupakan senyawa ion · D. ikatan O–H lebih lemah
   Kunci: **B** · H yang terikat pada O membentuk ikatan hidrogen antarmolekul. H₂S tidak, padahal massanya lebih besar.
+- [ ] **KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_3** — Unsur golongan IA periode 3 bereaksi dengan unsur golongan VIIA periode 3. Jenis ikatan yang terbentuk adalah …
+  A. ikatan ion · B. kovalen polar · C. kovalen nonpolar · D. ikatan logam
+  Kunci: **A** · Golongan IA periode 3 adalah Na (logam), VIIA periode 3 adalah Cl (nonlogam). Na melepas elektron ke Cl: ikatan ion (NaCl).
 - [ ] **KIM.C26.F.STRUKTUR.Q.BENTUK_1** — Bentuk molekul CH₄ adalah …
   A. linear · B. segitiga datar · C. tetrahedral · D. bentuk V
   Kunci: **C** · C memiliki 4 pasangan elektron ikatan tanpa pasangan bebas, sehingga bentuknya tetrahedral.
@@ -634,10 +715,13 @@ Materi: 4 · Soal: 9
 - [ ] **KIM.C26.F.STRUKTUR.Q.BENTUK_3** — Molekul NH₃ (3 PEI dan 1 PEB pada atom N) memiliki bentuk …
   A. tetrahedral · B. piramida trigonal · C. segitiga datar · D. linear
   Kunci: **B** · Tiga pasangan terikat dan satu pasangan bebas memberi bentuk piramida trigonal.
+- [ ] **KIM.C26.F.STRUKTUR.Q.BENTUK_4** — Unsur X bernomor atom 7 berikatan dengan hidrogen membentuk molekul XH₃. Bentuk molekul XH₃ adalah …
+  A. segitiga datar · B. piramida trigonal · C. tetrahedral · D. bentuk V
+  Kunci: **B** · X = 2, 5 (5 elektron valensi). Tiga dipakai berikatan dengan H, sisa satu pasangan bebas: 3 PEI + 1 PEB = piramida trigonal.
 
 ## Termokimia dan laju reaksi (KIM.C26.F.TERMOKIMIA)
 
-Materi: 4 · Soal: 8
+Materi: 4 · Soal: 9
 
 - [ ] **KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_1** — Saat dua larutan dicampur, suhu campuran naik. Reaksi tersebut termasuk …
   A. eksoterm, ΔH negatif · B. eksoterm, ΔH positif · C. endoterm, ΔH negatif · D. endoterm, ΔH positif
@@ -645,6 +729,9 @@ Materi: 4 · Soal: 8
 - [ ] **KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_2** — Reaksi 0,05 mol zat dalam kalorimeter menaikkan suhu 100 g larutan sebesar 5°C (c = 4,2 J/g°C). Perubahan entalpi reaksinya adalah …
   A. −42 kJ/mol · B. +42 kJ/mol · C. −2,1 kJ/mol · D. −105 kJ/mol
   Kunci: **A** · q = 100 × 4,2 × 5 = 2.100 J = 2,1 kJ. ΔH = −2,1 / 0,05 = −42 kJ/mol.
+- [ ] **KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_3** — Diketahui ΔHf° H₂O(l) = −286 kJ/mol (Mr H₂O = 18). Kalor yang dilepaskan pada pembentukan 9 g air adalah …
+  A. 143 kJ · B. 286 kJ · C. 572 kJ · D. 2.574 kJ
+  Kunci: **A** · n = 9/18 = 0,5 mol. Kalor dilepas = 0,5 × 286 = 143 kJ.
 - [ ] **KIM.C26.F.TERMOKIMIA.Q.HESS_1** — Diketahui C + O₂ → CO₂ ΔH = −394 kJ dan CO + ½O₂ → CO₂ ΔH = −283 kJ. Perubahan entalpi untuk C + ½O₂ → CO adalah …
   A. −111 kJ · B. −677 kJ · C. +111 kJ · D. −283 kJ
   Kunci: **A** · Reaksi pertama ditambah kebalikan reaksi kedua: −394 + 283 = −111 kJ.
@@ -666,7 +753,7 @@ Materi: 4 · Soal: 8
 
 ## Kesetimbangan & asam-basa (KIM.C26.F.SETIMBANG)
 
-Materi: 4 · Soal: 10
+Materi: 4 · Soal: 12
 
 - [ ] **KIM.C26.F.SETIMBANG.Q.KESETIMBANGAN_DINAMIS_1** — Pada kesetimbangan N₂(g) + 3H₂(g) ⇌ 2NH₃(g), jika tekanan diperbesar, kesetimbangan bergeser ke …
   A. kiri, NH₃ berkurang · B. kanan, NH₃ bertambah · C. tidak bergeser · D. kiri, N₂ berkurang
@@ -689,6 +776,9 @@ Materi: 4 · Soal: 10
 - [ ] **KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_3** — pH larutan H₂SO₄ 0,005 M adalah …
   A. 2 · B. 2,3 · C. 3 · D. 5
   Kunci: **A** · [H⁺] = 2 × 0,005 = 0,01 M, jadi pH = 2.
+- [ ] **KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_4** — pH larutan HCl 0,002 M adalah … (log 2 = 0,3)
+  A. 2,3 · B. 2,7 · C. 3,0 · D. 3,3
+  Kunci: **B** · [H⁺] = 2 × 10⁻³ M. pH = −log (2 × 10⁻³) = 3 − log 2 = 3 − 0,3 = 2,7.
 - [ ] **KIM.C26.F.SETIMBANG.Q.HIDROLISIS_1** — Pasangan zat berikut yang dapat membentuk larutan penyangga adalah …
   A. HCl dan NaCl · B. CH₃COOH dan CH₃COONa · C. NaOH dan NaCl · D. HNO₃ dan KNO₃
   Kunci: **B** · Penyangga terdiri dari asam lemah (CH₃COOH) dan basa konjugasinya (CH₃COO⁻ dari CH₃COONa).
@@ -698,10 +788,13 @@ Materi: 4 · Soal: 10
 - [ ] **KIM.C26.F.SETIMBANG.Q.HIDROLISIS_3** — Larutan garam NH₄Cl dalam air bersifat …
   A. asam · B. basa · C. netral · D. amfoter
   Kunci: **A** · NH₄Cl berasal dari basa lemah NH₃ dan asam kuat HCl, sehingga larutannya asam.
+- [ ] **KIM.C26.F.SETIMBANG.Q.HIDROLISIS_4** — Sebanyak 50 mL CH₃COOH 0,2 M dicampur dengan 50 mL NaOH 0,1 M (Ka = 10⁻⁵). pH campuran adalah …
+  A. 3 · B. 4 · C. 5 · D. 9
+  Kunci: **C** · CH₃COOH 10 mmol, NaOH 5 mmol. Sisa asam 5 mmol dan garam 5 mmol (penyangga). [H⁺] = 10⁻⁵ × 5/5, jadi pH = 5.
 
 ## Senyawa karbon & makromolekul (KIM.C26.F.KARBON)
 
-Materi: 4 · Soal: 9
+Materi: 4 · Soal: 10
 
 - [ ] **KIM.C26.F.KARBON.Q.STRUKTUR_DAN_GUGUS_FUNGSI_1** — Senyawa CH₃–CH₂–OH termasuk golongan …
   A. alkana · B. alkohol · C. aldehida · D. eter
@@ -724,6 +817,9 @@ Materi: 4 · Soal: 9
 - [ ] **KIM.C26.F.KARBON.Q.ISOMER_2** — Jumlah isomer struktur dari butana (C₄H₁₀) adalah …
   A. 1 · B. 2 · C. 3 · D. 4
   Kunci: **B** · n-butana dan 2-metilpropana.
+- [ ] **KIM.C26.F.KARBON.Q.ISOMER_3** — Senyawa dengan rumus C₃H₆O memberikan endapan merah bata dengan pereaksi Fehling. Senyawa tersebut adalah …
+  A. propanal · B. propanon · C. propanol · D. metoksietana
+  Kunci: **A** · C₃H₆O bisa aldehida atau keton (isomer fungsi). Hanya aldehida yang positif Fehling, jadi propanal.
 - [ ] **KIM.C26.F.KARBON.Q.POLIMER_1** — Polimer yang terbentuk dari monomer etena adalah …
   A. PVC · B. polietilena · C. nilon · D. teflon
   Kunci: **B** · Etena (CH₂=CH₂) mengalami polimerisasi adisi menjadi polietilena.
@@ -733,7 +829,7 @@ Materi: 4 · Soal: 9
 
 ## Keanekaragaman dan konservasi (BIO.C26.E.BIODIVERSITAS)
 
-Materi: 3 · Soal: 8
+Materi: 3 · Soal: 9
 
 - [ ] **BIO.C26.E.BIODIVERSITAS.Q.TINGKAT_KEANEKARAGAMAN_1** — Bunga mawar berwarna merah, putih, dan kuning menunjukkan keanekaragaman tingkat …
   A. gen · B. spesies · C. ekosistem · D. bioma
@@ -750,6 +846,9 @@ Materi: 3 · Soal: 8
 - [ ] **BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_2** — Hewan endemik Indonesia yang dilindungi di habitat aslinya di Nusa Tenggara Timur adalah …
   A. komodo · B. harimau benggala · C. panda raksasa · D. gajah afrika
   Kunci: **A** · Komodo hanya hidup secara alami di beberapa pulau di NTT dan dilindungi di Taman Nasional Komodo.
+- [ ] **BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_3** — Berbagai varietas padi lokal disimpan di bank benih nasional. Upaya ini melestarikan keanekaragaman tingkat … dengan cara …
+  A. gen, secara ex situ · B. gen, secara in situ · C. spesies, secara ex situ · D. ekosistem, secara in situ
+  Kunci: **A** · Varietas padi masih satu spesies, jadi tingkat gen. Bank benih berada di luar habitat asli: ex situ.
 - [ ] **BIO.C26.E.BIODIVERSITAS.Q.IDENTIFIKASI_1** — Penulisan nama ilmiah padi yang benar adalah …
   A. Oryza sativa · B. oryza sativa · C. Oryza Sativa · D. ORYZA SATIVA
   Kunci: **A** · Genus diawali huruf besar dan nama spesies huruf kecil seluruhnya (dicetak miring atau digarisbawahi).
@@ -762,7 +861,7 @@ Materi: 3 · Soal: 8
 
 ## Virus, bakteri, dan jamur (BIO.C26.E.MIKROBA)
 
-Materi: 4 · Soal: 9
+Materi: 4 · Soal: 10
 
 - [ ] **BIO.C26.E.MIKROBA.Q.BAKTERI_STRUKTUR_DAN_REPRODUKSI_1** — Ciri khas bakteri yang membedakannya dari jamur adalah …
   A. memiliki dinding sel · B. tidak memiliki membran inti · C. berkembang biak · D. bersifat heterotrof
@@ -782,6 +881,9 @@ Materi: 4 · Soal: 9
 - [ ] **BIO.C26.E.MIKROBA.Q.VIRUS_2** — Urutan tahap siklus litik virus yang benar adalah …
   A. penetrasi – adsorpsi – sintesis – perakitan – lisis · B. adsorpsi – penetrasi – sintesis – perakitan – lisis · C. adsorpsi – sintesis – penetrasi – lisis – perakitan · D. sintesis – adsorpsi – penetrasi – perakitan – lisis
   Kunci: **B** · Virus menempel dulu (adsorpsi), memasukkan materi genetik (penetrasi), membuat komponen (sintesis), merakit, lalu sel pecah (lisis).
+- [ ] **BIO.C26.E.MIKROBA.Q.VIRUS_3** — Antibiotik dapat menyembuhkan infeksi bakteri tetapi tidak efektif untuk infeksi virus. Penjelasan yang tepat adalah …
+  A. virus lebih besar dari bakteri · B. virus tidak memiliki dinding sel dan metabolisme sendiri yang menjadi sasaran antibiotik · C. virus memiliki membran inti · D. bakteri tidak memiliki DNA
+  Kunci: **B** · Antibiotik menyerang struktur atau proses sel bakteri, misalnya dinding sel peptidoglikan. Virus aseluler dan menumpang metabolisme sel inang.
 - [ ] **BIO.C26.E.MIKROBA.Q.JAMUR_1** — Ragi (Saccharomyces cerevisiae) dimanfaatkan dalam pembuatan …
   A. tempe · B. roti dan tapai · C. yoghurt · D. nata de coco
   Kunci: **B** · Ragi memfermentasi gula menjadi CO₂ dan alkohol: CO₂ mengembangkan roti, alkohol memberi rasa tapai.
@@ -794,7 +896,7 @@ Materi: 4 · Soal: 9
 
 ## Keseimbangan ekosistem dan iklim (BIO.C26.E.EKOSISTEM)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **BIO.C26.E.EKOSISTEM.Q.JARING_MAKANAN_DAN_POPULASI_1** — Pada rantai makanan padi → tikus → ular → elang, yang berperan sebagai konsumen tingkat II adalah …
   A. padi · B. tikus · C. ular · D. elang
@@ -814,10 +916,13 @@ Materi: 3 · Soal: 6
 - [ ] **BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_2** — Pada rantai makanan padi → tikus → ular → elang, elang diburu hingga habis. Dampak yang paling cepat terjadi adalah populasi ular …
   A. meningkat · B. menurun · C. tetap · D. punah
   Kunci: **A** · Elang adalah pemangsa ular. Tanpa elang, ular tidak lagi dimangsa sehingga populasinya meningkat.
+- [ ] **BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_3** — Pada rantai makanan padi → tikus → ular → elang, ular diburu hingga habis. Dampak yang paling mungkin terjadi pada sawah adalah …
+  A. tikus berkurang dan padi meningkat · B. tikus meningkat dan padi berkurang · C. elang meningkat · D. tidak ada perubahan
+  Kunci: **B** · Ular pemangsa tikus. Tanpa ular, tikus bertambah dan memakan lebih banyak padi, sehingga padi berkurang.
 
 ## Struktur sel dan bioproses (BIO.C26.F.SEL)
 
-Materi: 4 · Soal: 9
+Materi: 4 · Soal: 10
 
 - [ ] **BIO.C26.F.SEL.Q.ORGANEL_SEL_1** — Organel tempat berlangsungnya respirasi sel untuk menghasilkan ATP adalah …
   A. ribosom · B. mitokondria · C. badan Golgi · D. lisosom
@@ -846,10 +951,13 @@ Materi: 4 · Soal: 9
 - [ ] **BIO.C26.F.SEL.Q.RESPIRASI_3** — Otot yang bekerja berat dan kekurangan oksigen melakukan fermentasi yang menghasilkan …
   A. alkohol · B. asam laktat · C. asam asetat · D. glukosa
   Kunci: **B** · Fermentasi pada sel otot manusia menghasilkan asam laktat yang menyebabkan rasa pegal.
+- [ ] **BIO.C26.F.SEL.Q.RESPIRASI_4** — Sel otot jantung memiliki sangat banyak organel X karena membutuhkan energi besar. Organel X dan tahap respirasi yang berlangsung di dalamnya adalah …
+  A. ribosom; glikolisis · B. mitokondria; siklus Krebs dan transpor elektron · C. badan Golgi; fermentasi · D. mitokondria; glikolisis
+  Kunci: **B** · Energi (ATP) terutama dihasilkan di mitokondria: siklus Krebs di matriks dan transpor elektron di membran dalam. Glikolisis di sitoplasma.
 
 ## Pewarisan sifat & informasi genetik (BIO.C26.F.GENETIKA)
 
-Materi: 4 · Soal: 9
+Materi: 4 · Soal: 11
 
 - [ ] **BIO.C26.F.GENETIKA.Q.DNA_GEN_DAN_KROMOSOM_1** — Pasangan basa nitrogen yang benar pada DNA adalah …
   A. A–G dan T–C · B. A–T dan G–C · C. A–C dan G–T · D. A–U dan G–C
@@ -872,16 +980,22 @@ Materi: 4 · Soal: 9
 - [ ] **BIO.C26.F.GENETIKA.Q.MEIOSIS_2** — Sel tubuh manusia memiliki 46 kromosom. Jumlah kromosom pada sel sperma adalah …
   A. 92 · B. 46 · C. 23 · D. 22
   Kunci: **C** · Sperma terbentuk melalui meiosis sehingga jumlah kromosomnya setengah, yaitu 23.
+- [ ] **BIO.C26.F.GENETIKA.Q.MEIOSIS_3** — Individu bergenotipe AaBb (gen tidak terpaut) membentuk gamet melalui meiosis. Macam gamet yang dihasilkan adalah …
+  A. AB dan ab · B. Aa dan Bb · C. AB, Ab, aB, dan ab · D. A, a, B, dan b
+  Kunci: **C** · Saat meiosis, alel berpisah dan berpasangan bebas (Hukum Mendel II): 2² = 4 macam gamet AB, Ab, aB, ab.
 - [ ] **BIO.C26.F.GENETIKA.Q.EKSPRESI_1** — Urutan DNA cetakan TAC GGA akan menghasilkan mRNA dengan urutan …
   A. ATG CCT · B. AUG CCU · C. UAC GGA · D. TAC GGA
   Kunci: **B** · T → A, A → U, C → G, G → C. Jadi TAC GGA menjadi AUG CCU.
 - [ ] **BIO.C26.F.GENETIKA.Q.EKSPRESI_2** — Proses translasi dalam sintesis protein berlangsung di …
   A. nukleus · B. ribosom · C. mitokondria · D. lisosom
   Kunci: **B** · Ribosom membaca kodon mRNA dan merangkai asam amino menjadi protein.
+- [ ] **BIO.C26.F.GENETIKA.Q.EKSPRESI_3** — Untai DNA cetakan memiliki urutan TAC CGA. Urutan mRNA hasil transkripsi dan banyak kodonnya adalah …
+  A. ATG GCT, 2 kodon · B. AUG GCU, 2 kodon · C. AUG GCU, 6 kodon · D. UAC CGA, 2 kodon
+  Kunci: **B** · Pasangan basa ke RNA: T→A, A→U, C→G, G→C, jadi AUG GCU. Satu kodon = 3 basa, jadi 2 kodon.
 
 ## Bioteknologi modern (BIO.C26.F.BIOTEK)
 
-Materi: 3 · Soal: 6
+Materi: 3 · Soal: 7
 
 - [ ] **BIO.C26.F.BIOTEK.Q.REKAYASA_DAN_ANALISIS_DNA_1** — Enzim yang digunakan untuk memotong DNA pada urutan basa tertentu dalam rekayasa genetika adalah …
   A. ligase · B. enzim restriksi · C. amilase · D. DNA polimerase
@@ -895,6 +1009,9 @@ Materi: 3 · Soal: 6
 - [ ] **BIO.C26.F.BIOTEK.Q.PCR_2** — Dari satu molekul DNA, jumlah molekul DNA setelah 5 siklus PCR yang ideal adalah …
   A. 10 · B. 16 · C. 25 · D. 32
   Kunci: **D** · Setiap siklus menggandakan DNA: 2⁵ = 32 molekul.
+- [ ] **BIO.C26.F.BIOTEK.Q.PCR_3** — Setiap siklus PCR menggandakan jumlah DNA. Jika mula-mula ada 3 molekul DNA, jumlah DNA setelah 4 siklus adalah …
+  A. 12 · B. 24 · C. 48 · D. 81
+  Kunci: **C** · Jumlah DNA membentuk barisan geometri dengan rasio 2: 3 × 2⁴ = 48.
 - [ ] **BIO.C26.F.BIOTEK.Q.EVALUASI_MANFAAT_DAN_DAMPAK_1** — Contoh penerapan bioteknologi modern adalah …
   A. pembuatan tempe · B. pembuatan yoghurt · C. jagung transgenik tahan hama · D. pembuatan tapai
   Kunci: **C** · Tanaman transgenik dibuat dengan rekayasa genetika (bioteknologi modern). Tempe, yoghurt, dan tapai adalah bioteknologi konvensional.
@@ -904,7 +1021,7 @@ Materi: 3 · Soal: 6
 
 ## MAT.EKS (MAT.EKS)
 
-Materi: 12 · Soal: 36
+Materi: 12 · Soal: 38
 
 - [ ] **MAT.EKS.Q.DEFINISI_EKSPONEN_1** — Nilai dari 3⁴ adalah …
   A. 12 · B. 27 · C. 64 · D. 81
@@ -987,6 +1104,9 @@ Materi: 12 · Soal: 36
 - [ ] **MAT.EKS.Q.PERSAMAAN_EKSPONEN_3** — Jumlah semua nilai x yang memenuhi 2^(2x) − 6 · 2ˣ + 8 = 0 adalah …
   A. 2 · B. 3 · C. 6 · D. 8
   Kunci: **B** · Misalkan p = 2ˣ: p² − 6p + 8 = 0, p = 2 atau p = 4, sehingga x = 1 atau x = 2. Jumlahnya 3.
+- [ ] **MAT.EKS.Q.PERSAMAAN_EKSPONEN_4** — Nilai x yang memenuhi 4^(x + 1) = 2^(x + 3) adalah …
+  A. −1 · B. 1 · C. 2 · D. 3
+  Kunci: **B** · 4^(x + 1) = 2^(2x + 2) (sifat pangkat dari pangkat). 2x + 2 = x + 3, jadi x = 1.
 - [ ] **MAT.EKS.Q.PERSAMAAN_LOGARITMA_1** — Nilai x yang memenuhi ²log (x − 1) = 3 adalah …
   A. 7 · B. 8 · C. 9 · D. 10
   Kunci: **C** · x − 1 = 2³ = 8, jadi x = 9. Syarat x − 1 > 0 terpenuhi.
@@ -1005,6 +1125,9 @@ Materi: 12 · Soal: 36
 - [ ] **MAT.EKS.Q.PENERAPAN_3** — Zat radioaktif memiliki waktu paruh 5 hari. Jika massa awalnya 80 gram, massa yang tersisa setelah 15 hari adalah …
   A. 10 gram · B. 20 gram · C. 26,7 gram · D. 40 gram
   Kunci: **A** · 15 hari = 3 waktu paruh, jadi 80 × (1/2)³ = 10 gram.
+- [ ] **MAT.EKS.Q.PENERAPAN_4** — Gempa A berkekuatan 7 skala Richter dan gempa B 5 skala Richter. Amplitudo gempa A dibandingkan gempa B adalah …
+  A. 2 kali · B. 20 kali · C. 100 kali · D. 1.000 kali
+  Kunci: **C** · Skala Richter logaritmik basis 10: selisih 2 berarti 10² = 100 kali.
 - [ ] **MAT.EKS.Q.SOAL_KONTEKSTUAL_1** — Penduduk sebuah kota 100.000 jiwa dan bertambah 2% setiap tahun. Model jumlah penduduk setelah t tahun adalah …
   A. 100.000 · (1,02)ᵗ · B. 100.000 · (0,02)ᵗ · C. 100.000 + 2t · D. 100.000 · (1,2)ᵗ
   Kunci: **A** · Naik 2% berarti dikali 1,02 setiap tahun, sehingga P(t) = 100.000 · (1,02)ᵗ.
@@ -1017,7 +1140,7 @@ Materi: 12 · Soal: 36
 
 ## MAT.BAR (MAT.BAR)
 
-Materi: 9 · Soal: 18
+Materi: 9 · Soal: 19
 
 - [ ] **MAT.BAR.Q.POLA_BILANGAN_1** — Suku berikutnya dari barisan 3, 7, 13, 21, 31, … adalah …
   A. 41 · B. 43 · C. 45 · D. 39
@@ -1055,6 +1178,9 @@ Materi: 9 · Soal: 18
 - [ ] **MAT.BAR.Q.DERET_GEOMETRI_2** — Deret geometri memiliki suku pertama 64 dan rasio 1/2. Jumlah 5 suku pertamanya adalah …
   A. 120 · B. 124 · C. 126 · D. 128
   Kunci: **B** · 64 + 32 + 16 + 8 + 4 = 124.
+- [ ] **MAT.BAR.Q.DERET_GEOMETRI_3** — Suku ke-2 suatu barisan geometri adalah 6 dan suku ke-5 adalah 48. Jumlah 5 suku pertama barisan itu adalah …
+  A. 45 · B. 93 · C. 96 · D. 189
+  Kunci: **B** · r³ = 48/6 = 8 ⇒ r = 2, a = 3. S₅ = 3(2⁵ − 1)/(2 − 1) = 93.
 - [ ] **MAT.BAR.Q.DERET_TAK_HINGGA_1** — Jumlah deret tak hingga 12 + 6 + 3 + … adalah …
   A. 21 · B. 24 · C. 36 · D. tak terhingga
   Kunci: **B** · a = 12, r = 1/2: S∞ = 12/(1 − 1/2) = 24.
@@ -1076,7 +1202,7 @@ Materi: 9 · Soal: 18
 
 ## MAT.VEK (MAT.VEK)
 
-Materi: 16 · Soal: 34
+Materi: 16 · Soal: 35
 
 - [ ] **MAT.VEK.Q.KONSEP_DASAR_1** — Manakah yang termasuk besaran vektor?
   A. massa · B. suhu · C. perpindahan · D. waktu
@@ -1168,6 +1294,9 @@ Materi: 16 · Soal: 34
 - [ ] **MAT.VEK.Q.SUDUT_ANTAR_2** — Besar sudut antara a = (1, 2, 2) dan b = (2, −2, 1) adalah …
   A. 0° · B. 45° · C. 60° · D. 90°
   Kunci: **D** · a · b = 2 − 4 + 2 = 0, jadi kedua vektor tegak lurus: θ = 90°.
+- [ ] **MAT.VEK.Q.SUDUT_ANTAR_3** — Diketahui |a| = 2, |b| = 3, dan |a + b| = √19. Besar sudut antara vektor a dan b adalah …
+  A. 30° · B. 45° · C. 60° · D. 90°
+  Kunci: **C** · |a + b|² = |a|² + |b|² + 2a · b ⇒ 19 = 4 + 9 + 2a · b ⇒ a · b = 3. cos θ = 3/(2 × 3) = ½, jadi θ = 60°.
 - [ ] **MAT.VEK.Q.PENERAPAN_1** — Gaya F = (3, 4) N memindahkan benda dengan perpindahan s = (5, 0) m. Usaha yang dilakukan gaya adalah …
   A. 15 J · B. 20 J · C. 25 J · D. 35 J
   Kunci: **A** · W = F · s = 3 × 5 + 4 × 0 = 15 J.

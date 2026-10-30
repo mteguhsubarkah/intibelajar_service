@@ -1,0 +1,62 @@
+schemaVersion: 1
+code: MAT.BNG.Q.MAJEMUK_3
+familyCode: MAT.BNG.F.MAJEMUK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BNG.BUNGA_MAJEMUK
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.EKS.PERSAMAAN_EKSPONEN
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.EKS.SIFAT_SIFAT_LOGARITMA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Modal Rp1.000.000 dibungakan dengan bunga majemuk 10% per tahun hingga menjadi Rp2.000.000 setelah n tahun. Nilai n adalah …
+  options:
+    - id: a
+      label: log 2 / log 1,1
+    - id: b
+      label: log 1,1 / log 2
+    - id: c
+      label: 2 / 1,1
+    - id: d
+      label: log 2 − log 1,1
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - log 2 / log 1,1
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BNG.BUNGA_MAJEMUK
+    - MAT.EKS.PERSAMAAN_EKSPONEN
+    - MAT.EKS.SIFAT_SIFAT_LOGARITMA
+  feedback:
+    correct: 1.000.000 × 1,1ⁿ = 2.000.000 ⇒ 1,1ⁿ = 2 ⇒ n = log 2 / log 1,1 (sekitar 7,3 tahun).
+    incorrect: Jawabannya log 2 / log 1,1. 1.000.000 × 1,1ⁿ = 2.000.000 ⇒ 1,1ⁿ = 2 ⇒ n = log 2 / log 1,1 (sekitar 7,3 tahun).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.F.GENETIKA.Q.MEIOSIS_3
+familyCode: BIO.C26.F.GENETIKA.F.MEIOSIS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS
+    role: PRIMARY
+    assessable: true
+  - concept: BIO.C26.F.GENETIKA.POLA_PEWARISAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Individu bergenotipe AaBb (gen tidak terpaut) membentuk gamet melalui meiosis. Macam gamet yang dihasilkan adalah …
+  options:
+    - id: a
+      label: AB dan ab
+    - id: b
+      label: Aa dan Bb
+    - id: c
+      label: AB, Ab, aB, dan ab
+    - id: d
+      label: A, a, B, dan b
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - AB, Ab, aB, dan ab
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS
+    - BIO.C26.F.GENETIKA.POLA_PEWARISAN
+  feedback:
+    correct: "Saat meiosis, alel berpisah dan berpasangan bebas (Hukum Mendel II): 2² = 4 macam gamet AB, Ab, aB, ab."
+    incorrect: "Jawabannya AB, Ab, aB, dan ab. Saat meiosis, alel berpisah dan berpasangan bebas (Hukum Mendel II): 2² = 4 macam gamet AB, Ab, aB, ab."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

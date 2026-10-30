@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_3
+familyCode: FIS.C26.F.ELEKTRO.F.KIRCHHOFF_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Baterai 12 V dengan hambatan dalam 1 Ω dihubungkan ke dua resistor 6 Ω dan 3 Ω yang disusun paralel. Kuat arus yang keluar dari baterai adalah …
+  options:
+    - id: a
+      label: 2 A
+    - id: b
+      label: 3 A
+    - id: c
+      label: 4 A
+    - id: d
+      label: 6 A
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 4 A
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+    - FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+  feedback:
+    correct: "Rₚ = 6 × 3/(6 + 3) = 2 Ω. Hukum II Kirchhoff: 12 = I(2 + 1), jadi I = 4 A."
+    incorrect: "Jawabannya 4 A. Rₚ = 6 × 3/(6 + 3) = 2 Ω. Hukum II Kirchhoff: 12 = I(2 + 1), jadi I = 4 A."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_3
+familyCode: KIM.C26.E.STOIK.F.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Sebanyak 6,5 g seng (Ar Zn = 65) direaksikan dengan HCl berlebih: Zn + 2HCl → ZnCl₂ + H₂. Volume gas H₂ yang dihasilkan pada STP adalah …"
+  options:
+    - id: a
+      label: 1,12 L
+    - id: b
+      label: 2,24 L
+    - id: c
+      label: 4,48 L
+    - id: d
+      label: 22,4 L
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2,24 L
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+    - KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+  feedback:
+    correct: "n Zn = 6,5/65 = 0,1 mol. Perbandingan Zn : H₂ = 1 : 1, jadi H₂ = 0,1 mol = 0,1 × 22,4 = 2,24 L."
+    incorrect: "Jawabannya 2,24 L. n Zn = 6,5/65 = 0,1 mol. Perbandingan Zn : H₂ = 1 : 1, jadi H₂ = 0,1 mol = 0,1 × 22,4 = 2,24 L."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

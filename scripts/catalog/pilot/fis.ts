@@ -35,9 +35,17 @@ const UKUR: PilotTopic = {
 };
 
 const GERAK2D: PilotTopic = {
-  code: 'FIS.C26.E.GERAK2D', subject: 'FIS', title: 'Gerak dua dimensi', subtitle: 'Perpaduan gerak dan gerak parabola', phase: 'E', alias: 'gerak-parabola',
+  code: 'FIS.C26.E.GERAK2D', subject: 'FIS', title: 'Gerak dua dimensi', subtitle: 'Gerak lurus, perpaduan gerak, dan gerak parabola', phase: 'E', alias: 'gerak-parabola',
   bekal: ['gerak lurus', 'sinus dan kosinus'],
   cores: [
+    C('GLBB', 'Gerak lurus (GLB dan GLBB)', [
+      S('Kecepatan tetap atau percepatan tetap', ['**GLB**: kecepatan tetap, jarak **s = v · t**. **GLBB**: percepatan tetap, kecepatan berubah beraturan.', 'Tiga rumus GLBB cukup untuk hampir semua soal: pilih yang memuat besaran yang diketahui dan yang ditanya.'], [['GLB', 's = v · t'], ['v', 'v₀ + a · t'], ['s', 'v₀ · t + ½ · a · t²'], ['v²', 'v₀² + 2 · a · s']]),
+      S('Gerak bertahap', ['Bila gerak berganti jenis (dipercepat lalu konstan), hitung **tiap tahap terpisah**: kecepatan akhir tahap pertama menjadi kecepatan tahap berikutnya.', 'Contoh: dari diam a = 2 m/s² selama 5 s ⇒ v = 10 m/s, s₁ = 25 m. Lalu konstan 4 s ⇒ s₂ = 40 m. Jarak total 65 m.'], [['s total', 's₁ + s₂']], 'Dari diam berarti v₀ = 0; berhenti berarti v akhir = 0.'),
+    ], [
+      Q('Sebuah mobil bergerak dari keadaan diam dengan percepatan tetap 3 m/s² selama 4 s. Jarak yang ditempuh mobil adalah …', ['12 m', '24 m', '36 m', '48 m'], 1, 's = ½ × 3 × 4² = 24 m.', 1),
+      Q('Benda yang bergerak 20 m/s direm beraturan hingga berhenti dalam 4 s. Jarak pengereman adalah …', ['20 m', '40 m', '60 m', '80 m'], 1, 'Perlambatan 20/4 = 5 m/s². s = 20 × 4 − ½ × 5 × 16 = 40 m (sama dengan rata-rata kecepatan 10 m/s × 4 s).'),
+      Q('Sebuah motor bergerak dari diam dengan percepatan 2 m/s² selama 5 s, lalu bergerak dengan kecepatan tetap selama 6 s. Jarak total yang ditempuh motor adalah …', ['60 m', '75 m', '85 m', '110 m'], 2, 'Tahap 1: v = 10 m/s, s₁ = ½ × 2 × 25 = 25 m. Tahap 2: s₂ = 10 × 6 = 60 m. Total 85 m.', 3),
+    ], { min: 5 }),
     C('C1', 'Komponen gerak', [
       S('Dua gerak yang berjalan sendiri-sendiri', ['Gerak dua dimensi dapat diuraikan menjadi gerak pada sumbu x dan sumbu y yang **tidak saling memengaruhi**.', 'Contoh: perahu menyeberangi sungai. Waktu menyeberang hanya ditentukan kecepatan yang tegak lurus arus.'], [['t menyeberang', 'lebar sungai / v tegak lurus arus']]),
       S('Hanyut oleh arus', ['Selama waktu itu, arus menghanyutkan perahu sejauh **v arus × t**.', 'Contoh: lebar 60 m, perahu 3 m/s, arus 4 m/s ⇒ t = 20 s, hanyut 80 m, kecepatan resultan 5 m/s.'], [['hanyut', 'v arus × t']], 'Hitung waktu dari arah yang lebarnya diketahui, lalu pakai waktu itu untuk arah lain.'),
@@ -61,7 +69,7 @@ const GERAK2D: PilotTopic = {
       Q('Tanpa hambatan udara, sudut elevasi yang menghasilkan jangkauan mendatar paling jauh adalah …', ['30°', '45°', '60°', '90°'], 1, 'R sebanding dengan sin 2θ, yang bernilai maksimum 1 saat 2θ = 90°, yaitu θ = 45°.', 1),
     ], { capstone: true, min: 6 }),
   ],
-  edges: [['C1', 'VEKTOR', 'S'], ['C1', 'C2', 'S']],
+  edges: [['GLBB', 'C1', 'S'], ['C1', 'VEKTOR', 'S'], ['C1', 'C2', 'S']],
 };
 
 const ENERGI: PilotTopic = {

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_3
+familyCode: KIM.C26.F.TERMOKIMIA.F.ENTALPI_REAKSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui ΔHf° H₂O(l) = −286 kJ/mol (Mr H₂O = 18). Kalor yang dilepaskan pada pembentukan 9 g air adalah …
+  options:
+    - id: a
+      label: 143 kJ
+    - id: b
+      label: 286 kJ
+    - id: c
+      label: 572 kJ
+    - id: d
+      label: 2.574 kJ
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 143 kJ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI
+    - KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+  feedback:
+    correct: n = 9/18 = 0,5 mol. Kalor dilepas = 0,5 × 286 = 143 kJ.
+    incorrect: Jawabannya 143 kJ. n = 9/18 = 0,5 mol. Kalor dilepas = 0,5 × 286 = 143 kJ.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

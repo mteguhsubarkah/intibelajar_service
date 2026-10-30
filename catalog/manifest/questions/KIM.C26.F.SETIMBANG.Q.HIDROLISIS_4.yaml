@@ -1,0 +1,62 @@
+schemaVersion: 1
+code: KIM.C26.F.SETIMBANG.Q.HIDROLISIS_4
+familyCode: KIM.C26.F.SETIMBANG.F.HIDROLISIS_4
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebanyak 50 mL CH₃COOH 0,2 M dicampur dengan 50 mL NaOH 0,1 M (Ka = 10⁻⁵). pH campuran adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "4"
+    - id: c
+      label: "5"
+    - id: d
+      label: "9"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "5"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA
+    - KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH
+    - KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+  feedback:
+    correct: CH₃COOH 10 mmol, NaOH 5 mmol. Sisa asam 5 mmol dan garam 5 mmol (penyangga). [H⁺] = 10⁻⁵ × 5/5, jadi pH = 5.
+    incorrect: Jawabannya 5. CH₃COOH 10 mmol, NaOH 5 mmol. Sisa asam 5 mmol dan garam 5 mmol (penyangga). [H⁺] = 10⁻⁵ × 5/5, jadi pH = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_3
+familyCode: BIO.C26.E.EKOSISTEM.F.DAYA_DUKUNG_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal UTBK-SNBT (Tes Skolastik dan Literasi); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+    role: PRIMARY
+    assessable: true
+  - concept: BIO.C26.E.EKOSISTEM.JARING_MAKANAN_DAN_POPULASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada rantai makanan padi → tikus → ular → elang, ular diburu hingga habis. Dampak yang paling mungkin terjadi pada sawah adalah …
+  options:
+    - id: a
+      label: tikus berkurang dan padi meningkat
+    - id: b
+      label: tikus meningkat dan padi berkurang
+    - id: c
+      label: elang meningkat
+    - id: d
+      label: tidak ada perubahan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - tikus meningkat dan padi berkurang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI
+    - BIO.C26.E.EKOSISTEM.JARING_MAKANAN_DAN_POPULASI
+  feedback:
+    correct: Ular pemangsa tikus. Tanpa ular, tikus bertambah dan memakan lebih banyak padi, sehingga padi berkurang.
+    incorrect: Jawabannya tikus meningkat dan padi berkurang. Ular pemangsa tikus. Tanpa ular, tikus bertambah dan memakan lebih banyak padi, sehingga padi berkurang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

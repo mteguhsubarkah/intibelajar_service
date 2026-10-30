@@ -103,7 +103,11 @@ test('Slice 1 public catalog read API', async t => {
       const triC = concepts.find(c => c.legacyMapId === 'tri-c')!;
       const byConcept = await allQuestions(`&conceptId=${triC.id}`);
       assert.ok(byConcept.length > 0 && byConcept.every(q => q.conceptIds.includes(triC.id)));
-      assert.ok((await allQuestions()).filter(q => q.isCombined).length === 4);
+      // Gabungan = konsep yang dinilai berasal dari dua bab atau lebih; jumlahnya dihitung dari manifest yang sama.
+      const topicOf = new Map(fixture.topics.flatMap(t => t.concepts.map(c => [c.code, t.code] as const)));
+      const combined = fixture.questions.filter(q => new Set(q.concepts.filter(c => c.assessable).map(c => topicOf.get(c.concept))).size >= 2).length;
+      assert.ok(combined >= 4);
+      assert.equal((await allQuestions()).filter(q => q.isCombined).length, combined);
     });
 
     await t.test('pagination is complete, ordered and tamper-proof', async () => {

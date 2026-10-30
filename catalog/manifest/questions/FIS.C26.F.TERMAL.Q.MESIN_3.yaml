@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.F.TERMAL.Q.MESIN_3
+familyCode: FIS.C26.F.TERMAL.F.MESIN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah mesin kalor menyerap 2.000 J dari reservoir panas setiap siklus dengan efisiensi 30%. Kalor yang dibuang ke reservoir dingin setiap siklus adalah …
+  options:
+    - id: a
+      label: 600 J
+    - id: b
+      label: 1.400 J
+    - id: c
+      label: 2.000 J
+    - id: d
+      label: 2.600 J
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 1.400 J
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI
+    - FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA
+  feedback:
+    correct: W = 30% × 2.000 = 600 J. Menurut Hukum I, Q₂ = Q₁ − W = 2.000 − 600 = 1.400 J.
+    incorrect: Jawabannya 1.400 J. W = 30% × 2.000 = 600 J. Menurut Hukum I, Q₂ = Q₁ − W = 2.000 − 600 = 1.400 J.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

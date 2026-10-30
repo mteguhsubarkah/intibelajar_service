@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: KIM.C26.F.STRUKTUR.Q.BENTUK_4
+familyCode: KIM.C26.F.STRUKTUR.F.BENTUK_4
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Unsur X bernomor atom 7 berikatan dengan hidrogen membentuk molekul XH₃. Bentuk molekul XH₃ adalah …
+  options:
+    - id: a
+      label: segitiga datar
+    - id: b
+      label: piramida trigonal
+    - id: c
+      label: tetrahedral
+    - id: d
+      label: bentuk V
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - piramida trigonal
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN
+    - KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK
+  feedback:
+    correct: "X = 2, 5 (5 elektron valensi). Tiga dipakai berikatan dengan H, sisa satu pasangan bebas: 3 PEI + 1 PEB = piramida trigonal."
+    incorrect: "Jawabannya piramida trigonal. X = 2, 5 (5 elektron valensi). Tiga dipakai berikatan dengan H, sisa satu pasangan bebas: 3 PEI + 1 PEB = piramida trigonal."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

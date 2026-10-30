@@ -16,6 +16,12 @@ export interface PilotQuestion {
   min?: number;
   /** gaya rujukan soal: UN SMA, UTBK/SNBT, atau asesmen Kurikulum Merdeka */
   src?: 'UN' | 'SNBT' | 'KM';
+  /**
+   * Inti lain yang juga dipakai (soal multi-inti). Tiap entri: id inti di topik yang sama (mis. "VEKTOR"),
+   * "KODE_TOPIK:ID" untuk inti pilot di topik lain (mis. "MAT.KUA:PUNCAK"), atau kode konsep lengkap yang sudah
+   * ada di katalog (mis. "MAT.TRI.SUDUT_ISTIMEWA"). Semua inti menjadi PRIMARY dan dinilai.
+   */
+  also?: string[];
 }
 
 /** Satu slide materi: judul, paragraf (boleh **tebal**), rumus opsional, dan tip opsional. */

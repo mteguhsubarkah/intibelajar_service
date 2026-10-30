@@ -1,0 +1,65 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.L.GLBB
+title: Gerak lurus (GLB dan GLBB)
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.E.GERAK2D.GERAK_LURUS_GLB_DAN_GLBB
+blocks:
+  - type: heading
+    slide: 0
+    text: Kecepatan tetap atau percepatan tetap
+  - type: text
+    slide: 0
+    text: "**GLB**: kecepatan tetap, jarak **s = v · t**. **GLBB**: percepatan tetap, kecepatan berubah beraturan."
+  - type: text
+    slide: 0
+    text: "Tiga rumus GLBB cukup untuk hampir semua soal: pilih yang memuat besaran yang diketahui dan yang ditanya."
+  - type: math
+    slide: 0
+    name: GLB
+    expression: s = v · t
+    highlight: true
+  - type: math
+    slide: 0
+    name: v
+    expression: v₀ + a · t
+  - type: math
+    slide: 0
+    name: s
+    expression: v₀ · t + ½ · a · t²
+  - type: math
+    slide: 0
+    name: v²
+    expression: v₀² + 2 · a · s
+  - type: heading
+    slide: 1
+    text: Gerak bertahap
+  - type: text
+    slide: 1
+    text: "Bila gerak berganti jenis (dipercepat lalu konstan), hitung **tiap tahap terpisah**: kecepatan akhir tahap pertama menjadi kecepatan tahap berikutnya."
+  - type: text
+    slide: 1
+    text: "Contoh: dari diam a = 2 m/s² selama 5 s ⇒ v = 10 m/s, s₁ = 25 m. Lalu konstan 4 s ⇒ s₂ = 40 m. Jarak total 65 m."
+  - type: math
+    slide: 1
+    name: s total
+    expression: s₁ + s₂
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Dari diam berarti v₀ = 0; berhenti berarti v akhir = 0.
+checks:
+  - question: FIS.C26.E.GERAK2D.Q.GLBB_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.GERAK2D.S.GLBB
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

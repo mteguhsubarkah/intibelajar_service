@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.F.MEKANIKA.Q.IMPULS_3
+familyCode: FIS.C26.F.MEKANIKA.F.IMPULS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gaya tetap 10 N bekerja pada benda 2 kg yang mula-mula diam selama 3 s di lantai licin. Kecepatan akhir benda adalah …
+  options:
+    - id: a
+      label: 5 m/s
+    - id: b
+      label: 15 m/s
+    - id: c
+      label: 30 m/s
+    - id: d
+      label: 60 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 15 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+    - FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
+  feedback:
+    correct: Impuls = F · Δt = 30 N·s = Δp = 2 × v, jadi v = 15 m/s. Sama dengan a = F/m = 5 m/s² selama 3 s.
+    incorrect: Jawabannya 15 m/s. Impuls = F · Δt = 30 N·s = Δp = 2 × v, jadi v = 15 m/s. Sama dengan a = F/m = 5 m/s² selama 3 s.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

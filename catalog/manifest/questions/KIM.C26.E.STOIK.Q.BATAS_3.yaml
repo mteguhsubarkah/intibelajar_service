@@ -1,0 +1,62 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.BATAS_3
+familyCode: KIM.C26.E.STOIK.F.BATAS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebanyak 4 mol besi direaksikan dengan 4 mol gas oksigen menurut reaksi (belum setara) Fe + O₂ → Fe₂O₃. Jumlah Fe₂O₃ maksimum yang terbentuk adalah …
+  options:
+    - id: a
+      label: 1 mol
+    - id: b
+      label: 2 mol
+    - id: c
+      label: 3 mol
+    - id: d
+      label: 4 mol
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2 mol
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL
+    - KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    - KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+  feedback:
+    correct: "Setarakan: 4Fe + 3O₂ → 2Fe₂O₃. Fe: 4/4 = 1, O₂: 4/3 ≈ 1,33, jadi Fe pembatas. Fe₂O₃ = 2/4 × 4 = 2 mol."
+    incorrect: "Jawabannya 2 mol. Setarakan: 4Fe + 3O₂ → 2Fe₂O₃. Fe: 4/4 = 1, O₂: 4/3 ≈ 1,33, jadi Fe pembatas. Fe₂O₃ = 2/4 × 4 = 2 mol."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

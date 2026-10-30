@@ -8,9 +8,7 @@ availability: MAPPED
 bekal:
   - rata-rata, median, modus
   - membaca tabel dan diagram
-aliases:
-  - ns: TOPIC
-    value: statpel
+aliases: []
 units: []
 concepts:
   - code: MAT.STP.KUARTIL_DAN_IQR

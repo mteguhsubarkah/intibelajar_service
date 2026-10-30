@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.BAR.Q.DERET_GEOMETRI_3
+familyCode: MAT.BAR.F.DERET_GEOMETRI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 3
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.BAR.DERET_GEOMETRI
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.BAR.BARISAN_GEOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suku ke-2 suatu barisan geometri adalah 6 dan suku ke-5 adalah 48. Jumlah 5 suku pertama barisan itu adalah …
+  options:
+    - id: a
+      label: "45"
+    - id: b
+      label: "93"
+    - id: c
+      label: "96"
+    - id: d
+      label: "189"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "93"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.BAR.DERET_GEOMETRI
+    - MAT.BAR.BARISAN_GEOMETRI
+  feedback:
+    correct: r³ = 48/6 = 8 ⇒ r = 2, a = 3. S₅ = 3(2⁵ − 1)/(2 − 1) = 93.
+    incorrect: Jawabannya 93. r³ = 48/6 = 8 ⇒ r = 2, a = 3. S₅ = 3(2⁵ − 1)/(2 − 1) = 93.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

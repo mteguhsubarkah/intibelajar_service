@@ -90,6 +90,7 @@ sets:
     items:
       - MAT.KUA.Q.DISKRIMINAN_1
       - MAT.KUA.Q.DISKRIMINAN_2
+      - MAT.KUA.Q.DISKRIMINAN_3
     review:
       status: PROPOSED
       decision: D7
@@ -116,6 +117,7 @@ sets:
     items:
       - MAT.KUA.Q.MODEL_1
       - MAT.KUA.Q.MODEL_2
+      - MAT.KUA.Q.MODEL_3
     review:
       status: PROPOSED
       decision: D7
@@ -168,6 +170,7 @@ sets:
     items:
       - MAT.SPL.Q.MODEL_1
       - MAT.SPL.Q.MODEL_2
+      - MAT.SPL.Q.MODEL_3
     review:
       status: PROPOSED
       decision: D7
@@ -233,6 +236,7 @@ sets:
     items:
       - MAT.STP.Q.KRITIS_1
       - MAT.STP.Q.KRITIS_2
+      - MAT.STP.Q.KRITIS_3
     review:
       status: PROPOSED
       decision: D7
@@ -259,6 +263,7 @@ sets:
     items:
       - MAT.BNG.Q.MAJEMUK_1
       - MAT.BNG.Q.MAJEMUK_2
+      - MAT.BNG.Q.MAJEMUK_3
     review:
       status: PROPOSED
       decision: D7
@@ -351,6 +356,7 @@ sets:
       - MAT.INV.Q.INVERS_1
       - MAT.INV.Q.INVERS_2
       - MAT.INV.Q.INVERS_3
+      - MAT.INV.Q.INVERS_4
     review:
       status: PROPOSED
       decision: D7
@@ -403,6 +409,7 @@ sets:
     items:
       - MAT.CP25.F.LINGKARAN.Q.MASALAH_1
       - MAT.CP25.F.LINGKARAN.Q.MASALAH_2
+      - MAT.CP25.F.LINGKARAN.Q.MASALAH_3
     review:
       status: PROPOSED
       decision: D7
@@ -417,6 +424,7 @@ sets:
       - MAT.CP25.F.PELUANG.Q.CACAH_1
       - MAT.CP25.F.PELUANG.Q.CACAH_2
       - MAT.CP25.F.PELUANG.Q.CACAH_3
+      - MAT.CP25.F.PELUANG.Q.CACAH_4
     review:
       status: PROPOSED
       decision: D7
@@ -521,6 +529,7 @@ sets:
     items:
       - MAT.KAL.Q.INTEGRAL_1
       - MAT.KAL.Q.INTEGRAL_2
+      - MAT.KAL.Q.INTEGRAL_3
     review:
       status: PROPOSED
       decision: D7
@@ -600,6 +609,7 @@ sets:
     items:
       - MAT.MTX.Q.INVERS_1
       - MAT.MTX.Q.INVERS_2
+      - MAT.MTX.Q.INVERS_3
     review:
       status: PROPOSED
       decision: D7
@@ -613,6 +623,7 @@ sets:
     items:
       - MAT.MTX.Q.TRANSFORMASI_1
       - MAT.MTX.Q.TRANSFORMASI_2
+      - MAT.MTX.Q.TRANSFORMASI_3
     review:
       status: PROPOSED
       decision: D7
@@ -652,6 +663,21 @@ sets:
     items:
       - FIS.C26.E.UKUR.Q.SIGNIFIKAN_1
       - FIS.C26.E.UKUR.Q.SIGNIFIKAN_2
+      - FIS.C26.E.UKUR.Q.SIGNIFIKAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.E.GERAK2D.S.GLBB
+    title: Latihan Gerak lurus (GLB dan GLBB)
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.E.GERAK2D.Q.GLBB_1
+      - FIS.C26.E.GERAK2D.Q.GLBB_2
+      - FIS.C26.E.GERAK2D.Q.GLBB_3
     review:
       status: PROPOSED
       decision: D7
@@ -678,6 +704,7 @@ sets:
     items:
       - FIS.C26.E.GERAK2D.Q.VEKTOR_1
       - FIS.C26.E.GERAK2D.Q.VEKTOR_2
+      - FIS.C26.E.GERAK2D.Q.VEKTOR_3
     review:
       status: PROPOSED
       decision: D7
@@ -692,6 +719,8 @@ sets:
       - FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_1
       - FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_2
       - FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_3
+      - FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_4
+      - FIS.C26.E.GERAK2D.Q.GERAK_PELURU_IDEAL_5
     review:
       status: PROPOSED
       decision: D7
@@ -731,6 +760,7 @@ sets:
     items:
       - FIS.C26.E.ENERGI.Q.NERACA_1
       - FIS.C26.E.ENERGI.Q.NERACA_2
+      - FIS.C26.E.ENERGI.Q.NERACA_3
     review:
       status: PROPOSED
       decision: D7
@@ -770,6 +800,7 @@ sets:
     items:
       - FIS.C26.F.MEKANIKA.Q.IMPULS_1
       - FIS.C26.F.MEKANIKA.Q.IMPULS_2
+      - FIS.C26.F.MEKANIKA.Q.IMPULS_3
     review:
       status: PROPOSED
       decision: D7
@@ -863,6 +894,7 @@ sets:
     items:
       - FIS.C26.F.TERMAL.Q.MESIN_1
       - FIS.C26.F.TERMAL.Q.MESIN_2
+      - FIS.C26.F.TERMAL.Q.MESIN_3
     review:
       status: PROPOSED
       decision: D7
@@ -902,6 +934,7 @@ sets:
     items:
       - FIS.C26.F.GELOMBANG.Q.DOPPLER_1
       - FIS.C26.F.GELOMBANG.Q.DOPPLER_2
+      - FIS.C26.F.GELOMBANG.Q.DOPPLER_3
     review:
       status: PROPOSED
       decision: D7
@@ -941,6 +974,7 @@ sets:
     items:
       - FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_1
       - FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_2
+      - FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_3
     review:
       status: PROPOSED
       decision: D7
@@ -1033,6 +1067,7 @@ sets:
       - KIM.C26.E.ATOM.Q.ISOTOP_1
       - KIM.C26.E.ATOM.Q.ISOTOP_2
       - KIM.C26.E.ATOM.Q.ISOTOP_3
+      - KIM.C26.E.ATOM.Q.ISOTOP_4
     review:
       status: PROPOSED
       decision: D7
@@ -1073,6 +1108,7 @@ sets:
     items:
       - KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_1
       - KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_2
+      - KIM.C26.E.STOIK.Q.PERHITUNGAN_DARI_PERSAMAAN_REAKSI_3
     review:
       status: PROPOSED
       decision: D7
@@ -1086,6 +1122,7 @@ sets:
     items:
       - KIM.C26.E.STOIK.Q.BATAS_1
       - KIM.C26.E.STOIK.Q.BATAS_2
+      - KIM.C26.E.STOIK.Q.BATAS_3
     review:
       status: PROPOSED
       decision: D7
@@ -1125,6 +1162,7 @@ sets:
     items:
       - KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_1
       - KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_2
+      - KIM.C26.F.STRUKTUR.Q.IKATAN_DAN_GAYA_ANTARMOLEKUL_3
     review:
       status: PROPOSED
       decision: D7
@@ -1139,6 +1177,7 @@ sets:
       - KIM.C26.F.STRUKTUR.Q.BENTUK_1
       - KIM.C26.F.STRUKTUR.Q.BENTUK_2
       - KIM.C26.F.STRUKTUR.Q.BENTUK_3
+      - KIM.C26.F.STRUKTUR.Q.BENTUK_4
     review:
       status: PROPOSED
       decision: D7
@@ -1152,6 +1191,7 @@ sets:
     items:
       - KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_1
       - KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_2
+      - KIM.C26.F.TERMOKIMIA.Q.ENTALPI_REAKSI_3
     review:
       status: PROPOSED
       decision: D7
@@ -1231,6 +1271,7 @@ sets:
       - KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_1
       - KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_2
       - KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_3
+      - KIM.C26.F.SETIMBANG.Q.ASAM_BASA_DAN_PH_4
     review:
       status: PROPOSED
       decision: D7
@@ -1245,6 +1286,7 @@ sets:
       - KIM.C26.F.SETIMBANG.Q.HIDROLISIS_1
       - KIM.C26.F.SETIMBANG.Q.HIDROLISIS_2
       - KIM.C26.F.SETIMBANG.Q.HIDROLISIS_3
+      - KIM.C26.F.SETIMBANG.Q.HIDROLISIS_4
     review:
       status: PROPOSED
       decision: D7
@@ -1285,6 +1327,7 @@ sets:
     items:
       - KIM.C26.F.KARBON.Q.ISOMER_1
       - KIM.C26.F.KARBON.Q.ISOMER_2
+      - KIM.C26.F.KARBON.Q.ISOMER_3
     review:
       status: PROPOSED
       decision: D7
@@ -1325,6 +1368,7 @@ sets:
     items:
       - BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_1
       - BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_2
+      - BIO.C26.E.BIODIVERSITAS.Q.STRATEGI_KONSERVASI_3
     review:
       status: PROPOSED
       decision: D7
@@ -1378,6 +1422,7 @@ sets:
     items:
       - BIO.C26.E.MIKROBA.Q.VIRUS_1
       - BIO.C26.E.MIKROBA.Q.VIRUS_2
+      - BIO.C26.E.MIKROBA.Q.VIRUS_3
     review:
       status: PROPOSED
       decision: D7
@@ -1431,6 +1476,7 @@ sets:
     items:
       - BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_1
       - BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_2
+      - BIO.C26.E.EKOSISTEM.Q.DAYA_DUKUNG_3
     review:
       status: PROPOSED
       decision: D7
@@ -1484,6 +1530,7 @@ sets:
       - BIO.C26.F.SEL.Q.RESPIRASI_1
       - BIO.C26.F.SEL.Q.RESPIRASI_2
       - BIO.C26.F.SEL.Q.RESPIRASI_3
+      - BIO.C26.F.SEL.Q.RESPIRASI_4
     review:
       status: PROPOSED
       decision: D7
@@ -1524,6 +1571,7 @@ sets:
     items:
       - BIO.C26.F.GENETIKA.Q.MEIOSIS_1
       - BIO.C26.F.GENETIKA.Q.MEIOSIS_2
+      - BIO.C26.F.GENETIKA.Q.MEIOSIS_3
     review:
       status: PROPOSED
       decision: D7
@@ -1537,6 +1585,7 @@ sets:
     items:
       - BIO.C26.F.GENETIKA.Q.EKSPRESI_1
       - BIO.C26.F.GENETIKA.Q.EKSPRESI_2
+      - BIO.C26.F.GENETIKA.Q.EKSPRESI_3
     review:
       status: PROPOSED
       decision: D7
@@ -1563,6 +1612,7 @@ sets:
     items:
       - BIO.C26.F.BIOTEK.Q.PCR_1
       - BIO.C26.F.BIOTEK.Q.PCR_2
+      - BIO.C26.F.BIOTEK.Q.PCR_3
     review:
       status: PROPOSED
       decision: D7
@@ -1702,6 +1752,7 @@ sets:
       - MAT.EKS.Q.PERSAMAAN_EKSPONEN_1
       - MAT.EKS.Q.PERSAMAAN_EKSPONEN_2
       - MAT.EKS.Q.PERSAMAAN_EKSPONEN_3
+      - MAT.EKS.Q.PERSAMAAN_EKSPONEN_4
     review:
       status: PROPOSED
       decision: D7
@@ -1730,6 +1781,7 @@ sets:
       - MAT.EKS.Q.PENERAPAN_1
       - MAT.EKS.Q.PENERAPAN_2
       - MAT.EKS.Q.PENERAPAN_3
+      - MAT.EKS.Q.PENERAPAN_4
     review:
       status: PROPOSED
       decision: D7
@@ -1822,6 +1874,7 @@ sets:
     items:
       - MAT.BAR.Q.DERET_GEOMETRI_1
       - MAT.BAR.Q.DERET_GEOMETRI_2
+      - MAT.BAR.Q.DERET_GEOMETRI_3
     review:
       status: PROPOSED
       decision: D7
@@ -2045,6 +2098,7 @@ sets:
     items:
       - MAT.VEK.Q.SUDUT_ANTAR_1
       - MAT.VEK.Q.SUDUT_ANTAR_2
+      - MAT.VEK.Q.SUDUT_ANTAR_3
     review:
       status: PROPOSED
       decision: D7
