@@ -1761,6 +1761,121 @@ paths:
                   $ref: '#/components/examples/LegacyProgressSnapshotExample'
         '401':
           $ref: '#/components/responses/Unauthenticated'
+  /v1/me/questions:
+    get:
+      operationId: listLearnerQuestions
+      tags:
+        - progress
+      summary: Filter questions and learner results before pagination; all required
+        mapped cores must be ready.
+      parameters:
+        - name: subjectCode
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 16
+        - name: phase
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/Phase"
+        - name: topicId
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/Uuid"
+        - name: conceptId
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/Uuid"
+        - name: scope
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - all
+              - ready
+              - history
+        - name: coreCount
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - "1"
+              - "2"
+              - "3"
+              - 4+
+        - name: status
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/PracticeQuestionStatus"
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 200
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - recommended
+              - easy
+              - hard
+              - short
+        - &a1
+          $ref: "#/components/parameters/Cursor"
+        - &a2
+          $ref: "#/components/parameters/Limit"
+      responses:
+        "200":
+          description: Learner-owned practice projection.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LearnerQuestionPage"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthenticated"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+  /v1/me/questions/{questionId}/history:
+    get:
+      operationId: getLearnerQuestionHistory
+      tags:
+        - progress
+      summary: Paginated immutable attempt summaries for the current learner only.
+      parameters:
+        - name: questionId
+          in: path
+          required: true
+          schema:
+            $ref: "#/components/schemas/Uuid"
+        - *a1
+        - *a2
+      responses:
+        "200":
+          description: Learner-owned practice projection.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QuestionHistoryPage"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthenticated"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v1/me/mastery:
     get:
       operationId: listMastery
@@ -3876,6 +3991,177 @@ components:
         promptPreview:
           type: string
           maxLength: 160
+    PracticeQuestionStatus:
+      type: string
+      enum:
+        - UNTRIED
+        - IN_PROGRESS
+        - PENDING
+        - RETRY
+        - ASSISTED
+        - CORRECT
+        - UNASSESSED
+    PracticeQuestionProgress:
+      type: object
+      additionalProperties: false
+      required:
+        - status
+        - attemptCount
+        - correctAfterRetry
+      properties:
+        status:
+          $ref: "#/components/schemas/PracticeQuestionStatus"
+        attemptCount: &a2
+          type: integer
+          minimum: 0
+        correctAfterRetry: &a1
+          type: boolean
+        lastAttemptAt:
+          $ref: "#/components/schemas/Timestamp"
+        resumeSessionId:
+          $ref: "#/components/schemas/Uuid"
+    LearnerQuestion:
+      type: object
+      additionalProperties: false
+      required:
+        - question
+        - available
+        - coreCount
+        - ready
+        - needsReview
+        - progress
+      properties:
+        question:
+          $ref: "#/components/schemas/QuestionSummary"
+        available: *a1
+        coreCount: *a2
+        ready: *a1
+        needsReview: *a1
+        progress:
+          $ref: "#/components/schemas/PracticeQuestionProgress"
+    PracticeTopic:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - title
+        - total
+        - mastered
+        - cores
+      properties:
+        id:
+          $ref: "#/components/schemas/Uuid"
+        title: &a3
+          type: string
+        total: *a2
+        mastered: *a2
+        cores:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+              - id
+              - title
+              - mastered
+              - needsReview
+            properties:
+              id:
+                $ref: "#/components/schemas/Uuid"
+              title: *a3
+              legacyMapId: *a3
+              mastered: *a1
+              needsReview: *a1
+    PracticeQuestionStats:
+      type: object
+      additionalProperties: false
+      required:
+        - tried
+        - correct
+        - retry
+        - assisted
+      properties:
+        tried: *a2
+        correct: *a2
+        retry: *a2
+        assisted: *a2
+    LearnerQuestionPage:
+      type: object
+      additionalProperties: false
+      required:
+        - items
+        - nextCursor
+        - total
+        - summary
+        - topics
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/LearnerQuestion"
+        nextCursor:
+          type:
+            - string
+            - "null"
+        total: *a2
+        summary:
+          $ref: "#/components/schemas/PracticeQuestionStats"
+        topics:
+          type: array
+          items:
+            $ref: "#/components/schemas/PracticeTopic"
+    QuestionHistoryItem:
+      type: object
+      additionalProperties: false
+      required:
+        - attemptId
+        - sessionId
+        - submittedAt
+        - verdict
+        - assistance
+        - status
+        - response
+      properties:
+        feedback: {type: string}
+        recommendedConceptIds: {type: array, items: {$ref: "#/components/schemas/Uuid"}}
+        attemptId:
+          $ref: "#/components/schemas/Uuid"
+        sessionId:
+          $ref: "#/components/schemas/Uuid"
+        submittedAt:
+          $ref: "#/components/schemas/Timestamp"
+        verdict:
+          $ref: "#/components/schemas/Verdict"
+        assistance: *a3
+        status:
+          $ref: "#/components/schemas/PracticeQuestionStatus"
+        response:
+          type: object
+          additionalProperties: false
+          required:
+            - responseType
+            - purged
+          properties:
+            responseType: *a3
+            text: *a3
+            numeric: *a3
+            optionId: *a3
+            purged: *a1
+    QuestionHistoryPage:
+      type: object
+      additionalProperties: false
+      required:
+        - items
+        - nextCursor
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/QuestionHistoryItem"
+        nextCursor:
+          type:
+            - string
+            - "null"
     QuestionPage:
       type: object
       additionalProperties: false
@@ -4258,6 +4544,8 @@ components:
       additionalProperties: false
       required: [id, ordinal, questionId, status]
       properties:
+        verdict:
+          $ref: '#/components/schemas/Verdict'
         id:
           $ref: '#/components/schemas/Uuid'
         ordinal:

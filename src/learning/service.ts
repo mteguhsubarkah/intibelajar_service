@@ -77,6 +77,7 @@ const iso = (d: Date) => d.toISOString();
 const stateView = (l: Loaded) => ({ id: l.row.id, state: l.ctx.state, stateVersion: l.ctx.version, allowedActions: l.row.expired ? [] : allowedActions(l.ctx) });
 
 async function sessionView(db: Connection, l: Loaded) {
+  const results=(await sql<{session_item_id:string;verdict:Verdict}>`select distinct on (session_item_id) session_item_id,verdict from question_attempt where session_id=${l.row.id} and learner_id=${l.row.learner_id} and session_item_id is not null and graded_at is not null order by session_item_id,ordinal desc`.execute(db)).rows;
   const { row, ctx, assignment } = l;
   return {
     id: row.id, kind: row.kind, origin: row.origin, state: ctx.state, stateVersion: ctx.version, ...(row.outcome ? { outcome: row.outcome } : {}),
@@ -91,7 +92,7 @@ async function sessionView(db: Connection, l: Loaded) {
           answered: verdict === 'CORRECT' || verdict === 'INCORRECT', ...(verdict ? { verdict } : {}) };
       }),
     } } : {}),
-    items: l.items.map(i => ({ id: i.id, ordinal: i.ordinal, questionId: i.question_id, status: i.status })),
+    items: l.items.map(i => ({ id: i.id, ordinal: i.ordinal, questionId: i.question_id, status: i.status, ...(results.find(a=>a.session_item_id===i.id)?{verdict:results.find(a=>a.session_item_id===i.id)!.verdict}:{}) })),
     allowedActions: stateView(l).allowedActions, checkpoint: row.checkpoint,
     startedAt: iso(row.started_at), lastActivityAt: iso(row.last_activity_at), ...(row.completed_at ? { completedAt: iso(row.completed_at) } : {}), expiresAt: iso(row.expires_at),
   };
