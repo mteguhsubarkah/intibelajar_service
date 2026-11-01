@@ -5741,6 +5741,10 @@ components:
           enum: [ok, gap, rest]
         reason:
           type: string
+        quote:
+          type: string
+          maxLength: 200
+          description: For a gap only, the exact part of the learner's answer that shows the error (a quote of the graded text), so the client can highlight it. Absent when the grader quoted nothing.
     LegacyDiagnosisRun:
       type: object
       description: The shape `diagnosisRunWithBackend` validates (isRun). Frozen.
