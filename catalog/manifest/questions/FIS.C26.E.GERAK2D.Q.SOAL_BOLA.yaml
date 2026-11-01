@@ -39,7 +39,7 @@ body:
       conceptCode: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
       lead: Bola naik sampai puncak, lalu turun lagi dalam waktu yang sama.
   answerFormat: NUMBER
-  answerExample: 2 s
+  answerExample: t = … s
 rubric:
   schemaVersion: 1
   evaluator: numeric-v1

@@ -4,7 +4,7 @@ import type {Config} from '../config.js';
 import {token,hash,hmac,encrypt,decrypt,uuid,equal} from '../platform/crypto.js';
 import {fail,ApiError} from '../platform/errors.js';
 import {createPendingLearner,checkSigninLearner} from '../privacy/service.js';
-import {createSession} from './service.js';
+import {createSession,returningContinuation} from './service.js';
 import type {GoogleProvider} from './google-provider.js';
 
 export async function startGoogle(db:DB,config:Config,provider:GoogleProvider,continuation:{route:string;step:number}){
@@ -50,7 +50,7 @@ export async function finishGoogle(db:DB,config:Config,provider:GoogleProvider,r
   if(!valid)fail(410,'LINK_EXPIRED');
   const {userId,fresh}=await googleAccount(tx,config,claims);
   await sql`update auth_session set revoked_at=now() where id=${t.session_id}`.execute(tx);
-  return{cancelled:false as const,session:await createSession(tx,config,userId),continuation:fresh?{route:'/kenalan'}:t.continuation};
+  return{cancelled:false as const,session:await createSession(tx,config,userId),continuation:fresh?{route:'/kenalan'}:returningContinuation(t.continuation)};
  });
 }
 

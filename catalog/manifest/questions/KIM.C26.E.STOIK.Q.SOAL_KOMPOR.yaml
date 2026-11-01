@@ -39,7 +39,7 @@ body:
       conceptCode: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
       lead: Perbandingan koefisien = perbandingan mol.
   answerFormat: NUMBER
-  answerExample: 44 g
+  answerExample: massa CO₂ = … g
 rubric:
   schemaVersion: 1
   evaluator: numeric-v1

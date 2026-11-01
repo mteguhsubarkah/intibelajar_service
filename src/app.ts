@@ -196,7 +196,8 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     if(!privacyRoute(result.continuation.route.split('?')[0]!))fail(400,'VALIDATION_FAILED');
     if(!result.cancelled)reply.header('Set-Cookie',identity.cookie(result.session.raw,config.absoluteSeconds));
     else reply.header('Set-Cookie',identity.cookie('',0));
-    return reply.redirect(result.continuation.route,302);
+    // Akun lama yang masuk dari soal percobaan: Beranda memberi tahu bahwa kami masuk ke akun yang sudah ada.
+    return reply.redirect(result.continuation.route+('returning' in result.continuation&&result.continuation.returning?'?akun=lama':''),302);
   });
   route('POST','/v1/auth/email/links','public',async(req,reply)=>{
     const b=req.body as {email:string;transaction:string};

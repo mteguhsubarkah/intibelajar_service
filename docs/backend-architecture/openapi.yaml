@@ -3368,6 +3368,9 @@ components:
         route:
           type: string
           pattern: '^/(|coba|soal-tadi|kenalan|tanya|challenge|latihan/soal|home|pick|latihan|progress|profile|diagnosis|mastery)$|^/core/[a-z0-9-]{1,64}$'
+        returning:
+          type: boolean
+          description: The account already existed and signed in from the trial; the client lands on Beranda with a notice.
         sessionId:
           $ref: '#/components/schemas/Uuid'
         step:
