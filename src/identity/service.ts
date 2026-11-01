@@ -98,6 +98,13 @@ export function signinAddress(config: Config, value: string) {
 }
 /** Dikirim lewat pengirim sungguhan (bukan kotak surat sintetis). */
 export const deliveredForReal = (config: Config, address: string) => !!config.email && !address.endsWith('.invalid');
+/**
+ * Akun yang sudah ada dan masuk dari soal percobaan (/coba, /soal-tadi): ke Beranda, bukan kembali ke awal soal
+ * percobaan. Hasil soal tadi diklaim oleh FE saat progres dimuat. Akun baru tetap ke /kenalan.
+ */
+export function returningContinuation<T extends { route: string; step?: number }>(c: T): T & { returning?: true } {
+  return /^\/(coba|soal-tadi)(?:[?#]|$)/.test(c.route) ? { ...c, route: '/home', returning: true } : c;
+}
 export async function startEmail(tx: Tx, config: Config, continuation: {route:string;step:number}) {
   requireEmailSignin(config);
   const session = await createSession(tx,config,null), transaction=token();
@@ -143,5 +150,5 @@ export async function consumeEmail(tx: Tx, config: Config, raw: string | undefin
   await sql`update auth_transaction set consumed_at=now() where id=${t.id}`.execute(tx);
   await sql`update auth_session set revoked_at=now() where id=${t.session_id}`.execute(tx);
   const session=await createSession(tx,config,account.id);
-  return {session,continuation:fresh ? {route:'/kenalan'} : t.continuation};
+  return {session,continuation:fresh ? {route:'/kenalan'} : returningContinuation(t.continuation)};
 }

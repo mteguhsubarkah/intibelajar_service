@@ -105,6 +105,31 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
           next: { core: focus.title, reason, formula: authored?.keyFormula ?? '', coreId: focus.route, mapId: focus.legacyMapId ?? '' }
         } };
       }
+      // Jawaban belum tuntas (berhenti di tengah, "bingung", atau "belum tahu caranya") tetap diberi arah: inti yang sudah
+      // terlihat ditandai, dan inti pertama yang belum ada di jawaban (urutan katalog) menjadi langkah berikutnya.
+      // Hanya jawaban yang tidak berhubungan dengan soal (OUT_OF_SCOPE) atau tidak terbaca yang tetap meminta klarifikasi.
+      const unrelated = result.evidence.some(e => e.uncertaintyReasons.includes('OUT_OF_SCOPE'));
+      if (!supported && result.verdict === 'NOT_GRADED' && result.evidence.length && !unrelated && !misconception) {
+        const mapped = i.concepts.filter(x => x.legacyMapId);
+        const shown = (code: string) => result.evidence.find(e => e.conceptCode === code)?.classification === 'UNDERSTANDING_DEMONSTRATED';
+        const missing = mapped.find(x => !shown(x.code));
+        if (missing) {
+          const started = mapped.some(x => shown(x.code));
+          const reason = result.evidence.find(e => e.conceptCode === missing.code)?.rationale?.trim()
+            || (started ? 'Langkah ini belum ada di jawabanmu. Lanjutkan dari sini.' : 'Mulai dari inti ini untuk menyusun langkahmu.');
+          const items = mapped.map(x => {
+            const evidence = result.evidence.find(e => e.conceptCode === x.code);
+            return x === missing ? { id: x.legacyMapId!, state: 'gap', reason }
+              : shown(x.code) ? { id: x.legacyMapId!, state: 'ok', reason: evidence?.rationale ?? 'Bagian ini terlihat tepat dari jawabanmu.' }
+              : { id: x.legacyMapId!, state: 'rest', reason: evidence?.rationale ?? 'Belum kelihatan dari jawaban ini.' };
+          });
+          output = { diagnosisRunId: id, status: 'completed', items, assessment: {
+            tone: 'gap', title: started ? 'Kamu sudah di jalur yang benar. Tinggal lanjutkan.' : 'Mulai dari sini.', okName: null,
+            gap: { label: started ? 'Langkah berikutnya' : 'Mulai dari inti ini', name: missing.title, reason, coreId: missing.route, mapId: missing.legacyMapId ?? '' },
+            next: { core: missing.title, reason, formula: '', coreId: missing.route, mapId: missing.legacyMapId ?? '' },
+          } };
+        }
+      }
       if(proof && result.verdict==='CORRECT' && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
       // Bounded results and the latest answer (for tutor context) expire with the anonymous session.
       if (c.runs.size >= 32) c.runs.delete(c.runs.keys().next().value!);
