@@ -11,9 +11,10 @@ export type UnreadableReason =
   | 'negative-root' | 'not-finite' | 'unknown-unit' | 'too-long' | 'missing-answer-key' | 'unsupported-response';
 
 /** Accepted units are those of the rubric's answer: length (m), angle (°), or none. */
-export type UnitKind = 'length' | 'angle' | 'none';
+export type UnitKind = 'length' | 'angle' | 'time' | 'mass' | 'none';
 export const unitKindOf = (unit: string | undefined): UnitKind =>
-  unit === undefined ? 'none' : ['m', 'meter', 'metre'].includes(unit) ? 'length' : ['°', 'deg', 'derajat'].includes(unit) ? 'angle' : 'none';
+  unit === undefined ? 'none' : ['m', 'meter', 'metre'].includes(unit) ? 'length' : ['°', 'deg', 'derajat'].includes(unit) ? 'angle'
+    : ['s', 'sekon', 'detik'].includes(unit) ? 'time' : ['g', 'gram'].includes(unit) ? 'mass' : 'none';
 
 export type ParseOutcome = { kind: 'value'; value: number } | { kind: 'unreadable'; reason: UnreadableReason };
 
@@ -35,7 +36,10 @@ const LENGTH_UNITS = new Set(['m', 'meter', 'metre', 'mtr']);
 const ANGLE_UNITS = new Set(['derajat', 'deg']);
 // Units that are recognised, including ones that are rejected; longer alternatives first, \b on both sides.
 const UNIT_PATTERN = /\b(?:meter|metre|derajat|persen|sekon|detik|menit|radian|gram|liter|mtr|deg|rad|cm|mm|km|dm|kg|ml|jam|m|g|s|l)\b/g;
-const accepted = (kind: UnitKind) => kind === 'length' ? LENGTH_UNITS : kind === 'angle' ? ANGLE_UNITS : new Set<string>();
+const TIME_UNITS = new Set(['s', 'sekon', 'detik']);
+const MASS_UNITS = new Set(['g', 'gram']);
+const accepted = (kind: UnitKind) => kind === 'length' ? LENGTH_UNITS : kind === 'angle' ? ANGLE_UNITS
+  : kind === 'time' ? TIME_UNITS : kind === 'mass' ? MASS_UNITS : new Set<string>();
 
 export function parseAnswerValue(raw: string, kind: UnitKind): ParseOutcome {
   if (raw.length > MAX_INPUT_LENGTH) return { kind: 'unreadable', reason: 'too-long' };

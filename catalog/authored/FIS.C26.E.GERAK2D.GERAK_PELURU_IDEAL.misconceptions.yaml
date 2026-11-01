@@ -1,0 +1,19 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-bola).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - "Kesalahan umum yang dipakai sebagai pengecoh soal /coba soal-bola; kode dan kalimat perlu dicek guru."
+misconceptions:
+  - code: WAKTU_PUNCAK_SAJA
+    description: Waktu di udara disamakan dengan waktu naik sampai puncak
+    example: t = vᵧ / g = 1 s
+    indicators:
+      - "soal-bola: jawaban 1 s"

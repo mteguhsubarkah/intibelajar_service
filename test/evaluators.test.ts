@@ -54,6 +54,25 @@ test('every deterministic item accepts its own key and its first accepted form',
   assert.throws(() => evaluate(input({ ...question('MAT.TRI.Q.SOAL_MENARA'), rubric: { ...question('MAT.TRI.Q.SOAL_MENARA').rubric, evaluator: 'ai-assisted-v1' } }, text('x'))), /No deterministic evaluator ai-assisted-v1/);
 });
 
+test('/coba Fisika and Kimia (D8): time and mass units are read, each distractor names its concept', () => {
+  const bola = question('FIS.C26.E.GERAK2D.Q.SOAL_BOLA'), kompor = question('KIM.C26.E.STOIK.Q.SOAL_KOMPOR');
+  for (const t of ['2', '2 s', '2 detik', 't = 2 sekon']) assert.equal(evaluateNumeric(input(bola, text(t))).verdict, 'CORRECT', t);
+  for (const t of ['44', '44 g', '44 gram']) assert.equal(evaluateNumeric(input(kompor, text(t))).verdict, 'CORRECT', t);
+  // a unit of the wrong kind stays unreadable, never wrong
+  assert.equal(evaluateNumeric(input(bola, text('2 m'))).reason, 'unknown-unit');
+  assert.equal(evaluateNumeric(input(kompor, text('44 kg'))).reason, 'unknown-unit');
+  const gap = (q: Question, t: string) => {
+    const r = evaluateNumeric(input(q, text(t)));
+    return [r.verdict, r.misconceptionCode, r.evidence.find(e => e.classification === 'MISCONCEPTION_EVIDENCED')?.conceptCode];
+  };
+  assert.deepEqual(gap(bola, '1 s'), ['INCORRECT', 'WAKTU_PUNCAK_SAJA', 'FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL']);
+  assert.deepEqual(gap(bola, '3,46 s'), ['INCORRECT', 'KOMPONEN_TEGAK_PAKAI_COS', 'FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK']);
+  assert.deepEqual(gap(bola, '4 s'), ['INCORRECT', 'KECEPATAN_TIDAK_DIURAIKAN', 'FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK']);
+  assert.deepEqual(gap(kompor, '16 g'), ['INCORRECT', 'MASSA_DIANGGAP_TETAP', 'KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR']);
+  assert.deepEqual(gap(kompor, '28 g'), ['INCORRECT', 'MR_CO2_KELIRU', 'KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR']);
+  assert.deepEqual(gap(kompor, '88 g'), ['INCORRECT', 'KOEFISIEN_SALAH_BACA', 'KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI']);
+});
+
 test('evidence: correct answers demonstrate the final-answer concepts and quote what was written', () => {
   const q = question('MAT.TRI.Q.TRIG_DEPRESSION_01'), typed = '  x = 34,64 m ';
   const r = evaluateNumeric(input(q, text(typed)));

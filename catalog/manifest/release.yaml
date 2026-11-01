@@ -29,6 +29,9 @@ decisions:
   - id: D7
     status: PROPOSED
     summary: "Konten pilot MaFiKiBio (scripts/catalog/pilot): topik dan inti dari peta IntiVerse, soal pilihan ganda bergaya UN/UTBK-SNBT yang disusun ulang (bukan salinan soal resmi), dan materi dua slide per inti. Guru mata pelajaran memeriksa kunci, pembahasan, dan bahasa; daftar periksa di catalog/pilot-review.md."
+  - id: D8
+    status: PROPOSED
+    summary: "Soal /coba Fisika (soal-bola, FIS.C26.E.GERAK2D.Q.SOAL_BOLA) dan Kimia (soal-kompor, KIM.C26.E.STOIK.Q.SOAL_KOMPOR): numeric-v1 dengan pengecoh NUMERIC yang dicatat sebagai miskonsepsi inti. Guru Fisika dan Kimia memeriksa kunci, pengecoh, dan bahasa."
 gaps:
   - curriculum/trigonometry.ts declares its own prerequisite graph (e.g. sudut-depresi-elevasi requires grafik-fungsi) that disagrees with curriculum.ts edges; only curriculum.ts edges and the T13 prerequisites were imported.
   - trig-depression-01 diagnosticSteps (angle-reference, ratio-selection) are follow-up prompts with their own options; 03 §7 has no value object for them, so they are not imported. Decide in Slice 2 (QUESTION_LOOP clarification).
