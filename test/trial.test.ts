@@ -40,6 +40,10 @@ test('trial: genuine catalog evaluation without user, learner or consent', async
   assert.equal(result.status, 'completed');
   assert.equal(result.assessment.tone, 'gap');
   assert.ok(result.items.some((x: any) => x.state === 'gap'));
+  // the gap carries the quoted part of the answer for the client highlight; other states never do
+  const gapItem = result.items.find((x: any) => x.state === 'gap');
+  assert.ok(gapItem.quote && body.rawText.includes(gapItem.quote), 'gap quotes the learner text');
+  assert.ok(result.items.filter((x: any) => x.state !== 'gap').every((x: any) => x.quote === undefined));
   assert.deepEqual(await s.diagnose('browser-a', body), result, 'same request keeps the same run');
   assert.deepEqual(s.run('browser-a', result.diagnosisRunId), result);
   assert.throws(() => s.run('browser-b', result.diagnosisRunId), (e: any) => e instanceof ApiError && e.status === 404);

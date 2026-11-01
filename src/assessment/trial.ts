@@ -3,7 +3,7 @@ import type { GradingSource } from '../catalog/grading-source.js';
 import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
 import { gradingSource } from '../catalog/grading-source.js';
-import { evaluate, type StudentResponse } from './evaluators/index.js';
+import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
 import { fail } from '../platform/errors.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
@@ -31,6 +31,13 @@ export async function loadTrialItem(db: Connection, alias: string, revisionId?: 
     return { code: c.code, title: c.title, legacyMapId: c.legacyMapId, route: lesson?.routeSlug ?? '' };
   }));
   return { revisionId: anchor.revisionId, source, concepts, optionOrder: item.legacyOptionOrder };
+}
+/** For a gap only: the quoted part of the learner's own answer (an evidence span), so the client can highlight it. */
+function gapQuote(e: Evaluation['evidence'][number] | undefined) {
+  if (e?.classification !== 'MISCONCEPTION_EVIDENCED') return undefined;
+  const span = e.refs.find((r): r is Extract<typeof r, { kind: 'SPAN' }> => r.kind === 'SPAN');
+  const quote = span?.quote.trim();
+  return quote ? quote.slice(0, 200) : undefined;
 }
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
@@ -87,8 +94,9 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
         const reason = misconception?.rationale ?? 'Bagian ini terlihat tepat dari jawabanmu.';
         const items = i.concepts.filter(x => x.legacyMapId).map(x => {
           const evidence = result.evidence.find(e => e.conceptCode === x.code);
+          const quote = gapQuote(evidence);
           return { id: x.legacyMapId!, state: evidence?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'ok' : evidence?.classification === 'MISCONCEPTION_EVIDENCED' ? 'gap' : 'rest',
-            reason: evidence?.rationale ?? (evidence?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum kelihatan dari soal ini.') };
+            reason: evidence?.rationale ?? (evidence?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum kelihatan dari soal ini.'), ...(quote ? { quote } : {}) };
         });
         if (items.length) output = { diagnosisRunId: id, status: 'completed', items, assessment: {
           tone: correct ? 'kuat' : 'gap', title: correct ? 'Mantap. Caramu sudah tepat.' : 'Ada bagian yang perlu diperkuat.',
@@ -123,8 +131,9 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const index = option ? i.optionOrder?.indexOf(option) : undefined;
       const items = i.concepts.filter(x => x.legacyMapId).map(x => {
         const e = r.evidence.find(e => e.conceptCode === x.code);
+        const quote = gapQuote(e);
         return {id:x.legacyMapId!, state:e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'ok' : e?.classification === 'MISCONCEPTION_EVIDENCED' ? 'gap' : 'rest',
-          reason:e?.rationale ?? (e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum cukup bukti dari jawaban ini.')};
+          reason:e?.rationale ?? (e?.classification === 'UNDERSTANDING_DEMONSTRATED' ? 'Bagian ini terlihat tepat dari jawabanmu.' : 'Belum cukup bukti dari jawaban ini.'), ...(quote ? { quote } : {})};
       });
       const claimToken = proof && correct===true && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT' ? proof?.({owner,session:body.sessionId,questionId:body.itemId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen}) : undefined;
       return { correct, ...(claimToken ? {claimToken} : {}), ...(items.length ? {items} : {}), ...(index !== undefined && index >= 0 ? { correctOptionIndex: index } : {}), ...(correct === null ? { unreadable: true } : {}),
