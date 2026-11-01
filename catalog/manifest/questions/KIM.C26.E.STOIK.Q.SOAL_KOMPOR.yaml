@@ -1,0 +1,135 @@
+schemaVersion: 1
+code: KIM.C26.E.STOIK.Q.SOAL_KOMPOR
+familyCode: KIM.C26.E.STOIK.F.SOAL_KOMPOR
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: KOMPOR
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:coba
+  note: Soal /coba Kimia, sama dengan Soal 03 di landing "Di balik 1 soal". Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-kompor
+concepts:
+  - concept: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kompor gas di rumah membakar 16 gram metana (CH₄). Berapa gram CO₂ yang dihasilkan? (Ar C = 12, H = 1, O = 16)
+  hints:
+    - step: 1
+      conceptCode: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+      lead: Tulis dulu reaksi pembakarannya dan setarakan.
+      note: CH₄ bereaksi dengan O₂ menghasilkan CO₂ dan H₂O.
+    - step: 2
+      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+      lead: Gram belum bisa langsung dibandingkan. Ubah ke mol dulu.
+      note: mol = massa / Mr.
+    - step: 3
+      conceptCode: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+      lead: Perbandingan koefisien = perbandingan mol.
+  answerFormat: NUMBER
+  answerExample: 44 g
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 44
+    unit: g
+    tolerance:
+      relative: 0.02
+      floor: 1
+  acceptedForms:
+    - 44 g
+    - CH₄ + 2O₂ → CO₂ + 2H₂O
+    - 16 g CH₄ = 1 mol → 1 mol CO₂ = 44 g
+  solutionPaths:
+    - code: MOL
+      label: setarakan, ubah ke mol, bandingkan koefisien
+      steps:
+        - code: S1
+          description: "Setarakan: CH₄ + 2O₂ → CO₂ + 2H₂O"
+          concepts:
+            - code: KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+              role: REQUIRED
+        - code: S2
+          description: "mol CH₄ = 16 / 16 = 1 mol"
+          concepts:
+            - code: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+              role: REQUIRED
+        - code: S3
+          description: "Koefisien 1 : 1 → 1 mol CO₂ = 1 × 44 = 44 g"
+          concepts:
+            - code: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 16
+      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+      misconceptionCode: MASSA_DIANGGAP_TETAP
+      explanation: "Massa tidak pindah utuh dari CH₄ ke CO₂. Yang dibandingkan dalam reaksi adalah mol, bukan gram."
+    - pattern:
+        kind: NUMERIC
+        value: 28
+      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+      misconceptionCode: MR_CO2_KELIRU
+      explanation: "Mr yang kamu pakai 28 (seperti CO). CO₂ punya dua atom O: 12 + 2 × 16."
+    - pattern:
+        kind: NUMERIC
+        value: 88
+      conceptCode: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+      misconceptionCode: KOEFISIEN_SALAH_BACA
+      explanation: "Koefisien CO₂ di reaksi setara adalah 1, sama dengan CH₄. Angka 2 milik O₂ dan H₂O."
+  finalAnswerEvidence:
+    - KIM.C26.E.STOIK.MENYETARAKAN_REAKSI
+    - KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+    - KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+  lessonFor:
+    KIM.C26.E.STOIK.MENYETARAKAN_REAKSI: KIM.C26.E.STOIK.L.SETARA
+    KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR: KIM.C26.E.STOIK.L.MOL_DAN_MASSA_MOLAR
+    KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI: KIM.C26.E.STOIK.L.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+  recommend:
+    - misconceptionCode: MASSA_DIANGGAP_TETAP
+      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+      keyFormula: mol = massa / Mr
+    - misconceptionCode: MR_CO2_KELIRU
+      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+      keyFormula: Mr CO₂ = 12 + 2 × 16 = 44
+    - misconceptionCode: KOEFISIEN_SALAH_BACA
+      conceptCode: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+      keyFormula: mol CO₂ / mol CH₄ = koefisien CO₂ / koefisien CH₄ = 1 / 1
+  feedback:
+    correct: "16 g CH₄ = 1 mol. Koefisien 1 : 1, jadi 1 mol CO₂ = 44 g."
+    incorrect: "Jawabannya 44 g. 16 g CH₄ = 1 mol → 1 mol CO₂ (koefisien 1 : 1) → 1 × 44 = 44 g."
+  workedSolution:
+    steps:
+      - title: Setarakan reaksi
+        body: CH₄ + 2O₂ → CO₂ + 2H₂O
+      - title: Ubah ke mol
+        body: Mr CH₄ = 12 + 4 × 1 = 16, jadi 16 g = 1 mol
+      - title: Bandingkan koefisien
+        body: "CH₄ : CO₂ = 1 : 1 → 1 mol CO₂ × 44 g/mol = 44 g"
+    after:
+      - CH₄ + 2O₂ → CO₂ + 2H₂O
+      - 1 mol CH₄ → 1 mol CO₂ = 44 g
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "Soal /coba Kimia: pembakaran gas di dapur (konteks sehari-hari). Kunci, pengecoh, dan bahasa perlu dicek guru Kimia."
+    - "Pengecoh 16 g (massa dianggap tetap), 28 g (Mr CO₂ keliru), 88 g (koefisien salah baca) diturunkan dari kesalahan umum stoikiometri."

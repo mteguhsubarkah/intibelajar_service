@@ -1,0 +1,135 @@
+schemaVersion: 1
+code: FIS.C26.E.GERAK2D.Q.SOAL_BOLA
+familyCode: FIS.C26.E.GERAK2D.F.SOAL_BOLA
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: BOLA
+difficulty: 2
+estimatedMinutes: 3
+provenance:
+  source: authored:coba
+  note: Soal /coba Fisika, sama dengan Soal 02 di landing "Di balik 1 soal". Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-bola
+concepts:
+  - concept: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.TRI.SUDUT_ISTIMEWA
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bola ditendang dengan kecepatan 20 m/s membentuk sudut 30° terhadap tanah. Berapa lama bola melayang di udara? (g = 10 m/s²)
+  hints:
+    - step: 1
+      conceptCode: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+      lead: Uraikan kecepatannya. Yang melawan gravitasi hanya komponen tegak.
+      note: vᵧ = v sin θ, vₓ = v cos θ.
+    - step: 2
+      conceptCode: MAT.TRI.SUDUT_ISTIMEWA
+      lead: Sudut 30° punya nilai sinus yang rapi.
+      note: Nilainya bisa kamu hitung tanpa kalkulator.
+    - step: 3
+      conceptCode: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+      lead: Bola naik sampai puncak, lalu turun lagi dalam waktu yang sama.
+  answerFormat: NUMBER
+  answerExample: 2 s
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 2
+    unit: s
+    tolerance:
+      relative: 0.02
+      floor: 1
+  acceptedForms:
+    - 2 s
+    - vᵧ = 20 × sin 30° = 10 m/s
+    - t = 2 vᵧ / g = 2 s
+  solutionPaths:
+    - code: VY
+      label: komponen tegak lalu waktu naik-turun
+      steps:
+        - code: S1
+          description: "Uraikan kecepatan: vᵧ = v sin 30°"
+          concepts:
+            - code: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+              role: REQUIRED
+        - code: S2
+          description: "sin 30° = ½, jadi vᵧ = 10 m/s"
+          concepts:
+            - code: MAT.TRI.SUDUT_ISTIMEWA
+              role: REQUIRED
+        - code: S3
+          description: "Waktu di udara t = 2 vᵧ / g = 2 s"
+          concepts:
+            - code: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 1
+      conceptCode: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+      misconceptionCode: WAKTU_PUNCAK_SAJA
+      explanation: "Itu baru waktu naik sampai puncak. Bola masih harus turun lagi dengan waktu yang sama."
+    - pattern:
+        kind: NUMERIC
+        value: 3.4641
+      conceptCode: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+      misconceptionCode: KOMPONEN_TEGAK_PAKAI_COS
+      explanation: "Komponen tegak yang kamu pakai sekitar 17,3 m/s (v cos 30°). Gerak naik-turun memakai v sin θ."
+    - pattern:
+        kind: NUMERIC
+        value: 4
+      conceptCode: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+      misconceptionCode: KECEPATAN_TIDAK_DIURAIKAN
+      explanation: "20 m/s itu kecepatan miring. Yang melawan gravitasi hanya komponen tegaknya."
+  finalAnswerEvidence:
+    - FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+    - MAT.TRI.SUDUT_ISTIMEWA
+    - FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+  lessonFor:
+    FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK: FIS.C26.E.GERAK2D.L.VEKTOR
+    MAT.TRI.SUDUT_ISTIMEWA: MAT.TRI.L.SUDUT_ISTIMEWA
+    FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL: FIS.C26.E.GERAK2D.L.GERAK_PELURU_IDEAL
+  recommend:
+    - misconceptionCode: WAKTU_PUNCAK_SAJA
+      conceptCode: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+      keyFormula: t = 2 vᵧ / g
+    - misconceptionCode: KOMPONEN_TEGAK_PAKAI_COS
+      conceptCode: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+      keyFormula: vᵧ = v sin θ
+    - misconceptionCode: KECEPATAN_TIDAK_DIURAIKAN
+      conceptCode: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+      keyFormula: vᵧ = v sin θ
+  feedback:
+    correct: vᵧ = 20 × sin 30° = 10 m/s. t = 2 × 10 / 10 = 2 s.
+    incorrect: Jawabannya 2 s. vᵧ = 20 × sin 30° = 10 m/s, lalu t = 2 vᵧ / g = 2 s.
+  workedSolution:
+    steps:
+      - title: Uraikan kecepatan
+        body: vᵧ = v sin 30° (komponen tegak yang melawan gravitasi)
+      - title: Pakai sudut istimewa
+        body: sin 30° = ½, jadi vᵧ = 20 × ½ = 10 m/s
+      - title: Naik lalu turun
+        body: t naik = vᵧ / g = 1 s, total t = 2 × 1 = 2 s
+    after:
+      - vᵧ = 20 × sin 30° = 10 m/s
+      - t = 2 vᵧ / g = 2 s
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "Soal /coba Fisika: satu situasi sehari-hari (tendangan bola) yang menyambungkan inti Fisika dengan Sudut Istimewa Matematika. Kunci, pengecoh, dan bahasa perlu dicek guru Fisika."
+    - "Pengecoh 1 s (hanya waktu ke puncak), 3,46 s (memakai cos), 4 s (kecepatan tidak diuraikan) diturunkan dari kesalahan umum gerak parabola."

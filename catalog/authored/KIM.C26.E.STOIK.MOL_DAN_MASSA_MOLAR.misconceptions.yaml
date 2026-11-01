@@ -1,0 +1,24 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-kompor).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - "Kesalahan umum yang dipakai sebagai pengecoh soal /coba soal-kompor; kode dan kalimat perlu dicek guru."
+misconceptions:
+  - code: MASSA_DIANGGAP_TETAP
+    description: Massa pereaksi dianggap sama dengan massa hasil tanpa lewat mol
+    example: 16 g CH₄ → 16 g CO₂
+    indicators:
+      - "soal-kompor: jawaban 16 g"
+  - code: MR_CO2_KELIRU
+    description: Mr CO₂ dihitung dengan satu atom O
+    example: Mr CO₂ = 12 + 16 = 28
+    indicators:
+      - "soal-kompor: jawaban 28 g"

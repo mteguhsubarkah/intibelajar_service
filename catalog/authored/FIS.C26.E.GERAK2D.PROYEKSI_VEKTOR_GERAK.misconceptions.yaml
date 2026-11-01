@@ -1,0 +1,24 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-bola).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - "Kesalahan umum yang dipakai sebagai pengecoh soal /coba soal-bola; kode dan kalimat perlu dicek guru."
+misconceptions:
+  - code: KOMPONEN_TEGAK_PAKAI_COS
+    description: Komponen tegak kecepatan dihitung dengan cos, bukan sin
+    example: vᵧ = 20 cos 30°
+    indicators:
+      - "soal-bola: jawaban ≈ 3,46 s"
+  - code: KECEPATAN_TIDAK_DIURAIKAN
+    description: Kecepatan miring dipakai langsung sebagai kecepatan tegak
+    example: t = 2 × 20 / 10
+    indicators:
+      - "soal-bola: jawaban 4 s"

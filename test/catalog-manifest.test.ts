@@ -72,7 +72,8 @@ test('mutation: FILE_NAME is detected when a file does not match its code', () =
     renameSync(join(dir, 'questions/MAT.TRI.Q.TAN60_SIN30.yaml'), join(dir, 'questions/renamed.yaml'));
     // Without its overlays the tower question lacks its authored patterns and lesson links; only FILE_NAME is new.
     assert.deepEqual([...rulesOf(loadManifest(dir))].sort(), [...rulesOf(extracted), 'FILE_NAME'].sort());
-    assert.deepEqual([...rulesOf(extracted)].sort(), ['LESSON_LINK', 'PATTERN']);
+    // The /coba Fisika and Kimia questions (D8) name misconceptions that only their concept overlays catalogue.
+    assert.deepEqual([...rulesOf(extracted)].sort(), ['LESSON_LINK', 'MISCONCEPTION_UNKNOWN', 'PATTERN']);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
@@ -105,9 +106,12 @@ test('Slice 2 overlays: applied over the extracted tower question, reviewed on t
   assert.ok(concept(base, 'MAT.TRI.SUDUT_ISTIMEWA').misconceptions.some(m => m.code === 'TAN30_BUKAN_SETENGAH'));
   assert.ok(!concept(extracted, 'MAT.TRI.SUDUT_ISTIMEWA').misconceptions.some(m => m.code === 'TAN30_BUKAN_SETENGAH'));
   // Every overlay is an open proposal: the draft lints clean, strict lint refuses each one by name.
-  assert.ok(base.authored!.length === 3 && base.authored!.every(a => a.review.status === 'PROPOSED' && a.provenance.source === 'authored'));
+  // three tower overlays (S2-D1) plus four misconception overlays for the /coba Fisika and Kimia questions (D8)
+  assert.equal(base.authored!.filter(a => a.review.decision === 'S2-D1').length, 3);
+  assert.equal(base.authored!.filter(a => a.review.decision === 'D8').length, 4);
+  assert.ok(base.authored!.every(a => a.review.status === 'PROPOSED' && a.provenance.source === 'authored'));
   const strict = lintManifest(base, { strict: true }).filter(f => f.file.startsWith('authored/'));
-  assert.deepEqual(strict.map(f => f.rule), ['UNREVIEWED', 'UNREVIEWED', 'UNREVIEWED']);
+  assert.deepEqual(strict.map(f => f.rule), Array(7).fill('UNREVIEWED'));
 });
 
 test('D3 stays open: the synthetic funnel lesson exercises lessonFor in memory only and is refused by strict lint', () => {

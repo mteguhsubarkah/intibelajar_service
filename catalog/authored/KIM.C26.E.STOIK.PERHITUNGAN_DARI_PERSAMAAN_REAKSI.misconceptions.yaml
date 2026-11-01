@@ -1,0 +1,19 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-kompor).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - "Kesalahan umum yang dipakai sebagai pengecoh soal /coba soal-kompor; kode dan kalimat perlu dicek guru."
+misconceptions:
+  - code: KOEFISIEN_SALAH_BACA
+    description: Koefisien zat lain dipakai untuk perbandingan mol
+    example: 1 mol CH₄ → 2 mol CO₂
+    indicators:
+      - "soal-kompor: jawaban 88 g"
