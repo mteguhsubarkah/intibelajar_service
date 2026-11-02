@@ -16,6 +16,13 @@ test('typed answers find the option they mean', () => {
   assert.equal(matchOption(trend, 'kecil').index, 1);
   assert.equal(matchOption(trend, 'tidak makin kecil').index, -1, 'negation never matches a positive option');
   assert.equal(matchOption(trend, 'makin besar makin kecil').how, 'ambiguous');
+  // jawaban berlangkah: jawaban akhirnya yang dinilai, bukan angka di langkah tengah; satuan lengkap = singkatannya
+  const motor = ['60 m', '75 m', '85 m', '110 m'];
+  const steps = 'v = 2 × 5 = 10 m/s\ns1 = ½ × 2 × 25 = 25 m\ns2 = 10 × 6 = 60 m\ns total = 25 + 60 = 85 m\n\nJadi, jarak total yang ditempuh motor adalah 85 meter.';
+  assert.equal(matchOption(motor, steps).index, 2);
+  assert.equal(matchOption(motor, 's2 = 60 m\ns = 25 + 60 = 85 m').index, 2);
+  assert.equal(matchOption(motor, '85 meter').index, 2);
+  assert.equal(matchOption(motor, 's2 = 60 m\nJadi jaraknya 60 meter').index, 0, 'a wrong final answer stays wrong');
   const place = ['golongan VA, periode 3', 'golongan VIIA, periode 3', 'golongan VIIA, periode 2', 'golongan IIIA, periode 3'];
   assert.equal(matchOption(place, 'golongan VIIA periode 3').index, 1);
   assert.equal(matchOption(place, 'periode 3, golongan VIIA').index, 1);

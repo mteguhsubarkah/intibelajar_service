@@ -17,6 +17,12 @@ export interface Catalog {
   relations: { fromTopicId: string; toTopicId: string; kind: string; label: string }[];
   mapAlias: Map<string, string>;
 }
+/** Banyak soal latihan inti ini, dengan aturan yang sama dengan resolvePractice: soal satu inti dulu, selain itu satu bab. */
+function conceptPracticeCount(questions: QuestionRow[], id: string, topicId: string) {
+  const mine = questions.filter(q => q.concepts.some(x => x.conceptId === id && x.role === 'PRIMARY' && x.assessable));
+  const only = mine.filter(q => q.concepts.every(x => x.conceptId === id));
+  return (only.length ? only : mine.filter(q => q.concepts.every(x => x.topicId === topicId))).length;
+}
 const EMPTY: Catalog = { releaseId: null, etag: '"0"', subjects: [], topics: [], concepts: [], questions: [], lessons: [], edges: [], relations: [], mapAlias: new Map() };
 
 async function load(db: Connection, release: { id: string; version: number; snapshot_sha256: Buffer }): Promise<Catalog> {
@@ -105,7 +111,7 @@ export function catalogReader(key: Buffer) {
       if (!concept) return fail(404, 'NOT_FOUND');
       const lessons = c.lessons.filter(l => l.conceptIds.includes(id)).map(l => ({ lessonId: l.id, routeSlug: l.route_slug, title: l.title }));
       return conceptView(concept, c.edges.filter(e => e.conceptId === id).map(e => ({ conceptId: e.prerequisiteId, kind: e.kind })), lessons,
-        c.questions.filter(q => q.concepts.some(x => x.conceptId === id)).length);
+        conceptPracticeCount(c.questions, id, concept.topic_id));
     },
     questions: async (db: Connection, f: QuestionFilter, cursor?: string, limit = 20) => {
       const c = await current(db), after = cursor === undefined ? undefined : decodeCursor(cursor, f, c.releaseId);

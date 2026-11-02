@@ -22,11 +22,29 @@ const compact = (s: string) => s.replace(/[\s,]+/g, '');
 function words(s: string) {
   return new Set(s.split(/[^\p{L}\p{N}√π.+\-*/^°%→]+/u).map((w) => w.replace(/^\.+|\.+$/g, '')).filter((w) => w && !STOP.has(w)));
 }
+/* satuan yang ditulis lengkap disamakan dengan singkatannya: "85 meter" = "85 m" */
+const UNIT_ALIAS: Record<string, string> = { meter: 'm', metre: 'm', detik: 's', sekon: 's', gram: 'g', kilogram: 'kg', kilometer: 'km', sentimeter: 'cm', liter: 'l', mol: 'mol' };
 function numberOf(s: string): { value: number; unit: string } | null {
   const m = compact(s).replace(/^[a-z]=/, '').match(/^(-?\d+(?:\.\d+)?)(?:\/(\d+(?:\.\d+)?))?([a-z%°/²³]*)$/);
   if (!m) return null;
   const value = m[2] ? Number(m[1]) / Number(m[2]) : Number(m[1]);
-  return Number.isFinite(value) ? { value, unit: m[3] ?? '' } : null;
+  const unit = m[3] ?? '';
+  return Number.isFinite(value) ? { value, unit: UNIT_ALIAS[unit] ?? unit } : null;
+}
+
+/*
+ * Jawaban dengan langkah ("s1 = 25 m ... s total = 25 + 60 = 85 m. Jadi, jaraknya adalah 85 meter."): yang dinilai
+ * jawaban akhirnya — baris terakhir, setelah "adalah/ialah/yaitu" atau setelah "=" terakhir. null bila bukan jawaban
+ * berlangkah (satu baris pendek tanpa "=").
+ */
+function finalAnswerOf(raw: string): string | null {
+  const lines = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+  if (lines.length < 2 && !raw.includes('=')) return null;
+  const last = lines.at(-1) ?? '';
+  const afterWord = last.split(/\b(?:adalah|ialah|yaitu|jadi|maka)\b/i).at(-1) ?? last;
+  const afterEq = afterWord.split('=').at(-1) ?? afterWord;
+  const seg = afterEq.replace(/^[\s,:]+/, '').trim();
+  return seg && seg !== raw.trim() ? seg : null;
 }
 const close = (a: number, b: number) => Math.abs(a - b) <= Math.max(1e-9, Math.abs(b) * 0.005);
 function similarity(a: string, b: string) {
@@ -42,6 +60,12 @@ function similarity(a: string, b: string) {
 export function matchOption(options: readonly string[], raw: string): OptionMatch {
   const text = normalizeOptionText(raw ?? '');
   if (!text || DONT_KNOW.test(text)) return { index: -1, how: 'empty' };
+  // jawaban berlangkah: cocokkan jawaban akhirnya dulu, supaya angka di langkah tengah tidak ikut dinilai
+  const final = finalAnswerOf(raw);
+  if (final) {
+    const hit = matchOption(options, final);
+    if (hit.index >= 0) return hit;
+  }
   // huruf besar-kecil bisa jadi yang diuji (mis. penulisan nama ilmiah): cocok persis dulu
   const strict = raw.normalize('NFKC').trim().replace(/[.。]+$/, '').trim();
   const sameCase = options.findIndex((o) => o.normalize('NFKC').trim() === strict);
@@ -65,7 +89,13 @@ export function matchOption(options: readonly string[], raw: string): OptionMatc
   const within = (o: string) => o.length >= 3 && new RegExp(`(^|[\\s(=:])${esc(o)}($|[\\s.,;)])`).test(text);
   const inside = norm.map((o, i) => (within(o) ? i : -1)).filter((i) => i >= 0);
   const longest = Math.max(0, ...inside.map((i) => norm[i]!.length));
-  const top = inside.filter((i) => norm[i]!.length === longest);
+  let top = inside.filter((i) => norm[i]!.length === longest);
+  // jawaban berlangkah yang menulis beberapa pilihan (langkah tengah dan jawaban akhir): yang terakhir ditulis jawabannya
+  if (top.length > 1 && final !== null) {
+    const lastAt = (i: number) => text.lastIndexOf(norm[i]!);
+    const latest = Math.max(...top.map(lastAt));
+    top = top.filter((i) => lastAt(i) === latest);
+  }
   if (top.length === 1 && !NEG.test(text.replace(norm[top[0]!]!, ''))) return { index: top[0]!, how: 'exact' };
 
   const tw = words(text), negText = NEG.test(text);
