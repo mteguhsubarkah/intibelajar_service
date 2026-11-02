@@ -1,6 +1,7 @@
 import { chapterPractice, practiceData, practiceList, questionHistory, type PracticeFilter } from './progress/practice.js';
 import {ownQuestionService} from './assessment/own-question.js';
 import {guideReply,type GuideInput} from './tutor/context-guide.js';
+import {answerDirection} from './assessment/answer-direction.js';
 import {claimTrial} from './learning/trial-claim.js';
 import {readTrialProof} from './assessment/trial-proof.js';
 import type { TrialAi } from './assessment/trial-ai.js';
@@ -472,6 +473,11 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     learnLimit(req);
     await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
     return ownQuestions.diagnose(req.body as {questionText:string;rawText:string;sessionId:string;hintOpened:boolean},req.principal!.learnerId!);
+  });
+  route('POST','/v1/practice/answer-direction','student',async req=>{
+    learnLimit(req);
+    await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
+    return answerDirection(db,await catalog.current(db),config.guide,req.body as {questionId:string;optionId?:string;text?:string});
   });
   route('POST','/v1/guide/messages','student',async req=>{
     learnLimit(req);

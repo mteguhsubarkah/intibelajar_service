@@ -194,6 +194,44 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/LegacyTutorReply"
+  /v1/practice/answer-direction:
+    post:
+      operationId: practiceAnswerDirection
+      summary: For a wrong practice answer, the one core that explains the mistake and one friendly sentence to the learner (never the right answer).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId]
+              additionalProperties: false
+              properties:
+                questionId:
+                  $ref: '#/components/schemas/Uuid'
+                optionId:
+                  type: string
+                  maxLength: 16
+                text:
+                  type: string
+                  maxLength: 2000
+      responses:
+        "200":
+          description: Direction for the learner
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [coreId, title, reason]
+                properties:
+                  coreId: {type: string, maxLength: 128}
+                  title: {type: string, maxLength: 200}
+                  reason: {type: string, maxLength: 300}
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v1/trial/claim:
     post:
       operationId: claimTrial

@@ -50,7 +50,7 @@ export const paragraphs=(text:string)=>text.replace(/\r\n?/g,'\n').replace(/[ \t
 /* Penyebab gagal dicatat tanpa isi percakapan, supaya 503 bisa dilacak dari journalctl. */
 const logFailure=(reason:string,status?:number)=>console.warn(JSON.stringify({event:'intiguide_provider_failure',reason,...(status?{status}:{})}));
 type Attempt={ok:true;content:string}|{ok:false;retry:boolean};
-async function ask(http:typeof fetch,config:NonNullable<Config['guide']>,messages:unknown[],json:boolean,ms:number):Promise<Attempt>{
+export async function ask(http:typeof fetch,config:NonNullable<Config['guide']>,messages:unknown[],json:boolean,ms:number):Promise<Attempt>{
  let r:Response;
  try{r=await http('https://api.deepseek.com/chat/completions',{method:'POST',signal:AbortSignal.timeout(ms),headers:{'Content-Type':'application/json',Authorization:'Bearer '+config.apiKey},body:JSON.stringify({model:config.model,thinking:{type:'disabled'},max_tokens:900,stream:false,...(json?{response_format:{type:'json_object'}}:{}),messages})});}
  catch(e){logFailure((e as Error)?.name==='TimeoutError'?'timeout':'network');return{ok:false,retry:(e as Error)?.name!=='TimeoutError'||ms>12000};}
