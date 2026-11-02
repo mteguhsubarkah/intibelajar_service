@@ -46,7 +46,7 @@ export interface Rubric {
 export interface Question {
   schemaVersion: 1; code: string; familyCode: string; visibility: 'PUBLIC_PRACTICE'|'CATALOG'; origin: 'AUTHORED';
   itemType: 'FREE_RESPONSE'|'MULTIPLE_CHOICE'|'NUMERIC'; contextTag: string; difficulty: number; estimatedMinutes: number;
-  provenance: { source: string; note?: string }; aliases: Alias[]; legacyOptionOrder?: string[];
+  provenance: { source: string; note?: string; exam?: { name: string; year: number; number?: number } }; aliases: Alias[]; legacyOptionOrder?: string[];
   concepts: { concept: string; role: 'PRIMARY'|'SUPPORTING'; assessable: boolean }[]; body: QuestionBody; rubric: Rubric; review?: Review;
 }
 export type LessonBlock =

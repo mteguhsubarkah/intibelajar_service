@@ -17,6 +17,12 @@ export interface Catalog {
   relations: { fromTopicId: string; toTopicId: string; kind: string; label: string }[];
   mapAlias: Map<string, string>;
 }
+/** Banyak soal latihan inti ini, dengan aturan yang sama dengan resolvePractice: soal satu inti dulu, selain itu satu bab. */
+function conceptPracticeCount(questions: QuestionRow[], id: string, topicId: string) {
+  const mine = questions.filter(q => q.concepts.some(x => x.conceptId === id && x.role === 'PRIMARY' && x.assessable));
+  const only = mine.filter(q => q.concepts.every(x => x.conceptId === id));
+  return (only.length ? only : mine.filter(q => q.concepts.every(x => x.topicId === topicId))).length;
+}
 const EMPTY: Catalog = { releaseId: null, etag: '"0"', subjects: [], topics: [], concepts: [], questions: [], lessons: [], edges: [], relations: [], mapAlias: new Map() };
 
 async function load(db: Connection, release: { id: string; version: number; snapshot_sha256: Buffer }): Promise<Catalog> {
@@ -29,7 +35,7 @@ async function load(db: Connection, release: { id: string; version: number; snap
   const concepts = (await sql<ConceptRow>`select id, topic_id, code, legacy_map_id, title, subtitle, definition, objectives, misconceptions, unit_code,
       ordinal, estimated_minutes, availability, is_hidden, is_capstone from concept
     where code in (${codes('$.topics[*].concepts[*].code')}) order by topic_id, ordinal, code`.execute(db)).rows;
-  const questions = (await sql<QuestionRow>`select q.id, q.code, q.legacy_item_id, q.visibility, r.id as revision_id, r.item_type, r.body, r.difficulty, r.estimated_minutes,
+  const questions = (await sql<QuestionRow>`select q.id, q.code, q.legacy_item_id, q.visibility, r.id as revision_id, r.item_type, r.body, r.difficulty, r.estimated_minutes, r.provenance,
       (select jsonb_agg(jsonb_build_object('conceptId', c.id, 'topicId', c.topic_id, 'role', qc.role, 'assessable', qc.assessable) order by qc.role, c.code)
         from question_concept qc join concept c on c.id = qc.concept_id where qc.question_revision_id = r.id) as concepts
     from question q join question_revision r on r.question_id = q.id and r.status = 'PUBLISHED'
@@ -105,7 +111,7 @@ export function catalogReader(key: Buffer) {
       if (!concept) return fail(404, 'NOT_FOUND');
       const lessons = c.lessons.filter(l => l.conceptIds.includes(id)).map(l => ({ lessonId: l.id, routeSlug: l.route_slug, title: l.title }));
       return conceptView(concept, c.edges.filter(e => e.conceptId === id).map(e => ({ conceptId: e.prerequisiteId, kind: e.kind })), lessons,
-        c.questions.filter(q => q.concepts.some(x => x.conceptId === id)).length);
+        conceptPracticeCount(c.questions, id, concept.topic_id));
     },
     questions: async (db: Connection, f: QuestionFilter, cursor?: string, limit = 20) => {
       const c = await current(db), after = cursor === undefined ? undefined : decodeCursor(cursor, f, c.releaseId);

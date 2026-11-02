@@ -287,3 +287,55 @@ export function questionHistory(
       hash(stable(rows)).toString("hex"),
   );
 }
+
+/*
+ * Latihan per bab (halaman Latihan): satu ringkasan per bab pelajaran, dan 5 soal berikutnya untuk sesi bab.
+ * Soal yang ditawarkan hanya soal yang semua intinya sudah dikuasai ("ready"), supaya latihan bab menguji ulang
+ * yang sudah dipelajari (retrieval practice), bukan soal di luar jangkauan. Urutan pilihan: soal yang belum pernah
+ * dicoba, satu soal gabungan, satu soal yang pernah meleset, lalu soal lama yang paling lama tidak dikerjakan.
+ * Bab tanpa inti dikuasai tidak punya soal siap: aplikasi menawarkan materi inti pertamanya dulu.
+ */
+export const CHAPTER_SET = 5;
+type PracticeItem = Awaited<ReturnType<typeof practiceData>>["items"][number];
+export function pickChapterSet(ready: PracticeItem[], size = CHAPTER_SET): PracticeItem[] {
+  const untried = ready.filter((i) => i.progress.status === "UNTRIED");
+  const single = untried.filter((i) => i.coreCount === 1), multi = untried.filter((i) => i.coreCount > 1);
+  const missed = ready.filter((i) => i.progress.status === "RETRY");
+  const old = ready
+    .filter((i) => i.progress.attemptCount > 0 && i.progress.status !== "RETRY")
+    .sort((a, b) => (a.progress.lastAttemptAt ?? "").localeCompare(b.progress.lastAttemptAt ?? ""));
+  const picked: PracticeItem[] = [];
+  const take = (list: PracticeItem[], n: number) => { for (const i of list) { if (picked.length >= size || n <= 0) break; if (!picked.includes(i)) { picked.push(i); n--; } } };
+  take(single, 3); take(multi, 1); take(missed, 1); take(old, size);
+  take([...single, ...multi, ...missed], size);
+  return picked;
+}
+export function chapterPractice(data: Awaited<ReturnType<typeof practiceData>>, c: Catalog, p: Projection, subjectCode: string) {
+  const subject = c.subjects.find((s) => s.code === subjectCode);
+  if (!subject) fail(404, "NOT_FOUND");
+  const order = ["D", "E", "F", "F+"];
+  const topics = c.topics
+    .filter((t) => t.subject_id === subject!.id && t.availability === "MAPPED")
+    .sort((a, b) => order.indexOf(a.phase) - order.indexOf(b.phase) || a.code.localeCompare(b.code));
+  const items = topics.map((t) => {
+    const cores = c.concepts.filter((x) => x.topic_id === t.id && !x.is_hidden && !x.is_capstone).sort((a, b) => a.ordinal - b.ordinal);
+    const mastered = cores.filter((x) => counted(p, x.id));
+    const questions = data.items.filter((i) => i.available && i.question.topicIds.includes(t.id));
+    const ready = questions.filter((i) => i.ready);
+    const tried = questions.filter((i) => i.progress.attemptCount > 0);
+    const correct = tried.filter((i) => i.progress.status === "CORRECT" || i.progress.status === "ASSISTED");
+    const last = tried.map((i) => i.progress.lastAttemptAt ?? "").sort().at(-1);
+    const next = pickChapterSet(ready);
+    const firstCore = cores.find((x) => !counted(p, x.id)) ?? null;
+    return {
+      topicId: t.id, code: t.code, title: t.title, phase: t.phase,
+      cores: { total: cores.length, mastered: mastered.length },
+      questions: { total: questions.length, ready: ready.length, tried: tried.length, correct: correct.length, untriedReady: ready.filter((i) => i.progress.status === "UNTRIED").length },
+      ...(last ? { lastAttemptAt: last } : {}),
+      sources: [...new Set(questions.map((i) => i.question.source.label))],
+      next: next.map((i) => i.question.id),
+      ...(firstCore ? { nextCore: { conceptId: firstCore.id, title: firstCore.title, ...(firstCore.legacy_map_id ? { legacyMapId: firstCore.legacy_map_id } : {}) } } : {}),
+    };
+  });
+  return { subjectCode, items };
+}

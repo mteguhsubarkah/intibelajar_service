@@ -12,7 +12,8 @@ export interface ConceptRow { id: string; topic_id: string; code: string; legacy
   objectives: string[]; misconceptions: { code: string; description: string }[]; unit_code: string | null; ordinal: number; estimated_minutes: number;
   availability: string; is_hidden: boolean; is_capstone: boolean }
 export interface QuestionRow { id: string; code: string; legacy_item_id: string | null; visibility: string; revision_id: string; item_type: string; body: QuestionBody;
-  difficulty: number; estimated_minutes: number; concepts: { conceptId: string; topicId: string; role: 'PRIMARY'|'SUPPORTING'; assessable: boolean }[] }
+  difficulty: number; estimated_minutes: number; concepts: { conceptId: string; topicId: string; role: 'PRIMARY'|'SUPPORTING'; assessable: boolean }[];
+  provenance?: { source?: string; note?: string; exam?: { name: string; year: number; number?: number } } | null }
 export interface LessonRow { id: string; code: string; route_slug: string | null; practice_set: string | null; revision: number; title: string; estimated_minutes: number; blocks: LessonBlock[];
   conceptIds: string[]; checks: { id: string; ordinal: number; slide_index: number; required: boolean; question_id: string }[] }
 
@@ -45,6 +46,18 @@ export const conceptView = (c: ConceptRow, prerequisites: { conceptId: string; k
   questionCount,
 });
 
+/*
+ * Asal soal untuk siswa, dari provenance revisi soal. Soal ujian asli (exam: nama, tahun, nomor) diberi label ujiannya;
+ * soal yang ditulis tim tetap "Soal IntiBelajar", dengan gaya rujukannya bila ada (bukan klaim sebagai soal resmi).
+ */
+const STYLES: [RegExp, string][] = [[/UTBK|SNBT/i, 'Gaya UTBK-SNBT'], [/Ujian Nasional|\bUN\b/i, 'Gaya UN SMA'], [/Kurikulum Merdeka/i, 'Gaya Kurikulum Merdeka']];
+export const questionSource = (p: QuestionRow['provenance']) => {
+  const exam = p?.exam;
+  if (exam?.name && Number.isInteger(exam.year)) return { kind: 'EXAM' as const, label: `${exam.name} ${exam.year}${exam.number ? ` · no. ${exam.number}` : ''}` };
+  const style = STYLES.find(([re]) => re.test(p?.note ?? ''))?.[1];
+  return { kind: 'AUTHORED' as const, label: 'Soal IntiBelajar', ...(style ? { style } : {}) };
+};
+
 const PREVIEW = 160;
 const preview = (prompt: string) => {
   const chars = [...prompt.replace(/\s+/g, ' ').trim()];
@@ -56,7 +69,7 @@ export const questionSummary = (q: QuestionRow) => {
   return {
     id: q.id, code: q.code, ...opt('legacyItemId', q.legacy_item_id), visibility: q.visibility, itemType: q.item_type, difficulty: q.difficulty, estimatedMinutes: q.estimated_minutes,
     topicIds: [...new Set(q.concepts.map(c => c.topicId))], conceptIds: q.concepts.map(c => c.conceptId),
-    isCombined: assessableTopics.size >= 2, promptPreview: preview(q.body.prompt),
+    isCombined: assessableTopics.size >= 2, promptPreview: preview(q.body.prompt), source: questionSource(q.provenance),
   };
 };
 
@@ -66,6 +79,7 @@ export const questionView = (q: QuestionRow) => ({
   ...opt('figureRef', q.body.figureRef), ...(q.body.options ? { options: q.body.options.map(o => ({ id: o.id, label: o.label })) } : {}),
   answerFormat: q.body.answerFormat, ...opt('answerExample', q.body.answerExample), hintCount: q.body.hints.length,
   difficulty: q.difficulty, estimatedMinutes: q.estimated_minutes, concepts: q.concepts.map(c => ({ conceptId: c.conceptId, role: c.role })),
+  source: questionSource(q.provenance),
 });
 
 const blockView = (b: LessonBlock) => {

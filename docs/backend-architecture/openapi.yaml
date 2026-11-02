@@ -194,6 +194,44 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/LegacyTutorReply"
+  /v1/practice/answer-direction:
+    post:
+      operationId: practiceAnswerDirection
+      summary: For a wrong practice answer, the one core that explains the mistake and one friendly sentence to the learner (never the right answer).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId]
+              additionalProperties: false
+              properties:
+                questionId:
+                  $ref: '#/components/schemas/Uuid'
+                optionId:
+                  type: string
+                  maxLength: 16
+                text:
+                  type: string
+                  maxLength: 2000
+      responses:
+        "200":
+          description: Direction for the learner
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [coreId, title, reason]
+                properties:
+                  coreId: {type: string, maxLength: 128}
+                  title: {type: string, maxLength: 200}
+                  reason: {type: string, maxLength: 300}
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v1/trial/claim:
     post:
       operationId: claimTrial
@@ -1847,6 +1885,34 @@ paths:
           $ref: "#/components/responses/Unauthenticated"
         "403":
           $ref: "#/components/responses/Forbidden"
+  /v1/me/chapters:
+    get:
+      operationId: listLearnerChapters
+      tags:
+        - progress
+      summary: Chapter practice for one subject. Per chapter, the learner's results and the next practice set (up to 5 question ids whose cores are all mastered).
+      parameters:
+        - name: subjectCode
+          in: query
+          required: true
+          schema:
+            type: string
+            maxLength: 16
+      responses:
+        "200":
+          description: Learner-owned chapter practice projection.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LearnerChapterPage"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthenticated"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v1/me/questions/{questionId}/history:
     get:
       operationId: getLearnerQuestionHistory
@@ -3994,6 +4060,91 @@ components:
         promptPreview:
           type: string
           maxLength: 160
+        source:
+          $ref: '#/components/schemas/QuestionSource'
+    LearnerChapterPage:
+      type: object
+      additionalProperties: false
+      required: [subjectCode, items]
+      properties:
+        subjectCode:
+          type: string
+          maxLength: 16
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LearnerChapter'
+    LearnerChapter:
+      type: object
+      additionalProperties: false
+      required: [topicId, code, title, phase, cores, questions, sources, next]
+      properties:
+        topicId:
+          $ref: '#/components/schemas/Uuid'
+        code:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 200
+        phase:
+          $ref: '#/components/schemas/Phase'
+        cores:
+          type: object
+          additionalProperties: false
+          required: [total, mastered]
+          properties:
+            total: {type: integer, minimum: 0}
+            mastered: {type: integer, minimum: 0}
+        questions:
+          type: object
+          additionalProperties: false
+          required: [total, ready, tried, correct, untriedReady]
+          properties:
+            total: {type: integer, minimum: 0}
+            ready: {type: integer, minimum: 0}
+            tried: {type: integer, minimum: 0}
+            correct: {type: integer, minimum: 0}
+            untriedReady: {type: integer, minimum: 0}
+        lastAttemptAt:
+          $ref: '#/components/schemas/Timestamp'
+        sources:
+          type: array
+          maxItems: 20
+          items: {type: string, maxLength: 120}
+        next:
+          type: array
+          maxItems: 5
+          items:
+            $ref: '#/components/schemas/Uuid'
+        nextCore:
+          type: object
+          additionalProperties: false
+          required: [conceptId, title]
+          properties:
+            conceptId:
+              $ref: '#/components/schemas/Uuid'
+            title:
+              type: string
+              maxLength: 200
+            legacyMapId:
+              type: string
+              maxLength: 128
+    QuestionSource:
+      type: object
+      additionalProperties: false
+      description: Where a question comes from, for the learner. EXAM = a real exam paper (name, year, number); AUTHORED = written by the IntiBelajar team, with the exam style it follows when known.
+      required: [kind, label]
+      properties:
+        kind:
+          type: string
+          enum: [EXAM, AUTHORED]
+        label:
+          type: string
+          maxLength: 120
+        style:
+          type: string
+          maxLength: 60
     PracticeQuestionStatus:
       type: string
       enum:
@@ -4245,6 +4396,8 @@ components:
               role:
                 type: string
                 enum: [PRIMARY, SUPPORTING]
+        source:
+          $ref: '#/components/schemas/QuestionSource'
     LessonBlock:
       type: object
       additionalProperties: false
@@ -5189,6 +5342,23 @@ components:
         streakDays:
           type: integer
           minimum: 0
+        days:
+          type: array
+          description: The learner's last 7 local days, oldest first, today last. Activity count and XP per day, from all progress events (not only the 20 in `activities`).
+          maxItems: 7
+          items:
+            type: object
+            required: [date, count, xp]
+            properties:
+              date:
+                type: string
+                format: date
+              count:
+                type: integer
+                minimum: 0
+              xp:
+                type: integer
+                minimum: 0
     MasteryView:
       type: object
       additionalProperties: false

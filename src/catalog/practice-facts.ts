@@ -9,7 +9,7 @@ export async function practiceRevisions(
 ): Promise<QuestionRow[]> {
   if (!revisionIds.length) return [];
   return (
-    await sql<QuestionRow>`select q.id,q.code,q.legacy_item_id,q.visibility,r.id as revision_id,r.item_type,r.body,r.difficulty,r.estimated_minutes,
+    await sql<QuestionRow>`select q.id,q.code,q.legacy_item_id,q.visibility,r.id as revision_id,r.item_type,r.body,r.difficulty,r.estimated_minutes,r.provenance,
     coalesce((select jsonb_agg(jsonb_build_object('conceptId',c.id,'topicId',c.topic_id,'role',qc.role,'assessable',qc.assessable))
       from question_concept qc join concept c on c.id=qc.concept_id where qc.question_revision_id=r.id),'[]') as concepts
     from question_revision r join question q on q.id=r.question_id

@@ -131,6 +131,8 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
         }
       }
       if(proof && result.verdict==='CORRECT' && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
+      // Inti yang sudah terlihat di jawaban ini tidak diajarkan ulang oleh IntiGuide: ditandai selesai untuk percakapan berikutnya.
+      if (output.items) c.guideDone = [...new Set([...(c.guideDone ?? []), ...output.items.filter((x: { state: string }) => x.state === 'ok').map((x: { id: string }) => x.id)])];
       // Bounded results and the latest answer (for tutor context) expire with the anonymous session.
       if (c.runs.size >= 32) c.runs.delete(c.runs.keys().next().value!);
       c.runs.set(fingerprint, { id, output }); c.latestRun = id;

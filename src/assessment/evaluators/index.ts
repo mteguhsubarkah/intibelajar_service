@@ -1,6 +1,7 @@
 import type { QuestionBody, Rubric } from '../../catalog/manifest.js';
 import { normalizeAnswerText, parseAnswerValue, unitKindOf, withinTolerance, type UnreadableReason } from './numeric-parse.js';
 import { evaluateTower } from './tower-v1.js';
+import { matchOption } from './option-text.js';
 // Deterministic evaluators (Slice 1 M5; 06 §1–§2). Pure functions: (question, response) → verdict and
 // candidate evidence per concept. No I/O, no clock, no exposure or eligibility: assessment adds those
 // when it stores evidence (06 §5), because they depend on the learner's history, not on the answer.
@@ -57,12 +58,25 @@ function evidenceFor(input: EvaluationInput, correct: boolean, refs: EvidenceRef
   });
 }
 
-/** option-v1: multiple choice. The response names an option id; an unknown id is unreadable, never wrong. */
+/** option-v1: multiple choice, answered by option id or by typed text matched to an option. An unknown id is unreadable, never wrong. */
 export function evaluateOption(input: EvaluationInput): Evaluation {
   const { rubric, body, response } = input;
   if (response.responseType === 'SELF_REPORT') return ungraded('NOT_GRADED', null);
   const key = rubric.answer.optionId;
   if (key === undefined || !body.options?.some(o => o.id === key)) return ungraded('UNREADABLE', 'missing-answer-key');
+  // Isian: jawaban ketikan dicocokkan dengan pilihan (option-text.ts). Tidak cocok dengan pilihan mana pun = salah,
+  // tanpa miskonsepsi (tidak ada gap yang dikarang); kosong = belum terbaca.
+  if (response.responseType === 'TEXT' && typeof response.text === 'string') {
+    const m = matchOption(body.options.map(o => o.label), response.text);
+    if (m.how === 'empty') return ungraded('UNREADABLE', 'empty');
+    const start = response.text.length - response.text.trimStart().length, end = response.text.trimEnd().length;
+    const refs: EvidenceRef[] = [{ kind: 'SPAN', start, end, quote: response.text.slice(start, end) }];
+    const chosen = m.index >= 0 ? body.options[m.index]!.id : null;
+    const correct = chosen === key;
+    const miss = correct || !chosen ? null : rubric.misconceptionMap.find(x => x.pattern.kind === 'OPTION' && x.pattern.optionId === chosen) ?? null;
+    return { verdict: correct ? 'CORRECT' : 'INCORRECT', reason: null, value: null, misconceptionCode: miss?.misconceptionCode ?? null,
+      evidence: evidenceFor(input, correct, refs, miss), revealedAnswer: { optionId: key } };
+  }
   if (response.responseType !== 'OPTION' || response.optionId === undefined) return ungraded('UNREADABLE', 'unsupported-response');
   if (!body.options.some(o => o.id === response.optionId)) return ungraded('UNREADABLE', 'unsupported-response');
   const correct = response.optionId === key;

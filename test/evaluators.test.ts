@@ -116,7 +116,8 @@ test('INV-16 and refusals: unreadable, self-reports and malformed inputs produce
     [evaluateNumeric(input(numeric, option('a'))), 'UNREADABLE', 'unsupported-response'],
     [evaluateNumeric(input(numeric, { schemaVersion: 1, responseType: 'SELF_REPORT', selfReport: 'KNOW', inputMode: 'TYPED' })), 'NOT_GRADED', null],
     [evaluateOption(input(mcq, option('z'))), 'UNREADABLE', 'unsupported-response'],
-    [evaluateOption(input(mcq, text('a'))), 'UNREADABLE', 'unsupported-response'],
+    [evaluateOption(input(mcq, text('gatau'))), 'UNREADABLE', 'empty'],
+    [evaluateOption(input(mcq, text('   '))), 'UNREADABLE', 'empty'],
     [evaluateOption(input(mcq, { schemaVersion: 1, responseType: 'SELF_REPORT', selfReport: 'DONT_KNOW', inputMode: 'TYPED' })), 'NOT_GRADED', null],
   ];
   for (const [r, verdict, reason] of cases) {

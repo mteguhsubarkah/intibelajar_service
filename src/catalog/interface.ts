@@ -33,9 +33,17 @@ const strip = ({ revisionId, questionId, familyCode, primaryConcepts }: Practice
 export async function resolvePractice(db: Connection, release: Release, spec: PracticeSpec): Promise<PracticeItem[]> {
   if ('conceptId' in spec) {
     if (!(await sql`select 1 from concept where id = ${spec.conceptId}`.execute(db)).rows.length) fail(404, 'NOT_FOUND');
-    const rows = (await items(sql`r.item_type in (${sql.join(DETERMINISTIC)}) and exists (select 1 from question_concept qc where qc.question_revision_id = r.id
-      and qc.concept_id = ${spec.conceptId} and qc.role = 'PRIMARY' and qc.assessable)`).execute(db)).rows
-      .sort((a, b) => a.difficulty - b.difficulty || (a.code < b.code ? -1 : 1)).slice(0, MAX_ITEMS);
+    // Latihan satu inti menguji inti itu saja: soal yang hanya memakai inti ini dulu; bila belum ada, soal multi-inti
+    // dari bab yang sama. Soal lintas bab atau lintas pelajaran (soal gabungan) tidak pernah masuk latihan inti.
+    const focus = sql`r.item_type in (${sql.join(DETERMINISTIC)}) and exists (select 1 from question_concept qc where qc.question_revision_id = r.id
+      and qc.concept_id = ${spec.conceptId} and qc.role = 'PRIMARY' and qc.assessable)`;
+    const only = sql`not exists (select 1 from question_concept qc2 where qc2.question_revision_id = r.id and qc2.concept_id <> ${spec.conceptId})`;
+    const sameTopic = sql`not exists (select 1 from question_concept qc2 join concept c2 on c2.id = qc2.concept_id
+      where qc2.question_revision_id = r.id and c2.topic_id <> (select topic_id from concept where id = ${spec.conceptId}))`;
+    const order = (a: { difficulty: number; code: string }, b: { difficulty: number; code: string }) => a.difficulty - b.difficulty || (a.code < b.code ? -1 : 1);
+    let rows = (await items(sql`${focus} and ${only}`).execute(db)).rows;
+    if (!rows.length) rows = (await items(sql`${focus} and ${sameTopic}`).execute(db)).rows;
+    rows = rows.sort(order).slice(0, MAX_ITEMS);
     if (!rows.length) fail(409, 'CONTENT_UNAVAILABLE');
     return rows.map(strip);
   }
