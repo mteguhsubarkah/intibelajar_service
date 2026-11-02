@@ -1,4 +1,4 @@
-import { practiceData, practiceList, questionHistory, type PracticeFilter } from './progress/practice.js';
+import { chapterPractice, practiceData, practiceList, questionHistory, type PracticeFilter } from './progress/practice.js';
 import {ownQuestionService} from './assessment/own-question.js';
 import {guideReply,type GuideInput} from './tutor/context-guide.js';
 import {claimTrial} from './learning/trial-claim.js';
@@ -234,6 +234,13 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
       const p=await rebuildProgress(tx,id,profile.timezone),c=await catalog.current(tx);
       const data=await practiceData(tx,id,c,p);
       return practiceList(data,c,p,req.query as PracticeFilter,config.key,id);
+    });
+  });
+  route('GET','/v1/me/chapters','student',async req=>{
+    return learnerTransaction(req,async tx=>{
+      const id=req.principal!.learnerId!;await privacy.requireConsent(tx,id,['LEARNING_DATA']);const profile=await privacy.profile(tx,id);
+      const p=await rebuildProgress(tx,id,profile.timezone),c=await catalog.current(tx);
+      return chapterPractice(await practiceData(tx,id,c,p),c,p,(req.query as {subjectCode:string}).subjectCode);
     });
   });
   route('GET','/v1/me/questions/{questionId}/history','student',async req=>{

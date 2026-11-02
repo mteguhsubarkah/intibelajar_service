@@ -74,3 +74,19 @@ test('nullable AI verdict: unrelated text asks for clarification, unfinished wor
  assert.equal(partial.items.find((x:any)=>x.state==='ok').id,item.concepts[0]!.legacyMapId);
  const next=partial.items.find((x:any)=>x.state==='gap');assert.equal(next.id,item.concepts[1]!.legacyMapId);assert.equal(next.reason,'Hitung nilai x dari persamaan ini.');assert.equal(next.quote,undefined);
 });
+test('cores the answer already shows are passed to IntiGuide as done, so it does not teach them again',async()=>{
+ const okId=item.concepts[0].legacyMapId!;let context:any;
+ const ai=trialDeepSeek(null as any,config,async(_url,options)=>{
+  const body=JSON.parse(String(options?.body));
+  if(body.messages[0].content.includes('penilai'))return envelope({correct:false,items:item.concepts.map((c,i)=>({code:c.code,state:i===0?'ok':i===1?'gap':'rest',quote:i<2?'tan 30':'',reason:'Bukti langkah siswa.'}))});
+  context=JSON.parse(body.messages[1].content.replace('Konteks belajar: ',''));
+  return Response.json({choices:[{message:{content:'Kamu sudah paham bagian awal.\n\nSekarang bagian berikutnya?'}}]});
+ });
+ const s=trialAssessment(async()=>item,ai);
+ const run=await s.diagnose('owner',{sessionId:'seed',questionId:'soal-menara',rawText:raw,responseMode:null});
+ assert.ok(run.items.some((x:any)=>x.id===okId&&x.state==='ok'));
+ const reply=await s.tutor('owner',{sessionId:'seed',questionId:'soal-menara',messages:[{from:'me',text:'bantu'}]});
+ assert.ok(context.daftarInti.find((c:any)=>c.id===okId).selesai);
+ assert.notEqual(context.intiAktif.id,okId);
+ assert.ok(reply.coreProgress!.done.includes(okId));
+});

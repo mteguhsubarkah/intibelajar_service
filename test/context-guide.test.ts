@@ -49,3 +49,11 @@ test('a busy or empty provider reply is retried once without JSON mode; two fail
  let n=0;await assert.rejects(guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},(async()=>{n++;return new Response('',{status:503});}) as typeof fetch),(e:any)=>e.status===503);assert.equal(n,2);
  n=0;await assert.rejects(guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'hai'}]},(async()=>{n++;return new Response('',{status:401});}) as typeof fetch),(e:any)=>e.status===503);assert.equal(n,1,'auth errors are not retried');
 });
+test('replies are written as short paragraphs: the prompt asks for them and extra blank lines are tidied',async()=>{
+ let sent:any;
+ const reply=await guideReply(null as any,config,{questionText:'sin x = 9/12, tan x = ?',cores,done:['tri-i'],messages:[{from:'me',text:'bingung'}]},(async(_u,o)=>{sent=JSON.parse(String(o?.body));return envelope({reply:'Iya, aku paham kamu bingung.  \n\n\n\nKita mulai dari **Kuadran & Tanda**.\n\nDi kuadran 2, cos bernilai positif atau negatif?',intiAktifSelesai:false});}) as typeof fetch);
+ const system=sent.messages[0].content;
+ assert.match(system,/2-3 paragraf pendek/);assert.match(system,/Jangan diajarkan ulang/);assert.match(system,/tenangkan dulu/);
+ assert.equal(reply.text,'Iya, aku paham kamu bingung.\n\nKita mulai dari **Kuadran & Tanda**.\n\nDi kuadran 2, cos bernilai positif atau negatif?');
+ assert.deepEqual(reply.coreProgress,{active:'tri-g',done:['tri-i']});
+});

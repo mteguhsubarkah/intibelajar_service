@@ -29,7 +29,7 @@ async function load(db: Connection, release: { id: string; version: number; snap
   const concepts = (await sql<ConceptRow>`select id, topic_id, code, legacy_map_id, title, subtitle, definition, objectives, misconceptions, unit_code,
       ordinal, estimated_minutes, availability, is_hidden, is_capstone from concept
     where code in (${codes('$.topics[*].concepts[*].code')}) order by topic_id, ordinal, code`.execute(db)).rows;
-  const questions = (await sql<QuestionRow>`select q.id, q.code, q.legacy_item_id, q.visibility, r.id as revision_id, r.item_type, r.body, r.difficulty, r.estimated_minutes,
+  const questions = (await sql<QuestionRow>`select q.id, q.code, q.legacy_item_id, q.visibility, r.id as revision_id, r.item_type, r.body, r.difficulty, r.estimated_minutes, r.provenance,
       (select jsonb_agg(jsonb_build_object('conceptId', c.id, 'topicId', c.topic_id, 'role', qc.role, 'assessable', qc.assessable) order by qc.role, c.code)
         from question_concept qc join concept c on c.id = qc.concept_id where qc.question_revision_id = r.id) as concepts
     from question q join question_revision r on r.question_id = q.id and r.status = 'PUBLISHED'
