@@ -5342,6 +5342,23 @@ components:
         streakDays:
           type: integer
           minimum: 0
+        days:
+          type: array
+          description: The learner's last 7 local days, oldest first, today last. Activity count and XP per day, from all progress events (not only the 20 in `activities`).
+          maxItems: 7
+          items:
+            type: object
+            required: [date, count, xp]
+            properties:
+              date:
+                type: string
+                format: date
+              count:
+                type: integer
+                minimum: 0
+              xp:
+                type: integer
+                minimum: 0
     MasteryView:
       type: object
       additionalProperties: false
