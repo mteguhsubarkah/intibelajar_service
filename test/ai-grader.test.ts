@@ -67,18 +67,26 @@ test("tiered grading: rule for a sure single-core correct answer, AI for the res
     assert.equal(ok.eligibility.mastery, false);
     assert.ok(ok.refs.some((r: any) => r.quote === "ditambah 14 kali"));
 
-    // 3b. "gatau" → belum menjawab: tidak terbaca, soal tetap bisa dijawab, AI tidak dipanggil
-    const dontKnow = await run("gatau");
-    assert.equal(dontKnow.attempt.verdict, "UNREADABLE");
-    assert.equal(dontKnow.session.items[0].status, "PENDING");
-    assert.equal(calls.length, 2);
+    // 3b. "gatau ah bingung" → dirangkul AI: tidak terbaca (soal tetap terbuka), kalimat rangkul + inti untuk mulai
+    reply = (codes) => ({ correct: null, support: "Nggak apa-apa. Kita mulai dari bedanya dulu.", items: codes.map((code) => ({ code, state: "rest", reason: "Dari jawabanmu, belum terlihat beda antarsuku yang kamu cari.", quote: "" })) });
+    const confused = await run("gatau ah bingung bang");
+    assert.equal(calls.length, 3);
+    assert.equal(confused.attempt.verdict, "UNREADABLE");
+    assert.equal(confused.session.items[0].status, "PENDING");
+    assert.equal(confused.diagnosisRun.lede, "Nggak apa-apa. Kita mulai dari bedanya dulu.");
+    assert.ok(confused.diagnosisRun.evidence.some((e: any) => e.rationale?.startsWith("Dari jawabanmu")));
+
+    // 3c. ketikan acak → tidak nyambung: tanpa AI
+    const mash = await run("asdfgh wkwkwk");
+    assert.equal(mash.attempt.verdict, "UNREADABLE");
+    assert.equal(calls.length, 3);
 
     // 4. tanpa izin AI_PROCESSING → aturan saja, AI tidak dipanggil
     const plain = client(app, config, await consentedLearner(db, config));
     const noAi = await run("Un = a + n × b\nU15 = 65", plain);
     assert.equal(noAi.attempt.verdict, "INCORRECT");
     assert.equal(noAi.diagnosisRun.engine, "DETERMINISTIC");
-    assert.equal(calls.length, 2);
+    assert.equal(calls.length, 3);
   } finally {
     await app.close();
     await db.destroy();
