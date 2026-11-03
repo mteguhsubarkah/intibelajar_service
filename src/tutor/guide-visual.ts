@@ -20,7 +20,8 @@ export const VISUAL_PROMPT = `9. Boleh SATU visual bila gambar benar-benar memba
      suku = 2-8 suku berurutan dari suku pertama (angka, atau "?" untuk yang dicari); antara = keterangan panah antarsuku, misal "+3" atau "×2" (maks 40 huruf); noktah hanya untuk pola bilangan segitiga/persegi, selain itu hapus.
    {"type":"grafik","fungsi":{"jenis":"eksponen","a":1,"b":2,"c":0},"x":[-2,3],"titik":[{"x":0,"label":"(0, 1)"}],"caption":"Grafik naik makin curam"}
      jenis: linear y=a·x+b, kuadrat y=a·x²+b·x+c, eksponen y=a·bˣ+c (b>0, b≠1), sin y=a·sin(b·x°)+c, cos y=a·cos(b·x°)+c (x dalam derajat); x = rentang sumbu x; titik maks 3, label maks 20 huruf.
-   caption maks 90 huruf, teks biasa. Bila kamu menyebut gambar di teks ("lihat gambar"), visual WAJIB diisi. Visual DILARANG memuat jawaban akhir soal utama: nilai yang sedang dicari selalu "?".`;
+   caption maks 90 huruf, teks biasa. Bila kamu menyebut gambar di teks ("lihat gambar"), visual WAJIB diisi.
+   "visual" adalah field JSON TERPISAH di samping "reply". JANGAN menulis JSON, kurung kurawal, atau kata "type" di dalam teks reply. Visual DILARANG memuat jawaban akhir soal utama: nilai yang sedang dicari selalu "?".`;
 
 const num = (v: unknown, lo: number, hi: number) => (typeof v === 'number' && Number.isFinite(v) && v >= lo && v <= hi ? v : null);
 /* teks pendamping: kosong/bukan teks = tidak ada; terlalu panjang = dilepas (bukan menggagalkan seluruh gambar) */

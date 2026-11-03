@@ -69,6 +69,26 @@ function readReply(content:string):{reply:string;finished:boolean|null;visual?:u
  return{reply:content.trim().startsWith('{')?'':content,finished:null};
 }
 
+/**
+ * Objek visual yang terselip di teks ({"type":"segitiga-siku",...}, boleh dibungkus "visual": atau ```json):
+ * diambil (kurung kurawal seimbang, tanda kutip dihormati) dan dibuang dari teks, supaya siswa tidak melihat JSON mentah.
+ */
+export function pullVisual(text:string):{text:string;visual?:unknown}{
+ const start=text.search(/\{\s*"type"\s*:\s*"(?:segitiga-siku|pola|grafik)"/);
+ if(start<0)return{text};
+ let depth=0,inString=false,end=-1;
+ for(let i=start;i<text.length;i++){
+  const ch=text[i];
+  if(inString){if(ch==='\\')i++;else if(ch==='"')inString=false;continue;}
+  if(ch==='"')inString=true;else if(ch==='{')depth++;else if(ch==='}'&&--depth===0){end=i+1;break;}
+ }
+ if(end<0)return{text:text.slice(0,start).trim()};
+ let visual:unknown;try{visual=JSON.parse(text.slice(start,end));}catch{visual=undefined;}
+ // pembungkus di sekitar objek: "visual": , ```json ... ```
+ const before=text.slice(0,start).replace(/(?:\s*(?:```(?:json)?|"?visual"?\s*:))+\s*$/i,''),after=text.slice(end).replace(/^\s*```/,'');
+ return{text:(before+after).replace(/\n{3,}/g,'\n\n').trim(),visual};
+}
+
 export async function guideReply(db:Connection,config:Config['guide'],body:GuideInput,http:typeof fetch=fetch):Promise<GuideReply>{
  if(!config) return fail(503,'DEPENDENCY_UNAVAILABLE',{blockers:['INTIGUIDE_NOT_CONFIGURED']});
  let core='',cores=(body.cores??[]).slice(0,8);
@@ -83,8 +103,11 @@ export async function guideReply(db:Connection,config:Config['guide'],body:Guide
  let attempt=await ask(http,config,messages,true,18000);
  if(!attempt.ok&&attempt.retry)attempt=await ask(http,config,messages,false,12000);
  if(!attempt.ok)return unavailable();
- const {reply,finished,visual:rawVisual}=readReply(attempt.content);
- const text=paragraphs(plainMath(reply));
+ const read=readReply(attempt.content);
+ // model kadang menulis JSON gambarnya DI DALAM teks balasan: dikeluarkan dari teks dan dipakai sebagai visual
+ const pulled=pullVisual(read.reply);
+ const {finished}=read,rawVisual=read.visual??pulled.visual;
+ const text=paragraphs(plainMath(pulled.text));
  if(!text||text.length>5000){logFailure('unreadable_reply');return unavailable();}
  // visual yang tidak sah dibuang diam-diam: teksnya tetap dikirim
  const visual=readVisual(rawVisual,plainMath);
