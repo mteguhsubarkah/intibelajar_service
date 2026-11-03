@@ -90,3 +90,14 @@ test('a visual with long but sensible labels is kept: only what does not fit is 
  const clamped=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'?'}]},http({type:'segitiga-siku',sudut:88,label:{}}));
  assert.equal((clamped.visual as any).sudut,85);
 });
+test('a visual written INSIDE the reply text is pulled out: no raw JSON for the student, the picture still shows',async()=>{
+ const raw='Oke, aku bantu gambar. Lihat segitiga di bawah, ya.\n\nSisi miring 13, salah satu sisi tegak 5.\n\n{"type":"segitiga-siku","sudut":30,"label":{"depan":"5","samping":"?","miring":"13"},"sorot":"samping","caption":"Cari sisi tegak lainnya dengan Pythagoras"}\n\nJadi berapa hasil √(169 − 25)?';
+ for(const content of [{reply:raw,intiAktifSelesai:false},raw]){
+  const r=await guideReply(null as any,config,{questionText:'menara',messages:[{from:'me',text:'Ga kebayang segitiganya'}]},(async()=>envelope(content)) as typeof fetch);
+  assert.ok(!r.text.includes('{')&&!r.text.includes('"type"'),r.text);
+  assert.match(r.text,/Jadi berapa hasil/);
+  assert.deepEqual(r.visual,{type:'segitiga-siku',sudut:30,label:{depan:'5',samping:'?',miring:'13'},sorot:'samping',caption:'Cari sisi tegak lainnya dengan Pythagoras'});
+ }
+ const wrapped=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'?'}]},(async()=>envelope({reply:'Lihat ini.\n\nvisual: ```json\n{"type":"pola","suku":[1,3,"?"]}\n```\n\nBerapa suku ketiga?'})) as typeof fetch);
+ assert.equal(wrapped.text,'Lihat ini.\n\nBerapa suku ketiga?');assert.deepEqual(wrapped.visual,{type:'pola',suku:[1,3,'?']});
+});
