@@ -6,7 +6,7 @@ import { guideReply } from '../tutor/context-guide.js';
 import { fail } from '../platform/errors.js';
 export interface TrialAi {
   evaluate(item: TrialItem, response: StudentResponse): Promise<Evaluation>;
-  tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[]): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[]}}>;
+  tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[]): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[]};visual?:import('../tutor/guide-visual.js').GuideVisual}>;
 }
 const unavailable = () => fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
 /** Provider sees only the public question, public core labels and student response; no answer keys or rubric. */
