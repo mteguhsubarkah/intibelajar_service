@@ -1,3 +1,4 @@
+import type { AiGrader } from '../assessment/ai-grader.js';
 import { sql } from 'kysely';
 import type { Connection, Tx } from '../db.js';
 import { equal, hash, hmac, uuid } from '../platform/crypto.js';
@@ -172,7 +173,7 @@ const LOOP_KIND: Partial<Record<State, LoopKind>> = { QUESTION: 'INITIAL', CLARI
 const lessonOf = (s: LessonSource): Lesson => ({ status: 'ASSIGNED', slide: 0, slideCount: s.slideCount,
   checks: s.checks.map(c => ({ id: c.microAssessmentId, slide: c.slide, required: c.required, verdict: null })) });
 
-export function learningService(key: Buffer, engine: DiagnosisEngine | null = null) {
+export function learningService(key: Buffer, engine: DiagnosisEngine | null = null, aiGrader: AiGrader | null = null) {
   const guard = async (tx: Tx, learnerId: string, sessionId: string, expected: number | undefined, cmd: Command) => {
     await requireConsent(tx, learnerId, ['LEARNING_DATA']);
     const l = await load(tx, sessionId, learnerId, true);
@@ -203,7 +204,9 @@ export function learningService(key: Buffer, engine: DiagnosisEngine | null = nu
     await sql`insert into question_attempt(id, session_id, learner_id, question_revision_id, kind, ordinal, session_item_id, assignment_id, micro_assessment_id, response, assistance, source)
       values (${attemptId}, ${l.row.id}, ${learnerId}, ${a.revisionId}, ${a.kind}, ${ordinal}, ${a.itemId ?? null}, ${a.assignmentId ?? null}, ${a.checkId ?? null},
         ${JSON.stringify(a.response)}::jsonb, ${assistance}, 'LIVE')`.execute(tx);
-    const graded = await grade(tx, { attemptId, learnerId, revisionId: a.revisionId, kind: a.kind, source: 'LIVE', response: a.response, exposure: exposed });
+    // penilaian berjenjang: AI hanya dengan izin AI_PROCESSING; soal cek di tengah materi tetap aturan saja
+    const ai = aiGrader && a.kind !== 'QUICK_CHECK' && await hasConsent(tx, learnerId, 'AI_PROCESSING') ? aiGrader : null;
+    const graded = await grade(tx, { attemptId, learnerId, revisionId: a.revisionId, kind: a.kind, source: 'LIVE', response: a.response, exposure: exposed, ai });
     const verdict = graded.evaluation.verdict;
     await sql`update question_attempt set verdict = ${verdict}, graded_at = now() where id = ${attemptId}`.execute(tx);
     // Showing the key after grading is exposure for the family (06 §5.3), recorded once per session.

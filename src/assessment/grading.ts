@@ -5,6 +5,8 @@ import { gradingSource } from '../catalog/grading-source.js';
 import { conceptLabels } from '../catalog/interface.js';
 import { evaluate, type CandidateEvidence, type Evaluation, type StudentResponse } from './evaluators/index.js';
 import { reportOf } from './disputes.js';
+import { logTier, mergeGrades, type AiGrader } from './ai-grader.js';
+import { matchOption } from './evaluators/option-text.js';
 // Inline deterministic grading (Slice 1 M6; 06 §2.3 step 1, §5). One completed GRADING run per attempt,
 // one evidence row per mapped concept, with mastery and transfer eligibility decided and explained here.
 // Exposure facts come from the learning module, which owns attempts and assistance events.
@@ -14,6 +16,8 @@ export interface Exposure { hintUsed: boolean; solutionSeen: boolean; familyFres
 export interface GradeRequest {
   attemptId: string; learnerId: string; revisionId: string; kind: 'PRACTICE' | 'TRANSFER' | 'QUICK_CHECK';
   source: 'LIVE' | 'DEVICE_IMPORT'; response: StudentResponse; exposure: Exposure;
+  /** Penilai AI berjenjang; null = aturan saja (tanpa izin AI_PROCESSING, tanpa konfigurasi, impor perangkat). */
+  ai?: AiGrader | null;
 }
 export interface Graded { runId: string; evaluation: Evaluation; familyCode: string; revealed: { optionId: string } | { value: string } | null }
 
@@ -50,26 +54,54 @@ const claim = (e: CandidateEvidence) => e.classification === 'UNDERSTANDING_DEMO
 
 export async function grade(tx: Tx, req: GradeRequest): Promise<Graded> {
   const source = await gradingSource(tx, req.revisionId);
-  const evaluation = evaluate({ body: source.body, rubric: source.rubric, concepts: source.concepts.map(c => ({ code: c.code, assessable: c.assessable })), response: req.response });
+  const ruled = evaluate({ body: source.body, rubric: source.rubric, concepts: source.concepts.map(c => ({ code: c.code, assessable: c.assessable })), response: req.response });
+  const { evaluation, aiCodes, engine } = await tiered(tx, req, source, ruled);
   const supported = evaluation.evidence.some(claim), runId = uuid();
   const copy = COPY[evaluation.verdict], feedback = evaluation.verdict === 'CORRECT' ? source.rubric.feedback?.correct : evaluation.verdict === 'INCORRECT' ? source.rubric.feedback?.incorrect : undefined;
   await sql`insert into diagnosis_run(id, attempt_id, learner_id, generation, purpose, engine, status, evidence_status, verdict, headline, lede, clarification_prompt,
       recommendations, rubric_version, policy_version, provenance, deadline_at, started_at, completed_at)
-    values (${runId}, ${req.attemptId}, ${req.learnerId}, 1, 'GRADING', 'DETERMINISTIC', 'COMPLETED', ${supported ? 'SUPPORTED' : 'INSUFFICIENT_EVIDENCE'}, ${evaluation.verdict},
+    values (${runId}, ${req.attemptId}, ${req.learnerId}, 1, 'GRADING', ${engine}, 'COMPLETED', ${supported ? 'SUPPORTED' : 'INSUFFICIENT_EVIDENCE'}, ${evaluation.verdict},
       ${copy.headline}, ${feedback && feedback.length <= 240 ? feedback : null}, ${supported ? null : 'clarification' in copy ? copy.clarification : COPY.INCORRECT.clarification},
       '[]', ${source.rubric.evaluator}, ${POLICY_VERSION},
-      ${JSON.stringify({ engine: 'DETERMINISTIC', rubricVersion: source.rubric.evaluator, policyVersion: POLICY_VERSION, inputHash: hash(stable(req.response)).toString('hex'), invocationIds: [] })}::jsonb,
+      ${JSON.stringify({ engine, rubricVersion: source.rubric.evaluator, policyVersion: POLICY_VERSION, inputHash: hash(stable(req.response)).toString('hex'), invocationIds: [] })}::jsonb,
       now(), now(), now())`.execute(tx);
   const concepts = new Map(source.concepts.map(c => [c.code, c]));
   for (const e of evaluation.evidence) {
-    const concept = concepts.get(e.conceptCode)!, eligible = eligibility(e, concept.assessable, req);
+    const fromAi = aiCodes.has(e.conceptCode);
+    const concept = concepts.get(e.conceptCode)!, eligible = eligibility(e, concept.assessable, { ...req, engine: fromAi ? 'AI_ASSISTED' : 'DETERMINISTIC' });
     await sql`insert into concept_evidence(id, diagnosis_run_id, attempt_id, learner_id, concept_id, classification, misconception_code, source, uncertainty_reasons, refs,
         rationale, question_family_code, context_tag, transfer_eligible, mastery_eligible, eligibility_reasons)
-      values (${uuid()}, ${runId}, ${req.attemptId}, ${req.learnerId}, ${concept.id}, ${e.classification}, ${e.misconceptionCode ?? null}, 'DETERMINISTIC',
-        ${e.uncertaintyReasons}::text[], ${JSON.stringify(e.refs)}::jsonb, ${e.rationale ?? null}, ${source.familyCode}, ${source.contextTag},
+      values (${uuid()}, ${runId}, ${req.attemptId}, ${req.learnerId}, ${concept.id}, ${e.classification}, ${e.misconceptionCode ?? null}, ${fromAi ? 'AI' : 'DETERMINISTIC'},
+        ${e.uncertaintyReasons}::text[], ${JSON.stringify(e.refs)}::jsonb, ${e.rationale ? e.rationale.slice(0, 400) : null}, ${source.familyCode}, ${source.contextTag},
         ${eligible.transferEligible}, ${eligible.masteryEligible}, ${eligible.reasons}::text[])`.execute(tx);
   }
   return { runId, evaluation, familyCode: source.familyCode, revealed: revealedOf(evaluation) };
+}
+
+/** Kuota penilaian AI per siswa per 24 jam; lewat kuota, aturan saja. */
+const AI_DAILY_LIMIT = Number(process.env.AI_GRADE_DAILY_LIMIT ?? 300);
+
+/**
+ * Penilaian berjenjang (ai-grader.ts): soal 1 inti yang jawaban akhirnya pasti cocok kunci → aturan; selain itu AI
+ * (cache dulu). Jawaban ketikan yang tidak cocok dengan pilihan mana pun belum "diputuskan" aturan, jadi
+ * benar/salahnya dari AI.
+ */
+async function tiered(tx: Tx, req: GradeRequest, source: Awaited<ReturnType<typeof gradingSource>>, ruled: Evaluation) {
+  const plain = { evaluation: ruled, aiCodes: new Set<string>(), engine: 'DETERMINISTIC' as 'DETERMINISTIC' | 'AI_ASSISTED' };
+  const text = req.response.responseType === 'TEXT' ? req.response.text ?? '' : '';
+  const unmatched = source.rubric.evaluator === 'option-v1' && !!text && !!source.body.options?.length
+    && matchOption(source.body.options.map(o => o.label), text).index < 0;
+  const decided = (ruled.verdict === 'CORRECT' || ruled.verdict === 'INCORRECT') && !unmatched;
+  const single = source.concepts.filter(c => c.assessable).length <= 1;
+  if (single && decided && ruled.verdict === 'CORRECT') { logTier('rule', source.revisionId); return plain; }
+  if (!req.ai || !text.trim() || req.source !== 'LIVE') return plain;
+  const used = Number((await sql<{ n: string }>`select count(*) as n from diagnosis_run where learner_id = ${req.learnerId}
+    and engine = 'AI_ASSISTED' and purpose = 'GRADING' and created_at > now() - interval '24 hours'`.execute(tx)).rows[0]?.n ?? 0);
+  if (used >= AI_DAILY_LIMIT) { logTier('rule-fallback', source.revisionId); return plain; }
+  const graded = await req.ai.grade(source, req.response).catch(() => null);
+  if (!graded) { logTier('rule-fallback', source.revisionId); return plain; }
+  const merged = mergeGrades(ruled, graded, text, decided);
+  return { ...merged, engine: 'AI_ASSISTED' as const };
 }
 
 const revealedOf = (e: Evaluation) => !e.revealedAnswer ? null : 'optionId' in e.revealedAnswer ? { optionId: e.revealedAnswer.optionId }
