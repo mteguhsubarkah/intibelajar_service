@@ -5,7 +5,7 @@ import { gradingSource } from '../catalog/grading-source.js';
 import { conceptLabels } from '../catalog/interface.js';
 import { evaluate, type CandidateEvidence, type Evaluation, type StudentResponse } from './evaluators/index.js';
 import { reportOf } from './disputes.js';
-import { logTier, mergeGrades, type AiGrader } from './ai-grader.js';
+import { isGibberish, logTier, mergeGrades, type AiGrader } from './ai-grader.js';
 import { matchOption } from './evaluators/option-text.js';
 // Inline deterministic grading (Slice 1 M6; 06 §2.3 step 1, §5). One completed GRADING run per attempt,
 // one evidence row per mapped concept, with mastery and transfer eligibility decided and explained here.
@@ -55,13 +55,13 @@ const claim = (e: CandidateEvidence) => e.classification === 'UNDERSTANDING_DEMO
 export async function grade(tx: Tx, req: GradeRequest): Promise<Graded> {
   const source = await gradingSource(tx, req.revisionId);
   const ruled = evaluate({ body: source.body, rubric: source.rubric, concepts: source.concepts.map(c => ({ code: c.code, assessable: c.assessable })), response: req.response });
-  const { evaluation, aiCodes, engine } = await tiered(tx, req, source, ruled);
+  const { evaluation, aiCodes, engine, support } = await tiered(tx, req, source, ruled);
   const supported = evaluation.evidence.some(claim), runId = uuid();
   const copy = COPY[evaluation.verdict], feedback = evaluation.verdict === 'CORRECT' ? source.rubric.feedback?.correct : evaluation.verdict === 'INCORRECT' ? source.rubric.feedback?.incorrect : undefined;
   await sql`insert into diagnosis_run(id, attempt_id, learner_id, generation, purpose, engine, status, evidence_status, verdict, headline, lede, clarification_prompt,
       recommendations, rubric_version, policy_version, provenance, deadline_at, started_at, completed_at)
     values (${runId}, ${req.attemptId}, ${req.learnerId}, 1, 'GRADING', ${engine}, 'COMPLETED', ${supported ? 'SUPPORTED' : 'INSUFFICIENT_EVIDENCE'}, ${evaluation.verdict},
-      ${copy.headline}, ${feedback && feedback.length <= 240 ? feedback : null}, ${supported ? null : 'clarification' in copy ? copy.clarification : COPY.INCORRECT.clarification},
+      ${copy.headline}, ${support ?? (feedback && feedback.length <= 240 ? feedback : null)}, ${supported ? null : 'clarification' in copy ? copy.clarification : COPY.INCORRECT.clarification},
       '[]', ${source.rubric.evaluator}, ${POLICY_VERSION},
       ${JSON.stringify({ engine, rubricVersion: source.rubric.evaluator, policyVersion: POLICY_VERSION, inputHash: hash(stable(req.response)).toString('hex'), invocationIds: [] })}::jsonb,
       now(), now(), now())`.execute(tx);
@@ -87,23 +87,27 @@ const AI_DAILY_LIMIT = Number(process.env.AI_GRADE_DAILY_LIMIT ?? 300);
  * benar/salahnya dari AI.
  */
 async function tiered(tx: Tx, req: GradeRequest, source: Awaited<ReturnType<typeof gradingSource>>, ruled: Evaluation) {
-  const plain = { evaluation: ruled, aiCodes: new Set<string>(), engine: 'DETERMINISTIC' as 'DETERMINISTIC' | 'AI_ASSISTED' };
+  const plain = { evaluation: ruled, aiCodes: new Set<string>(), engine: 'DETERMINISTIC' as 'DETERMINISTIC' | 'AI_ASSISTED', support: undefined as string | undefined };
   const text = req.response.responseType === 'TEXT' ? req.response.text ?? '' : '';
   const unmatched = source.rubric.evaluator === 'option-v1' && !!text && !!source.body.options?.length
     && matchOption(source.body.options.map(o => o.label), text).index < 0;
   const decided = (ruled.verdict === 'CORRECT' || ruled.verdict === 'INCORRECT') && !unmatched;
   const single = source.concepts.filter(c => c.assessable).length <= 1;
   if (single && decided && ruled.verdict === 'CORRECT') { logTier('rule', source.revisionId); return plain; }
-  // "gatau", "bingung", kosong: belum menjawab (soal tetap bisa dijawab), tidak perlu AI
-  if (ruled.reason === 'empty') { logTier('rule', source.revisionId); return plain; }
-  if (!req.ai || !text.trim() || req.source !== 'LIVE') return plain;
+  // kosong atau ketikan acak: tidak nyambung, tanpa AI. "gatau"/"bingung" tetap ke AI supaya siswa dirangkul.
+  if (!text.trim() || isGibberish(text)) {
+    logTier('rule', source.revisionId);
+    // tidak nyambung: belum terbaca (soal tetap terbuka, tidak dihitung salah)
+    return text.trim() ? { ...plain, evaluation: { ...ruled, verdict: 'UNREADABLE' as const, reason: 'empty' as const, misconceptionCode: null, evidence: [], revealedAnswer: null } } : plain;
+  }
+  if (!req.ai || req.source !== 'LIVE') return plain;
   const used = Number((await sql<{ n: string }>`select count(*) as n from diagnosis_run where learner_id = ${req.learnerId}
     and engine = 'AI_ASSISTED' and purpose = 'GRADING' and created_at > now() - interval '24 hours'`.execute(tx)).rows[0]?.n ?? 0);
   if (used >= AI_DAILY_LIMIT) { logTier('rule-fallback', source.revisionId); return plain; }
   const graded = await req.ai.grade(source, req.response).catch(() => null);
   if (!graded) { logTier('rule-fallback', source.revisionId); return plain; }
   const merged = mergeGrades(ruled, graded, text, decided);
-  return { ...merged, engine: 'AI_ASSISTED' as const };
+  return { ...merged, engine: 'AI_ASSISTED' as const, support: merged.evaluation.verdict === 'UNREADABLE' ? graded.support : undefined };
 }
 
 const revealedOf = (e: Evaluation) => !e.revealedAnswer ? null : 'optionId' in e.revealedAnswer ? { optionId: e.revealedAnswer.optionId }
