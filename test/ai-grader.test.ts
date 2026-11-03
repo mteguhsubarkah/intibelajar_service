@@ -67,6 +67,12 @@ test("tiered grading: rule for a sure single-core correct answer, AI for the res
     assert.equal(ok.eligibility.mastery, false);
     assert.ok(ok.refs.some((r: any) => r.quote === "ditambah 14 kali"));
 
+    // 3b. "gatau" → belum menjawab: tidak terbaca, soal tetap bisa dijawab, AI tidak dipanggil
+    const dontKnow = await run("gatau");
+    assert.equal(dontKnow.attempt.verdict, "UNREADABLE");
+    assert.equal(dontKnow.session.items[0].status, "PENDING");
+    assert.equal(calls.length, 2);
+
     // 4. tanpa izin AI_PROCESSING → aturan saja, AI tidak dipanggil
     const plain = client(app, config, await consentedLearner(db, config));
     const noAi = await run("Un = a + n × b\nU15 = 65", plain);

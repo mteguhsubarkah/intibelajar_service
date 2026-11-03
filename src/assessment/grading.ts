@@ -94,6 +94,8 @@ async function tiered(tx: Tx, req: GradeRequest, source: Awaited<ReturnType<type
   const decided = (ruled.verdict === 'CORRECT' || ruled.verdict === 'INCORRECT') && !unmatched;
   const single = source.concepts.filter(c => c.assessable).length <= 1;
   if (single && decided && ruled.verdict === 'CORRECT') { logTier('rule', source.revisionId); return plain; }
+  // "gatau", "bingung", kosong: belum menjawab (soal tetap bisa dijawab), tidak perlu AI
+  if (ruled.reason === 'empty') { logTier('rule', source.revisionId); return plain; }
   if (!req.ai || !text.trim() || req.source !== 'LIVE') return plain;
   const used = Number((await sql<{ n: string }>`select count(*) as n from diagnosis_run where learner_id = ${req.learnerId}
     and engine = 'AI_ASSISTED' and purpose = 'GRADING' and created_at > now() - interval '24 hours'`.execute(tx)).rows[0]?.n ?? 0);
