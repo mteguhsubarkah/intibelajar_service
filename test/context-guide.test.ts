@@ -120,3 +120,10 @@ test('the right angle itself: sudut 90 or no angle gives a generic triangle with
  assert.deepEqual((await ask({type:'segitiga',label:{},sorot:'siku',caption:'Pojok siku-siku'})).visual,{type:'segitiga-siku',label:{},sorot:'siku',caption:'Pojok siku-siku'});
  const r=await ask({type:'segitiga-siku',label:{depan:'?'}});assert.deepEqual(r.visual,{type:'segitiga-siku',label:{depan:'?'}});validateResponse('/v1/guide/messages','POST',200,r);
 });
+test('a correct mini answer finishes the core even when the model wants to keep asking about it',async()=>{
+ const r=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'bot',text:'Sisi mana yang disebut sisi samping?'},{from:'me',text:'Sisi bawah garid pandang pengamat'}]},
+  (async()=>envelope({cek:{pertanyaanMini:'sisi samping yang mana?',jawabanSiswa:'sisi bawah',yangBenar:'jarak mendatar',siswaBenar:true},reply:'Bagus, arahnya sudah benar!',intiAktifSelesai:false})) as typeof fetch);
+ assert.deepEqual(r.coreProgress,{active:'tri-g',done:['tri-i']});
+ const wrong=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'miring'}]},(async()=>envelope({cek:{siswaBenar:false},reply:'Coba lagi.',intiAktifSelesai:false})) as typeof fetch);
+ assert.deepEqual(wrong.coreProgress,{active:'tri-i',done:[]});
+});

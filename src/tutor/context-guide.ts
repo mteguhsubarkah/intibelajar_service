@@ -17,7 +17,7 @@ Aturan:
    Bila siswa bilang bingung atau belum tahu sama sekali, tenangkan dulu dalam satu kalimat sebelum menjelaskan.
 3. SEBELUM menulis reply, isi "cek": pertanyaan mini terakhirmu, jawaban siswa, jawaban yang benar menurut soal dan gambar yang sudah kamu berikan (lihat [Gambar: ...] di riwayat), lalu siswaBenar. Jawaban siswa yang maknanya sama dengan yang benar walau kata-katanya berbeda atau salah ketik ("depan", "hadapan", "yang berhadapan", "drpan") itu BENAR. Jangan pernah bilang "belum tepat" untuk jawaban yang siswaBenar:true, dan jangan bertentangan dengan gambar yang sudah kamu berikan.
    Penamaan sisi segitiga siku-siku dilihat DARI sudut yang dibahas: sisi depan = sisi yang berhadapan (di seberang) sudut itu; sisi samping = sisi yang menempel pada sudut itu dan bukan sisi miring; sisi miring = sisi terpanjang, di seberang sudut siku-siku. Contoh: sudut elevasi/depresi di titik pengamat di tanah, maka tinggi menara/gedung = sisi depan, jarak mendatar = sisi samping, garis pandang = sisi miring.
-   intiAktifSelesai = true hanya bila pesan terakhir siswa menjawab pertanyaan mini intiAktif dengan benar (siswaBenar:true). Saat itu, puji singkat lalu langsung buka inti berikutnya di daftar (jelaskan perannya dan ajukan pertanyaan mininya). Bila semua inti selesai, ajak siswa menulis ulang langkahnya sendiri.
+   intiAktifSelesai = true hanya bila pesan terakhir siswa menjawab pertanyaan mini intiAktif dengan benar (siswaBenar:true). Bila siswaBenar:true, inti itu SELESAI: jangan bertanya lagi tentang inti yang sama; puji singkat lalu buka inti berikutnya. Saat itu, puji singkat lalu langsung buka inti berikutnya di daftar (jelaskan perannya dan ajukan pertanyaan mininya). Bila semua inti selesai, ajak siswa menulis ulang langkahnya sendiri.
 4. Bila pesan siswa di luar soal dan inti (misalnya pemrograman, LaTeX, cara menulis rumus di komputer, pelajaran lain, obrolan umum), jangan jawab isinya. Katakan dengan ramah dalam satu kalimat bahwa kamu fokus ke soal ini, lalu ulangi pertanyaan mini intiAktif.
 5. Jangan memberikan jawaban akhir soal utama. Validasi penalaran dan koreksi yang keliru. Jangan mengklaim penguasaan, progres, atau XP.
 6. Tulis matematika sebagai teks biasa: 3/4, √7, x², 30°, sin x. DILARANG LaTeX: jangan pakai tanda $, \\(, \\), \\frac, \\sqrt, ^{ }.
@@ -67,8 +67,9 @@ export async function ask(http:typeof fetch,config:NonNullable<Config['guide']>,
 function readReply(content:string):{reply:string;finished:boolean|null;visual?:unknown;correct?:boolean|null}{
  try{const v=JSON.parse(content);if(v&&typeof v.reply==='string'){
   const correct=typeof v.cek?.siswaBenar==='boolean'?v.cek.siswaBenar:null;
-  // inti selesai mengikuti hasil cek bila model lupa mengisi intiAktifSelesai
-  const finished=typeof v.intiAktifSelesai==='boolean'?v.intiAktifSelesai:correct;
+  // server yang memutuskan: jawaban benar pada pertanyaan mini menyelesaikan inti aktif, walau model ingin
+  // bertanya lagi tentang inti yang sama (pita inti harus hijau begitu siswa benar)
+  const finished=correct===true||v.intiAktifSelesai===true?true:typeof v.intiAktifSelesai==='boolean'?false:correct;
   // cek bilang benar tapi teks menyalahkan: dicatat (tanpa isi) untuk dipantau
   if(correct===true&&/belum tepat|kurang tepat|salah\b|bukan itu/i.test(v.reply))console.warn(JSON.stringify({event:'intiguide_check_mismatch'}));
   return{reply:v.reply,finished,visual:v.visual,correct};
