@@ -88,6 +88,7 @@ export async function guideReply(db:Connection,config:Config['guide'],body:Guide
  if(!text||text.length>5000){logFailure('unreadable_reply');return unavailable();}
  // visual yang tidak sah dibuang diam-diam: teksnya tetap dikirim
  const visual=readVisual(rawVisual,plainMath);
+ if(!visual&&rawVisual==null&&/\bgambar/i.test(text))console.warn(JSON.stringify({event:'intiguide_visual_missing'}));
  const extra=visual?{visual}:{};
  if(!cores.length)return {text,quick:[],hintsUsed:0,...extra};
  const nowDone=finished&&active?[...done,active.id]:done;
