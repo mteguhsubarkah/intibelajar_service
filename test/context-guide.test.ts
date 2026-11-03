@@ -101,3 +101,15 @@ test('a visual written INSIDE the reply text is pulled out: no raw JSON for the 
  const wrapped=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'?'}]},(async()=>envelope({reply:'Lihat ini.\n\nvisual: ```json\n{"type":"pola","suku":[1,3,"?"]}\n```\n\nBerapa suku ketiga?'})) as typeof fetch);
  assert.equal(wrapped.text,'Lihat ini.\n\nBerapa suku ketiga?');assert.deepEqual(wrapped.visual,{type:'pola',suku:[1,3,'?']});
 });
+test('grading the mini question: the model checks first (cek) and sees its earlier picture in the history',async()=>{
+ let sent:any;
+ const history=[{from:'bot' as const,text:'[Gambar: segitiga siku-siku, sudut 30° di kiri bawah, siku-siku di kanan bawah; dilihat dari sudut 30°: depan = tinggi menara 20 m; samping = jarak mendatar ?; miring = garis pandang; disorot: depan]\n\nSisi menara yang 20 m itu berdiri di hadapan sudut, atau bersebelahan?'},{from:'me' as const,text:'Hadapan'}];
+ const reply=await guideReply(null as any,config,{questionText:'menara 20 m, sudut depresi 30°',cores,messages:history},(async(_u:unknown,o?:RequestInit)=>{sent=JSON.parse(String(o?.body));
+  return envelope({cek:{pertanyaanMini:'menara berhadapan atau bersebelahan dengan sudut?',jawabanSiswa:'Hadapan',yangBenar:'berhadapan (sisi depan)',siswaBenar:true},reply:'Tepat! Tinggi menara itu **sisi depan**.\n\nSekarang **Kuadran & Tanda**: ...'});}) as typeof fetch);
+ const system=sent.messages[0].content;
+ for(const rule of [/SEBELUM menulis reply, isi "cek"/,/\[Gambar: \.\.\.\]/,/sisi depan = sisi yang berhadapan/,/tinggi menara\/gedung = sisi depan/,/"hadapan"/,/"cek" tidak ditampilkan/])assert.match(system,rule);
+ assert.match(sent.messages.at(-2).content,/\[Gambar: segitiga siku-siku/,'the picture description reaches the model');
+ assert.deepEqual(reply.coreProgress,{active:'tri-g',done:['tri-i']},'cek.siswaBenar finishes the core when intiAktifSelesai is missing');
+ assert.ok(!reply.text.includes('cek')&&!reply.text.includes('siswaBenar'));
+ validateRequest('/v1/guide/messages','POST',{body:{questionText:'q',cores,messages:history},query:{},headers:{}} as any);
+});
