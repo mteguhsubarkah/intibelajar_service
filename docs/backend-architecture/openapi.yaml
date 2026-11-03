@@ -6099,9 +6099,9 @@ components:
               type: object
               additionalProperties: false
               properties:
-                depan: {type: string, maxLength: 12}
-                samping: {type: string, maxLength: 12}
-                miring: {type: string, maxLength: 12}
+                depan: {type: string, maxLength: 28}
+                samping: {type: string, maxLength: 28}
+                miring: {type: string, maxLength: 28}
             sorot: {type: string, enum: [depan, samping, miring]}
             caption: {type: string, maxLength: 90}
         - type: object
@@ -6117,7 +6117,7 @@ components:
                 oneOf:
                   - {type: number}
                   - {type: string, const: '?'}
-            antara: {type: string, maxLength: 20}
+            antara: {type: string, maxLength: 40}
             noktah: {type: string, enum: [segitiga, persegi]}
             caption: {type: string, maxLength: 90}
         - type: object
@@ -6148,7 +6148,7 @@ components:
                 additionalProperties: false
                 properties:
                   x: {type: number}
-                  label: {type: string, maxLength: 16}
+                  label: {type: string, maxLength: 24}
             caption: {type: string, maxLength: 90}
     LegacyIntakeReadRequest:
       allOf:

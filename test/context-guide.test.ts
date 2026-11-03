@@ -70,9 +70,23 @@ test('IntiGuide may attach one validated visual; invalid visuals are dropped and
  const graf=await guideReply(null as any,config,{questionText:'grafik 2^x',messages:[{from:'me',text:'?'}]},http({type:'grafik',fungsi:{jenis:'eksponen',a:1,b:2,c:0},x:[-2,3],titik:[{x:0,label:'(0, 1)'}]}));
  assert.deepEqual(graf.visual,{type:'grafik',fungsi:{jenis:'eksponen',a:1,b:2,c:0},x:[-2,3],titik:[{x:0,label:'(0, 1)'}]});validateResponse('/v1/guide/messages','POST',200,graf);
  for(const bad of [
-  {type:'segitiga-siku',sudut:90,label:{}},{type:'segitiga-siku',sudut:30,label:{depan:'panjang sekali sisinya'}},
-  {type:'pola',suku:[1]},{type:'pola',suku:['?','?']},{type:'pola',suku:[1,2],noktah:'lingkaran'},
+  {type:'segitiga-siku',sudut:90,label:{}},{type:'segitiga-siku',label:{depan:'?'}},
+  {type:'pola',suku:[1]},{type:'pola',suku:['?','?']},
   {type:'grafik',fungsi:{jenis:'eksponen',a:1,b:1,c:0},x:[0,2]},{type:'grafik',fungsi:{jenis:'log',a:1,b:2,c:0},x:[1,2]},{type:'grafik',fungsi:{jenis:'linear',a:1,b:0,c:0},x:[3,1]},
   {type:'svg',d:'<script>'},'<svg/>',null,
  ]){const r=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'?'}]},http(bad));assert.equal(r.text,'Lihat segitiganya.');assert.equal(r.visual,undefined,JSON.stringify(bad));}
+});
+test('a visual with long but sensible labels is kept: only what does not fit is dropped (soal menara)',async()=>{
+ const http=(visual:unknown)=>(async()=>envelope({reply:'Oke, aku bantu pakai gambar ya.',intiAktifSelesai:false,visual})) as typeof fetch;
+ const menara=await guideReply(null as any,config,{questionText:'menara, sudut elevasi 30°',messages:[{from:'me',text:'Ga kebayang visualnya'}]},
+  http({type:'segitiga-siku',sudut:30,label:{depan:'tinggi menara ?',samping:'jarak mendatar 50 m',miring:'garis pandang ke puncak menara yang panjang'},sorot:'depan',caption:'Sudut 30° ada di titik pandangmu; sisi depan adalah tinggi menara, sisi samping jarak mendatar ke kaki menara, sisi miring garis pandang'}));
+ assert.ok(menara.visual,'visual kept');
+ const v=menara.visual as any;
+ assert.deepEqual(v.label,{depan:'tinggi menara ?',samping:'jarak mendatar 50 m'});
+ assert.ok(v.caption.length<=90&&v.caption.endsWith('…'));
+ validateResponse('/v1/guide/messages','POST',200,menara);
+ const asString=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'?'}]},http(JSON.stringify({type:'pola',suku:[1,2,'?'],noktah:'lingkaran'})));
+ assert.deepEqual(asString.visual,{type:'pola',suku:[1,2,'?']});
+ const clamped=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'?'}]},http({type:'segitiga-siku',sudut:88,label:{}}));
+ assert.equal((clamped.visual as any).sudut,85);
 });
