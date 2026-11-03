@@ -9,13 +9,13 @@
  * - grafik: fungsi dari keluarga tetap (linear, kuadrat, eksponen, sin, cos) dengan koefisien; titik dihitung FE
  */
 export type GuideVisual =
-  | { type: 'segitiga-siku'; sudut: number; label: { depan?: string; samping?: string; miring?: string }; sorot?: 'depan' | 'samping' | 'miring'; caption?: string }
+  | { type: 'segitiga-siku'; sudut?: number; label: { depan?: string; samping?: string; miring?: string }; sorot?: 'depan' | 'samping' | 'miring' | 'siku'; caption?: string }
   | { type: 'pola'; suku: (number | '?')[]; antara?: string; noktah?: 'segitiga' | 'persegi'; caption?: string }
   | { type: 'grafik'; fungsi: { jenis: 'linear' | 'kuadrat' | 'eksponen' | 'sin' | 'cos'; a: number; b: number; c: number }; x: [number, number]; titik?: { x: number; label?: string }[]; caption?: string };
 
 export const VISUAL_PROMPT = `9. Boleh SATU visual bila gambar benar-benar membantu memahami intiAktif di soal ini (sisi segitiga, pola suku, bentuk grafik). Bila tidak perlu, "visual": null. Pilih salah satu bentuk:
    {"type":"segitiga-siku","sudut":30,"label":{"depan":"?","samping":"10 m","miring":"?"},"sorot":"depan","caption":"Sisi depan berhadapan dengan sudut 30°"}
-     sudut = sudut lancip θ (derajat, 5-85) di kiri bawah; label tiap sisi maks 24 huruf, boleh nama benda dari soal ("tinggi menara ?"), nilai yang dicari ditulis "?"; sorot = sisi yang sedang dibahas (boleh dihapus).
+     sudut = sudut lancip θ (derajat, 5-85) di kiri bawah; hapus sudut bila soal/inti belum memakai besar sudut (gambar memakai θ); sorot "siku" untuk menyorot sudut siku-siku 90°; label tiap sisi maks 24 huruf, boleh nama benda dari soal ("tinggi menara ?"), nilai yang dicari ditulis "?"; sorot = sisi yang sedang dibahas (boleh dihapus).
    {"type":"pola","suku":[1,3,6,10,"?"],"antara":"+2, +3, +4","noktah":"segitiga","caption":"Tiap pola menambah satu baris noktah"}
      suku = 2-8 suku berurutan dari suku pertama (angka, atau "?" untuk yang dicari); antara = keterangan panah antarsuku, misal "+3" atau "×2" (maks 40 huruf); noktah hanya untuk pola bilangan segitiga/persegi, selain itu hapus.
    {"type":"grafik","fungsi":{"jenis":"eksponen","a":1,"b":2,"c":0},"x":[-2,3],"titik":[{"x":0,"label":"(0, 1)"}],"caption":"Grafik naik makin curam"}
@@ -48,15 +48,22 @@ export function readVisual(input: unknown, clean: (s: string) => string = (s) =>
   const caption = cut(v.caption, 90, clean);
   const withCaption = <T extends object>(o: T) => (caption ? { ...o, caption } : o);
 
+  // nama jenis yang hampir sama tetap dikenali
+  const type = typeof v.type === 'string' ? v.type.toLowerCase().replace(/[\s_]+/g, '-') : v.type;
+  if (type === 'segitiga' || type === 'segitiga-siku-siku' || type === 'siku-siku') v.type = 'segitiga-siku';
+  if (type === 'barisan' || type === 'deret') v.type = 'pola';
+  if (type === 'grafik-fungsi') v.type = 'grafik';
+
   if (v.type === 'segitiga-siku') {
+    // sudut 90 (siku-siku) atau kosong: segitiga umum dengan θ, bukan dibuang
     const s = typeof v.sudut === 'string' ? Number.parseFloat(v.sudut) : v.sudut;
-    if (typeof s !== 'number' || !Number.isFinite(s) || s <= 0 || s >= 90) return dropped(v.type, 'sudut');
-    const sudut = Math.round(Math.min(85, Math.max(5, s)));
+    const sudut = typeof s === 'number' && Number.isFinite(s) && s > 0 && s < 89.5 ? Math.round(Math.min(85, Math.max(5, s))) : undefined;
+    const sorotSiku = v.sorot === 'siku' || (typeof s === 'number' && s >= 89.5);
     const l = (v.label && typeof v.label === 'object' ? v.label : {}) as Record<string, unknown>;
     const label: { depan?: string; samping?: string; miring?: string } = {};
     for (const k of ['depan', 'samping', 'miring'] as const) { const t = text(l[k], 28, clean); if (t) label[k] = t; }
-    const sorot = ['depan', 'samping', 'miring'].includes(v.sorot as string) ? (v.sorot as 'depan' | 'samping' | 'miring') : undefined;
-    return withCaption({ type: 'segitiga-siku' as const, sudut, label, ...(sorot ? { sorot } : {}) });
+    const sorot = sorotSiku ? 'siku' as const : ['depan', 'samping', 'miring'].includes(v.sorot as string) ? (v.sorot as 'depan' | 'samping' | 'miring') : undefined;
+    return withCaption({ type: 'segitiga-siku' as const, ...(sudut ? { sudut } : {}), label, ...(sorot ? { sorot } : {}) });
   }
 
   if (v.type === 'pola') {

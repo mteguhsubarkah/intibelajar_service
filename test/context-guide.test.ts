@@ -70,7 +70,7 @@ test('IntiGuide may attach one validated visual; invalid visuals are dropped and
  const graf=await guideReply(null as any,config,{questionText:'grafik 2^x',messages:[{from:'me',text:'?'}]},http({type:'grafik',fungsi:{jenis:'eksponen',a:1,b:2,c:0},x:[-2,3],titik:[{x:0,label:'(0, 1)'}]}));
  assert.deepEqual(graf.visual,{type:'grafik',fungsi:{jenis:'eksponen',a:1,b:2,c:0},x:[-2,3],titik:[{x:0,label:'(0, 1)'}]});validateResponse('/v1/guide/messages','POST',200,graf);
  for(const bad of [
-  {type:'segitiga-siku',sudut:90,label:{}},{type:'segitiga-siku',label:{depan:'?'}},
+  {type:'lingkaran',r:2},
   {type:'pola',suku:[1]},{type:'pola',suku:['?','?']},
   {type:'grafik',fungsi:{jenis:'eksponen',a:1,b:1,c:0},x:[0,2]},{type:'grafik',fungsi:{jenis:'log',a:1,b:2,c:0},x:[1,2]},{type:'grafik',fungsi:{jenis:'linear',a:1,b:0,c:0},x:[3,1]},
   {type:'svg',d:'<script>'},'<svg/>',null,
@@ -112,4 +112,11 @@ test('grading the mini question: the model checks first (cek) and sees its earli
  assert.deepEqual(reply.coreProgress,{active:'tri-g',done:['tri-i']},'cek.siswaBenar finishes the core when intiAktifSelesai is missing');
  assert.ok(!reply.text.includes('cek')&&!reply.text.includes('siswaBenar'));
  validateRequest('/v1/guide/messages','POST',{body:{questionText:'q',cores,messages:history},query:{},headers:{}} as any);
+});
+test('the right angle itself: sudut 90 or no angle gives a generic triangle with the right angle highlighted',async()=>{
+ const http=(visual:unknown)=>(async()=>envelope({reply:'Siap, aku kasih gambar biar kebayang.',visual})) as typeof fetch;
+ const ask=(v:unknown)=>guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'Aduh ga kebayang visualnya'}]},http(v));
+ assert.deepEqual((await ask({type:'segitiga-siku',sudut:90,label:{miring:'paling panjang'}})).visual,{type:'segitiga-siku',label:{miring:'paling panjang'},sorot:'siku'});
+ assert.deepEqual((await ask({type:'segitiga',label:{},sorot:'siku',caption:'Pojok siku-siku'})).visual,{type:'segitiga-siku',label:{},sorot:'siku',caption:'Pojok siku-siku'});
+ const r=await ask({type:'segitiga-siku',label:{depan:'?'}});assert.deepEqual(r.visual,{type:'segitiga-siku',label:{depan:'?'}});validateResponse('/v1/guide/messages','POST',200,r);
 });

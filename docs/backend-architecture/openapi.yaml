@@ -6090,11 +6090,11 @@ components:
         The value being asked for is always "?", never the final answer.
       oneOf:
         - type: object
-          required: [type, sudut, label]
+          required: [type, label]
           additionalProperties: false
           properties:
             type: {const: segitiga-siku}
-            sudut: {type: integer, minimum: 5, maximum: 85, description: Acute angle θ in degrees at the bottom-left vertex.}
+            sudut: {type: integer, minimum: 5, maximum: 85, description: Acute angle θ in degrees at the bottom-left vertex; absent = a generic triangle labelled θ.}
             label:
               type: object
               additionalProperties: false
@@ -6102,7 +6102,7 @@ components:
                 depan: {type: string, maxLength: 28}
                 samping: {type: string, maxLength: 28}
                 miring: {type: string, maxLength: 28}
-            sorot: {type: string, enum: [depan, samping, miring]}
+            sorot: {type: string, enum: [depan, samping, miring, siku]}
             caption: {type: string, maxLength: 90}
         - type: object
           required: [type, suku]
