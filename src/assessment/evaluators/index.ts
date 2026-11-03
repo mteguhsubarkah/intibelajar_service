@@ -39,6 +39,8 @@ export interface Evaluation {
   revealedAnswer: { optionId: string } | { forms: string[] } | null;
 }
 
+/** SpanRef.quote maxLength in the contract. */
+const QUOTE_MAX = 200;
 const ungraded = (verdict: 'UNREADABLE' | 'NOT_GRADED', reason: Evaluation['reason']): Evaluation =>
   ({ verdict, reason, value: null, misconceptionCode: null, evidence: [], revealedAnswer: null });
 
@@ -69,7 +71,9 @@ export function evaluateOption(input: EvaluationInput): Evaluation {
   if (response.responseType === 'TEXT' && typeof response.text === 'string') {
     const m = matchOption(body.options.map(o => o.label), response.text);
     if (m.how === 'empty') return ungraded('UNREADABLE', 'empty');
-    const start = response.text.length - response.text.trimStart().length, end = response.text.trimEnd().length;
+    // Kutipan bukti paling banyak 200 karakter (SpanRef.quote): jawaban berlangkah dikutip dari ujungnya, tempat jawaban akhirnya.
+    const end = response.text.trimEnd().length;
+    const start = Math.max(response.text.length - response.text.trimStart().length, end - QUOTE_MAX);
     const refs: EvidenceRef[] = [{ kind: 'SPAN', start, end, quote: response.text.slice(start, end) }];
     const chosen = m.index >= 0 ? body.options[m.index]!.id : null;
     const correct = chosen === key;

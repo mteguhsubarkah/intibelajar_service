@@ -236,7 +236,9 @@ export function validateCandidate(raw: unknown, input: EngineInput): { verdict: 
       || typeof item.rationale !== 'string' || !item.rationale || item.rationale.length > 400)) { dropped.push('MISCONCEPTION'); continue; }
     if (isClaim && !refs.length) { dropped.push('UNSUPPORTED'); continue; }
     const confidence = typeof item.confidence === 'number' && item.confidence >= 0 && item.confidence <= 1 ? Math.round(item.confidence * 1000) / 1000 : 0;
-    const refsOut = refs.map(r => ({ kind: 'SPAN', start: r.start, end: r.end, quote: text.slice(r.start as number, r.end as number) }) as EvidenceRef);
+    // Kutipan AI bisa lebih panjang dari batas kontrak (SpanRef.quote ≤ 200): ambil 200 karakter terakhir span itu.
+    const refsOut = refs.map(r => { const end = r.end as number, start = Math.max(r.start as number, end - 200);
+      return { kind: 'SPAN', start, end, quote: text.slice(start, end) } as EvidenceRef; });
     seen.set(concept.code, isClaim && confidence < CONFIDENCE_FLOOR
       ? { conceptCode: concept.code, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['LOW_CONFIDENCE'], confidence }
       : { conceptCode: concept.code, classification, refs: isClaim ? refsOut : [], confidence,

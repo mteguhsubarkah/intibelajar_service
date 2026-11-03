@@ -1,3 +1,4 @@
+import { deepSeekGrader, type AiGrader } from './assessment/ai-grader.js';
 import { chapterPractice, practiceData, practiceList, questionHistory, type PracticeFilter } from './progress/practice.js';
 import {ownQuestionService} from './assessment/own-question.js';
 import {guideReply,type GuideInput} from './tutor/context-guide.js';
@@ -51,7 +52,7 @@ function lastDays(events:{localDate:string;xpDelta:number}[],timezone:string,now
     return{date,count:mine.length,xp:mine.reduce((n,e)=>n+Math.max(0,e.xpDelta||0),0)};
   });
 }
-export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStream?:NodeJS.WritableStream;spanProcessors?:SpanProcessor[];diagnosisEngine?:DiagnosisEngine;trialAi?:TrialAi;googleProvider?:GoogleProvider}={}) {
+export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStream?:NodeJS.WritableStream;spanProcessors?:SpanProcessor[];diagnosisEngine?:DiagnosisEngine;trialAi?:TrialAi;aiGrader?:AiGrader;googleProvider?:GoogleProvider}={}) {
   if(options.googleProvider&&config.mode!=='test')throw new Error('A fake Google provider is test-only');
   let google:GoogleProvider|undefined=options.googleProvider;
   const googleProvider=()=>google??=createGoogleProvider(config);
@@ -317,7 +318,8 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     }));
   });
   // Learning sessions: PRACTICE (Slice 1 M6) and QUESTION_LOOP (Slice 2 M5). Commands are idempotent, consent-gated and versioned (04 §7).
-  const learning=learningService(config.key,options.diagnosisEngine??null);
+  // penilaian latihan berjenjang (aturan → AI); tes memberi penilai tiruan lewat options.aiGrader
+  const learning=learningService(config.key,options.diagnosisEngine??null,options.aiGrader ?? deepSeekGrader(config.guide));
   route('POST','/v1/question-intakes','student',async(req,reply)=>send(reply,await learnerCommand(req,'POST intake',req.body,async tx=>{await privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA']);return{status:201,body:await createIntake(tx,req.principal!.learnerId!,req.body as{inputMode:'PHOTO'|'TYPED';text?:string},ocr)};}),b=>'/v1/question-intakes/'+b.id));
   route('GET','/v1/question-intakes/{intakeId}','student',async(req,reply)=>learnerTransaction(req,async tx=>{await privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA']);const view=await intakeView(tx,params(req).intakeId!,req.principal!.learnerId!);if(view.status==='READING')reply.header('Retry-After','2');return view;}));
   route('DELETE','/v1/question-intakes/{intakeId}','student',async(req,reply)=>{await learnerTransaction(req,async tx=>{await privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA']);await discardIntake(tx,req.principal!.learnerId!,params(req).intakeId!);});return reply.code(204).send();});

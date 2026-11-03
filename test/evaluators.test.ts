@@ -54,6 +54,19 @@ test('every deterministic item accepts its own key and its first accepted form',
   assert.throws(() => evaluate(input({ ...question('MAT.TRI.Q.SOAL_MENARA'), rubric: { ...question('MAT.TRI.Q.SOAL_MENARA').rubric, evaluator: 'ai-assisted-v1' } }, text('x'))), /No deterministic evaluator ai-assisted-v1/);
 });
 
+test('typed multiple-choice answers: a long worked answer is quoted within the 200-character SpanRef limit', () => {
+  const q = question('MAT.BAR.Q.BARISAN_ARITMETIKA_2');
+  const long = 'Diketahui barisan: 5, 9, 13, …\nSuku pertama (a) = 5\nBeda (b) = 4\n' + 'Un = a + (n - 1) × b\n'.repeat(8) + 'U15 = 5 + 14 × 4 = 61\n\nJadi, suku ke-15 dari barisan tersebut adalah 61.';
+  assert.ok(long.length > 200);
+  const r = evaluate(input(q, text(long)));
+  assert.equal(r.verdict, 'CORRECT');
+  for (const ref of r.evidence.flatMap(e => e.refs)) if (ref.kind === 'SPAN') {
+    assert.ok(ref.quote.length <= 200, 'contract SpanRef.quote maxLength');
+    assert.equal(long.slice(ref.start, ref.end), ref.quote);
+    assert.ok(ref.quote.endsWith('adalah 61.'), 'the final answer is what gets quoted');
+  }
+});
+
 test('/coba Fisika and Kimia (D8): time and mass units are read, each distractor names its concept', () => {
   const bola = question('FIS.C26.E.GERAK2D.Q.SOAL_BOLA'), kompor = question('KIM.C26.E.STOIK.Q.SOAL_KOMPOR');
   for (const t of ['2', '2 s', '2 detik', 't = 2 sekon']) assert.equal(evaluateNumeric(input(bola, text(t))).verdict, 'CORRECT', t);
