@@ -6081,6 +6081,75 @@ components:
             done:
               type: array
               items: {type: string}
+        visual:
+          $ref: '#/components/schemas/GuideVisual'
+    GuideVisual:
+      description: >-
+        Optional picture for the current core, chosen by the guide model and validated by the server
+        (src/tutor/guide-visual.ts). The client draws it with its own components; never HTML or SVG from the model.
+        The value being asked for is always "?", never the final answer.
+      oneOf:
+        - type: object
+          required: [type, sudut, label]
+          additionalProperties: false
+          properties:
+            type: {const: segitiga-siku}
+            sudut: {type: integer, minimum: 5, maximum: 85, description: Acute angle θ in degrees at the bottom-left vertex.}
+            label:
+              type: object
+              additionalProperties: false
+              properties:
+                depan: {type: string, maxLength: 12}
+                samping: {type: string, maxLength: 12}
+                miring: {type: string, maxLength: 12}
+            sorot: {type: string, enum: [depan, samping, miring]}
+            caption: {type: string, maxLength: 90}
+        - type: object
+          required: [type, suku]
+          additionalProperties: false
+          properties:
+            type: {const: pola}
+            suku:
+              type: array
+              minItems: 2
+              maxItems: 8
+              items:
+                oneOf:
+                  - {type: number}
+                  - {type: string, const: '?'}
+            antara: {type: string, maxLength: 20}
+            noktah: {type: string, enum: [segitiga, persegi]}
+            caption: {type: string, maxLength: 90}
+        - type: object
+          required: [type, fungsi, x]
+          additionalProperties: false
+          properties:
+            type: {const: grafik}
+            fungsi:
+              type: object
+              required: [jenis, a, b, c]
+              additionalProperties: false
+              properties:
+                jenis: {type: string, enum: [linear, kuadrat, eksponen, sin, cos]}
+                a: {type: number}
+                b: {type: number}
+                c: {type: number}
+            x:
+              type: array
+              minItems: 2
+              maxItems: 2
+              items: {type: number}
+            titik:
+              type: array
+              maxItems: 3
+              items:
+                type: object
+                required: [x]
+                additionalProperties: false
+                properties:
+                  x: {type: number}
+                  label: {type: string, maxLength: 16}
+            caption: {type: string, maxLength: 90}
     LegacyIntakeReadRequest:
       allOf:
         - $ref: '#/components/schemas/LegacyFlowContext'

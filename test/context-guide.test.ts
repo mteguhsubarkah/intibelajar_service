@@ -57,3 +57,22 @@ test('replies are written as short paragraphs: the prompt asks for them and extr
  assert.equal(reply.text,'Iya, aku paham kamu bingung.\n\nKita mulai dari **Kuadran & Tanda**.\n\nDi kuadran 2, cos bernilai positif atau negatif?');
  assert.deepEqual(reply.coreProgress,{active:'tri-g',done:['tri-i']});
 });
+test('IntiGuide may attach one validated visual; invalid visuals are dropped and the text still arrives',async()=>{
+ let sent:any;
+ const http=(visual:unknown)=>(async(_u:unknown,o?:RequestInit)=>{sent=JSON.parse(String(o?.body));return envelope({reply:'Lihat segitiganya.',intiAktifSelesai:false,visual});}) as typeof fetch;
+ const tri=await guideReply(null as any,config,{questionText:'tangga 10 m, sudut 30°',cores,messages:[{from:'me',text:'sisi depan yang mana?'}]},
+  http({type:'segitiga-siku',sudut:30,label:{depan:'?',samping:'10 m',miring:'?'},sorot:'depan',caption:'Sisi depan berhadapan dengan sudut \\(30^\\circ\\)'}));
+ assert.match(sent.messages[0].content,/"type":"segitiga-siku"/);assert.match(sent.messages[0].content,/DILARANG memuat jawaban akhir/);
+ assert.deepEqual(tri.visual,{type:'segitiga-siku',sudut:30,label:{depan:'?',samping:'10 m',miring:'?'},sorot:'depan',caption:'Sisi depan berhadapan dengan sudut 30°'});
+ validateResponse('/v1/guide/messages','POST',200,tri);
+ const pola=await guideReply(null as any,config,{questionText:'pola 1,3,6,10',messages:[{from:'me',text:'?'}]},http({type:'pola',suku:[1,3,6,10,'?'],antara:'+2, +3, +4',noktah:'segitiga'}));
+ assert.deepEqual(pola.visual,{type:'pola',suku:[1,3,6,10,'?'],antara:'+2, +3, +4',noktah:'segitiga'});validateResponse('/v1/guide/messages','POST',200,pola);
+ const graf=await guideReply(null as any,config,{questionText:'grafik 2^x',messages:[{from:'me',text:'?'}]},http({type:'grafik',fungsi:{jenis:'eksponen',a:1,b:2,c:0},x:[-2,3],titik:[{x:0,label:'(0, 1)'}]}));
+ assert.deepEqual(graf.visual,{type:'grafik',fungsi:{jenis:'eksponen',a:1,b:2,c:0},x:[-2,3],titik:[{x:0,label:'(0, 1)'}]});validateResponse('/v1/guide/messages','POST',200,graf);
+ for(const bad of [
+  {type:'segitiga-siku',sudut:90,label:{}},{type:'segitiga-siku',sudut:30,label:{depan:'panjang sekali sisinya'}},
+  {type:'pola',suku:[1]},{type:'pola',suku:['?','?']},{type:'pola',suku:[1,2],noktah:'lingkaran'},
+  {type:'grafik',fungsi:{jenis:'eksponen',a:1,b:1,c:0},x:[0,2]},{type:'grafik',fungsi:{jenis:'log',a:1,b:2,c:0},x:[1,2]},{type:'grafik',fungsi:{jenis:'linear',a:1,b:0,c:0},x:[3,1]},
+  {type:'svg',d:'<script>'},'<svg/>',null,
+ ]){const r=await guideReply(null as any,config,{questionText:'q',messages:[{from:'me',text:'?'}]},http(bad));assert.equal(r.text,'Lihat segitiganya.');assert.equal(r.visual,undefined,JSON.stringify(bad));}
+});
