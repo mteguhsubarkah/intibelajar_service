@@ -127,3 +127,14 @@ test('a correct mini answer finishes the core even when the model wants to keep 
  const wrong=await guideReply(null as any,config,{questionText:'q',cores,messages:[{from:'me',text:'miring'}]},(async()=>envelope({cek:{siswaBenar:false},reply:'Coba lagi.',intiAktifSelesai:false})) as typeof fetch);
  assert.deepEqual(wrong.coreProgress,{active:'tri-i',done:[]});
 });
+test('the model lists every passed core (intiTuntas); the picture note from the history never reaches the student',async()=>{
+ const three=[{id:'tri-c',title:'Segitiga Siku-siku'},{id:'tri-d',title:'Definisi sin, cos, tan'},{id:'tri-f',title:'Sudut Istimewa'}];
+ let sent:any;
+ const r=await guideReply(null as any,config,{questionText:'menara',cores:three,done:['tri-c'],messages:[{from:'bot',text:'[Gambar: segitiga siku-siku, sudut 30°]\n\nPerbandingan apa yang cocok?'},{from:'me',text:'Tan'}]},
+  (async(_u:unknown,o?:RequestInit)=>{sent=JSON.parse(String(o?.body));return envelope({cek:{siswaBenar:null},reply:'[Gambar: segitiga siku-siku, sudut 30° di kiri bawah; depan = 20 m; samping = ?]\n\nBetul! tan = depan/samping.\n\nLanjut ke inti terakhir, **Sudut Istimewa**. Berapa nilai tan 30°?',intiAktifSelesai:false,intiTuntas:['tri-c','tri-d','tri-zz']});}) as typeof fetch);
+ assert.match(sent.messages[0].content,/"intiTuntas"/);assert.match(sent.messages[0].content,/JANGAN pernah menulisnya di reply/);
+ assert.ok(!r.text.includes('[Gambar'),r.text);assert.match(r.text,/^Betul!/);
+ assert.deepEqual(r.coreProgress,{active:'tri-f',done:['tri-c','tri-d']},'model list counts; unknown ids ignored');
+ const keep=await guideReply(null as any,config,{questionText:'q',cores:three,done:['tri-c','tri-d'],messages:[{from:'me',text:'?'}]},(async()=>envelope({reply:'Ok',intiTuntas:[]})) as typeof fetch);
+ assert.deepEqual(keep.coreProgress,{active:'tri-f',done:['tri-c','tri-d']},'never un-ticks');
+});
