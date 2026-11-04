@@ -93,3 +93,19 @@ test('trial routes: first visit has no login, no consent, no legacy flag; schema
     assert.equal(solution.statusCode, 200, solution.body);
   } finally { await app.close(); }
 });
+
+test('trial IntiGuide: reopening the dialog starts a fresh conversation, cores ticked in the old chat are not carried over', async () => {
+  const seen: string[][] = [];
+  const ai = { ...fixtureAi, tutor: async (_i: TrialItem, messages: { from: string; text: string }[], _a: string, used: number, done: string[] = []) => {
+    seen.push(done);
+    // first conversation: the guide ticks all three cores
+    return { text: 'ok', quick: [], hintsUsed: used, coreProgress: { active: null, done: ['tri-c', 'tri-d', 'tri-f'] } };
+  } };
+  const s = trialAssessment(load, ai);
+  const welcome = { from: 'bot', text: 'Halo! Aku IntiGuide.' };
+  await s.tutor('browser-r', { ...body, messages: [welcome, { from: 'me', text: 'Ok' }] });
+  await s.tutor('browser-r', { ...body, messages: [welcome, { from: 'me', text: 'Ok' }, { from: 'bot', text: 'inti 1?' }, { from: 'me', text: 'depan' }] });
+  assert.deepEqual(seen[1], ['tri-c', 'tri-d', 'tri-f'], 'the same conversation keeps its ticks');
+  await s.tutor('browser-r', { ...body, messages: [welcome, { from: 'me', text: 'Ok' }] });
+  assert.deepEqual(seen[2], [], 'a reopened dialog does not inherit the old chat');
+});

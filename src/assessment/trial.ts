@@ -41,7 +41,7 @@ function gapQuote(e: Evaluation['evidence'][number] | undefined) {
 }
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
-  hints: number; guideDone?: string[]; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
+  hints: number; guideDone?: string[]; answerDone?: string[]; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
   ai: TrialAi, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
@@ -132,7 +132,12 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       }
       if(proof && result.verdict==='CORRECT' && response.responseType==='TEXT' && evaluate({...i.source,response}).verdict==='CORRECT') output.claimToken=proof?.({owner,session:body.sessionId,questionId:body.questionId,revisionId:i.revisionId,text:response.text!,hintUsed:c.hints>0||c.openedHint,solutionSeen:c.solutionSeen});
       // Inti yang sudah terlihat di jawaban ini tidak diajarkan ulang oleh IntiGuide: ditandai selesai untuk percakapan berikutnya.
-      if (output.items) c.guideDone = [...new Set([...(c.guideDone ?? []), ...output.items.filter((x: { state: string }) => x.state === 'ok').map((x: { id: string }) => x.id)])];
+      if (output.items) {
+        // inti yang terlihat benar dari jawaban siswa: tetap tercentang di setiap percakapan IntiGuide berikutnya
+        const ok = output.items.filter((x: { state: string }) => x.state === 'ok').map((x: { id: string }) => x.id);
+        c.answerDone = [...new Set([...(c.answerDone ?? []), ...ok])];
+        c.guideDone = [...new Set([...(c.guideDone ?? []), ...ok])];
+      }
       // Bounded results and the latest answer (for tutor context) expire with the anonymous session.
       if (c.runs.size >= 32) c.runs.delete(c.runs.keys().next().value!);
       c.runs.set(fingerprint, { id, output }); c.latestRun = id;
@@ -175,7 +180,11 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const c = context(owner, body.sessionId), i = await item(c, body.questionId);
       const last = body.messages.at(-1);
       if (last?.from !== 'me' || !last.text.trim()) return fail(400, 'VALIDATION_FAILED');
-      const reply=await ai.tutor(i,body.messages,(body.currentAnswer ?? c.answer ?? '').slice(0,1000),c.hints,c.guideDone ?? []);
+      // percakapan baru (dialog ditutup lalu dibuka: hanya sambutan + pesan pertama siswa): inti dari percakapan
+      // sebelumnya tidak dibawa, hanya inti yang terbukti dari jawaban siswa
+      const fresh = body.messages.filter((m) => m.from === 'bot').length <= 1;
+      const done = fresh ? (c.answerDone ?? []) : (c.guideDone ?? c.answerDone ?? []);
+      const reply=await ai.tutor(i,body.messages,(body.currentAnswer ?? c.answer ?? '').slice(0,1000),c.hints,done);
       c.hints=reply.hintsUsed;
       // inti yang sudah lewat di chat ini disimpan di sesi trial, supaya IntiGuide melanjutkan urutannya
       if(reply.coreProgress)c.guideDone=reply.coreProgress.done;
