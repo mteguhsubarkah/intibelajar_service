@@ -138,3 +138,13 @@ test('the model lists every passed core (intiTuntas); the picture note from the 
  const keep=await guideReply(null as any,config,{questionText:'q',cores:three,done:['tri-c','tri-d'],messages:[{from:'me',text:'?'}]},(async()=>envelope({reply:'Ok',intiTuntas:[]})) as typeof fetch);
  assert.deepEqual(keep.coreProgress,{active:'tri-f',done:['tri-c','tri-d']},'never un-ticks');
 });
+test('moving on to a later core in the reply ticks the cores before it, even without cek or intiTuntas (plain-text fallback)',async()=>{
+ const three=[{id:'tri-c',title:'Segitiga Siku-siku'},{id:'tri-d',title:'Definisi sin, cos, tan'},{id:'tri-f',title:'Sudut Istimewa'}];
+ const reply='Tepat! tan θ = depan/samping. Jadi kita akan pakai tan 30° = 20 m / jarak mendatar.\n\nSekarang inti ketiga: **Sudut Istimewa**. Nilai tan 30° itu angka istimewa.\n\nMenurutmu, tan 30° = berapa?';
+ for(const content of [{reply},reply]){
+  const r=await guideReply(null as any,config,{questionText:'menara',cores:three,done:['tri-c'],messages:[{from:'me',text:'Depan samping'}]},(async()=>envelope(content)) as typeof fetch);
+  assert.deepEqual(r.coreProgress,{active:'tri-f',done:['tri-c','tri-d']});
+ }
+ const recap=await guideReply(null as any,config,{questionText:'q',cores:three,done:['tri-c'],messages:[{from:'me',text:'?'}]},(async()=>envelope({reply:'Kamu sudah paham **Segitiga Siku-siku**. Sekarang tan itu depan per apa?'})) as typeof fetch);
+ assert.deepEqual(recap.coreProgress,{active:'tri-d',done:['tri-c']},'mentioning an earlier core does not tick anything');
+});
