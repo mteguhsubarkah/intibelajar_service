@@ -109,3 +109,25 @@ test('trial IntiGuide: reopening the dialog starts a fresh conversation, cores t
   await s.tutor('browser-r', { ...body, messages: [welcome, { from: 'me', text: 'Ok' }] });
   assert.deepEqual(seen[2], [], 'a reopened dialog does not inherit the old chat');
 });
+
+test('trial mini check: grades against the question the server wrote, and a pass ticks the core for IntiGuide', async () => {
+  const calls: any[] = [];
+  const ai = { ...fixtureAi, mini: async (_i: TrialItem, input: any) => { calls.push(input);
+    return input.question === undefined ? { question: 'Tinggi menara itu sisi apa?', hint: 'Lihat sudutnya.' } : { correct: input.reply === 'depan', feedback: 'ok', because: input.reply === 'depan' ? 'kamu tahu sisi depan' : '' }; },
+    tutor: async (_i: TrialItem, _m: unknown, _a: string, used: number, done: string[] = []) => { calls.push({ done }); return { text: 'ok', quick: [], hintsUsed: used }; } };
+  const s = trialAssessment(load, ai);
+  const mini = { sessionId: 'mini', questionId: 'soal-menara', topicId: 'trigonometri', hintOpened: false, coreId: 'tri-c', currentAnswer: 'sin 30 = 20/x' };
+  await assert.rejects(s.miniCheck('browser-m', { ...mini, reply: 'depan' }), (e: unknown) => e instanceof ApiError && e.status === 400, 'no grading before the question exists');
+  const asked = await s.miniCheck('browser-m', mini);
+  assert.deepEqual(asked, { question: 'Tinggi menara itu sisi apa?', hint: 'Lihat sudutnya.' });
+  await s.miniCheck('browser-m', mini);
+  assert.equal(calls.length, 1, 'the same core and answer reuse the question');
+  const wrong = await s.miniCheck('browser-m', { ...mini, reply: 'miring' });
+  assert.equal(wrong.correct, false);
+  const right = await s.miniCheck('browser-m', { ...mini, reply: 'depan' });
+  assert.deepEqual({ correct: right.correct, because: right.because }, { correct: true, because: 'kamu tahu sisi depan' });
+  assert.equal(calls[2].question, 'Tinggi menara itu sisi apa?');
+  await s.tutor('browser-m', { ...mini, messages: [{ from: 'bot', text: 'Halo' }, { from: 'me', text: 'a' }, { from: 'bot', text: 'b' }, { from: 'me', text: 'c' }] });
+  assert.deepEqual(calls.at(-1).done, ['tri-c']);
+  await assert.rejects(s.miniCheck('browser-m', { ...mini, coreId: 'bukan-inti' }), (e: unknown) => e instanceof ApiError && e.status === 404);
+});

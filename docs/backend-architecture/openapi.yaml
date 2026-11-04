@@ -460,6 +460,37 @@ paths:
         Browser-bound temporary results; no learner account, consent grants or
         durable progress. No local-response fallback. Same-origin/HTTPS checks
         still apply.
+  /v1/trial/mini-check:
+    post:
+      operationId: publicTrialMiniCheckPost
+      tags:
+        - Public trial
+      summary: "Anonymous public trial: mini question at the end of one core's material"
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TrialMiniCheckRequest"
+      responses:
+        "200":
+          description: Without `reply`, the AI-written mini question about this core, tied to the question and the learner's own answer (cached per core and answer in the browser-bound trial). With `reply`, the same question graded; `because` completes "Kamu sudah kuasai ini karena …" when correct.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrialMiniCheckReply"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+      description: Grading always uses the question the server wrote for this core and answer, never one sent by the browser. Provider failure returns HTTP 503; no deterministic fallback. No account, mastery or durable progress.
   # ------------------------------------------------------------------ auth
   /v1/auth/session:
     get:
@@ -6022,6 +6053,43 @@ components:
           type: array
           items:
             type: string
+    TrialMiniCheckRequest:
+      allOf:
+        - $ref: '#/components/schemas/LegacyFlowContext'
+        - type: object
+          required: [coreId]
+          properties:
+            coreId:
+              type: string
+              minLength: 1
+              maxLength: 64
+            currentAnswer:
+              type: string
+              maxLength: 1000
+            reply:
+              type: string
+              minLength: 1
+              maxLength: 500
+    TrialMiniCheckReply:
+      type: object
+      required: [question, hint]
+      additionalProperties: false
+      properties:
+        question:
+          type: string
+          minLength: 1
+          maxLength: 400
+        hint:
+          type: string
+          maxLength: 240
+        correct:
+          type: boolean
+        feedback:
+          type: string
+          maxLength: 400
+        because:
+          type: string
+          maxLength: 200
     LegacyTutorRequest:
       allOf:
         - $ref: '#/components/schemas/LegacyFlowContext'

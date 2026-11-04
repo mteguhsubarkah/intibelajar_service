@@ -3,10 +3,13 @@ import type { Connection } from '../db.js';
 import type { Evaluation, StudentResponse } from './evaluators/index.js';
 import type { TrialItem } from './trial.js';
 import { guideReply } from '../tutor/context-guide.js';
+import { miniQuestion, miniGrade, type MiniQuestion, type MiniGrade } from '../tutor/mini-check.js';
 import { fail } from '../platform/errors.js';
 export interface TrialAi {
   evaluate(item: TrialItem, response: StudentResponse): Promise<Evaluation>;
   tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[]): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[]};visual?:import('../tutor/guide-visual.js').GuideVisual}>;
+  /** Pertanyaan mini di akhir materi satu inti (ask), atau penilaian jawabannya (grade). */
+  mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string}): Promise<MiniQuestion|MiniGrade>;
 }
 const unavailable = () => fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
 /** Provider sees only the public question, public core labels and student response; no answer keys or rubric. */
@@ -57,6 +60,10 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
     async tutor(item,messages,answer,used,done=[]) {
       const reply=await guideReply(db,config,{questionText:item.source.body.prompt,answer,cores:item.concepts.map(c=>({id:c.legacyMapId??c.code,title:c.title})),done,messages:messages.slice(-12).map(m=>({from:m.from==='me'?'me':'bot',text:m.text.slice(0,1000)}))},http);
       return {...reply,hintsUsed:used+1};
+    },
+    async mini(item,input) {
+      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,...(input.reason?{reason:input.reason}:{})};
+      return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??''},http) : miniQuestion(config,base,http);
     }
   };
 }
