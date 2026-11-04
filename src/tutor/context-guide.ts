@@ -66,7 +66,7 @@ export async function ask(http:typeof fetch,config:NonNullable<Config['guide']>,
  return{ok:true,content};
 }
 /* JSON yang terpotong atau teks biasa: ambil isi "reply" bila ada, selain itu pakai teksnya apa adanya. */
-function readReply(content:string):{reply:string;finished:boolean|null;visual?:unknown;correct?:boolean|null;passed?:string[]}{
+function readReply(content:string):{reply:string;finished:boolean|null;visual?:unknown;correct?:boolean|null;passed?:string[];json?:boolean}{
  try{const v=JSON.parse(content);if(v&&typeof v.reply==='string'){
   const correct=typeof v.cek?.siswaBenar==='boolean'?v.cek.siswaBenar:null;
   // server yang memutuskan: jawaban benar pada pertanyaan mini menyelesaikan inti aktif, walau model ingin
@@ -75,7 +75,7 @@ function readReply(content:string):{reply:string;finished:boolean|null;visual?:u
   // cek bilang benar tapi teks menyalahkan: dicatat (tanpa isi) untuk dipantau
   if(correct===true&&/belum tepat|kurang tepat|salah\b|bukan itu/i.test(v.reply))console.warn(JSON.stringify({event:'intiguide_check_mismatch'}));
   const passed=Array.isArray(v.intiTuntas)?v.intiTuntas.filter((x:unknown):x is string=>typeof x==='string'):undefined;
-  return{reply:v.reply,finished,visual:v.visual,correct,passed};
+  return{reply:v.reply,finished,visual:v.visual,correct,passed,json:true};
  }}catch{/* lanjut */}
  const m=content.match(/"reply"\s*:\s*"((?:[^"\\]|\\.)*)/);
  if(m){try{return{reply:JSON.parse('"'+m[1]+'"'),finished:null};}catch{/* lanjut */}}
@@ -113,8 +113,9 @@ export async function guideReply(db:Connection,config:Config['guide'],body:Guide
  const context=JSON.stringify({daftarInti:cores.map((c,i)=>({nomor:i+1,id:c.id,judul:c.title,selesai:done.includes(c.id)})),intiAktif:active?{id:active.id,judul:active.title}:null,intiFokus:core||null,soal:body.questionText||null,jawabanSaatIni:body.answer||null});
  const messages=[{role:'system',content:SYSTEM},{role:'user',content:'Konteks belajar: '+context},...body.messages.map(m=>({role:m.from==='me'?'user':'assistant',content:m.text}))];
  // Satu percobaan ulang tanpa mode JSON: DeepSeek kadang membalas kosong di mode JSON atau sedang sibuk.
- let attempt=await ask(http,config,messages,true,18000);
- if(!attempt.ok&&attempt.retry)attempt=await ask(http,config,messages,false,12000);
+ const started=Date.now();
+ let attempt=await ask(http,config,messages,true,18000),mode:'json'|'text'='json';
+ if(!attempt.ok&&attempt.retry){attempt=await ask(http,config,messages,false,12000);mode='text';}
  if(!attempt.ok)return unavailable();
  const read=readReply(attempt.content);
  // model kadang menulis JSON gambarnya DI DALAM teks balasan: dikeluarkan dari teks dan dipakai sebagai visual
@@ -127,9 +128,21 @@ export async function guideReply(db:Connection,config:Config['guide'],body:Guide
  const visual=readVisual(rawVisual,plainMath);
  if(!visual&&rawVisual==null&&/\bgambar/i.test(text))console.warn(JSON.stringify({event:'intiguide_visual_missing'}));
  const extra=visual?{visual}:{};
- if(!cores.length)return {text,quick:[],hintsUsed:0,...extra};
+ /* Satu baris per balasan IntiGuide, tanpa isi percakapan: jalur, apa yang diisi model, dan keputusan server. */
+ const turn=(extra2:Record<string,unknown>)=>console.log(JSON.stringify({event:'intiguide_turn',ms:Date.now()-started,mode,json:!!read.json,
+  cek:read.correct===undefined?'kosong':read.correct,selesai:finished,visual:visual?visual.type:rawVisual==null?'tidak ada':'dibuang',pesan:body.messages.length,...extra2}));
+ if(!cores.length){turn({inti:0});return {text,quick:[],hintsUsed:0,...extra};}
  // inti tuntas: yang sudah tuntas sebelumnya, inti aktif bila jawabannya benar, dan daftar intiTuntas dari model
  // (hanya id yang ada di daftar inti soal ini; yang sudah tuntas tidak pernah dilepas lagi)
- const nowDone=[...new Set([...done,...(finished&&active?[active.id]:[]),...(read.passed??[]).filter(id=>ids.has(id))])];
- return {text,quick:[],hintsUsed:0,coreProgress:{active:cores.find(c=>!nowDone.includes(c.id))?.id??null,done:nowDone},...extra};
+ // Cadangan yang tidak bergantung pada kepatuhan model: IntiGuide dilarang melompat, jadi balasan yang sudah
+ // menyebut judul inti SESUDAH inti aktif berarti inti-inti sebelumnya sudah tuntas.
+ const norm=(x:string)=>x.toLocaleLowerCase('id-ID').replace(/\*\*/g,'').replace(/\s+/g,' ');
+ const at=active?cores.findIndex(c=>c.id===active.id):-1;
+ const reached=at<0?-1:Math.max(-1,...cores.map((c,j)=>j>at&&norm(text).includes(norm(c.title))?j:-1));
+ const byTitle=reached>at?cores.slice(at,reached).map(c=>c.id):[];
+ const byModel=(read.passed??[]).filter(id=>ids.has(id));
+ const nowDone=[...new Set([...done,...(finished&&active?[active.id]:[]),...byModel,...byTitle])];
+ const nextActive=cores.find(c=>!nowDone.includes(c.id))?.id??null;
+ turn({inti:cores.length,aktif:at+1,tuntasSebelum:done.length,tuntasSesudah:nowDone.length,dariCek:finished===true&&!!active,dariModel:read.passed===undefined?'kosong':byModel.length,dariJudul:byTitle.length,aktifSesudah:nextActive?cores.findIndex(c=>c.id===nextActive)+1:null});
+ return {text,quick:[],hintsUsed:0,coreProgress:{active:nextActive,done:nowDone},...extra};
 }
