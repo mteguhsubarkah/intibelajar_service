@@ -42,6 +42,8 @@ function gapQuote(e: Evaluation['evidence'][number] | undefined) {
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
   hints: number; guideDone?: string[]; answerDone?: string[]; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
+  /** pertanyaan mini per inti + jawaban siswa: dinilai terhadap pertanyaan yang dibuat server, bukan kiriman browser */
+  mini?: Map<string,{question:string;hint:string}>;
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
   ai: TrialAi, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
@@ -189,6 +191,32 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       // inti yang sudah lewat di chat ini disimpan di sesi trial, supaya IntiGuide melanjutkan urutannya
       if(reply.coreProgress)c.guideDone=reply.coreProgress.done;
       return reply;
+    },
+    async miniCheck(owner: string, body: { sessionId: string; questionId: string; coreId: string; currentAnswer?: string; reply?: string }): Promise<{ question: string; hint: string; correct?: boolean; feedback?: string; because?: string }> {
+      const c = context(owner, body.sessionId), i = await item(c, body.questionId);
+      const core = i.concepts.find(x => (x.legacyMapId ?? x.code) === body.coreId);
+      if (!core) return fail(404, 'NOT_FOUND');
+      if (!ai.mini) return fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
+      const answer = (body.currentAnswer ?? c.answer ?? '').slice(0, 1000);
+      const latest = [...c.runs.values()].find(r => r.id === c.latestRun)?.output;
+      const reason = latest?.items?.find((x: { id: string }) => x.id === body.coreId)?.reason as string | undefined;
+      const ref = { id: body.coreId, title: core.title };
+      const key = body.coreId + '\u0000' + answer;
+      c.mini ??= new Map();
+      if (body.reply === undefined) {
+        const cached = c.mini.get(key);
+        if (cached) return cached;
+        const asked = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}) }) as {question:string;hint:string};
+        if (c.mini.size >= 32) c.mini.delete(c.mini.keys().next().value!);
+        c.mini.set(key, { question: asked.question, hint: asked.hint });
+        return { question: asked.question, hint: asked.hint };
+      }
+      const asked = c.mini.get(key);
+      if (!asked || !body.reply.trim()) return fail(400, 'VALIDATION_FAILED');
+      const graded = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}), question: asked.question, reply: body.reply }) as {correct:boolean;feedback:string;because:string};
+      // inti yang terbukti lewat pertanyaan mini tidak diajarkan ulang oleh IntiGuide
+      if (graded.correct) c.guideDone = [...new Set([...(c.guideDone ?? c.answerDone ?? []), body.coreId])];
+      return { question: asked.question, hint: asked.hint, correct: graded.correct, feedback: graded.feedback, ...(graded.because ? { because: graded.because } : {}) };
     },
     close() { contexts.clear(); }
   };

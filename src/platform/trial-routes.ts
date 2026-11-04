@@ -37,4 +37,5 @@ export function registerTrialRoutes(app: FastifyInstance, db: Connection,
   register('POST', 'answers/check', (id, req) => trial.check(id, req.body as any));
   register('POST', 'solution', (id, req) => trial.solution(id, req.body as any));
   register('POST', 'tutor', (id, req) => trial.tutor(id, req.body as any));
+  register('POST', 'mini-check', (id, req) => trial.miniCheck(id, req.body as any));
 }
