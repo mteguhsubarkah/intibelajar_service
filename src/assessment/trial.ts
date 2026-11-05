@@ -55,7 +55,8 @@ interface TrialContext {
  *   karena memuat 1/√3, dan "20/1/√3 = 20√3" pernah disalahkan AI.
  * - Hasil akhir tidak terbaca (masih ada x, belum dihitung, kalimat): AI yang menilai.
  */
-type FinalValue = { value: number; quote: string };
+/** values: bacaan angka hasil akhir; selain bacaan baku, "a/b/c" juga dibaca a/(b/c) (maksud "20/1/√3" = 20 dibagi 1/√3) */
+type FinalValue = { value: number; values: number[]; quote: string };
 const KEEP_WORDS = new Set(['akar', 'sqrt', 'meter', 'metre', 'derajat', 'detik', 'sekon', 'gram', 'menit']);
 export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>): FinalValue | null {
   const last = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1);
@@ -64,7 +65,15 @@ export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>): F
     const cleaned = piece.replace(/[a-zA-Z]{4,}/g, w => (KEEP_WORDS.has(w.toLowerCase()) ? w : ' ')).replace(/[,;.]\s*$/, '').replace(/\s+/g, ' ').trim();
     if (!cleaned) continue;
     const v = parseAnswerValue(cleaned, kind);
-    if (v.kind === 'value') return { value: v.value, quote: piece.trim() };
+    if (v.kind !== 'value') continue;
+    const values = [v.value];
+    // pembagian bertingkat tanpa kurung: siswa yang menulis "20/1/√3" bermaksud 20 / (1/√3)
+    const nested = cleaned.match(/^(.+?)\/(.+)\/(.+)$/);
+    if (nested && !/[()]/.test(cleaned)) {
+      const alt = parseAnswerValue(`${nested[1]}/(${nested[2]}/${nested[3]})`, kind);
+      if (alt.kind === 'value' && alt.value !== v.value) values.push(alt.value);
+    }
+    return { value: v.value, values, quote: piece.trim() };
   }
   return null;
 }
@@ -77,8 +86,8 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   const text = response.text ?? '';
   const got = finalValue(text, unitKindOf(key.unit));
   if (!got) return judged;
-  const right = withinTolerance(got.value, key.value, key.tolerance?.relative, key.tolerance?.floor);
-  console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', ai: judged.verdict }));
+  const right = got.values.some(value => withinTolerance(value, key.value!, key.tolerance?.relative, key.tolerance?.floor));
+  console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', bacaan: got.values.length, ai: judged.verdict }));
   if (right) {
     if (judged.verdict === 'CORRECT') return judged;
     if (fixed.verdict === 'CORRECT') return fixed;
