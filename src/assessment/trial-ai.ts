@@ -10,7 +10,7 @@ export interface TrialAi {
   evaluate(item: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation>;
   tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[]): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[]};visual?:import('../tutor/guide-visual.js').GuideVisual}>;
   /** Pertanyaan mini di akhir materi satu inti (ask), atau penilaian jawabannya (grade). */
-  mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string}): Promise<MiniQuestion|MiniGrade>;
+  mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string;key?:string}): Promise<MiniQuestion|MiniGrade>;
 }
 const unavailable = () => fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
 /* Penyebab 503 penilaian dicatat tanpa isi jawaban: journalctl -u intibelajar-api | grep trial_ai_invalid */
@@ -52,6 +52,7 @@ correct=true hanya bila jawaban soal sudah benar dan tuntas; false jika terbukti
 relevant=false hanya bila jawaban sama sekali tidak berhubungan dengan soal (teks acak, topik lain); jawaban setengah jadi, langkah yang berhenti di tengah, atau tulisan bingung tetap relevant=true. Bila jawaban belum tuntas, reason untuk inti yang belum terlihat (rest) menyebut langkah apa yang belum ada atau perlu dilanjutkan, tanpa memberi hasil akhirnya. Jangan memberi XP atau mengklaim penguasaan permanen.
 Hitung sendiri nilai akhir siswa sebelum memutuskan. 20/√3 (sekitar 11,5) BUKAN 20√3 (sekitar 34,6); "x = 20/√3" itu salah walau rumusnya mirip. Bila ada inti yang kamu tandai gap, correct WAJIB false.
 Bila ada "koreksi", siswa sedang memperbaiki jawabannya untuk soal yang sama (koreksi ke-N, "jawabanSebelumnya" adalah jawaban yang dinilai sebelumnya). Nilai jawaban yang baru dengan teliti dan tandai inti yang MASIH salah; reason untuk inti yang sudah diperbaiki boleh mengakui perbaikannya.
+Konsisten: bila reason mengatakan bagian itu sudah benar, state WAJIB ok (bukan rest) dengan quote bagian itu, disalin persis dari jawaban siswa. rest hanya untuk langkah yang memang belum ada di jawaban.
 Untuk gap, quote HANYA bagian yang salah (mis. "1/√3 * 20"), jangan mengutip baris yang sudah benar. Nilai hasil akhir dan caranya: tulisan tanpa kurung seperti "20/1/√3" yang hasil akhirnya benar (20√3) dibaca sebagai 20/(1/√3), bukan kesalahan.
 Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langsung ke siswa dengan kata "kamu", maksimal 25 kata, ramah dan menyemangati. Untuk ok: sebut apa yang sudah benar ("Dari jawabanmu, kamu sudah ..."). Untuk gap: mulai dari yang sudah benar bila ada, lalu satu arah perbaikan yang mengajak ("Coba cek lagi ..., ya."). Untuk rest: sebut langkah yang belum ada sebagai ajakan ("Langkah ini belum ada di jawabanmu. Coba mulai dari ..."). DILARANG memakai kata "siswa", "bukti", atau kalimat "tidak ada bukti".`;
       let result: Response;
@@ -74,6 +75,7 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       // Balasan model yang sedikit melenceng tidak lagi membuang seluruh penilaian (dulu: 503 ke siswa). Bukti yang tidak bisa
       // ditautkan ke jawaban diturunkan jadi "belum terlihat"; setiap penyesuaian dicatat tanpa isi jawaban.
       const adjusted: string[] = [];
+      const spanned = new Set<string>();
       const seen = new Set<string>();
       const text = response.responseType==='TEXT' ? response.text ?? '' : response.responseType==='OPTION' ? response.optionId ?? '' : '';
       const evidence: Evaluation['evidence'] = [];
@@ -84,13 +86,17 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
         const reason = typeof entry.reason==='string' && entry.reason.trim() ? entry.reason.trim().slice(0,500) : 'Belum kelihatan dari jawaban ini.';
         let state = ['ok','gap','rest'].includes(entry.state) ? entry.state as 'ok'|'gap'|'rest' : 'rest';
         let span: {start:number;end:number;quote:string} | null = null;
-        if (state!=='rest' && response.responseType==='TEXT') {
-          span = concept.assessable && typeof entry.quote==='string' ? findQuote(text, entry.quote) : null;
-          if (!span) { adjusted.push('quote_not_found'); state='rest'; }
-        } else if (state!=='rest' && !concept.assessable) { adjusted.push('not_assessable'); state='rest'; }
+        if (state!=='rest' && !concept.assessable) { adjusted.push('not_assessable'); state='rest'; }
+        else if (state!=='rest' && response.responseType==='TEXT') {
+          span = typeof entry.quote==='string' ? findQuote(text, entry.quote) : null;
+          // kutipan tidak ketemu: penilaian intinya tetap dipakai (dulu diturunkan jadi "belum terlihat" padahal alasannya
+          // memuji), hanya tanpa sorotan. "benar" tetap butuh minimal satu bukti yang ketemu di jawaban (lihat di bawah).
+          if (!span) adjusted.push('quote_not_found');
+        }
         const assessed = state!=='rest';
+        if (span) spanned.add(entry.code);
         evidence.push({conceptCode:entry.code,classification:state==='ok'?'UNDERSTANDING_DEMONSTRATED':state==='gap'?'MISCONCEPTION_EVIDENCED':'INSUFFICIENT_EVIDENCE',rationale:reason,
-          refs:!assessed?[]:response.responseType==='OPTION'?[{kind:'OPTION',optionId:text}]:[{kind:'SPAN',start:span!.start,end:span!.end,quote:span!.quote}],uncertaintyReasons:assessed?[]:['INCOMPLETE_WORK']});
+          refs:!assessed?[]:response.responseType==='OPTION'?[{kind:'OPTION',optionId:text}]:span?[{kind:'SPAN',start:span.start,end:span.end,quote:span.quote}]:[],uncertaintyReasons:assessed?[]:['INCOMPLETE_WORK']});
       }
       for (const c of item.concepts) if (!seen.has(c.code)) { adjusted.push('missing_item'); evidence.push({conceptCode:c.code,classification:'INSUFFICIENT_EVIDENCE',rationale:'Belum kelihatan dari jawaban ini.',refs:[],uncertaintyReasons:['INCOMPLETE_WORK']}); }
       // "benar" padahal ada inti yang ditandai salah: jawabannya SALAH (tanda salahnya yang dipercaya, bukan "benar"-nya).
@@ -98,7 +104,7 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       if (value.correct===true && evidence.some(e=>e.classification==='MISCONCEPTION_EVIDENCED')) { adjusted.push('correct_with_gap'); value.correct=false; }
       // belum dinilai tapi ada yang ditandai salah: tanda salahnya diturunkan jadi "belum terlihat"
       if (value.correct===null) for (const e of evidence) if (e.classification==='MISCONCEPTION_EVIDENCED') { adjusted.push('gap_on_not_graded'); e.classification='INSUFFICIENT_EVIDENCE'; e.refs=[]; e.uncertaintyReasons=['INCOMPLETE_WORK']; }
-      if (value.correct===true && !evidence.some(e=>e.classification==='UNDERSTANDING_DEMONSTRATED')) { invalid('correct_without_evidence'); return unavailable(); }
+      if (value.correct===true && !evidence.some(e=>e.classification==='UNDERSTANDING_DEMONSTRATED'&&(response.responseType!=='TEXT'||spanned.has(e.conceptCode)))) { invalid('correct_without_evidence'); return unavailable(); }
       if (adjusted.length) console.warn(JSON.stringify({event:'trial_ai_adjusted',reasons:[...new Set(adjusted)],verdict:value.correct}));
       // Tidak berhubungan sama sekali dengan soal: ditandai supaya diagnosis tidak menebak inti yang kurang.
       if (value.correct===null && value.relevant===false) for (const e of evidence) e.uncertaintyReasons=['OUT_OF_SCOPE'];
@@ -118,7 +124,7 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       const last=paths.flatMap(p=>p.steps.at(-1)?.patterns??[]);
       const allSteps=paths.flatMap(p=>p.steps).map(s=>s.description);
       const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,steps,allSteps,hidden:last};
-      return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??''},http) : miniQuestion(config,base,http);
+      return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??'',...(input.key?{key:input.key}:{})},http) : miniQuestion(config,base,http);
     }
   };
 }

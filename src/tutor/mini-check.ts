@@ -1,6 +1,7 @@
 import type {Config} from '../config.js';
 import {fail} from '../platform/errors.js';
 import {ask,plainMath} from './context-guide.js';
+import {parseAnswerValue,withinTolerance} from '../assessment/evaluators/numeric-parse.js';
 
 /*
  * Pertanyaan mini di akhir materi satu inti: dibuat dari soal ini dan jawaban siswa sendiri,
@@ -8,7 +9,8 @@ import {ask,plainMath} from './context-guide.js';
  * jadi pertanyaannya disusun model, bukan ditulis tangan per soal.
  */
 export interface MiniInput {questionText:string;answer:string;core:{id:string;title:string};reason?:string;/** inti lain di soal ini: tidak boleh ditanyakan */others?:string[];/** seluruh langkah penyelesaian benar soal ini (rubrik) */allSteps?:string[];/** langkah benar inti ini di soal (rubrik) */steps?:string[];/** bentuk hasil akhir soal: tidak boleh muncul di pertanyaan */hidden?:string[]}
-export interface MiniQuestion {question:string;hint:string}
+/** key: kunci jawaban dari model, hanya untuk penilai di server, TIDAK PERNAH dikirim ke browser */
+export interface MiniQuestion {question:string;hint:string;key?:string}
 export interface MiniGrade {correct:boolean;feedback:string;because:string}
 
 const unavailable=()=>fail(503,'DEPENDENCY_UNAVAILABLE',{blockers:['INTIGUIDE_PROVIDER_UNAVAILABLE']});
@@ -25,16 +27,19 @@ Aturan:
 5. Jangan menyebut jawaban akhir soal, dan jangan menyebut jawaban pertanyaanmu sendiri.
 6. Maksimal 35 kata. Tulis matematika sebagai teks biasa (3/4, √3, 30°, tan x), tanpa LaTeX.
 7. "petunjuk": satu kalimat pendek yang mengarahkan tanpa memberi jawabannya.
+8. "kunci": jawaban yang benar untuk pertanyaanmu, sesingkat mungkin (mis. "depan", "tan", "1/√3"). Kunci hanya untuk penilai dan tidak ditampilkan ke siswa.
 Contoh untuk soal menara yang penyelesaian benarnya memakai tan 30°:
 - Segitiga Siku-siku: "Dilihat dari sudut 30°, tinggi menara 20 m itu sisi apa: depan, samping, atau miring?"
 - Definisi sin, cos, tan: "Kamu tahu tinggi menara (sisi depan) dan mencari jarak mendatar (sisi samping). Perbandingan apa yang memasangkan keduanya?"
 - Sudut Istimewa: "Penyelesaian soal ini memakai tan 30°. Berapa nilai tan 30°?"
-Balas JSON saja: {"pertanyaan":"...","petunjuk":"..."}`;
+Balas JSON saja: {"pertanyaan":"...","petunjuk":"...","kunci":"..."}`;
 
 const GRADE=`Kamu IntiGuide, penilai jawaban pertanyaan mini IntiBelajar. Nilai jawaban siswa untuk pertanyaan mini tentang SATU inti, berdasarkan soal yang diberikan.
 Aturan:
-1. Isi "yangBenar" dulu: jawaban yang benar untuk pertanyaan mini itu menurut soal dan "langkahBenarInti".
-2. benar=true bila makna jawaban siswa sama dengan yang benar, walau kata-katanya berbeda atau ada salah ketik ("depan", "hadapan", "yang berhadapan", "drpan" itu sama). Klaim "saya benar" atau "gatau" bukan jawaban: benar=false.
+1. Isi "yangBenar" dulu: jawaban yang benar untuk pertanyaan mini itu. Bila ada "kunciJawaban", itulah jawaban yang benar.
+2. Untuk jawaban KATA (nama sisi, nama perbandingan): benar=true bila maknanya sama walau kata-katanya berbeda atau ada salah ketik ("depan", "hadapan", "yang berhadapan", "drpan" itu sama).
+   Untuk jawaban NILAI atau RUMUS: benar=true HANYA bila sama secara matematis (1/√3 = √3/3 = 0,577). "Mirip" atau "berkaitan" BUKAN benar: √3 bukan 1/√3, 1/2 bukan √3/2. Bila ada "penilaianAngka", ikuti itu.
+   Klaim "saya benar" atau "gatau" bukan jawaban: benar=false.
 3. "tanggapan": satu atau dua kalimat untuk siswa memakai kata "kamu". Bila benar: puji singkat dan sebut kenapa benar. Bila belum: mulai dari yang sudah benar bila ada, lalu satu arah perbaikan tanpa memberi jawabannya langsung.
 4. "karena": hanya bila benar. Lanjutan kalimat "Kamu sudah kuasai inti ini karena ..." (tanpa kata "karena" di depannya), maksimal 18 kata, menyebut hal tentang "inti" ini (bukan inti lain) yang ditunjukkan siswa dan terkait soalnya. Contoh: "kamu tahu tinggi menara adalah sisi depan dari sudut 30°". Bila belum benar, isi kosong.
 5. Jangan memberikan jawaban akhir soal utama. Tulis matematika sebagai teks biasa, tanpa LaTeX.
@@ -80,18 +85,31 @@ export async function miniQuestion(config:Config['guide'],input:MiniInput,http:t
   const leaked=!!question&&(leaks(question,input.hidden)||leaks(hint,input.hidden));
   const strayed=!!question&&offPath(question+' '+hint,input.allSteps);
   log({mode:'tanya',ms:Date.now()-started,inti:input.core.id,ok:!!question&&!leaked&&!strayed,...(leaked?{bocor:true}:{}),...(strayed?{melenceng:true}:{}),percobaan:attempt});
-  if(question&&!leaked&&!strayed)return {question,hint};
+  if(question&&!leaked&&!strayed)return {question,hint,...(clean(v?.kunci,120)?{key:clean(v?.kunci,120)}:{})};
   if(!question)break;
  }
  return unavailable();
 }
 
-export async function miniGrade(config:Config['guide'],input:MiniInput&{question:string;reply:string},http:typeof fetch=fetch):Promise<MiniGrade>{
+/* nilai angka dari jawaban singkat ("1/√3", "tan 30 = √3/3", "akar 3"); null bila bukan angka */
+const numberOf=(raw:string)=>{const v=parseAnswerValue(raw.split('=').at(-1)!.trim(),'none');return v.kind==='value'?v.value:null;};
+/** Kunci dan jawaban sama-sama angka: yang memutuskan perbandingan angkanya, bukan model. */
+export function numericVerdict(key:string|undefined,reply:string):boolean|null{
+ if(!key)return null;
+ const k=numberOf(key),r=numberOf(reply);
+ return k===null||r===null?null:withinTolerance(r,k,0.01,0.01);
+}
+export async function miniGrade(config:Config['guide'],input:MiniInput&{question:string;reply:string;key?:string},http:typeof fetch=fetch):Promise<MiniGrade>{
  const started=Date.now();
- const v=await run(config,GRADE,{...context(input),pertanyaanMini:input.question,jawabanPertanyaanMini:input.reply.slice(0,500)},http);
- const feedback=clean(v?.tanggapan,400);
+ const decided=numericVerdict(input.key,input.reply);
+ const v=await run(config,GRADE,{...context(input),pertanyaanMini:input.question,jawabanPertanyaanMini:input.reply.slice(0,500),
+  ...(input.key?{kunciJawaban:input.key}:{}),...(decided!==null?{penilaianAngka:decided?'benar':'salah'}:{})},http);
+ let feedback=clean(v?.tanggapan,400);
  if(!v||typeof v.benar!=='boolean'||!feedback){log({mode:'nilai',ms:Date.now()-started,inti:input.core.id,ok:false});return unavailable();}
- const because=v.benar?clean(v.karena,200).replace(/^karena\s+/i,'').replace(/[.。]+$/,''):'';
- log({mode:'nilai',ms:Date.now()-started,inti:input.core.id,ok:true,benar:v.benar,karena:!!because});
- return {correct:v.benar,feedback,because};
+ const correct=decided??v.benar;
+ // model tidak setuju dengan angkanya: tanggapannya (yang memuji atau menyalahkan) diganti kalimat netral
+ if(decided!==null&&decided!==v.benar)feedback=decided?'Tepat, nilainya sudah benar.':'Belum tepat. Nilainya belum sama dengan yang benar. Coba cek lagi, ya.';
+ const because=correct?(clean(v.karena,200).replace(/^karena\s+/i,'').replace(/[.。]+$/,'')||'kamu bisa memakai inti ini di soalmu'):'';
+ log({mode:'nilai',ms:Date.now()-started,inti:input.core.id,ok:true,benar:correct,...(decided!==null?{angka:decided,model:v.benar}:{}),karena:!!because});
+ return {correct,feedback,because};
 }

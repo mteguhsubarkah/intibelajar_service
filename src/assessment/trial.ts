@@ -4,6 +4,7 @@ import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
 import { gradingSource } from '../catalog/grading-source.js';
 import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
+import { parseAnswerValue, unitKindOf, withinTolerance } from './evaluators/numeric-parse.js';
 import { fail } from '../platform/errors.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
@@ -43,23 +44,57 @@ interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
   hints: number; guideDone?: string[]; answerDone?: string[]; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
   /** pertanyaan mini per inti + jawaban siswa: dinilai terhadap pertanyaan yang dibuat server, bukan kiriman browser */
-  mini?: Map<string,{question:string;hint:string}>;
+  mini?: Map<string,{question:string;hint:string;key?:string}>;
 }
 /*
- * Penilaian trial. Pilihan ganda dinilai dengan kuncinya (deterministik, tanpa AI). Jawaban tulisan dinilai AI,
- * tetapi bila rubrik soal (langkah dan nilai akhir yang sudah direview) menilainya BENAR, AI tidak boleh
- * membaliknya jadi salah: AI pernah menyalahkan "x = 20/1/√3 = 20√3" (tulisan tanpa kurung, hasil akhir benar)
- * dan menyorot baris yang benar. Arah sebaliknya tetap dari AI: rubrik hanya mengenali pola yang dikatalogkan.
+ * Penilaian trial.
+ * - Pilihan ganda: dinilai dengan kuncinya (deterministik, tanpa AI).
+ * - Jawaban tulisan dengan kunci angka (mis. soal menara, 34,64 m): angka HASIL AKHIR siswa (bagian terakhir sesudah "="
+ *   di baris terakhir) dihitung dengan pembaca angka katalog, lalu dibandingkan dengan kunci + toleransinya. Angka itu
+ *   yang memutuskan benar/salah, bukan AI dan bukan pola langkah: "x = 20*1/akar 3" (11,5) pernah lolos sebagai benar
+ *   karena memuat 1/√3, dan "20/1/√3 = 20√3" pernah disalahkan AI.
+ * - Hasil akhir tidak terbaca (masih ada x, belum dihitung, kalimat): AI yang menilai.
  */
+type FinalValue = { value: number; quote: string };
+const KEEP_WORDS = new Set(['akar', 'sqrt', 'meter', 'metre', 'derajat', 'detik', 'sekon', 'gram', 'menit']);
+export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>): FinalValue | null {
+  const last = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1);
+  if (!last || !last.includes('=')) return null;
+  for (const piece of last.split('=').at(-1)!.split('≈')) {
+    const cleaned = piece.replace(/[a-zA-Z]{4,}/g, w => (KEEP_WORDS.has(w.toLowerCase()) ? w : ' ')).replace(/[,;.]\s*$/, '').replace(/\s+/g, ' ').trim();
+    if (!cleaned) continue;
+    const v = parseAnswerValue(cleaned, kind);
+    if (v.kind === 'value') return { value: v.value, quote: piece.trim() };
+  }
+  return null;
+}
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
   const fixed = evaluate({ ...i.source, response });
   if (response.responseType === 'OPTION') return fixed;
   const judged = await ai.evaluate(i, response, retry);
-  if (response.responseType === 'TEXT' && fixed.verdict === 'CORRECT' && judged.verdict !== 'CORRECT') {
-    console.log(JSON.stringify({ event: 'grade_rubric_override', ai: judged.verdict }));
-    return fixed;
+  const key = i.source.rubric.answer;
+  if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
+  const text = response.text ?? '';
+  const got = finalValue(text, unitKindOf(key.unit));
+  if (!got) return judged;
+  const right = withinTolerance(got.value, key.value, key.tolerance?.relative, key.tolerance?.floor);
+  console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', ai: judged.verdict }));
+  if (right) {
+    if (judged.verdict === 'CORRECT') return judged;
+    if (fixed.verdict === 'CORRECT') return fixed;
+    // benar menurut angka: tanda salah dari AI tidak berlaku lagi
+    return { ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
+      evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation;
   }
-  return judged;
+  if (judged.verdict === 'INCORRECT' && judged.evidence.some(e => e.classification === 'MISCONCEPTION_EVIDENCED')) return judged;
+  // salah menurut angka, padahal AI tidak menemukan yang salah: hasil akhirnya yang ditandai, pada inti langkah "hitung" terakhir
+  const path = i.source.rubric.solutionPaths?.[0];
+  const concept = path?.steps.at(-1)?.concepts[0]?.code ?? i.concepts.at(-1)?.code;
+  const start = text.lastIndexOf(got.quote);
+  const evidence = judged.evidence.filter(e => e.conceptCode !== concept);
+  if (concept) evidence.push({ conceptCode: concept, classification: 'MISCONCEPTION_EVIDENCED', rationale: 'Langkahmu sudah jalan, tapi hasil akhirnya belum sama dengan yang dicari. Hitung lagi bagian yang disorot, ya.',
+    refs: start >= 0 ? [{ kind: 'SPAN', start, end: start + got.quote.length, quote: got.quote }] : [], uncertaintyReasons: [] });
+  return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, evidence } as Evaluation;
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
   ai: TrialAi, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
@@ -224,15 +259,16 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       c.mini ??= new Map();
       if (body.reply === undefined) {
         const cached = c.mini.get(key);
-        if (cached) return cached;
-        const asked = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}) }) as {question:string;hint:string};
+        if (cached) return { question: cached.question, hint: cached.hint };
+        const asked = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}) }) as {question:string;hint:string;key?:string};
         if (c.mini.size >= 32) c.mini.delete(c.mini.keys().next().value!);
-        c.mini.set(key, { question: asked.question, hint: asked.hint });
+        // kunci jawaban disimpan di sesi server untuk penilai; yang dikirim ke browser hanya pertanyaan dan petunjuk
+        c.mini.set(key, { question: asked.question, hint: asked.hint, ...(asked.key ? { key: asked.key } : {}) });
         return { question: asked.question, hint: asked.hint };
       }
       const asked = c.mini.get(key);
       if (!asked || !body.reply.trim()) return fail(400, 'VALIDATION_FAILED');
-      const graded = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}), question: asked.question, reply: body.reply }) as {correct:boolean;feedback:string;because:string};
+      const graded = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}), question: asked.question, reply: body.reply, ...(asked.key ? { key: asked.key } : {}) }) as {correct:boolean;feedback:string;because:string};
       // inti yang terbukti lewat pertanyaan mini tidak diajarkan ulang oleh IntiGuide
       if (graded.correct) c.guideDone = [...new Set([...(c.guideDone ?? c.answerDone ?? []), body.coreId])];
       return { question: asked.question, hint: asked.hint, correct: graded.correct, feedback: graded.feedback, ...(graded.because ? { because: graded.because } : {}) };
