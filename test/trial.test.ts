@@ -164,3 +164,19 @@ test('trial grading decides by the final number: "20*1/akar 3" is wrong even whe
   assert.equal(finalValue('tan 30 = 20/x', 'length'), null, 'not computed yet: the AI decides');
   assert.equal((await gradeTrial(says('INCORRECT'), i, text('tan 30 = 20/x'))).verdict, 'INCORRECT');
 });
+
+test('trial mini check: after a correction that is still wrong, the same core gets a fresh question for the new round', async () => {
+  const asks: any[] = [];
+  const ai = { ...fixtureAi, mini: async (_i: TrialItem, input: any) => {
+    if (input.question === undefined) { asks.push(input); return { question: `Pertanyaan ${asks.length}`, hint: 'h', key: 'depan' }; }
+    return { correct: true, feedback: 'ok', because: 'x' }; } };
+  const s = trialAssessment(load, ai);
+  const mini = { sessionId: 'round', questionId: 'soal-menara', topicId: 'trigonometri', hintOpened: false, coreId: 'tri-c', currentAnswer: 'sin 30 = 20/x' };
+  assert.equal((await s.miniCheck('browser-n', mini)).question, 'Pertanyaan 1');
+  await s.miniCheck('browser-n', { ...mini, reply: 'depan' });
+  assert.equal((await s.miniCheck('browser-n', mini)).question, 'Pertanyaan 1', 'same round: same question');
+  assert.equal((await s.miniCheck('browser-n', { ...mini, round: 1 })).question, 'Pertanyaan 2', 'a new round asks again');
+  assert.equal(asks[1].previous, 'Pertanyaan 1', 'and is told the previous question');
+  const graded = await s.miniCheck('browser-n', { ...mini, round: 1, reply: 'depan' });
+  assert.equal(graded.question, 'Pertanyaan 2', 'grading uses that round\'s question');
+});

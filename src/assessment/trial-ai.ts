@@ -10,7 +10,7 @@ export interface TrialAi {
   evaluate(item: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation>;
   tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[]): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[]};visual?:import('../tutor/guide-visual.js').GuideVisual}>;
   /** Pertanyaan mini di akhir materi satu inti (ask), atau penilaian jawabannya (grade). */
-  mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string;key?:string}): Promise<MiniQuestion|MiniGrade>;
+  mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string;key?:string;previous?:string}): Promise<MiniQuestion|MiniGrade>;
 }
 const unavailable = () => fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
 /* Penyebab 503 penilaian dicatat tanpa isi jawaban: journalctl -u intibelajar-api | grep trial_ai_invalid */
@@ -123,7 +123,7 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       const steps=paths.flatMap(p=>p.steps).filter(s=>s.concepts.some(c=>c.code===code)).map(s=>s.description);
       const last=paths.flatMap(p=>p.steps.at(-1)?.patterns??[]);
       const allSteps=paths.flatMap(p=>p.steps).map(s=>s.description);
-      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,steps,allSteps,hidden:last};
+      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,steps,allSteps,hidden:last,...(input.previous?{previous:input.previous}:{})};
       return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??'',...(input.key?{key:input.key}:{})},http) : miniQuestion(config,base,http);
     }
   };

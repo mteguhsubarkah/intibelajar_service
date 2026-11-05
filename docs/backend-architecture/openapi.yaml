@@ -6071,6 +6071,11 @@ components:
             currentAnswer:
               type: string
               maxLength: 1000
+            round:
+              type: integer
+              minimum: 0
+              maximum: 20
+              description: Learning round (0 = after the first answer, n = after correction n). Each round gets a fresh question; grading uses that round's question.
             reply:
               type: string
               minLength: 1
