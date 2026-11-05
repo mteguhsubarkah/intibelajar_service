@@ -31,7 +31,7 @@ body:
     - id: b
       label: "0"
     - id: c
-      label: ½
+      label: 1/2
   hints: []
   answerFormat: OPTION
 rubric:
@@ -46,8 +46,8 @@ rubric:
   finalAnswerEvidence:
     - MAT.TRI.SUDUT_ISTIMEWA
   feedback:
-    correct: cos memakai pola yang dibalik, jadi cos 90° = √0/2 = 0. Di 90° sisi samping menyusut jadi 0.
-    incorrect: cos 90° = 0. cos 0° yang bernilai 1, dan cos 60° = ½.
+    correct: "Pola cos dibalik: cos 90° = √0/2 = 0."
+    incorrect: cos 90° = 0. Yang bernilai 1 adalah cos 0°, dan cos 60° = 1/2.
 review:
   status: PROPOSED
   decision: D6

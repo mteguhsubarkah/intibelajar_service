@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C2
+familyCode: MAT.TRI.F.SEGITIGA_SIKU_SIKU_C2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: TANGGA
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts segitiga-siku-siku chunks[2].check
+aliases:
+  - ns: ITEM
+    value: core:segitiga-siku-siku:c2
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Masih tangga tadi. Sekarang sudut acuannya di puncak tangga, yang menempel di dinding. Tinggi dinding sekarang sisi apa?
+  options:
+    - id: a
+      label: Sisi depan
+    - id: b
+      label: Sisi samping
+    - id: c
+      label: Sisi miring
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Sisi samping
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+  feedback:
+    correct: Tepat. Sekarang tinggi dinding menempel di sudut acuan, dan bukan sisi miring. Jadi sisi samping.
+    incorrect: Belum tepat. Sudut acuannya pindah ke puncak tangga. Tinggi dinding sekarang menempel di sudut itu, jadi sisi samping.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson segitiga-siku-siku, whose coreId is tri-c
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag TANGGA from the keyword table

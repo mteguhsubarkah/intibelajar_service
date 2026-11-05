@@ -1,0 +1,72 @@
+schemaVersion: 1
+code: MAT.TRI.L.SEGITIGA_SIKU_SIKU
+title: Segitiga Siku-siku
+estimatedMinutes: 4
+aliases:
+  - ns: ROUTE
+    value: segitiga-siku-siku
+concepts:
+  - MAT.TRI.SEGITIGA_SIKU_SIKU
+blocks:
+  - type: heading
+    slide: 0
+    text: Cari sisi miring dulu
+  - type: text
+    slide: 0
+    text: Segitiga siku-siku punya satu sudut **90°**. Sudut ini biasanya ditandai kotak kecil.
+  - type: text
+    slide: 0
+    text: Sisi di seberang sudut 90° disebut **sisi miring**. Sisi miring selalu yang **paling panjang**.
+  - type: figure
+    slide: 0
+    figureRef: tri30
+  - type: heading
+    slide: 1
+    text: Berdiri di sudut acuan
+  - type: text
+    slide: 1
+    text: "Dua sisi lainnya diberi nama dari **sudut acuan**: sudut yang sedang kamu pakai, misalnya 30°."
+  - type: text
+    slide: 1
+    text: Bayangkan kamu berdiri di sudut acuan. Sisi di seberangmu, yang tidak menyentuh sudutmu, adalah **sisi depan**.
+  - type: text
+    slide: 1
+    text: Sisi yang menempel di sudutmu, tapi bukan sisi miring, adalah **sisi samping**.
+  - type: figure
+    slide: 1
+    figureRef: tri30
+  - type: heading
+    slide: 2
+    text: Sudut pindah, nama ikut pindah
+  - type: text
+    slide: 2
+    text: Nama depan dan samping **bergantung pada sudut acuan**. Kalau sudut acuannya pindah, keduanya bertukar.
+  - type: text
+    slide: 2
+    text: Sisi miring **tidak pernah** berubah. Ia selalu di seberang sudut 90°.
+  - type: figure
+    slide: 2
+    figureRef: tukar
+checks:
+  - question: MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C0
+    ordinal: 0
+    slideIndex: 0
+    required: true
+  - question: MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C1
+    ordinal: 1
+    slideIndex: 1
+    required: true
+  - question: MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C2
+    ordinal: 2
+    slideIndex: 2
+    required: true
+practiceSet: MAT.TRI.S.SEGITIGA_SIKU_SIKU
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+  evidence:
+    - coreLessons.ts coreId is tri-c
+    - coba.ts CORE_ROUTES routes tri-c here
+    - estimatedMinutes taken from the concept, as the frontend does

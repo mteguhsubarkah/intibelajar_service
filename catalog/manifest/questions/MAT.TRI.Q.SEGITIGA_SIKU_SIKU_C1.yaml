@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C1
+familyCode: MAT.TRI.F.SEGITIGA_SIKU_SIKU_C1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: TANGGA
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts segitiga-siku-siku chunks[1].check
+aliases:
+  - ns: ITEM
+    value: core:segitiga-siku-siku:c1
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tangga bersandar ke dinding. Sudut antara tangga dan tanah 60°. Dilihat dari sudut 60° itu, tinggi dinding adalah sisi apa?
+  options:
+    - id: a
+      label: Sisi depan
+    - id: b
+      label: Sisi samping
+    - id: c
+      label: Sisi miring
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - Sisi depan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+  feedback:
+    correct: Tepat. Tinggi dinding ada di seberang sudut 60° dan tidak menyentuhnya, jadi sisi depan. Tangganya sendiri sisi miring.
+    incorrect: "Belum tepat. Berdirilah di kaki tangga (sudut 60°). Tinggi dinding ada di seberangmu dan tidak menyentuh sudutmu: itu sisi depan."
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson segitiga-siku-siku, whose coreId is tri-c
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag TANGGA from the keyword table

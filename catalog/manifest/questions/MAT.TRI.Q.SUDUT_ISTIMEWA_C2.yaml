@@ -4,7 +4,7 @@ familyCode: MAT.TRI.F.SUDUT_ISTIMEWA_C2
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
-contextTag: BARE_VALUE
+contextTag: CONCEPTUAL
 difficulty: 1
 estimatedMinutes: 1
 provenance:
@@ -22,12 +22,12 @@ concepts:
     assessable: true
 body:
   schemaVersion: 1
-  prompt: "Pakai pola: sin 60° = ..."
+  prompt: Berapa tan 45°?
   options:
     - id: a
-      label: √2/2
+      label: √2
     - id: b
-      label: √3/2
+      label: "1"
     - id: c
       label: 1/2
   hints: []
@@ -38,14 +38,14 @@ rubric:
   answer:
     optionId: b
   acceptedForms:
-    - √3/2
+    - "1"
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
     - MAT.TRI.SUDUT_ISTIMEWA
   feedback:
-    correct: "Tepat. 60° ada di urutan ke-4, jadi akarnya √3: sin 60° = √3/2."
-    incorrect: "Belum tepat. Urutan sudutnya 0°, 30°, 45°, 60°, 90°. Karena 60° ada di urutan ke-4, isi akarnya 3: √3/2."
+    correct: Tepat. Depan dan samping sama-sama 1, jadi tan 45° = 1/1 = 1.
+    incorrect: Belum tepat. Di segitiga 45°, depan dan samping sama-sama 1. Jadi tan 45° = 1/1 = 1.
 review:
   status: PROPOSED
   decision: D6
@@ -57,4 +57,4 @@ review:
   evidence:
     - chunk check of lesson sudut-istimewa, whose coreId is tri-f
     - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
-    - contextTag BARE_VALUE from the keyword table
+    - contextTag CONCEPTUAL from the keyword table

@@ -7,6 +7,13 @@ sets:
       - MAT.TRI.Q.PERBANDINGAN_TRIG_P0
       - MAT.TRI.Q.PERBANDINGAN_TRIG_P1
       - MAT.TRI.Q.PERBANDINGAN_TRIG_P2
+  - code: MAT.TRI.S.SEGITIGA_SIKU_SIKU
+    title: Latihan Segitiga Siku-siku
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.SEGITIGA_SIKU_SIKU_P0
+      - MAT.TRI.Q.SEGITIGA_SIKU_SIKU_P1
+      - MAT.TRI.Q.SEGITIGA_SIKU_SIKU_P2
   - code: MAT.TRI.S.SUDUT_ISTIMEWA
     title: Latihan Sudut Istimewa
     origin: CONCEPT_LESSON
