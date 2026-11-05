@@ -123,7 +123,9 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       const steps=paths.flatMap(p=>p.steps).filter(s=>s.concepts.some(c=>c.code===code)).map(s=>s.description);
       const last=paths.flatMap(p=>p.steps.at(-1)?.patterns??[]);
       const allSteps=paths.flatMap(p=>p.steps).map(s=>s.description);
-      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,steps,allSteps,hidden:last,...(input.previous?{previous:input.previous}:{})};
+      // soal pilihan ganda: pilihannya ikut, supaya pertanyaan mini merujuk soal yang sama dengan yang dilihat siswa
+      const options=(item.source.body.options??[]).map((o:{label:string})=>o.label).filter(Boolean);
+      const base={questionText:item.source.body.prompt+(options.length?'\nPilihan: '+options.join(' | '):''),answer:input.answer,core:input.core,others,steps,allSteps,hidden:last,...(input.previous?{previous:input.previous}:{})};
       return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??'',...(input.key?{key:input.key}:{})},http) : miniQuestion(config,base,http);
     }
   };

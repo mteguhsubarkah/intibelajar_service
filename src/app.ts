@@ -486,6 +486,11 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
     return ownQuestions.diagnose(req.body as {questionText:string;rawText:string;sessionId:string;hintOpened:boolean},req.principal!.learnerId!);
   });
+  route('POST','/v1/own/mini-check','student',async req=>{
+    learnLimit(req);
+    await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));
+    return ownQuestions.miniCheck(req.body as {questionText:string;coreId:string;round?:number;reply?:string},req.principal!.learnerId!);
+  });
   route('POST','/v1/practice/answer-direction','student',async req=>{
     learnLimit(req);
     await learnerTransaction(req,tx=>privacy.requireConsent(tx,req.principal!.learnerId!,['LEARNING_DATA','AI_PROCESSING']));

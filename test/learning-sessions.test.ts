@@ -89,7 +89,7 @@ test('Slice 1 practice sessions over the API', async t => {
     await t.test('E-02, E-12–E-15: a lesson with quick checks, then practice; formative evidence never counts', async () => {
       const learner = await consentedLearner(db, config), call = client(app, config, learner);
       const s = (await call('POST', '/v1/learning-sessions', { kind: 'PRACTICE', origin: 'CONCEPT_LESSON', withLesson: true, spec: { setCode: 'MAT.TRI.S.SUDUT_ISTIMEWA' } })).body;
-      assert.deepEqual([s.state, s.lesson.slideIndex, s.lesson.slideCount, s.lesson.checks.length, s.items.length], ['MICROLEARNING', 0, 3, 3, 4]);
+      assert.deepEqual([s.state, s.lesson.slideIndex, s.lesson.slideCount, s.lesson.checks.length, s.items.length], ['MICROLEARNING', 0, 4, 4, 4]); // Sudut Istimewa: 4 potongan materi + 4 cek sejak ditulis ulang
       assert.equal(s.focusConceptId, c.specialAngles);
       assert.equal(s.checkpoint.route, '/core/sudut-istimewa');
       const roles = (await sql<{ role: string }>`select role from session_item where session_id = ${s.id} order by ordinal`.execute(db)).rows.map(r => r.role);
@@ -116,9 +116,11 @@ test('Slice 1 practice sessions over the API', async t => {
       v = (await answer(v.stateVersion, s.lesson.checks[1], true)).body.session;
       v = (await action({ type: 'ADVANCE_LESSON', expectedStateVersion: v.stateVersion, slideIndex: 2 })).body.session;
       v = (await answer(v.stateVersion, s.lesson.checks[2], true)).body.session;
+      v = (await action({ type: 'ADVANCE_LESSON', expectedStateVersion: v.stateVersion, slideIndex: 3 })).body.session;
+      v = (await answer(v.stateVersion, s.lesson.checks[3], true)).body.session;
       assert.ok(v.allowedActions.includes('FINISH_LESSON'));
       v = (await action({ type: 'FINISH_LESSON', expectedStateVersion: v.stateVersion })).body.session;
-      assert.deepEqual([v.state, v.lesson.status, v.lesson.checks.map((x: { answered: boolean }) => x.answered)], ['PRACTICING', 'COMPLETED', [true, true, true]]);
+      assert.deepEqual([v.state, v.lesson.status, v.lesson.checks.map((x: { answered: boolean }) => x.answered)], ['PRACTICING', 'COMPLETED', [true, true, true, true]]);
     });
 
     await t.test('E-22: items in order; grading, evidence, eligibility and exposure; completion', async () => {

@@ -17,7 +17,9 @@ export interface TrialItem {
 export async function loadTrialItem(db: Connection, alias: string, revisionId?: string): Promise<TrialItem> {
   const release = await currentRelease(db);
   if (!release) return fail(409, 'CONTENT_UNAVAILABLE');
-  const item = await legacyItem(db, release, alias);
+  // alias lama (soal /coba, cek materi) atau ID soal katalog (soal latihan akun: banyak soal pilot tanpa alias ITEM)
+  const item = await legacyItem(db, release, alias)
+    ?? (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(alias) ? { questionId: alias, legacyOptionOrder: null } : null);
   if (!item) return fail(404, 'NOT_FOUND');
   const anchor = await loopAnchor(db, item.questionId);
   if (!anchor) return fail(409, 'CONTENT_UNAVAILABLE');
@@ -78,8 +80,11 @@ export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>): F
   return null;
 }
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
-  const fixed = evaluate({ ...i.source, response });
-  if (response.responseType === 'OPTION') return fixed;
+  // soal milik siswa (ai-assisted-v1) tidak punya penilai deterministik: hanya AI yang menilai.
+  // (Tanpa penjaga ini, setiap diagnosis /tanya gagal "No deterministic evaluator".)
+  let fixed: Evaluation | null = null;
+  try { fixed = evaluate({ ...i.source, response }); } catch { fixed = null; }
+  if (response.responseType === 'OPTION' && fixed) return fixed;
   const judged = await ai.evaluate(i, response, retry);
   const key = i.source.rubric.answer;
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
@@ -90,7 +95,7 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', bacaan: got.values.length, ai: judged.verdict }));
   if (right) {
     if (judged.verdict === 'CORRECT') return judged;
-    if (fixed.verdict === 'CORRECT') return fixed;
+    if (fixed?.verdict === 'CORRECT') return fixed;
     // benar menurut angka: tanda salah dari AI tidak berlaku lagi
     return { ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
       evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation;
@@ -126,7 +131,8 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
     return value;
   }
   return {
-    async diagnose(owner: string, body: { sessionId: string; questionId: string; rawText: string; responseMode: 'know' | 'blank' | null; hintOpened?:boolean }) {
+    async diagnose(owner: string, body: { sessionId: string; questionId: string; rawText: string; responseMode: 'know' | 'blank' | null; hintOpened?:boolean;
+      /** koreksi soal yang sama (soal milik siswa): penilai diberi tahu koreksi ke berapa dan jawaban sebelumnya */ retry?: { correction: number; previous: string } }) {
       const c = context(owner, body.sessionId);
       if(body.hintOpened)c.openedHint=true;
       const i = await item(c, body.questionId);
@@ -140,7 +146,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const pending=c.pending.get(fingerprint);
       if(pending)return pending;
       const work=(async()=>{
-      const result = await gradeTrial(ai, i, response);
+      const result = await gradeTrial(ai, i, response, body.retry);
       c.answer = response.text?.slice(0,1000) ?? '';
       const id = uuid();
       const demonstrated = result.evidence.find(e => e.classification === 'UNDERSTANDING_DEMONSTRATED');
