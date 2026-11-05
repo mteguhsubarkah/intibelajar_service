@@ -109,7 +109,8 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       const paths=item.source.rubric.solutionPaths??[];
       const steps=paths.flatMap(p=>p.steps).filter(s=>s.concepts.some(c=>c.code===code)).map(s=>s.description);
       const last=paths.flatMap(p=>p.steps.at(-1)?.patterns??[]);
-      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,steps,hidden:last,...(input.reason?{reason:input.reason}:{})};
+      const allSteps=paths.flatMap(p=>p.steps).map(s=>s.description);
+      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,steps,allSteps,hidden:last};
       return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??''},http) : miniQuestion(config,base,http);
     }
   };
