@@ -131,3 +131,18 @@ test('trial mini check: grades against the question the server wrote, and a pass
   assert.deepEqual(calls.at(-1).done, ['tri-c']);
   await assert.rejects(s.miniCheck('browser-m', { ...mini, coreId: 'bukan-inti' }), (e: unknown) => e instanceof ApiError && e.status === 404);
 });
+
+test('trial grading: the reviewed rubric wins over an AI that marks a correct answer wrong; options never go to AI', async () => {
+  const { gradeTrial } = await import('../src/assessment/trial.js');
+  const i = await load('soal-menara');
+  const strictAi = { ...fixtureAi, evaluate: async () => ({ verdict: 'INCORRECT', reason: null, value: null, misconceptionCode: null, revealedAnswer: null,
+    evidence: [{ conceptCode: i.concepts[0]!.code, classification: 'MISCONCEPTION_EVIDENCED', rationale: 'salah', refs: [], uncertaintyReasons: [] }] }) as any };
+  const text = (t: string) => ({ schemaVersion: 1, responseType: 'TEXT', text: t, inputMode: 'TYPED' }) as any;
+  assert.equal((await gradeTrial(strictAi, i, text('Tan 30 = 20/x\nX = 20/1/√3 = 20√3'))).verdict, 'CORRECT');
+  assert.equal((await gradeTrial(strictAi, i, text('sin 30 = 20/x\nx = 40'))).verdict, 'INCORRECT', 'a wrong answer stays the AI verdict');
+  let asked = 0;
+  const counting = { ...fixtureAi, evaluate: async (...a: Parameters<typeof fixtureAi.evaluate>) => { asked++; return fixtureAi.evaluate(...a); } };
+  const check = await load('core:sudut-istimewa:c1');
+  const r = await gradeTrial(counting, check, { schemaVersion: 1, responseType: 'OPTION', optionId: check.optionOrder![0]!, inputMode: 'TYPED' } as any);
+  assert.equal(r.verdict, 'CORRECT'); assert.equal(asked, 0);
+});
