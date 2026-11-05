@@ -162,6 +162,8 @@ test('trial grading decides by the final number: "20*1/akar 3" is wrong even whe
   assert.equal((await gradeTrial(says('CORRECT'), i, text('tan 30 = 20/x\nX = 20 / akar 3'))).verdict, 'INCORRECT');
   assert.equal((await gradeTrial(says('INCORRECT'), i, text('tan 30 = 20/x\nx = 34,6 m jaraknya'))).verdict, 'CORRECT');
   assert.equal(finalValue('tan 30 = 20/x', 'length'), null, 'not computed yet: the AI decides');
+  assert.equal((await gradeTrial(says('INCORRECT'), i, text('Tan 30= 20/X\nX = 20/1/√3'))).verdict, 'CORRECT', '"20/1/√3" means 20 divided by 1/√3');
+  assert.equal((await gradeTrial(says('CORRECT'), i, text('Tan 30 = 20/x\nX = 20/√3'))).verdict, 'INCORRECT', 'no sensible reading gives 34,6');
   assert.equal((await gradeTrial(says('INCORRECT'), i, text('tan 30 = 20/x'))).verdict, 'INCORRECT');
 });
 
