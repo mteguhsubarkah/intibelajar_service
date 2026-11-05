@@ -108,3 +108,17 @@ test('a slightly-off model quote no longer turns a wrong answer into a 503',asyn
  assert.equal(invented.verdict,'INCORRECT','still graded, the unfound gap becomes not-yet-seen');
  assert.equal(invented.evidence.find(e=>e.conceptCode===tri('tri-f'))!.classification,'INSUFFICIENT_EVIDENCE');
 });
+test('"correct" with a core marked wrong is graded wrong; a retry tells the grader which correction it is',async()=>{
+ const tri=(id:string)=>item.concepts.find(c=>c.legacyMapId===id)!.code;
+ const text='Tan 30 = 20/x\nX = 20 / akar 3';
+ let sent:any;
+ const ai=trialDeepSeek(null as any,config,async(_u,o)=>{sent=JSON.parse(JSON.parse(String(o?.body)).messages[1].content);return envelope({correct:true,items:[
+  {code:tri('tri-c'),state:'ok',quote:'20/x',reason:'ok'},{code:tri('tri-d'),state:'ok',quote:'Tan 30',reason:'ok'},{code:tri('tri-f'),state:'gap',quote:'20 / akar 3',reason:'20/√3 bukan 20√3.'}]});});
+ const r=await ai.evaluate(item,{schemaVersion:1,responseType:'TEXT',text,inputMode:'TYPED'},{correction:2,previous:'Tan 30 = 20/x\nX = 1/√3 * 20'});
+ assert.equal(r.verdict,'INCORRECT');
+ assert.deepEqual(sent.koreksi,{ke:2,jawabanSebelumnya:'Tan 30 = 20/x\nX = 1/√3 * 20'});
+ const s=trialAssessment(async()=>item,ai);
+ await s.check('owner',{sessionId:'r',itemId:'soal-menara',answer:'tan 30 = 20/x'});
+ const again=await s.check('owner',{sessionId:'r',itemId:'soal-menara',answer:text,kind:'retry_original',correction:1});
+ assert.equal(again.correct,false);assert.deepEqual(sent.koreksi,{ke:1,jawabanSebelumnya:'tan 30 = 20/x'});
+});
