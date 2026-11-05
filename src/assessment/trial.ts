@@ -51,10 +51,10 @@ interface TrialContext {
  * membaliknya jadi salah: AI pernah menyalahkan "x = 20/1/√3 = 20√3" (tulisan tanpa kurung, hasil akhir benar)
  * dan menyorot baris yang benar. Arah sebaliknya tetap dari AI: rubrik hanya mengenali pola yang dikatalogkan.
  */
-export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse): Promise<Evaluation> {
+export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
   const fixed = evaluate({ ...i.source, response });
   if (response.responseType === 'OPTION') return fixed;
-  const judged = await ai.evaluate(i, response);
+  const judged = await ai.evaluate(i, response, retry);
   if (response.responseType === 'TEXT' && fixed.verdict === 'CORRECT' && judged.verdict !== 'CORRECT') {
     console.log(JSON.stringify({ event: 'grade_rubric_override', ai: judged.verdict }));
     return fixed;
@@ -169,12 +169,15 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
         for (const run of c.runs.values()) if (run.id === id) return run.output;
       return fail(404, 'NOT_FOUND');
     },
-    async check(owner: string, body: { sessionId: string; itemId: string; answer: string | number }) {
+    async check(owner: string, body: { sessionId: string; itemId: string; answer: string | number; kind?: string; correction?: number }) {
       const c = context(owner, body.sessionId), i = await item(c, body.itemId);
       const response: StudentResponse = typeof body.answer === 'number'
         ? { schemaVersion: 1, responseType: 'OPTION', optionId: i.optionOrder?.[body.answer] ?? '', inputMode: 'TYPED' }
         : { schemaVersion: 1, responseType: 'TEXT', text: body.answer, inputMode: 'TYPED' };
-      const r = await gradeTrial(ai, i, response);
+      // koreksi soal tadi: penilai diberi tahu ini koreksi ke berapa dan jawaban yang dinilai sebelumnya
+      const retry = body.kind === 'retry_original' && response.responseType === 'TEXT' ? { correction: body.correction ?? 1, previous: c.answer ?? '' } : undefined;
+      if (retry) console.log(JSON.stringify({ event: 'trial_retry_check', correction: retry.correction }));
+      const r = await gradeTrial(ai, i, response, retry);
       if(response.responseType==='TEXT')c.answer=response.text?.slice(0,1000) ?? '';
       const correct = r.verdict === 'CORRECT' ? true : r.verdict === 'INCORRECT' ? false : null;
       const option = r.revealedAnswer && 'optionId' in r.revealedAnswer ? r.revealedAnswer.optionId : undefined;

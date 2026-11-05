@@ -5999,6 +5999,11 @@ components:
             answer:
               type: [string, number]
               maxLength: 2000
+            correction:
+              type: integer
+              minimum: 1
+              maximum: 20
+              description: For kind retry_original, which correction of the original question this is (1 = first fix after learning). The grader is told the number and the previously graded answer.
     LegacyCheckResult:
       type: object
       description: The shape `checkWithBackend` validates (isCheck). Frozen.
