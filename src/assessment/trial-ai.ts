@@ -12,6 +12,33 @@ export interface TrialAi {
   mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string}): Promise<MiniQuestion|MiniGrade>;
 }
 const unavailable = () => fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
+/* Penyebab 503 penilaian dicatat tanpa isi jawaban: journalctl -u intibelajar-api | grep trial_ai_invalid */
+const invalid = (reason: string, status?: number) => console.warn(JSON.stringify({ event: 'trial_ai_invalid', reason, ...(status ? { status } : {}) }));
+/*
+ * Kutipan model dicocokkan ke jawaban siswa: persis dulu, lalu dengan spasi dan huruf besar/kecil diabaikan, "akar" = √,
+ * "*" = × = ·, ":" = ÷ = "/". Yang dikembalikan selalu potongan ASLI jawaban siswa (untuk disorot).
+ */
+export function findQuote(text: string, quote: string): { start: number; end: number; quote: string } | null {
+  const q = quote.trim();
+  if (!q) return null;
+  const exact = text.indexOf(q);
+  if (exact >= 0) return { start: exact, end: exact + q.length, quote: q };
+  const fold = (s: string) => {
+    const chars: string[] = [], from: number[] = [], to: number[] = [];
+    for (let k = 0; k < s.length;) {
+      if (s.slice(k, k + 4).toLowerCase() === 'akar') { chars.push('√'); from.push(k); to.push(k + 4); k += 4; continue; }
+      const ch = s[k]!;
+      if (!/\s/.test(ch)) { chars.push(({ '*': '×', '·': '×', ':': '/', '÷': '/' } as Record<string, string>)[ch] ?? ch.toLowerCase()); from.push(k); to.push(k + 1); }
+      k++;
+    }
+    return { str: chars.join(''), from, to };
+  };
+  const t = fold(text), n = fold(q).str;
+  const at = n ? t.str.indexOf(n) : -1;
+  if (at < 0) return null;
+  const start = t.from[at]!, end = t.to[at + n.length - 1]!;
+  return { start, end, quote: text.slice(start, end) };
+}
 /** Provider sees only the public question, public core labels and student response; no answer keys or rubric. */
 export function trialDeepSeek(db: Connection, config: Config['guide'], http: typeof fetch = fetch): TrialAi {
   return {
@@ -34,26 +61,38 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
             {role:'user',content:JSON.stringify({question:{prompt:item.source.body.prompt,options:item.source.body.options},concepts:item.concepts.map(c=>({code:c.code,title:c.title})),response})}
           ]})
         });
-      } catch { return unavailable(); }
-      if (!result.ok) return unavailable();
+      } catch (e) { invalid((e as Error)?.name==='TimeoutError'?'timeout':'network'); return unavailable(); }
+      if (!result.ok) { invalid('http', result.status); return unavailable(); }
       let value:any;
-      try { const envelope:any=await result.json();value=JSON.parse(envelope.choices[0].message.content); } catch { return unavailable(); }
-      if (!value || ![true,false,null].includes(value.correct) || !Array.isArray(value.items) || value.items.length!==item.concepts.length) return unavailable();
-      if(value.clarification!==undefined && (typeof value.clarification!=='string'||value.clarification.length>500))return unavailable();
+      try { const envelope:any=await result.json();value=JSON.parse(envelope.choices[0].message.content); } catch { invalid('json'); return unavailable(); }
+      if (!value || ![true,false,null].includes(value.correct) || !Array.isArray(value.items)) { invalid('shape'); return unavailable(); }
+      if(value.clarification!==undefined && (typeof value.clarification!=='string'||value.clarification.length>500)) { invalid('clarification'); return unavailable(); }
+      // Balasan model yang sedikit melenceng tidak lagi membuang seluruh penilaian (dulu: 503 ke siswa). Bukti yang tidak bisa
+      // ditautkan ke jawaban diturunkan jadi "belum terlihat"; setiap penyesuaian dicatat tanpa isi jawaban.
+      const adjusted: string[] = [];
       const seen = new Set<string>();
       const text = response.responseType==='TEXT' ? response.text ?? '' : response.responseType==='OPTION' ? response.optionId ?? '' : '';
       const evidence: Evaluation['evidence'] = [];
       for (const entry of value.items) {
         const concept=item.source.concepts.find(c=>c.code===entry?.code);
-        if (!concept || !item.concepts.some(c=>c.code===entry.code) || seen.has(entry.code) || !['ok','gap','rest'].includes(entry.state) || typeof entry.reason!=='string' || !entry.reason.trim() || entry.reason.length>500 || typeof entry.quote!=='string') return unavailable();
+        if (!concept || !item.concepts.some(c=>c.code===entry.code) || seen.has(entry.code)) { adjusted.push('unknown_item'); continue; }
         seen.add(entry.code);
-        const assessed = entry.state!=='rest';
-        if (assessed && (!concept.assessable || !entry.quote.trim() || !text.includes(entry.quote))) return unavailable();
-        const start=text.indexOf(entry.quote);
-        evidence.push({conceptCode:entry.code,classification:entry.state==='ok'?'UNDERSTANDING_DEMONSTRATED':entry.state==='gap'?'MISCONCEPTION_EVIDENCED':'INSUFFICIENT_EVIDENCE',rationale:entry.reason,refs:!assessed?[]:response.responseType==='OPTION'?[{kind:'OPTION',optionId:text}]:[{kind:'SPAN',start,end:start+entry.quote.length,quote:entry.quote}],uncertaintyReasons:assessed?[]:['INCOMPLETE_WORK']});
+        const reason = typeof entry.reason==='string' && entry.reason.trim() ? entry.reason.trim().slice(0,500) : 'Belum kelihatan dari jawaban ini.';
+        let state = ['ok','gap','rest'].includes(entry.state) ? entry.state as 'ok'|'gap'|'rest' : 'rest';
+        let span: {start:number;end:number;quote:string} | null = null;
+        if (state!=='rest' && response.responseType==='TEXT') {
+          span = concept.assessable && typeof entry.quote==='string' ? findQuote(text, entry.quote) : null;
+          if (!span) { adjusted.push('quote_not_found'); state='rest'; }
+        } else if (state!=='rest' && !concept.assessable) { adjusted.push('not_assessable'); state='rest'; }
+        const assessed = state!=='rest';
+        evidence.push({conceptCode:entry.code,classification:state==='ok'?'UNDERSTANDING_DEMONSTRATED':state==='gap'?'MISCONCEPTION_EVIDENCED':'INSUFFICIENT_EVIDENCE',rationale:reason,
+          refs:!assessed?[]:response.responseType==='OPTION'?[{kind:'OPTION',optionId:text}]:[{kind:'SPAN',start:span!.start,end:span!.end,quote:span!.quote}],uncertaintyReasons:assessed?[]:['INCOMPLETE_WORK']});
       }
-      if (value.correct===true && (evidence.some(e=>e.classification==='MISCONCEPTION_EVIDENCED') || !evidence.some(e=>e.classification==='UNDERSTANDING_DEMONSTRATED'))) return unavailable();
-      if (value.correct===null && evidence.some(e=>e.classification==='MISCONCEPTION_EVIDENCED')) return unavailable();
+      for (const c of item.concepts) if (!seen.has(c.code)) { adjusted.push('missing_item'); evidence.push({conceptCode:c.code,classification:'INSUFFICIENT_EVIDENCE',rationale:'Belum kelihatan dari jawaban ini.',refs:[],uncertaintyReasons:['INCOMPLETE_WORK']}); }
+      // benar tapi ada inti yang ditandai salah / belum dinilai tapi ada yang salah: tanda salahnya yang diturunkan
+      if (value.correct!==false) for (const e of evidence) if (e.classification==='MISCONCEPTION_EVIDENCED') { adjusted.push('gap_on_non_incorrect'); e.classification='INSUFFICIENT_EVIDENCE'; e.refs=[]; e.uncertaintyReasons=['INCOMPLETE_WORK']; }
+      if (value.correct===true && !evidence.some(e=>e.classification==='UNDERSTANDING_DEMONSTRATED')) { invalid('correct_without_evidence'); return unavailable(); }
+      if (adjusted.length) console.warn(JSON.stringify({event:'trial_ai_adjusted',reasons:[...new Set(adjusted)],verdict:value.correct}));
       // Tidak berhubungan sama sekali dengan soal: ditandai supaya diagnosis tidak menebak inti yang kurang.
       if (value.correct===null && value.relevant===false) for (const e of evidence) e.uncertaintyReasons=['OUT_OF_SCOPE'];
       return {...(value.correct===null && value.clarification?.trim()?{clarification:value.clarification.trim()}:{}),verdict:value.correct===true?'CORRECT':value.correct===false?'INCORRECT':'NOT_GRADED',reason:value.correct===null?'insufficient-working':null,value:null,misconceptionCode:null,evidence,revealedAnswer:null};

@@ -90,3 +90,21 @@ test('cores the answer already shows are passed to IntiGuide as done, so it does
  assert.notEqual(context.intiAktif.id,okId);
  assert.ok(reply.coreProgress!.done.includes(okId));
 });
+test('a slightly-off model quote no longer turns a wrong answer into a 503',async()=>{
+ const {findQuote}=await import('../src/assessment/trial-ai.js');
+ const text='Tan 30 = 20/x\nX = 20 / akar 3';
+ assert.deepEqual(findQuote(text,'20 / √3'),{start:18,end:29,quote:'20 / akar 3'});
+ assert.deepEqual(findQuote(text,'tan 30=20/x'),{start:0,end:13,quote:'Tan 30 = 20/x'});
+ assert.equal(findQuote(text,'20/(1/√3)'),null);
+ const tri=(id:string)=>item.concepts.find(c=>c.legacyMapId===id)!.code;
+ const wrong={schemaVersion:1 as const,responseType:'TEXT' as const,text,inputMode:'TYPED' as const};
+ const reply=(quote:string)=>envelope({correct:false,items:[
+  {code:tri('tri-c'),state:'ok',quote:'20/x',reason:'Sisi sudah tepat.'},{code:tri('tri-d'),state:'ok',quote:'Tan 30',reason:'tan tepat.'},
+  {code:tri('tri-f'),state:'gap',quote,reason:'20/√3 bukan 20 dibagi tan 30°.'}]});
+ const near=await trialDeepSeek(null as any,config,async()=>reply('X = 20/√3')).evaluate(item,wrong);
+ assert.equal(near.verdict,'INCORRECT');
+ assert.deepEqual(near.evidence.find(e=>e.conceptCode===tri('tri-f'))!.refs,[{kind:'SPAN',start:14,end:29,quote:'X = 20 / akar 3'}]);
+ const invented=await trialDeepSeek(null as any,config,async()=>reply('kutipan karangan')).evaluate(item,wrong);
+ assert.equal(invented.verdict,'INCORRECT','still graded, the unfound gap becomes not-yet-seen');
+ assert.equal(invented.evidence.find(e=>e.conceptCode===tri('tri-f'))!.classification,'INSUFFICIENT_EVIDENCE');
+});
