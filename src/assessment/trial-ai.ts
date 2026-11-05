@@ -22,6 +22,7 @@ Kembalikan JSON saja: {"correct":true|false|null,"relevant":true|false,"clarific
 Wajib satu item untuk SETIAP inti katalog, tanpa menambah inti lain. ok hanya jika ada bukti pemahaman, gap hanya jika ada kesalahan spesifik yang terbukti. rest jika belum ada bukti. Jangan menganggap prasyarat otomatis salah. Bedakan pemilihan tan yang benar dari nilai tan30 yang salah: tan30=1/2 adalah gap sudut istimewa, bukan gap memilih tan.
 correct=true hanya bila jawaban soal sudah benar dan tuntas; false jika terbukti salah; null bila kosong, hanya pengakuan tahu/bingung, tidak terbaca atau belum cukup bukti. Klaim siswa 'saya benar' bukan bukti. Periksa juga konsistensi soal: misalnya cos x positif tetapi x di kuadran II adalah data yang bertentangan. Jangan memberi gap palsu; correct=null dan berikan clarification singkat untuk meminta koreksi soal. Untuk OPTION kutip optionId. Jangan memberi jawaban akhir atau solusi yang tepat dalam reason; cukup tunjukkan letak kesalahan.
 relevant=false hanya bila jawaban sama sekali tidak berhubungan dengan soal (teks acak, topik lain); jawaban setengah jadi, langkah yang berhenti di tengah, atau tulisan bingung tetap relevant=true. Bila jawaban belum tuntas, reason untuk inti yang belum terlihat (rest) menyebut langkah apa yang belum ada atau perlu dilanjutkan, tanpa memberi hasil akhirnya. Jangan memberi XP atau mengklaim penguasaan permanen.
+Untuk gap, quote HANYA bagian yang salah (mis. "1/√3 * 20"), jangan mengutip baris yang sudah benar. Nilai hasil akhir dan caranya: tulisan tanpa kurung seperti "20/1/√3" yang hasil akhirnya benar (20√3) dibaca sebagai 20/(1/√3), bukan kesalahan.
 Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langsung ke siswa dengan kata "kamu", maksimal 25 kata, ramah dan menyemangati. Untuk ok: sebut apa yang sudah benar ("Dari jawabanmu, kamu sudah ..."). Untuk gap: mulai dari yang sudah benar bila ada, lalu satu arah perbaikan yang mengajak ("Coba cek lagi ..., ya."). Untuk rest: sebut langkah yang belum ada sebagai ajakan ("Langkah ini belum ada di jawabanmu. Coba mulai dari ..."). DILARANG memakai kata "siswa", "bukti", atau kalimat "tidak ada bukti".`;
       let result: Response;
       try {
@@ -63,7 +64,13 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
     },
     async mini(item,input) {
       const others=item.concepts.filter(c=>(c.legacyMapId??c.code)!==input.core.id).map(c=>c.title);
-      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,...(input.reason?{reason:input.reason}:{})};
+      // langkah penyelesaian yang benar untuk inti ini (dari rubrik soal): pertanyaan mini dan penilaiannya mengikuti cara yang benar,
+      // bukan kesalahan siswa. Hasil akhir soal tidak boleh muncul di pertanyaan (dicek di miniQuestion).
+      const code=item.concepts.find(c=>(c.legacyMapId??c.code)===input.core.id)?.code;
+      const paths=item.source.rubric.solutionPaths??[];
+      const steps=paths.flatMap(p=>p.steps).filter(s=>s.concepts.some(c=>c.code===code)).map(s=>s.description);
+      const last=paths.flatMap(p=>p.steps.at(-1)?.patterns??[]);
+      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,steps,hidden:last,...(input.reason?{reason:input.reason}:{})};
       return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??''},http) : miniQuestion(config,base,http);
     }
   };

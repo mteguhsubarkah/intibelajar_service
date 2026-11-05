@@ -45,6 +45,22 @@ interface TrialContext {
   /** pertanyaan mini per inti + jawaban siswa: dinilai terhadap pertanyaan yang dibuat server, bukan kiriman browser */
   mini?: Map<string,{question:string;hint:string}>;
 }
+/*
+ * Penilaian trial. Pilihan ganda dinilai dengan kuncinya (deterministik, tanpa AI). Jawaban tulisan dinilai AI,
+ * tetapi bila rubrik soal (langkah dan nilai akhir yang sudah direview) menilainya BENAR, AI tidak boleh
+ * membaliknya jadi salah: AI pernah menyalahkan "x = 20/1/√3 = 20√3" (tulisan tanpa kurung, hasil akhir benar)
+ * dan menyorot baris yang benar. Arah sebaliknya tetap dari AI: rubrik hanya mengenali pola yang dikatalogkan.
+ */
+export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse): Promise<Evaluation> {
+  const fixed = evaluate({ ...i.source, response });
+  if (response.responseType === 'OPTION') return fixed;
+  const judged = await ai.evaluate(i, response);
+  if (response.responseType === 'TEXT' && fixed.verdict === 'CORRECT' && judged.verdict !== 'CORRECT') {
+    console.log(JSON.stringify({ event: 'grade_rubric_override', ai: judged.verdict }));
+    return fixed;
+  }
+  return judged;
+}
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
   ai: TrialAi, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
   const contexts = new Map<string, TrialContext>();
@@ -80,7 +96,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const pending=c.pending.get(fingerprint);
       if(pending)return pending;
       const work=(async()=>{
-      const result = await ai.evaluate(i, response);
+      const result = await gradeTrial(ai, i, response);
       c.answer = response.text?.slice(0,1000) ?? '';
       const id = uuid();
       const demonstrated = result.evidence.find(e => e.classification === 'UNDERSTANDING_DEMONSTRATED');
@@ -158,7 +174,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const response: StudentResponse = typeof body.answer === 'number'
         ? { schemaVersion: 1, responseType: 'OPTION', optionId: i.optionOrder?.[body.answer] ?? '', inputMode: 'TYPED' }
         : { schemaVersion: 1, responseType: 'TEXT', text: body.answer, inputMode: 'TYPED' };
-      const r = ai ? await ai.evaluate(i, response) : evaluate({ ...i.source, response });
+      const r = await gradeTrial(ai, i, response);
       if(response.responseType==='TEXT')c.answer=response.text?.slice(0,1000) ?? '';
       const correct = r.verdict === 'CORRECT' ? true : r.verdict === 'INCORRECT' ? false : null;
       const option = r.revealedAnswer && 'optionId' in r.revealedAnswer ? r.revealedAnswer.optionId : undefined;

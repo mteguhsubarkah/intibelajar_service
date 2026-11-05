@@ -35,6 +35,9 @@ blocks:
   - type: text
     slide: 1
     text: Untuk 60°, pakai segitiga yang sama, tapi berdiri di sudut 60°. Depan dan samping bertukar.
+  - type: figure
+    slide: 1
+    figureRef: tri-3060
   - type: math
     slide: 1
     name: sin 30°

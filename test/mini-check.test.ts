@@ -32,3 +32,11 @@ test('mini check request contract',()=>{
  validateRequest('/v1/trial/mini-check','POST',{body:{sessionId:'s',questionId:'soal-menara',topicId:null,hintOpened:false,coreId:'tri-c',currentAnswer:'sin 30 = 20/x',reply:'depan'},query:{},headers:{}} as any);
  assert.throws(()=>validateRequest('/v1/trial/mini-check','POST',{body:{sessionId:'s',questionId:'soal-menara',topicId:null,hintOpened:false},query:{},headers:{}} as any));
 });
+test('mini question follows the correct step for this core and never shows the final answer',async()=>{
+ let calls=0,ctx:any;
+ const q=await miniQuestion(config,{...input,core:{id:'tri-f',title:'Sudut Istimewa'},steps:['Hitung: x = 20 / tan 30° = 20√3 ≈ 34,6 m'],hidden:['20 √ 3','34,6','1 / √ 3']},(async(_u,o)=>{calls++;ctx=JSON.parse(JSON.parse(String(o?.body)).messages[1].content);
+  return envelope(calls===1?{pertanyaan:'Kalau tan 30° = 1/√3, berapa x?',petunjuk:'-'}:{pertanyaan:'Di soalmu perbandingan yang dipakai tan 30°. Berapa nilai tan 30°?',petunjuk:'Lihat segitiga 30°.'});}) as typeof fetch);
+ assert.equal(calls,2,'a question that leaks 1/√3 is asked again');
+ assert.deepEqual(ctx.langkahBenarInti,['Hitung: x = 20 / tan 30° = 20√3 ≈ 34,6 m']);
+ assert.match(q.question,/tan 30°/);
+});
