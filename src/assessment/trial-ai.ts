@@ -62,7 +62,8 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       return {...reply,hintsUsed:used+1};
     },
     async mini(item,input) {
-      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,...(input.reason?{reason:input.reason}:{})};
+      const others=item.concepts.filter(c=>(c.legacyMapId??c.code)!==input.core.id).map(c=>c.title);
+      const base={questionText:item.source.body.prompt,answer:input.answer,core:input.core,others,...(input.reason?{reason:input.reason}:{})};
       return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??''},http) : miniQuestion(config,base,http);
     }
   };
