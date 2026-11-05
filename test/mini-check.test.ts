@@ -4,7 +4,7 @@ import {validateRequest,validateResponse} from '../src/platform/contract.js';
 import {ApiError} from '../src/platform/errors.js';
 const config={apiKey:'synthetic-key',model:'deepseek-flash',visionModel:'deepseek-v4-flash-vision-exp'};
 const envelope=(content:unknown)=>Response.json({choices:[{message:{content:typeof content==='string'?content:JSON.stringify(content)}}]});
-const input={questionText:'Sebuah menara setinggi 20 m dilihat dengan sudut depresi 30°. Berapa jarak mendatar?',answer:'sin 30 = 20/x\nx = 1/4 * 20\nx = 5',core:{id:'tri-c',title:'Segitiga Siku-siku'},reason:'Coba cek lagi sisi mana yang kamu pakai, ya.'};
+const input={others:['Definisi sin, cos, tan','Sudut Istimewa'],questionText:'Sebuah menara setinggi 20 m dilihat dengan sudut depresi 30°. Berapa jarak mendatar?',answer:'sin 30 = 20/x\nx = 1/4 * 20\nx = 5',core:{id:'tri-c',title:'Segitiga Siku-siku'},reason:'Coba cek lagi sisi mana yang kamu pakai, ya.'};
 
 test('mini question: built from the question and the learner answer, about one core only',async()=>{
  let sent:any;
@@ -12,7 +12,8 @@ test('mini question: built from the question and the learner answer, about one c
  assert.equal(sent.response_format.type,'json_object');
  assert.match(sent.messages[0].content,/JANGAN meminta atau menyebut jawaban akhir/);
  const ctx=JSON.parse(sent.messages[1].content);
- assert.equal(ctx.inti,'Segitiga Siku-siku');assert.equal(ctx.jawabanSiswa,input.answer);assert.equal(ctx.catatanPemeriksaan,input.reason);
+ assert.equal(ctx.inti,'Segitiga Siku-siku');assert.equal(ctx.jawabanSiswa,input.answer);assert.equal(ctx.catatanPemeriksaan,input.reason);assert.deepEqual(ctx.intiLainDiSoalIni,input.others);
+ assert.match(sent.messages[0].content,/JANGAN tanyakan nama sisi/);
  assert.equal(q.question,'Di soalmu, tinggi menara 20 m itu sisi apa dari sudut 30°?');
  validateResponse('/v1/trial/mini-check','POST',200,q);
 });
