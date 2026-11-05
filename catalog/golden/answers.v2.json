@@ -521,6 +521,57 @@
       "correctIndex": 1
     },
     {
+      "question": "MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C0",
+      "items": [
+        "core:segitiga-siku-siku:c0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C1",
+      "items": [
+        "core:segitiga-siku-siku:c1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C2",
+      "items": [
+        "core:segitiga-siku-siku:c2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SEGITIGA_SIKU_SIKU_P0",
+      "items": [
+        "segitiga-siku-siku:0",
+        "core:segitiga-siku-siku:q0"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
+      "question": "MAT.TRI.Q.SEGITIGA_SIKU_SIKU_P1",
+      "items": [
+        "segitiga-siku-siku:1",
+        "core:segitiga-siku-siku:q1"
+      ],
+      "optionCount": 3,
+      "correctIndex": 0
+    },
+    {
+      "question": "MAT.TRI.Q.SEGITIGA_SIKU_SIKU_P2",
+      "items": [
+        "segitiga-siku-siku:2",
+        "core:segitiga-siku-siku:q2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 2
+    },
+    {
       "question": "MAT.TRI.Q.SUDUT_DEPRESI_ELEVASI_C0",
       "items": [
         "core:sudut-depresi-elevasi:c0"
@@ -577,12 +628,20 @@
         "core:sudut-istimewa:c1"
       ],
       "optionCount": 3,
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C2",
       "items": [
         "core:sudut-istimewa:c2"
+      ],
+      "optionCount": 3,
+      "correctIndex": 1
+    },
+    {
+      "question": "MAT.TRI.Q.SUDUT_ISTIMEWA_C3",
+      "items": [
+        "core:sudut-istimewa:c3"
       ],
       "optionCount": 3,
       "correctIndex": 1

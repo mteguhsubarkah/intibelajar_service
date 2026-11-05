@@ -22,7 +22,7 @@ concepts:
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Di segitiga 30°–60°–90° dengan sisi miring 2, berapa panjang sisi di depan sudut 30°?
+  prompt: Di segitiga separuh itu, berapa panjang sisi di depan sudut 30°?
   options:
     - id: a
       label: √3
@@ -44,8 +44,8 @@ rubric:
   finalAnswerEvidence:
     - MAT.TRI.SUDUT_ISTIMEWA
   feedback:
-    correct: "Tepat. Sudut terkecil berhadapan dengan sisi terpendek: panjangnya 1."
-    incorrect: Belum tepat. Sisi di depan 30° itu yang terpendek, yaitu 1. √3 adalah sisi di depan 60°, dan 2 adalah sisi miring.
+    correct: "Tepat. Sudut 30° ada di atas. Sisi di seberangnya adalah alas yang dipotong separuh: 1."
+    incorrect: "Belum tepat. Sudut 30° ada di atas. Sisi di seberangnya adalah alas, yang tinggal separuh: 1."
 review:
   status: PROPOSED
   decision: D6

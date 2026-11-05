@@ -27,7 +27,7 @@ body:
   prompt: sin 45° = ...
   options:
     - id: a
-      label: ½
+      label: 1/2
     - id: b
       label: √2/2
     - id: c
@@ -46,8 +46,8 @@ rubric:
   finalAnswerEvidence:
     - MAT.TRI.SUDUT_ISTIMEWA
   feedback:
-    correct: 45° ada di urutan ke-3 pada pola √k/2, jadi sin 45° = √2/2. Di segitiga 45°–45°–90°, depan = samping = 1 dan miring = √2.
-    incorrect: sin 45° = √2/2 (sekitar 0,71). ½ itu sin 30°, dan √3/2 itu sin 60°.
+    correct: "Di segitiga dari persegi: depan 1, miring √2. sin 45° = 1/√2 = √2/2."
+    incorrect: sin 45° = √2/2. Nilai 1/2 itu sin 30°, dan √3/2 itu sin 60°.
 review:
   status: PROPOSED
   decision: D6

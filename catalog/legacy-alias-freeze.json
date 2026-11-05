@@ -20,6 +20,12 @@
       "core:perbandingan-trig:q0",
       "core:perbandingan-trig:q1",
       "core:perbandingan-trig:q2",
+      "core:segitiga-siku-siku:c0",
+      "core:segitiga-siku-siku:c1",
+      "core:segitiga-siku-siku:c2",
+      "core:segitiga-siku-siku:q0",
+      "core:segitiga-siku-siku:q1",
+      "core:segitiga-siku-siku:q2",
       "core:sudut-depresi-elevasi:c0",
       "core:sudut-depresi-elevasi:c1",
       "core:sudut-depresi-elevasi:q0",
@@ -28,6 +34,7 @@
       "core:sudut-istimewa:c0",
       "core:sudut-istimewa:c1",
       "core:sudut-istimewa:c2",
+      "core:sudut-istimewa:c3",
       "core:sudut-istimewa:q0",
       "core:sudut-istimewa:q1",
       "core:sudut-istimewa:q2",
@@ -119,6 +126,7 @@
     ],
     "ROUTE": [
       "perbandingan-trig",
+      "segitiga-siku-siku",
       "sudut-depresi-elevasi",
       "sudut-istimewa"
     ],

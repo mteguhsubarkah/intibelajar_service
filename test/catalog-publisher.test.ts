@@ -117,7 +117,7 @@ test('Slice 1 catalog migration and publisher on PostgreSQL', async t => {
       const lessonRevisions = await sql<{ revision: number; status: string; checks: string }>`
         select r.revision, r.status, (select count(*) from micro_assessment a where a.lesson_revision_id = r.id)::text checks from micro_lesson_revision r
         join micro_lesson l on l.id = r.lesson_id where l.code = 'MAT.TRI.L.SUDUT_ISTIMEWA' order by r.revision`.execute(db);
-      assert.deepEqual(lessonRevisions.rows.map(x => [x.revision, x.status, x.checks]), [[1, 'RETIRED', '3'], [2, 'PUBLISHED', '3']]);
+      assert.deepEqual(lessonRevisions.rows.map(x => [x.revision, x.status, x.checks]), [[1, 'RETIRED', '4'], [2, 'PUBLISHED', '4']]);
       const releases = await db.selectFrom('curriculum_release').select(['id', 'is_current', 'status']).orderBy('version').execute();
       assert.ok(releases.find(x => x.id === release1)!.status === 'PUBLISHED' && !releases.find(x => x.id === release1)!.is_current);
       assert.equal(releases.filter(x => x.is_current).length, 1);

@@ -1,0 +1,63 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SEGITIGA_SIKU_SIKU_P0
+familyCode: MAT.TRI.F.SEGITIGA_SIKU_SIKU_P0
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts segitiga-siku-siku practice[0]
+aliases:
+  - ns: ITEM
+    value: segitiga-siku-siku:0
+  - ns: ITEM
+    value: core:segitiga-siku-siku:q0
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di segitiga siku-siku, sisi mana yang paling panjang?
+  options:
+    - id: a
+      label: Sisi depan
+    - id: b
+      label: Sisi samping
+    - id: c
+      label: Sisi miring
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - Sisi miring
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+  feedback:
+    correct: Sisi miring ada di seberang sudut 90°, dan selalu paling panjang.
+    incorrect: Yang paling panjang selalu sisi miring, yaitu sisi di seberang sudut 90°.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - no bank entry; lesson coreId tri-c
+    - positional legacy ids frozen as recorded (plan 03 §1.2.4)
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table

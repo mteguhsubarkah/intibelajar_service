@@ -24,7 +24,7 @@ concepts:
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Tanpa kalkulator. Dalam segitiga siku-siku dengan sudut 30° dan sisi miring 10, berapa panjang sisi di depan sudut 30°?
+  prompt: Tanpa kalkulator. Segitiga siku-siku punya sudut 30° dan sisi miring 10. Berapa panjang sisi di depan sudut 30°?
   figureRef: tri30
   options:
     - id: a
@@ -47,8 +47,8 @@ rubric:
   finalAnswerEvidence:
     - MAT.TRI.SUDUT_ISTIMEWA
   feedback:
-    correct: sin 30° = ½, jadi sisi depan = ½ × 10 = 5. Pola ini dipakai untuk semua sudut istimewa.
-    incorrect: Sisi depan = sin 30° × sisi miring, dan sin 30° = ½ — jadi 5. Pola ini dipakai untuk semua sudut istimewa.
+    correct: sin 30° = 1/2, jadi sisi depan = 1/2 × 10 = 5.
+    incorrect: Sisi depan = sin 30° × sisi miring. sin 30° = 1/2, jadi hasilnya 5.
 review:
   status: PROPOSED
   decision: D6

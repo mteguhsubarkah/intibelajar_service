@@ -7,7 +7,6 @@ aliases:
     value: sudut-depresi-elevasi
 concepts:
   - MAT.TRI.SUDUT_ELEVASI_DEPRESI
-  - MAT.TRI.SEGITIGA_SIKU_SIKU
 blocks:
   - type: heading
     slide: 0
@@ -57,5 +56,5 @@ review:
     - concepts
   evidence:
     - coreLessons.ts coreId is tri-p
-    - coba.ts CORE_ROUTES routes tri-c, tri-p here
+    - coba.ts CORE_ROUTES routes tri-p here
     - estimatedMinutes taken from the concept, as the frontend does

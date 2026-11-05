@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SEGITIGA_SIKU_SIKU_C0
+familyCode: MAT.TRI.F.SEGITIGA_SIKU_SIKU_C0
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: CONCEPTUAL
+difficulty: 1
+estimatedMinutes: 1
+provenance:
+  source: frontend:src/data/coreLessons.ts segitiga-siku-siku chunks[0].check
+aliases:
+  - ns: ITEM
+    value: core:segitiga-siku-siku:c0
+legacyOptionOrder:
+  - a
+  - b
+  - c
+concepts:
+  - concept: MAT.TRI.SEGITIGA_SIKU_SIKU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di mana letak sisi miring?
+  options:
+    - id: a
+      label: Menempel pada sudut 90°
+    - id: b
+      label: Di seberang sudut 90°
+    - id: c
+      label: Selalu di bagian bawah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Di seberang sudut 90°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SEGITIGA_SIKU_SIKU
+  feedback:
+    correct: Tepat. Sisi miring ada di seberang sudut 90°, dan ia yang paling panjang.
+    incorrect: Belum tepat. Cari kotak kecil (sudut 90°). Sisi di seberangnya, yang paling panjang, itulah sisi miring.
+review:
+  status: PROPOSED
+  decision: D6
+  fields:
+    - concepts
+    - finalAnswerEvidence
+    - contextTag
+    - visibility
+  evidence:
+    - chunk check of lesson segitiga-siku-siku, whose coreId is tri-c
+    - "visibility PUBLIC_PRACTICE: the key already ships in the frontend bundle (D4)"
+    - contextTag CONCEPTUAL from the keyword table
