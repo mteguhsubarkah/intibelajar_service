@@ -246,7 +246,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       if(reply.coreProgress)c.guideDone=reply.coreProgress.done;
       return reply;
     },
-    async miniCheck(owner: string, body: { sessionId: string; questionId: string; coreId: string; currentAnswer?: string; reply?: string }): Promise<{ question: string; hint: string; correct?: boolean; feedback?: string; because?: string }> {
+    async miniCheck(owner: string, body: { sessionId: string; questionId: string; coreId: string; currentAnswer?: string; reply?: string; round?: number }): Promise<{ question: string; hint: string; correct?: boolean; feedback?: string; because?: string }> {
       const c = context(owner, body.sessionId), i = await item(c, body.questionId);
       const core = i.concepts.find(x => (x.legacyMapId ?? x.code) === body.coreId);
       if (!core) return fail(404, 'NOT_FOUND');
@@ -255,12 +255,15 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const latest = [...c.runs.values()].find(r => r.id === c.latestRun)?.output;
       const reason = latest?.items?.find((x: { id: string }) => x.id === body.coreId)?.reason as string | undefined;
       const ref = { id: body.coreId, title: core.title };
-      const key = body.coreId + '\u0000' + answer;
+      // per inti, jawaban, dan putaran belajar: sesudah koreksi yang belum tepat, inti yang dipelajari lagi mendapat pertanyaan baru
+      const key = body.coreId + '\u0000' + answer + '\u0000' + (body.round ?? 0);
       c.mini ??= new Map();
       if (body.reply === undefined) {
         const cached = c.mini.get(key);
         if (cached) return { question: cached.question, hint: cached.hint };
-        const asked = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}) }) as {question:string;hint:string;key?:string};
+        // putaran berikutnya: pertanyaan dari putaran sebelumnya untuk inti ini dikirim supaya yang baru berbeda
+        const previous = [...c.mini.entries()].filter(([k]) => k.startsWith(body.coreId + '\u0000' + answer + '\u0000') && k !== key).map(([, v]) => v.question).at(-1);
+        const asked = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}), ...(previous ? { previous } : {}) }) as {question:string;hint:string;key?:string};
         if (c.mini.size >= 32) c.mini.delete(c.mini.keys().next().value!);
         // kunci jawaban disimpan di sesi server untuk penilai; yang dikirim ke browser hanya pertanyaan dan petunjuk
         c.mini.set(key, { question: asked.question, hint: asked.hint, ...(asked.key ? { key: asked.key } : {}) });

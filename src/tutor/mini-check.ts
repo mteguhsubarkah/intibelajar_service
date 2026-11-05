@@ -8,7 +8,7 @@ import {parseAnswerValue,withinTolerance} from '../assessment/evaluators/numeric
  * supaya siswa "ngeh" bagian mana dari jawabannya yang dipakai inti itu. Jawaban siswa beragam,
  * jadi pertanyaannya disusun model, bukan ditulis tangan per soal.
  */
-export interface MiniInput {questionText:string;answer:string;core:{id:string;title:string};reason?:string;/** inti lain di soal ini: tidak boleh ditanyakan */others?:string[];/** seluruh langkah penyelesaian benar soal ini (rubrik) */allSteps?:string[];/** langkah benar inti ini di soal (rubrik) */steps?:string[];/** bentuk hasil akhir soal: tidak boleh muncul di pertanyaan */hidden?:string[]}
+export interface MiniInput {questionText:string;answer:string;core:{id:string;title:string};reason?:string;/** inti lain di soal ini: tidak boleh ditanyakan */others?:string[];/** seluruh langkah penyelesaian benar soal ini (rubrik) */allSteps?:string[];/** pertanyaan mini putaran sebelumnya untuk inti ini: yang baru harus berbeda */previous?:string;/** langkah benar inti ini di soal (rubrik) */steps?:string[];/** bentuk hasil akhir soal: tidak boleh muncul di pertanyaan */hidden?:string[]}
 /** key: kunci jawaban dari model, hanya untuk penilai di server, TIDAK PERNAH dikirim ke browser */
 export interface MiniQuestion {question:string;hint:string;key?:string}
 export interface MiniGrade {correct:boolean;feedback:string;because:string}
@@ -27,7 +27,8 @@ Aturan:
 5. Jangan menyebut jawaban akhir soal, dan jangan menyebut jawaban pertanyaanmu sendiri.
 6. Maksimal 35 kata. Tulis matematika sebagai teks biasa (3/4, √3, 30°, tan x), tanpa LaTeX.
 7. "petunjuk": satu kalimat pendek yang mengarahkan tanpa memberi jawabannya.
-8. "kunci": jawaban yang benar untuk pertanyaanmu, sesingkat mungkin (mis. "depan", "tan", "1/√3"). Kunci hanya untuk penilai dan tidak ditampilkan ke siswa.
+8. Bila ada "pertanyaanSebelumnya", siswa sedang mempelajari inti ini lagi sesudah koreksinya belum tepat: buat pertanyaan yang BERBEDA (bagian langkah atau bentuk pertanyaan lain), tetap tentang langkahBenarInti.
+9. "kunci": jawaban yang benar untuk pertanyaanmu, sesingkat mungkin (mis. "depan", "tan", "1/√3"). Kunci hanya untuk penilai dan tidak ditampilkan ke siswa.
 Contoh untuk soal menara yang penyelesaian benarnya memakai tan 30°:
 - Segitiga Siku-siku: "Dilihat dari sudut 30°, tinggi menara 20 m itu sisi apa: depan, samping, atau miring?"
 - Definisi sin, cos, tan: "Kamu tahu tinggi menara (sisi depan) dan mencari jarak mendatar (sisi samping). Perbandingan apa yang memasangkan keduanya?"
@@ -56,7 +57,8 @@ const trimFinal=(step:string,hidden:string[]=[])=>step.split(/(?=[=≈])/).filte
 const context=(input:MiniInput)=>({soal:input.questionText.slice(0,2000),inti:input.core.title,
  ...(input.steps?.length?{langkahBenarInti:input.steps.slice(0,4).map(st=>trimFinal(st,input.hidden))}:{}),
  ...(input.allSteps?.length?{langkahBenarSoal:input.allSteps.slice(0,8).map(st=>trimFinal(st,input.hidden))}:{}),
- ...(input.others?.length?{intiLainDiSoalIni:input.others.slice(0,8)}:{})});
+ ...(input.others?.length?{intiLainDiSoalIni:input.others.slice(0,8)}:{}),
+ ...(input.previous?{pertanyaanSebelumnya:input.previous.slice(0,400)}:{})});
 /* perbandingan trigonometri yang tidak dipakai di penyelesaian benar tidak boleh muncul di pertanyaan */
 const RATIOS=['sin','cos','tan'];
 const offPath=(text:string,allSteps:string[]=[])=>{
