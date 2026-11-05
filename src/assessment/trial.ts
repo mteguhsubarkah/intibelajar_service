@@ -265,13 +265,15 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const reason = latest?.items?.find((x: { id: string }) => x.id === body.coreId)?.reason as string | undefined;
       const ref = { id: body.coreId, title: core.title };
       // per inti, jawaban, dan putaran belajar: sesudah koreksi yang belum tepat, inti yang dipelajari lagi mendapat pertanyaan baru
-      const key = body.coreId + '\u0000' + answer + '\u0000' + (body.round ?? 0);
+      // per soal, inti, jawaban, dan putaran belajar (inti yang sama, mis. Sudut Istimewa, dipakai beberapa soal /coba)
+      const scope = body.questionId + '\u0000' + body.coreId + '\u0000' + answer + '\u0000';
+      const key = scope + (body.round ?? 0);
       c.mini ??= new Map();
       if (body.reply === undefined) {
         const cached = c.mini.get(key);
         if (cached) return { question: cached.question, hint: cached.hint };
         // putaran berikutnya: pertanyaan dari putaran sebelumnya untuk inti ini dikirim supaya yang baru berbeda
-        const previous = [...c.mini.entries()].filter(([k]) => k.startsWith(body.coreId + '\u0000' + answer + '\u0000') && k !== key).map(([, v]) => v.question).at(-1);
+        const previous = [...c.mini.entries()].filter(([k]) => k.startsWith(scope) && k !== key).map(([, v]) => v.question).at(-1);
         const asked = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}), ...(previous ? { previous } : {}) }) as {question:string;hint:string;key?:string};
         if (c.mini.size >= 32) c.mini.delete(c.mini.keys().next().value!);
         // kunci jawaban disimpan di sesi server untuk penilai; yang dikirim ke browser hanya pertanyaan dan petunjuk
