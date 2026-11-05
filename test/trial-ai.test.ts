@@ -105,8 +105,9 @@ test('a slightly-off model quote no longer turns a wrong answer into a 503',asyn
  assert.equal(near.verdict,'INCORRECT');
  assert.deepEqual(near.evidence.find(e=>e.conceptCode===tri('tri-f'))!.refs,[{kind:'SPAN',start:14,end:29,quote:'X = 20 / akar 3'}]);
  const invented=await trialDeepSeek(null as any,config,async()=>reply('kutipan karangan')).evaluate(item,wrong);
- assert.equal(invented.verdict,'INCORRECT','still graded, the unfound gap becomes not-yet-seen');
- assert.equal(invented.evidence.find(e=>e.conceptCode===tri('tri-f'))!.classification,'INSUFFICIENT_EVIDENCE');
+ assert.equal(invented.verdict,'INCORRECT','still graded');
+ const unfound=invented.evidence.find(e=>e.conceptCode===tri('tri-f'))!;
+ assert.equal(unfound.classification,'MISCONCEPTION_EVIDENCED','the judgement stays, only the highlight is missing');assert.deepEqual(unfound.refs,[]);
 });
 test('"correct" with a core marked wrong is graded wrong; a retry tells the grader which correction it is',async()=>{
  const tri=(id:string)=>item.concepts.find(c=>c.legacyMapId===id)!.code;

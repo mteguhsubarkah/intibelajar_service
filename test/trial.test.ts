@@ -113,7 +113,7 @@ test('trial IntiGuide: reopening the dialog starts a fresh conversation, cores t
 test('trial mini check: grades against the question the server wrote, and a pass ticks the core for IntiGuide', async () => {
   const calls: any[] = [];
   const ai = { ...fixtureAi, mini: async (_i: TrialItem, input: any) => { calls.push(input);
-    return input.question === undefined ? { question: 'Tinggi menara itu sisi apa?', hint: 'Lihat sudutnya.' } : { correct: input.reply === 'depan', feedback: 'ok', because: input.reply === 'depan' ? 'kamu tahu sisi depan' : '' }; },
+    return input.question === undefined ? { question: 'Tinggi menara itu sisi apa?', hint: 'Lihat sudutnya.', key: 'depan' } : { correct: input.reply === 'depan', feedback: 'ok', because: input.reply === 'depan' ? 'kamu tahu sisi depan' : '' }; },
     tutor: async (_i: TrialItem, _m: unknown, _a: string, used: number, done: string[] = []) => { calls.push({ done }); return { text: 'ok', quick: [], hintsUsed: used }; } };
   const s = trialAssessment(load, ai);
   const mini = { sessionId: 'mini', questionId: 'soal-menara', topicId: 'trigonometri', hintOpened: false, coreId: 'tri-c', currentAnswer: 'sin 30 = 20/x' };
@@ -127,6 +127,7 @@ test('trial mini check: grades against the question the server wrote, and a pass
   const right = await s.miniCheck('browser-m', { ...mini, reply: 'depan' });
   assert.deepEqual({ correct: right.correct, because: right.because }, { correct: true, because: 'kamu tahu sisi depan' });
   assert.equal(calls[2].question, 'Tinggi menara itu sisi apa?');
+  assert.equal(calls[2].key, 'depan', 'the grader gets the key');
   await s.tutor('browser-m', { ...mini, messages: [{ from: 'bot', text: 'Halo' }, { from: 'me', text: 'a' }, { from: 'bot', text: 'b' }, { from: 'me', text: 'c' }] });
   assert.deepEqual(calls.at(-1).done, ['tri-c']);
   await assert.rejects(s.miniCheck('browser-m', { ...mini, coreId: 'bukan-inti' }), (e: unknown) => e instanceof ApiError && e.status === 404);
@@ -138,11 +139,28 @@ test('trial grading: the reviewed rubric wins over an AI that marks a correct an
   const strictAi = { ...fixtureAi, evaluate: async () => ({ verdict: 'INCORRECT', reason: null, value: null, misconceptionCode: null, revealedAnswer: null,
     evidence: [{ conceptCode: i.concepts[0]!.code, classification: 'MISCONCEPTION_EVIDENCED', rationale: 'salah', refs: [], uncertaintyReasons: [] }] }) as any };
   const text = (t: string) => ({ schemaVersion: 1, responseType: 'TEXT', text: t, inputMode: 'TYPED' }) as any;
-  assert.equal((await gradeTrial(strictAi, i, text('Tan 30 = 20/x\nX = 20/1/√3 = 20√3'))).verdict, 'CORRECT');
+  assert.equal((await gradeTrial(strictAi, i, text('Tan 30 = 20/x\nX = 20/1/√3 = 20√3'))).verdict, 'CORRECT', 'the final value 20√3 decides');
   assert.equal((await gradeTrial(strictAi, i, text('sin 30 = 20/x\nx = 40'))).verdict, 'INCORRECT', 'a wrong answer stays the AI verdict');
   let asked = 0;
   const counting = { ...fixtureAi, evaluate: async (...a: Parameters<typeof fixtureAi.evaluate>) => { asked++; return fixtureAi.evaluate(...a); } };
   const check = await load('core:sudut-istimewa:c1');
   const r = await gradeTrial(counting, check, { schemaVersion: 1, responseType: 'OPTION', optionId: check.optionOrder![0]!, inputMode: 'TYPED' } as any);
   assert.equal(r.verdict, 'CORRECT'); assert.equal(asked, 0);
+});
+
+test('trial grading decides by the final number: "20*1/akar 3" is wrong even when the AI says right, "= 20√3" is right even when it says wrong', async () => {
+  const { gradeTrial, finalValue } = await import('../src/assessment/trial.js');
+  const i = await load('soal-menara');
+  const text = (t: string) => ({ schemaVersion: 1, responseType: 'TEXT', text: t, inputMode: 'TYPED' }) as any;
+  const says = (verdict: string) => ({ ...fixtureAi, evaluate: async () => ({ verdict, reason: null, value: null, misconceptionCode: null, revealedAnswer: null,
+    evidence: i.concepts.map(c => ({ conceptCode: c.code, classification: 'UNDERSTANDING_DEMONSTRATED', rationale: 'ok', refs: [], uncertaintyReasons: [] })) }) as any });
+  const wrong = await gradeTrial(says('CORRECT'), i, text('Tan 30 = 20/x\nX= 20*1/akar 3'));
+  assert.equal(wrong.verdict, 'INCORRECT');
+  const gap = wrong.evidence.find(e => e.classification === 'MISCONCEPTION_EVIDENCED')!;
+  assert.deepEqual(gap.refs, [{ kind: 'SPAN', start: 17, end: 28, quote: '20*1/akar 3' }]);
+  assert.equal((await gradeTrial(says('INCORRECT'), i, text('Tan 30 = 20/x\nX = 20/1/√3 = 20√3'))).verdict, 'CORRECT');
+  assert.equal((await gradeTrial(says('CORRECT'), i, text('tan 30 = 20/x\nX = 20 / akar 3'))).verdict, 'INCORRECT');
+  assert.equal((await gradeTrial(says('INCORRECT'), i, text('tan 30 = 20/x\nx = 34,6 m jaraknya'))).verdict, 'CORRECT');
+  assert.equal(finalValue('tan 30 = 20/x', 'length'), null, 'not computed yet: the AI decides');
+  assert.equal((await gradeTrial(says('INCORRECT'), i, text('tan 30 = 20/x'))).verdict, 'INCORRECT');
 });

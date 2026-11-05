@@ -49,3 +49,12 @@ test('mini question never asks about a ratio the correct solution does not use (
  assert.deepEqual(ctx.langkahBenarInti,['Hitung: x = 20 / tan 30°'],'the final answer is cut from the step');
  assert.equal(ctx.langkahBenarSoal.length,3);assert.ok(!JSON.stringify(ctx).includes('20√3'));
 });
+test('mini grade: a number answer is decided by its value ("akar 3" is not tan 30° = 1/√3), and the key never leaves the server',async()=>{
+ const {numericVerdict}=await import('../src/tutor/mini-check.js');
+ assert.equal(numericVerdict('1/√3','akar 3'),false);assert.equal(numericVerdict('1/√3','√3/3'),true);assert.equal(numericVerdict('depan','depan'),null);
+ let sent:any;
+ const g=await miniGrade(config,{...input,question:'Berapa nilai tan 30°?',reply:'akar 3',key:'1/√3'},(async(_u,o)=>{sent=JSON.parse(JSON.parse(String(o?.body)).messages[1].content);
+  return envelope({yangBenar:'1/√3',benar:true,tanggapan:'Tepat, kamu benar menyebut nilai tan 30° berkaitan dengan akar 3.',karena:'kamu tahu tan 30°'});}) as typeof fetch);
+ assert.equal(g.correct,false);assert.equal(g.because,'');assert.doesNotMatch(g.feedback,/Tepat/);
+ assert.equal(sent.kunciJawaban,'1/√3');assert.equal(sent.penilaianAngka,'salah');
+});
