@@ -185,14 +185,17 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
           const started = mapped.some(x => shown(x.code));
           const reason = result.evidence.find(e => e.conceptCode === missing.code)?.rationale?.trim()
             || (started ? 'Langkah ini belum ada di jawabanmu. Lanjutkan dari sini.' : 'Mulai dari inti ini untuk menyusun langkahmu.');
+          // Belum ada yang SALAH: inti titik mulai tetap "belum terlihat" (bukan "perlu diperkuat"); assessment.gap hanya
+          // menunjuk dari mana mulai. "Perlu diperkuat" khusus kesalahan yang terbukti.
           const items = mapped.map(x => {
             const evidence = result.evidence.find(e => e.conceptCode === x.code);
-            return x === missing ? { id: x.legacyMapId!, state: 'gap', reason }
+            return x === missing ? { id: x.legacyMapId!, state: 'rest', reason }
               : shown(x.code) ? { id: x.legacyMapId!, state: 'ok', reason: evidence?.rationale ?? 'Bagian ini terlihat tepat dari jawabanmu.' }
               : { id: x.legacyMapId!, state: 'rest', reason: evidence?.rationale ?? 'Belum kelihatan dari jawaban ini.' };
           });
+          const confused = !!result.confused && !started;
           output = { diagnosisRunId: id, status: 'completed', items, assessment: {
-            tone: 'gap', title: started ? 'Kamu sudah di jalur yang benar. Tinggal lanjutkan.' : 'Mulai dari sini.', okName: null,
+            tone: 'gap', title: confused ? 'Nggak apa-apa kalau masih bingung.' : started ? 'Kamu sudah di jalur yang benar. Tinggal lanjutkan.' : 'Mulai dari sini.', okName: null,
             gap: { label: started ? 'Langkah berikutnya' : 'Mulai dari inti ini', name: missing.title, reason, coreId: missing.route, mapId: missing.legacyMapId ?? '' },
             next: { core: missing.title, reason, formula: '', coreId: missing.route, mapId: missing.legacyMapId ?? '' },
           } };
