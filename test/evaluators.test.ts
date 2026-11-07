@@ -160,10 +160,20 @@ const towerResponse = (c: TowerCase['input']): StudentResponse => c.text.trim() 
   : text(c.text);
 const stateOf = (cls: string | undefined) => cls === 'UNDERSTANDING_DEMONSTRATED' ? 'ok' : cls === 'MISCONCEPTION_EVIDENCED' ? 'gap' : 'rest';
 
-test('golden v2 carries the v1 numeric and option sections unchanged', () => {
+/*
+ * Soal pilihan ganda yang isinya sengaja ditulis ulang sesudah v1 diarsipkan (kuncinya ikut berubah).
+ * Sudut Istimewa ditulis ulang dengan bahasa yang lebih sederhana (FE b97415e): cek potongan 2 sekarang "tan 30°".
+ */
+const REWRITTEN_AFTER_V1 = new Set(['MAT.TRI.Q.SUDUT_ISTIMEWA_C1']);
+test('golden v2 carries the v1 numeric section unchanged, and every v1 option item except deliberately rewritten ones', () => {
   const v1 = readGolden('catalog/golden/answers.v1.json');
   assert.equal(golden.schemaVersion, 2);
-  assert.deepEqual([golden.numeric, golden.options], [v1.numeric, v1.options]);
+  assert.deepEqual(golden.numeric, v1.numeric);
+  for (const old of v1.options) {
+    const now = golden.options.find(x => x.question === old.question);
+    assert.ok(now, `${old.question} is still in the golden file`);
+    if (!REWRITTEN_AFTER_V1.has(old.question)) assert.deepEqual(now, old, `${old.question} unchanged since v1`);
+  }
 });
 
 test('golden tower cases: verdict, reason, misconception and per-concept evidence with exact quotes', () => {

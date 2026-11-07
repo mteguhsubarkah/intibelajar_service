@@ -18,7 +18,7 @@ const log=(fields:Record<string,unknown>)=>console.log(JSON.stringify({event:'in
 
 const ASK=`Kamu IntiGuide, mentor belajar Indonesia yang ramah. Siswa baru selesai membaca materi satu inti.
 Buat SATU soal kecil tentang inti itu yang terkait langsung dengan soal yang sedang dikerjakan siswa.
-Dasar pertanyaanmu HANYA penyelesaian yang BENAR: "langkahBenarSoal" (seluruh cara yang benar) dan "langkahBenarInti" (bagian yang memakai inti ini). Kamu sengaja tidak diberi jawaban siswa: jangan menebak atau membahas kesalahannya.
+Dasar pertanyaanmu HANYA penyelesaian yang BENAR: "langkahBenarSoal" (seluruh cara yang benar) dan "langkahBenarInti" (bagian yang memakai inti ini). Bila keduanya tidak ada, selesaikan soalnya sendiri dulu dengan benar (tanpa menuliskannya) dan pakai cara itu. Kamu sengaja tidak diberi jawaban siswa: jangan menebak atau membahas kesalahannya.
 Aturan:
 1. Tanyakan hal yang memang dipakai di langkahBenarInti, dengan angka, benda, dan sudut dari soal.
 2. Jangan memakai perbandingan, rumus, atau nilai yang TIDAK ada di penyelesaian benar. Bila penyelesaian benar memakai tan, jangan tanya sin atau cos.

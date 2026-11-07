@@ -26,6 +26,8 @@ export interface CandidateEvidence {
 }
 export interface Evaluation {
   clarification?: string;
+  /** siswa menyatakan bingung / belum tahu caranya, tanpa langkah: tidak ada inti yang dinilai salah */
+  confused?: boolean;
   verdict: 'CORRECT' | 'INCORRECT' | 'UNREADABLE' | 'NOT_GRADED';
   /** Why the answer could not be graded; null otherwise. Codes match the frontend checker, plus tower-v1's
    *  'insufficient-working' (readable working that shows neither a result nor a catalogued error). */

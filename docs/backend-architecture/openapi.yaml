@@ -128,6 +128,26 @@ paths:
         '403': {$ref: '#/components/responses/Forbidden'}
         '409': {$ref: '#/components/responses/Conflict'}
         '503': {$ref: '#/components/responses/Unavailable'}
+  /v1/own/mini-check:
+    post:
+      operationId: ownMiniCheck
+      summary: Mini question at the end of one core's material, for a learner's own typed question
+      description: Requires active learner, CSRF and learning/AI consent. The AI first solves the question (steps tagged with catalog cores, final answer; kept server-side, never returned), then writes one mini question about this core from the correct steps. With reply, the same question is graded. Does not write mastery or award XP. Provider failure is HTTP 503.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/OwnMiniCheckRequest'}
+      responses:
+        '200':
+          description: The mini question, or its grading
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/TrialMiniCheckReply'}
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '403': {$ref: '#/components/responses/Forbidden'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '503': {$ref: '#/components/responses/Unavailable'}
   /v1/guide/messages:
     post:
       operationId: contextGuide
@@ -3080,6 +3100,17 @@ components:
         questionText: {type: string, minLength: 1, maxLength: 2000}
         rawText: {type: string, minLength: 1, maxLength: 2000}
         hintOpened: {type: boolean}
+        correction: {type: integer, minimum: 1, maximum: 20, description: 'Which correction of the same question this is; the grader is told the number and previousAnswer.'}
+        previousAnswer: {type: string, maxLength: 2000}
+    OwnMiniCheckRequest:
+      type: object
+      additionalProperties: false
+      required: [questionText, coreId]
+      properties:
+        questionText: {type: string, minLength: 1, maxLength: 2000}
+        coreId: {type: string, minLength: 1, maxLength: 64}
+        round: {type: integer, minimum: 0, maximum: 20}
+        reply: {type: string, minLength: 1, maxLength: 500}
     # ------------------------------------------------------------ primitives
     Uuid:
       type: string

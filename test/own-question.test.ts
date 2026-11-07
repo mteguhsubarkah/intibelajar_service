@@ -68,3 +68,33 @@ test('typed question diagnoses through AI without catalog alias lookup, fake XP,
   const refused=await outside.hints('Siapa presiden pertama Indonesia?','learner-a');assert.equal(refused.scope.status,'UNSUPPORTED_SUBJECT');assert.deepEqual(refused.items,[]);validateResponse('/v1/own/hints','POST',200,refused);
  }finally{await db.destroy();}
 });
+test('own question: the AI solves it first, the mini question comes from the correct step of this core without the final answer, and corrections reach the grader',async()=>{
+ const config=readConfig(JSON.parse(readFileSync('.local/test-env.json','utf8')));assert.match(new URL(config.databaseUrl).pathname,/_test$/);
+ const db=connect(config.databaseUrl);await migrate(db);
+ try{
+  const manifest=reviewedFixture();manifest.release.version=Number((await sql<{v:number}>`select coalesce(max(version),0)+1 as v from curriculum_release`.execute(db)).rows[0]!.v);await publish(db,manifest);
+  const seen:any[]=[];
+  const service=ownQuestionService(db,guide,async(_url,options)=>{
+   const body=JSON.parse(String(options?.body));const system=String(body.messages[0].content);const data=JSON.parse(body.messages[1].content);
+   if(data.catalog)return envelope({scope:'IN_CATALOG',subject:'matematika',reason:'',cores:[{id:'tri-f',relation:'Nilai cos 30 derajat memakai sudut istimewa.'}]});
+   if(system.includes('Selesaikan soal siswa')){seen.push(['solve',data]);return envelope({langkah:[{teks:'cos 30° = √3/2',inti:'tri-f'}],jawabanAkhir:'√3/2'});}
+   if(system.includes('Buat SATU soal kecil')){seen.push(['ask',data]);return envelope({pertanyaan:'Berapa nilai cos 30°?',petunjuk:'Ingat segitiga 30°.',kunci:'√3/2'});}
+   if(system.includes('penilai jawaban pertanyaan mini')){seen.push(['grade',data]);return envelope({yangBenar:'√3/2',benar:true,tanggapan:'Betul.',karena:'kamu tahu nilai cos 30°'});}
+   seen.push(['evaluate',data]);
+   return envelope({correct:false,items:data.concepts.map((c:any)=>({code:c.code,state:'gap',reason:'Nilainya belum tepat.',quote:'1/2'}))});
+  });
+  const asked=await service.miniCheck({questionText:'Tentukan nilai cos30',coreId:'tri-f'},'learner-a');
+  assert.deepEqual(asked,{question:'Berapa nilai cos 30°?',hint:'Ingat segitiga 30°.'},'the key stays on the server');
+  const ask=seen.find(x=>x[0]==='ask')[1];
+  assert.deepEqual(ask.langkahBenarInti,['cos 30°'],'the final answer is cut from the step');assert.equal(ask.jawabanSiswa,undefined);
+  const wrong:any=await service.miniCheck({questionText:'Tentukan nilai cos30',coreId:'tri-f',reply:'1/2'},'learner-a');
+  assert.equal(wrong.correct,false,'decided by the value, not the model');
+  const right:any=await service.miniCheck({questionText:'Tentukan nilai cos30',coreId:'tri-f',reply:'√3/2'},'learner-a');
+  assert.equal(right.correct,true);validateResponse('/v1/own/mini-check','POST',200,right);
+  assert.equal(seen.filter(x=>x[0]==='solve').length,1,'the solution is solved once per question');
+  validateRequest('/v1/own/mini-check','POST',{body:{questionText:'Tentukan nilai cos30',coreId:'tri-f',round:1,reply:'√3/2'},query:{},headers:{}} as any);
+  await service.diagnose({questionText:'Tentukan nilai cos30',rawText:'1/2',sessionId:'own-fix',hintOpened:false,correction:2,previousAnswer:'cos 30 = 1'},'learner-a');
+  assert.deepEqual(seen.filter(x=>x[0]==='evaluate').at(-1)[1].koreksi,{ke:2,jawabanSebelumnya:'cos 30 = 1'});
+  validateRequest('/v1/own/diagnosis','POST',{body:{questionText:'q',rawText:'a',sessionId:'s',hintOpened:false,correction:1,previousAnswer:'b'},query:{},headers:{}} as any);
+ }finally{await db.destroy();}
+});

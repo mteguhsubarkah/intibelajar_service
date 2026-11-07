@@ -17,7 +17,9 @@ export interface TrialItem {
 export async function loadTrialItem(db: Connection, alias: string, revisionId?: string): Promise<TrialItem> {
   const release = await currentRelease(db);
   if (!release) return fail(409, 'CONTENT_UNAVAILABLE');
-  const item = await legacyItem(db, release, alias);
+  // alias lama (soal /coba, cek materi) atau ID soal katalog (soal latihan akun: banyak soal pilot tanpa alias ITEM)
+  const item = await legacyItem(db, release, alias)
+    ?? (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(alias) ? { questionId: alias, legacyOptionOrder: null } : null);
   if (!item) return fail(404, 'NOT_FOUND');
   const anchor = await loopAnchor(db, item.questionId);
   if (!anchor) return fail(409, 'CONTENT_UNAVAILABLE');
@@ -78,8 +80,11 @@ export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>): F
   return null;
 }
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
-  const fixed = evaluate({ ...i.source, response });
-  if (response.responseType === 'OPTION') return fixed;
+  // soal milik siswa (ai-assisted-v1) tidak punya penilai deterministik: hanya AI yang menilai.
+  // (Tanpa penjaga ini, setiap diagnosis /tanya gagal "No deterministic evaluator".)
+  let fixed: Evaluation | null = null;
+  try { fixed = evaluate({ ...i.source, response }); } catch { fixed = null; }
+  if (response.responseType === 'OPTION' && fixed) return fixed;
   const judged = await ai.evaluate(i, response, retry);
   const key = i.source.rubric.answer;
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
@@ -90,7 +95,7 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', bacaan: got.values.length, ai: judged.verdict }));
   if (right) {
     if (judged.verdict === 'CORRECT') return judged;
-    if (fixed.verdict === 'CORRECT') return fixed;
+    if (fixed?.verdict === 'CORRECT') return fixed;
     // benar menurut angka: tanda salah dari AI tidak berlaku lagi
     return { ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
       evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation;
@@ -126,7 +131,8 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
     return value;
   }
   return {
-    async diagnose(owner: string, body: { sessionId: string; questionId: string; rawText: string; responseMode: 'know' | 'blank' | null; hintOpened?:boolean }) {
+    async diagnose(owner: string, body: { sessionId: string; questionId: string; rawText: string; responseMode: 'know' | 'blank' | null; hintOpened?:boolean;
+      /** koreksi soal yang sama (soal milik siswa): penilai diberi tahu koreksi ke berapa dan jawaban sebelumnya */ retry?: { correction: number; previous: string } }) {
       const c = context(owner, body.sessionId);
       if(body.hintOpened)c.openedHint=true;
       const i = await item(c, body.questionId);
@@ -140,7 +146,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const pending=c.pending.get(fingerprint);
       if(pending)return pending;
       const work=(async()=>{
-      const result = await gradeTrial(ai, i, response);
+      const result = await gradeTrial(ai, i, response, body.retry);
       c.answer = response.text?.slice(0,1000) ?? '';
       const id = uuid();
       const demonstrated = result.evidence.find(e => e.classification === 'UNDERSTANDING_DEMONSTRATED');
@@ -179,14 +185,17 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
           const started = mapped.some(x => shown(x.code));
           const reason = result.evidence.find(e => e.conceptCode === missing.code)?.rationale?.trim()
             || (started ? 'Langkah ini belum ada di jawabanmu. Lanjutkan dari sini.' : 'Mulai dari inti ini untuk menyusun langkahmu.');
+          // Belum ada yang SALAH: inti titik mulai tetap "belum terlihat" (bukan "perlu diperkuat"); assessment.gap hanya
+          // menunjuk dari mana mulai. "Perlu diperkuat" khusus kesalahan yang terbukti.
           const items = mapped.map(x => {
             const evidence = result.evidence.find(e => e.conceptCode === x.code);
-            return x === missing ? { id: x.legacyMapId!, state: 'gap', reason }
+            return x === missing ? { id: x.legacyMapId!, state: 'rest', reason }
               : shown(x.code) ? { id: x.legacyMapId!, state: 'ok', reason: evidence?.rationale ?? 'Bagian ini terlihat tepat dari jawabanmu.' }
               : { id: x.legacyMapId!, state: 'rest', reason: evidence?.rationale ?? 'Belum kelihatan dari jawaban ini.' };
           });
+          const confused = !!result.confused && !started;
           output = { diagnosisRunId: id, status: 'completed', items, assessment: {
-            tone: 'gap', title: started ? 'Kamu sudah di jalur yang benar. Tinggal lanjutkan.' : 'Mulai dari sini.', okName: null,
+            tone: 'gap', title: confused ? 'Nggak apa-apa kalau masih bingung.' : started ? 'Kamu sudah di jalur yang benar. Tinggal lanjutkan.' : 'Mulai dari sini.', okName: null,
             gap: { label: started ? 'Langkah berikutnya' : 'Mulai dari inti ini', name: missing.title, reason, coreId: missing.route, mapId: missing.legacyMapId ?? '' },
             next: { core: missing.title, reason, formula: '', coreId: missing.route, mapId: missing.legacyMapId ?? '' },
           } };
@@ -265,13 +274,15 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const reason = latest?.items?.find((x: { id: string }) => x.id === body.coreId)?.reason as string | undefined;
       const ref = { id: body.coreId, title: core.title };
       // per inti, jawaban, dan putaran belajar: sesudah koreksi yang belum tepat, inti yang dipelajari lagi mendapat pertanyaan baru
-      const key = body.coreId + '\u0000' + answer + '\u0000' + (body.round ?? 0);
+      // per soal, inti, jawaban, dan putaran belajar (inti yang sama, mis. Sudut Istimewa, dipakai beberapa soal /coba)
+      const scope = body.questionId + '\u0000' + body.coreId + '\u0000' + answer + '\u0000';
+      const key = scope + (body.round ?? 0);
       c.mini ??= new Map();
       if (body.reply === undefined) {
         const cached = c.mini.get(key);
         if (cached) return { question: cached.question, hint: cached.hint };
         // putaran berikutnya: pertanyaan dari putaran sebelumnya untuk inti ini dikirim supaya yang baru berbeda
-        const previous = [...c.mini.entries()].filter(([k]) => k.startsWith(body.coreId + '\u0000' + answer + '\u0000') && k !== key).map(([, v]) => v.question).at(-1);
+        const previous = [...c.mini.entries()].filter(([k]) => k.startsWith(scope) && k !== key).map(([, v]) => v.question).at(-1);
         const asked = await ai.mini(i, { core: ref, answer, ...(reason ? { reason } : {}), ...(previous ? { previous } : {}) }) as {question:string;hint:string;key?:string};
         if (c.mini.size >= 32) c.mini.delete(c.mini.keys().next().value!);
         // kunci jawaban disimpan di sesi server untuk penilai; yang dikirim ke browser hanya pertanyaan dan petunjuk

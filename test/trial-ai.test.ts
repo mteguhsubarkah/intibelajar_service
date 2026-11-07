@@ -61,18 +61,20 @@ test('nullable AI verdict: unrelated text asks for clarification, unfinished wor
  const run=await off.diagnose('owner',{sessionId:'off',questionId:'soal-menara',rawText:'resep nasi goreng',responseMode:null});
  assert.equal(run.status,'insufficient_evidence');assert.equal(run.assessment,undefined);
  assert.equal((await off.check('owner',{sessionId:'off',itemId:'soal-menara',answer:'resep nasi goreng'})).correct,null);
- // bingung total: mulai dari inti pertama; tidak pernah menandai sebagai benar
+ // bingung total: belum ada yang salah, jadi tidak ada "perlu diperkuat"; inti pertama hanya ditunjuk sebagai titik mulai
  const lost=trialAssessment(async()=>item,trialDeepSeek(null as any,config,async()=>envelope({correct:null,items:entries('rest','')})));
  const start=await lost.diagnose('owner',{sessionId:'lost',questionId:'soal-menara',rawText:'bingung',responseMode:null});
- assert.equal(start.status,'completed');assert.equal(start.assessment.tone,'gap');assert.equal(start.assessment.title,'Mulai dari sini.');
- assert.equal(start.items.filter((x:any)=>x.state==='gap').length,1);assert.ok(!start.items.some((x:any)=>x.state==='ok'));assert.equal(start.claimToken,undefined);
+ assert.equal(start.status,'completed');assert.equal(start.assessment.tone,'gap');assert.equal(start.assessment.title,'Nggak apa-apa kalau masih bingung.');
+ assert.equal(start.items.filter((x:any)=>x.state==='gap').length,0);assert.ok(start.items.every((x:any)=>x.state==='rest'));assert.equal(start.assessment.gap.mapId,item.concepts[0]!.legacyMapId);assert.ok(!start.items.some((x:any)=>x.state==='ok'));assert.equal(start.claimToken,undefined);
  // setengah jalan: inti yang sudah ditulis ok, inti pertama yang belum ada jadi langkah berikutnya
  const first=item.concepts[0]!.code,text='tan 30 = 20/x';
  const half=trialAssessment(async()=>item,trialDeepSeek(null as any,config,async()=>envelope({correct:null,clarification:'Lanjutkan sampai x.',items:item.concepts.map(c=>c.code===first?{code:c.code,state:'ok',quote:'tan 30',reason:'Sudah memilih perbandingan yang tepat.'}:{code:c.code,state:'rest',quote:'',reason:'Hitung nilai x dari persamaan ini.'})})));
  const partial=await half.diagnose('owner',{sessionId:'half',questionId:'soal-menara',rawText:text,responseMode:null});
  assert.equal(partial.status,'completed');assert.equal(partial.assessment.title,'Kamu sudah di jalur yang benar. Tinggal lanjutkan.');
  assert.equal(partial.items.find((x:any)=>x.state==='ok').id,item.concepts[0]!.legacyMapId);
- const next=partial.items.find((x:any)=>x.state==='gap');assert.equal(next.id,item.concepts[1]!.legacyMapId);assert.equal(next.reason,'Hitung nilai x dari persamaan ini.');assert.equal(next.quote,undefined);
+ assert.equal(partial.items.filter((x:any)=>x.state==='gap').length,0,'a step not written yet is not wrong');
+ assert.equal(partial.assessment.gap.mapId,item.concepts[1]!.legacyMapId,'it is where to continue');
+ const next=partial.items.find((x:any)=>x.id===item.concepts[1]!.legacyMapId);assert.equal(next.state,'rest');assert.equal(next.reason,'Hitung nilai x dari persamaan ini.');assert.equal(next.quote,undefined);
 });
 test('cores the answer already shows are passed to IntiGuide as done, so it does not teach them again',async()=>{
  const okId=item.concepts[0].legacyMapId!;let context:any;
@@ -122,4 +124,16 @@ test('"correct" with a core marked wrong is graded wrong; a retry tells the grad
  await s.check('owner',{sessionId:'r',itemId:'soal-menara',answer:'tan 30 = 20/x'});
  const again=await s.check('owner',{sessionId:'r',itemId:'soal-menara',answer:text,kind:'retry_original',correction:1});
  assert.equal(again.correct,false);assert.deepEqual(sent.koreksi,{ke:1,jawabanSebelumnya:'tan 30 = 20/x'});
+});
+test('a confused answer is never graded wrong: the model flag and the fallback pattern both clear every gap',async()=>{
+ const {confusedText}=await import('../src/assessment/trial-ai.js');
+ for(const t of ['gatau mulai darimana','bingung','nggak ngerti','gak tau','belum tahu caranya'])assert.equal(confusedText(t),true,t);
+ for(const t of ['tan 30 = 20/x','x = 20√3, bingung di akhir','sin'])assert.equal(confusedText(t),false,t);
+ const tri=(id:string)=>item.concepts.find(c=>c.legacyMapId===id)!.code;
+ const flagged=trialDeepSeek(null as any,config,async()=>envelope({correct:false,bingung:true,items:[{code:tri('tri-c'),state:'gap',quote:'saya',reason:'x'},{code:tri('tri-d'),state:'rest',quote:'',reason:'y'},{code:tri('tri-f'),state:'rest',quote:'',reason:'z'}]}));
+ const r=await flagged.evaluate(item,{schemaVersion:1,responseType:'TEXT',text:'saya belum paham soal ini sama sekali',inputMode:'TYPED'});
+ assert.equal(r.verdict,'NOT_GRADED');assert.equal(r.confused,true);assert.ok(r.evidence.every(e=>e.classification==='INSUFFICIENT_EVIDENCE'));
+ const s=trialAssessment(async()=>item,trialDeepSeek(null as any,config,async()=>envelope({correct:false,items:[{code:tri('tri-c'),state:'gap',quote:'gatau',reason:'x'},{code:tri('tri-d'),state:'rest',quote:'',reason:'y'},{code:tri('tri-f'),state:'rest',quote:'',reason:'z'}]})));
+ const run=await s.diagnose('owner',{sessionId:'c',questionId:'soal-menara',rawText:'gatau mulai darimana',responseMode:null});
+ assert.equal(run.assessment.title,'Nggak apa-apa kalau masih bingung.');assert.ok(run.items.every((x:any)=>x.state==='rest'));
 });
