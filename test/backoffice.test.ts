@@ -146,3 +146,80 @@ test('backoffice HTTPS proxy: exact domain, transport, authenticated proxy, sepa
     assert.equal((await app.inject({method:'POST',url:'/api/commands',headers:{...h,origin:'https://intibelajar.com'},payload:{revision:0,...topic()}})).statusCode,200);
   } finally { await app.close(); f.done(); }
 });
+
+test('backoffice: structured lesson blocks are editable, validated, and keep checks on their slides', () => {
+  const f = fixture(); try {
+    const old = f.store.read().manifest.lessons.find(l => l.code === 'MAT.TRI.L.PERBANDINGAN_TRIG')!;
+    assert.ok(old.checks.some(c => c.slideIndex === 1));
+    const blocks = [{ type: 'heading', slide: 0, text: 'Pilih sisi' }, { type: 'math', slide: 0, name: 'tan θ', expression: 'depan / samping', highlight: true },
+      { type: 'tip', slide: 1, text: 'Ingat **tan**.' }, { type: 'text', slide: 1, text: 'Contoh baru' }];
+    f.store.change(0, 'edit', s => command(s, { kind: 'lesson-blocks', code: old.code, title: 'Perbandingan Trigonometri', concepts: old.concepts, estimatedMinutes: 7, blocks }));
+    const saved = f.store.read().manifest.lessons.find(l => l.code === old.code)!;
+    assert.deepEqual(saved.blocks, blocks); assert.deepEqual(saved.checks, old.checks); assert.equal(saved.practiceSet, old.practiceSet); assert.equal(saved.estimatedMinutes, 7);
+    // menghapus slide yang memegang cek, slide bolong, jenis/field asing, dan teks kosong ditolak
+    const bad = [
+      [{ type: 'text', slide: 0, text: 'satu slide saja' }],
+      [{ type: 'text', slide: 0, text: 'a' }, { type: 'text', slide: 2, text: 'b' }],
+      [{ type: 'html', slide: 0, text: '<b>x</b>' }],
+      [{ type: 'text', slide: 0, text: '' }],
+      [{ type: 'figure', slide: 0, figureRef: '../x' }],
+    ];
+    for (const b of bad) assert.throws(() => f.store.change(1, 'bad', s => command(s, { kind: 'lesson-blocks', code: old.code, title: 'x', concepts: old.concepts, blocks: b })));
+    // materi baru untuk inti tanpa materi; field tambahan pada blok tidak ikut tersimpan
+    f.store.change(1, 'new', s => command(s, { kind: 'lesson-blocks', code: 'MAT.TRI.L.UJI_BARU', title: 'Materi uji', concepts: 'MAT.TRI.RADIAN',
+      blocks: [{ type: 'text', slide: 0, text: 'Halo', html: '<script>' }, { type: 'text', slide: 1, text: 'Dua' }] }));
+    const fresh = f.store.read().manifest.lessons.find(l => l.code === 'MAT.TRI.L.UJI_BARU')!;
+    assert.deepEqual(fresh.blocks[0], { type: 'text', slide: 0, text: 'Halo' }); assert.deepEqual(fresh.checks, []); assert.equal(fresh.review?.status, 'PROPOSED');
+  } finally { f.done(); }
+});
+
+test('backoffice: practice questions per core, key write-only in state, readable per question', async () => {
+  const f = fixture(), app = buildBackoffice(f.store, 'a'.repeat(64));
+  const headers = { host: 'localhost:8010', authorization: 'Bearer ' + 'a'.repeat(64), origin: 'http://localhost:8010' };
+  try {
+    const before = f.store.read().manifest.questions.length;
+    const mc = { kind: 'question', concept: 'MAT.TRI.RADIAN', itemType: 'MULTIPLE_CHOICE', prompt: '180° sama dengan …', options: ['π rad', '2π rad', 'π/2 rad'], answerIndex: 0,
+      feedbackCorrect: '180° = π rad.', feedbackIncorrect: 'Ingat 360° = 2π rad.', difficulty: 1, estimatedMinutes: 1 };
+    const r = await app.inject({ method: 'POST', url: '/api/commands', headers, payload: { revision: 0, ...mc } });
+    assert.equal(r.statusCode, 200, r.body); const code = r.json().code as string;
+    assert.match(code, /^MAT\.TRI\.Q\.RADIAN_\d+$/);
+    const q = f.store.read().manifest.questions.find(x => x.code === code)!;
+    assert.equal(f.store.read().manifest.questions.length, before + 1);
+    assert.equal(q.rubric.evaluator, 'option-v1'); assert.equal(q.rubric.answer.optionId, 'a'); assert.deepEqual(q.concepts, [{ concept: 'MAT.TRI.RADIAN', role: 'PRIMARY', assessable: true }]);
+    assert.equal(q.body.options?.length, 3); assert.equal('answer' in q.body, false);
+    // daftar di state tanpa kunci; kunci hanya di detail satu soal
+    const state = (await app.inject({ url: '/api/state', headers })).json();
+    const item = state.practice.find((x: { code: string }) => x.code === code);
+    assert.ok(item); assert.equal(JSON.stringify(state.practice).includes('optionId'), false); assert.equal(item.rubric, undefined); assert.equal(item.answerIndex, undefined);
+    assert.match(state.previewUrl, /\/pratinjau\/materi$/);
+    const detail = (await app.inject({ url: '/api/questions/' + code, headers })).json();
+    assert.equal(detail.answerIndex, 0); assert.equal(detail.feedbackCorrect, '180° = π rad.');
+    // edit: kunci pindah ke pilihan kedua; tanpa kunci ditolak; jenis tidak boleh diganti
+    f.store.change(1, 'edit', s => command(s, { ...mc, code, answerIndex: 1 }));
+    assert.equal(f.store.read().manifest.questions.find(x => x.code === code)!.rubric.answer.optionId, 'b');
+    assert.throws(() => f.store.change(2, 'bad', s => command(s, { ...mc, code, answerIndex: -1 })));
+    assert.throws(() => f.store.change(2, 'bad', s => command(s, { ...mc, code, itemType: 'NUMERIC', answerValue: 3 })));
+    assert.throws(() => f.store.change(2, 'bad', s => command(s, { ...mc, options: ['sama', 'sama'] })));
+    // soal angka
+    const n = f.store.change(2, 'num', s => command(s, { kind: 'question', concept: 'MAT.TRI.RADIAN', itemType: 'NUMERIC', prompt: 'π rad = … derajat', answerValue: '180', unit: '°' })) as string;
+    const nq = f.store.read().manifest.questions.find(x => x.code === n)!;
+    assert.equal(nq.rubric.evaluator, 'numeric-v1'); assert.equal(nq.rubric.answer.value, 180); assert.deepEqual(nq.rubric.answer.tolerance, { relative: 0.02, floor: 1 });
+    // soal berpenilai khusus tidak bisa diedit dari studio
+    const tower = f.store.read().manifest.questions.find(x => x.rubric.evaluator === 'tower-v1')!;
+    assert.equal((await app.inject({ url: '/api/questions/' + tower.code, headers })).statusCode, 422);
+    assert.equal(lintManifest(f.store.read().manifest).filter(x => x.severity === 'error').length, 0);
+  } finally { await app.close(); f.done(); }
+});
+
+test('backoffice: preview frame allowed only for the configured app origin', async () => {
+  const f = fixture();
+  try {
+    const local = buildBackoffice(f.store, 'a'.repeat(64));
+    const r = await local.inject({ url: '/', headers: { host: 'localhost:8010' } });
+    assert.match(String(r.headers['content-security-policy']), /frame-src http:\/\/localhost:5180;/);
+    assert.match(String(r.headers['content-security-policy']), /frame-ancestors 'none'/);
+    assert.throws(() => buildBackoffice(f.store, 'a'.repeat(64), 8010, undefined, 'http://evil.example'));
+    assert.throws(() => buildBackoffice(f.store, 'a'.repeat(64), 8010, undefined, 'https://intibelajar.com/path'));
+    await local.close();
+  } finally { f.done(); }
+});

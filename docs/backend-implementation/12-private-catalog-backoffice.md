@@ -27,6 +27,14 @@ Buka `http://localhost:8010`. Access key otomatis dibuat pada `.local/backoffice
 
 Alur: Topik → Inti → Hubungan → Materi 2 slide → Graf → Ekspor. Gunakan kode yang sama untuk memperbarui entitas. Kode adalah identitas tetap; mengganti kode membuat entitas baru. Belum ada delete/cascade atau pemindahan inti antar topik. Materi terstruktur yang berisi rumus/gambar atau slide lebih dari dua harus diedit melalui manifest; editor sederhana menolaknya agar tidak menghapus struktur lama.
 
+## Materi berbentuk blok, pratinjau aplikasi, dan latihan inti (10 November 2026)
+
+- **Inti / core:** tiap inti menampilkan status "Materi · N slide" / "Belum ada materi" dan "Latihan · N soal" / "Belum ada latihan". Filter **Tampilkan** menyaring inti yang belum ada materi, belum ada latihan, atau belum ada definisi. Ringkasan menghitung inti tanpa materi dan tanpa latihan.
+- **Materi:** editor blok untuk semua materi, termasuk yang terstruktur: Judul, Teks (`**tebal**`), Rumus (kiri = kanan, bisa disorot), Tip, Ilustrasi (kode `figureRef`). Slide 1–10, blok bisa dinaikkan, diturunkan, dihapus. Slide yang memegang cek pemahaman tidak bisa dihapus. Perintah `lesson-blocks` memvalidasi jenis dan panjang field; tidak ada HTML.
+- **Pratinjau:** iframe ke halaman aplikasi siswa `/pratinjau/materi` (komponen yang sama dengan `/materi/:core`). Draf dikirim lewat `postMessage`; halaman itu tidak memanggil API, tidak menyimpan apa pun, dan hanya menerima pesan dari origin aplikasi sendiri atau studio lokal `localhost:8010`. CSP studio memakai `frame-src` ke origin aplikasi: di mode domain = `BACKOFFICE_PUBLIC_ORIGIN`, di lokal = `http://localhost:5180`, atau isi `BACKOFFICE_PREVIEW_ORIGIN`.
+- **Latihan inti:** soal pilihan ganda (`option-v1`) dan angka (`numeric-v1`) dengan satu inti PRIMARY. Kode soal baru dibuat otomatis (`<TOPIK>.Q.<INTI>_<n>`), visibilitas `PUBLIC_PRACTICE`, review `PROPOSED`. `/api/state` hanya mengirim ringkasan tanpa kunci; kunci dan umpan balik dikirim lewat `GET /api/questions/{code}` saat satu soal dibuka. Soal berpenilai khusus (tower, AI) tetap lewat manifest. Soal lama dari aplikasi (punya `legacyOptionOrder`) boleh diubah teksnya, jumlah pilihannya tetap.
+- Semua perubahan tetap draf: ekspor, review manusia, dan `catalog:publish` tetap diperlukan sebelum siswa melihatnya.
+
 ## Data dan keamanan
 
 - `.local/backoffice/state.json`: manifest draf lengkap, provenance, jobs, audit teknis. File ini **mengandung rubrik baseline** sebagai bagian manifest internal; tidak dikirim ke UI dan tidak boleh dipublikasikan/download melalui Nginx. Directory mode 700/file 600 pada Linux.
