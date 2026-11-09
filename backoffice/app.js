@@ -1,4 +1,6 @@
 import { selectCatalog, reportHtml } from './catalog-view.js';
+import { createLessonEditor } from './lesson-editor.js';
+import { createPracticeEditor } from './practice-editor.js';
 /* Private authoring client: no external scripts, fonts, analytics or learner data. */
 let token = '', state, tab = 'overview';
 const $ = s => document.querySelector(s);
@@ -13,21 +15,19 @@ function show(name) {
   document.querySelectorAll('[data-tab]').forEach(n => n.classList.toggle('active', n.dataset.tab === name));
   $('#pageTitle').textContent = $(`[data-tab="${name}"]`).textContent;
   if (name === 'graph' && state) graph();
+  if (name === 'practice' && state) practiceEditor.render();
 }
 document.querySelectorAll('[data-tab]').forEach(n => n.onclick = () => show(n.dataset.tab));
 function row(host, title, note, onEdit) {
   const n = el('div', undefined, 'row'), text = el('div'); text.append(el('p', title), el('small', note)); n.append(text);
   if (onEdit) { const b = el('button', 'Edit'); b.onclick = onEdit; n.append(b); }
-  host.append(n);
+  host.append(n); return n;
 }
 function fill(form, values) { for (const [k,v] of Object.entries(values)) if (form.elements.namedItem(k)) form.elements.namedItem(k).value = v ?? ''; }
 function revealTopic(t){if(!visible().topicCodes.has(t.code)){$('#subjectFilter').value=t.subject;$('#phaseFilter').value=t.phase;render();}}
 function topicEdit(t) { revealTopic(t); show('topics'); fill($('#topicForm'), { ...t, source: state.sources[t.code]?.[0] ?? t.review?.evidence?.[0] ?? '' }); }
 function coreEdit(t,c) { revealTopic(t); show('cores'); fill($('#coreForm'), { ...c, topic: t.code, objectives: c.objectives.join('\n'), source: state.sources[c.code]?.[0] ?? c.review?.evidence?.[0] ?? '' }); }
-function lessonEdit(l) {
-  if (l.blocks.some(b => b.type !== 'text' || b.slide > 1)) { notice('Materi ini memakai blok terstruktur. Ekspor dan gunakan editor manifest agar rumus/ilustrasi tetap utuh.', true); return; }
-  show('lessons'); fill($('#lessonForm'), { ...l, concepts: l.concepts.join(', '), slide1: l.blocks.filter(b => b.slide === 0).map(b => b.text).join('\n'), slide2: l.blocks.filter(b => b.slide === 1).map(b => b.text).join('\n'), source: state.sources[l.code]?.[0] ?? '' }); preview();
-}
+function lessonEdit(l) { show('lessons'); lessonEditor.open(l); }
 function populate(select, options) { const previous = select.value; select.replaceChildren(); for (const [value,label] of options) { const o = el('option',label); o.value=value; select.append(o); } if (options.some(([v]) => v === previous)) select.value=previous; }
 function visible() { return selectCatalog(state, $('#subjectFilter').value, $('#phaseFilter').value); }
 function render() {
@@ -40,7 +40,7 @@ function render() {
   document.querySelectorAll('.coreSelect').forEach(n => populate(n,cores));
   $('#coreCodes').replaceChildren(...cores.map(([value]) => { const o = el('option'); o.value = value; return o; }));
   $('#stats').replaceChildren();
-  for (const [n, label] of [[view.topics.length,'Topik'],[cores.length,'Inti'],[view.lessons.length,'Materi'],[view.relations.length,'Relasi topik']]) { const d = el('div',undefined,'stat'); d.append(el('strong',n),el('span',label)); $('#stats').append(d); }
+  for (const [n, label] of [[view.topics.length,'Topik'],[cores.length,'Inti'],[view.lessons.length,'Materi'],[coresWithout(view,'lesson').length,'Inti tanpa materi'],[coresWithout(view,'practice').length,'Inti tanpa latihan']]) { const d = el('div',undefined,'stat'); d.append(el('strong',n),el('span',label)); $('#stats').append(d); }
   $('#reviewCount').textContent = `${state.findings.length} temuan sebelum publikasi · revisi draf ${state.revision}`;
   $('#overviewTopics').replaceChildren(); $('#topicList').replaceChildren();
   for (const t of view.topics) {
@@ -51,6 +51,9 @@ function render() {
   for (const r of view.relations) row($('#relationList'),`${r.from} ${r.kind === 'REQUIRES' ? 'memerlukan' : 'berkaitan dengan'} ${r.to}`, r.label + (!view.topicCodes.has(r.from)||!view.topicCodes.has(r.to)?' · lintas filter':''), () => { $('#subjectFilter').value='';$('#phaseFilter').value='';render();show('relations'); fill($('#relationForm'),{code:r.from,to:r.to,type:r.kind,label:r.label}); });
   for (const p of view.prerequisites) row($('#relationList'),`${p.concept} memerlukan ${p.requires}`,p.kind + (!view.coreCodes.has(p.concept)||!view.coreCodes.has(p.requires)?' · lintas filter':''),()=>{$('#subjectFilter').value='';$('#phaseFilter').value='';render();show('relations');fill($('#prerequisiteForm'),{code:p.concept,to:p.requires,type:p.kind});});
   $('#lessonList').replaceChildren(); for (const l of view.lessons) row($('#lessonList'),l.title,`${l.code} · ${Math.max(...l.blocks.map(b=>b.slide))+1} slide`,()=>lessonEdit(l));
+  $('#lessonMissing').replaceChildren(); for (const [t,c] of coresWithout(view,'lesson')) { const n=row($('#lessonMissing'),c.title,`${t.title} · ${c.code}`); const b=el('button','Buat materi'); b.onclick=()=>{show('lessons');lessonEditor.forCore(t,c);}; n.append(b); }
+  if (!$('#lessonMissing').children.length) $('#lessonMissing').append(el('p','Semua inti di filter ini sudah punya materi.','muted'));
+  lessonEditor.refresh(); if (tab === 'practice') practiceEditor.render();
   $('#jobs').replaceChildren(); for (const j of state.jobs) row($('#jobs'),j.status,j.message ?? 'Menunggu worker / sedang diproses');
   $('#findings').replaceChildren(); for (const f of state.findings.filter(f=>!$('#subjectFilter').value||f.file.includes($('#subjectFilter').value)||!state.subjects.subjects.some(s=>f.file.includes(s.code+'.')))) row($('#findings'),`${f.rule} · ${f.file}`,f.message);
   $('#sources').replaceChildren(); const urls = new Set(view.sources); for(const url of urls){const a=el('a',url);a.href=url;a.target='_blank';a.rel='noopener noreferrer';$('#sources').append(a);}
@@ -59,17 +62,36 @@ function render() {
   $('#filterSummary').textContent = `${view.topics.length} dari ${state.topics.length} topik · filter berlaku di semua tab. Hubungan lintas filter tetap ditandai.`;
   if(tab==='graph')graph();
 }
-function renderCores(){const t=state.topics.find(t=>t.code===$('#coreFilter').value);$('#coreList').replaceChildren();for(const c of t?.concepts??[])row($('#coreList'),c.title,`${c.code} · ${c.definition??'Belum ada definisi'}`,()=>coreEdit(t,c));}
-$('#coreFilter').onchange=renderCores;
+function lessonsOf(code){return state.lessons.filter(l=>l.concepts.includes(code));}
+function practiceOf(code){return state.practice.filter(q=>q.concepts.includes(code));}
+/* Inti dalam filter yang belum punya materi / latihan: [topik, inti] */
+function coresWithout(view,what){return view.topics.flatMap(t=>t.concepts.filter(c=>!c.hidden).map(c=>[t,c])).filter(([,c])=>what==='lesson'?!lessonsOf(c.code).length:!practiceOf(c.code).length);}
+function renderCores(){
+  const t=state.topics.find(t=>t.code===$('#coreFilter').value),mode=$('#coreStatus').value;$('#coreList').replaceChildren();
+  const all=t?.concepts??[],shown=all.filter(c=>mode==='no-lesson'?!lessonsOf(c.code).length:mode==='no-practice'?!practiceOf(c.code).length:mode==='no-definition'?!c.definition:true);
+  $('#coreSummary').textContent=t?`${shown.length} dari ${all.length} inti · ${all.filter(c=>!lessonsOf(c.code).length).length} belum ada materi · ${all.filter(c=>!practiceOf(c.code).length).length} belum ada latihan`:'';
+  for(const c of shown){
+    const ls=lessonsOf(c.code),qs=practiceOf(c.code);
+    const n=row($('#coreList'),c.title,`${c.code} · ${c.definition??'Belum ada definisi'}`,()=>coreEdit(t,c));
+    const chips=el('div',undefined,'chips');
+    chips.append(el('span',ls.length?`Materi · ${Math.max(...ls[0].blocks.map(b=>b.slide))+1} slide`:'Belum ada materi',ls.length?'chip ok':'chip warn'),el('span',qs.length?`Latihan · ${qs.length} soal`:'Belum ada latihan',qs.length?'chip ok':'chip warn'));
+    n.firstChild.append(chips);
+    const m=el('button',ls.length?'Materi':'Buat materi');m.onclick=()=>{show('lessons');ls.length?lessonEditor.open(ls[0]):lessonEditor.forCore(t,c);};
+    const p=el('button','Latihan');p.onclick=()=>{show('practice');practiceEditor.openFor(t,c.code);};
+    n.append(m,p);
+  }
+  if(!shown.length)$('#coreList').append(el('p',t?'Tidak ada inti untuk pilihan ini.':'Pilih topik.','muted'));
+}
+$('#coreFilter').onchange=renderCores;$('#coreStatus').onchange=renderCores;
 async function load(){state=await api('state');render();}
 $('#loginForm').onsubmit=async e=>{e.preventDefault();token=new FormData(e.target).get('token');try{await load();e.target.reset();notice('Ruang kerja terbuka. Perubahan disimpan sebagai draf.');}catch(e){token='';notice(e.message,true);}};
 $('#logout').onclick=()=>{token='';state=undefined;$('#workspace').hidden=true;$('#login').hidden=false;notice('Studio terkunci.');};
 $('#refresh').onclick=()=>{if(token)load().catch(e=>notice(e.message,true));};
-for(const [id,kind] of [['topicForm','topic'],['coreForm','core'],['relationForm','relation'],['prerequisiteForm','prerequisite'],['lessonForm','lesson']])$('#'+id).onsubmit=async e=>{e.preventDefault();const button=e.target.querySelector('button');button.disabled=true;try{await api('commands',{...Object.fromEntries(new FormData(e.target)),kind});await load();notice('Draf tersimpan. Belum dipublikasikan ke siswa.');}catch(e){notice(e.message,true);}finally{button.disabled=false;}};
+for(const [id,kind] of [['topicForm','topic'],['coreForm','core'],['relationForm','relation'],['prerequisiteForm','prerequisite']])$('#'+id).onsubmit=async e=>{e.preventDefault();const button=e.target.querySelector('button');button.disabled=true;try{await api('commands',{...Object.fromEntries(new FormData(e.target)),kind});await load();notice('Draf tersimpan. Belum dipublikasikan ke siswa.');}catch(e){notice(e.message,true);}finally{button.disabled=false;}};
 $('#importSeed').onclick=async()=>{try{await api('imports',{});await load();notice('Impor diantrekan. Jalankan worker lalu klik Muat ulang untuk melihat hasil.');}catch(e){notice(e.message,true);}};
 $('#export').onclick=async()=>{try{const r=await api('exports',{});$('#exportResult').textContent=`Folder server:\n${r.directory}\n\n${r.findings.length} temuan strict. Tinjau sebelum menggunakan catalog:publish.`;notice('Ekspor selesai; tidak ada publikasi.');}catch(e){notice(e.message,true);}};
-function preview(){const f=$('#lessonForm');$('#slidePreview').replaceChildren();for(let i=1;i<=2;i++){const d=el('div',undefined,'slide');d.append(el('small',`SLIDE ${i} / 2`),el('h3',f.elements.title.value||'Judul materi'),el('p',f.elements['slide'+i].value||'Teks slide akan muncul di sini.'));$('#slidePreview').append(d);}}
-$('#lessonForm').oninput=preview;preview();
+const lessonEditor=createLessonEditor({$,api,notice,getState:()=>state,reload:load});
+const practiceEditor=createPracticeEditor({$,api,notice,getState:()=>state,reload:load,visibleTopics:()=>visible().topics});
 function graph(){
   const svg=$('#graph');svg.replaceChildren();const ns='http://www.w3.org/2000/svg';const add=(tag,attrs,parent=svg)=>{const n=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,String(v));parent.append(n);return n;};
   const coreMode=$('#graphMode').value==='cores',topic=state.topics.find(t=>t.code===$('#graphTopic').value);
@@ -90,9 +112,9 @@ $('#graphMode').onchange=graph;$('#graphTopic').onchange=graph;
 
 function filterChanged(){
   // Clear forms so hidden previous selections cannot be saved against a different topic.
-  for(const id of ['topicForm','coreForm','relationForm','prerequisiteForm','lessonForm'])$('#'+id).reset();
+  for(const id of ['topicForm','coreForm','relationForm','prerequisiteForm'])$('#'+id).reset();
   render();if($('#subjectFilter').value)$('#topicSubject').value=$('#subjectFilter').value;
-  if($('#phaseFilter').value)$('#topicForm').elements.phase.value=$('#phaseFilter').value;preview();
+  if($('#phaseFilter').value)$('#topicForm').elements.phase.value=$('#phaseFilter').value;
 }
 $('#subjectFilter').onchange=filterChanged;$('#phaseFilter').onchange=filterChanged;
 $('#resetFilters').onclick=()=>{$('#subjectFilter').value='';$('#phaseFilter').value='';filterChanged();};

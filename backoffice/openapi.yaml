@@ -17,10 +17,10 @@ paths:
   /api/state:
     get:
       operationId: getDraftWorkspace
-      summary: Topics, cores, lessons, relations, provenance, jobs and strict publication findings.
+      summary: Topics, cores, lessons, practice summaries, relations, provenance, jobs and strict publication findings.
       responses:
         '200':
-          description: Current workspace; question bodies and answer keys are excluded.
+          description: Current workspace. Practice questions are summarised without answer keys or rubrics; previewUrl is the learner app page used for lesson preview.
           content:
             application/json:
               schema:
@@ -36,17 +36,26 @@ paths:
                   jobs: {type: array, items: {type: object}}
                   findings: {type: array, items: {type: object}}
                   audit: {type: array, items: {type: object}}
+                  practice:
+                    type: array
+                    description: Questions whose PRIMARY assessable concept is a core (core practice). No key, rubric or feedback.
+                    items: {type: object}
+                  previewUrl: {type: string, description: 'Learner app page /pratinjau/materi, rendered in an iframe and fed through postMessage.'}
         '401': {$ref: '#/components/responses/Error'}
         '403': {$ref: '#/components/responses/Error'}
   /api/commands:
     post:
       operationId: saveDraftEntity
-      summary: Upsert a topic, core, relation, prerequisite or two-slide text lesson.
+      summary: Upsert a topic, core, relation, prerequisite, lesson (text or blocks) or core practice question.
       description: |
         All changes reset review to PROPOSED and release sign-off to PENDING.
         Cycle, reference, schema and alias validation runs before atomic persistence.
         code identifies the entity; core.topic selects its topic; lesson.concepts is comma-separated.
         relation.code is the requiring/source topic, relation.to its target; prerequisite.code is the dependent core.
+        lesson-blocks stores heading/text/math/tip/figure blocks (plain text, **bold** only) on contiguous slides;
+        checks stay on their slides and a slide holding a check cannot be removed.
+        question upserts a MULTIPLE_CHOICE (option-v1) or NUMERIC (numeric-v1) practice question with one PRIMARY concept;
+        an empty code creates a new question and the response returns its generated code.
       parameters:
         - $ref: '#/components/parameters/Origin'
       requestBody:
@@ -55,11 +64,11 @@ paths:
           application/json:
             schema:
               type: object
-              required: [revision, kind, code]
+              required: [revision, kind]
               properties:
                 revision: {type: integer, minimum: 0}
-                kind: {enum: [topic, core, relation, prerequisite, lesson]}
-                code: {type: string, maxLength: 120}
+                kind: {enum: [topic, core, relation, prerequisite, lesson, lesson-blocks, question]}
+                code: {type: string, maxLength: 120, description: Required except for a new question.}
                 title: {type: string, maxLength: 240}
                 phase: {enum: [D, E, F, F+]}
                 subject: {type: string, description: Existing subject code. Defaults to existing subject or MAT; changing an existing topic subject is rejected.}
@@ -70,15 +79,56 @@ paths:
                 to: {type: string}
                 type: {enum: [REQUIRES, RELATED, HARD, SOFT]}
                 label: {type: string, maxLength: 200}
-                concepts: {type: string}
+                concepts:
+                  oneOf:
+                    - {type: string, description: Comma-separated core codes.}
+                    - {type: array, items: {type: string}}
+                estimatedMinutes: {type: integer, minimum: 1, maximum: 30}
+                blocks:
+                  type: array
+                  maxItems: 80
+                  items:
+                    type: object
+                    required: [type, slide]
+                    properties:
+                      type: {enum: [heading, text, math, tip, figure]}
+                      slide: {type: integer, minimum: 0, maximum: 9}
+                      text: {type: string, maxLength: 2000}
+                      name: {type: string, maxLength: 240}
+                      expression: {type: string, maxLength: 240}
+                      highlight: {type: boolean}
+                      figureRef: {type: string, pattern: '^[a-z0-9-]{1,40}$'}
+                concept: {type: string, description: Core code of a practice question (its PRIMARY concept).}
+                itemType: {enum: [MULTIPLE_CHOICE, NUMERIC]}
+                prompt: {type: string, maxLength: 2000}
+                options: {type: array, minItems: 2, maxItems: 6, items: {type: string, maxLength: 240}}
+                answerIndex: {type: integer, description: Index of the correct option.}
+                answerValue: {type: [number, string], description: Correct numeric answer.}
+                unit: {type: string, maxLength: 20}
+                answerExample: {type: string, maxLength: 240}
+                feedbackCorrect: {type: string, maxLength: 2000}
+                feedbackIncorrect: {type: string, maxLength: 2000}
+                difficulty: {type: integer, minimum: 1, maximum: 3}
                 slide1: {type: string, maxLength: 2000}
                 slide2: {type: string, maxLength: 2000}
       responses:
-        '200': {description: 'Draft saved, with new revision.'}
+        '200': {description: 'Draft saved, with new revision (and the question code for kind=question).'}
         '400': {$ref: '#/components/responses/Error'}
         '401': {$ref: '#/components/responses/Error'}
         '403': {$ref: '#/components/responses/Error'}
         '409': {$ref: '#/components/responses/Error'}
+        '422': {$ref: '#/components/responses/Error'}
+  /api/questions/{code}:
+    get:
+      operationId: getPracticeQuestion
+      summary: One editable practice question including its key, fetched only when an editor opens it.
+      parameters:
+        - {name: code, in: path, required: true, schema: {type: string, maxLength: 120}}
+      responses:
+        '200': {description: 'Prompt, options, answerIndex or answerValue/unit, feedback, difficulty and minutes.'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
         '422': {$ref: '#/components/responses/Error'}
   /api/imports:
     post:
