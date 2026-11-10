@@ -4463,12 +4463,12 @@ components:
     LessonBlock:
       type: object
       additionalProperties: false
-      description: "heading/text/tip carry text; math carries name and expression (plain notation, or latex); figure carries figureRef; worked_example carries steps. Text may use **bold**; never HTML."
+      description: "heading/text/tip carry text; math carries name and expression (plain notation, or latex); figure carries figureRef; worked_example carries steps; code (animation) carries label, height and html/css/js that clients run only in a sandboxed opaque-origin iframe. Text may use **bold**; never HTML."
       required: [type, slide]
       properties:
         type:
           type: string
-          enum: [heading, text, math, figure, worked_example, tip]
+          enum: [heading, text, math, figure, worked_example, tip, code]
         slide:
           type: integer
           minimum: 0
@@ -4495,6 +4495,22 @@ components:
           items:
             type: string
             maxLength: 400
+        label:
+          type: string
+          maxLength: 240
+        height:
+          type: integer
+          minimum: 120
+          maximum: 720
+        html:
+          type: string
+          maxLength: 12000
+        css:
+          type: string
+          maxLength: 12000
+        js:
+          type: string
+          maxLength: 24000
     Lesson:
       type: object
       additionalProperties: false

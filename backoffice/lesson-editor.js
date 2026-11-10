@@ -1,12 +1,16 @@
 /* Editor materi berbentuk blok + pratinjau memakai halaman aplikasi siswa sendiri (/pratinjau/materi).
-   Tidak ada HTML dari editor: semua isi dikirim sebagai teks dan dirender aplikasi sebagai teks. */
+   Blok teks dirender aplikasi sebagai teks biasa. Blok "Animasi kode" (HTML/CSS/JS) dijalankan aplikasi
+   hanya di iframe sandbox tanpa akses ke halaman, sesi, atau jaringan. */
+import { TEMPLATES } from './animation-templates.js';
 const TYPES = [
-  ['heading', 'Judul'], ['text', 'Teks'], ['math', 'Rumus'], ['tip', 'Tip'], ['figure', 'Ilustrasi'],
+  ['heading', 'Judul'], ['text', 'Teks'], ['math', 'Rumus'], ['tip', 'Tip'], ['code', 'Animasi kode'], ['figure', 'Ilustrasi'],
 ];
 const LABEL = Object.fromEntries(TYPES);
 const MAX_SLIDES = 10;
 const el = (tag, text, cls) => { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (cls) n.className = cls; return n; };
-const blank = (type, slide) => type === 'math' ? { type, slide, name: '', expression: '' } : type === 'figure' ? { type, slide, figureRef: '' } : { type, slide, text: '' };
+const fromTemplate = (key, slide) => { const t = TEMPLATES[key]; return { type: 'code', slide, label: t.label, height: t.height, html: t.html, css: t.css, js: t.js }; };
+const blank = (type, slide) => type === 'math' ? { type, slide, name: '', expression: '' } : type === 'figure' ? { type, slide, figureRef: '' }
+  : type === 'code' ? fromTemplate('kuadran', slide) : { type, slide, text: '' };
 
 export function createLessonEditor({ $, api, notice, getState: current, reload }) {
   const getState = () => current() ?? { topics: [], lessons: [], practice: [], sources: {} };
@@ -63,6 +67,16 @@ export function createLessonEditor({ $, api, notice, getState: current, reload }
     input.oninput = () => { block[key] = input.value; push(); };
     l.append(input); return l;
   }
+  function codeField(block, key, label, max) {
+    const l = el('label', label), input = el('textarea', undefined, 'code-input');
+    input.rows = key === 'js' ? 12 : 7; input.spellcheck = false; input.maxLength = max; input.value = block[key] ?? '';
+    input.oninput = () => { block[key] = input.value; push(); };
+    input.onkeydown = e => {
+      if (e.key !== 'Tab' || e.shiftKey) return;
+      e.preventDefault(); const a = input.selectionStart; input.setRangeText('  ', a, input.selectionEnd, 'end'); block[key] = input.value; push();
+    };
+    l.append(input); return l;
+  }
   function blockCard(block, list) {
     const card = el('div', undefined, 'block-card');
     const head = el('div', undefined, 'block-head');
@@ -87,6 +101,23 @@ export function createLessonEditor({ $, api, notice, getState: current, reload }
       const hl = el('label', undefined, 'check'), box = el('input'); box.type = 'checkbox'; box.checked = block.highlight === true;
       box.onchange = () => { if (box.checked) block.highlight = true; else delete block.highlight; push(); };
       hl.append(box, document.createTextNode(' Sorot rumus ini')); card.append(row, hl);
+    }
+    if (block.type === 'code') {
+      const top = el('div', undefined, 'meta-grid');
+      const height = el('label', 'Tinggi (px)'), h = el('input'); h.type = 'number'; h.min = '120'; h.max = '720'; h.value = String(block.height);
+      h.oninput = () => { block.height = Number(h.value); push(); }; height.append(h);
+      const tpl = el('label', 'Ganti dengan template'), pick = el('select');
+      pick.append(el('option', '— pilih —'));
+      for (const [key, t] of Object.entries(TEMPLATES)) { const o = el('option', t.name); o.value = key; pick.append(o); }
+      pick.onchange = () => {
+        if (!TEMPLATES[pick.value]) return;
+        if ((block.html || block.css || block.js) && !confirm('Ganti kode blok ini dengan template?')) { pick.selectedIndex = 0; return; }
+        Object.assign(block, fromTemplate(pick.value, block.slide)); render();
+      };
+      tpl.append(pick);
+      top.append(field(block, 'label', 'Keterangan (dibacakan pembaca layar)', false, 240), height, tpl);
+      card.append(top, codeField(block, 'html', 'HTML', 12000), codeField(block, 'css', 'CSS', 12000), codeField(block, 'js', 'JS', 24000),
+        el('small', 'Berjalan di kotak terisolasi: tanpa internet, tanpa akses ke halaman atau akun siswa. Font/gambar/skrip dari luar tidak dimuat; tulis semuanya di sini. Hormati @media (prefers-reduced-motion: reduce).', 'muted'));
     }
     if (block.type === 'figure') {
       card.append(field(block, 'figureRef', 'Kode ilustrasi (huruf kecil, angka, -)', false, 40),

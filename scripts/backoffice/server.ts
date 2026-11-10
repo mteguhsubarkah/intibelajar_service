@@ -17,7 +17,8 @@ export function buildBackoffice(store: Store, token: string, port = 8010, public
   const preview = previewOrigin ?? domain?.origin ?? 'http://localhost:5180';
   { const u = new URL(preview); if (!['https:', 'http:'].includes(u.protocol) || u.origin !== preview || (u.protocol === 'http:' && !['localhost', '127.0.0.1'].includes(u.hostname)))
     throw new Error('BACKOFFICE_PREVIEW_ORIGIN must be an exact HTTPS origin (or http://localhost)'); }
-  const app = Fastify({ logger: false, bodyLimit: 32_768 });
+  // Materi dengan animasi kode bisa sampai batas katalog 64 KB per materi.
+  const app = Fastify({ logger: false, bodyLimit: 131_072 });
   const hosts = [`127.0.0.1:${port}`, `localhost:${port}`];
   const origins = domain ? [domain.origin] : hosts.map(h => `http://${h}`);
   app.addHook('onRequest', async (req, reply) => {
@@ -45,7 +46,7 @@ export function buildBackoffice(store: Store, token: string, port = 8010, public
       return reply.code((e as {statusCode:number}).statusCode).send({message:'Body tidak valid / terlalu besar'});
     return reply.code(500).send({ message: 'Gagal menyimpan draf; tidak ada publikasi dilakukan' });
   });
-  for (const [url, file, type] of [['/', 'index.html', 'text/html'], ['/app.js', 'app.js', 'text/javascript'], ['/catalog-view.js','catalog-view.js','text/javascript'], ['/lesson-editor.js','lesson-editor.js','text/javascript'], ['/practice-editor.js','practice-editor.js','text/javascript'], ['/report.css','report.css','text/css'], ['/style.css', 'style.css', 'text/css'], ['/openapi.yaml', 'openapi.yaml', 'application/yaml']])
+  for (const [url, file, type] of [['/', 'index.html', 'text/html'], ['/app.js', 'app.js', 'text/javascript'], ['/catalog-view.js','catalog-view.js','text/javascript'], ['/lesson-editor.js','lesson-editor.js','text/javascript'], ['/practice-editor.js','practice-editor.js','text/javascript'], ['/animation-templates.js','animation-templates.js','text/javascript'], ['/report.css','report.css','text/css'], ['/style.css', 'style.css', 'text/css'], ['/openapi.yaml', 'openapi.yaml', 'application/yaml']])
     app.get(url!, async (_req, reply) => reply.type(type!).send(readFileSync(new URL(`../../backoffice/${file}`, import.meta.url), 'utf8')));
   app.get('/api/state', async () => {
     const s = store.read();

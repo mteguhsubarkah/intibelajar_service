@@ -86,6 +86,7 @@ const blockView = (b: LessonBlock) => {
   switch (b.type) {
     case 'math': return { type: b.type, slide: b.slide, name: b.name, expression: b.expression, ...(b.highlight ? { highlight: true } : {}) };
     case 'figure': return { type: b.type, slide: b.slide, figureRef: b.figureRef };
+    case 'code': return { type: b.type, slide: b.slide, label: b.label, height: b.height, ...opt('html', b.html), ...opt('css', b.css), ...opt('js', b.js) };
     default: return { type: b.type, slide: b.slide, text: b.text };
   }
 };

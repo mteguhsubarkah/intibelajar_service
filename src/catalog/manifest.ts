@@ -52,7 +52,9 @@ export interface Question {
 export type LessonBlock =
   | { type: 'heading'|'text'|'tip'; slide: number; text: string }
   | { type: 'math'; slide: number; name: string; expression: string; highlight?: boolean }
-  | { type: 'figure'; slide: number; figureRef: string };
+  | { type: 'figure'; slide: number; figureRef: string }
+  /** Animasi kode: html/css/js hanya dijalankan aplikasi di iframe sandbox (origin opak). */
+  | { type: 'code'; slide: number; label: string; height: number; html?: string; css?: string; js?: string };
 export interface Lesson {
   schemaVersion: 1; code: string; title: string; estimatedMinutes: number; aliases: Alias[]; concepts: string[];
   blocks: LessonBlock[]; checks: { question: string; ordinal: number; slideIndex: number; required: boolean }[]; practiceSet?: string; review?: Review;
