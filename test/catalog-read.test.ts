@@ -173,9 +173,7 @@ test('Slice 1 public catalog read API', async t => {
       // Authored content that works the same example as a rubric. Not a key leak, but an exposure the content
       // reviewers must decide on (plan 03 §9). Each entry must keep matching, so the list cannot go stale.
       const KNOWN_EXPOSURES = [{ secret: 'tan 30° = 20 / x', codes: ['MAT.TRI.Q.T13_CHECK_2', 'MAT.TRI.L.MENCARI_SISI_YANG_BELUM_DIKETAHUI'],
-        reason: 'The T13 lesson and its check 2 work the tower question itself (20 m, 30°), which is the worked solution of SOAL_MENARA / TRIG_DEPRESSION_01' },
-        { secret: 'CH₄ + 2O₂ → CO₂ + 2H₂O', codes: ['KIM.C26.F.TERMOKIMIA.Q.HESS_2', 'KIM.C26.F.TERMOKIMIA.L.HESS'],
-          reason: 'The Hess lesson and question use the methane combustion equation, which is also a step (and accepted form) of the /coba Kimia question SOAL_KOMPOR. A standard balanced equation, not the 44 g answer' }];
+        reason: 'The T13 lesson and its check 2 work the tower question itself (20 m, 30°), which is the worked solution of SOAL_MENARA / TRIG_DEPRESSION_01' }];
       const allowed = new Set(KNOWN_EXPOSURES.flatMap(e => e.codes));
       const without = (node: unknown): unknown => Array.isArray(node) ? node.map(without)
         : node && typeof node === 'object' ? ((node as { code?: string }).code && allowed.has((node as { code: string }).code) ? null

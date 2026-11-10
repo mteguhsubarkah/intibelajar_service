@@ -70,7 +70,15 @@ test('typed multiple-choice answers: a long worked answer is quoted within the 2
 test('/coba Fisika and Kimia (D8): time and mass units are read, each distractor names its concept', () => {
   const bola = question('FIS.C26.E.GERAK2D.Q.SOAL_BOLA'), kompor = question('KIM.C26.E.STOIK.Q.SOAL_KOMPOR');
   for (const t of ['2', '2 s', '2 detik', 't = 2 sekon']) assert.equal(evaluateNumeric(input(bola, text(t))).verdict, 'CORRECT', t);
-  for (const t of ['44', '44 g', '44 gram']) assert.equal(evaluateNumeric(input(kompor, text(t))).verdict, 'CORRECT', t);
+  for (const t of ['44', '44 g', '44 gram']) {
+    const result = evaluateNumeric(input(kompor, text(t)));
+    assert.equal(result.verdict, 'CORRECT', t);
+    // The balanced equation is given: a correct mass must not award independent balancing mastery.
+    assert.deepEqual(result.evidence.filter(e => e.classification === 'UNDERSTANDING_DEMONSTRATED').map(e => e.conceptCode), [
+      'KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR',
+      'KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI',
+    ]);
+  }
   // a unit of the wrong kind stays unreadable, never wrong
   assert.equal(evaluateNumeric(input(bola, text('2 m'))).reason, 'unknown-unit');
   assert.equal(evaluateNumeric(input(kompor, text('44 kg'))).reason, 'unknown-unit');
