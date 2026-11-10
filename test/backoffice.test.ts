@@ -223,3 +223,30 @@ test('backoffice: preview frame allowed only for the configured app origin', asy
     await local.close();
   } finally { f.done(); }
 });
+
+test('backoffice: animation code block is stored as data with limits, and projected to the learner API shape', async () => {
+  const f = fixture(); try {
+    const old = f.store.read().manifest.lessons.find(l => l.code === 'MAT.TRI.L.PERBANDINGAN_TRIG')!;
+    const anim = { type: 'code', slide: 0, label: 'Animasi tanda di kuadran', height: 380, html: '<svg id="s"></svg>', css: 'svg{width:100%}', js: 'document.getElementById("s")' };
+    const blocks = [...old.blocks.filter(b => b.slide === 0), anim, ...old.blocks.filter(b => b.slide > 0)];
+    f.store.change(0, 'anim', s => command(s, { kind: 'lesson-blocks', code: old.code, title: old.title, concepts: old.concepts, blocks }));
+    const saved = f.store.read().manifest.lessons.find(l => l.code === old.code)!;
+    assert.deepEqual(saved.blocks.find(b => b.type === 'code'), anim);
+    assert.equal(lintManifest(f.store.read().manifest).filter(x => x.severity === 'error').length, 0);
+    const bad = [
+      { ...anim, html: '', js: '' },
+      { ...anim, height: 2000 },
+      { ...anim, label: '' },
+      { ...anim, js: 'x'.repeat(24001) },
+      { ...anim, html: 7 },
+    ];
+    for (const b of bad) assert.throws(() => f.store.change(1, 'bad', s => command(s, { kind: 'lesson-blocks', code: old.code, title: old.title, concepts: old.concepts, blocks: [...old.blocks, b] })));
+    // API siswa: blok animasi diteruskan apa adanya dan lolos kontrak OpenAPI /v1/lessons/{id}
+    const { lessonView } = await import('../src/catalog/projection.js');
+    const { validateResponse } = await import('../src/platform/contract.js');
+    const view = lessonView({ id: '00000000-0000-4000-8000-000000000001', code: saved.code, route_slug: null, practice_set: null, revision: 1, title: saved.title,
+      estimated_minutes: saved.estimatedMinutes, blocks: saved.blocks, conceptIds: ['00000000-0000-4000-8000-000000000002'], checks: [] }, () => undefined);
+    assert.deepEqual(view.blocks.find(b => b.type === 'code'), anim);
+    assert.doesNotThrow(() => validateResponse('/v1/lessons/{lessonId}', 'get', 200, view));
+  } finally { f.done(); }
+});

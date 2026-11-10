@@ -110,6 +110,20 @@ export function lessonBlocks(v: unknown): LessonBlock[] {
     if (b.type === 'heading') return { type: 'heading', slide, text: at('text', 240) };
     if (b.type === 'text' || b.type === 'tip') return { type: b.type, slide, text: at('text', 2000) };
     if (b.type === 'math') return { type: 'math', slide, name: at('name', 240), expression: at('expression', 240), ...(b.highlight === true ? { highlight: true } : {}) };
+    if (b.type === 'code') {
+      // Animasi kode: dijalankan aplikasi hanya di iframe sandbox. Studio menyimpan teksnya apa adanya.
+      const part = (field: 'html' | 'css' | 'js', max: number) => {
+        const v = b[field];
+        if (v === undefined || v === null || v === '') return undefined;
+        if (typeof v !== 'string' || v.length > max) throw new OfficeError(422, `Blok ${i + 1} (animasi): ${field.toUpperCase()} maksimal ${max} karakter`);
+        return v;
+      };
+      const html = part('html', 12000), css = part('css', 12000), js = part('js', 24000);
+      if (!html?.trim() && !js?.trim()) throw new OfficeError(422, `Blok ${i + 1} (animasi): isi HTML atau JS`);
+      const height = Number(b.height);
+      if (!Number.isInteger(height) || height < 120 || height > 720) throw new OfficeError(422, `Blok ${i + 1} (animasi): tinggi 120–720 px`);
+      return { type: 'code', slide, label: at('label', 240), height, ...(html ? { html } : {}), ...(css ? { css } : {}), ...(js ? { js } : {}) };
+    }
     if (b.type === 'figure') {
       const ref = at('figureRef', 40);
       if (!/^[a-z0-9-]{1,40}$/.test(ref)) throw new OfficeError(422, `Blok ${i + 1}: kode ilustrasi hanya huruf kecil, angka, dan tanda -`);

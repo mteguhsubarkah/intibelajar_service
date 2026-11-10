@@ -1302,7 +1302,7 @@
       }
     },
     "lessonBlock": {
-      "description": "LessonBlocks VO (03 §7). Text may use **bold** only; no HTML.",
+      "description": "LessonBlocks VO (03 §7). Text may use **bold** only; no HTML. A code block (animation) carries html/css/js that the app runs only inside a sandboxed, opaque-origin iframe.",
       "oneOf": [
         {
           "type": "object",
@@ -1414,6 +1414,46 @@
             },
             "text": {
               "$ref": "#/$defs/text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "slide",
+            "label",
+            "height"
+          ],
+          "properties": {
+            "type": {
+              "const": "code"
+            },
+            "slide": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "label": {
+              "$ref": "#/$defs/shortText",
+              "description": "What the animation shows; read by screen readers."
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 120,
+              "maximum": 720
+            },
+            "html": {
+              "type": "string",
+              "maxLength": 12000
+            },
+            "css": {
+              "type": "string",
+              "maxLength": 12000
+            },
+            "js": {
+              "type": "string",
+              "maxLength": 24000
             }
           }
         }
