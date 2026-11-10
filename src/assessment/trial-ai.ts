@@ -2,13 +2,15 @@ import type { Config } from '../config.js';
 import type { Connection } from '../db.js';
 import type { Evaluation, StudentResponse } from './evaluators/index.js';
 import type { TrialItem } from './trial.js';
-import { guideReply } from '../tutor/context-guide.js';
+import { guideTurn, type GuideStreak } from '../tutor/context-guide.js';
+import { orderedGuideCores } from '../tutor/core-steps.js';
 import { miniQuestion, miniGrade, type MiniQuestion, type MiniGrade } from '../tutor/mini-check.js';
 import { fail } from '../platform/errors.js';
 export interface TrialAi {
   /** retry: koreksi ke berapa dan jawaban yang dinilai sebelumnya (soal yang sama dikerjakan ulang) */
   evaluate(item: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation>;
-  tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[]): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[]};visual?:import('../tutor/guide-visual.js').GuideVisual}>;
+  /** streak: jawaban benar untuk inti aktif di percakapan ini (dari sesi trial); balasannya membawa streak berikutnya */
+  tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[], streak?: GuideStreak): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[];order?:string[]};visual?:import('../tutor/guide-visual.js').GuideVisual;streak?:GuideStreak}>;
   /** Pertanyaan mini di akhir materi satu inti (ask), atau penilaian jawabannya (grade). */
   mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string;key?:string;previous?:string}): Promise<MiniQuestion|MiniGrade>;
 }
@@ -128,9 +130,11 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       if (value.correct===null && value.relevant===false) for (const e of evidence) e.uncertaintyReasons=['OUT_OF_SCOPE'];
       return {...(confused?{confused:true}:{}),...(value.correct===null && value.clarification?.trim()?{clarification:value.clarification.trim()}:{}),verdict:value.correct===true?'CORRECT':value.correct===false?'INCORRECT':'NOT_GRADED',reason:value.correct===null?'insufficient-working':null,value:null,misconceptionCode:null,evidence,revealedAnswer:null};
     },
-    async tutor(item,messages,answer,used,done=[]) {
-      const reply=await guideReply(db,config,{questionText:item.source.body.prompt,answer,cores:item.concepts.map(c=>({id:c.legacyMapId??c.code,title:c.title})),done,messages:messages.slice(-12).map(m=>({from:m.from==='me'?'me':'bot',text:m.text.slice(0,1000)}))},http);
-      return {...reply,hintsUsed:used+1};
+    async tutor(item,messages,answer,used,done=[],streak) {
+      // urutan inti dan langkahnya dari kunci soal (langkah terakhir yang memuat jawaban akhir tidak ikut)
+      const cores=orderedGuideCores(item.concepts,item.source.rubric.solutionPaths);
+      const turn=await guideTurn(db,config,{questionText:item.source.body.prompt,answer,cores,done,...(streak?{streak}:{}),messages:messages.slice(-12).map(m=>({from:m.from==='me'?'me':'bot',text:m.text.slice(0,1000)}))},http);
+      return {...turn.reply,hintsUsed:used+1,...(turn.streak?{streak:turn.streak}:{})};
     },
     async mini(item,input) {
       const others=item.concepts.filter(c=>(c.legacyMapId??c.code)!==input.core.id).map(c=>c.title);

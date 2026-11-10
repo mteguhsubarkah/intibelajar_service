@@ -6206,6 +6206,12 @@ components:
             done:
               type: array
               items: {type: string}
+            order:
+              type: array
+              description: >-
+                The order the guide works the cores in, when the server ordered them from the question's own solution
+                steps (catalog trial questions). The core strip follows it. Absent when the client's list order is used.
+              items: {type: string}
         visual:
           $ref: '#/components/schemas/GuideVisual'
     GuideVisual:

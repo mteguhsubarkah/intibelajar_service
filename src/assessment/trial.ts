@@ -44,7 +44,7 @@ function gapQuote(e: Evaluation['evidence'][number] | undefined) {
 }
 interface TrialContext {
   expires: number; pins: Map<string, string>; runs: Map<string, { id: string; output: any }>;
-  hints: number; guideDone?: string[]; answerDone?: string[]; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
+  hints: number; guideDone?: string[]; answerDone?: string[]; guideStreak?: { core: string | null; correct: number }; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
   /** pertanyaan mini per inti + jawaban siswa: dinilai terhadap pertanyaan yang dibuat server, bukan kiriman browser */
   mini?: Map<string,{question:string;hint:string;key?:string}>;
 }
@@ -258,10 +258,13 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       // sebelumnya tidak dibawa, hanya inti yang terbukti dari jawaban siswa
       const fresh = body.messages.filter((m) => m.from === 'bot').length <= 1;
       const done = fresh ? (c.answerDone ?? []) : (c.guideDone ?? c.answerDone ?? []);
-      const reply=await ai.tutor(i,body.messages,(body.currentAnswer ?? c.answer ?? '').slice(0,1000),c.hints,done);
+      if (fresh) c.guideStreak = undefined;
+      const { streak, ...reply } = await ai.tutor(i,body.messages,(body.currentAnswer ?? c.answer ?? '').slice(0,1000),c.hints,done,c.guideStreak);
       c.hints=reply.hintsUsed;
-      // inti yang sudah lewat di chat ini disimpan di sesi trial, supaya IntiGuide melanjutkan urutannya
+      // inti yang sudah lewat di chat ini disimpan di sesi trial, supaya IntiGuide melanjutkan urutannya;
+      // jumlah jawaban benar untuk inti aktif juga (batas 3 pertanyaan mini per inti), tidak dikirim ke browser
       if(reply.coreProgress)c.guideDone=reply.coreProgress.done;
+      c.guideStreak = streak;
       return reply;
     },
     async miniCheck(owner: string, body: { sessionId: string; questionId: string; coreId: string; currentAnswer?: string; reply?: string; round?: number }): Promise<{ question: string; hint: string; correct?: boolean; feedback?: string; because?: string }> {
