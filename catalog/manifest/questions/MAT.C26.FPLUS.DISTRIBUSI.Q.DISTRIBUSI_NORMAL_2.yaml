@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_2
+familyCode: MAT.C26.FPLUS.DISTRIBUSI.F.DISTRIBUSI_NORMAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tinggi siswa berdistribusi normal dengan μ = 160 cm dan σ = 5 cm. Menurut aturan empiris, persentase siswa dengan tinggi antara 150 cm dan 170 cm sekitar …
+  options:
+    - id: a
+      label: 68%
+    - id: b
+      label: 99,7%
+    - id: c
+      label: 50%
+    - id: d
+      label: 95%
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 95%
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL
+  feedback:
+    correct: 150 dan 170 adalah μ − 2σ dan μ + 2σ, jadi sekitar 95% data berada di antaranya.
+    incorrect: Jawabannya 95%. 150 dan 170 adalah μ − 2σ dan μ + 2σ, jadi sekitar 95% data berada di antaranya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

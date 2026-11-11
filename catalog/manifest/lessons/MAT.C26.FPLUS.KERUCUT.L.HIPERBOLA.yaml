@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.L.HIPERBOLA
+title: Hiperbola
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+blocks:
+  - type: heading
+    slide: 0
+    text: Selisih jarak tetap
+  - type: text
+    slide: 0
+    text: Hiperbola adalah himpunan titik yang **selisih jaraknya ke dua fokus tetap**, yaitu 2a.
+  - type: text
+    slide: 0
+    text: "Hiperbola berpusat di (0, 0) yang terbuka ke kiri dan kanan: **x²/a² − y²/b² = 1**, dengan fokus (±c, 0) dan **c² = a² + b²**."
+  - type: math
+    slide: 0
+    name: hiperbola
+    expression: x²/a² − y²/b² = 1
+    highlight: true
+  - type: math
+    slide: 0
+    name: fokus
+    expression: c² = a² + b²
+  - type: heading
+    slide: 1
+    text: Asimtot dan arah
+  - type: text
+    slide: 1
+    text: Asimtot hiperbola x²/a² − y²/b² = 1 adalah **y = ±(b/a)x**. Cabang-cabangnya makin mendekati garis ini tetapi tidak pernah memotongnya.
+  - type: text
+    slide: 1
+    text: Jika suku y² yang bertanda positif (y²/a² − x²/b² = 1), hiperbola terbuka ke atas dan bawah, dan asimtotnya y = ±(a/b)x.
+  - type: math
+    slide: 1
+    name: asimtot
+    expression: y = ±(b/a)x
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Arah hiperbola ditentukan suku yang bertanda positif, bukan penyebut yang lebih besar.
+checks:
+  - question: MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.KERUCUT.S.HIPERBOLA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

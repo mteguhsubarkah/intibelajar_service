@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_2
+familyCode: MAT.C26.FPLUS.KERUCUT.F.HIPERBOLA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan asimtot hiperbola x²/9 − y²/4 = 1 adalah …
+  options:
+    - id: a
+      label: y = ±(3/2)x
+    - id: b
+      label: y = ±(4/9)x
+    - id: c
+      label: y = ±(9/4)x
+    - id: d
+      label: y = ±(2/3)x
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - y = ±(2/3)x
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+  feedback:
+    correct: a = 3 dan b = 2, jadi asimtotnya y = ±(b/a)x = ±(2/3)x.
+    incorrect: Jawabannya y = ±(2/3)x. a = 3 dan b = 2, jadi asimtotnya y = ±(b/a)x = ±(2/3)x.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

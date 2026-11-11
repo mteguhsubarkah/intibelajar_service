@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_3
+familyCode: MAT.C26.FPLUS.DISTRIBUSI.F.DISTRIBUSI_NORMAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika P(Z < 1,5) = 0,9332, maka P(Z > 1,5) adalah …
+  options:
+    - id: a
+      label: 0,4332
+    - id: b
+      label: 0,5
+    - id: c
+      label: 0,0668
+    - id: d
+      label: 0,9332
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 0,0668
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL
+  feedback:
+    correct: Luas total di bawah kurva 1, jadi P(Z > 1,5) = 1 − 0,9332 = 0,0668.
+    incorrect: Jawabannya 0,0668. Luas total di bawah kurva 1, jadi P(Z > 1,5) = 1 − 0,9332 = 0,0668.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

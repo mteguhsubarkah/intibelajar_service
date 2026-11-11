@@ -4,7 +4,7 @@ subject: MAT
 title: Distribusi Binomial & Normal
 subtitle: Variabel acak binomial dan kurva distribusi normal
 phase: F+
-availability: PLANNED
+availability: MAPPED
 bekal: []
 aliases: []
 units: []
@@ -14,10 +14,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-fplus-distribusi-c1
@@ -27,10 +27,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 2
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-fplus-distribusi-parameter
@@ -39,10 +39,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 3
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-fplus-distribusi-c2

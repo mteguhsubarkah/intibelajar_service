@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_3
+familyCode: MAT.C26.FPLUS.KERUCUT.F.PARABOLA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KERUCUT.PARABOLA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Parabola dengan puncak (0, 0) dan fokus (−3, 0) memiliki persamaan …
+  options:
+    - id: a
+      label: x² = −12y
+    - id: b
+      label: y² = −3x
+    - id: c
+      label: y² = −12x
+    - id: d
+      label: y² = 12x
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - y² = −12x
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KERUCUT.PARABOLA
+  feedback:
+    correct: Fokus di sumbu x negatif berarti bentuknya y² = 4px dengan p = −3, jadi y² = −12x.
+    incorrect: Jawabannya y² = −12x. Fokus di sumbu x negatif berarti bentuknya y² = 4px dengan p = −3, jadi y² = −12x.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1270,6 +1270,38 @@ Materi: 3 · Soal: 9
   A. 40 · B. 50 · C. 25 · D. 10
   Kunci: **B** · Proporsi pada sampel 10/40 = 1/4, jadi perkiraannya 1/4 × 200 = 50 siswa.
 
+## Distribusi Binomial & Normal (MAT.C26.FPLUS.DISTRIBUSI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_1** — Sebuah dadu dilempar 3 kali. Peluang muncul mata 6 tepat satu kali adalah …
+  A. 1/216 · B. 25/72 · C. 1/6 · D. 25/216
+  Kunci: **B** · P = C(3, 1) · (1/6) · (5/6)² = 3 · 25/216 = 75/216 = 25/72.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_2** — Percobaan berikut yang BUKAN percobaan binomial adalah …
+  A. menebak 5 soal pilihan ganda dan menghitung yang benar · B. menembak sasaran 8 kali dengan peluang kena tetap 0,7 · C. mengambil 3 kartu satu per satu tanpa pengembalian dan menghitung kartu As · D. melempar koin 10 kali dan menghitung sisi gambar
+  Kunci: **C** · Tanpa pengembalian, peluang mendapat As berubah setelah setiap pengambilan, jadi p tidak tetap dan percobaannya tidak saling bebas.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_3** — Peluang seorang pemain mencetak gol dari tendangan penalti adalah 0,8. Jika ia menendang 3 penalti, peluang ketiganya gol adalah …
+  A. 0,8 · B. 0,24 · C. 0,096 · D. 0,512
+  Kunci: **D** · P(X = 3) = C(3, 3) · 0,8³ · 0,2⁰ = 0,512.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_1** — Variabel acak X memiliki P(X = 0) = 0,2, P(X = 1) = 0,5, dan P(X = 2) = 0,3. Nilai E(X) adalah …
+  A. 0,5 · B. 1,3 · C. 1,1 · D. 1
+  Kunci: **C** · E(X) = 0 · 0,2 + 1 · 0,5 + 2 · 0,3 = 1,1.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_2** — Sebanyak 50 soal pilihan ganda dengan 5 opsi dijawab dengan menebak. Rataan banyak jawaban benar adalah …
+  A. 12,5 · B. 10 · C. 25 · D. 5
+  Kunci: **B** · Peluang benar setiap soal 1/5, jadi E(X) = np = 50 × 1/5 = 10.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_3** — X berdistribusi binomial dengan n = 100 dan p = 0,2. Simpangan baku X adalah …
+  A. 4 · B. 16 · C. 20 · D. 2
+  Kunci: **A** · σ = √(np(1 − p)) = √(100 × 0,2 × 0,8) = √16 = 4.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_1** — Nilai ujian berdistribusi normal dengan μ = 70 dan σ = 8. Nilai baku untuk x = 86 adalah …
+  A. 2 · B. 16 · C. 1,6 · D. 0,5
+  Kunci: **A** · z = (86 − 70) / 8 = 16 / 8 = 2.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_2** — Tinggi siswa berdistribusi normal dengan μ = 160 cm dan σ = 5 cm. Menurut aturan empiris, persentase siswa dengan tinggi antara 150 cm dan 170 cm sekitar …
+  A. 68% · B. 99,7% · C. 50% · D. 95%
+  Kunci: **D** · 150 dan 170 adalah μ − 2σ dan μ + 2σ, jadi sekitar 95% data berada di antaranya.
+- [ ] **MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_3** — Jika P(Z < 1,5) = 0,9332, maka P(Z > 1,5) adalah …
+  A. 0,4332 · B. 0,5 · C. 0,0668 · D. 0,9332
+  Kunci: **C** · Luas total di bawah kurva 1, jadi P(Z > 1,5) = 1 − 0,9332 = 0,0668.
+
 ## Pengukuran dan kerja ilmiah (FIS.C26.D.UKUR)
 
 Materi: 2 · Soal: 6
@@ -1908,6 +1940,38 @@ Materi: 4 · Soal: 12
 - [ ] **MAT.C26.F.REGRESI.Q.KAUSAL_3** — Cara paling tepat untuk menguji apakah pupuk baru menyebabkan tanaman lebih tinggi adalah …
   A. mengamati kebun yang sudah memakai pupuk itu · B. menghitung korelasi tinggi tanaman dengan harga pupuk · C. bertanya kepada penjual pupuk · D. membagi tanaman secara acak ke dua kelompok, hanya satu yang diberi pupuk, dan kondisi lain disamakan
   Kunci: **D** · Eksperimen terkontrol dengan pembagian acak memisahkan pengaruh pupuk dari faktor lain.
+
+## Irisan kerucut (MAT.C26.FPLUS.KERUCUT)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_1** — Fokus parabola y² = 8x adalah …
+  A. (2, 0) · B. (8, 0) · C. (0, 2) · D. (4, 0)
+  Kunci: **A** · 4p = 8, jadi p = 2 dan fokusnya (2, 0).
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_2** — Persamaan direktriks parabola x² = −16y adalah …
+  A. y = −4 · B. x = 4 · C. y = 16 · D. y = 4
+  Kunci: **D** · 4p = −16, jadi p = −4. Parabola terbuka ke bawah dengan fokus (0, −4), dan direktriksnya y = −p = 4.
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_3** — Parabola dengan puncak (0, 0) dan fokus (−3, 0) memiliki persamaan …
+  A. x² = −12y · B. y² = −3x · C. y² = −12x · D. y² = 12x
+  Kunci: **C** · Fokus di sumbu x negatif berarti bentuknya y² = 4px dengan p = −3, jadi y² = −12x.
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.ELIPS_1** — Fokus elips x²/25 + y²/9 = 1 adalah …
+  A. (±√34, 0) · B. (±4, 0) · C. (±5, 0) · D. (±3, 0)
+  Kunci: **B** · a² = 25 dan b² = 9, jadi c² = 25 − 9 = 16 dan c = 4. Fokusnya (±4, 0).
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.ELIPS_2** — Panjang sumbu mayor elips x²/16 + y²/36 = 1 adalah …
+  A. 6 · B. 36 · C. 12 · D. 8
+  Kunci: **C** · Penyebut terbesar 36 ada di bawah y², jadi sumbu mayor tegak dengan a = 6 dan panjangnya 2a = 12.
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.ELIPS_3** — Eksentrisitas elips x²/25 + y²/16 = 1 adalah …
+  A. 4/5 · B. 5/3 · C. 1 · D. 3/5
+  Kunci: **D** · c² = 25 − 16 = 9, jadi c = 3 dan e = c/a = 3/5.
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_1** — Fokus hiperbola x²/16 − y²/9 = 1 adalah …
+  A. (±5, 0) · B. (±√7, 0) · C. (±4, 0) · D. (0, ±5)
+  Kunci: **A** · c² = a² + b² = 16 + 9 = 25, jadi c = 5. Suku x² positif, sehingga fokusnya (±5, 0).
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_2** — Persamaan asimtot hiperbola x²/9 − y²/4 = 1 adalah …
+  A. y = ±(3/2)x · B. y = ±(4/9)x · C. y = ±(9/4)x · D. y = ±(2/3)x
+  Kunci: **D** · a = 3 dan b = 2, jadi asimtotnya y = ±(b/a)x = ±(2/3)x.
+- [ ] **MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_3** — Hiperbola y²/25 − x²/144 = 1 terbuka ke arah …
+  A. kanan saja · B. atas saja · C. atas dan bawah · D. kiri dan kanan
+  Kunci: **C** · Suku y² bertanda positif, sehingga cabang-cabangnya terbuka ke atas dan ke bawah.
 
 ## Larutan elektrolit (KIM.C26.F.ELEKTROLIT)
 

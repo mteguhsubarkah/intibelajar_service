@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI.L.VARIABEL_ACAK_BINOMIAL
+title: Variabel acak binomial
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.DISTRIBUSI.VARIABEL_ACAK_BINOMIAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Percobaan binomial
+  - type: text
+    slide: 0
+    text: Percobaan binomial diulang n kali, setiap percobaan hanya punya dua hasil (sukses atau gagal), peluang sukses p tetap, dan antarpercobaan saling bebas.
+  - type: text
+    slide: 0
+    text: Variabel acak X = banyak sukses dalam n percobaan, nilainya 0, 1, 2, …, n.
+  - type: math
+    slide: 0
+    name: syarat
+    expression: n tetap, dua hasil, p tetap, saling bebas
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Peluang binomial
+  - type: text
+    slide: 1
+    text: "**P(X = k) = C(n, k) · pᵏ · (1 − p)ⁿ⁻ᵏ**, dengan C(n, k) = n! / (k!(n − k)!)."
+  - type: text
+    slide: 1
+    text: "Contoh: koin dilempar 4 kali, peluang tepat 2 gambar = C(4, 2) · (½)² · (½)² = 6/16 = 3/8."
+  - type: math
+    slide: 1
+    name: P(X = k)
+    expression: C(n, k) pᵏ (1 − p)ⁿ⁻ᵏ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: C(n, k) menghitung banyak urutan; pᵏ(1 − p)ⁿ⁻ᵏ adalah peluang satu urutan tertentu.
+checks:
+  - question: MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.DISTRIBUSI.S.VARIABEL_ACAK_BINOMIAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -4,7 +4,7 @@ subject: MAT
 title: Irisan kerucut
 subtitle: Parabola, elips, dan hiperbola
 phase: F+
-availability: PLANNED
+availability: MAPPED
 bekal:
   - persamaan kuadrat
   - jarak dua titik
@@ -17,10 +17,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-fplus-kerucut-c1
@@ -30,10 +30,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 2
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-fplus-kerucut-c2
@@ -43,10 +43,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 3
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-fplus-kerucut-hiperbola
