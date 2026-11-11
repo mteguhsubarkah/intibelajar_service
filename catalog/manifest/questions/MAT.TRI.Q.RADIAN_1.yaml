@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.RADIAN_1
+familyCode: MAT.TRI.F.RADIAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.RADIAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sudut 60° jika dinyatakan dalam radian adalah …
+  options:
+    - id: a
+      label: π/6
+    - id: b
+      label: π/4
+    - id: c
+      label: π/3
+    - id: d
+      label: π/2
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - π/3
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.RADIAN
+  feedback:
+    correct: 60° × π/180° = π/3.
+    incorrect: Jawabannya π/3. 60° × π/180° = π/3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

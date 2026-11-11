@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.TRI.L.GRAFIK_SIN_COS_TAN
+title: Grafik sin, cos, tan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.TRI.GRAFIK_SIN_COS_TAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Grafik sinus dan cosinus
+  - type: text
+    slide: 0
+    text: "**y = sin x** mulai dari 0 di 0°, naik ke 1 di 90°, kembali 0 di 180°, turun ke −1 di 270°, lalu 0 lagi di 360°."
+  - type: text
+    slide: 0
+    text: "**y = cos x** berbentuk sama tetapi bergeser 90°: mulai dari 1 di 0°, 0 di 90°, dan −1 di 180°."
+  - type: math
+    slide: 0
+    name: sin x
+    expression: maks 1 di 90°, min −1 di 270°
+    highlight: true
+  - type: math
+    slide: 0
+    name: cos x
+    expression: maks 1 di 0°, min −1 di 180°
+  - type: heading
+    slide: 1
+    text: Grafik tangen
+  - type: text
+    slide: 1
+    text: "**y = tan x** tidak punya nilai maksimum atau minimum dan berulang setiap 180°."
+  - type: text
+    slide: 1
+    text: Di 90° dan 270°, cos x = 0 sehingga tan x tidak terdefinisi. Grafiknya mendekati garis tegak (asimtot) di sana.
+  - type: math
+    slide: 1
+    name: tan x
+    expression: asimtot di x = 90° + k · 180°
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Grafik sin dan cos adalah jejak koordinat y dan x dari titik yang berputar pada lingkaran satuan.
+checks:
+  - question: MAT.TRI.Q.GRAFIK_SIN_COS_TAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.GRAFIK_SIN_COS_TAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

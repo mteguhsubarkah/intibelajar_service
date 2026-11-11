@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.IDENTITAS_DASAR_1
+familyCode: MAT.TRI.F.IDENTITAS_DASAR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.IDENTITAS_DASAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk sederhana dari (1 − cos²x) / sin x adalah …
+  options:
+    - id: a
+      label: sin x
+    - id: b
+      label: cos x
+    - id: c
+      label: tan x
+    - id: d
+      label: "1"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sin x
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.IDENTITAS_DASAR
+  feedback:
+    correct: 1 − cos²x = sin²x, dan sin²x / sin x = sin x.
+    incorrect: Jawabannya sin x. 1 − cos²x = sin²x, dan sin²x / sin x = sin x.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

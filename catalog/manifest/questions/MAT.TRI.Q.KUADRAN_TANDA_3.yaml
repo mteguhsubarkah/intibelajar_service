@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.KUADRAN_TANDA_3
+familyCode: MAT.TRI.F.KUADRAN_TANDA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.KUADRAN_TANDA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui sin x = −5/13 dan x berada di kuadran III. Nilai cos x adalah …
+  options:
+    - id: a
+      label: −12/13
+    - id: b
+      label: 12/13
+    - id: c
+      label: −5/12
+    - id: d
+      label: 5/12
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −12/13
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.KUADRAN_TANDA
+  feedback:
+    correct: Dari segitiga dengan sisi 5, 12, 13, nilai mutlak cos x adalah 12/13. Di kuadran III cos bernilai negatif, jadi cos x = −12/13.
+    incorrect: Jawabannya −12/13. Dari segitiga dengan sisi 5, 12, 13, nilai mutlak cos x adalah 12/13. Di kuadran III cos bernilai negatif, jadi cos x = −12/13.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

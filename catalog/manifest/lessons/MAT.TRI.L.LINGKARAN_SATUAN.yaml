@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.TRI.L.LINGKARAN_SATUAN
+title: Lingkaran Satuan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.TRI.LINGKARAN_SATUAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Titik (cos θ, sin θ)
+  - type: text
+    slide: 0
+    text: Lingkaran satuan berpusat di (0, 0) dengan jari-jari 1. Karena r = 1, titik pada sisi akhir sudut θ adalah **(cos θ, sin θ)**.
+  - type: text
+    slide: 0
+    text: Akibatnya, nilai sin θ dan cos θ selalu di antara −1 dan 1.
+  - type: math
+    slide: 0
+    name: titik pada lingkaran satuan
+    expression: (cos θ, sin θ)
+    highlight: true
+  - type: math
+    slide: 0
+    name: batas nilai
+    expression: −1 ≤ sin θ, cos θ ≤ 1
+  - type: heading
+    slide: 1
+    text: Sudut pada sumbu
+  - type: text
+    slide: 1
+    text: 0° → (1, 0), 90° → (0, 1), 180° → (−1, 0), 270° → (0, −1).
+  - type: text
+    slide: 1
+    text: Jadi sin 90° = 1, cos 180° = −1, dan sin 270° = −1. Karena tan θ = y/x, tan tidak terdefinisi di 90° dan 270°, saat x = 0.
+  - type: math
+    slide: 1
+    name: tan θ
+    expression: y / x, tak terdefinisi saat x = 0
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Baca koordinat x sebagai cos dan koordinat y sebagai sin.
+checks:
+  - question: MAT.TRI.Q.LINGKARAN_SATUAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.LINGKARAN_SATUAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.UKURAN_SUDUT_3
+familyCode: MAT.TRI.F.UKURAN_SUDUT_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.UKURAN_SUDUT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dalam posisi baku, sisi akhir sudut −90° terletak pada …
+  options:
+    - id: a
+      label: sumbu y positif
+    - id: b
+      label: sumbu x negatif
+    - id: c
+      label: kuadran III
+    - id: d
+      label: sumbu y negatif
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - sumbu y negatif
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.UKURAN_SUDUT
+  feedback:
+    correct: Tanda negatif berarti diputar searah jarum jam. Seperempat putaran dari sumbu x positif ke arah itu berakhir di sumbu y negatif.
+    incorrect: Jawabannya sumbu y negatif. Tanda negatif berarti diputar searah jarum jam. Seperempat putaran dari sumbu x positif ke arah itu berakhir di sumbu y negatif.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

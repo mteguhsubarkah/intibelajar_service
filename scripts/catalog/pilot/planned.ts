@@ -1,7 +1,8 @@
 // Topik dan inti yang belum ada di katalog (audit kesenjangan materi kelas 7–12, 10 November 2026).
 // Struktur dulu: inti tanpa slides/soal ditulis PLANNED. Isi materi dan soal di sini nanti, inti otomatis menjadi READY.
 // Sebagian dibangkitkan dari src/data/intiverse-reference.json FE (topik "peta saja"), sisanya topik baru usulan audit.
-import type { PilotCore, PilotQuestion, PilotRelation, PilotTopic } from './types.js';
+import type { PilotCore, PilotRelation, PilotTopic } from './types.js';
+import { spread } from './spread.js';
 import { SMP_MAT } from './smp-mat.js';
 import { SMP_FIS } from './smp-fis.js';
 import { SMP_KIM } from './smp-kim.js';
@@ -381,15 +382,6 @@ for (const key of Object.keys(CONTENT)) {
   const [code, id] = key.split(':');
   if (!STRUCTURE.some(t => t.code === code && t.cores.some(c => c.id === id))) throw new Error(`materi untuk inti yang tidak ada: ${key}`);
 }
-// Opsi ditampilkan apa adanya (tidak diacak di generator maupun aplikasi), sedangkan penulis cenderung menaruh kunci di A/B.
-// Kunci diputar ke posisi yang ditentukan hash kunci inti + nomor soal: tetap deterministik, tersebar merata di A–D,
-// dan menambah inti baru tidak menggeser soal lain. Urutan siklis opsi dipertahankan.
-const spread = (key: string, qs: PilotQuestion[]): PilotQuestion[] => qs.map((q, i) => {
-  let h = 2166136261;
-  for (const ch of `${key}#${i}`) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
-  const n = q.o.length, to = h % n, shift = (to - q.a + n) % n;
-  return { ...q, o: q.o.map((_, j) => q.o[(j - shift + n) % n]), a: to };
-});
 export const PLANNED_TOPICS: PilotTopic[] = STRUCTURE.map(t => ({ ...t, cores: t.cores.map(c => {
   const key = `${t.code}:${c.id}`, add = CONTENT[key];
   return { ...c, ...add, ...(add?.q ? { q: spread(key, add.q) } : {}) };

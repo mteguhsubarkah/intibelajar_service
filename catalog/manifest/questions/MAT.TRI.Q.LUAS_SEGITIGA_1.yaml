@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.LUAS_SEGITIGA_1
+familyCode: MAT.TRI.F.LUAS_SEGITIGA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.LUAS_SEGITIGA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Segitiga ABC memiliki a = 6 cm, b = 8 cm, dan ∠C = 30°. Luasnya adalah …
+  options:
+    - id: a
+      label: 12 cm²
+    - id: b
+      label: 24 cm²
+    - id: c
+      label: 12√3 cm²
+    - id: d
+      label: 48 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 12 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.LUAS_SEGITIGA
+  feedback:
+    correct: L = ½ · 6 · 8 · sin 30° = 24 · ½ = 12 cm².
+    incorrect: Jawabannya 12 cm². L = ½ · 6 · 8 · sin 30° = 24 · ½ = 12 cm².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

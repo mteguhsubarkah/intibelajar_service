@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERIODE_AMPLITUDO_3
+familyCode: MAT.TRI.F.PERIODE_AMPLITUDO_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.PERIODE_AMPLITUDO
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Periode fungsi y = tan 3x adalah …
+  options:
+    - id: a
+      label: 540°
+    - id: b
+      label: 60°
+    - id: c
+      label: 120°
+    - id: d
+      label: 180°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 60°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.PERIODE_AMPLITUDO
+  feedback:
+    correct: Periode tan adalah 180° / |k| = 180° / 3 = 60°.
+    incorrect: Jawabannya 60°. Periode tan adalah 180° / |k| = 180° / 3 = 60°.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

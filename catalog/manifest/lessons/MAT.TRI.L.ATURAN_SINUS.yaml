@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.TRI.L.ATURAN_SINUS
+title: Aturan Sinus
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.TRI.ATURAN_SINUS
+blocks:
+  - type: heading
+    slide: 0
+    text: Sisi dan sinus sudut di depannya
+  - type: text
+    slide: 0
+    text: Pada segitiga ABC, sisi a berada di depan sudut A, sisi b di depan sudut B, dan sisi c di depan sudut C.
+  - type: text
+    slide: 0
+    text: "Aturan sinus: **a / sin A = b / sin B = c / sin C**. Sisi terpanjang selalu berada di depan sudut terbesar."
+  - type: math
+    slide: 0
+    name: aturan sinus
+    expression: a / sin A = b / sin B = c / sin C
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kapan dipakai
+  - type: text
+    slide: 1
+    text: Pakai aturan sinus jika diketahui **dua sudut dan satu sisi**, atau **dua sisi dan sudut di depan salah satu sisi itu**.
+  - type: text
+    slide: 1
+    text: Sudut ketiga didapat dari A + B + C = 180°. Pada kasus dua sisi dan sudut di depannya, bisa ada nol, satu, atau dua segitiga yang memenuhi.
+  - type: math
+    slide: 1
+    name: jumlah sudut
+    expression: A + B + C = 180°
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pastikan setiap pasangan yang dibandingkan adalah sisi dengan sudut di depannya, bukan sudut yang mengapitnya.
+checks:
+  - question: MAT.TRI.Q.ATURAN_SINUS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.ATURAN_SINUS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

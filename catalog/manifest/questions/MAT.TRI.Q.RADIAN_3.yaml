@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.RADIAN_3
+familyCode: MAT.TRI.F.RADIAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.RADIAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah lingkaran berjari-jari 10 cm. Panjang busur di depan sudut pusat π/5 rad adalah …
+  options:
+    - id: a
+      label: 2π cm
+    - id: b
+      label: 5π cm
+    - id: c
+      label: π/2 cm
+    - id: d
+      label: 50π cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2π cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.RADIAN
+  feedback:
+    correct: s = r · θ = 10 × π/5 = 2π cm.
+    incorrect: Jawabannya 2π cm. s = r · θ = 10 × π/5 = 2π cm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

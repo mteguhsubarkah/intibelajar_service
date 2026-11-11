@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.LINGKARAN_SATUAN_3
+familyCode: MAT.TRI.F.LINGKARAN_SATUAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.LINGKARAN_SATUAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Titik P(−½, ½√3) pada lingkaran satuan merupakan sisi akhir sudut θ, dengan 0° ≤ θ < 360°. Besar θ adalah …
+  options:
+    - id: a
+      label: 60°
+    - id: b
+      label: 150°
+    - id: c
+      label: 240°
+    - id: d
+      label: 120°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 120°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.LINGKARAN_SATUAN
+  feedback:
+    correct: "cos θ = −½ dan sin θ = ½√3, jadi θ di kuadran II dengan sudut acuan 60°: θ = 180° − 60° = 120°."
+    incorrect: "Jawabannya 120°. cos θ = −½ dan sin θ = ½√3, jadi θ di kuadran II dengan sudut acuan 60°: θ = 180° − 60° = 120°."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

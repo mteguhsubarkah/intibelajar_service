@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.ATURAN_COSINUS_1
+familyCode: MAT.TRI.F.ATURAN_COSINUS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.ATURAN_COSINUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada segitiga ABC, b = 5 cm, c = 8 cm, dan ∠A = 60°. Panjang sisi a adalah …
+  options:
+    - id: a
+      label: √129 cm
+    - id: b
+      label: 7 cm
+    - id: c
+      label: √89 cm
+    - id: d
+      label: 13 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 7 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.ATURAN_COSINUS
+  feedback:
+    correct: a² = 25 + 64 − 2 · 5 · 8 · ½ = 89 − 40 = 49, jadi a = 7 cm.
+    incorrect: Jawabannya 7 cm. a² = 25 + 64 − 2 · 5 · 8 · ½ = 89 − 40 = 49, jadi a = 7 cm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

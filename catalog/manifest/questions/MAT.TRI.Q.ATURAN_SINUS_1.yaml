@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.ATURAN_SINUS_1
+familyCode: MAT.TRI.F.ATURAN_SINUS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.ATURAN_SINUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada segitiga ABC, ∠A = 30°, ∠B = 45°, dan a = 6 cm. Panjang sisi b adalah …
+  options:
+    - id: a
+      label: 3√2 cm
+    - id: b
+      label: 12 cm
+    - id: c
+      label: 6√3 cm
+    - id: d
+      label: 6√2 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 6√2 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.ATURAN_SINUS
+  feedback:
+    correct: b = a · sin B / sin A = 6 · (½√2) / (½) = 6√2 cm.
+    incorrect: Jawabannya 6√2 cm. b = a · sin B / sin A = 6 · (½√2) / (½) = 6√2 cm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

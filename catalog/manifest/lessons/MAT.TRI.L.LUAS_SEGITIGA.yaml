@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.TRI.L.LUAS_SEGITIGA
+title: Luas Segitiga
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.TRI.LUAS_SEGITIGA
+blocks:
+  - type: heading
+    slide: 0
+    text: Dua sisi dan sudut apit
+  - type: text
+    slide: 0
+    text: Tinggi segitiga terhadap sisi a adalah b · sin C. Maka luasnya **L = ½ · a · b · sin C**.
+  - type: text
+    slide: 0
+    text: "Rumus ini berlaku untuk pasangan mana saja: dua sisi dan sudut yang diapit keduanya."
+  - type: math
+    slide: 0
+    name: luas
+    expression: L = ½ ab sin C
+    highlight: true
+  - type: heading
+    slide: 1
+    text: "Tiga sisi: rumus Heron"
+  - type: text
+    slide: 1
+    text: Jika ketiga sisi diketahui, hitung setengah keliling **s = ½(a + b + c)**.
+  - type: text
+    slide: 1
+    text: Luasnya **L = √(s(s − a)(s − b)(s − c))**.
+  - type: math
+    slide: 1
+    name: setengah keliling
+    expression: s = ½(a + b + c)
+    highlight: true
+  - type: math
+    slide: 1
+    name: Heron
+    expression: L = √(s(s − a)(s − b)(s − c))
+  - type: tip
+    slide: 1
+    text: Rumus ½ · alas · tinggi tetap benar; sin C hanya cara menghitung tingginya.
+checks:
+  - question: MAT.TRI.Q.LUAS_SEGITIGA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.LUAS_SEGITIGA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

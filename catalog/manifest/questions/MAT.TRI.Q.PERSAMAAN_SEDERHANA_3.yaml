@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERSAMAAN_SEDERHANA_3
+familyCode: MAT.TRI.F.PERSAMAAN_SEDERHANA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.PERSAMAAN_SEDERHANA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Himpunan penyelesaian tan x = 1 untuk 0° ≤ x ≤ 360° adalah …
+  options:
+    - id: a
+      label: "{135°, 315°}"
+    - id: b
+      label: "{45°, 225°}"
+    - id: c
+      label: "{45°, 135°}"
+    - id: d
+      label: "{45°, 315°}"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "{45°, 225°}"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.PERSAMAAN_SEDERHANA
+  feedback:
+    correct: "tan x = tan 45°, dan periodenya 180°: x = 45° dan x = 45° + 180° = 225°."
+    incorrect: "Jawabannya {45°, 225°}. tan x = tan 45°, dan periodenya 180°: x = 45° dan x = 45° + 180° = 225°."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

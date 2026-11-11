@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERSAMAAN_SEDERHANA_1
+familyCode: MAT.TRI.F.PERSAMAAN_SEDERHANA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.PERSAMAAN_SEDERHANA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Himpunan penyelesaian sin x = ½ untuk 0° ≤ x ≤ 360° adalah …
+  options:
+    - id: a
+      label: "{30°, 330°}"
+    - id: b
+      label: "{60°, 120°}"
+    - id: c
+      label: "{30°, 210°}"
+    - id: d
+      label: "{30°, 150°}"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "{30°, 150°}"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.PERSAMAAN_SEDERHANA
+  feedback:
+    correct: "Sudut acuannya 30°, dan sin positif di kuadran I dan II: x = 30° dan x = 180° − 30° = 150°."
+    incorrect: "Jawabannya {30°, 150°}. Sudut acuannya 30°, dan sin positif di kuadran I dan II: x = 30° dan x = 180° − 30° = 150°."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

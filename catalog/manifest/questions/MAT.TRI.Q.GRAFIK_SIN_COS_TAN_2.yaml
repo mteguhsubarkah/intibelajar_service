@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.GRAFIK_SIN_COS_TAN_2
+familyCode: MAT.TRI.F.GRAFIK_SIN_COS_TAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.GRAFIK_SIN_COS_TAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Untuk 0° ≤ x ≤ 360°, grafik y = cos x memotong sumbu x di …
+  options:
+    - id: a
+      label: 0° dan 180°
+    - id: b
+      label: 180° dan 360°
+    - id: c
+      label: 45° dan 225°
+    - id: d
+      label: 90° dan 270°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 90° dan 270°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.GRAFIK_SIN_COS_TAN
+  feedback:
+    correct: Grafik memotong sumbu x saat cos x = 0, yaitu di x = 90° dan x = 270°.
+    incorrect: Jawabannya 90° dan 270°. Grafik memotong sumbu x saat cos x = 0, yaitu di x = 90° dan x = 270°.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.TRI.L.PERSAMAAN_DENGAN_IDENTITAS
+title: Persamaan dengan Identitas
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.TRI.PERSAMAAN_DENGAN_IDENTITAS
+blocks:
+  - type: heading
+    slide: 0
+    text: Jadikan satu jenis fungsi
+  - type: text
+    slide: 0
+    text: Jika persamaan memuat sin² dan cos sekaligus, ganti salah satunya memakai **sin²x + cos²x = 1** sehingga hanya ada satu jenis fungsi.
+  - type: text
+    slide: 0
+    text: Hasilnya sering berbentuk kuadrat. Misalkan p = sin x atau p = cos x, lalu faktorkan.
+  - type: math
+    slide: 0
+    name: ganti sin²x
+    expression: 1 − cos²x
+    highlight: true
+  - type: math
+    slide: 0
+    name: ganti cos²x
+    expression: 1 − sin²x
+  - type: heading
+    slide: 1
+    text: Saring akarnya
+  - type: text
+    slide: 1
+    text: "Contoh: 2cos²x − cos x − 1 = 0 difaktorkan menjadi (2cos x + 1)(cos x − 1) = 0, jadi cos x = −½ atau cos x = 1."
+  - type: text
+    slide: 1
+    text: Nilai sin dan cos hanya di antara −1 dan 1. Akar seperti cos x = 2 dibuang karena tidak mungkin.
+  - type: math
+    slide: 1
+    name: syarat
+    expression: −1 ≤ sin x, cos x ≤ 1
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Setelah mendapat nilai sin atau cos, selesaikan seperti persamaan trigonometri sederhana.
+checks:
+  - question: MAT.TRI.Q.PERSAMAAN_DENGAN_IDENTITAS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.PERSAMAAN_DENGAN_IDENTITAS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

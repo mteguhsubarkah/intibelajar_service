@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.IDENTITAS_DASAR_3
+familyCode: MAT.TRI.F.IDENTITAS_DASAR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.IDENTITAS_DASAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai dari sec²x − tan²x adalah …
+  options:
+    - id: a
+      label: sec x
+    - id: b
+      label: −1
+    - id: c
+      label: "1"
+    - id: d
+      label: "0"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.IDENTITAS_DASAR
+  feedback:
+    correct: Dari 1 + tan²x = sec²x, selisih sec²x dan tan²x selalu 1.
+    incorrect: Jawabannya 1. Dari 1 + tan²x = sec²x, selisih sec²x dan tan²x selalu 1.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

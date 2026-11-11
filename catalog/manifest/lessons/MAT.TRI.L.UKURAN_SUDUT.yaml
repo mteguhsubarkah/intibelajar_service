@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.L.UKURAN_SUDUT
+title: Ukuran Sudut
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.TRI.UKURAN_SUDUT
+blocks:
+  - type: heading
+    slide: 0
+    text: Derajat dan jenis sudut
+  - type: text
+    slide: 0
+    text: Satu putaran penuh = **360°**. Sudut **lancip** kurang dari 90°, **siku-siku** = 90°, **tumpul** di antara 90° dan 180°, **lurus** = 180°, dan **refleks** di antara 180° dan 360°.
+  - type: math
+    slide: 0
+    name: 1 putaran
+    expression: 360°
+    highlight: true
+  - type: math
+    slide: 0
+    name: siku-siku
+    expression: 90°
+  - type: heading
+    slide: 1
+    text: Sudut berarah dan posisi baku
+  - type: text
+    slide: 1
+    text: Dalam posisi baku, sudut diukur dari **sumbu x positif**. Putaran **berlawanan** arah jarum jam bernilai positif; searah jarum jam bernilai negatif.
+  - type: text
+    slide: 1
+    text: "Sudut yang berselisih kelipatan 360° punya sisi akhir yang sama (koterminal): 30°, 390°, dan −330° menunjuk ke arah yang sama."
+  - type: math
+    slide: 1
+    name: koterminal
+    expression: θ + k · 360°
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Untuk sudut lebih dari 360°, kurangi 360° berulang kali sampai berada di antara 0° dan 360°.
+checks:
+  - question: MAT.TRI.Q.UKURAN_SUDUT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.UKURAN_SUDUT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

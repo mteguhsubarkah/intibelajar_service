@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.SOAL_KONTEKSTUAL_1
+familyCode: MAT.TRI.F.SOAL_KONTEKSTUAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.SOAL_KONTEKSTUAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Seorang siswa berdiri 12 m dari tiang bendera dan melihat puncaknya dengan sudut elevasi 45°. Tinggi matanya dari tanah 1,5 m. Tinggi tiang bendera adalah …
+  options:
+    - id: a
+      label: 13,5 m
+    - id: b
+      label: 12 m
+    - id: c
+      label: 10,5 m
+    - id: d
+      label: 12√2 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 13,5 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.SOAL_KONTEKSTUAL
+  feedback:
+    correct: "Tinggi di atas mata = 12 · tan 45° = 12 m. Tambahkan tinggi mata: 12 + 1,5 = 13,5 m."
+    incorrect: "Jawabannya 13,5 m. Tinggi di atas mata = 12 · tan 45° = 12 m. Tambahkan tinggi mata: 12 + 1,5 = 13,5 m."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran
