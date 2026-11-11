@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_1
+familyCode: MAT.C26.FPLUS.DISTRIBUSI.F.VARIABEL_ACAK_BINOMIAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.VARIABEL_ACAK_BINOMIAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah dadu dilempar 3 kali. Peluang muncul mata 6 tepat satu kali adalah …
+  options:
+    - id: a
+      label: 1/216
+    - id: b
+      label: 25/72
+    - id: c
+      label: 1/6
+    - id: d
+      label: 25/216
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 25/72
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.DISTRIBUSI.VARIABEL_ACAK_BINOMIAL
+  feedback:
+    correct: P = C(3, 1) · (1/6) · (5/6)² = 3 · 25/216 = 75/216 = 25/72.
+    incorrect: Jawabannya 25/72. P = C(3, 1) · (1/6) · (5/6)² = 3 · 25/216 = 75/216 = 25/72.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

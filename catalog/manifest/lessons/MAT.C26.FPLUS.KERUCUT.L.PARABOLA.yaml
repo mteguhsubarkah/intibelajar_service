@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.L.PARABOLA
+title: Parabola
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.KERUCUT.PARABOLA
+blocks:
+  - type: heading
+    slide: 0
+    text: Fokus dan direktriks
+  - type: text
+    slide: 0
+    text: Parabola adalah himpunan titik yang jaraknya ke **fokus** sama dengan jaraknya ke **direktriks** (sebuah garis).
+  - type: text
+    slide: 0
+    text: "Puncak di (0, 0) dan terbuka ke kanan: **y² = 4px**, fokus (p, 0), direktriks x = −p. Terbuka ke atas: **x² = 4py**, fokus (0, p), direktriks y = −p."
+  - type: math
+    slide: 0
+    name: y² = 4px
+    expression: fokus (p, 0), direktriks x = −p
+    highlight: true
+  - type: math
+    slide: 0
+    name: x² = 4py
+    expression: fokus (0, p), direktriks y = −p
+  - type: heading
+    slide: 1
+    text: Membaca persamaan
+  - type: text
+    slide: 1
+    text: "Tanda p menentukan arah: p > 0 terbuka ke kanan atau ke atas, p < 0 ke kiri atau ke bawah."
+  - type: text
+    slide: 1
+    text: "Puncak di (a, b): (y − b)² = 4p(x − a) atau (x − a)² = 4p(y − b). Contoh: y² = 12x berarti 4p = 12, p = 3, dan fokusnya (3, 0)."
+  - type: math
+    slide: 1
+    name: puncak (a, b)
+    expression: (y − b)² = 4p(x − a)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Cari 4p dulu dari koefisiennya, baru tentukan p, fokus, dan direktriks.
+checks:
+  - question: MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.KERUCUT.S.PARABOLA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

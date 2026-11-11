@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_2
+familyCode: MAT.C26.FPLUS.DISTRIBUSI.F.PARAMETER_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebanyak 50 soal pilihan ganda dengan 5 opsi dijawab dengan menebak. Rataan banyak jawaban benar adalah …
+  options:
+    - id: a
+      label: 12,5
+    - id: b
+      label: "10"
+    - id: c
+      label: "25"
+    - id: d
+      label: "5"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "10"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+  feedback:
+    correct: Peluang benar setiap soal 1/5, jadi E(X) = np = 50 × 1/5 = 10.
+    incorrect: Jawabannya 10. Peluang benar setiap soal 1/5, jadi E(X) = np = 50 × 1/5 = 10.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

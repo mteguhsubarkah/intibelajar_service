@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI.L.PARAMETER
+title: Rataan dan simpangan baku distribusi
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Nilai harapan dan varians
+  - type: text
+    slide: 0
+    text: "Nilai harapan (rataan) variabel acak diskrit: **E(X) = Σ x · P(X = x)**."
+  - type: text
+    slide: 0
+    text: "Varians: **Var(X) = E(X²) − μ²**, dan simpangan baku σ = √Var(X)."
+  - type: math
+    slide: 0
+    name: nilai harapan
+    expression: E(X) = Σ x · P(x)
+    highlight: true
+  - type: math
+    slide: 0
+    name: varians
+    expression: E(X²) − μ²
+  - type: heading
+    slide: 1
+    text: Untuk distribusi binomial
+  - type: text
+    slide: 1
+    text: "Jika X berdistribusi binomial dengan n percobaan dan peluang sukses p: **E(X) = np**, **Var(X) = np(1 − p)**, dan σ = √(np(1 − p))."
+  - type: text
+    slide: 1
+    text: "Contoh: koin dilempar 100 kali, banyak sisi gambar memiliki rataan 50 dan simpangan baku √25 = 5."
+  - type: math
+    slide: 1
+    name: binomial
+    expression: μ = np, σ² = np(1 − p)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Nilai harapan adalah rata-rata jangka panjang dan tidak harus berupa hasil yang mungkin muncul, misalnya 3,5 pada dadu.
+checks:
+  - question: MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.DISTRIBUSI.S.PARAMETER
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.Q.ELIPS_2
+familyCode: MAT.C26.FPLUS.KERUCUT.F.ELIPS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KERUCUT.ELIPS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Panjang sumbu mayor elips x²/16 + y²/36 = 1 adalah …
+  options:
+    - id: a
+      label: "6"
+    - id: b
+      label: "36"
+    - id: c
+      label: "12"
+    - id: d
+      label: "8"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "12"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KERUCUT.ELIPS
+  feedback:
+    correct: Penyebut terbesar 36 ada di bawah y², jadi sumbu mayor tegak dengan a = 6 dan panjangnya 2a = 12.
+    incorrect: Jawabannya 12. Penyebut terbesar 36 ada di bawah y², jadi sumbu mayor tegak dengan a = 6 dan panjangnya 2a = 12.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

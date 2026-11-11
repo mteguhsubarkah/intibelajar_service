@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_3
+familyCode: MAT.C26.FPLUS.KERUCUT.F.HIPERBOLA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hiperbola y²/25 − x²/144 = 1 terbuka ke arah …
+  options:
+    - id: a
+      label: kanan saja
+    - id: b
+      label: atas saja
+    - id: c
+      label: atas dan bawah
+    - id: d
+      label: kiri dan kanan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - atas dan bawah
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+  feedback:
+    correct: Suku y² bertanda positif, sehingga cabang-cabangnya terbuka ke atas dan ke bawah.
+    incorrect: Jawabannya atas dan bawah. Suku y² bertanda positif, sehingga cabang-cabangnya terbuka ke atas dan ke bawah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

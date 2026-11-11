@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_2
+familyCode: MAT.C26.FPLUS.KERUCUT.F.PARABOLA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KERUCUT.PARABOLA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan direktriks parabola x² = −16y adalah …
+  options:
+    - id: a
+      label: y = −4
+    - id: b
+      label: x = 4
+    - id: c
+      label: y = 16
+    - id: d
+      label: y = 4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - y = 4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KERUCUT.PARABOLA
+  feedback:
+    correct: 4p = −16, jadi p = −4. Parabola terbuka ke bawah dengan fokus (0, −4), dan direktriksnya y = −p = 4.
+    incorrect: Jawabannya y = 4. 4p = −16, jadi p = −4. Parabola terbuka ke bawah dengan fokus (0, −4), dan direktriksnya y = −p = 4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_1
+familyCode: MAT.C26.FPLUS.KERUCUT.F.HIPERBOLA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fokus hiperbola x²/16 − y²/9 = 1 adalah …
+  options:
+    - id: a
+      label: (±5, 0)
+    - id: b
+      label: (±√7, 0)
+    - id: c
+      label: (±4, 0)
+    - id: d
+      label: (0, ±5)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (±5, 0)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+  feedback:
+    correct: c² = a² + b² = 16 + 9 = 25, jadi c = 5. Suku x² positif, sehingga fokusnya (±5, 0).
+    incorrect: Jawabannya (±5, 0). c² = a² + b² = 16 + 9 = 25, jadi c = 5. Suku x² positif, sehingga fokusnya (±5, 0).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

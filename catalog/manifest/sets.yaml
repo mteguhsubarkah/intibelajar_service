@@ -1976,6 +1976,48 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: MAT.C26.FPLUS.DISTRIBUSI.S.VARIABEL_ACAK_BINOMIAL
+    title: Latihan Variabel acak binomial
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_1
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_2
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.VARIABEL_ACAK_BINOMIAL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.FPLUS.DISTRIBUSI.S.PARAMETER
+    title: Latihan Rataan dan simpangan baku distribusi
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_1
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_2
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.FPLUS.DISTRIBUSI.S.DISTRIBUSI_NORMAL
+    title: Latihan Distribusi normal
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_1
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_2
+      - MAT.C26.FPLUS.DISTRIBUSI.Q.DISTRIBUSI_NORMAL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: FIS.C26.D.UKUR.S.BESARAN_DAN_SATUAN
     title: Latihan Besaran dan satuan
     origin: CONCEPT_LESSON
@@ -2823,6 +2865,48 @@ sets:
       - MAT.C26.F.REGRESI.Q.KAUSAL_1
       - MAT.C26.F.REGRESI.Q.KAUSAL_2
       - MAT.C26.F.REGRESI.Q.KAUSAL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.FPLUS.KERUCUT.S.PARABOLA
+    title: Latihan Parabola
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_1
+      - MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_2
+      - MAT.C26.FPLUS.KERUCUT.Q.PARABOLA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.FPLUS.KERUCUT.S.ELIPS
+    title: Latihan Elips
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.FPLUS.KERUCUT.Q.ELIPS_1
+      - MAT.C26.FPLUS.KERUCUT.Q.ELIPS_2
+      - MAT.C26.FPLUS.KERUCUT.Q.ELIPS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.FPLUS.KERUCUT.S.HIPERBOLA
+    title: Latihan Hiperbola
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_1
+      - MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_2
+      - MAT.C26.FPLUS.KERUCUT.Q.HIPERBOLA_3
     review:
       status: PROPOSED
       decision: D7

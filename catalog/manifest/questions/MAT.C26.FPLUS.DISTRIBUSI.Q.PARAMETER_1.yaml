@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI.Q.PARAMETER_1
+familyCode: MAT.C26.FPLUS.DISTRIBUSI.F.PARAMETER_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Variabel acak X memiliki P(X = 0) = 0,2, P(X = 1) = 0,5, dan P(X = 2) = 0,3. Nilai E(X) adalah …
+  options:
+    - id: a
+      label: 0,5
+    - id: b
+      label: 1,3
+    - id: c
+      label: 1,1
+    - id: d
+      label: "1"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 1,1
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+  feedback:
+    correct: E(X) = 0 · 0,2 + 1 · 0,5 + 2 · 0,3 = 1,1.
+    incorrect: Jawabannya 1,1. E(X) = 0 · 0,2 + 1 · 0,5 + 2 · 0,3 = 1,1.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran
