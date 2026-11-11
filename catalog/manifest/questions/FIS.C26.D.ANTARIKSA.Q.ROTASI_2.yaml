@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.Q.ROTASI_2
+familyCode: FIS.C26.D.ANTARIKSA.F.ROTASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.ANTARIKSA.ROTASI_DAN_REVOLUSI_BUMI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pergantian musim di belahan bumi utara disebabkan oleh …
+  options:
+    - id: a
+      label: rotasi Bumi
+    - id: b
+      label: revolusi Bumi dengan poros yang miring
+    - id: c
+      label: jarak Bumi ke Bulan
+    - id: d
+      label: gerhana
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - revolusi Bumi dengan poros yang miring
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.ANTARIKSA.ROTASI_DAN_REVOLUSI_BUMI
+  feedback:
+    correct: Karena poros miring, belahan bumi utara dan selatan bergantian lebih condong ke Matahari selama revolusi.
+    incorrect: Jawabannya revolusi Bumi dengan poros yang miring. Karena poros miring, belahan bumi utara dan selatan bergantian lebih condong ke Matahari selama revolusi.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

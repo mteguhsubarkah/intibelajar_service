@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.L.KELAJUAN
+title: Jarak, perpindahan & kelajuan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Jarak dan perpindahan
+  - type: text
+    slide: 0
+    text: "**Jarak** adalah panjang lintasan yang ditempuh (skalar). **Perpindahan** adalah perubahan posisi dari awal ke akhir, beserta arahnya (vektor)."
+  - type: text
+    slide: 0
+    text: "Lari satu putaran lapangan 400 m: jaraknya 400 m, tetapi perpindahannya 0 karena kembali ke titik awal."
+  - type: math
+    slide: 0
+    name: jarak
+    expression: panjang lintasan
+    highlight: true
+  - type: math
+    slide: 0
+    name: perpindahan
+    expression: posisi akhir − posisi awal
+  - type: heading
+    slide: 1
+    text: Kelajuan dan kecepatan
+  - type: text
+    slide: 1
+    text: "Kelajuan rata-rata = jarak total : waktu total. Kecepatan rata-rata = perpindahan : waktu."
+  - type: text
+    slide: 1
+    text: "Gerak lurus beraturan (GLB): kelajuan tetap. Gerak lurus berubah beraturan (GLBB): kelajuan berubah secara teratur."
+  - type: math
+    slide: 1
+    name: kelajuan rata-rata
+    expression: "jarak total : waktu total"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kelajuan rata-rata bukan rata-rata dari beberapa kelajuan; hitung dari jarak total dan waktu total.
+checks:
+  - question: FIS.C26.D.GERAK.Q.KELAJUAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.GERAK.S.KELAJUAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

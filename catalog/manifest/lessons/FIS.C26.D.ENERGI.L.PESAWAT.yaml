@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.ENERGI.L.PESAWAT
+title: Pesawat sederhana
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.ENERGI.PESAWAT_SEDERHANA
+blocks:
+  - type: heading
+    slide: 0
+    text: Tuas
+  - type: text
+    slide: 0
+    text: Pesawat sederhana memudahkan kerja dengan mengubah besar atau arah gaya.
+  - type: text
+    slide: 0
+    text: "Pada tuas berlaku beban × lengan beban = kuasa × lengan kuasa. Keuntungan mekanis = beban : kuasa."
+  - type: math
+    slide: 0
+    name: tuas
+    expression: w × Lb = F × Lk
+    highlight: true
+  - type: math
+    slide: 0
+    name: keuntungan mekanis
+    expression: KM = w / F
+  - type: heading
+    slide: 1
+    text: Katrol dan bidang miring
+  - type: text
+    slide: 1
+    text: Katrol tetap hanya mengubah arah gaya (KM = 1); katrol bebas KM = 2.
+  - type: text
+    slide: 1
+    text: "Bidang miring: KM = panjang lintasan : tinggi. Contoh: jalan berkelok di pegunungan, sekrup, dan obeng."
+  - type: math
+    slide: 1
+    name: bidang miring
+    expression: KM = s / h
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Pesawat sederhana tidak mengurangi usaha: gayanya lebih kecil, tetapi jaraknya lebih panjang."
+checks:
+  - question: FIS.C26.D.ENERGI.Q.PESAWAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ENERGI.S.PESAWAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

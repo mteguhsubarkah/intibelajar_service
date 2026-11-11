@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.ENERGI.Q.KALOR_1
+familyCode: FIS.C26.D.ENERGI.F.KALOR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.ENERGI.KALOR_JENIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kalor yang diperlukan untuk memanaskan 2 kg air dari 25 °C menjadi 75 °C (c = 4.200 J/kg°C) adalah …
+  options:
+    - id: a
+      label: 420.000 J
+    - id: b
+      label: 210.000 J
+    - id: c
+      label: 630.000 J
+    - id: d
+      label: 8.400 J
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 420.000 J
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.ENERGI.KALOR_JENIS
+  feedback:
+    correct: Q = 2 × 4.200 × (75 − 25) = 420.000 J.
+    incorrect: Jawabannya 420.000 J. Q = 2 × 4.200 × (75 − 25) = 420.000 J.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_2
+familyCode: FIS.C26.D.ANTARIKSA.F.SISTEM_TATA_SURYA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sabuk asteroid terletak di antara orbit planet …
+  options:
+    - id: a
+      label: Bumi dan Mars
+    - id: b
+      label: Mars dan Yupiter
+    - id: c
+      label: Yupiter dan Saturnus
+    - id: d
+      label: Venus dan Bumi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Mars dan Yupiter
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA
+  feedback:
+    correct: Sabuk asteroid utama berada di antara Mars dan Yupiter.
+    incorrect: Jawabannya Mars dan Yupiter. Sabuk asteroid utama berada di antara Mars dan Yupiter.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

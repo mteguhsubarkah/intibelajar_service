@@ -4,7 +4,7 @@ subject: FIS
 title: Usaha, energi, dan kalor
 subtitle: Usaha, perubahan energi, suhu, perpindahan kalor, dan kalor jenis
 phase: D
-availability: PLANNED
+availability: MAPPED
 bekal: []
 aliases: []
 units: []
@@ -17,7 +17,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-energi-c1
@@ -29,7 +29,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-energi-c2
@@ -42,7 +42,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-energi-pesawat
@@ -54,7 +54,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-energi-kalor

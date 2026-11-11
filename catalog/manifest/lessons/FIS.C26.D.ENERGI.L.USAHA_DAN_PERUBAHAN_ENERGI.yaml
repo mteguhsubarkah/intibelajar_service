@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.ENERGI.L.USAHA_DAN_PERUBAHAN_ENERGI
+title: Usaha & perubahan energi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.ENERGI.USAHA_DAN_PERUBAHAN_ENERGI
+blocks:
+  - type: heading
+    slide: 0
+    text: Usaha
+  - type: text
+    slide: 0
+    text: "Usaha dilakukan jika gaya memindahkan benda searah gaya: W = F × s, satuannya joule (J)."
+  - type: text
+    slide: 0
+    text: "Mendorong tembok yang tidak bergeser: usahanya 0 walaupun terasa lelah."
+  - type: math
+    slide: 0
+    name: usaha
+    expression: W = F × s
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Energi berubah bentuk
+  - type: text
+    slide: 1
+    text: Energi potensial gravitasi Ep = m × g × h; energi kinetik Ek = ½ × m × v².
+  - type: text
+    slide: 1
+    text: Energi tidak dapat diciptakan atau dimusnahkan, hanya berubah bentuk. Buah yang jatuh mengubah energi potensial menjadi energi kinetik.
+  - type: math
+    slide: 1
+    name: energi potensial
+    expression: Ep = m × g × h
+    highlight: true
+  - type: math
+    slide: 1
+    name: energi kinetik
+    expression: Ek = ½ × m × v²
+  - type: tip
+    slide: 1
+    text: "Daya = usaha : waktu, satuannya watt (W)."
+checks:
+  - question: FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ENERGI.S.USAHA_DAN_PERUBAHAN_ENERGI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

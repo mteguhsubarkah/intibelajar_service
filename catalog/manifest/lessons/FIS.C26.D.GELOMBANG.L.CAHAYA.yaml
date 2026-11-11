@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.L.CAHAYA
+title: Pemantulan & pembiasan cahaya
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Pemantulan cahaya
+  - type: text
+    slide: 0
+    text: "Hukum pemantulan: sudut datang = sudut pantul, keduanya diukur dari garis normal."
+  - type: text
+    slide: 0
+    text: Cermin datar membentuk bayangan maya, tegak, dan sama besar. Cermin cembung (spion) selalu membentuk bayangan maya, tegak, diperkecil.
+  - type: math
+    slide: 0
+    name: hukum pemantulan
+    expression: sudut datang = sudut pantul
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pembiasan cahaya
+  - type: text
+    slide: 1
+    text: "Cahaya dibelokkan saat melewati dua medium dengan kerapatan berbeda: pensil tampak patah di dalam air, kolam tampak lebih dangkal."
+  - type: text
+    slide: 1
+    text: Untuk lensa dan cermin lengkung berlaku 1/f = 1/s + 1/s′.
+  - type: math
+    slide: 1
+    name: lensa dan cermin lengkung
+    expression: 1/f = 1/s + 1/s′
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Dari medium renggang ke rapat (udara → air), sinar dibelokkan mendekati garis normal.
+checks:
+  - question: FIS.C26.D.GELOMBANG.Q.CAHAYA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.GELOMBANG.S.CAHAYA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

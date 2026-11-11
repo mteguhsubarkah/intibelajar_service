@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.Q.CAHAYA_3
+familyCode: FIS.C26.D.GELOMBANG.F.CAHAYA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 10 cm. Jarak bayangannya adalah …
+  options:
+    - id: a
+      label: 15 cm
+    - id: b
+      label: 20 cm
+    - id: c
+      label: 7,5 cm
+    - id: d
+      label: 40 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 15 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
+  feedback:
+    correct: 1/s′ = 1/10 − 1/30 = 2/30, jadi s′ = 15 cm.
+    incorrect: Jawabannya 15 cm. 1/s′ = 1/10 − 1/30 = 2/30, jadi s′ = 15 cm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

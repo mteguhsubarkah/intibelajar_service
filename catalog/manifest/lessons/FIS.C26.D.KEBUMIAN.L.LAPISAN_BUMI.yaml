@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.L.LAPISAN_BUMI
+title: Lapisan Bumi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.D.KEBUMIAN.LAPISAN_BUMI
+blocks:
+  - type: heading
+    slide: 0
+    text: Tiga lapisan utama
+  - type: text
+    slide: 0
+    text: "**Kerak**: paling luar, padat, dan tipis. **Mantel**: paling tebal, berupa batuan panas yang dapat mengalir sangat perlahan. **Inti**: inti luar cair dan inti dalam padat, kaya besi dan nikel."
+  - type: text
+    slide: 0
+    text: Makin ke dalam, suhu dan tekanan makin tinggi.
+  - type: math
+    slide: 0
+    name: lapisan paling tebal
+    expression: mantel
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Litosfer dan astenosfer
+  - type: text
+    slide: 1
+    text: Litosfer adalah kerak ditambah bagian atas mantel yang kaku; litosfer terpecah menjadi lempeng-lempeng.
+  - type: text
+    slide: 1
+    text: Di bawahnya terdapat astenosfer yang lebih lunak, tempat lempeng bergerak perlahan.
+  - type: math
+    slide: 1
+    name: litosfer
+    expression: kerak + mantel atas yang kaku
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Arus konveksi di dalam mantel menjadi penggerak lempeng.
+checks:
+  - question: FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.KEBUMIAN.S.LAPISAN_BUMI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

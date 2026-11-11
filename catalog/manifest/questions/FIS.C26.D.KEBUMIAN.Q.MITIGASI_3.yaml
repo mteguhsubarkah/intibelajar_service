@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.Q.MITIGASI_3
+familyCode: FIS.C26.D.KEBUMIAN.F.MITIGASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Contoh mitigasi bencana gempa yang dilakukan sebelum bencana terjadi adalah …
+  options:
+    - id: a
+      label: membangun rumah tahan gempa
+    - id: b
+      label: menolong korban
+    - id: c
+      label: mendirikan tenda pengungsian
+    - id: d
+      label: membagikan makanan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - membangun rumah tahan gempa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+  feedback:
+    correct: Mitigasi bertujuan mengurangi risiko sebelum bencana; pilihan lain dilakukan sesudah bencana.
+    incorrect: Jawabannya membangun rumah tahan gempa. Mitigasi bertujuan mengurangi risiko sebelum bencana; pilihan lain dilakukan sesudah bencana.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

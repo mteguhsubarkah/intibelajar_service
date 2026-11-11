@@ -1962,6 +1962,342 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: FIS.C26.D.UKUR.S.BESARAN_DAN_SATUAN
+    title: Latihan Besaran dan satuan
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_1
+      - FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_2
+      - FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.UKUR.S.VARIABEL_DAN_BUKTI
+    title: Latihan Variabel dan bukti
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_1
+      - FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_2
+      - FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GERAK.S.GERAK_DAN_GAYA_RESULTAN
+    title: Latihan Gerak dan gaya resultan
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1
+      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2
+      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GERAK.S.TEKANAN
+    title: Latihan Tekanan
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GERAK.Q.TEKANAN_1
+      - FIS.C26.D.GERAK.Q.TEKANAN_2
+      - FIS.C26.D.GERAK.Q.TEKANAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GERAK.S.KELAJUAN
+    title: Latihan Jarak, perpindahan & kelajuan
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GERAK.Q.KELAJUAN_1
+      - FIS.C26.D.GERAK.Q.KELAJUAN_2
+      - FIS.C26.D.GERAK.Q.KELAJUAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GERAK.S.RESULTAN
+    title: Latihan Resultan gaya dan inersia
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GERAK.Q.RESULTAN_1
+      - FIS.C26.D.GERAK.Q.RESULTAN_2
+      - FIS.C26.D.GERAK.Q.RESULTAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ENERGI.S.USAHA_DAN_PERUBAHAN_ENERGI
+    title: Latihan Usaha & perubahan energi
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_1
+      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_2
+      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ENERGI.S.SUHU_DAN_PERPINDAHAN_KALOR
+    title: Latihan Suhu & perpindahan kalor
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_1
+      - FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_2
+      - FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ENERGI.S.PESAWAT
+    title: Latihan Pesawat sederhana
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ENERGI.Q.PESAWAT_1
+      - FIS.C26.D.ENERGI.Q.PESAWAT_2
+      - FIS.C26.D.ENERGI.Q.PESAWAT_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ENERGI.S.KALOR
+    title: Latihan Kalor jenis
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ENERGI.Q.KALOR_1
+      - FIS.C26.D.ENERGI.Q.KALOR_2
+      - FIS.C26.D.ENERGI.Q.KALOR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GELOMBANG.S.GETARAN_DAN_GELOMBANG
+    title: Latihan Getaran dan gelombang
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_1
+      - FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_2
+      - FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GELOMBANG.S.BUNYI_DAN_OPTIK
+    title: Latihan Bunyi dan optik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_1
+      - FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_2
+      - FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GELOMBANG.S.CAHAYA
+    title: Latihan Pemantulan & pembiasan cahaya
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GELOMBANG.Q.CAHAYA_1
+      - FIS.C26.D.GELOMBANG.Q.CAHAYA_2
+      - FIS.C26.D.GELOMBANG.Q.CAHAYA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.LISTRIK.S.ARUS_DAN_RANGKAIAN
+    title: Latihan Arus dan rangkaian
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_1
+      - FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_2
+      - FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.LISTRIK.S.MAGNET_DAN_PEMBANGKIT_LISTRIK
+    title: Latihan Magnet & pembangkit listrik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_1
+      - FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_2
+      - FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.LISTRIK.S.SERI_PARALEL
+    title: Latihan Rangkaian seri dan paralel
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1
+      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_2
+      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ANTARIKSA.S.SISTEM_TATA_SURYA
+    title: Latihan Sistem tata surya
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_1
+      - FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_2
+      - FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ANTARIKSA.S.ROTASI
+    title: Latihan Rotasi dan revolusi Bumi
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ANTARIKSA.Q.ROTASI_1
+      - FIS.C26.D.ANTARIKSA.Q.ROTASI_2
+      - FIS.C26.D.ANTARIKSA.Q.ROTASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ANTARIKSA.S.BULAN
+    title: Latihan Gerak Bulan dan fasenya
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ANTARIKSA.Q.BULAN_1
+      - FIS.C26.D.ANTARIKSA.Q.BULAN_2
+      - FIS.C26.D.ANTARIKSA.Q.BULAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ANTARIKSA.S.GERHANA
+    title: Latihan Gerhana Matahari dan Bulan
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ANTARIKSA.Q.GERHANA_1
+      - FIS.C26.D.ANTARIKSA.Q.GERHANA_2
+      - FIS.C26.D.ANTARIKSA.Q.GERHANA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.KEBUMIAN.S.LAPISAN_BUMI
+    title: Latihan Lapisan Bumi
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_1
+      - FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_2
+      - FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.KEBUMIAN.S.LEMPENG
+    title: Latihan Gerak lempeng tektonik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.KEBUMIAN.Q.LEMPENG_1
+      - FIS.C26.D.KEBUMIAN.Q.LEMPENG_2
+      - FIS.C26.D.KEBUMIAN.Q.LEMPENG_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.KEBUMIAN.S.GEMPA
+    title: Latihan Gempa bumi dan gunung api
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.KEBUMIAN.Q.GEMPA_1
+      - FIS.C26.D.KEBUMIAN.Q.GEMPA_2
+      - FIS.C26.D.KEBUMIAN.Q.GEMPA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.KEBUMIAN.S.MITIGASI
+    title: Latihan Mitigasi bencana geologi
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.KEBUMIAN.Q.MITIGASI_1
+      - FIS.C26.D.KEBUMIAN.Q.MITIGASI_2
+      - FIS.C26.D.KEBUMIAN.Q.MITIGASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: MAT.EKS.S.DEFINISI_EKSPONEN
     title: Latihan Definisi Eksponen
     origin: CONCEPT_LESSON

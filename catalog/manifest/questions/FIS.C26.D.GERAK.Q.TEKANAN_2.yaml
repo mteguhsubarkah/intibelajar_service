@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.Q.TEKANAN_2
+familyCode: FIS.C26.D.GERAK.F.TEKANAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GERAK.TEKANAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
+  options:
+    - id: a
+      label: 2.000 Pa
+    - id: b
+      label: 20.000 Pa
+    - id: c
+      label: 200 Pa
+    - id: d
+      label: 5.000 Pa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 20.000 Pa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GERAK.TEKANAN
+  feedback:
+    correct: P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
+    incorrect: Jawabannya 20.000 Pa. P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

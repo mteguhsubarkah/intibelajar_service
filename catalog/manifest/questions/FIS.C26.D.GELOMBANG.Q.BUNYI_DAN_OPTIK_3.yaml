@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_3
+familyCode: FIS.C26.D.GELOMBANG.F.BUNYI_DAN_OPTIK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …
+  options:
+    - id: a
+      label: cekung
+    - id: b
+      label: cembung
+    - id: c
+      label: datar
+    - id: d
+      label: silinder saja
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - cekung
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+  feedback:
+    correct: Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
+    incorrect: Jawabannya cekung. Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

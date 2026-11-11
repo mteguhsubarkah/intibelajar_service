@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_3
+familyCode: FIS.C26.D.LISTRIK.F.MAGNET_DAN_PEMBANGKIT_LISTRIK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah transformator memiliki 200 lilitan primer dan 1.000 lilitan sekunder. Jika tegangan primernya 220 V, tegangan sekundernya adalah …
+  options:
+    - id: a
+      label: 44 V
+    - id: b
+      label: 1.100 V
+    - id: c
+      label: 220 V
+    - id: d
+      label: 4.400 V
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 1.100 V
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
+  feedback:
+    correct: "Vs = Vp × Ns / Np = 220 × 1.000 : 200 = 1.100 V."
+    incorrect: "Jawabannya 1.100 V. Vs = Vp × Ns / Np = 220 × 1.000 : 200 = 1.100 V."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

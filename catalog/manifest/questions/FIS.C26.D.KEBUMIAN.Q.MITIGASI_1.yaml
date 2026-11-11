@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.Q.MITIGASI_1
+familyCode: FIS.C26.D.KEBUMIAN.F.MITIGASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Saat terjadi gempa di dalam kelas, tindakan yang paling tepat adalah …
+  options:
+    - id: a
+      label: berlari keluar sambil berdesakan di tangga
+    - id: b
+      label: berlindung di bawah meja sambil melindungi kepala
+    - id: c
+      label: berdiri di dekat jendela kaca
+    - id: d
+      label: menyalakan kompor
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - berlindung di bawah meja sambil melindungi kepala
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+  feedback:
+    correct: Berlindung di bawah meja melindungi kepala dari benda yang jatuh; berdesakan dan dekat kaca berbahaya.
+    incorrect: Jawabannya berlindung di bawah meja sambil melindungi kepala. Berlindung di bawah meja melindungi kepala dari benda yang jatuh; berdesakan dan dekat kaca berbahaya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

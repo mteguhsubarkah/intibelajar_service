@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.L.GETARAN_DAN_GELOMBANG
+title: Getaran dan gelombang
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG
+blocks:
+  - type: heading
+    slide: 0
+    text: Getaran
+  - type: text
+    slide: 0
+    text: Getaran adalah gerak bolak-balik melalui titik setimbang.
+  - type: text
+    slide: 0
+    text: Periode (T) = waktu satu getaran; frekuensi (f) = banyak getaran per sekon, satuannya hertz (Hz). f = 1/T.
+  - type: math
+    slide: 0
+    name: frekuensi
+    expression: f = n / t = 1 / T
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Gelombang
+  - type: text
+    slide: 1
+    text: Gelombang merambatkan energi tanpa memindahkan mediumnya.
+  - type: text
+    slide: 1
+    text: "**Transversal**: arah getar tegak lurus arah rambat (gelombang tali). **Longitudinal**: arah getar searah arah rambat (bunyi, slinki yang didorong)."
+  - type: math
+    slide: 1
+    name: cepat rambat
+    expression: v = λ × f
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "λ (lambda) adalah panjang satu gelombang: satu bukit + satu lembah, atau satu rapatan + satu renggangan."
+checks:
+  - question: FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.GELOMBANG.S.GETARAN_DAN_GELOMBANG
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

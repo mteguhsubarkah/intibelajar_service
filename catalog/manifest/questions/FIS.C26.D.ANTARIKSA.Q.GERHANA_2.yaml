@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.Q.GERHANA_2
+familyCode: FIS.C26.D.ANTARIKSA.F.GERHANA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gerhana Bulan hanya dapat terjadi pada fase …
+  options:
+    - id: a
+      label: bulan baru
+    - id: b
+      label: purnama
+    - id: c
+      label: kuartir pertama
+    - id: d
+      label: sabit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - purnama
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN
+  feedback:
+    correct: Bumi berada di antara Matahari dan Bulan hanya ketika Bulan purnama.
+    incorrect: Jawabannya purnama. Bumi berada di antara Matahari dan Bulan hanya ketika Bulan purnama.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

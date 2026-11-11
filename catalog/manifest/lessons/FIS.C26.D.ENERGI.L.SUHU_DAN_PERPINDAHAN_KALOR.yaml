@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: FIS.C26.D.ENERGI.L.SUHU_DAN_PERPINDAHAN_KALOR
+title: Suhu & perpindahan kalor
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.ENERGI.SUHU_DAN_PERPINDAHAN_KALOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Suhu dan termometer
+  - type: text
+    slide: 0
+    text: "Suhu menyatakan derajat panas suatu benda. Skala Kelvin: K = °C + 273."
+  - type: text
+    slide: 0
+    text: Pada tekanan 1 atm, air membeku pada 0 °C (273 K) dan mendidih pada 100 °C (373 K).
+  - type: math
+    slide: 0
+    name: Celsius ke Kelvin
+    expression: K = °C + 273
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Tiga cara perpindahan kalor
+  - type: text
+    slide: 1
+    text: "**Konduksi**: kalor merambat melalui zat tanpa zatnya berpindah (sendok yang ujungnya panas)."
+  - type: text
+    slide: 1
+    text: "**Konveksi**: kalor berpindah bersama aliran zat (air mendidih, angin laut). **Radiasi**: tanpa medium (panas Matahari)."
+  - type: math
+    slide: 1
+    name: konduksi
+    expression: merambat
+    highlight: true
+  - type: math
+    slide: 1
+    name: konveksi
+    expression: mengalir
+  - type: math
+    slide: 1
+    name: radiasi
+    expression: memancar
+  - type: tip
+    slide: 1
+    text: Konduksi menempel, konveksi mengalir, radiasi memancar.
+checks:
+  - question: FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ENERGI.S.SUHU_DAN_PERPINDAHAN_KALOR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

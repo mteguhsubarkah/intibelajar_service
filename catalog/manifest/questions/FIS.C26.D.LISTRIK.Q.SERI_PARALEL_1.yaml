@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1
+familyCode: FIS.C26.D.LISTRIK.F.SERI_PARALEL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua hambatan 6 Ω dan 3 Ω disusun seri. Hambatan penggantinya adalah …
+  options:
+    - id: a
+      label: 9 Ω
+    - id: b
+      label: 2 Ω
+    - id: c
+      label: 18 Ω
+    - id: d
+      label: 3 Ω
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 9 Ω
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
+  feedback:
+    correct: Rs = 6 + 3 = 9 Ω.
+    incorrect: Jawabannya 9 Ω. Rs = 6 + 3 = 9 Ω.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

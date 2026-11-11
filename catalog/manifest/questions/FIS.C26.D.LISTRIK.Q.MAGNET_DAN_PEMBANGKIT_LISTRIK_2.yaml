@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_2
+familyCode: FIS.C26.D.LISTRIK.F.MAGNET_DAN_PEMBANGKIT_LISTRIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Alat yang mengubah energi gerak menjadi energi listrik adalah …
+  options:
+    - id: a
+      label: generator
+    - id: b
+      label: motor listrik
+    - id: c
+      label: setrika listrik
+    - id: d
+      label: baterai
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - generator
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
+  feedback:
+    correct: Generator memanfaatkan induksi elektromagnetik dari gerak.
+    incorrect: Jawabannya generator. Generator memanfaatkan induksi elektromagnetik dari gerak.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1261,6 +1261,257 @@ Materi: 3 · Soal: 9
   A. 10 · B. 40 · C. 50 · D. 25
   Kunci: **C** · Proporsi pada sampel 10/40 = 1/4, jadi perkiraannya 1/4 × 200 = 50 siswa.
 
+## Pengukuran dan kerja ilmiah (FIS.C26.D.UKUR)
+
+Materi: 2 · Soal: 6
+
+- [ ] **FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_1** — Kelompok besaran berikut yang semuanya besaran pokok adalah …
+  A. panjang, massa, waktu · B. panjang, luas, volume · C. massa, berat, gaya · D. suhu, kecepatan, waktu
+  Kunci: **A** · Luas, volume, berat, gaya, dan kecepatan adalah besaran turunan.
+- [ ] **FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_2** — Satuan SI untuk massa jenis adalah …
+  A. kg/m³ · B. g/cm · C. N/m² · D. kg·m
+  Kunci: **A** · Massa jenis = massa : volume, jadi satuannya kg/m³.
+- [ ] **FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_3** — Kecepatan 54 km/jam sama dengan …
+  A. 15 m/s · B. 5,4 m/s · C. 150 m/s · D. 30 m/s
+  Kunci: **A** · 54 : 3,6 = 15 m/s.
+- [ ] **FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_1** — Siswa menyelidiki pengaruh suhu air terhadap waktu larut gula. Variabel terikatnya adalah …
+  A. suhu air · B. waktu larut gula · C. jumlah gula · D. jenis gelas
+  Kunci: **B** · Yang diukur sebagai akibat adalah waktu larut gula. Suhu air variabel bebas; jumlah gula dan jenis gelas variabel kontrol.
+- [ ] **FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_2** — Siswa menyelidiki pengaruh suhu air terhadap waktu larut gula. Yang harus dijaga sama (variabel kontrol) adalah …
+  A. suhu air · B. waktu larut gula · C. jumlah gula dan volume air · D. hasil pengamatan
+  Kunci: **C** · Jumlah gula dan volume air dibuat sama supaya perbedaan waktu larut hanya disebabkan oleh suhu.
+- [ ] **FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_3** — Hasil tiga kali pengukuran panjang meja adalah 120,2 cm; 120,4 cm; dan 120,3 cm. Nilai yang paling tepat dilaporkan adalah …
+  A. 120,2 cm · B. 120,3 cm · C. 120,4 cm · D. 361 cm
+  Kunci: **B** · Rata-ratanya (120,2 + 120,4 + 120,3) : 3 = 120,3 cm.
+
+## Gerak, gaya, dan tekanan (FIS.C26.D.GERAK)
+
+Materi: 4 · Soal: 12
+
+- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1** — Gaya yang membuat bola yang menggelinding di lantai lama-kelamaan berhenti adalah …
+  A. gaya gesek · B. gaya magnet · C. gaya pegas · D. gaya listrik
+  Kunci: **A** · Gaya gesek antara bola dan lantai melawan arah gerak sehingga bola melambat.
+- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2** — Sebuah benda bermassa 5 kg berada di Bumi (g = 10 m/s²). Beratnya adalah …
+  A. 5 N · B. 50 N · C. 0,5 N · D. 500 N
+  Kunci: **B** · w = m × g = 5 × 10 = 50 N.
+- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_3** — Massa seorang astronaut 60 kg. Di Bulan, yang gravitasinya 1/6 gravitasi Bumi, massanya …
+  A. 10 kg · B. 60 kg · C. 360 kg · D. 0 kg
+  Kunci: **B** · Massa tidak berubah di mana pun; yang berubah adalah beratnya.
+- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_1** — Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
+  A. 100 Pa · B. 400 Pa · C. 200,5 Pa · D. 40 Pa
+  Kunci: **B** · P = F / A = 200 : 0,5 = 400 Pa.
+- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_2** — Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
+  A. 2.000 Pa · B. 20.000 Pa · C. 200 Pa · D. 5.000 Pa
+  Kunci: **B** · P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
+- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_3** — Dinding bendungan dibuat makin tebal di bagian bawah karena …
+  A. air di bagian bawah lebih hangat · B. tekanan air makin besar di tempat yang makin dalam · C. air di bagian bawah lebih ringan · D. agar ikan tidak dapat lewat
+  Kunci: **B** · Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
+- [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_1** — Budi berjalan 300 m ke timur, lalu 400 m ke utara. Besar perpindahannya adalah …
+  A. 700 m · B. 500 m · C. 100 m · D. 350 m
+  Kunci: **B** · Perpindahan adalah garis lurus dari awal ke akhir: √(300² + 400²) = 500 m. Jaraknya 700 m.
+- [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_2** — Sebuah sepeda menempuh 1.800 m dalam 6 menit. Kelajuan rata-ratanya adalah …
+  A. 5 m/s · B. 300 m/s · C. 30 m/s · D. 10 m/s
+  Kunci: **A** · 6 menit = 360 s; 1.800 : 360 = 5 m/s.
+- [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_3** — Mobil menempuh 60 km pada jam pertama dan 40 km pada jam kedua. Kelajuan rata-ratanya adalah …
+  A. 50 km/jam · B. 100 km/jam · C. 40 km/jam · D. 60 km/jam
+  Kunci: **A** · Jarak total 100 km dalam 2 jam, jadi 100 : 2 = 50 km/jam.
+- [ ] **FIS.C26.D.GERAK.Q.RESULTAN_1** — Dua anak mendorong lemari ke kanan dengan gaya 40 N dan 35 N, sedangkan gaya gesek 25 N bekerja ke kiri. Resultan gayanya adalah …
+  A. 100 N ke kanan · B. 50 N ke kanan · C. 75 N ke kanan · D. 50 N ke kiri
+  Kunci: **B** · 40 + 35 − 25 = 50 N ke kanan.
+- [ ] **FIS.C26.D.GERAK.Q.RESULTAN_2** — Penumpang terdorong ke depan saat bus mengerem mendadak. Peristiwa ini merupakan contoh …
+  A. hukum I Newton (inersia) · B. hukum III Newton · C. gaya gravitasi · D. tekanan udara
+  Kunci: **A** · Tubuh penumpang cenderung tetap bergerak ke depan walaupun bus melambat.
+- [ ] **FIS.C26.D.GERAK.Q.RESULTAN_3** — Resultan gaya 20 N bekerja pada benda bermassa 4 kg. Percepatan benda adalah …
+  A. 80 m/s² · B. 5 m/s² · C. 0,2 m/s² · D. 24 m/s²
+  Kunci: **B** · a = ΣF / m = 20 : 4 = 5 m/s².
+
+## Usaha, energi, dan kalor (FIS.C26.D.ENERGI)
+
+Materi: 4 · Soal: 12
+
+- [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_1** — Gaya 50 N memindahkan kotak sejauh 4 m searah gaya. Usaha yang dilakukan adalah …
+  A. 200 J · B. 12,5 J · C. 54 J · D. 46 J
+  Kunci: **A** · W = F × s = 50 × 4 = 200 J.
+- [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_2** — Energi potensial buah kelapa bermassa 2 kg pada ketinggian 10 m (g = 10 m/s²) adalah …
+  A. 20 J · B. 200 J · C. 100 J · D. 2.000 J
+  Kunci: **B** · Ep = m × g × h = 2 × 10 × 10 = 200 J.
+- [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_3** — Perubahan energi pada senter yang menyala adalah …
+  A. kimia → listrik → cahaya dan panas · B. listrik → kimia → cahaya · C. cahaya → listrik → kimia · D. panas → kimia → listrik
+  Kunci: **A** · Baterai menyimpan energi kimia, diubah menjadi energi listrik, lalu lampu mengubahnya menjadi cahaya dan panas.
+- [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_1** — Suhu 27 °C dalam skala Kelvin adalah …
+  A. 246 K · B. 300 K · C. 273 K · D. 327 K
+  Kunci: **B** · K = 27 + 273 = 300 K.
+- [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_2** — Gagang panci dari logam terasa panas saat panci dipanaskan karena perpindahan kalor secara …
+  A. konduksi · B. konveksi · C. radiasi · D. evaporasi
+  Kunci: **A** · Kalor merambat melalui logam tanpa logamnya berpindah, yaitu konduksi.
+- [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_3** — Angin laut pada siang hari terjadi karena …
+  A. konduksi kalor oleh tanah · B. konveksi udara dari laut ke darat · C. radiasi dari Bulan · D. konduksi kalor oleh air
+  Kunci: **B** · Daratan lebih cepat panas, udara di atasnya naik, lalu udara laut yang lebih sejuk mengalir ke darat (konveksi).
+- [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_1** — Linggis dengan lengan beban 20 cm dan lengan kuasa 100 cm dipakai untuk mengangkat batu seberat 500 N. Gaya kuasa yang diperlukan adalah …
+  A. 100 N · B. 2.500 N · C. 25 N · D. 250 N
+  Kunci: **A** · 500 × 20 = F × 100, jadi F = 100 N.
+- [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_2** — Keuntungan mekanis sebuah katrol tetap tunggal adalah …
+  A. 1 · B. 2 · C. 0,5 · D. bergantung pada beban
+  Kunci: **A** · Katrol tetap hanya membelokkan arah gaya, jadi gaya kuasa sama dengan beban.
+- [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_3** — Bidang miring sepanjang 5 m dengan tinggi 1 m dipakai untuk menaikkan peti seberat 1.000 N. Jika gesekan diabaikan, gaya minimal yang diperlukan adalah …
+  A. 5.000 N · B. 200 N · C. 1.000 N · D. 500 N
+  Kunci: **B** · KM = 5 : 1 = 5, jadi F = 1.000 : 5 = 200 N.
+- [ ] **FIS.C26.D.ENERGI.Q.KALOR_1** — Kalor yang diperlukan untuk memanaskan 2 kg air dari 25 °C menjadi 75 °C (c = 4.200 J/kg°C) adalah …
+  A. 420.000 J · B. 210.000 J · C. 630.000 J · D. 8.400 J
+  Kunci: **A** · Q = 2 × 4.200 × (75 − 25) = 420.000 J.
+- [ ] **FIS.C26.D.ENERGI.Q.KALOR_2** — Pada siang hari, pantai terasa lebih sejuk daripada daratan di sekitarnya terutama karena …
+  A. kalor jenis air besar sehingga air lambat panas · B. air memantulkan semua cahaya Matahari · C. udara di laut lebih tipis · D. pasir tidak menyerap kalor
+  Kunci: **A** · Air membutuhkan banyak kalor untuk naik suhunya, jadi permukaan laut tetap relatif sejuk.
+- [ ] **FIS.C26.D.ENERGI.Q.KALOR_3** — Es yang sedang melebur pada 0 °C terus dipanaskan. Selama proses melebur, suhunya …
+  A. naik dengan cepat · B. tetap 0 °C sampai semua es mencair · C. turun · D. naik lalu turun
+  Kunci: **B** · Kalor dipakai untuk mengubah wujud, bukan menaikkan suhu, sampai semua es mencair.
+
+## Getaran, bunyi, dan cahaya (FIS.C26.D.GELOMBANG)
+
+Materi: 3 · Soal: 9
+
+- [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_1** — Sebuah bandul bergetar 30 kali dalam 15 sekon. Frekuensinya adalah …
+  A. 2 Hz · B. 0,5 Hz · C. 45 Hz · D. 15 Hz
+  Kunci: **A** · f = 30 : 15 = 2 Hz. Periodenya 0,5 s.
+- [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_2** — Gelombang dengan panjang gelombang 2 m dan frekuensi 5 Hz memiliki cepat rambat …
+  A. 10 m/s · B. 2,5 m/s · C. 0,4 m/s · D. 7 m/s
+  Kunci: **A** · v = λ × f = 2 × 5 = 10 m/s.
+- [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_3** — Contoh gelombang longitudinal adalah …
+  A. gelombang bunyi di udara · B. gelombang pada tali yang digoyangkan · C. gelombang cahaya · D. riak pada permukaan air
+  Kunci: **A** · Bunyi merambat sebagai rapatan dan renggangan yang searah dengan arah rambatnya.
+- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_1** — Astronaut di Bulan tidak dapat saling mendengar suara tanpa radio karena …
+  A. bunyi memerlukan medium untuk merambat · B. frekuensi suaranya terlalu tinggi · C. gravitasi Bulan kecil · D. suhunya terlalu dingin
+  Kunci: **A** · Bulan hampir tidak memiliki udara, sedangkan bunyi butuh medium.
+- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_2** — Sonar kapal menerima bunyi pantul 2 sekon setelah dipancarkan. Cepat rambat bunyi di air 1.500 m/s. Kedalaman laut adalah …
+  A. 3.000 m · B. 1.500 m · C. 750 m · D. 6.000 m
+  Kunci: **B** · d = v × t : 2 = 1.500 × 2 : 2 = 1.500 m.
+- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_3** — Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …
+  A. cekung · B. cembung · C. datar · D. silinder saja
+  Kunci: **A** · Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
+- [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_1** — Sinar datang membentuk sudut 35° terhadap garis normal sebuah cermin datar. Besar sudut pantulnya adalah …
+  A. 35° · B. 55° · C. 70° · D. 145°
+  Kunci: **A** · Sudut pantul sama dengan sudut datang, keduanya diukur dari garis normal.
+- [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_2** — Dasar kolam terlihat lebih dangkal daripada kedalaman sebenarnya karena peristiwa …
+  A. pemantulan · B. pembiasan · C. difraksi · D. interferensi
+  Kunci: **B** · Cahaya dari dasar kolam dibelokkan saat keluar dari air ke udara.
+- [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_3** — Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 10 cm. Jarak bayangannya adalah …
+  A. 15 cm · B. 20 cm · C. 7,5 cm · D. 40 cm
+  Kunci: **A** · 1/s′ = 1/10 − 1/30 = 2/30, jadi s′ = 15 cm.
+
+## Kelistrikan & energi ramah lingkungan (FIS.C26.D.LISTRIK)
+
+Materi: 3 · Soal: 9
+
+- [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_1** — Tegangan 12 V dipasang pada hambatan 4 Ω. Kuat arus yang mengalir adalah …
+  A. 3 A · B. 48 A · C. 0,33 A · D. 16 A
+  Kunci: **A** · I = V / R = 12 : 4 = 3 A.
+- [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_2** — Sebuah lampu 50 W menyala 10 jam setiap hari. Energi yang dipakai dalam 30 hari adalah …
+  A. 15 kWh · B. 1,5 kWh · C. 150 kWh · D. 500 kWh
+  Kunci: **A** · 50 × 10 × 30 = 15.000 Wh = 15 kWh.
+- [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_3** — Cara memasang voltmeter untuk mengukur tegangan sebuah lampu adalah …
+  A. paralel dengan lampu · B. seri dengan lampu · C. di sembarang tempat · D. hanya di dekat baterai
+  Kunci: **A** · Voltmeter mengukur beda potensial di antara dua titik, jadi dipasang paralel.
+- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_1** — Dua kutub utara magnet didekatkan. Keduanya akan …
+  A. tarik-menarik · B. tolak-menolak · C. diam saja · D. berubah kutub
+  Kunci: **B** · Kutub senama saling tolak-menolak.
+- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_2** — Alat yang mengubah energi gerak menjadi energi listrik adalah …
+  A. generator · B. motor listrik · C. setrika listrik · D. baterai
+  Kunci: **A** · Generator memanfaatkan induksi elektromagnetik dari gerak.
+- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_3** — Sebuah transformator memiliki 200 lilitan primer dan 1.000 lilitan sekunder. Jika tegangan primernya 220 V, tegangan sekundernya adalah …
+  A. 44 V · B. 1.100 V · C. 220 V · D. 4.400 V
+  Kunci: **B** · Vs = Vp × Ns / Np = 220 × 1.000 : 200 = 1.100 V.
+- [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1** — Dua hambatan 6 Ω dan 3 Ω disusun seri. Hambatan penggantinya adalah …
+  A. 9 Ω · B. 2 Ω · C. 18 Ω · D. 3 Ω
+  Kunci: **A** · Rs = 6 + 3 = 9 Ω.
+- [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_2** — Dua hambatan 6 Ω dan 3 Ω disusun paralel. Hambatan penggantinya adalah …
+  A. 9 Ω · B. 2 Ω · C. 4,5 Ω · D. 0,5 Ω
+  Kunci: **B** · 1/Rp = 1/6 + 1/3 = 3/6, jadi Rp = 2 Ω.
+- [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_3** — Lampu-lampu di rumah dipasang paralel karena …
+  A. agar kuat arus di semua lampu sama · B. agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus · C. agar hambatan totalnya besar · D. agar kabel lebih hemat
+  Kunci: **B** · Pada rangkaian paralel setiap cabang mendapat tegangan sumber penuh dan bekerja sendiri-sendiri.
+
+## Bumi dan tata surya (FIS.C26.D.ANTARIKSA)
+
+Materi: 4 · Soal: 12
+
+- [ ] **FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_1** — Planet terbesar di tata surya adalah …
+  A. Saturnus · B. Yupiter · C. Neptunus · D. Bumi
+  Kunci: **B** · Yupiter adalah planet raksasa gas yang terbesar.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_2** — Sabuk asteroid terletak di antara orbit planet …
+  A. Bumi dan Mars · B. Mars dan Yupiter · C. Yupiter dan Saturnus · D. Venus dan Bumi
+  Kunci: **B** · Sabuk asteroid utama berada di antara Mars dan Yupiter.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_3** — Planet yang paling lama mengelilingi Matahari adalah …
+  A. Merkurius · B. Bumi · C. Neptunus · D. Mars
+  Kunci: **C** · Neptunus paling jauh dari Matahari, jadi orbitnya paling panjang.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.ROTASI_1** — Matahari tampak terbit di timur karena …
+  A. Bumi berotasi dari barat ke timur · B. Bumi berevolusi · C. Matahari mengelilingi Bumi · D. poros Bumi miring
+  Kunci: **A** · Rotasi Bumi ke arah timur membuat Matahari tampak bergerak dari timur ke barat.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.ROTASI_2** — Pergantian musim di belahan bumi utara disebabkan oleh …
+  A. rotasi Bumi · B. revolusi Bumi dengan poros yang miring · C. jarak Bumi ke Bulan · D. gerhana
+  Kunci: **B** · Karena poros miring, belahan bumi utara dan selatan bergantian lebih condong ke Matahari selama revolusi.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.ROTASI_3** — Selisih waktu WIB dan WIT adalah 2 jam. Jika di Jakarta pukul 07.00 WIB, di Jayapura pukul …
+  A. 05.00 WIT · B. 09.00 WIT · C. 08.00 WIT · D. 07.00 WIT
+  Kunci: **B** · Wilayah timur mengalami siang lebih dahulu: 07.00 + 2 jam = 09.00 WIT.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.BULAN_1** — Bulan tampak bersinar karena …
+  A. memancarkan cahaya sendiri · B. memantulkan cahaya Matahari · C. memantulkan cahaya Bumi saja · D. berisi gas yang terbakar
+  Kunci: **B** · Bulan adalah benda gelap yang memantulkan cahaya Matahari.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.BULAN_2** — Fase ketika seluruh permukaan Bulan yang menghadap Bumi tampak terang disebut …
+  A. bulan baru · B. bulan sabit · C. purnama · D. kuartir pertama
+  Kunci: **C** · Saat purnama, sisi Bulan yang menghadap Bumi seluruhnya tersinari Matahari.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.BULAN_3** — Pasang laut paling tinggi terjadi saat …
+  A. kuartir pertama · B. purnama dan bulan baru · C. bulan sabit saja · D. siang hari saja
+  Kunci: **B** · Saat Matahari, Bumi, dan Bulan segaris, tarikan gravitasi keduanya saling menguatkan.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.GERHANA_1** — Gerhana Matahari terjadi jika susunan benda langitnya …
+  A. Matahari – Bulan – Bumi · B. Matahari – Bumi – Bulan · C. Bumi – Matahari – Bulan · D. Bulan – Matahari – Bumi
+  Kunci: **A** · Bulan menghalangi cahaya Matahari sehingga bayangannya jatuh ke Bumi.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.GERHANA_2** — Gerhana Bulan hanya dapat terjadi pada fase …
+  A. bulan baru · B. purnama · C. kuartir pertama · D. sabit
+  Kunci: **B** · Bumi berada di antara Matahari dan Bulan hanya ketika Bulan purnama.
+- [ ] **FIS.C26.D.ANTARIKSA.Q.GERHANA_3** — Gerhana tidak terjadi setiap bulan karena …
+  A. Bulan terlalu kecil · B. orbit Bulan miring terhadap orbit Bumi · C. Bumi berotasi · D. Matahari bergerak
+  Kunci: **B** · Pada sebagian besar bulan baru dan purnama, Bulan lewat sedikit di atas atau di bawah garis Matahari–Bumi.
+
+## Struktur Bumi dan mitigasi bencana (FIS.C26.D.KEBUMIAN)
+
+Materi: 4 · Soal: 12
+
+- [ ] **FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_1** — Lapisan Bumi yang paling tebal adalah …
+  A. kerak · B. mantel · C. inti luar · D. inti dalam
+  Kunci: **B** · Mantel membentuk sebagian besar volume Bumi.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_2** — Inti Bumi terutama tersusun atas …
+  A. besi dan nikel · B. silikon dan oksigen · C. air dan es · D. karbon dan hidrogen
+  Kunci: **A** · Inti Bumi kaya logam berat, terutama besi dan nikel.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_3** — Lapisan yang lebih lunak tempat lempeng litosfer bergerak disebut …
+  A. astenosfer · B. atmosfer · C. hidrosfer · D. troposfer
+  Kunci: **A** · Astenosfer berada di bawah litosfer dan bersifat lebih lunak.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.LEMPENG_1** — Batas lempeng yang saling menjauh disebut …
+  A. divergen · B. konvergen · C. transform · D. subduksi
+  Kunci: **A** · Pada batas divergen, magma naik mengisi celah lempeng yang saling menjauh.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.LEMPENG_2** — Banyaknya gunung api di Indonesia terutama disebabkan oleh …
+  A. Indonesia negara kepulauan · B. Indonesia berada di pertemuan lempeng tektonik · C. iklim tropis · D. banyaknya hutan
+  Kunci: **B** · Penunjaman lempeng di sekitar Indonesia menghasilkan magma yang membentuk gunung api.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.LEMPENG_3** — Penunjaman lempeng samudra ke bawah lempeng benua (subduksi) terjadi pada batas …
+  A. divergen · B. konvergen · C. transform · D. tidak ada batas lempeng
+  Kunci: **B** · Subduksi terjadi saat dua lempeng saling mendekat, yaitu batas konvergen.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.GEMPA_1** — Titik di permukaan Bumi yang tepat berada di atas sumber gempa disebut …
+  A. hiposentrum · B. episentrum · C. magma · D. palung
+  Kunci: **B** · Hiposentrum adalah sumber gempa di dalam Bumi; episentrum berada tepat di atasnya.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.GEMPA_2** — Gempa yang paling mungkin memicu tsunami adalah gempa …
+  A. di dasar laut yang menggeser dasar laut secara vertikal · B. di daerah pegunungan · C. akibat ledakan kecil · D. di gurun pasir
+  Kunci: **A** · Pergeseran vertikal dasar laut mendorong kolom air di atasnya dan membentuk gelombang besar.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.GEMPA_3** — Manfaat gunung api bagi manusia adalah …
+  A. tanah yang subur dan energi panas bumi · B. menghentikan gempa · C. mencegah tsunami · D. menurunkan suhu Bumi
+  Kunci: **A** · Abu vulkanik menyuburkan tanah, dan panas dari magma dapat dimanfaatkan sebagai energi panas bumi.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.MITIGASI_1** — Saat terjadi gempa di dalam kelas, tindakan yang paling tepat adalah …
+  A. berlari keluar sambil berdesakan di tangga · B. berlindung di bawah meja sambil melindungi kepala · C. berdiri di dekat jendela kaca · D. menyalakan kompor
+  Kunci: **B** · Berlindung di bawah meja melindungi kepala dari benda yang jatuh; berdesakan dan dekat kaca berbahaya.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.MITIGASI_2** — Di pantai terasa gempa kuat, lalu air laut tiba-tiba surut. Tindakan yang tepat adalah …
+  A. mendekati pantai untuk melihat · B. segera evakuasi ke tempat tinggi · C. menunggu sirene berbunyi · D. memotret air laut
+  Kunci: **B** · Air laut yang surut tiba-tiba adalah tanda alami tsunami; jangan menunggu peringatan lain.
+- [ ] **FIS.C26.D.KEBUMIAN.Q.MITIGASI_3** — Contoh mitigasi bencana gempa yang dilakukan sebelum bencana terjadi adalah …
+  A. membangun rumah tahan gempa · B. menolong korban · C. mendirikan tenda pengungsian · D. membagikan makanan
+  Kunci: **A** · Mitigasi bertujuan mengurangi risiko sebelum bencana; pilihan lain dilakukan sesudah bencana.
+
 ## MAT.EKS (MAT.EKS)
 
 Materi: 12 · Soal: 38

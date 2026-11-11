@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_2
+familyCode: FIS.C26.D.UKUR.F.BESARAN_DAN_SATUAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Satuan SI untuk massa jenis adalah …
+  options:
+    - id: a
+      label: kg/m³
+    - id: b
+      label: g/cm
+    - id: c
+      label: N/m²
+    - id: d
+      label: kg·m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - kg/m³
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+  feedback:
+    correct: "Massa jenis = massa : volume, jadi satuannya kg/m³."
+    incorrect: "Jawabannya kg/m³. Massa jenis = massa : volume, jadi satuannya kg/m³."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

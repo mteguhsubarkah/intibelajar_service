@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.Q.KELAJUAN_3
+familyCode: FIS.C26.D.GERAK.F.KELAJUAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Mobil menempuh 60 km pada jam pertama dan 40 km pada jam kedua. Kelajuan rata-ratanya adalah …
+  options:
+    - id: a
+      label: 50 km/jam
+    - id: b
+      label: 100 km/jam
+    - id: c
+      label: 40 km/jam
+    - id: d
+      label: 60 km/jam
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 50 km/jam
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
+  feedback:
+    correct: "Jarak total 100 km dalam 2 jam, jadi 100 : 2 = 50 km/jam."
+    incorrect: "Jawabannya 50 km/jam. Jarak total 100 km dalam 2 jam, jadi 100 : 2 = 50 km/jam."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

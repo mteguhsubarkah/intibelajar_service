@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.L.ARUS_DAN_RANGKAIAN
+title: Arus dan rangkaian
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Arus, tegangan, dan hambatan
+  - type: text
+    slide: 0
+    text: Arus listrik (I, ampere) mengalir dalam rangkaian tertutup karena ada tegangan atau beda potensial (V, volt). Hambatan (R, ohm) menghambat arus.
+  - type: text
+    slide: 0
+    text: "Hukum Ohm: V = I × R."
+  - type: math
+    slide: 0
+    name: hukum Ohm
+    expression: V = I × R
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mengukur dan menghitung energi
+  - type: text
+    slide: 1
+    text: Amperemeter dipasang seri; voltmeter dipasang paralel.
+  - type: text
+    slide: 1
+    text: Daya listrik P = V × I, energi W = P × t. Tagihan listrik dihitung dalam kWh.
+  - type: math
+    slide: 1
+    name: daya
+    expression: P = V × I
+    highlight: true
+  - type: math
+    slide: 1
+    name: energi
+    expression: W = P × t
+  - type: tip
+    slide: 1
+    text: 1 kWh = daya 1.000 watt yang dipakai selama 1 jam.
+checks:
+  - question: FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.LISTRIK.S.ARUS_DAN_RANGKAIAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -3,9 +3,10 @@
 // Sebagian dibangkitkan dari src/data/intiverse-reference.json FE (topik "peta saja"), sisanya topik baru usulan audit.
 import type { PilotCore, PilotRelation, PilotTopic } from './types.js';
 import { SMP_MAT } from './smp-mat.js';
+import { SMP_FIS } from './smp-fis.js';
 
 /** Materi dan soal yang sudah ditulis, per "KODE_TOPIK:ID_INTI". Inti yang punya isi di sini menjadi READY. */
-const CONTENT: Record<string, Pick<PilotCore, 'slides' | 'q' | 'min'>> = { ...SMP_MAT };
+const CONTENT: Record<string, Pick<PilotCore, 'slides' | 'q' | 'min'>> = { ...SMP_MAT, ...SMP_FIS };
 
 const EV_FE = ["nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)", "dicatat sebagai \"peta saja\" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul"];
 const EV_NEW = ["inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)", "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"];
