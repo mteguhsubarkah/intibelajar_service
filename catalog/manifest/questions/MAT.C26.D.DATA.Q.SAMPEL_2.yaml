@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.DATA.Q.SAMPEL_2
+familyCode: MAT.C26.D.DATA.F.SAMPEL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.DATA.SAMPEL_REPRESENTATIF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Survei tentang jam tidur siswa hanya dilakukan pada siswa yang mengikuti kegiatan malam. Hasil survei itu kemungkinan …
+  options:
+    - id: a
+      label: mewakili semua siswa
+    - id: b
+      label: bias, cenderung menunjukkan jam tidur lebih sedikit
+    - id: c
+      label: pasti sama dengan hasil populasi
+    - id: d
+      label: tidak dapat dihitung
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - bias, cenderung menunjukkan jam tidur lebih sedikit
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.DATA.SAMPEL_REPRESENTATIF
+  feedback:
+    correct: Siswa yang ikut kegiatan malam cenderung tidur lebih larut, jadi sampelnya condong ke satu kelompok.
+    incorrect: Jawabannya bias, cenderung menunjukkan jam tidur lebih sedikit. Siswa yang ikut kegiatan malam cenderung tidur lebih larut, jadi sampelnya condong ke satu kelompok.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

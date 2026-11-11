@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.ALJABAR.L.POLA_DAN_BENTUK_EKUIVALEN
+title: Pola & bentuk ekuivalen
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.ALJABAR.POLA_DAN_BENTUK_EKUIVALEN
+blocks:
+  - type: heading
+    slide: 0
+    text: Pola dan bentuk aljabar
+  - type: text
+    slide: 0
+    text: Pola 3, 7, 11, 15, … selalu bertambah 4, sehingga suku ke-n = 4n − 1.
+  - type: text
+    slide: 0
+    text: "Dalam 4n − 1: **n** adalah variabel, **4** koefisien, dan **−1** konstanta."
+  - type: math
+    slide: 0
+    name: suku ke-n pola bertambah 4
+    expression: 4n − 1
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Bentuk yang ekuivalen
+  - type: text
+    slide: 1
+    text: Dua bentuk aljabar **ekuivalen** jika nilainya selalu sama untuk setiap nilai variabel.
+  - type: text
+    slide: 1
+    text: "Contoh: 3(x + 2) = 3x + 6 (sifat distributif) dan 2x + 5x = 7x (menggabung suku sejenis)."
+  - type: math
+    slide: 1
+    name: distributif
+    expression: a(b + c) = ab + ac
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Uji dengan satu angka, misalnya x = 1. Jika hasilnya berbeda, pasti tidak ekuivalen.
+checks:
+  - question: MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.ALJABAR.S.POLA_DAN_BENTUK_EKUIVALEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

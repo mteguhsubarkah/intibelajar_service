@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.Q.JARING_2
+familyCode: MAT.C26.D.PENGUKURAN.F.JARING_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Luas permukaan balok berukuran 8 cm × 5 cm × 3 cm adalah …
+  options:
+    - id: a
+      label: 120 cm²
+    - id: b
+      label: 158 cm²
+    - id: c
+      label: 79 cm²
+    - id: d
+      label: 240 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 158 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN
+  feedback:
+    correct: 2(8 × 5 + 8 × 3 + 5 × 3) = 2(40 + 24 + 15) = 158 cm².
+    incorrect: Jawabannya 158 cm². 2(8 × 5 + 8 × 3 + 5 × 3) = 2(40 + 24 + 15) = 158 cm².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

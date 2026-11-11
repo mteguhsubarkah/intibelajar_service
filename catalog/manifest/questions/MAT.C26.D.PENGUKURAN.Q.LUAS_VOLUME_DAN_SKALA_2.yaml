@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_2
+familyCode: MAT.C26.D.PENGUKURAN.F.LUAS_VOLUME_DAN_SKALA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.PENGUKURAN.LUAS_VOLUME_DAN_SKALA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah tabung berjari-jari 7 cm dan tinggi 10 cm. Dengan π = 22/7, volumenya adalah …
+  options:
+    - id: a
+      label: 1.540 cm³
+    - id: b
+      label: 440 cm³
+    - id: c
+      label: 220 cm³
+    - id: d
+      label: 3.080 cm³
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 1.540 cm³
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.PENGUKURAN.LUAS_VOLUME_DAN_SKALA
+  feedback:
+    correct: V = 22/7 × 7² × 10 = 22 × 7 × 10 = 1.540 cm³.
+    incorrect: Jawabannya 1.540 cm³. V = 22/7 × 7² × 10 = 22 × 7 × 10 = 1.540 cm³.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

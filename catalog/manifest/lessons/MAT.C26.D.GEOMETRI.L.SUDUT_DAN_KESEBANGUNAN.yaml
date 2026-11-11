@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.L.SUDUT_DAN_KESEBANGUNAN
+title: Sudut dan kesebangunan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.GEOMETRI.SUDUT_DAN_KESEBANGUNAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Hubungan antarsudut
+  - type: text
+    slide: 0
+    text: Sudut **berpelurus** jumlahnya 180°; sudut **berpenyiku** jumlahnya 90°.
+  - type: text
+    slide: 0
+    text: "Dua garis sejajar dipotong garis lain: sudut sehadap sama besar, sudut dalam berseberangan sama besar."
+  - type: math
+    slide: 0
+    name: berpelurus
+    expression: a + b = 180°
+    highlight: true
+  - type: math
+    slide: 0
+    name: berpenyiku
+    expression: a + b = 90°
+  - type: heading
+    slide: 1
+    text: Bangun yang sebangun
+  - type: text
+    slide: 1
+    text: Dua bangun **sebangun** jika sudut-sudut yang bersesuaian sama besar dan sisi-sisi yang bersesuaian sebanding.
+  - type: text
+    slide: 1
+    text: Foto 4 cm × 6 cm yang diperbesar menjadi 8 cm × 12 cm sebangun dengan faktor skala 2.
+  - type: math
+    slide: 1
+    name: sebangun
+    expression: a/a′ = b/b′ = c/c′
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pasangkan sisi yang berhadapan dengan sudut yang sama besar.
+checks:
+  - question: MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.GEOMETRI.S.SUDUT_DAN_KESEBANGUNAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

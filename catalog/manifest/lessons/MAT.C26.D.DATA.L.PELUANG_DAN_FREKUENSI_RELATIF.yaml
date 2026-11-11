@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.DATA.L.PELUANG_DAN_FREKUENSI_RELATIF
+title: Peluang & frekuensi relatif
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.DATA.PELUANG_DAN_FREKUENSI_RELATIF
+blocks:
+  - type: heading
+    slide: 0
+    text: Peluang teoretis
+  - type: text
+    slide: 0
+    text: "Jika setiap hasil sama mungkin terjadi, peluang kejadian A = banyak hasil yang diharapkan : banyak semua hasil yang mungkin."
+  - type: text
+    slide: 0
+    text: Pada sebuah dadu, P(bilangan genap) = 3/6 = 1/2.
+  - type: math
+    slide: 0
+    name: peluang
+    expression: n(A) / n(S)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Frekuensi relatif
+  - type: text
+    slide: 1
+    text: "Frekuensi relatif = banyak kejadian muncul : banyak percobaan."
+  - type: text
+    slide: 1
+    text: Makin banyak percobaan dilakukan, frekuensi relatif makin mendekati peluang teoretisnya.
+  - type: math
+    slide: 1
+    name: frekuensi relatif
+    expression: banyak kejadian / banyak percobaan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Peluang selalu bernilai dari 0 (mustahil) sampai 1 (pasti).
+checks:
+  - question: MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.DATA.S.PELUANG_DAN_FREKUENSI_RELATIF
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

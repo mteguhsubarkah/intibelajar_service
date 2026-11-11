@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.L.LUAS_VOLUME_DAN_SKALA
+title: Luas, volume & skala
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.PENGUKURAN.LUAS_VOLUME_DAN_SKALA
+blocks:
+  - type: heading
+    slide: 0
+    text: Rumus volume dan luas
+  - type: text
+    slide: 0
+    text: Volume kubus s³, balok p × l × t, prisma = luas alas × tinggi, tabung πr²t. Luas lingkaran πr².
+  - type: math
+    slide: 0
+    name: volume prisma dan tabung
+    expression: luas alas × tinggi
+    highlight: true
+  - type: math
+    slide: 0
+    name: volume balok
+    expression: p × l × t
+  - type: heading
+    slide: 1
+    text: Pengaruh skala
+  - type: text
+    slide: 1
+    text: Jika semua ukuran panjang dikali k, luasnya menjadi k² kali dan volumenya k³ kali.
+  - type: text
+    slide: 1
+    text: Kubus bersisi 2 cm bervolume 8 cm³; kubus bersisi 4 cm bervolume 64 cm³, yaitu 8 kali lebih besar.
+  - type: math
+    slide: 1
+    name: dikali k
+    expression: luas × k², volume × k³
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Ingat konversi: 1 liter = 1 dm³ = 1.000 cm³."
+checks:
+  - question: MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.PENGUKURAN.S.LUAS_VOLUME_DAN_SKALA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

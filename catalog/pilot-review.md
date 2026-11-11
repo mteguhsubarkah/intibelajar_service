@@ -1019,6 +1019,248 @@ Materi: 3 · Soal: 7
   A. tanaman menjadi lebih kecil · B. gen sisipan dapat menyebar ke tumbuhan liar dan mengganggu ekosistem · C. tanaman tidak dapat berfotosintesis · D. hasil panen pasti menurun
   Kunci: **B** · Penyerbukan silang dapat memindahkan gen sisipan ke kerabat liar dengan dampak yang sulit dikendalikan.
 
+## Bilangan dan operasi (MAT.C26.D.BILANGAN)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_1** — Bilangan berikut yang **bukan** bilangan rasional adalah …
+  A. 0,25 · B. −7 · C. √2 · D. 2/3
+  Kunci: **C** · √2 tidak dapat ditulis sebagai pecahan a/b; desimalnya tidak berakhir dan tidak berulang. Bilangan lain dapat ditulis a/b.
+- [ ] **MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_2** — Urutan bilangan −0,7; −3/4; 1/2; 0,45 dari yang terkecil adalah …
+  A. −3/4; −0,7; 0,45; 1/2 · B. −0,7; −3/4; 0,45; 1/2 · C. −3/4; −0,7; 1/2; 0,45 · D. 0,45; 1/2; −0,7; −3/4
+  Kunci: **A** · −3/4 = −0,75 lebih kecil dari −0,7, dan 0,45 lebih kecil dari 1/2 = 0,5.
+- [ ] **MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_3** — Ani membeli 3 buku seharga Rp19.800 per buku. Estimasi total harga yang paling masuk akal adalah …
+  A. sekitar Rp40.000 · B. sekitar Rp60.000 · C. sekitar Rp80.000 · D. sekitar Rp6.000
+  Kunci: **B** · Rp19.800 dibulatkan menjadi Rp20.000; 3 × Rp20.000 = Rp60.000.
+- [ ] **MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_1** — Hasil 2³ × 2⁴ adalah …
+  A. 2⁷ · B. 2¹² · C. 4⁷ · D. 4¹²
+  Kunci: **A** · Basisnya sama, jadi pangkatnya dijumlahkan: 3 + 4 = 7.
+- [ ] **MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_2** — Bentuk sederhana dari √72 adalah …
+  A. 6√2 · B. 3√8 · C. 2√18 · D. 8√3
+  Kunci: **A** · 72 = 36 × 2 dan √36 = 6, jadi √72 = 6√2. Bentuk 3√8 dan 2√18 bernilai sama tetapi belum paling sederhana.
+- [ ] **MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_3** — Nilai dari (5²)³ : 5⁴ adalah …
+  A. 5 · B. 25 · C. 125 · D. 625
+  Kunci: **B** · (5²)³ = 5⁶, lalu 5⁶ : 5⁴ = 5² = 25.
+- [ ] **MAT.C26.D.BILANGAN.Q.PECAHAN_1** — Hasil 2/3 + 3/4 adalah …
+  A. 5/7 · B. 17/12 · C. 5/12 · D. 6/7
+  Kunci: **B** · KPK 3 dan 4 adalah 12: 8/12 + 9/12 = 17/12. Pembilang dan penyebut tidak boleh dijumlahkan langsung.
+- [ ] **MAT.C26.D.BILANGAN.Q.PECAHAN_2** — Hasil 1½ : 3/4 adalah …
+  A. 2 · B. 9/8 · C. 1/2 · D. 3/8
+  Kunci: **A** · 1½ = 3/2, lalu 3/2 × 4/3 = 12/6 = 2.
+- [ ] **MAT.C26.D.BILANGAN.Q.PECAHAN_3** — Sebuah resep membutuhkan 3/4 cangkir gula untuk 1 loyang kue. Untuk 2½ loyang dibutuhkan … cangkir gula.
+  A. 1 7/8 · B. 2 1/4 · C. 3 1/4 · D. 1 1/2
+  Kunci: **A** · 3/4 × 5/2 = 15/8 = 1 7/8 cangkir.
+- [ ] **MAT.C26.D.BILANGAN.Q.ILMIAH_1** — Notasi ilmiah dari 0,00072 adalah …
+  A. 7,2 × 10⁻⁴ · B. 72 × 10⁻⁵ · C. 7,2 × 10⁴ · D. 0,72 × 10⁻³
+  Kunci: **A** · Koma digeser 4 tempat ke kanan menjadi 7,2, jadi pangkatnya −4. Bentuk 72 × 10⁻⁵ dan 0,72 × 10⁻³ tidak memenuhi 1 ≤ a < 10.
+- [ ] **MAT.C26.D.BILANGAN.Q.ILMIAH_2** — Hasil (3 × 10⁴) × (5 × 10²) dalam notasi ilmiah adalah …
+  A. 1,5 × 10⁵ · B. 1,5 × 10⁷ · C. 1,5 × 10⁶ · D. 8 × 10⁸
+  Kunci: **B** · 3 × 5 = 15 dan 10⁴ × 10² = 10⁶, jadi 15 × 10⁶ = 1,5 × 10⁷.
+- [ ] **MAT.C26.D.BILANGAN.Q.ILMIAH_3** — Massa satu sel kira-kira 2 × 10⁻⁹ gram. Massa 5 × 10³ sel adalah …
+  A. 1 × 10⁻⁵ g · B. 10 × 10⁻¹² g · C. 1 × 10⁻⁶ g · D. 7 × 10⁻⁶ g
+  Kunci: **A** · 2 × 5 = 10 dan 10⁻⁹ × 10³ = 10⁻⁶, jadi 10 × 10⁻⁶ = 1 × 10⁻⁵ gram.
+
+## Rasio, skala, dan laju (MAT.C26.D.RASIO)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_1** — Harga 4 pensil Rp10.000. Harga 10 pensil yang sama adalah …
+  A. Rp20.000 · B. Rp25.000 · C. Rp40.000 · D. Rp4.000
+  Kunci: **B** · Harga satu pensil Rp2.500, jadi 10 pensil Rp25.000.
+- [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_2** — Sebuah mobil menghabiskan 6 liter bensin untuk menempuh 72 km. Untuk menempuh 120 km dibutuhkan … liter.
+  A. 8 · B. 9 · C. 10 · D. 12
+  Kunci: **C** · 72 km : 6 L = 12 km per liter, lalu 120 : 12 = 10 liter.
+- [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_3** — Pasangan besaran berikut yang merupakan perbandingan senilai adalah …
+  A. banyak pekerja dan lama pekerjaan selesai · B. kecepatan dan waktu tempuh untuk jarak yang sama · C. banyak barang dan total harga · D. banyak siswa dan jatah kue per siswa dari kue yang sama
+  Kunci: **C** · Makin banyak barang, makin besar total harganya dengan perbandingan tetap. Pasangan lain berbalik nilai.
+- [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1** — Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …
+  A. 2 km · B. 20 km · C. 200 km · D. 2.000 km
+  Kunci: **B** · 4 × 500.000 = 2.000.000 cm = 20 km.
+- [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_2** — Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …
+  A. 15 liter/menit · B. 12 liter/menit · C. 960 liter/menit · D. 16 liter/menit
+  Kunci: **A** · Debit = volume : waktu = 120 : 8 = 15 liter per menit.
+- [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_3** — Jarak sebenarnya 15 km digambar 5 cm pada sebuah denah. Skala denah tersebut adalah …
+  A. 1 : 3.000 · B. 1 : 30.000 · C. 1 : 300.000 · D. 1 : 3.000.000
+  Kunci: **C** · 15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000.
+- [ ] **MAT.C26.D.RASIO.Q.BERBALIK_1** — Suatu pekerjaan selesai oleh 8 orang dalam 15 hari. Jika dikerjakan 12 orang, pekerjaan selesai dalam … hari.
+  A. 10 · B. 12 · C. 18 · D. 22,5
+  Kunci: **A** · 8 × 15 = 120 hari-kerja; 120 : 12 = 10 hari.
+- [ ] **MAT.C26.D.RASIO.Q.BERBALIK_2** — Persediaan makanan cukup untuk 40 ekor ayam selama 9 hari. Jika ayam bertambah 20 ekor, makanan itu cukup untuk … hari.
+  A. 6 · B. 13,5 · C. 4,5 · D. 12
+  Kunci: **A** · 40 × 9 = 360; ayam menjadi 60 ekor, jadi 360 : 60 = 6 hari.
+- [ ] **MAT.C26.D.RASIO.Q.BERBALIK_3** — Mobil dengan kecepatan 60 km/jam membutuhkan 3 jam untuk suatu perjalanan. Jika kecepatannya 90 km/jam, waktunya …
+  A. 2 jam · B. 4,5 jam · C. 1,5 jam · D. 2,5 jam
+  Kunci: **A** · Jarak tetap 60 × 3 = 180 km; 180 : 90 = 2 jam.
+
+## Pola, bentuk aljabar & persamaan (MAT.C26.D.ALJABAR)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_1** — Rumus suku ke-n dari pola 5, 8, 11, 14, … adalah …
+  A. 3n + 2 · B. 5n · C. n + 3 · D. 3n + 5
+  Kunci: **A** · Bedanya 3, jadi bentuknya 3n + c. Untuk n = 1 hasilnya harus 5, sehingga c = 2.
+- [ ] **MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_2** — Bentuk yang ekuivalen dengan 4(2x − 3) adalah …
+  A. 8x − 3 · B. 8x − 12 · C. 6x − 7 · D. 8x + 12
+  Kunci: **B** · 4 × 2x = 8x dan 4 × (−3) = −12.
+- [ ] **MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_3** — Bentuk sederhana dari 5a + 3b − 2a + b adalah …
+  A. 3a + 4b · B. 7a + 4b · C. 3a + 2b · D. 7ab
+  Kunci: **A** · Gabungkan suku sejenis: 5a − 2a = 3a dan 3b + b = 4b.
+- [ ] **MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_1** — Penyelesaian dari 3x − 5 < 10 adalah …
+  A. x < 5 · B. x > 5 · C. x < 15 · D. x < 3
+  Kunci: **A** · 3x < 15, lalu bagi 3: x < 5.
+- [ ] **MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_2** — Penyelesaian dari −4x ≥ 12 adalah …
+  A. x ≥ −3 · B. x ≤ −3 · C. x ≥ 3 · D. x ≤ 3
+  Kunci: **B** · Kedua ruas dibagi −4, jadi tanda dibalik: x ≤ −3.
+- [ ] **MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_3** — Tiket masuk taman bermain Rp15.000 dan setiap naik wahana Rp10.000. Uang Rina Rp65.000. Paling banyak Rina dapat naik wahana … kali.
+  A. 4 · B. 5 · C. 6 · D. 6,5
+  Kunci: **B** · 15.000 + 10.000n ≤ 65.000, sehingga 10.000n ≤ 50.000 dan n ≤ 5.
+- [ ] **MAT.C26.D.ALJABAR.Q.LINEAR_1** — Nilai x yang memenuhi 5x − 8 = 2x + 7 adalah …
+  A. 5 · B. 3 · C. 15 · D. −5
+  Kunci: **A** · 5x − 2x = 7 + 8, jadi 3x = 15 dan x = 5.
+- [ ] **MAT.C26.D.ALJABAR.Q.LINEAR_2** — Nilai x yang memenuhi (x + 4)/3 = 5 adalah …
+  A. 11 · B. 19 · C. 1 · D. 15
+  Kunci: **A** · Kalikan kedua ruas dengan 3: x + 4 = 15, jadi x = 11.
+- [ ] **MAT.C26.D.ALJABAR.Q.LINEAR_3** — Keliling sebuah persegi panjang 46 cm. Panjangnya 5 cm lebih dari lebarnya. Lebar persegi panjang itu adalah …
+  A. 9 cm · B. 14 cm · C. 18 cm · D. 10,5 cm
+  Kunci: **A** · 2(l + 5 + l) = 46 → 4l + 10 = 46 → l = 9 cm.
+
+## Relasi, fungsi linear, dan SPLDV (MAT.C26.D.FUNGSI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_1** — Jika f(x) = 3x − 4, nilai f(5) adalah …
+  A. 11 · B. 19 · C. 1 · D. −11
+  Kunci: **A** · f(5) = 3 × 5 − 4 = 11.
+- [ ] **MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_2** — Gradien garis yang melalui titik (1, 2) dan (4, 11) adalah …
+  A. 3 · B. 1/3 · C. 9 · D. 2
+  Kunci: **A** · m = (11 − 2)/(4 − 1) = 9/3 = 3.
+- [ ] **MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_3** — Relasi berikut yang merupakan fungsi adalah …
+  A. {(1, a), (1, b), (2, c)} · B. {(1, a), (2, a), (3, b)} · C. {(2, a), (2, b), (3, c)} · D. {(3, a), (3, b), (4, a)}
+  Kunci: **B** · Setiap anggota domain (1, 2, 3) punya tepat satu pasangan. Pada pilihan lain ada anggota domain yang punya dua pasangan.
+- [ ] **MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_1** — Pasangan (x, y) yang memenuhi x + y = 7 dan x − y = 1 adalah …
+  A. (4, 3) · B. (3, 4) · C. (5, 2) · D. (6, 1)
+  Kunci: **A** · 4 + 3 = 7 dan 4 − 3 = 1. Pasangan (3, 4) hanya memenuhi persamaan pertama.
+- [ ] **MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_2** — Harga 2 buku dan 1 pena Rp13.000, sedangkan 1 buku dan 2 pena Rp11.000. Jika b = harga buku dan p = harga pena, model matematikanya adalah …
+  A. 2b + p = 13.000 dan b + 2p = 11.000 · B. 2b + 2p = 13.000 dan b + p = 11.000 · C. b + 2p = 13.000 dan 2b + p = 11.000 · D. 2b + p = 11.000 dan b + 2p = 13.000
+  Kunci: **A** · 2 buku + 1 pena = 13.000 dan 1 buku + 2 pena = 11.000.
+- [ ] **MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_3** — Sistem persamaan 2x + y = 5 dan 4x + 2y = 7 memiliki …
+  A. tepat satu penyelesaian · B. tak hingga banyak penyelesaian · C. tidak ada penyelesaian · D. dua penyelesaian
+  Kunci: **C** · Persamaan kedua dibagi 2 menjadi 2x + y = 3,5, sedangkan persamaan pertama 2x + y = 5. Kedua garis sejajar, jadi tidak berpotongan.
+- [ ] **MAT.C26.D.FUNGSI.Q.ELIMINASI_1** — Penyelesaian dari 2x + y = 11 dan x − y = 1 adalah …
+  A. x = 4, y = 3 · B. x = 3, y = 5 · C. x = 5, y = 1 · D. x = 4, y = 4
+  Kunci: **A** · Jumlahkan kedua persamaan: 3x = 12, jadi x = 4 dan y = 11 − 8 = 3.
+- [ ] **MAT.C26.D.FUNGSI.Q.ELIMINASI_2** — Harga 2 buku dan 1 pena Rp13.000, sedangkan 1 buku dan 2 pena Rp11.000. Harga 1 buku adalah …
+  A. Rp5.000 · B. Rp3.000 · C. Rp4.000 · D. Rp6.000
+  Kunci: **A** · Kalikan persamaan kedua dengan 2: 2b + 4p = 22.000. Kurangi dengan 2b + p = 13.000: 3p = 9.000, p = 3.000, lalu b = (13.000 − 3.000) : 2 = 5.000.
+- [ ] **MAT.C26.D.FUNGSI.Q.ELIMINASI_3** — Jumlah dua bilangan 30 dan selisihnya 8. Hasil kali kedua bilangan itu adalah …
+  A. 209 · B. 220 · C. 176 · D. 240
+  Kunci: **A** · x + y = 30 dan x − y = 8, jadi x = 19 dan y = 11. Hasil kalinya 19 × 11 = 209.
+
+## Sudut, kesebangunan & Pythagoras (MAT.C26.D.GEOMETRI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_1** — Pelurus sudut 65° adalah …
+  A. 25° · B. 115° · C. 125° · D. 295°
+  Kunci: **B** · Sudut berpelurus berjumlah 180°: 180° − 65° = 115°. Jawaban 25° adalah penyikunya.
+- [ ] **MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_2** — Segitiga ABC sebangun dengan segitiga PQR, dengan AB bersesuaian dengan PQ. AB = 6 cm, PQ = 9 cm, dan BC = 8 cm. Panjang QR adalah …
+  A. 10 cm · B. 11 cm · C. 12 cm · D. 5⅓ cm
+  Kunci: **C** · Faktor skala 9 : 6 = 1,5, jadi QR = 8 × 1,5 = 12 cm.
+- [ ] **MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_3** — Sebuah tiang setinggi 2 m memiliki bayangan 1,5 m. Pada saat yang sama, bayangan sebuah pohon 6 m. Tinggi pohon itu adalah …
+  A. 4,5 m · B. 8 m · C. 7,5 m · D. 9 m
+  Kunci: **B** · Tiang dan pohon membentuk segitiga sebangun: 2/1,5 = t/6, jadi t = 8 m.
+- [ ] **MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_1** — Sebuah segitiga siku-siku memiliki sisi tegak 6 cm dan 8 cm. Panjang sisi miringnya adalah …
+  A. 10 cm · B. 14 cm · C. 12 cm · D. √28 cm
+  Kunci: **A** · √(6² + 8²) = √(36 + 64) = √100 = 10 cm.
+- [ ] **MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_2** — Tiga bilangan berikut yang dapat menjadi panjang sisi segitiga siku-siku adalah …
+  A. 4, 5, 6 · B. 6, 8, 12 · C. 9, 12, 15 · D. 5, 11, 12
+  Kunci: **C** · 9² + 12² = 81 + 144 = 225 = 15². Pilihan lain tidak memenuhi a² + b² = c².
+- [ ] **MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_3** — Tangga sepanjang 13 m bersandar pada dinding. Kaki tangga berjarak 5 m dari dinding. Tinggi ujung tangga dari lantai adalah …
+  A. 8 m · B. 12 m · C. 18 m · D. √194 m
+  Kunci: **B** · Tangga adalah sisi miring: √(13² − 5²) = √(169 − 25) = √144 = 12 m.
+- [ ] **MAT.C26.D.GEOMETRI.Q.KONGRUEN_1** — Pernyataan berikut yang benar adalah …
+  A. setiap dua bangun yang sebangun pasti kongruen · B. setiap dua bangun yang kongruen pasti sebangun · C. dua persegi panjang selalu sebangun · D. dua segitiga dengan sudut-sudut sama pasti kongruen
+  Kunci: **B** · Kongruen berarti bentuk dan ukuran sama, jadi pasti sebangun. Sebaliknya belum tentu.
+- [ ] **MAT.C26.D.GEOMETRI.Q.KONGRUEN_2** — Dua segitiga memiliki tiga pasang sudut yang sama besar. Kedua segitiga itu pasti …
+  A. kongruen · B. sebangun · C. sama luas · D. sama keliling
+  Kunci: **B** · Sudut-sudut yang sama menjamin bentuknya sama (sebangun), tetapi ukurannya bisa berbeda.
+- [ ] **MAT.C26.D.GEOMETRI.Q.KONGRUEN_3** — Pada segitiga ABC dan DEF diketahui AB = DE dan ∠B = ∠E. Agar kedua segitiga kongruen dengan syarat s-sd-s, harus diketahui juga …
+  A. BC = EF · B. AC = DF · C. ∠A = ∠D · D. ∠C = ∠F
+  Kunci: **A** · Syarat s-sd-s memerlukan sudut yang diapit dua sisi. ∠B diapit oleh AB dan BC, jadi perlu BC = EF.
+
+## Lingkaran, bangun ruang & transformasi (MAT.C26.D.PENGUKURAN)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_1** — Volume balok berukuran 10 cm × 6 cm × 5 cm adalah …
+  A. 300 cm³ · B. 210 cm³ · C. 30 cm³ · D. 600 cm³
+  Kunci: **A** · 10 × 6 × 5 = 300 cm³.
+- [ ] **MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_2** — Sebuah tabung berjari-jari 7 cm dan tinggi 10 cm. Dengan π = 22/7, volumenya adalah …
+  A. 1.540 cm³ · B. 440 cm³ · C. 220 cm³ · D. 3.080 cm³
+  Kunci: **A** · V = 22/7 × 7² × 10 = 22 × 7 × 10 = 1.540 cm³.
+- [ ] **MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_3** — Semua rusuk sebuah balok diperbesar menjadi 3 kali semula. Volumenya menjadi … kali semula.
+  A. 3 · B. 6 · C. 9 · D. 27
+  Kunci: **D** · Volume berubah sebesar k³ = 3³ = 27 kali.
+- [ ] **MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_1** — Titik A(3, −2) ditranslasikan oleh (−4, 5). Bayangan titik A adalah …
+  A. (−1, 3) · B. (7, −7) · C. (−1, −7) · D. (7, 3)
+  Kunci: **A** · 3 + (−4) = −1 dan −2 + 5 = 3.
+- [ ] **MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_2** — Bayangan titik P(2, 5) oleh refleksi terhadap sumbu y adalah …
+  A. (2, −5) · B. (−2, 5) · C. (−2, −5) · D. (5, 2)
+  Kunci: **B** · Refleksi terhadap sumbu y hanya mengubah tanda koordinat x.
+- [ ] **MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_3** — Bayangan titik Q(4, 1) oleh rotasi 90° berlawanan arah jarum jam dengan pusat O(0, 0) adalah …
+  A. (−1, 4) · B. (1, −4) · C. (−4, −1) · D. (4, −1)
+  Kunci: **A** · (x, y) → (−y, x), jadi (4, 1) → (−1, 4).
+- [ ] **MAT.C26.D.PENGUKURAN.Q.JARING_1** — Luas permukaan kubus dengan panjang rusuk 5 cm adalah …
+  A. 125 cm² · B. 150 cm² · C. 100 cm² · D. 25 cm²
+  Kunci: **B** · 6 × 5² = 6 × 25 = 150 cm². Jawaban 125 adalah volumenya (cm³).
+- [ ] **MAT.C26.D.PENGUKURAN.Q.JARING_2** — Luas permukaan balok berukuran 8 cm × 5 cm × 3 cm adalah …
+  A. 120 cm² · B. 158 cm² · C. 79 cm² · D. 240 cm²
+  Kunci: **B** · 2(8 × 5 + 8 × 3 + 5 × 3) = 2(40 + 24 + 15) = 158 cm².
+- [ ] **MAT.C26.D.PENGUKURAN.Q.JARING_3** — Sebuah kotak berbentuk kubus tanpa tutup dengan rusuk 20 cm akan dicat bagian luarnya. Luas yang dicat adalah …
+  A. 2.400 cm² · B. 2.000 cm² · C. 8.000 cm² · D. 1.600 cm²
+  Kunci: **B** · Tanpa tutup, sisinya tinggal 5: 5 × 20² = 2.000 cm².
+- [ ] **MAT.C26.D.PENGUKURAN.Q.JURING_1** — Panjang busur dengan sudut pusat 60° pada lingkaran berjari-jari 21 cm (π = 22/7) adalah …
+  A. 22 cm · B. 11 cm · C. 66 cm · D. 231 cm
+  Kunci: **A** · 60°/360° = 1/6; keliling = 2 × 22/7 × 21 = 132 cm; 132 : 6 = 22 cm.
+- [ ] **MAT.C26.D.PENGUKURAN.Q.JURING_2** — Luas juring dengan sudut pusat 90° pada lingkaran berjari-jari 14 cm (π = 22/7) adalah …
+  A. 154 cm² · B. 616 cm² · C. 44 cm² · D. 308 cm²
+  Kunci: **A** · Luas lingkaran 22/7 × 196 = 616 cm²; seperempatnya 154 cm².
+- [ ] **MAT.C26.D.PENGUKURAN.Q.JURING_3** — Sebuah pizza berdiameter 28 cm dipotong menjadi 8 potong sama besar. Luas satu potong pizza (π = 22/7) adalah …
+  A. 77 cm² · B. 154 cm² · C. 308 cm² · D. 38,5 cm²
+  Kunci: **A** · Jari-jarinya 14 cm, luas pizza 616 cm², jadi satu potong 616 : 8 = 77 cm².
+
+## Data dan peluang sederhana (MAT.C26.D.DATA)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_1** — Mean dari data 6, 8, 7, 9, 10 adalah …
+  A. 7 · B. 8 · C. 9 · D. 40
+  Kunci: **B** · Jumlahnya 40 dan banyak datanya 5, jadi mean = 40 : 5 = 8.
+- [ ] **MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_2** — Median dari data 5, 9, 3, 7, 8, 4 adalah …
+  A. 6 · B. 7 · C. 5,5 · D. 6,5
+  Kunci: **A** · Urutkan: 3, 4, 5, 7, 8, 9. Dua nilai tengahnya 5 dan 7, jadi median = (5 + 7) : 2 = 6.
+- [ ] **MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_3** — Nilai rata-rata 9 siswa adalah 70. Seorang siswa yang ikut ujian susulan mendapat nilai 80. Nilai rata-rata 10 siswa itu menjadi …
+  A. 71 · B. 75 · C. 72 · D. 70,5
+  Kunci: **A** · Jumlah nilai 9 siswa = 630; ditambah 80 menjadi 710; 710 : 10 = 71.
+- [ ] **MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_1** — Peluang muncul mata dadu lebih dari 4 pada pelemparan sebuah dadu adalah …
+  A. 1/3 · B. 1/2 · C. 2/3 · D. 1/6
+  Kunci: **A** · Mata dadu lebih dari 4 adalah 5 dan 6, jadi peluangnya 2/6 = 1/3.
+- [ ] **MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_2** — Sebuah koin dilempar 50 kali dan sisi angka muncul 28 kali. Frekuensi relatif munculnya sisi angka adalah …
+  A. 0,28 · B. 0,56 · C. 0,5 · D. 0,44
+  Kunci: **B** · 28 : 50 = 0,56. Nilai 0,5 adalah peluang teoretisnya.
+- [ ] **MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_3** — Sebuah kantong berisi 4 kelereng merah dan 6 kelereng biru. Satu kelereng diambil secara acak. Peluang terambil kelereng merah adalah …
+  A. 2/5 · B. 3/5 · C. 4/6 · D. 1/4
+  Kunci: **A** · Semua kelereng ada 10, yang merah 4, jadi peluangnya 4/10 = 2/5.
+- [ ] **MAT.C26.D.DATA.Q.SAMPEL_1** — Kepala sekolah ingin mengetahui makanan kantin favorit seluruh siswa. Sampel yang paling representatif adalah …
+  A. 10 siswa dari kelas 7A · B. 30 siswa yang dipilih acak dari setiap kelas · C. semua anggota OSIS · D. siswa yang berada di kantin pukul 07.00
+  Kunci: **B** · Memilih acak dari setiap kelas memberi kesempatan yang sama bagi semua siswa untuk terpilih.
+- [ ] **MAT.C26.D.DATA.Q.SAMPEL_2** — Survei tentang jam tidur siswa hanya dilakukan pada siswa yang mengikuti kegiatan malam. Hasil survei itu kemungkinan …
+  A. mewakili semua siswa · B. bias, cenderung menunjukkan jam tidur lebih sedikit · C. pasti sama dengan hasil populasi · D. tidak dapat dihitung
+  Kunci: **B** · Siswa yang ikut kegiatan malam cenderung tidur lebih larut, jadi sampelnya condong ke satu kelompok.
+- [ ] **MAT.C26.D.DATA.Q.SAMPEL_3** — Dari 200 siswa diambil sampel acak 40 siswa; 10 di antaranya suka membaca komik. Perkiraan banyak siswa di sekolah yang suka membaca komik adalah …
+  A. 10 · B. 40 · C. 50 · D. 25
+  Kunci: **C** · Proporsi pada sampel 10/40 = 1/4, jadi perkiraannya 1/4 × 200 = 50 siswa.
+
 ## MAT.EKS (MAT.EKS)
 
 Materi: 12 · Soal: 38

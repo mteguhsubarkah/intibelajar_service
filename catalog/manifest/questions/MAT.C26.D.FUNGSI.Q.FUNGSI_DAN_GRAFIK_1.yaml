@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_1
+familyCode: MAT.C26.D.FUNGSI.F.FUNGSI_DAN_GRAFIK_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.FUNGSI.FUNGSI_DAN_GRAFIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika f(x) = 3x − 4, nilai f(5) adalah …
+  options:
+    - id: a
+      label: "11"
+    - id: b
+      label: "19"
+    - id: c
+      label: "1"
+    - id: d
+      label: −11
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "11"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.FUNGSI.FUNGSI_DAN_GRAFIK
+  feedback:
+    correct: f(5) = 3 × 5 − 4 = 11.
+    incorrect: Jawabannya 11. f(5) = 3 × 5 − 4 = 11.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

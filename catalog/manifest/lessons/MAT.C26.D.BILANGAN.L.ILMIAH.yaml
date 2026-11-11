@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.L.ILMIAH
+title: Notasi ilmiah
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.BILANGAN.NOTASI_ILMIAH
+blocks:
+  - type: heading
+    slide: 0
+    text: Bentuk a × 10ⁿ
+  - type: text
+    slide: 0
+    text: Notasi ilmiah menulis bilangan sangat besar atau sangat kecil sebagai a × 10ⁿ, dengan 1 ≤ a < 10 dan n bilangan bulat.
+  - type: text
+    slide: 0
+    text: "Contoh: 3.000.000 = 3 × 10⁶ dan 0,00045 = 4,5 × 10⁻⁴."
+  - type: math
+    slide: 0
+    name: notasi ilmiah
+    expression: a × 10ⁿ, 1 ≤ a < 10
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Menghitung dengan notasi ilmiah
+  - type: text
+    slide: 1
+    text: "Kalikan bagian a-nya, lalu jumlahkan pangkat 10-nya: (2 × 10³) × (4 × 10⁵) = 8 × 10⁸."
+  - type: text
+    slide: 1
+    text: "Jika hasil a ≥ 10, geser koma: 12 × 10⁴ = 1,2 × 10⁵. Contoh nyata: jarak Bumi–Matahari ≈ 1,5 × 10⁸ km."
+  - type: math
+    slide: 1
+    name: (a × 10ᵐ)(b × 10ⁿ)
+    expression: (a × b) × 10ᵐ⁺ⁿ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Koma digeser ke kiri → pangkat bertambah; digeser ke kanan → pangkat berkurang.
+checks:
+  - question: MAT.C26.D.BILANGAN.Q.ILMIAH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.BILANGAN.S.ILMIAH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

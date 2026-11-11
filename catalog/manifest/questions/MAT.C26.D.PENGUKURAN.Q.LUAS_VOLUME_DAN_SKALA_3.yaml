@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_3
+familyCode: MAT.C26.D.PENGUKURAN.F.LUAS_VOLUME_DAN_SKALA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.PENGUKURAN.LUAS_VOLUME_DAN_SKALA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Semua rusuk sebuah balok diperbesar menjadi 3 kali semula. Volumenya menjadi … kali semula.
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: "6"
+    - id: c
+      label: "9"
+    - id: d
+      label: "27"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "27"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.PENGUKURAN.LUAS_VOLUME_DAN_SKALA
+  feedback:
+    correct: Volume berubah sebesar k³ = 3³ = 27 kali.
+    incorrect: Jawabannya 27. Volume berubah sebesar k³ = 3³ = 27 kali.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

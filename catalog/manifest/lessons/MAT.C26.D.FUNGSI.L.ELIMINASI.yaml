@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.FUNGSI.L.ELIMINASI
+title: Eliminasi & substitusi SPLDV
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.FUNGSI.ELIMINASI_DAN_SUBSTITUSI_SPLDV
+blocks:
+  - type: heading
+    slide: 0
+    text: Metode eliminasi
+  - type: text
+    slide: 0
+    text: Samakan koefisien salah satu variabel, lalu jumlahkan atau kurangkan kedua persamaan.
+  - type: text
+    slide: 0
+    text: "x + y = 10 dan x − y = 2. Jumlahkan: 2x = 12, jadi x = 6, lalu y = 10 − 6 = 4."
+  - type: math
+    slide: 0
+    name: eliminasi
+    expression: samakan koefisien, lalu jumlah/kurang
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Metode substitusi
+  - type: text
+    slide: 1
+    text: Ubah satu persamaan menjadi y = …, lalu masukkan ke persamaan lain.
+  - type: text
+    slide: 1
+    text: y = 10 − x, maka x − (10 − x) = 2 → 2x = 12 → x = 6.
+  - type: math
+    slide: 1
+    name: substitusi
+    expression: y = …, masukkan ke persamaan lain
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gabungan keduanya (eliminasi dulu, lalu substitusi) biasanya paling cepat.
+checks:
+  - question: MAT.C26.D.FUNGSI.Q.ELIMINASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.FUNGSI.S.ELIMINASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

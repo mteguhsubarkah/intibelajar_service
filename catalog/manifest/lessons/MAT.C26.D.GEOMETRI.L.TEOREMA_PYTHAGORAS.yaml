@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.L.TEOREMA_PYTHAGORAS
+title: Teorema Pythagoras
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.GEOMETRI.TEOREMA_PYTHAGORAS
+blocks:
+  - type: heading
+    slide: 0
+    text: a² + b² = c²
+  - type: text
+    slide: 0
+    text: Pada segitiga siku-siku, kuadrat sisi miring sama dengan jumlah kuadrat dua sisi lainnya.
+  - type: text
+    slide: 0
+    text: Sisi miring (c) adalah sisi terpanjang, di depan sudut siku-siku.
+  - type: math
+    slide: 0
+    name: Teorema Pythagoras
+    expression: a² + b² = c²
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Tripel dan penerapan
+  - type: text
+    slide: 1
+    text: "Tripel Pythagoras yang sering dipakai: (3, 4, 5), (5, 12, 13), (8, 15, 17), dan kelipatannya."
+  - type: text
+    slide: 1
+    text: Tangga 5 m bersandar dengan kaki 3 m dari dinding, maka tingginya √(25 − 9) = √16 = 4 m.
+  - type: math
+    slide: 1
+    name: sisi tegak
+    expression: √(c² − a²)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pastikan dulu mana sisi miringnya sebelum memasukkan angka ke rumus.
+checks:
+  - question: MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.GEOMETRI.S.TEOREMA_PYTHAGORAS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

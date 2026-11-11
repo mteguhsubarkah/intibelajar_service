@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.L.JARING
+title: Jaring-jaring & luas permukaan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Jaring-jaring
+  - type: text
+    slide: 0
+    text: Jaring-jaring adalah bangun datar yang didapat dengan membuka (menggunting) permukaan bangun ruang.
+  - type: text
+    slide: 0
+    text: Jaring-jaring kubus terdiri dari 6 persegi yang kongruen. Tidak semua susunan 6 persegi bisa dilipat menjadi kubus.
+  - type: math
+    slide: 0
+    name: kubus
+    expression: 6 sisi persegi
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Luas permukaan
+  - type: text
+    slide: 1
+    text: Luas permukaan = jumlah luas semua sisinya.
+  - type: text
+    slide: 1
+    text: Kubus 6s², balok 2(pl + pt + lt), tabung 2πr² + 2πrt.
+  - type: math
+    slide: 1
+    name: luas permukaan balok
+    expression: 2(pl + pt + lt)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bayangkan jaring-jaringnya supaya tidak ada sisi yang terlewat atau terhitung dua kali.
+checks:
+  - question: MAT.C26.D.PENGUKURAN.Q.JARING_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.PENGUKURAN.S.JARING
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

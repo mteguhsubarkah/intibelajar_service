@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.Q.BERBALIK_3
+familyCode: MAT.C26.D.RASIO.F.BERBALIK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.RASIO.PERBANDINGAN_BERBALIK_NILAI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Mobil dengan kecepatan 60 km/jam membutuhkan 3 jam untuk suatu perjalanan. Jika kecepatannya 90 km/jam, waktunya …
+  options:
+    - id: a
+      label: 2 jam
+    - id: b
+      label: 4,5 jam
+    - id: c
+      label: 1,5 jam
+    - id: d
+      label: 2,5 jam
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2 jam
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.RASIO.PERBANDINGAN_BERBALIK_NILAI
+  feedback:
+    correct: "Jarak tetap 60 × 3 = 180 km; 180 : 90 = 2 jam."
+    incorrect: "Jawabannya 2 jam. Jarak tetap 60 × 3 = 180 km; 180 : 90 = 2 jam."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

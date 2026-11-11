@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.Q.ILMIAH_2
+familyCode: MAT.C26.D.BILANGAN.F.ILMIAH_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.BILANGAN.NOTASI_ILMIAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil (3 × 10⁴) × (5 × 10²) dalam notasi ilmiah adalah …
+  options:
+    - id: a
+      label: 1,5 × 10⁵
+    - id: b
+      label: 1,5 × 10⁷
+    - id: c
+      label: 1,5 × 10⁶
+    - id: d
+      label: 8 × 10⁸
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 1,5 × 10⁷
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.BILANGAN.NOTASI_ILMIAH
+  feedback:
+    correct: 3 × 5 = 15 dan 10⁴ × 10² = 10⁶, jadi 15 × 10⁶ = 1,5 × 10⁷.
+    incorrect: Jawabannya 1,5 × 10⁷. 3 × 5 = 15 dan 10⁴ × 10² = 10⁶, jadi 15 × 10⁶ = 1,5 × 10⁷.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

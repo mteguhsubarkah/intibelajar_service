@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.Q.KONGRUEN_3
+familyCode: MAT.C26.D.GEOMETRI.F.KONGRUEN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada segitiga ABC dan DEF diketahui AB = DE dan ∠B = ∠E. Agar kedua segitiga kongruen dengan syarat s-sd-s, harus diketahui juga …
+  options:
+    - id: a
+      label: BC = EF
+    - id: b
+      label: AC = DF
+    - id: c
+      label: ∠A = ∠D
+    - id: d
+      label: ∠C = ∠F
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - BC = EF
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+  feedback:
+    correct: Syarat s-sd-s memerlukan sudut yang diapit dua sisi. ∠B diapit oleh AB dan BC, jadi perlu BC = EF.
+    incorrect: Jawabannya BC = EF. Syarat s-sd-s memerlukan sudut yang diapit dua sisi. ∠B diapit oleh AB dan BC, jadi perlu BC = EF.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_2
+familyCode: MAT.C26.D.BILANGAN.F.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk sederhana dari √72 adalah …
+  options:
+    - id: a
+      label: 6√2
+    - id: b
+      label: 3√8
+    - id: c
+      label: 2√18
+    - id: d
+      label: 8√3
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 6√2
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+  feedback:
+    correct: 72 = 36 × 2 dan √36 = 6, jadi √72 = 6√2. Bentuk 3√8 dan 2√18 bernilai sama tetapi belum paling sederhana.
+    incorrect: Jawabannya 6√2. 72 = 36 × 2 dan √36 = 6, jadi √72 = 6√2. Bentuk 3√8 dan 2√18 bernilai sama tetapi belum paling sederhana.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

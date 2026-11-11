@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.L.PERBANDINGAN_SENILAI
+title: Perbandingan senilai
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.RASIO.PERBANDINGAN_SENILAI
+blocks:
+  - type: heading
+    slide: 0
+    text: Naik bersama
+  - type: text
+    slide: 0
+    text: Dua besaran **senilai** jika yang satu bertambah, yang lain ikut bertambah dengan perbandingan tetap.
+  - type: text
+    slide: 0
+    text: "Contoh: 2 kg beras Rp26.000, maka 5 kg beras Rp65.000."
+  - type: math
+    slide: 0
+    name: senilai
+    expression: a₁/b₁ = a₂/b₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Cara menghitung
+  - type: text
+    slide: 1
+    text: "Cara 1: cari harga satuan (Rp26.000 : 2 = Rp13.000 per kg), lalu kalikan 5."
+  - type: text
+    slide: 1
+    text: "Cara 2: pakai perbandingan 2/5 = 26.000/x, sehingga x = 65.000."
+  - type: math
+    slide: 1
+    name: nilai satuan
+    expression: "total : banyak"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Tanyakan dulu: kalau yang satu naik, apakah yang lain juga naik? Jika ya, perbandingannya senilai."
+checks:
+  - question: MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.RASIO.S.PERBANDINGAN_SENILAI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

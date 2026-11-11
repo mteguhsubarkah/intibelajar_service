@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.L.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+title: Pangkat, akar & notasi ilmiah
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+blocks:
+  - type: heading
+    slide: 0
+    text: Bilangan berpangkat
+  - type: text
+    slide: 0
+    text: "aⁿ artinya a dikalikan sebanyak n kali: 2⁴ = 2 × 2 × 2 × 2 = 16."
+  - type: text
+    slide: 0
+    text: "Sifat penting: aᵐ × aⁿ = aᵐ⁺ⁿ, aᵐ : aⁿ = aᵐ⁻ⁿ, (aᵐ)ⁿ = aᵐⁿ, dan a⁰ = 1 untuk a ≠ 0."
+  - type: math
+    slide: 0
+    name: perkalian, basis sama
+    expression: aᵐ × aⁿ = aᵐ⁺ⁿ
+    highlight: true
+  - type: math
+    slide: 0
+    name: pembagian, basis sama
+    expression: "aᵐ : aⁿ = aᵐ⁻ⁿ"
+  - type: heading
+    slide: 1
+    text: Bentuk akar
+  - type: text
+    slide: 1
+    text: "√a adalah bilangan tak negatif yang kuadratnya a: √49 = 7 karena 7² = 49. Akar pangkat tiga: ∛8 = 2 karena 2³ = 8."
+  - type: text
+    slide: 1
+    text: "Menyederhanakan akar: √50 = √(25 × 2) = 5√2."
+  - type: math
+    slide: 1
+    name: √(a × b)
+    expression: √a × √b
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Cari faktor kuadrat terbesar (4, 9, 16, 25, 36, …) untuk menyederhanakan akar.
+checks:
+  - question: MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.BILANGAN.S.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

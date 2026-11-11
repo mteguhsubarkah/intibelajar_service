@@ -1,12 +1,16 @@
 // Topik dan inti yang belum ada di katalog (audit kesenjangan materi kelas 7–12, 10 November 2026).
 // Struktur dulu: inti tanpa slides/soal ditulis PLANNED. Isi materi dan soal di sini nanti, inti otomatis menjadi READY.
 // Sebagian dibangkitkan dari src/data/intiverse-reference.json FE (topik "peta saja"), sisanya topik baru usulan audit.
-import type { PilotRelation, PilotTopic } from './types.js';
+import type { PilotCore, PilotRelation, PilotTopic } from './types.js';
+import { SMP_MAT } from './smp-mat.js';
+
+/** Materi dan soal yang sudah ditulis, per "KODE_TOPIK:ID_INTI". Inti yang punya isi di sini menjadi READY. */
+const CONTENT: Record<string, Pick<PilotCore, 'slides' | 'q' | 'min'>> = { ...SMP_MAT };
 
 const EV_FE = ["nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)", "dicatat sebagai \"peta saja\" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul"];
 const EV_NEW = ["inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)", "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"];
 
-export const PLANNED_TOPICS: PilotTopic[] = [
+const STRUCTURE: PilotTopic[] = [
   {
     code: "MAT.C26.D.BILANGAN", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,
     title: "Bilangan dan operasi", subtitle: "Bilangan rasional, pangkat, akar, pecahan, dan notasi ilmiah", bekal: [],
@@ -369,6 +373,12 @@ export const PLANNED_TOPICS: PilotTopic[] = [
     edges: [["C1", "MEDANLISTRIK", "H"], ["MEDANLISTRIK", "POTENSIAL", "H"], ["POTENSIAL", "KAPASITOR", "S"], ["MEDANLISTRIK", "LORENTZ", "S"]],
   },
 ];
+
+for (const key of Object.keys(CONTENT)) {
+  const [code, id] = key.split(':');
+  if (!STRUCTURE.some(t => t.code === code && t.cores.some(c => c.id === id))) throw new Error(`materi untuk inti yang tidak ada: ${key}`);
+}
+export const PLANNED_TOPICS: PilotTopic[] = STRUCTURE.map(t => ({ ...t, cores: t.cores.map(c => ({ ...c, ...CONTENT[`${t.code}:${c.id}`] })) }));
 
 export const PLANNED_RELATIONS: PilotRelation[] = [
   { from: "MAT.C26.D.BILANGAN", to: "MAT.C26.D.RASIO", kind: "REQUIRES", label: "Konsep dasar operasi bilangan mendukung rasio", decision: 'D9' },

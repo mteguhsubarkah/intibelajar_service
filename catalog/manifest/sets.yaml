@@ -1640,6 +1640,328 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: MAT.C26.D.BILANGAN.S.BILANGAN_RASIONAL_DAN_ESTIMASI
+    title: Latihan Bilangan rasional & estimasi
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_1
+      - MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_2
+      - MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.BILANGAN.S.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+    title: Latihan Pangkat, akar & notasi ilmiah
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_1
+      - MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_2
+      - MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.BILANGAN.S.PECAHAN
+    title: Latihan Operasi pecahan
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.BILANGAN.Q.PECAHAN_1
+      - MAT.C26.D.BILANGAN.Q.PECAHAN_2
+      - MAT.C26.D.BILANGAN.Q.PECAHAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.BILANGAN.S.ILMIAH
+    title: Latihan Notasi ilmiah
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.BILANGAN.Q.ILMIAH_1
+      - MAT.C26.D.BILANGAN.Q.ILMIAH_2
+      - MAT.C26.D.BILANGAN.Q.ILMIAH_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.RASIO.S.PERBANDINGAN_SENILAI
+    title: Latihan Perbandingan senilai
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_1
+      - MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_2
+      - MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.RASIO.S.SKALA_DAN_LAJU
+    title: Latihan Skala dan laju
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1
+      - MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_2
+      - MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.RASIO.S.BERBALIK
+    title: Latihan Perbandingan berbalik nilai
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.RASIO.Q.BERBALIK_1
+      - MAT.C26.D.RASIO.Q.BERBALIK_2
+      - MAT.C26.D.RASIO.Q.BERBALIK_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.ALJABAR.S.POLA_DAN_BENTUK_EKUIVALEN
+    title: Latihan Pola & bentuk ekuivalen
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_1
+      - MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_2
+      - MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.ALJABAR.S.PERSAMAAN_DAN_PERTIDAKSAMAAN
+    title: Latihan Persamaan & pertidaksamaan
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_1
+      - MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_2
+      - MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.ALJABAR.S.LINEAR
+    title: Latihan Persamaan linear satu variabel
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.ALJABAR.Q.LINEAR_1
+      - MAT.C26.D.ALJABAR.Q.LINEAR_2
+      - MAT.C26.D.ALJABAR.Q.LINEAR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.FUNGSI.S.FUNGSI_DAN_GRAFIK
+    title: Latihan Fungsi dan grafik
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_1
+      - MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_2
+      - MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.FUNGSI.S.SISTEM_PERSAMAAN_LINEAR
+    title: Latihan Sistem persamaan linear
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_1
+      - MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_2
+      - MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.FUNGSI.S.ELIMINASI
+    title: Latihan Eliminasi & substitusi SPLDV
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.FUNGSI.Q.ELIMINASI_1
+      - MAT.C26.D.FUNGSI.Q.ELIMINASI_2
+      - MAT.C26.D.FUNGSI.Q.ELIMINASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.GEOMETRI.S.SUDUT_DAN_KESEBANGUNAN
+    title: Latihan Sudut dan kesebangunan
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_1
+      - MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_2
+      - MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.GEOMETRI.S.TEOREMA_PYTHAGORAS
+    title: Latihan Teorema Pythagoras
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_1
+      - MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_2
+      - MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.GEOMETRI.S.KONGRUEN
+    title: Latihan Kongruen dan sebangun
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.GEOMETRI.Q.KONGRUEN_1
+      - MAT.C26.D.GEOMETRI.Q.KONGRUEN_2
+      - MAT.C26.D.GEOMETRI.Q.KONGRUEN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.PENGUKURAN.S.LUAS_VOLUME_DAN_SKALA
+    title: Latihan Luas, volume & skala
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_1
+      - MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_2
+      - MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.PENGUKURAN.S.TRANSFORMASI_KOORDINAT
+    title: Latihan Transformasi koordinat
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_1
+      - MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_2
+      - MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.PENGUKURAN.S.JARING
+    title: Latihan Jaring-jaring & luas permukaan
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.PENGUKURAN.Q.JARING_1
+      - MAT.C26.D.PENGUKURAN.Q.JARING_2
+      - MAT.C26.D.PENGUKURAN.Q.JARING_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.PENGUKURAN.S.JURING
+    title: Latihan Busur dan juring lingkaran
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.PENGUKURAN.Q.JURING_1
+      - MAT.C26.D.PENGUKURAN.Q.JURING_2
+      - MAT.C26.D.PENGUKURAN.Q.JURING_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.DATA.S.SAMPEL_DAN_UKURAN_PEMUSATAN
+    title: Latihan Sampel & ukuran pemusatan
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_1
+      - MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_2
+      - MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.DATA.S.PELUANG_DAN_FREKUENSI_RELATIF
+    title: Latihan Peluang & frekuensi relatif
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_1
+      - MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_2
+      - MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.DATA.S.SAMPEL
+    title: Latihan Sampel representatif
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.DATA.Q.SAMPEL_1
+      - MAT.C26.D.DATA.Q.SAMPEL_2
+      - MAT.C26.D.DATA.Q.SAMPEL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: MAT.EKS.S.DEFINISI_EKSPONEN
     title: Latihan Definisi Eksponen
     origin: CONCEPT_LESSON

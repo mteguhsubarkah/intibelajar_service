@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1
+familyCode: MAT.C26.D.RASIO.F.SKALA_DAN_LAJU_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …"
+  options:
+    - id: a
+      label: 2 km
+    - id: b
+      label: 20 km
+    - id: c
+      label: 200 km
+    - id: d
+      label: 2.000 km
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 20 km
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.RASIO.SKALA_DAN_LAJU
+  feedback:
+    correct: 4 × 500.000 = 2.000.000 cm = 20 km.
+    incorrect: Jawabannya 20 km. 4 × 500.000 = 2.000.000 cm = 20 km.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.L.JURING
+title: Busur dan juring lingkaran
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.PENGUKURAN.BUSUR_DAN_JURING_LINGKARAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Sebanding dengan sudut pusat
+  - type: text
+    slide: 0
+    text: Panjang busur dan luas juring sebanding dengan besar sudut pusatnya dibandingkan satu putaran penuh (360°).
+  - type: math
+    slide: 0
+    name: panjang busur
+    expression: (α/360°) × 2πr
+    highlight: true
+  - type: math
+    slide: 0
+    name: luas juring
+    expression: (α/360°) × πr²
+  - type: heading
+    slide: 1
+    text: Contoh
+  - type: text
+    slide: 1
+    text: "Lingkaran berjari-jari 14 cm dengan sudut pusat 90° (seperempat lingkaran):"
+  - type: text
+    slide: 1
+    text: panjang busur = 1/4 × 2 × 22/7 × 14 = 22 cm, luas juring = 1/4 × 22/7 × 14² = 154 cm².
+  - type: math
+    slide: 1
+    name: 90°
+    expression: seperempat lingkaran
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sudut 90° = 1/4 lingkaran, 60° = 1/6, 120° = 1/3, 180° = 1/2.
+checks:
+  - question: MAT.C26.D.PENGUKURAN.Q.JURING_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.PENGUKURAN.S.JURING
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

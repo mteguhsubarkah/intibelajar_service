@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_3
+familyCode: MAT.C26.D.ALJABAR.F.POLA_DAN_BENTUK_EKUIVALEN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.ALJABAR.POLA_DAN_BENTUK_EKUIVALEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk sederhana dari 5a + 3b − 2a + b adalah …
+  options:
+    - id: a
+      label: 3a + 4b
+    - id: b
+      label: 7a + 4b
+    - id: c
+      label: 3a + 2b
+    - id: d
+      label: 7ab
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 3a + 4b
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.ALJABAR.POLA_DAN_BENTUK_EKUIVALEN
+  feedback:
+    correct: "Gabungkan suku sejenis: 5a − 2a = 3a dan 3b + b = 4b."
+    incorrect: "Jawabannya 3a + 4b. Gabungkan suku sejenis: 5a − 2a = 3a dan 3b + b = 4b."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

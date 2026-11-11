@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.Q.JARING_1
+familyCode: MAT.C26.D.PENGUKURAN.F.JARING_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Luas permukaan kubus dengan panjang rusuk 5 cm adalah …
+  options:
+    - id: a
+      label: 125 cm²
+    - id: b
+      label: 150 cm²
+    - id: c
+      label: 100 cm²
+    - id: d
+      label: 25 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 150 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN
+  feedback:
+    correct: 6 × 5² = 6 × 25 = 150 cm². Jawaban 125 adalah volumenya (cm³).
+    incorrect: Jawabannya 150 cm². 6 × 5² = 6 × 25 = 150 cm². Jawaban 125 adalah volumenya (cm³).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran
