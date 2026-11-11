@@ -60,6 +60,19 @@ concepts:
     aliases:
       - ns: MAP
         value: bio-f-sel-respirasi
+  - code: BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME
+    title: Fotosintesis dan anabolisme
+    subtitle: Reaksi terang dan gelap, hubungan anabolisme–katabolisme, regulasi metabolisme
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-sel-fotosintesis
 prerequisites:
   - concept: BIO.C26.F.SEL.ENZIM_DAN_METABOLISME
     requires: BIO.C26.F.SEL.ORGANEL_SEL
@@ -69,6 +82,9 @@ prerequisites:
     kind: SOFT
   - concept: BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP
     requires: BIO.C26.F.SEL.ORGANEL_SEL
+    kind: SOFT
+  - concept: BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME
+    requires: BIO.C26.F.SEL.ENZIM_DAN_METABOLISME
     kind: SOFT
 review:
   status: PROPOSED

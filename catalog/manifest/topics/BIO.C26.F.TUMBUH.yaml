@@ -1,0 +1,84 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUH
+subject: BIO
+title: Pertumbuhan dan perkembangan
+subtitle: Diferensiasi, faktor internal–eksternal, dan eksperimen pertumbuhan
+phase: F
+availability: PLANNED
+bekal:
+  - sel
+  - hormon
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.TUMBUH.DIFERENSIASI_DAN_SPESIALISASI_SEL
+    title: Diferensiasi dan spesialisasi sel
+    subtitle: Dari sel embrio menjadi jaringan khusus
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuh-c1
+  - code: BIO.C26.F.TUMBUH.PERTUMBUHAN_TUMBUHAN_DAN_HORMONNYA
+    title: Pertumbuhan tumbuhan dan hormonnya
+    subtitle: Meristem, perkecambahan, auksin, giberelin, sitokinin
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuh-tumbuhan
+  - code: BIO.C26.F.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN_HEWAN
+    title: Pertumbuhan dan perkembangan hewan
+    subtitle: Tahap embrio dan pascaembrio
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuh-hewan
+  - code: BIO.C26.F.TUMBUH.EKSPERIMEN_PERTUMBUHAN
+    title: Eksperimen pertumbuhan
+    subtitle: Merancang variabel dan membaca data pertumbuhan
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuh-eksperimen
+prerequisites:
+  - concept: BIO.C26.F.TUMBUH.PERTUMBUHAN_TUMBUHAN_DAN_HORMONNYA
+    requires: BIO.C26.F.TUMBUH.DIFERENSIASI_DAN_SPESIALISASI_SEL
+    kind: SOFT
+  - concept: BIO.C26.F.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN_HEWAN
+    requires: BIO.C26.F.TUMBUH.DIFERENSIASI_DAN_SPESIALISASI_SEL
+    kind: SOFT
+  - concept: BIO.C26.F.TUMBUH.EKSPERIMEN_PERTUMBUHAN
+    requires: BIO.C26.F.TUMBUH.PERTUMBUHAN_TUMBUHAN_DAN_HORMONNYA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

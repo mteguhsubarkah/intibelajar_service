@@ -1,0 +1,84 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI
+subject: BIO
+title: Evolusi
+subtitle: Variasi populasi, seleksi alam, bukti evolusi, dan spesiasi
+phase: F
+availability: PLANNED
+bekal:
+  - pewarisan sifat
+  - keanekaragaman hayati
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI
+    title: Variasi dalam populasi
+    subtitle: "Sumber variasi: mutasi dan rekombinasi"
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-evolusi-c1
+  - code: BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+    title: Seleksi alam dan adaptasi
+    subtitle: Kelangsungan hidup dan perubahan frekuensi sifat
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-evolusi-seleksi
+  - code: BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI
+    title: Bukti evolusi
+    subtitle: Fosil, homologi, embriologi, dan molekuler
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-evolusi-bukti
+  - code: BIO.C26.F.EVOLUSI.SPESIASI_DAN_KEANEKARAGAMAN
+    title: Spesiasi dan keanekaragaman
+    subtitle: Isolasi reproduksi dan terbentuknya spesies baru
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-evolusi-spesiasi
+prerequisites:
+  - concept: BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+    requires: BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI
+    kind: HARD
+  - concept: BIO.C26.F.EVOLUSI.SPESIASI_DAN_KEANEKARAGAMAN
+    requires: BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+    kind: SOFT
+  - concept: BIO.C26.F.EVOLUSI.SPESIASI_DAN_KEANEKARAGAMAN
+    requires: BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

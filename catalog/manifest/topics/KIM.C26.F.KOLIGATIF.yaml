@@ -1,0 +1,100 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF
+subject: KIM
+title: Sifat koligatif larutan
+subtitle: Molalitas, fraksi mol, tekanan uap, titik didih, titik beku, dan osmosis
+phase: F
+availability: PLANNED
+bekal:
+  - mol
+  - larutan elektrolit
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL
+    title: Molalitas dan fraksi mol
+    subtitle: Satuan konsentrasi untuk sifat koligatif
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-koligatif-c1
+  - code: KIM.C26.F.KOLIGATIF.PENURUNAN_TEKANAN_UAP
+    title: Penurunan tekanan uap
+    subtitle: Hukum Raoult
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-koligatif-uap
+  - code: KIM.C26.F.KOLIGATIF.KENAIKAN_TITIK_DIDIH_DAN_PENURUNAN_TITIK
+    title: Kenaikan titik didih dan penurunan titik beku
+    subtitle: ΔTb = Kb·m dan ΔTf = Kf·m
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-koligatif-didihbeku
+  - code: KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS
+    title: Tekanan osmosis
+    subtitle: π = MRT dan penerapannya
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-koligatif-osmosis
+  - code: KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+    title: Faktor van 't Hoff
+    subtitle: Sifat koligatif larutan elektrolit
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-koligatif-vanthoff
+prerequisites:
+  - concept: KIM.C26.F.KOLIGATIF.PENURUNAN_TEKANAN_UAP
+    requires: KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL
+    kind: HARD
+  - concept: KIM.C26.F.KOLIGATIF.KENAIKAN_TITIK_DIDIH_DAN_PENURUNAN_TITIK
+    requires: KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL
+    kind: HARD
+  - concept: KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS
+    requires: KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL
+    kind: HARD
+  - concept: KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+    requires: KIM.C26.F.KOLIGATIF.KENAIKAN_TITIK_DIDIH_DAN_PENURUNAN_TITIK
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

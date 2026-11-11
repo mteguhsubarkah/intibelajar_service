@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI
+subject: MAT
+title: Sudut, kesebangunan & Pythagoras
+subtitle: Hubungan sudut, kekongruenan, kesebangunan, dan Teorema Pythagoras
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.D.GEOMETRI.SUDUT_DAN_KESEBANGUNAN
+    title: Sudut dan kesebangunan
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-geometri-c1
+  - code: MAT.C26.D.GEOMETRI.TEOREMA_PYTHAGORAS
+    title: Teorema Pythagoras
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-geometri-c2
+  - code: MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+    title: Kongruen dan sebangun
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-geometri-kongruen
+prerequisites:
+  - concept: MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+    requires: MAT.C26.D.GEOMETRI.SUDUT_DAN_KESEBANGUNAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

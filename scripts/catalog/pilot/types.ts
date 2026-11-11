@@ -40,8 +40,12 @@ export interface PilotCore {
   sub?: string;
   min?: number;
   capstone?: boolean;
-  slides: [PilotSlide, PilotSlide];
-  q: PilotQuestion[];
+  /**
+   * Materi dua slide. Inti tanpa materi (dan tanpa soal) ditulis PLANNED: posisinya sudah ada di kurikulum,
+   * isinya belum. Begitu slides dan soal diisi, inti menjadi READY pada pembangkitan berikutnya.
+   */
+  slides?: [PilotSlide, PilotSlide];
+  q?: PilotQuestion[];
 }
 
 /** Topik baru (atau topik MAT yang sebelumnya PLANNED tanpa inti). */
@@ -50,13 +54,17 @@ export interface PilotTopic {
   subject: 'MAT' | 'FIS' | 'KIM' | 'BIO';
   title: string;
   subtitle: string;
-  phase: 'E' | 'F' | 'F+';
+  phase: 'D' | 'E' | 'F' | 'F+';
   bekal: string[];
   /** alias TOPIC (huruf kecil) bila topik baru */
   alias?: string;
   cores: PilotCore[];
   /** prasyarat antarinti: [dari, ke, H = keras | S = lunak] */
   edges: [string, string, 'H' | 'S'][];
+  /** keputusan review (bawaan D7 konten pilot); topik dari audit kesenjangan materi memakai D9 */
+  decision?: string;
+  /** bukti asal inti untuk peninjau (bawaan: peta referensi IntiVerse) */
+  evidence?: string[];
 }
 
 /** Materi dan soal untuk konsep yang sudah ada di katalog (MAT.EKS, MAT.BAR, MAT.VEK). */
@@ -72,4 +80,4 @@ export interface PilotExisting {
   q: PilotQuestion[];
 }
 
-export interface PilotRelation { from: string; to: string; kind: 'REQUIRES' | 'RELATED'; label: string }
+export interface PilotRelation { from: string; to: string; kind: 'REQUIRES' | 'RELATED'; label: string; decision?: string }

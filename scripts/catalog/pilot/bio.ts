@@ -135,8 +135,10 @@ const SEL: PilotTopic = {
       Q('Glikolisis berlangsung di …', ['sitoplasma', 'matriks mitokondria', 'membran dalam mitokondria', 'nukleus'], 0, 'Glikolisis memecah glukosa menjadi asam piruvat di sitoplasma.', 1),
       Q('Otot yang bekerja berat dan kekurangan oksigen melakukan fermentasi yang menghasilkan …', ['alkohol', 'asam laktat', 'asam asetat', 'glukosa'], 1, 'Fermentasi pada sel otot manusia menghasilkan asam laktat yang menyebabkan rasa pegal.', 1),
     ], { capstone: true, min: 6 }),
+    // audit kesenjangan materi (D9): fotosintesis belum punya inti sendiri; PLANNED sampai materi dan soal diisi
+    { id: 'FOTOSINTESIS', title: 'Fotosintesis dan anabolisme', sub: 'Reaksi terang dan gelap, hubungan anabolisme–katabolisme, regulasi metabolisme' },
   ],
-  edges: [['C1', 'C2', 'S'], ['C1', 'TRANSPORT', 'S'], ['C1', 'RESPIRASI', 'S']],
+  edges: [['C1', 'C2', 'S'], ['C1', 'TRANSPORT', 'S'], ['C1', 'RESPIRASI', 'S'], ['C2', 'FOTOSINTESIS', 'S']],
 };
 
 const GENETIKA: PilotTopic = {

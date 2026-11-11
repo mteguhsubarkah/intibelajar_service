@@ -1,0 +1,68 @@
+schemaVersion: 1
+code: MAT.C26.E.SPLTV
+subject: MAT
+title: Sistem persamaan linear tiga variabel
+subtitle: Pemodelan tiga variabel, eliminasi–substitusi, dan himpunan solusi
+phase: E
+availability: PLANNED
+bekal:
+  - SPLDV
+  - bentuk aljabar
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH
+    title: Model SPLTV dari masalah
+    subtitle: Menerjemahkan masalah kontekstual menjadi tiga persamaan
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-e-spltv-c1
+  - code: MAT.C26.E.SPLTV.ELIMINASI_DAN_SUBSTITUSI_SPLTV
+    title: Eliminasi dan substitusi SPLTV
+    subtitle: Mengurangi tiga variabel menjadi dua, lalu satu
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-e-spltv-c2
+  - code: MAT.C26.E.SPLTV.HIMPUNAN_SOLUSI_DAN_INTERPRETASINYA
+    title: Himpunan solusi dan interpretasinya
+    subtitle: Memeriksa solusi dan maknanya dalam konteks
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-e-spltv-solusi
+prerequisites:
+  - concept: MAT.C26.E.SPLTV.ELIMINASI_DAN_SUBSTITUSI_SPLTV
+    requires: MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH
+    kind: HARD
+  - concept: MAT.C26.E.SPLTV.HIMPUNAN_SOLUSI_DAN_INTERPRETASINYA
+    requires: MAT.C26.E.SPLTV.ELIMINASI_DAN_SUBSTITUSI_SPLTV
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

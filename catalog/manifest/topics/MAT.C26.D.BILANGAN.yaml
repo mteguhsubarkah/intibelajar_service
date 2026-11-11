@@ -1,0 +1,75 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN
+subject: MAT
+title: Bilangan dan operasi
+subtitle: Bilangan rasional, pangkat, akar, pecahan, dan notasi ilmiah
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+    title: Bilangan rasional & estimasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-bilangan-c1
+  - code: MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+    title: Pangkat, akar & notasi ilmiah
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-bilangan-c2
+  - code: MAT.C26.D.BILANGAN.OPERASI_PECAHAN
+    title: Operasi pecahan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-bilangan-pecahan
+  - code: MAT.C26.D.BILANGAN.NOTASI_ILMIAH
+    title: Notasi ilmiah
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-bilangan-ilmiah
+prerequisites:
+  - concept: MAT.C26.D.BILANGAN.OPERASI_PECAHAN
+    requires: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+    kind: SOFT
+  - concept: MAT.C26.D.BILANGAN.NOTASI_ILMIAH
+    requires: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

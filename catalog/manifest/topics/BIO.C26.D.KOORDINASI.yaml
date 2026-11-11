@@ -1,0 +1,86 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI
+subject: BIO
+title: Koordinasi, reproduksi, dan homeostasis
+subtitle: Sistem saraf, hormon, reproduksi manusia, dan pengaturan kondisi tubuh
+phase: D
+availability: PLANNED
+bekal:
+  - sistem organ
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.D.KOORDINASI.SISTEM_SARAF_DAN_INDRA
+    title: Sistem saraf dan indra
+    subtitle: Neuron, gerak refleks, dan alat indra
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-koordinasi-c1
+  - code: BIO.C26.D.KOORDINASI.SISTEM_HORMON
+    title: Sistem hormon
+    subtitle: Kelenjar endokrin dan fungsi hormon
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-koordinasi-hormon
+  - code: BIO.C26.D.KOORDINASI.REPRODUKSI_DAN_KESEHATAN_REPRODUKSI
+    title: Reproduksi dan kesehatan reproduksi
+    subtitle: Organ reproduksi, pubertas, dan menjaga kesehatan reproduksi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-koordinasi-reproduksi
+  - code: BIO.C26.D.KOORDINASI.HOMEOSTASIS
+    title: Homeostasis
+    subtitle: Kerja sama antarsistem menjaga suhu, cairan, dan gula darah
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-koordinasi-homeostasis
+prerequisites:
+  - concept: BIO.C26.D.KOORDINASI.SISTEM_HORMON
+    requires: BIO.C26.D.KOORDINASI.SISTEM_SARAF_DAN_INDRA
+    kind: SOFT
+  - concept: BIO.C26.D.KOORDINASI.REPRODUKSI_DAN_KESEHATAN_REPRODUKSI
+    requires: BIO.C26.D.KOORDINASI.SISTEM_HORMON
+    kind: SOFT
+  - concept: BIO.C26.D.KOORDINASI.HOMEOSTASIS
+    requires: BIO.C26.D.KOORDINASI.SISTEM_SARAF_DAN_INDRA
+    kind: SOFT
+  - concept: BIO.C26.D.KOORDINASI.HOMEOSTASIS
+    requires: BIO.C26.D.KOORDINASI.SISTEM_HORMON
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

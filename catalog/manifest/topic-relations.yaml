@@ -311,3 +311,666 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.BILANGAN
+    to: MAT.C26.D.RASIO
+    kind: REQUIRES
+    label: Konsep dasar operasi bilangan mendukung rasio
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.BILANGAN
+    to: MAT.C26.D.ALJABAR
+    kind: REQUIRES
+    label: Operasi bilangan menjadi bekal bentuk aljabar
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.ALJABAR
+    to: MAT.C26.D.FUNGSI
+    kind: REQUIRES
+    label: Persamaan aljabar menjadi bekal SPLDV
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.GEOMETRI
+    to: MAT.C26.D.PENGUKURAN
+    kind: REQUIRES
+    label: Pythagoras & kesebangunan mendukung bangun ruang
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.BILANGAN
+    to: MAT.EKS
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Bilangan berpangkat SMP menuju Eksponen & Logaritma SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.ALJABAR
+    to: MAT.KUA
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Bentuk aljabar SMP menuju Persamaan & Fungsi Kuadrat SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.FUNGSI
+    to: MAT.SPL
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: SPLDV SMP menuju Sistem Pertidaksamaan SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.GEOMETRI
+    to: MAT.TRI
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Kesebangunan & Pythagoras SMP menuju Trigonometri SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.DATA
+    to: MAT.STP
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Data & peluang SMP menuju Statistika SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.FUNGSI
+    to: MAT.INV
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Relasi & fungsi linear menuju Komposisi & Invers Fungsi"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.GEOMETRI
+    to: MAT.CP25.F.LINGKARAN
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Sudut & Pythagoras menuju Hubungan Unsur Lingkaran"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.DATA
+    to: MAT.CP25.F.PELUANG
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Peluang sederhana menuju Peluang Majemuk & Bersyarat"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.CP25.F.PELUANG
+    to: MAT.C26.FPLUS.DISTRIBUSI
+    kind: REQUIRES
+    label: "Lintas Fase F ➔ F+: Peluang majemuk menuju Distribusi Binomial & Normal"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.UKUR
+    to: FIS.C26.D.GERAK
+    kind: REQUIRES
+    label: Besaran & satuan mendukung analisis gerak
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.GERAK
+    to: FIS.C26.D.ENERGI
+    kind: REQUIRES
+    label: Gaya & gerak mendukung konsep usaha dan energi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.GERAK
+    to: FIS.C26.D.GELOMBANG
+    kind: REQUIRES
+    label: Konsep gerak mendukung getaran & gelombang
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.ENERGI
+    to: FIS.C26.D.LISTRIK
+    kind: REQUIRES
+    label: Energi mendukung kelistrikan & energi ramah lingkungan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.UKUR
+    to: FIS.C26.E.UKUR
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Pengukuran SMP menuju Ketidakpastian & Analisis Data SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.GERAK
+    to: FIS.C26.E.GERAK2D
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Gerak lurus SMP menuju Gerak Dua Dimensi SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.ENERGI
+    to: FIS.C26.E.ENERGI
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Usaha & energi SMP menuju Energi Alternatif SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.GERAK
+    to: FIS.C26.F.FLUIDA
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Gaya & tekanan SMP menuju Fluida Statis & Dinamis"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.ENERGI
+    to: FIS.C26.F.TERMAL
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Kalor SMP menuju Termodinamika SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.GELOMBANG
+    to: FIS.C26.F.GELOMBANG
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Getaran & bunyi SMP menuju Gelombang & Efek Doppler"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.LISTRIK
+    to: FIS.C26.F.ELEKTRO
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Rangkaian SMP menuju Elektromagnetisme & Kirchhoff"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.D.MATERI
+    to: KIM.C26.D.ZAT
+    kind: REQUIRES
+    label: Sifat materi mendukung kajian zat aditif
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.D.MATERI
+    to: KIM.C26.E.ATOM
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Klasifikasi materi SMP menuju Partikel Penyusun Materi SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.KLASIFIKASI
+    to: BIO.C26.D.ORGAN
+    kind: REQUIRES
+    label: Ciri makhluk hidup mendukung organisasi kehidupan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.KLASIFIKASI
+    to: BIO.C26.D.EKOLOGI
+    kind: REQUIRES
+    label: Klasifikasi mendukung interaksi ekosistem
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.ORGAN
+    to: BIO.C26.D.GENETIKA
+    kind: REQUIRES
+    label: Sistem organ mendukung pewarisan sifat SMP
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.KLASIFIKASI
+    to: BIO.C26.E.BIODIVERSITAS
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Klasifikasi SMP menuju Keanekaragaman & Konservasi SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.KLASIFIKASI
+    to: BIO.C26.E.MIKROBA
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Klasifikasi SMP menuju Virus, Bakteri & Jamur"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.EKOLOGI
+    to: BIO.C26.E.EKOSISTEM
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: Ekologi SMP menuju Siklus Karbon & Keseimbangan Ekosistem"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.ORGAN
+    to: BIO.C26.F.SEL
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Sel & organ SMP menuju Struktur Sel & Bioproses"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.GENETIKA
+    to: BIO.C26.F.GENETIKA
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: Pewarisan sifat SMP menuju Genetika Molekuler SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.STOIK
+    to: MAT.C26.D.RASIO
+    kind: RELATED
+    label: "Lintas Pelajaran Kimia ↔ Matematika: Perbandingan mol dalam reaksi kimia"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.D.MATERI
+    to: KIM.C26.D.REAKSI
+    kind: REQUIRES
+    label: sifat dan perubahan materi → reaksi kimia
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.D.REAKSI
+    to: KIM.C26.E.STOIK
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: kekekalan massa dan persamaan reaksi → stoikiometri"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.STOIK
+    to: KIM.C26.F.KOLIGATIF
+    kind: REQUIRES
+    label: mol → molalitas dan fraksi mol
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.ELEKTROLIT
+    to: KIM.C26.F.KOLIGATIF
+    kind: REQUIRES
+    label: jumlah ion → faktor van 't Hoff
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.ELEKTROLIT
+    to: KIM.C26.F.REDOKS
+    kind: RELATED
+    label: larutan elektrolit dalam sel elektrokimia
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.ORGAN
+    to: BIO.C26.D.KOORDINASI
+    kind: REQUIRES
+    label: sistem organ → koordinasi antarsistem
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.ORGAN
+    to: BIO.C26.F.ORGAN
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: sistem organ SMP → sistem organ SMA"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.TUMBUH
+    to: BIO.C26.F.TUMBUH
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: pertumbuhan dan perkembangan"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.SEL
+    to: BIO.C26.F.ORGAN
+    kind: REQUIRES
+    label: sel dan jaringan → sistem organ
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.GENETIKA
+    to: BIO.C26.F.EVOLUSI
+    kind: REQUIRES
+    label: pewarisan dan mutasi → variasi populasi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.D.FUNGSI
+    to: MAT.C26.E.SPLTV
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: SPLDV → SPLTV"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.STP
+    to: MAT.C26.F.REGRESI
+    kind: REQUIRES
+    label: diagram pencar → korelasi dan regresi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.KUA
+    to: MAT.C26.FPLUS.KERUCUT
+    kind: REQUIRES
+    label: fungsi kuadrat → parabola
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.LISTRIK
+    to: FIS.C26.F.MEDAN
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ F: listrik dan magnet SMP → medan listrik dan magnet"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.F.MEDAN
+    to: FIS.C26.F.ELEKTRO
+    kind: RELATED
+    label: medan magnet ↔ induksi elektromagnetik
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.ANTARIKSA
+    to: FIS.C26.D.KEBUMIAN
+    kind: RELATED
+    label: Bumi sebagai planet ↔ struktur Bumi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse

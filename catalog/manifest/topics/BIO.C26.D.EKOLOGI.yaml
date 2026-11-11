@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI
+subject: BIO
+title: Ekosistem dan perubahan iklim
+subtitle: Interaksi, aliran energi, rantai jaring makanan, dan perubahan lingkungan
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+    title: Interaksi & aliran energi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-ekologi-c1
+  - code: BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+    title: Perubahan lingkungan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-ekologi-c2
+  - code: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+    title: Rantai dan jaring makanan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-ekologi-jejaring
+prerequisites:
+  - concept: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+    requires: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

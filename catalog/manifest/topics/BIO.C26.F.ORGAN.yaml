@@ -1,0 +1,131 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN
+subject: BIO
+title: Sistem organ manusia
+subtitle: "Keterkaitan struktur dan fungsi: pencernaan, sirkulasi, respirasi, ekskresi, koordinasi, reproduksi"
+phase: F
+availability: PLANNED
+bekal:
+  - sel dan jaringan
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    title: Struktur dan fungsi jaringan
+    subtitle: Jaringan hewan dan hubungannya dengan fungsi organ
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-organ-c1
+  - code: BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+    title: Sistem pencernaan
+    subtitle: Pencernaan mekanik–kimiawi, enzim, dan penyerapan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-organ-pencernaan
+  - code: BIO.C26.F.ORGAN.SISTEM_SIRKULASI
+    title: Sistem sirkulasi
+    subtitle: Jantung, peredaran darah ganda, dan sistem limfa
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-organ-sirkulasi
+  - code: BIO.C26.F.ORGAN.SISTEM_RESPIRASI
+    title: Sistem respirasi
+    subtitle: Mekanisme pernapasan dan pertukaran gas
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-organ-respirasi
+  - code: BIO.C26.F.ORGAN.SISTEM_EKSKRESI
+    title: Sistem ekskresi
+    subtitle: Ginjal, pembentukan urine, dan organ ekskresi lain
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-organ-ekskresi
+  - code: BIO.C26.F.ORGAN.SISTEM_KOORDINASI
+    title: Sistem koordinasi
+    subtitle: Saraf, hormon, dan alat indra
+    objectives: []
+    misconceptions: []
+    ordinal: 6
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-organ-koordinasi
+  - code: BIO.C26.F.ORGAN.SISTEM_REPRODUKSI
+    title: Sistem reproduksi
+    subtitle: Gametogenesis, siklus menstruasi, dan fertilisasi
+    objectives: []
+    misconceptions: []
+    ordinal: 7
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-f-organ-reproduksi
+prerequisites:
+  - concept: BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+    requires: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    kind: SOFT
+  - concept: BIO.C26.F.ORGAN.SISTEM_SIRKULASI
+    requires: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    kind: SOFT
+  - concept: BIO.C26.F.ORGAN.SISTEM_RESPIRASI
+    requires: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    kind: SOFT
+  - concept: BIO.C26.F.ORGAN.SISTEM_EKSKRESI
+    requires: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    kind: SOFT
+  - concept: BIO.C26.F.ORGAN.SISTEM_KOORDINASI
+    requires: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    kind: SOFT
+  - concept: BIO.C26.F.ORGAN.SISTEM_REPRODUKSI
+    requires: BIO.C26.F.ORGAN.SISTEM_KOORDINASI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

@@ -1,0 +1,100 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS
+subject: KIM
+title: Redoks dan elektrokimia
+subtitle: Bilangan oksidasi, penyetaraan redoks, sel volta, elektrolisis, dan korosi
+phase: F
+availability: PLANNED
+bekal:
+  - persamaan reaksi
+  - larutan elektrolit
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.REDOKS.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS
+    title: Bilangan oksidasi dan reaksi redoks
+    subtitle: Oksidator, reduktor, dan perubahan bilangan oksidasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-redoks-c1
+  - code: KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+    title: Penyetaraan reaksi redoks
+    subtitle: Metode setengah reaksi dan perubahan bilangan oksidasi
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-redoks-setara
+  - code: KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+    title: Sel volta dan potensial sel
+    subtitle: Notasi sel dan E° sel
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-redoks-volta
+  - code: KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY
+    title: Elektrolisis dan hukum Faraday
+    subtitle: Reaksi di katode–anode dan massa hasil elektrolisis
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-redoks-elektrolisis
+  - code: KIM.C26.F.REDOKS.KOROSI_DAN_PENCEGAHANNYA
+    title: Korosi dan pencegahannya
+    subtitle: Perkaratan besi dan cara mencegahnya
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-redoks-korosi
+prerequisites:
+  - concept: KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+    requires: KIM.C26.F.REDOKS.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS
+    kind: HARD
+  - concept: KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+    requires: KIM.C26.F.REDOKS.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS
+    kind: HARD
+  - concept: KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY
+    requires: KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+    kind: SOFT
+  - concept: KIM.C26.F.REDOKS.KOROSI_DAN_PENCEGAHANNYA
+    requires: KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

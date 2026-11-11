@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.D.ZAT
+subject: KIM
+title: Zat aditif dan adiktif
+subtitle: Fungsi zat aditif makanan serta risiko kesehatan zat adiktif
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.D.ZAT.FUNGSI_ZAT_ADITIF
+    title: Fungsi zat aditif
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-d-zat-c1
+  - code: KIM.C26.D.ZAT.RISIKO_ZAT_ADIKTIF
+    title: Risiko zat adiktif
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-d-zat-c2
+prerequisites:
+  - concept: KIM.C26.D.ZAT.RISIKO_ZAT_ADIKTIF
+    requires: KIM.C26.D.ZAT.FUNGSI_ZAT_ADITIF
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
