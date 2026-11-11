@@ -20,20 +20,20 @@ body:
   prompt: Siswa menyelidiki pengaruh suhu air terhadap waktu larut gula. Yang harus dijaga sama (variabel kontrol) adalah …
   options:
     - id: a
-      label: suhu air
-    - id: b
-      label: waktu larut gula
-    - id: c
       label: jumlah gula dan volume air
-    - id: d
+    - id: b
       label: hasil pengamatan
+    - id: c
+      label: suhu air
+    - id: d
+      label: waktu larut gula
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: a
   acceptedForms:
     - jumlah gula dan volume air
   solutionPaths: []

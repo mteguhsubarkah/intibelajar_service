@@ -20,20 +20,20 @@ body:
   prompt: Saat terjadi gempa di dalam kelas, tindakan yang paling tepat adalah …
   options:
     - id: a
-      label: berlari keluar sambil berdesakan di tangga
-    - id: b
-      label: berlindung di bawah meja sambil melindungi kepala
-    - id: c
-      label: berdiri di dekat jendela kaca
-    - id: d
       label: menyalakan kompor
+    - id: b
+      label: berlari keluar sambil berdesakan di tangga
+    - id: c
+      label: berlindung di bawah meja sambil melindungi kepala
+    - id: d
+      label: berdiri di dekat jendela kaca
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - berlindung di bawah meja sambil melindungi kepala
   solutionPaths: []

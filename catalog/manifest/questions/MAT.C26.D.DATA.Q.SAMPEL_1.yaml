@@ -20,20 +20,20 @@ body:
   prompt: Kepala sekolah ingin mengetahui makanan kantin favorit seluruh siswa. Sampel yang paling representatif adalah …
   options:
     - id: a
-      label: 10 siswa dari kelas 7A
-    - id: b
-      label: 30 siswa yang dipilih acak dari setiap kelas
-    - id: c
       label: semua anggota OSIS
-    - id: d
+    - id: b
       label: siswa yang berada di kantin pukul 07.00
+    - id: c
+      label: 10 siswa dari kelas 7A
+    - id: d
+      label: 30 siswa yang dipilih acak dari setiap kelas
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 30 siswa yang dipilih acak dari setiap kelas
   solutionPaths: []

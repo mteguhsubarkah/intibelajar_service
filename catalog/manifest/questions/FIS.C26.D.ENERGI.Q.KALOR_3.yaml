@@ -20,20 +20,20 @@ body:
   prompt: Es yang sedang melebur pada 0 °C terus dipanaskan. Selama proses melebur, suhunya …
   options:
     - id: a
-      label: naik dengan cepat
-    - id: b
       label: tetap 0 °C sampai semua es mencair
-    - id: c
+    - id: b
       label: turun
-    - id: d
+    - id: c
       label: naik lalu turun
+    - id: d
+      label: naik dengan cepat
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - tetap 0 °C sampai semua es mencair
   solutionPaths: []

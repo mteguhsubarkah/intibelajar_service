@@ -20,20 +20,20 @@ body:
   prompt: Sebuah lampu 50 W menyala 10 jam setiap hari. Energi yang dipakai dalam 30 hari adalah …
   options:
     - id: a
-      label: 15 kWh
-    - id: b
-      label: 1,5 kWh
-    - id: c
       label: 150 kWh
-    - id: d
+    - id: b
       label: 500 kWh
+    - id: c
+      label: 15 kWh
+    - id: d
+      label: 1,5 kWh
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 15 kWh
   solutionPaths: []

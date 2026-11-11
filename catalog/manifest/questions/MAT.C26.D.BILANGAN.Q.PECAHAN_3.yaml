@@ -20,20 +20,20 @@ body:
   prompt: Sebuah resep membutuhkan 3/4 cangkir gula untuk 1 loyang kue. Untuk 2½ loyang dibutuhkan … cangkir gula.
   options:
     - id: a
-      label: 1 7/8
-    - id: b
-      label: 2 1/4
-    - id: c
-      label: 3 1/4
-    - id: d
       label: 1 1/2
+    - id: b
+      label: 1 7/8
+    - id: c
+      label: 2 1/4
+    - id: d
+      label: 3 1/4
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - 1 7/8
   solutionPaths: []

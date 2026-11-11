@@ -20,20 +20,20 @@ body:
   prompt: Tangga sepanjang 13 m bersandar pada dinding. Kaki tangga berjarak 5 m dari dinding. Tinggi ujung tangga dari lantai adalah …
   options:
     - id: a
-      label: 8 m
-    - id: b
       label: 12 m
-    - id: c
+    - id: b
       label: 18 m
-    - id: d
+    - id: c
       label: √194 m
+    - id: d
+      label: 8 m
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - 12 m
   solutionPaths: []

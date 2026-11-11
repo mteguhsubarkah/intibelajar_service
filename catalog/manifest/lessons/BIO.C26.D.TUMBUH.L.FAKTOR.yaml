@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.L.FAKTOR
+title: Faktor internal dan eksternal
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.TUMBUH.FAKTOR_INTERNAL_DAN_EKSTERNAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Faktor internal
+  - type: text
+    slide: 0
+    text: "Faktor dari dalam: gen (keturunan) dan hormon."
+  - type: text
+    slide: 0
+    text: Pada tumbuhan, auksin merangsang pemanjangan sel dan giberelin merangsang pertumbuhan batang. Pada manusia ada hormon pertumbuhan dari hipofisis.
+  - type: math
+    slide: 0
+    name: auksin
+    expression: pemanjangan sel
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Faktor eksternal
+  - type: text
+    slide: 1
+    text: "Faktor dari luar: nutrisi, air, cahaya, suhu, dan kelembapan."
+  - type: text
+    slide: 1
+    text: Kecambah di tempat gelap tumbuh lebih cepat tinggi tetapi kurus dan pucat (etiolasi), karena auksin tidak terurai oleh cahaya.
+  - type: math
+    slide: 1
+    name: etiolasi
+    expression: gelap → cepat tinggi, pucat
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Cahaya justru menghambat pemanjangan batang, tetapi diperlukan untuk fotosintesis.
+checks:
+  - question: BIO.C26.D.TUMBUH.Q.FAKTOR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.TUMBUH.S.FAKTOR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

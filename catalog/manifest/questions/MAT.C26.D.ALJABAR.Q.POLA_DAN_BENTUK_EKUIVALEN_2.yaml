@@ -20,20 +20,20 @@ body:
   prompt: Bentuk yang ekuivalen dengan 4(2x − 3) adalah …
   options:
     - id: a
-      label: 8x − 3
-    - id: b
-      label: 8x − 12
-    - id: c
       label: 6x − 7
-    - id: d
+    - id: b
       label: 8x + 12
+    - id: c
+      label: 8x − 3
+    - id: d
+      label: 8x − 12
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 8x − 12
   solutionPaths: []

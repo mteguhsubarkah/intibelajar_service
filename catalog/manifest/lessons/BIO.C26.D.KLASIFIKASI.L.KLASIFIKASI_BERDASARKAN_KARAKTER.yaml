@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.KLASIFIKASI.L.KLASIFIKASI_BERDASARKAN_KARAKTER
+title: Klasifikasi berdasarkan karakter
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.KLASIFIKASI.KLASIFIKASI_BERDASARKAN_KARAKTER
+blocks:
+  - type: heading
+    slide: 0
+    text: Mengapa mengelompokkan?
+  - type: text
+    slide: 0
+    text: Klasifikasi memudahkan kita mengenali dan mempelajari makhluk hidup yang sangat beragam.
+  - type: text
+    slide: 0
+    text: Dasarnya persamaan dan perbedaan ciri, misalnya bertulang belakang atau tidak, berbunga atau tidak, bersel satu atau bersel banyak.
+  - type: math
+    slide: 0
+    name: dasar klasifikasi
+    expression: persamaan dan perbedaan ciri
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Lima kingdom
+  - type: text
+    slide: 1
+    text: "**Monera** (bakteri, tanpa membran inti), **Protista** (bersel satu bermembran inti, misalnya amoeba dan alga), **Fungi** (jamur), **Plantae** (tumbuhan berklorofil), **Animalia** (hewan)."
+  - type: text
+    slide: 1
+    text: Hewan dibagi menjadi vertebrata (ikan, amfibi, reptil, burung, mamalia) dan invertebrata.
+  - type: math
+    slide: 1
+    name: vertebrata
+    expression: bertulang belakang
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Mulailah dari ciri yang paling membedakan, lalu ke ciri yang lebih rinci.
+checks:
+  - question: BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.KLASIFIKASI.S.KLASIFIKASI_BERDASARKAN_KARAKTER
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -20,20 +20,20 @@ body:
   prompt: Linggis dengan lengan beban 20 cm dan lengan kuasa 100 cm dipakai untuk mengangkat batu seberat 500 N. Gaya kuasa yang diperlukan adalah …
   options:
     - id: a
-      label: 100 N
-    - id: b
-      label: 2.500 N
-    - id: c
       label: 25 N
-    - id: d
+    - id: b
       label: 250 N
+    - id: c
+      label: 100 N
+    - id: d
+      label: 2.500 N
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 100 N
   solutionPaths: []

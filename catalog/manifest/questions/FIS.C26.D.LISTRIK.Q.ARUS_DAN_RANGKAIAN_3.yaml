@@ -20,20 +20,20 @@ body:
   prompt: Cara memasang voltmeter untuk mengukur tegangan sebuah lampu adalah …
   options:
     - id: a
-      label: paralel dengan lampu
-    - id: b
       label: seri dengan lampu
-    - id: c
+    - id: b
       label: di sembarang tempat
-    - id: d
+    - id: c
       label: hanya di dekat baterai
+    - id: d
+      label: paralel dengan lampu
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - paralel dengan lampu
   solutionPaths: []

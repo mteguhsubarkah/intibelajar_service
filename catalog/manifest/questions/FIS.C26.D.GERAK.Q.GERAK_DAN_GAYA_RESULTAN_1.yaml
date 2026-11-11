@@ -20,20 +20,20 @@ body:
   prompt: Gaya yang membuat bola yang menggelinding di lantai lama-kelamaan berhenti adalah …
   options:
     - id: a
-      label: gaya gesek
-    - id: b
-      label: gaya magnet
-    - id: c
-      label: gaya pegas
-    - id: d
       label: gaya listrik
+    - id: b
+      label: gaya gesek
+    - id: c
+      label: gaya magnet
+    - id: d
+      label: gaya pegas
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - gaya gesek
   solutionPaths: []

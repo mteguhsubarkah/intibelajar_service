@@ -20,20 +20,20 @@ body:
   prompt: Penyelesaian dari 2x + y = 11 dan x − y = 1 adalah …
   options:
     - id: a
-      label: x = 4, y = 3
-    - id: b
-      label: x = 3, y = 5
-    - id: c
       label: x = 5, y = 1
-    - id: d
+    - id: b
       label: x = 4, y = 4
+    - id: c
+      label: x = 4, y = 3
+    - id: d
+      label: x = 3, y = 5
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - x = 4, y = 3
   solutionPaths: []

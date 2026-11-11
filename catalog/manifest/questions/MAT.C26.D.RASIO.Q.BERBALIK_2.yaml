@@ -20,20 +20,20 @@ body:
   prompt: Persediaan makanan cukup untuk 40 ekor ayam selama 9 hari. Jika ayam bertambah 20 ekor, makanan itu cukup untuk … hari.
   options:
     - id: a
-      label: "6"
-    - id: b
-      label: 13,5
-    - id: c
       label: 4,5
-    - id: d
+    - id: b
       label: "12"
+    - id: c
+      label: "6"
+    - id: d
+      label: 13,5
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - "6"
   solutionPaths: []

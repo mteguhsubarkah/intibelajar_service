@@ -20,20 +20,20 @@ body:
   prompt: Gradien garis yang melalui titik (1, 2) dan (4, 11) adalah …
   options:
     - id: a
-      label: "3"
-    - id: b
-      label: 1/3
-    - id: c
       label: "9"
-    - id: d
+    - id: b
       label: "2"
+    - id: c
+      label: "3"
+    - id: d
+      label: 1/3
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - "3"
   solutionPaths: []

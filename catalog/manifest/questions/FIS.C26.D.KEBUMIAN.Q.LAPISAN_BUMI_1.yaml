@@ -20,20 +20,20 @@ body:
   prompt: Lapisan Bumi yang paling tebal adalah …
   options:
     - id: a
-      label: kerak
-    - id: b
-      label: mantel
-    - id: c
       label: inti luar
-    - id: d
+    - id: b
       label: inti dalam
+    - id: c
+      label: kerak
+    - id: d
+      label: mantel
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - mantel
   solutionPaths: []

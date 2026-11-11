@@ -20,20 +20,20 @@ body:
   prompt: Massa seorang astronaut 60 kg. Di Bulan, yang gravitasinya 1/6 gravitasi Bumi, massanya …
   options:
     - id: a
-      label: 10 kg
-    - id: b
-      label: 60 kg
-    - id: c
       label: 360 kg
-    - id: d
+    - id: b
       label: 0 kg
+    - id: c
+      label: 10 kg
+    - id: d
+      label: 60 kg
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 60 kg
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Suhu 27 °C dalam skala Kelvin adalah …
   options:
     - id: a
-      label: 246 K
-    - id: b
-      label: 300 K
-    - id: c
-      label: 273 K
-    - id: d
       label: 327 K
+    - id: b
+      label: 246 K
+    - id: c
+      label: 300 K
+    - id: d
+      label: 273 K
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - 300 K
   solutionPaths: []

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_3
+familyCode: BIO.C26.D.KOORDINASI.F.HOMEOSTASIS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KOORDINASI.HOMEOSTASIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Saat cuaca dingin, tubuh menggigil. Tujuannya adalah …
+  options:
+    - id: a
+      label: menurunkan suhu tubuh
+    - id: b
+      label: menghemat air
+    - id: c
+      label: mengeluarkan keringat
+    - id: d
+      label: menghasilkan panas dari kontraksi otot
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - menghasilkan panas dari kontraksi otot
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KOORDINASI.HOMEOSTASIS
+  feedback:
+    correct: Otot yang berkontraksi cepat menghasilkan panas untuk menghangatkan tubuh.
+    incorrect: Jawabannya menghasilkan panas dari kontraksi otot. Otot yang berkontraksi cepat menghasilkan panas untuk menghangatkan tubuh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

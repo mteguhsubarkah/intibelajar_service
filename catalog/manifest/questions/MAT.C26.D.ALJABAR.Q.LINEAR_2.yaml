@@ -20,20 +20,20 @@ body:
   prompt: Nilai x yang memenuhi (x + 4)/3 = 5 adalah …
   options:
     - id: a
-      label: "11"
-    - id: b
-      label: "19"
-    - id: c
       label: "1"
-    - id: d
+    - id: b
       label: "15"
+    - id: c
+      label: "11"
+    - id: d
+      label: "19"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - "11"
   solutionPaths: []

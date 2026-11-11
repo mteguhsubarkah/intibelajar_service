@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.EKSKRESI_3
+familyCode: BIO.C26.D.ORGAN.F.EKSKRESI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.EKSKRESI_DAN_KESEIMBANGAN_CAIRAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Saat seseorang kurang minum, urinenya cenderung …
+  options:
+    - id: a
+      label: banyak dan encer
+    - id: b
+      label: sedikit dan pekat
+    - id: c
+      label: tidak berubah
+    - id: d
+      label: berwarna biru
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - sedikit dan pekat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.EKSKRESI_DAN_KESEIMBANGAN_CAIRAN
+  feedback:
+    correct: Ginjal menghemat air, sehingga urine yang dikeluarkan sedikit dan pekat.
+    incorrect: Jawabannya sedikit dan pekat. Ginjal menghemat air, sehingga urine yang dikeluarkan sedikit dan pekat.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -20,20 +20,20 @@ body:
   prompt: Bentuk sederhana dari √72 adalah …
   options:
     - id: a
-      label: 6√2
-    - id: b
       label: 3√8
-    - id: c
+    - id: b
       label: 2√18
-    - id: d
+    - id: c
       label: 8√3
+    - id: d
+      label: 6√2
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 6√2
   solutionPaths: []

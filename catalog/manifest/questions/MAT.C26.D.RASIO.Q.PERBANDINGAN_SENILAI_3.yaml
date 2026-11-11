@@ -20,20 +20,20 @@ body:
   prompt: Pasangan besaran berikut yang merupakan perbandingan senilai adalah …
   options:
     - id: a
-      label: banyak pekerja dan lama pekerjaan selesai
-    - id: b
-      label: kecepatan dan waktu tempuh untuk jarak yang sama
-    - id: c
-      label: banyak barang dan total harga
-    - id: d
       label: banyak siswa dan jatah kue per siswa dari kue yang sama
+    - id: b
+      label: banyak pekerja dan lama pekerjaan selesai
+    - id: c
+      label: kecepatan dan waktu tempuh untuk jarak yang sama
+    - id: d
+      label: banyak barang dan total harga
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: d
   acceptedForms:
     - banyak barang dan total harga
   solutionPaths: []

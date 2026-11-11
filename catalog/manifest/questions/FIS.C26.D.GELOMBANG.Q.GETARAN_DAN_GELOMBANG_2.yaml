@@ -20,20 +20,20 @@ body:
   prompt: Gelombang dengan panjang gelombang 2 m dan frekuensi 5 Hz memiliki cepat rambat …
   options:
     - id: a
-      label: 10 m/s
-    - id: b
-      label: 2,5 m/s
-    - id: c
       label: 0,4 m/s
-    - id: d
+    - id: b
       label: 7 m/s
+    - id: c
+      label: 10 m/s
+    - id: d
+      label: 2,5 m/s
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 10 m/s
   solutionPaths: []

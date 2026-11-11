@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.Q.FENOTIPE_2
+familyCode: BIO.C26.D.GENETIKA.F.FENOTIPE_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Persilangan Tt × Tt menghasilkan perbandingan fenotipe tinggi : pendek sebesar …"
+  options:
+    - id: a
+      label: "3 : 1"
+    - id: b
+      label: "1 : 2 : 1"
+    - id: c
+      label: semua tinggi
+    - id: d
+      label: "1 : 1"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "3 : 1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE
+  feedback:
+    correct: "Keturunannya TT, Tt, Tt, tt: tiga tinggi dan satu pendek. Rasio 1 : 2 : 1 adalah rasio genotipenya."
+    incorrect: "Jawabannya 3 : 1. Keturunannya TT, Tt, Tt, tt: tiga tinggi dan satu pendek. Rasio 1 : 2 : 1 adalah rasio genotipenya."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

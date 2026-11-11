@@ -20,20 +20,20 @@ body:
   prompt: Keuntungan mekanis sebuah katrol tetap tunggal adalah …
   options:
     - id: a
-      label: "1"
-    - id: b
-      label: "2"
-    - id: c
-      label: 0,5
-    - id: d
       label: bergantung pada beban
+    - id: b
+      label: "1"
+    - id: c
+      label: "2"
+    - id: d
+      label: 0,5
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - "1"
   solutionPaths: []

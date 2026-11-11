@@ -20,20 +20,20 @@ body:
   prompt: Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 10 cm. Jarak bayangannya adalah …
   options:
     - id: a
-      label: 15 cm
-    - id: b
-      label: 20 cm
-    - id: c
       label: 7,5 cm
-    - id: d
+    - id: b
       label: 40 cm
+    - id: c
+      label: 15 cm
+    - id: d
+      label: 20 cm
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 15 cm
   solutionPaths: []

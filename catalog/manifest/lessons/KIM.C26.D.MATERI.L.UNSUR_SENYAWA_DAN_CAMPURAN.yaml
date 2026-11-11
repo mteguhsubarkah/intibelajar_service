@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.L.UNSUR_SENYAWA_DAN_CAMPURAN
+title: Unsur, senyawa & campuran
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.MATERI.UNSUR_SENYAWA_DAN_CAMPURAN
+blocks:
+  - type: heading
+    slide: 0
+    text: "Zat tunggal: unsur dan senyawa"
+  - type: text
+    slide: 0
+    text: "**Unsur** adalah zat tunggal yang tidak dapat diuraikan lagi secara kimia, misalnya besi (Fe) dan oksigen (O₂)."
+  - type: text
+    slide: 0
+    text: "**Senyawa** adalah gabungan dua unsur atau lebih dengan perbandingan tetap, misalnya air (H₂O) dan garam dapur (NaCl). Sifat senyawa berbeda dari sifat unsur penyusunnya."
+  - type: math
+    slide: 0
+    name: air
+    expression: H₂O
+    highlight: true
+  - type: math
+    slide: 0
+    name: garam dapur
+    expression: NaCl
+  - type: heading
+    slide: 1
+    text: Campuran
+  - type: text
+    slide: 1
+    text: Campuran tersusun dari beberapa zat tanpa perbandingan tetap, dan sifat zat penyusunnya masih ada.
+  - type: text
+    slide: 1
+    text: "**Homogen**: tampak menyatu (larutan gula, udara). **Heterogen**: komponennya masih terlihat (pasir dan air, salad buah)."
+  - type: math
+    slide: 1
+    name: campuran
+    expression: komposisi berubah-ubah
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Rumus kimianya tetap → senyawa. Komposisinya bisa berubah-ubah → campuran.
+checks:
+  - question: KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.MATERI.S.UNSUR_SENYAWA_DAN_CAMPURAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

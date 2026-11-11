@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_1
+familyCode: KIM.C26.D.REAKSI.F.CIRI_CIRI_REAKSI_KIMIA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tanda terjadinya reaksi kimia adalah …
+  options:
+    - id: a
+      label: benda berpindah tempat
+    - id: b
+      label: terbentuk gas atau endapan
+    - id: c
+      label: benda berubah ukuran
+    - id: d
+      label: zat berubah wujud saja
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - terbentuk gas atau endapan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+  feedback:
+    correct: Gas atau endapan baru menunjukkan terbentuknya zat baru.
+    incorrect: Jawabannya terbentuk gas atau endapan. Gas atau endapan baru menunjukkan terbentuknya zat baru.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

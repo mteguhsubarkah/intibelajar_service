@@ -20,20 +20,20 @@ body:
   prompt: Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
   options:
     - id: a
-      label: 100 Pa
-    - id: b
       label: 400 Pa
-    - id: c
+    - id: b
       label: 200,5 Pa
-    - id: d
+    - id: c
       label: 40 Pa
+    - id: d
+      label: 100 Pa
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - 400 Pa
   solutionPaths: []

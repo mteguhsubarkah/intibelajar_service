@@ -20,20 +20,20 @@ body:
   prompt: Banyaknya gunung api di Indonesia terutama disebabkan oleh …
   options:
     - id: a
-      label: Indonesia negara kepulauan
-    - id: b
-      label: Indonesia berada di pertemuan lempeng tektonik
-    - id: c
-      label: iklim tropis
-    - id: d
       label: banyaknya hutan
+    - id: b
+      label: Indonesia negara kepulauan
+    - id: c
+      label: Indonesia berada di pertemuan lempeng tektonik
+    - id: d
+      label: iklim tropis
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - Indonesia berada di pertemuan lempeng tektonik
   solutionPaths: []

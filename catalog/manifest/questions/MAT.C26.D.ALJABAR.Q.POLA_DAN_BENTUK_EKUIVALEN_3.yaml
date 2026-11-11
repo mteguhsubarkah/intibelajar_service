@@ -20,20 +20,20 @@ body:
   prompt: Bentuk sederhana dari 5a + 3b − 2a + b adalah …
   options:
     - id: a
-      label: 3a + 4b
-    - id: b
-      label: 7a + 4b
-    - id: c
       label: 3a + 2b
-    - id: d
+    - id: b
       label: 7ab
+    - id: c
+      label: 3a + 4b
+    - id: d
+      label: 7a + 4b
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 3a + 4b
   solutionPaths: []

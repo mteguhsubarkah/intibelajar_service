@@ -20,20 +20,20 @@ body:
   prompt: Sebuah kotak berbentuk kubus tanpa tutup dengan rusuk 20 cm akan dicat bagian luarnya. Luas yang dicat adalah …
   options:
     - id: a
-      label: 2.400 cm²
-    - id: b
-      label: 2.000 cm²
-    - id: c
-      label: 8.000 cm²
-    - id: d
       label: 1.600 cm²
+    - id: b
+      label: 2.400 cm²
+    - id: c
+      label: 2.000 cm²
+    - id: d
+      label: 8.000 cm²
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - 2.000 cm²
   solutionPaths: []

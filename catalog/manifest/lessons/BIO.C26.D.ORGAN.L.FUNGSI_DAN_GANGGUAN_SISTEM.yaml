@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.L.FUNGSI_DAN_GANGGUAN_SISTEM
+title: Fungsi dan gangguan sistem
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.ORGAN.FUNGSI_DAN_GANGGUAN_SISTEM
+blocks:
+  - type: heading
+    slide: 0
+    text: Sistem gerak
+  - type: text
+    slide: 0
+    text: Tulang adalah alat gerak pasif; otot adalah alat gerak aktif.
+  - type: text
+    slide: 0
+    text: "Sendi menghubungkan tulang: sendi engsel (siku, lutut), sendi peluru (bahu, pangkal paha), dan sendi putar (leher)."
+  - type: math
+    slide: 0
+    name: sendi engsel
+    expression: siku, lutut
+    highlight: true
+  - type: math
+    slide: 0
+    name: sendi peluru
+    expression: bahu, pangkal paha
+  - type: heading
+    slide: 1
+    text: Gangguan dan cara menjaganya
+  - type: text
+    slide: 1
+    text: "Skoliosis: tulang belakang bengkok ke samping, antara lain karena posisi duduk yang salah. Osteoporosis: tulang keropos karena kekurangan kalsium. Kram: otot menegang tiba-tiba."
+  - type: text
+    slide: 1
+    text: Cegah dengan postur tubuh yang baik, olahraga teratur, serta cukup kalsium dan vitamin D.
+  - type: math
+    slide: 1
+    name: osteoporosis
+    expression: kekurangan kalsium
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gangguan pada satu sistem organ dapat memengaruhi sistem lain.
+checks:
+  - question: BIO.C26.D.ORGAN.Q.FUNGSI_DAN_GANGGUAN_SISTEM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.ORGAN.S.FUNGSI_DAN_GANGGUAN_SISTEM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.L.JEJARING
+title: Rantai dan jaring makanan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Rantai makanan
+  - type: text
+    slide: 0
+    text: "Rantai makanan menunjukkan urutan makan-dimakan: padi → tikus → ular → elang."
+  - type: text
+    slide: 0
+    text: Produsen berada di awal, diikuti konsumen I, konsumen II, dan seterusnya. Pengurai menguraikan organisme yang mati.
+  - type: math
+    slide: 0
+    name: padi → tikus → ular → elang
+    expression: produsen → konsumen I → II → III
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Jaring makanan dan piramida energi
+  - type: text
+    slide: 1
+    text: Jaring makanan adalah gabungan beberapa rantai makanan yang saling terhubung.
+  - type: text
+    slide: 1
+    text: Pada piramida energi, energi makin kecil di tingkat atas; hanya sekitar 10% yang diteruskan. Jika satu populasi hilang, populasi lain ikut terpengaruh.
+  - type: math
+    slide: 1
+    name: energi yang diteruskan
+    expression: ± 10% per tingkat
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jika ular diburu habis, populasi tikus kemungkinan meningkat.
+checks:
+  - question: BIO.C26.D.EKOLOGI.Q.JEJARING_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.EKOLOGI.S.JEJARING
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

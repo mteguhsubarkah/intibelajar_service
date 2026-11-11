@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.Q.DAURHIDUP_1
+familyCode: BIO.C26.D.TUMBUH.F.DAURHIDUP_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan metamorfosis sempurna pada kupu-kupu adalah …
+  options:
+    - id: a
+      label: larva → telur → pupa → imago
+    - id: b
+      label: telur → nimfa → imago
+    - id: c
+      label: telur → larva → pupa → imago
+    - id: d
+      label: telur → pupa → larva → imago
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - telur → larva → pupa → imago
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+  feedback:
+    correct: Kupu-kupu melewati tahap ulat (larva) dan kepompong (pupa).
+    incorrect: Jawabannya telur → larva → pupa → imago. Kupu-kupu melewati tahap ulat (larva) dan kepompong (pupa).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

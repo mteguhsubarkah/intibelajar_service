@@ -20,20 +20,20 @@ body:
   prompt: Perubahan energi pada senter yang menyala adalah …
   options:
     - id: a
-      label: kimia → listrik → cahaya dan panas
-    - id: b
-      label: listrik → kimia → cahaya
-    - id: c
-      label: cahaya → listrik → kimia
-    - id: d
       label: panas → kimia → listrik
+    - id: b
+      label: kimia → listrik → cahaya dan panas
+    - id: c
+      label: listrik → kimia → cahaya
+    - id: d
+      label: cahaya → listrik → kimia
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - kimia → listrik → cahaya dan panas
   solutionPaths: []

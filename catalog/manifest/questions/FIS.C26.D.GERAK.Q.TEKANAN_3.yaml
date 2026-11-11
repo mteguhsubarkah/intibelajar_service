@@ -20,20 +20,20 @@ body:
   prompt: Dinding bendungan dibuat makin tebal di bagian bawah karena …
   options:
     - id: a
-      label: air di bagian bawah lebih hangat
-    - id: b
-      label: tekanan air makin besar di tempat yang makin dalam
-    - id: c
-      label: air di bagian bawah lebih ringan
-    - id: d
       label: agar ikan tidak dapat lewat
+    - id: b
+      label: air di bagian bawah lebih hangat
+    - id: c
+      label: tekanan air makin besar di tempat yang makin dalam
+    - id: d
+      label: air di bagian bawah lebih ringan
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - tekanan air makin besar di tempat yang makin dalam
   solutionPaths: []

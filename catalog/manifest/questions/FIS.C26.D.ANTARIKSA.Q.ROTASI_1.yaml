@@ -20,20 +20,20 @@ body:
   prompt: Matahari tampak terbit di timur karena …
   options:
     - id: a
-      label: Bumi berotasi dari barat ke timur
-    - id: b
-      label: Bumi berevolusi
-    - id: c
-      label: Matahari mengelilingi Bumi
-    - id: d
       label: poros Bumi miring
+    - id: b
+      label: Bumi berotasi dari barat ke timur
+    - id: c
+      label: Bumi berevolusi
+    - id: d
+      label: Matahari mengelilingi Bumi
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - Bumi berotasi dari barat ke timur
   solutionPaths: []

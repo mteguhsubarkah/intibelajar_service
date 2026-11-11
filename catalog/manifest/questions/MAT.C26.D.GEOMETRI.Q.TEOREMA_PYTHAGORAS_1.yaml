@@ -20,20 +20,20 @@ body:
   prompt: Sebuah segitiga siku-siku memiliki sisi tegak 6 cm dan 8 cm. Panjang sisi miringnya adalah …
   options:
     - id: a
-      label: 10 cm
-    - id: b
-      label: 14 cm
-    - id: c
       label: 12 cm
-    - id: d
+    - id: b
       label: √28 cm
+    - id: c
+      label: 10 cm
+    - id: d
+      label: 14 cm
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 10 cm
   solutionPaths: []

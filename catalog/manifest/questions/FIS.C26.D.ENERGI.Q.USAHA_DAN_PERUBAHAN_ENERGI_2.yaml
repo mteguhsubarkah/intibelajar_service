@@ -20,20 +20,20 @@ body:
   prompt: Energi potensial buah kelapa bermassa 2 kg pada ketinggian 10 m (g = 10 m/s²) adalah …
   options:
     - id: a
-      label: 20 J
-    - id: b
       label: 200 J
-    - id: c
+    - id: b
       label: 100 J
-    - id: d
+    - id: c
       label: 2.000 J
+    - id: d
+      label: 20 J
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - 200 J
   solutionPaths: []

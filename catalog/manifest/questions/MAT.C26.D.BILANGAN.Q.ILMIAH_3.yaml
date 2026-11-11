@@ -20,20 +20,20 @@ body:
   prompt: Massa satu sel kira-kira 2 × 10⁻⁹ gram. Massa 5 × 10³ sel adalah …
   options:
     - id: a
-      label: 1 × 10⁻⁵ g
-    - id: b
-      label: 10 × 10⁻¹² g
-    - id: c
-      label: 1 × 10⁻⁶ g
-    - id: d
       label: 7 × 10⁻⁶ g
+    - id: b
+      label: 1 × 10⁻⁵ g
+    - id: c
+      label: 10 × 10⁻¹² g
+    - id: d
+      label: 1 × 10⁻⁶ g
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - 1 × 10⁻⁵ g
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Volume balok berukuran 10 cm × 6 cm × 5 cm adalah …
   options:
     - id: a
-      label: 300 cm³
-    - id: b
       label: 210 cm³
-    - id: c
+    - id: b
       label: 30 cm³
-    - id: d
+    - id: c
       label: 600 cm³
+    - id: d
+      label: 300 cm³
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 300 cm³
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Manfaat gunung api bagi manusia adalah …
   options:
     - id: a
-      label: tanah yang subur dan energi panas bumi
-    - id: b
-      label: menghentikan gempa
-    - id: c
-      label: mencegah tsunami
-    - id: d
       label: menurunkan suhu Bumi
+    - id: b
+      label: tanah yang subur dan energi panas bumi
+    - id: c
+      label: menghentikan gempa
+    - id: d
+      label: mencegah tsunami
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - tanah yang subur dan energi panas bumi
   solutionPaths: []

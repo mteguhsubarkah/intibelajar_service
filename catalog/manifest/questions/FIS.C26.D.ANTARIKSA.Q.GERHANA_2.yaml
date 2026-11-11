@@ -20,20 +20,20 @@ body:
   prompt: Gerhana Bulan hanya dapat terjadi pada fase …
   options:
     - id: a
-      label: bulan baru
-    - id: b
-      label: purnama
-    - id: c
-      label: kuartir pertama
-    - id: d
       label: sabit
+    - id: b
+      label: bulan baru
+    - id: c
+      label: purnama
+    - id: d
+      label: kuartir pertama
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - purnama
   solutionPaths: []

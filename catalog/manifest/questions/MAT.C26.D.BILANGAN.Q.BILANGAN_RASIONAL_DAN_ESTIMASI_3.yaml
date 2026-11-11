@@ -20,20 +20,20 @@ body:
   prompt: Ani membeli 3 buku seharga Rp19.800 per buku. Estimasi total harga yang paling masuk akal adalah …
   options:
     - id: a
-      label: sekitar Rp40.000
-    - id: b
-      label: sekitar Rp60.000
-    - id: c
       label: sekitar Rp80.000
-    - id: d
+    - id: b
       label: sekitar Rp6.000
+    - id: c
+      label: sekitar Rp40.000
+    - id: d
+      label: sekitar Rp60.000
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - sekitar Rp60.000
   solutionPaths: []

@@ -1024,41 +1024,41 @@ Materi: 3 · Soal: 7
 Materi: 4 · Soal: 12
 
 - [ ] **MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_1** — Bilangan berikut yang **bukan** bilangan rasional adalah …
-  A. 0,25 · B. −7 · C. √2 · D. 2/3
-  Kunci: **C** · √2 tidak dapat ditulis sebagai pecahan a/b; desimalnya tidak berakhir dan tidak berulang. Bilangan lain dapat ditulis a/b.
+  A. −7 · B. √2 · C. 2/3 · D. 0,25
+  Kunci: **B** · √2 tidak dapat ditulis sebagai pecahan a/b; desimalnya tidak berakhir dan tidak berulang. Bilangan lain dapat ditulis a/b.
 - [ ] **MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_2** — Urutan bilangan −0,7; −3/4; 1/2; 0,45 dari yang terkecil adalah …
-  A. −3/4; −0,7; 0,45; 1/2 · B. −0,7; −3/4; 0,45; 1/2 · C. −3/4; −0,7; 1/2; 0,45 · D. 0,45; 1/2; −0,7; −3/4
-  Kunci: **A** · −3/4 = −0,75 lebih kecil dari −0,7, dan 0,45 lebih kecil dari 1/2 = 0,5.
+  A. −3/4; −0,7; 1/2; 0,45 · B. 0,45; 1/2; −0,7; −3/4 · C. −3/4; −0,7; 0,45; 1/2 · D. −0,7; −3/4; 0,45; 1/2
+  Kunci: **C** · −3/4 = −0,75 lebih kecil dari −0,7, dan 0,45 lebih kecil dari 1/2 = 0,5.
 - [ ] **MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_3** — Ani membeli 3 buku seharga Rp19.800 per buku. Estimasi total harga yang paling masuk akal adalah …
-  A. sekitar Rp40.000 · B. sekitar Rp60.000 · C. sekitar Rp80.000 · D. sekitar Rp6.000
-  Kunci: **B** · Rp19.800 dibulatkan menjadi Rp20.000; 3 × Rp20.000 = Rp60.000.
+  A. sekitar Rp80.000 · B. sekitar Rp6.000 · C. sekitar Rp40.000 · D. sekitar Rp60.000
+  Kunci: **D** · Rp19.800 dibulatkan menjadi Rp20.000; 3 × Rp20.000 = Rp60.000.
 - [ ] **MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_1** — Hasil 2³ × 2⁴ adalah …
   A. 2⁷ · B. 2¹² · C. 4⁷ · D. 4¹²
   Kunci: **A** · Basisnya sama, jadi pangkatnya dijumlahkan: 3 + 4 = 7.
 - [ ] **MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_2** — Bentuk sederhana dari √72 adalah …
-  A. 6√2 · B. 3√8 · C. 2√18 · D. 8√3
-  Kunci: **A** · 72 = 36 × 2 dan √36 = 6, jadi √72 = 6√2. Bentuk 3√8 dan 2√18 bernilai sama tetapi belum paling sederhana.
+  A. 3√8 · B. 2√18 · C. 8√3 · D. 6√2
+  Kunci: **D** · 72 = 36 × 2 dan √36 = 6, jadi √72 = 6√2. Bentuk 3√8 dan 2√18 bernilai sama tetapi belum paling sederhana.
 - [ ] **MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_3** — Nilai dari (5²)³ : 5⁴ adalah …
-  A. 5 · B. 25 · C. 125 · D. 625
-  Kunci: **B** · (5²)³ = 5⁶, lalu 5⁶ : 5⁴ = 5² = 25.
+  A. 625 · B. 5 · C. 25 · D. 125
+  Kunci: **C** · (5²)³ = 5⁶, lalu 5⁶ : 5⁴ = 5² = 25.
 - [ ] **MAT.C26.D.BILANGAN.Q.PECAHAN_1** — Hasil 2/3 + 3/4 adalah …
-  A. 5/7 · B. 17/12 · C. 5/12 · D. 6/7
-  Kunci: **B** · KPK 3 dan 4 adalah 12: 8/12 + 9/12 = 17/12. Pembilang dan penyebut tidak boleh dijumlahkan langsung.
+  A. 5/12 · B. 6/7 · C. 5/7 · D. 17/12
+  Kunci: **D** · KPK 3 dan 4 adalah 12: 8/12 + 9/12 = 17/12. Pembilang dan penyebut tidak boleh dijumlahkan langsung.
 - [ ] **MAT.C26.D.BILANGAN.Q.PECAHAN_2** — Hasil 1½ : 3/4 adalah …
   A. 2 · B. 9/8 · C. 1/2 · D. 3/8
   Kunci: **A** · 1½ = 3/2, lalu 3/2 × 4/3 = 12/6 = 2.
 - [ ] **MAT.C26.D.BILANGAN.Q.PECAHAN_3** — Sebuah resep membutuhkan 3/4 cangkir gula untuk 1 loyang kue. Untuk 2½ loyang dibutuhkan … cangkir gula.
-  A. 1 7/8 · B. 2 1/4 · C. 3 1/4 · D. 1 1/2
-  Kunci: **A** · 3/4 × 5/2 = 15/8 = 1 7/8 cangkir.
+  A. 1 1/2 · B. 1 7/8 · C. 2 1/4 · D. 3 1/4
+  Kunci: **B** · 3/4 × 5/2 = 15/8 = 1 7/8 cangkir.
 - [ ] **MAT.C26.D.BILANGAN.Q.ILMIAH_1** — Notasi ilmiah dari 0,00072 adalah …
-  A. 7,2 × 10⁻⁴ · B. 72 × 10⁻⁵ · C. 7,2 × 10⁴ · D. 0,72 × 10⁻³
-  Kunci: **A** · Koma digeser 4 tempat ke kanan menjadi 7,2, jadi pangkatnya −4. Bentuk 72 × 10⁻⁵ dan 0,72 × 10⁻³ tidak memenuhi 1 ≤ a < 10.
+  A. 72 × 10⁻⁵ · B. 7,2 × 10⁴ · C. 0,72 × 10⁻³ · D. 7,2 × 10⁻⁴
+  Kunci: **D** · Koma digeser 4 tempat ke kanan menjadi 7,2, jadi pangkatnya −4. Bentuk 72 × 10⁻⁵ dan 0,72 × 10⁻³ tidak memenuhi 1 ≤ a < 10.
 - [ ] **MAT.C26.D.BILANGAN.Q.ILMIAH_2** — Hasil (3 × 10⁴) × (5 × 10²) dalam notasi ilmiah adalah …
-  A. 1,5 × 10⁵ · B. 1,5 × 10⁷ · C. 1,5 × 10⁶ · D. 8 × 10⁸
-  Kunci: **B** · 3 × 5 = 15 dan 10⁴ × 10² = 10⁶, jadi 15 × 10⁶ = 1,5 × 10⁷.
+  A. 1,5 × 10⁷ · B. 1,5 × 10⁶ · C. 8 × 10⁸ · D. 1,5 × 10⁵
+  Kunci: **A** · 3 × 5 = 15 dan 10⁴ × 10² = 10⁶, jadi 15 × 10⁶ = 1,5 × 10⁷.
 - [ ] **MAT.C26.D.BILANGAN.Q.ILMIAH_3** — Massa satu sel kira-kira 2 × 10⁻⁹ gram. Massa 5 × 10³ sel adalah …
-  A. 1 × 10⁻⁵ g · B. 10 × 10⁻¹² g · C. 1 × 10⁻⁶ g · D. 7 × 10⁻⁶ g
-  Kunci: **A** · 2 × 5 = 10 dan 10⁻⁹ × 10³ = 10⁻⁶, jadi 10 × 10⁻⁶ = 1 × 10⁻⁵ gram.
+  A. 7 × 10⁻⁶ g · B. 1 × 10⁻⁵ g · C. 10 × 10⁻¹² g · D. 1 × 10⁻⁶ g
+  Kunci: **B** · 2 × 5 = 10 dan 10⁻⁹ × 10³ = 10⁻⁶, jadi 10 × 10⁻⁶ = 1 × 10⁻⁵ gram.
 
 ## Rasio, skala, dan laju (MAT.C26.D.RASIO)
 
@@ -1071,26 +1071,26 @@ Materi: 3 · Soal: 9
   A. 8 · B. 9 · C. 10 · D. 12
   Kunci: **C** · 72 km : 6 L = 12 km per liter, lalu 120 : 12 = 10 liter.
 - [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_3** — Pasangan besaran berikut yang merupakan perbandingan senilai adalah …
-  A. banyak pekerja dan lama pekerjaan selesai · B. kecepatan dan waktu tempuh untuk jarak yang sama · C. banyak barang dan total harga · D. banyak siswa dan jatah kue per siswa dari kue yang sama
-  Kunci: **C** · Makin banyak barang, makin besar total harganya dengan perbandingan tetap. Pasangan lain berbalik nilai.
+  A. banyak siswa dan jatah kue per siswa dari kue yang sama · B. banyak pekerja dan lama pekerjaan selesai · C. kecepatan dan waktu tempuh untuk jarak yang sama · D. banyak barang dan total harga
+  Kunci: **D** · Makin banyak barang, makin besar total harganya dengan perbandingan tetap. Pasangan lain berbalik nilai.
 - [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1** — Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …
-  A. 2 km · B. 20 km · C. 200 km · D. 2.000 km
-  Kunci: **B** · 4 × 500.000 = 2.000.000 cm = 20 km.
+  A. 20 km · B. 200 km · C. 2.000 km · D. 2 km
+  Kunci: **A** · 4 × 500.000 = 2.000.000 cm = 20 km.
 - [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_2** — Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …
-  A. 15 liter/menit · B. 12 liter/menit · C. 960 liter/menit · D. 16 liter/menit
-  Kunci: **A** · Debit = volume : waktu = 120 : 8 = 15 liter per menit.
+  A. 12 liter/menit · B. 960 liter/menit · C. 16 liter/menit · D. 15 liter/menit
+  Kunci: **D** · Debit = volume : waktu = 120 : 8 = 15 liter per menit.
 - [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_3** — Jarak sebenarnya 15 km digambar 5 cm pada sebuah denah. Skala denah tersebut adalah …
   A. 1 : 3.000 · B. 1 : 30.000 · C. 1 : 300.000 · D. 1 : 3.000.000
   Kunci: **C** · 15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000.
 - [ ] **MAT.C26.D.RASIO.Q.BERBALIK_1** — Suatu pekerjaan selesai oleh 8 orang dalam 15 hari. Jika dikerjakan 12 orang, pekerjaan selesai dalam … hari.
-  A. 10 · B. 12 · C. 18 · D. 22,5
-  Kunci: **A** · 8 × 15 = 120 hari-kerja; 120 : 12 = 10 hari.
+  A. 22,5 · B. 10 · C. 12 · D. 18
+  Kunci: **B** · 8 × 15 = 120 hari-kerja; 120 : 12 = 10 hari.
 - [ ] **MAT.C26.D.RASIO.Q.BERBALIK_2** — Persediaan makanan cukup untuk 40 ekor ayam selama 9 hari. Jika ayam bertambah 20 ekor, makanan itu cukup untuk … hari.
-  A. 6 · B. 13,5 · C. 4,5 · D. 12
-  Kunci: **A** · 40 × 9 = 360; ayam menjadi 60 ekor, jadi 360 : 60 = 6 hari.
+  A. 4,5 · B. 12 · C. 6 · D. 13,5
+  Kunci: **C** · 40 × 9 = 360; ayam menjadi 60 ekor, jadi 360 : 60 = 6 hari.
 - [ ] **MAT.C26.D.RASIO.Q.BERBALIK_3** — Mobil dengan kecepatan 60 km/jam membutuhkan 3 jam untuk suatu perjalanan. Jika kecepatannya 90 km/jam, waktunya …
-  A. 2 jam · B. 4,5 jam · C. 1,5 jam · D. 2,5 jam
-  Kunci: **A** · Jarak tetap 60 × 3 = 180 km; 180 : 90 = 2 jam.
+  A. 4,5 jam · B. 1,5 jam · C. 2,5 jam · D. 2 jam
+  Kunci: **D** · Jarak tetap 60 × 3 = 180 km; 180 : 90 = 2 jam.
 
 ## Pola, bentuk aljabar & persamaan (MAT.C26.D.ALJABAR)
 
@@ -1100,58 +1100,58 @@ Materi: 3 · Soal: 9
   A. 3n + 2 · B. 5n · C. n + 3 · D. 3n + 5
   Kunci: **A** · Bedanya 3, jadi bentuknya 3n + c. Untuk n = 1 hasilnya harus 5, sehingga c = 2.
 - [ ] **MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_2** — Bentuk yang ekuivalen dengan 4(2x − 3) adalah …
-  A. 8x − 3 · B. 8x − 12 · C. 6x − 7 · D. 8x + 12
-  Kunci: **B** · 4 × 2x = 8x dan 4 × (−3) = −12.
+  A. 6x − 7 · B. 8x + 12 · C. 8x − 3 · D. 8x − 12
+  Kunci: **D** · 4 × 2x = 8x dan 4 × (−3) = −12.
 - [ ] **MAT.C26.D.ALJABAR.Q.POLA_DAN_BENTUK_EKUIVALEN_3** — Bentuk sederhana dari 5a + 3b − 2a + b adalah …
-  A. 3a + 4b · B. 7a + 4b · C. 3a + 2b · D. 7ab
-  Kunci: **A** · Gabungkan suku sejenis: 5a − 2a = 3a dan 3b + b = 4b.
+  A. 3a + 2b · B. 7ab · C. 3a + 4b · D. 7a + 4b
+  Kunci: **C** · Gabungkan suku sejenis: 5a − 2a = 3a dan 3b + b = 4b.
 - [ ] **MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_1** — Penyelesaian dari 3x − 5 < 10 adalah …
-  A. x < 5 · B. x > 5 · C. x < 15 · D. x < 3
-  Kunci: **A** · 3x < 15, lalu bagi 3: x < 5.
+  A. x < 3 · B. x < 5 · C. x > 5 · D. x < 15
+  Kunci: **B** · 3x < 15, lalu bagi 3: x < 5.
 - [ ] **MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_2** — Penyelesaian dari −4x ≥ 12 adalah …
-  A. x ≥ −3 · B. x ≤ −3 · C. x ≥ 3 · D. x ≤ 3
-  Kunci: **B** · Kedua ruas dibagi −4, jadi tanda dibalik: x ≤ −3.
+  A. x ≤ 3 · B. x ≥ −3 · C. x ≤ −3 · D. x ≥ 3
+  Kunci: **C** · Kedua ruas dibagi −4, jadi tanda dibalik: x ≤ −3.
 - [ ] **MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_3** — Tiket masuk taman bermain Rp15.000 dan setiap naik wahana Rp10.000. Uang Rina Rp65.000. Paling banyak Rina dapat naik wahana … kali.
-  A. 4 · B. 5 · C. 6 · D. 6,5
-  Kunci: **B** · 15.000 + 10.000n ≤ 65.000, sehingga 10.000n ≤ 50.000 dan n ≤ 5.
+  A. 6 · B. 6,5 · C. 4 · D. 5
+  Kunci: **D** · 15.000 + 10.000n ≤ 65.000, sehingga 10.000n ≤ 50.000 dan n ≤ 5.
 - [ ] **MAT.C26.D.ALJABAR.Q.LINEAR_1** — Nilai x yang memenuhi 5x − 8 = 2x + 7 adalah …
-  A. 5 · B. 3 · C. 15 · D. −5
-  Kunci: **A** · 5x − 2x = 7 + 8, jadi 3x = 15 dan x = 5.
+  A. −5 · B. 5 · C. 3 · D. 15
+  Kunci: **B** · 5x − 2x = 7 + 8, jadi 3x = 15 dan x = 5.
 - [ ] **MAT.C26.D.ALJABAR.Q.LINEAR_2** — Nilai x yang memenuhi (x + 4)/3 = 5 adalah …
-  A. 11 · B. 19 · C. 1 · D. 15
-  Kunci: **A** · Kalikan kedua ruas dengan 3: x + 4 = 15, jadi x = 11.
+  A. 1 · B. 15 · C. 11 · D. 19
+  Kunci: **C** · Kalikan kedua ruas dengan 3: x + 4 = 15, jadi x = 11.
 - [ ] **MAT.C26.D.ALJABAR.Q.LINEAR_3** — Keliling sebuah persegi panjang 46 cm. Panjangnya 5 cm lebih dari lebarnya. Lebar persegi panjang itu adalah …
-  A. 9 cm · B. 14 cm · C. 18 cm · D. 10,5 cm
-  Kunci: **A** · 2(l + 5 + l) = 46 → 4l + 10 = 46 → l = 9 cm.
+  A. 14 cm · B. 18 cm · C. 10,5 cm · D. 9 cm
+  Kunci: **D** · 2(l + 5 + l) = 46 → 4l + 10 = 46 → l = 9 cm.
 
 ## Relasi, fungsi linear, dan SPLDV (MAT.C26.D.FUNGSI)
 
 Materi: 3 · Soal: 9
 
 - [ ] **MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_1** — Jika f(x) = 3x − 4, nilai f(5) adalah …
-  A. 11 · B. 19 · C. 1 · D. −11
-  Kunci: **A** · f(5) = 3 × 5 − 4 = 11.
+  A. −11 · B. 11 · C. 19 · D. 1
+  Kunci: **B** · f(5) = 3 × 5 − 4 = 11.
 - [ ] **MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_2** — Gradien garis yang melalui titik (1, 2) dan (4, 11) adalah …
-  A. 3 · B. 1/3 · C. 9 · D. 2
-  Kunci: **A** · m = (11 − 2)/(4 − 1) = 9/3 = 3.
+  A. 9 · B. 2 · C. 3 · D. 1/3
+  Kunci: **C** · m = (11 − 2)/(4 − 1) = 9/3 = 3.
 - [ ] **MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_3** — Relasi berikut yang merupakan fungsi adalah …
-  A. {(1, a), (1, b), (2, c)} · B. {(1, a), (2, a), (3, b)} · C. {(2, a), (2, b), (3, c)} · D. {(3, a), (3, b), (4, a)}
-  Kunci: **B** · Setiap anggota domain (1, 2, 3) punya tepat satu pasangan. Pada pilihan lain ada anggota domain yang punya dua pasangan.
+  A. {(2, a), (2, b), (3, c)} · B. {(3, a), (3, b), (4, a)} · C. {(1, a), (1, b), (2, c)} · D. {(1, a), (2, a), (3, b)}
+  Kunci: **D** · Setiap anggota domain (1, 2, 3) punya tepat satu pasangan. Pada pilihan lain ada anggota domain yang punya dua pasangan.
 - [ ] **MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_1** — Pasangan (x, y) yang memenuhi x + y = 7 dan x − y = 1 adalah …
   A. (4, 3) · B. (3, 4) · C. (5, 2) · D. (6, 1)
   Kunci: **A** · 4 + 3 = 7 dan 4 − 3 = 1. Pasangan (3, 4) hanya memenuhi persamaan pertama.
 - [ ] **MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_2** — Harga 2 buku dan 1 pena Rp13.000, sedangkan 1 buku dan 2 pena Rp11.000. Jika b = harga buku dan p = harga pena, model matematikanya adalah …
-  A. 2b + p = 13.000 dan b + 2p = 11.000 · B. 2b + 2p = 13.000 dan b + p = 11.000 · C. b + 2p = 13.000 dan 2b + p = 11.000 · D. 2b + p = 11.000 dan b + 2p = 13.000
-  Kunci: **A** · 2 buku + 1 pena = 13.000 dan 1 buku + 2 pena = 11.000.
+  A. 2b + 2p = 13.000 dan b + p = 11.000 · B. b + 2p = 13.000 dan 2b + p = 11.000 · C. 2b + p = 11.000 dan b + 2p = 13.000 · D. 2b + p = 13.000 dan b + 2p = 11.000
+  Kunci: **D** · 2 buku + 1 pena = 13.000 dan 1 buku + 2 pena = 11.000.
 - [ ] **MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_3** — Sistem persamaan 2x + y = 5 dan 4x + 2y = 7 memiliki …
   A. tepat satu penyelesaian · B. tak hingga banyak penyelesaian · C. tidak ada penyelesaian · D. dua penyelesaian
   Kunci: **C** · Persamaan kedua dibagi 2 menjadi 2x + y = 3,5, sedangkan persamaan pertama 2x + y = 5. Kedua garis sejajar, jadi tidak berpotongan.
 - [ ] **MAT.C26.D.FUNGSI.Q.ELIMINASI_1** — Penyelesaian dari 2x + y = 11 dan x − y = 1 adalah …
-  A. x = 4, y = 3 · B. x = 3, y = 5 · C. x = 5, y = 1 · D. x = 4, y = 4
-  Kunci: **A** · Jumlahkan kedua persamaan: 3x = 12, jadi x = 4 dan y = 11 − 8 = 3.
+  A. x = 5, y = 1 · B. x = 4, y = 4 · C. x = 4, y = 3 · D. x = 3, y = 5
+  Kunci: **C** · Jumlahkan kedua persamaan: 3x = 12, jadi x = 4 dan y = 11 − 8 = 3.
 - [ ] **MAT.C26.D.FUNGSI.Q.ELIMINASI_2** — Harga 2 buku dan 1 pena Rp13.000, sedangkan 1 buku dan 2 pena Rp11.000. Harga 1 buku adalah …
-  A. Rp5.000 · B. Rp3.000 · C. Rp4.000 · D. Rp6.000
-  Kunci: **A** · Kalikan persamaan kedua dengan 2: 2b + 4p = 22.000. Kurangi dengan 2b + p = 13.000: 3p = 9.000, p = 3.000, lalu b = (13.000 − 3.000) : 2 = 5.000.
+  A. Rp6.000 · B. Rp5.000 · C. Rp3.000 · D. Rp4.000
+  Kunci: **B** · Kalikan persamaan kedua dengan 2: 2b + 4p = 22.000. Kurangi dengan 2b + p = 13.000: 3p = 9.000, p = 3.000, lalu b = (13.000 − 3.000) : 2 = 5.000.
 - [ ] **MAT.C26.D.FUNGSI.Q.ELIMINASI_3** — Jumlah dua bilangan 30 dan selisihnya 8. Hasil kali kedua bilangan itu adalah …
   A. 209 · B. 220 · C. 176 · D. 240
   Kunci: **A** · x + y = 30 dan x − y = 8, jadi x = 19 dan y = 11. Hasil kalinya 19 × 11 = 209.
@@ -1161,49 +1161,49 @@ Materi: 3 · Soal: 9
 Materi: 3 · Soal: 9
 
 - [ ] **MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_1** — Pelurus sudut 65° adalah …
-  A. 25° · B. 115° · C. 125° · D. 295°
-  Kunci: **B** · Sudut berpelurus berjumlah 180°: 180° − 65° = 115°. Jawaban 25° adalah penyikunya.
+  A. 125° · B. 295° · C. 25° · D. 115°
+  Kunci: **D** · Sudut berpelurus berjumlah 180°: 180° − 65° = 115°. Jawaban 25° adalah penyikunya.
 - [ ] **MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_2** — Segitiga ABC sebangun dengan segitiga PQR, dengan AB bersesuaian dengan PQ. AB = 6 cm, PQ = 9 cm, dan BC = 8 cm. Panjang QR adalah …
-  A. 10 cm · B. 11 cm · C. 12 cm · D. 5⅓ cm
-  Kunci: **C** · Faktor skala 9 : 6 = 1,5, jadi QR = 8 × 1,5 = 12 cm.
+  A. 12 cm · B. 5⅓ cm · C. 10 cm · D. 11 cm
+  Kunci: **A** · Faktor skala 9 : 6 = 1,5, jadi QR = 8 × 1,5 = 12 cm.
 - [ ] **MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_3** — Sebuah tiang setinggi 2 m memiliki bayangan 1,5 m. Pada saat yang sama, bayangan sebuah pohon 6 m. Tinggi pohon itu adalah …
   A. 4,5 m · B. 8 m · C. 7,5 m · D. 9 m
   Kunci: **B** · Tiang dan pohon membentuk segitiga sebangun: 2/1,5 = t/6, jadi t = 8 m.
 - [ ] **MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_1** — Sebuah segitiga siku-siku memiliki sisi tegak 6 cm dan 8 cm. Panjang sisi miringnya adalah …
-  A. 10 cm · B. 14 cm · C. 12 cm · D. √28 cm
-  Kunci: **A** · √(6² + 8²) = √(36 + 64) = √100 = 10 cm.
+  A. 12 cm · B. √28 cm · C. 10 cm · D. 14 cm
+  Kunci: **C** · √(6² + 8²) = √(36 + 64) = √100 = 10 cm.
 - [ ] **MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_2** — Tiga bilangan berikut yang dapat menjadi panjang sisi segitiga siku-siku adalah …
-  A. 4, 5, 6 · B. 6, 8, 12 · C. 9, 12, 15 · D. 5, 11, 12
-  Kunci: **C** · 9² + 12² = 81 + 144 = 225 = 15². Pilihan lain tidak memenuhi a² + b² = c².
+  A. 6, 8, 12 · B. 9, 12, 15 · C. 5, 11, 12 · D. 4, 5, 6
+  Kunci: **B** · 9² + 12² = 81 + 144 = 225 = 15². Pilihan lain tidak memenuhi a² + b² = c².
 - [ ] **MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_3** — Tangga sepanjang 13 m bersandar pada dinding. Kaki tangga berjarak 5 m dari dinding. Tinggi ujung tangga dari lantai adalah …
-  A. 8 m · B. 12 m · C. 18 m · D. √194 m
-  Kunci: **B** · Tangga adalah sisi miring: √(13² − 5²) = √(169 − 25) = √144 = 12 m.
+  A. 12 m · B. 18 m · C. √194 m · D. 8 m
+  Kunci: **A** · Tangga adalah sisi miring: √(13² − 5²) = √(169 − 25) = √144 = 12 m.
 - [ ] **MAT.C26.D.GEOMETRI.Q.KONGRUEN_1** — Pernyataan berikut yang benar adalah …
-  A. setiap dua bangun yang sebangun pasti kongruen · B. setiap dua bangun yang kongruen pasti sebangun · C. dua persegi panjang selalu sebangun · D. dua segitiga dengan sudut-sudut sama pasti kongruen
-  Kunci: **B** · Kongruen berarti bentuk dan ukuran sama, jadi pasti sebangun. Sebaliknya belum tentu.
+  A. setiap dua bangun yang kongruen pasti sebangun · B. dua persegi panjang selalu sebangun · C. dua segitiga dengan sudut-sudut sama pasti kongruen · D. setiap dua bangun yang sebangun pasti kongruen
+  Kunci: **A** · Kongruen berarti bentuk dan ukuran sama, jadi pasti sebangun. Sebaliknya belum tentu.
 - [ ] **MAT.C26.D.GEOMETRI.Q.KONGRUEN_2** — Dua segitiga memiliki tiga pasang sudut yang sama besar. Kedua segitiga itu pasti …
-  A. kongruen · B. sebangun · C. sama luas · D. sama keliling
-  Kunci: **B** · Sudut-sudut yang sama menjamin bentuknya sama (sebangun), tetapi ukurannya bisa berbeda.
+  A. sama luas · B. sama keliling · C. kongruen · D. sebangun
+  Kunci: **D** · Sudut-sudut yang sama menjamin bentuknya sama (sebangun), tetapi ukurannya bisa berbeda.
 - [ ] **MAT.C26.D.GEOMETRI.Q.KONGRUEN_3** — Pada segitiga ABC dan DEF diketahui AB = DE dan ∠B = ∠E. Agar kedua segitiga kongruen dengan syarat s-sd-s, harus diketahui juga …
-  A. BC = EF · B. AC = DF · C. ∠A = ∠D · D. ∠C = ∠F
-  Kunci: **A** · Syarat s-sd-s memerlukan sudut yang diapit dua sisi. ∠B diapit oleh AB dan BC, jadi perlu BC = EF.
+  A. ∠A = ∠D · B. ∠C = ∠F · C. BC = EF · D. AC = DF
+  Kunci: **C** · Syarat s-sd-s memerlukan sudut yang diapit dua sisi. ∠B diapit oleh AB dan BC, jadi perlu BC = EF.
 
 ## Lingkaran, bangun ruang & transformasi (MAT.C26.D.PENGUKURAN)
 
 Materi: 4 · Soal: 12
 
 - [ ] **MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_1** — Volume balok berukuran 10 cm × 6 cm × 5 cm adalah …
-  A. 300 cm³ · B. 210 cm³ · C. 30 cm³ · D. 600 cm³
-  Kunci: **A** · 10 × 6 × 5 = 300 cm³.
+  A. 210 cm³ · B. 30 cm³ · C. 600 cm³ · D. 300 cm³
+  Kunci: **D** · 10 × 6 × 5 = 300 cm³.
 - [ ] **MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_2** — Sebuah tabung berjari-jari 7 cm dan tinggi 10 cm. Dengan π = 22/7, volumenya adalah …
   A. 1.540 cm³ · B. 440 cm³ · C. 220 cm³ · D. 3.080 cm³
   Kunci: **A** · V = 22/7 × 7² × 10 = 22 × 7 × 10 = 1.540 cm³.
 - [ ] **MAT.C26.D.PENGUKURAN.Q.LUAS_VOLUME_DAN_SKALA_3** — Semua rusuk sebuah balok diperbesar menjadi 3 kali semula. Volumenya menjadi … kali semula.
-  A. 3 · B. 6 · C. 9 · D. 27
-  Kunci: **D** · Volume berubah sebesar k³ = 3³ = 27 kali.
+  A. 9 · B. 27 · C. 3 · D. 6
+  Kunci: **B** · Volume berubah sebesar k³ = 3³ = 27 kali.
 - [ ] **MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_1** — Titik A(3, −2) ditranslasikan oleh (−4, 5). Bayangan titik A adalah …
-  A. (−1, 3) · B. (7, −7) · C. (−1, −7) · D. (7, 3)
-  Kunci: **A** · 3 + (−4) = −1 dan −2 + 5 = 3.
+  A. (−1, −7) · B. (7, 3) · C. (−1, 3) · D. (7, −7)
+  Kunci: **C** · 3 + (−4) = −1 dan −2 + 5 = 3.
 - [ ] **MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_2** — Bayangan titik P(2, 5) oleh refleksi terhadap sumbu y adalah …
   A. (2, −5) · B. (−2, 5) · C. (−2, −5) · D. (5, 2)
   Kunci: **B** · Refleksi terhadap sumbu y hanya mengubah tanda koordinat x.
@@ -1211,40 +1211,40 @@ Materi: 4 · Soal: 12
   A. (−1, 4) · B. (1, −4) · C. (−4, −1) · D. (4, −1)
   Kunci: **A** · (x, y) → (−y, x), jadi (4, 1) → (−1, 4).
 - [ ] **MAT.C26.D.PENGUKURAN.Q.JARING_1** — Luas permukaan kubus dengan panjang rusuk 5 cm adalah …
-  A. 125 cm² · B. 150 cm² · C. 100 cm² · D. 25 cm²
-  Kunci: **B** · 6 × 5² = 6 × 25 = 150 cm². Jawaban 125 adalah volumenya (cm³).
+  A. 150 cm² · B. 100 cm² · C. 25 cm² · D. 125 cm²
+  Kunci: **A** · 6 × 5² = 6 × 25 = 150 cm². Jawaban 125 adalah volumenya (cm³).
 - [ ] **MAT.C26.D.PENGUKURAN.Q.JARING_2** — Luas permukaan balok berukuran 8 cm × 5 cm × 3 cm adalah …
-  A. 120 cm² · B. 158 cm² · C. 79 cm² · D. 240 cm²
-  Kunci: **B** · 2(8 × 5 + 8 × 3 + 5 × 3) = 2(40 + 24 + 15) = 158 cm².
+  A. 79 cm² · B. 240 cm² · C. 120 cm² · D. 158 cm²
+  Kunci: **D** · 2(8 × 5 + 8 × 3 + 5 × 3) = 2(40 + 24 + 15) = 158 cm².
 - [ ] **MAT.C26.D.PENGUKURAN.Q.JARING_3** — Sebuah kotak berbentuk kubus tanpa tutup dengan rusuk 20 cm akan dicat bagian luarnya. Luas yang dicat adalah …
-  A. 2.400 cm² · B. 2.000 cm² · C. 8.000 cm² · D. 1.600 cm²
-  Kunci: **B** · Tanpa tutup, sisinya tinggal 5: 5 × 20² = 2.000 cm².
+  A. 1.600 cm² · B. 2.400 cm² · C. 2.000 cm² · D. 8.000 cm²
+  Kunci: **C** · Tanpa tutup, sisinya tinggal 5: 5 × 20² = 2.000 cm².
 - [ ] **MAT.C26.D.PENGUKURAN.Q.JURING_1** — Panjang busur dengan sudut pusat 60° pada lingkaran berjari-jari 21 cm (π = 22/7) adalah …
   A. 22 cm · B. 11 cm · C. 66 cm · D. 231 cm
   Kunci: **A** · 60°/360° = 1/6; keliling = 2 × 22/7 × 21 = 132 cm; 132 : 6 = 22 cm.
 - [ ] **MAT.C26.D.PENGUKURAN.Q.JURING_2** — Luas juring dengan sudut pusat 90° pada lingkaran berjari-jari 14 cm (π = 22/7) adalah …
-  A. 154 cm² · B. 616 cm² · C. 44 cm² · D. 308 cm²
-  Kunci: **A** · Luas lingkaran 22/7 × 196 = 616 cm²; seperempatnya 154 cm².
+  A. 616 cm² · B. 44 cm² · C. 308 cm² · D. 154 cm²
+  Kunci: **D** · Luas lingkaran 22/7 × 196 = 616 cm²; seperempatnya 154 cm².
 - [ ] **MAT.C26.D.PENGUKURAN.Q.JURING_3** — Sebuah pizza berdiameter 28 cm dipotong menjadi 8 potong sama besar. Luas satu potong pizza (π = 22/7) adalah …
-  A. 77 cm² · B. 154 cm² · C. 308 cm² · D. 38,5 cm²
-  Kunci: **A** · Jari-jarinya 14 cm, luas pizza 616 cm², jadi satu potong 616 : 8 = 77 cm².
+  A. 308 cm² · B. 38,5 cm² · C. 77 cm² · D. 154 cm²
+  Kunci: **C** · Jari-jarinya 14 cm, luas pizza 616 cm², jadi satu potong 616 : 8 = 77 cm².
 
 ## Data dan peluang sederhana (MAT.C26.D.DATA)
 
 Materi: 3 · Soal: 9
 
 - [ ] **MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_1** — Mean dari data 6, 8, 7, 9, 10 adalah …
-  A. 7 · B. 8 · C. 9 · D. 40
-  Kunci: **B** · Jumlahnya 40 dan banyak datanya 5, jadi mean = 40 : 5 = 8.
+  A. 9 · B. 40 · C. 7 · D. 8
+  Kunci: **D** · Jumlahnya 40 dan banyak datanya 5, jadi mean = 40 : 5 = 8.
 - [ ] **MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_2** — Median dari data 5, 9, 3, 7, 8, 4 adalah …
   A. 6 · B. 7 · C. 5,5 · D. 6,5
   Kunci: **A** · Urutkan: 3, 4, 5, 7, 8, 9. Dua nilai tengahnya 5 dan 7, jadi median = (5 + 7) : 2 = 6.
 - [ ] **MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_3** — Nilai rata-rata 9 siswa adalah 70. Seorang siswa yang ikut ujian susulan mendapat nilai 80. Nilai rata-rata 10 siswa itu menjadi …
-  A. 71 · B. 75 · C. 72 · D. 70,5
-  Kunci: **A** · Jumlah nilai 9 siswa = 630; ditambah 80 menjadi 710; 710 : 10 = 71.
+  A. 70,5 · B. 71 · C. 75 · D. 72
+  Kunci: **B** · Jumlah nilai 9 siswa = 630; ditambah 80 menjadi 710; 710 : 10 = 71.
 - [ ] **MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_1** — Peluang muncul mata dadu lebih dari 4 pada pelemparan sebuah dadu adalah …
-  A. 1/3 · B. 1/2 · C. 2/3 · D. 1/6
-  Kunci: **A** · Mata dadu lebih dari 4 adalah 5 dan 6, jadi peluangnya 2/6 = 1/3.
+  A. 2/3 · B. 1/6 · C. 1/3 · D. 1/2
+  Kunci: **C** · Mata dadu lebih dari 4 adalah 5 dan 6, jadi peluangnya 2/6 = 1/3.
 - [ ] **MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_2** — Sebuah koin dilempar 50 kali dan sisi angka muncul 28 kali. Frekuensi relatif munculnya sisi angka adalah …
   A. 0,28 · B. 0,56 · C. 0,5 · D. 0,44
   Kunci: **B** · 28 : 50 = 0,56. Nilai 0,5 adalah peluang teoretisnya.
@@ -1252,34 +1252,34 @@ Materi: 3 · Soal: 9
   A. 2/5 · B. 3/5 · C. 4/6 · D. 1/4
   Kunci: **A** · Semua kelereng ada 10, yang merah 4, jadi peluangnya 4/10 = 2/5.
 - [ ] **MAT.C26.D.DATA.Q.SAMPEL_1** — Kepala sekolah ingin mengetahui makanan kantin favorit seluruh siswa. Sampel yang paling representatif adalah …
-  A. 10 siswa dari kelas 7A · B. 30 siswa yang dipilih acak dari setiap kelas · C. semua anggota OSIS · D. siswa yang berada di kantin pukul 07.00
-  Kunci: **B** · Memilih acak dari setiap kelas memberi kesempatan yang sama bagi semua siswa untuk terpilih.
+  A. semua anggota OSIS · B. siswa yang berada di kantin pukul 07.00 · C. 10 siswa dari kelas 7A · D. 30 siswa yang dipilih acak dari setiap kelas
+  Kunci: **D** · Memilih acak dari setiap kelas memberi kesempatan yang sama bagi semua siswa untuk terpilih.
 - [ ] **MAT.C26.D.DATA.Q.SAMPEL_2** — Survei tentang jam tidur siswa hanya dilakukan pada siswa yang mengikuti kegiatan malam. Hasil survei itu kemungkinan …
-  A. mewakili semua siswa · B. bias, cenderung menunjukkan jam tidur lebih sedikit · C. pasti sama dengan hasil populasi · D. tidak dapat dihitung
-  Kunci: **B** · Siswa yang ikut kegiatan malam cenderung tidur lebih larut, jadi sampelnya condong ke satu kelompok.
+  A. bias, cenderung menunjukkan jam tidur lebih sedikit · B. pasti sama dengan hasil populasi · C. tidak dapat dihitung · D. mewakili semua siswa
+  Kunci: **A** · Siswa yang ikut kegiatan malam cenderung tidur lebih larut, jadi sampelnya condong ke satu kelompok.
 - [ ] **MAT.C26.D.DATA.Q.SAMPEL_3** — Dari 200 siswa diambil sampel acak 40 siswa; 10 di antaranya suka membaca komik. Perkiraan banyak siswa di sekolah yang suka membaca komik adalah …
-  A. 10 · B. 40 · C. 50 · D. 25
-  Kunci: **C** · Proporsi pada sampel 10/40 = 1/4, jadi perkiraannya 1/4 × 200 = 50 siswa.
+  A. 40 · B. 50 · C. 25 · D. 10
+  Kunci: **B** · Proporsi pada sampel 10/40 = 1/4, jadi perkiraannya 1/4 × 200 = 50 siswa.
 
 ## Pengukuran dan kerja ilmiah (FIS.C26.D.UKUR)
 
 Materi: 2 · Soal: 6
 
 - [ ] **FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_1** — Kelompok besaran berikut yang semuanya besaran pokok adalah …
-  A. panjang, massa, waktu · B. panjang, luas, volume · C. massa, berat, gaya · D. suhu, kecepatan, waktu
-  Kunci: **A** · Luas, volume, berat, gaya, dan kecepatan adalah besaran turunan.
+  A. massa, berat, gaya · B. suhu, kecepatan, waktu · C. panjang, massa, waktu · D. panjang, luas, volume
+  Kunci: **C** · Luas, volume, berat, gaya, dan kecepatan adalah besaran turunan.
 - [ ] **FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_2** — Satuan SI untuk massa jenis adalah …
-  A. kg/m³ · B. g/cm · C. N/m² · D. kg·m
-  Kunci: **A** · Massa jenis = massa : volume, jadi satuannya kg/m³.
+  A. kg·m · B. kg/m³ · C. g/cm · D. N/m²
+  Kunci: **B** · Massa jenis = massa : volume, jadi satuannya kg/m³.
 - [ ] **FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_3** — Kecepatan 54 km/jam sama dengan …
   A. 15 m/s · B. 5,4 m/s · C. 150 m/s · D. 30 m/s
   Kunci: **A** · 54 : 3,6 = 15 m/s.
 - [ ] **FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_1** — Siswa menyelidiki pengaruh suhu air terhadap waktu larut gula. Variabel terikatnya adalah …
-  A. suhu air · B. waktu larut gula · C. jumlah gula · D. jenis gelas
-  Kunci: **B** · Yang diukur sebagai akibat adalah waktu larut gula. Suhu air variabel bebas; jumlah gula dan jenis gelas variabel kontrol.
+  A. jumlah gula · B. jenis gelas · C. suhu air · D. waktu larut gula
+  Kunci: **D** · Yang diukur sebagai akibat adalah waktu larut gula. Suhu air variabel bebas; jumlah gula dan jenis gelas variabel kontrol.
 - [ ] **FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_2** — Siswa menyelidiki pengaruh suhu air terhadap waktu larut gula. Yang harus dijaga sama (variabel kontrol) adalah …
-  A. suhu air · B. waktu larut gula · C. jumlah gula dan volume air · D. hasil pengamatan
-  Kunci: **C** · Jumlah gula dan volume air dibuat sama supaya perbedaan waktu larut hanya disebabkan oleh suhu.
+  A. jumlah gula dan volume air · B. hasil pengamatan · C. suhu air · D. waktu larut gula
+  Kunci: **A** · Jumlah gula dan volume air dibuat sama supaya perbedaan waktu larut hanya disebabkan oleh suhu.
 - [ ] **FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_3** — Hasil tiga kali pengukuran panjang meja adalah 120,2 cm; 120,4 cm; dan 120,3 cm. Nilai yang paling tepat dilaporkan adalah …
   A. 120,2 cm · B. 120,3 cm · C. 120,4 cm · D. 361 cm
   Kunci: **B** · Rata-ratanya (120,2 + 120,4 + 120,3) : 3 = 120,3 cm.
@@ -1289,35 +1289,35 @@ Materi: 2 · Soal: 6
 Materi: 4 · Soal: 12
 
 - [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1** — Gaya yang membuat bola yang menggelinding di lantai lama-kelamaan berhenti adalah …
-  A. gaya gesek · B. gaya magnet · C. gaya pegas · D. gaya listrik
-  Kunci: **A** · Gaya gesek antara bola dan lantai melawan arah gerak sehingga bola melambat.
+  A. gaya listrik · B. gaya gesek · C. gaya magnet · D. gaya pegas
+  Kunci: **B** · Gaya gesek antara bola dan lantai melawan arah gerak sehingga bola melambat.
 - [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2** — Sebuah benda bermassa 5 kg berada di Bumi (g = 10 m/s²). Beratnya adalah …
-  A. 5 N · B. 50 N · C. 0,5 N · D. 500 N
-  Kunci: **B** · w = m × g = 5 × 10 = 50 N.
+  A. 500 N · B. 5 N · C. 50 N · D. 0,5 N
+  Kunci: **C** · w = m × g = 5 × 10 = 50 N.
 - [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_3** — Massa seorang astronaut 60 kg. Di Bulan, yang gravitasinya 1/6 gravitasi Bumi, massanya …
-  A. 10 kg · B. 60 kg · C. 360 kg · D. 0 kg
-  Kunci: **B** · Massa tidak berubah di mana pun; yang berubah adalah beratnya.
+  A. 360 kg · B. 0 kg · C. 10 kg · D. 60 kg
+  Kunci: **D** · Massa tidak berubah di mana pun; yang berubah adalah beratnya.
 - [ ] **FIS.C26.D.GERAK.Q.TEKANAN_1** — Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
-  A. 100 Pa · B. 400 Pa · C. 200,5 Pa · D. 40 Pa
-  Kunci: **B** · P = F / A = 200 : 0,5 = 400 Pa.
+  A. 400 Pa · B. 200,5 Pa · C. 40 Pa · D. 100 Pa
+  Kunci: **A** · P = F / A = 200 : 0,5 = 400 Pa.
 - [ ] **FIS.C26.D.GERAK.Q.TEKANAN_2** — Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
-  A. 2.000 Pa · B. 20.000 Pa · C. 200 Pa · D. 5.000 Pa
-  Kunci: **B** · P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
+  A. 200 Pa · B. 5.000 Pa · C. 2.000 Pa · D. 20.000 Pa
+  Kunci: **D** · P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
 - [ ] **FIS.C26.D.GERAK.Q.TEKANAN_3** — Dinding bendungan dibuat makin tebal di bagian bawah karena …
-  A. air di bagian bawah lebih hangat · B. tekanan air makin besar di tempat yang makin dalam · C. air di bagian bawah lebih ringan · D. agar ikan tidak dapat lewat
-  Kunci: **B** · Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
+  A. agar ikan tidak dapat lewat · B. air di bagian bawah lebih hangat · C. tekanan air makin besar di tempat yang makin dalam · D. air di bagian bawah lebih ringan
+  Kunci: **C** · Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
 - [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_1** — Budi berjalan 300 m ke timur, lalu 400 m ke utara. Besar perpindahannya adalah …
-  A. 700 m · B. 500 m · C. 100 m · D. 350 m
-  Kunci: **B** · Perpindahan adalah garis lurus dari awal ke akhir: √(300² + 400²) = 500 m. Jaraknya 700 m.
+  A. 500 m · B. 100 m · C. 350 m · D. 700 m
+  Kunci: **A** · Perpindahan adalah garis lurus dari awal ke akhir: √(300² + 400²) = 500 m. Jaraknya 700 m.
 - [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_2** — Sebuah sepeda menempuh 1.800 m dalam 6 menit. Kelajuan rata-ratanya adalah …
-  A. 5 m/s · B. 300 m/s · C. 30 m/s · D. 10 m/s
-  Kunci: **A** · 6 menit = 360 s; 1.800 : 360 = 5 m/s.
+  A. 300 m/s · B. 30 m/s · C. 10 m/s · D. 5 m/s
+  Kunci: **D** · 6 menit = 360 s; 1.800 : 360 = 5 m/s.
 - [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_3** — Mobil menempuh 60 km pada jam pertama dan 40 km pada jam kedua. Kelajuan rata-ratanya adalah …
-  A. 50 km/jam · B. 100 km/jam · C. 40 km/jam · D. 60 km/jam
-  Kunci: **A** · Jarak total 100 km dalam 2 jam, jadi 100 : 2 = 50 km/jam.
+  A. 40 km/jam · B. 60 km/jam · C. 50 km/jam · D. 100 km/jam
+  Kunci: **C** · Jarak total 100 km dalam 2 jam, jadi 100 : 2 = 50 km/jam.
 - [ ] **FIS.C26.D.GERAK.Q.RESULTAN_1** — Dua anak mendorong lemari ke kanan dengan gaya 40 N dan 35 N, sedangkan gaya gesek 25 N bekerja ke kiri. Resultan gayanya adalah …
-  A. 100 N ke kanan · B. 50 N ke kanan · C. 75 N ke kanan · D. 50 N ke kiri
-  Kunci: **B** · 40 + 35 − 25 = 50 N ke kanan.
+  A. 75 N ke kanan · B. 50 N ke kiri · C. 100 N ke kanan · D. 50 N ke kanan
+  Kunci: **D** · 40 + 35 − 25 = 50 N ke kanan.
 - [ ] **FIS.C26.D.GERAK.Q.RESULTAN_2** — Penumpang terdorong ke depan saat bus mengerem mendadak. Peristiwa ini merupakan contoh …
   A. hukum I Newton (inersia) · B. hukum III Newton · C. gaya gravitasi · D. tekanan udara
   Kunci: **A** · Tubuh penumpang cenderung tetap bergerak ke depan walaupun bus melambat.
@@ -1330,105 +1330,306 @@ Materi: 4 · Soal: 12
 Materi: 4 · Soal: 12
 
 - [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_1** — Gaya 50 N memindahkan kotak sejauh 4 m searah gaya. Usaha yang dilakukan adalah …
-  A. 200 J · B. 12,5 J · C. 54 J · D. 46 J
-  Kunci: **A** · W = F × s = 50 × 4 = 200 J.
+  A. 12,5 J · B. 54 J · C. 46 J · D. 200 J
+  Kunci: **D** · W = F × s = 50 × 4 = 200 J.
 - [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_2** — Energi potensial buah kelapa bermassa 2 kg pada ketinggian 10 m (g = 10 m/s²) adalah …
-  A. 20 J · B. 200 J · C. 100 J · D. 2.000 J
-  Kunci: **B** · Ep = m × g × h = 2 × 10 × 10 = 200 J.
+  A. 200 J · B. 100 J · C. 2.000 J · D. 20 J
+  Kunci: **A** · Ep = m × g × h = 2 × 10 × 10 = 200 J.
 - [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_3** — Perubahan energi pada senter yang menyala adalah …
-  A. kimia → listrik → cahaya dan panas · B. listrik → kimia → cahaya · C. cahaya → listrik → kimia · D. panas → kimia → listrik
-  Kunci: **A** · Baterai menyimpan energi kimia, diubah menjadi energi listrik, lalu lampu mengubahnya menjadi cahaya dan panas.
+  A. panas → kimia → listrik · B. kimia → listrik → cahaya dan panas · C. listrik → kimia → cahaya · D. cahaya → listrik → kimia
+  Kunci: **B** · Baterai menyimpan energi kimia, diubah menjadi energi listrik, lalu lampu mengubahnya menjadi cahaya dan panas.
 - [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_1** — Suhu 27 °C dalam skala Kelvin adalah …
-  A. 246 K · B. 300 K · C. 273 K · D. 327 K
-  Kunci: **B** · K = 27 + 273 = 300 K.
+  A. 327 K · B. 246 K · C. 300 K · D. 273 K
+  Kunci: **C** · K = 27 + 273 = 300 K.
 - [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_2** — Gagang panci dari logam terasa panas saat panci dipanaskan karena perpindahan kalor secara …
-  A. konduksi · B. konveksi · C. radiasi · D. evaporasi
-  Kunci: **A** · Kalor merambat melalui logam tanpa logamnya berpindah, yaitu konduksi.
+  A. evaporasi · B. konduksi · C. konveksi · D. radiasi
+  Kunci: **B** · Kalor merambat melalui logam tanpa logamnya berpindah, yaitu konduksi.
 - [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_3** — Angin laut pada siang hari terjadi karena …
-  A. konduksi kalor oleh tanah · B. konveksi udara dari laut ke darat · C. radiasi dari Bulan · D. konduksi kalor oleh air
-  Kunci: **B** · Daratan lebih cepat panas, udara di atasnya naik, lalu udara laut yang lebih sejuk mengalir ke darat (konveksi).
+  A. konveksi udara dari laut ke darat · B. radiasi dari Bulan · C. konduksi kalor oleh air · D. konduksi kalor oleh tanah
+  Kunci: **A** · Daratan lebih cepat panas, udara di atasnya naik, lalu udara laut yang lebih sejuk mengalir ke darat (konveksi).
 - [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_1** — Linggis dengan lengan beban 20 cm dan lengan kuasa 100 cm dipakai untuk mengangkat batu seberat 500 N. Gaya kuasa yang diperlukan adalah …
-  A. 100 N · B. 2.500 N · C. 25 N · D. 250 N
-  Kunci: **A** · 500 × 20 = F × 100, jadi F = 100 N.
+  A. 25 N · B. 250 N · C. 100 N · D. 2.500 N
+  Kunci: **C** · 500 × 20 = F × 100, jadi F = 100 N.
 - [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_2** — Keuntungan mekanis sebuah katrol tetap tunggal adalah …
-  A. 1 · B. 2 · C. 0,5 · D. bergantung pada beban
-  Kunci: **A** · Katrol tetap hanya membelokkan arah gaya, jadi gaya kuasa sama dengan beban.
+  A. bergantung pada beban · B. 1 · C. 2 · D. 0,5
+  Kunci: **B** · Katrol tetap hanya membelokkan arah gaya, jadi gaya kuasa sama dengan beban.
 - [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_3** — Bidang miring sepanjang 5 m dengan tinggi 1 m dipakai untuk menaikkan peti seberat 1.000 N. Jika gesekan diabaikan, gaya minimal yang diperlukan adalah …
-  A. 5.000 N · B. 200 N · C. 1.000 N · D. 500 N
-  Kunci: **B** · KM = 5 : 1 = 5, jadi F = 1.000 : 5 = 200 N.
+  A. 200 N · B. 1.000 N · C. 500 N · D. 5.000 N
+  Kunci: **A** · KM = 5 : 1 = 5, jadi F = 1.000 : 5 = 200 N.
 - [ ] **FIS.C26.D.ENERGI.Q.KALOR_1** — Kalor yang diperlukan untuk memanaskan 2 kg air dari 25 °C menjadi 75 °C (c = 4.200 J/kg°C) adalah …
-  A. 420.000 J · B. 210.000 J · C. 630.000 J · D. 8.400 J
-  Kunci: **A** · Q = 2 × 4.200 × (75 − 25) = 420.000 J.
+  A. 630.000 J · B. 8.400 J · C. 420.000 J · D. 210.000 J
+  Kunci: **C** · Q = 2 × 4.200 × (75 − 25) = 420.000 J.
 - [ ] **FIS.C26.D.ENERGI.Q.KALOR_2** — Pada siang hari, pantai terasa lebih sejuk daripada daratan di sekitarnya terutama karena …
-  A. kalor jenis air besar sehingga air lambat panas · B. air memantulkan semua cahaya Matahari · C. udara di laut lebih tipis · D. pasir tidak menyerap kalor
-  Kunci: **A** · Air membutuhkan banyak kalor untuk naik suhunya, jadi permukaan laut tetap relatif sejuk.
+  A. pasir tidak menyerap kalor · B. kalor jenis air besar sehingga air lambat panas · C. air memantulkan semua cahaya Matahari · D. udara di laut lebih tipis
+  Kunci: **B** · Air membutuhkan banyak kalor untuk naik suhunya, jadi permukaan laut tetap relatif sejuk.
 - [ ] **FIS.C26.D.ENERGI.Q.KALOR_3** — Es yang sedang melebur pada 0 °C terus dipanaskan. Selama proses melebur, suhunya …
-  A. naik dengan cepat · B. tetap 0 °C sampai semua es mencair · C. turun · D. naik lalu turun
-  Kunci: **B** · Kalor dipakai untuk mengubah wujud, bukan menaikkan suhu, sampai semua es mencair.
+  A. tetap 0 °C sampai semua es mencair · B. turun · C. naik lalu turun · D. naik dengan cepat
+  Kunci: **A** · Kalor dipakai untuk mengubah wujud, bukan menaikkan suhu, sampai semua es mencair.
 
 ## Getaran, bunyi, dan cahaya (FIS.C26.D.GELOMBANG)
 
 Materi: 3 · Soal: 9
 
 - [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_1** — Sebuah bandul bergetar 30 kali dalam 15 sekon. Frekuensinya adalah …
-  A. 2 Hz · B. 0,5 Hz · C. 45 Hz · D. 15 Hz
-  Kunci: **A** · f = 30 : 15 = 2 Hz. Periodenya 0,5 s.
+  A. 15 Hz · B. 2 Hz · C. 0,5 Hz · D. 45 Hz
+  Kunci: **B** · f = 30 : 15 = 2 Hz. Periodenya 0,5 s.
 - [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_2** — Gelombang dengan panjang gelombang 2 m dan frekuensi 5 Hz memiliki cepat rambat …
-  A. 10 m/s · B. 2,5 m/s · C. 0,4 m/s · D. 7 m/s
-  Kunci: **A** · v = λ × f = 2 × 5 = 10 m/s.
+  A. 0,4 m/s · B. 7 m/s · C. 10 m/s · D. 2,5 m/s
+  Kunci: **C** · v = λ × f = 2 × 5 = 10 m/s.
 - [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_3** — Contoh gelombang longitudinal adalah …
-  A. gelombang bunyi di udara · B. gelombang pada tali yang digoyangkan · C. gelombang cahaya · D. riak pada permukaan air
-  Kunci: **A** · Bunyi merambat sebagai rapatan dan renggangan yang searah dengan arah rambatnya.
+  A. gelombang pada tali yang digoyangkan · B. gelombang cahaya · C. riak pada permukaan air · D. gelombang bunyi di udara
+  Kunci: **D** · Bunyi merambat sebagai rapatan dan renggangan yang searah dengan arah rambatnya.
 - [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_1** — Astronaut di Bulan tidak dapat saling mendengar suara tanpa radio karena …
   A. bunyi memerlukan medium untuk merambat · B. frekuensi suaranya terlalu tinggi · C. gravitasi Bulan kecil · D. suhunya terlalu dingin
   Kunci: **A** · Bulan hampir tidak memiliki udara, sedangkan bunyi butuh medium.
 - [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_2** — Sonar kapal menerima bunyi pantul 2 sekon setelah dipancarkan. Cepat rambat bunyi di air 1.500 m/s. Kedalaman laut adalah …
-  A. 3.000 m · B. 1.500 m · C. 750 m · D. 6.000 m
-  Kunci: **B** · d = v × t : 2 = 1.500 × 2 : 2 = 1.500 m.
+  A. 750 m · B. 6.000 m · C. 3.000 m · D. 1.500 m
+  Kunci: **D** · d = v × t : 2 = 1.500 × 2 : 2 = 1.500 m.
 - [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_3** — Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …
-  A. cekung · B. cembung · C. datar · D. silinder saja
-  Kunci: **A** · Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
+  A. datar · B. silinder saja · C. cekung · D. cembung
+  Kunci: **C** · Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
 - [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_1** — Sinar datang membentuk sudut 35° terhadap garis normal sebuah cermin datar. Besar sudut pantulnya adalah …
   A. 35° · B. 55° · C. 70° · D. 145°
   Kunci: **A** · Sudut pantul sama dengan sudut datang, keduanya diukur dari garis normal.
 - [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_2** — Dasar kolam terlihat lebih dangkal daripada kedalaman sebenarnya karena peristiwa …
-  A. pemantulan · B. pembiasan · C. difraksi · D. interferensi
-  Kunci: **B** · Cahaya dari dasar kolam dibelokkan saat keluar dari air ke udara.
+  A. difraksi · B. interferensi · C. pemantulan · D. pembiasan
+  Kunci: **D** · Cahaya dari dasar kolam dibelokkan saat keluar dari air ke udara.
 - [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_3** — Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 10 cm. Jarak bayangannya adalah …
-  A. 15 cm · B. 20 cm · C. 7,5 cm · D. 40 cm
-  Kunci: **A** · 1/s′ = 1/10 − 1/30 = 2/30, jadi s′ = 15 cm.
+  A. 7,5 cm · B. 40 cm · C. 15 cm · D. 20 cm
+  Kunci: **C** · 1/s′ = 1/10 − 1/30 = 2/30, jadi s′ = 15 cm.
 
 ## Kelistrikan & energi ramah lingkungan (FIS.C26.D.LISTRIK)
 
 Materi: 3 · Soal: 9
 
 - [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_1** — Tegangan 12 V dipasang pada hambatan 4 Ω. Kuat arus yang mengalir adalah …
-  A. 3 A · B. 48 A · C. 0,33 A · D. 16 A
-  Kunci: **A** · I = V / R = 12 : 4 = 3 A.
+  A. 16 A · B. 3 A · C. 48 A · D. 0,33 A
+  Kunci: **B** · I = V / R = 12 : 4 = 3 A.
 - [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_2** — Sebuah lampu 50 W menyala 10 jam setiap hari. Energi yang dipakai dalam 30 hari adalah …
-  A. 15 kWh · B. 1,5 kWh · C. 150 kWh · D. 500 kWh
-  Kunci: **A** · 50 × 10 × 30 = 15.000 Wh = 15 kWh.
+  A. 150 kWh · B. 500 kWh · C. 15 kWh · D. 1,5 kWh
+  Kunci: **C** · 50 × 10 × 30 = 15.000 Wh = 15 kWh.
 - [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_3** — Cara memasang voltmeter untuk mengukur tegangan sebuah lampu adalah …
-  A. paralel dengan lampu · B. seri dengan lampu · C. di sembarang tempat · D. hanya di dekat baterai
-  Kunci: **A** · Voltmeter mengukur beda potensial di antara dua titik, jadi dipasang paralel.
+  A. seri dengan lampu · B. di sembarang tempat · C. hanya di dekat baterai · D. paralel dengan lampu
+  Kunci: **D** · Voltmeter mengukur beda potensial di antara dua titik, jadi dipasang paralel.
 - [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_1** — Dua kutub utara magnet didekatkan. Keduanya akan …
-  A. tarik-menarik · B. tolak-menolak · C. diam saja · D. berubah kutub
-  Kunci: **B** · Kutub senama saling tolak-menolak.
+  A. tolak-menolak · B. diam saja · C. berubah kutub · D. tarik-menarik
+  Kunci: **A** · Kutub senama saling tolak-menolak.
 - [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_2** — Alat yang mengubah energi gerak menjadi energi listrik adalah …
-  A. generator · B. motor listrik · C. setrika listrik · D. baterai
-  Kunci: **A** · Generator memanfaatkan induksi elektromagnetik dari gerak.
+  A. motor listrik · B. setrika listrik · C. baterai · D. generator
+  Kunci: **D** · Generator memanfaatkan induksi elektromagnetik dari gerak.
 - [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_3** — Sebuah transformator memiliki 200 lilitan primer dan 1.000 lilitan sekunder. Jika tegangan primernya 220 V, tegangan sekundernya adalah …
-  A. 44 V · B. 1.100 V · C. 220 V · D. 4.400 V
-  Kunci: **B** · Vs = Vp × Ns / Np = 220 × 1.000 : 200 = 1.100 V.
+  A. 4.400 V · B. 44 V · C. 1.100 V · D. 220 V
+  Kunci: **C** · Vs = Vp × Ns / Np = 220 × 1.000 : 200 = 1.100 V.
 - [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1** — Dua hambatan 6 Ω dan 3 Ω disusun seri. Hambatan penggantinya adalah …
   A. 9 Ω · B. 2 Ω · C. 18 Ω · D. 3 Ω
   Kunci: **A** · Rs = 6 + 3 = 9 Ω.
 - [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_2** — Dua hambatan 6 Ω dan 3 Ω disusun paralel. Hambatan penggantinya adalah …
-  A. 9 Ω · B. 2 Ω · C. 4,5 Ω · D. 0,5 Ω
-  Kunci: **B** · 1/Rp = 1/6 + 1/3 = 3/6, jadi Rp = 2 Ω.
+  A. 4,5 Ω · B. 0,5 Ω · C. 9 Ω · D. 2 Ω
+  Kunci: **D** · 1/Rp = 1/6 + 1/3 = 3/6, jadi Rp = 2 Ω.
 - [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_3** — Lampu-lampu di rumah dipasang paralel karena …
-  A. agar kuat arus di semua lampu sama · B. agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus · C. agar hambatan totalnya besar · D. agar kabel lebih hemat
-  Kunci: **B** · Pada rangkaian paralel setiap cabang mendapat tegangan sumber penuh dan bekerja sendiri-sendiri.
+  A. agar kabel lebih hemat · B. agar kuat arus di semua lampu sama · C. agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus · D. agar hambatan totalnya besar
+  Kunci: **C** · Pada rangkaian paralel setiap cabang mendapat tegangan sumber penuh dan bekerja sendiri-sendiri.
+
+## Klasifikasi dan sifat materi (KIM.C26.D.MATERI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_1** — Kelompok zat berikut yang semuanya unsur adalah …
+  A. udara, sirup, besi · B. emas, air, tembaga · C. besi, oksigen, emas · D. air, garam, gula
+  Kunci: **C** · Besi, oksigen, dan emas tidak dapat diuraikan lagi. Air, garam, dan gula adalah senyawa; udara dan sirup campuran.
+- [ ] **KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_2** — Air laut tergolong …
+  A. senyawa · B. campuran homogen · C. campuran heterogen · D. unsur
+  Kunci: **B** · Air laut berisi air dan berbagai garam terlarut tanpa perbandingan tetap, dan tampak menyatu.
+- [ ] **KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_3** — Ciri senyawa adalah …
+  A. tersusun dari unsur-unsur dengan perbandingan tetap · B. dapat dipisahkan dengan penyaringan · C. komposisinya berubah-ubah · D. sifatnya sama dengan unsur penyusunnya
+  Kunci: **A** · Senyawa selalu tersusun dengan perbandingan tetap dan sifatnya baru, berbeda dari unsur penyusunnya.
+- [ ] **KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_1** — Contoh perubahan kimia adalah …
+  A. kertas dilipat · B. air menguap · C. es mencair · D. besi berkarat
+  Kunci: **D** · Karat adalah zat baru (besi oksida). Pilihan lain hanya mengubah bentuk atau wujud.
+- [ ] **KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_2** — Contoh perubahan fisika adalah …
+  A. lilin meleleh · B. nasi menjadi basi · C. kayu terbakar · D. susu menjadi yoghurt
+  Kunci: **A** · Lilin yang meleleh hanya berubah wujud; lilin cair tetap lilin.
+- [ ] **KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_3** — Sifat "mudah terbakar" merupakan …
+  A. sifat fisika · B. sifat kimia · C. perubahan fisika · D. campuran
+  Kunci: **B** · Mudah terbakar adalah kemampuan suatu zat berubah menjadi zat baru, jadi termasuk sifat kimia.
+- [ ] **KIM.C26.D.MATERI.Q.PEMISAHAN_1** — Petani garam memperoleh garam dari air laut dengan cara …
+  A. penguapan · B. sublimasi · C. kromatografi · D. penyaringan
+  Kunci: **A** · Air laut dijemur sampai airnya menguap dan garamnya tertinggal.
+- [ ] **KIM.C26.D.MATERI.Q.PEMISAHAN_2** — Cara paling tepat untuk memisahkan zat-zat warna pada tinta spidol adalah …
+  A. magnet · B. filtrasi · C. distilasi · D. kromatografi
+  Kunci: **D** · Zat warna yang berbeda meresap dengan kecepatan berbeda pada kertas, sehingga terpisah.
+- [ ] **KIM.C26.D.MATERI.Q.PEMISAHAN_3** — Pembuatan air suling (akuades) memanfaatkan perbedaan …
+  A. kemagnetan · B. ukuran partikel · C. titik didih · D. warna
+  Kunci: **C** · Air diuapkan lalu diembunkan kembali, sedangkan zat terlarut dengan titik didih lebih tinggi tertinggal.
+
+## Zat aditif dan adiktif (KIM.C26.D.ZAT)
+
+Materi: 2 · Soal: 6
+
+- [ ] **KIM.C26.D.ZAT.Q.FUNGSI_ZAT_ADITIF_1** — Daun suji pada kue berfungsi sebagai …
+  A. pengawet · B. pewarna alami · C. pemanis · D. pengental
+  Kunci: **B** · Daun suji memberi warna hijau alami pada makanan.
+- [ ] **KIM.C26.D.ZAT.Q.FUNGSI_ZAT_ADITIF_2** — Zat yang dilarang ditambahkan ke makanan adalah …
+  A. garam · B. natrium benzoat sesuai takaran · C. formalin · D. gula
+  Kunci: **C** · Formalin adalah pengawet mayat dan berbahaya bagi tubuh, sehingga dilarang untuk makanan.
+- [ ] **KIM.C26.D.ZAT.Q.FUNGSI_ZAT_ADITIF_3** — Fungsi pengawet pada makanan kemasan adalah …
+  A. menambah rasa manis · B. membuat makanan lebih kental · C. menambah warna · D. menghambat pertumbuhan mikroorganisme
+  Kunci: **D** · Pengawet memperlambat pembusukan oleh bakteri dan jamur sehingga makanan lebih tahan lama.
+- [ ] **KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_1** — Zat adiktif yang terdapat dalam rokok adalah …
+  A. nikotin · B. aspartam · C. lesitin · D. kafein
+  Kunci: **A** · Nikotin adalah zat adiktif utama dalam tembakau.
+- [ ] **KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_2** — Ciri utama zat adiktif adalah …
+  A. mengawetkan makanan · B. menambah gizi · C. memberi warna pada makanan · D. menimbulkan ketergantungan
+  Kunci: **D** · Zat adiktif membuat pemakainya ingin terus menggunakannya (kecanduan).
+- [ ] **KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_3** — Seorang teman menawarkan rokok elektrik kepadamu. Sikap yang paling tepat adalah …
+  A. membelinya agar dianggap keren · B. mencoba sekali saja · C. menolak dengan tegas dan menjelaskan alasannya · D. menyimpannya untuk nanti
+  Kunci: **C** · Rokok elektrik juga mengandung nikotin yang adiktif. Menolak dengan tegas melindungi kesehatanmu.
+
+## Ciri dan klasifikasi makhluk hidup (BIO.C26.D.KLASIFIKASI)
+
+Materi: 2 · Soal: 6
+
+- [ ] **BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_1** — Daun putri malu menutup saat disentuh. Hal ini menunjukkan ciri makhluk hidup, yaitu …
+  A. mengeluarkan zat sisa · B. bernapas · C. peka terhadap rangsang · D. berkembang biak
+  Kunci: **C** · Putri malu menanggapi rangsang sentuhan.
+- [ ] **BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_2** — Kucing mengeluarkan keringat melalui telapak kakinya. Ini contoh ciri makhluk hidup, yaitu …
+  A. memerlukan nutrisi · B. mengeluarkan zat sisa · C. tumbuh · D. bergerak
+  Kunci: **B** · Keringat adalah zat sisa yang dikeluarkan tubuh.
+- [ ] **BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_3** — Mobil dapat bergerak dan memerlukan bensin, tetapi bukan makhluk hidup karena …
+  A. tidak tumbuh dan tidak berkembang biak · B. terbuat dari logam · C. tidak bersuara · D. tidak berwarna
+  Kunci: **A** · Mobil tidak memiliki semua ciri kehidupan, misalnya tumbuh dan berkembang biak.
+- [ ] **BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_1** — Hewan berikut yang termasuk vertebrata adalah …
+  A. ubur-ubur · B. kupu-kupu · C. cacing tanah · D. katak
+  Kunci: **D** · Katak memiliki tulang belakang (amfibi). Hewan lain invertebrata.
+- [ ] **BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_2** — Kingdom yang anggotanya tidak memiliki membran inti adalah …
+  A. Monera · B. Protista · C. Fungi · D. Plantae
+  Kunci: **A** · Monera (bakteri) bersifat prokariotik, tanpa membran inti.
+- [ ] **BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_3** — Kelelawar dikelompokkan ke dalam mamalia, bukan burung, karena …
+  A. dapat terbang · B. menyusui anaknya dan berambut · C. hidup di gua · D. aktif pada malam hari
+  Kunci: **B** · Menyusui dan berambut adalah ciri khas mamalia; kemampuan terbang bukan dasar pengelompokan.
+
+## Organisasi kehidupan & sistem organ (BIO.C26.D.ORGAN)
+
+Materi: 6 · Soal: 18
+
+- [ ] **BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_1** — Urutan tingkat organisasi kehidupan yang benar adalah …
+  A. sel → jaringan → organ → sistem organ · B. jaringan → sel → organ → organisme · C. organ → sel → jaringan → organisme · D. sel → organ → jaringan → sistem organ
+  Kunci: **A** · Sel membentuk jaringan, jaringan membentuk organ, organ membentuk sistem organ.
+- [ ] **BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_2** — Bagian sel yang hanya dimiliki sel tumbuhan adalah …
+  A. inti sel · B. sitoplasma · C. membran sel · D. dinding sel dan kloroplas
+  Kunci: **D** · Membran sel, inti, dan sitoplasma dimiliki sel hewan dan tumbuhan.
+- [ ] **BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_3** — Jantung termasuk tingkat organisasi …
+  A. sel · B. jaringan · C. organ · D. organisme
+  Kunci: **C** · Jantung tersusun dari beberapa jaringan yang bekerja sama, jadi termasuk organ.
+- [ ] **BIO.C26.D.ORGAN.Q.FUNGSI_DAN_GANGGUAN_SISTEM_1** — Sendi pada siku termasuk sendi …
+  A. peluru · B. engsel · C. putar · D. pelana
+  Kunci: **B** · Sendi engsel hanya memungkinkan gerak ke satu arah, seperti pada siku.
+- [ ] **BIO.C26.D.ORGAN.Q.FUNGSI_DAN_GANGGUAN_SISTEM_2** — Kelainan tulang belakang yang bengkok ke samping disebut …
+  A. lordosis · B. kifosis · C. skoliosis · D. osteoporosis
+  Kunci: **C** · Lordosis bengkok ke depan, kifosis bengkok ke belakang, skoliosis bengkok ke samping.
+- [ ] **BIO.C26.D.ORGAN.Q.FUNGSI_DAN_GANGGUAN_SISTEM_3** — Osteoporosis dapat dicegah dengan …
+  A. mengurangi minum air · B. duduk membungkuk · C. kurang bergerak · D. cukup kalsium, vitamin D, dan olahraga teratur
+  Kunci: **D** · Kalsium dan vitamin D menjaga kepadatan tulang, dan olahraga menguatkannya.
+- [ ] **BIO.C26.D.ORGAN.Q.PENCERNAAN_1** — Enzim amilase di dalam mulut mengubah …
+  A. protein menjadi asam amino · B. amilum menjadi gula · C. lemak menjadi asam lemak · D. gula menjadi amilum
+  Kunci: **B** · Amilase memecah amilum (pati) menjadi gula yang lebih sederhana.
+- [ ] **BIO.C26.D.ORGAN.Q.PENCERNAAN_2** — Penyerapan sari makanan terutama terjadi di …
+  A. kerongkongan · B. lambung · C. usus halus · D. usus besar
+  Kunci: **C** · Jonjot usus halus memperluas permukaan penyerapan.
+- [ ] **BIO.C26.D.ORGAN.Q.PENCERNAAN_3** — Sembelit dapat dicegah dengan …
+  A. mengurangi minum air · B. banyak makan makanan berlemak · C. tidak sarapan · D. banyak makan makanan berserat dan cukup minum
+  Kunci: **D** · Serat dan air membantu feses lunak dan mudah dikeluarkan.
+- [ ] **BIO.C26.D.ORGAN.Q.PERNAPASAN_1** — Pertukaran oksigen dan karbon dioksida terjadi di …
+  A. bronkus · B. alveolus · C. laring · D. trakea
+  Kunci: **B** · Alveolus berdinding tipis dan dikelilingi kapiler darah, tempat gas berpindah.
+- [ ] **BIO.C26.D.ORGAN.Q.PERNAPASAN_2** — Saat menarik napas pada pernapasan perut, diafragma …
+  A. mengecil · B. melengkung ke atas · C. mendatar sehingga rongga dada membesar · D. tidak bergerak
+  Kunci: **C** · Diafragma yang mendatar memperbesar rongga dada sehingga tekanan turun dan udara masuk.
+- [ ] **BIO.C26.D.ORGAN.Q.PERNAPASAN_3** — Kebiasaan yang paling merusak alveolus adalah …
+  A. minum air putih · B. tidur cukup · C. berolahraga · D. merokok
+  Kunci: **D** · Zat dalam asap rokok merusak dinding alveolus sehingga pertukaran gas terganggu.
+- [ ] **BIO.C26.D.ORGAN.Q.PEREDARAN_1** — Sel darah yang berfungsi mengangkut oksigen adalah …
+  A. sel darah merah · B. keping darah · C. plasma darah · D. sel darah putih
+  Kunci: **A** · Hemoglobin dalam sel darah merah mengikat oksigen.
+- [ ] **BIO.C26.D.ORGAN.Q.PEREDARAN_2** — Peredaran darah kecil adalah peredaran darah dari jantung ke …
+  A. otak saja · B. ginjal saja · C. seluruh tubuh lalu kembali ke jantung · D. paru-paru lalu kembali ke jantung
+  Kunci: **D** · Peredaran kecil membawa darah ke paru-paru untuk mengambil oksigen.
+- [ ] **BIO.C26.D.ORGAN.Q.PEREDARAN_3** — Kekurangan hemoglobin sehingga mudah lelah dan pucat disebut …
+  A. leukemia · B. hemofilia · C. anemia · D. hipertensi
+  Kunci: **C** · Anemia membuat darah kurang mampu mengangkut oksigen.
+- [ ] **BIO.C26.D.ORGAN.Q.EKSKRESI_1** — Organ yang menghasilkan urine adalah …
+  A. paru-paru · B. kulit · C. hati · D. ginjal
+  Kunci: **D** · Ginjal menyaring darah dan membentuk urine.
+- [ ] **BIO.C26.D.ORGAN.Q.EKSKRESI_2** — Paru-paru termasuk organ ekskresi karena mengeluarkan …
+  A. karbon dioksida dan uap air · B. empedu · C. urine · D. keringat
+  Kunci: **A** · Karbon dioksida dan uap air adalah sisa metabolisme yang dibuang lewat paru-paru.
+- [ ] **BIO.C26.D.ORGAN.Q.EKSKRESI_3** — Saat seseorang kurang minum, urinenya cenderung …
+  A. banyak dan encer · B. sedikit dan pekat · C. tidak berubah · D. berwarna biru
+  Kunci: **B** · Ginjal menghemat air, sehingga urine yang dikeluarkan sedikit dan pekat.
+
+## Ekosistem dan perubahan iklim (BIO.C26.D.EKOLOGI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **BIO.C26.D.EKOLOGI.Q.INTERAKSI_DAN_ALIRAN_ENERGI_1** — Hubungan lebah dan bunga merupakan simbiosis …
+  A. komensalisme · B. parasitisme · C. predasi · D. mutualisme
+  Kunci: **D** · Lebah mendapat nektar, bunga terbantu penyerbukannya; keduanya untung.
+- [ ] **BIO.C26.D.EKOLOGI.Q.INTERAKSI_DAN_ALIRAN_ENERGI_2** — Benalu yang hidup di pohon mangga merupakan contoh simbiosis …
+  A. parasitisme · B. netralisme · C. mutualisme · D. komensalisme
+  Kunci: **A** · Benalu mengambil air dan zat hara dari pohon mangga sehingga pohon dirugikan.
+- [ ] **BIO.C26.D.EKOLOGI.Q.INTERAKSI_DAN_ALIRAN_ENERGI_3** — Sumber energi utama dalam ekosistem adalah …
+  A. tumbuhan · B. Matahari · C. tanah · D. air
+  Kunci: **B** · Produsen mengubah energi cahaya Matahari menjadi energi kimia melalui fotosintesis.
+- [ ] **BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_1** — Gas utama penyebab efek rumah kaca dari kendaraan bermotor adalah …
+  A. hidrogen · B. oksigen · C. karbon dioksida · D. nitrogen
+  Kunci: **C** · Pembakaran bensin menghasilkan karbon dioksida yang memerangkap panas di atmosfer.
+- [ ] **BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_2** — Dampak pemanasan global adalah …
+  A. hujan selalu merata · B. permukaan laut naik · C. es kutub bertambah · D. suhu Bumi turun
+  Kunci: **B** · Es kutub yang mencair dan air laut yang memuai membuat permukaan laut naik.
+- [ ] **BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_3** — Tindakan siswa yang ikut mengurangi perubahan iklim adalah …
+  A. mematikan lampu yang tidak dipakai dan bersepeda ke sekolah · B. memakai kantong plastik sekali pakai · C. menebang pohon di halaman · D. membakar sampah plastik
+  Kunci: **A** · Menghemat listrik dan bahan bakar mengurangi emisi karbon dioksida.
+- [ ] **BIO.C26.D.EKOLOGI.Q.JEJARING_1** — Pada rantai makanan padi → tikus → ular → elang, ular berperan sebagai …
+  A. konsumen I · B. konsumen II · C. pengurai · D. produsen
+  Kunci: **B** · Padi produsen, tikus konsumen I, ular konsumen II, elang konsumen III.
+- [ ] **BIO.C26.D.EKOLOGI.Q.JEJARING_2** — Jika populasi ular menurun drastis, yang kemungkinan terjadi adalah …
+  A. populasi elang meningkat · B. tidak ada perubahan · C. populasi tikus meningkat · D. populasi padi meningkat
+  Kunci: **C** · Pemangsa tikus berkurang, sehingga tikus berkembang lebih banyak.
+- [ ] **BIO.C26.D.EKOLOGI.Q.JEJARING_3** — Energi paling kecil dalam piramida energi terdapat pada …
+  A. semua tingkat sama · B. produsen · C. konsumen I · D. konsumen puncak
+  Kunci: **D** · Energi berkurang di setiap tingkat, jadi paling sedikit di puncak.
+
+## Pewarisan sifat & bioteknologi SMP (BIO.C26.D.GENETIKA)
+
+Materi: 3 · Soal: 9
+
+- [ ] **BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_1** — Pembawa sifat keturunan yang terdapat pada kromosom disebut …
+  A. enzim · B. gen · C. sel darah · D. hormon
+  Kunci: **B** · Gen adalah bagian DNA pada kromosom yang membawa sifat.
+- [ ] **BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_2** — Jumlah kromosom pada sel tubuh manusia adalah …
+  A. 92 · B. 23 · C. 46 · D. 48
+  Kunci: **C** · Sel tubuh manusia memiliki 23 pasang atau 46 kromosom.
+- [ ] **BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_3** — Contoh variasi yang terutama dipengaruhi lingkungan adalah …
+  A. bentuk cuping telinga · B. golongan darah · C. warna mata · D. kulit menggelap karena sering terkena sinar Matahari
+  Kunci: **D** · Kulit menggelap karena paparan sinar Matahari, bukan karena gen yang berubah.
+- [ ] **BIO.C26.D.GENETIKA.Q.FERMENTASI_1** — Mikroorganisme yang berperan dalam pembuatan tempe adalah …
+  A. Rhizopus · B. Acetobacter · C. Saccharomyces · D. Lactobacillus
+  Kunci: **A** · Jamur Rhizopus membentuk benang-benang yang mengikat kedelai menjadi tempe.
+- [ ] **BIO.C26.D.GENETIKA.Q.FERMENTASI_2** — Adonan roti mengembang karena ragi menghasilkan gas …
+  A. nitrogen · B. hidrogen · C. oksigen · D. karbon dioksida
+  Kunci: **D** · Gas CO₂ hasil fermentasi ragi terperangkap di adonan dan membuatnya mengembang.
+- [ ] **BIO.C26.D.GENETIKA.Q.FERMENTASI_3** — Pembuatan yoghurt memanfaatkan bakteri yang mengubah gula susu menjadi …
+  A. protein · B. alkohol · C. asam laktat · D. asam asetat
+  Kunci: **C** · Lactobacillus menghasilkan asam laktat yang membuat susu kental dan masam.
+- [ ] **BIO.C26.D.GENETIKA.Q.FENOTIPE_1** — Sifat yang tampak dari luar, seperti warna bunga, disebut …
+  A. alel · B. kromosom · C. genotipe · D. fenotipe
+  Kunci: **D** · Fenotipe adalah sifat yang dapat diamati.
+- [ ] **BIO.C26.D.GENETIKA.Q.FENOTIPE_2** — Persilangan Tt × Tt menghasilkan perbandingan fenotipe tinggi : pendek sebesar …
+  A. 3 : 1 · B. 1 : 2 : 1 · C. semua tinggi · D. 1 : 1
+  Kunci: **A** · Keturunannya TT, Tt, Tt, tt: tiga tinggi dan satu pendek. Rasio 1 : 2 : 1 adalah rasio genotipenya.
+- [ ] **BIO.C26.D.GENETIKA.Q.FENOTIPE_3** — Persilangan TT × tt menghasilkan keturunan F1 dengan genotipe …
+  A. semua TT · B. semua Tt · C. semua tt · D. Tt dan tt
+  Kunci: **B** · Setiap keturunan menerima T dari satu induk dan t dari induk lainnya.
 
 ## Bumi dan tata surya (FIS.C26.D.ANTARIKSA)
 
@@ -1438,20 +1639,20 @@ Materi: 4 · Soal: 12
   A. Saturnus · B. Yupiter · C. Neptunus · D. Bumi
   Kunci: **B** · Yupiter adalah planet raksasa gas yang terbesar.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_2** — Sabuk asteroid terletak di antara orbit planet …
-  A. Bumi dan Mars · B. Mars dan Yupiter · C. Yupiter dan Saturnus · D. Venus dan Bumi
-  Kunci: **B** · Sabuk asteroid utama berada di antara Mars dan Yupiter.
+  A. Venus dan Bumi · B. Bumi dan Mars · C. Mars dan Yupiter · D. Yupiter dan Saturnus
+  Kunci: **C** · Sabuk asteroid utama berada di antara Mars dan Yupiter.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_3** — Planet yang paling lama mengelilingi Matahari adalah …
-  A. Merkurius · B. Bumi · C. Neptunus · D. Mars
-  Kunci: **C** · Neptunus paling jauh dari Matahari, jadi orbitnya paling panjang.
+  A. Mars · B. Merkurius · C. Bumi · D. Neptunus
+  Kunci: **D** · Neptunus paling jauh dari Matahari, jadi orbitnya paling panjang.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.ROTASI_1** — Matahari tampak terbit di timur karena …
-  A. Bumi berotasi dari barat ke timur · B. Bumi berevolusi · C. Matahari mengelilingi Bumi · D. poros Bumi miring
-  Kunci: **A** · Rotasi Bumi ke arah timur membuat Matahari tampak bergerak dari timur ke barat.
+  A. poros Bumi miring · B. Bumi berotasi dari barat ke timur · C. Bumi berevolusi · D. Matahari mengelilingi Bumi
+  Kunci: **B** · Rotasi Bumi ke arah timur membuat Matahari tampak bergerak dari timur ke barat.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.ROTASI_2** — Pergantian musim di belahan bumi utara disebabkan oleh …
-  A. rotasi Bumi · B. revolusi Bumi dengan poros yang miring · C. jarak Bumi ke Bulan · D. gerhana
-  Kunci: **B** · Karena poros miring, belahan bumi utara dan selatan bergantian lebih condong ke Matahari selama revolusi.
+  A. gerhana · B. rotasi Bumi · C. revolusi Bumi dengan poros yang miring · D. jarak Bumi ke Bulan
+  Kunci: **C** · Karena poros miring, belahan bumi utara dan selatan bergantian lebih condong ke Matahari selama revolusi.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.ROTASI_3** — Selisih waktu WIB dan WIT adalah 2 jam. Jika di Jakarta pukul 07.00 WIB, di Jayapura pukul …
-  A. 05.00 WIT · B. 09.00 WIT · C. 08.00 WIT · D. 07.00 WIT
-  Kunci: **B** · Wilayah timur mengalami siang lebih dahulu: 07.00 + 2 jam = 09.00 WIT.
+  A. 08.00 WIT · B. 07.00 WIT · C. 05.00 WIT · D. 09.00 WIT
+  Kunci: **D** · Wilayah timur mengalami siang lebih dahulu: 07.00 + 2 jam = 09.00 WIT.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.BULAN_1** — Bulan tampak bersinar karena …
   A. memancarkan cahaya sendiri · B. memantulkan cahaya Matahari · C. memantulkan cahaya Bumi saja · D. berisi gas yang terbakar
   Kunci: **B** · Bulan adalah benda gelap yang memantulkan cahaya Matahari.
@@ -1459,58 +1660,172 @@ Materi: 4 · Soal: 12
   A. bulan baru · B. bulan sabit · C. purnama · D. kuartir pertama
   Kunci: **C** · Saat purnama, sisi Bulan yang menghadap Bumi seluruhnya tersinari Matahari.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.BULAN_3** — Pasang laut paling tinggi terjadi saat …
-  A. kuartir pertama · B. purnama dan bulan baru · C. bulan sabit saja · D. siang hari saja
-  Kunci: **B** · Saat Matahari, Bumi, dan Bulan segaris, tarikan gravitasi keduanya saling menguatkan.
+  A. bulan sabit saja · B. siang hari saja · C. kuartir pertama · D. purnama dan bulan baru
+  Kunci: **D** · Saat Matahari, Bumi, dan Bulan segaris, tarikan gravitasi keduanya saling menguatkan.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.GERHANA_1** — Gerhana Matahari terjadi jika susunan benda langitnya …
-  A. Matahari – Bulan – Bumi · B. Matahari – Bumi – Bulan · C. Bumi – Matahari – Bulan · D. Bulan – Matahari – Bumi
-  Kunci: **A** · Bulan menghalangi cahaya Matahari sehingga bayangannya jatuh ke Bumi.
+  A. Bulan – Matahari – Bumi · B. Matahari – Bulan – Bumi · C. Matahari – Bumi – Bulan · D. Bumi – Matahari – Bulan
+  Kunci: **B** · Bulan menghalangi cahaya Matahari sehingga bayangannya jatuh ke Bumi.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.GERHANA_2** — Gerhana Bulan hanya dapat terjadi pada fase …
-  A. bulan baru · B. purnama · C. kuartir pertama · D. sabit
-  Kunci: **B** · Bumi berada di antara Matahari dan Bulan hanya ketika Bulan purnama.
+  A. sabit · B. bulan baru · C. purnama · D. kuartir pertama
+  Kunci: **C** · Bumi berada di antara Matahari dan Bulan hanya ketika Bulan purnama.
 - [ ] **FIS.C26.D.ANTARIKSA.Q.GERHANA_3** — Gerhana tidak terjadi setiap bulan karena …
-  A. Bulan terlalu kecil · B. orbit Bulan miring terhadap orbit Bumi · C. Bumi berotasi · D. Matahari bergerak
-  Kunci: **B** · Pada sebagian besar bulan baru dan purnama, Bulan lewat sedikit di atas atau di bawah garis Matahari–Bumi.
+  A. Bumi berotasi · B. Matahari bergerak · C. Bulan terlalu kecil · D. orbit Bulan miring terhadap orbit Bumi
+  Kunci: **D** · Pada sebagian besar bulan baru dan purnama, Bulan lewat sedikit di atas atau di bawah garis Matahari–Bumi.
 
 ## Struktur Bumi dan mitigasi bencana (FIS.C26.D.KEBUMIAN)
 
 Materi: 4 · Soal: 12
 
 - [ ] **FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_1** — Lapisan Bumi yang paling tebal adalah …
-  A. kerak · B. mantel · C. inti luar · D. inti dalam
-  Kunci: **B** · Mantel membentuk sebagian besar volume Bumi.
+  A. inti luar · B. inti dalam · C. kerak · D. mantel
+  Kunci: **D** · Mantel membentuk sebagian besar volume Bumi.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_2** — Inti Bumi terutama tersusun atas …
   A. besi dan nikel · B. silikon dan oksigen · C. air dan es · D. karbon dan hidrogen
   Kunci: **A** · Inti Bumi kaya logam berat, terutama besi dan nikel.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_3** — Lapisan yang lebih lunak tempat lempeng litosfer bergerak disebut …
-  A. astenosfer · B. atmosfer · C. hidrosfer · D. troposfer
-  Kunci: **A** · Astenosfer berada di bawah litosfer dan bersifat lebih lunak.
+  A. troposfer · B. astenosfer · C. atmosfer · D. hidrosfer
+  Kunci: **B** · Astenosfer berada di bawah litosfer dan bersifat lebih lunak.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.LEMPENG_1** — Batas lempeng yang saling menjauh disebut …
-  A. divergen · B. konvergen · C. transform · D. subduksi
-  Kunci: **A** · Pada batas divergen, magma naik mengisi celah lempeng yang saling menjauh.
+  A. subduksi · B. divergen · C. konvergen · D. transform
+  Kunci: **B** · Pada batas divergen, magma naik mengisi celah lempeng yang saling menjauh.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.LEMPENG_2** — Banyaknya gunung api di Indonesia terutama disebabkan oleh …
-  A. Indonesia negara kepulauan · B. Indonesia berada di pertemuan lempeng tektonik · C. iklim tropis · D. banyaknya hutan
-  Kunci: **B** · Penunjaman lempeng di sekitar Indonesia menghasilkan magma yang membentuk gunung api.
+  A. banyaknya hutan · B. Indonesia negara kepulauan · C. Indonesia berada di pertemuan lempeng tektonik · D. iklim tropis
+  Kunci: **C** · Penunjaman lempeng di sekitar Indonesia menghasilkan magma yang membentuk gunung api.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.LEMPENG_3** — Penunjaman lempeng samudra ke bawah lempeng benua (subduksi) terjadi pada batas …
-  A. divergen · B. konvergen · C. transform · D. tidak ada batas lempeng
-  Kunci: **B** · Subduksi terjadi saat dua lempeng saling mendekat, yaitu batas konvergen.
+  A. transform · B. tidak ada batas lempeng · C. divergen · D. konvergen
+  Kunci: **D** · Subduksi terjadi saat dua lempeng saling mendekat, yaitu batas konvergen.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.GEMPA_1** — Titik di permukaan Bumi yang tepat berada di atas sumber gempa disebut …
-  A. hiposentrum · B. episentrum · C. magma · D. palung
-  Kunci: **B** · Hiposentrum adalah sumber gempa di dalam Bumi; episentrum berada tepat di atasnya.
+  A. magma · B. palung · C. hiposentrum · D. episentrum
+  Kunci: **D** · Hiposentrum adalah sumber gempa di dalam Bumi; episentrum berada tepat di atasnya.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.GEMPA_2** — Gempa yang paling mungkin memicu tsunami adalah gempa …
   A. di dasar laut yang menggeser dasar laut secara vertikal · B. di daerah pegunungan · C. akibat ledakan kecil · D. di gurun pasir
   Kunci: **A** · Pergeseran vertikal dasar laut mendorong kolom air di atasnya dan membentuk gelombang besar.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.GEMPA_3** — Manfaat gunung api bagi manusia adalah …
-  A. tanah yang subur dan energi panas bumi · B. menghentikan gempa · C. mencegah tsunami · D. menurunkan suhu Bumi
-  Kunci: **A** · Abu vulkanik menyuburkan tanah, dan panas dari magma dapat dimanfaatkan sebagai energi panas bumi.
+  A. menurunkan suhu Bumi · B. tanah yang subur dan energi panas bumi · C. menghentikan gempa · D. mencegah tsunami
+  Kunci: **B** · Abu vulkanik menyuburkan tanah, dan panas dari magma dapat dimanfaatkan sebagai energi panas bumi.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.MITIGASI_1** — Saat terjadi gempa di dalam kelas, tindakan yang paling tepat adalah …
-  A. berlari keluar sambil berdesakan di tangga · B. berlindung di bawah meja sambil melindungi kepala · C. berdiri di dekat jendela kaca · D. menyalakan kompor
-  Kunci: **B** · Berlindung di bawah meja melindungi kepala dari benda yang jatuh; berdesakan dan dekat kaca berbahaya.
+  A. menyalakan kompor · B. berlari keluar sambil berdesakan di tangga · C. berlindung di bawah meja sambil melindungi kepala · D. berdiri di dekat jendela kaca
+  Kunci: **C** · Berlindung di bawah meja melindungi kepala dari benda yang jatuh; berdesakan dan dekat kaca berbahaya.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.MITIGASI_2** — Di pantai terasa gempa kuat, lalu air laut tiba-tiba surut. Tindakan yang tepat adalah …
   A. mendekati pantai untuk melihat · B. segera evakuasi ke tempat tinggi · C. menunggu sirene berbunyi · D. memotret air laut
   Kunci: **B** · Air laut yang surut tiba-tiba adalah tanda alami tsunami; jangan menunggu peringatan lain.
 - [ ] **FIS.C26.D.KEBUMIAN.Q.MITIGASI_3** — Contoh mitigasi bencana gempa yang dilakukan sebelum bencana terjadi adalah …
   A. membangun rumah tahan gempa · B. menolong korban · C. mendirikan tenda pengungsian · D. membagikan makanan
   Kunci: **A** · Mitigasi bertujuan mengurangi risiko sebelum bencana; pilihan lain dilakukan sesudah bencana.
+
+## Reaksi kimia dan asam–basa dasar (KIM.C26.D.REAKSI)
+
+Materi: 4 · Soal: 12
+
+- [ ] **KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_1** — Tanda terjadinya reaksi kimia adalah …
+  A. benda berpindah tempat · B. terbentuk gas atau endapan · C. benda berubah ukuran · D. zat berubah wujud saja
+  Kunci: **B** · Gas atau endapan baru menunjukkan terbentuknya zat baru.
+- [ ] **KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_2** — Cuka dicampur dengan soda kue lalu muncul banyak gelembung. Gelembung itu menunjukkan …
+  A. soda kue mencair · B. terjadi penguapan · C. terbentuk gas baru · D. air mendidih
+  Kunci: **C** · Cuka (asam) bereaksi dengan soda kue menghasilkan gas karbon dioksida.
+- [ ] **KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_3** — Dua larutan dicampur, lalu terbentuk padatan yang tidak larut di dasar tabung. Padatan itu disebut …
+  A. larutan · B. pelarut · C. katalis · D. endapan
+  Kunci: **D** · Padatan tak larut yang terbentuk dari reaksi dua larutan disebut endapan.
+- [ ] **KIM.C26.D.REAKSI.Q.MASSA_1** — Dalam wadah tertutup, 10 g zat A bereaksi tepat dengan 6 g zat B. Massa hasil reaksinya adalah …
+  A. 4 g · B. 10 g · C. 16 g · D. 60 g
+  Kunci: **C** · Massa sebelum = massa sesudah: 10 + 6 = 16 g.
+- [ ] **KIM.C26.D.REAKSI.Q.MASSA_2** — Kertas dibakar di udara terbuka dan abunya lebih ringan daripada kertas semula karena …
+  A. massanya musnah · B. sebagian zat berubah menjadi gas yang lepas ke udara · C. abu lebih padat · D. hukum kekekalan massa tidak berlaku
+  Kunci: **B** · Massa tidak hilang; sebagian berubah menjadi gas yang keluar dari sistem terbuka.
+- [ ] **KIM.C26.D.REAKSI.Q.MASSA_3** — Belerang sebanyak 32 g bereaksi dengan besi menghasilkan 88 g besi(II) sulfida. Massa besi yang bereaksi adalah …
+  A. 56 g · B. 120 g · C. 32 g · D. 88 g
+  Kunci: **A** · Massa besi = massa hasil − massa belerang = 88 − 32 = 56 g.
+- [ ] **KIM.C26.D.REAKSI.Q.PERSAMAAN_1** — Pada reaksi Zn + 2HCl → ZnCl₂ + H₂, zat yang merupakan hasil reaksi adalah …
+  A. Zn dan H₂ · B. HCl dan ZnCl₂ · C. Zn dan HCl · D. ZnCl₂ dan H₂
+  Kunci: **D** · Hasil reaksi ditulis di sebelah kanan tanda panah.
+- [ ] **KIM.C26.D.REAKSI.Q.PERSAMAAN_2** — Persamaan setara untuk reaksi N₂ + H₂ → NH₃ adalah …
+  A. N₂ + 3H₂ → 2NH₃ · B. N₂ + 3H₂ → NH₃ · C. 2N₂ + H₂ → 2NH₃ · D. N₂ + H₂ → 2NH₃
+  Kunci: **A** · N: 2 = 2 × 1; H: 3 × 2 = 6 = 2 × 3. Jadi N₂ + 3H₂ → 2NH₃.
+- [ ] **KIM.C26.D.REAKSI.Q.PERSAMAAN_3** — Pada persamaan 2H₂ + O₂ → 2H₂O, jumlah atom H di ruas kanan adalah …
+  A. 2 · B. 4 · C. 1 · D. 6
+  Kunci: **B** · 2H₂O berarti 2 molekul air, masing-masing 2 atom H, jadi 4 atom H.
+- [ ] **KIM.C26.D.REAKSI.Q.ASAMBASA_1** — Larutan yang mengubah kertas lakmus biru menjadi merah bersifat …
+  A. netral · B. garam · C. asam · D. basa
+  Kunci: **C** · Asam memerahkan lakmus biru.
+- [ ] **KIM.C26.D.REAKSI.Q.ASAMBASA_2** — Larutan dengan pH 12 bersifat …
+  A. asam kuat · B. basa · C. netral · D. asam lemah
+  Kunci: **B** · pH lebih dari 7 menunjukkan larutan bersifat basa.
+- [ ] **KIM.C26.D.REAKSI.Q.ASAMBASA_3** — Air sabun ditetesi ekstrak kubis ungu. Warna yang kemungkinan muncul adalah …
+  A. hijau · B. tetap ungu · C. tidak berwarna · D. merah
+  Kunci: **A** · Air sabun bersifat basa, dan ekstrak kubis ungu berubah kehijauan dalam basa.
+
+## Koordinasi, reproduksi, dan homeostasis (BIO.C26.D.KOORDINASI)
+
+Materi: 4 · Soal: 12
+
+- [ ] **BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_1** — Menarik tangan saat menyentuh setrika panas adalah contoh gerak …
+  A. refleks · B. lambat · C. terencana · D. sadar
+  Kunci: **A** · Gerak ini terjadi otomatis dan cepat, tanpa dipikirkan dulu.
+- [ ] **BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_2** — Bagian sistem saraf pusat adalah …
+  A. jantung dan paru-paru · B. saraf di ujung jari · C. otot dan tulang · D. otak dan sumsum tulang belakang
+  Kunci: **D** · Otak dan sumsum tulang belakang adalah pusat pengolah impuls; saraf di ujung jari termasuk saraf tepi.
+- [ ] **BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_3** — Organ yang juga berfungsi sebagai indra keseimbangan adalah …
+  A. lidah · B. mata · C. telinga · D. hidung
+  Kunci: **C** · Telinga bagian dalam memiliki alat keseimbangan.
+- [ ] **BIO.C26.D.KOORDINASI.Q.HORMON_1** — Hormon yang menurunkan kadar gula darah adalah …
+  A. adrenalin · B. insulin · C. tiroksin · D. estrogen
+  Kunci: **B** · Insulin dari pankreas membantu sel menyerap gula dari darah.
+- [ ] **BIO.C26.D.KOORDINASI.Q.HORMON_2** — Hormon disebarkan ke organ sasarannya melalui …
+  A. otot · B. saraf · C. darah · D. udara
+  Kunci: **C** · Kelenjar endokrin tidak bersaluran; hormonnya langsung masuk ke darah.
+- [ ] **BIO.C26.D.KOORDINASI.Q.HORMON_3** — Kekurangan iodin dalam makanan dapat menyebabkan …
+  A. anemia · B. rabun · C. diabetes · D. gondok
+  Kunci: **D** · Iodin diperlukan kelenjar tiroid untuk membuat hormon tiroksin.
+- [ ] **BIO.C26.D.KOORDINASI.Q.REPRODUKSI_1** — Organ yang menghasilkan sel telur adalah …
+  A. ovarium · B. testis · C. vagina · D. rahim
+  Kunci: **A** · Ovarium menghasilkan sel telur dan hormon estrogen.
+- [ ] **BIO.C26.D.KOORDINASI.Q.REPRODUKSI_2** — Peleburan sel sperma dengan sel telur disebut …
+  A. ovulasi · B. pubertas · C. menstruasi · D. fertilisasi
+  Kunci: **D** · Fertilisasi menghasilkan zigot yang berkembang menjadi embrio.
+- [ ] **BIO.C26.D.KOORDINASI.Q.REPRODUKSI_3** — Suara remaja laki-laki menjadi lebih berat saat pubertas karena pengaruh hormon …
+  A. tiroksin · B. estrogen · C. testosteron · D. insulin
+  Kunci: **C** · Testosteron memicu ciri kelamin sekunder laki-laki, termasuk perubahan suara.
+- [ ] **BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_1** — Saat berolahraga dan tubuh terasa panas, respons tubuh untuk menurunkan suhu adalah …
+  A. berhenti berkeringat · B. berkeringat · C. menggigil · D. mengurangi aliran darah ke kulit
+  Kunci: **B** · Keringat yang menguap dari kulit membawa panas keluar dari tubuh.
+- [ ] **BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_2** — Setelah makan, kadar gula darah naik. Organ yang merespons dengan melepas insulin adalah …
+  A. lambung · B. hati · C. pankreas · D. ginjal
+  Kunci: **C** · Pankreas melepas insulin agar gula darah kembali normal.
+- [ ] **BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_3** — Saat cuaca dingin, tubuh menggigil. Tujuannya adalah …
+  A. menurunkan suhu tubuh · B. menghemat air · C. mengeluarkan keringat · D. menghasilkan panas dari kontraksi otot
+  Kunci: **D** · Otot yang berkontraksi cepat menghasilkan panas untuk menghangatkan tubuh.
+
+## Pertumbuhan dan perkembangan (BIO.C26.D.TUMBUH)
+
+Materi: 3 · Soal: 9
+
+- [ ] **BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_1** — Contoh pertumbuhan adalah …
+  A. tinggi badan anak bertambah · B. tumbuhan mulai berbunga · C. remaja mengalami menstruasi · D. bayi mulai bisa berbicara
+  Kunci: **A** · Tinggi badan dapat diukur dan bertambah, jadi termasuk pertumbuhan.
+- [ ] **BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_2** — Perbedaan pertumbuhan dan perkembangan adalah …
+  A. pertumbuhan tidak dapat diukur · B. perkembangan selalu menambah ukuran · C. keduanya sama saja · D. pertumbuhan dapat diukur, sedangkan perkembangan adalah proses menuju kedewasaan
+  Kunci: **D** · Pertumbuhan bersifat kuantitatif, perkembangan bersifat kualitatif.
+- [ ] **BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_3** — Pertumbuhan memanjang pada tumbuhan terjadi di daerah …
+  A. kulit batang · B. akar serabut saja · C. meristem ujung akar dan batang · D. daun tua
+  Kunci: **C** · Sel-sel meristem di ujung akar dan batang terus membelah.
+- [ ] **BIO.C26.D.TUMBUH.Q.FAKTOR_1** — Kecambah yang tumbuh di tempat gelap menjadi lebih tinggi tetapi pucat. Peristiwa ini disebut …
+  A. fototropisme · B. metamorfosis · C. fotosintesis · D. etiolasi
+  Kunci: **D** · Tanpa cahaya, auksin tidak terurai sehingga batang memanjang cepat, tetapi daun pucat karena kurang klorofil.
+- [ ] **BIO.C26.D.TUMBUH.Q.FAKTOR_2** — Contoh faktor internal pertumbuhan adalah …
+  A. hormon · B. suhu · C. cahaya · D. air
+  Kunci: **A** · Hormon dihasilkan dari dalam tubuh; cahaya, air, dan suhu adalah faktor eksternal.
+- [ ] **BIO.C26.D.TUMBUH.Q.FAKTOR_3** — Anak yang kekurangan gizi dapat terhambat pertumbuhannya. Hal ini menunjukkan pengaruh faktor …
+  A. gen · B. nutrisi (eksternal) · C. hormon · D. umur
+  Kunci: **B** · Nutrisi berasal dari makanan, yaitu faktor dari luar tubuh.
+- [ ] **BIO.C26.D.TUMBUH.Q.DAURHIDUP_1** — Urutan metamorfosis sempurna pada kupu-kupu adalah …
+  A. larva → telur → pupa → imago · B. telur → nimfa → imago · C. telur → larva → pupa → imago · D. telur → pupa → larva → imago
+  Kunci: **C** · Kupu-kupu melewati tahap ulat (larva) dan kepompong (pupa).
+- [ ] **BIO.C26.D.TUMBUH.Q.DAURHIDUP_2** — Hewan yang mengalami metamorfosis tidak sempurna adalah …
+  A. kupu-kupu · B. belalang · C. lalat · D. nyamuk
+  Kunci: **B** · Belalang tidak memiliki tahap pupa: telur → nimfa → imago.
+- [ ] **BIO.C26.D.TUMBUH.Q.DAURHIDUP_3** — Menguras bak mandi secara rutin dapat mencegah demam berdarah karena …
+  A. memutus daur hidup nyamuk pada tahap jentik · B. mengusir nyamuk dengan bau · C. menambah oksigen dalam air · D. membunuh nyamuk dewasa
+  Kunci: **A** · Jentik (larva) nyamuk hidup di air; menguras bak membuat jentik tidak dapat berkembang menjadi nyamuk dewasa.
 
 ## MAT.EKS (MAT.EKS)
 

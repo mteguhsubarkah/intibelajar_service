@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.Q.PERSAMAAN_2
+familyCode: KIM.C26.D.REAKSI.F.PERSAMAAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.REAKSI.PERSAMAAN_REAKSI_SEDERHANA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan setara untuk reaksi N₂ + H₂ → NH₃ adalah …
+  options:
+    - id: a
+      label: N₂ + 3H₂ → 2NH₃
+    - id: b
+      label: N₂ + 3H₂ → NH₃
+    - id: c
+      label: 2N₂ + H₂ → 2NH₃
+    - id: d
+      label: N₂ + H₂ → 2NH₃
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - N₂ + 3H₂ → 2NH₃
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.REAKSI.PERSAMAAN_REAKSI_SEDERHANA
+  feedback:
+    correct: "N: 2 = 2 × 1; H: 3 × 2 = 6 = 2 × 3. Jadi N₂ + 3H₂ → 2NH₃."
+    incorrect: "Jawabannya N₂ + 3H₂ → 2NH₃. N: 2 = 2 × 1; H: 3 × 2 = 6 = 2 × 3. Jadi N₂ + 3H₂ → 2NH₃."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

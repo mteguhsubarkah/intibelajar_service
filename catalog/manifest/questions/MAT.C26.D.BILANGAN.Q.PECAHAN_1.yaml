@@ -20,20 +20,20 @@ body:
   prompt: Hasil 2/3 + 3/4 adalah …
   options:
     - id: a
-      label: 5/7
-    - id: b
-      label: 17/12
-    - id: c
       label: 5/12
-    - id: d
+    - id: b
       label: 6/7
+    - id: c
+      label: 5/7
+    - id: d
+      label: 17/12
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 17/12
   solutionPaths: []

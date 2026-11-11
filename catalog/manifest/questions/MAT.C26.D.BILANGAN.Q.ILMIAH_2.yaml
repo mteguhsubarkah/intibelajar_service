@@ -20,20 +20,20 @@ body:
   prompt: Hasil (3 × 10⁴) × (5 × 10²) dalam notasi ilmiah adalah …
   options:
     - id: a
-      label: 1,5 × 10⁵
-    - id: b
       label: 1,5 × 10⁷
-    - id: c
+    - id: b
       label: 1,5 × 10⁶
-    - id: d
+    - id: c
       label: 8 × 10⁸
+    - id: d
+      label: 1,5 × 10⁵
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - 1,5 × 10⁷
   solutionPaths: []

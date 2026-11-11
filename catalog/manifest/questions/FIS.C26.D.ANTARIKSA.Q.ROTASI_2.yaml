@@ -20,20 +20,20 @@ body:
   prompt: Pergantian musim di belahan bumi utara disebabkan oleh …
   options:
     - id: a
-      label: rotasi Bumi
-    - id: b
-      label: revolusi Bumi dengan poros yang miring
-    - id: c
-      label: jarak Bumi ke Bulan
-    - id: d
       label: gerhana
+    - id: b
+      label: rotasi Bumi
+    - id: c
+      label: revolusi Bumi dengan poros yang miring
+    - id: d
+      label: jarak Bumi ke Bulan
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - revolusi Bumi dengan poros yang miring
   solutionPaths: []

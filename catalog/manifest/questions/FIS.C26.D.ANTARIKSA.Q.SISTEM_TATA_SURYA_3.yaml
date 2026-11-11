@@ -20,20 +20,20 @@ body:
   prompt: Planet yang paling lama mengelilingi Matahari adalah …
   options:
     - id: a
-      label: Merkurius
-    - id: b
-      label: Bumi
-    - id: c
-      label: Neptunus
-    - id: d
       label: Mars
+    - id: b
+      label: Merkurius
+    - id: c
+      label: Bumi
+    - id: d
+      label: Neptunus
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: d
   acceptedForms:
     - Neptunus
   solutionPaths: []

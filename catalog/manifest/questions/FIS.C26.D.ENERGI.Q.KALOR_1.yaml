@@ -20,20 +20,20 @@ body:
   prompt: Kalor yang diperlukan untuk memanaskan 2 kg air dari 25 °C menjadi 75 °C (c = 4.200 J/kg°C) adalah …
   options:
     - id: a
-      label: 420.000 J
-    - id: b
-      label: 210.000 J
-    - id: c
       label: 630.000 J
-    - id: d
+    - id: b
       label: 8.400 J
+    - id: c
+      label: 420.000 J
+    - id: d
+      label: 210.000 J
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 420.000 J
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Dasar kolam terlihat lebih dangkal daripada kedalaman sebenarnya karena peristiwa …
   options:
     - id: a
-      label: pemantulan
-    - id: b
-      label: pembiasan
-    - id: c
       label: difraksi
-    - id: d
+    - id: b
       label: interferensi
+    - id: c
+      label: pemantulan
+    - id: d
+      label: pembiasan
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - pembiasan
   solutionPaths: []

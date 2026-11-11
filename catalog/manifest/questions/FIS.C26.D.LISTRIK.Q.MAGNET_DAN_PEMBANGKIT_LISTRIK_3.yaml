@@ -20,20 +20,20 @@ body:
   prompt: Sebuah transformator memiliki 200 lilitan primer dan 1.000 lilitan sekunder. Jika tegangan primernya 220 V, tegangan sekundernya adalah …
   options:
     - id: a
-      label: 44 V
-    - id: b
-      label: 1.100 V
-    - id: c
-      label: 220 V
-    - id: d
       label: 4.400 V
+    - id: b
+      label: 44 V
+    - id: c
+      label: 1.100 V
+    - id: d
+      label: 220 V
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - 1.100 V
   solutionPaths: []

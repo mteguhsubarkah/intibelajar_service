@@ -20,20 +20,20 @@ body:
   prompt: Gerhana Matahari terjadi jika susunan benda langitnya …
   options:
     - id: a
-      label: Matahari – Bulan – Bumi
-    - id: b
-      label: Matahari – Bumi – Bulan
-    - id: c
-      label: Bumi – Matahari – Bulan
-    - id: d
       label: Bulan – Matahari – Bumi
+    - id: b
+      label: Matahari – Bulan – Bumi
+    - id: c
+      label: Matahari – Bumi – Bulan
+    - id: d
+      label: Bumi – Matahari – Bulan
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - Matahari – Bulan – Bumi
   solutionPaths: []

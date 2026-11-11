@@ -20,20 +20,20 @@ body:
   prompt: Penyelesaian dari 3x − 5 < 10 adalah …
   options:
     - id: a
-      label: x < 5
-    - id: b
-      label: x > 5
-    - id: c
-      label: x < 15
-    - id: d
       label: x < 3
+    - id: b
+      label: x < 5
+    - id: c
+      label: x > 5
+    - id: d
+      label: x < 15
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - x < 5
   solutionPaths: []

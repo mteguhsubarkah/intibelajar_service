@@ -4,7 +4,7 @@ subject: BIO
 title: Organisasi kehidupan & sistem organ
 subtitle: Sel sampai organisme, pencernaan, ekskresi, dan gangguan sistem organ
 phase: D
-availability: PLANNED
+availability: MAPPED
 bekal: []
 aliases: []
 units: []
@@ -14,10 +14,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-organ-c1
@@ -26,10 +26,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 2
-    estimatedMinutes: 5
+    estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-organ-c2
@@ -41,7 +41,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-organ-pencernaan
@@ -54,7 +54,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-organ-pernapasan
@@ -67,7 +67,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-organ-peredaran
@@ -79,7 +79,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-organ-ekskresi

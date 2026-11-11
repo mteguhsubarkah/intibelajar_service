@@ -20,20 +20,20 @@ body:
   prompt: Tiket masuk taman bermain Rp15.000 dan setiap naik wahana Rp10.000. Uang Rina Rp65.000. Paling banyak Rina dapat naik wahana … kali.
   options:
     - id: a
-      label: "4"
-    - id: b
-      label: "5"
-    - id: c
       label: "6"
-    - id: d
+    - id: b
       label: 6,5
+    - id: c
+      label: "4"
+    - id: d
+      label: "5"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - "5"
   solutionPaths: []

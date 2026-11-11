@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.Q.FERMENTASI_3
+familyCode: BIO.C26.D.GENETIKA.F.FERMENTASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.GENETIKA.FERMENTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pembuatan yoghurt memanfaatkan bakteri yang mengubah gula susu menjadi …
+  options:
+    - id: a
+      label: protein
+    - id: b
+      label: alkohol
+    - id: c
+      label: asam laktat
+    - id: d
+      label: asam asetat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - asam laktat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.GENETIKA.FERMENTASI
+  feedback:
+    correct: Lactobacillus menghasilkan asam laktat yang membuat susu kental dan masam.
+    incorrect: Jawabannya asam laktat. Lactobacillus menghasilkan asam laktat yang membuat susu kental dan masam.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

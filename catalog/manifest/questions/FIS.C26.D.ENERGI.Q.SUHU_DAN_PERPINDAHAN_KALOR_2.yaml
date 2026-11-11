@@ -20,20 +20,20 @@ body:
   prompt: Gagang panci dari logam terasa panas saat panci dipanaskan karena perpindahan kalor secara …
   options:
     - id: a
-      label: konduksi
-    - id: b
-      label: konveksi
-    - id: c
-      label: radiasi
-    - id: d
       label: evaporasi
+    - id: b
+      label: konduksi
+    - id: c
+      label: konveksi
+    - id: d
+      label: radiasi
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - konduksi
   solutionPaths: []

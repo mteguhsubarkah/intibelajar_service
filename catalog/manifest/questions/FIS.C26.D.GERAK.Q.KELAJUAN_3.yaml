@@ -20,20 +20,20 @@ body:
   prompt: Mobil menempuh 60 km pada jam pertama dan 40 km pada jam kedua. Kelajuan rata-ratanya adalah …
   options:
     - id: a
-      label: 50 km/jam
-    - id: b
-      label: 100 km/jam
-    - id: c
       label: 40 km/jam
-    - id: d
+    - id: b
       label: 60 km/jam
+    - id: c
+      label: 50 km/jam
+    - id: d
+      label: 100 km/jam
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 50 km/jam
   solutionPaths: []

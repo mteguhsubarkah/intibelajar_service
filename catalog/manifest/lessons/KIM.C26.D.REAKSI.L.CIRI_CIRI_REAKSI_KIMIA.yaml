@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.L.CIRI_CIRI_REAKSI_KIMIA
+title: Ciri-ciri reaksi kimia
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+blocks:
+  - type: heading
+    slide: 0
+    text: Tanda reaksi kimia
+  - type: text
+    slide: 0
+    text: Reaksi kimia menghasilkan zat baru.
+  - type: text
+    slide: 0
+    text: "Tanda-tandanya: perubahan warna, terbentuk gas (gelembung), terbentuk endapan, dan perubahan suhu (menjadi panas atau dingin)."
+  - type: math
+    slide: 0
+    name: tanda reaksi
+    expression: warna, gas, endapan, suhu
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh sehari-hari
+  - type: text
+    slide: 1
+    text: Tablet vitamin C effervescent dimasukkan ke air → muncul gelembung gas. Apel yang dipotong menjadi cokelat → perubahan warna. Kayu dibakar → panas dan cahaya.
+  - type: math
+    slide: 1
+    name: effervescent
+    expression: gelembung gas CO₂
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Satu tanda saja belum tentu reaksi kimia; es mencair juga menyerap panas. Pastikan ada zat baru.
+checks:
+  - question: KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.REAKSI.S.CIRI_CIRI_REAKSI_KIMIA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

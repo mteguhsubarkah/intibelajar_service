@@ -20,20 +20,20 @@ body:
   prompt: Lampu-lampu di rumah dipasang paralel karena …
   options:
     - id: a
-      label: agar kuat arus di semua lampu sama
-    - id: b
-      label: agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus
-    - id: c
-      label: agar hambatan totalnya besar
-    - id: d
       label: agar kabel lebih hemat
+    - id: b
+      label: agar kuat arus di semua lampu sama
+    - id: c
+      label: agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus
+    - id: d
+      label: agar hambatan totalnya besar
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus
   solutionPaths: []

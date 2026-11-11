@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.L.EKSKRESI
+title: Ekskresi & keseimbangan cairan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.ORGAN.EKSKRESI_DAN_KESEIMBANGAN_CAIRAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Organ ekskresi
+  - type: text
+    slide: 0
+    text: "**Ginjal** menyaring darah dan menghasilkan urine. **Kulit** mengeluarkan keringat. **Paru-paru** mengeluarkan karbon dioksida dan uap air. **Hati** menghasilkan empedu dan menguraikan zat beracun."
+  - type: math
+    slide: 0
+    name: ginjal
+    expression: urine
+    highlight: true
+  - type: math
+    slide: 0
+    name: paru-paru
+    expression: CO₂ dan uap air
+  - type: heading
+    slide: 1
+    text: Keseimbangan cairan
+  - type: text
+    slide: 1
+    text: "Ginjal mengatur jumlah air dalam tubuh: saat kurang minum urine pekat dan sedikit; saat banyak minum urine encer."
+  - type: text
+    slide: 1
+    text: "Gangguan: batu ginjal dan gagal ginjal. Minum air yang cukup dan batasi garam berlebih."
+  - type: math
+    slide: 1
+    name: kurang minum
+    expression: urine sedikit dan pekat
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Urine berwarna kuning pekat dapat menjadi tanda tubuh kekurangan cairan.
+checks:
+  - question: BIO.C26.D.ORGAN.Q.EKSKRESI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.ORGAN.S.EKSKRESI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

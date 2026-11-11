@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_3
+familyCode: BIO.C26.D.ORGAN.F.SEL_SAMPAI_ORGANISME_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jantung termasuk tingkat organisasi …
+  options:
+    - id: a
+      label: sel
+    - id: b
+      label: jaringan
+    - id: c
+      label: organ
+    - id: d
+      label: organisme
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - organ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+  feedback:
+    correct: Jantung tersusun dari beberapa jaringan yang bekerja sama, jadi termasuk organ.
+    incorrect: Jawabannya organ. Jantung tersusun dari beberapa jaringan yang bekerja sama, jadi termasuk organ.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_1
+familyCode: BIO.C26.D.KLASIFIKASI.F.KLASIFIKASI_BERDASARKAN_KARAKTER_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KLASIFIKASI.KLASIFIKASI_BERDASARKAN_KARAKTER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hewan berikut yang termasuk vertebrata adalah …
+  options:
+    - id: a
+      label: ubur-ubur
+    - id: b
+      label: kupu-kupu
+    - id: c
+      label: cacing tanah
+    - id: d
+      label: katak
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - katak
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KLASIFIKASI.KLASIFIKASI_BERDASARKAN_KARAKTER
+  feedback:
+    correct: Katak memiliki tulang belakang (amfibi). Hewan lain invertebrata.
+    incorrect: Jawabannya katak. Katak memiliki tulang belakang (amfibi). Hewan lain invertebrata.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

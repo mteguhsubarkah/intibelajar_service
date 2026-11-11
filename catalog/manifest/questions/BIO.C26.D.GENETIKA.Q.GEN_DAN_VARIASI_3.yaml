@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_3
+familyCode: BIO.C26.D.GENETIKA.F.GEN_DAN_VARIASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.GENETIKA.GEN_DAN_VARIASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Contoh variasi yang terutama dipengaruhi lingkungan adalah …
+  options:
+    - id: a
+      label: bentuk cuping telinga
+    - id: b
+      label: golongan darah
+    - id: c
+      label: warna mata
+    - id: d
+      label: kulit menggelap karena sering terkena sinar Matahari
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - kulit menggelap karena sering terkena sinar Matahari
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.GENETIKA.GEN_DAN_VARIASI
+  feedback:
+    correct: Kulit menggelap karena paparan sinar Matahari, bukan karena gen yang berubah.
+    incorrect: Jawabannya kulit menggelap karena sering terkena sinar Matahari. Kulit menggelap karena paparan sinar Matahari, bukan karena gen yang berubah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

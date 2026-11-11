@@ -20,20 +20,20 @@ body:
   prompt: Harga 2 buku dan 1 pena Rp13.000, sedangkan 1 buku dan 2 pena Rp11.000. Jika b = harga buku dan p = harga pena, model matematikanya adalah …
   options:
     - id: a
-      label: 2b + p = 13.000 dan b + 2p = 11.000
-    - id: b
       label: 2b + 2p = 13.000 dan b + p = 11.000
-    - id: c
+    - id: b
       label: b + 2p = 13.000 dan 2b + p = 11.000
-    - id: d
+    - id: c
       label: 2b + p = 11.000 dan b + 2p = 13.000
+    - id: d
+      label: 2b + p = 13.000 dan b + 2p = 11.000
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 2b + p = 13.000 dan b + 2p = 11.000
   solutionPaths: []

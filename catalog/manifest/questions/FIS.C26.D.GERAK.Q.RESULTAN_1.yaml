@@ -20,20 +20,20 @@ body:
   prompt: Dua anak mendorong lemari ke kanan dengan gaya 40 N dan 35 N, sedangkan gaya gesek 25 N bekerja ke kiri. Resultan gayanya adalah …
   options:
     - id: a
-      label: 100 N ke kanan
-    - id: b
-      label: 50 N ke kanan
-    - id: c
       label: 75 N ke kanan
-    - id: d
+    - id: b
       label: 50 N ke kiri
+    - id: c
+      label: 100 N ke kanan
+    - id: d
+      label: 50 N ke kanan
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 50 N ke kanan
   solutionPaths: []

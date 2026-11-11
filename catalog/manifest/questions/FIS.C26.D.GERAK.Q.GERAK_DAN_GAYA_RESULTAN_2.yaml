@@ -20,20 +20,20 @@ body:
   prompt: Sebuah benda bermassa 5 kg berada di Bumi (g = 10 m/s²). Beratnya adalah …
   options:
     - id: a
-      label: 5 N
-    - id: b
-      label: 50 N
-    - id: c
-      label: 0,5 N
-    - id: d
       label: 500 N
+    - id: b
+      label: 5 N
+    - id: c
+      label: 50 N
+    - id: d
+      label: 0,5 N
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - 50 N
   solutionPaths: []

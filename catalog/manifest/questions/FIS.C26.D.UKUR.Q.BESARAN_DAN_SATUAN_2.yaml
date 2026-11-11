@@ -20,20 +20,20 @@ body:
   prompt: Satuan SI untuk massa jenis adalah …
   options:
     - id: a
-      label: kg/m³
-    - id: b
-      label: g/cm
-    - id: c
-      label: N/m²
-    - id: d
       label: kg·m
+    - id: b
+      label: kg/m³
+    - id: c
+      label: g/cm
+    - id: d
+      label: N/m²
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - kg/m³
   solutionPaths: []

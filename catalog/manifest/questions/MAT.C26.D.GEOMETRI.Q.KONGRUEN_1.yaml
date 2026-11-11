@@ -20,20 +20,20 @@ body:
   prompt: Pernyataan berikut yang benar adalah …
   options:
     - id: a
-      label: setiap dua bangun yang sebangun pasti kongruen
-    - id: b
       label: setiap dua bangun yang kongruen pasti sebangun
-    - id: c
+    - id: b
       label: dua persegi panjang selalu sebangun
-    - id: d
+    - id: c
       label: dua segitiga dengan sudut-sudut sama pasti kongruen
+    - id: d
+      label: setiap dua bangun yang sebangun pasti kongruen
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - setiap dua bangun yang kongruen pasti sebangun
   solutionPaths: []

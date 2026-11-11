@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_3
+familyCode: BIO.C26.D.EKOLOGI.F.PERUBAHAN_LINGKUNGAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tindakan siswa yang ikut mengurangi perubahan iklim adalah …
+  options:
+    - id: a
+      label: mematikan lampu yang tidak dipakai dan bersepeda ke sekolah
+    - id: b
+      label: memakai kantong plastik sekali pakai
+    - id: c
+      label: menebang pohon di halaman
+    - id: d
+      label: membakar sampah plastik
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - mematikan lampu yang tidak dipakai dan bersepeda ke sekolah
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+  feedback:
+    correct: Menghemat listrik dan bahan bakar mengurangi emisi karbon dioksida.
+    incorrect: Jawabannya mematikan lampu yang tidak dipakai dan bersepeda ke sekolah. Menghemat listrik dan bahan bakar mengurangi emisi karbon dioksida.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

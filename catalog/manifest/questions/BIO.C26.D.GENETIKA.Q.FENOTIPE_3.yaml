@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.Q.FENOTIPE_3
+familyCode: BIO.C26.D.GENETIKA.F.FENOTIPE_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persilangan TT × tt menghasilkan keturunan F1 dengan genotipe …
+  options:
+    - id: a
+      label: semua TT
+    - id: b
+      label: semua Tt
+    - id: c
+      label: semua tt
+    - id: d
+      label: Tt dan tt
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - semua Tt
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE
+  feedback:
+    correct: Setiap keturunan menerima T dari satu induk dan t dari induk lainnya.
+    incorrect: Jawabannya semua Tt. Setiap keturunan menerima T dari satu induk dan t dari induk lainnya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

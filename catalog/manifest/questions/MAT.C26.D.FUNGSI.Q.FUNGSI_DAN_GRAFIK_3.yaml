@@ -20,20 +20,20 @@ body:
   prompt: Relasi berikut yang merupakan fungsi adalah …
   options:
     - id: a
-      label: "{(1, a), (1, b), (2, c)}"
-    - id: b
-      label: "{(1, a), (2, a), (3, b)}"
-    - id: c
       label: "{(2, a), (2, b), (3, c)}"
-    - id: d
+    - id: b
       label: "{(3, a), (3, b), (4, a)}"
+    - id: c
+      label: "{(1, a), (1, b), (2, c)}"
+    - id: d
+      label: "{(1, a), (2, a), (3, b)}"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - "{(1, a), (2, a), (3, b)}"
   solutionPaths: []

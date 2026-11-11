@@ -20,20 +20,20 @@ body:
   prompt: Lapisan yang lebih lunak tempat lempeng litosfer bergerak disebut …
   options:
     - id: a
-      label: astenosfer
-    - id: b
-      label: atmosfer
-    - id: c
-      label: hidrosfer
-    - id: d
       label: troposfer
+    - id: b
+      label: astenosfer
+    - id: c
+      label: atmosfer
+    - id: d
+      label: hidrosfer
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - astenosfer
   solutionPaths: []

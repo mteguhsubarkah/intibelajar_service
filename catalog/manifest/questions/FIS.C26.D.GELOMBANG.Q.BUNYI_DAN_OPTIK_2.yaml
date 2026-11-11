@@ -20,20 +20,20 @@ body:
   prompt: Sonar kapal menerima bunyi pantul 2 sekon setelah dipancarkan. Cepat rambat bunyi di air 1.500 m/s. Kedalaman laut adalah …
   options:
     - id: a
-      label: 3.000 m
-    - id: b
-      label: 1.500 m
-    - id: c
       label: 750 m
-    - id: d
+    - id: b
       label: 6.000 m
+    - id: c
+      label: 3.000 m
+    - id: d
+      label: 1.500 m
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 1.500 m
   solutionPaths: []

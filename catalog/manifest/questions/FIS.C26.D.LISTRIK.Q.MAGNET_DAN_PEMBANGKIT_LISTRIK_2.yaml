@@ -20,20 +20,20 @@ body:
   prompt: Alat yang mengubah energi gerak menjadi energi listrik adalah …
   options:
     - id: a
-      label: generator
-    - id: b
       label: motor listrik
-    - id: c
+    - id: b
       label: setrika listrik
-    - id: d
+    - id: c
       label: baterai
+    - id: d
+      label: generator
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - generator
   solutionPaths: []

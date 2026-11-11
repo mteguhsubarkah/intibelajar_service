@@ -20,20 +20,20 @@ body:
   prompt: Angin laut pada siang hari terjadi karena …
   options:
     - id: a
-      label: konduksi kalor oleh tanah
-    - id: b
       label: konveksi udara dari laut ke darat
-    - id: c
+    - id: b
       label: radiasi dari Bulan
-    - id: d
+    - id: c
       label: konduksi kalor oleh air
+    - id: d
+      label: konduksi kalor oleh tanah
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - konveksi udara dari laut ke darat
   solutionPaths: []

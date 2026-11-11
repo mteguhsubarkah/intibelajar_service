@@ -20,20 +20,20 @@ body:
   prompt: Sebuah sepeda menempuh 1.800 m dalam 6 menit. Kelajuan rata-ratanya adalah …
   options:
     - id: a
-      label: 5 m/s
-    - id: b
       label: 300 m/s
-    - id: c
+    - id: b
       label: 30 m/s
-    - id: d
+    - id: c
       label: 10 m/s
+    - id: d
+      label: 5 m/s
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 5 m/s
   solutionPaths: []

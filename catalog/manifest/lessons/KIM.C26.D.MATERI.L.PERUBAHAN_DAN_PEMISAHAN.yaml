@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.L.PERUBAHAN_DAN_PEMISAHAN
+title: Perubahan dan pemisahan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.MATERI.PERUBAHAN_DAN_PEMISAHAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Perubahan fisika
+  - type: text
+    slide: 0
+    text: Perubahan fisika tidak menghasilkan zat baru; biasanya hanya bentuk, ukuran, atau wujudnya yang berubah.
+  - type: text
+    slide: 0
+    text: "Contoh: es mencair, kertas digunting, gula larut dalam air, lilin meleleh."
+  - type: math
+    slide: 0
+    name: perubahan fisika
+    expression: tidak ada zat baru
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Perubahan kimia
+  - type: text
+    slide: 1
+    text: "Perubahan kimia menghasilkan zat baru dengan sifat berbeda: kayu terbakar, besi berkarat, nasi basi, kue dipanggang."
+  - type: text
+    slide: 1
+    text: Sifat kimia, seperti mudah terbakar atau mudah berkarat, terlihat saat zat berubah menjadi zat lain.
+  - type: math
+    slide: 1
+    name: perubahan kimia
+    expression: terbentuk zat baru
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Tanyakan: apakah terbentuk zat baru? Jika ya, itu perubahan kimia."
+checks:
+  - question: KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.MATERI.S.PERUBAHAN_DAN_PEMISAHAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

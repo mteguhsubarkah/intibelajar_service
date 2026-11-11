@@ -20,20 +20,20 @@ body:
   prompt: Urutan bilangan −0,7; −3/4; 1/2; 0,45 dari yang terkecil adalah …
   options:
     - id: a
-      label: −3/4; −0,7; 0,45; 1/2
-    - id: b
-      label: −0,7; −3/4; 0,45; 1/2
-    - id: c
       label: −3/4; −0,7; 1/2; 0,45
-    - id: d
+    - id: b
       label: 0,45; 1/2; −0,7; −3/4
+    - id: c
+      label: −3/4; −0,7; 0,45; 1/2
+    - id: d
+      label: −0,7; −3/4; 0,45; 1/2
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - −3/4; −0,7; 0,45; 1/2
   solutionPaths: []

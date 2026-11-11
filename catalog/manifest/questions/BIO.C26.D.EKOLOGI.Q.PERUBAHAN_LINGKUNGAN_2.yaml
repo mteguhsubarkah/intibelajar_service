@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_2
+familyCode: BIO.C26.D.EKOLOGI.F.PERUBAHAN_LINGKUNGAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dampak pemanasan global adalah …
+  options:
+    - id: a
+      label: hujan selalu merata
+    - id: b
+      label: permukaan laut naik
+    - id: c
+      label: es kutub bertambah
+    - id: d
+      label: suhu Bumi turun
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - permukaan laut naik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+  feedback:
+    correct: Es kutub yang mencair dan air laut yang memuai membuat permukaan laut naik.
+    incorrect: Jawabannya permukaan laut naik. Es kutub yang mencair dan air laut yang memuai membuat permukaan laut naik.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

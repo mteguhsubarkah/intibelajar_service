@@ -20,20 +20,20 @@ body:
   prompt: Batas lempeng yang saling menjauh disebut …
   options:
     - id: a
-      label: divergen
-    - id: b
-      label: konvergen
-    - id: c
-      label: transform
-    - id: d
       label: subduksi
+    - id: b
+      label: divergen
+    - id: c
+      label: konvergen
+    - id: d
+      label: transform
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - divergen
   solutionPaths: []

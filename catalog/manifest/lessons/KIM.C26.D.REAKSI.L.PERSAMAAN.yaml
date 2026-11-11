@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.L.PERSAMAAN
+title: Persamaan reaksi sederhana
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.D.REAKSI.PERSAMAAN_REAKSI_SEDERHANA
+blocks:
+  - type: heading
+    slide: 0
+    text: Membaca persamaan reaksi
+  - type: text
+    slide: 0
+    text: Pereaksi ditulis di kiri tanda panah, hasil reaksi di kanan. C + O₂ → CO₂ berarti karbon bereaksi dengan oksigen menghasilkan karbon dioksida.
+  - type: text
+    slide: 0
+    text: "Wujud zat ditulis dalam kurung: (s) padat, (l) cair, (g) gas, (aq) larutan."
+  - type: math
+    slide: 0
+    name: pereaksi → hasil reaksi
+    expression: C + O₂ → CO₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Menyetarakan persamaan reaksi
+  - type: text
+    slide: 1
+    text: Jumlah setiap jenis atom di ruas kiri harus sama dengan di ruas kanan, sesuai hukum kekekalan massa.
+  - type: text
+    slide: 1
+    text: "Ubah koefisien di depan rumus, bukan angka kecil di dalam rumus: H₂ + O₂ → H₂O disetarakan menjadi 2H₂ + O₂ → 2H₂O."
+  - type: math
+    slide: 1
+    name: setara
+    expression: atom kiri = atom kanan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Hitung atom satu per satu. Pada 2H₂ + O₂ → 2H₂O: H kiri 4 = H kanan 4; O kiri 2 = O kanan 2."
+checks:
+  - question: KIM.C26.D.REAKSI.Q.PERSAMAAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.REAKSI.S.PERSAMAAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -20,20 +20,20 @@ body:
   prompt: Nilai x yang memenuhi 5x − 8 = 2x + 7 adalah …
   options:
     - id: a
-      label: "5"
-    - id: b
-      label: "3"
-    - id: c
-      label: "15"
-    - id: d
       label: −5
+    - id: b
+      label: "5"
+    - id: c
+      label: "3"
+    - id: d
+      label: "15"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - "5"
   solutionPaths: []

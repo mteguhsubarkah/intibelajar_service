@@ -20,20 +20,20 @@ body:
   prompt: Pada siang hari, pantai terasa lebih sejuk daripada daratan di sekitarnya terutama karena …
   options:
     - id: a
-      label: kalor jenis air besar sehingga air lambat panas
-    - id: b
-      label: air memantulkan semua cahaya Matahari
-    - id: c
-      label: udara di laut lebih tipis
-    - id: d
       label: pasir tidak menyerap kalor
+    - id: b
+      label: kalor jenis air besar sehingga air lambat panas
+    - id: c
+      label: air memantulkan semua cahaya Matahari
+    - id: d
+      label: udara di laut lebih tipis
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - kalor jenis air besar sehingga air lambat panas
   solutionPaths: []

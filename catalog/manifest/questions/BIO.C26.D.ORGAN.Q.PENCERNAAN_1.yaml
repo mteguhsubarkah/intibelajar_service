@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.PENCERNAAN_1
+familyCode: BIO.C26.D.ORGAN.F.PENCERNAAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Enzim amilase di dalam mulut mengubah …
+  options:
+    - id: a
+      label: protein menjadi asam amino
+    - id: b
+      label: amilum menjadi gula
+    - id: c
+      label: lemak menjadi asam lemak
+    - id: d
+      label: gula menjadi amilum
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - amilum menjadi gula
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN
+  feedback:
+    correct: Amilase memecah amilum (pati) menjadi gula yang lebih sederhana.
+    incorrect: Jawabannya amilum menjadi gula. Amilase memecah amilum (pati) menjadi gula yang lebih sederhana.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -20,20 +20,20 @@ body:
   prompt: Budi berjalan 300 m ke timur, lalu 400 m ke utara. Besar perpindahannya adalah …
   options:
     - id: a
-      label: 700 m
-    - id: b
       label: 500 m
-    - id: c
+    - id: b
       label: 100 m
-    - id: d
+    - id: c
       label: 350 m
+    - id: d
+      label: 700 m
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - 500 m
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …
   options:
     - id: a
-      label: cekung
-    - id: b
-      label: cembung
-    - id: c
       label: datar
-    - id: d
+    - id: b
       label: silinder saja
+    - id: c
+      label: cekung
+    - id: d
+      label: cembung
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - cekung
   solutionPaths: []

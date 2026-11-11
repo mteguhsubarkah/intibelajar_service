@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_1
+familyCode: BIO.C26.D.KOORDINASI.F.HOMEOSTASIS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KOORDINASI.HOMEOSTASIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Saat berolahraga dan tubuh terasa panas, respons tubuh untuk menurunkan suhu adalah …
+  options:
+    - id: a
+      label: berhenti berkeringat
+    - id: b
+      label: berkeringat
+    - id: c
+      label: menggigil
+    - id: d
+      label: mengurangi aliran darah ke kulit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - berkeringat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KOORDINASI.HOMEOSTASIS
+  feedback:
+    correct: Keringat yang menguap dari kulit membawa panas keluar dari tubuh.
+    incorrect: Jawabannya berkeringat. Keringat yang menguap dari kulit membawa panas keluar dari tubuh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -20,20 +20,20 @@ body:
   prompt: Contoh gelombang longitudinal adalah …
   options:
     - id: a
-      label: gelombang bunyi di udara
-    - id: b
       label: gelombang pada tali yang digoyangkan
-    - id: c
+    - id: b
       label: gelombang cahaya
-    - id: d
+    - id: c
       label: riak pada permukaan air
+    - id: d
+      label: gelombang bunyi di udara
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - gelombang bunyi di udara
   solutionPaths: []

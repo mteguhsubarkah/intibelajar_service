@@ -20,20 +20,20 @@ body:
   prompt: "Nilai dari (5²)³ : 5⁴ adalah …"
   options:
     - id: a
-      label: "5"
-    - id: b
-      label: "25"
-    - id: c
-      label: "125"
-    - id: d
       label: "625"
+    - id: b
+      label: "5"
+    - id: c
+      label: "25"
+    - id: d
+      label: "125"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - "25"
   solutionPaths: []

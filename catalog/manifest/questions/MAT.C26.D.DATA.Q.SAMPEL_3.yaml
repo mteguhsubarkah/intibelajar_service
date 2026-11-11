@@ -20,20 +20,20 @@ body:
   prompt: Dari 200 siswa diambil sampel acak 40 siswa; 10 di antaranya suka membaca komik. Perkiraan banyak siswa di sekolah yang suka membaca komik adalah …
   options:
     - id: a
-      label: "10"
-    - id: b
       label: "40"
-    - id: c
+    - id: b
       label: "50"
-    - id: d
+    - id: c
       label: "25"
+    - id: d
+      label: "10"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: b
   acceptedForms:
     - "50"
   solutionPaths: []

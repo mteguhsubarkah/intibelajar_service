@@ -20,20 +20,20 @@ body:
   prompt: Tegangan 12 V dipasang pada hambatan 4 Ω. Kuat arus yang mengalir adalah …
   options:
     - id: a
-      label: 3 A
-    - id: b
-      label: 48 A
-    - id: c
-      label: 0,33 A
-    - id: d
       label: 16 A
+    - id: b
+      label: 3 A
+    - id: c
+      label: 48 A
+    - id: d
+      label: 0,33 A
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - 3 A
   solutionPaths: []

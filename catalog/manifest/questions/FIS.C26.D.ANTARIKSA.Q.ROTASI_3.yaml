@@ -20,20 +20,20 @@ body:
   prompt: Selisih waktu WIB dan WIT adalah 2 jam. Jika di Jakarta pukul 07.00 WIB, di Jayapura pukul …
   options:
     - id: a
-      label: 05.00 WIT
-    - id: b
-      label: 09.00 WIT
-    - id: c
       label: 08.00 WIT
-    - id: d
+    - id: b
       label: 07.00 WIT
+    - id: c
+      label: 05.00 WIT
+    - id: d
+      label: 09.00 WIT
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 09.00 WIT
   solutionPaths: []

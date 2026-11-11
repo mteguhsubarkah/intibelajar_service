@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_2
+familyCode: BIO.C26.D.KOORDINASI.F.HOMEOSTASIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KOORDINASI.HOMEOSTASIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Setelah makan, kadar gula darah naik. Organ yang merespons dengan melepas insulin adalah …
+  options:
+    - id: a
+      label: lambung
+    - id: b
+      label: hati
+    - id: c
+      label: pankreas
+    - id: d
+      label: ginjal
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - pankreas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KOORDINASI.HOMEOSTASIS
+  feedback:
+    correct: Pankreas melepas insulin agar gula darah kembali normal.
+    incorrect: Jawabannya pankreas. Pankreas melepas insulin agar gula darah kembali normal.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

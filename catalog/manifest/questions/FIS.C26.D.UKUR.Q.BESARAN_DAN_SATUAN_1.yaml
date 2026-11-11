@@ -20,20 +20,20 @@ body:
   prompt: Kelompok besaran berikut yang semuanya besaran pokok adalah …
   options:
     - id: a
-      label: panjang, massa, waktu
-    - id: b
-      label: panjang, luas, volume
-    - id: c
       label: massa, berat, gaya
-    - id: d
+    - id: b
       label: suhu, kecepatan, waktu
+    - id: c
+      label: panjang, massa, waktu
+    - id: d
+      label: panjang, luas, volume
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - panjang, massa, waktu
   solutionPaths: []

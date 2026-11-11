@@ -20,20 +20,20 @@ body:
   prompt: Luas permukaan balok berukuran 8 cm × 5 cm × 3 cm adalah …
   options:
     - id: a
-      label: 120 cm²
-    - id: b
-      label: 158 cm²
-    - id: c
       label: 79 cm²
-    - id: d
+    - id: b
       label: 240 cm²
+    - id: c
+      label: 120 cm²
+    - id: d
+      label: 158 cm²
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 158 cm²
   solutionPaths: []

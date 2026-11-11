@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_3
+familyCode: KIM.C26.D.MATERI.F.UNSUR_SENYAWA_DAN_CAMPURAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.MATERI.UNSUR_SENYAWA_DAN_CAMPURAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ciri senyawa adalah …
+  options:
+    - id: a
+      label: tersusun dari unsur-unsur dengan perbandingan tetap
+    - id: b
+      label: dapat dipisahkan dengan penyaringan
+    - id: c
+      label: komposisinya berubah-ubah
+    - id: d
+      label: sifatnya sama dengan unsur penyusunnya
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - tersusun dari unsur-unsur dengan perbandingan tetap
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.MATERI.UNSUR_SENYAWA_DAN_CAMPURAN
+  feedback:
+    correct: Senyawa selalu tersusun dengan perbandingan tetap dan sifatnya baru, berbeda dari unsur penyusunnya.
+    incorrect: Jawabannya tersusun dari unsur-unsur dengan perbandingan tetap. Senyawa selalu tersusun dengan perbandingan tetap dan sifatnya baru, berbeda dari unsur penyusunnya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

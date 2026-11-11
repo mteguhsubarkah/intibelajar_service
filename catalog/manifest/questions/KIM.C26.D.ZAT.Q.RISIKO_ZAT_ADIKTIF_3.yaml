@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_3
+familyCode: KIM.C26.D.ZAT.F.RISIKO_ZAT_ADIKTIF_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.ZAT.RISIKO_ZAT_ADIKTIF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Seorang teman menawarkan rokok elektrik kepadamu. Sikap yang paling tepat adalah …
+  options:
+    - id: a
+      label: membelinya agar dianggap keren
+    - id: b
+      label: mencoba sekali saja
+    - id: c
+      label: menolak dengan tegas dan menjelaskan alasannya
+    - id: d
+      label: menyimpannya untuk nanti
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - menolak dengan tegas dan menjelaskan alasannya
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.ZAT.RISIKO_ZAT_ADIKTIF
+  feedback:
+    correct: Rokok elektrik juga mengandung nikotin yang adiktif. Menolak dengan tegas melindungi kesehatanmu.
+    incorrect: Jawabannya menolak dengan tegas dan menjelaskan alasannya. Rokok elektrik juga mengandung nikotin yang adiktif. Menolak dengan tegas melindungi kesehatanmu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

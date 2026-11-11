@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.L.PEREDARAN
+title: Sistem peredaran darah
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+blocks:
+  - type: heading
+    slide: 0
+    text: Jantung, pembuluh, dan darah
+  - type: text
+    slide: 0
+    text: Jantung memompa darah. **Arteri** membawa darah keluar dari jantung, **vena** membawa darah kembali ke jantung, **kapiler** tempat pertukaran zat.
+  - type: text
+    slide: 0
+    text: Darah terdiri dari plasma, sel darah merah (mengangkut oksigen dengan hemoglobin), sel darah putih (melawan kuman), dan keping darah (pembekuan).
+  - type: math
+    slide: 0
+    name: sel darah merah
+    expression: mengangkut oksigen
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Peredaran darah ganda
+  - type: text
+    slide: 1
+    text: "Peredaran kecil: jantung → paru-paru → jantung, untuk mengambil oksigen. Peredaran besar: jantung → seluruh tubuh → jantung."
+  - type: text
+    slide: 1
+    text: "Gangguan: anemia (kekurangan hemoglobin), hipertensi (tekanan darah tinggi), dan penyumbatan pembuluh darah."
+  - type: math
+    slide: 1
+    name: peredaran kecil
+    expression: jantung → paru-paru → jantung
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Arteri menjauhi jantung; vena menuju jantung.
+checks:
+  - question: BIO.C26.D.ORGAN.Q.PEREDARAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.ORGAN.S.PEREDARAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

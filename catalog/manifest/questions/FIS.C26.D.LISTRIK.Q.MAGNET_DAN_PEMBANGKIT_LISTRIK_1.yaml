@@ -20,20 +20,20 @@ body:
   prompt: Dua kutub utara magnet didekatkan. Keduanya akan …
   options:
     - id: a
-      label: tarik-menarik
-    - id: b
       label: tolak-menolak
-    - id: c
+    - id: b
       label: diam saja
-    - id: d
+    - id: c
       label: berubah kutub
+    - id: d
+      label: tarik-menarik
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - tolak-menolak
   solutionPaths: []

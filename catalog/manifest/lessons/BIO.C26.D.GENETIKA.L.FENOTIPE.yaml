@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.L.FENOTIPE
+title: Genotipe dan fenotipe
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE
+blocks:
+  - type: heading
+    slide: 0
+    text: Genotipe dan fenotipe
+  - type: text
+    slide: 0
+    text: "**Genotipe** adalah susunan gen, ditulis dengan huruf (TT, Tt, tt). **Fenotipe** adalah sifat yang tampak (tinggi atau pendek)."
+  - type: text
+    slide: 0
+    text: Alel dominan (T) menutupi alel resesif (t), jadi Tt tampak tinggi.
+  - type: math
+    slide: 0
+    name: genotipe
+    expression: susunan gen
+    highlight: true
+  - type: math
+    slide: 0
+    name: fenotipe
+    expression: sifat yang tampak
+  - type: heading
+    slide: 1
+    text: Persilangan monohibrid
+  - type: text
+    slide: 1
+    text: "Ercis tinggi (TT) disilangkan dengan pendek (tt): F1 semuanya Tt (tinggi)."
+  - type: text
+    slide: 1
+    text: "F1 disilangkan sesamanya: F2 bergenotipe TT : Tt : tt = 1 : 2 : 1 dan berfenotipe tinggi : pendek = 3 : 1."
+  - type: math
+    slide: 1
+    name: F2 monohibrid
+    expression: "fenotipe 3 : 1"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gunakan papan catur (diagram Punnett) untuk menghitung keturunan.
+checks:
+  - question: BIO.C26.D.GENETIKA.Q.FENOTIPE_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.GENETIKA.S.FENOTIPE
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

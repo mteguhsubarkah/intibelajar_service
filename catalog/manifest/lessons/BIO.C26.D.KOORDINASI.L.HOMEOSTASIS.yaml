@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.L.HOMEOSTASIS
+title: Homeostasis
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.KOORDINASI.HOMEOSTASIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Menjaga kondisi tetap stabil
+  - type: text
+    slide: 0
+    text: Homeostasis adalah kemampuan tubuh menjaga kondisi di dalamnya tetap stabil, misalnya suhu tubuh sekitar 37 °C, kadar air, dan kadar gula darah.
+  - type: math
+    slide: 0
+    name: suhu tubuh normal
+    expression: ± 37 °C
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kerja sama antarsistem
+  - type: text
+    slide: 1
+    text: Saat kepanasan, otak memerintah kulit berkeringat dan pembuluh darah kulit melebar. Setelah makan, gula darah naik, lalu pankreas melepas insulin. Saat kurang minum, ginjal menghemat air.
+  - type: text
+    slide: 1
+    text: Saraf, hormon, ekskresi, dan peredaran darah bekerja sama.
+  - type: math
+    slide: 1
+    name: umpan balik
+    expression: perubahan → respons → kembali normal
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Homeostasis bekerja dengan umpan balik: perubahan memicu respons yang mengembalikan kondisi normal."
+checks:
+  - question: BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.KOORDINASI.S.HOMEOSTASIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

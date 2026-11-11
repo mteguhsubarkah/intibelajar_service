@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.Q.ASAMBASA_2
+familyCode: KIM.C26.D.REAKSI.F.ASAMBASA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.REAKSI.ASAM_BASA_DAN_INDIKATOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Larutan dengan pH 12 bersifat …
+  options:
+    - id: a
+      label: asam kuat
+    - id: b
+      label: basa
+    - id: c
+      label: netral
+    - id: d
+      label: asam lemah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - basa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.REAKSI.ASAM_BASA_DAN_INDIKATOR
+  feedback:
+    correct: pH lebih dari 7 menunjukkan larutan bersifat basa.
+    incorrect: Jawabannya basa. pH lebih dari 7 menunjukkan larutan bersifat basa.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

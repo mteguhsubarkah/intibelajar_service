@@ -20,20 +20,20 @@ body:
   prompt: Penunjaman lempeng samudra ke bawah lempeng benua (subduksi) terjadi pada batas …
   options:
     - id: a
-      label: divergen
-    - id: b
-      label: konvergen
-    - id: c
       label: transform
-    - id: d
+    - id: b
       label: tidak ada batas lempeng
+    - id: c
+      label: divergen
+    - id: d
+      label: konvergen
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - konvergen
   solutionPaths: []

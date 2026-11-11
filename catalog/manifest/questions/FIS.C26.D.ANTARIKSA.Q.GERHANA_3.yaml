@@ -20,20 +20,20 @@ body:
   prompt: Gerhana tidak terjadi setiap bulan karena …
   options:
     - id: a
-      label: Bulan terlalu kecil
-    - id: b
-      label: orbit Bulan miring terhadap orbit Bumi
-    - id: c
       label: Bumi berotasi
-    - id: d
+    - id: b
       label: Matahari bergerak
+    - id: c
+      label: Bulan terlalu kecil
+    - id: d
+      label: orbit Bulan miring terhadap orbit Bumi
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - orbit Bulan miring terhadap orbit Bumi
   solutionPaths: []

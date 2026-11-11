@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.Q.PEMISAHAN_2
+familyCode: KIM.C26.D.MATERI.F.PEMISAHAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.MATERI.METODE_PEMISAHAN_CAMPURAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Cara paling tepat untuk memisahkan zat-zat warna pada tinta spidol adalah …
+  options:
+    - id: a
+      label: magnet
+    - id: b
+      label: filtrasi
+    - id: c
+      label: distilasi
+    - id: d
+      label: kromatografi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - kromatografi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.MATERI.METODE_PEMISAHAN_CAMPURAN
+  feedback:
+    correct: Zat warna yang berbeda meresap dengan kecepatan berbeda pada kertas, sehingga terpisah.
+    incorrect: Jawabannya kromatografi. Zat warna yang berbeda meresap dengan kecepatan berbeda pada kertas, sehingga terpisah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

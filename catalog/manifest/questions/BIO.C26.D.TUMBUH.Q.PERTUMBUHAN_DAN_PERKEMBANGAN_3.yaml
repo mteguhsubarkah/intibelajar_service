@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_3
+familyCode: BIO.C26.D.TUMBUH.F.PERTUMBUHAN_DAN_PERKEMBANGAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pertumbuhan memanjang pada tumbuhan terjadi di daerah …
+  options:
+    - id: a
+      label: kulit batang
+    - id: b
+      label: akar serabut saja
+    - id: c
+      label: meristem ujung akar dan batang
+    - id: d
+      label: daun tua
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - meristem ujung akar dan batang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN
+  feedback:
+    correct: Sel-sel meristem di ujung akar dan batang terus membelah.
+    incorrect: Jawabannya meristem ujung akar dan batang. Sel-sel meristem di ujung akar dan batang terus membelah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -20,20 +20,20 @@ body:
   prompt: Tiga bilangan berikut yang dapat menjadi panjang sisi segitiga siku-siku adalah …
   options:
     - id: a
-      label: 4, 5, 6
-    - id: b
       label: 6, 8, 12
-    - id: c
+    - id: b
       label: 9, 12, 15
-    - id: d
+    - id: c
       label: 5, 11, 12
+    - id: d
+      label: 4, 5, 6
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: b
   acceptedForms:
     - 9, 12, 15
   solutionPaths: []

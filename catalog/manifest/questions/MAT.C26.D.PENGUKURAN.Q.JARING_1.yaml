@@ -20,20 +20,20 @@ body:
   prompt: Luas permukaan kubus dengan panjang rusuk 5 cm adalah …
   options:
     - id: a
-      label: 125 cm²
-    - id: b
       label: 150 cm²
-    - id: c
+    - id: b
       label: 100 cm²
-    - id: d
+    - id: c
       label: 25 cm²
+    - id: d
+      label: 125 cm²
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - 150 cm²
   solutionPaths: []

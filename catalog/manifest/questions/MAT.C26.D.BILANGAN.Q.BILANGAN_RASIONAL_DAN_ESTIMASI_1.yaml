@@ -20,20 +20,20 @@ body:
   prompt: Bilangan berikut yang **bukan** bilangan rasional adalah …
   options:
     - id: a
-      label: 0,25
-    - id: b
       label: −7
-    - id: c
+    - id: b
       label: √2
-    - id: d
+    - id: c
       label: 2/3
+    - id: d
+      label: 0,25
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: b
   acceptedForms:
     - √2
   solutionPaths: []

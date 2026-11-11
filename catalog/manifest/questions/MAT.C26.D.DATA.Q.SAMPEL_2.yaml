@@ -20,20 +20,20 @@ body:
   prompt: Survei tentang jam tidur siswa hanya dilakukan pada siswa yang mengikuti kegiatan malam. Hasil survei itu kemungkinan …
   options:
     - id: a
-      label: mewakili semua siswa
-    - id: b
       label: bias, cenderung menunjukkan jam tidur lebih sedikit
-    - id: c
+    - id: b
       label: pasti sama dengan hasil populasi
-    - id: d
+    - id: c
       label: tidak dapat dihitung
+    - id: d
+      label: mewakili semua siswa
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - bias, cenderung menunjukkan jam tidur lebih sedikit
   solutionPaths: []

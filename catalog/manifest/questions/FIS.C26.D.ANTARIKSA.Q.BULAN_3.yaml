@@ -20,20 +20,20 @@ body:
   prompt: Pasang laut paling tinggi terjadi saat …
   options:
     - id: a
-      label: kuartir pertama
-    - id: b
-      label: purnama dan bulan baru
-    - id: c
       label: bulan sabit saja
-    - id: d
+    - id: b
       label: siang hari saja
+    - id: c
+      label: kuartir pertama
+    - id: d
+      label: purnama dan bulan baru
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - purnama dan bulan baru
   solutionPaths: []

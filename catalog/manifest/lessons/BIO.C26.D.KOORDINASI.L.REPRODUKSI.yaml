@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.L.REPRODUKSI
+title: Reproduksi dan kesehatan reproduksi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.KOORDINASI.REPRODUKSI_DAN_KESEHATAN_REPRODUKSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Organ reproduksi
+  - type: text
+    slide: 0
+    text: "Laki-laki: testis menghasilkan sperma dan hormon testosteron. Perempuan: ovarium menghasilkan sel telur dan hormon estrogen; rahim tempat janin berkembang."
+  - type: text
+    slide: 0
+    text: Fertilisasi adalah peleburan sel sperma dengan sel telur.
+  - type: math
+    slide: 0
+    name: fertilisasi
+    expression: sperma + sel telur
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pubertas dan kesehatan reproduksi
+  - type: text
+    slide: 1
+    text: Pubertas ditandai perubahan fisik, seperti tumbuh rambut, suara berubah, dan menstruasi, yang dipengaruhi hormon.
+  - type: text
+    slide: 1
+    text: Jaga kebersihan organ reproduksi, kenali batasan tubuh, dan cari informasi dari tenaga kesehatan atau orang dewasa tepercaya.
+  - type: math
+    slide: 1
+    name: testosteron
+    expression: ciri kelamin sekunder laki-laki
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Perubahan saat pubertas itu normal, dan waktunya bisa berbeda pada setiap orang.
+checks:
+  - question: BIO.C26.D.KOORDINASI.Q.REPRODUKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.KOORDINASI.S.REPRODUKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

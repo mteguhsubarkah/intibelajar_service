@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.L.PERNAPASAN
+title: Sistem pernapasan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.ORGAN.SISTEM_PERNAPASAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Jalur udara dan pertukaran gas
+  - type: text
+    slide: 0
+    text: Udara masuk melalui hidung → faring → laring → trakea → bronkus → bronkiolus → alveolus.
+  - type: text
+    slide: 0
+    text: "Di alveolus terjadi pertukaran gas: oksigen masuk ke darah, karbon dioksida keluar dari darah."
+  - type: math
+    slide: 0
+    name: tempat pertukaran gas
+    expression: alveolus
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mekanisme dan gangguan
+  - type: text
+    slide: 1
+    text: Pernapasan dada digerakkan otot antartulang rusuk; pernapasan perut digerakkan diafragma. Saat menarik napas, diafragma mendatar sehingga rongga dada membesar dan udara masuk.
+  - type: text
+    slide: 1
+    text: "Gangguan: asma, bronkitis, pneumonia. Asap rokok merusak alveolus."
+  - type: math
+    slide: 1
+    name: inspirasi
+    expression: diafragma mendatar, rongga dada membesar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bernapas lewat hidung membuat udara tersaring, hangat, dan lembap.
+checks:
+  - question: BIO.C26.D.ORGAN.Q.PERNAPASAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.ORGAN.S.PERNAPASAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

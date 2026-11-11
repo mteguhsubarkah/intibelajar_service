@@ -20,20 +20,20 @@ body:
   prompt: Peluang muncul mata dadu lebih dari 4 pada pelemparan sebuah dadu adalah …
   options:
     - id: a
-      label: 1/3
-    - id: b
-      label: 1/2
-    - id: c
       label: 2/3
-    - id: d
+    - id: b
       label: 1/6
+    - id: c
+      label: 1/3
+    - id: d
+      label: 1/2
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - 1/3
   solutionPaths: []

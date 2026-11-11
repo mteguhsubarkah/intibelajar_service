@@ -20,20 +20,20 @@ body:
   prompt: Semua rusuk sebuah balok diperbesar menjadi 3 kali semula. Volumenya menjadi … kali semula.
   options:
     - id: a
-      label: "3"
-    - id: b
-      label: "6"
-    - id: c
       label: "9"
-    - id: d
+    - id: b
       label: "27"
+    - id: c
+      label: "3"
+    - id: d
+      label: "6"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: d
+    optionId: b
   acceptedForms:
     - "27"
   solutionPaths: []

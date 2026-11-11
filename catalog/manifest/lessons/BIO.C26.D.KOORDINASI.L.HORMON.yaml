@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.L.HORMON
+title: Sistem hormon
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.KOORDINASI.SISTEM_HORMON
+blocks:
+  - type: heading
+    slide: 0
+    text: Kelenjar endokrin
+  - type: text
+    slide: 0
+    text: Hormon dihasilkan kelenjar endokrin dan dibawa darah ke organ sasaran.
+  - type: text
+    slide: 0
+    text: "Contoh: insulin (pankreas) menurunkan gula darah, tiroksin (tiroid) mengatur metabolisme, adrenalin (anak ginjal) saat panik, hormon pertumbuhan (hipofisis)."
+  - type: math
+    slide: 0
+    name: insulin
+    expression: menurunkan gula darah
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kerja hormon dan gangguannya
+  - type: text
+    slide: 1
+    text: Kerja hormon lebih lambat daripada saraf, tetapi efeknya lebih lama.
+  - type: text
+    slide: 1
+    text: "Gangguan: kekurangan insulin menyebabkan diabetes melitus; kekurangan iodin dapat menyebabkan gondok."
+  - type: math
+    slide: 1
+    name: kekurangan iodin
+    expression: gondok
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Saraf bekerja cepat dan singkat; hormon bekerja lambat dan lama.
+checks:
+  - question: BIO.C26.D.KOORDINASI.Q.HORMON_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.KOORDINASI.S.HORMON
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

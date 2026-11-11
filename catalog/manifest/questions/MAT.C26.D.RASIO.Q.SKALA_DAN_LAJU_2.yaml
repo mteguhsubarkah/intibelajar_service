@@ -20,20 +20,20 @@ body:
   prompt: Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …
   options:
     - id: a
-      label: 15 liter/menit
-    - id: b
       label: 12 liter/menit
-    - id: c
+    - id: b
       label: 960 liter/menit
-    - id: d
+    - id: c
       label: 16 liter/menit
+    - id: d
+      label: 15 liter/menit
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 15 liter/menit
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Gaya 50 N memindahkan kotak sejauh 4 m searah gaya. Usaha yang dilakukan adalah …
   options:
     - id: a
-      label: 200 J
-    - id: b
       label: 12,5 J
-    - id: c
+    - id: b
       label: 54 J
-    - id: d
+    - id: c
       label: 46 J
+    - id: d
+      label: 200 J
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 200 J
   solutionPaths: []

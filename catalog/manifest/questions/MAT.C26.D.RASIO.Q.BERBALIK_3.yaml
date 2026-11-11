@@ -20,20 +20,20 @@ body:
   prompt: Mobil dengan kecepatan 60 km/jam membutuhkan 3 jam untuk suatu perjalanan. Jika kecepatannya 90 km/jam, waktunya …
   options:
     - id: a
-      label: 2 jam
-    - id: b
       label: 4,5 jam
-    - id: c
+    - id: b
       label: 1,5 jam
-    - id: d
+    - id: c
       label: 2,5 jam
+    - id: d
+      label: 2 jam
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 2 jam
   solutionPaths: []

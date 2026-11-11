@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.Q.JEJARING_3
+familyCode: BIO.C26.D.EKOLOGI.F.JEJARING_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Energi paling kecil dalam piramida energi terdapat pada …
+  options:
+    - id: a
+      label: semua tingkat sama
+    - id: b
+      label: produsen
+    - id: c
+      label: konsumen I
+    - id: d
+      label: konsumen puncak
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - konsumen puncak
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+  feedback:
+    correct: Energi berkurang di setiap tingkat, jadi paling sedikit di puncak.
+    incorrect: Jawabannya konsumen puncak. Energi berkurang di setiap tingkat, jadi paling sedikit di puncak.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

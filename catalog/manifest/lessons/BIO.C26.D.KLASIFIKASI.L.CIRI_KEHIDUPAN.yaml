@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.D.KLASIFIKASI.L.CIRI_KEHIDUPAN
+title: Ciri kehidupan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.KLASIFIKASI.CIRI_KEHIDUPAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Ciri makhluk hidup
+  - type: text
+    slide: 0
+    text: Makhluk hidup bernapas, bergerak, memerlukan nutrisi, tumbuh dan berkembang, berkembang biak, peka terhadap rangsang, mengeluarkan zat sisa, dan beradaptasi.
+  - type: math
+    slide: 0
+    name: iritabilitas
+    expression: peka terhadap rangsang
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Hidup atau tidak hidup?
+  - type: text
+    slide: 1
+    text: Benda tak hidup bisa menunjukkan satu ciri, misalnya mobil bergerak atau api membesar, tetapi makhluk hidup memiliki semua ciri tersebut.
+  - type: text
+    slide: 1
+    text: "Tumbuhan juga bergerak, walaupun lambat: daun putri malu menutup saat disentuh."
+  - type: math
+    slide: 1
+    name: makhluk hidup
+    expression: memiliki semua ciri kehidupan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Satu ciri saja tidak cukup untuk menyebut sesuatu hidup.
+checks:
+  - question: BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.KLASIFIKASI.S.CIRI_KEHIDUPAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

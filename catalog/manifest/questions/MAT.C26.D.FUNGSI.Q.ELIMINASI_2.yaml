@@ -20,20 +20,20 @@ body:
   prompt: Harga 2 buku dan 1 pena Rp13.000, sedangkan 1 buku dan 2 pena Rp11.000. Harga 1 buku adalah …
   options:
     - id: a
-      label: Rp5.000
-    - id: b
-      label: Rp3.000
-    - id: c
-      label: Rp4.000
-    - id: d
       label: Rp6.000
+    - id: b
+      label: Rp5.000
+    - id: c
+      label: Rp3.000
+    - id: d
+      label: Rp4.000
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - Rp5.000
   solutionPaths: []

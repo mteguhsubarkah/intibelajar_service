@@ -20,20 +20,20 @@ body:
   prompt: Suatu pekerjaan selesai oleh 8 orang dalam 15 hari. Jika dikerjakan 12 orang, pekerjaan selesai dalam … hari.
   options:
     - id: a
-      label: "10"
-    - id: b
-      label: "12"
-    - id: c
-      label: "18"
-    - id: d
       label: 22,5
+    - id: b
+      label: "10"
+    - id: c
+      label: "12"
+    - id: d
+      label: "18"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - "10"
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Dua segitiga memiliki tiga pasang sudut yang sama besar. Kedua segitiga itu pasti …
   options:
     - id: a
-      label: kongruen
-    - id: b
-      label: sebangun
-    - id: c
       label: sama luas
-    - id: d
+    - id: b
       label: sama keliling
+    - id: c
+      label: kongruen
+    - id: d
+      label: sebangun
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - sebangun
   solutionPaths: []

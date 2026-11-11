@@ -20,20 +20,20 @@ body:
   prompt: Segitiga ABC sebangun dengan segitiga PQR, dengan AB bersesuaian dengan PQ. AB = 6 cm, PQ = 9 cm, dan BC = 8 cm. Panjang QR adalah …
   options:
     - id: a
-      label: 10 cm
-    - id: b
-      label: 11 cm
-    - id: c
       label: 12 cm
-    - id: d
+    - id: b
       label: 5⅓ cm
+    - id: c
+      label: 10 cm
+    - id: d
+      label: 11 cm
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: a
   acceptedForms:
     - 12 cm
   solutionPaths: []

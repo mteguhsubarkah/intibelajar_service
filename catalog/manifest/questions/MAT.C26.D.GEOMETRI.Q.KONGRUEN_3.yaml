@@ -20,20 +20,20 @@ body:
   prompt: Pada segitiga ABC dan DEF diketahui AB = DE dan ∠B = ∠E. Agar kedua segitiga kongruen dengan syarat s-sd-s, harus diketahui juga …
   options:
     - id: a
-      label: BC = EF
-    - id: b
-      label: AC = DF
-    - id: c
       label: ∠A = ∠D
-    - id: d
+    - id: b
       label: ∠C = ∠F
+    - id: c
+      label: BC = EF
+    - id: d
+      label: AC = DF
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: c
   acceptedForms:
     - BC = EF
   solutionPaths: []

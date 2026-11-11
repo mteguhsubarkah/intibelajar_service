@@ -20,20 +20,20 @@ body:
   prompt: Keliling sebuah persegi panjang 46 cm. Panjangnya 5 cm lebih dari lebarnya. Lebar persegi panjang itu adalah …
   options:
     - id: a
-      label: 9 cm
-    - id: b
       label: 14 cm
-    - id: c
+    - id: b
       label: 18 cm
-    - id: d
+    - id: c
       label: 10,5 cm
+    - id: d
+      label: 9 cm
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
     - 9 cm
   solutionPaths: []

@@ -20,20 +20,20 @@ body:
   prompt: Pelurus sudut 65° adalah …
   options:
     - id: a
-      label: 25°
-    - id: b
-      label: 115°
-    - id: c
       label: 125°
-    - id: d
+    - id: b
       label: 295°
+    - id: c
+      label: 25°
+    - id: d
+      label: 115°
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 115°
   solutionPaths: []

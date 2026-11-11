@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_1
+familyCode: BIO.C26.D.ORGAN.F.SEL_SAMPAI_ORGANISME_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan tingkat organisasi kehidupan yang benar adalah …
+  options:
+    - id: a
+      label: sel → jaringan → organ → sistem organ
+    - id: b
+      label: jaringan → sel → organ → organisme
+    - id: c
+      label: organ → sel → jaringan → organisme
+    - id: d
+      label: sel → organ → jaringan → sistem organ
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sel → jaringan → organ → sistem organ
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+  feedback:
+    correct: Sel membentuk jaringan, jaringan membentuk organ, organ membentuk sistem organ.
+    incorrect: Jawabannya sel → jaringan → organ → sistem organ. Sel membentuk jaringan, jaringan membentuk organ, organ membentuk sistem organ.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -20,20 +20,20 @@ body:
   prompt: Penyelesaian dari −4x ≥ 12 adalah …
   options:
     - id: a
-      label: x ≥ −3
-    - id: b
-      label: x ≤ −3
-    - id: c
-      label: x ≥ 3
-    - id: d
       label: x ≤ 3
+    - id: b
+      label: x ≥ −3
+    - id: c
+      label: x ≤ −3
+    - id: d
+      label: x ≥ 3
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
     - x ≤ −3
   solutionPaths: []

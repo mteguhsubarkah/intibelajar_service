@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_1
+familyCode: BIO.C26.D.EKOLOGI.F.PERUBAHAN_LINGKUNGAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gas utama penyebab efek rumah kaca dari kendaraan bermotor adalah …
+  options:
+    - id: a
+      label: hidrogen
+    - id: b
+      label: oksigen
+    - id: c
+      label: karbon dioksida
+    - id: d
+      label: nitrogen
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - karbon dioksida
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+  feedback:
+    correct: Pembakaran bensin menghasilkan karbon dioksida yang memerangkap panas di atmosfer.
+    incorrect: Jawabannya karbon dioksida. Pembakaran bensin menghasilkan karbon dioksida yang memerangkap panas di atmosfer.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

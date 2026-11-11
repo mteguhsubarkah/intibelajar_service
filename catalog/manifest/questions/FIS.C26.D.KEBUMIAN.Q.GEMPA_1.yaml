@@ -20,20 +20,20 @@ body:
   prompt: Titik di permukaan Bumi yang tepat berada di atas sumber gempa disebut …
   options:
     - id: a
-      label: hiposentrum
-    - id: b
-      label: episentrum
-    - id: c
       label: magma
-    - id: d
+    - id: b
       label: palung
+    - id: c
+      label: hiposentrum
+    - id: d
+      label: episentrum
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - episentrum
   solutionPaths: []

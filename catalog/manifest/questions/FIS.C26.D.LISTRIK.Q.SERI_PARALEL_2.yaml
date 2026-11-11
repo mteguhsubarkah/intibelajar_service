@@ -20,20 +20,20 @@ body:
   prompt: Dua hambatan 6 Ω dan 3 Ω disusun paralel. Hambatan penggantinya adalah …
   options:
     - id: a
-      label: 9 Ω
-    - id: b
-      label: 2 Ω
-    - id: c
       label: 4,5 Ω
-    - id: d
+    - id: b
       label: 0,5 Ω
+    - id: c
+      label: 9 Ω
+    - id: d
+      label: 2 Ω
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - 2 Ω
   solutionPaths: []

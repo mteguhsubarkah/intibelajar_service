@@ -20,20 +20,20 @@ body:
   prompt: "Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …"
   options:
     - id: a
-      label: 2 km
-    - id: b
       label: 20 km
-    - id: c
+    - id: b
       label: 200 km
-    - id: d
+    - id: c
       label: 2.000 km
+    - id: d
+      label: 2 km
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: a
   acceptedForms:
     - 20 km
   solutionPaths: []

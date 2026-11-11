@@ -20,20 +20,20 @@ body:
   prompt: Sebuah bandul bergetar 30 kali dalam 15 sekon. Frekuensinya adalah …
   options:
     - id: a
-      label: 2 Hz
-    - id: b
-      label: 0,5 Hz
-    - id: c
-      label: 45 Hz
-    - id: d
       label: 15 Hz
+    - id: b
+      label: 2 Hz
+    - id: c
+      label: 0,5 Hz
+    - id: d
+      label: 45 Hz
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
     - 2 Hz
   solutionPaths: []

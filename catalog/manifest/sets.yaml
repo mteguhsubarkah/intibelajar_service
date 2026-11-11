@@ -2186,6 +2186,272 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: KIM.C26.D.MATERI.S.UNSUR_SENYAWA_DAN_CAMPURAN
+    title: Latihan Unsur, senyawa & campuran
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_1
+      - KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_2
+      - KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.MATERI.S.PERUBAHAN_DAN_PEMISAHAN
+    title: Latihan Perubahan dan pemisahan
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_1
+      - KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_2
+      - KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.MATERI.S.PEMISAHAN
+    title: Latihan Metode pemisahan campuran
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.MATERI.Q.PEMISAHAN_1
+      - KIM.C26.D.MATERI.Q.PEMISAHAN_2
+      - KIM.C26.D.MATERI.Q.PEMISAHAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.ZAT.S.FUNGSI_ZAT_ADITIF
+    title: Latihan Fungsi zat aditif
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.ZAT.Q.FUNGSI_ZAT_ADITIF_1
+      - KIM.C26.D.ZAT.Q.FUNGSI_ZAT_ADITIF_2
+      - KIM.C26.D.ZAT.Q.FUNGSI_ZAT_ADITIF_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.ZAT.S.RISIKO_ZAT_ADIKTIF
+    title: Latihan Risiko zat adiktif
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_1
+      - KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_2
+      - KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.KLASIFIKASI.S.CIRI_KEHIDUPAN
+    title: Latihan Ciri kehidupan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_1
+      - BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_2
+      - BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.KLASIFIKASI.S.KLASIFIKASI_BERDASARKAN_KARAKTER
+    title: Latihan Klasifikasi berdasarkan karakter
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_1
+      - BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_2
+      - BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.ORGAN.S.SEL_SAMPAI_ORGANISME
+    title: Latihan Sel sampai organisme
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_1
+      - BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_2
+      - BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.ORGAN.S.FUNGSI_DAN_GANGGUAN_SISTEM
+    title: Latihan Fungsi dan gangguan sistem
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.ORGAN.Q.FUNGSI_DAN_GANGGUAN_SISTEM_1
+      - BIO.C26.D.ORGAN.Q.FUNGSI_DAN_GANGGUAN_SISTEM_2
+      - BIO.C26.D.ORGAN.Q.FUNGSI_DAN_GANGGUAN_SISTEM_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.ORGAN.S.PENCERNAAN
+    title: Latihan Pencernaan dan penyerapan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.ORGAN.Q.PENCERNAAN_1
+      - BIO.C26.D.ORGAN.Q.PENCERNAAN_2
+      - BIO.C26.D.ORGAN.Q.PENCERNAAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.ORGAN.S.PERNAPASAN
+    title: Latihan Sistem pernapasan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.ORGAN.Q.PERNAPASAN_1
+      - BIO.C26.D.ORGAN.Q.PERNAPASAN_2
+      - BIO.C26.D.ORGAN.Q.PERNAPASAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.ORGAN.S.PEREDARAN
+    title: Latihan Sistem peredaran darah
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.ORGAN.Q.PEREDARAN_1
+      - BIO.C26.D.ORGAN.Q.PEREDARAN_2
+      - BIO.C26.D.ORGAN.Q.PEREDARAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.ORGAN.S.EKSKRESI
+    title: Latihan Ekskresi & keseimbangan cairan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.ORGAN.Q.EKSKRESI_1
+      - BIO.C26.D.ORGAN.Q.EKSKRESI_2
+      - BIO.C26.D.ORGAN.Q.EKSKRESI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.EKOLOGI.S.INTERAKSI_DAN_ALIRAN_ENERGI
+    title: Latihan Interaksi & aliran energi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.EKOLOGI.Q.INTERAKSI_DAN_ALIRAN_ENERGI_1
+      - BIO.C26.D.EKOLOGI.Q.INTERAKSI_DAN_ALIRAN_ENERGI_2
+      - BIO.C26.D.EKOLOGI.Q.INTERAKSI_DAN_ALIRAN_ENERGI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.EKOLOGI.S.PERUBAHAN_LINGKUNGAN
+    title: Latihan Perubahan lingkungan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_1
+      - BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_2
+      - BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.EKOLOGI.S.JEJARING
+    title: Latihan Rantai dan jaring makanan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.EKOLOGI.Q.JEJARING_1
+      - BIO.C26.D.EKOLOGI.Q.JEJARING_2
+      - BIO.C26.D.EKOLOGI.Q.JEJARING_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.GENETIKA.S.GEN_DAN_VARIASI
+    title: Latihan Gen dan variasi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_1
+      - BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_2
+      - BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.GENETIKA.S.FERMENTASI
+    title: Latihan Fermentasi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.GENETIKA.Q.FERMENTASI_1
+      - BIO.C26.D.GENETIKA.Q.FERMENTASI_2
+      - BIO.C26.D.GENETIKA.Q.FERMENTASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.GENETIKA.S.FENOTIPE
+    title: Latihan Genotipe dan fenotipe
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.GENETIKA.Q.FENOTIPE_1
+      - BIO.C26.D.GENETIKA.Q.FENOTIPE_2
+      - BIO.C26.D.GENETIKA.Q.FENOTIPE_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: FIS.C26.D.ANTARIKSA.S.SISTEM_TATA_SURYA
     title: Latihan Sistem tata surya
     origin: CONCEPT_LESSON
@@ -2291,6 +2557,160 @@ sets:
       - FIS.C26.D.KEBUMIAN.Q.MITIGASI_1
       - FIS.C26.D.KEBUMIAN.Q.MITIGASI_2
       - FIS.C26.D.KEBUMIAN.Q.MITIGASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.REAKSI.S.CIRI_CIRI_REAKSI_KIMIA
+    title: Latihan Ciri-ciri reaksi kimia
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_1
+      - KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_2
+      - KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.REAKSI.S.MASSA
+    title: Latihan Hukum kekekalan massa
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.REAKSI.Q.MASSA_1
+      - KIM.C26.D.REAKSI.Q.MASSA_2
+      - KIM.C26.D.REAKSI.Q.MASSA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.REAKSI.S.PERSAMAAN
+    title: Latihan Persamaan reaksi sederhana
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.REAKSI.Q.PERSAMAAN_1
+      - KIM.C26.D.REAKSI.Q.PERSAMAAN_2
+      - KIM.C26.D.REAKSI.Q.PERSAMAAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.D.REAKSI.S.ASAMBASA
+    title: Latihan Asam, basa, dan indikator
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.D.REAKSI.Q.ASAMBASA_1
+      - KIM.C26.D.REAKSI.Q.ASAMBASA_2
+      - KIM.C26.D.REAKSI.Q.ASAMBASA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.KOORDINASI.S.SISTEM_SARAF_DAN_INDRA
+    title: Latihan Sistem saraf dan indra
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_1
+      - BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_2
+      - BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.KOORDINASI.S.HORMON
+    title: Latihan Sistem hormon
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.KOORDINASI.Q.HORMON_1
+      - BIO.C26.D.KOORDINASI.Q.HORMON_2
+      - BIO.C26.D.KOORDINASI.Q.HORMON_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.KOORDINASI.S.REPRODUKSI
+    title: Latihan Reproduksi dan kesehatan reproduksi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.KOORDINASI.Q.REPRODUKSI_1
+      - BIO.C26.D.KOORDINASI.Q.REPRODUKSI_2
+      - BIO.C26.D.KOORDINASI.Q.REPRODUKSI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.KOORDINASI.S.HOMEOSTASIS
+    title: Latihan Homeostasis
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_1
+      - BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_2
+      - BIO.C26.D.KOORDINASI.Q.HOMEOSTASIS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.TUMBUH.S.PERTUMBUHAN_DAN_PERKEMBANGAN
+    title: Latihan Pertumbuhan dan perkembangan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_1
+      - BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_2
+      - BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.TUMBUH.S.FAKTOR
+    title: Latihan Faktor internal dan eksternal
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.TUMBUH.Q.FAKTOR_1
+      - BIO.C26.D.TUMBUH.Q.FAKTOR_2
+      - BIO.C26.D.TUMBUH.Q.FAKTOR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.D.TUMBUH.S.DAURHIDUP
+    title: Latihan Daur hidup dan metamorfosis
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.D.TUMBUH.Q.DAURHIDUP_1
+      - BIO.C26.D.TUMBUH.Q.DAURHIDUP_2
+      - BIO.C26.D.TUMBUH.Q.DAURHIDUP_3
     review:
       status: PROPOSED
       decision: D7

@@ -20,20 +20,20 @@ body:
   prompt: Mean dari data 6, 8, 7, 9, 10 adalah …
   options:
     - id: a
-      label: "7"
-    - id: b
-      label: "8"
-    - id: c
       label: "9"
-    - id: d
+    - id: b
       label: "40"
+    - id: c
+      label: "7"
+    - id: d
+      label: "8"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
     - "8"
   solutionPaths: []
