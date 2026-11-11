@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: MAT.TRI.L.SOAL_KONTEKSTUAL
+title: Soal Kontekstual
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.TRI.SOAL_KONTEKSTUAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari cerita ke segitiga
+  - type: text
+    slide: 0
+    text: "1) Gambar sketsa dan tandai yang diketahui. 2) Tentukan segitiganya: siku-siku atau sembarang. 3) Pilih alat: sin, cos, tan untuk segitiga siku-siku; aturan sinus atau cosinus untuk segitiga sembarang. 4) Hitung, lalu periksa satuan dan kewajarannya."
+  - type: math
+    slide: 0
+    name: siku-siku
+    expression: sin, cos, tan
+    highlight: true
+  - type: math
+    slide: 0
+    name: sembarang
+    expression: aturan sinus / cosinus
+  - type: heading
+    slide: 1
+    text: Arah jurusan tiga angka
+  - type: text
+    slide: 1
+    text: "Dalam navigasi, arah ditulis sebagai **jurusan tiga angka**, diukur dari arah **utara searah jarum jam**: timur = 090°, selatan = 180°, barat = 270°."
+  - type: text
+    slide: 1
+    text: Sudut antara dua lintasan dari titik yang sama adalah selisih jurusannya, yang lalu dipakai dalam aturan cosinus.
+  - type: math
+    slide: 1
+    name: timur
+    expression: 090°
+    highlight: true
+  - type: math
+    slide: 1
+    name: selatan
+    expression: 180°
+  - type: tip
+    slide: 1
+    text: Jangan lupa tinggi mata pengamat atau tinggi alat ukur jika disebut dalam soal.
+checks:
+  - question: MAT.TRI.Q.SOAL_KONTEKSTUAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.SOAL_KONTEKSTUAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

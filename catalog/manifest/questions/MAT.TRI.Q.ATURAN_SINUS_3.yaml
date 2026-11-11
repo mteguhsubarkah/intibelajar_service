@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.ATURAN_SINUS_3
+familyCode: MAT.TRI.F.ATURAN_SINUS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.ATURAN_SINUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Aturan sinus paling tepat dipakai untuk mencari unsur segitiga jika yang diketahui …
+  options:
+    - id: a
+      label: tiga sudut saja
+    - id: b
+      label: dua sudut dan satu sisi
+    - id: c
+      label: tiga sisi
+    - id: d
+      label: dua sisi dan sudut yang diapitnya
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - dua sudut dan satu sisi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.ATURAN_SINUS
+  feedback:
+    correct: Dengan dua sudut, sudut ketiga ikut diketahui, sehingga setiap sisi bisa dipasangkan dengan sinus sudut di depannya. Tiga sisi atau dua sisi dengan sudut apit memerlukan aturan cosinus.
+    incorrect: Jawabannya dua sudut dan satu sisi. Dengan dua sudut, sudut ketiga ikut diketahui, sehingga setiap sisi bisa dipasangkan dengan sinus sudut di depannya. Tiga sisi atau dua sisi dengan sudut apit memerlukan aturan cosinus.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

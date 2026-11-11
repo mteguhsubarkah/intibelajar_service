@@ -3217,3 +3217,199 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: MAT.TRI.S.UKURAN_SUDUT
+    title: Latihan Ukuran Sudut
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.UKURAN_SUDUT_1
+      - MAT.TRI.Q.UKURAN_SUDUT_2
+      - MAT.TRI.Q.UKURAN_SUDUT_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.RADIAN
+    title: Latihan Radian
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.RADIAN_1
+      - MAT.TRI.Q.RADIAN_2
+      - MAT.TRI.Q.RADIAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.KUADRAN_TANDA
+    title: Latihan Kuadran & Tanda
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.KUADRAN_TANDA_1
+      - MAT.TRI.Q.KUADRAN_TANDA_2
+      - MAT.TRI.Q.KUADRAN_TANDA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.SUDUT_BERELASI
+    title: Latihan Sudut Berelasi
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.SUDUT_BERELASI_1
+      - MAT.TRI.Q.SUDUT_BERELASI_2
+      - MAT.TRI.Q.SUDUT_BERELASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.IDENTITAS_DASAR
+    title: Latihan Identitas Dasar
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.IDENTITAS_DASAR_1
+      - MAT.TRI.Q.IDENTITAS_DASAR_2
+      - MAT.TRI.Q.IDENTITAS_DASAR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.ATURAN_SINUS
+    title: Latihan Aturan Sinus
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.ATURAN_SINUS_1
+      - MAT.TRI.Q.ATURAN_SINUS_2
+      - MAT.TRI.Q.ATURAN_SINUS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.ATURAN_COSINUS
+    title: Latihan Aturan Cosinus
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.ATURAN_COSINUS_1
+      - MAT.TRI.Q.ATURAN_COSINUS_2
+      - MAT.TRI.Q.ATURAN_COSINUS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.LUAS_SEGITIGA
+    title: Latihan Luas Segitiga
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.LUAS_SEGITIGA_1
+      - MAT.TRI.Q.LUAS_SEGITIGA_2
+      - MAT.TRI.Q.LUAS_SEGITIGA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.LINGKARAN_SATUAN
+    title: Latihan Lingkaran Satuan
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.LINGKARAN_SATUAN_1
+      - MAT.TRI.Q.LINGKARAN_SATUAN_2
+      - MAT.TRI.Q.LINGKARAN_SATUAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.GRAFIK_SIN_COS_TAN
+    title: Latihan Grafik sin, cos, tan
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.GRAFIK_SIN_COS_TAN_1
+      - MAT.TRI.Q.GRAFIK_SIN_COS_TAN_2
+      - MAT.TRI.Q.GRAFIK_SIN_COS_TAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.PERIODE_AMPLITUDO
+    title: Latihan Periode & Amplitudo
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.PERIODE_AMPLITUDO_1
+      - MAT.TRI.Q.PERIODE_AMPLITUDO_2
+      - MAT.TRI.Q.PERIODE_AMPLITUDO_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.PERSAMAAN_SEDERHANA
+    title: Latihan Persamaan Sederhana
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.PERSAMAAN_SEDERHANA_1
+      - MAT.TRI.Q.PERSAMAAN_SEDERHANA_2
+      - MAT.TRI.Q.PERSAMAAN_SEDERHANA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.PERSAMAAN_DENGAN_IDENTITAS
+    title: Latihan Persamaan dengan Identitas
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.PERSAMAAN_DENGAN_IDENTITAS_1
+      - MAT.TRI.Q.PERSAMAAN_DENGAN_IDENTITAS_2
+      - MAT.TRI.Q.PERSAMAAN_DENGAN_IDENTITAS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.TRI.S.SOAL_KONTEKSTUAL
+    title: Latihan Soal Kontekstual
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.TRI.Q.SOAL_KONTEKSTUAL_1
+      - MAT.TRI.Q.SOAL_KONTEKSTUAL_2
+      - MAT.TRI.Q.SOAL_KONTEKSTUAL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini

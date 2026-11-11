@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.PERSAMAAN_DENGAN_IDENTITAS_3
+familyCode: MAT.TRI.F.PERSAMAAN_DENGAN_IDENTITAS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.PERSAMAAN_DENGAN_IDENTITAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Himpunan penyelesaian cos²x − cos x − 2 = 0 untuk 0° ≤ x ≤ 360° adalah …
+  options:
+    - id: a
+      label: tidak ada penyelesaian
+    - id: b
+      label: "{180°}"
+    - id: c
+      label: "{0°, 180°}"
+    - id: d
+      label: "{60°, 180°}"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "{180°}"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.PERSAMAAN_DENGAN_IDENTITAS
+  feedback:
+    correct: (cos x − 2)(cos x + 1) = 0. cos x = 2 tidak mungkin, jadi hanya cos x = −1, yaitu x = 180°.
+    incorrect: Jawabannya {180°}. (cos x − 2)(cos x + 1) = 0. cos x = 2 tidak mungkin, jadi hanya cos x = −1, yaitu x = 180°.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.IDENTITAS_DASAR_2
+familyCode: MAT.TRI.F.IDENTITAS_DASAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.IDENTITAS_DASAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika sin x = 3/5 dan x sudut lancip, nilai tan x adalah …
+  options:
+    - id: a
+      label: 4/3
+    - id: b
+      label: 4/5
+    - id: c
+      label: 3/5
+    - id: d
+      label: 3/4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 3/4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.IDENTITAS_DASAR
+  feedback:
+    correct: cos²x = 1 − 9/25 = 16/25, jadi cos x = 4/5 (positif untuk sudut lancip). tan x = (3/5) / (4/5) = 3/4.
+    incorrect: Jawabannya 3/4. cos²x = 1 − 9/25 = 16/25, jadi cos x = 4/5 (positif untuk sudut lancip). tan x = (3/5) / (4/5) = 3/4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

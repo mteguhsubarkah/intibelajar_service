@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.TRI.L.PERIODE_AMPLITUDO
+title: Periode & Amplitudo
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.TRI.PERIODE_AMPLITUDO
+blocks:
+  - type: heading
+    slide: 0
+    text: Membaca y = a sin kx + c
+  - type: text
+    slide: 0
+    text: "**Amplitudo** = |a|, yaitu setengah jarak puncak ke lembah. **Periode** = 360° / |k|, yaitu panjang satu gelombang penuh."
+  - type: text
+    slide: 0
+    text: Nilai maksimum = c + |a| dan nilai minimum = c − |a|. Aturan yang sama berlaku untuk y = a cos kx + c.
+  - type: math
+    slide: 0
+    name: amplitudo
+    expression: "|a|"
+    highlight: true
+  - type: math
+    slide: 0
+    name: periode sin, cos
+    expression: 360° / |k|
+  - type: math
+    slide: 0
+    name: maks / min
+    expression: c ± |a|
+  - type: heading
+    slide: 1
+    text: Tangen dan pergeseran
+  - type: text
+    slide: 1
+    text: Untuk **y = a tan kx**, periodenya **180° / |k|**, dan tidak ada amplitudo karena grafiknya tidak terbatas.
+  - type: text
+    slide: 1
+    text: Bentuk y = sin(x − α) menggeser grafik y = sin x sejauh α ke kanan; y = sin x + c menggesernya c satuan ke atas.
+  - type: math
+    slide: 1
+    name: periode tan
+    expression: 180° / |k|
+    highlight: true
+  - type: tip
+    slide: 1
+    text: k mengubah periode, a mengubah tinggi gelombang, c menggeser naik atau turun.
+checks:
+  - question: MAT.TRI.Q.PERIODE_AMPLITUDO_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.PERIODE_AMPLITUDO
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

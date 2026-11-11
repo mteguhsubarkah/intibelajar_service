@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.TRI.L.RADIAN
+title: Radian
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.TRI.RADIAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Apa itu radian
+  - type: text
+    slide: 0
+    text: Satu **radian** adalah sudut pusat yang busurnya sama panjang dengan jari-jari lingkaran.
+  - type: text
+    slide: 0
+    text: Keliling lingkaran 2πr memuat 2π jari-jari, jadi satu putaran = **2π rad** = 360°, sehingga **π rad = 180°**.
+  - type: math
+    slide: 0
+    name: π rad
+    expression: 180°
+    highlight: true
+  - type: math
+    slide: 0
+    name: 1 rad
+    expression: ≈ 57,3°
+  - type: heading
+    slide: 1
+    text: Konversi dan panjang busur
+  - type: text
+    slide: 1
+    text: "Derajat ke radian: kalikan **π/180°**. Radian ke derajat: kalikan **180°/π**. Contoh: 90° = π/2 rad."
+  - type: text
+    slide: 1
+    text: Jika sudut pusat θ dinyatakan dalam radian, panjang busurnya **s = r · θ**.
+  - type: math
+    slide: 1
+    name: derajat → radian
+    expression: × π/180°
+    highlight: true
+  - type: math
+    slide: 1
+    name: panjang busur
+    expression: s = r · θ
+  - type: tip
+    slide: 1
+    text: Rumus s = r · θ hanya berlaku jika θ dalam radian. Ubah dulu bila sudut diberikan dalam derajat.
+checks:
+  - question: MAT.TRI.Q.RADIAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.RADIAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

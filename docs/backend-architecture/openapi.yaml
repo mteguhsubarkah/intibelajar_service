@@ -638,7 +638,10 @@ paths:
             maxLength: 512
       responses:
         '302':
-          description: Redirect to the continuation route (or to onboarding for a new learner, or back with a cancelled flag).
+          description: >-
+            Redirect to the continuation route (or to onboarding for a new learner, or back with authCancelled=1).
+            A refused callback (expired or replayed transaction, other browser, provider unavailable, account unavailable)
+            is a browser navigation, so it also redirects, to /masuk?authError={code}, without setting or clearing a cookie.
           headers:
             Location:
               $ref: '#/components/headers/Location'
@@ -646,8 +649,6 @@ paths:
               $ref: '#/components/headers/SetSessionCookie'
         '400':
           $ref: '#/components/responses/BadRequest'
-        '410':
-          $ref: '#/components/responses/Gone'
   /v1/auth/email/links:
     post:
       operationId: sendEmailSignInLink

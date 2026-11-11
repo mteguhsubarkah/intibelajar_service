@@ -5,6 +5,7 @@ import type { Lesson, LessonBlock, PracticeSet, Question, Review, Topic } from '
 import type { PilotExisting, PilotQuestion, PilotSlide, PilotTopic } from './pilot/types.js';
 import { MAT_TOPICS, MAT_RELATIONS } from './pilot/mat.js';
 import { MAT_EXISTING } from './pilot/mat-existing.js';
+import { TRI_EXISTING } from './pilot/tri-existing.js';
 import { MULTI } from './pilot/multi.js';
 import { FIS_TOPICS, FIS_RELATIONS } from './pilot/fis.js';
 import { KIM_TOPICS, KIM_RELATIONS } from './pilot/kim.js';
@@ -21,7 +22,7 @@ export const PILOT_DECISION = 'D7';
 export const AUDIT_DECISION = 'D9';
 const OURS = new Set([PILOT_DECISION, AUDIT_DECISION]);
 const TOPICS: PilotTopic[] = [...MAT_TOPICS, ...FIS_TOPICS, ...KIM_TOPICS, ...BIO_TOPICS, ...PLANNED_TOPICS];
-const EXISTING: PilotExisting[] = MAT_EXISTING;
+const EXISTING: PilotExisting[] = [...MAT_EXISTING, ...TRI_EXISTING];
 const RELATIONS = [...MAT_RELATIONS, ...FIS_RELATIONS, ...KIM_RELATIONS, ...BIO_RELATIONS, ...PLANNED_RELATIONS];
 
 /** Alias MAP inti pilot; FE (src/data/intiverse.ts) memakai rumus yang sama untuk menautkan peta ke katalog. */

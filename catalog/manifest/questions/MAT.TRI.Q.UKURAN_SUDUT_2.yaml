@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.UKURAN_SUDUT_2
+familyCode: MAT.TRI.F.UKURAN_SUDUT_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.UKURAN_SUDUT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sudut yang koterminal dengan 400° dan berada di antara 0° dan 360° adalah …
+  options:
+    - id: a
+      label: 320°
+    - id: b
+      label: 760°
+    - id: c
+      label: 40°
+    - id: d
+      label: 140°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 40°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.UKURAN_SUDUT
+  feedback:
+    correct: 400° − 360° = 40°. Keduanya berselisih satu putaran penuh, jadi sisi akhirnya sama.
+    incorrect: Jawabannya 40°. 400° − 360° = 40°. Keduanya berselisih satu putaran penuh, jadi sisi akhirnya sama.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

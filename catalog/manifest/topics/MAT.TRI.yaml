@@ -67,7 +67,7 @@ concepts:
     estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-b
@@ -81,7 +81,7 @@ concepts:
     estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-b2
@@ -192,7 +192,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-g
@@ -206,7 +206,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-h
@@ -229,7 +229,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-i
@@ -243,7 +243,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-j
@@ -257,7 +257,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-k
@@ -271,7 +271,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-l
@@ -285,7 +285,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-m
@@ -299,7 +299,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-n
@@ -313,7 +313,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-o
@@ -341,7 +341,7 @@ concepts:
     estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-q
@@ -355,7 +355,7 @@ concepts:
     estimatedMinutes: 7
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-q2
@@ -369,7 +369,7 @@ concepts:
     estimatedMinutes: 10
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: tri-r

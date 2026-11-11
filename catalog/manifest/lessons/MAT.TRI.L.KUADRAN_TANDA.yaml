@@ -1,0 +1,66 @@
+schemaVersion: 1
+code: MAT.TRI.L.KUADRAN_TANDA
+title: Kuadran & Tanda
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.TRI.KUADRAN_TANDA
+blocks:
+  - type: heading
+    slide: 0
+    text: Sudut di bidang koordinat
+  - type: text
+    slide: 0
+    text: Ambil titik (x, y) pada sisi akhir sudut θ. Jaraknya ke pusat **r = √(x² + y²)**. Karena r adalah jarak, nilainya **selalu positif**.
+  - type: text
+    slide: 0
+    text: "Definisinya: **sin θ = y/r**, **cos θ = x/r**, **tan θ = y/x**. Tanda tiap rasio ditentukan oleh tanda x dan y."
+  - type: math
+    slide: 0
+    name: sin θ
+    expression: y / r
+    highlight: true
+  - type: math
+    slide: 0
+    name: cos θ
+    expression: x / r
+  - type: math
+    slide: 0
+    name: tan θ
+    expression: y / x
+  - type: heading
+    slide: 1
+    text: Tanda di empat kuadran
+  - type: text
+    slide: 1
+    text: "Kuadran I (x +, y +): semua positif. Kuadran II (x −, y +): hanya **sin** positif. Kuadran III (x −, y −): hanya **tan** positif. Kuadran IV (x +, y −): hanya **cos** positif."
+  - type: math
+    slide: 1
+    name: kuadran II
+    expression: sin +
+    highlight: true
+  - type: math
+    slide: 1
+    name: kuadran III
+    expression: tan +
+  - type: math
+    slide: 1
+    name: kuadran IV
+    expression: cos +
+  - type: tip
+    slide: 1
+    text: Tentukan dulu kuadrannya, baru tandanya. Nilai mutlaknya tetap dihitung dari segitiga siku-siku seperti biasa.
+checks:
+  - question: MAT.TRI.Q.KUADRAN_TANDA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.KUADRAN_TANDA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.TRI.L.IDENTITAS_DASAR
+title: Identitas Dasar
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.TRI.IDENTITAS_DASAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari Pythagoras ke identitas
+  - type: text
+    slide: 0
+    text: "Pada titik (x, y) berjarak r, berlaku x² + y² = r². Bagi kedua ruas dengan r²: (x/r)² + (y/r)² = 1."
+  - type: text
+    slide: 0
+    text: Itulah **sin²θ + cos²θ = 1**, berlaku untuk setiap sudut θ. Selain itu, **tan θ = sin θ / cos θ**.
+  - type: math
+    slide: 0
+    name: sin²θ + cos²θ
+    expression: "1"
+    highlight: true
+  - type: math
+    slide: 0
+    name: tan θ
+    expression: sin θ / cos θ
+  - type: heading
+    slide: 1
+    text: Turunan dan cara memakainya
+  - type: text
+    slide: 1
+    text: "Bagi sin²θ + cos²θ = 1 dengan cos²θ: **1 + tan²θ = sec²θ**. Bagi dengan sin²θ: **1 + cot²θ = csc²θ**."
+  - type: text
+    slide: 1
+    text: Untuk menyederhanakan atau membuktikan identitas, ubah semuanya ke sin dan cos, lalu olah satu ruas sampai sama dengan ruas lainnya.
+  - type: math
+    slide: 1
+    name: 1 + tan²θ
+    expression: sec²θ
+    highlight: true
+  - type: math
+    slide: 1
+    name: 1 + cot²θ
+    expression: csc²θ
+  - type: tip
+    slide: 1
+    text: Bentuk 1 − cos²θ dan 1 − sin²θ sering muncul. Ganti dengan sin²θ dan cos²θ.
+checks:
+  - question: MAT.TRI.Q.IDENTITAS_DASAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.IDENTITAS_DASAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

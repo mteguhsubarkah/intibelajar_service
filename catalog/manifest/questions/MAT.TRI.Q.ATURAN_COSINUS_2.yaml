@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.TRI.Q.ATURAN_COSINUS_2
+familyCode: MAT.TRI.F.ATURAN_COSINUS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.TRI.ATURAN_COSINUS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah segitiga memiliki sisi 7 cm, 8 cm, dan 13 cm. Besar sudut terbesarnya adalah …
+  options:
+    - id: a
+      label: 150°
+    - id: b
+      label: 90°
+    - id: c
+      label: 120°
+    - id: d
+      label: 60°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 120°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.TRI.ATURAN_COSINUS
+  feedback:
+    correct: Sudut terbesar berada di depan sisi 13. cos C = (49 + 64 − 169) / (2 · 7 · 8) = −56/112 = −½, jadi C = 120°.
+    incorrect: Jawabannya 120°. Sudut terbesar berada di depan sisi 13. cos C = (49 + 64 − 169) / (2 · 7 · 8) = −56/112 = −½, jadi C = 120°.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

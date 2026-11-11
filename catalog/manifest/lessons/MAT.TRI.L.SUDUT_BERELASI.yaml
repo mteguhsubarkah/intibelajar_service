@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.TRI.L.SUDUT_BERELASI
+title: Sudut Berelasi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.TRI.SUDUT_BERELASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Kembali ke sudut lancip
+  - type: text
+    slide: 0
+    text: "Sudut di kuadran II, III, dan IV bisa ditulis memakai sudut lancip θ: **180° − θ**, **180° + θ**, atau **360° − θ**."
+  - type: text
+    slide: 0
+    text: Nilainya sama dengan nilai di θ; yang berubah hanya tanda, sesuai kuadrannya.
+  - type: math
+    slide: 0
+    name: sin(180° − θ)
+    expression: sin θ
+    highlight: true
+  - type: math
+    slide: 0
+    name: cos(180° + θ)
+    expression: −cos θ
+  - type: math
+    slide: 0
+    name: tan(360° − θ)
+    expression: −tan θ
+  - type: heading
+    slide: 1
+    text: Langkah dan kofungsi
+  - type: text
+    slide: 1
+    text: "Contoh: cos 210° = cos(180° + 30°). Sudut 210° ada di kuadran III, tempat cos negatif, jadi cos 210° = −cos 30° = −½√3."
+  - type: text
+    slide: 1
+    text: "Pasangan **90° − θ** menukar fungsi: sin(90° − θ) = cos θ dan cos(90° − θ) = sin θ."
+  - type: math
+    slide: 1
+    name: sin(90° − θ)
+    expression: cos θ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Urutannya: ubah ke 180° ± θ atau 360° − θ, tentukan tanda dari kuadran, lalu ambil nilai dari sudut θ."
+checks:
+  - question: MAT.TRI.Q.SUDUT_BERELASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.SUDUT_BERELASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

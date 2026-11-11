@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.TRI.L.ATURAN_COSINUS
+title: Aturan Cosinus
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - MAT.TRI.ATURAN_COSINUS
+blocks:
+  - type: heading
+    slide: 0
+    text: Pythagoras untuk segitiga sembarang
+  - type: text
+    slide: 0
+    text: "**a² = b² + c² − 2bc · cos A**, dan bentuk serupa untuk b² dan c²."
+  - type: text
+    slide: 0
+    text: Jika A = 90°, cos A = 0 dan rumus ini kembali menjadi Pythagoras.
+  - type: math
+    slide: 0
+    name: aturan cosinus
+    expression: a² = b² + c² − 2bc cos A
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mencari sisi atau sudut
+  - type: text
+    slide: 1
+    text: "Diketahui **dua sisi dan sudut apitnya**: hitung sisi ketiga. Diketahui **tiga sisi**: hitung sudut dengan **cos A = (b² + c² − a²) / (2bc)**."
+  - type: text
+    slide: 1
+    text: Jika cos A negatif, sudut A tumpul.
+  - type: math
+    slide: 1
+    name: mencari sudut
+    expression: cos A = (b² + c² − a²) / 2bc
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Saat mencari sudut terbesar, pilih sudut di depan sisi terpanjang.
+checks:
+  - question: MAT.TRI.Q.ATURAN_COSINUS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.TRI.S.ATURAN_COSINUS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran
