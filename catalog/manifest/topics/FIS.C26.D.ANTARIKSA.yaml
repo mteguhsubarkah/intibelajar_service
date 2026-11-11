@@ -1,0 +1,84 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA
+subject: FIS
+title: Bumi dan tata surya
+subtitle: Posisi dan gerak Bumi, Bulan, Matahari; rotasi, revolusi, dan gerhana
+phase: D
+availability: PLANNED
+bekal:
+  - gerak
+  - cahaya
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA
+    title: Sistem tata surya
+    subtitle: Matahari, planet, dan benda langit lain beserta posisinya
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-antariksa-c1
+  - code: FIS.C26.D.ANTARIKSA.ROTASI_DAN_REVOLUSI_BUMI
+    title: Rotasi dan revolusi Bumi
+    subtitle: Siang dan malam, gerak semu, dan pergantian musim
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-antariksa-rotasi
+  - code: FIS.C26.D.ANTARIKSA.GERAK_BULAN_DAN_FASENYA
+    title: Gerak Bulan dan fasenya
+    subtitle: Revolusi Bulan, fase Bulan, dan pasang surut
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-antariksa-bulan
+  - code: FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN
+    title: Gerhana Matahari dan Bulan
+    subtitle: Posisi Bumi, Bulan, Matahari saat gerhana dan dampaknya
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-antariksa-gerhana
+prerequisites:
+  - concept: FIS.C26.D.ANTARIKSA.ROTASI_DAN_REVOLUSI_BUMI
+    requires: FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA
+    kind: SOFT
+  - concept: FIS.C26.D.ANTARIKSA.GERAK_BULAN_DAN_FASENYA
+    requires: FIS.C26.D.ANTARIKSA.ROTASI_DAN_REVOLUSI_BUMI
+    kind: SOFT
+  - concept: FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN
+    requires: FIS.C26.D.ANTARIKSA.GERAK_BULAN_DAN_FASENYA
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

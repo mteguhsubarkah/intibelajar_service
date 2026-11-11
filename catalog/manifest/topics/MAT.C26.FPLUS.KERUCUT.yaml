@@ -1,0 +1,68 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KERUCUT
+subject: MAT
+title: Irisan kerucut
+subtitle: Parabola, elips, dan hiperbola
+phase: F+
+availability: PLANNED
+bekal:
+  - persamaan kuadrat
+  - jarak dua titik
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.FPLUS.KERUCUT.PARABOLA
+    title: Parabola
+    subtitle: Fokus, direktriks, dan persamaan parabola
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-fplus-kerucut-c1
+  - code: MAT.C26.FPLUS.KERUCUT.ELIPS
+    title: Elips
+    subtitle: Dua fokus, sumbu mayor–minor, dan persamaan elips
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-fplus-kerucut-c2
+  - code: MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+    title: Hiperbola
+    subtitle: Fokus, asimtot, dan persamaan hiperbola
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-fplus-kerucut-hiperbola
+prerequisites:
+  - concept: MAT.C26.FPLUS.KERUCUT.ELIPS
+    requires: MAT.C26.FPLUS.KERUCUT.PARABOLA
+    kind: SOFT
+  - concept: MAT.C26.FPLUS.KERUCUT.HIPERBOLA
+    requires: MAT.C26.FPLUS.KERUCUT.ELIPS
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

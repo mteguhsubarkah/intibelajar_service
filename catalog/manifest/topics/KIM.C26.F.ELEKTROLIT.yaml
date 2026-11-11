@@ -1,0 +1,67 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT
+subject: KIM
+title: Larutan elektrolit
+subtitle: Ionisasi, disosiasi, elektrolit kuat–lemah, dan daya hantar listrik
+phase: F
+availability: PLANNED
+bekal:
+  - ikatan ion dan kovalen
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.ELEKTROLIT.IONISASI_DAN_DISOSIASI
+    title: Ionisasi dan disosiasi
+    subtitle: Senyawa ion dan kovalen polar menghasilkan ion dalam air
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-elektrolit-c1
+  - code: KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+    title: Elektrolit kuat, lemah, dan nonelektrolit
+    subtitle: Derajat ionisasi dan contoh larutan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-elektrolit-c2
+  - code: KIM.C26.F.ELEKTROLIT.DAYA_HANTAR_LISTRIK_LARUTAN
+    title: Daya hantar listrik larutan
+    subtitle: Membaca hasil uji nyala lampu dan gelembung gas
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-f-elektrolit-dayahantar
+prerequisites:
+  - concept: KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+    requires: KIM.C26.F.ELEKTROLIT.IONISASI_DAN_DISOSIASI
+    kind: HARD
+  - concept: KIM.C26.F.ELEKTROLIT.DAYA_HANTAR_LISTRIK_LARUTAN
+    requires: KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

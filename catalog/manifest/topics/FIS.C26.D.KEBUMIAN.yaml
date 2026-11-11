@@ -1,0 +1,84 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN
+subject: FIS
+title: Struktur Bumi dan mitigasi bencana
+subtitle: Lapisan Bumi, gerak lempeng, gempa, gunung api, dan mitigasi risiko
+phase: D
+availability: PLANNED
+bekal:
+  - gaya
+  - energi
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.KEBUMIAN.LAPISAN_BUMI
+    title: Lapisan Bumi
+    subtitle: Kerak, mantel, dan inti Bumi beserta sifatnya
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-kebumian-c1
+  - code: FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+    title: Gerak lempeng tektonik
+    subtitle: Batas divergen, konvergen, dan transform
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-kebumian-lempeng
+  - code: FIS.C26.D.KEBUMIAN.GEMPA_BUMI_DAN_GUNUNG_API
+    title: Gempa bumi dan gunung api
+    subtitle: Penyebab, gelombang gempa, dan jenis gunung api
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-kebumian-gempa
+  - code: FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+    title: Mitigasi bencana geologi
+    subtitle: Membaca risiko dan memilih tindakan sebelum, saat, dan sesudah bencana
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-kebumian-mitigasi
+prerequisites:
+  - concept: FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+    requires: FIS.C26.D.KEBUMIAN.LAPISAN_BUMI
+    kind: HARD
+  - concept: FIS.C26.D.KEBUMIAN.GEMPA_BUMI_DAN_GUNUNG_API
+    requires: FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+    kind: HARD
+  - concept: FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+    requires: FIS.C26.D.KEBUMIAN.GEMPA_BUMI_DAN_GUNUNG_API
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

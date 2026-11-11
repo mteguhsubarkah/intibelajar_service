@@ -1,0 +1,67 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.DISTRIBUSI
+subject: MAT
+title: Distribusi Binomial & Normal
+subtitle: Variabel acak binomial dan kurva distribusi normal
+phase: F+
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.FPLUS.DISTRIBUSI.VARIABEL_ACAK_BINOMIAL
+    title: Variabel acak binomial
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-fplus-distribusi-c1
+  - code: MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+    title: Rataan dan simpangan baku distribusi
+    subtitle: Nilai harapan dan varians variabel acak
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-fplus-distribusi-parameter
+  - code: MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL
+    title: Distribusi normal
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-fplus-distribusi-c2
+prerequisites:
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL
+    requires: MAT.C26.FPLUS.DISTRIBUSI.VARIABEL_ACAK_BINOMIAL
+    kind: SOFT
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+    requires: MAT.C26.FPLUS.DISTRIBUSI.VARIABEL_ACAK_BINOMIAL
+    kind: SOFT
+  - concept: MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL
+    requires: MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK
+subject: FIS
+title: Kelistrikan & energi ramah lingkungan
+subtitle: Arus, rangkaian seri paralel, magnet, dan pembangkitan listrik
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+    title: Arus dan rangkaian
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-listrik-c1
+  - code: FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
+    title: Magnet & pembangkit listrik
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-listrik-c2
+  - code: FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
+    title: Rangkaian seri dan paralel
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-listrik-seri-paralel
+prerequisites:
+  - concept: FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
+    requires: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

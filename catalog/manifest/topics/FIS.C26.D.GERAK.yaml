@@ -1,0 +1,75 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK
+subject: FIS
+title: Gerak, gaya, dan tekanan
+subtitle: Jarak, perpindahan, kelajuan, resultan gaya, inersia, dan tekanan
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    title: Gerak dan gaya resultan
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gerak-c1
+  - code: FIS.C26.D.GERAK.TEKANAN
+    title: Tekanan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gerak-c2
+  - code: FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
+    title: Jarak, perpindahan & kelajuan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gerak-kelajuan
+  - code: FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
+    title: Resultan gaya dan inersia
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gerak-resultan
+prerequisites:
+  - concept: FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
+    requires: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    kind: SOFT
+  - concept: FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
+    requires: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

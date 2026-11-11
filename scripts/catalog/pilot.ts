@@ -9,6 +9,7 @@ import { MULTI } from './pilot/multi.js';
 import { FIS_TOPICS, FIS_RELATIONS } from './pilot/fis.js';
 import { KIM_TOPICS, KIM_RELATIONS } from './pilot/kim.js';
 import { BIO_TOPICS, BIO_RELATIONS } from './pilot/bio.js';
+import { PLANNED_TOPICS, PLANNED_RELATIONS } from './pilot/planned.js';
 
 // Usage: npm run catalog:pilot [-- --manifest catalog/manifest]
 // Menulis konten pilot (topik, inti, soal pilihan ganda, materi dua slide) ke manifest katalog.
@@ -16,9 +17,12 @@ import { BIO_TOPICS, BIO_RELATIONS } from './pilot/bio.js';
 // Semua entri baru membawa tag review PROPOSED D7: guru memeriksa kunci dan bahasa sebelum sign-off.
 
 export const PILOT_DECISION = 'D7';
-const TOPICS: PilotTopic[] = [...MAT_TOPICS, ...FIS_TOPICS, ...KIM_TOPICS, ...BIO_TOPICS];
+/** Topik dan inti dari audit kesenjangan materi kelas 7–12 (10 November 2026): struktur dulu, materi menyusul. */
+export const AUDIT_DECISION = 'D9';
+const OURS = new Set([PILOT_DECISION, AUDIT_DECISION]);
+const TOPICS: PilotTopic[] = [...MAT_TOPICS, ...FIS_TOPICS, ...KIM_TOPICS, ...BIO_TOPICS, ...PLANNED_TOPICS];
 const EXISTING: PilotExisting[] = MAT_EXISTING;
-const RELATIONS = [...MAT_RELATIONS, ...FIS_RELATIONS, ...KIM_RELATIONS, ...BIO_RELATIONS];
+const RELATIONS = [...MAT_RELATIONS, ...FIS_RELATIONS, ...KIM_RELATIONS, ...BIO_RELATIONS, ...PLANNED_RELATIONS];
 
 /** Alias MAP inti pilot; FE (src/data/intiverse.ts) memakai rumus yang sama untuk menautkan peta ke katalog. */
 export const aliasOf = (topic: string, core: string) =>
@@ -26,7 +30,7 @@ export const aliasOf = (topic: string, core: string) =>
 const slug = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase()
   .replace(/&/g, ' DAN ').replace(/[^A-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 40).replace(/_+$/, '');
 
-const review = (fields: string[], evidence: string[]): Review => ({ status: 'PROPOSED', decision: PILOT_DECISION, fields, evidence });
+const review = (fields: string[], evidence: string[], decision = PILOT_DECISION): Review => ({ status: 'PROPOSED', decision, fields, evidence });
 const OPTION_IDS = ['a', 'b', 'c', 'd', 'e'];
 const SOURCE: Record<NonNullable<PilotQuestion['src']>, string> = {
   UN: 'Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019)',
@@ -100,25 +104,28 @@ export function buildPilot() {
   const extra = (at: string) => MULTI.filter(m => m.at === at).map(m => m.q);
   for (const m of MULTI) {
     const [t, id] = m.at.split(':');
-    const known = id ? TOPICS.some(x => x.code === t && x.cores.some(c => c.id === id)) : EXISTING.some(e => e.concept === m.at);
+    const known = id ? TOPICS.some(x => x.code === t && x.cores.some(c => c.id === id && c.slides)) : EXISTING.some(e => e.concept === m.at);
     if (!known) throw new Error(`soal multi-inti: inti utama ${m.at} tidak ada`);
   }
   for (const t of TOPICS) {
     const ref = resolver(t.code);
     topics.push({
-      schemaVersion: 1, code: t.code, subject: t.subject, title: t.title, subtitle: t.subtitle, phase: t.phase, availability: 'MAPPED',
+      // topik yang belum punya satu pun inti bermateri ditandai PLANNED (posisi di kurikulum ada, isinya belum)
+      schemaVersion: 1, code: t.code, subject: t.subject, title: t.title, subtitle: t.subtitle, phase: t.phase, availability: t.cores.some(c => c.slides) ? 'MAPPED' : 'PLANNED',
       bekal: t.bekal, aliases: t.alias ? [{ ns: 'TOPIC', value: t.alias }] : [], units: [],
       concepts: t.cores.map((c, i) => ({
         code: ref(c.id), title: c.title, ...(c.sub ? { subtitle: c.sub } : {}), objectives: [], misconceptions: [],
-        ordinal: i + 1, estimatedMinutes: c.min ?? 5, hidden: false, capstone: !!c.capstone, availability: 'READY' as const,
+        ordinal: i + 1, estimatedMinutes: c.min ?? 5, hidden: false, capstone: !!c.capstone, availability: c.slides ? 'READY' as const : 'PLANNED' as const,
         aliases: [{ ns: 'MAP' as const, value: aliasOf(t.code, c.id) }],
       })),
       prerequisites: t.edges.map(([from, to, kind]) => ({ concept: ref(to), requires: ref(from), kind: kind === 'H' ? 'HARD' as const : 'SOFT' as const })),
-      review: review(['concepts', 'prerequisites'], ['inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)']),
+      review: review(['concepts', 'prerequisites'], t.evidence ?? ['inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)'], t.decision),
     });
     for (const c of t.cores) {
+      // inti PLANNED: belum ada materi, jadi belum boleh ada soal
+      if (!c.slides) { if (c.q?.length) throw new Error(`${t.code} ${c.id}: soal tanpa materi`); continue; }
       const key = slug(c.id === 'C1' || c.id === 'C2' ? c.title : c.id), concept = ref(c.id);
-      const qs = [...c.q, ...extra(`${t.code}:${c.id}`)].map((q, i) => question(t.code, concept, key, i + 1, q, ref));
+      const qs = [...(c.q ?? []), ...extra(`${t.code}:${c.id}`)].map((q, i) => question(t.code, concept, key, i + 1, q, ref));
       const [l, s] = lesson(t.code, concept, key, c.title, c.min ?? 5, c.slides, qs);
       questions.push(...qs); lessons.push(l); sets.push(s);
     }
@@ -132,7 +139,7 @@ export function buildPilot() {
 }
 
 const dump = (value: unknown) => stringify(value, { lineWidth: 0, aliasDuplicateObjects: false });
-const isPilot = (file: string) => (parse(readFileSync(file, 'utf8')) as { review?: Review })?.review?.decision === PILOT_DECISION;
+const isPilot = (file: string) => OURS.has((parse(readFileSync(file, 'utf8')) as { review?: Review })?.review?.decision ?? '');
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
@@ -168,19 +175,22 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   writeFileSync(subjectsFile, dump(subjects));
 
   const relFile = join(dir, 'topic-relations.yaml'), rel = parse(readFileSync(relFile, 'utf8')) as { relations: { from: string; to: string; review?: Review }[] };
-  const kept = rel.relations.filter(r => r.review?.decision !== PILOT_DECISION);
-  rel.relations = [...kept, ...RELATIONS.filter(r => !kept.some(k => k.from === r.from && k.to === r.to)).map(r => ({
-    ...r, source: 'CURRICULUM', review: review(['kind', 'label'], ['hubungan antartopik dari peta referensi IntiVerse']) }))];
+  const kept = rel.relations.filter(r => !OURS.has(r.review?.decision ?? ''));
+  rel.relations = [...kept, ...RELATIONS.filter(r => !kept.some(k => k.from === r.from && k.to === r.to)).map(({ decision, ...r }) => ({
+    ...r, source: 'CURRICULUM', review: review(['kind', 'label'], ['hubungan antartopik dari peta referensi IntiVerse'], decision) }))];
   writeFileSync(relFile, dump(rel));
 
   const releaseFile = join(dir, 'release.yaml'), release = parse(readFileSync(releaseFile, 'utf8')) as { version: number; decisions: { id: string; status: string; summary: string }[] };
   release.version = Math.max(release.version, 2);
   if (!release.decisions.some(d => d.id === PILOT_DECISION)) release.decisions.push({ id: PILOT_DECISION, status: 'PROPOSED',
     summary: 'Konten pilot MaFiKiBio (scripts/catalog/pilot): topik dan inti dari peta IntiVerse, soal pilihan ganda bergaya UN/UTBK-SNBT yang disusun ulang (bukan salinan soal resmi), dan materi dua slide per inti. Guru mata pelajaran memeriksa kunci, pembahasan, dan bahasa; daftar periksa di catalog/pilot-review.md.' });
+  if (!release.decisions.some(d => d.id === AUDIT_DECISION)) release.decisions.push({ id: AUDIT_DECISION, status: 'PROPOSED',
+    summary: 'Audit kesenjangan materi kelas 7–12 (10 November 2026): topik dan inti yang belum ada ditambahkan sebagai PLANNED (posisi di kurikulum, materi dan soal menyusul) lewat scripts/catalog/pilot/planned.ts. Acuan Kepka BSKAP 046/H/KR/2025 dan panduan mapel BSKAP 2025. Guru mata pelajaran memeriksa nama inti, urutan, dan penempatan fase.' });
   writeFileSync(releaseFile, dump(release));
 
   writeFileSync(resolve(dir, '../pilot-review.md'), reviewSheet(topics, questions, lessons));
-  console.log(`Konten pilot ditulis: ${topics.length} topik, ${topics.reduce((n, t) => n + t.concepts.length, 0)} inti baru, ${questions.length} soal, ${lessons.length} materi`);
+  const planned = topics.flatMap(t => t.concepts).filter(c => c.availability === 'PLANNED').length;
+  console.log(`Konten pilot ditulis: ${topics.length} topik, ${topics.reduce((n, t) => n + t.concepts.length, 0)} inti baru (${planned} PLANNED), ${questions.length} soal, ${lessons.length} materi`);
 }
 
 /** Lembar periksa untuk guru: setiap soal dengan kuncinya, dikelompokkan per topik. */

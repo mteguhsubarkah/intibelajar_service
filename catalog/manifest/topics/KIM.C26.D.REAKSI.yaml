@@ -1,0 +1,83 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI
+subject: KIM
+title: Reaksi kimia dan asam–basa dasar
+subtitle: Ciri reaksi, kekekalan massa, persamaan reaksi, dan indikator asam–basa
+phase: D
+availability: PLANNED
+bekal:
+  - perubahan fisika dan kimia
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+    title: Ciri-ciri reaksi kimia
+    subtitle: Perubahan warna, gas, endapan, dan suhu
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-d-reaksi-c1
+  - code: KIM.C26.D.REAKSI.HUKUM_KEKEKALAN_MASSA
+    title: Hukum kekekalan massa
+    subtitle: Massa zat sebelum dan sesudah reaksi dalam sistem tertutup
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-d-reaksi-massa
+  - code: KIM.C26.D.REAKSI.PERSAMAAN_REAKSI_SEDERHANA
+    title: Persamaan reaksi sederhana
+    subtitle: Membaca dan menyetarakan persamaan reaksi sederhana
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-d-reaksi-persamaan
+  - code: KIM.C26.D.REAKSI.ASAM_BASA_DAN_INDIKATOR
+    title: Asam, basa, dan indikator
+    subtitle: Sifat asam–basa, indikator lakmus dan alami, skala pH sederhana
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: kim-d-reaksi-asambasa
+prerequisites:
+  - concept: KIM.C26.D.REAKSI.HUKUM_KEKEKALAN_MASSA
+    requires: KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+    kind: SOFT
+  - concept: KIM.C26.D.REAKSI.PERSAMAAN_REAKSI_SEDERHANA
+    requires: KIM.C26.D.REAKSI.HUKUM_KEKEKALAN_MASSA
+    kind: HARD
+  - concept: KIM.C26.D.REAKSI.ASAM_BASA_DAN_INDIKATOR
+    requires: KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

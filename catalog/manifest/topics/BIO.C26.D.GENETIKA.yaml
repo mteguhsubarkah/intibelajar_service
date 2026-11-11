@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA
+subject: BIO
+title: Pewarisan sifat & bioteknologi SMP
+subtitle: Gen, variasi, genotipe fenotipe, dan fermentasi konvensional
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.D.GENETIKA.GEN_DAN_VARIASI
+    title: Gen dan variasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-genetika-c1
+  - code: BIO.C26.D.GENETIKA.FERMENTASI
+    title: Fermentasi
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-genetika-c2
+  - code: BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE
+    title: Genotipe dan fenotipe
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-genetika-fenotipe
+prerequisites:
+  - concept: BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE
+    requires: BIO.C26.D.GENETIKA.GEN_DAN_VARIASI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

@@ -1,0 +1,67 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH
+subject: BIO
+title: Pertumbuhan dan perkembangan
+subtitle: Beda tumbuh dan berkembang, faktor yang memengaruhi, dan daur hidup
+phase: D
+availability: PLANNED
+bekal:
+  - ciri makhluk hidup
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.D.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN
+    title: Pertumbuhan dan perkembangan
+    subtitle: Perbedaan bertambah ukuran dan menjadi dewasa
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-tumbuh-c1
+  - code: BIO.C26.D.TUMBUH.FAKTOR_INTERNAL_DAN_EKSTERNAL
+    title: Faktor internal dan eksternal
+    subtitle: Gen, hormon, nutrisi, cahaya, suhu, dan air
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-tumbuh-faktor
+  - code: BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+    title: Daur hidup dan metamorfosis
+    subtitle: Metamorfosis sempurna, tidak sempurna, dan daur hidup tumbuhan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-tumbuh-daurhidup
+prerequisites:
+  - concept: BIO.C26.D.TUMBUH.FAKTOR_INTERNAL_DAN_EKSTERNAL
+    requires: BIO.C26.D.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN
+    kind: SOFT
+  - concept: BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+    requires: BIO.C26.D.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

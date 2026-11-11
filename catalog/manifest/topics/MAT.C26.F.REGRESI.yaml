@@ -1,0 +1,84 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI
+subject: MAT
+title: Statistika dua variabel
+subtitle: Korelasi, regresi linear, prediksi, dan batas hubungan sebab-akibat
+phase: F
+availability: PLANNED
+bekal:
+  - diagram pencar
+  - persamaan garis lurus
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.F.REGRESI.KOEFISIEN_KORELASI
+    title: Koefisien korelasi
+    subtitle: Arah dan kekuatan hubungan linear dua variabel
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-f-regresi-c1
+  - code: MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+    title: Garis regresi linear
+    subtitle: Garis kecocokan terbaik dan makna gradien serta titik potong
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-f-regresi-c2
+  - code: MAT.C26.F.REGRESI.PREDIKSI_DAN_BATASNYA
+    title: Prediksi dan batasnya
+    subtitle: Interpolasi, ekstrapolasi, dan sisaan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-f-regresi-prediksi
+  - code: MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+    title: Korelasi bukan sebab-akibat
+    subtitle: Variabel lain dan batas kesimpulan dari data
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-f-regresi-kausal
+prerequisites:
+  - concept: MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+    requires: MAT.C26.F.REGRESI.KOEFISIEN_KORELASI
+    kind: SOFT
+  - concept: MAT.C26.F.REGRESI.PREDIKSI_DAN_BATASNYA
+    requires: MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+    kind: HARD
+  - concept: MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+    requires: MAT.C26.F.REGRESI.KOEFISIEN_KORELASI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

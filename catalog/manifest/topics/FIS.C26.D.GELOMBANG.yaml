@@ -1,0 +1,60 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG
+subject: FIS
+title: Getaran, bunyi, dan cahaya
+subtitle: Getaran, gelombang, bunyi, optik, serta pemantulan dan pembiasan cahaya
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG
+    title: Getaran dan gelombang
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gelombang-c1
+  - code: FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+    title: Bunyi dan optik
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gelombang-c2
+  - code: FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
+    title: Pemantulan & pembiasan cahaya
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gelombang-cahaya
+prerequisites:
+  - concept: FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
+    requires: FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

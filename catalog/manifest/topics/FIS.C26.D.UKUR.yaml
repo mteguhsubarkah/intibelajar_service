@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: FIS.C26.D.UKUR
+subject: FIS
+title: Pengukuran dan kerja ilmiah
+subtitle: Besaran, satuan, variabel percobaan, dan bukti ilmiah
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+    title: Besaran dan satuan
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-ukur-c1
+  - code: FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI
+    title: Variabel dan bukti
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-ukur-c2
+prerequisites:
+  - concept: FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI
+    requires: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

@@ -1,0 +1,100 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN
+subject: FIS
+title: Listrik statis dan medan
+subtitle: Muatan, medan dan potensial listrik, kapasitor, medan magnet, dan gaya Lorentz
+phase: F
+availability: PLANNED
+bekal:
+  - vektor
+  - rangkaian listrik
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.F.MEDAN.MUATAN_DAN_HUKUM_COULOMB
+    title: Muatan dan hukum Coulomb
+    subtitle: Gaya antarmuatan titik
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-f-medan-c1
+  - code: FIS.C26.F.MEDAN.MEDAN_LISTRIK
+    title: Medan listrik
+    subtitle: Kuat medan dan garis medan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-f-medan-medanlistrik
+  - code: FIS.C26.F.MEDAN.POTENSIAL_DAN_ENERGI_POTENSIAL_LISTRIK
+    title: Potensial dan energi potensial listrik
+    subtitle: Usaha memindahkan muatan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-f-medan-potensial
+  - code: FIS.C26.F.MEDAN.KAPASITOR
+    title: Kapasitor
+    subtitle: Kapasitas, susunan seri–paralel, dan energi tersimpan
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-f-medan-kapasitor
+  - code: FIS.C26.F.MEDAN.MEDAN_MAGNET_DAN_GAYA_LORENTZ
+    title: Medan magnet dan gaya Lorentz
+    subtitle: Medan di sekitar arus dan gaya pada muatan atau kawat
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-f-medan-lorentz
+prerequisites:
+  - concept: FIS.C26.F.MEDAN.MEDAN_LISTRIK
+    requires: FIS.C26.F.MEDAN.MUATAN_DAN_HUKUM_COULOMB
+    kind: HARD
+  - concept: FIS.C26.F.MEDAN.POTENSIAL_DAN_ENERGI_POTENSIAL_LISTRIK
+    requires: FIS.C26.F.MEDAN.MEDAN_LISTRIK
+    kind: HARD
+  - concept: FIS.C26.F.MEDAN.KAPASITOR
+    requires: FIS.C26.F.MEDAN.POTENSIAL_DAN_ENERGI_POTENSIAL_LISTRIK
+    kind: SOFT
+  - concept: FIS.C26.F.MEDAN.MEDAN_MAGNET_DAN_GAYA_LORENTZ
+    requires: FIS.C26.F.MEDAN.MEDAN_LISTRIK
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
+    - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"

@@ -1,0 +1,107 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN
+subject: BIO
+title: Organisasi kehidupan & sistem organ
+subtitle: Sel sampai organisme, pencernaan, ekskresi, dan gangguan sistem organ
+phase: D
+availability: PLANNED
+bekal: []
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    title: Sel sampai organisme
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-organ-c1
+  - code: BIO.C26.D.ORGAN.FUNGSI_DAN_GANGGUAN_SISTEM
+    title: Fungsi dan gangguan sistem
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-organ-c2
+  - code: BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN
+    title: Pencernaan dan penyerapan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-organ-pencernaan
+  - code: BIO.C26.D.ORGAN.SISTEM_PERNAPASAN
+    title: Sistem pernapasan
+    subtitle: Organ pernapasan, pertukaran gas, dan gangguannya
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-organ-pernapasan
+  - code: BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+    title: Sistem peredaran darah
+    subtitle: Jantung, pembuluh, darah, dan gangguannya
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-organ-peredaran
+  - code: BIO.C26.D.ORGAN.EKSKRESI_DAN_KESEIMBANGAN_CAIRAN
+    title: Ekskresi & keseimbangan cairan
+    objectives: []
+    misconceptions: []
+    ordinal: 6
+    estimatedMinutes: 5
+    hidden: false
+    capstone: true
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: bio-d-organ-ekskresi
+prerequisites:
+  - concept: BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN
+    requires: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    kind: SOFT
+  - concept: BIO.C26.D.ORGAN.EKSKRESI_DAN_KESEIMBANGAN_CAIRAN
+    requires: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    kind: SOFT
+  - concept: BIO.C26.D.ORGAN.SISTEM_PERNAPASAN
+    requires: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    kind: SOFT
+  - concept: BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+    requires: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
+    - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul

@@ -32,6 +32,9 @@ decisions:
   - id: D8
     status: PROPOSED
     summary: "Soal /coba Fisika (soal-bola, FIS.C26.E.GERAK2D.Q.SOAL_BOLA) dan Kimia (soal-kompor, KIM.C26.E.STOIK.Q.SOAL_KOMPOR): numeric-v1 dengan pengecoh NUMERIC yang dicatat sebagai miskonsepsi inti. Guru Fisika dan Kimia memeriksa kunci, pengecoh, dan bahasa."
+  - id: D9
+    status: PROPOSED
+    summary: "Audit kesenjangan materi kelas 7–12 (10 November 2026): topik dan inti yang belum ada ditambahkan sebagai PLANNED (posisi di kurikulum, materi dan soal menyusul) lewat scripts/catalog/pilot/planned.ts. Acuan Kepka BSKAP 046/H/KR/2025 dan panduan mapel BSKAP 2025. Guru mata pelajaran memeriksa nama inti, urutan, dan penempatan fase."
 gaps:
   - curriculum/trigonometry.ts declares its own prerequisite graph (e.g. sudut-depresi-elevasi requires grafik-fungsi) that disagrees with curriculum.ts edges; only curriculum.ts edges and the T13 prerequisites were imported.
   - trig-depression-01 diagnosticSteps (angle-reference, ratio-selection) are follow-up prompts with their own options; 03 §7 has no value object for them, so they are not imported. Decide in Slice 2 (QUESTION_LOOP clarification).
