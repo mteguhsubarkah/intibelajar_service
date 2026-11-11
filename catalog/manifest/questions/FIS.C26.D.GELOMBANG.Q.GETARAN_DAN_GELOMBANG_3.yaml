@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_3
+familyCode: FIS.C26.D.GELOMBANG.F.GETARAN_DAN_GELOMBANG_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Contoh gelombang longitudinal adalah …
+  options:
+    - id: a
+      label: gelombang pada tali yang digoyangkan
+    - id: b
+      label: gelombang cahaya
+    - id: c
+      label: riak pada permukaan air
+    - id: d
+      label: gelombang bunyi di udara
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - gelombang bunyi di udara
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG
+  feedback:
+    correct: Bunyi merambat sebagai rapatan dan renggangan yang searah dengan arah rambatnya.
+    incorrect: Jawabannya gelombang bunyi di udara. Bunyi merambat sebagai rapatan dan renggangan yang searah dengan arah rambatnya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

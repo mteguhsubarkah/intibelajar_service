@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.Q.DAURHIDUP_2
+familyCode: BIO.C26.D.TUMBUH.F.DAURHIDUP_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hewan yang mengalami metamorfosis tidak sempurna adalah …
+  options:
+    - id: a
+      label: kupu-kupu
+    - id: b
+      label: belalang
+    - id: c
+      label: lalat
+    - id: d
+      label: nyamuk
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - belalang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+  feedback:
+    correct: "Belalang tidak memiliki tahap pupa: telur → nimfa → imago."
+    incorrect: "Jawabannya belalang. Belalang tidak memiliki tahap pupa: telur → nimfa → imago."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

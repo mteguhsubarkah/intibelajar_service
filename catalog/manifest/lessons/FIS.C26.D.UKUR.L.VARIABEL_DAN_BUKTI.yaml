@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.UKUR.L.VARIABEL_DAN_BUKTI
+title: Variabel dan bukti
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI
+blocks:
+  - type: heading
+    slide: 0
+    text: Tiga jenis variabel
+  - type: text
+    slide: 0
+    text: "**Variabel bebas**: yang sengaja diubah. **Variabel terikat**: yang diukur sebagai akibatnya. **Variabel kontrol**: dijaga tetap agar percobaan adil."
+  - type: text
+    slide: 0
+    text: "Contoh: pengaruh banyak cahaya (bebas) terhadap tinggi tanaman (terikat), dengan jenis tanaman, air, dan pot dibuat sama (kontrol)."
+  - type: math
+    slide: 0
+    name: variabel bebas
+    expression: yang diubah
+    highlight: true
+  - type: math
+    slide: 0
+    name: variabel terikat
+    expression: yang diukur
+  - type: heading
+    slide: 1
+    text: Kesimpulan berbasis bukti
+  - type: text
+    slide: 1
+    text: Ulangi pengukuran beberapa kali dan ambil rata-ratanya, lalu sajikan dalam tabel atau grafik.
+  - type: text
+    slide: 1
+    text: Simpulkan hanya yang didukung data. Hipotesis yang ditolak oleh data tetap merupakan hasil yang berharga.
+  - type: math
+    slide: 1
+    name: nilai terbaik
+    expression: rata-rata pengukuran berulang
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ubah satu variabel saja dalam satu percobaan.
+checks:
+  - question: FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.UKUR.S.VARIABEL_DAN_BUKTI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

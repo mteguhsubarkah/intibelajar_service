@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_1
+familyCode: MAT.C26.D.BILANGAN.F.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil 2³ × 2⁴ adalah …
+  options:
+    - id: a
+      label: 2⁷
+    - id: b
+      label: 2¹²
+    - id: c
+      label: 4⁷
+    - id: d
+      label: 4¹²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2⁷
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+  feedback:
+    correct: "Basisnya sama, jadi pangkatnya dijumlahkan: 3 + 4 = 7."
+    incorrect: "Jawabannya 2⁷. Basisnya sama, jadi pangkatnya dijumlahkan: 3 + 4 = 7."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

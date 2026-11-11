@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_2
+familyCode: BIO.C26.D.ORGAN.F.SEL_SAMPAI_ORGANISME_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bagian sel yang hanya dimiliki sel tumbuhan adalah …
+  options:
+    - id: a
+      label: inti sel
+    - id: b
+      label: sitoplasma
+    - id: c
+      label: membran sel
+    - id: d
+      label: dinding sel dan kloroplas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - dinding sel dan kloroplas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+  feedback:
+    correct: Membran sel, inti, dan sitoplasma dimiliki sel hewan dan tumbuhan.
+    incorrect: Jawabannya dinding sel dan kloroplas. Membran sel, inti, dan sitoplasma dimiliki sel hewan dan tumbuhan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

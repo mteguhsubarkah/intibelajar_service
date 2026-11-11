@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.Q.SUDUT_DAN_KESEBANGUNAN_1
+familyCode: MAT.C26.D.GEOMETRI.F.SUDUT_DAN_KESEBANGUNAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.GEOMETRI.SUDUT_DAN_KESEBANGUNAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pelurus sudut 65° adalah …
+  options:
+    - id: a
+      label: 125°
+    - id: b
+      label: 295°
+    - id: c
+      label: 25°
+    - id: d
+      label: 115°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 115°
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.GEOMETRI.SUDUT_DAN_KESEBANGUNAN
+  feedback:
+    correct: "Sudut berpelurus berjumlah 180°: 180° − 65° = 115°. Jawaban 25° adalah penyikunya."
+    incorrect: "Jawabannya 115°. Sudut berpelurus berjumlah 180°: 180° − 65° = 115°. Jawaban 25° adalah penyikunya."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

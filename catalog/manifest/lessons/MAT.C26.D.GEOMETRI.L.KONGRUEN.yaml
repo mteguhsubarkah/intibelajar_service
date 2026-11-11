@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.L.KONGRUEN
+title: Kongruen dan sebangun
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+blocks:
+  - type: heading
+    slide: 0
+    text: Kongruen dan sebangun
+  - type: text
+    slide: 0
+    text: "**Kongruen**: bentuk dan ukurannya sama persis; sisi-sisi yang bersesuaian sama panjang."
+  - type: text
+    slide: 0
+    text: "**Sebangun**: bentuknya sama, ukurannya boleh berbeda. Setiap bangun yang kongruen pasti sebangun, tetapi tidak sebaliknya."
+  - type: math
+    slide: 0
+    name: kongruen
+    expression: sebangun dengan faktor skala 1
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Syarat segitiga kongruen
+  - type: text
+    slide: 1
+    text: "Cukup salah satu syarat: **s-s-s** (tiga sisi), **s-sd-s** (dua sisi dan sudut yang diapitnya), atau **sd-s-sd** (dua sudut dan sisi di antaranya)."
+  - type: math
+    slide: 1
+    name: syarat kongruen
+    expression: s-s-s, s-sd-s, sd-s-sd
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tiga sudut yang sama saja hanya menjamin sebangun, belum kongruen.
+checks:
+  - question: MAT.C26.D.GEOMETRI.Q.KONGRUEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.GEOMETRI.S.KONGRUEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

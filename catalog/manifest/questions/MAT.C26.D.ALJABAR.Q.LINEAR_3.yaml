@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.ALJABAR.Q.LINEAR_3
+familyCode: MAT.C26.D.ALJABAR.F.LINEAR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.ALJABAR.PERSAMAAN_LINEAR_SATU_VARIABEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Keliling sebuah persegi panjang 46 cm. Panjangnya 5 cm lebih dari lebarnya. Lebar persegi panjang itu adalah …
+  options:
+    - id: a
+      label: 14 cm
+    - id: b
+      label: 18 cm
+    - id: c
+      label: 10,5 cm
+    - id: d
+      label: 9 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 9 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.ALJABAR.PERSAMAAN_LINEAR_SATU_VARIABEL
+  feedback:
+    correct: 2(l + 5 + l) = 46 → 4l + 10 = 46 → l = 9 cm.
+    incorrect: Jawabannya 9 cm. 2(l + 5 + l) = 46 → 4l + 10 = 46 → l = 9 cm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

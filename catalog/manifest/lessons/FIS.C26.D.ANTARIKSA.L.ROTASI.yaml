@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.L.ROTASI
+title: Rotasi dan revolusi Bumi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.D.ANTARIKSA.ROTASI_DAN_REVOLUSI_BUMI
+blocks:
+  - type: heading
+    slide: 0
+    text: Rotasi Bumi
+  - type: text
+    slide: 0
+    text: Bumi berputar pada porosnya dari barat ke timur sekali dalam sekitar 24 jam.
+  - type: text
+    slide: 0
+    text: "Akibatnya: siang dan malam, gerak semu harian Matahari (terbit di timur), dan perbedaan waktu antarwilayah (WIB, WITA, WIT)."
+  - type: math
+    slide: 0
+    name: rotasi
+    expression: ± 24 jam
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Revolusi Bumi
+  - type: text
+    slide: 1
+    text: Bumi mengelilingi Matahari dalam sekitar 365¼ hari dengan poros yang miring 23,5°.
+  - type: text
+    slide: 1
+    text: "Akibatnya: pergantian musim di belahan bumi utara dan selatan, perbedaan lama siang dan malam, serta gerak semu tahunan Matahari."
+  - type: math
+    slide: 1
+    name: revolusi
+    expression: ± 365¼ hari
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Rotasi → hari (siang dan malam). Revolusi → tahun (musim).
+checks:
+  - question: FIS.C26.D.ANTARIKSA.Q.ROTASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ANTARIKSA.S.ROTASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

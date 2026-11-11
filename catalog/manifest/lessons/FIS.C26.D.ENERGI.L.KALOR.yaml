@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.ENERGI.L.KALOR
+title: Kalor jenis
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.ENERGI.KALOR_JENIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Kalor dan kalor jenis
+  - type: text
+    slide: 0
+    text: "Kalor yang diperlukan untuk menaikkan suhu: Q = m × c × ΔT."
+  - type: text
+    slide: 0
+    text: Kalor jenis (c) menunjukkan seberapa sulit suatu zat dipanaskan. Kalor jenis air besar (4.200 J/kg°C), sehingga air lambat panas dan lambat dingin.
+  - type: math
+    slide: 0
+    name: kalor
+    expression: Q = m × c × ΔT
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Perubahan wujud
+  - type: text
+    slide: 1
+    text: Saat zat mencair atau mendidih, suhunya tetap walaupun kalor terus diberikan; kalor dipakai untuk mengubah wujud.
+  - type: text
+    slide: 1
+    text: "Kalor perubahan wujud: Q = m × L, dengan L kalor lebur atau kalor uap."
+  - type: math
+    slide: 1
+    name: perubahan wujud
+    expression: Q = m × L
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pada grafik suhu terhadap waktu, bagian yang mendatar menandakan perubahan wujud.
+checks:
+  - question: FIS.C26.D.ENERGI.Q.KALOR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ENERGI.S.KALOR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

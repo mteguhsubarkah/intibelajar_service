@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.L.PEMISAHAN
+title: Metode pemisahan campuran
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.D.MATERI.METODE_PEMISAHAN_CAMPURAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Penyaringan, penguapan, penyulingan
+  - type: text
+    slide: 0
+    text: "**Penyaringan (filtrasi)**: memisahkan padatan yang tidak larut dari cairan (pasir dari air)."
+  - type: text
+    slide: 0
+    text: "**Penguapan (evaporasi)**: mengambil zat padat terlarut dari pelarutnya (garam dari air laut). **Penyulingan (distilasi)**: memisahkan cairan berdasarkan titik didih (air suling, minyak atsiri)."
+  - type: math
+    slide: 0
+    name: distilasi
+    expression: berdasarkan titik didih
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kromatografi, sublimasi, magnet
+  - type: text
+    slide: 1
+    text: "**Kromatografi** memisahkan zat warna berdasarkan kecepatan meresap (tinta, klorofil)."
+  - type: text
+    slide: 1
+    text: "**Sublimasi** untuk zat yang dapat menyublim (kapur barus, iodin). **Magnet** untuk memisahkan logam besi dari campuran."
+  - type: math
+    slide: 1
+    name: kromatografi
+    expression: berdasarkan kecepatan meresap
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Pilih metode dari perbedaan sifat: ukuran partikel, titik didih, kelarutan, atau daya tarik magnet."
+checks:
+  - question: KIM.C26.D.MATERI.Q.PEMISAHAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.MATERI.S.PEMISAHAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

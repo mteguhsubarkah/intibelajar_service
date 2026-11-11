@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_3
+familyCode: MAT.C26.D.PENGUKURAN.F.TRANSFORMASI_KOORDINAT_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.PENGUKURAN.TRANSFORMASI_KOORDINAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bayangan titik Q(4, 1) oleh rotasi 90° berlawanan arah jarum jam dengan pusat O(0, 0) adalah …
+  options:
+    - id: a
+      label: (−1, 4)
+    - id: b
+      label: (1, −4)
+    - id: c
+      label: (−4, −1)
+    - id: d
+      label: (4, −1)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (−1, 4)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.PENGUKURAN.TRANSFORMASI_KOORDINAT
+  feedback:
+    correct: (x, y) → (−y, x), jadi (4, 1) → (−1, 4).
+    incorrect: Jawabannya (−1, 4). (x, y) → (−y, x), jadi (4, 1) → (−1, 4).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

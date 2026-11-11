@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.PEREDARAN_1
+familyCode: BIO.C26.D.ORGAN.F.PEREDARAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sel darah yang berfungsi mengangkut oksigen adalah …
+  options:
+    - id: a
+      label: sel darah merah
+    - id: b
+      label: keping darah
+    - id: c
+      label: plasma darah
+    - id: d
+      label: sel darah putih
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sel darah merah
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+  feedback:
+    correct: Hemoglobin dalam sel darah merah mengikat oksigen.
+    incorrect: Jawabannya sel darah merah. Hemoglobin dalam sel darah merah mengikat oksigen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.D.ZAT.L.RISIKO_ZAT_ADIKTIF
+title: Risiko zat adiktif
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.ZAT.RISIKO_ZAT_ADIKTIF
+blocks:
+  - type: heading
+    slide: 0
+    text: Apa itu zat adiktif
+  - type: text
+    slide: 0
+    text: Zat adiktif menimbulkan ketergantungan (kecanduan), misalnya kafein (kopi, teh), nikotin (rokok), dan alkohol.
+  - type: text
+    slide: 0
+    text: Psikotropika dan narkotika memengaruhi sistem saraf; penggunaannya hanya boleh dengan resep dokter untuk pengobatan.
+  - type: math
+    slide: 0
+    name: zat adiktif
+    expression: menimbulkan ketergantungan
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Dampak dan keputusan sehat
+  - type: text
+    slide: 1
+    text: Nikotin dan tar dalam rokok merusak paru-paru dan pembuluh darah; narkoba merusak otak dan hubungan sosial.
+  - type: text
+    slide: 1
+    text: "Keputusan sehat: berani menolak, mencari informasi dari sumber tepercaya, dan meminta bantuan orang dewasa atau tenaga kesehatan."
+  - type: math
+    slide: 1
+    name: rokok
+    expression: nikotin + tar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kecanduan membuat seseorang sulit berhenti walaupun tahu dampaknya. Lebih mudah untuk tidak memulai.
+checks:
+  - question: KIM.C26.D.ZAT.Q.RISIKO_ZAT_ADIKTIF_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.ZAT.S.RISIKO_ZAT_ADIKTIF
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

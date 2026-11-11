@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.Q.FERMENTASI_2
+familyCode: BIO.C26.D.GENETIKA.F.FERMENTASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.GENETIKA.FERMENTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Adonan roti mengembang karena ragi menghasilkan gas …
+  options:
+    - id: a
+      label: nitrogen
+    - id: b
+      label: hidrogen
+    - id: c
+      label: oksigen
+    - id: d
+      label: karbon dioksida
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - karbon dioksida
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.GENETIKA.FERMENTASI
+  feedback:
+    correct: Gas CO₂ hasil fermentasi ragi terperangkap di adonan dan membuatnya mengembang.
+    incorrect: Jawabannya karbon dioksida. Gas CO₂ hasil fermentasi ragi terperangkap di adonan dan membuatnya mengembang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

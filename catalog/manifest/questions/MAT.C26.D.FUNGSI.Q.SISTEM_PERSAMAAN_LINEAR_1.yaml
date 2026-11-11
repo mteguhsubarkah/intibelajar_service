@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_1
+familyCode: MAT.C26.D.FUNGSI.F.SISTEM_PERSAMAAN_LINEAR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.FUNGSI.SISTEM_PERSAMAAN_LINEAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pasangan (x, y) yang memenuhi x + y = 7 dan x − y = 1 adalah …
+  options:
+    - id: a
+      label: (4, 3)
+    - id: b
+      label: (3, 4)
+    - id: c
+      label: (5, 2)
+    - id: d
+      label: (6, 1)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (4, 3)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.FUNGSI.SISTEM_PERSAMAAN_LINEAR
+  feedback:
+    correct: 4 + 3 = 7 dan 4 − 3 = 1. Pasangan (3, 4) hanya memenuhi persamaan pertama.
+    incorrect: Jawabannya (4, 3). 4 + 3 = 7 dan 4 − 3 = 1. Pasangan (3, 4) hanya memenuhi persamaan pertama.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

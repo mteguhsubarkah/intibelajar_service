@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.L.PENCERNAAN
+title: Pencernaan dan penyerapan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Saluran pencernaan
+  - type: text
+    slide: 0
+    text: Mulut → kerongkongan → lambung → usus halus → usus besar → anus.
+  - type: text
+    slide: 0
+    text: "Pencernaan mekanik: makanan dikunyah dan diremas. Pencernaan kimiawi: dengan enzim, misalnya amilase di mulut memecah amilum, pepsin di lambung memecah protein."
+  - type: math
+    slide: 0
+    name: amilase
+    expression: amilum → gula
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Penyerapan dan gangguannya
+  - type: text
+    slide: 1
+    text: Sari makanan diserap terutama di usus halus melalui jonjot usus (vili) yang memperluas permukaan. Usus besar menyerap air.
+  - type: text
+    slide: 1
+    text: "Gangguan: maag (radang lambung), diare (penyerapan air terganggu), dan sembelit."
+  - type: math
+    slide: 1
+    name: penyerapan sari makanan
+    expression: usus halus
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Makan teratur, cukup serat, dan cukup minum menjaga pencernaan tetap sehat.
+checks:
+  - question: BIO.C26.D.ORGAN.Q.PENCERNAAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.ORGAN.S.PENCERNAAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

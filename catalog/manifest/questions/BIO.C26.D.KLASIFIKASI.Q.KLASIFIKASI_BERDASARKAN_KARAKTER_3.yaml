@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KLASIFIKASI.Q.KLASIFIKASI_BERDASARKAN_KARAKTER_3
+familyCode: BIO.C26.D.KLASIFIKASI.F.KLASIFIKASI_BERDASARKAN_KARAKTER_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KLASIFIKASI.KLASIFIKASI_BERDASARKAN_KARAKTER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kelelawar dikelompokkan ke dalam mamalia, bukan burung, karena …
+  options:
+    - id: a
+      label: dapat terbang
+    - id: b
+      label: menyusui anaknya dan berambut
+    - id: c
+      label: hidup di gua
+    - id: d
+      label: aktif pada malam hari
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - menyusui anaknya dan berambut
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KLASIFIKASI.KLASIFIKASI_BERDASARKAN_KARAKTER
+  feedback:
+    correct: Menyusui dan berambut adalah ciri khas mamalia; kemampuan terbang bukan dasar pengelompokan.
+    incorrect: Jawabannya menyusui anaknya dan berambut. Menyusui dan berambut adalah ciri khas mamalia; kemampuan terbang bukan dasar pengelompokan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.Q.LEMPENG_3
+familyCode: FIS.C26.D.KEBUMIAN.F.LEMPENG_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penunjaman lempeng samudra ke bawah lempeng benua (subduksi) terjadi pada batas …
+  options:
+    - id: a
+      label: transform
+    - id: b
+      label: tidak ada batas lempeng
+    - id: c
+      label: divergen
+    - id: d
+      label: konvergen
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - konvergen
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+  feedback:
+    correct: Subduksi terjadi saat dua lempeng saling mendekat, yaitu batas konvergen.
+    incorrect: Jawabannya konvergen. Subduksi terjadi saat dua lempeng saling mendekat, yaitu batas konvergen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

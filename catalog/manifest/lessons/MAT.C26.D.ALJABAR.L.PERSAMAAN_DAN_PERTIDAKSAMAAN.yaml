@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.D.ALJABAR.L.PERSAMAAN_DAN_PERTIDAKSAMAAN
+title: Persamaan & pertidaksamaan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.ALJABAR.PERSAMAAN_DAN_PERTIDAKSAMAAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Persamaan dan pertidaksamaan
+  - type: text
+    slide: 0
+    text: "**Persamaan** memakai tanda =, penyelesaiannya satu nilai: x + 4 = 9, jadi x = 5."
+  - type: text
+    slide: 0
+    text: "**Pertidaksamaan** memakai <, >, ≤, atau ≥, penyelesaiannya sekumpulan nilai: x + 4 > 9, jadi x > 5."
+  - type: math
+    slide: 0
+    name: persamaan
+    expression: x + 4 = 9 → x = 5
+    highlight: true
+  - type: math
+    slide: 0
+    name: pertidaksamaan
+    expression: x + 4 > 9 → x > 5
+  - type: heading
+    slide: 1
+    text: Hati-hati dengan tanda
+  - type: text
+    slide: 1
+    text: Menambah atau mengurangi kedua ruas tidak mengubah tanda pertidaksamaan.
+  - type: text
+    slide: 1
+    text: "Tetapi saat kedua ruas **dikali atau dibagi bilangan negatif**, tandanya dibalik: −2x < 6 menjadi x > −3."
+  - type: math
+    slide: 1
+    name: bagi dengan negatif
+    expression: balik tanda pertidaksamaan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Cek jawabanmu dengan satu angka dari himpunan penyelesaian.
+checks:
+  - question: MAT.C26.D.ALJABAR.Q.PERSAMAAN_DAN_PERTIDAKSAMAAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.ALJABAR.S.PERSAMAAN_DAN_PERTIDAKSAMAAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.Q.LAPISAN_BUMI_3
+familyCode: FIS.C26.D.KEBUMIAN.F.LAPISAN_BUMI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.KEBUMIAN.LAPISAN_BUMI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Lapisan yang lebih lunak tempat lempeng litosfer bergerak disebut …
+  options:
+    - id: a
+      label: troposfer
+    - id: b
+      label: astenosfer
+    - id: c
+      label: atmosfer
+    - id: d
+      label: hidrosfer
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - astenosfer
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.KEBUMIAN.LAPISAN_BUMI
+  feedback:
+    correct: Astenosfer berada di bawah litosfer dan bersifat lebih lunak.
+    incorrect: Jawabannya astenosfer. Astenosfer berada di bawah litosfer dan bersifat lebih lunak.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

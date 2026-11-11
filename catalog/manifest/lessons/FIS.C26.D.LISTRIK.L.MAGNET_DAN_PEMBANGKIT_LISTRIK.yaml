@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.L.MAGNET_DAN_PEMBANGKIT_LISTRIK
+title: Magnet & pembangkit listrik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Magnet dan elektromagnet
+  - type: text
+    slide: 0
+    text: Kutub magnet senama tolak-menolak; kutub tak senama tarik-menarik.
+  - type: text
+    slide: 0
+    text: Arus listrik menimbulkan medan magnet. Kumparan berarus (elektromagnet) dipakai pada bel listrik dan derek pengangkat besi.
+  - type: math
+    slide: 0
+    name: kutub senama
+    expression: tolak-menolak
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Induksi elektromagnetik
+  - type: text
+    slide: 1
+    text: "Magnet yang digerakkan keluar-masuk kumparan menimbulkan arus induksi. Inilah prinsip generator: dinamo sepeda, PLTA, dan PLTB."
+  - type: text
+    slide: 1
+    text: "Transformator mengubah tegangan bolak-balik (AC): Vp/Vs = Np/Ns."
+  - type: math
+    slide: 1
+    name: transformator
+    expression: Vp / Vs = Np / Ns
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Generator: gerak → listrik. Motor listrik: listrik → gerak."
+checks:
+  - question: FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.LISTRIK.S.MAGNET_DAN_PEMBANGKIT_LISTRIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

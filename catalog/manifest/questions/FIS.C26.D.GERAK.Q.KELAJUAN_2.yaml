@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.Q.KELAJUAN_2
+familyCode: FIS.C26.D.GERAK.F.KELAJUAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah sepeda menempuh 1.800 m dalam 6 menit. Kelajuan rata-ratanya adalah …
+  options:
+    - id: a
+      label: 300 m/s
+    - id: b
+      label: 30 m/s
+    - id: c
+      label: 10 m/s
+    - id: d
+      label: 5 m/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 5 m/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
+  feedback:
+    correct: "6 menit = 360 s; 1.800 : 360 = 5 m/s."
+    incorrect: "Jawabannya 5 m/s. 6 menit = 360 s; 1.800 : 360 = 5 m/s."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

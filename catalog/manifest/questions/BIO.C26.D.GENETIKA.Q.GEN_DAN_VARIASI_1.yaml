@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_1
+familyCode: BIO.C26.D.GENETIKA.F.GEN_DAN_VARIASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.GENETIKA.GEN_DAN_VARIASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pembawa sifat keturunan yang terdapat pada kromosom disebut …
+  options:
+    - id: a
+      label: enzim
+    - id: b
+      label: gen
+    - id: c
+      label: sel darah
+    - id: d
+      label: hormon
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - gen
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.GENETIKA.GEN_DAN_VARIASI
+  feedback:
+    correct: Gen adalah bagian DNA pada kromosom yang membawa sifat.
+    incorrect: Jawabannya gen. Gen adalah bagian DNA pada kromosom yang membawa sifat.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

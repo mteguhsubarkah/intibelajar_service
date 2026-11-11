@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_3
+familyCode: FIS.C26.D.UKUR.F.VARIABEL_DAN_BUKTI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil tiga kali pengukuran panjang meja adalah 120,2 cm; 120,4 cm; dan 120,3 cm. Nilai yang paling tepat dilaporkan adalah …
+  options:
+    - id: a
+      label: 120,2 cm
+    - id: b
+      label: 120,3 cm
+    - id: c
+      label: 120,4 cm
+    - id: d
+      label: 361 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 120,3 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI
+  feedback:
+    correct: "Rata-ratanya (120,2 + 120,4 + 120,3) : 3 = 120,3 cm."
+    incorrect: "Jawabannya 120,3 cm. Rata-ratanya (120,2 + 120,4 + 120,3) : 3 = 120,3 cm."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_2
+familyCode: MAT.C26.D.GEOMETRI.F.TEOREMA_PYTHAGORAS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.GEOMETRI.TEOREMA_PYTHAGORAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tiga bilangan berikut yang dapat menjadi panjang sisi segitiga siku-siku adalah …
+  options:
+    - id: a
+      label: 6, 8, 12
+    - id: b
+      label: 9, 12, 15
+    - id: c
+      label: 5, 11, 12
+    - id: d
+      label: 4, 5, 6
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 9, 12, 15
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.GEOMETRI.TEOREMA_PYTHAGORAS
+  feedback:
+    correct: 9² + 12² = 81 + 144 = 225 = 15². Pilihan lain tidak memenuhi a² + b² = c².
+    incorrect: Jawabannya 9, 12, 15. 9² + 12² = 81 + 144 = 225 = 15². Pilihan lain tidak memenuhi a² + b² = c².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

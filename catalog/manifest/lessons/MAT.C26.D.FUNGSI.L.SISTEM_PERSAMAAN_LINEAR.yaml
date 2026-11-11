@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.FUNGSI.L.SISTEM_PERSAMAAN_LINEAR
+title: Sistem persamaan linear
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.FUNGSI.SISTEM_PERSAMAAN_LINEAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Dua persamaan, dua variabel
+  - type: text
+    slide: 0
+    text: SPLDV terdiri dari dua persamaan linear dengan dua variabel, misalnya x + y = 10 dan x − y = 2.
+  - type: text
+    slide: 0
+    text: "Penyelesaiannya pasangan (x, y) yang memenuhi **kedua** persamaan sekaligus: (6, 4)."
+  - type: math
+    slide: 0
+    name: SPLDV
+    expression: a₁x + b₁y = c₁ dan a₂x + b₂y = c₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Makna grafiknya
+  - type: text
+    slide: 1
+    text: Setiap persamaan linear adalah sebuah garis. **Titik potong** kedua garis adalah penyelesaiannya.
+  - type: text
+    slide: 1
+    text: Garis sejajar → tidak ada penyelesaian. Garis berimpit → penyelesaiannya tak hingga banyak.
+  - type: math
+    slide: 1
+    name: penyelesaian
+    expression: titik potong dua garis
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Selalu cek jawaban dengan memasukkannya ke kedua persamaan.
+checks:
+  - question: MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.FUNGSI.S.SISTEM_PERSAMAAN_LINEAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2
+familyCode: FIS.C26.D.GERAK.F.GERAK_DAN_GAYA_RESULTAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah benda bermassa 5 kg berada di Bumi (g = 10 m/s²). Beratnya adalah …
+  options:
+    - id: a
+      label: 500 N
+    - id: b
+      label: 5 N
+    - id: c
+      label: 50 N
+    - id: d
+      label: 0,5 N
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 50 N
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+  feedback:
+    correct: w = m × g = 5 × 10 = 50 N.
+    incorrect: Jawabannya 50 N. w = m × g = 5 × 10 = 50 N.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

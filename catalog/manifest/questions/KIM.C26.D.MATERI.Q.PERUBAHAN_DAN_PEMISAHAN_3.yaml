@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.Q.PERUBAHAN_DAN_PEMISAHAN_3
+familyCode: KIM.C26.D.MATERI.F.PERUBAHAN_DAN_PEMISAHAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.MATERI.PERUBAHAN_DAN_PEMISAHAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sifat "mudah terbakar" merupakan …
+  options:
+    - id: a
+      label: sifat fisika
+    - id: b
+      label: sifat kimia
+    - id: c
+      label: perubahan fisika
+    - id: d
+      label: campuran
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - sifat kimia
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.MATERI.PERUBAHAN_DAN_PEMISAHAN
+  feedback:
+    correct: Mudah terbakar adalah kemampuan suatu zat berubah menjadi zat baru, jadi termasuk sifat kimia.
+    incorrect: Jawabannya sifat kimia. Mudah terbakar adalah kemampuan suatu zat berubah menjadi zat baru, jadi termasuk sifat kimia.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

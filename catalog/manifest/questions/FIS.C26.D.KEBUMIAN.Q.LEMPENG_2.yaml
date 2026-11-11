@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.Q.LEMPENG_2
+familyCode: FIS.C26.D.KEBUMIAN.F.LEMPENG_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Banyaknya gunung api di Indonesia terutama disebabkan oleh …
+  options:
+    - id: a
+      label: banyaknya hutan
+    - id: b
+      label: Indonesia negara kepulauan
+    - id: c
+      label: Indonesia berada di pertemuan lempeng tektonik
+    - id: d
+      label: iklim tropis
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - Indonesia berada di pertemuan lempeng tektonik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+  feedback:
+    correct: Penunjaman lempeng di sekitar Indonesia menghasilkan magma yang membentuk gunung api.
+    incorrect: Jawabannya Indonesia berada di pertemuan lempeng tektonik. Penunjaman lempeng di sekitar Indonesia menghasilkan magma yang membentuk gunung api.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

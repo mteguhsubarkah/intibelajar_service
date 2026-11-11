@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.L.MITIGASI
+title: Mitigasi bencana geologi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+blocks:
+  - type: heading
+    slide: 0
+    text: Sebelum dan saat bencana
+  - type: text
+    slide: 0
+    text: Mitigasi adalah upaya mengurangi risiko bencana.
+  - type: text
+    slide: 0
+    text: "Sebelum bencana: kenali jalur evakuasi, siapkan tas siaga, dan bangun rumah tahan gempa. Saat gempa: merunduk, berlindung di bawah meja, dan berpegangan; jauhi kaca."
+  - type: math
+    slide: 0
+    name: saat gempa
+    expression: merunduk, berlindung, berpegangan
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Membaca tanda bahaya
+  - type: text
+    slide: 1
+    text: Jika di pantai terasa gempa kuat atau air laut tiba-tiba surut, segera evakuasi ke tempat tinggi tanpa menunggu sirene.
+  - type: text
+    slide: 1
+    text: Ikuti informasi resmi dari BMKG dan BNPB, bukan kabar yang belum jelas sumbernya.
+  - type: math
+    slide: 1
+    name: air laut tiba-tiba surut
+    expression: segera ke tempat tinggi
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Siapkan tas siaga berisi air, makanan, senter, obat, dan dokumen penting.
+checks:
+  - question: FIS.C26.D.KEBUMIAN.Q.MITIGASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.KEBUMIAN.S.MITIGASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

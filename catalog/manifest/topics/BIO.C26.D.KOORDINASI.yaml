@@ -4,7 +4,7 @@ subject: BIO
 title: Koordinasi, reproduksi, dan homeostasis
 subtitle: Sistem saraf, hormon, reproduksi manusia, dan pengaturan kondisi tubuh
 phase: D
-availability: PLANNED
+availability: MAPPED
 bekal:
   - sistem organ
 aliases: []
@@ -16,10 +16,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-koordinasi-c1
@@ -32,7 +32,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-koordinasi-hormon
@@ -45,7 +45,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-koordinasi-reproduksi
@@ -58,7 +58,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-d-koordinasi-homeostasis

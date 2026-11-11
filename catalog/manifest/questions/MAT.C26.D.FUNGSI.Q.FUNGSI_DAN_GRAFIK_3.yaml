@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_3
+familyCode: MAT.C26.D.FUNGSI.F.FUNGSI_DAN_GRAFIK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.FUNGSI.FUNGSI_DAN_GRAFIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Relasi berikut yang merupakan fungsi adalah …
+  options:
+    - id: a
+      label: "{(2, a), (2, b), (3, c)}"
+    - id: b
+      label: "{(3, a), (3, b), (4, a)}"
+    - id: c
+      label: "{(1, a), (1, b), (2, c)}"
+    - id: d
+      label: "{(1, a), (2, a), (3, b)}"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "{(1, a), (2, a), (3, b)}"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.FUNGSI.FUNGSI_DAN_GRAFIK
+  feedback:
+    correct: Setiap anggota domain (1, 2, 3) punya tepat satu pasangan. Pada pilihan lain ada anggota domain yang punya dua pasangan.
+    incorrect: Jawabannya {(1, a), (2, a), (3, b)}. Setiap anggota domain (1, 2, 3) punya tepat satu pasangan. Pada pilihan lain ada anggota domain yang punya dua pasangan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

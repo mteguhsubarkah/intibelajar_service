@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.Q.PECAHAN_2
+familyCode: MAT.C26.D.BILANGAN.F.PECAHAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.BILANGAN.OPERASI_PECAHAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Hasil 1½ : 3/4 adalah …"
+  options:
+    - id: a
+      label: "2"
+    - id: b
+      label: 9/8
+    - id: c
+      label: 1/2
+    - id: d
+      label: 3/8
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "2"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.BILANGAN.OPERASI_PECAHAN
+  feedback:
+    correct: 1½ = 3/2, lalu 3/2 × 4/3 = 12/6 = 2.
+    incorrect: Jawabannya 2. 1½ = 3/2, lalu 3/2 × 4/3 = 12/6 = 2.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.Q.DAURHIDUP_3
+familyCode: BIO.C26.D.TUMBUH.F.DAURHIDUP_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Menguras bak mandi secara rutin dapat mencegah demam berdarah karena …
+  options:
+    - id: a
+      label: memutus daur hidup nyamuk pada tahap jentik
+    - id: b
+      label: mengusir nyamuk dengan bau
+    - id: c
+      label: menambah oksigen dalam air
+    - id: d
+      label: membunuh nyamuk dewasa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - memutus daur hidup nyamuk pada tahap jentik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+  feedback:
+    correct: Jentik (larva) nyamuk hidup di air; menguras bak membuat jentik tidak dapat berkembang menjadi nyamuk dewasa.
+    incorrect: Jawabannya memutus daur hidup nyamuk pada tahap jentik. Jentik (larva) nyamuk hidup di air; menguras bak membuat jentik tidak dapat berkembang menjadi nyamuk dewasa.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

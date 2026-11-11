@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.Q.ILMIAH_1
+familyCode: MAT.C26.D.BILANGAN.F.ILMIAH_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.BILANGAN.NOTASI_ILMIAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Notasi ilmiah dari 0,00072 adalah …
+  options:
+    - id: a
+      label: 72 × 10⁻⁵
+    - id: b
+      label: 7,2 × 10⁴
+    - id: c
+      label: 0,72 × 10⁻³
+    - id: d
+      label: 7,2 × 10⁻⁴
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 7,2 × 10⁻⁴
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.BILANGAN.NOTASI_ILMIAH
+  feedback:
+    correct: Koma digeser 4 tempat ke kanan menjadi 7,2, jadi pangkatnya −4. Bentuk 72 × 10⁻⁵ dan 0,72 × 10⁻³ tidak memenuhi 1 ≤ a < 10.
+    incorrect: Jawabannya 7,2 × 10⁻⁴. Koma digeser 4 tempat ke kanan menjadi 7,2, jadi pangkatnya −4. Bentuk 72 × 10⁻⁵ dan 0,72 × 10⁻³ tidak memenuhi 1 ≤ a < 10.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

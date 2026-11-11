@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.L.PERTUMBUHAN_DAN_PERKEMBANGAN
+title: Pertumbuhan dan perkembangan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Tumbuh atau berkembang?
+  - type: text
+    slide: 0
+    text: "**Pertumbuhan**: bertambahnya ukuran (tinggi, berat, volume) yang tidak dapat kembali; dapat diukur dengan angka."
+  - type: text
+    slide: 0
+    text: "**Perkembangan**: proses menuju kedewasaan, misalnya kemampuan berpikir bertambah atau bunga menjadi buah; tidak diukur dengan angka."
+  - type: math
+    slide: 0
+    name: pertumbuhan
+    expression: kuantitatif (dapat diukur)
+    highlight: true
+  - type: math
+    slide: 0
+    name: perkembangan
+    expression: kualitatif (menuju dewasa)
+  - type: heading
+    slide: 1
+    text: Contoh
+  - type: text
+    slide: 1
+    text: Tinggi badan bertambah 5 cm → pertumbuhan. Anak mulai bisa berbicara atau tumbuhan mulai berbunga → perkembangan.
+  - type: text
+    slide: 1
+    text: Pada tumbuhan, pertumbuhan memanjang terjadi di jaringan meristem pada ujung akar dan ujung batang.
+  - type: math
+    slide: 1
+    name: pertumbuhan memanjang tumbuhan
+    expression: meristem ujung akar dan batang
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bisa diukur dengan penggaris atau timbangan → pertumbuhan.
+checks:
+  - question: BIO.C26.D.TUMBUH.Q.PERTUMBUHAN_DAN_PERKEMBANGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.TUMBUH.S.PERTUMBUHAN_DAN_PERKEMBANGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

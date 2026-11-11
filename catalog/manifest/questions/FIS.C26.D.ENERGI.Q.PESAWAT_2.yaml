@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.ENERGI.Q.PESAWAT_2
+familyCode: FIS.C26.D.ENERGI.F.PESAWAT_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.ENERGI.PESAWAT_SEDERHANA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Keuntungan mekanis sebuah katrol tetap tunggal adalah …
+  options:
+    - id: a
+      label: bergantung pada beban
+    - id: b
+      label: "1"
+    - id: c
+      label: "2"
+    - id: d
+      label: 0,5
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.ENERGI.PESAWAT_SEDERHANA
+  feedback:
+    correct: Katrol tetap hanya membelokkan arah gaya, jadi gaya kuasa sama dengan beban.
+    incorrect: Jawabannya 1. Katrol tetap hanya membelokkan arah gaya, jadi gaya kuasa sama dengan beban.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

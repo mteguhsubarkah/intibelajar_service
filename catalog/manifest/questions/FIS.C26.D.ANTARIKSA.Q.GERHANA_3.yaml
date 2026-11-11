@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.Q.GERHANA_3
+familyCode: FIS.C26.D.ANTARIKSA.F.GERHANA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gerhana tidak terjadi setiap bulan karena …
+  options:
+    - id: a
+      label: Bumi berotasi
+    - id: b
+      label: Matahari bergerak
+    - id: c
+      label: Bulan terlalu kecil
+    - id: d
+      label: orbit Bulan miring terhadap orbit Bumi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - orbit Bulan miring terhadap orbit Bumi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN
+  feedback:
+    correct: Pada sebagian besar bulan baru dan purnama, Bulan lewat sedikit di atas atau di bawah garis Matahari–Bumi.
+    incorrect: Jawabannya orbit Bulan miring terhadap orbit Bumi. Pada sebagian besar bulan baru dan purnama, Bulan lewat sedikit di atas atau di bawah garis Matahari–Bumi.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

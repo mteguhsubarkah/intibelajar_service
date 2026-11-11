@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.PENCERNAAN_2
+familyCode: BIO.C26.D.ORGAN.F.PENCERNAAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penyerapan sari makanan terutama terjadi di …
+  options:
+    - id: a
+      label: kerongkongan
+    - id: b
+      label: lambung
+    - id: c
+      label: usus halus
+    - id: d
+      label: usus besar
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - usus halus
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN
+  feedback:
+    correct: Jonjot usus halus memperluas permukaan penyerapan.
+    incorrect: Jawabannya usus halus. Jonjot usus halus memperluas permukaan penyerapan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

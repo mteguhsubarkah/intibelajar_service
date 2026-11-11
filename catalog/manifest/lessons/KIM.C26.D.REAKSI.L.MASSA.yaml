@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.L.MASSA
+title: Hukum kekekalan massa
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.D.REAKSI.HUKUM_KEKEKALAN_MASSA
+blocks:
+  - type: heading
+    slide: 0
+    text: Hukum Lavoisier
+  - type: text
+    slide: 0
+    text: Dalam sistem tertutup, massa zat sebelum reaksi sama dengan massa zat sesudah reaksi.
+  - type: text
+    slide: 0
+    text: Atom-atom hanya tersusun ulang menjadi zat baru; tidak ada atom yang hilang atau bertambah.
+  - type: math
+    slide: 0
+    name: hukum kekekalan massa
+    expression: massa sebelum = massa sesudah
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Bagaimana dengan sistem terbuka?
+  - type: text
+    slide: 1
+    text: Kayu yang dibakar di udara terbuka tampak lebih ringan karena gas CO₂ dan uap air lepas ke udara.
+  - type: text
+    slide: 1
+    text: Jika semua gas itu ditampung (sistem tertutup), massa totalnya tetap sama.
+  - type: math
+    slide: 1
+    name: sistem terbuka
+    expression: gas dapat keluar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Massa yang tampak "hilang" biasanya berupa gas yang keluar dari wadah.
+checks:
+  - question: KIM.C26.D.REAKSI.Q.MASSA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.REAKSI.S.MASSA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

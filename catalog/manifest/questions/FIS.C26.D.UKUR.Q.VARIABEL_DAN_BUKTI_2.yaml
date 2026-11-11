@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.UKUR.Q.VARIABEL_DAN_BUKTI_2
+familyCode: FIS.C26.D.UKUR.F.VARIABEL_DAN_BUKTI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Siswa menyelidiki pengaruh suhu air terhadap waktu larut gula. Yang harus dijaga sama (variabel kontrol) adalah …
+  options:
+    - id: a
+      label: jumlah gula dan volume air
+    - id: b
+      label: hasil pengamatan
+    - id: c
+      label: suhu air
+    - id: d
+      label: waktu larut gula
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - jumlah gula dan volume air
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI
+  feedback:
+    correct: Jumlah gula dan volume air dibuat sama supaya perbedaan waktu larut hanya disebabkan oleh suhu.
+    incorrect: Jawabannya jumlah gula dan volume air. Jumlah gula dan volume air dibuat sama supaya perbedaan waktu larut hanya disebabkan oleh suhu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

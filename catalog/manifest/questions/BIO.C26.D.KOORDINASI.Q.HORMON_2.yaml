@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.Q.HORMON_2
+familyCode: BIO.C26.D.KOORDINASI.F.HORMON_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KOORDINASI.SISTEM_HORMON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hormon disebarkan ke organ sasarannya melalui …
+  options:
+    - id: a
+      label: otot
+    - id: b
+      label: saraf
+    - id: c
+      label: darah
+    - id: d
+      label: udara
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - darah
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KOORDINASI.SISTEM_HORMON
+  feedback:
+    correct: Kelenjar endokrin tidak bersaluran; hormonnya langsung masuk ke darah.
+    incorrect: Jawabannya darah. Kelenjar endokrin tidak bersaluran; hormonnya langsung masuk ke darah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.L.GEN_DAN_VARIASI
+title: Gen dan variasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.GENETIKA.GEN_DAN_VARIASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Gen, DNA, dan kromosom
+  - type: text
+    slide: 0
+    text: Sifat diturunkan dari orang tua melalui **gen**. Gen adalah bagian DNA yang terdapat pada kromosom di dalam inti sel.
+  - type: text
+    slide: 0
+    text: Sel tubuh manusia memiliki 46 kromosom (23 pasang).
+  - type: math
+    slide: 0
+    name: manusia
+    expression: 46 kromosom (23 pasang)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Variasi
+  - type: text
+    slide: 1
+    text: Variasi adalah perbedaan sifat di antara individu sejenis, seperti warna kulit, golongan darah, dan bentuk rambut.
+  - type: text
+    slide: 1
+    text: "Sumbernya: gen dari kedua orang tua dan pengaruh lingkungan."
+  - type: math
+    slide: 1
+    name: variasi
+    expression: gen + lingkungan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Golongan darah ditentukan gen; berat badan dipengaruhi gen dan lingkungan.
+checks:
+  - question: BIO.C26.D.GENETIKA.Q.GEN_DAN_VARIASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.GENETIKA.S.GEN_DAN_VARIASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

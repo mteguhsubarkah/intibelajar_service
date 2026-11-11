@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_2
+familyCode: FIS.C26.D.LISTRIK.F.ARUS_DAN_RANGKAIAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah lampu 50 W menyala 10 jam setiap hari. Energi yang dipakai dalam 30 hari adalah …
+  options:
+    - id: a
+      label: 150 kWh
+    - id: b
+      label: 500 kWh
+    - id: c
+      label: 15 kWh
+    - id: d
+      label: 1,5 kWh
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 15 kWh
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+  feedback:
+    correct: 50 × 10 × 30 = 15.000 Wh = 15 kWh.
+    incorrect: Jawabannya 15 kWh. 50 × 10 × 30 = 15.000 Wh = 15 kWh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.L.INTERAKSI_DAN_ALIRAN_ENERGI
+title: Interaksi & aliran energi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+blocks:
+  - type: heading
+    slide: 0
+    text: Komponen ekosistem
+  - type: text
+    slide: 0
+    text: Ekosistem terdiri dari komponen **biotik** (makhluk hidup) dan **abiotik** (air, tanah, cahaya, suhu) yang saling berinteraksi.
+  - type: text
+    slide: 0
+    text: "Peran komponen biotik: produsen (tumbuhan), konsumen (hewan), dan pengurai (bakteri, jamur)."
+  - type: math
+    slide: 0
+    name: abiotik
+    expression: air, tanah, cahaya, suhu
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pola interaksi
+  - type: text
+    slide: 1
+    text: Simbiosis **mutualisme** (lebah dan bunga, keduanya untung), **komensalisme** (anggrek dan pohon, satu untung yang lain tidak terpengaruh), **parasitisme** (benalu dan pohon, satu untung yang lain rugi), serta **predasi** (elang memangsa tikus).
+  - type: text
+    slide: 1
+    text: Energi mengalir dari Matahari → produsen → konsumen.
+  - type: math
+    slide: 1
+    name: aliran energi
+    expression: Matahari → produsen → konsumen
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Energi mengalir satu arah dan berkurang di setiap tingkat; materi berdaur.
+checks:
+  - question: BIO.C26.D.EKOLOGI.Q.INTERAKSI_DAN_ALIRAN_ENERGI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.EKOLOGI.S.INTERAKSI_DAN_ALIRAN_ENERGI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

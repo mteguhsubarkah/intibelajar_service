@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.Q.JARING_3
+familyCode: MAT.C26.D.PENGUKURAN.F.JARING_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah kotak berbentuk kubus tanpa tutup dengan rusuk 20 cm akan dicat bagian luarnya. Luas yang dicat adalah …
+  options:
+    - id: a
+      label: 1.600 cm²
+    - id: b
+      label: 2.400 cm²
+    - id: c
+      label: 2.000 cm²
+    - id: d
+      label: 8.000 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 2.000 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN
+  feedback:
+    correct: "Tanpa tutup, sisinya tinggal 5: 5 × 20² = 2.000 cm²."
+    incorrect: "Jawabannya 2.000 cm². Tanpa tutup, sisinya tinggal 5: 5 × 20² = 2.000 cm²."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

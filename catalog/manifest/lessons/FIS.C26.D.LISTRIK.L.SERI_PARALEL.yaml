@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.L.SERI_PARALEL
+title: Rangkaian seri dan paralel
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Rangkaian seri
+  - type: text
+    slide: 0
+    text: Komponen tersusun berderet; kuat arus sama di semua bagian.
+  - type: text
+    slide: 0
+    text: Rs = R₁ + R₂ + … Jika satu lampu putus, semua lampu padam.
+  - type: math
+    slide: 0
+    name: seri
+    expression: Rs = R₁ + R₂ + …
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Rangkaian paralel
+  - type: text
+    slide: 1
+    text: Komponen tersusun bercabang; tegangan sama di setiap cabang. 1/Rp = 1/R₁ + 1/R₂ + …
+  - type: text
+    slide: 1
+    text: Instalasi rumah memakai rangkaian paralel, sehingga satu lampu putus tidak memadamkan lampu lain.
+  - type: math
+    slide: 1
+    name: paralel
+    expression: 1/Rp = 1/R₁ + 1/R₂ + …
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hambatan pengganti paralel selalu lebih kecil daripada hambatan terkecilnya.
+checks:
+  - question: FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.LISTRIK.S.SERI_PARALEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

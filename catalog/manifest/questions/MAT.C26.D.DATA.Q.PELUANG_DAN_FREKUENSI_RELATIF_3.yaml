@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_3
+familyCode: MAT.C26.D.DATA.F.PELUANG_DAN_FREKUENSI_RELATIF_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.DATA.PELUANG_DAN_FREKUENSI_RELATIF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah kantong berisi 4 kelereng merah dan 6 kelereng biru. Satu kelereng diambil secara acak. Peluang terambil kelereng merah adalah …
+  options:
+    - id: a
+      label: 2/5
+    - id: b
+      label: 3/5
+    - id: c
+      label: 4/6
+    - id: d
+      label: 1/4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2/5
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.DATA.PELUANG_DAN_FREKUENSI_RELATIF
+  feedback:
+    correct: Semua kelereng ada 10, yang merah 4, jadi peluangnya 4/10 = 2/5.
+    incorrect: Jawabannya 2/5. Semua kelereng ada 10, yang merah 4, jadi peluangnya 4/10 = 2/5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

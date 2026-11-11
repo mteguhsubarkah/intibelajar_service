@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.Q.FAKTOR_1
+familyCode: BIO.C26.D.TUMBUH.F.FAKTOR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.TUMBUH.FAKTOR_INTERNAL_DAN_EKSTERNAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kecambah yang tumbuh di tempat gelap menjadi lebih tinggi tetapi pucat. Peristiwa ini disebut …
+  options:
+    - id: a
+      label: fototropisme
+    - id: b
+      label: metamorfosis
+    - id: c
+      label: fotosintesis
+    - id: d
+      label: etiolasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - etiolasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.TUMBUH.FAKTOR_INTERNAL_DAN_EKSTERNAL
+  feedback:
+    correct: Tanpa cahaya, auksin tidak terurai sehingga batang memanjang cepat, tetapi daun pucat karena kurang klorofil.
+    incorrect: Jawabannya etiolasi. Tanpa cahaya, auksin tidak terurai sehingga batang memanjang cepat, tetapi daun pucat karena kurang klorofil.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

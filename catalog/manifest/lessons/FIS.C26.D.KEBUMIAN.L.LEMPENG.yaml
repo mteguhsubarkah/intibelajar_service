@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.L.LEMPENG
+title: Gerak lempeng tektonik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.KEBUMIAN.GERAK_LEMPENG_TEKTONIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Tiga jenis batas lempeng
+  - type: text
+    slide: 0
+    text: "**Divergen**: lempeng saling menjauh (punggung tengah samudra). **Konvergen**: lempeng saling mendekat dan bertumbukan, membentuk pegunungan, palung, dan gunung api. **Transform**: lempeng saling bergeser."
+  - type: text
+    slide: 0
+    text: Pada batas konvergen, lempeng samudra dapat menunjam ke bawah lempeng lain (subduksi).
+  - type: math
+    slide: 0
+    name: divergen
+    expression: menjauh
+    highlight: true
+  - type: math
+    slide: 0
+    name: konvergen
+    expression: mendekat
+  - type: heading
+    slide: 1
+    text: Indonesia di pertemuan lempeng
+  - type: text
+    slide: 1
+    text: Indonesia berada di pertemuan Lempeng Eurasia, Indo-Australia, dan Pasifik.
+  - type: text
+    slide: 1
+    text: Akibatnya banyak gunung api dan gempa, tetapi juga tanah yang subur dan kaya mineral.
+  - type: math
+    slide: 1
+    name: Indonesia
+    expression: pertemuan tiga lempeng besar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Konvergen bertumbukan, divergen berpisah, transform bergesekan.
+checks:
+  - question: FIS.C26.D.KEBUMIAN.Q.LEMPENG_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.KEBUMIAN.S.LEMPENG
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

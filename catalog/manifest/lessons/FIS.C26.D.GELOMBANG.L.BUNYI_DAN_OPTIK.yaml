@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.L.BUNYI_DAN_OPTIK
+title: Bunyi dan optik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Bunyi
+  - type: text
+    slide: 0
+    text: Bunyi adalah gelombang longitudinal yang memerlukan medium, sehingga tidak dapat merambat di ruang hampa.
+  - type: text
+    slide: 0
+    text: Tinggi nada ditentukan frekuensi; kuat bunyi ditentukan amplitudo. Telinga manusia mendengar 20–20.000 Hz (audiosonik).
+  - type: math
+    slide: 0
+    name: audiosonik
+    expression: 20 – 20.000 Hz
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pantulan bunyi dan alat optik
+  - type: text
+    slide: 1
+    text: "Gema dan sonar memanfaatkan pantulan bunyi: kedalaman = v × t : 2."
+  - type: text
+    slide: 1
+    text: Mata, lup, dan kamera membentuk bayangan dengan lensa. Rabun jauh (miopi) dibantu lensa cekung, rabun dekat (hipermetropi) dibantu lensa cembung.
+  - type: math
+    slide: 1
+    name: kedalaman sonar
+    expression: d = v × t / 2
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Waktu sonar dibagi 2 karena bunyi berangkat lalu kembali.
+checks:
+  - question: FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.GELOMBANG.S.BUNYI_DAN_OPTIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

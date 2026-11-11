@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.FUNGSI.Q.SISTEM_PERSAMAAN_LINEAR_2
+familyCode: MAT.C26.D.FUNGSI.F.SISTEM_PERSAMAAN_LINEAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.FUNGSI.SISTEM_PERSAMAAN_LINEAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Harga 2 buku dan 1 pena Rp13.000, sedangkan 1 buku dan 2 pena Rp11.000. Jika b = harga buku dan p = harga pena, model matematikanya adalah …
+  options:
+    - id: a
+      label: 2b + 2p = 13.000 dan b + p = 11.000
+    - id: b
+      label: b + 2p = 13.000 dan 2b + p = 11.000
+    - id: c
+      label: 2b + p = 11.000 dan b + 2p = 13.000
+    - id: d
+      label: 2b + p = 13.000 dan b + 2p = 11.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 2b + p = 13.000 dan b + 2p = 11.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.FUNGSI.SISTEM_PERSAMAAN_LINEAR
+  feedback:
+    correct: 2 buku + 1 pena = 13.000 dan 1 buku + 2 pena = 11.000.
+    incorrect: Jawabannya 2b + p = 13.000 dan b + 2p = 11.000. 2 buku + 1 pena = 13.000 dan 1 buku + 2 pena = 11.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

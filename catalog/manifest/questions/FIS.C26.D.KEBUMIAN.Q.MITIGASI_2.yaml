@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.Q.MITIGASI_2
+familyCode: FIS.C26.D.KEBUMIAN.F.MITIGASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di pantai terasa gempa kuat, lalu air laut tiba-tiba surut. Tindakan yang tepat adalah …
+  options:
+    - id: a
+      label: mendekati pantai untuk melihat
+    - id: b
+      label: segera evakuasi ke tempat tinggi
+    - id: c
+      label: menunggu sirene berbunyi
+    - id: d
+      label: memotret air laut
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - segera evakuasi ke tempat tinggi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.KEBUMIAN.MITIGASI_BENCANA_GEOLOGI
+  feedback:
+    correct: Air laut yang surut tiba-tiba adalah tanda alami tsunami; jangan menunggu peringatan lain.
+    incorrect: Jawabannya segera evakuasi ke tempat tinggi. Air laut yang surut tiba-tiba adalah tanda alami tsunami; jangan menunggu peringatan lain.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

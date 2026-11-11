@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_2
+familyCode: MAT.C26.D.RASIO.F.PERBANDINGAN_SENILAI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.RASIO.PERBANDINGAN_SENILAI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah mobil menghabiskan 6 liter bensin untuk menempuh 72 km. Untuk menempuh 120 km dibutuhkan … liter.
+  options:
+    - id: a
+      label: "8"
+    - id: b
+      label: "9"
+    - id: c
+      label: "10"
+    - id: d
+      label: "12"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "10"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.RASIO.PERBANDINGAN_SENILAI
+  feedback:
+    correct: "72 km : 6 L = 12 km per liter, lalu 120 : 12 = 10 liter."
+    incorrect: "Jawabannya 10. 72 km : 6 L = 12 km per liter, lalu 120 : 12 = 10 liter."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

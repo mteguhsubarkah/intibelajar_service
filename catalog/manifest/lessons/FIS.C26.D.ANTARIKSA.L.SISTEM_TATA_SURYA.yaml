@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.L.SISTEM_TATA_SURYA
+title: Sistem tata surya
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Anggota tata surya
+  - type: text
+    slide: 0
+    text: "Matahari adalah pusat tata surya. Delapan planetnya: Merkurius, Venus, Bumi, Mars (planet dalam, berbatuan) serta Yupiter, Saturnus, Uranus, Neptunus (planet luar, raksasa)."
+  - type: text
+    slide: 0
+    text: "Anggota lain: planet kerdil, satelit, asteroid (sebagian besar di sabuk antara Mars dan Yupiter), dan komet."
+  - type: math
+    slide: 0
+    name: planet terbesar
+    expression: Yupiter
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mengapa planet beredar
+  - type: text
+    slide: 1
+    text: Gaya gravitasi Matahari menahan planet tetap pada orbitnya.
+  - type: text
+    slide: 1
+    text: "Makin jauh dari Matahari, makin lama waktu revolusinya: Merkurius 88 hari, Bumi 1 tahun, Neptunus sekitar 165 tahun."
+  - type: math
+    slide: 1
+    name: jarak makin jauh
+    expression: revolusi makin lama
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Urutan dari yang terdekat: Merkurius, Venus, Bumi, Mars, Yupiter, Saturnus, Uranus, Neptunus."
+checks:
+  - question: FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ANTARIKSA.S.SISTEM_TATA_SURYA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.Q.PEMISAHAN_3
+familyCode: KIM.C26.D.MATERI.F.PEMISAHAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.MATERI.METODE_PEMISAHAN_CAMPURAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pembuatan air suling (akuades) memanfaatkan perbedaan …
+  options:
+    - id: a
+      label: kemagnetan
+    - id: b
+      label: ukuran partikel
+    - id: c
+      label: titik didih
+    - id: d
+      label: warna
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - titik didih
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.MATERI.METODE_PEMISAHAN_CAMPURAN
+  feedback:
+    correct: Air diuapkan lalu diembunkan kembali, sedangkan zat terlarut dengan titik didih lebih tinggi tertinggal.
+    incorrect: Jawabannya titik didih. Air diuapkan lalu diembunkan kembali, sedangkan zat terlarut dengan titik didih lebih tinggi tertinggal.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

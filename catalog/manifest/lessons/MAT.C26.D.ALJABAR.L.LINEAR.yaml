@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.D.ALJABAR.L.LINEAR
+title: Persamaan linear satu variabel
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.ALJABAR.PERSAMAAN_LINEAR_SATU_VARIABEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Menyelesaikan PLSV
+  - type: text
+    slide: 0
+    text: Lakukan operasi yang sama pada kedua ruas sampai variabel tinggal sendiri.
+  - type: text
+    slide: 0
+    text: "Contoh: 2x + 7 = 19 → 2x = 12 → x = 6."
+  - type: math
+    slide: 0
+    name: PLSV
+    expression: ax + b = c → x = (c − b)/a
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Dari cerita ke persamaan
+  - type: text
+    slide: 1
+    text: Umur ayah 3 kali umur anak, dan jumlah umur mereka 48 tahun.
+  - type: text
+    slide: 1
+    text: "Misalkan umur anak x: x + 3x = 48 → 4x = 48 → x = 12. Anak berumur 12 tahun, ayah 36 tahun."
+  - type: math
+    slide: 1
+    name: umur anak
+    expression: x
+    highlight: true
+  - type: math
+    slide: 1
+    name: umur ayah
+    expression: 3x
+  - type: tip
+    slide: 1
+    text: Tulis dulu arti x sebelum menyusun persamaan.
+checks:
+  - question: MAT.C26.D.ALJABAR.Q.LINEAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.ALJABAR.S.LINEAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

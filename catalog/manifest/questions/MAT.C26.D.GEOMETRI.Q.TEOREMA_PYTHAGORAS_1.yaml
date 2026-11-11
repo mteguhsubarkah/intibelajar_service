@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.Q.TEOREMA_PYTHAGORAS_1
+familyCode: MAT.C26.D.GEOMETRI.F.TEOREMA_PYTHAGORAS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.GEOMETRI.TEOREMA_PYTHAGORAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah segitiga siku-siku memiliki sisi tegak 6 cm dan 8 cm. Panjang sisi miringnya adalah …
+  options:
+    - id: a
+      label: 12 cm
+    - id: b
+      label: √28 cm
+    - id: c
+      label: 10 cm
+    - id: d
+      label: 14 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 10 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.GEOMETRI.TEOREMA_PYTHAGORAS
+  feedback:
+    correct: √(6² + 8²) = √(36 + 64) = √100 = 10 cm.
+    incorrect: Jawabannya 10 cm. √(6² + 8²) = √(36 + 64) = √100 = 10 cm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -4,7 +4,7 @@ subject: FIS
 title: Getaran, bunyi, dan cahaya
 subtitle: Getaran, gelombang, bunyi, optik, serta pemantulan dan pembiasan cahaya
 phase: D
-availability: PLANNED
+availability: MAPPED
 bekal: []
 aliases: []
 units: []
@@ -17,7 +17,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gelombang-c1
@@ -29,7 +29,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gelombang-c2
@@ -41,7 +41,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gelombang-cahaya

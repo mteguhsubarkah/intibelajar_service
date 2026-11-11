@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.L.PECAHAN
+title: Operasi pecahan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.BILANGAN.OPERASI_PECAHAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Menjumlah dan mengurangi pecahan
+  - type: text
+    slide: 0
+    text: Samakan dulu penyebutnya dengan KPK, lalu jumlahkan atau kurangkan pembilangnya.
+  - type: text
+    slide: 0
+    text: "Contoh: 2/3 + 1/4 = 8/12 + 3/12 = 11/12."
+  - type: math
+    slide: 0
+    name: a/b + c/d
+    expression: (ad + bc)/bd
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mengali dan membagi pecahan
+  - type: text
+    slide: 1
+    text: "**Kali**: pembilang × pembilang, penyebut × penyebut."
+  - type: text
+    slide: 1
+    text: "**Bagi**: kalikan dengan kebalikan pembagi. 3/4 : 1/2 = 3/4 × 2/1 = 6/4 = 1½."
+  - type: math
+    slide: 1
+    name: "a/b : c/d"
+    expression: a/b × d/c
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ubah pecahan campuran menjadi pecahan biasa sebelum mengali atau membagi.
+checks:
+  - question: MAT.C26.D.BILANGAN.Q.PECAHAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.BILANGAN.S.PECAHAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.Q.RESULTAN_2
+familyCode: FIS.C26.D.GERAK.F.RESULTAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penumpang terdorong ke depan saat bus mengerem mendadak. Peristiwa ini merupakan contoh …
+  options:
+    - id: a
+      label: hukum I Newton (inersia)
+    - id: b
+      label: hukum III Newton
+    - id: c
+      label: gaya gravitasi
+    - id: d
+      label: tekanan udara
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - hukum I Newton (inersia)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
+  feedback:
+    correct: Tubuh penumpang cenderung tetap bergerak ke depan walaupun bus melambat.
+    incorrect: Jawabannya hukum I Newton (inersia). Tubuh penumpang cenderung tetap bergerak ke depan walaupun bus melambat.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

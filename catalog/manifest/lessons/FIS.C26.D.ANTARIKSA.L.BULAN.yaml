@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.L.BULAN
+title: Gerak Bulan dan fasenya
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.D.ANTARIKSA.GERAK_BULAN_DAN_FASENYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Fase Bulan
+  - type: text
+    slide: 0
+    text: Bulan tidak bercahaya sendiri; ia memantulkan cahaya Matahari.
+  - type: text
+    slide: 0
+    text: "Selama sekitar 29,5 hari (dari bulan baru ke bulan baru), bagian terang yang terlihat dari Bumi berubah: bulan baru, sabit, kuartir pertama, purnama, kuartir akhir."
+  - type: math
+    slide: 0
+    name: satu siklus fase
+    expression: ± 29,5 hari
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pasang surut
+  - type: text
+    slide: 1
+    text: Gaya gravitasi Bulan (dan Matahari) menarik air laut sehingga terjadi pasang naik dan pasang surut.
+  - type: text
+    slide: 1
+    text: Pasang tertinggi terjadi saat purnama dan bulan baru, ketika Matahari, Bumi, dan Bulan segaris.
+  - type: math
+    slide: 1
+    name: pasang tertinggi
+    expression: purnama dan bulan baru
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sisi Bulan yang sama selalu menghadap Bumi karena periode rotasi dan revolusinya sama.
+checks:
+  - question: FIS.C26.D.ANTARIKSA.Q.BULAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ANTARIKSA.S.BULAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

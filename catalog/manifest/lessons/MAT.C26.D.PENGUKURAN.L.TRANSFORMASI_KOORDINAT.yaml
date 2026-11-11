@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.L.TRANSFORMASI_KOORDINAT
+title: Transformasi koordinat
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.PENGUKURAN.TRANSFORMASI_KOORDINAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Translasi dan refleksi
+  - type: text
+    slide: 0
+    text: "**Translasi** (a, b): (x, y) → (x + a, y + b)."
+  - type: text
+    slide: 0
+    text: "**Refleksi** terhadap sumbu x: (x, y) → (x, −y). Terhadap sumbu y: (x, y) → (−x, y)."
+  - type: math
+    slide: 0
+    name: translasi
+    expression: (x, y) → (x + a, y + b)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Rotasi dan dilatasi
+  - type: text
+    slide: 1
+    text: "**Rotasi** 90° berlawanan arah jarum jam dengan pusat O: (x, y) → (−y, x). Rotasi 180°: (x, y) → (−x, −y)."
+  - type: text
+    slide: 1
+    text: "**Dilatasi** dengan faktor k dan pusat O: (x, y) → (kx, ky)."
+  - type: math
+    slide: 1
+    name: dilatasi
+    expression: (x, y) → (kx, ky)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Uji dengan titik (1, 0): rotasi 90° berlawanan arah jarum jam membawanya ke (0, 1)."
+checks:
+  - question: MAT.C26.D.PENGUKURAN.Q.TRANSFORMASI_KOORDINAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.PENGUKURAN.S.TRANSFORMASI_KOORDINAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

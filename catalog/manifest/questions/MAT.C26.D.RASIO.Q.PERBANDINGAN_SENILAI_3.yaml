@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_3
+familyCode: MAT.C26.D.RASIO.F.PERBANDINGAN_SENILAI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.RASIO.PERBANDINGAN_SENILAI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pasangan besaran berikut yang merupakan perbandingan senilai adalah …
+  options:
+    - id: a
+      label: banyak siswa dan jatah kue per siswa dari kue yang sama
+    - id: b
+      label: banyak pekerja dan lama pekerjaan selesai
+    - id: c
+      label: kecepatan dan waktu tempuh untuk jarak yang sama
+    - id: d
+      label: banyak barang dan total harga
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - banyak barang dan total harga
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.RASIO.PERBANDINGAN_SENILAI
+  feedback:
+    correct: Makin banyak barang, makin besar total harganya dengan perbandingan tetap. Pasangan lain berbalik nilai.
+    incorrect: Jawabannya banyak barang dan total harga. Makin banyak barang, makin besar total harganya dengan perbandingan tetap. Pasangan lain berbalik nilai.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

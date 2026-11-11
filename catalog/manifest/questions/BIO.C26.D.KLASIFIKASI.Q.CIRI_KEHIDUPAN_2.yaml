@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KLASIFIKASI.Q.CIRI_KEHIDUPAN_2
+familyCode: BIO.C26.D.KLASIFIKASI.F.CIRI_KEHIDUPAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KLASIFIKASI.CIRI_KEHIDUPAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kucing mengeluarkan keringat melalui telapak kakinya. Ini contoh ciri makhluk hidup, yaitu …
+  options:
+    - id: a
+      label: memerlukan nutrisi
+    - id: b
+      label: mengeluarkan zat sisa
+    - id: c
+      label: tumbuh
+    - id: d
+      label: bergerak
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - mengeluarkan zat sisa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KLASIFIKASI.CIRI_KEHIDUPAN
+  feedback:
+    correct: Keringat adalah zat sisa yang dikeluarkan tubuh.
+    incorrect: Jawabannya mengeluarkan zat sisa. Keringat adalah zat sisa yang dikeluarkan tubuh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

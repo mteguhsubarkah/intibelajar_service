@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.Q.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_3
+familyCode: MAT.C26.D.BILANGAN.F.PANGKAT_AKAR_DAN_NOTASI_ILMIAH_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Nilai dari (5²)³ : 5⁴ adalah …"
+  options:
+    - id: a
+      label: "625"
+    - id: b
+      label: "5"
+    - id: c
+      label: "25"
+    - id: d
+      label: "125"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "25"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH
+  feedback:
+    correct: "(5²)³ = 5⁶, lalu 5⁶ : 5⁴ = 5² = 25."
+    incorrect: "Jawabannya 25. (5²)³ = 5⁶, lalu 5⁶ : 5⁴ = 5² = 25."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

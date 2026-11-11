@@ -4,7 +4,7 @@ subject: FIS
 title: Gerak, gaya, dan tekanan
 subtitle: Jarak, perpindahan, kelajuan, resultan gaya, inersia, dan tekanan
 phase: D
-availability: PLANNED
+availability: MAPPED
 bekal: []
 aliases: []
 units: []
@@ -14,10 +14,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gerak-c1
@@ -29,7 +29,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gerak-c2
@@ -41,7 +41,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gerak-kelajuan
@@ -53,7 +53,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gerak-resultan

@@ -1,0 +1,65 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.L.ASAMBASA
+title: Asam, basa, dan indikator
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.D.REAKSI.ASAM_BASA_DAN_INDIKATOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Sifat asam, basa, dan netral
+  - type: text
+    slide: 0
+    text: "**Asam**: rasa masam, pH < 7, memerahkan lakmus biru (cuka, air jeruk). **Basa**: rasa pahit dan licin, pH > 7, membirukan lakmus merah (sabun, air kapur)."
+  - type: text
+    slide: 0
+    text: "**Netral**: pH = 7 (air murni, larutan garam dapur)."
+  - type: math
+    slide: 0
+    name: asam
+    expression: pH < 7
+    highlight: true
+  - type: math
+    slide: 0
+    name: basa
+    expression: pH > 7
+  - type: math
+    slide: 0
+    name: netral
+    expression: pH = 7
+  - type: heading
+    slide: 1
+    text: Indikator
+  - type: text
+    slide: 1
+    text: "Indikator menunjukkan sifat larutan melalui perubahan warna: kertas lakmus, indikator universal, dan indikator alami seperti kunyit, kubis ungu, dan bunga sepatu."
+  - type: text
+    slide: 1
+    text: Ekstrak kubis ungu menjadi kemerahan dalam asam dan kehijauan dalam basa.
+  - type: math
+    slide: 1
+    name: lakmus biru
+    expression: menjadi merah dalam asam
+    highlight: true
+  - type: math
+    slide: 1
+    name: lakmus merah
+    expression: menjadi biru dalam basa
+  - type: tip
+    slide: 1
+    text: Jangan mencicipi larutan untuk menguji sifatnya; gunakan indikator.
+checks:
+  - question: KIM.C26.D.REAKSI.Q.ASAMBASA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.REAKSI.S.ASAMBASA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

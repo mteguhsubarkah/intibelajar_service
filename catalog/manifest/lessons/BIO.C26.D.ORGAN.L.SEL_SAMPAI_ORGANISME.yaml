@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.L.SEL_SAMPAI_ORGANISME
+title: Sel sampai organisme
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME
+blocks:
+  - type: heading
+    slide: 0
+    text: Tingkat organisasi kehidupan
+  - type: text
+    slide: 0
+    text: Sel → jaringan → organ → sistem organ → organisme.
+  - type: text
+    slide: 0
+    text: "Contoh: sel otot jantung → jaringan otot → jantung → sistem peredaran darah → manusia."
+  - type: math
+    slide: 0
+    name: urutan
+    expression: sel → jaringan → organ → sistem organ → organisme
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Sel hewan dan sel tumbuhan
+  - type: text
+    slide: 1
+    text: Keduanya memiliki membran sel, sitoplasma, dan inti sel.
+  - type: text
+    slide: 1
+    text: Sel tumbuhan juga memiliki **dinding sel**, **kloroplas**, dan **vakuola besar**, yang tidak dimiliki sel hewan.
+  - type: math
+    slide: 1
+    name: khas sel tumbuhan
+    expression: dinding sel, kloroplas, vakuola besar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kloroplas adalah tempat fotosintesis, hanya ada pada sel tumbuhan.
+checks:
+  - question: BIO.C26.D.ORGAN.Q.SEL_SAMPAI_ORGANISME_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.ORGAN.S.SEL_SAMPAI_ORGANISME
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

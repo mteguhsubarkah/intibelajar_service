@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.L.GERHANA
+title: Gerhana Matahari dan Bulan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Gerhana Matahari
+  - type: text
+    slide: 0
+    text: Terjadi saat Bulan berada di antara Matahari dan Bumi, sehingga bayangan Bulan jatuh ke Bumi.
+  - type: text
+    slide: 0
+    text: Hanya mungkin terjadi pada fase bulan baru. Ada gerhana Matahari total, sebagian, dan cincin.
+  - type: math
+    slide: 0
+    name: gerhana Matahari
+    expression: Matahari – Bulan – Bumi
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Gerhana Bulan
+  - type: text
+    slide: 1
+    text: Terjadi saat Bumi berada di antara Matahari dan Bulan, sehingga Bulan masuk ke bayangan Bumi. Hanya mungkin saat purnama.
+  - type: text
+    slide: 1
+    text: Gerhana tidak terjadi setiap bulan karena orbit Bulan miring sekitar 5° terhadap orbit Bumi.
+  - type: math
+    slide: 1
+    name: gerhana Bulan
+    expression: Matahari – Bumi – Bulan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jangan menatap gerhana Matahari secara langsung tanpa filter khusus.
+checks:
+  - question: FIS.C26.D.ANTARIKSA.Q.GERHANA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.ANTARIKSA.S.GERHANA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

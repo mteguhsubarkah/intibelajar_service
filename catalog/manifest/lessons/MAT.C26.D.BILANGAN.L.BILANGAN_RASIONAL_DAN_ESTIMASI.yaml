@@ -1,0 +1,56 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.L.BILANGAN_RASIONAL_DAN_ESTIMASI
+title: Bilangan rasional & estimasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Bilangan rasional
+  - type: text
+    slide: 0
+    text: "Bilangan **rasional** dapat ditulis a/b dengan a dan b bulat, b ≠ 0. Contoh: 3, −2, 0,5 = 1/2, 0,333… = 1/3."
+  - type: text
+    slide: 0
+    text: "Bilangan seperti √2 dan π **tidak rasional**: desimalnya tidak berakhir dan tidak berulang."
+  - type: text
+    slide: 0
+    text: Untuk membandingkan, ubah ke bentuk yang sama. −3/4 = −0,75 lebih kecil dari −0,7 karena letaknya lebih jauh di kiri garis bilangan.
+  - type: math
+    slide: 0
+    name: bilangan rasional
+    expression: a/b, dengan b ≠ 0
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Estimasi
+  - type: text
+    slide: 1
+    text: Estimasi berarti membulatkan dulu supaya hitungan cepat dan hasil akhir bisa dicek.
+  - type: text
+    slide: 1
+    text: "Contoh: 49,8 × 3,1 ≈ 50 × 3 = 150. Hasil tepatnya 154,38, dekat dengan estimasi, jadi masuk akal."
+  - type: math
+    slide: 1
+    name: estimasi
+    expression: bulatkan, lalu hitung
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bandingkan jawaban akhirmu dengan estimasi; kalau jauh berbeda, cek lagi hitungannya.
+checks:
+  - question: MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.BILANGAN.S.BILANGAN_RASIONAL_DAN_ESTIMASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

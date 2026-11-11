@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.Q.KONGRUEN_1
+familyCode: MAT.C26.D.GEOMETRI.F.KONGRUEN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pernyataan berikut yang benar adalah …
+  options:
+    - id: a
+      label: setiap dua bangun yang kongruen pasti sebangun
+    - id: b
+      label: dua persegi panjang selalu sebangun
+    - id: c
+      label: dua segitiga dengan sudut-sudut sama pasti kongruen
+    - id: d
+      label: setiap dua bangun yang sebangun pasti kongruen
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - setiap dua bangun yang kongruen pasti sebangun
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+  feedback:
+    correct: Kongruen berarti bentuk dan ukuran sama, jadi pasti sebangun. Sebaliknya belum tentu.
+    incorrect: Jawabannya setiap dua bangun yang kongruen pasti sebangun. Kongruen berarti bentuk dan ukuran sama, jadi pasti sebangun. Sebaliknya belum tentu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

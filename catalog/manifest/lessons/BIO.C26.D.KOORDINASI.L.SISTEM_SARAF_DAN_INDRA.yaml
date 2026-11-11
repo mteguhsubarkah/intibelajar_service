@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.L.SISTEM_SARAF_DAN_INDRA
+title: Sistem saraf dan indra
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.KOORDINASI.SISTEM_SARAF_DAN_INDRA
+blocks:
+  - type: heading
+    slide: 0
+    text: Sistem saraf
+  - type: text
+    slide: 0
+    text: Sel saraf (neuron) menghantarkan impuls. Sistem saraf pusat terdiri dari otak dan sumsum tulang belakang.
+  - type: text
+    slide: 0
+    text: Gerak sadar dikendalikan otak. Gerak refleks lebih cepat karena impulsnya tidak diolah otak terlebih dahulu, misalnya menarik tangan dari benda panas.
+  - type: math
+    slide: 0
+    name: gerak refleks
+    expression: tidak melalui otak lebih dahulu
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Alat indra
+  - type: text
+    slide: 1
+    text: Mata (cahaya), telinga (bunyi dan keseimbangan), hidung (bau), lidah (rasa), dan kulit (sentuhan, suhu, nyeri).
+  - type: text
+    slide: 1
+    text: Rangsang diterima reseptor, lalu impulsnya diteruskan ke sistem saraf pusat.
+  - type: math
+    slide: 1
+    name: indra keseimbangan
+    expression: telinga bagian dalam
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Jalur refleks: reseptor → saraf sensorik → sumsum tulang belakang → saraf motorik → otot."
+checks:
+  - question: BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.KOORDINASI.S.SISTEM_SARAF_DAN_INDRA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.SERI_PARALEL_3
+familyCode: FIS.C26.D.LISTRIK.F.SERI_PARALEL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Lampu-lampu di rumah dipasang paralel karena …
+  options:
+    - id: a
+      label: agar kabel lebih hemat
+    - id: b
+      label: agar kuat arus di semua lampu sama
+    - id: c
+      label: agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus
+    - id: d
+      label: agar hambatan totalnya besar
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
+  feedback:
+    correct: Pada rangkaian paralel setiap cabang mendapat tegangan sumber penuh dan bekerja sendiri-sendiri.
+    incorrect: Jawabannya agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus. Pada rangkaian paralel setiap cabang mendapat tegangan sumber penuh dan bekerja sendiri-sendiri.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

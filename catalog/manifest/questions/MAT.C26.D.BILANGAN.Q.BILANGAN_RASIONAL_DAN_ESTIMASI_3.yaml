@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_3
+familyCode: MAT.C26.D.BILANGAN.F.BILANGAN_RASIONAL_DAN_ESTIMASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ani membeli 3 buku seharga Rp19.800 per buku. Estimasi total harga yang paling masuk akal adalah …
+  options:
+    - id: a
+      label: sekitar Rp80.000
+    - id: b
+      label: sekitar Rp6.000
+    - id: c
+      label: sekitar Rp40.000
+    - id: d
+      label: sekitar Rp60.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - sekitar Rp60.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+  feedback:
+    correct: Rp19.800 dibulatkan menjadi Rp20.000; 3 × Rp20.000 = Rp60.000.
+    incorrect: Jawabannya sekitar Rp60.000. Rp19.800 dibulatkan menjadi Rp20.000; 3 × Rp20.000 = Rp60.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.D.TUMBUH.L.DAURHIDUP
+title: Daur hidup dan metamorfosis
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.D.TUMBUH.DAUR_HIDUP_DAN_METAMORFOSIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Metamorfosis
+  - type: text
+    slide: 0
+    text: "**Metamorfosis sempurna**: telur → larva → pupa → imago (kupu-kupu, nyamuk). **Metamorfosis tidak sempurna**: telur → nimfa → imago (belalang, kecoak)."
+  - type: text
+    slide: 0
+    text: "Katak mengalami metamorfosis: telur → berudu → katak muda → katak dewasa."
+  - type: math
+    slide: 0
+    name: sempurna
+    expression: telur → larva → pupa → imago
+    highlight: true
+  - type: math
+    slide: 0
+    name: tidak sempurna
+    expression: telur → nimfa → imago
+  - type: heading
+    slide: 1
+    text: Daur hidup tumbuhan dan manfaatnya
+  - type: text
+    slide: 1
+    text: "Tumbuhan berbiji: biji → kecambah → tumbuhan muda → tumbuhan dewasa → berbunga → buah dan biji."
+  - type: text
+    slide: 1
+    text: Memahami daur hidup membantu mengendalikan hama, misalnya memutus daur hidup nyamuk dengan menguras penampungan air (3M).
+  - type: math
+    slide: 1
+    name: 3M
+    expression: menguras, menutup, mendaur ulang
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ada tahap pupa → metamorfosis sempurna.
+checks:
+  - question: BIO.C26.D.TUMBUH.Q.DAURHIDUP_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.TUMBUH.S.DAURHIDUP
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

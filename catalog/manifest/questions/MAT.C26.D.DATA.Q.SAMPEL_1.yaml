@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.DATA.Q.SAMPEL_1
+familyCode: MAT.C26.D.DATA.F.SAMPEL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.DATA.SAMPEL_REPRESENTATIF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kepala sekolah ingin mengetahui makanan kantin favorit seluruh siswa. Sampel yang paling representatif adalah …
+  options:
+    - id: a
+      label: semua anggota OSIS
+    - id: b
+      label: siswa yang berada di kantin pukul 07.00
+    - id: c
+      label: 10 siswa dari kelas 7A
+    - id: d
+      label: 30 siswa yang dipilih acak dari setiap kelas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 30 siswa yang dipilih acak dari setiap kelas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.DATA.SAMPEL_REPRESENTATIF
+  feedback:
+    correct: Memilih acak dari setiap kelas memberi kesempatan yang sama bagi semua siswa untuk terpilih.
+    incorrect: Jawabannya 30 siswa yang dipilih acak dari setiap kelas. Memilih acak dari setiap kelas memberi kesempatan yang sama bagi semua siswa untuk terpilih.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

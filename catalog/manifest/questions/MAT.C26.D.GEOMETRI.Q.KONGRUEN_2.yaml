@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.GEOMETRI.Q.KONGRUEN_2
+familyCode: MAT.C26.D.GEOMETRI.F.KONGRUEN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua segitiga memiliki tiga pasang sudut yang sama besar. Kedua segitiga itu pasti …
+  options:
+    - id: a
+      label: sama luas
+    - id: b
+      label: sama keliling
+    - id: c
+      label: kongruen
+    - id: d
+      label: sebangun
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - sebangun
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN
+  feedback:
+    correct: Sudut-sudut yang sama menjamin bentuknya sama (sebangun), tetapi ukurannya bisa berbeda.
+    incorrect: Jawabannya sebangun. Sudut-sudut yang sama menjamin bentuknya sama (sebangun), tetapi ukurannya bisa berbeda.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

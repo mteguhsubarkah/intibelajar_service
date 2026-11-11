@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.PEREDARAN_2
+familyCode: BIO.C26.D.ORGAN.F.PEREDARAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Peredaran darah kecil adalah peredaran darah dari jantung ke …
+  options:
+    - id: a
+      label: otak saja
+    - id: b
+      label: ginjal saja
+    - id: c
+      label: seluruh tubuh lalu kembali ke jantung
+    - id: d
+      label: paru-paru lalu kembali ke jantung
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - paru-paru lalu kembali ke jantung
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+  feedback:
+    correct: Peredaran kecil membawa darah ke paru-paru untuk mengambil oksigen.
+    incorrect: Jawabannya paru-paru lalu kembali ke jantung. Peredaran kecil membawa darah ke paru-paru untuk mengambil oksigen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

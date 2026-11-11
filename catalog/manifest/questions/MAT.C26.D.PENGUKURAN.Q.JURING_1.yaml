@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.PENGUKURAN.Q.JURING_1
+familyCode: MAT.C26.D.PENGUKURAN.F.JURING_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.PENGUKURAN.BUSUR_DAN_JURING_LINGKARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Panjang busur dengan sudut pusat 60° pada lingkaran berjari-jari 21 cm (π = 22/7) adalah …
+  options:
+    - id: a
+      label: 22 cm
+    - id: b
+      label: 11 cm
+    - id: c
+      label: 66 cm
+    - id: d
+      label: 231 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 22 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.PENGUKURAN.BUSUR_DAN_JURING_LINGKARAN
+  feedback:
+    correct: "60°/360° = 1/6; keliling = 2 × 22/7 × 21 = 132 cm; 132 : 6 = 22 cm."
+    incorrect: "Jawabannya 22 cm. 60°/360° = 1/6; keliling = 2 × 22/7 × 21 = 132 cm; 132 : 6 = 22 cm."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

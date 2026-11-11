@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.L.RESULTAN
+title: Resultan gaya dan inersia
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
+blocks:
+  - type: heading
+    slide: 0
+    text: Resultan gaya
+  - type: text
+    slide: 0
+    text: Gaya yang searah dijumlahkan; gaya yang berlawanan dikurangkan.
+  - type: text
+    slide: 0
+    text: Tarik tambang 300 N ke kanan dan 250 N ke kiri menghasilkan resultan 50 N ke kanan. Jika resultannya nol, benda diam atau bergerak lurus beraturan.
+  - type: math
+    slide: 0
+    name: gaya searah
+    expression: R = F₁ + F₂
+    highlight: true
+  - type: math
+    slide: 0
+    name: gaya berlawanan
+    expression: R = F₁ − F₂
+  - type: heading
+    slide: 1
+    text: Inersia dan hukum Newton
+  - type: text
+    slide: 1
+    text: "**Hukum I Newton**: benda cenderung mempertahankan keadaannya (inersia). Saat bus mengerem mendadak, penumpang terdorong ke depan."
+  - type: text
+    slide: 1
+    text: "**Hukum II Newton**: percepatan sebanding dengan resultan gaya dan berbanding terbalik dengan massa."
+  - type: math
+    slide: 1
+    name: hukum II Newton
+    expression: a = ΣF / m
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sabuk pengaman melawan efek inersia saat kendaraan berhenti mendadak.
+checks:
+  - question: FIS.C26.D.GERAK.Q.RESULTAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.GERAK.S.RESULTAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

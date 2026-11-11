@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.DATA.Q.PELUANG_DAN_FREKUENSI_RELATIF_2
+familyCode: MAT.C26.D.DATA.F.PELUANG_DAN_FREKUENSI_RELATIF_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.DATA.PELUANG_DAN_FREKUENSI_RELATIF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah koin dilempar 50 kali dan sisi angka muncul 28 kali. Frekuensi relatif munculnya sisi angka adalah …
+  options:
+    - id: a
+      label: 0,28
+    - id: b
+      label: 0,56
+    - id: c
+      label: 0,5
+    - id: d
+      label: 0,44
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 0,56
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.DATA.PELUANG_DAN_FREKUENSI_RELATIF
+  feedback:
+    correct: "28 : 50 = 0,56. Nilai 0,5 adalah peluang teoretisnya."
+    incorrect: "Jawabannya 0,56. 28 : 50 = 0,56. Nilai 0,5 adalah peluang teoretisnya."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

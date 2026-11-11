@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.ORGAN.Q.PEREDARAN_3
+familyCode: BIO.C26.D.ORGAN.F.PEREDARAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kekurangan hemoglobin sehingga mudah lelah dan pucat disebut …
+  options:
+    - id: a
+      label: leukemia
+    - id: b
+      label: hemofilia
+    - id: c
+      label: anemia
+    - id: d
+      label: hipertensi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - anemia
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH
+  feedback:
+    correct: Anemia membuat darah kurang mampu mengangkut oksigen.
+    incorrect: Jawabannya anemia. Anemia membuat darah kurang mampu mengangkut oksigen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

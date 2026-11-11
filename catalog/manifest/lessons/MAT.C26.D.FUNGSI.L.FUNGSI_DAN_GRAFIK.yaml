@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.FUNGSI.L.FUNGSI_DAN_GRAFIK
+title: Fungsi dan grafik
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.FUNGSI.FUNGSI_DAN_GRAFIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Relasi dan fungsi
+  - type: text
+    slide: 0
+    text: "**Fungsi** memasangkan setiap anggota domain dengan **tepat satu** anggota kodomain."
+  - type: text
+    slide: 0
+    text: Untuk f(x) = 2x + 1, nilai f(3) = 2 × 3 + 1 = 7. Himpunan semua hasilnya disebut range.
+  - type: math
+    slide: 0
+    name: fungsi linear
+    expression: f(x) = mx + c
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Grafik garis lurus
+  - type: text
+    slide: 1
+    text: "Grafik f(x) = mx + c berupa garis lurus: **m** gradien (kemiringan) dan **c** titik potong sumbu y."
+  - type: text
+    slide: 1
+    text: "Gradien dari dua titik: m = (y₂ − y₁)/(x₂ − x₁)."
+  - type: math
+    slide: 1
+    name: gradien
+    expression: (y₂ − y₁)/(x₂ − x₁)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: m positif → garis naik ke kanan; m negatif → garis turun ke kanan.
+checks:
+  - question: MAT.C26.D.FUNGSI.Q.FUNGSI_DAN_GRAFIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.FUNGSI.S.FUNGSI_DAN_GRAFIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

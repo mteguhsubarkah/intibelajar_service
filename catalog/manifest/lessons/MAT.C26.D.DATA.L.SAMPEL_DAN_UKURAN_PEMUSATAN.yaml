@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.C26.D.DATA.L.SAMPEL_DAN_UKURAN_PEMUSATAN
+title: Sampel & ukuran pemusatan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.DATA.SAMPEL_DAN_UKURAN_PEMUSATAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Mean, median, modus
+  - type: text
+    slide: 0
+    text: "**Mean** = jumlah semua data : banyak data. **Median** = nilai tengah setelah data diurutkan. **Modus** = nilai yang paling sering muncul."
+  - type: math
+    slide: 0
+    name: mean
+    expression: jumlah data / banyak data
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Mana yang paling mewakili?
+  - type: text
+    slide: 1
+    text: Jika ada nilai ekstrem (pencilan), median biasanya lebih mewakili daripada mean.
+  - type: text
+    slide: 1
+    text: "Gaji 3, 3, 4, 4, dan 30 juta: mean 8,8 juta terlalu tinggi untuk sebagian besar orang, median 4 juta lebih mewakili."
+  - type: math
+    slide: 1
+    name: ada pencilan
+    expression: pakai median
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Urutkan data dulu sebelum mencari median.
+checks:
+  - question: MAT.C26.D.DATA.Q.SAMPEL_DAN_UKURAN_PEMUSATAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.DATA.S.SAMPEL_DAN_UKURAN_PEMUSATAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

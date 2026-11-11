@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.MATERI.Q.UNSUR_SENYAWA_DAN_CAMPURAN_2
+familyCode: KIM.C26.D.MATERI.F.UNSUR_SENYAWA_DAN_CAMPURAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.MATERI.UNSUR_SENYAWA_DAN_CAMPURAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Air laut tergolong …
+  options:
+    - id: a
+      label: senyawa
+    - id: b
+      label: campuran homogen
+    - id: c
+      label: campuran heterogen
+    - id: d
+      label: unsur
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - campuran homogen
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.MATERI.UNSUR_SENYAWA_DAN_CAMPURAN
+  feedback:
+    correct: Air laut berisi air dan berbagai garam terlarut tanpa perbandingan tetap, dan tampak menyatu.
+    incorrect: Jawabannya campuran homogen. Air laut berisi air dan berbagai garam terlarut tanpa perbandingan tetap, dan tampak menyatu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

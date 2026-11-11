@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.KEBUMIAN.L.GEMPA
+title: Gempa bumi dan gunung api
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.KEBUMIAN.GEMPA_BUMI_DAN_GUNUNG_API
+blocks:
+  - type: heading
+    slide: 0
+    text: Gempa bumi
+  - type: text
+    slide: 0
+    text: Gempa tektonik terjadi saat energi yang tertahan di batas lempeng terlepas tiba-tiba.
+  - type: text
+    slide: 0
+    text: Titik sumber gempa di dalam Bumi disebut **hiposentrum**; titik di permukaan tepat di atasnya disebut **episentrum**. Gempa di dasar laut dapat memicu tsunami.
+  - type: math
+    slide: 0
+    name: episentrum
+    expression: titik di permukaan di atas sumber gempa
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Gunung api
+  - type: text
+    slide: 1
+    text: Magma dari dalam Bumi naik ke permukaan melalui gunung api. Letusan dapat menghasilkan lava, abu, dan awan panas.
+  - type: text
+    slide: 1
+    text: Gunung api juga memberi tanah yang subur dan energi panas bumi.
+  - type: math
+    slide: 1
+    name: gempa vulkanik
+    expression: akibat aktivitas magma
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gempa tektonik disebabkan gerak lempeng; gempa vulkanik disebabkan aktivitas magma.
+checks:
+  - question: FIS.C26.D.KEBUMIAN.Q.GEMPA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.KEBUMIAN.S.GEMPA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.ANTARIKSA.Q.SISTEM_TATA_SURYA_3
+familyCode: FIS.C26.D.ANTARIKSA.F.SISTEM_TATA_SURYA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Planet yang paling lama mengelilingi Matahari adalah …
+  options:
+    - id: a
+      label: Mars
+    - id: b
+      label: Merkurius
+    - id: c
+      label: Bumi
+    - id: d
+      label: Neptunus
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - Neptunus
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA
+  feedback:
+    correct: Neptunus paling jauh dari Matahari, jadi orbitnya paling panjang.
+    incorrect: Jawabannya Neptunus. Neptunus paling jauh dari Matahari, jadi orbitnya paling panjang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

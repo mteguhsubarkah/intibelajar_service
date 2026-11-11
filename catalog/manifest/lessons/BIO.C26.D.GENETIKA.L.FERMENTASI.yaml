@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.D.GENETIKA.L.FERMENTASI
+title: Fermentasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.GENETIKA.FERMENTASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Bioteknologi konvensional
+  - type: text
+    slide: 0
+    text: Bioteknologi konvensional memanfaatkan mikroorganisme untuk menghasilkan produk.
+  - type: text
+    slide: 0
+    text: Ragi (*Saccharomyces*) → tapai dan roti. *Rhizopus* → tempe. *Lactobacillus* → yoghurt. *Acetobacter xylinum* → nata de coco.
+  - type: math
+    slide: 0
+    name: Rhizopus
+    expression: tempe
+    highlight: true
+  - type: math
+    slide: 0
+    name: Lactobacillus
+    expression: yoghurt
+  - type: heading
+    slide: 1
+    text: Proses fermentasi
+  - type: text
+    slide: 1
+    text: Mikroorganisme mengubah gula menjadi zat lain, seperti alkohol, asam laktat, atau CO₂, dengan sedikit atau tanpa oksigen.
+  - type: text
+    slide: 1
+    text: "Syaratnya: alat bersih, suhu sesuai, dan wadah tertutup."
+  - type: math
+    slide: 1
+    name: fermentasi ragi
+    expression: gula → alkohol + CO₂
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kontaminasi mikroba lain dapat membuat fermentasi gagal; jaga kebersihan.
+checks:
+  - question: BIO.C26.D.GENETIKA.Q.FERMENTASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.GENETIKA.S.FERMENTASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

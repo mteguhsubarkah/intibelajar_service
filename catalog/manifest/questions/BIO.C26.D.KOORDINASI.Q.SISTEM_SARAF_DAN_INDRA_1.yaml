@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.D.KOORDINASI.Q.SISTEM_SARAF_DAN_INDRA_1
+familyCode: BIO.C26.D.KOORDINASI.F.SISTEM_SARAF_DAN_INDRA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.D.KOORDINASI.SISTEM_SARAF_DAN_INDRA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Menarik tangan saat menyentuh setrika panas adalah contoh gerak …
+  options:
+    - id: a
+      label: refleks
+    - id: b
+      label: lambat
+    - id: c
+      label: terencana
+    - id: d
+      label: sadar
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - refleks
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.D.KOORDINASI.SISTEM_SARAF_DAN_INDRA
+  feedback:
+    correct: Gerak ini terjadi otomatis dan cepat, tanpa dipikirkan dulu.
+    incorrect: Jawabannya refleks. Gerak ini terjadi otomatis dan cepat, tanpa dipikirkan dulu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

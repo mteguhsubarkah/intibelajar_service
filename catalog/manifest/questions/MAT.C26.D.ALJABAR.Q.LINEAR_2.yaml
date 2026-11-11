@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.ALJABAR.Q.LINEAR_2
+familyCode: MAT.C26.D.ALJABAR.F.LINEAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.ALJABAR.PERSAMAAN_LINEAR_SATU_VARIABEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai x yang memenuhi (x + 4)/3 = 5 adalah …
+  options:
+    - id: a
+      label: "1"
+    - id: b
+      label: "15"
+    - id: c
+      label: "11"
+    - id: d
+      label: "19"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "11"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.ALJABAR.PERSAMAAN_LINEAR_SATU_VARIABEL
+  feedback:
+    correct: "Kalikan kedua ruas dengan 3: x + 4 = 15, jadi x = 11."
+    incorrect: "Jawabannya 11. Kalikan kedua ruas dengan 3: x + 4 = 15, jadi x = 11."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

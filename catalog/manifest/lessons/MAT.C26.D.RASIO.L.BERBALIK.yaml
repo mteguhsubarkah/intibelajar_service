@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.L.BERBALIK
+title: Perbandingan berbalik nilai
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.D.RASIO.PERBANDINGAN_BERBALIK_NILAI
+blocks:
+  - type: heading
+    slide: 0
+    text: Satu naik, satu turun
+  - type: text
+    slide: 0
+    text: Dua besaran **berbalik nilai** jika yang satu bertambah, yang lain berkurang, dan hasil kalinya tetap.
+  - type: text
+    slide: 0
+    text: "Contoh: 6 pekerja selesai dalam 10 hari (6 × 10 = 60 hari-kerja). Dengan 12 pekerja, selesai dalam 60 : 12 = 5 hari."
+  - type: math
+    slide: 0
+    name: berbalik nilai
+    expression: a₁ × b₁ = a₂ × b₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Membedakan dari senilai
+  - type: text
+    slide: 1
+    text: Cek hasil kalinya. Kecepatan × waktu = jarak tetap; banyak orang × jatah per orang = jumlah barang tetap.
+  - type: text
+    slide: 1
+    text: Kalau hasil baginya yang tetap, berarti senilai.
+  - type: math
+    slide: 1
+    name: senilai
+    expression: hasil bagi tetap
+    highlight: true
+  - type: math
+    slide: 1
+    name: berbalik nilai
+    expression: hasil kali tetap
+  - type: tip
+    slide: 1
+    text: "Senilai: bagi tetap. Berbalik nilai: kali tetap."
+checks:
+  - question: MAT.C26.D.RASIO.Q.BERBALIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.RASIO.S.BERBALIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

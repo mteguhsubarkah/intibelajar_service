@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.D.GERAK.L.GERAK_DAN_GAYA_RESULTAN
+title: Gerak dan gaya resultan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Gaya mengubah gerak
+  - type: text
+    slide: 0
+    text: Gaya adalah tarikan atau dorongan, satuannya newton (N).
+  - type: text
+    slide: 0
+    text: "Gaya dapat mengubah kecepatan, arah gerak, atau bentuk benda. Contoh gaya: gaya berat, gaya gesek, gaya normal, dan gaya otot."
+  - type: math
+    slide: 0
+    name: satuan gaya
+    expression: newton (N)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Gaya berat
+  - type: text
+    slide: 1
+    text: "Berat = massa × percepatan gravitasi: w = m × g, dengan g ≈ 9,8 m/s² (sering dibulatkan 10 m/s²)."
+  - type: text
+    slide: 1
+    text: Massa benda sama di mana pun, sedangkan beratnya bergantung pada gravitasi tempat itu.
+  - type: math
+    slide: 1
+    name: gaya berat
+    expression: w = m × g
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Massa (kg) berbeda dengan berat (N).
+checks:
+  - question: FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.GERAK.S.GERAK_DAN_GAYA_RESULTAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

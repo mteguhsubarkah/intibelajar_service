@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.L.PERUBAHAN_LINGKUNGAN
+title: Perubahan lingkungan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Pencemaran lingkungan
+  - type: text
+    slide: 0
+    text: Pencemaran air (limbah pabrik, sampah), udara (asap kendaraan dan pabrik), dan tanah (plastik, pestisida berlebihan) mengganggu keseimbangan ekosistem.
+  - type: math
+    slide: 0
+    name: pencemaran udara
+    expression: asap kendaraan dan pabrik
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Perubahan iklim
+  - type: text
+    slide: 1
+    text: Gas rumah kaca (CO₂, metana) dari pembakaran bahan bakar fosil dan penebangan hutan memerangkap panas, sehingga suhu rata-rata Bumi naik.
+  - type: text
+    slide: 1
+    text: "Dampaknya: cuaca ekstrem, es kutub mencair, dan permukaan laut naik. Tindakan: hemat energi, menanam pohon, mengurangi sampah plastik."
+  - type: math
+    slide: 1
+    name: gas rumah kaca utama
+    expression: CO₂
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kurangi, gunakan ulang, daur ulang (reduce, reuse, recycle).
+checks:
+  - question: BIO.C26.D.EKOLOGI.Q.PERUBAHAN_LINGKUNGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.D.EKOLOGI.S.PERUBAHAN_LINGKUNGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

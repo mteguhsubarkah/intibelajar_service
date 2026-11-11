@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.D.ZAT.L.FUNGSI_ZAT_ADITIF
+title: Fungsi zat aditif
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.ZAT.FUNGSI_ZAT_ADITIF
+blocks:
+  - type: heading
+    slide: 0
+    text: Jenis zat aditif
+  - type: text
+    slide: 0
+    text: Zat aditif ditambahkan ke makanan untuk memperbaiki rasa, warna, aroma, atau daya tahan.
+  - type: text
+    slide: 0
+    text: "Contoh: pemanis (gula, aspartam), pewarna (kunyit, daun suji), pengawet (natrium benzoat), penyedap (MSG), dan pengemulsi (lesitin)."
+  - type: math
+    slide: 0
+    name: pewarna alami
+    expression: kunyit, daun suji
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Membaca label dengan cermat
+  - type: text
+    slide: 1
+    text: Zat aditif sintetis harus dipakai sesuai batas aman BPOM.
+  - type: text
+    slide: 1
+    text: Formalin, boraks, serta pewarna tekstil seperti rhodamin B dan metanil yellow dilarang untuk makanan. Periksa label komposisi dan nomor izin BPOM.
+  - type: math
+    slide: 1
+    name: dilarang untuk makanan
+    expression: formalin, boraks, rhodamin B
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Zat aditif alami umumnya lebih aman, tetapi semua tetap perlu takaran yang wajar.
+checks:
+  - question: KIM.C26.D.ZAT.Q.FUNGSI_ZAT_ADITIF_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.ZAT.S.FUNGSI_ZAT_ADITIF
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

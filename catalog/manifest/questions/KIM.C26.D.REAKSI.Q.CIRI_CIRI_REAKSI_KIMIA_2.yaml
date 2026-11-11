@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.REAKSI.Q.CIRI_CIRI_REAKSI_KIMIA_2
+familyCode: KIM.C26.D.REAKSI.F.CIRI_CIRI_REAKSI_KIMIA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Cuka dicampur dengan soda kue lalu muncul banyak gelembung. Gelembung itu menunjukkan …
+  options:
+    - id: a
+      label: soda kue mencair
+    - id: b
+      label: terjadi penguapan
+    - id: c
+      label: terbentuk gas baru
+    - id: d
+      label: air mendidih
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - terbentuk gas baru
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.REAKSI.CIRI_CIRI_REAKSI_KIMIA
+  feedback:
+    correct: Cuka (asam) bereaksi dengan soda kue menghasilkan gas karbon dioksida.
+    incorrect: Jawabannya terbentuk gas baru. Cuka (asam) bereaksi dengan soda kue menghasilkan gas karbon dioksida.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

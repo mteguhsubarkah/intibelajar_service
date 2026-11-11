@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.UKUR.L.BESARAN_DAN_SATUAN
+title: Besaran dan satuan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Besaran pokok dan turunan
+  - type: text
+    slide: 0
+    text: "Besaran pokok punya satuan SI dasar: panjang (meter), massa (kilogram), waktu (sekon), suhu (kelvin), kuat arus (ampere), jumlah zat (mol), intensitas cahaya (kandela)."
+  - type: text
+    slide: 0
+    text: Besaran turunan disusun dari besaran pokok, misalnya luas (m²), kecepatan (m/s), dan massa jenis (kg/m³).
+  - type: math
+    slide: 0
+    name: kecepatan
+    expression: m/s
+    highlight: true
+  - type: math
+    slide: 0
+    name: massa jenis
+    expression: kg/m³
+  - type: heading
+    slide: 1
+    text: Konversi satuan
+  - type: text
+    slide: 1
+    text: Pada tangga satuan km–hm–dam–m–dm–cm–mm, turun satu anak tangga berarti dikali 10.
+  - type: text
+    slide: 1
+    text: "Contoh: 2,5 km = 2.500 m; 72 km/jam = 72.000 m : 3.600 s = 20 m/s."
+  - type: math
+    slide: 1
+    name: km/jam → m/s
+    expression: bagi 3,6
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tuliskan satuan di setiap langkah supaya kesalahan konversi cepat terlihat.
+checks:
+  - question: FIS.C26.D.UKUR.Q.BESARAN_DAN_SATUAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.UKUR.S.BESARAN_DAN_SATUAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran
