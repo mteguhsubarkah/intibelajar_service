@@ -78,6 +78,8 @@ test('Swagger and Google routes against PostgreSQL: fail closed, cookie binding,
  const body={provider:'google',continuation:{targetPath:'/profile',step:0}};
  const start=async()=>{const r=await post(body);assert.equal(r.statusCode,200,r.body);return{state:new URL(r.json().redirectUrl).searchParams.get('state')!,cookie:String(r.headers['set-cookie']).split(';')[0]!};};
  const callback=(s:{state:string;cookie:string},extra='code=fixture')=>app.inject({url:'/v1/auth/callback/google?state='+s.state+'&'+extra,headers:{cookie:s.cookie}});
+ // A refused callback is a browser navigation: it lands on /masuk with the code, never raw JSON, and never sets or clears a session.
+ const refused=(r:{statusCode:number;headers:Record<string,unknown>;body:string},code:string)=>{assert.equal(r.statusCode,302,r.body);assert.equal(r.headers.location,'/masuk?authError='+code);assert.equal(r.headers['set-cookie'],undefined);};
  try{
   await t.test('Swagger serves authoritative contract and local assets only',async()=>{
    const html=await app.inject('/docs');assert.equal(html.statusCode,200);assert.match(html.body,/swagger-ui/);assert.ok(!html.body.includes('cdn'));
@@ -93,10 +95,10 @@ test('Swagger and Google routes against PostgreSQL: fail closed, cookie binding,
   });
   await t.test('wrong cookie/state and expired transaction rejected before provider',async()=>{
    const s=await start();const wrong=await createSession(db,config,null);
-   assert.equal((await callback({...s,cookie:cookieName+'='+wrong.raw})).statusCode,410);
-   assert.equal((await callback({...s,state:'wrong'})).statusCode,410);
+   refused(await callback({...s,cookie:cookieName+'='+wrong.raw}),'LINK_EXPIRED');
+   refused(await callback({...s,state:'wrong'}),'LINK_EXPIRED');
    await sql`update auth_transaction set expires_at=now()-interval '1 second' where state_hash=${hash(s.state)}`.execute(db);
-   assert.equal((await callback(s)).statusCode,410);assert.equal(verifies,0);
+   refused(await callback(s),'LINK_EXPIRED');assert.equal(verifies,0);
   });
   let user:string;
   await t.test('register rotates session, stores no email/tokens, creates no consent',async()=>{
@@ -105,7 +107,7 @@ test('Swagger and Google routes against PostgreSQL: fail closed, cookie binding,
    const session=(await app.inject({url:'/v1/auth/session',headers:{cookie}})).json();assert.equal(session.authenticated,true);assert.equal(session.learner.status,'PENDING_CONSENT');assert.deepEqual(session.learner.missingPurposes,['LEARNING_DATA']);user=session.user.id;
    const i=await db.selectFrom('auth_identity').selectAll().where('provider','=','GOOGLE').where('subject','=',subject).executeTakeFirstOrThrow();assert.equal(i.email_ciphertext,null);assert.equal(i.email_verified,true);
    const old=await db.selectFrom('auth_session').select('revoked_at').where('token_hash','=',hash(s.cookie.split('=')[1]!)).executeTakeFirstOrThrow();assert.ok(old.revoked_at);
-   assert.equal((await callback(s)).statusCode,410);
+   refused(await callback(s),'LINK_EXPIRED');
    const attempt=await app.inject({method:'POST',url:'/v1/learning-sessions',headers:{cookie,origin:config.origin,'content-type':'application/json','x-csrf-token':session.csrfToken,'idempotency-key':randomUUID()},payload:JSON.stringify({kind:'PRACTICE',origin:'COMBINED_SET',withLesson:false,spec:{setCode:'gabungan'}})});
    assert.equal(attempt.statusCode,403);assert.equal(attempt.json().code,'CONSENT_REQUIRED');
   });
@@ -114,7 +116,7 @@ test('Swagger and Google routes against PostgreSQL: fail closed, cookie binding,
    const session=(await app.inject({url:'/v1/auth/session',headers:{cookie:String(r.headers['set-cookie']).split(';')[0]!}})).json();assert.equal(session.user.id,user!);
   });
   await t.test('cancellation consumes transaction without calling provider',async()=>{
-   const before=verifies,s=await start(),r=await callback(s,'error=access_denied');assert.equal(r.statusCode,302);assert.equal(r.headers.location,'/profile?authCancelled=1');assert.equal(verifies,before);assert.equal((await callback(s)).statusCode,410);
+   const before=verifies,s=await start(),r=await callback(s,'error=access_denied');assert.equal(r.statusCode,302);assert.equal(r.headers.location,'/profile?authCancelled=1');assert.equal(verifies,before);refused(await callback(s),'LINK_EXPIRED');
   });
   await t.test('only verified email identities link; synthetic/unverified email never links',async()=>{
    for(const verified of [false,true]){
@@ -128,12 +130,12 @@ test('Swagger and Google routes against PostgreSQL: fail closed, cookie binding,
   });
   await t.test('provider failure cannot create a user and consumes the callback attempt',async()=>{
    const s=await start();rejectProvider=true;
-   const r=await callback(s);assert.equal(r.statusCode,503);rejectProvider=false;
-   assert.equal((await callback(s)).statusCode,410);
+   refused(await callback(s),'DEPENDENCY_UNAVAILABLE');rejectProvider=false;
+   refused(await callback(s),'LINK_EXPIRED');
   });
   await t.test('disabled accounts cannot sign in again',async()=>{
    await db.updateTable('app_user').set({status:'DISABLED'}).where('id','=',(await db.selectFrom('auth_identity').select('user_id').where('provider','=','GOOGLE').where('subject','=',subject).executeTakeFirstOrThrow()).user_id).execute();
-   assert.equal((await callback(await start())).statusCode,403);
+   refused(await callback(await start()),'ACCOUNT_UNAVAILABLE');
   });
   await t.test('Google environment defaults off and rejects incomplete/production settings',()=>{
    assert.equal(readConfig(env).google,undefined);

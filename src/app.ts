@@ -204,7 +204,17 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
     return {redirectUrl:config.origin+'/auth/email?transaction='+encodeURIComponent(result.transaction)};
   });
   route('GET','/v1/auth/callback/{provider}','public',async(req,reply)=>{
-    const result=await finishGoogle(db,config,googleProvider(),req.sessionToken,req.query as {state:string;code?:string;error?:string});
+    const provider=googleProvider();
+    let result:Awaited<ReturnType<typeof finishGoogle>>;
+    try{result=await finishGoogle(db,config,provider,req.sessionToken,req.query as {state:string;code?:string;error?:string});}
+    catch(error){
+      // Halaman ini dibuka browser lewat pengalihan dari Google, bukan dipanggil fetch: JSON galat tampil mentah ke siswa
+      // (mis. transaksi lewat 10 menit, dibuka di browser lain, Google tak terjangkau). /masuk menjelaskan dan menawarkan
+      // coba lagi. Cookie tidak disentuh: callback basi dari riwayat browser tidak boleh mengeluarkan siswa yang sudah masuk.
+      const code=error instanceof ApiError?error.code:'INTERNAL_ERROR';
+      app.log[error instanceof ApiError?'warn':'error']({requestId:req.id,code,status:error instanceof ApiError?error.status:500},'google callback refused');
+      return reply.redirect('/masuk?authError='+code,302);
+    }
     if(!privacyRoute(result.continuation.route.split('?')[0]!))fail(400,'VALIDATION_FAILED');
     if(!result.cancelled)reply.header('Set-Cookie',identity.cookie(result.session.raw,config.absoluteSeconds));
     else reply.header('Set-Cookie',identity.cookie('',0));
