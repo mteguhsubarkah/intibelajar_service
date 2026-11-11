@@ -97,6 +97,14 @@ test('self onboarding consent and real email sign-in',async t=>{
       assert.equal(half.statusCode,200,half.body);
       assert.equal(half.json().status,'PENDING_CONSENT');
 
+      // TC-ONB-004: username 1–40 karakter. 41 ditolak sebelum menyentuh data, termasuk 41 karakter non-ASCII.
+      const tooLong=await inject('PATCH','/v1/me/profile',{displayName:'a'.repeat(41),grade:10},headers());
+      assert.equal(tooLong.statusCode,400,tooLong.body);assert.equal(tooLong.json().code,'VALIDATION_FAILED');
+      assert.equal((await inject('PATCH','/v1/me/profile',{displayName:'é'.repeat(41),grade:10},headers())).statusCode,400);
+      assert.equal((await inject('PATCH','/v1/me/profile',{displayName:'',grade:10},headers())).statusCode,400);
+      const longest=await inject('PATCH','/v1/me/profile',{displayName:'abcdefghij'.repeat(4),grade:10},headers());
+      assert.equal(longest.statusCode,200,longest.body);assert.equal(longest.json().displayName,'abcdefghij'.repeat(4));
+
       const done=await inject('PATCH','/v1/me/profile',{displayName:'Budi',grade:10},headers());
       assert.equal(done.statusCode,200,done.body);
       assert.equal(done.json().status,'ACTIVE');
