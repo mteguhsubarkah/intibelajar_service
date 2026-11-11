@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.PENCERNAAN_1
+familyCode: BIO.C26.F.ORGAN.F.PENCERNAAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Empedu membantu pencernaan lemak dengan cara …
+  options:
+    - id: a
+      label: memecah lemak menjadi asam lemak
+    - id: b
+      label: mengubah lemak menjadi glukosa
+    - id: c
+      label: menyerap lemak ke darah
+    - id: d
+      label: mengemulsikan lemak menjadi butiran kecil
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - mengemulsikan lemak menjadi butiran kecil
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+  feedback:
+    correct: Empedu bukan enzim; ia memperluas permukaan lemak agar lipase dapat bekerja.
+    incorrect: Jawabannya mengemulsikan lemak menjadi butiran kecil. Empedu bukan enzim; ia memperluas permukaan lemak agar lipase dapat bekerja.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

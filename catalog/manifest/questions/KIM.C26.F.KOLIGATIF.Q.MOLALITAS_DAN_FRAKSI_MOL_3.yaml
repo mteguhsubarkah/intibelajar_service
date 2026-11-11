@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_3
+familyCode: KIM.C26.F.KOLIGATIF.F.MOLALITAS_DAN_FRAKSI_MOL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fraksi mol zat terlarut dalam suatu larutan adalah 0,15. Fraksi mol pelarutnya adalah …
+  options:
+    - id: a
+      label: 0,85
+    - id: b
+      label: 0,15
+    - id: c
+      label: 1,15
+    - id: d
+      label: 0,30
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 0,85
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL
+  feedback:
+    correct: X_t + X_p = 1, jadi X_p = 1 − 0,15 = 0,85.
+    incorrect: Jawabannya 0,85. X_t + X_p = 1, jadi X_p = 1 − 0,15 = 0,85.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

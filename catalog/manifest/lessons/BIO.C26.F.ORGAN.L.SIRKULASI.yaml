@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.L.SIRKULASI
+title: Sistem sirkulasi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.ORGAN.SISTEM_SIRKULASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Jantung dan peredaran ganda
+  - type: text
+    slide: 0
+    text: "Jantung manusia memiliki empat ruang: serambi kanan, bilik kanan, serambi kiri, dan bilik kiri. Katup mencegah darah mengalir balik."
+  - type: text
+    slide: 0
+    text: "Peredaran pulmonal: bilik kanan → arteri pulmonalis → paru-paru → vena pulmonalis → serambi kiri. Peredaran sistemik: bilik kiri → aorta → seluruh tubuh → vena kava → serambi kanan."
+  - type: math
+    slide: 0
+    name: arteri pulmonalis
+    expression: membawa darah miskin O₂ ke paru-paru
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Sistem limfa dan gangguan
+  - type: text
+    slide: 1
+    text: Sistem limfa mengembalikan cairan jaringan ke darah, mengangkut lemak dari usus, dan menjadi bagian pertahanan tubuh di kelenjar limfa.
+  - type: text
+    slide: 1
+    text: "Gangguan sirkulasi: hipertensi, aterosklerosis (penyempitan pembuluh oleh plak lemak), varises, dan anemia."
+  - type: math
+    slide: 1
+    name: aterosklerosis
+    expression: plak lemak di dinding arteri
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Arteri pulmonalis satu-satunya arteri yang membawa darah miskin oksigen, sedangkan vena pulmonalis membawa darah kaya oksigen.
+checks:
+  - question: BIO.C26.F.ORGAN.Q.SIRKULASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.ORGAN.S.SIRKULASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

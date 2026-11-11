@@ -4,7 +4,7 @@ subject: KIM
 title: Redoks dan elektrokimia
 subtitle: Bilangan oksidasi, penyetaraan redoks, sel volta, elektrolisis, dan korosi
 phase: F
-availability: PLANNED
+availability: MAPPED
 bekal:
   - persamaan reaksi
   - larutan elektrolit
@@ -20,7 +20,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-redoks-c1
@@ -30,10 +30,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 2
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-redoks-setara
@@ -43,10 +43,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 3
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-redoks-volta
@@ -56,10 +56,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 4
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-redoks-elektrolisis
@@ -72,7 +72,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-redoks-korosi

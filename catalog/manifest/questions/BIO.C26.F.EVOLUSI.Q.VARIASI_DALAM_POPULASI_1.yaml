@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_1
+familyCode: BIO.C26.F.EVOLUSI.F.VARIASI_DALAM_POPULASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sumber utama munculnya alel baru dalam populasi adalah …
+  options:
+    - id: a
+      label: mutasi
+    - id: b
+      label: latihan fisik
+    - id: c
+      label: pengaruh makanan
+    - id: d
+      label: perubahan cuaca harian
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - mutasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI
+  feedback:
+    correct: Mutasi mengubah urutan DNA sehingga dapat memunculkan alel yang belum pernah ada.
+    incorrect: Jawabannya mutasi. Mutasi mengubah urutan DNA sehingga dapat memunculkan alel yang belum pernah ada.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

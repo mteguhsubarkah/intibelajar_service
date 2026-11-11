@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.E.SPLTV.L.SOLUSI
+title: Himpunan solusi dan interpretasinya
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.E.SPLTV.HIMPUNAN_SOLUSI_DAN_INTERPRETASINYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Memeriksa solusi
+  - type: text
+    slide: 0
+    text: Solusi SPLTV adalah tripel terurut (x, y, z) yang memenuhi **ketiga** persamaan sekaligus.
+  - type: text
+    slide: 0
+    text: Selalu substitusikan kembali ke ketiga persamaan awal. Satu persamaan yang tidak terpenuhi berarti ada salah hitung.
+  - type: math
+    slide: 0
+    name: himpunan solusi
+    expression: "{(x, y, z)}"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Banyaknya solusi dan maknanya
+  - type: text
+    slide: 1
+    text: SPLTV bisa punya satu solusi, tak hingga banyak solusi (ada persamaan yang merupakan gabungan persamaan lain), atau tidak punya solusi (persamaannya saling bertentangan).
+  - type: text
+    slide: 1
+    text: "Dalam konteks, periksa kewajarannya: harga, banyak barang, atau umur tidak boleh negatif, dan banyak barang harus bilangan bulat."
+  - type: math
+    slide: 1
+    name: tidak ada solusi
+    expression: muncul pernyataan salah, mis. 0 = 5
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jawaban akhir ditulis dalam bahasa soal, misalnya "harga satu buku Rp4.500", bukan hanya x = 4.500.
+checks:
+  - question: MAT.C26.E.SPLTV.Q.SOLUSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.E.SPLTV.S.SOLUSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

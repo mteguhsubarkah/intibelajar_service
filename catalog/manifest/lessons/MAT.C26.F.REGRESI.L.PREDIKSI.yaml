@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.L.PREDIKSI
+title: Prediksi dan batasnya
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.F.REGRESI.PREDIKSI_DAN_BATASNYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Memprediksi dengan garis regresi
+  - type: text
+    slide: 0
+    text: Substitusikan nilai x ke garis regresi untuk mendapat prediksi ŷ.
+  - type: text
+    slide: 0
+    text: "**Interpolasi**: x di dalam rentang data, prediksinya lebih dapat dipercaya. **Ekstrapolasi**: x di luar rentang data, polanya belum tentu berlanjut."
+  - type: math
+    slide: 0
+    name: interpolasi
+    expression: x di dalam rentang data
+    highlight: true
+  - type: math
+    slide: 0
+    name: ekstrapolasi
+    expression: x di luar rentang data
+  - type: heading
+    slide: 1
+    text: Sisaan
+  - type: text
+    slide: 1
+    text: "**Sisaan** (residu) = y sebenarnya − ŷ prediksi. Sisaan positif berarti data berada di atas garis."
+  - type: text
+    slide: 1
+    text: Sisaan yang kecil dan tersebar acak menandakan garis cocok dengan data.
+  - type: math
+    slide: 1
+    name: sisaan
+    expression: e = y − ŷ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Hati-hati memprediksi jauh di luar data: tinggi badan anak tidak terus naik 6 cm per tahun sampai dewasa."
+checks:
+  - question: MAT.C26.F.REGRESI.Q.PREDIKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.F.REGRESI.S.PREDIKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

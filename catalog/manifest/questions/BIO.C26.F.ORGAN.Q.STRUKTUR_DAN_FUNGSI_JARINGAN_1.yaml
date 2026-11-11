@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_1
+familyCode: BIO.C26.F.ORGAN.F.STRUKTUR_DAN_FUNGSI_JARINGAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Darah digolongkan ke dalam jaringan …
+  options:
+    - id: a
+      label: otot
+    - id: b
+      label: saraf
+    - id: c
+      label: ikat
+    - id: d
+      label: epitel
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - ikat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+  feedback:
+    correct: Darah adalah jaringan ikat dengan matriks cair, yaitu plasma.
+    incorrect: Jawabannya ikat. Darah adalah jaringan ikat dengan matriks cair, yaitu plasma.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

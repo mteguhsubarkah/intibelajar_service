@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT.L.DAYAHANTAR
+title: Daya hantar listrik larutan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.ELEKTROLIT.DAYA_HANTAR_LISTRIK_LARUTAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Uji daya hantar
+  - type: text
+    slide: 0
+    text: "Alat uji: dua elektrode dicelupkan ke larutan dan dihubungkan dengan lampu dan baterai."
+  - type: text
+    slide: 0
+    text: "Elektrolit kuat: lampu **menyala terang** dan banyak gelembung gas. Elektrolit lemah: lampu **redup atau tidak menyala**, tetapi ada gelembung. Nonelektrolit: lampu tidak menyala dan tidak ada gelembung."
+  - type: math
+    slide: 0
+    name: kuat
+    expression: lampu terang + banyak gelembung
+    highlight: true
+  - type: math
+    slide: 0
+    name: lemah
+    expression: redup/mati + sedikit gelembung
+  - type: math
+    slide: 0
+    name: nonelektrolit
+    expression: mati, tanpa gelembung
+  - type: heading
+    slide: 1
+    text: Mengapa larutan menghantar
+  - type: text
+    slide: 1
+    text: Arus listrik dalam larutan dibawa oleh **ion-ion yang bergerak bebas**, bukan oleh elektron.
+  - type: text
+    slide: 1
+    text: NaCl padat tidak menghantar karena ionnya terikat dalam kisi kristal; lelehan atau larutan NaCl menghantar karena ionnya bebas bergerak.
+  - type: math
+    slide: 1
+    name: pembawa muatan
+    expression: ion yang bebas bergerak
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gelembung gas di elektrode menandakan ada reaksi, jadi ada ion, walaupun lampu tidak menyala.
+checks:
+  - question: KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.ELEKTROLIT.S.DAYAHANTAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

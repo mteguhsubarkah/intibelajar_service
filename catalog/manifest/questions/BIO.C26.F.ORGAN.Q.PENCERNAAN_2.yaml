@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.PENCERNAAN_2
+familyCode: BIO.C26.F.ORGAN.F.PENCERNAAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Enzim yang memecah protein di lambung adalah …
+  options:
+    - id: a
+      label: pepsin
+    - id: b
+      label: amilase
+    - id: c
+      label: lipase
+    - id: d
+      label: tripsin
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - pepsin
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+  feedback:
+    correct: Pepsin yang diaktifkan HCl memecah protein menjadi pepton di lambung, sedangkan tripsin bekerja di usus halus.
+    incorrect: Jawabannya pepsin. Pepsin yang diaktifkan HCl memecah protein menjadi pepton di lambung, sedangkan tripsin bekerja di usus halus.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

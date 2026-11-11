@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_2
+familyCode: KIM.C26.F.KOLIGATIF.F.DIDIHBEKU_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLIGATIF.KENAIKAN_TITIK_DIDIH_DAN_PENURUNAN_TITIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebanyak 18 g glukosa (Mr = 180) dilarutkan dalam 500 g air (Kf = 1,86 °C/m). Titik beku larutan adalah …
+  options:
+    - id: a
+      label: 0,372 °C
+    - id: b
+      label: −3,72 °C
+    - id: c
+      label: −0,372 °C
+    - id: d
+      label: −0,186 °C
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - −0,372 °C
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLIGATIF.KENAIKAN_TITIK_DIDIH_DAN_PENURUNAN_TITIK
+  feedback:
+    correct: m = (18/180) × (1000/500) = 0,2 m. ΔTf = 1,86 × 0,2 = 0,372 °C, jadi titik bekunya −0,372 °C.
+    incorrect: Jawabannya −0,372 °C. m = (18/180) × (1000/500) = 0,2 m. ΔTf = 1,86 × 0,2 = 0,372 °C, jadi titik bekunya −0,372 °C.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

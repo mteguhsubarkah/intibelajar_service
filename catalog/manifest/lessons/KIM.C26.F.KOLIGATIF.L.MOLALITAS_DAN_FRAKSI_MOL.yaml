@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.L.MOLALITAS_DAN_FRAKSI_MOL
+title: Molalitas dan fraksi mol
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL
+blocks:
+  - type: heading
+    slide: 0
+    text: Molalitas
+  - type: text
+    slide: 0
+    text: "**Molalitas m** = mol zat terlarut per **kilogram pelarut**, atau m = (massa / Mr) × (1000 / p), dengan p massa pelarut dalam gram."
+  - type: text
+    slide: 0
+    text: Molalitas tidak berubah oleh suhu karena memakai massa, bukan volume.
+  - type: math
+    slide: 0
+    name: molalitas
+    expression: m = (g / Mr) × (1000 / p)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Fraksi mol
+  - type: text
+    slide: 1
+    text: "**Fraksi mol** zat terlarut: X_t = n_t / (n_t + n_p). Fraksi mol pelarut: X_p = n_p / (n_t + n_p)."
+  - type: text
+    slide: 1
+    text: "Jumlah semua fraksi mol dalam larutan selalu 1: X_t + X_p = 1."
+  - type: math
+    slide: 1
+    name: fraksi mol
+    expression: X_t = n_t / (n_t + n_p)
+    highlight: true
+  - type: math
+    slide: 1
+    name: jumlah
+    expression: X_t + X_p = 1
+  - type: tip
+    slide: 1
+    text: Molalitas memakai massa pelarut, bukan massa larutan dan bukan volume larutan.
+checks:
+  - question: KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLIGATIF.S.MOLALITAS_DAN_FRAKSI_MOL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

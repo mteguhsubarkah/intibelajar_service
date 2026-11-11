@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_1
+familyCode: KIM.C26.F.ELEKTROLIT.F.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kelompok zat berikut yang semuanya elektrolit kuat adalah …
+  options:
+    - id: a
+      label: NH₄OH, HF, gula
+    - id: b
+      label: HCl, alkohol, NaCl
+    - id: c
+      label: HCl, NaOH, KNO₃
+    - id: d
+      label: CH₃COOH, NaCl, urea
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - HCl, NaOH, KNO₃
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+  feedback:
+    correct: HCl (asam kuat), NaOH (basa kuat), dan KNO₃ (garam) terionisasi sempurna dalam air.
+    incorrect: Jawabannya HCl, NaOH, KNO₃. HCl (asam kuat), NaOH (basa kuat), dan KNO₃ (garam) terionisasi sempurna dalam air.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.L.FOTOSINTESIS
+title: Fotosintesis dan anabolisme
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME
+blocks:
+  - type: heading
+    slide: 0
+    text: Reaksi terang dan siklus Calvin
+  - type: text
+    slide: 0
+    text: "Fotosintesis berlangsung di kloroplas: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ dengan bantuan energi cahaya."
+  - type: text
+    slide: 0
+    text: "**Reaksi terang** di membran tilakoid: cahaya memecah air (fotolisis) dan menghasilkan O₂, ATP, serta NADPH. **Siklus Calvin** (reaksi gelap) di stroma: CO₂ diikat RuBP dengan enzim rubisko, lalu ATP dan NADPH dipakai untuk membentuk gula."
+  - type: math
+    slide: 0
+    name: reaksi terang
+    expression: tilakoid → O₂, ATP, NADPH
+    highlight: true
+  - type: math
+    slide: 0
+    name: siklus Calvin
+    expression: stroma → gula
+  - type: heading
+    slide: 1
+    text: Anabolisme dan katabolisme
+  - type: text
+    slide: 1
+    text: "**Anabolisme** menyusun molekul besar dan memerlukan energi, misalnya fotosintesis dan sintesis protein. **Katabolisme** memecah molekul dan melepas energi, misalnya respirasi sel."
+  - type: text
+    slide: 1
+    text: "Keduanya saling melengkapi: gula hasil fotosintesis dipecah dalam respirasi untuk menghasilkan ATP. Laju metabolisme diatur enzim, yang dipengaruhi suhu, pH, dan inhibitor."
+  - type: math
+    slide: 1
+    name: anabolisme
+    expression: menyusun, butuh energi
+    highlight: true
+  - type: math
+    slide: 1
+    name: katabolisme
+    expression: memecah, melepas energi
+  - type: tip
+    slide: 1
+    text: Oksigen hasil fotosintesis berasal dari pemecahan air, bukan dari CO₂.
+checks:
+  - question: BIO.C26.F.SEL.Q.FOTOSINTESIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.SEL.S.FOTOSINTESIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

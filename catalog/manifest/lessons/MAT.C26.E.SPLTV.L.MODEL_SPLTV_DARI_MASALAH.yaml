@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.E.SPLTV.L.MODEL_SPLTV_DARI_MASALAH
+title: Model SPLTV dari masalah
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH
+blocks:
+  - type: heading
+    slide: 0
+    text: Tiga besaran, tiga persamaan
+  - type: text
+    slide: 0
+    text: SPLTV terdiri dari tiga persamaan linear dengan tiga variabel, misalnya x, y, dan z. Bentuk umumnya **ax + by + cz = d**.
+  - type: text
+    slide: 0
+    text: Untuk memodelkan masalah, tentukan dulu apa yang dilambangkan x, y, dan z (lengkap dengan satuannya), lalu ubah setiap informasi menjadi satu persamaan.
+  - type: math
+    slide: 0
+    name: bentuk umum
+    expression: ax + by + cz = d
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh pemodelan
+  - type: text
+    slide: 1
+    text: Harga 2 buku, 1 pensil, dan 1 penghapus Rp13.000; 1 buku, 2 pensil, dan 1 penghapus Rp11.000; 1 buku, 1 pensil, dan 2 penghapus Rp10.000.
+  - type: text
+    slide: 1
+    text: "Misalkan x = harga buku, y = harga pensil, z = harga penghapus: 2x + y + z = 13.000, x + 2y + z = 11.000, x + y + 2z = 10.000."
+  - type: math
+    slide: 1
+    name: x, y, z
+    expression: harga buku, pensil, penghapus
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Satu kalimat informasi biasanya menjadi satu persamaan. Tiga variabel butuh tiga persamaan yang tidak saling bergantung.
+checks:
+  - question: MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.E.SPLTV.S.MODEL_SPLTV_DARI_MASALAH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

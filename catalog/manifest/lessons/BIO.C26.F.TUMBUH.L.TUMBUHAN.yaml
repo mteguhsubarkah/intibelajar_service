@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUH.L.TUMBUHAN
+title: Pertumbuhan tumbuhan dan hormonnya
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUH.PERTUMBUHAN_TUMBUHAN_DAN_HORMONNYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Meristem dan perkecambahan
+  - type: text
+    slide: 0
+    text: "**Meristem apikal** di ujung akar dan batang menyebabkan tumbuh memanjang (pertumbuhan primer). **Kambium** menyebabkan batang tumbuhan dikotil membesar (pertumbuhan sekunder)."
+  - type: text
+    slide: 0
+    text: "Perkecambahan **epigeal**: kotiledon terangkat ke atas tanah (kacang hijau). **Hipogeal**: kotiledon tetap di dalam tanah (kacang kapri, jagung)."
+  - type: math
+    slide: 0
+    name: meristem apikal
+    expression: memanjang
+    highlight: true
+  - type: math
+    slide: 0
+    name: kambium
+    expression: membesar
+  - type: heading
+    slide: 1
+    text: Hormon tumbuhan
+  - type: text
+    slide: 1
+    text: "**Auksin**: pemanjangan sel dan dominansi apikal. **Giberelin**: pemanjangan batang dan perkecambahan biji. **Sitokinin**: merangsang pembelahan sel dan menunda penuaan."
+  - type: text
+    slide: 1
+    text: "**Etilen**: pematangan buah. **Asam absisat**: menutup stomata saat kekeringan."
+  - type: math
+    slide: 1
+    name: etilen
+    expression: pematangan buah
+    highlight: true
+  - type: math
+    slide: 1
+    name: asam absisat
+    expression: menutup stomata
+  - type: tip
+    slide: 1
+    text: Memotong pucuk tanaman menghilangkan dominansi apikal oleh auksin, sehingga tunas samping tumbuh.
+checks:
+  - question: BIO.C26.F.TUMBUH.Q.TUMBUHAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUH.S.TUMBUHAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

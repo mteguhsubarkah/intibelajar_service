@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.L.UAP
+title: Penurunan tekanan uap
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KOLIGATIF.PENURUNAN_TEKANAN_UAP
+blocks:
+  - type: heading
+    slide: 0
+    text: Hukum Raoult
+  - type: text
+    slide: 0
+    text: Zat terlarut yang tidak mudah menguap mengurangi banyak molekul pelarut di permukaan, sehingga tekanan uap larutan turun.
+  - type: text
+    slide: 0
+    text: "Hukum Raoult: **P = X_p · P°**, dengan P° tekanan uap pelarut murni."
+  - type: math
+    slide: 0
+    name: tekanan uap larutan
+    expression: P = X_p · P°
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Besar penurunannya
+  - type: text
+    slide: 1
+    text: "Penurunan tekanan uap: **ΔP = P° − P = X_t · P°**."
+  - type: text
+    slide: 1
+    text: "Contoh: P° air = 30 mmHg dan X_t = 0,1, maka ΔP = 3 mmHg dan P = 27 mmHg."
+  - type: math
+    slide: 1
+    name: penurunan
+    expression: ΔP = X_t · P°
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Sifat koligatif hanya bergantung pada banyaknya partikel zat terlarut, bukan jenisnya.
+checks:
+  - question: KIM.C26.F.KOLIGATIF.Q.UAP_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLIGATIF.S.UAP
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

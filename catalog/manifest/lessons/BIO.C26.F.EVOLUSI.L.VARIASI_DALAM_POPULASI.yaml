@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.L.VARIASI_DALAM_POPULASI
+title: Variasi dalam populasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Sumber variasi
+  - type: text
+    slide: 0
+    text: Individu dalam satu spesies berbeda-beda (variasi). Variasi yang diwariskan berasal dari **mutasi** (perubahan DNA) dan **rekombinasi gen** saat meiosis dan fertilisasi, misalnya pindah silang dan pemilahan bebas kromosom.
+  - type: math
+    slide: 0
+    name: sumber variasi baru
+    expression: mutasi
+    highlight: true
+  - type: math
+    slide: 0
+    name: pengacakan
+    expression: rekombinasi gen
+  - type: heading
+    slide: 1
+    text: Variasi yang diwariskan
+  - type: text
+    slide: 1
+    text: Variasi akibat lingkungan saja, misalnya otot yang membesar karena latihan, **tidak diwariskan** ke keturunan.
+  - type: text
+    slide: 1
+    text: Hanya variasi pada gen, terutama yang terjadi di sel kelamin, yang dapat diturunkan dan menjadi bahan evolusi.
+  - type: math
+    slide: 1
+    name: bahan evolusi
+    expression: variasi genetik yang diwariskan
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tanpa variasi genetik, seleksi alam tidak punya apa pun untuk dipilih.
+checks:
+  - question: BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.EVOLUSI.S.VARIASI_DALAM_POPULASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

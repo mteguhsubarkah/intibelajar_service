@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.Q.SELEKSI_3
+familyCode: BIO.C26.F.EVOLUSI.F.SELEKSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk paruh burung yang sesuai dengan jenis makanannya merupakan contoh adaptasi …
+  options:
+    - id: a
+      label: morfologi
+    - id: b
+      label: fisiologi
+    - id: c
+      label: tingkah laku
+    - id: d
+      label: kimiawi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - morfologi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+  feedback:
+    correct: Adaptasi morfologi berupa bentuk tubuh atau alat tubuh, seperti bentuk paruh.
+    incorrect: Jawabannya morfologi. Adaptasi morfologi berupa bentuk tubuh atau alat tubuh, seperti bentuk paruh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

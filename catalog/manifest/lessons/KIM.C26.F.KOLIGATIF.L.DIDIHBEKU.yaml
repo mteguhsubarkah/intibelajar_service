@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.L.DIDIHBEKU
+title: Kenaikan titik didih dan penurunan titik beku
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KOLIGATIF.KENAIKAN_TITIK_DIDIH_DAN_PENURUNAN_TITIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Titik didih naik, titik beku turun
+  - type: text
+    slide: 0
+    text: Larutan mendidih pada suhu lebih tinggi dan membeku pada suhu lebih rendah daripada pelarut murninya.
+  - type: text
+    slide: 0
+    text: "**ΔTb = Kb · m** dan **ΔTf = Kf · m**. Untuk air: Kb = 0,52 °C/m dan Kf = 1,86 °C/m."
+  - type: math
+    slide: 0
+    name: kenaikan titik didih
+    expression: ΔTb = Kb · m
+    highlight: true
+  - type: math
+    slide: 0
+    name: penurunan titik beku
+    expression: ΔTf = Kf · m
+  - type: heading
+    slide: 1
+    text: Menghitung titik didih dan titik beku
+  - type: text
+    slide: 1
+    text: Titik didih larutan = titik didih pelarut + ΔTb. Titik beku larutan = titik beku pelarut − ΔTf.
+  - type: text
+    slide: 1
+    text: "Contoh: larutan urea 0,5 m dalam air memiliki ΔTf = 1,86 × 0,5 = 0,93 °C, jadi titik bekunya −0,93 °C."
+  - type: math
+    slide: 1
+    name: air
+    expression: Kb = 0,52; Kf = 1,86 °C/m
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Penerapannya: garam ditaburkan di jalan bersalju dan etilen glikol dicampurkan ke air radiator agar tidak cepat membeku."
+checks:
+  - question: KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLIGATIF.S.DIDIHBEKU
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

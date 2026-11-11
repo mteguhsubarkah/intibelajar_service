@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.L.KOORDINASI
+title: Sistem koordinasi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.ORGAN.SISTEM_KOORDINASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Saraf dan impuls
+  - type: text
+    slide: 0
+    text: Neuron terdiri dari dendrit (menerima impuls), badan sel, dan akson (meneruskan impuls). Impuls menyeberang antarneuron di **sinapsis** melalui neurotransmiter, misalnya asetilkolin.
+  - type: text
+    slide: 0
+    text: "Lengkung refleks: reseptor → neuron sensorik → neuron konektor di sumsum tulang belakang → neuron motorik → efektor."
+  - type: math
+    slide: 0
+    name: sinapsis
+    expression: neurotransmiter
+    highlight: true
+  - type: math
+    slide: 0
+    name: refleks
+    expression: tanpa diolah otak lebih dahulu
+  - type: heading
+    slide: 1
+    text: Hormon dan indra
+  - type: text
+    slide: 1
+    text: Hipofisis disebut kelenjar induk karena hormonnya (TSH, FSH, LH) mengatur kelenjar lain; hipofisis juga menghasilkan hormon pertumbuhan (GH). Insulin dan glukagon dari pankreas mengatur kadar gula darah secara berlawanan.
+  - type: text
+    slide: 1
+    text: Retina mata berisi sel batang (peka cahaya redup) dan sel kerucut (peka warna). Miopi dikoreksi dengan lensa cekung, hipermetropi dengan lensa cembung.
+  - type: math
+    slide: 1
+    name: insulin
+    expression: menurunkan gula darah
+    highlight: true
+  - type: math
+    slide: 1
+    name: glukagon
+    expression: menaikkan gula darah
+  - type: tip
+    slide: 1
+    text: Saraf bekerja cepat lewat impuls; hormon bekerja lebih lambat lewat darah, tetapi efeknya lebih lama.
+checks:
+  - question: BIO.C26.F.ORGAN.Q.KOORDINASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.ORGAN.S.KOORDINASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.SETARA_2
+familyCode: KIM.C26.F.REDOKS.F.SETARA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Pada reaksi Cr₂O₇²⁻ + Fe²⁺ → Cr³⁺ + Fe³⁺ (suasana asam), perbandingan koefisien Cr₂O₇²⁻ : Fe²⁺ setelah disetarakan adalah …"
+  options:
+    - id: a
+      label: "1 : 3"
+    - id: b
+      label: "2 : 3"
+    - id: c
+      label: "1 : 2"
+    - id: d
+      label: "1 : 6"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "1 : 6"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+  feedback:
+    correct: Setiap Cr turun dari +6 ke +3 (3 elektron) dan ada 2 Cr, jadi 6 elektron. Setiap Fe²⁺ melepas 1 elektron, sehingga perlu 6 Fe²⁺.
+    incorrect: "Jawabannya 1 : 6. Setiap Cr turun dari +6 ke +3 (3 elektron) dan ada 2 Cr, jadi 6 elektron. Setiap Fe²⁺ melepas 1 elektron, sehingga perlu 6 Fe²⁺."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

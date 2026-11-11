@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUH.L.DIFERENSIASI_DAN_SPESIALISASI_SEL
+title: Diferensiasi dan spesialisasi sel
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUH.DIFERENSIASI_DAN_SPESIALISASI_SEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari satu sel menjadi banyak jenis
+  - type: text
+    slide: 0
+    text: "Zigot membelah berkali-kali secara mitosis. Sel-selnya lalu **berdiferensiasi**: berubah bentuk dan fungsi menjadi sel khusus, seperti sel otot, sel saraf, atau sel darah."
+  - type: text
+    slide: 0
+    text: Semua sel tubuh membawa DNA yang sama; yang berbeda adalah gen mana yang aktif.
+  - type: math
+    slide: 0
+    name: diferensiasi
+    expression: sel menjadi khusus
+    highlight: true
+  - type: math
+    slide: 0
+    name: dasarnya
+    expression: ekspresi gen berbeda
+  - type: heading
+    slide: 1
+    text: Sel punca dan spesialisasi
+  - type: text
+    slide: 1
+    text: "**Sel punca** (stem cell) belum terdiferensiasi dan dapat menjadi berbagai jenis sel. Sel punca embrionik lebih fleksibel daripada sel punca dewasa, misalnya yang ada di sumsum tulang."
+  - type: text
+    slide: 1
+    text: Pada tumbuhan, jaringan meristem tetap mampu membelah dan berdiferensiasi sepanjang hidupnya.
+  - type: math
+    slide: 1
+    name: sel punca
+    expression: belum terdiferensiasi
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pertumbuhan = bertambahnya ukuran dan jumlah sel; perkembangan = sel menjadi khusus dan menuju dewasa.
+checks:
+  - question: BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUH.S.DIFERENSIASI_DAN_SPESIALISASI_SEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

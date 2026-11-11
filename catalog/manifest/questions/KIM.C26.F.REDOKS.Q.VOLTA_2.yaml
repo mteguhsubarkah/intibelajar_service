@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.VOLTA_2
+familyCode: KIM.C26.F.REDOKS.F.VOLTA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada sel volta Zn | Zn²⁺ || Cu²⁺ | Cu, elektron mengalir dari …
+  options:
+    - id: a
+      label: katode ke anode
+    - id: b
+      label: Zn ke Cu melalui kawat
+    - id: c
+      label: Cu ke Zn melalui kawat
+    - id: d
+      label: Zn ke Cu melalui jembatan garam
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - Zn ke Cu melalui kawat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+  feedback:
+    correct: Elektron dilepas di anode (Zn, tempat oksidasi) dan mengalir lewat kawat ke katode (Cu).
+    incorrect: Jawabannya Zn ke Cu melalui kawat. Elektron dilepas di anode (Zn, tempat oksidasi) dan mengalir lewat kawat ke katode (Cu).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

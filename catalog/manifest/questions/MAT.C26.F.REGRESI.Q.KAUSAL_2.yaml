@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.KAUSAL_2
+familyCode: MAT.C26.F.REGRESI.F.KAUSAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Data menunjukkan siswa yang sarapan memiliki nilai rata-rata lebih tinggi. Kesimpulan yang paling tepat adalah …
+  options:
+    - id: a
+      label: nilai tinggi menyebabkan siswa sarapan
+    - id: b
+      label: tidak ada hubungan sama sekali
+    - id: c
+      label: ada hubungan, tetapi belum terbukti sarapan menyebabkan nilai tinggi
+    - id: d
+      label: sarapan pasti menyebabkan nilai tinggi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - ada hubungan, tetapi belum terbukti sarapan menyebabkan nilai tinggi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+  feedback:
+    correct: Data pengamatan hanya menunjukkan hubungan. Faktor lain, misalnya kebiasaan tidur atau dukungan keluarga, bisa ikut berperan.
+    incorrect: Jawabannya ada hubungan, tetapi belum terbukti sarapan menyebabkan nilai tinggi. Data pengamatan hanya menunjukkan hubungan. Faktor lain, misalnya kebiasaan tidur atau dukungan keluarga, bisa ikut berperan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

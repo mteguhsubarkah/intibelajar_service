@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.L.KAUSAL
+title: Korelasi bukan sebab-akibat
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Berhubungan belum tentu menyebabkan
+  - type: text
+    slide: 0
+    text: Korelasi yang kuat hanya menunjukkan dua variabel bergerak bersama. Itu **bukan bukti** bahwa yang satu menyebabkan yang lain.
+  - type: text
+    slide: 0
+    text: Bisa ada **variabel ketiga** (variabel perancu) yang memengaruhi keduanya.
+  - type: math
+    slide: 0
+    name: variabel perancu
+    expression: memengaruhi kedua variabel
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh dan cara menguji
+  - type: text
+    slide: 1
+    text: Penjualan es krim dan kasus tenggelam sama-sama naik di musim panas. Penyebabnya cuaca panas, bukan es krim.
+  - type: text
+    slide: 1
+    text: "Untuk menguji sebab-akibat diperlukan eksperimen terkontrol: kelompok dibagi acak, hanya satu perlakuan yang diubah, dan kondisi lain dijaga sama."
+  - type: math
+    slide: 1
+    name: bukti sebab-akibat
+    expression: eksperimen terkontrol
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Selalu tanyakan: adakah faktor lain yang bisa menjelaskan kedua data ini?"
+checks:
+  - question: MAT.C26.F.REGRESI.Q.KAUSAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.F.REGRESI.S.KAUSAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

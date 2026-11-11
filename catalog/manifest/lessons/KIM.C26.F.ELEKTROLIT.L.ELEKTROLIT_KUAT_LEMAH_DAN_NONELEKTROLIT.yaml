@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT.L.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+title: Elektrolit kuat, lemah, dan nonelektrolit
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+blocks:
+  - type: heading
+    slide: 0
+    text: Derajat ionisasi
+  - type: text
+    slide: 0
+    text: "**Derajat ionisasi α** = banyak zat yang terionisasi dibagi banyak zat mula-mula."
+  - type: text
+    slide: 0
+    text: "Elektrolit **kuat**: α ≈ 1 (terionisasi sempurna). Elektrolit **lemah**: 0 < α < 1. **Nonelektrolit**: α = 0."
+  - type: math
+    slide: 0
+    name: derajat ionisasi
+    expression: α = terionisasi / mula-mula
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh tiap kelompok
+  - type: text
+    slide: 1
+    text: "Kuat: asam kuat (HCl, H₂SO₄, HNO₃), basa kuat (NaOH, KOH), dan sebagian besar garam (NaCl)."
+  - type: text
+    slide: 1
+    text: "Lemah: asam lemah (CH₃COOH, HF) dan basa lemah (NH₃ atau NH₄OH). Nonelektrolit: gula, urea, alkohol."
+  - type: math
+    slide: 1
+    name: kuat
+    expression: HCl, NaOH, NaCl
+    highlight: true
+  - type: math
+    slide: 1
+    name: lemah
+    expression: CH₃COOH, NH₄OH
+  - type: tip
+    slide: 1
+    text: Kuat-lemahnya elektrolit ditentukan jenis zatnya, bukan seberapa pekat larutannya.
+checks:
+  - question: KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.ELEKTROLIT.S.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

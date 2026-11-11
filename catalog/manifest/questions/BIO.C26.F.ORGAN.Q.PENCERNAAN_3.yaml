@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.PENCERNAAN_3
+familyCode: BIO.C26.F.ORGAN.F.PENCERNAAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Asam lemak dan gliserol hasil pencernaan diangkut melalui …
+  options:
+    - id: a
+      label: kantong empedu
+    - id: b
+      label: pembuluh kil (limfa)
+    - id: c
+      label: kapiler darah bersama glukosa
+    - id: d
+      label: saluran empedu
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - pembuluh kil (limfa)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+  feedback:
+    correct: Asam lemak dan gliserol diserap ke pembuluh kil di vili usus, lalu masuk ke sistem limfa.
+    incorrect: Jawabannya pembuluh kil (limfa). Asam lemak dan gliserol diserap ke pembuluh kil di vili usus, lalu masuk ke sistem limfa.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

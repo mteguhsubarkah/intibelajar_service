@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_3
+familyCode: KIM.C26.F.ELEKTROLIT.F.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Larutan cuka (CH₃COOH) termasuk elektrolit lemah karena …
+  options:
+    - id: a
+      label: hanya sebagian molekulnya terionisasi
+    - id: b
+      label: tidak menghasilkan ion sama sekali
+    - id: c
+      label: terionisasi sempurna
+    - id: d
+      label: merupakan senyawa ion
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - hanya sebagian molekulnya terionisasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+  feedback:
+    correct: Asam asetat adalah asam lemah, sehingga hanya sebagian kecil molekulnya yang terionisasi (0 < α < 1).
+    incorrect: Jawabannya hanya sebagian molekulnya terionisasi. Asam asetat adalah asam lemah, sehingga hanya sebagian kecil molekulnya yang terionisasi (0 < α < 1).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

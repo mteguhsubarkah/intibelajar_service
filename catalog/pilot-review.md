@@ -922,7 +922,7 @@ Materi: 3 · Soal: 7
 
 ## Struktur sel dan bioproses (BIO.C26.F.SEL)
 
-Materi: 4 · Soal: 10
+Materi: 5 · Soal: 13
 
 - [ ] **BIO.C26.F.SEL.Q.ORGANEL_SEL_1** — Organel tempat berlangsungnya respirasi sel untuk menghasilkan ATP adalah …
   A. ribosom · B. mitokondria · C. badan Golgi · D. lisosom
@@ -954,6 +954,15 @@ Materi: 4 · Soal: 10
 - [ ] **BIO.C26.F.SEL.Q.RESPIRASI_4** — Sel otot jantung memiliki sangat banyak organel X karena membutuhkan energi besar. Organel X dan tahap respirasi yang berlangsung di dalamnya adalah …
   A. ribosom; glikolisis · B. mitokondria; siklus Krebs dan transpor elektron · C. badan Golgi; fermentasi · D. mitokondria; glikolisis
   Kunci: **B** · Energi (ATP) terutama dihasilkan di mitokondria: siklus Krebs di matriks dan transpor elektron di membran dalam. Glikolisis di sitoplasma.
+- [ ] **BIO.C26.F.SEL.Q.FOTOSINTESIS_1** — Oksigen yang dilepaskan dalam fotosintesis berasal dari …
+  A. udara yang masuk lewat stomata · B. pemecahan air pada reaksi terang · C. CO₂ pada siklus Calvin · D. glukosa
+  Kunci: **B** · Fotolisis air di membran tilakoid melepaskan O₂, sedangkan atom O dari CO₂ masuk ke dalam gula dan air.
+- [ ] **BIO.C26.F.SEL.Q.FOTOSINTESIS_2** — Siklus Calvin berlangsung di …
+  A. mitokondria · B. sitoplasma · C. stroma kloroplas · D. membran tilakoid
+  Kunci: **C** · Pengikatan CO₂ oleh rubisko dan pembentukan gula terjadi di stroma.
+- [ ] **BIO.C26.F.SEL.Q.FOTOSINTESIS_3** — Hasil reaksi terang yang dipakai dalam siklus Calvin adalah …
+  A. O₂ dan glukosa · B. CO₂ dan H₂O · C. ADP dan NADP⁺ · D. ATP dan NADPH
+  Kunci: **D** · Energi kimia dari reaksi terang dalam bentuk ATP dan NADPH dipakai untuk mengubah CO₂ menjadi gula.
 
 ## Pewarisan sifat & informasi genetik (BIO.C26.F.GENETIKA)
 
@@ -1826,6 +1835,411 @@ Materi: 3 · Soal: 9
 - [ ] **BIO.C26.D.TUMBUH.Q.DAURHIDUP_3** — Menguras bak mandi secara rutin dapat mencegah demam berdarah karena …
   A. memutus daur hidup nyamuk pada tahap jentik · B. mengusir nyamuk dengan bau · C. menambah oksigen dalam air · D. membunuh nyamuk dewasa
   Kunci: **A** · Jentik (larva) nyamuk hidup di air; menguras bak membuat jentik tidak dapat berkembang menjadi nyamuk dewasa.
+
+## Sistem persamaan linear tiga variabel (MAT.C26.E.SPLTV)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_1** — Ani membeli 2 kg apel, 1 kg jeruk, dan 1 kg mangga seharga Rp95.000. Jika x, y, dan z berturut-turut harga per kg apel, jeruk, dan mangga, persamaan yang tepat adalah …
+  A. x + 2y + z = 95.000 · B. 2x + 2y + z = 95.000 · C. x + y + z = 95.000 · D. 2x + y + z = 95.000
+  Kunci: **D** · Setiap banyak kilogram dikalikan harga per kilogramnya: 2x + 1y + 1z = 95.000.
+- [ ] **MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_2** — Jumlah tiga bilangan adalah 30. Bilangan pertama dua kali bilangan kedua, dan bilangan ketiga 6 lebih dari bilangan kedua. Jika ketiga bilangan itu x, y, dan z, sistem persamaan yang tepat adalah …
+  A. x + y + z = 30, x = 2y, z = y + 6 · B. x + y + z = 30, y = 2x, z = y + 6 · C. x + y + z = 30, x = 2y, y = z + 6 · D. x + y + z = 30, x = y + 2, z = 6y
+  Kunci: **A** · "Bilangan pertama dua kali bilangan kedua" berarti x = 2y, dan "ketiga 6 lebih dari kedua" berarti z = y + 6.
+- [ ] **MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_3** — Agar nilai tiga variabel dapat ditentukan tunggal, SPLTV umumnya memerlukan …
+  A. tiga persamaan yang sama · B. tiga persamaan yang tidak saling bergantung · C. dua persamaan saja · D. satu persamaan dengan tiga variabel
+  Kunci: **B** · Tiga nilai yang belum diketahui hanya bisa ditentukan jika ada tiga informasi berbeda, bukan kelipatan satu sama lain.
+- [ ] **MAT.C26.E.SPLTV.Q.ELIMINASI_DAN_SUBSTITUSI_SPLTV_1** — Penyelesaian sistem x + y + z = 9, x − y = 1, dan y − z = 1 adalah …
+  A. (2, 3, 4) · B. (5, 3, 1) · C. (4, 3, 2) · D. (3, 4, 2)
+  Kunci: **C** · Dari x = y + 1 dan z = y − 1, persamaan pertama menjadi 3y = 9, jadi y = 3, x = 4, dan z = 2.
+- [ ] **MAT.C26.E.SPLTV.Q.ELIMINASI_DAN_SUBSTITUSI_SPLTV_2** — Dari sistem 2x + y − z = 3 dan x − y + z = 0, menjumlahkan kedua persamaan menghasilkan …
+  A. 3x − 2y = 3 · B. 3x = 3 · C. 3x + 2z = 3 · D. x + 2y = 3
+  Kunci: **B** · y dan −y saling menghilang, begitu juga −z dan z, sehingga tersisa 3x = 3.
+- [ ] **MAT.C26.E.SPLTV.Q.ELIMINASI_DAN_SUBSTITUSI_SPLTV_3** — Harga satu tiket dewasa, satu tiket remaja, dan satu tiket anak seluruhnya Rp60.000. Tiket dewasa Rp10.000 lebih mahal daripada tiket remaja, dan tiket remaja Rp10.000 lebih mahal daripada tiket anak. Harga tiket anak adalah …
+  A. Rp10.000 · B. Rp20.000 · C. Rp30.000 · D. Rp15.000
+  Kunci: **A** · Tulis semuanya dalam harga tiket anak a: a + (a + 10.000) + (a + 20.000) = 60.000, jadi 3a = 30.000 dan a = Rp10.000.
+- [ ] **MAT.C26.E.SPLTV.Q.SOLUSI_1** — Tripel yang merupakan solusi sistem x + y + z = 6, x + 2y − z = 2, dan 2x − y + z = 3 adalah …
+  A. (3, 2, 1) · B. (1, 3, 2) · C. (1, 2, 3) · D. (2, 1, 3)
+  Kunci: **C** · Substitusikan setiap pilihan ke ketiga persamaan. Hanya (1, 2, 3) yang menghasilkan 6, 2, dan 3.
+- [ ] **MAT.C26.E.SPLTV.Q.SOLUSI_2** — Saat menyelesaikan sebuah SPLTV, diperoleh 0x + 0y + 0z = 4. Artinya sistem tersebut …
+  A. memiliki solusi (0, 0, 0) · B. tidak memiliki solusi · C. memiliki tepat satu solusi · D. memiliki tak hingga banyak solusi
+  Kunci: **B** · Tidak ada nilai x, y, dan z yang membuat 0 = 4, jadi persamaannya saling bertentangan.
+- [ ] **MAT.C26.E.SPLTV.Q.SOLUSI_3** — Model SPLTV untuk banyak tiga jenis kue menghasilkan x = 12, y = −3, dan z = 8. Kesimpulan yang tepat adalah …
+  A. ada kesalahan model atau hitungan, karena banyak kue tidak mungkin negatif · B. banyak kue jenis kedua adalah 3 · C. solusinya pasti benar karena memenuhi persamaan · D. y cukup dibulatkan menjadi 0
+  Kunci: **A** · Dalam konteks banyak barang, nilai negatif tidak masuk akal. Model dan hitungannya perlu diperiksa lagi.
+
+## Statistika dua variabel (MAT.C26.F.REGRESI)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_1** — Nilai koefisien korelasi yang menunjukkan hubungan linear paling kuat adalah …
+  A. −0,92 · B. 0,75 · C. 0,10 · D. −0,40
+  Kunci: **A** · Kekuatan dilihat dari |r|, dan |−0,92| = 0,92 paling dekat ke 1.
+- [ ] **MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_2** — Data lama belajar dan banyak kesalahan ujian menunjukkan: makin lama belajar, makin sedikit kesalahan, dengan pola hampir lurus. Nilai r yang paling mungkin adalah …
+  A. 0,85 · B. 0 · C. 1,3 · D. −0,85
+  Kunci: **D** · Satu variabel naik ketika yang lain turun, jadi r negatif; pola yang hampir lurus berarti |r| besar. Nilai 1,3 tidak mungkin.
+- [ ] **MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_3** — Diagram pencar membentuk lengkungan seperti huruf U dan r ≈ 0. Kesimpulan yang tepat adalah …
+  A. korelasinya sangat kuat · B. r salah hitung karena seharusnya negatif · C. tidak ada hubungan linear, tetapi bisa ada hubungan tak linear · D. kedua variabel pasti tidak berhubungan
+  Kunci: **C** · r hanya mengukur hubungan garis lurus, sedangkan pola U menunjukkan hubungan yang melengkung.
+- [ ] **MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_1** — Garis regresi nilai ujian (y) terhadap lama belajar dalam jam (x) adalah ŷ = 45 + 6x. Makna angka 6 adalah …
+  A. koefisien korelasinya 0,6 · B. setiap tambahan 1 jam belajar, nilai naik rata-rata 6 poin · C. nilai siswa yang tidak belajar adalah 6 · D. rata-rata lama belajar 6 jam
+  Kunci: **B** · 6 adalah gradien, yaitu perubahan rata-rata ŷ untuk setiap kenaikan x sebesar 1 jam.
+- [ ] **MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_2** — Sebuah data memiliki x̄ = 5, ȳ = 32, dan gradien regresi b = 4. Persamaan garis regresinya adalah …
+  A. ŷ = 4 + 12x · B. ŷ = 28 + 4x · C. ŷ = 12 + 4x · D. ŷ = 32 + 4x
+  Kunci: **C** · a = ȳ − b · x̄ = 32 − 4 · 5 = 12, jadi ŷ = 12 + 4x.
+- [ ] **MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_3** — Garis regresi ŷ = 80 − 2,5x memodelkan sisa baterai (%) terhadap lama pemakaian (jam). Pernyataan yang benar adalah …
+  A. setiap jam, baterai bertambah 2,5% · B. baterai habis tepat setelah 80 jam · C. baterai mula-mula 2,5% · D. setiap jam pemakaian, sisa baterai turun rata-rata 2,5%
+  Kunci: **D** · Gradien −2,5 berarti ŷ turun 2,5 untuk setiap kenaikan x sebesar 1 jam.
+- [ ] **MAT.C26.F.REGRESI.Q.PREDIKSI_1** — Dengan garis regresi ŷ = 12 + 4x, prediksi y untuk x = 7 adalah …
+  A. 28 · B. 16 · C. 52 · D. 40
+  Kunci: **D** · ŷ = 12 + 4 · 7 = 12 + 28 = 40.
+- [ ] **MAT.C26.F.REGRESI.Q.PREDIKSI_2** — Garis ŷ = 20 + 3x dibuat dari data dengan x antara 2 dan 10. Prediksi yang paling tidak dapat dipercaya adalah untuk x = …
+  A. 50 · B. 5 · C. 8 · D. 3
+  Kunci: **A** · x = 50 jauh di luar rentang data 2–10 (ekstrapolasi), sehingga polanya belum tentu berlaku.
+- [ ] **MAT.C26.F.REGRESI.Q.PREDIKSI_3** — Untuk x = 6, garis regresi memprediksi ŷ = 50, sedangkan data sebenarnya y = 46. Sisaannya adalah …
+  A. 50 · B. −4 · C. 4 · D. 96
+  Kunci: **B** · Sisaan = y − ŷ = 46 − 50 = −4, jadi data berada di bawah garis.
+- [ ] **MAT.C26.F.REGRESI.Q.KAUSAL_1** — Di sebuah kota, banyak mobil pemadam yang dikirim berkorelasi positif dengan besar kerugian kebakaran. Penjelasan yang paling tepat adalah …
+  A. korelasinya pasti salah hitung · B. kebakaran yang lebih besar membuat lebih banyak pemadam dikirim dan kerugian lebih besar · C. mobil pemadam menyebabkan kerugian · D. kerugian besar membuat api mengecil
+  Kunci: **B** · Besarnya kebakaran adalah variabel ketiga yang memengaruhi banyak pemadam sekaligus besar kerugian.
+- [ ] **MAT.C26.F.REGRESI.Q.KAUSAL_2** — Data menunjukkan siswa yang sarapan memiliki nilai rata-rata lebih tinggi. Kesimpulan yang paling tepat adalah …
+  A. nilai tinggi menyebabkan siswa sarapan · B. tidak ada hubungan sama sekali · C. ada hubungan, tetapi belum terbukti sarapan menyebabkan nilai tinggi · D. sarapan pasti menyebabkan nilai tinggi
+  Kunci: **C** · Data pengamatan hanya menunjukkan hubungan. Faktor lain, misalnya kebiasaan tidur atau dukungan keluarga, bisa ikut berperan.
+- [ ] **MAT.C26.F.REGRESI.Q.KAUSAL_3** — Cara paling tepat untuk menguji apakah pupuk baru menyebabkan tanaman lebih tinggi adalah …
+  A. mengamati kebun yang sudah memakai pupuk itu · B. menghitung korelasi tinggi tanaman dengan harga pupuk · C. bertanya kepada penjual pupuk · D. membagi tanaman secara acak ke dua kelompok, hanya satu yang diberi pupuk, dan kondisi lain disamakan
+  Kunci: **D** · Eksperimen terkontrol dengan pembagian acak memisahkan pengaruh pupuk dari faktor lain.
+
+## Larutan elektrolit (KIM.C26.F.ELEKTROLIT)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.IONISASI_DAN_DISOSIASI_1** — Reaksi ionisasi Al₂(SO₄)₃ yang benar adalah …
+  A. Al₂(SO₄)₃ → Al³⁺ + SO₄²⁻ · B. Al₂(SO₄)₃ → 2Al²⁺ + 3SO₄³⁻ · C. Al₂(SO₄)₃ → 3Al³⁺ + 2SO₄²⁻ · D. Al₂(SO₄)₃ → 2Al³⁺ + 3SO₄²⁻
+  Kunci: **D** · Dua ion Al³⁺ (muatan +6) diimbangi tiga ion SO₄²⁻ (muatan −6).
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.IONISASI_DAN_DISOSIASI_2** — Zat berikut yang larut dalam air tanpa menghasilkan ion adalah …
+  A. glukosa · B. NaOH · C. HCl · D. KCl
+  Kunci: **A** · Glukosa adalah senyawa kovalen yang larut sebagai molekul utuh.
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.IONISASI_DAN_DISOSIASI_3** — Banyak ion yang dihasilkan dari ionisasi sempurna satu satuan rumus Mg(NO₃)₂ adalah …
+  A. 9 · B. 3 · C. 2 · D. 5
+  Kunci: **B** · Mg(NO₃)₂ → Mg²⁺ + 2NO₃⁻, jadi ada 1 + 2 = 3 ion.
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_1** — Kelompok zat berikut yang semuanya elektrolit kuat adalah …
+  A. NH₄OH, HF, gula · B. HCl, alkohol, NaCl · C. HCl, NaOH, KNO₃ · D. CH₃COOH, NaCl, urea
+  Kunci: **C** · HCl (asam kuat), NaOH (basa kuat), dan KNO₃ (garam) terionisasi sempurna dalam air.
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_2** — Dari 0,2 mol asam lemah HA, sebanyak 0,01 mol terionisasi. Derajat ionisasinya adalah …
+  A. 0,5 · B. 0,05 · C. 0,01 · D. 0,2
+  Kunci: **B** · α = 0,01 / 0,2 = 0,05.
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_3** — Larutan cuka (CH₃COOH) termasuk elektrolit lemah karena …
+  A. hanya sebagian molekulnya terionisasi · B. tidak menghasilkan ion sama sekali · C. terionisasi sempurna · D. merupakan senyawa ion
+  Kunci: **A** · Asam asetat adalah asam lemah, sehingga hanya sebagian kecil molekulnya yang terionisasi (0 < α < 1).
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_1** — Hasil uji: larutan P lampu tidak menyala tetapi ada gelembung; larutan Q lampu menyala terang dengan banyak gelembung. Kesimpulan yang tepat adalah …
+  A. P elektrolit lemah, Q elektrolit kuat · B. P nonelektrolit, Q elektrolit kuat · C. P elektrolit kuat, Q elektrolit lemah · D. keduanya nonelektrolit
+  Kunci: **A** · Gelembung pada P menunjukkan ada ion walaupun sedikit (lemah). Q menyala terang, jadi elektrolit kuat.
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_2** — Kristal garam dapur kering tidak menghantarkan listrik karena …
+  A. tidak memiliki ion · B. merupakan senyawa kovalen · C. bersifat asam · D. ion-ionnya tidak dapat bergerak bebas
+  Kunci: **D** · Dalam padatan, ion Na⁺ dan Cl⁻ terikat kuat pada kisi kristal sehingga tidak bisa membawa arus.
+- [ ] **KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_3** — Larutan yang lampunya tidak menyala dan tidak menghasilkan gelembung adalah larutan …
+  A. NaOH · B. cuka · C. gula · D. HCl
+  Kunci: **C** · Gula adalah nonelektrolit: tidak ada ion yang membawa arus atau bereaksi di elektrode.
+
+## Sifat koligatif larutan (KIM.C26.F.KOLIGATIF)
+
+Materi: 5 · Soal: 15
+
+- [ ] **KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_1** — Sebanyak 6 g urea (Mr = 60) dilarutkan dalam 250 g air. Molalitas larutan adalah …
+  A. 0,025 m · B. 2,5 m · C. 0,4 m · D. 0,1 m
+  Kunci: **C** · n = 6/60 = 0,1 mol, jadi m = 0,1 × 1000/250 = 0,4 m.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_2** — Sebuah larutan berisi 0,2 mol glukosa dan 9,8 mol air. Fraksi mol glukosa adalah …
+  A. 0,04 · B. 0,02 · C. 0,98 · D. 0,2
+  Kunci: **B** · X = 0,2 / (0,2 + 9,8) = 0,2 / 10 = 0,02.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_3** — Fraksi mol zat terlarut dalam suatu larutan adalah 0,15. Fraksi mol pelarutnya adalah …
+  A. 0,85 · B. 0,15 · C. 1,15 · D. 0,30
+  Kunci: **A** · X_t + X_p = 1, jadi X_p = 1 − 0,15 = 0,85.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.UAP_1** — Tekanan uap air murni pada suhu tertentu 32 mmHg. Tekanan uap larutan dengan fraksi mol zat terlarut 0,25 adalah …
+  A. 32 mmHg · B. 40 mmHg · C. 24 mmHg · D. 8 mmHg
+  Kunci: **C** · X_p = 1 − 0,25 = 0,75, jadi P = 0,75 × 32 = 24 mmHg.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.UAP_2** — Besarnya penurunan tekanan uap larutan bergantung pada …
+  A. bentuk wadah · B. banyaknya partikel zat terlarut · C. warna zat terlarut · D. jenis zat terlarut
+  Kunci: **B** · Penurunan tekanan uap adalah sifat koligatif, yang ditentukan banyaknya partikel, bukan jenisnya.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.UAP_3** — Pada 25 °C tekanan uap air murni 24 mmHg. Penurunan tekanan uap larutan dengan fraksi mol zat terlarut 0,05 adalah …
+  A. 1,2 mmHg · B. 22,8 mmHg · C. 0,05 mmHg · D. 2,4 mmHg
+  Kunci: **A** · ΔP = X_t · P° = 0,05 × 24 = 1,2 mmHg.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_1** — Larutan glukosa 0,2 m dalam air (Kb = 0,52 °C/m) mendidih pada suhu …
+  A. 100,2 °C · B. 100,104 °C · C. 100,52 °C · D. 99,896 °C
+  Kunci: **B** · ΔTb = 0,52 × 0,2 = 0,104 °C, jadi titik didihnya 100 + 0,104 = 100,104 °C.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_2** — Sebanyak 18 g glukosa (Mr = 180) dilarutkan dalam 500 g air (Kf = 1,86 °C/m). Titik beku larutan adalah …
+  A. 0,372 °C · B. −3,72 °C · C. −0,372 °C · D. −0,186 °C
+  Kunci: **C** · m = (18/180) × (1000/500) = 0,2 m. ΔTf = 1,86 × 0,2 = 0,372 °C, jadi titik bekunya −0,372 °C.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_3** — Garam ditaburkan di jalan bersalju karena …
+  A. menaikkan titik beku air · B. menaikkan suhu udara · C. membuat es lebih keras · D. menurunkan titik beku air sehingga es mencair pada suhu di bawah 0 °C
+  Kunci: **D** · Larutan garam membeku pada suhu di bawah 0 °C, sehingga es dapat mencair walaupun udara di bawah 0 °C.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.OSMOSIS_1** — Tekanan osmosis larutan glukosa 0,1 M pada 27 °C (R = 0,082 L·atm/mol·K) adalah …
+  A. 0,22 atm · B. 24,6 atm · C. 0,246 atm · D. 2,46 atm
+  Kunci: **D** · T = 27 + 273 = 300 K, jadi π = 0,1 × 0,082 × 300 = 2,46 atm.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.OSMOSIS_2** — Cairan infus harus bersifat isotonik dengan darah agar …
+  A. sel darah tidak mengerut atau pecah · B. infus lebih cepat habis · C. darah menjadi lebih encer · D. sel darah membelah
+  Kunci: **A** · Tekanan osmosis yang sama membuat air tidak berpindah berlebihan masuk atau keluar sel darah.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.OSMOSIS_3** — Sayuran yang direndam dalam larutan garam pekat menjadi layu karena …
+  A. suhu larutan turun · B. air keluar dari sel sayuran ke larutan yang lebih pekat · C. garam masuk dan mengeringkan sel · D. sel menyerap terlalu banyak air
+  Kunci: **B** · Larutan garam pekat bersifat hipertonik, sehingga air berpindah keluar dari sel secara osmosis.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.VANTHOFF_1** — Larutan NaCl 0,2 m (α = 1) dalam air (Kf = 1,86 °C/m) membeku pada suhu …
+  A. −0,744 °C · B. −0,372 °C · C. −0,186 °C · D. −1,116 °C
+  Kunci: **A** · Untuk NaCl, i = 2. ΔTf = 1,86 × 0,2 × 2 = 0,744 °C, jadi titik bekunya −0,744 °C.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.VANTHOFF_2** — Larutan berikut yang memiliki titik didih paling tinggi adalah …
+  A. NaCl 0,1 m · B. glukosa 0,2 m · C. urea 0,1 m · D. CaCl₂ 0,1 m
+  Kunci: **D** · Bandingkan m × i: CaCl₂ 0,1 × 3 = 0,3; NaCl 0,1 × 2 = 0,2; glukosa 0,2 × 1 = 0,2; urea 0,1. Yang terbesar CaCl₂.
+- [ ] **KIM.C26.F.KOLIGATIF.Q.VANTHOFF_3** — Elektrolit biner lemah dengan derajat ionisasi 0,4 memiliki faktor van 't Hoff sebesar …
+  A. 0,4 · B. 0,8 · C. 1,4 · D. 2,4
+  Kunci: **C** · i = 1 + (n − 1)α = 1 + (2 − 1) × 0,4 = 1,4.
+
+## Redoks dan elektrokimia (KIM.C26.F.REDOKS)
+
+Materi: 5 · Soal: 15
+
+- [ ] **KIM.C26.F.REDOKS.Q.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS_1** — Bilangan oksidasi Mn dalam KMnO₄ adalah …
+  A. +4 · B. +2 · C. +7 · D. +6
+  Kunci: **C** · (+1) + Mn + 4(−2) = 0, jadi Mn = +7.
+- [ ] **KIM.C26.F.REDOKS.Q.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS_2** — Pada reaksi Zn + Cu²⁺ → Zn²⁺ + Cu, zat yang bertindak sebagai reduktor adalah …
+  A. Cu · B. Zn · C. Cu²⁺ · D. Zn²⁺
+  Kunci: **B** · Biloks Zn naik dari 0 menjadi +2 (oksidasi), sehingga Zn adalah reduktor.
+- [ ] **KIM.C26.F.REDOKS.Q.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS_3** — Bilangan oksidasi S dalam ion SO₄²⁻ adalah …
+  A. +6 · B. +4 · C. +8 · D. −2
+  Kunci: **A** · S + 4(−2) = −2, jadi S = +6.
+- [ ] **KIM.C26.F.REDOKS.Q.SETARA_1** — Setengah reaksi MnO₄⁻ → Mn²⁺ dalam suasana asam yang setara adalah …
+  A. MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O · B. MnO₄⁻ + 4H⁺ + 3e⁻ → Mn²⁺ + 2H₂O · C. MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O + 5e⁻ · D. MnO₄⁻ + 8H⁺ + 7e⁻ → Mn²⁺ + 4H₂O
+  Kunci: **A** · O disetarakan dengan 4H₂O dan H dengan 8H⁺. Muatan kiri −1 + 8 = +7 harus menjadi +2, jadi perlu 5 elektron di ruas kiri.
+- [ ] **KIM.C26.F.REDOKS.Q.SETARA_2** — Pada reaksi Cr₂O₇²⁻ + Fe²⁺ → Cr³⁺ + Fe³⁺ (suasana asam), perbandingan koefisien Cr₂O₇²⁻ : Fe²⁺ setelah disetarakan adalah …
+  A. 1 : 3 · B. 2 : 3 · C. 1 : 2 · D. 1 : 6
+  Kunci: **D** · Setiap Cr turun dari +6 ke +3 (3 elektron) dan ada 2 Cr, jadi 6 elektron. Setiap Fe²⁺ melepas 1 elektron, sehingga perlu 6 Fe²⁺.
+- [ ] **KIM.C26.F.REDOKS.Q.SETARA_3** — Dalam metode setengah reaksi suasana asam, kekurangan atom O di salah satu ruas disetarakan dengan menambahkan …
+  A. OH⁻ · B. O₂ · C. H₂O · D. H⁺
+  Kunci: **C** · Kekurangan O ditutup dengan H₂O, lalu kelebihan H disetarakan dengan H⁺.
+- [ ] **KIM.C26.F.REDOKS.Q.VOLTA_1** — Diketahui E° Mg²⁺/Mg = −2,37 V dan E° Ag⁺/Ag = +0,80 V. Potensial sel Mg | Mg²⁺ || Ag⁺ | Ag adalah …
+  A. −3,17 V · B. 2,37 V · C. 3,17 V · D. 1,57 V
+  Kunci: **C** · E°sel = E°katode − E°anode = 0,80 − (−2,37) = 3,17 V.
+- [ ] **KIM.C26.F.REDOKS.Q.VOLTA_2** — Pada sel volta Zn | Zn²⁺ || Cu²⁺ | Cu, elektron mengalir dari …
+  A. katode ke anode · B. Zn ke Cu melalui kawat · C. Cu ke Zn melalui kawat · D. Zn ke Cu melalui jembatan garam
+  Kunci: **B** · Elektron dilepas di anode (Zn, tempat oksidasi) dan mengalir lewat kawat ke katode (Cu).
+- [ ] **KIM.C26.F.REDOKS.Q.VOLTA_3** — Diketahui E° Fe²⁺/Fe = −0,44 V dan E° Pb²⁺/Pb = −0,13 V. Reaksi yang berlangsung spontan adalah …
+  A. Fe + Pb²⁺ → Fe²⁺ + Pb · B. Pb + Fe²⁺ → Pb²⁺ + Fe · C. Fe²⁺ + Pb²⁺ → Fe + Pb · D. tidak ada yang spontan
+  Kunci: **A** · Fe memiliki E° lebih kecil sehingga teroksidasi: E°sel = −0,13 − (−0,44) = +0,31 V, lebih dari nol.
+- [ ] **KIM.C26.F.REDOKS.Q.ELEKTROLISIS_1** — Pada elektrolisis larutan CuSO₄ dengan elektrode karbon, zat yang dihasilkan di katode adalah …
+  A. gas O₂ · B. gas SO₂ · C. logam Cu · D. gas H₂
+  Kunci: **C** · Cu²⁺ bukan ion logam aktif, sehingga ion inilah yang tereduksi menjadi Cu di katode.
+- [ ] **KIM.C26.F.REDOKS.Q.ELEKTROLISIS_2** — Arus 10 A dialirkan selama 965 detik ke larutan AgNO₃ (Ar Ag = 108). Massa perak yang mengendap adalah …
+  A. 5,4 g · B. 10,8 g · C. 1,08 g · D. 21,6 g
+  Kunci: **B** · Muatan = 10 × 965 = 9.650 C = 0,1 F. Ag⁺ + e⁻ → Ag, jadi terbentuk 0,1 mol Ag = 10,8 g.
+- [ ] **KIM.C26.F.REDOKS.Q.ELEKTROLISIS_3** — Pada elektrolisis larutan Na₂SO₄ dengan elektrode inert, zat yang terbentuk di katode adalah …
+  A. gas H₂ · B. logam Na · C. gas O₂ · D. gas SO₂
+  Kunci: **A** · Na⁺ adalah ion logam aktif, sehingga yang tereduksi adalah air: 2H₂O + 2e⁻ → H₂ + 2OH⁻.
+- [ ] **KIM.C26.F.REDOKS.Q.KOROSI_1** — Paku yang paling cepat berkarat adalah paku yang diletakkan di …
+  A. minyak goreng · B. udara kering dalam wadah tertutup berisi kapur tohor · C. air yang sudah dididihkan dan ditutup minyak · D. air garam terbuka
+  Kunci: **D** · Air garam menyediakan air, oksigen, dan ion yang mempercepat korosi.
+- [ ] **KIM.C26.F.REDOKS.Q.KOROSI_2** — Pipa besi di dalam tanah dihubungkan dengan batang magnesium untuk mencegah korosi. Cara ini disebut …
+  A. perlindungan katodik · B. pelapisan dengan cat · C. galvanisasi · D. elektrolisis
+  Kunci: **A** · Mg lebih mudah teroksidasi daripada besi, sehingga Mg yang berkarat sebagai logam korban dan besi terlindungi.
+- [ ] **KIM.C26.F.REDOKS.Q.KOROSI_3** — Kaleng besi berlapis timah lebih cepat berkarat setelah tergores karena …
+  A. timah menarik air dari udara · B. besi lebih mudah teroksidasi daripada timah, sehingga besi menjadi anode · C. timah bereaksi dengan oksigen lebih dulu · D. goresan mengubah timah menjadi besi
+  Kunci: **B** · E° besi lebih kecil daripada E° timah. Saat keduanya bersentuhan dan terbuka, besi yang teroksidasi.
+
+## Sistem organ manusia (BIO.C26.F.ORGAN)
+
+Materi: 7 · Soal: 21
+
+- [ ] **BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_1** — Darah digolongkan ke dalam jaringan …
+  A. otot · B. saraf · C. ikat · D. epitel
+  Kunci: **C** · Darah adalah jaringan ikat dengan matriks cair, yaitu plasma.
+- [ ] **BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_2** — Otot yang bekerja tidak sadar dan menyusun dinding usus adalah otot …
+  A. rangka · B. polos · C. lurik · D. jantung
+  Kunci: **B** · Otot polos menyusun dinding organ dalam seperti usus dan bekerja di luar kendali kesadaran.
+- [ ] **BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_3** — Sel epitel usus halus memiliki mikrovili. Fungsi struktur ini adalah …
+  A. memperluas permukaan penyerapan · B. menghantarkan impuls · C. menghasilkan hormon · D. mempercepat kontraksi
+  Kunci: **A** · Mikrovili menambah luas permukaan sel sehingga penyerapan sari makanan lebih efisien.
+- [ ] **BIO.C26.F.ORGAN.Q.PENCERNAAN_1** — Empedu membantu pencernaan lemak dengan cara …
+  A. memecah lemak menjadi asam lemak · B. mengubah lemak menjadi glukosa · C. menyerap lemak ke darah · D. mengemulsikan lemak menjadi butiran kecil
+  Kunci: **D** · Empedu bukan enzim; ia memperluas permukaan lemak agar lipase dapat bekerja.
+- [ ] **BIO.C26.F.ORGAN.Q.PENCERNAAN_2** — Enzim yang memecah protein di lambung adalah …
+  A. pepsin · B. amilase · C. lipase · D. tripsin
+  Kunci: **A** · Pepsin yang diaktifkan HCl memecah protein menjadi pepton di lambung, sedangkan tripsin bekerja di usus halus.
+- [ ] **BIO.C26.F.ORGAN.Q.PENCERNAAN_3** — Asam lemak dan gliserol hasil pencernaan diangkut melalui …
+  A. kantong empedu · B. pembuluh kil (limfa) · C. kapiler darah bersama glukosa · D. saluran empedu
+  Kunci: **B** · Asam lemak dan gliserol diserap ke pembuluh kil di vili usus, lalu masuk ke sistem limfa.
+- [ ] **BIO.C26.F.ORGAN.Q.SIRKULASI_1** — Pembuluh yang membawa darah kaya oksigen dari paru-paru ke jantung adalah …
+  A. vena kava · B. vena pulmonalis · C. arteri pulmonalis · D. aorta
+  Kunci: **B** · Vena pulmonalis membawa darah yang baru mengambil oksigen di paru-paru ke serambi kiri.
+- [ ] **BIO.C26.F.ORGAN.Q.SIRKULASI_2** — Ruang jantung yang memompa darah ke seluruh tubuh adalah …
+  A. serambi kiri · B. serambi kanan · C. bilik kiri · D. bilik kanan
+  Kunci: **C** · Bilik kiri memompa darah ke aorta; dindingnya paling tebal karena harus mendorong darah ke seluruh tubuh.
+- [ ] **BIO.C26.F.ORGAN.Q.SIRKULASI_3** — Penyempitan pembuluh arteri karena penumpukan plak lemak disebut …
+  A. varises · B. hipotensi · C. leukemia · D. aterosklerosis
+  Kunci: **D** · Plak lemak di dinding arteri menyempitkan pembuluh dan mengurangi aliran darah.
+- [ ] **BIO.C26.F.ORGAN.Q.RESPIRASI_1** — Saat inspirasi pernapasan perut, yang terjadi adalah …
+  A. diafragma berkontraksi dan mendatar, rongga dada membesar · B. diafragma relaksasi dan melengkung, rongga dada mengecil · C. tulang rusuk turun · D. tekanan di paru-paru naik
+  Kunci: **A** · Kontraksi diafragma memperbesar rongga dada sehingga tekanan turun dan udara masuk.
+- [ ] **BIO.C26.F.ORGAN.Q.RESPIRASI_2** — Sebagian besar CO₂ diangkut dari jaringan ke paru-paru dalam bentuk …
+  A. oksihemoglobin · B. gas CO₂ terlarut saja · C. ikatan dengan zat besi · D. ion bikarbonat dalam plasma
+  Kunci: **D** · Sekitar 70% CO₂ diubah menjadi HCO₃⁻ dengan bantuan enzim karbonat anhidrase dan diangkut dalam plasma.
+- [ ] **BIO.C26.F.ORGAN.Q.RESPIRASI_3** — Volume udara yang keluar masuk paru-paru pada pernapasan biasa disebut …
+  A. volume residu · B. udara komplementer · C. volume tidal · D. kapasitas vital
+  Kunci: **C** · Volume tidal adalah udara pernapasan biasa, sekitar 500 mL.
+- [ ] **BIO.C26.F.ORGAN.Q.EKSKRESI_1** — Urine primer dihasilkan melalui proses …
+  A. penampungan di kandung kemih · B. filtrasi di glomerulus · C. reabsorpsi di tubulus proksimal · D. augmentasi di tubulus distal
+  Kunci: **B** · Darah disaring di glomerulus, dan hasilnya ditampung di kapsul Bowman sebagai urine primer.
+- [ ] **BIO.C26.F.ORGAN.Q.EKSKRESI_2** — Urine sekunder orang sehat tidak lagi mengandung glukosa karena glukosa …
+  A. diubah menjadi urea · B. dikeluarkan lewat keringat · C. diserap kembali pada tahap reabsorpsi · D. tidak ikut tersaring
+  Kunci: **C** · Glukosa ikut tersaring di glomerulus, lalu diserap kembali di tubulus kontortus proksimal.
+- [ ] **BIO.C26.F.ORGAN.Q.EKSKRESI_3** — Seseorang mengeluarkan urine sangat banyak dan encer karena kekurangan hormon ADH. Gangguan ini disebut …
+  A. diabetes melitus · B. nefritis · C. batu ginjal · D. diabetes insipidus
+  Kunci: **D** · Tanpa ADH, tubulus hanya menyerap sedikit air sehingga urine banyak dan encer.
+- [ ] **BIO.C26.F.ORGAN.Q.KOORDINASI_1** — Bagian neuron yang meneruskan impuls dari badan sel ke sel lain adalah …
+  A. dendrit · B. sinapsis · C. nukleus · D. akson
+  Kunci: **D** · Dendrit menerima impuls, sedangkan akson membawa impuls keluar dari badan sel.
+- [ ] **BIO.C26.F.ORGAN.Q.KOORDINASI_2** — Saat kadar gula darah rendah, pankreas melepaskan hormon …
+  A. glukagon · B. insulin · C. tiroksin · D. ADH
+  Kunci: **A** · Glukagon memicu hati memecah glikogen menjadi glukosa sehingga gula darah naik.
+- [ ] **BIO.C26.F.ORGAN.Q.KOORDINASI_3** — Penderita miopi dapat dibantu dengan kacamata berlensa …
+  A. silinder · B. cekung · C. cembung · D. bifokal
+  Kunci: **B** · Pada miopi bayangan jatuh di depan retina; lensa cekung menyebarkan cahaya agar bayangan jatuh tepat di retina.
+- [ ] **BIO.C26.F.ORGAN.Q.REPRODUKSI_1** — Ovulasi dipicu oleh lonjakan hormon …
+  A. progesteron · B. oksitosin · C. LH · D. FSH
+  Kunci: **C** · Kenaikan tajam LH di pertengahan siklus menyebabkan folikel matang melepaskan oosit.
+- [ ] **BIO.C26.F.ORGAN.Q.REPRODUKSI_2** — Dari satu oosit primer, oogenesis menghasilkan …
+  A. empat sperma · B. satu ovum dan badan polar · C. empat ovum · D. dua ovum
+  Kunci: **B** · Pembelahan meiosis pada oogenesis tidak merata, sehingga hanya satu sel yang menjadi ovum.
+- [ ] **BIO.C26.F.ORGAN.Q.REPRODUKSI_3** — Fertilisasi pada manusia normalnya terjadi di …
+  A. tuba falopi · B. rahim · C. ovarium · D. vagina
+  Kunci: **A** · Sperma bertemu ovum di tuba falopi; zigot kemudian bergerak ke rahim untuk berimplantasi.
+
+## Pertumbuhan dan perkembangan (BIO.C26.F.TUMBUH)
+
+Materi: 4 · Soal: 12
+
+- [ ] **BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_1** — Sel saraf dan sel otot pada satu orang memiliki DNA yang sama, tetapi bentuk dan fungsinya berbeda karena …
+  A. jumlah kromosomnya berbeda · B. berasal dari zigot yang berbeda · C. gen yang aktif pada kedua sel berbeda · D. DNA-nya bermutasi
+  Kunci: **C** · Diferensiasi terjadi karena ekspresi gen yang berbeda, bukan karena DNA yang berbeda.
+- [ ] **BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_2** — Sel yang belum terdiferensiasi dan dapat berkembang menjadi berbagai jenis sel disebut …
+  A. sel kanker · B. sel punca · C. sel gamet · D. sel somatik dewasa
+  Kunci: **B** · Sel punca belum memiliki fungsi khusus dan dapat berdiferensiasi menjadi berbagai sel.
+- [ ] **BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_3** — Berubahnya sel-sel embrio menjadi sel dengan struktur dan fungsi khusus disebut …
+  A. diferensiasi · B. fertilisasi · C. meiosis · D. regenerasi
+  Kunci: **A** · Diferensiasi mengubah sel-sel yang mirip menjadi sel khusus seperti sel otot atau sel saraf.
+- [ ] **BIO.C26.F.TUMBUH.Q.TUMBUHAN_1** — Hormon tumbuhan yang mempercepat pematangan buah adalah …
+  A. etilen · B. auksin · C. sitokinin · D. asam absisat
+  Kunci: **A** · Etilen berupa gas yang memicu pematangan, misalnya saat buah diperam dalam wadah tertutup.
+- [ ] **BIO.C26.F.TUMBUH.Q.TUMBUHAN_2** — Pucuk tanaman dipotong agar tanaman tumbuh lebih rimbun. Prinsip yang dipakai adalah …
+  A. menambah giberelin · B. menghentikan fotosintesis · C. mempercepat penuaan daun · D. menghilangkan dominansi apikal oleh auksin
+  Kunci: **D** · Auksin dari pucuk menghambat tunas samping; tanpa pucuk, tunas samping tumbuh.
+- [ ] **BIO.C26.F.TUMBUH.Q.TUMBUHAN_3** — Pertumbuhan sekunder yang membuat batang tumbuhan dikotil membesar disebabkan oleh aktivitas …
+  A. epidermis · B. stomata · C. kambium · D. meristem apikal
+  Kunci: **C** · Kambium membelah ke arah dalam dan luar sehingga diameter batang bertambah.
+- [ ] **BIO.C26.F.TUMBUH.Q.HEWAN_1** — Urutan tahap perkembangan embrio yang benar adalah …
+  A. zigot → blastula → morula → gastrula · B. morula → zigot → gastrula → blastula · C. zigot → gastrula → blastula → morula · D. zigot → morula → blastula → gastrula
+  Kunci: **D** · Zigot membelah menjadi morula yang padat, lalu blastula yang berongga, kemudian gastrula dengan tiga lapisan lembaga.
+- [ ] **BIO.C26.F.TUMBUH.Q.HEWAN_2** — Sistem saraf manusia berkembang dari lapisan lembaga …
+  A. ektoderm · B. mesoderm · C. endoderm · D. blastosol
+  Kunci: **A** · Ektoderm membentuk kulit dan sistem saraf.
+- [ ] **BIO.C26.F.TUMBUH.Q.HEWAN_3** — Cicak yang menumbuhkan kembali ekornya setelah putus menunjukkan kemampuan …
+  A. gastrulasi · B. regenerasi · C. metamorfosis · D. diferensiasi embrio
+  Kunci: **B** · Regenerasi adalah kemampuan menumbuhkan kembali bagian tubuh yang hilang.
+- [ ] **BIO.C26.F.TUMBUH.Q.EKSPERIMEN_1** — Pada percobaan pengaruh pupuk terhadap tinggi tanaman, variabel terikatnya adalah …
+  A. jenis pupuk · B. jenis tanaman · C. banyak air yang diberikan · D. tinggi tanaman
+  Kunci: **D** · Variabel terikat adalah hasil yang diukur, yaitu tinggi tanaman.
+- [ ] **BIO.C26.F.TUMBUH.Q.EKSPERIMEN_2** — Dalam percobaan pengaruh cahaya terhadap kecambah, banyak air siraman harus …
+  A. dibuat sama untuk semua perlakuan · B. dibedakan untuk tiap perlakuan · C. ditiadakan · D. diubah secara acak setiap hari
+  Kunci: **A** · Air adalah variabel kontrol. Jika berbeda, perbedaan tinggi tidak bisa dipastikan berasal dari cahaya.
+- [ ] **BIO.C26.F.TUMBUH.Q.EKSPERIMEN_3** — Kurva pertumbuhan kecambah yang lambat di awal, cepat di tengah, lalu melambat disebut kurva …
+  A. acak · B. sigmoid · C. linear · D. menurun
+  Kunci: **B** · Bentuk S (sigmoid) menggambarkan fase lambat, fase cepat, lalu fase yang hampir tetap.
+
+## Evolusi (BIO.C26.F.EVOLUSI)
+
+Materi: 4 · Soal: 12
+
+- [ ] **BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_1** — Sumber utama munculnya alel baru dalam populasi adalah …
+  A. mutasi · B. latihan fisik · C. pengaruh makanan · D. perubahan cuaca harian
+  Kunci: **A** · Mutasi mengubah urutan DNA sehingga dapat memunculkan alel yang belum pernah ada.
+- [ ] **BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_2** — Variasi berikut yang dapat diwariskan adalah …
+  A. otot besar karena latihan · B. kulit gelap karena berjemur · C. bekas luka · D. golongan darah
+  Kunci: **D** · Golongan darah ditentukan gen; variasi lainnya disebabkan lingkungan dan tidak diwariskan.
+- [ ] **BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_3** — Pindah silang (crossing over) saat meiosis meningkatkan variasi karena …
+  A. menghapus gen yang merugikan · B. mengubah semua gen menjadi dominan · C. menghasilkan kombinasi alel baru pada kromosom · D. menambah jumlah kromosom
+  Kunci: **C** · Pertukaran segmen antarkromosom homolog menghasilkan kombinasi alel yang berbeda dari induknya.
+- [ ] **BIO.C26.F.EVOLUSI.Q.SELEKSI_1** — Setelah antibiotik dipakai berulang kali, bakteri yang resisten makin banyak. Penjelasan yang tepat adalah …
+  A. antibiotik mengubah semua bakteri menjadi kuat · B. bakteri resisten selalu datang dari luar tubuh · C. bakteri yang sudah resisten bertahan dan berkembang biak, sedangkan yang peka mati · D. bakteri belajar melawan antibiotik
+  Kunci: **C** · Antibiotik menyeleksi bakteri: yang membawa sifat resisten bertahan dan mewariskan sifat itu.
+- [ ] **BIO.C26.F.EVOLUSI.Q.SELEKSI_2** — Menurut teori seleksi alam, jerapah berleher panjang menjadi umum karena …
+  A. leher panjang didapat dari makanan · B. jerapah berleher lebih panjang lebih mampu bertahan dan berketurunan · C. leher jerapah memanjang karena sering dijulurkan · D. jerapah ingin mencapai daun yang tinggi
+  Kunci: **B** · Variasi panjang leher sudah ada; yang lehernya lebih panjang lebih berhasil mendapat makanan dan berketurunan. Sifat yang diperoleh selama hidup tidak diwariskan.
+- [ ] **BIO.C26.F.EVOLUSI.Q.SELEKSI_3** — Bentuk paruh burung yang sesuai dengan jenis makanannya merupakan contoh adaptasi …
+  A. morfologi · B. fisiologi · C. tingkah laku · D. kimiawi
+  Kunci: **A** · Adaptasi morfologi berupa bentuk tubuh atau alat tubuh, seperti bentuk paruh.
+- [ ] **BIO.C26.F.EVOLUSI.Q.BUKTI_1** — Tangan manusia dan sayap kelelawar merupakan contoh organ …
+  A. analog · B. vestigial · C. buatan · D. homolog
+  Kunci: **D** · Keduanya tersusun dari tulang dengan pola yang sama walaupun fungsinya berbeda.
+- [ ] **BIO.C26.F.EVOLUSI.Q.BUKTI_2** — Sayap burung dan sayap kupu-kupu disebut organ analog karena …
+  A. fungsinya sama, tetapi asal-usul strukturnya berbeda · B. asal-usulnya sama · C. keduanya tidak berfungsi · D. keduanya tersusun dari tulang
+  Kunci: **A** · Sayap serangga bukan modifikasi anggota tubuh bertulang; kesamaannya hanya pada fungsi terbang.
+- [ ] **BIO.C26.F.EVOLUSI.Q.BUKTI_3** — Urutan DNA simpanse lebih mirip dengan manusia daripada dengan kuda. Kesimpulan yang tepat adalah …
+  A. DNA tidak berhubungan dengan kekerabatan · B. manusia dan simpanse berkerabat lebih dekat · C. manusia berasal dari simpanse modern · D. kuda bukan mamalia
+  Kunci: **B** · Kemiripan molekuler menunjukkan nenek moyang bersama yang lebih baru, bukan bahwa satu spesies modern berasal dari spesies modern lainnya.
+- [ ] **BIO.C26.F.EVOLUSI.Q.SPESIASI_1** — Kuda dan keledai dapat kawin dan menghasilkan bagal yang mandul. Hal ini menunjukkan bahwa kuda dan keledai …
+  A. tidak memiliki isolasi reproduksi · B. spesies yang berbeda · C. spesies yang sama · D. satu populasi
+  Kunci: **B** · Keturunannya tidak fertil, jadi ada isolasi reproduksi dan keduanya termasuk spesies berbeda.
+- [ ] **BIO.C26.F.EVOLUSI.Q.SPESIASI_2** — Populasi tupai terpisah oleh ngarai besar selama ribuan tahun dan kini tidak dapat saling kawin. Proses ini disebut …
+  A. mutasi titik · B. adaptasi tingkah laku · C. spesiasi alopatrik · D. seleksi buatan
+  Kunci: **C** · Spesiasi alopatrik diawali isolasi geografis yang memisahkan populasi.
+- [ ] **BIO.C26.F.EVOLUSI.Q.SPESIASI_3** — Dua spesies katak hidup di kolam yang sama, tetapi satu kawin di awal musim hujan dan yang lain di akhir musim hujan. Jenis isolasinya adalah isolasi …
+  A. geografis · B. mekanik · C. hibrida mandul · D. waktu (musim kawin)
+  Kunci: **D** · Perbedaan waktu kawin mencegah perkawinan walaupun keduanya tinggal di tempat yang sama.
+
+## Listrik statis dan medan (FIS.C26.F.MEDAN)
+
+Materi: 5 · Soal: 15
+
+- [ ] **FIS.C26.F.MEDAN.Q.MUATAN_DAN_HUKUM_COULOMB_1** — Dua muatan masing-masing 2 µC dan 3 µC berjarak 30 cm. Besar gaya Coulomb antara keduanya adalah …
+  A. 6 N · B. 1,8 N · C. 0,6 N · D. 0,06 N
+  Kunci: **C** · F = 9 × 10⁹ × (2 × 10⁻⁶)(3 × 10⁻⁶) / (0,3)² = 0,054 / 0,09 = 0,6 N.
+- [ ] **FIS.C26.F.MEDAN.Q.MUATAN_DAN_HUKUM_COULOMB_2** — Jarak antara dua muatan dijadikan 3 kali semula. Gaya Coulomb menjadi … kali semula.
+  A. 9 · B. 1/9 · C. 1/3 · D. 3
+  Kunci: **B** · F berbanding terbalik dengan r². Jika r menjadi 3r, F menjadi F/3² = F/9.
+- [ ] **FIS.C26.F.MEDAN.Q.MUATAN_DAN_HUKUM_COULOMB_3** — Benda bermuatan A dan B saling tarik-menarik, sedangkan B dan benda C yang bermuatan negatif saling tolak-menolak. Muatan benda A adalah …
+  A. positif · B. negatif · C. netral · D. tidak dapat ditentukan
+  Kunci: **A** · B menolak C yang negatif, jadi B negatif. A yang bermuatan menarik B yang negatif, jadi A positif.
+- [ ] **FIS.C26.F.MEDAN.Q.MEDANLISTRIK_1** — Kuat medan listrik pada jarak 3 cm dari muatan titik 4 µC adalah …
+  A. 4 × 10⁵ N/C · B. 1,2 × 10⁶ N/C · C. 3,6 × 10⁴ N/C · D. 4 × 10⁷ N/C
+  Kunci: **D** · E = kQ/r² = 9 × 10⁹ × 4 × 10⁻⁶ / (3 × 10⁻²)² = 3,6 × 10⁴ / 9 × 10⁻⁴ = 4 × 10⁷ N/C.
+- [ ] **FIS.C26.F.MEDAN.Q.MEDANLISTRIK_2** — Sebuah muatan 2 × 10⁻⁶ C mengalami gaya 0,01 N di suatu titik. Kuat medan di titik itu adalah …
+  A. 5 × 10³ N/C · B. 2 × 10⁻⁸ N/C · C. 5 × 10⁻³ N/C · D. 2 × 10⁴ N/C
+  Kunci: **A** · E = F/q = 0,01 / (2 × 10⁻⁶) = 5 × 10³ N/C.
+- [ ] **FIS.C26.F.MEDAN.Q.MEDANLISTRIK_3** — Sebuah elektron berada dalam medan listrik yang mengarah ke timur. Arah gaya pada elektron adalah ke …
+  A. tidak ada gaya · B. barat · C. timur · D. utara
+  Kunci: **B** · Elektron bermuatan negatif, sehingga gayanya berlawanan dengan arah medan.
+- [ ] **FIS.C26.F.MEDAN.Q.POTENSIAL_1** — Potensial listrik pada jarak 0,3 m dari muatan titik 2 µC adalah …
+  A. 1,8 × 10⁴ V · B. 6 × 10⁴ V · C. 2 × 10⁵ V · D. 6 × 10³ V
+  Kunci: **B** · V = kQ/r = 9 × 10⁹ × 2 × 10⁻⁶ / 0,3 = 1,8 × 10⁴ / 0,3 = 6 × 10⁴ V.
+- [ ] **FIS.C26.F.MEDAN.Q.POTENSIAL_2** — Usaha untuk memindahkan muatan 5 µC dari titik berpotensial 20 V ke titik berpotensial 80 V adalah …
+  A. 1 × 10⁻⁴ J · B. 3 × 10⁻² J · C. 3 × 10⁻⁴ J · D. 4 × 10⁻⁴ J
+  Kunci: **C** · W = q(V_B − V_A) = 5 × 10⁻⁶ × (80 − 20) = 3 × 10⁻⁴ J.
+- [ ] **FIS.C26.F.MEDAN.Q.POTENSIAL_3** — Jika jarak dari sebuah muatan titik dijadikan 2 kali, potensial listriknya menjadi …
+  A. ¼ kali semula · B. 2 kali semula · C. tetap · D. ½ kali semula
+  Kunci: **D** · V = kQ/r berbanding terbalik dengan r, bukan r², jadi menjadi setengahnya.
+- [ ] **FIS.C26.F.MEDAN.Q.KAPASITOR_1** — Dua kapasitor 3 µF dan 6 µF disusun seri. Kapasitas totalnya adalah …
+  A. 2 µF · B. 9 µF · C. 4,5 µF · D. 18 µF
+  Kunci: **A** · 1/C = 1/3 + 1/6 = 1/2, jadi C = 2 µF.
+- [ ] **FIS.C26.F.MEDAN.Q.KAPASITOR_2** — Kapasitor 4 µF dihubungkan ke sumber 10 V. Energi yang tersimpan adalah …
+  A. 4 × 10⁻⁴ J · B. 2 × 10⁻⁵ J · C. 4 × 10⁻⁵ J · D. 2 × 10⁻⁴ J
+  Kunci: **D** · W = ½CV² = ½ × 4 × 10⁻⁶ × 10² = 2 × 10⁻⁴ J.
+- [ ] **FIS.C26.F.MEDAN.Q.KAPASITOR_3** — Jarak antarkeping sebuah kapasitor keping sejajar diperkecil menjadi setengahnya. Kapasitasnya menjadi …
+  A. 4 kali semula · B. tetap · C. 2 kali semula · D. ½ kali semula
+  Kunci: **C** · C = ε₀A/d berbanding terbalik dengan d, jadi d yang setengahnya membuat C dua kali lipat.
+- [ ] **FIS.C26.F.MEDAN.Q.LORENTZ_1** — Kuat medan magnet pada jarak 2 cm dari kawat lurus panjang berarus 5 A adalah …
+  A. 5 × 10⁻⁵ T · B. 1 × 10⁻⁴ T · C. 5 × 10⁻⁷ T · D. 2,5 × 10⁻⁵ T
+  Kunci: **A** · B = μ₀I/(2πa) = (4π × 10⁻⁷ × 5) / (2π × 0,02) = 5 × 10⁻⁵ T.
+- [ ] **FIS.C26.F.MEDAN.Q.LORENTZ_2** — Kawat sepanjang 0,5 m berarus 4 A berada tegak lurus dalam medan magnet 0,2 T. Besar gaya Lorentz pada kawat adalah …
+  A. 0,8 N · B. 4 N · C. 0,1 N · D. 0,4 N
+  Kunci: **D** · F = BIL sin 90° = 0,2 × 4 × 0,5 × 1 = 0,4 N.
+- [ ] **FIS.C26.F.MEDAN.Q.LORENTZ_3** — Sebuah proton bergerak sejajar dengan arah medan magnet. Gaya Lorentz yang dialaminya …
+  A. sama dengan qvB · B. berlawanan arah gerak · C. nol · D. maksimum
+  Kunci: **C** · F = qvB sin θ dengan θ = 0°, sehingga sin θ = 0 dan gayanya nol.
 
 ## MAT.EKS (MAT.EKS)
 

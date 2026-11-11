@@ -1545,6 +1545,20 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: BIO.C26.F.SEL.S.FOTOSINTESIS
+    title: Latihan Fotosintesis dan anabolisme
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.SEL.Q.FOTOSINTESIS_1
+      - BIO.C26.F.SEL.Q.FOTOSINTESIS_2
+      - BIO.C26.F.SEL.Q.FOTOSINTESIS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: BIO.C26.F.GENETIKA.S.DNA_GEN_DAN_KROMOSOM
     title: Latihan DNA, gen, dan kromosom
     origin: CONCEPT_LESSON
@@ -2711,6 +2725,566 @@ sets:
       - BIO.C26.D.TUMBUH.Q.DAURHIDUP_1
       - BIO.C26.D.TUMBUH.Q.DAURHIDUP_2
       - BIO.C26.D.TUMBUH.Q.DAURHIDUP_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.E.SPLTV.S.MODEL_SPLTV_DARI_MASALAH
+    title: Latihan Model SPLTV dari masalah
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_1
+      - MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_2
+      - MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.E.SPLTV.S.ELIMINASI_DAN_SUBSTITUSI_SPLTV
+    title: Latihan Eliminasi dan substitusi SPLTV
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.E.SPLTV.Q.ELIMINASI_DAN_SUBSTITUSI_SPLTV_1
+      - MAT.C26.E.SPLTV.Q.ELIMINASI_DAN_SUBSTITUSI_SPLTV_2
+      - MAT.C26.E.SPLTV.Q.ELIMINASI_DAN_SUBSTITUSI_SPLTV_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.E.SPLTV.S.SOLUSI
+    title: Latihan Himpunan solusi dan interpretasinya
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.E.SPLTV.Q.SOLUSI_1
+      - MAT.C26.E.SPLTV.Q.SOLUSI_2
+      - MAT.C26.E.SPLTV.Q.SOLUSI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.F.REGRESI.S.KOEFISIEN_KORELASI
+    title: Latihan Koefisien korelasi
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_1
+      - MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_2
+      - MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.F.REGRESI.S.GARIS_REGRESI_LINEAR
+    title: Latihan Garis regresi linear
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_1
+      - MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_2
+      - MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.F.REGRESI.S.PREDIKSI
+    title: Latihan Prediksi dan batasnya
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.F.REGRESI.Q.PREDIKSI_1
+      - MAT.C26.F.REGRESI.Q.PREDIKSI_2
+      - MAT.C26.F.REGRESI.Q.PREDIKSI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.F.REGRESI.S.KAUSAL
+    title: Latihan Korelasi bukan sebab-akibat
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.F.REGRESI.Q.KAUSAL_1
+      - MAT.C26.F.REGRESI.Q.KAUSAL_2
+      - MAT.C26.F.REGRESI.Q.KAUSAL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.ELEKTROLIT.S.IONISASI_DAN_DISOSIASI
+    title: Latihan Ionisasi dan disosiasi
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.ELEKTROLIT.Q.IONISASI_DAN_DISOSIASI_1
+      - KIM.C26.F.ELEKTROLIT.Q.IONISASI_DAN_DISOSIASI_2
+      - KIM.C26.F.ELEKTROLIT.Q.IONISASI_DAN_DISOSIASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.ELEKTROLIT.S.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+    title: Latihan Elektrolit kuat, lemah, dan nonelektrolit
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_1
+      - KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_2
+      - KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.ELEKTROLIT.S.DAYAHANTAR
+    title: Latihan Daya hantar listrik larutan
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_1
+      - KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_2
+      - KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.KOLIGATIF.S.MOLALITAS_DAN_FRAKSI_MOL
+    title: Latihan Molalitas dan fraksi mol
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_1
+      - KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_2
+      - KIM.C26.F.KOLIGATIF.Q.MOLALITAS_DAN_FRAKSI_MOL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.KOLIGATIF.S.UAP
+    title: Latihan Penurunan tekanan uap
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.KOLIGATIF.Q.UAP_1
+      - KIM.C26.F.KOLIGATIF.Q.UAP_2
+      - KIM.C26.F.KOLIGATIF.Q.UAP_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.KOLIGATIF.S.DIDIHBEKU
+    title: Latihan Kenaikan titik didih dan penurunan titik beku
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_1
+      - KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_2
+      - KIM.C26.F.KOLIGATIF.Q.DIDIHBEKU_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.KOLIGATIF.S.OSMOSIS
+    title: Latihan Tekanan osmosis
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.KOLIGATIF.Q.OSMOSIS_1
+      - KIM.C26.F.KOLIGATIF.Q.OSMOSIS_2
+      - KIM.C26.F.KOLIGATIF.Q.OSMOSIS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.KOLIGATIF.S.VANTHOFF
+    title: Latihan Faktor van 't Hoff
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.KOLIGATIF.Q.VANTHOFF_1
+      - KIM.C26.F.KOLIGATIF.Q.VANTHOFF_2
+      - KIM.C26.F.KOLIGATIF.Q.VANTHOFF_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.REDOKS.S.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS
+    title: Latihan Bilangan oksidasi dan reaksi redoks
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.REDOKS.Q.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS_1
+      - KIM.C26.F.REDOKS.Q.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS_2
+      - KIM.C26.F.REDOKS.Q.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.REDOKS.S.SETARA
+    title: Latihan Penyetaraan reaksi redoks
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.REDOKS.Q.SETARA_1
+      - KIM.C26.F.REDOKS.Q.SETARA_2
+      - KIM.C26.F.REDOKS.Q.SETARA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.REDOKS.S.VOLTA
+    title: Latihan Sel volta dan potensial sel
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.REDOKS.Q.VOLTA_1
+      - KIM.C26.F.REDOKS.Q.VOLTA_2
+      - KIM.C26.F.REDOKS.Q.VOLTA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.REDOKS.S.ELEKTROLISIS
+    title: Latihan Elektrolisis dan hukum Faraday
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.REDOKS.Q.ELEKTROLISIS_1
+      - KIM.C26.F.REDOKS.Q.ELEKTROLISIS_2
+      - KIM.C26.F.REDOKS.Q.ELEKTROLISIS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: KIM.C26.F.REDOKS.S.KOROSI
+    title: Latihan Korosi dan pencegahannya
+    origin: CONCEPT_LESSON
+    items:
+      - KIM.C26.F.REDOKS.Q.KOROSI_1
+      - KIM.C26.F.REDOKS.Q.KOROSI_2
+      - KIM.C26.F.REDOKS.Q.KOROSI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.ORGAN.S.STRUKTUR_DAN_FUNGSI_JARINGAN
+    title: Latihan Struktur dan fungsi jaringan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_1
+      - BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_2
+      - BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.ORGAN.S.PENCERNAAN
+    title: Latihan Sistem pencernaan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.ORGAN.Q.PENCERNAAN_1
+      - BIO.C26.F.ORGAN.Q.PENCERNAAN_2
+      - BIO.C26.F.ORGAN.Q.PENCERNAAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.ORGAN.S.SIRKULASI
+    title: Latihan Sistem sirkulasi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.ORGAN.Q.SIRKULASI_1
+      - BIO.C26.F.ORGAN.Q.SIRKULASI_2
+      - BIO.C26.F.ORGAN.Q.SIRKULASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.ORGAN.S.RESPIRASI
+    title: Latihan Sistem respirasi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.ORGAN.Q.RESPIRASI_1
+      - BIO.C26.F.ORGAN.Q.RESPIRASI_2
+      - BIO.C26.F.ORGAN.Q.RESPIRASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.ORGAN.S.EKSKRESI
+    title: Latihan Sistem ekskresi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.ORGAN.Q.EKSKRESI_1
+      - BIO.C26.F.ORGAN.Q.EKSKRESI_2
+      - BIO.C26.F.ORGAN.Q.EKSKRESI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.ORGAN.S.KOORDINASI
+    title: Latihan Sistem koordinasi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.ORGAN.Q.KOORDINASI_1
+      - BIO.C26.F.ORGAN.Q.KOORDINASI_2
+      - BIO.C26.F.ORGAN.Q.KOORDINASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.ORGAN.S.REPRODUKSI
+    title: Latihan Sistem reproduksi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.ORGAN.Q.REPRODUKSI_1
+      - BIO.C26.F.ORGAN.Q.REPRODUKSI_2
+      - BIO.C26.F.ORGAN.Q.REPRODUKSI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.TUMBUH.S.DIFERENSIASI_DAN_SPESIALISASI_SEL
+    title: Latihan Diferensiasi dan spesialisasi sel
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_1
+      - BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_2
+      - BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.TUMBUH.S.TUMBUHAN
+    title: Latihan Pertumbuhan tumbuhan dan hormonnya
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.TUMBUH.Q.TUMBUHAN_1
+      - BIO.C26.F.TUMBUH.Q.TUMBUHAN_2
+      - BIO.C26.F.TUMBUH.Q.TUMBUHAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.TUMBUH.S.HEWAN
+    title: Latihan Pertumbuhan dan perkembangan hewan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.TUMBUH.Q.HEWAN_1
+      - BIO.C26.F.TUMBUH.Q.HEWAN_2
+      - BIO.C26.F.TUMBUH.Q.HEWAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.TUMBUH.S.EKSPERIMEN
+    title: Latihan Eksperimen pertumbuhan
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.TUMBUH.Q.EKSPERIMEN_1
+      - BIO.C26.F.TUMBUH.Q.EKSPERIMEN_2
+      - BIO.C26.F.TUMBUH.Q.EKSPERIMEN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.EVOLUSI.S.VARIASI_DALAM_POPULASI
+    title: Latihan Variasi dalam populasi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_1
+      - BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_2
+      - BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.EVOLUSI.S.SELEKSI
+    title: Latihan Seleksi alam dan adaptasi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.EVOLUSI.Q.SELEKSI_1
+      - BIO.C26.F.EVOLUSI.Q.SELEKSI_2
+      - BIO.C26.F.EVOLUSI.Q.SELEKSI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.EVOLUSI.S.BUKTI
+    title: Latihan Bukti evolusi
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.EVOLUSI.Q.BUKTI_1
+      - BIO.C26.F.EVOLUSI.Q.BUKTI_2
+      - BIO.C26.F.EVOLUSI.Q.BUKTI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: BIO.C26.F.EVOLUSI.S.SPESIASI
+    title: Latihan Spesiasi dan keanekaragaman
+    origin: CONCEPT_LESSON
+    items:
+      - BIO.C26.F.EVOLUSI.Q.SPESIASI_1
+      - BIO.C26.F.EVOLUSI.Q.SPESIASI_2
+      - BIO.C26.F.EVOLUSI.Q.SPESIASI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MEDAN.S.MUATAN_DAN_HUKUM_COULOMB
+    title: Latihan Muatan dan hukum Coulomb
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MEDAN.Q.MUATAN_DAN_HUKUM_COULOMB_1
+      - FIS.C26.F.MEDAN.Q.MUATAN_DAN_HUKUM_COULOMB_2
+      - FIS.C26.F.MEDAN.Q.MUATAN_DAN_HUKUM_COULOMB_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MEDAN.S.MEDANLISTRIK
+    title: Latihan Medan listrik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MEDAN.Q.MEDANLISTRIK_1
+      - FIS.C26.F.MEDAN.Q.MEDANLISTRIK_2
+      - FIS.C26.F.MEDAN.Q.MEDANLISTRIK_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MEDAN.S.POTENSIAL
+    title: Latihan Potensial dan energi potensial listrik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MEDAN.Q.POTENSIAL_1
+      - FIS.C26.F.MEDAN.Q.POTENSIAL_2
+      - FIS.C26.F.MEDAN.Q.POTENSIAL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MEDAN.S.KAPASITOR
+    title: Latihan Kapasitor
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MEDAN.Q.KAPASITOR_1
+      - FIS.C26.F.MEDAN.Q.KAPASITOR_2
+      - FIS.C26.F.MEDAN.Q.KAPASITOR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MEDAN.S.LORENTZ
+    title: Latihan Medan magnet dan gaya Lorentz
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MEDAN.Q.LORENTZ_1
+      - FIS.C26.F.MEDAN.Q.LORENTZ_2
+      - FIS.C26.F.MEDAN.Q.LORENTZ_3
     review:
       status: PROPOSED
       decision: D7

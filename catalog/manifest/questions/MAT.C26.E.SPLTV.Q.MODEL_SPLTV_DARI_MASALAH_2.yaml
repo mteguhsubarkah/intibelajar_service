@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_2
+familyCode: MAT.C26.E.SPLTV.F.MODEL_SPLTV_DARI_MASALAH_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah tiga bilangan adalah 30. Bilangan pertama dua kali bilangan kedua, dan bilangan ketiga 6 lebih dari bilangan kedua. Jika ketiga bilangan itu x, y, dan z, sistem persamaan yang tepat adalah …
+  options:
+    - id: a
+      label: x + y + z = 30, x = 2y, z = y + 6
+    - id: b
+      label: x + y + z = 30, y = 2x, z = y + 6
+    - id: c
+      label: x + y + z = 30, x = 2y, y = z + 6
+    - id: d
+      label: x + y + z = 30, x = y + 2, z = 6y
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - x + y + z = 30, x = 2y, z = y + 6
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH
+  feedback:
+    correct: '"Bilangan pertama dua kali bilangan kedua" berarti x = 2y, dan "ketiga 6 lebih dari kedua" berarti z = y + 6.'
+    incorrect: Jawabannya x + y + z = 30, x = 2y, z = y + 6. "Bilangan pertama dua kali bilangan kedua" berarti x = 2y, dan "ketiga 6 lebih dari kedua" berarti z = y + 6.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

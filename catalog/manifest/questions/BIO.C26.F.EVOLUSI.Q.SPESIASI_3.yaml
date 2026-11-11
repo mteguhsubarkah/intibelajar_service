@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.Q.SPESIASI_3
+familyCode: BIO.C26.F.EVOLUSI.F.SPESIASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.EVOLUSI.SPESIASI_DAN_KEANEKARAGAMAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua spesies katak hidup di kolam yang sama, tetapi satu kawin di awal musim hujan dan yang lain di akhir musim hujan. Jenis isolasinya adalah isolasi …
+  options:
+    - id: a
+      label: geografis
+    - id: b
+      label: mekanik
+    - id: c
+      label: hibrida mandul
+    - id: d
+      label: waktu (musim kawin)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - waktu (musim kawin)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.EVOLUSI.SPESIASI_DAN_KEANEKARAGAMAN
+  feedback:
+    correct: Perbedaan waktu kawin mencegah perkawinan walaupun keduanya tinggal di tempat yang sama.
+    incorrect: Jawabannya waktu (musim kawin). Perbedaan waktu kawin mencegah perkawinan walaupun keduanya tinggal di tempat yang sama.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

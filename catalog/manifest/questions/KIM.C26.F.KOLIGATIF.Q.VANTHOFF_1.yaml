@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.Q.VANTHOFF_1
+familyCode: KIM.C26.F.KOLIGATIF.F.VANTHOFF_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Larutan NaCl 0,2 m (α = 1) dalam air (Kf = 1,86 °C/m) membeku pada suhu …
+  options:
+    - id: a
+      label: −0,744 °C
+    - id: b
+      label: −0,372 °C
+    - id: c
+      label: −0,186 °C
+    - id: d
+      label: −1,116 °C
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −0,744 °C
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+  feedback:
+    correct: Untuk NaCl, i = 2. ΔTf = 1,86 × 0,2 × 2 = 0,744 °C, jadi titik bekunya −0,744 °C.
+    incorrect: Jawabannya −0,744 °C. Untuk NaCl, i = 2. ΔTf = 1,86 × 0,2 × 2 = 0,744 °C, jadi titik bekunya −0,744 °C.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

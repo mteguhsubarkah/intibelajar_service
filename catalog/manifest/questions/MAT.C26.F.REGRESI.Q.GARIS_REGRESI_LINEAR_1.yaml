@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_1
+familyCode: MAT.C26.F.REGRESI.F.GARIS_REGRESI_LINEAR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Garis regresi nilai ujian (y) terhadap lama belajar dalam jam (x) adalah ŷ = 45 + 6x. Makna angka 6 adalah …
+  options:
+    - id: a
+      label: koefisien korelasinya 0,6
+    - id: b
+      label: setiap tambahan 1 jam belajar, nilai naik rata-rata 6 poin
+    - id: c
+      label: nilai siswa yang tidak belajar adalah 6
+    - id: d
+      label: rata-rata lama belajar 6 jam
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - setiap tambahan 1 jam belajar, nilai naik rata-rata 6 poin
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+  feedback:
+    correct: 6 adalah gradien, yaitu perubahan rata-rata ŷ untuk setiap kenaikan x sebesar 1 jam.
+    incorrect: Jawabannya setiap tambahan 1 jam belajar, nilai naik rata-rata 6 poin. 6 adalah gradien, yaitu perubahan rata-rata ŷ untuk setiap kenaikan x sebesar 1 jam.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

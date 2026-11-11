@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.E.SPLTV.Q.SOLUSI_2
+familyCode: MAT.C26.E.SPLTV.F.SOLUSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.E.SPLTV.HIMPUNAN_SOLUSI_DAN_INTERPRETASINYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Saat menyelesaikan sebuah SPLTV, diperoleh 0x + 0y + 0z = 4. Artinya sistem tersebut …
+  options:
+    - id: a
+      label: memiliki solusi (0, 0, 0)
+    - id: b
+      label: tidak memiliki solusi
+    - id: c
+      label: memiliki tepat satu solusi
+    - id: d
+      label: memiliki tak hingga banyak solusi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - tidak memiliki solusi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.E.SPLTV.HIMPUNAN_SOLUSI_DAN_INTERPRETASINYA
+  feedback:
+    correct: Tidak ada nilai x, y, dan z yang membuat 0 = 4, jadi persamaannya saling bertentangan.
+    incorrect: Jawabannya tidak memiliki solusi. Tidak ada nilai x, y, dan z yang membuat 0 = 4, jadi persamaannya saling bertentangan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

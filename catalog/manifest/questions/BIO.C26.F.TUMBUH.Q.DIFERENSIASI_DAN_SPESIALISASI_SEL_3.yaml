@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUH.Q.DIFERENSIASI_DAN_SPESIALISASI_SEL_3
+familyCode: BIO.C26.F.TUMBUH.F.DIFERENSIASI_DAN_SPESIALISASI_SEL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUH.DIFERENSIASI_DAN_SPESIALISASI_SEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Berubahnya sel-sel embrio menjadi sel dengan struktur dan fungsi khusus disebut …
+  options:
+    - id: a
+      label: diferensiasi
+    - id: b
+      label: fertilisasi
+    - id: c
+      label: meiosis
+    - id: d
+      label: regenerasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - diferensiasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUH.DIFERENSIASI_DAN_SPESIALISASI_SEL
+  feedback:
+    correct: Diferensiasi mengubah sel-sel yang mirip menjadi sel khusus seperti sel otot atau sel saraf.
+    incorrect: Jawabannya diferensiasi. Diferensiasi mengubah sel-sel yang mirip menjadi sel khusus seperti sel otot atau sel saraf.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

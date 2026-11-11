@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.RESPIRASI_3
+familyCode: BIO.C26.F.ORGAN.F.RESPIRASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_RESPIRASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Volume udara yang keluar masuk paru-paru pada pernapasan biasa disebut …
+  options:
+    - id: a
+      label: volume residu
+    - id: b
+      label: udara komplementer
+    - id: c
+      label: volume tidal
+    - id: d
+      label: kapasitas vital
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - volume tidal
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_RESPIRASI
+  feedback:
+    correct: Volume tidal adalah udara pernapasan biasa, sekitar 500 mL.
+    incorrect: Jawabannya volume tidal. Volume tidal adalah udara pernapasan biasa, sekitar 500 mL.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

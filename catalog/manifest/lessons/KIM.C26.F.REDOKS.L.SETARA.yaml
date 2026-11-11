@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.L.SETARA
+title: Penyetaraan reaksi redoks
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+blocks:
+  - type: heading
+    slide: 0
+    text: Metode setengah reaksi (suasana asam)
+  - type: text
+    slide: 0
+    text: 1) Pisahkan reaksi oksidasi dan reduksi. 2) Setarakan atom selain O dan H. 3) Tambahkan H₂O untuk menyetarakan O, lalu H⁺ untuk menyetarakan H. 4) Tambahkan elektron untuk menyetarakan muatan.
+  - type: text
+    slide: 0
+    text: 5) Samakan banyak elektron di kedua setengah reaksi, lalu jumlahkan.
+  - type: math
+    slide: 0
+    name: kekurangan O
+    expression: tambah H₂O
+    highlight: true
+  - type: math
+    slide: 0
+    name: kekurangan H
+    expression: tambah H⁺ (suasana asam)
+  - type: heading
+    slide: 1
+    text: Metode perubahan bilangan oksidasi
+  - type: text
+    slide: 1
+    text: Tentukan kenaikan dan penurunan biloks, lalu samakan dengan mengalikan koefisien.
+  - type: text
+    slide: 1
+    text: "Contoh: Mn pada MnO₄⁻ → Mn²⁺ turun 5, sedangkan Fe²⁺ → Fe³⁺ naik 1. Perbandingannya 1 MnO₄⁻ : 5 Fe²⁺, sehingga MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O."
+  - type: math
+    slide: 1
+    name: MnO₄⁻ → Mn²⁺
+    expression: biloks Mn turun 5
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Periksa di akhir: jumlah atom dan jumlah muatan di ruas kiri dan kanan harus sama."
+checks:
+  - question: KIM.C26.F.REDOKS.Q.SETARA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.REDOKS.S.SETARA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

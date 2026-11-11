@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.FOTOSINTESIS_3
+familyCode: BIO.C26.F.SEL.F.FOTOSINTESIS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil reaksi terang yang dipakai dalam siklus Calvin adalah …
+  options:
+    - id: a
+      label: O₂ dan glukosa
+    - id: b
+      label: CO₂ dan H₂O
+    - id: c
+      label: ADP dan NADP⁺
+    - id: d
+      label: ATP dan NADPH
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - ATP dan NADPH
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME
+  feedback:
+    correct: Energi kimia dari reaksi terang dalam bentuk ATP dan NADPH dipakai untuk mengubah CO₂ menjadi gula.
+    incorrect: Jawabannya ATP dan NADPH. Energi kimia dari reaksi terang dalam bentuk ATP dan NADPH dipakai untuk mengubah CO₂ menjadi gula.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.SETARA_3
+familyCode: KIM.C26.F.REDOKS.F.SETARA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dalam metode setengah reaksi suasana asam, kekurangan atom O di salah satu ruas disetarakan dengan menambahkan …
+  options:
+    - id: a
+      label: OH⁻
+    - id: b
+      label: O₂
+    - id: c
+      label: H₂O
+    - id: d
+      label: H⁺
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - H₂O
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+  feedback:
+    correct: Kekurangan O ditutup dengan H₂O, lalu kelebihan H disetarakan dengan H⁺.
+    incorrect: Jawabannya H₂O. Kekurangan O ditutup dengan H₂O, lalu kelebihan H disetarakan dengan H⁺.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

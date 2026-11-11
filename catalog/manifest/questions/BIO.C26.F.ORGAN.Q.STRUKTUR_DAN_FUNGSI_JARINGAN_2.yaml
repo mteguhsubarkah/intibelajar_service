@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_2
+familyCode: BIO.C26.F.ORGAN.F.STRUKTUR_DAN_FUNGSI_JARINGAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Otot yang bekerja tidak sadar dan menyusun dinding usus adalah otot …
+  options:
+    - id: a
+      label: rangka
+    - id: b
+      label: polos
+    - id: c
+      label: lurik
+    - id: d
+      label: jantung
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - polos
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+  feedback:
+    correct: Otot polos menyusun dinding organ dalam seperti usus dan bekerja di luar kendali kesadaran.
+    incorrect: Jawabannya polos. Otot polos menyusun dinding organ dalam seperti usus dan bekerja di luar kendali kesadaran.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

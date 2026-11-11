@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.E.SPLTV.Q.MODEL_SPLTV_DARI_MASALAH_1
+familyCode: MAT.C26.E.SPLTV.F.MODEL_SPLTV_DARI_MASALAH_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ani membeli 2 kg apel, 1 kg jeruk, dan 1 kg mangga seharga Rp95.000. Jika x, y, dan z berturut-turut harga per kg apel, jeruk, dan mangga, persamaan yang tepat adalah …
+  options:
+    - id: a
+      label: x + 2y + z = 95.000
+    - id: b
+      label: 2x + 2y + z = 95.000
+    - id: c
+      label: x + y + z = 95.000
+    - id: d
+      label: 2x + y + z = 95.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 2x + y + z = 95.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH
+  feedback:
+    correct: "Setiap banyak kilogram dikalikan harga per kilogramnya: 2x + 1y + 1z = 95.000."
+    incorrect: "Jawabannya 2x + y + z = 95.000. Setiap banyak kilogram dikalikan harga per kilogramnya: 2x + 1y + 1z = 95.000."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

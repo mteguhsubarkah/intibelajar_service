@@ -7,9 +7,16 @@ import { SMP_MAT } from './smp-mat.js';
 import { SMP_FIS } from './smp-fis.js';
 import { SMP_KIM } from './smp-kim.js';
 import { SMP_BIO } from './smp-bio.js';
+import { SMA_MAT } from './sma-mat.js';
+import { SMA_FIS } from './sma-fis.js';
+import { SMA_KIM } from './sma-kim.js';
+import { SMA_BIO } from './sma-bio.js';
 
 /** Materi dan soal yang sudah ditulis, per "KODE_TOPIK:ID_INTI". Inti yang punya isi di sini menjadi READY. */
-const CONTENT: Record<string, Pick<PilotCore, 'slides' | 'q' | 'min'>> = { ...SMP_MAT, ...SMP_FIS, ...SMP_KIM, ...SMP_BIO };
+const CONTENT: Record<string, Pick<PilotCore, 'slides' | 'q' | 'min'>> = {
+  ...SMP_MAT, ...SMP_FIS, ...SMP_KIM, ...SMP_BIO, // prioritas 1: inti SMP
+  ...SMA_MAT, ...SMA_FIS, ...SMA_KIM, ...SMA_BIO, // prioritas 2: celah SMA Fase E/F
+};
 
 const EV_FE = ["nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)", "dicatat sebagai \"peta saja\" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul"];
 const EV_NEW = ["inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)", "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"];

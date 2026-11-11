@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.KOROSI_3
+familyCode: KIM.C26.F.REDOKS.F.KOROSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.KOROSI_DAN_PENCEGAHANNYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kaleng besi berlapis timah lebih cepat berkarat setelah tergores karena …
+  options:
+    - id: a
+      label: timah menarik air dari udara
+    - id: b
+      label: besi lebih mudah teroksidasi daripada timah, sehingga besi menjadi anode
+    - id: c
+      label: timah bereaksi dengan oksigen lebih dulu
+    - id: d
+      label: goresan mengubah timah menjadi besi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - besi lebih mudah teroksidasi daripada timah, sehingga besi menjadi anode
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.KOROSI_DAN_PENCEGAHANNYA
+  feedback:
+    correct: E° besi lebih kecil daripada E° timah. Saat keduanya bersentuhan dan terbuka, besi yang teroksidasi.
+    incorrect: Jawabannya besi lebih mudah teroksidasi daripada timah, sehingga besi menjadi anode. E° besi lebih kecil daripada E° timah. Saat keduanya bersentuhan dan terbuka, besi yang teroksidasi.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

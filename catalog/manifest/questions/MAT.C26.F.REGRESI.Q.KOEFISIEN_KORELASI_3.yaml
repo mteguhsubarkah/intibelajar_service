@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_3
+familyCode: MAT.C26.F.REGRESI.F.KOEFISIEN_KORELASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.KOEFISIEN_KORELASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diagram pencar membentuk lengkungan seperti huruf U dan r ≈ 0. Kesimpulan yang tepat adalah …
+  options:
+    - id: a
+      label: korelasinya sangat kuat
+    - id: b
+      label: r salah hitung karena seharusnya negatif
+    - id: c
+      label: tidak ada hubungan linear, tetapi bisa ada hubungan tak linear
+    - id: d
+      label: kedua variabel pasti tidak berhubungan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - tidak ada hubungan linear, tetapi bisa ada hubungan tak linear
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.KOEFISIEN_KORELASI
+  feedback:
+    correct: r hanya mengukur hubungan garis lurus, sedangkan pola U menunjukkan hubungan yang melengkung.
+    incorrect: Jawabannya tidak ada hubungan linear, tetapi bisa ada hubungan tak linear. r hanya mengukur hubungan garis lurus, sedangkan pola U menunjukkan hubungan yang melengkung.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

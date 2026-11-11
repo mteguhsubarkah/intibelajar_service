@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN.L.LORENTZ
+title: Medan magnet dan gaya Lorentz
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.MEDAN.MEDAN_MAGNET_DAN_GAYA_LORENTZ
+blocks:
+  - type: heading
+    slide: 0
+    text: Medan magnet di sekitar arus
+  - type: text
+    slide: 0
+    text: "Arus listrik menimbulkan medan magnet. Arahnya mengikuti **kaidah tangan kanan**: ibu jari searah arus, lipatan jari menunjukkan arah medan."
+  - type: text
+    slide: 0
+    text: "Di sekitar kawat lurus panjang: **B = μ₀I / (2πa)**, dengan μ₀ = 4π × 10⁻⁷ Wb/(A·m) dan a jarak ke kawat."
+  - type: math
+    slide: 0
+    name: kawat lurus
+    expression: B = μ₀I / 2πa
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Gaya Lorentz
+  - type: text
+    slide: 1
+    text: Kawat berarus dalam medan magnet mengalami gaya **F = B · I · L · sin θ**. Muatan yang bergerak mengalami **F = q · v · B · sin θ**.
+  - type: text
+    slide: 1
+    text: Gaya paling besar saat arus atau kecepatan tegak lurus medan (θ = 90°) dan nol saat sejajar medan.
+  - type: math
+    slide: 1
+    name: pada kawat
+    expression: F = BIL sin θ
+    highlight: true
+  - type: math
+    slide: 1
+    name: pada muatan
+    expression: F = qvB sin θ
+  - type: tip
+    slide: 1
+    text: Arah gaya Lorentz tegak lurus terhadap arus (atau kecepatan) dan terhadap medan sekaligus.
+checks:
+  - question: FIS.C26.F.MEDAN.Q.LORENTZ_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MEDAN.S.LORENTZ
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

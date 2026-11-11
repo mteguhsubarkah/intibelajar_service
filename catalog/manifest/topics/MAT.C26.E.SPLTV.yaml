@@ -4,7 +4,7 @@ subject: MAT
 title: Sistem persamaan linear tiga variabel
 subtitle: Pemodelan tiga variabel, eliminasi–substitusi, dan himpunan solusi
 phase: E
-availability: PLANNED
+availability: MAPPED
 bekal:
   - SPLDV
   - bentuk aljabar
@@ -17,10 +17,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-e-spltv-c1
@@ -33,7 +33,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-e-spltv-c2
@@ -46,7 +46,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-e-spltv-solusi

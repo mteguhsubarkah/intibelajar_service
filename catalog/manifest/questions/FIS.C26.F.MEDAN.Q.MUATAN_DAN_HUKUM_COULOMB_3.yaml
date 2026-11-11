@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN.Q.MUATAN_DAN_HUKUM_COULOMB_3
+familyCode: FIS.C26.F.MEDAN.F.MUATAN_DAN_HUKUM_COULOMB_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEDAN.MUATAN_DAN_HUKUM_COULOMB
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Benda bermuatan A dan B saling tarik-menarik, sedangkan B dan benda C yang bermuatan negatif saling tolak-menolak. Muatan benda A adalah …
+  options:
+    - id: a
+      label: positif
+    - id: b
+      label: negatif
+    - id: c
+      label: netral
+    - id: d
+      label: tidak dapat ditentukan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - positif
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEDAN.MUATAN_DAN_HUKUM_COULOMB
+  feedback:
+    correct: B menolak C yang negatif, jadi B negatif. A yang bermuatan menarik B yang negatif, jadi A positif.
+    incorrect: Jawabannya positif. B menolak C yang negatif, jadi B negatif. A yang bermuatan menarik B yang negatif, jadi A positif.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.KAUSAL_1
+familyCode: MAT.C26.F.REGRESI.F.KAUSAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di sebuah kota, banyak mobil pemadam yang dikirim berkorelasi positif dengan besar kerugian kebakaran. Penjelasan yang paling tepat adalah …
+  options:
+    - id: a
+      label: korelasinya pasti salah hitung
+    - id: b
+      label: kebakaran yang lebih besar membuat lebih banyak pemadam dikirim dan kerugian lebih besar
+    - id: c
+      label: mobil pemadam menyebabkan kerugian
+    - id: d
+      label: kerugian besar membuat api mengecil
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - kebakaran yang lebih besar membuat lebih banyak pemadam dikirim dan kerugian lebih besar
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+  feedback:
+    correct: Besarnya kebakaran adalah variabel ketiga yang memengaruhi banyak pemadam sekaligus besar kerugian.
+    incorrect: Jawabannya kebakaran yang lebih besar membuat lebih banyak pemadam dikirim dan kerugian lebih besar. Besarnya kebakaran adalah variabel ketiga yang memengaruhi banyak pemadam sekaligus besar kerugian.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran
