@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.L.KOEFISIEN_KORELASI
+title: Koefisien korelasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.F.REGRESI.KOEFISIEN_KORELASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Arah dan kekuatan hubungan
+  - type: text
+    slide: 0
+    text: Koefisien korelasi **r** mengukur hubungan **linear** dua variabel, nilainya −1 ≤ r ≤ 1.
+  - type: text
+    slide: 0
+    text: "r positif: kedua variabel cenderung naik bersama. r negatif: satu naik, yang lain turun. Makin dekat |r| ke 1, titik-titik makin rapat ke sebuah garis."
+  - type: math
+    slide: 0
+    name: rentang
+    expression: −1 ≤ r ≤ 1
+    highlight: true
+  - type: math
+    slide: 0
+    name: r ≈ 0
+    expression: tidak ada hubungan linear
+  - type: heading
+    slide: 1
+    text: Membaca diagram pencar
+  - type: text
+    slide: 1
+    text: Titik yang naik ke kanan dan rapat → r mendekati 1. Titik yang turun ke kanan dan rapat → r mendekati −1. Titik tersebar tanpa pola → r mendekati 0.
+  - type: text
+    slide: 1
+    text: r ≈ 0 tidak berarti tidak ada hubungan sama sekali; hubungannya bisa saja melengkung, bukan garis lurus.
+  - type: math
+    slide: 1
+    name: kuat
+    expression: "|r| mendekati 1"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tanda r menunjukkan arah, besar |r| menunjukkan kekuatan. r = −0,9 lebih kuat daripada r = 0,5.
+checks:
+  - question: MAT.C26.F.REGRESI.Q.KOEFISIEN_KORELASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.F.REGRESI.S.KOEFISIEN_KORELASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

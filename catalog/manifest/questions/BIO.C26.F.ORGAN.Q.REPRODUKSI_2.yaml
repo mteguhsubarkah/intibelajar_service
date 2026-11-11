@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.REPRODUKSI_2
+familyCode: BIO.C26.F.ORGAN.F.REPRODUKSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_REPRODUKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dari satu oosit primer, oogenesis menghasilkan …
+  options:
+    - id: a
+      label: empat sperma
+    - id: b
+      label: satu ovum dan badan polar
+    - id: c
+      label: empat ovum
+    - id: d
+      label: dua ovum
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - satu ovum dan badan polar
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_REPRODUKSI
+  feedback:
+    correct: Pembelahan meiosis pada oogenesis tidak merata, sehingga hanya satu sel yang menjadi ovum.
+    incorrect: Jawabannya satu ovum dan badan polar. Pembelahan meiosis pada oogenesis tidak merata, sehingga hanya satu sel yang menjadi ovum.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

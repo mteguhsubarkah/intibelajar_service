@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.L.OSMOSIS
+title: Tekanan osmosis
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Tekanan osmosis
+  - type: text
+    slide: 0
+    text: Osmosis adalah perpindahan pelarut melalui membran semipermeabel dari larutan encer ke larutan pekat.
+  - type: text
+    slide: 0
+    text: "Tekanan osmosis adalah tekanan yang diperlukan untuk menghentikan osmosis: **π = M · R · T**, dengan R = 0,082 L·atm/(mol·K) dan T dalam kelvin."
+  - type: math
+    slide: 0
+    name: tekanan osmosis
+    expression: π = MRT
+    highlight: true
+  - type: math
+    slide: 0
+    name: R
+    expression: 0,082 L·atm/(mol·K)
+  - type: heading
+    slide: 1
+    text: Isotonik, hipotonik, hipertonik
+  - type: text
+    slide: 1
+    text: Larutan **isotonik** memiliki tekanan osmosis yang sama. Cairan infus dibuat isotonik dengan darah.
+  - type: text
+    slide: 1
+    text: Sel darah merah dalam larutan **hipertonik** mengerut karena air keluar; dalam larutan **hipotonik** menggembung, bahkan pecah, karena air masuk.
+  - type: math
+    slide: 1
+    name: hipertonik
+    expression: air keluar dari sel
+    highlight: true
+  - type: math
+    slide: 1
+    name: hipotonik
+    expression: air masuk ke sel
+  - type: tip
+    slide: 1
+    text: "Ubah suhu ke kelvin: T = °C + 273."
+checks:
+  - question: KIM.C26.F.KOLIGATIF.Q.OSMOSIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLIGATIF.S.OSMOSIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

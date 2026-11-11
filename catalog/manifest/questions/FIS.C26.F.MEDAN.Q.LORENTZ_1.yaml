@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN.Q.LORENTZ_1
+familyCode: FIS.C26.F.MEDAN.F.LORENTZ_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEDAN.MEDAN_MAGNET_DAN_GAYA_LORENTZ
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kuat medan magnet pada jarak 2 cm dari kawat lurus panjang berarus 5 A adalah …
+  options:
+    - id: a
+      label: 5 × 10⁻⁵ T
+    - id: b
+      label: 1 × 10⁻⁴ T
+    - id: c
+      label: 5 × 10⁻⁷ T
+    - id: d
+      label: 2,5 × 10⁻⁵ T
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 5 × 10⁻⁵ T
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEDAN.MEDAN_MAGNET_DAN_GAYA_LORENTZ
+  feedback:
+    correct: B = μ₀I/(2πa) = (4π × 10⁻⁷ × 5) / (2π × 0,02) = 5 × 10⁻⁵ T.
+    incorrect: Jawabannya 5 × 10⁻⁵ T. B = μ₀I/(2πa) = (4π × 10⁻⁷ × 5) / (2π × 0,02) = 5 × 10⁻⁵ T.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

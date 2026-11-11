@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT.Q.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_2
+familyCode: KIM.C26.F.ELEKTROLIT.F.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dari 0,2 mol asam lemah HA, sebanyak 0,01 mol terionisasi. Derajat ionisasinya adalah …
+  options:
+    - id: a
+      label: 0,5
+    - id: b
+      label: 0,05
+    - id: c
+      label: 0,01
+    - id: d
+      label: 0,2
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 0,05
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT
+  feedback:
+    correct: α = 0,01 / 0,2 = 0,05.
+    incorrect: Jawabannya 0,05. α = 0,01 / 0,2 = 0,05.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

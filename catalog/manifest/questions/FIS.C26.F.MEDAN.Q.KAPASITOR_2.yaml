@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN.Q.KAPASITOR_2
+familyCode: FIS.C26.F.MEDAN.F.KAPASITOR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEDAN.KAPASITOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kapasitor 4 µF dihubungkan ke sumber 10 V. Energi yang tersimpan adalah …
+  options:
+    - id: a
+      label: 4 × 10⁻⁴ J
+    - id: b
+      label: 2 × 10⁻⁵ J
+    - id: c
+      label: 4 × 10⁻⁵ J
+    - id: d
+      label: 2 × 10⁻⁴ J
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 2 × 10⁻⁴ J
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEDAN.KAPASITOR
+  feedback:
+    correct: W = ½CV² = ½ × 4 × 10⁻⁶ × 10² = 2 × 10⁻⁴ J.
+    incorrect: Jawabannya 2 × 10⁻⁴ J. W = ½CV² = ½ × 4 × 10⁻⁶ × 10² = 2 × 10⁻⁴ J.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

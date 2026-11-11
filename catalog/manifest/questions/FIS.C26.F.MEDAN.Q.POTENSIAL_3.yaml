@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN.Q.POTENSIAL_3
+familyCode: FIS.C26.F.MEDAN.F.POTENSIAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEDAN.POTENSIAL_DAN_ENERGI_POTENSIAL_LISTRIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika jarak dari sebuah muatan titik dijadikan 2 kali, potensial listriknya menjadi …
+  options:
+    - id: a
+      label: ¼ kali semula
+    - id: b
+      label: 2 kali semula
+    - id: c
+      label: tetap
+    - id: d
+      label: ½ kali semula
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - ½ kali semula
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEDAN.POTENSIAL_DAN_ENERGI_POTENSIAL_LISTRIK
+  feedback:
+    correct: V = kQ/r berbanding terbalik dengan r, bukan r², jadi menjadi setengahnya.
+    incorrect: Jawabannya ½ kali semula. V = kQ/r berbanding terbalik dengan r, bukan r², jadi menjadi setengahnya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

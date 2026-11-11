@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.PREDIKSI_1
+familyCode: MAT.C26.F.REGRESI.F.PREDIKSI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.PREDIKSI_DAN_BATASNYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dengan garis regresi ŷ = 12 + 4x, prediksi y untuk x = 7 adalah …
+  options:
+    - id: a
+      label: "28"
+    - id: b
+      label: "16"
+    - id: c
+      label: "52"
+    - id: d
+      label: "40"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "40"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.PREDIKSI_DAN_BATASNYA
+  feedback:
+    correct: ŷ = 12 + 4 · 7 = 12 + 28 = 40.
+    incorrect: Jawabannya 40. ŷ = 12 + 4 · 7 = 12 + 28 = 40.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

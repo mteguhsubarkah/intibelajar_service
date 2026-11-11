@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.L.EKSKRESI
+title: Sistem ekskresi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.ORGAN.SISTEM_EKSKRESI
+blocks:
+  - type: heading
+    slide: 0
+    text: Pembentukan urine
+  - type: text
+    slide: 0
+    text: Di nefron ginjal terjadi tiga tahap. **Filtrasi** di glomerulus menghasilkan urine primer. **Reabsorpsi** di tubulus kontortus proksimal menyerap kembali glukosa, asam amino, dan air, sehingga terbentuk urine sekunder. **Augmentasi** di tubulus distal menambahkan zat sisa, sehingga terbentuk urine sesungguhnya.
+  - type: math
+    slide: 0
+    name: filtrasi
+    expression: glomerulus → urine primer
+    highlight: true
+  - type: math
+    slide: 0
+    name: reabsorpsi
+    expression: tubulus proksimal → urine sekunder
+  - type: heading
+    slide: 1
+    text: Organ ekskresi lain dan gangguan
+  - type: text
+    slide: 1
+    text: Hati merombak sel darah merah tua dan mengubah amonia menjadi urea. Kulit mengeluarkan keringat. Paru-paru mengeluarkan CO₂ dan uap air.
+  - type: text
+    slide: 1
+    text: "Gangguan: nefritis, batu ginjal, dan diabetes insipidus (kekurangan hormon ADH sehingga urine sangat banyak dan encer)."
+  - type: math
+    slide: 1
+    name: ADH
+    expression: meningkatkan penyerapan air
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Glukosa dalam urine (glukosuria) menandakan kadar gula darah melebihi kemampuan tubulus menyerap kembali glukosa.
+checks:
+  - question: BIO.C26.F.ORGAN.Q.EKSKRESI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.ORGAN.S.EKSKRESI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

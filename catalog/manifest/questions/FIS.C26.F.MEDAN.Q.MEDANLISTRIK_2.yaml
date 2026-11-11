@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN.Q.MEDANLISTRIK_2
+familyCode: FIS.C26.F.MEDAN.F.MEDANLISTRIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MEDAN.MEDAN_LISTRIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah muatan 2 × 10⁻⁶ C mengalami gaya 0,01 N di suatu titik. Kuat medan di titik itu adalah …
+  options:
+    - id: a
+      label: 5 × 10³ N/C
+    - id: b
+      label: 2 × 10⁻⁸ N/C
+    - id: c
+      label: 5 × 10⁻³ N/C
+    - id: d
+      label: 2 × 10⁴ N/C
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 5 × 10³ N/C
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MEDAN.MEDAN_LISTRIK
+  feedback:
+    correct: E = F/q = 0,01 / (2 × 10⁻⁶) = 5 × 10³ N/C.
+    incorrect: Jawabannya 5 × 10³ N/C. E = F/q = 0,01 / (2 × 10⁻⁶) = 5 × 10³ N/C.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.SIRKULASI_2
+familyCode: BIO.C26.F.ORGAN.F.SIRKULASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_SIRKULASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ruang jantung yang memompa darah ke seluruh tubuh adalah …
+  options:
+    - id: a
+      label: serambi kiri
+    - id: b
+      label: serambi kanan
+    - id: c
+      label: bilik kiri
+    - id: d
+      label: bilik kanan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - bilik kiri
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_SIRKULASI
+  feedback:
+    correct: Bilik kiri memompa darah ke aorta; dindingnya paling tebal karena harus mendorong darah ke seluruh tubuh.
+    incorrect: Jawabannya bilik kiri. Bilik kiri memompa darah ke aorta; dindingnya paling tebal karena harus mendorong darah ke seluruh tubuh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

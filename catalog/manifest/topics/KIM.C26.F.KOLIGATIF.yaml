@@ -4,7 +4,7 @@ subject: KIM
 title: Sifat koligatif larutan
 subtitle: Molalitas, fraksi mol, tekanan uap, titik didih, titik beku, dan osmosis
 phase: F
-availability: PLANNED
+availability: MAPPED
 bekal:
   - mol
   - larutan elektrolit
@@ -20,7 +20,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-koligatif-c1
@@ -33,7 +33,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-koligatif-uap
@@ -46,7 +46,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-koligatif-didihbeku
@@ -59,7 +59,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-koligatif-osmosis
@@ -72,7 +72,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: kim-f-koligatif-vanthoff

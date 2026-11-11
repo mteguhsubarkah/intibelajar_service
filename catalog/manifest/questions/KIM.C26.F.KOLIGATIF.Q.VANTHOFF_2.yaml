@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.Q.VANTHOFF_2
+familyCode: KIM.C26.F.KOLIGATIF.F.VANTHOFF_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Larutan berikut yang memiliki titik didih paling tinggi adalah …
+  options:
+    - id: a
+      label: NaCl 0,1 m
+    - id: b
+      label: glukosa 0,2 m
+    - id: c
+      label: urea 0,1 m
+    - id: d
+      label: CaCl₂ 0,1 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - CaCl₂ 0,1 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+  feedback:
+    correct: "Bandingkan m × i: CaCl₂ 0,1 × 3 = 0,3; NaCl 0,1 × 2 = 0,2; glukosa 0,2 × 1 = 0,2; urea 0,1. Yang terbesar CaCl₂."
+    incorrect: "Jawabannya CaCl₂ 0,1 m. Bandingkan m × i: CaCl₂ 0,1 × 3 = 0,3; NaCl 0,1 × 2 = 0,2; glukosa 0,2 × 1 = 0,2; urea 0,1. Yang terbesar CaCl₂."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

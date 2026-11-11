@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.KAUSAL_3
+familyCode: MAT.C26.F.REGRESI.F.KAUSAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Cara paling tepat untuk menguji apakah pupuk baru menyebabkan tanaman lebih tinggi adalah …
+  options:
+    - id: a
+      label: mengamati kebun yang sudah memakai pupuk itu
+    - id: b
+      label: menghitung korelasi tinggi tanaman dengan harga pupuk
+    - id: c
+      label: bertanya kepada penjual pupuk
+    - id: d
+      label: membagi tanaman secara acak ke dua kelompok, hanya satu yang diberi pupuk, dan kondisi lain disamakan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - membagi tanaman secara acak ke dua kelompok, hanya satu yang diberi pupuk, dan kondisi lain disamakan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT
+  feedback:
+    correct: Eksperimen terkontrol dengan pembagian acak memisahkan pengaruh pupuk dari faktor lain.
+    incorrect: Jawabannya membagi tanaman secara acak ke dua kelompok, hanya satu yang diberi pupuk, dan kondisi lain disamakan. Eksperimen terkontrol dengan pembagian acak memisahkan pengaruh pupuk dari faktor lain.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

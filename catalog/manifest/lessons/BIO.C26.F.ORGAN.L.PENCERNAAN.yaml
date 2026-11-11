@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.L.PENCERNAAN
+title: Sistem pencernaan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.ORGAN.SISTEM_PENCERNAAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Enzim di sepanjang saluran
+  - type: text
+    slide: 0
+    text: "Mulut: amilase (ptialin) memecah amilum. Lambung: pepsin memecah protein menjadi pepton; HCl membunuh kuman dan mengaktifkan pepsinogen."
+  - type: text
+    slide: 0
+    text: "Usus halus: enzim pankreas (amilase, tripsin, lipase) bekerja bersama empedu dari hati yang mengemulsikan lemak."
+  - type: math
+    slide: 0
+    name: pepsin
+    expression: protein → pepton
+    highlight: true
+  - type: math
+    slide: 0
+    name: lipase
+    expression: lemak → asam lemak + gliserol
+  - type: heading
+    slide: 1
+    text: Penyerapan dan gangguan
+  - type: text
+    slide: 1
+    text: "Sari makanan diserap di usus halus: glukosa dan asam amino masuk ke kapiler darah, sedangkan asam lemak dan gliserol masuk ke pembuluh kil (limfa)."
+  - type: text
+    slide: 1
+    text: "Gangguan: tukak lambung, apendisitis (radang usus buntu), dan malabsorpsi."
+  - type: math
+    slide: 1
+    name: asam lemak
+    expression: diserap ke pembuluh kil (limfa)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Empedu tidak mengandung enzim; ia memecah lemak menjadi butiran kecil agar lipase bekerja lebih cepat.
+checks:
+  - question: BIO.C26.F.ORGAN.Q.PENCERNAAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.ORGAN.S.PENCERNAAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

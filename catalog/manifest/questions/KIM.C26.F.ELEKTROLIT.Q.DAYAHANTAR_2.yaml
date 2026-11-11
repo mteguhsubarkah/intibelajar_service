@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT.Q.DAYAHANTAR_2
+familyCode: KIM.C26.F.ELEKTROLIT.F.DAYAHANTAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ELEKTROLIT.DAYA_HANTAR_LISTRIK_LARUTAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kristal garam dapur kering tidak menghantarkan listrik karena …
+  options:
+    - id: a
+      label: tidak memiliki ion
+    - id: b
+      label: merupakan senyawa kovalen
+    - id: c
+      label: bersifat asam
+    - id: d
+      label: ion-ionnya tidak dapat bergerak bebas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - ion-ionnya tidak dapat bergerak bebas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ELEKTROLIT.DAYA_HANTAR_LISTRIK_LARUTAN
+  feedback:
+    correct: Dalam padatan, ion Na⁺ dan Cl⁻ terikat kuat pada kisi kristal sehingga tidak bisa membawa arus.
+    incorrect: Jawabannya ion-ionnya tidak dapat bergerak bebas. Dalam padatan, ion Na⁺ dan Cl⁻ terikat kuat pada kisi kristal sehingga tidak bisa membawa arus.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

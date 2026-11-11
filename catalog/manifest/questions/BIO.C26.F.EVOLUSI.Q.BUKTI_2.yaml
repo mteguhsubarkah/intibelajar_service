@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.Q.BUKTI_2
+familyCode: BIO.C26.F.EVOLUSI.F.BUKTI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sayap burung dan sayap kupu-kupu disebut organ analog karena …
+  options:
+    - id: a
+      label: fungsinya sama, tetapi asal-usul strukturnya berbeda
+    - id: b
+      label: asal-usulnya sama
+    - id: c
+      label: keduanya tidak berfungsi
+    - id: d
+      label: keduanya tersusun dari tulang
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - fungsinya sama, tetapi asal-usul strukturnya berbeda
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI
+  feedback:
+    correct: Sayap serangga bukan modifikasi anggota tubuh bertulang; kesamaannya hanya pada fungsi terbang.
+    incorrect: Jawabannya fungsinya sama, tetapi asal-usul strukturnya berbeda. Sayap serangga bukan modifikasi anggota tubuh bertulang; kesamaannya hanya pada fungsi terbang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

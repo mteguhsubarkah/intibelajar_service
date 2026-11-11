@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_2
+familyCode: MAT.C26.F.REGRESI.F.GARIS_REGRESI_LINEAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah data memiliki x̄ = 5, ȳ = 32, dan gradien regresi b = 4. Persamaan garis regresinya adalah …
+  options:
+    - id: a
+      label: ŷ = 4 + 12x
+    - id: b
+      label: ŷ = 28 + 4x
+    - id: c
+      label: ŷ = 12 + 4x
+    - id: d
+      label: ŷ = 32 + 4x
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - ŷ = 12 + 4x
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+  feedback:
+    correct: a = ȳ − b · x̄ = 32 − 4 · 5 = 12, jadi ŷ = 12 + 4x.
+    incorrect: Jawabannya ŷ = 12 + 4x. a = ȳ − b · x̄ = 32 − 4 · 5 = 12, jadi ŷ = 12 + 4x.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

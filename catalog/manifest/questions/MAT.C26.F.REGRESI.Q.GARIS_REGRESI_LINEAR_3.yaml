@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.F.REGRESI.Q.GARIS_REGRESI_LINEAR_3
+familyCode: MAT.C26.F.REGRESI.F.GARIS_REGRESI_LINEAR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Garis regresi ŷ = 80 − 2,5x memodelkan sisa baterai (%) terhadap lama pemakaian (jam). Pernyataan yang benar adalah …
+  options:
+    - id: a
+      label: setiap jam, baterai bertambah 2,5%
+    - id: b
+      label: baterai habis tepat setelah 80 jam
+    - id: c
+      label: baterai mula-mula 2,5%
+    - id: d
+      label: setiap jam pemakaian, sisa baterai turun rata-rata 2,5%
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - setiap jam pemakaian, sisa baterai turun rata-rata 2,5%
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR
+  feedback:
+    correct: Gradien −2,5 berarti ŷ turun 2,5 untuk setiap kenaikan x sebesar 1 jam.
+    incorrect: Jawabannya setiap jam pemakaian, sisa baterai turun rata-rata 2,5%. Gradien −2,5 berarti ŷ turun 2,5 untuk setiap kenaikan x sebesar 1 jam.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

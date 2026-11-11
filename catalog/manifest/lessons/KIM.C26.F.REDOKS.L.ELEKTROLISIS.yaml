@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.L.ELEKTROLISIS
+title: Elektrolisis dan hukum Faraday
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY
+blocks:
+  - type: heading
+    slide: 0
+    text: Reaksi di elektrode
+  - type: text
+    slide: 0
+    text: Elektrolisis memakai listrik untuk menjalankan reaksi redoks yang tidak spontan. **Katode** (kutub −) tempat reduksi, **anode** (kutub +) tempat oksidasi.
+  - type: text
+    slide: 0
+    text: "Larutan berair: di katode, ion logam aktif (golongan IA, IIA, Al, Mn) tidak tereduksi, melainkan air yang tereduksi menjadi H₂. Di anode inert, ion sisa asam oksi (SO₄²⁻, NO₃⁻) tidak teroksidasi, melainkan air yang teroksidasi menjadi O₂."
+  - type: math
+    slide: 0
+    name: katode
+    expression: reduksi (−)
+    highlight: true
+  - type: math
+    slide: 0
+    name: anode
+    expression: oksidasi (+)
+  - type: heading
+    slide: 1
+    text: Hukum Faraday
+  - type: text
+    slide: 1
+    text: "Massa zat yang dihasilkan sebanding dengan muatan listrik: **w = (e · i · t) / 96.500**, dengan e = Ar / banyak elektron."
+  - type: text
+    slide: 1
+    text: 1 faraday = 96.500 C, yaitu muatan 1 mol elektron.
+  - type: math
+    slide: 1
+    name: hukum Faraday I
+    expression: w = e · i · t / 96.500
+    highlight: true
+  - type: math
+    slide: 1
+    name: 1 F
+    expression: 96.500 C
+  - type: tip
+    slide: 1
+    text: Ion Cl⁻ tetap teroksidasi menjadi Cl₂ di anode walaupun larutannya berair.
+checks:
+  - question: KIM.C26.F.REDOKS.Q.ELEKTROLISIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.REDOKS.S.ELEKTROLISIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

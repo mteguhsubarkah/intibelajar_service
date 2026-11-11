@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.L.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS
+title: Bilangan oksidasi dan reaksi redoks
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.REDOKS.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS
+blocks:
+  - type: heading
+    slide: 0
+    text: Aturan bilangan oksidasi
+  - type: text
+    slide: 0
+    text: Unsur bebas memiliki biloks 0 (Na, O₂, Fe). Ion tunggal biloksnya sama dengan muatannya (Na⁺ = +1). O umumnya −2 dan H umumnya +1.
+  - type: text
+    slide: 0
+    text: Jumlah biloks dalam senyawa netral = 0; dalam ion poliatom = muatan ionnya.
+  - type: math
+    slide: 0
+    name: unsur bebas
+    expression: "0"
+    highlight: true
+  - type: math
+    slide: 0
+    name: O dan H
+    expression: −2 dan +1 (umumnya)
+  - type: heading
+    slide: 1
+    text: Oksidasi, reduksi, oksidator, reduktor
+  - type: text
+    slide: 1
+    text: "**Oksidasi**: biloks naik (melepas elektron). **Reduksi**: biloks turun (menerima elektron)."
+  - type: text
+    slide: 1
+    text: "**Oksidator** adalah zat yang mengalami reduksi; **reduktor** adalah zat yang mengalami oksidasi."
+  - type: math
+    slide: 1
+    name: oksidasi
+    expression: biloks naik
+    highlight: true
+  - type: math
+    slide: 1
+    name: reduksi
+    expression: biloks turun
+  - type: tip
+    slide: 1
+    text: Oksidator mengoksidasi zat lain, jadi dirinya sendiri yang tereduksi.
+checks:
+  - question: KIM.C26.F.REDOKS.Q.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.REDOKS.S.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

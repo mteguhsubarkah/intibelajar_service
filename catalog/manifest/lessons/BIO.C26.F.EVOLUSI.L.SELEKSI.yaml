@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.L.SELEKSI
+title: Seleksi alam dan adaptasi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Seleksi alam
+  - type: text
+    slide: 0
+    text: Dalam populasi ada variasi, keturunan yang lahir lebih banyak daripada yang dapat bertahan, dan sifat-sifat diwariskan.
+  - type: text
+    slide: 0
+    text: Individu dengan sifat yang lebih cocok dengan lingkungannya lebih banyak bertahan dan bereproduksi, sehingga frekuensi sifat itu meningkat dari generasi ke generasi.
+  - type: math
+    slide: 0
+    name: seleksi alam
+    expression: sifat cocok → lebih banyak keturunan
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh dan adaptasi
+  - type: text
+    slide: 1
+    text: Ngengat *Biston betularia* berwarna gelap meningkat ketika batang pohon menghitam oleh polusi pada masa Revolusi Industri di Inggris. Bakteri yang tahan antibiotik bertambah jika antibiotik dipakai sembarangan.
+  - type: text
+    slide: 1
+    text: "**Adaptasi** adalah sifat hasil seleksi yang membuat organisme cocok dengan lingkungannya, berupa adaptasi morfologi, fisiologi, atau tingkah laku."
+  - type: math
+    slide: 1
+    name: adaptasi
+    expression: morfologi, fisiologi, tingkah laku
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Individu tidak berubah karena membutuhkan; populasi berubah karena individu yang cocok lebih banyak berketurunan.
+checks:
+  - question: BIO.C26.F.EVOLUSI.Q.SELEKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.EVOLUSI.S.SELEKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

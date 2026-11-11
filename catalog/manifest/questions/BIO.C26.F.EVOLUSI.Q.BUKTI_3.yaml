@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.Q.BUKTI_3
+familyCode: BIO.C26.F.EVOLUSI.F.BUKTI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan DNA simpanse lebih mirip dengan manusia daripada dengan kuda. Kesimpulan yang tepat adalah …
+  options:
+    - id: a
+      label: DNA tidak berhubungan dengan kekerabatan
+    - id: b
+      label: manusia dan simpanse berkerabat lebih dekat
+    - id: c
+      label: manusia berasal dari simpanse modern
+    - id: d
+      label: kuda bukan mamalia
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - manusia dan simpanse berkerabat lebih dekat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI
+  feedback:
+    correct: Kemiripan molekuler menunjukkan nenek moyang bersama yang lebih baru, bukan bahwa satu spesies modern berasal dari spesies modern lainnya.
+    incorrect: Jawabannya manusia dan simpanse berkerabat lebih dekat. Kemiripan molekuler menunjukkan nenek moyang bersama yang lebih baru, bukan bahwa satu spesies modern berasal dari spesies modern lainnya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

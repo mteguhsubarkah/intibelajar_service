@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.L.BUKTI
+title: Bukti evolusi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Fosil dan anatomi
+  - type: text
+    slide: 0
+    text: "**Fosil** menunjukkan makhluk hidup berubah dari waktu ke waktu; lapisan batuan yang lebih dalam umumnya lebih tua."
+  - type: text
+    slide: 0
+    text: "**Organ homolog**: asal-usulnya sama, fungsinya bisa berbeda (tangan manusia, sayap kelelawar, sirip paus). **Organ analog**: fungsinya sama, asal-usulnya berbeda (sayap burung dan sayap serangga)."
+  - type: math
+    slide: 0
+    name: homolog
+    expression: asal sama, fungsi bisa beda
+    highlight: true
+  - type: math
+    slide: 0
+    name: analog
+    expression: fungsi sama, asal beda
+  - type: heading
+    slide: 1
+    text: Embriologi dan molekuler
+  - type: text
+    slide: 1
+    text: Embrio vertebrata pada tahap awal tampak mirip, misalnya sama-sama memiliki celah faring dan ekor.
+  - type: text
+    slide: 1
+    text: Makin mirip urutan DNA atau protein (misalnya sitokrom c) dua spesies, makin dekat hubungan kekerabatannya.
+  - type: math
+    slide: 1
+    name: bukti molekuler
+    expression: kemiripan DNA dan protein
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Organ homolog adalah bukti kekerabatan; organ analog bukan.
+checks:
+  - question: BIO.C26.F.EVOLUSI.Q.BUKTI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.EVOLUSI.S.BUKTI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

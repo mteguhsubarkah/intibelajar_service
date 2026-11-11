@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.L.KOROSI
+title: Korosi dan pencegahannya
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.REDOKS.KOROSI_DAN_PENCEGAHANNYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Perkaratan besi
+  - type: text
+    slide: 0
+    text: Korosi adalah reaksi redoks logam dengan lingkungannya. Besi berkarat jika ada **oksigen dan air**; karat besi adalah Fe₂O₃ · xH₂O.
+  - type: text
+    slide: 0
+    text: Pada permukaan besi, Fe teroksidasi menjadi Fe²⁺ (bagian anode), dan O₂ tereduksi dengan bantuan air (bagian katode). Garam dan asam mempercepat korosi.
+  - type: math
+    slide: 0
+    name: syarat korosi besi
+    expression: O₂ + H₂O
+    highlight: true
+  - type: math
+    slide: 0
+    name: karat
+    expression: Fe₂O₃ · xH₂O
+  - type: heading
+    slide: 1
+    text: Cara mencegah
+  - type: text
+    slide: 1
+    text: "**Pelapisan**: cat, oli, plastik, atau logam lain (timah pada kaleng, krom pada stang sepeda). **Galvanisasi**: melapisi besi dengan seng."
+  - type: text
+    slide: 1
+    text: "**Perlindungan katodik**: menghubungkan besi dengan logam yang lebih mudah teroksidasi, misalnya Mg atau Zn, sebagai logam korban."
+  - type: math
+    slide: 1
+    name: logam korban
+    expression: Mg, Zn (E° lebih kecil dari Fe)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Lapisan timah melindungi selama utuh. Jika tergores, besi justru lebih cepat berkarat karena timah kurang aktif dibanding besi.
+checks:
+  - question: KIM.C26.F.REDOKS.Q.KOROSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.REDOKS.S.KOROSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

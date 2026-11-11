@@ -1,0 +1,50 @@
+schemaVersion: 1
+code: MAT.C26.E.SPLTV.L.ELIMINASI_DAN_SUBSTITUSI_SPLTV
+title: Eliminasi dan substitusi SPLTV
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.E.SPLTV.ELIMINASI_DAN_SUBSTITUSI_SPLTV
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari tiga variabel ke dua
+  - type: text
+    slide: 0
+    text: Pilih satu variabel, misalnya z. Eliminasi z dari persamaan (1) dan (2), lalu dari (1) dan (3). Hasilnya dua persamaan yang hanya memuat x dan y (SPLDV).
+  - type: math
+    slide: 0
+    name: langkah 1
+    expression: eliminasi satu variabel dua kali
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Selesaikan, lalu substitusi balik
+  - type: text
+    slide: 1
+    text: Selesaikan SPLDV untuk x dan y, lalu substitusikan ke salah satu persamaan awal untuk mendapat z.
+  - type: text
+    slide: 1
+    text: "Contoh: x + y + z = 6, x − y + z = 2, 2x + y − z = 1. Kurangkan dua persamaan pertama: 2y = 4, jadi y = 2. Lalu x + z = 4 dan 2x − z = −1, sehingga 3x = 3, x = 1, dan z = 3."
+  - type: math
+    slide: 1
+    name: contoh
+    expression: (x, y, z) = (1, 2, 3)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pilih variabel yang koefisiennya paling mudah disamakan, misalnya yang sudah 1 atau −1.
+checks:
+  - question: MAT.C26.E.SPLTV.Q.ELIMINASI_DAN_SUBSTITUSI_SPLTV_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.E.SPLTV.S.ELIMINASI_DAN_SUBSTITUSI_SPLTV
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -4,7 +4,7 @@ subject: MAT
 title: Statistika dua variabel
 subtitle: Korelasi, regresi linear, prediksi, dan batas hubungan sebab-akibat
 phase: F
-availability: PLANNED
+availability: MAPPED
 bekal:
   - diagram pencar
   - persamaan garis lurus
@@ -17,10 +17,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 4
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-f-regresi-c1
@@ -33,7 +33,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-f-regresi-c2
@@ -46,7 +46,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-f-regresi-prediksi
@@ -59,7 +59,7 @@ concepts:
     estimatedMinutes: 5
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: mat-f-regresi-kausal

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.L.STRUKTUR_DAN_FUNGSI_JARINGAN
+title: Struktur dan fungsi jaringan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Empat jaringan hewan
+  - type: text
+    slide: 0
+    text: "**Epitel** melapisi permukaan dan rongga (kulit, lapisan usus). **Ikat** menghubungkan dan menyokong (tulang, tulang rawan, darah). **Otot** berkontraksi. **Saraf** menghantarkan impuls."
+  - type: math
+    slide: 0
+    name: epitel
+    expression: pelapis
+    highlight: true
+  - type: math
+    slide: 0
+    name: ikat
+    expression: penyokong, penghubung
+  - type: heading
+    slide: 1
+    text: Struktur sesuai fungsi
+  - type: text
+    slide: 1
+    text: Otot dibedakan menjadi otot lurik (rangka, bekerja sadar), otot polos (organ dalam, tak sadar), dan otot jantung (lurik, tak sadar).
+  - type: text
+    slide: 1
+    text: "Bentuk sel menyesuaikan fungsinya: epitel usus memiliki mikrovili untuk menyerap, dan neuron memiliki akson panjang untuk menghantar impuls."
+  - type: math
+    slide: 1
+    name: otot jantung
+    expression: lurik, bekerja tak sadar
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Satu organ tersusun dari beberapa jaringan sekaligus; lambung punya epitel, otot polos, jaringan ikat, dan saraf.
+checks:
+  - question: BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.ORGAN.S.STRUKTUR_DAN_FUNGSI_JARINGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

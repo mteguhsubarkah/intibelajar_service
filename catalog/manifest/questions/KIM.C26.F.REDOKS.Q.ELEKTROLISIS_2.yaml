@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.ELEKTROLISIS_2
+familyCode: KIM.C26.F.REDOKS.F.ELEKTROLISIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Arus 10 A dialirkan selama 965 detik ke larutan AgNO₃ (Ar Ag = 108). Massa perak yang mengendap adalah …
+  options:
+    - id: a
+      label: 5,4 g
+    - id: b
+      label: 10,8 g
+    - id: c
+      label: 1,08 g
+    - id: d
+      label: 21,6 g
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 10,8 g
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY
+  feedback:
+    correct: Muatan = 10 × 965 = 9.650 C = 0,1 F. Ag⁺ + e⁻ → Ag, jadi terbentuk 0,1 mol Ag = 10,8 g.
+    incorrect: Jawabannya 10,8 g. Muatan = 10 × 965 = 9.650 C = 0,1 F. Ag⁺ + e⁻ → Ag, jadi terbentuk 0,1 mol Ag = 10,8 g.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

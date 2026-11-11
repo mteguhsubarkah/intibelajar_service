@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.Q.VARIASI_DALAM_POPULASI_3
+familyCode: BIO.C26.F.EVOLUSI.F.VARIASI_DALAM_POPULASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pindah silang (crossing over) saat meiosis meningkatkan variasi karena …
+  options:
+    - id: a
+      label: menghapus gen yang merugikan
+    - id: b
+      label: mengubah semua gen menjadi dominan
+    - id: c
+      label: menghasilkan kombinasi alel baru pada kromosom
+    - id: d
+      label: menambah jumlah kromosom
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - menghasilkan kombinasi alel baru pada kromosom
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI
+  feedback:
+    correct: Pertukaran segmen antarkromosom homolog menghasilkan kombinasi alel yang berbeda dari induknya.
+    incorrect: Jawabannya menghasilkan kombinasi alel baru pada kromosom. Pertukaran segmen antarkromosom homolog menghasilkan kombinasi alel yang berbeda dari induknya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

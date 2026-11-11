@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.L.REPRODUKSI
+title: Sistem reproduksi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.ORGAN.SISTEM_REPRODUKSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Gametogenesis
+  - type: text
+    slide: 0
+    text: "**Spermatogenesis** di testis: satu spermatosit primer menghasilkan empat sperma. **Oogenesis** di ovarium: satu oosit primer menghasilkan satu ovum dan badan polar."
+  - type: text
+    slide: 0
+    text: Keduanya melibatkan meiosis, sehingga gamet bersifat haploid (n = 23 kromosom pada manusia).
+  - type: math
+    slide: 0
+    name: spermatogenesis
+    expression: 1 → 4 sperma
+    highlight: true
+  - type: math
+    slide: 0
+    name: oogenesis
+    expression: 1 → 1 ovum + badan polar
+  - type: heading
+    slide: 1
+    text: Siklus menstruasi dan fertilisasi
+  - type: text
+    slide: 1
+    text: "Siklus sekitar 28 hari: fase menstruasi, fase folikel (FSH dan estrogen), ovulasi (dipicu lonjakan LH, sekitar hari ke-14), dan fase luteal (progesteron menebalkan dinding rahim)."
+  - type: text
+    slide: 1
+    text: Fertilisasi terjadi di tuba falopi (oviduk). Zigot membelah, lalu menempel (implantasi) di dinding rahim.
+  - type: math
+    slide: 1
+    name: ovulasi
+    expression: dipicu lonjakan LH
+    highlight: true
+  - type: math
+    slide: 1
+    name: fertilisasi
+    expression: di tuba falopi
+  - type: tip
+    slide: 1
+    text: "Jika tidak terjadi fertilisasi, progesteron turun dan dinding rahim luruh: menstruasi dimulai."
+checks:
+  - question: BIO.C26.F.ORGAN.Q.REPRODUKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.ORGAN.S.REPRODUKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

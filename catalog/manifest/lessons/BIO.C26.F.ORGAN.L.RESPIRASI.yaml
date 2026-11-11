@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.L.RESPIRASI
+title: Sistem respirasi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.ORGAN.SISTEM_RESPIRASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Mekanisme pernapasan
+  - type: text
+    slide: 0
+    text: "Inspirasi pernapasan dada: otot antartulang rusuk luar berkontraksi, rusuk terangkat, dan rongga dada membesar. Inspirasi pernapasan perut: diafragma berkontraksi dan mendatar."
+  - type: text
+    slide: 0
+    text: Rongga dada membesar → tekanan di paru-paru turun → udara masuk.
+  - type: math
+    slide: 0
+    name: inspirasi
+    expression: volume naik, tekanan turun
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Pertukaran dan pengangkutan gas
+  - type: text
+    slide: 1
+    text: Di alveolus, O₂ berdifusi ke darah dan CO₂ berdifusi keluar, mengikuti perbedaan tekanan parsial.
+  - type: text
+    slide: 1
+    text: O₂ diangkut terutama oleh hemoglobin sebagai oksihemoglobin. CO₂ diangkut terutama sebagai ion bikarbonat (HCO₃⁻) dalam plasma. Volume udara pernapasan biasa (volume tidal) sekitar 500 mL.
+  - type: math
+    slide: 1
+    name: angkut O₂
+    expression: oksihemoglobin
+    highlight: true
+  - type: math
+    slide: 1
+    name: angkut CO₂
+    expression: sebagian besar HCO₃⁻
+  - type: tip
+    slide: 1
+    text: Gas berpindah dari tekanan parsial tinggi ke rendah; tidak ada pompa yang mendorongnya.
+checks:
+  - question: BIO.C26.F.ORGAN.Q.RESPIRASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.ORGAN.S.RESPIRASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

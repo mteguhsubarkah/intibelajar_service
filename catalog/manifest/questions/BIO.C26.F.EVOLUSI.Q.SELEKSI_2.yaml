@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.EVOLUSI.Q.SELEKSI_2
+familyCode: BIO.C26.F.EVOLUSI.F.SELEKSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Menurut teori seleksi alam, jerapah berleher panjang menjadi umum karena …
+  options:
+    - id: a
+      label: leher panjang didapat dari makanan
+    - id: b
+      label: jerapah berleher lebih panjang lebih mampu bertahan dan berketurunan
+    - id: c
+      label: leher jerapah memanjang karena sering dijulurkan
+    - id: d
+      label: jerapah ingin mencapai daun yang tinggi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - jerapah berleher lebih panjang lebih mampu bertahan dan berketurunan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI
+  feedback:
+    correct: Variasi panjang leher sudah ada; yang lehernya lebih panjang lebih berhasil mendapat makanan dan berketurunan. Sifat yang diperoleh selama hidup tidak diwariskan.
+    incorrect: Jawabannya jerapah berleher lebih panjang lebih mampu bertahan dan berketurunan. Variasi panjang leher sudah ada; yang lehernya lebih panjang lebih berhasil mendapat makanan dan berketurunan. Sifat yang diperoleh selama hidup tidak diwariskan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

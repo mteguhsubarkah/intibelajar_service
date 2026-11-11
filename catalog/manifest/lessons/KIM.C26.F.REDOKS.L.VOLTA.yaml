@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.L.VOLTA
+title: Sel volta dan potensial sel
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Sel volta
+  - type: text
+    slide: 0
+    text: Sel volta mengubah energi reaksi redoks spontan menjadi energi listrik. **Anode** (kutub −) tempat oksidasi, **katode** (kutub +) tempat reduksi.
+  - type: text
+    slide: 0
+    text: "Notasi sel: anode | ion anode || ion katode | katode, misalnya Zn | Zn²⁺ || Cu²⁺ | Cu."
+  - type: math
+    slide: 0
+    name: anode
+    expression: oksidasi (−)
+    highlight: true
+  - type: math
+    slide: 0
+    name: katode
+    expression: reduksi (+)
+  - type: heading
+    slide: 1
+    text: Potensial sel
+  - type: text
+    slide: 1
+    text: "**E°sel = E°katode − E°anode**, keduanya potensial reduksi standar. Reaksi spontan jika E°sel > 0."
+  - type: text
+    slide: 1
+    text: "Logam dengan E° lebih kecil menjadi anode. Contoh: E° Zn = −0,76 V dan E° Cu = +0,34 V, jadi E°sel = 0,34 − (−0,76) = 1,10 V."
+  - type: math
+    slide: 1
+    name: potensial sel
+    expression: E° katode − E° anode
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Dalam deret Volta (Li, K, Ba, Ca, Na, Mg, Al, Mn, Zn, Cr, Fe, …), logam di kiri lebih mudah teroksidasi.
+checks:
+  - question: KIM.C26.F.REDOKS.Q.VOLTA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.REDOKS.S.VOLTA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

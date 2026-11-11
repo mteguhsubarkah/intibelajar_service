@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUH.L.HEWAN
+title: Pertumbuhan dan perkembangan hewan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN_HEWAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Tahap embrionik
+  - type: text
+    slide: 0
+    text: Zigot → **morula** (bola sel padat) → **blastula** (bola berongga) → **gastrula** (terbentuk tiga lapisan lembaga) → organogenesis.
+  - type: text
+    slide: 0
+    text: "Tiga lapisan lembaga: **ektoderm** (kulit, sistem saraf), **mesoderm** (otot, tulang, darah, jantung), dan **endoderm** (lapisan saluran pencernaan dan pernapasan, hati)."
+  - type: math
+    slide: 0
+    name: ektoderm
+    expression: kulit, saraf
+    highlight: true
+  - type: math
+    slide: 0
+    name: mesoderm
+    expression: otot, tulang, darah
+  - type: math
+    slide: 0
+    name: endoderm
+    expression: saluran cerna, hati
+  - type: heading
+    slide: 1
+    text: Tahap pascaembrionik
+  - type: text
+    slide: 1
+    text: Setelah lahir atau menetas terjadi pertumbuhan, **metamorfosis** (perubahan bentuk besar, misalnya pada katak dan serangga), dan **regenerasi** (menumbuhkan bagian yang hilang, misalnya ekor cicak).
+  - type: text
+    slide: 1
+    text: Pertumbuhan hewan dipengaruhi gen, hormon (misalnya hormon pertumbuhan dan tiroksin), serta nutrisi.
+  - type: math
+    slide: 1
+    name: regenerasi
+    expression: menumbuhkan bagian yang hilang
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Urutan tahap embrio: morula → blastula → gastrula. Gastrula ditandai tiga lapisan lembaga."
+checks:
+  - question: BIO.C26.F.TUMBUH.Q.HEWAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUH.S.HEWAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

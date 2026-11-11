@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.Q.VANTHOFF_3
+familyCode: KIM.C26.F.KOLIGATIF.F.VANTHOFF_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Elektrolit biner lemah dengan derajat ionisasi 0,4 memiliki faktor van 't Hoff sebesar …
+  options:
+    - id: a
+      label: 0,4
+    - id: b
+      label: 0,8
+    - id: c
+      label: 1,4
+    - id: d
+      label: 2,4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 1,4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+  feedback:
+    correct: i = 1 + (n − 1)α = 1 + (2 − 1) × 0,4 = 1,4.
+    incorrect: Jawabannya 1,4. i = 1 + (n − 1)α = 1 + (2 − 1) × 0,4 = 1,4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

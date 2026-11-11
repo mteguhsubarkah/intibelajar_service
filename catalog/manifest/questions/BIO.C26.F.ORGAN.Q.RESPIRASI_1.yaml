@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.RESPIRASI_1
+familyCode: BIO.C26.F.ORGAN.F.RESPIRASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_RESPIRASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Saat inspirasi pernapasan perut, yang terjadi adalah …
+  options:
+    - id: a
+      label: diafragma berkontraksi dan mendatar, rongga dada membesar
+    - id: b
+      label: diafragma relaksasi dan melengkung, rongga dada mengecil
+    - id: c
+      label: tulang rusuk turun
+    - id: d
+      label: tekanan di paru-paru naik
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - diafragma berkontraksi dan mendatar, rongga dada membesar
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_RESPIRASI
+  feedback:
+    correct: Kontraksi diafragma memperbesar rongga dada sehingga tekanan turun dan udara masuk.
+    incorrect: Jawabannya diafragma berkontraksi dan mendatar, rongga dada membesar. Kontraksi diafragma memperbesar rongga dada sehingga tekanan turun dan udara masuk.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

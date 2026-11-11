@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUH.L.EKSPERIMEN
+title: Eksperimen pertumbuhan
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUH.EKSPERIMEN_PERTUMBUHAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Merancang percobaan
+  - type: text
+    slide: 0
+    text: "Contoh pertanyaan: apakah intensitas cahaya memengaruhi tinggi kecambah?"
+  - type: text
+    slide: 0
+    text: "**Variabel bebas**: yang sengaja diubah (intensitas cahaya). **Variabel terikat**: yang diukur (tinggi kecambah). **Variabel kontrol**: yang dibuat sama (jenis biji, air, media, suhu, lama pengamatan)."
+  - type: math
+    slide: 0
+    name: bebas
+    expression: diubah
+    highlight: true
+  - type: math
+    slide: 0
+    name: terikat
+    expression: diukur
+  - type: math
+    slide: 0
+    name: kontrol
+    expression: dibuat sama
+  - type: heading
+    slide: 1
+    text: Membaca data pertumbuhan
+  - type: text
+    slide: 1
+    text: Ukur pada waktu yang sama setiap hari, pakai beberapa biji untuk tiap perlakuan, lalu hitung rata-ratanya.
+  - type: text
+    slide: 1
+    text: "Kurva pertumbuhan umumnya berbentuk S (sigmoid): lambat di awal, cepat di tengah, lalu melambat dan konstan."
+  - type: math
+    slide: 1
+    name: kurva pertumbuhan
+    expression: sigmoid (S)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Satu perlakuan dengan satu biji saja belum bisa dipercaya; ulangan mengurangi pengaruh kebetulan.
+checks:
+  - question: BIO.C26.F.TUMBUH.Q.EKSPERIMEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUH.S.EKSPERIMEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

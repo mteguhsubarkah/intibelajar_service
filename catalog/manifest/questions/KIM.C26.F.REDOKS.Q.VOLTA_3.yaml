@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.VOLTA_3
+familyCode: KIM.C26.F.REDOKS.F.VOLTA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Diketahui E° Fe²⁺/Fe = −0,44 V dan E° Pb²⁺/Pb = −0,13 V. Reaksi yang berlangsung spontan adalah …
+  options:
+    - id: a
+      label: Fe + Pb²⁺ → Fe²⁺ + Pb
+    - id: b
+      label: Pb + Fe²⁺ → Pb²⁺ + Fe
+    - id: c
+      label: Fe²⁺ + Pb²⁺ → Fe + Pb
+    - id: d
+      label: tidak ada yang spontan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - Fe + Pb²⁺ → Fe²⁺ + Pb
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL
+  feedback:
+    correct: "Fe memiliki E° lebih kecil sehingga teroksidasi: E°sel = −0,13 − (−0,44) = +0,31 V, lebih dari nol."
+    incorrect: "Jawabannya Fe + Pb²⁺ → Fe²⁺ + Pb. Fe memiliki E° lebih kecil sehingga teroksidasi: E°sel = −0,13 − (−0,44) = +0,31 V, lebih dari nol."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

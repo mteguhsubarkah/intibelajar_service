@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.ELEKTROLIT.L.IONISASI_DAN_DISOSIASI
+title: Ionisasi dan disosiasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.ELEKTROLIT.IONISASI_DAN_DISOSIASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari mana ion dalam larutan
+  - type: text
+    slide: 0
+    text: "Senyawa ion seperti NaCl **terdisosiasi** di dalam air: ion-ionnya terlepas, NaCl → Na⁺ + Cl⁻."
+  - type: text
+    slide: 0
+    text: "Senyawa kovalen polar seperti HCl **terionisasi** saat bereaksi dengan air: HCl → H⁺ + Cl⁻."
+  - type: math
+    slide: 0
+    name: NaCl(aq)
+    expression: Na⁺ + Cl⁻
+    highlight: true
+  - type: math
+    slide: 0
+    name: HCl(aq)
+    expression: H⁺ + Cl⁻
+  - type: heading
+    slide: 1
+    text: Yang tidak menghasilkan ion
+  - type: text
+    slide: 1
+    text: Gula (C₁₂H₂₂O₁₁), urea, dan alkohol larut sebagai molekul utuh, sehingga tidak ada ion yang terbentuk.
+  - type: text
+    slide: 1
+    text: "Saat menulis reaksi ionisasi, hitung jumlah ionnya. Contoh: CaCl₂ → Ca²⁺ + 2Cl⁻ menghasilkan 3 ion."
+  - type: math
+    slide: 1
+    name: CaCl₂
+    expression: Ca²⁺ + 2Cl⁻ (3 ion)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jumlah muatan positif dan negatif hasil ionisasi selalu seimbang.
+checks:
+  - question: KIM.C26.F.ELEKTROLIT.Q.IONISASI_DAN_DISOSIASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.ELEKTROLIT.S.IONISASI_DAN_DISOSIASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

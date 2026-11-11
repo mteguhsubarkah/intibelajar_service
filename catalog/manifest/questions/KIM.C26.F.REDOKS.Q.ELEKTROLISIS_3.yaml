@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.ELEKTROLISIS_3
+familyCode: KIM.C26.F.REDOKS.F.ELEKTROLISIS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada elektrolisis larutan Na₂SO₄ dengan elektrode inert, zat yang terbentuk di katode adalah …
+  options:
+    - id: a
+      label: gas H₂
+    - id: b
+      label: logam Na
+    - id: c
+      label: gas O₂
+    - id: d
+      label: gas SO₂
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - gas H₂
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY
+  feedback:
+    correct: "Na⁺ adalah ion logam aktif, sehingga yang tereduksi adalah air: 2H₂O + 2e⁻ → H₂ + 2OH⁻."
+    incorrect: "Jawabannya gas H₂. Na⁺ adalah ion logam aktif, sehingga yang tereduksi adalah air: 2H₂O + 2e⁻ → H₂ + 2OH⁻."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

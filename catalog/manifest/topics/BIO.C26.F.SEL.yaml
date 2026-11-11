@@ -66,10 +66,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 5
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: bio-f-sel-fotosintesis

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.MEDAN.L.POTENSIAL
+title: Potensial dan energi potensial listrik
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.MEDAN.POTENSIAL_DAN_ENERGI_POTENSIAL_LISTRIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Potensial listrik
+  - type: text
+    slide: 0
+    text: "Potensial listrik **V** adalah energi potensial per satuan muatan, satuannya volt (1 V = 1 J/C). Untuk muatan titik: **V = kQ / r**."
+  - type: text
+    slide: 0
+    text: "Potensial adalah besaran skalar: tanda muatan ikut dihitung, dan potensial dari beberapa muatan cukup dijumlahkan."
+  - type: math
+    slide: 0
+    name: potensial muatan titik
+    expression: V = kQ / r
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Energi dan usaha
+  - type: text
+    slide: 1
+    text: "Energi potensial muatan q di titik berpotensial V: **Ep = qV**."
+  - type: text
+    slide: 1
+    text: "Usaha untuk memindahkan muatan q dari A ke B: **W = q(V_B − V_A)**."
+  - type: math
+    slide: 1
+    name: energi potensial
+    expression: Ep = qV
+    highlight: true
+  - type: math
+    slide: 1
+    name: usaha
+    expression: W = q · ΔV
+  - type: tip
+    slide: 1
+    text: Kuat medan E berbanding dengan 1/r², tetapi potensial V berbanding dengan 1/r.
+checks:
+  - question: FIS.C26.F.MEDAN.Q.POTENSIAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MEDAN.S.POTENSIAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

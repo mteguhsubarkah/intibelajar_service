@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUH.Q.TUMBUHAN_3
+familyCode: BIO.C26.F.TUMBUH.F.TUMBUHAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUH.PERTUMBUHAN_TUMBUHAN_DAN_HORMONNYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pertumbuhan sekunder yang membuat batang tumbuhan dikotil membesar disebabkan oleh aktivitas …
+  options:
+    - id: a
+      label: epidermis
+    - id: b
+      label: stomata
+    - id: c
+      label: kambium
+    - id: d
+      label: meristem apikal
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - kambium
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUH.PERTUMBUHAN_TUMBUHAN_DAN_HORMONNYA
+  feedback:
+    correct: Kambium membelah ke arah dalam dan luar sehingga diameter batang bertambah.
+    incorrect: Jawabannya kambium. Kambium membelah ke arah dalam dan luar sehingga diameter batang bertambah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

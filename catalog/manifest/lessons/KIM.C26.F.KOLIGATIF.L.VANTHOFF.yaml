@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.L.VANTHOFF
+title: Faktor van 't Hoff
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF
+blocks:
+  - type: heading
+    slide: 0
+    text: Elektrolit menghasilkan lebih banyak partikel
+  - type: text
+    slide: 0
+    text: Satu satuan NaCl dalam air menjadi dua ion, sehingga efek koligatifnya hampir dua kali larutan nonelektrolit dengan molalitas yang sama.
+  - type: text
+    slide: 0
+    text: "Faktor van 't Hoff: **i = 1 + (n − 1)α**, dengan n = banyak ion dan α = derajat ionisasi."
+  - type: math
+    slide: 0
+    name: faktor van 't Hoff
+    expression: i = 1 + (n − 1)α
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Rumus untuk larutan elektrolit
+  - type: text
+    slide: 1
+    text: "Semua rumus koligatif dikalikan i: **ΔTb = Kb · m · i**, **ΔTf = Kf · m · i**, dan **π = MRTi**."
+  - type: text
+    slide: 1
+    text: "Elektrolit kuat (α = 1): i = n. Contoh: NaCl → i = 2, CaCl₂ → i = 3. Nonelektrolit: i = 1."
+  - type: math
+    slide: 1
+    name: elektrolit kuat
+    expression: i = n
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Untuk membandingkan larutan, hitung m × i, yaitu banyaknya partikel.
+checks:
+  - question: KIM.C26.F.KOLIGATIF.Q.VANTHOFF_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLIGATIF.S.VANTHOFF
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

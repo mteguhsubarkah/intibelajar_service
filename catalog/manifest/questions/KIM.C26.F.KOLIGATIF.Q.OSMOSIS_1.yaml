@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.Q.OSMOSIS_1
+familyCode: KIM.C26.F.KOLIGATIF.F.OSMOSIS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tekanan osmosis larutan glukosa 0,1 M pada 27 °C (R = 0,082 L·atm/mol·K) adalah …
+  options:
+    - id: a
+      label: 0,22 atm
+    - id: b
+      label: 24,6 atm
+    - id: c
+      label: 0,246 atm
+    - id: d
+      label: 2,46 atm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 2,46 atm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS
+  feedback:
+    correct: T = 27 + 273 = 300 K, jadi π = 0,1 × 0,082 × 300 = 2,46 atm.
+    incorrect: Jawabannya 2,46 atm. T = 27 + 273 = 300 K, jadi π = 0,1 × 0,082 × 300 = 2,46 atm.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

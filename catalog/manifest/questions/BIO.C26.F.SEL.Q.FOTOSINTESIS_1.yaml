@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.SEL.Q.FOTOSINTESIS_1
+familyCode: BIO.C26.F.SEL.F.FOTOSINTESIS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Oksigen yang dilepaskan dalam fotosintesis berasal dari …
+  options:
+    - id: a
+      label: udara yang masuk lewat stomata
+    - id: b
+      label: pemecahan air pada reaksi terang
+    - id: c
+      label: CO₂ pada siklus Calvin
+    - id: d
+      label: glukosa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - pemecahan air pada reaksi terang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME
+  feedback:
+    correct: Fotolisis air di membran tilakoid melepaskan O₂, sedangkan atom O dari CO₂ masuk ke dalam gula dan air.
+    incorrect: Jawabannya pemecahan air pada reaksi terang. Fotolisis air di membran tilakoid melepaskan O₂, sedangkan atom O dari CO₂ masuk ke dalam gula dan air.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

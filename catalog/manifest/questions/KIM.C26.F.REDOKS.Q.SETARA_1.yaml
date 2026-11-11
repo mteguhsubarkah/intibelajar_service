@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.REDOKS.Q.SETARA_1
+familyCode: KIM.C26.F.REDOKS.F.SETARA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Setengah reaksi MnO₄⁻ → Mn²⁺ dalam suasana asam yang setara adalah …
+  options:
+    - id: a
+      label: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O
+    - id: b
+      label: MnO₄⁻ + 4H⁺ + 3e⁻ → Mn²⁺ + 2H₂O
+    - id: c
+      label: MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O + 5e⁻
+    - id: d
+      label: MnO₄⁻ + 8H⁺ + 7e⁻ → Mn²⁺ + 4H₂O
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS
+  feedback:
+    correct: O disetarakan dengan 4H₂O dan H dengan 8H⁺. Muatan kiri −1 + 8 = +7 harus menjadi +2, jadi perlu 5 elektron di ruas kiri.
+    incorrect: Jawabannya MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O. O disetarakan dengan 4H₂O dan H dengan 8H⁺. Muatan kiri −1 + 8 = +7 harus menjadi +2, jadi perlu 5 elektron di ruas kiri.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,4 +1,5 @@
 import type { PilotCore, PilotQuestion, PilotRelation, PilotSlide, PilotTopic } from './types.js';
+import { spread } from './spread.js';
 // Biologi fase E dan F, mengikuti topik dan inti peta IntiVerse.
 
 const S = (h: string, t: string[], m?: [string, string][], tip?: string): PilotSlide => ({ h, t, ...(m ? { m } : {}), ...(tip ? { tip } : {}) });
@@ -136,7 +137,15 @@ const SEL: PilotTopic = {
       Q('Otot yang bekerja berat dan kekurangan oksigen melakukan fermentasi yang menghasilkan …', ['alkohol', 'asam laktat', 'asam asetat', 'glukosa'], 1, 'Fermentasi pada sel otot manusia menghasilkan asam laktat yang menyebabkan rasa pegal.', 1),
     ], { capstone: true, min: 6 }),
     // audit kesenjangan materi (D9): fotosintesis belum punya inti sendiri; PLANNED sampai materi dan soal diisi
-    { id: 'FOTOSINTESIS', title: 'Fotosintesis dan anabolisme', sub: 'Reaksi terang dan gelap, hubungan anabolisme–katabolisme, regulasi metabolisme' },
+    // Inti tambahan dari audit kesenjangan materi (D9); materi dan soalnya ditulis pada batch prioritas 2.
+    C('FOTOSINTESIS', 'Fotosintesis dan anabolisme', [
+      S('Reaksi terang dan siklus Calvin', ['Fotosintesis berlangsung di kloroplas: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ dengan bantuan energi cahaya.', '**Reaksi terang** di membran tilakoid: cahaya memecah air (fotolisis) dan menghasilkan O₂, ATP, serta NADPH. **Siklus Calvin** (reaksi gelap) di stroma: CO₂ diikat RuBP dengan enzim rubisko, lalu ATP dan NADPH dipakai untuk membentuk gula.'], [['reaksi terang', 'tilakoid → O₂, ATP, NADPH'], ['siklus Calvin', 'stroma → gula']]),
+      S('Anabolisme dan katabolisme', ['**Anabolisme** menyusun molekul besar dan memerlukan energi, misalnya fotosintesis dan sintesis protein. **Katabolisme** memecah molekul dan melepas energi, misalnya respirasi sel.', 'Keduanya saling melengkapi: gula hasil fotosintesis dipecah dalam respirasi untuk menghasilkan ATP. Laju metabolisme diatur enzim, yang dipengaruhi suhu, pH, dan inhibitor.'], [['anabolisme', 'menyusun, butuh energi'], ['katabolisme', 'memecah, melepas energi']], 'Oksigen hasil fotosintesis berasal dari pemecahan air, bukan dari CO₂.'),
+    ], spread('BIO.C26.F.SEL:FOTOSINTESIS', [
+      Q('Oksigen yang dilepaskan dalam fotosintesis berasal dari …', ['pemecahan air pada reaksi terang', 'CO₂ pada siklus Calvin', 'glukosa', 'udara yang masuk lewat stomata'], 0, 'Fotolisis air di membran tilakoid melepaskan O₂, sedangkan atom O dari CO₂ masuk ke dalam gula dan air.', 2, 'KM'),
+      Q('Siklus Calvin berlangsung di …', ['stroma kloroplas', 'membran tilakoid', 'mitokondria', 'sitoplasma'], 0, 'Pengikatan CO₂ oleh rubisko dan pembentukan gula terjadi di stroma.', 1, 'KM'),
+      Q('Hasil reaksi terang yang dipakai dalam siklus Calvin adalah …', ['ATP dan NADPH', 'O₂ dan glukosa', 'CO₂ dan H₂O', 'ADP dan NADP⁺'], 0, 'Energi kimia dari reaksi terang dalam bentuk ATP dan NADPH dipakai untuk mengubah CO₂ menjadi gula.', 2, 'KM'),
+    ]), { sub: 'Reaksi terang dan gelap, hubungan anabolisme–katabolisme, regulasi metabolisme', min: 6 }),
   ],
   edges: [['C1', 'C2', 'S'], ['C1', 'TRANSPORT', 'S'], ['C1', 'RESPIRASI', 'S'], ['C2', 'FOTOSINTESIS', 'S']],
 };

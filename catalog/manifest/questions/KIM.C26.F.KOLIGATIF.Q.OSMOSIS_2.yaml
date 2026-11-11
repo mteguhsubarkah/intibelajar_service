@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLIGATIF.Q.OSMOSIS_2
+familyCode: KIM.C26.F.KOLIGATIF.F.OSMOSIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Cairan infus harus bersifat isotonik dengan darah agar …
+  options:
+    - id: a
+      label: sel darah tidak mengerut atau pecah
+    - id: b
+      label: infus lebih cepat habis
+    - id: c
+      label: darah menjadi lebih encer
+    - id: d
+      label: sel darah membelah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sel darah tidak mengerut atau pecah
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS
+  feedback:
+    correct: Tekanan osmosis yang sama membuat air tidak berpindah berlebihan masuk atau keluar sel darah.
+    incorrect: Jawabannya sel darah tidak mengerut atau pecah. Tekanan osmosis yang sama membuat air tidak berpindah berlebihan masuk atau keluar sel darah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

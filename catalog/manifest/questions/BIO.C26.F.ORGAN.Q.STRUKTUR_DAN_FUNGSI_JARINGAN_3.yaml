@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.STRUKTUR_DAN_FUNGSI_JARINGAN_3
+familyCode: BIO.C26.F.ORGAN.F.STRUKTUR_DAN_FUNGSI_JARINGAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sel epitel usus halus memiliki mikrovili. Fungsi struktur ini adalah …
+  options:
+    - id: a
+      label: memperluas permukaan penyerapan
+    - id: b
+      label: menghantarkan impuls
+    - id: c
+      label: menghasilkan hormon
+    - id: d
+      label: mempercepat kontraksi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - memperluas permukaan penyerapan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN
+  feedback:
+    correct: Mikrovili menambah luas permukaan sel sehingga penyerapan sari makanan lebih efisien.
+    incorrect: Jawabannya memperluas permukaan penyerapan. Mikrovili menambah luas permukaan sel sehingga penyerapan sari makanan lebih efisien.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

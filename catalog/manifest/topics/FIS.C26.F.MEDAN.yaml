@@ -4,7 +4,7 @@ subject: FIS
 title: Listrik statis dan medan
 subtitle: Muatan, medan dan potensial listrik, kapasitor, medan magnet, dan gaya Lorentz
 phase: F
-availability: PLANNED
+availability: MAPPED
 bekal:
   - vektor
   - rangkaian listrik
@@ -17,10 +17,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 1
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-f-medan-c1
@@ -30,10 +30,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 2
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-f-medan-medanlistrik
@@ -43,10 +43,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 3
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-f-medan-potensial
@@ -56,10 +56,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 4
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: false
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-f-medan-kapasitor
@@ -69,10 +69,10 @@ concepts:
     objectives: []
     misconceptions: []
     ordinal: 5
-    estimatedMinutes: 5
+    estimatedMinutes: 6
     hidden: false
     capstone: true
-    availability: PLANNED
+    availability: READY
     aliases:
       - ns: MAP
         value: fis-f-medan-lorentz

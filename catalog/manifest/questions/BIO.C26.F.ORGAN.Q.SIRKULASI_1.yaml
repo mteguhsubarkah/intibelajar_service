@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.ORGAN.Q.SIRKULASI_1
+familyCode: BIO.C26.F.ORGAN.F.SIRKULASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.ORGAN.SISTEM_SIRKULASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pembuluh yang membawa darah kaya oksigen dari paru-paru ke jantung adalah …
+  options:
+    - id: a
+      label: vena kava
+    - id: b
+      label: vena pulmonalis
+    - id: c
+      label: arteri pulmonalis
+    - id: d
+      label: aorta
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - vena pulmonalis
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.ORGAN.SISTEM_SIRKULASI
+  feedback:
+    correct: Vena pulmonalis membawa darah yang baru mengambil oksigen di paru-paru ke serambi kiri.
+    incorrect: Jawabannya vena pulmonalis. Vena pulmonalis membawa darah yang baru mengambil oksigen di paru-paru ke serambi kiri.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran
