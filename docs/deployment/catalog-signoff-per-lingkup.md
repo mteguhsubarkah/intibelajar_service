@@ -69,5 +69,6 @@ babnya (D 7–9, E 10, F dan F+ 11–12).
   belum punya kelas.
 - **Yang diperiksa guru:** apakah tiap inti ada di kelas yang sama dengan buku dan ATP sekolah. Pembagian kelas di dalam
   satu fase berbeda antarbuku; lembar tinjauan (`catalog:scope-sheet`) menampilkan kelas di samping tiap inti.
-- **Database:** kolom `concept.grade` ditambahkan oleh migrasi `0013-concept-grade`. Jalankan `npm run migrate` sebelum
+- **Database:** kolom `concept.grade` ditambahkan oleh migrasi `0013-concept-grade`. Di server, jalankan
+  `node --env-file=.env --import tsx src/migrate.ts up` (bukan `npm run migrate`, yang tidak membaca `.env`) sebelum
   menerbitkan rilis yang memuat kelas.
