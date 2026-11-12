@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { lintManifest, loadManifest, type Manifest } from '../src/catalog/manifest.js';
 import { snapshotOf } from '../src/catalog/publisher.js';
-import { checkSignOffFile, composeRelease, homeTopic, parseScope, scopeHash, selectSignOffs, type SignOff } from '../src/catalog/scope.js';
+import { checkSignOffFile, composeRelease, homeTopic, parseScope, scopeHash, selectSignOffs, withRepoGrades, type SignOff } from '../src/catalog/scope.js';
 
 // Sign-off dan rilis per lingkup memakai manifest repo sungguhan. Sign-off di sini sintetis (tes otomatis), bukan tinjauan guru.
 const repo = loadManifest('catalog/manifest');
@@ -82,4 +82,23 @@ test('catalog scope: file sign-off yang rusak ditolak', () => {
   for (const bad of [{}, { schemaVersion: 2, signoffs: [] }, { schemaVersion: 1, signoffs: [{ ...ok, name: '' }] },
     { schemaVersion: 1, signoffs: [{ ...ok, scope: 'mat' }] }, { schemaVersion: 1, signoffs: [{ ...ok, contentSha256: 'abc' }] }])
     assert.throws(() => checkSignOffFile(bad));
+});
+
+test('catalog scope: rilis khusus kelas hanya memasang kelas pada isi yang sudah tayang', () => {
+  const noGrades = clone(repo);
+  for (const t of noGrades.topics) for (const c of t.concepts) delete c.grade;
+  const live = clone(composeRelease(null, noGrades, [signed(noGrades, 'FIS:D'), signed(noGrades, 'BIO')], 1).manifest);
+  const { manifest, changed, skipped } = withRepoGrades(live, repo, 2);
+  assert.deepEqual(lintManifest(manifest, { strict: true }), []);
+  assert.equal(manifest.release.version, 2);
+  assert.ok(changed.length > 0 && skipped.length === 0);
+  assert.ok(manifest.topics.flatMap(t => t.concepts).filter(c => !c.hidden).every(c => c.grade !== undefined), 'semua inti yang tayang mendapat kelas');
+  const strip = (m: Manifest) => { const x = clone(m); x.release.version = 0; for (const t of x.topics) for (const c of t.concepts) delete c.grade; return snapshotOf(x).json; };
+  assert.equal(strip(manifest), strip(live), 'selain kelas dan versi, isi rilis sama persis: tidak ada materi, soal, atau bab baru');
+  assert.equal(withRepoGrades(manifest, repo, 3).changed.length, 0, 'dijalankan ulang: tidak ada perubahan');
+  const moved = clone(live), t = moved.topics.find(x => x.subject === 'FIS' && x.phase === 'D')!;
+  t.phase = 'E';
+  const r = withRepoGrades(moved, repo, 2);
+  assert.ok(r.skipped.some(x => x.startsWith(t.concepts[0]!.code)), 'kelas di luar fase bab produksi tidak dipasang');
+  assert.deepEqual(lintManifest(r.manifest, { strict: true }), []);
 });

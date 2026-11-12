@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { stable } from '../platform/crypto.js';
-import type { Authored, Lesson, Manifest, PracticeSet, Question, Release, Review, Topic } from './manifest.js';
+import { GRADES_OF_PHASE, type Authored, type Lesson, type Manifest, type PracticeSet, type Question, type Release, type Review, type Topic } from './manifest.js';
 
 /* =========================================================
    Sign-off dan rilis katalog per lingkup (mapel, atau mapel + fase).
@@ -265,4 +265,24 @@ export function selectSignOffs(repo: Manifest, file: SignOffFile) {
     if (match) included.push({ scope, signOff: match }); else stale.push({ scope, lastSigned: entries.at(-1)!, current });
   }
   return { included, stale };
+}
+
+/**
+ * Rilis khusus kelas (release.ts --grades-only): isi produksi yang sedang aktif tetap PERSIS sama; satu-satunya perubahan
+ * adalah kelas (grade) tiap inti yang sudah tayang, diambil dari repo. Tidak ada materi, soal, atau bab baru yang ikut,
+ * jadi bab baru tetap menunggu sign-off guru. Kelas di luar fase bab di produksi diabaikan dan dilaporkan.
+ */
+export interface GradeChange { subject: string; topic: string; concept: string; from?: number; to: number }
+export function withRepoGrades(live: Manifest, repo: Manifest, version: number): { manifest: Manifest; changed: GradeChange[]; skipped: string[] } {
+  const manifest = structuredClone(live), changed: GradeChange[] = [], skipped: string[] = [];
+  const repoGrade = new Map(repo.topics.flatMap(t => t.concepts.filter(c => c.grade !== undefined).map(c => [c.code, c.grade!] as const)));
+  for (const t of manifest.topics) for (const c of t.concepts) {
+    const to = repoGrade.get(c.code);
+    if (to === undefined || to === c.grade) continue;
+    if (!GRADES_OF_PHASE[t.phase].includes(to)) { skipped.push(`${c.code}: kelas ${to} di luar fase ${t.phase}`); continue; }
+    changed.push({ subject: t.subject, topic: t.code, concept: c.code, ...(c.grade !== undefined ? { from: c.grade } : {}), to });
+    c.grade = to;
+  }
+  manifest.release.version = version;
+  return { manifest, changed, skipped };
 }
