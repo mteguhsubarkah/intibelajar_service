@@ -42,7 +42,8 @@ export const GRADES: Record<string, Placement> = {
   'FIS.C26.F.MEKANIKA': 11, 'FIS.C26.F.FLUIDA': 11, 'FIS.C26.F.GELOMBANG': 11, 'FIS.C26.F.TERMAL': 11,
   'FIS.C26.F.MEDAN': 12, 'FIS.C26.F.ELEKTRO': 12, 'FIS.C26.F.MODERN': 12,
   // ---------------- Kimia ----------------
-  'KIM.C26.D.PARTIKEL': 7, 'KIM.C26.D.MATERI': 7, // VII: zat dan perubahannya
+  'KIM.C26.D.PARTIKEL': 7, // VII bab 2: zat dan perubahannya (wujud zat, model partikel, kerapatan)
+  'KIM.C26.D.MATERI': { all: 8, PERUBAHAN_DAN_PEMISAHAN: 7 }, // VIII bab 5: unsur, senyawa, campuran; VII bab 2: perubahan fisika dan kimia
   'KIM.C26.D.ATOM': 9, 'KIM.C26.D.REAKSI': 9, 'KIM.C26.D.ZAT': 9, // IX: reaksi kimia, zat aditif & adiktif
   'KIM.C26.E.ATOM': 10, 'KIM.C26.E.STOIK': 10, 'KIM.C26.E.HUKUMDASAR': 10, 'KIM.C26.E.HIJAU': 10, 'KIM.C26.E.MODELATOM': 10,
   'KIM.C26.F.STRUKTUR': 11, 'KIM.C26.F.HIDROKARBON': 11, 'KIM.C26.F.TERMOKIMIA': 11, 'KIM.C26.F.LAJU': 11,
