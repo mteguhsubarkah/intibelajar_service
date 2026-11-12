@@ -72,3 +72,19 @@ babnya (D 7–9, E 10, F dan F+ 11–12).
 - **Database:** kolom `concept.grade` ditambahkan oleh migrasi `0013-concept-grade`. Di server, jalankan
   `node --env-file=.env --import tsx src/migrate.ts up` (bukan `npm run migrate`, yang tidak membaca `.env`) sebelum
   menerbitkan rilis yang memuat kelas.
+
+### Rilis khusus kelas (tanpa menunggu tinjauan isi)
+
+Untuk isi yang SUDAH tayang, kelas bisa diterbitkan sendiri tanpa file sign-off. Isi rilis aktif (materi, soal, judul,
+urutan) tetap sama persis; yang berubah hanya `grade` tiap inti, diambil dari repo. Bab dan inti baru TIDAK ikut, tetap
+menunggu sign-off guru seperti biasa.
+
+```
+cd /var/www/intibelajar_service
+git pull --ff-only
+node --env-file=.env --import tsx scripts/catalog/release.ts --grades-only            # simulasi: jumlah inti per mapel, inti yang pindah kelas
+node --env-file=.env --import tsx scripts/catalog/release.ts --grades-only --publish  # terbitkan
+```
+
+Penempatan kelas yang terbit lewat jalur ini belum diperiksa guru; koreksi dari guru masuk lewat `grades.ts`, lalu jalankan
+perintah yang sama lagi. Menjalankannya dua kali tanpa perubahan di repo tidak menerbitkan apa pun.
