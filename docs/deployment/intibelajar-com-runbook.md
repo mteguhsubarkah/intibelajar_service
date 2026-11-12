@@ -14,7 +14,7 @@ bawah dijalankan **di server lewat SSH**, kecuali bagian 2 (di PC). Panduan ini 
 | Nginx | `/etc/nginx/sites-available/intibelajar` (backup `.bak`): `/` → FE, `/v1` dan `/docs` → `127.0.0.1:8000`, `/planner/` |
 | HTTPS | certbot (`--nginx --redirect`), sertifikat Let's Encrypt diperbarui otomatis |
 | Backoffice | systemd `intibelajar-backoffice`, snippet `/etc/nginx/snippets/intibelajar-backoffice.conf`, Basic Auth `/etc/nginx/intibelajar-backoffice.htpasswd`, env `/etc/intibelajar-backoffice.env` |
-| Katalog | draf `r7-20261025` dipublikasikan lewat `scripts/catalog/publish.ts` (backup sebelumnya di `~/backups/intibelajar/`) |
+| Katalog | draf `r7-20261025` dipublikasikan lewat `scripts/catalog/publish.ts` (backup sebelumnya di `~/backups/intibelajar/`). Rilis berikutnya bisa per mapel/fase: [catalog-signoff-per-lingkup.md](catalog-signoff-per-lingkup.md) |
 | Planner | `/var/www/intiverse-planner/index.html`, juga dijalankan `nohup python3 -m http.server 8085 --bind 0.0.0.0` |
 
 ## 2. Domain publik: mode runtime pilot
