@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU.Q.PENERAPAN_2
+familyCode: KIM.C26.E.HIJAU.F.PENERAPAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Plastik dari pati singkong lebih ramah lingkungan karena …
+  options:
+    - id: a
+      label: lebih awet di tempat sampah
+    - id: b
+      label: mudah terurai dan bahan bakunya terbarukan
+    - id: c
+      label: tidak dapat terurai
+    - id: d
+      label: dibuat dari minyak bumi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - mudah terurai dan bahan bakunya terbarukan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA
+  feedback:
+    correct: Pati berasal dari tanaman yang dapat ditanam ulang, dan plastiknya dapat diuraikan mikroorganisme.
+    incorrect: Jawabannya mudah terurai dan bahan bakunya terbarukan. Pati berasal dari tanaman yang dapat ditanam ulang, dan plastiknya dapat diuraikan mikroorganisme.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

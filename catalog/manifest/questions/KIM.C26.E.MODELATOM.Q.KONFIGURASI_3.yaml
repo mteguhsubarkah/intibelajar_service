@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM.Q.KONFIGURASI_3
+familyCode: KIM.C26.E.MODELATOM.F.KONFIGURASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Atom X bernomor atom 19. Ion yang paling mudah dibentuk X adalah …
+  options:
+    - id: a
+      label: X⁻
+    - id: b
+      label: X²⁺
+    - id: c
+      label: X²⁻
+    - id: d
+      label: X⁺
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - X⁺
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS
+  feedback:
+    correct: Konfigurasi 2, 8, 8, 1 memiliki satu elektron valensi yang mudah dilepas, sehingga terbentuk X⁺.
+    incorrect: Jawabannya X⁺. Konfigurasi 2, 8, 8, 1 memiliki satu elektron valensi yang mudah dilepas, sehingga terbentuk X⁺.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

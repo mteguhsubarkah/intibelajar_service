@@ -1,0 +1,71 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU
+subject: KIM
+title: Laju reaksi
+subtitle: Pengertian laju, teori tumbukan, dan faktor yang memengaruhi laju
+phase: F
+availability: MAPPED
+bekal:
+  - konsentrasi molar
+  - persamaan reaksi
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.LAJU.KONSEP_LAJU_REAKSI
+    title: Konsep laju reaksi
+    subtitle: Perubahan konsentrasi per satuan waktu
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-laju-c1
+  - code: KIM.C26.F.LAJU.TEORI_TUMBUKAN
+    title: Teori tumbukan
+    subtitle: Tumbukan efektif dan energi aktivasi
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-laju-c2
+  - code: KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU
+    title: Faktor yang memengaruhi laju
+    subtitle: Konsentrasi, luas permukaan, suhu, dan katalis
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-laju-faktor
+prerequisites:
+  - concept: KIM.C26.F.LAJU.TEORI_TUMBUKAN
+    requires: KIM.C26.F.LAJU.KONSEP_LAJU_REAKSI
+    kind: SOFT
+  - concept: KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU
+    requires: KIM.C26.F.LAJU.TEORI_TUMBUKAN
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

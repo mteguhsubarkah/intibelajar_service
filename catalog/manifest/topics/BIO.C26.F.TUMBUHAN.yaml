@@ -1,0 +1,88 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN
+subject: BIO
+title: Jaringan dan transpor pada tumbuhan
+subtitle: Jaringan dan organ tumbuhan, transpor air, hara, dan hasil fotosintesis
+phase: F
+availability: MAPPED
+bekal:
+  - sel
+  - fotosintesis
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.TUMBUHAN.JARINGAN_TUMBUHAN
+    title: Jaringan tumbuhan
+    subtitle: Meristem, jaringan dewasa, xilem, dan floem
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuhan-c1
+  - code: BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+    title: Organ tumbuhan
+    subtitle: Akar, batang, dan struktur daun
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuhan-c2
+  - code: BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+    title: Transpor air dan hara
+    subtitle: Osmosis, transpirasi, kohesi, dan adhesi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuhan-air
+  - code: BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS
+    title: Transpor hasil fotosintesis
+    subtitle: Translokasi sukrosa dari sumber ke penerima
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-tumbuhan-floem
+prerequisites:
+  - concept: BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+    requires: BIO.C26.F.TUMBUHAN.JARINGAN_TUMBUHAN
+    kind: HARD
+  - concept: BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+    requires: BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+    kind: HARD
+  - concept: BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS
+    requires: BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

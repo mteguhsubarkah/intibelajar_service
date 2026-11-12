@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU.Q.EKONOMI_ATOM_2
+familyCode: KIM.C26.E.HIJAU.F.EKONOMI_ATOM_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HIJAU.EKONOMI_ATOM
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada reaksi CaCO₃ → CaO + CO₂ (Mr CaCO₃ = 100, CaO = 56, CO₂ = 44), ekonomi atom untuk produk CaO adalah …
+  options:
+    - id: a
+      label: 56%
+    - id: b
+      label: 44%
+    - id: c
+      label: 100%
+    - id: d
+      label: 78%
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 56%
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HIJAU.EKONOMI_ATOM
+  feedback:
+    correct: Ekonomi atom = 56/100 × 100% = 56%; sisanya terbuang sebagai CO₂.
+    incorrect: Jawabannya 56%. Ekonomi atom = 56/100 × 100% = 56%; sisanya terbuang sebagai CO₂.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

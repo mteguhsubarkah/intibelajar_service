@@ -60,6 +60,7 @@ concepts:
     unit: MAT.VEK.U1
     ordinal: 2
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -74,6 +75,7 @@ concepts:
     unit: MAT.VEK.U1
     ordinal: 3
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -88,6 +90,7 @@ concepts:
     unit: MAT.VEK.U1
     ordinal: 4
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -102,6 +105,7 @@ concepts:
     unit: MAT.VEK.U2
     ordinal: 5
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -116,6 +120,7 @@ concepts:
     unit: MAT.VEK.U2
     ordinal: 6
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -130,6 +135,7 @@ concepts:
     unit: MAT.VEK.U2
     ordinal: 7
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -144,6 +150,7 @@ concepts:
     unit: MAT.VEK.U3
     ordinal: 8
     estimatedMinutes: 6
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -158,6 +165,7 @@ concepts:
     unit: MAT.VEK.U3
     ordinal: 9
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -172,6 +180,7 @@ concepts:
     unit: MAT.VEK.U3
     ordinal: 10
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -186,6 +195,7 @@ concepts:
     unit: MAT.VEK.U3
     ordinal: 11
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -200,6 +210,7 @@ concepts:
     unit: MAT.VEK.U3
     ordinal: 12
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -214,6 +225,7 @@ concepts:
     unit: MAT.VEK.U4
     ordinal: 13
     estimatedMinutes: 6
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -228,6 +240,7 @@ concepts:
     unit: MAT.VEK.U4
     ordinal: 14
     estimatedMinutes: 7
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -242,6 +255,7 @@ concepts:
     unit: MAT.VEK.U4
     ordinal: 15
     estimatedMinutes: 7
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -256,6 +270,7 @@ concepts:
     unit: MAT.VEK.U5
     ordinal: 16
     estimatedMinutes: 7
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -270,6 +285,7 @@ concepts:
     unit: MAT.VEK.U5
     ordinal: 17
     estimatedMinutes: 10
+    grade: 10
     hidden: false
     capstone: false
     availability: READY

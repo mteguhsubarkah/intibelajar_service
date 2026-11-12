@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.Q.ALDEHIDA_DAN_KETON_2
+familyCode: KIM.C26.F.GUGUS.F.ALDEHIDA_DAN_KETON_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.GUGUS.ALDEHIDA_DAN_KETON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nama IUPAC aseton adalah …
+  options:
+    - id: a
+      label: propanal
+    - id: b
+      label: etanal
+    - id: c
+      label: propanol
+    - id: d
+      label: propanon
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - propanon
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.GUGUS.ALDEHIDA_DAN_KETON
+  feedback:
+    correct: Aseton adalah keton dengan tiga atom C (CH₃–CO–CH₃), sehingga namanya propanon.
+    incorrect: Jawabannya propanon. Aseton adalah keton dengan tiga atom C (CH₃–CO–CH₃), sehingga namanya propanon.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

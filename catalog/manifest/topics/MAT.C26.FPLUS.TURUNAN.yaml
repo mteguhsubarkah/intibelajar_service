@@ -1,0 +1,73 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN
+subject: MAT
+title: Turunan lanjut
+subtitle: Aturan rantai, turunan trigonometri, titik stasioner, dan kemonotonan
+phase: F+
+availability: MAPPED
+bekal:
+  - turunan dasar
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+    title: Aturan rantai
+    subtitle: Turunan fungsi komposisi dan bentuk pangkat
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-turunan-c1
+  - code: MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+    title: Turunan fungsi trigonometri
+    subtitle: Turunan sinus, kosinus, dan tangen
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-turunan-c2
+  - code: MAT.C26.FPLUS.TURUNAN.TITIK_STASIONER_DAN_KEMONOTONAN
+    title: Titik stasioner dan kemonotonan
+    subtitle: Fungsi naik dan turun, uji turunan kedua
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 12
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-turunan-stasioner
+prerequisites:
+  - concept: MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+    requires: MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+    kind: HARD
+  - concept: MAT.C26.FPLUS.TURUNAN.TITIK_STASIONER_DAN_KEMONOTONAN
+    requires: MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+    kind: SOFT
+  - concept: MAT.C26.FPLUS.TURUNAN.TITIK_STASIONER_DAN_KEMONOTONAN
+    requires: MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

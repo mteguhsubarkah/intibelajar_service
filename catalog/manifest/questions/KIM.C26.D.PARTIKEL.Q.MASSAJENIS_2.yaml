@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.Q.MASSAJENIS_2
+familyCode: KIM.C26.D.PARTIKEL.F.MASSAJENIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.PARTIKEL.MASSA_JENIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Batu dimasukkan ke gelas ukur sehingga permukaan air naik dari 50 mL ke 70 mL. Jika massa batu 60 g, massa jenisnya adalah …
+  options:
+    - id: a
+      label: 30 g/cm³
+    - id: b
+      label: 3 g/cm³
+    - id: c
+      label: 0,86 g/cm³
+    - id: d
+      label: 1,2 g/cm³
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 3 g/cm³
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.PARTIKEL.MASSA_JENIS
+  feedback:
+    correct: Volume batu 70 − 50 = 20 mL = 20 cm³, sehingga ρ = 60/20 = 3 g/cm³.
+    incorrect: Jawabannya 3 g/cm³. Volume batu 70 − 50 = 20 mL = 20 cm³, sehingga ρ = 60/20 = 3 g/cm³.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.HUKUM_PERBANDINGAN_TETAP_PROUST_2
+familyCode: KIM.C26.E.HUKUMDASAR.F.HUKUM_PERBANDINGAN_TETAP_PROUST_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Sebanyak 10 g hidrogen direaksikan dengan 64 g oksigen membentuk air (H : O = 1 : 8). Zat yang bersisa dan massanya adalah …"
+  options:
+    - id: a
+      label: hidrogen, 2 g
+    - id: b
+      label: oksigen, 16 g
+    - id: c
+      label: hidrogen, 8 g
+    - id: d
+      label: tidak ada yang bersisa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - hidrogen, 2 g
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+  feedback:
+    correct: 64 g oksigen hanya membutuhkan 8 g hidrogen, sehingga hidrogen bersisa 10 − 8 = 2 g.
+    incorrect: Jawabannya hidrogen, 2 g. 64 g oksigen hanya membutuhkan 8 g hidrogen, sehingga hidrogen bersisa 10 − 8 = 2 g.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

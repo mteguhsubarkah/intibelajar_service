@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM.L.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD
+title: Model atom Dalton, Thomson, Rutherford
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.MODELATOM.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD
+blocks:
+  - type: heading
+    slide: 0
+    text: Dalton dan Thomson
+  - type: text
+    slide: 0
+    text: "**Dalton**: atom adalah bola pejal yang tidak dapat dibagi lagi, dan atom unsur yang sama memiliki sifat yang sama."
+  - type: text
+    slide: 0
+    text: "**Thomson** menemukan elektron, sehingga atom digambarkan sebagai bola bermuatan positif dengan elektron tersebar di dalamnya, seperti roti kismis."
+  - type: heading
+    slide: 1
+    text: Rutherford
+  - type: text
+    slide: 1
+    text: Pada percobaan hamburan sinar alfa terhadap lempeng emas tipis, sebagian besar sinar menembus dan hanya sedikit yang dibelokkan atau dipantulkan.
+  - type: text
+    slide: 1
+    text: "**Rutherford** menyimpulkan bahwa atom sebagian besar berupa ruang kosong, dengan inti kecil bermuatan positif yang dikelilingi elektron."
+  - type: tip
+    slide: 1
+    text: Setiap model atom muncul untuk menjelaskan hasil percobaan yang tidak bisa dijelaskan model sebelumnya.
+checks:
+  - question: KIM.C26.E.MODELATOM.Q.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.MODELATOM.S.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.Q.PENCEMARAN_LINGKUNGAN_2
+familyCode: BIO.C26.E.LIMBAH.F.PENCEMARAN_LINGKUNGAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ikan di sungai mati setelah terjadi ledakan alga terutama karena …
+  options:
+    - id: a
+      label: oksigen terlarut habis saat alga mati diuraikan bakteri
+    - id: b
+      label: suhu air turun
+    - id: c
+      label: air menjadi terlalu jernih
+    - id: d
+      label: alga memakan ikan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - oksigen terlarut habis saat alga mati diuraikan bakteri
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+  feedback:
+    correct: Bakteri pengurai memakai banyak oksigen, sehingga kadar oksigen terlarut turun drastis.
+    incorrect: Jawabannya oksigen terlarut habis saat alga mati diuraikan bakteri. Bakteri pengurai memakai banyak oksigen, sehingga kadar oksigen terlarut turun drastis.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

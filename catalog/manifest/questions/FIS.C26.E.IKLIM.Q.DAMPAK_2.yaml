@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.Q.DAMPAK_2
+familyCode: FIS.C26.E.IKLIM.F.DAMPAK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.IKLIM.DAMPAK_PERUBAHAN_IKLIM
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pemutihan terumbu karang terutama dipicu oleh …
+  options:
+    - id: a
+      label: meningkatnya cahaya bulan
+    - id: b
+      label: suhu air laut yang terlalu tinggi
+    - id: c
+      label: bertambahnya ikan karang
+    - id: d
+      label: air laut yang terlalu dingin
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - suhu air laut yang terlalu tinggi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.IKLIM.DAMPAK_PERUBAHAN_IKLIM
+  feedback:
+    correct: Pada air yang terlalu hangat, karang melepas alga simbionnya sehingga warnanya memudar dan karang bisa mati.
+    incorrect: Jawabannya suhu air laut yang terlalu tinggi. Pada air yang terlalu hangat, karang melepas alga simbionnya sehingga warnanya memudar dan karang bisa mati.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

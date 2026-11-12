@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LIMIT.L.LIMIT_FUNGSI_ALJABAR
+title: Limit fungsi aljabar
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.LIMIT.LIMIT_FUNGSI_ALJABAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Substitusi langsung
+  - type: text
+    slide: 0
+    text: "Untuk fungsi polinomial, limit di x = a cukup dihitung f(a). Contoh: lim x→2 (x² + 3x) = 4 + 6 = 10."
+  - type: text
+    slide: 0
+    text: Jika substitusi menghasilkan bentuk tak tentu 0/0, ubah dulu bentuk fungsinya.
+  - type: math
+    slide: 0
+    name: polinomial
+    expression: lim x→a f(x) = f(a)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Faktorisasi dan perkalian sekawan
+  - type: text
+    slide: 1
+    text: "**Faktorisasi**: (x² − 9)/(x − 3) = (x − 3)(x + 3)/(x − 3) = x + 3, sehingga limitnya di x = 3 adalah 6."
+  - type: text
+    slide: 1
+    text: "**Sekawan**: untuk bentuk akar, kalikan dengan sekawannya. (√x − 2)/(x − 4) = 1/(√x + 2), sehingga limit di x = 4 adalah 1/4."
+  - type: math
+    slide: 1
+    name: contoh
+    expression: lim x→3 (x² − 9)/(x − 3) = 6
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bentuk 0/0 tidak berarti limitnya 0 atau tidak ada.
+checks:
+  - question: MAT.C26.FPLUS.LIMIT.Q.LIMIT_FUNGSI_ALJABAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.LIMIT.S.LIMIT_FUNGSI_ALJABAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.L.MINYAK
+title: Minyak bumi dan pembakaran
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.HIDROKARBON.MINYAK_BUMI_DAN_PEMBAKARAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Fraksi minyak bumi
+  - type: text
+    slide: 0
+    text: Minyak bumi adalah campuran hidrokarbon yang dipisahkan dengan **distilasi bertingkat** berdasarkan perbedaan titik didih.
+  - type: text
+    slide: 0
+    text: Fraksi bertitik didih rendah (gas, bensin) keluar di bagian atas menara, sedangkan fraksi bertitik didih tinggi (solar, oli, aspal) di bagian bawah.
+  - type: heading
+    slide: 1
+    text: Bilangan oktan dan pembakaran
+  - type: text
+    slide: 1
+    text: "**Bilangan oktan** menunjukkan ketahanan bensin terhadap ketukan (knocking). Isooktana diberi nilai 100 dan n-heptana 0."
+  - type: text
+    slide: 1
+    text: Pembakaran sempurna menghasilkan CO₂ dan H₂O. Pembakaran tidak sempurna menghasilkan CO yang beracun dan jelaga.
+  - type: math
+    slide: 1
+    name: pembakaran sempurna
+    expression: CₓHᵧ + O₂ → CO₂ + H₂O
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Bensin beroktan 92 setara campuran 92% isooktana dan 8% n-heptana.
+checks:
+  - question: KIM.C26.F.HIDROKARBON.Q.MINYAK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.HIDROKARBON.S.MINYAK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

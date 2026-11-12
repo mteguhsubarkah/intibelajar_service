@@ -33,7 +33,7 @@ async function load(db: Connection, release: { id: string; version: number; snap
   const topics = (await sql<TopicRow>`select id, subject_id, code, legacy_id, title, subtitle, phase, availability, units from topic
     where code in (${codes('$.topics[*].code')}) order by code`.execute(db)).rows;
   const concepts = (await sql<ConceptRow>`select id, topic_id, code, legacy_map_id, title, subtitle, definition, objectives, misconceptions, unit_code,
-      ordinal, estimated_minutes, availability, is_hidden, is_capstone from concept
+      ordinal, estimated_minutes, availability, is_hidden, is_capstone, grade from concept
     where code in (${codes('$.topics[*].concepts[*].code')}) order by topic_id, ordinal, code`.execute(db)).rows;
   const questions = (await sql<QuestionRow>`select q.id, q.code, q.legacy_item_id, q.visibility, r.id as revision_id, r.item_type, r.body, r.difficulty, r.estimated_minutes, r.provenance,
       (select jsonb_agg(jsonb_build_object('conceptId', c.id, 'topicId', c.topic_id, 'role', qc.role, 'assessable', qc.assessable) order by qc.role, c.code)

@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU
+subject: KIM
+title: Kimia hijau dan pembangunan berkelanjutan
+subtitle: Prinsip kimia hijau, ekonomi atom, dan penerapannya
+phase: E
+availability: MAPPED
+bekal:
+  - reaksi kimia
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+    title: Prinsip kimia hijau
+    subtitle: Mencegah limbah, bahan lebih aman, hemat energi, katalis
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-hijau-c1
+  - code: KIM.C26.E.HIJAU.EKONOMI_ATOM
+    title: Ekonomi atom
+    subtitle: Persentase atom pereaksi yang menjadi produk
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-hijau-c2
+  - code: KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA
+    title: Kimia hijau dan pembangunan berkelanjutan
+    subtitle: Contoh penerapan dan kaitannya dengan SDGs
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-hijau-penerapan
+prerequisites:
+  - concept: KIM.C26.E.HIJAU.EKONOMI_ATOM
+    requires: KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+    kind: SOFT
+  - concept: KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA
+    requires: KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN.Q.TURUNAN_FUNGSI_TRIGONOMETRI_2
+familyCode: MAT.C26.FPLUS.TURUNAN.F.TURUNAN_FUNGSI_TRIGONOMETRI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Turunan y = cos(4x) adalah …
+  options:
+    - id: a
+      label: −sin 4x
+    - id: b
+      label: −4 cos 4x
+    - id: c
+      label: −4 sin 4x
+    - id: d
+      label: 4 sin 4x
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - −4 sin 4x
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+  feedback:
+    correct: Turunan luar −sin 4x dikalikan turunan bagian dalam 4.
+    incorrect: Jawabannya −4 sin 4x. Turunan luar −sin 4x dikalikan turunan bagian dalam 4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

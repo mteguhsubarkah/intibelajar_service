@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU.L.FAKTOR
+title: Faktor yang memengaruhi laju
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU
+blocks:
+  - type: heading
+    slide: 0
+    text: Konsentrasi dan luas permukaan
+  - type: text
+    slide: 0
+    text: "**Konsentrasi** yang lebih tinggi berarti lebih banyak partikel per volume, sehingga tumbukan lebih sering."
+  - type: text
+    slide: 0
+    text: "**Luas permukaan** yang lebih besar (zat berupa serbuk) membuat lebih banyak partikel terpapar, sehingga tumbukan juga lebih sering."
+  - type: heading
+    slide: 1
+    text: Suhu dan katalis
+  - type: text
+    slide: 1
+    text: "**Suhu** yang lebih tinggi menaikkan energi kinetik partikel, sehingga tumbukan lebih sering dan lebih banyak yang efektif. Sering dipakai perkiraan: tiap kenaikan 10°C, laju naik sekitar dua kali."
+  - type: text
+    slide: 1
+    text: "**Katalis** menyediakan jalan reaksi dengan energi aktivasi lebih rendah tanpa ikut habis bereaksi."
+  - type: math
+    slide: 1
+    name: aturan 10°C
+    expression: laju ≈ ×2 tiap naik 10°C
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Katalis tidak mengubah ΔH reaksi, hanya menurunkan Ea.
+checks:
+  - question: KIM.C26.F.LAJU.Q.FAKTOR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.LAJU.S.FAKTOR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

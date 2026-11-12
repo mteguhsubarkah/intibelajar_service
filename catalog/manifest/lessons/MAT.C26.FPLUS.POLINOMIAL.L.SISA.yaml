@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL.L.SISA
+title: Teorema sisa dan faktor
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.POLINOMIAL.TEOREMA_SISA_DAN_FAKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Teorema sisa
+  - type: text
+    slide: 0
+    text: Jika P(x) dibagi (x − k), sisanya **P(k)**. Jika dibagi (ax − b), sisanya P(b/a).
+  - type: text
+    slide: 0
+    text: "Contoh: sisa x⁴ + 3x − 1 dibagi x + 1 adalah P(−1) = 1 − 3 − 1 = −3, tanpa melakukan pembagian."
+  - type: math
+    slide: 0
+    name: teorema sisa
+    expression: S = P(k)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Teorema faktor
+  - type: text
+    slide: 1
+    text: (x − k) adalah **faktor** P(x) jika dan hanya jika P(k) = 0. Nilai k seperti itu disebut akar.
+  - type: text
+    slide: 1
+    text: Untuk mencari faktor, uji nilai k dari faktor-faktor suku tetap a₀ (dibagi faktor koefisien utama).
+  - type: math
+    slide: 1
+    name: teorema faktor
+    expression: P(k) = 0 ⇔ (x − k) faktor
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Setelah satu faktor ditemukan, bagi dengan Horner untuk mendapat polinomial yang derajatnya lebih rendah.
+checks:
+  - question: MAT.C26.FPLUS.POLINOMIAL.Q.SISA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.POLINOMIAL.S.SISA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

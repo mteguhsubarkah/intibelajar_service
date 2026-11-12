@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM.Q.KONFIGURASI_2
+familyCode: KIM.C26.E.MODELATOM.F.KONFIGURASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Elektron valensi atom belerang (nomor atom 16) adalah …
+  options:
+    - id: a
+      label: "8"
+    - id: b
+      label: "16"
+    - id: c
+      label: "6"
+    - id: d
+      label: "2"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "6"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS
+  feedback:
+    correct: Konfigurasinya 2, 8, 6, sehingga kulit terluarnya berisi 6 elektron.
+    incorrect: Jawabannya 6. Konfigurasinya 2, 8, 6, sehingga kulit terluarnya berisi 6 elektron.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

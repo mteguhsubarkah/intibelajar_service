@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.Q.DAURULANG_3
+familyCode: BIO.C26.E.LIMBAH.F.DAURULANG_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.LIMBAH.DAUR_ULANG_DAN_PENGELOLAAN_LIMBAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Botol plastik bekas yang dilelehkan dan dibuat menjadi biji plastik baru adalah contoh …
+  options:
+    - id: a
+      label: reuse
+    - id: b
+      label: pengomposan
+    - id: c
+      label: recycle
+    - id: d
+      label: reduce
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - recycle
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.LIMBAH.DAUR_ULANG_DAN_PENGELOLAAN_LIMBAH
+  feedback:
+    correct: Bahan diolah kembali menjadi bahan baku baru, sehingga termasuk daur ulang.
+    incorrect: Jawabannya recycle. Bahan diolah kembali menjadi bahan baku baru, sehingga termasuk daur ulang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

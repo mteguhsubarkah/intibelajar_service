@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.L.KEKHASAN_ATOM_KARBON
+title: Kekhasan atom karbon
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON
+blocks:
+  - type: heading
+    slide: 0
+    text: Empat ikatan karbon
+  - type: text
+    slide: 0
+    text: Atom karbon memiliki **4 elektron valensi**, sehingga dapat membentuk empat ikatan kovalen.
+  - type: text
+    slide: 0
+    text: Atom karbon dapat berikatan dengan sesama karbon membentuk rantai lurus, bercabang, atau cincin, dengan ikatan tunggal, rangkap dua, atau rangkap tiga.
+  - type: heading
+    slide: 1
+    text: Jenis atom karbon
+  - type: text
+    slide: 1
+    text: "Berdasarkan jumlah atom C lain yang diikat: **C primer** mengikat 1 atom C, **sekunder** 2, **tersier** 3, dan **kuarterner** 4."
+  - type: text
+    slide: 1
+    text: "Contoh: pada 2-metilpropana, CH(CH₃)₃, atom C pusat adalah C tersier, sedangkan tiga gugus CH₃ adalah C primer."
+  - type: tip
+    slide: 1
+    text: Kekhasan inilah yang membuat jumlah senyawa karbon sangat banyak.
+checks:
+  - question: KIM.C26.F.HIDROKARBON.Q.KEKHASAN_ATOM_KARBON_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.HIDROKARBON.S.KEKHASAN_ATOM_KARBON
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

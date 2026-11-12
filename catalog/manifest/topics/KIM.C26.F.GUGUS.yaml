@@ -1,0 +1,87 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS
+subject: KIM
+title: Senyawa turunan alkana
+subtitle: Alkohol, eter, aldehida, keton, asam karboksilat, ester, dan reaksinya
+phase: F
+availability: MAPPED
+bekal:
+  - hidrokarbon
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.GUGUS.ALKOHOL_DAN_ETER
+    title: Alkohol dan eter
+    subtitle: Gugus –OH dan –O–, tata nama, dan isomer fungsi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-gugus-c1
+  - code: KIM.C26.F.GUGUS.ALDEHIDA_DAN_KETON
+    title: Aldehida dan keton
+    subtitle: Gugus karbonil, uji Tollens dan Fehling
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-gugus-c2
+  - code: KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+    title: Asam karboksilat dan ester
+    subtitle: Gugus –COOH dan –COO–, esterifikasi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-gugus-karboksilat
+  - code: KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON
+    title: Reaksi senyawa karbon
+    subtitle: Substitusi, adisi, eliminasi, dan oksidasi alkohol
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-gugus-reaksi
+prerequisites:
+  - concept: KIM.C26.F.GUGUS.ALDEHIDA_DAN_KETON
+    requires: KIM.C26.F.GUGUS.ALKOHOL_DAN_ETER
+    kind: SOFT
+  - concept: KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+    requires: KIM.C26.F.GUGUS.ALDEHIDA_DAN_KETON
+    kind: SOFT
+  - concept: KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON
+    requires: KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

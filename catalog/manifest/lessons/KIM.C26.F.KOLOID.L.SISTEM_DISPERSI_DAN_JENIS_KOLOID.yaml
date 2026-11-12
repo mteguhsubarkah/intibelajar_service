@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLOID.L.SISTEM_DISPERSI_DAN_JENIS_KOLOID
+title: Sistem dispersi dan jenis koloid
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.KOLOID.SISTEM_DISPERSI_DAN_JENIS_KOLOID
+blocks:
+  - type: heading
+    slide: 0
+    text: Larutan, koloid, suspensi
+  - type: text
+    slide: 0
+    text: "**Larutan** (partikel < 1 nm) jernih dan tidak dapat disaring. **Suspensi** (partikel > 100 nm) keruh dan mengendap."
+  - type: text
+    slide: 0
+    text: "**Koloid** berada di antaranya (1–100 nm): tampak homogen, tidak mengendap, dan tidak dapat disaring dengan kertas saring biasa."
+  - type: math
+    slide: 0
+    name: ukuran koloid
+    expression: 1–100 nm
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Jenis koloid
+  - type: text
+    slide: 1
+    text: "Koloid terdiri atas **fase terdispersi** dan **medium pendispersi**. Contoh: **sol** (padat dalam cair, seperti tinta), **emulsi** (cair dalam cair, seperti susu dan mayones), **buih** (gas dalam cair, seperti busa sabun)."
+  - type: text
+    slide: 1
+    text: Ada juga **aerosol cair** (kabut), **aerosol padat** (asap), dan **gel** (cair dalam padat, seperti agar-agar).
+  - type: tip
+    slide: 1
+    text: Nama jenis koloid ditentukan oleh wujud fase terdispersi dan medium pendispersinya.
+checks:
+  - question: KIM.C26.F.KOLOID.Q.SISTEM_DISPERSI_DAN_JENIS_KOLOID_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLOID.S.SISTEM_DISPERSI_DAN_JENIS_KOLOID
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

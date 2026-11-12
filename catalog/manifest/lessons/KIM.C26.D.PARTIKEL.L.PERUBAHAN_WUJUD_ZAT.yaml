@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.L.PERUBAHAN_WUJUD_ZAT
+title: Perubahan wujud zat
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Enam perubahan wujud
+  - type: text
+    slide: 0
+    text: "**Mencair** (padat → cair) dan **menguap** (cair → gas) memerlukan kalor. **Membeku** (cair → padat) dan **mengembun** (gas → cair) melepaskan kalor."
+  - type: text
+    slide: 0
+    text: "**Menyublim** (padat → gas langsung) memerlukan kalor, sedangkan **mengkristal** atau deposisi (gas → padat) melepaskan kalor."
+  - type: heading
+    slide: 1
+    text: Contoh sehari-hari
+  - type: text
+    slide: 1
+    text: Kapur barus yang mengecil di lemari adalah peristiwa menyublim. Embun pada gelas berisi es adalah uap air yang mengembun.
+  - type: text
+    slide: 1
+    text: Selama mencair atau mendidih, suhu zat murni tetap walaupun kalor terus diberikan.
+  - type: tip
+    slide: 1
+    text: "Perubahan wujud adalah perubahan fisika: zatnya tetap sama."
+checks:
+  - question: KIM.C26.D.PARTIKEL.Q.PERUBAHAN_WUJUD_ZAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.PARTIKEL.S.PERUBAHAN_WUJUD_ZAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

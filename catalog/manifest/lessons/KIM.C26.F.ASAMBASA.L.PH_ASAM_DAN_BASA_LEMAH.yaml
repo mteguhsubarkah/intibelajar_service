@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.L.PH_ASAM_DAN_BASA_LEMAH
+title: pH asam dan basa lemah
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.ASAMBASA.PH_ASAM_DAN_BASA_LEMAH
+blocks:
+  - type: heading
+    slide: 0
+    text: Asam lemah
+  - type: text
+    slide: 0
+    text: Asam lemah terionisasi sebagian dengan tetapan ionisasi Ka. Konsentrasi H⁺ dihitung dengan **[H⁺] = √(Ka × Ma)**.
+  - type: text
+    slide: 0
+    text: "pH = −log [H⁺]. Contoh: CH₃COOH 0,1 M dengan Ka = 10⁻⁵ memiliki [H⁺] = √(10⁻⁶) = 10⁻³ M, jadi pH = 3."
+  - type: math
+    slide: 0
+    name: asam lemah
+    expression: "[H⁺] = √(Ka · Ma)"
+    highlight: true
+  - type: math
+    slide: 0
+    name: pH
+    expression: −log [H⁺]
+  - type: heading
+    slide: 1
+    text: Basa lemah
+  - type: text
+    slide: 1
+    text: "Untuk basa lemah: **[OH⁻] = √(Kb × Mb)**, lalu pOH = −log [OH⁻] dan pH = 14 − pOH pada 25°C."
+  - type: text
+    slide: 1
+    text: "Contoh: NH₃ 0,1 M dengan Kb = 10⁻⁵ memiliki [OH⁻] = 10⁻³ M, pOH = 3, dan pH = 11."
+  - type: math
+    slide: 1
+    name: basa lemah
+    expression: "[OH⁻] = √(Kb · Mb)"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Asam kuat langsung memakai [H⁺] = valensi × M, tanpa akar.
+checks:
+  - question: KIM.C26.F.ASAMBASA.Q.PH_ASAM_DAN_BASA_LEMAH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.ASAMBASA.S.PH_ASAM_DAN_BASA_LEMAH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

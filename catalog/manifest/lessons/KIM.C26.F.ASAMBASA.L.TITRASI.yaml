@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.L.TITRASI
+title: Titrasi asam–basa
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+blocks:
+  - type: heading
+    slide: 0
+    text: Prinsip titrasi
+  - type: text
+    slide: 0
+    text: "**Titrasi** menentukan konsentrasi larutan dengan meneteskan larutan lain yang konsentrasinya diketahui (titran) sampai reaksi tepat habis."
+  - type: text
+    slide: 0
+    text: "Pada **titik ekuivalen**, mol H⁺ dari asam sama dengan mol OH⁻ dari basa: **Va × Ma × a = Vb × Mb × b**, dengan a dan b valensi asam dan basa."
+  - type: math
+    slide: 0
+    name: titik ekuivalen
+    expression: Va · Ma · a = Vb · Mb · b
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Indikator dan kurva
+  - type: text
+    slide: 1
+    text: "**Indikator** dipilih agar perubahan warnanya (titik akhir) dekat dengan pH titik ekuivalen. Fenolftalein berubah dari tak berwarna menjadi merah muda pada pH sekitar 8,3–10."
+  - type: text
+    slide: 1
+    text: Kurva titrasi menunjukkan perubahan pH yang tajam di sekitar titik ekuivalen.
+  - type: tip
+    slide: 1
+    text: Titrasi asam kuat dengan basa kuat memiliki titik ekuivalen pada pH 7.
+checks:
+  - question: KIM.C26.F.ASAMBASA.Q.TITRASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.ASAMBASA.S.TITRASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

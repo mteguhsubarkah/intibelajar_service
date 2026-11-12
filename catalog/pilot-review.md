@@ -2305,6 +2305,987 @@ Materi: 5 · Soal: 15
   A. sama dengan qvB · B. berlawanan arah gerak · C. nol · D. maksimum
   Kunci: **C** · F = qvB sin θ dengan θ = 0°, sehingga sin θ = 0 dan gayanya nol.
 
+## Bilangan kompleks (MAT.C26.FPLUS.KOMPLEKS)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS_1** — Bagian real dan bagian imajiner dari z = 4 − 7i berturut-turut adalah …
+  A. 4 dan 7 · B. −7 dan 4 · C. 4 dan −7i · D. 4 dan −7
+  Kunci: **D** · Bentuk a + bi dengan a = 4 dan b = −7; bagian imajiner adalah bilangan real b, bukan bi.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS_2** — Nilai i²⁰²⁶ adalah …
+  A. −1 · B. 1 · C. i · D. −i
+  Kunci: **A** · 2026 = 4 · 506 + 2, sehingga i²⁰²⁶ = i² = −1.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS_3** — Titik pada bidang kompleks yang mewakili z = −2 + 3i adalah …
+  A. (−2, −3) · B. (−2, 3) · C. (3, −2) · D. (2, 3)
+  Kunci: **B** · Bagian real −2 menjadi koordinat mendatar dan bagian imajiner 3 menjadi koordinat tegak.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.OPERASI_BILANGAN_KOMPLEKS_1** — (3 + 2i) + (1 − 5i) = …
+  A. 2 + 7i · B. 4 − 7i · C. 4 − 3i · D. 4 + 7i
+  Kunci: **C** · Real: 3 + 1 = 4; imajiner: 2 + (−5) = −3.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.OPERASI_BILANGAN_KOMPLEKS_2** — (2 + 3i)(1 − i) = …
+  A. 2 − 3i · B. 5 + i · C. −1 + i · D. 5 − i
+  Kunci: **B** · 2 − 2i + 3i − 3i² = 2 + i + 3 = 5 + i, karena −3i² = 3.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.OPERASI_BILANGAN_KOMPLEKS_3** — Hasil 5/(2 + i) adalah …
+  A. 2 − i · B. 2 + i · C. 5/2 − 5i · D. 10 − 5i
+  Kunci: **A** · Kalikan dengan sekawan 2 − i: 5(2 − i)/(4 + 1) = 2 − i.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.KONJUGAT_1** — Modulus dari z = 6 − 8i adalah …
+  A. 10 · B. 14 · C. 2 · D. √28
+  Kunci: **A** · √(6² + (−8)²) = √100 = 10.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.KONJUGAT_2** — Jika z = 3 + 4i, nilai z · z̄ adalah …
+  A. 7 · B. 9 − 16i · C. 5 · D. 25
+  Kunci: **D** · z · z̄ = |z|² = 3² + 4² = 25; hasilnya selalu bilangan real.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.KONJUGAT_3** — Argumen dari z = −√3 + i adalah …
+  A. −30° · B. 120° · C. 150° · D. 30°
+  Kunci: **C** · Titik (−√3, 1) di kuadran II dengan sudut acuan 30°, jadi arg z = 180° − 30° = 150°.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.POLAR_1** — Bentuk polar dari z = 2i adalah …
+  A. 2 cis 0° · B. 2 cis 180° · C. 4 cis 90° · D. 2 cis 90°
+  Kunci: **D** · Titik (0, 2) berjarak 2 dari titik asal dan terletak di sumbu imajiner positif, jadi θ = 90°.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.POLAR_2** — Hasil 3 cis 40° × 2 cis 50° adalah …
+  A. 6i · B. 6 · C. 5 cis 90° · D. 6 cis 2000°
+  Kunci: **A** · Modulus 3 × 2 = 6 dan argumen 40° + 50° = 90°, sehingga hasilnya 6 cis 90° = 6i.
+- [ ] **MAT.C26.FPLUS.KOMPLEKS.Q.POLAR_3** — Nilai (1 + i)⁴ adalah …
+  A. −4i · B. −4 · C. 4 · D. 4i
+  Kunci: **B** · 1 + i = √2 cis 45°, sehingga pangkat empatnya (√2)⁴ cis 180° = 4 · (−1) = −4.
+
+## Polinomial (MAT.C26.FPLUS.POLINOMIAL)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.BENTUK_DAN_OPERASI_POLINOMIAL_1** — Derajat polinomial P(x) = 4x² − x⁵ + 7 adalah …
+  A. 2 · B. 4 · C. 7 · D. 5
+  Kunci: **D** · Pangkat tertinggi x adalah 5 (dari suku −x⁵); urutan penulisan suku tidak berpengaruh.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.BENTUK_DAN_OPERASI_POLINOMIAL_2** — Jika P(x) = 2x³ − x² + 3x − 4, nilai P(−1) adalah …
+  A. −10 · B. −2 · C. 2 · D. −8
+  Kunci: **A** · 2(−1)³ − (−1)² + 3(−1) − 4 = −2 − 1 − 3 − 4 = −10.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.BENTUK_DAN_OPERASI_POLINOMIAL_3** — Derajat hasil kali (x³ + 2)(x² − x + 1) adalah …
+  A. 2 · B. 5 · C. 6 · D. 3
+  Kunci: **B** · Derajat hasil kali adalah jumlah derajat kedua faktor: 3 + 2 = 5.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.PEMBAGIAN_POLINOMIAL_1** — Sisa pembagian x³ − 4x + 2 oleh x − 2 adalah …
+  A. −2 · B. 10 · C. 2 · D. 0
+  Kunci: **C** · Horner dengan k = 2 pada koefisien 1, 0, −4, 2 menghasilkan baris 1, 2, 0, 2; bilangan terakhir 2 adalah sisa.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.PEMBAGIAN_POLINOMIAL_2** — Hasil bagi x³ − 4x + 2 oleh x − 2 adalah …
+  A. x² + 2 · B. x² + 2x · C. x² − 2x · D. x² + 2x − 4
+  Kunci: **B** · Baris Horner 1, 2, 0 adalah koefisien hasil bagi berderajat dua: x² + 2x + 0.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.PEMBAGIAN_POLINOMIAL_3** — Polinomial berderajat 4 dibagi x² − 1. Derajat tertinggi yang mungkin untuk sisanya adalah …
+  A. 1 · B. 2 · C. 3 · D. 0
+  Kunci: **A** · Sisa harus berderajat lebih kecil dari pembagi yang berderajat 2, jadi paling tinggi berderajat 1.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.SISA_1** — Sisa pembagian P(x) = x³ + 2x² − 5 oleh (x + 2) adalah …
+  A. 3 · B. −21 · C. 5 · D. −5
+  Kunci: **D** · Menurut teorema sisa, sisanya P(−2) = −8 + 8 − 5 = −5.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.SISA_2** — Jika (x − 1) adalah faktor dari x³ + ax − 4, nilai a adalah …
+  A. 3 · B. −3 · C. 4 · D. 5
+  Kunci: **A** · Faktor (x − 1) berarti P(1) = 0: 1 + a − 4 = 0, sehingga a = 3.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.SISA_3** — Faktor-faktor dari x³ − 6x² + 11x − 6 adalah …
+  A. (x − 1)²(x − 6) · B. (x − 1)(x − 2)(x − 3) · C. (x + 1)(x + 2)(x + 3) · D. (x − 1)(x + 2)(x − 3)
+  Kunci: **B** · P(1) = 1 − 6 + 11 − 6 = 0; pembagian dengan (x − 1) memberi x² − 5x + 6 = (x − 2)(x − 3).
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.AKAR_1** — Jumlah akar-akar persamaan 2x³ − 6x² + x + 8 = 0 adalah …
+  A. 3 · B. −3 · C. 4 · D. −4
+  Kunci: **A** · x₁ + x₂ + x₃ = −b/a = −(−6)/2 = 3.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.AKAR_2** — Hasil kali akar-akar x³ − 4x² + x + 6 = 0 adalah …
+  A. 6 · B. 1 · C. 4 · D. −6
+  Kunci: **D** · x₁x₂x₃ = −d/a = −6/1 = −6. Akarnya memang −1, 2, dan 3.
+- [ ] **MAT.C26.FPLUS.POLINOMIAL.Q.AKAR_3** — Salah satu akar x³ − 7x + 6 = 0 adalah 1. Dua akar lainnya adalah …
+  A. 3 dan −1 · B. 6 dan 1 · C. 2 dan −3 · D. −2 dan 3
+  Kunci: **C** · Bagi dengan (x − 1): hasil baginya x² + x − 6 = (x + 3)(x − 2), jadi akar lainnya 2 dan −3.
+
+## Transformasi geometri (MAT.C26.FPLUS.TRANSFORMASI)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.TRANSLASI_DAN_REFLEKSI_1** — Bayangan titik (3, −1) oleh translasi (−5, 4) adalah …
+  A. (−2, 3) · B. (8, −5) · C. (−2, −5) · D. (8, 3)
+  Kunci: **A** · Tambahkan komponennya: 3 + (−5) = −2 dan −1 + 4 = 3.
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.TRANSLASI_DAN_REFLEKSI_2** — Bayangan titik (2, 5) jika dicerminkan terhadap garis y = x adalah …
+  A. (−2, 5) · B. (2, −5) · C. (−5, −2) · D. (5, 2)
+  Kunci: **D** · Pencerminan terhadap y = x menukar absis dan ordinat.
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.TRANSLASI_DAN_REFLEKSI_3** — Titik A(4, −3) dicerminkan terhadap sumbu y, lalu digeser oleh (1, 2). Bayangan akhirnya adalah …
+  A. (−3, −5) · B. (−5, −1) · C. (−3, −1) · D. (5, −1)
+  Kunci: **C** · Cermin sumbu y memberi (−4, −3); translasi (1, 2) memberi (−3, −1).
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.ROTASI_1** — Bayangan titik (3, 1) oleh rotasi 90° berlawanan arah jarum jam terhadap O adalah …
+  A. (3, −1) · B. (−1, 3) · C. (1, −3) · D. (−3, −1)
+  Kunci: **B** · Rotasi 90° memetakan (x, y) ke (−y, x), jadi (3, 1) menjadi (−1, 3).
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.ROTASI_2** — Bayangan titik (−2, 5) oleh rotasi 180° terhadap O adalah …
+  A. (5, −2) · B. (−2, −5) · C. (2, −5) · D. (−5, −2)
+  Kunci: **C** · Rotasi 180° membalik tanda kedua koordinat, sehingga diperoleh (2, −5).
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.ROTASI_3** — Titik (4, 0) diputar 60° berlawanan arah jarum jam terhadap O. Bayangannya adalah …
+  A. (2√3, 2) · B. (−2, 2√3) · C. (4, 2√3) · D. (2, 2√3)
+  Kunci: **D** · x′ = 4 cos 60° = 2 dan y′ = 4 sin 60° = 2√3.
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.DILATASI_1** — Bayangan titik (−3, 2) oleh dilatasi [O, 4] adalah …
+  A. (1, 6) · B. (−12, 2) · C. (12, −8) · D. (−12, 8)
+  Kunci: **D** · Kalikan kedua koordinat dengan faktor skala 4.
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.DILATASI_2** — Persegi seluas 5 cm² didilatasi dengan faktor skala −2. Luas bayangannya adalah …
+  A. 20 cm² · B. 10 cm² · C. −20 cm² · D. 25 cm²
+  Kunci: **A** · Luas dikali k² = (−2)² = 4, sehingga 5 × 4 = 20 cm².
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.DILATASI_3** — Bayangan titik (5, 3) oleh dilatasi berpusat (1, 1) dengan faktor skala 2 adalah …
+  A. (6, 4) · B. (9, 5) · C. (10, 6) · D. (11, 7)
+  Kunci: **B** · Jarak dari pusat (4, 2) dikalikan 2 menjadi (8, 4), lalu ditambah pusat (1, 1): (9, 5).
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.KOMPOSISI_1** — Matriks yang mewakili refleksi terhadap sumbu x dilanjutkan rotasi 90° terhadap O adalah …
+  A. [[1, 0], [0, −1]] · B. [[0, −1], [1, 0]] · C. [[0, 1], [1, 0]] · D. [[0, −1], [−1, 0]]
+  Kunci: **C** · Matriks rotasi dikalikan dari kiri: [[0, −1], [1, 0]] · [[1, 0], [0, −1]] = [[0, 1], [1, 0]], yaitu pencerminan terhadap y = x.
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.KOMPOSISI_2** — Titik (2, 1) ditransformasi oleh matriks [[2, 1], [0, 3]]. Bayangannya adalah …
+  A. (2, 3) · B. (5, 3) · C. (4, 3) · D. (5, 6)
+  Kunci: **B** · x′ = 2 · 2 + 1 · 1 = 5 dan y′ = 0 · 2 + 3 · 1 = 3.
+- [ ] **MAT.C26.FPLUS.TRANSFORMASI.Q.KOMPOSISI_3** — Segitiga seluas 4 satuan luas ditransformasi oleh matriks [[3, 1], [2, 2]]. Luas bayangannya adalah …
+  A. 16 satuan luas · B. 32 satuan luas · C. 12 satuan luas · D. 8 satuan luas
+  Kunci: **A** · det M = 3 · 2 − 1 · 2 = 4, sehingga luas bayangan 4 × 4 = 16 satuan luas.
+
+## Fungsi dan pemodelan (MAT.C26.FPLUS.FUNGSI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.FUNGSI_RASIONAL_DAN_ASIMTOT_1** — Asimtot tegak grafik f(x) = (x + 4)/(x + 2) adalah …
+  A. x = 2 · B. x = −4 · C. y = 1 · D. x = −2
+  Kunci: **D** · Penyebut nol saat x = −2, sedangkan pembilangnya bernilai 2 (tidak nol).
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.FUNGSI_RASIONAL_DAN_ASIMTOT_2** — Asimtot datar grafik f(x) = (6x − 1)/(2x + 5) adalah …
+  A. y = 3 · B. y = 6 · C. y = −1/5 · D. x = −5/2
+  Kunci: **A** · Derajat pembilang dan penyebut sama-sama 1, jadi y = 6/2 = 3.
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.FUNGSI_RASIONAL_DAN_ASIMTOT_3** — Daerah asal f(x) = 3/(x² − 9) adalah …
+  A. x > 3 · B. semua bilangan real kecuali 3 dan −3 · C. semua bilangan real kecuali 9 · D. semua bilangan real kecuali 3
+  Kunci: **B** · x² − 9 = 0 saat x = 3 atau x = −3, sehingga kedua nilai itu dikeluarkan.
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.MODEL_PERIODIK_TRIGONOMETRI_1** — Suhu sebuah ruangan berubah periodik antara 18°C dan 30°C. Amplitudo modelnya adalah …
+  A. 24°C · B. 30°C · C. 6°C · D. 12°C
+  Kunci: **C** · Amplitudo = (30 − 18)/2 = 6°C.
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.MODEL_PERIODIK_TRIGONOMETRI_2** — Periode fungsi y = 4 sin(3x) + 1 (x dalam radian) adalah …
+  A. π/3 · B. 2π/3 · C. 3 · D. 6π
+  Kunci: **B** · Periode = 2π/B dengan B = 3, jadi 2π/3.
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.MODEL_PERIODIK_TRIGONOMETRI_3** — Bianglala berdiameter 40 m dengan titik terendah 2 m di atas tanah berputar sekali tiap 10 menit. Garis tengah (D) model tinggi penumpang adalah …
+  A. 22 m · B. 20 m · C. 40 m · D. 42 m
+  Kunci: **A** · Tinggi berkisar 2 m sampai 42 m, sehingga D = (2 + 42)/2 = 22 m.
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.MODEL_1** — Data y untuk x = 0, 1, 2, 3 adalah 5, 10, 20, 40. Model yang paling sesuai adalah …
+  A. kuadrat · B. trigonometri · C. eksponensial · D. linear
+  Kunci: **C** · Rasio berurutannya tetap 2 (10/5 = 20/10 = 40/20), ciri pertumbuhan eksponensial.
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.MODEL_2** — Data y untuk x = 0, 1, 2, 3, 4 adalah 1, 4, 9, 16, 25. Selisih kedua data ini …
+  A. tetap 1, sehingga modelnya trigonometri · B. tetap 2, sehingga modelnya kuadrat · C. tetap 3, sehingga modelnya linear · D. tidak tetap, sehingga modelnya eksponensial
+  Kunci: **B** · Selisih pertama 3, 5, 7, 9 dan selisih keduanya selalu 2, jadi datanya mengikuti fungsi kuadrat y = (x + 1)².
+- [ ] **MAT.C26.FPLUS.FUNGSI.Q.MODEL_3** — Jumlah pengunjung taman selalu tinggi di akhir pekan dan rendah di tengah pekan, berulang tiap minggu. Model yang tepat adalah fungsi …
+  A. trigonometri dengan periode 7 hari · B. linear naik · C. eksponensial dengan rasio 7 · D. rasional dengan asimtot x = 7
+  Kunci: **A** · Pola naik-turun yang berulang setiap minggu adalah ciri model periodik dengan periode 7 hari.
+
+## Persamaan lingkaran (MAT.C26.FPLUS.LINGKARAN)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.PERSAMAAN_LINGKARAN_1** — Persamaan lingkaran berpusat (−3, 4) dan berjari-jari 6 adalah …
+  A. (x + 3)² + (y − 4)² = 6 · B. (x − 3)² + (y − 4)² = 36 · C. (x + 3)² + (y − 4)² = 36 · D. (x − 3)² + (y + 4)² = 36
+  Kunci: **C** · Substitusi a = −3, b = 4, dan r² = 36 ke (x − a)² + (y − b)² = r².
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.PERSAMAAN_LINGKARAN_2** — Lingkaran berpusat di O melalui titik (6, −8). Persamaannya adalah …
+  A. x² + y² = 28 · B. x² + y² = 100 · C. x² + y² = 10 · D. x² + y² = 14
+  Kunci: **B** · r² = 6² + (−8)² = 100.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.PERSAMAAN_LINGKARAN_3** — Lingkaran memiliki diameter AB dengan A(1, 2) dan B(7, 10). Persamaannya adalah …
+  A. (x − 4)² + (y − 6)² = 25 · B. (x − 4)² + (y − 6)² = 100 · C. (x − 3)² + (y − 4)² = 25 · D. (x − 8)² + (y − 12)² = 25
+  Kunci: **A** · Pusat adalah titik tengah AB, yaitu (4, 6), dan jari-jarinya setengah panjang AB = 10/2 = 5.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.BENTUK_UMUM_DAN_PUSAT_JARI_JARI_1** — Pusat lingkaran x² + y² + 8x − 2y − 8 = 0 adalah …
+  A. (4, −1) · B. (8, −2) · C. (−8, 2) · D. (−4, 1)
+  Kunci: **D** · Pusat (−A/2, −B/2) = (−8/2, 2/2) = (−4, 1).
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.BENTUK_UMUM_DAN_PUSAT_JARI_JARI_2** — Jari-jari lingkaran x² + y² − 4x + 6y − 12 = 0 adalah …
+  A. 5 · B. √12 · C. 25 · D. 1
+  Kunci: **A** · r = √(16/4 + 36/4 + 12) = √(4 + 9 + 12) = 5.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.BENTUK_UMUM_DAN_PUSAT_JARI_JARI_3** — Persamaan 2x² + 2y² − 8x + 12y + 8 = 0 menyatakan lingkaran dengan jari-jari …
+  A. √13 · B. 3 · C. √26 · D. 9
+  Kunci: **B** · Bagi dengan 2 dulu: x² + y² − 4x + 6y + 4 = 0, sehingga r = √(4 + 9 − 4) = 3.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.KEDUDUKAN_1** — Kedudukan titik (5, 1) terhadap lingkaran x² + y² = 25 adalah …
+  A. di dalam lingkaran · B. di pusat lingkaran · C. di luar lingkaran · D. pada lingkaran
+  Kunci: **C** · 5² + 1² = 26, lebih besar dari r² = 25.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.KEDUDUKAN_2** — Kedudukan garis y = x + 1 terhadap lingkaran x² + y² = 1 adalah …
+  A. melalui pusat · B. memotong di dua titik · C. menyinggung · D. tidak memotong
+  Kunci: **B** · Substitusi memberi 2x² + 2x = 0 dengan D = 4 > 0, jadi ada dua titik potong, yaitu (0, 1) dan (−1, 0).
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.KEDUDUKAN_3** — Jarak pusat lingkaran (x − 2)² + (y − 3)² = 9 ke garis 3x + 4y + 2 = 0 adalah 4. Kedudukan garis itu adalah …
+  A. tidak memotong lingkaran · B. menyinggung lingkaran · C. memotong di dua titik · D. melalui pusat lingkaran
+  Kunci: **A** · Jarak pusat ke garis (4) lebih besar dari jari-jari (3), sehingga garis berada di luar lingkaran.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.SINGGUNG_1** — Persamaan garis singgung lingkaran x² + y² = 25 di titik (3, 4) adalah …
+  A. 3x − 4y = 25 · B. 3x + 4y = 5 · C. 3x + 4y = 25 · D. 4x + 3y = 25
+  Kunci: **C** · Gunakan x₁x + y₁y = r² dengan (x₁, y₁) = (3, 4) dan r² = 25.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.SINGGUNG_2** — Garis singgung lingkaran x² + y² = 9 yang bergradien 0 adalah …
+  A. y = x ± 3 · B. y = 3 dan y = −3 · C. x = 3 dan x = −3 · D. y = 9 dan y = −9
+  Kunci: **B** · Dengan m = 0, y = 0 · x ± 3√1, sehingga y = 3 atau y = −3.
+- [ ] **MAT.C26.FPLUS.LINGKARAN.Q.SINGGUNG_3** — Persamaan garis singgung lingkaran (x − 1)² + (y + 2)² = 10 di titik (2, 1) adalah …
+  A. x + 3y = 5 · B. x + 3y = 10 · C. 3x + y = 7 · D. x − 3y = −1
+  Kunci: **A** · (2 − 1)(x − 1) + (1 + 2)(y + 2) = 10 menjadi x − 1 + 3y + 6 = 10, yaitu x + 3y = 5.
+
+## Limit fungsi (MAT.C26.FPLUS.LIMIT)
+
+Materi: 4 · Soal: 12
+
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.KONSEP_LIMIT_1** — Tabel f(x) untuk x = 2,9; 2,99; 2,999 adalah 5,8; 5,98; 5,998 dan untuk x = 3,1; 3,01; 3,001 adalah 6,2; 6,02; 6,002. Nilai lim x→3 f(x) adalah …
+  A. 6 · B. 5,998 · C. 3 · D. tidak ada
+  Kunci: **A** · Dari kiri dan dari kanan, nilai f(x) sama-sama mendekati 6.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.KONSEP_LIMIT_2** — Fungsi f(x) = x + 1 untuk x < 1 dan f(x) = 2x untuk x ≥ 1. Nilai lim x→1 f(x) adalah …
+  A. 1 · B. 3 · C. tidak ada · D. 2
+  Kunci: **D** · Limit kiri 1 + 1 = 2 dan limit kanan 2 · 1 = 2 sama, sehingga limitnya 2.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.KONSEP_LIMIT_3** — Fungsi g(x) = 3 untuk x < 0 dan g(x) = −3 untuk x ≥ 0. Pernyataan yang benar adalah …
+  A. lim x→0 g(x) = 3 · B. lim x→0 g(x) = −3 · C. lim x→0 g(x) tidak ada · D. lim x→0 g(x) = 0
+  Kunci: **C** · Limit kiri 3 berbeda dengan limit kanan −3, jadi limit di x = 0 tidak ada.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.LIMIT_FUNGSI_ALJABAR_1** — Nilai lim x→−1 (2x³ − x + 4) adalah …
+  A. −3 · B. 3 · C. 5 · D. 1
+  Kunci: **B** · Substitusi langsung: 2(−1)³ − (−1) + 4 = −2 + 1 + 4 = 3.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.LIMIT_FUNGSI_ALJABAR_2** — Nilai lim x→2 (x² − 5x + 6)/(x − 2) adalah …
+  A. 1 · B. tidak ada · C. −1 · D. 0
+  Kunci: **C** · Pembilang = (x − 2)(x − 3), sehingga bentuknya menjadi x − 3 dan limitnya 2 − 3 = −1.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.LIMIT_FUNGSI_ALJABAR_3** — Nilai lim x→9 (x − 9)/(√x − 3) adalah …
+  A. 0 · B. 3 · C. 1/6 · D. 6
+  Kunci: **D** · x − 9 = (√x − 3)(√x + 3), sehingga limitnya √9 + 3 = 6.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.TAKHINGGA_1** — Nilai lim x→∞ (4x² − x)/(2x² + 7) adalah …
+  A. 0 · B. tak hingga · C. 2 · D. 4
+  Kunci: **C** · Derajat pembilang dan penyebut sama, jadi limitnya 4/2 = 2.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.TAKHINGGA_2** — Nilai lim x→∞ (3x + 1)/(x² − 5) adalah …
+  A. −1/5 · B. 0 · C. 3 · D. tak hingga
+  Kunci: **B** · Derajat pembilang (1) lebih kecil daripada derajat penyebut (2), sehingga limitnya 0.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.TAKHINGGA_3** — Nilai lim x→∞ (√(x² + 6x) − √(x² − 2x)) adalah …
+  A. 4 · B. 2 · C. 8 · D. 0
+  Kunci: **A** · Dengan rumus (b − q)/(2√a): (6 − (−2))/(2 · 1) = 4.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.TRIGONOMETRI_1** — Nilai lim x→0 sin 5x / (2x) adalah …
+  A. 2/5 · B. 5 · C. 1 · D. 5/2
+  Kunci: **D** · Bentuk sin(ax)/(bx) dengan a = 5 dan b = 2 menghasilkan 5/2.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.TRIGONOMETRI_2** — Nilai lim x→0 tan 6x / sin 3x adalah …
+  A. 2 · B. 1/2 · C. 18 · D. 3
+  Kunci: **A** · tan(ax)/sin(bx) → a/b = 6/3 = 2.
+- [ ] **MAT.C26.FPLUS.LIMIT.Q.TRIGONOMETRI_3** — Nilai lim x→0 (1 − cos 4x)/x² adalah …
+  A. 2 · B. 8 · C. 4 · D. 16
+  Kunci: **B** · 1 − cos 4x = 2 sin² 2x, sehingga limitnya 2 · 2² = 8.
+
+## Turunan lanjut (MAT.C26.FPLUS.TURUNAN)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.ATURAN_RANTAI_1** — Turunan y = (2x − 5)³ adalah …
+  A. 6(2x − 5)² · B. 3(2x − 5)² · C. 6(2x − 5)³ · D. 2(2x − 5)²
+  Kunci: **A** · 3(2x − 5)² dikalikan turunan bagian dalam 2, menjadi 6(2x − 5)².
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.ATURAN_RANTAI_2** — Turunan y = √(4x + 1) adalah …
+  A. 1/(2√(4x + 1)) · B. 4√(4x + 1) · C. 1/√(4x + 1) · D. 2/√(4x + 1)
+  Kunci: **D** · ½(4x + 1)^(−1/2) · 4 = 2/√(4x + 1).
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.ATURAN_RANTAI_3** — Jika f(x) = (x² + 1)⁵, nilai f′(1) adalah …
+  A. 32 · B. 10 · C. 160 · D. 80
+  Kunci: **C** · f′(x) = 10x(x² + 1)⁴, sehingga f′(1) = 10 · 1 · 2⁴ = 160.
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.TURUNAN_FUNGSI_TRIGONOMETRI_1** — Turunan y = 3 sin x − 2 cos x adalah …
+  A. 3 sin x + 2 cos x · B. 3 cos x + 2 sin x · C. 3 cos x − 2 sin x · D. −3 cos x + 2 sin x
+  Kunci: **B** · (sin x)′ = cos x dan (cos x)′ = −sin x, jadi 3 cos x − 2(−sin x) = 3 cos x + 2 sin x.
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.TURUNAN_FUNGSI_TRIGONOMETRI_2** — Turunan y = cos(4x) adalah …
+  A. −sin 4x · B. −4 cos 4x · C. −4 sin 4x · D. 4 sin 4x
+  Kunci: **C** · Turunan luar −sin 4x dikalikan turunan bagian dalam 4.
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.TURUNAN_FUNGSI_TRIGONOMETRI_3** — Jika f(x) = x² cos x, nilai f′(π) adalah …
+  A. 2π · B. −π² · C. 0 · D. −2π
+  Kunci: **D** · f′(x) = 2x cos x − x² sin x; di x = π: 2π(−1) − π² · 0 = −2π.
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.STASIONER_1** — Fungsi f(x) = x² − 6x + 1 naik pada interval …
+  A. x > −3 · B. x < 6 · C. x > 3 · D. x < 3
+  Kunci: **C** · f′(x) = 2x − 6 > 0 saat x > 3.
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.STASIONER_2** — Titik stasioner f(x) = x³ − 12x terjadi di …
+  A. x = 2 saja · B. x = 2 dan x = −2 · C. x = 0 dan x = 12 · D. x = 4 dan x = −4
+  Kunci: **B** · f′(x) = 3x² − 12 = 0 memberi x² = 4, jadi x = ±2.
+- [ ] **MAT.C26.FPLUS.TURUNAN.Q.STASIONER_3** — Nilai maksimum lokal f(x) = −x³ + 3x² + 2 adalah …
+  A. 6 · B. 2 · C. 0 · D. 10
+  Kunci: **A** · Titik stasioner x = 0 dan x = 2; f″(2) = −6 < 0, sehingga maksimumnya f(2) = −8 + 12 + 2 = 6.
+
+## Integral lanjut (MAT.C26.FPLUS.INTEGRAL)
+
+Materi: 3 · Soal: 9
+
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.INTEGRAL_SUBSTITUSI_1** — Hasil ∫3x²(x³ − 2)⁴ dx adalah …
+  A. (x³ − 2)⁴/4 + C · B. (x³ − 2)⁵/5 + C · C. (x³ − 2)⁵ + C · D. 3(x³ − 2)⁵/5 + C
+  Kunci: **B** · Dengan u = x³ − 2 dan du = 3x² dx, integralnya ∫u⁴ du = u⁵/5 + C.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.INTEGRAL_SUBSTITUSI_2** — Hasil ∫cos(5x) dx adalah …
+  A. −(1/5) sin 5x + C · B. sin 5x + C · C. (1/5) sin 5x + C · D. 5 sin 5x + C
+  Kunci: **C** · Misalkan u = 5x sehingga du = 5 dx; integralnya (1/5) sin 5x + C.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.INTEGRAL_SUBSTITUSI_3** — Hasil ∫x/(x² + 4)² dx adalah …
+  A. 1/(2(x² + 4)) + C · B. −1/(x² + 4) + C · C. −2/(x² + 4)³ + C · D. −1/(2(x² + 4)) + C
+  Kunci: **D** · Dengan u = x² + 4, x dx = ½ du, sehingga ½ ∫u⁻² du = −1/(2u) + C.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.LUAS_DAERAH_ANTARA_DUA_KURVA_1** — Luas daerah yang dibatasi y = x² dan sumbu x pada 0 ≤ x ≤ 3 adalah …
+  A. 9 satuan luas · B. 27 satuan luas · C. 3 satuan luas · D. 6 satuan luas
+  Kunci: **A** · ∫₀³ x² dx = [x³/3]₀³ = 27/3 = 9.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.LUAS_DAERAH_ANTARA_DUA_KURVA_2** — Luas daerah yang dibatasi y = 4 − x² dan sumbu x adalah …
+  A. 16/3 satuan luas · B. 8 satuan luas · C. 16 satuan luas · D. 32/3 satuan luas
+  Kunci: **D** · Kurva memotong sumbu x di x = ±2; ∫₋₂² (4 − x²) dx = 16 − 16/3 = 32/3.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.LUAS_DAERAH_ANTARA_DUA_KURVA_3** — Luas daerah antara y = x² dan y = 2x adalah …
+  A. 4 satuan luas · B. 2/3 satuan luas · C. 4/3 satuan luas · D. 8/3 satuan luas
+  Kunci: **C** · Titik potong x = 0 dan x = 2, dengan garis y = 2x di atas: ∫₀² (2x − x²) dx = 4 − 8/3 = 4/3.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.VOLUME_1** — Daerah di bawah y = x pada 0 ≤ x ≤ 3 diputar mengelilingi sumbu x. Volume benda putarnya adalah …
+  A. 3π · B. 27π · C. 9π/2 · D. 9π
+  Kunci: **D** · V = π ∫₀³ x² dx = π · 27/3 = 9π, sama dengan volume kerucut berjari-jari 3 dan tinggi 3.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.VOLUME_2** — Daerah di bawah y = √x pada 0 ≤ x ≤ 4 diputar mengelilingi sumbu x. Volumenya adalah …
+  A. 8π · B. 16π · C. 4π · D. 2π
+  Kunci: **A** · V = π ∫₀⁴ (√x)² dx = π ∫₀⁴ x dx = π · 16/2 = 8π.
+- [ ] **MAT.C26.FPLUS.INTEGRAL.Q.VOLUME_3** — Daerah antara y = 2 dan y = 1 pada 0 ≤ x ≤ 5 diputar mengelilingi sumbu x. Volumenya adalah …
+  A. 45π · B. 15π · C. 5π · D. 25π
+  Kunci: **B** · Metode cincin: π ∫₀⁵ (2² − 1²) dx = π · 3 · 5 = 15π.
+
+## Pemanasan global dan perubahan iklim (FIS.C26.E.IKLIM)
+
+Materi: 4 · Soal: 12
+
+- [ ] **FIS.C26.E.IKLIM.Q.EFEK_RUMAH_KACA_1** — Radiasi yang terutama diserap gas rumah kaca adalah …
+  A. inframerah yang dipancarkan permukaan Bumi · B. cahaya tampak dari Matahari · C. sinar ultraviolet dari Matahari · D. gelombang radio
+  Kunci: **A** · Permukaan Bumi yang hangat memancarkan inframerah, dan radiasi itulah yang ditahan CO₂, metana, dan uap air.
+- [ ] **FIS.C26.E.IKLIM.Q.EFEK_RUMAH_KACA_2** — Gas berikut yang termasuk gas rumah kaca adalah …
+  A. nitrogen (N₂) · B. oksigen (O₂) · C. argon (Ar) · D. metana (CH₄)
+  Kunci: **D** · Metana menyerap inframerah dengan kuat; N₂, O₂, dan Ar hampir tidak menyerapnya.
+- [ ] **FIS.C26.E.IKLIM.Q.EFEK_RUMAH_KACA_3** — Pernyataan yang tepat tentang efek rumah kaca adalah …
+  A. efek rumah kaca disebabkan oleh lubang ozon · B. efek rumah kaca mendinginkan Bumi · C. efek alaminya membuat Bumi layak huni, tetapi tambahan gas dari manusia menaikkan suhu · D. efek rumah kaca seluruhnya disebabkan manusia
+  Kunci: **C** · Tanpa gas rumah kaca alami Bumi akan jauh lebih dingin; yang menjadi masalah adalah tambahan emisi dari aktivitas manusia.
+- [ ] **FIS.C26.E.IKLIM.Q.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_1** — Kegiatan yang paling banyak menambah CO₂ ke atmosfer adalah …
+  A. pemakaian sepeda · B. pembakaran bahan bakar fosil · C. penanaman pohon · D. penggunaan panel surya
+  Kunci: **B** · Batu bara, minyak, dan gas yang dibakar di pembangkit listrik, industri, dan kendaraan adalah sumber CO₂ terbesar.
+- [ ] **FIS.C26.E.IKLIM.Q.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_2** — Penebangan hutan mempercepat pemanasan global karena …
+  A. tanah menjadi lebih dingin · B. oksigen di udara bertambah · C. berkurangnya tumbuhan yang menyerap CO₂ lewat fotosintesis · D. pohon menghasilkan metana
+  Kunci: **C** · Pohon menyimpan karbon dan menyerap CO₂; deforestasi melepas karbon itu dan mengurangi penyerapannya.
+- [ ] **FIS.C26.E.IKLIM.Q.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_3** — Berikut yang merupakan bukti pemanasan global adalah …
+  A. suhu siang lebih tinggi daripada malam · B. musim hujan terjadi setiap tahun · C. Matahari terbit dari timur · D. permukaan air laut rata-rata terus naik
+  Kunci: **D** · Kenaikan muka laut terjadi karena air laut yang menghangat memuai dan es daratan mencair.
+- [ ] **FIS.C26.E.IKLIM.Q.DAMPAK_1** — Dampak kenaikan muka laut yang paling dirasakan kota pesisir adalah …
+  A. meningkatnya salju · B. berkurangnya gelombang laut · C. banjir rob dan abrasi pantai · D. gempa bumi
+  Kunci: **C** · Air laut yang lebih tinggi lebih mudah menggenangi daratan rendah dan mengikis garis pantai.
+- [ ] **FIS.C26.E.IKLIM.Q.DAMPAK_2** — Pemutihan terumbu karang terutama dipicu oleh …
+  A. meningkatnya cahaya bulan · B. suhu air laut yang terlalu tinggi · C. bertambahnya ikan karang · D. air laut yang terlalu dingin
+  Kunci: **B** · Pada air yang terlalu hangat, karang melepas alga simbionnya sehingga warnanya memudar dan karang bisa mati.
+- [ ] **FIS.C26.E.IKLIM.Q.DAMPAK_3** — Pernyataan yang tepat tentang perubahan iklim adalah …
+  A. dapat menyebabkan kekeringan di satu daerah dan hujan ekstrem di daerah lain · B. hanya membuat semua tempat menjadi lebih panas secara merata · C. tidak berpengaruh pada pertanian · D. hanya terjadi di wilayah kutub
+  Kunci: **A** · Pemanasan mengubah pola sirkulasi atmosfer, sehingga dampaknya berbeda di setiap wilayah.
+- [ ] **FIS.C26.E.IKLIM.Q.MITIGASI_1** — Tindakan berikut yang termasuk mitigasi perubahan iklim adalah …
+  A. menanam padi tahan kekeringan · B. mengganti lampu pijar dengan lampu LED · C. meninggikan rumah di daerah rawan banjir · D. membangun tanggul laut
+  Kunci: **B** · Lampu LED memakai listrik lebih sedikit, sehingga emisi dari pembangkit berkurang; tiga pilihan lain adalah adaptasi.
+- [ ] **FIS.C26.E.IKLIM.Q.MITIGASI_2** — Pembuatan sistem peringatan dini banjir termasuk …
+  A. penyebab pemanasan global · B. efek rumah kaca alami · C. adaptasi · D. mitigasi
+  Kunci: **C** · Peringatan dini tidak mengurangi emisi, tetapi mengurangi kerugian akibat banjir.
+- [ ] **FIS.C26.E.IKLIM.Q.MITIGASI_3** — Menanam mangrove di pesisir disebut bermanfaat ganda karena …
+  A. hanya mengurangi emisi kendaraan · B. menaikkan suhu laut · C. mempercepat kenaikan muka laut · D. menyerap karbon sekaligus melindungi pantai dari abrasi
+  Kunci: **D** · Mangrove menyimpan banyak karbon (mitigasi) dan meredam gelombang serta abrasi (adaptasi).
+
+## Pembangkit energi terbarukan (FIS.C26.E.TERBARUKAN)
+
+Materi: 3 · Soal: 9
+
+- [ ] **FIS.C26.E.TERBARUKAN.Q.ENERGI_SURYA_DAN_SEL_SURYA_1** — Perubahan energi pada sel surya adalah …
+  A. energi listrik menjadi energi cahaya · B. energi cahaya menjadi energi listrik · C. energi kimia menjadi energi listrik · D. energi gerak menjadi energi listrik
+  Kunci: **B** · Sel fotovoltaik menyerap foton dan menghasilkan arus listrik secara langsung.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.ENERGI_SURYA_DAN_SEL_SURYA_2** — Panel surya seluas 1,5 m² menerima intensitas 800 W/m² dengan efisiensi 15%. Daya listriknya adalah …
+  A. 120 W · B. 800 W · C. 180 W · D. 1.200 W
+  Kunci: **C** · P = 0,15 × 800 × 1,5 = 180 W.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.ENERGI_SURYA_DAN_SEL_SURYA_3** — Rumah yang hanya memakai panel surya tetap membutuhkan baterai karena …
+  A. panel menghasilkan listrik bolak-balik · B. baterai menaikkan efisiensi panel · C. panel hanya bekerja saat hujan · D. panel tidak menghasilkan listrik saat malam
+  Kunci: **D** · Energi berlebih di siang hari disimpan di baterai untuk dipakai saat tidak ada cahaya.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_1** — Urutan perubahan energi pada PLTA adalah …
+  A. potensial → kinetik → listrik · B. kinetik → potensial → listrik · C. kimia → panas → listrik · D. listrik → kinetik → potensial
+  Kunci: **A** · Air di ketinggian memiliki energi potensial, berubah menjadi kinetik saat jatuh, lalu turbin dan generator mengubahnya menjadi listrik.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_2** — Air dengan debit 10 m³/s jatuh dari ketinggian 20 m (ρ = 1.000 kg/m³, g = 10 m/s²). Jika efisiensinya 80%, daya listriknya adalah …
+  A. 2 MW · B. 160 kW · C. 16 MW · D. 1,6 MW
+  Kunci: **D** · P = 0,8 × 1.000 × 10 × 10 × 20 = 1.600.000 W = 1,6 MW.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_3** — Jika kecepatan angin naik dari 4 m/s menjadi 8 m/s, daya turbin angin menjadi …
+  A. 4 kali semula · B. 16 kali semula · C. 8 kali semula · D. 2 kali semula
+  Kunci: **C** · Daya sebanding v³, sehingga kecepatan dua kali lipat membuat daya menjadi 2³ = 8 kali.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.PANASBUMI_1** — Kelebihan PLTP dibanding PLTS adalah …
+  A. tidak menghasilkan uap · B. dapat menghasilkan listrik terus-menerus, siang dan malam · C. tidak memerlukan turbin · D. dapat dibangun di mana saja
+  Kunci: **B** · Sumber panasnya berasal dari dalam Bumi dan tidak bergantung pada cahaya Matahari.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.PANASBUMI_2** — Biogas dari kotoran sapi terutama mengandung gas …
+  A. nitrogen · B. helium · C. metana · D. oksigen
+  Kunci: **C** · Penguraian bahan organik tanpa oksigen oleh bakteri menghasilkan gas metana yang dapat dibakar.
+- [ ] **FIS.C26.E.TERBARUKAN.Q.PANASBUMI_3** — Sebuah pulau kecil terpencil yang cerah sepanjang tahun dan jauh dari gunung api paling cocok memakai …
+  A. pembangkit listrik tenaga panas bumi · B. PLTA bendungan besar · C. pembangkit listrik tenaga batu bara skala besar · D. pembangkit listrik tenaga surya dengan baterai
+  Kunci: **D** · Sinar Matahari melimpah dan panel dapat dipasang bertahap, sementara panas bumi dan bendungan besar butuh kondisi geologi atau sungai tertentu.
+
+## Wujud zat dan teori partikel (KIM.C26.D.PARTIKEL)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.D.PARTIKEL.Q.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL_1** — Zat yang bentuknya berubah sesuai wadah tetapi volumenya tetap adalah zat …
+  A. gas · B. plasma · C. cair · D. padat
+  Kunci: **C** · Partikel zat cair dapat bergeser tetapi tetap berdekatan, sehingga volumenya tidak berubah.
+- [ ] **KIM.C26.D.PARTIKEL.Q.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL_2** — Gas mudah dimampatkan karena …
+  A. partikelnya tersusun teratur · B. jarak antarpartikelnya besar · C. partikelnya tidak bergerak · D. gaya tarik antarpartikelnya paling kuat
+  Kunci: **B** · Ruang kosong di antara partikel gas banyak, sehingga partikel bisa didorong saling mendekat.
+- [ ] **KIM.C26.D.PARTIKEL.Q.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL_3** — Pernyataan yang benar tentang partikel zat padat adalah …
+  A. tersusun rapat dan hanya bergetar di tempatnya · B. bergerak bebas ke segala arah · C. berjauhan satu sama lain · D. tidak memiliki gaya tarik
+  Kunci: **A** · Gaya tarik yang kuat menahan partikel padat di posisinya, sehingga partikel hanya bergetar.
+- [ ] **KIM.C26.D.PARTIKEL.Q.PERUBAHAN_WUJUD_ZAT_1** — Butiran air di luar gelas berisi es terbentuk karena peristiwa …
+  A. penguapan air dari dalam gelas · B. pembekuan air · C. penyubliman es · D. pengembunan uap air dari udara
+  Kunci: **D** · Uap air di udara mendingin saat menyentuh permukaan gelas yang dingin, lalu berubah menjadi cair.
+- [ ] **KIM.C26.D.PARTIKEL.Q.PERUBAHAN_WUJUD_ZAT_2** — Perubahan wujud berikut yang melepaskan kalor adalah …
+  A. membeku · B. mencair · C. menguap · D. menyublim
+  Kunci: **A** · Saat membeku, partikel melepas energi sehingga dapat tersusun lebih rapat.
+- [ ] **KIM.C26.D.PARTIKEL.Q.PERUBAHAN_WUJUD_ZAT_3** — Kapur barus di lemari lama-kelamaan habis tanpa meninggalkan cairan. Peristiwa ini adalah …
+  A. mengembun · B. menyublim · C. mencair · D. membeku
+  Kunci: **B** · Kapur barus berubah langsung dari padat menjadi gas tanpa melewati wujud cair.
+- [ ] **KIM.C26.D.PARTIKEL.Q.MASSAJENIS_1** — Sebuah balok bermassa 270 g bervolume 100 cm³. Massa jenisnya adalah …
+  A. 0,37 g/cm³ · B. 270 g/cm³ · C. 2,7 g/cm³ · D. 27 g/cm³
+  Kunci: **C** · ρ = 270 g / 100 cm³ = 2,7 g/cm³, yaitu massa jenis aluminium.
+- [ ] **KIM.C26.D.PARTIKEL.Q.MASSAJENIS_2** — Batu dimasukkan ke gelas ukur sehingga permukaan air naik dari 50 mL ke 70 mL. Jika massa batu 60 g, massa jenisnya adalah …
+  A. 30 g/cm³ · B. 3 g/cm³ · C. 0,86 g/cm³ · D. 1,2 g/cm³
+  Kunci: **B** · Volume batu 70 − 50 = 20 mL = 20 cm³, sehingga ρ = 60/20 = 3 g/cm³.
+- [ ] **KIM.C26.D.PARTIKEL.Q.MASSAJENIS_3** — Minyak (ρ = 0,8 g/cm³) dituang ke dalam air (ρ = 1 g/cm³). Yang terjadi adalah …
+  A. minyak berada di atas air · B. minyak tenggelam ke dasar · C. minyak bercampur rata dengan air · D. air berada di atas minyak
+  Kunci: **A** · Massa jenis minyak lebih kecil daripada air, sehingga minyak terapung di permukaan.
+
+## Atom, ion, dan molekul (KIM.C26.D.ATOM)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.D.ATOM.Q.ATOM_DAN_PARTIKEL_PENYUSUNNYA_1** — Partikel subatom yang bermuatan negatif adalah …
+  A. inti atom · B. elektron · C. proton · D. neutron
+  Kunci: **B** · Elektron bermuatan negatif, proton positif, dan neutron netral.
+- [ ] **KIM.C26.D.ATOM.Q.ATOM_DAN_PARTIKEL_PENYUSUNNYA_2** — Atom karbon memiliki nomor atom 6 dan nomor massa 14. Jumlah neutronnya adalah …
+  A. 14 · B. 20 · C. 8 · D. 6
+  Kunci: **C** · Neutron = 14 − 6 = 8.
+- [ ] **KIM.C26.D.ATOM.Q.ATOM_DAN_PARTIKEL_PENYUSUNNYA_3** — Atom netral oksigen memiliki 8 proton. Jumlah elektronnya adalah …
+  A. 16 · B. 0 · C. 4 · D. 8
+  Kunci: **D** · Pada atom netral, jumlah elektron sama dengan jumlah proton.
+- [ ] **KIM.C26.D.ATOM.Q.ION_DAN_MOLEKUL_1** — Atom magnesium melepas 2 elektron. Ion yang terbentuk adalah …
+  A. Mg²⁺ · B. Mg²⁻ · C. Mg⁺ · D. Mg
+  Kunci: **A** · Melepas dua elektron membuat proton lebih banyak dua, sehingga muatannya +2.
+- [ ] **KIM.C26.D.ATOM.Q.ION_DAN_MOLEKUL_2** — Yang termasuk molekul unsur adalah …
+  A. H₂O · B. CO₂ · C. NaCl · D. O₂
+  Kunci: **D** · O₂ tersusun dari dua atom yang sejenis, yaitu oksigen.
+- [ ] **KIM.C26.D.ATOM.Q.ION_DAN_MOLEKUL_3** — Jumlah atom dalam satu molekul glukosa C₆H₁₂O₆ adalah …
+  A. 18 · B. 12 · C. 24 · D. 3
+  Kunci: **C** · 6 atom C + 12 atom H + 6 atom O = 24 atom.
+- [ ] **KIM.C26.D.ATOM.Q.UNSUR_1** — Lambang unsur besi adalah …
+  A. B · B. Ir · C. Fe · D. Be
+  Kunci: **C** · Lambang besi berasal dari nama Latinnya, ferrum.
+- [ ] **KIM.C26.D.ATOM.Q.UNSUR_2** — Unsur berikut yang termasuk logam adalah …
+  A. karbon (C) · B. tembaga (Cu) · C. belerang (S) · D. oksigen (O)
+  Kunci: **B** · Tembaga mengilap dan menghantarkan listrik serta panas dengan baik, ciri khas logam.
+- [ ] **KIM.C26.D.ATOM.Q.UNSUR_3** — Natrium dan kalium terletak dalam satu golongan. Hal ini berarti keduanya …
+  A. memiliki sifat kimia yang mirip · B. memiliki nomor atom yang sama · C. merupakan nonlogam · D. memiliki massa yang sama
+  Kunci: **A** · Unsur dalam satu golongan menunjukkan sifat kimia yang mirip, misalnya sama-sama bereaksi hebat dengan air.
+
+## Hukum dasar kimia (KIM.C26.E.HUKUMDASAR)
+
+Materi: 4 · Soal: 12
+
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.HUKUM_KEKEKALAN_MASSA_LAVOISIER_1** — Sebanyak 5,6 g besi bereaksi tepat dengan 3,2 g belerang dalam sistem tertutup. Massa besi sulfida yang terbentuk adalah …
+  A. 5,6 g · B. 17,9 g · C. 8,8 g · D. 2,4 g
+  Kunci: **C** · Menurut hukum kekekalan massa, 5,6 + 3,2 = 8,8 g.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.HUKUM_KEKEKALAN_MASSA_LAVOISIER_2** — Kertas dibakar di udara terbuka sehingga abunya lebih ringan daripada kertas semula. Penjelasan yang tepat adalah …
+  A. abu lebih padat · B. sebagian hasil reaksi berupa gas yang keluar ke udara · C. massa hilang selama reaksi · D. hukum kekekalan massa tidak berlaku
+  Kunci: **B** · CO₂ dan uap air hasil pembakaran keluar dari sistem, sehingga massa total tetap tetapi tidak ikut tertimbang.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.HUKUM_KEKEKALAN_MASSA_LAVOISIER_3** — Logam magnesium 2,4 g dibakar dan menghasilkan 4,0 g magnesium oksida. Massa oksigen yang bereaksi adalah …
+  A. 1,6 g · B. 6,4 g · C. 4,0 g · D. 2,4 g
+  Kunci: **A** · Massa oksigen = 4,0 − 2,4 = 1,6 g.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.HUKUM_PERBANDINGAN_TETAP_PROUST_1** — Perbandingan massa C : O dalam CO₂ adalah 3 : 8. Massa oksigen yang diperlukan untuk bereaksi dengan 9 g karbon adalah …
+  A. 8 g · B. 33 g · C. 12 g · D. 24 g
+  Kunci: **D** · 9 g karbon setara 3 × 3 g, sehingga oksigen yang dibutuhkan 3 × 8 = 24 g.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.HUKUM_PERBANDINGAN_TETAP_PROUST_2** — Sebanyak 10 g hidrogen direaksikan dengan 64 g oksigen membentuk air (H : O = 1 : 8). Zat yang bersisa dan massanya adalah …
+  A. hidrogen, 2 g · B. oksigen, 16 g · C. hidrogen, 8 g · D. tidak ada yang bersisa
+  Kunci: **A** · 64 g oksigen hanya membutuhkan 8 g hidrogen, sehingga hidrogen bersisa 10 − 8 = 2 g.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.HUKUM_PERBANDINGAN_TETAP_PROUST_3** — Hukum Proust menyatakan bahwa …
+  A. dua unsur dapat membentuk lebih dari satu senyawa · B. perbandingan massa unsur dalam suatu senyawa selalu tetap · C. massa sebelum dan sesudah reaksi sama · D. volume gas sebanding dengan jumlah molekul
+  Kunci: **B** · Pilihan lain berturut-turut adalah hukum Lavoisier, hipotesis Avogadro, dan dasar hukum Dalton.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.BERGANDA_1** — Nitrogen dan oksigen membentuk NO dan NO₂. Untuk massa nitrogen yang sama, perbandingan massa oksigen NO : NO₂ adalah …
+  A. 1 : 2 · B. 2 : 1 · C. 1 : 1 · D. 7 : 8
+  Kunci: **A** · NO memiliki satu atom O dan NO₂ dua atom O untuk setiap atom N, sehingga perbandingannya 1 : 2.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.BERGANDA_2** — Belerang membentuk dua oksida. Oksida I mengandung 50% S, oksida II mengandung 40% S. Untuk massa belerang yang sama, perbandingan massa oksigen I : II adalah …
+  A. 1 : 2 · B. 3 : 2 · C. 4 : 5 · D. 2 : 3
+  Kunci: **D** · Oksida I: 50 g O per 50 g S (1 : 1). Oksida II: 60 g O per 40 g S (1,5 : 1). Perbandingan oksigennya 1 : 1,5 = 2 : 3, sesuai SO₂ dan SO₃.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.BERGANDA_3** — Hukum perbandingan berganda berlaku untuk pasangan senyawa …
+  A. H₂O dan CO₂ · B. CH₄ dan NH₃ · C. H₂O dan H₂O₂ · D. NaCl dan KCl
+  Kunci: **C** · H₂O dan H₂O₂ dibentuk oleh dua unsur yang sama, yaitu hidrogen dan oksigen.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.VOLUME_1** — Pada reaksi 2H₂(g) + O₂(g) → 2H₂O(g), volume O₂ yang diperlukan untuk bereaksi dengan 10 L H₂ adalah …
+  A. 5 L · B. 10 L · C. 20 L · D. 2 L
+  Kunci: **A** · Perbandingan volume H₂ : O₂ = 2 : 1, sehingga O₂ yang diperlukan 10/2 = 5 L.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.VOLUME_2** — Pada suhu dan tekanan tertentu, 2 L gas N₂ mengandung n molekul. Jumlah molekul dalam 6 L gas CO₂ pada kondisi yang sama adalah …
+  A. n · B. n/3 · C. 6n · D. 3n
+  Kunci: **D** · Menurut Avogadro, volume tiga kali lipat berisi molekul tiga kali lipat: 3n.
+- [ ] **KIM.C26.E.HUKUMDASAR.Q.VOLUME_3** — Pada reaksi C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(g), volume CO₂ yang dihasilkan dari 4 L propana adalah …
+  A. 20 L · B. 16 L · C. 12 L · D. 3 L
+  Kunci: **C** · Perbandingan C₃H₈ : CO₂ = 1 : 3, sehingga 4 L propana menghasilkan 12 L CO₂.
+
+## Kimia hijau dan pembangunan berkelanjutan (KIM.C26.E.HIJAU)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.E.HIJAU.Q.PRINSIP_KIMIA_HIJAU_1** — Prinsip kimia hijau yang paling diutamakan adalah …
+  A. membuang limbah ke tempat yang jauh · B. mengencerkan limbah · C. mencegah terbentuknya limbah · D. mengolah limbah setelah terbentuk
+  Kunci: **C** · Mencegah lebih baik daripada mengolah: limbah yang tidak terbentuk tidak perlu ditangani.
+- [ ] **KIM.C26.E.HIJAU.Q.PRINSIP_KIMIA_HIJAU_2** — Mengganti pelarut organik beracun dengan air dalam suatu proses adalah contoh prinsip …
+  A. pembuatan produk yang sulit terurai · B. penggunaan pelarut yang lebih aman · C. penggunaan bahan baku tak terbarukan · D. peningkatan suhu reaksi
+  Kunci: **B** · Air tidak beracun dan tidak mudah terbakar, sehingga risiko bagi pekerja dan lingkungan berkurang.
+- [ ] **KIM.C26.E.HIJAU.Q.PRINSIP_KIMIA_HIJAU_3** — Penggunaan katalis enzim pada suhu ruang mendukung kimia hijau karena …
+  A. menghemat energi dan mengurangi produk samping · B. menaikkan jumlah limbah · C. membutuhkan suhu sangat tinggi · D. membuat reaksi menjadi lebih lambat
+  Kunci: **A** · Enzim bekerja spesifik pada kondisi ringan, sehingga energi dan limbah samping berkurang.
+- [ ] **KIM.C26.E.HIJAU.Q.EKONOMI_ATOM_1** — Reaksi dengan ekonomi atom 100% adalah reaksi yang …
+  A. menghasilkan produk samping paling banyak · B. berlangsung paling cepat · C. tidak memerlukan katalis · D. seluruh atom pereaksinya menjadi produk yang diinginkan
+  Kunci: **D** · Tidak ada atom yang terbuang menjadi produk samping.
+- [ ] **KIM.C26.E.HIJAU.Q.EKONOMI_ATOM_2** — Pada reaksi CaCO₃ → CaO + CO₂ (Mr CaCO₃ = 100, CaO = 56, CO₂ = 44), ekonomi atom untuk produk CaO adalah …
+  A. 56% · B. 44% · C. 100% · D. 78%
+  Kunci: **A** · Ekonomi atom = 56/100 × 100% = 56%; sisanya terbuang sebagai CO₂.
+- [ ] **KIM.C26.E.HIJAU.Q.EKONOMI_ATOM_3** — Etanol dibuat dengan dua cara: (I) C₂H₄ + H₂O → C₂H₅OH, (II) C₂H₅Br + NaOH → C₂H₅OH + NaBr. Cara yang lebih sesuai prinsip kimia hijau adalah …
+  A. keduanya sama · B. cara I, karena ekonomi atomnya 100% · C. cara II, karena menghasilkan NaBr · D. cara II, karena memakai basa
+  Kunci: **B** · Pada cara I semua atom pereaksi menjadi etanol, sedangkan cara II membuang NaBr sebagai produk samping.
+- [ ] **KIM.C26.E.HIJAU.Q.PENERAPAN_1** — Pembuatan biodiesel dari minyak jelantah sesuai prinsip kimia hijau karena …
+  A. menghasilkan lebih banyak limbah · B. memerlukan pelarut beracun · C. memanfaatkan limbah sebagai bahan baku terbarukan · D. memakai bahan bakar fosil
+  Kunci: **C** · Minyak jelantah yang semula limbah diolah menjadi bahan bakar, sehingga limbah berkurang dan bahan bakunya terbarukan.
+- [ ] **KIM.C26.E.HIJAU.Q.PENERAPAN_2** — Plastik dari pati singkong lebih ramah lingkungan karena …
+  A. lebih awet di tempat sampah · B. mudah terurai dan bahan bakunya terbarukan · C. tidak dapat terurai · D. dibuat dari minyak bumi
+  Kunci: **B** · Pati berasal dari tanaman yang dapat ditanam ulang, dan plastiknya dapat diuraikan mikroorganisme.
+- [ ] **KIM.C26.E.HIJAU.Q.PENERAPAN_3** — Tindakan siswa di sekolah yang paling sesuai dengan prinsip pencegahan limbah adalah …
+  A. membawa botol minum isi ulang · B. membakar sampah plastik di halaman · C. membuang sisa larutan praktikum ke selokan · D. membeli air dalam botol plastik setiap hari
+  Kunci: **A** · Botol isi ulang mencegah sampah plastik terbentuk sejak awal; membakar sampah dan membuang larutan ke selokan justru mencemari.
+
+## Perkembangan model atom (KIM.C26.E.MODELATOM)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.E.MODELATOM.Q.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD_1** — Model atom yang menggambarkan atom seperti roti kismis dikemukakan oleh …
+  A. Bohr · B. Thomson · C. Dalton · D. Rutherford
+  Kunci: **B** · Thomson menggambarkan elektron tersebar dalam bola bermuatan positif, mirip kismis dalam roti.
+- [ ] **KIM.C26.E.MODELATOM.Q.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD_2** — Sebagian besar sinar alfa menembus lempeng emas tanpa dibelokkan. Kesimpulan Rutherford dari hasil ini adalah …
+  A. elektron bermuatan positif · B. inti atom berukuran besar · C. sebagian besar atom berupa ruang kosong · D. atom adalah bola pejal
+  Kunci: **C** · Jika sinar alfa lewat tanpa hambatan, berarti sebagian besar ruang dalam atom kosong.
+- [ ] **KIM.C26.E.MODELATOM.Q.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD_3** — Kelemahan model atom Dalton adalah …
+  A. tidak menjelaskan bahwa atom penyusun unsur · B. menganggap atom sebagian besar ruang kosong · C. menganggap elektron berada di kulit · D. tidak dapat menjelaskan adanya elektron dan sifat listrik atom
+  Kunci: **D** · Dalton menganggap atom tidak bisa dibagi, padahal kemudian ditemukan elektron, proton, dan neutron.
+- [ ] **KIM.C26.E.MODELATOM.Q.MODEL_ATOM_BOHR_1** — Jumlah maksimum elektron pada kulit M (n = 3) adalah …
+  A. 18 · B. 8 · C. 9 · D. 32
+  Kunci: **A** · 2n² = 2 × 3² = 18 elektron.
+- [ ] **KIM.C26.E.MODELATOM.Q.MODEL_ATOM_BOHR_2** — Elektron memancarkan cahaya ketika …
+  A. berpindah ke kulit yang lebih luar · B. berhenti bergerak · C. keluar dari inti atom · D. berpindah dari kulit luar ke kulit yang lebih dalam
+  Kunci: **D** · Kulit dalam berenergi lebih rendah, sehingga selisih energinya dilepas sebagai cahaya.
+- [ ] **KIM.C26.E.MODELATOM.Q.MODEL_ATOM_BOHR_3** — Warna nyala yang khas pada uji nyala logam dapat dijelaskan oleh model atom …
+  A. Thomson · B. Rutherford · C. Bohr · D. Dalton
+  Kunci: **C** · Bohr menjelaskan bahwa energi elektron bertingkat, sehingga cahaya yang dipancarkan memiliki warna tertentu.
+- [ ] **KIM.C26.E.MODELATOM.Q.KONFIGURASI_1** — Konfigurasi elektron atom magnesium (nomor atom 12) adalah …
+  A. 2, 2, 8 · B. 2, 8, 2 · C. 2, 10 · D. 2, 8, 1, 1
+  Kunci: **B** · Kulit K diisi 2, kulit L diisi 8, dan sisanya 2 berada di kulit M.
+- [ ] **KIM.C26.E.MODELATOM.Q.KONFIGURASI_2** — Elektron valensi atom belerang (nomor atom 16) adalah …
+  A. 8 · B. 16 · C. 6 · D. 2
+  Kunci: **C** · Konfigurasinya 2, 8, 6, sehingga kulit terluarnya berisi 6 elektron.
+- [ ] **KIM.C26.E.MODELATOM.Q.KONFIGURASI_3** — Atom X bernomor atom 19. Ion yang paling mudah dibentuk X adalah …
+  A. X⁻ · B. X²⁺ · C. X²⁻ · D. X⁺
+  Kunci: **D** · Konfigurasi 2, 8, 8, 1 memiliki satu elektron valensi yang mudah dilepas, sehingga terbentuk X⁺.
+
+## Hidrokarbon dan minyak bumi (KIM.C26.F.HIDROKARBON)
+
+Materi: 4 · Soal: 12
+
+- [ ] **KIM.C26.F.HIDROKARBON.Q.KEKHASAN_ATOM_KARBON_1** — Atom karbon dapat membentuk empat ikatan kovalen karena …
+  A. memiliki 4 kulit elektron · B. bernomor atom 4 · C. memiliki 4 proton · D. memiliki 4 elektron valensi
+  Kunci: **D** · Karbon (2, 4) membutuhkan 4 elektron lagi untuk stabil, sehingga membentuk 4 pasangan elektron bersama.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.KEKHASAN_ATOM_KARBON_2** — Pada senyawa CH₃–C(CH₃)₂–CH₃, atom C yang mengikat empat atom C lain disebut atom C …
+  A. kuarterner · B. primer · C. sekunder · D. tersier
+  Kunci: **A** · Atom C pusat terikat pada empat gugus CH₃, sehingga disebut C kuarterner.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.KEKHASAN_ATOM_KARBON_3** — Jumlah atom C sekunder pada CH₃–CH₂–CH₂–CH₃ adalah …
+  A. 4 · B. 2 · C. 0 · D. 1
+  Kunci: **B** · Dua atom C di tengah masing-masing mengikat dua atom C lain.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.ALKANA_ALKENA_DAN_ALKUNA_1** — Rumus molekul alkana dengan 5 atom karbon adalah …
+  A. C₅H₈ · B. C₅H₁₄ · C. C₅H₁₂ · D. C₅H₁₀
+  Kunci: **C** · CₙH₂ₙ₊₂ dengan n = 5 memberi C₅H₁₂.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.ALKANA_ALKENA_DAN_ALKUNA_2** — Senyawa C₄H₈ termasuk golongan …
+  A. alkohol · B. alkena · C. alkana · D. alkuna
+  Kunci: **B** · C₄H₈ memenuhi CₙH₂ₙ, rumus umum alkena.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.ALKANA_ALKENA_DAN_ALKUNA_3** — Senyawa yang dapat mengalami reaksi adisi dengan H₂ adalah …
+  A. C₃H₆ · B. C₃H₈ · C. CH₄ · D. C₂H₆
+  Kunci: **A** · C₃H₆ (propena) memiliki ikatan rangkap dua yang dapat dibuka oleh adisi; pilihan lain adalah alkana jenuh.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.TATANAMA_1** — Nama IUPAC untuk CH₃–CH₂–CH(CH₃)–CH₃ adalah …
+  A. 2-metilbutana · B. 3-metilbutana · C. pentana · D. 2-etilpropana
+  Kunci: **A** · Rantai terpanjang 4 C (butana), dan penomoran dari ujung terdekat cabang menempatkan metil di C-2.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.TATANAMA_2** — Nama senyawa CH₃–CH=CH–CH₂–CH₃ adalah …
+  A. 3-pentena · B. 2-pentana · C. 2-pentuna · D. 2-pentena
+  Kunci: **D** · Rantai 5 C dengan ikatan rangkap dua mulai di C-2 bila dinomori dari ujung kiri.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.TATANAMA_3** — Rumus struktur 3-metil-1-butuna adalah …
+  A. H₂C=CH–CH(CH₃)–CH₃ · B. HC≡C–CH₂–CH₂–CH₃ · C. HC≡C–CH(CH₃)–CH₃ · D. CH₃–C≡C–CH(CH₃)₂
+  Kunci: **C** · Butuna dengan rangkap tiga di C-1, ditambah cabang metil di C-3.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.MINYAK_1** — Prinsip pemisahan fraksi minyak bumi adalah perbedaan …
+  A. titik didih · B. massa jenis · C. warna · D. kelarutan dalam air
+  Kunci: **A** · Distilasi bertingkat memisahkan komponen berdasarkan suhu didihnya.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.MINYAK_2** — Gas beracun yang dihasilkan pembakaran tidak sempurna adalah …
+  A. karbon dioksida (CO₂) · B. uap air · C. oksigen · D. karbon monoksida (CO)
+  Kunci: **D** · Kekurangan oksigen membuat karbon hanya teroksidasi menjadi CO, yang mengikat hemoglobin darah.
+- [ ] **KIM.C26.F.HIDROKARBON.Q.MINYAK_3** — Pembakaran sempurna 1 mol propana (C₃H₈) menghasilkan …
+  A. 1 mol CO₂ dan 1 mol H₂O · B. 3 mol CO₂ dan 8 mol H₂O · C. 3 mol CO₂ dan 4 mol H₂O · D. 3 mol CO dan 4 mol H₂O
+  Kunci: **C** · Persamaan setaranya C₃H₈ + 5O₂ → 3CO₂ + 4H₂O.
+
+## Laju reaksi (KIM.C26.F.LAJU)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.F.LAJU.Q.KONSEP_LAJU_REAKSI_1** — Konsentrasi zat A turun dari 0,8 M menjadi 0,2 M dalam 20 detik. Laju berkurangnya A adalah …
+  A. 0,6 M/s · B. 0,01 M/s · C. 0,03 M/s · D. 0,05 M/s
+  Kunci: **C** · v = (0,8 − 0,2)/20 = 0,6/20 = 0,03 M/s.
+- [ ] **KIM.C26.F.LAJU.Q.KONSEP_LAJU_REAKSI_2** — Pada reaksi 2SO₂ + O₂ → 2SO₃, jika laju berkurangnya O₂ adalah 0,1 M/s, laju terbentuknya SO₃ adalah …
+  A. 0,4 M/s · B. 0,2 M/s · C. 0,1 M/s · D. 0,05 M/s
+  Kunci: **B** · Perbandingan koefisien O₂ : SO₃ = 1 : 2, sehingga laju SO₃ = 2 × 0,1 = 0,2 M/s.
+- [ ] **KIM.C26.F.LAJU.Q.KONSEP_LAJU_REAKSI_3** — Satuan laju reaksi yang tepat adalah …
+  A. M/s · B. mol · C. M · D. s/M
+  Kunci: **A** · Laju adalah perubahan konsentrasi (M) per satuan waktu (s).
+- [ ] **KIM.C26.F.LAJU.Q.TEORI_TUMBUKAN_1** — Tumbukan efektif adalah tumbukan yang …
+  A. terjadi paling sering · B. terjadi antara partikel sejenis · C. tidak memerlukan energi · D. menghasilkan reaksi karena energinya cukup dan arahnya tepat
+  Kunci: **D** · Hanya tumbukan dengan energi minimal sebesar Ea dan orientasi yang tepat yang mengubah pereaksi menjadi produk.
+- [ ] **KIM.C26.F.LAJU.Q.TEORI_TUMBUKAN_2** — Energi aktivasi adalah …
+  A. energi minimum yang diperlukan agar tumbukan menghasilkan reaksi · B. energi yang dilepas reaksi · C. energi kinetik rata-rata partikel · D. energi ikatan produk
+  Kunci: **A** · Ea adalah batas energi yang harus dilampaui partikel yang bertumbukan.
+- [ ] **KIM.C26.F.LAJU.Q.TEORI_TUMBUKAN_3** — Reaksi P memiliki Ea = 40 kJ/mol dan reaksi Q memiliki Ea = 90 kJ/mol pada suhu yang sama. Pernyataan yang tepat adalah …
+  A. reaksi P tidak memerlukan tumbukan · B. reaksi P berlangsung lebih cepat · C. reaksi Q berlangsung lebih cepat · D. laju keduanya sama
+  Kunci: **B** · Dengan Ea lebih rendah, lebih banyak partikel P yang memiliki energi cukup untuk bereaksi.
+- [ ] **KIM.C26.F.LAJU.Q.FAKTOR_1** — Pualam serbuk bereaksi lebih cepat dengan HCl daripada pualam bongkahan karena …
+  A. energi aktivasinya naik · B. luas permukaan sentuhnya lebih besar · C. konsentrasinya lebih besar · D. suhunya lebih tinggi
+  Kunci: **B** · Serbuk memiliki permukaan yang jauh lebih luas, sehingga lebih banyak partikel dapat bertumbukan dengan HCl.
+- [ ] **KIM.C26.F.LAJU.Q.FAKTOR_2** — Suatu reaksi berlangsung 2 kali lebih cepat setiap kenaikan suhu 10°C. Jika pada 20°C lajunya v, maka pada 50°C lajunya …
+  A. 6v · B. 30v · C. 8v · D. 3v
+  Kunci: **C** · Dari 20°C ke 50°C ada tiga kali kenaikan 10°C, sehingga laju menjadi 2³ = 8 kali.
+- [ ] **KIM.C26.F.LAJU.Q.FAKTOR_3** — Katalis mempercepat reaksi dengan cara …
+  A. menaikkan energi aktivasi · B. memperbesar ΔH reaksi · C. menambah konsentrasi pereaksi · D. menurunkan energi aktivasi
+  Kunci: **D** · Katalis menyediakan mekanisme lain dengan bukit energi lebih rendah, sehingga lebih banyak tumbukan efektif.
+
+## Sistem koloid (KIM.C26.F.KOLOID)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.F.KOLOID.Q.SISTEM_DISPERSI_DAN_JENIS_KOLOID_1** — Campuran yang tampak homogen, tidak mengendap, dan partikelnya berukuran 1–100 nm disebut …
+  A. suspensi · B. senyawa · C. koloid · D. larutan
+  Kunci: **C** · Ukuran partikel 1–100 nm adalah ciri sistem koloid.
+- [ ] **KIM.C26.F.KOLOID.Q.SISTEM_DISPERSI_DAN_JENIS_KOLOID_2** — Susu termasuk koloid jenis …
+  A. aerosol · B. emulsi · C. sol · D. buih
+  Kunci: **B** · Susu adalah butiran lemak cair yang terdispersi dalam air (cair dalam cair).
+- [ ] **KIM.C26.F.KOLOID.Q.SISTEM_DISPERSI_DAN_JENIS_KOLOID_3** — Asap termasuk koloid dengan fase terdispersi dan medium pendispersi berturut-turut …
+  A. padat dalam gas · B. gas dalam padat · C. cair dalam gas · D. padat dalam cair
+  Kunci: **A** · Asap terdiri atas partikel padat halus yang tersebar di udara, sehingga disebut aerosol padat.
+- [ ] **KIM.C26.F.KOLOID.Q.SIFAT_KOLOID_1** — Sorot lampu proyektor tampak jelas di ruangan berdebu karena …
+  A. gerak Brown · B. koagulasi · C. dialisis · D. efek Tyndall
+  Kunci: **D** · Partikel debu yang berukuran koloid menghamburkan cahaya sehingga berkasnya terlihat.
+- [ ] **KIM.C26.F.KOLOID.Q.SIFAT_KOLOID_2** — Pemberian norit untuk mengatasi sakit perut memanfaatkan sifat koloid …
+  A. adsorpsi · B. koagulasi · C. efek Tyndall · D. gerak Brown
+  Kunci: **A** · Permukaan karbon aktif menyerap racun dan bakteri di saluran pencernaan.
+- [ ] **KIM.C26.F.KOLOID.Q.SIFAT_KOLOID_3** — Prinsip kerja mesin cuci darah (hemodialisis) adalah …
+  A. elektroforesis · B. dialisis dengan selaput semipermeabel · C. koagulasi darah · D. efek Tyndall
+  Kunci: **B** · Zat sisa berukuran kecil menembus selaput, sementara protein dan sel darah yang berukuran besar tertahan.
+- [ ] **KIM.C26.F.KOLOID.Q.PEMBUATAN_1** — Pembuatan sol Fe(OH)₃ dengan meneteskan FeCl₃ ke air mendidih termasuk cara …
+  A. busur Bredig · B. kondensasi · C. dispersi mekanik · D. peptisasi
+  Kunci: **B** · Ion Fe³⁺ bereaksi membentuk partikel Fe(OH)₃ yang bergabung sampai berukuran koloid.
+- [ ] **KIM.C26.F.KOLOID.Q.PEMBUATAN_2** — Kuning telur dalam pembuatan mayones berfungsi sebagai …
+  A. pelarut · B. katalis · C. pengemulsi · D. koagulan
+  Kunci: **C** · Lesitin dalam kuning telur menstabilkan butiran minyak di dalam cairan cuka.
+- [ ] **KIM.C26.F.KOLOID.Q.PEMBUATAN_3** — Pembuatan koloid dengan menggiling partikel kasar sampai halus termasuk cara …
+  A. kondensasi · B. reaksi redoks · C. hidrolisis · D. dispersi mekanik
+  Kunci: **D** · Partikel besar dipecah secara fisik sampai berukuran koloid.
+
+## Asam–basa dan titrasi (KIM.C26.F.ASAMBASA)
+
+Materi: 3 · Soal: 9
+
+- [ ] **KIM.C26.F.ASAMBASA.Q.TEORI_ASAM_BASA_1** — Menurut Brønsted–Lowry, basa adalah zat yang …
+  A. memberi ion H⁺ pada air · B. menerima proton · C. memberi proton · D. menghasilkan H⁺ dalam air
+  Kunci: **B** · Basa Brønsted–Lowry adalah akseptor proton (H⁺).
+- [ ] **KIM.C26.F.ASAMBASA.Q.TEORI_ASAM_BASA_2** — Pada reaksi HCO₃⁻ + H₂O ⇌ CO₃²⁻ + H₃O⁺, pasangan asam–basa konjugasi yang benar adalah …
+  A. H₂O dan CO₃²⁻ · B. H₃O⁺ dan CO₃²⁻ · C. HCO₃⁻ dan CO₃²⁻ · D. HCO₃⁻ dan H₂O
+  Kunci: **C** · HCO₃⁻ memberi satu H⁺ dan menjadi CO₃²⁻, sehingga keduanya berbeda satu proton.
+- [ ] **KIM.C26.F.ASAMBASA.Q.TEORI_ASAM_BASA_3** — Basa konjugasi dari H₂SO₄ adalah …
+  A. SO₄²⁻ · B. H₃SO₄⁺ · C. H₂O · D. HSO₄⁻
+  Kunci: **D** · Basa konjugasi terbentuk setelah asam melepas satu H⁺: H₂SO₄ → HSO₄⁻.
+- [ ] **KIM.C26.F.ASAMBASA.Q.PH_ASAM_DAN_BASA_LEMAH_1** — pH larutan HCl 0,01 M adalah …
+  A. 2 · B. 1 · C. 12 · D. 0,01
+  Kunci: **A** · HCl asam kuat: [H⁺] = 0,01 = 10⁻² M, sehingga pH = 2.
+- [ ] **KIM.C26.F.ASAMBASA.Q.PH_ASAM_DAN_BASA_LEMAH_2** — pH larutan HCOOH 0,04 M (Ka = 10⁻⁴) adalah …
+  A. 2 − log 4 · B. 4 · C. 3 · D. 3 − log 2
+  Kunci: **D** · [H⁺] = √(10⁻⁴ × 0,04) = √(4 × 10⁻⁶) = 2 × 10⁻³ M, sehingga pH = 3 − log 2.
+- [ ] **KIM.C26.F.ASAMBASA.Q.PH_ASAM_DAN_BASA_LEMAH_3** — pH larutan NH₃ 0,01 M (Kb = 10⁻⁶) adalah …
+  A. 8 · B. 12 · C. 10 · D. 4
+  Kunci: **C** · [OH⁻] = √(10⁻⁶ × 10⁻²) = 10⁻⁴ M, pOH = 4, sehingga pH = 14 − 4 = 10.
+- [ ] **KIM.C26.F.ASAMBASA.Q.TITRASI_1** — Sebanyak 20 mL HCl dititrasi dengan NaOH 0,1 M dan membutuhkan 30 mL NaOH. Konsentrasi HCl adalah …
+  A. 0,3 M · B. 0,15 M · C. 0,067 M · D. 0,1 M
+  Kunci: **B** · Va · Ma = Vb · Mb: 20 × Ma = 30 × 0,1, sehingga Ma = 0,15 M.
+- [ ] **KIM.C26.F.ASAMBASA.Q.TITRASI_2** — Volume NaOH 0,2 M yang diperlukan untuk menetralkan 10 mL H₂SO₄ 0,1 M adalah …
+  A. 20 mL · B. 2 mL · C. 10 mL · D. 5 mL
+  Kunci: **C** · H₂SO₄ bervalensi 2: 10 × 0,1 × 2 = V × 0,2 × 1, sehingga V = 10 mL.
+- [ ] **KIM.C26.F.ASAMBASA.Q.TITRASI_3** — Indikator fenolftalein pada titrasi asam dengan basa menandai titik akhir saat larutan …
+  A. berubah dari merah menjadi kuning · B. tetap tak berwarna · C. berubah menjadi biru · D. berubah dari tak berwarna menjadi merah muda
+  Kunci: **D** · Fenolftalein tak berwarna dalam suasana asam dan merah muda saat larutan menjadi sedikit basa.
+
+## Senyawa turunan alkana (KIM.C26.F.GUGUS)
+
+Materi: 4 · Soal: 12
+
+- [ ] **KIM.C26.F.GUGUS.Q.ALKOHOL_DAN_ETER_1** — Gugus fungsi alkohol adalah …
+  A. –COOH · B. –OH · C. –O– · D. –CHO
+  Kunci: **B** · Alkohol dicirikan oleh gugus hidroksil (–OH) yang terikat pada atom karbon.
+- [ ] **KIM.C26.F.GUGUS.Q.ALKOHOL_DAN_ETER_2** — Isomer fungsi dari etanol (C₂H₅OH) adalah …
+  A. etanal · B. asam etanoat · C. dimetil eter (CH₃–O–CH₃) · D. metanol
+  Kunci: **C** · Keduanya memiliki rumus molekul C₂H₆O, tetapi gugus fungsinya berbeda.
+- [ ] **KIM.C26.F.GUGUS.Q.ALKOHOL_DAN_ETER_3** — Cara membedakan 1-propanol dan metoksietana di laboratorium adalah dengan …
+  A. mencium baunya saja · B. mengukur massanya · C. melarutkannya dalam bensin · D. mereaksikannya dengan logam natrium
+  Kunci: **D** · Alkohol bereaksi dengan Na menghasilkan gas H₂, sedangkan eter tidak bereaksi.
+- [ ] **KIM.C26.F.GUGUS.Q.ALDEHIDA_DAN_KETON_1** — Senyawa yang memberi cermin perak pada uji Tollens adalah …
+  A. propanal · B. propanon · C. 2-propanol · D. dimetil eter
+  Kunci: **A** · Aldehida mudah dioksidasi dan mereduksi ion perak menjadi logam perak.
+- [ ] **KIM.C26.F.GUGUS.Q.ALDEHIDA_DAN_KETON_2** — Nama IUPAC aseton adalah …
+  A. propanal · B. etanal · C. propanol · D. propanon
+  Kunci: **D** · Aseton adalah keton dengan tiga atom C (CH₃–CO–CH₃), sehingga namanya propanon.
+- [ ] **KIM.C26.F.GUGUS.Q.ALDEHIDA_DAN_KETON_3** — Gugus fungsi –CHO terdapat pada senyawa …
+  A. asam etanoat · B. etoksietana · C. etanal · D. etanol
+  Kunci: **C** · Akhiran -al menunjukkan aldehida, yang memiliki gugus –CHO.
+- [ ] **KIM.C26.F.GUGUS.Q.KARBOKSILAT_1** — Asam asetat dalam cuka memiliki nama IUPAC …
+  A. etil etanoat · B. etanal · C. asam etanoat · D. asam metanoat
+  Kunci: **C** · Asam asetat (CH₃COOH) memiliki dua atom C dengan gugus –COOH.
+- [ ] **KIM.C26.F.GUGUS.Q.KARBOKSILAT_2** — Hasil reaksi asam propanoat dengan metanol adalah …
+  A. metil propanoat dan hidrogen · B. metil propanoat dan air · C. propil metanoat dan air · D. asam metanoat dan propanol
+  Kunci: **B** · Pada esterifikasi, alkil dari alkohol (metil) dipadukan dengan nama asam (propanoat), dan air dilepas.
+- [ ] **KIM.C26.F.GUGUS.Q.KARBOKSILAT_3** — Senyawa yang merupakan isomer fungsi dari asam butanoat (C₄H₈O₂) adalah …
+  A. etil etanoat · B. butanal · C. butanol · D. butanon
+  Kunci: **A** · Etil etanoat (CH₃COOC₂H₅) juga berumus C₄H₈O₂, tetapi gugus fungsinya ester.
+- [ ] **KIM.C26.F.GUGUS.Q.REAKSI_1** — Reaksi CH₂=CH₂ + HBr → CH₃–CH₂Br termasuk reaksi …
+  A. adisi · B. substitusi · C. eliminasi · D. esterifikasi
+  Kunci: **A** · Ikatan rangkap dua terbuka, lalu H dan Br terikat pada atom C.
+- [ ] **KIM.C26.F.GUGUS.Q.REAKSI_2** — Oksidasi 2-propanol menghasilkan …
+  A. propanal · B. asam propanoat · C. propena · D. propanon
+  Kunci: **D** · 2-propanol adalah alkohol sekunder, sehingga oksidasinya menghasilkan keton.
+- [ ] **KIM.C26.F.GUGUS.Q.REAKSI_3** — Reaksi C₂H₅Cl + NaOH → C₂H₅OH + NaCl termasuk reaksi …
+  A. eliminasi · B. polimerisasi · C. substitusi · D. adisi
+  Kunci: **C** · Atom Cl diganti oleh gugus –OH tanpa terbentuk ikatan rangkap.
+
+## Klasifikasi makhluk hidup (BIO.C26.E.KLASIFIKASI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.SISTEM_KLASIFIKASI_DAN_TAKSON_1** — Takson yang anggotanya paling banyak memiliki persamaan ciri adalah …
+  A. kingdom · B. kelas · C. famili · D. spesies
+  Kunci: **D** · Spesies adalah takson terendah, sehingga anggotanya paling mirip satu sama lain.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.SISTEM_KLASIFIKASI_DAN_TAKSON_2** — Urutan takson yang benar dari tinggi ke rendah adalah …
+  A. kelas – ordo – famili – genus · B. ordo – kelas – genus – famili · C. famili – ordo – kelas – genus · D. genus – famili – ordo – kelas
+  Kunci: **A** · Ordo berada di bawah kelas, famili di bawah ordo, dan genus di bawah famili.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.SISTEM_KLASIFIKASI_DAN_TAKSON_3** — Kuda dan keledai dapat kawin dan menghasilkan bagal yang mandul. Hal ini menunjukkan kuda dan keledai …
+  A. berbeda filum · B. berbeda spesies · C. satu spesies · D. berbeda kingdom
+  Kunci: **B** · Anggota satu spesies menghasilkan keturunan fertil; bagal yang mandul menunjukkan induknya berbeda spesies.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.TATA_NAMA_BINOMIAL_1** — Penulisan nama ilmiah jagung yang benar adalah …
+  A. Zea Mays, dicetak miring · B. ZEA MAYS, huruf tegak · C. Zea mays, dicetak miring · D. zea mays, dicetak miring
+  Kunci: **C** · Genus diawali huruf kapital, penunjuk spesies huruf kecil, dan seluruh nama dicetak miring.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.TATA_NAMA_BINOMIAL_2** — Padi (Oryza sativa) dan padi liar (Oryza rufipogon) berkerabat dekat karena …
+  A. berbeda kingdom · B. satu genus · C. satu spesies · D. berbeda famili
+  Kunci: **B** · Kata pertama nama ilmiahnya sama, yaitu Oryza, sehingga keduanya satu genus.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.TATA_NAMA_BINOMIAL_3** — Manfaat utama nama ilmiah dibanding nama daerah adalah …
+  A. berlaku sama di seluruh dunia sehingga tidak menimbulkan salah paham · B. lebih mudah diucapkan · C. menunjukkan ukuran tubuh makhluk hidup · D. menunjukkan tempat hidup makhluk hidup
+  Kunci: **A** · Satu makhluk bisa punya banyak nama daerah, tetapi hanya satu nama ilmiah yang disepakati.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.KINGDOM_1** — Makhluk hidup bersel satu yang tidak memiliki membran inti dikelompokkan ke dalam kingdom …
+  A. Fungi · B. Plantae · C. Monera · D. Protista
+  Kunci: **C** · Tidak adanya membran inti berarti prokariota, yang dalam sistem lima kingdom masuk Monera.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.KINGDOM_2** — Jamur dipisahkan dari tumbuhan karena jamur …
+  A. prokariota · B. heterotrof dan dinding selnya tersusun kitin · C. memiliki klorofil · D. tidak memiliki dinding sel
+  Kunci: **B** · Jamur tidak berfotosintesis dan dinding selnya kitin, berbeda dengan tumbuhan yang dinding selnya selulosa.
+- [ ] **BIO.C26.E.KLASIFIKASI.Q.KINGDOM_3** — Dasar pembagian makhluk hidup menjadi tiga domain adalah …
+  A. perbedaan RNA ribosom · B. bentuk tubuh · C. tempat hidup · D. cara bergerak
+  Kunci: **A** · Carl Woese membandingkan urutan RNA ribosom dan menemukan tiga kelompok besar.
+
+## Pencemaran dan pengelolaan limbah (BIO.C26.E.LIMBAH)
+
+Materi: 3 · Soal: 9
+
+- [ ] **BIO.C26.E.LIMBAH.Q.PENCEMARAN_LINGKUNGAN_1** — Ledakan populasi alga di danau akibat limbah pupuk disebut …
+  A. biomagnifikasi · B. fotosintesis · C. reboisasi · D. eutrofikasi
+  Kunci: **D** · Nutrien berlebih, terutama fosfat dan nitrat, menyuburkan alga secara berlebihan.
+- [ ] **BIO.C26.E.LIMBAH.Q.PENCEMARAN_LINGKUNGAN_2** — Ikan di sungai mati setelah terjadi ledakan alga terutama karena …
+  A. oksigen terlarut habis saat alga mati diuraikan bakteri · B. suhu air turun · C. air menjadi terlalu jernih · D. alga memakan ikan
+  Kunci: **A** · Bakteri pengurai memakai banyak oksigen, sehingga kadar oksigen terlarut turun drastis.
+- [ ] **BIO.C26.E.LIMBAH.Q.PENCEMARAN_LINGKUNGAN_3** — Banyaknya larva capung di sungai menunjukkan bahwa air sungai …
+  A. tidak mengandung oksigen · B. relatif bersih · C. sangat tercemar · D. mengandung limbah minyak
+  Kunci: **B** · Larva capung membutuhkan air yang kaya oksigen, sehingga menjadi indikator air yang relatif bersih.
+- [ ] **BIO.C26.E.LIMBAH.Q.JENIS_LIMBAH_1** — Yang termasuk limbah organik adalah …
+  A. kaleng minuman · B. kantong plastik · C. kulit buah · D. botol kaca
+  Kunci: **C** · Kulit buah berasal dari makhluk hidup dan mudah diuraikan mikroorganisme.
+- [ ] **BIO.C26.E.LIMBAH.Q.JENIS_LIMBAH_2** — Baterai bekas tergolong limbah B3 karena …
+  A. tidak berbahaya · B. mengandung logam berat yang beracun · C. mudah terurai · D. berasal dari tumbuhan
+  Kunci: **B** · Merkuri, kadmium, atau timbal dalam baterai dapat mencemari tanah dan air.
+- [ ] **BIO.C26.E.LIMBAH.Q.JENIS_LIMBAH_3** — Cara penanganan oli bekas bengkel yang tepat adalah …
+  A. dikumpulkan dan diserahkan ke pengelola limbah B3 berizin · B. dibuang ke selokan · C. dicampur sampah rumah tangga · D. dibakar di tempat terbuka
+  Kunci: **A** · Oli bekas termasuk limbah B3 yang harus dikelola khusus agar tidak mencemari air dan tanah.
+- [ ] **BIO.C26.E.LIMBAH.Q.DAURULANG_1** — Membawa tas belanja sendiri agar tidak memakai kantong plastik termasuk prinsip …
+  A. reduce · B. reuse · C. recycle · D. recovery
+  Kunci: **A** · Tindakan ini mengurangi sampah sejak awal (reduce).
+- [ ] **BIO.C26.E.LIMBAH.Q.DAURULANG_2** — Pengolahan sisa sayuran menjadi pupuk memanfaatkan proses …
+  A. pembakaran · B. pelelehan · C. sterilisasi · D. pengomposan oleh mikroorganisme
+  Kunci: **D** · Mikroorganisme menguraikan bahan organik menjadi kompos yang menyuburkan tanah.
+- [ ] **BIO.C26.E.LIMBAH.Q.DAURULANG_3** — Botol plastik bekas yang dilelehkan dan dibuat menjadi biji plastik baru adalah contoh …
+  A. reuse · B. pengomposan · C. recycle · D. reduce
+  Kunci: **C** · Bahan diolah kembali menjadi bahan baku baru, sehingga termasuk daur ulang.
+
+## Jaringan dan transpor pada tumbuhan (BIO.C26.F.TUMBUHAN)
+
+Materi: 4 · Soal: 12
+
+- [ ] **BIO.C26.F.TUMBUHAN.Q.JARINGAN_TUMBUHAN_1** — Jaringan yang menyebabkan batang tumbuhan dikotil bertambah besar adalah …
+  A. meristem apikal · B. epidermis · C. parenkim · D. kambium
+  Kunci: **D** · Kambium membelah ke arah dalam membentuk xilem dan ke arah luar membentuk floem, sehingga batang membesar.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.JARINGAN_TUMBUHAN_2** — Fungsi floem adalah …
+  A. mengangkut hasil fotosintesis ke seluruh tubuh tumbuhan · B. mengangkut air dari akar · C. melindungi permukaan daun · D. memperkuat batang
+  Kunci: **A** · Floem membawa gula hasil fotosintesis dari daun ke bagian yang membutuhkan.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.JARINGAN_TUMBUHAN_3** — Ciri batang monokotil adalah …
+  A. tidak memiliki xilem · B. berkas pengangkut tersebar dan tidak berkambium · C. berkas pengangkut melingkar dengan kambium · D. memiliki lingkaran tahun
+  Kunci: **B** · Pada monokotil berkas pengangkut tersebar dan tidak ada kambium, sehingga batangnya tidak membesar seperti dikotil.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.ORGAN_TUMBUHAN_1** — Bagian akar yang memperluas bidang penyerapan air adalah …
+  A. kambium · B. endodermis · C. rambut akar · D. tudung akar
+  Kunci: **C** · Rambut akar adalah tonjolan sel epidermis yang menambah luas permukaan.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.ORGAN_TUMBUHAN_2** — Jaringan daun yang paling banyak mengandung kloroplas adalah …
+  A. xilem · B. jaringan palisade · C. jaringan bunga karang · D. epidermis
+  Kunci: **B** · Sel palisade tersusun rapat di bawah epidermis atas dan kaya kloroplas untuk menangkap cahaya.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.ORGAN_TUMBUHAN_3** — Ruang antarsel yang banyak pada jaringan bunga karang berfungsi untuk …
+  A. pertukaran gas · B. menyimpan cadangan makanan · C. mengangkut air · D. melindungi daun
+  Kunci: **A** · Ruang antarsel memudahkan CO₂ masuk dan O₂ serta uap air keluar melalui stomata.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.AIR_1** — Gaya utama yang menarik air dari akar ke daun pada pohon tinggi adalah …
+  A. gravitasi · B. fotosintesis · C. respirasi akar · D. tarikan transpirasi
+  Kunci: **D** · Penguapan di daun menciptakan tarikan yang diteruskan sepanjang kolom air berkat kohesi.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.AIR_2** — Transpirasi paling cepat terjadi pada kondisi …
+  A. panas, berangin, dan udara kering · B. gelap dan lembap · C. dingin dan tanpa angin · D. hujan lebat
+  Kunci: **A** · Suhu tinggi, angin, dan udara kering memperbesar perbedaan uap air antara daun dan udara.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.AIR_3** — Air masuk dari tanah ke dalam sel rambut akar melalui proses …
+  A. gutasi · B. osmosis · C. fotosintesis · D. transpirasi
+  Kunci: **B** · Air berpindah dari tanah yang lebih encer ke sel akar yang lebih pekat melalui membran.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.FLOEM_1** — Bentuk utama hasil fotosintesis yang diangkut melalui floem adalah …
+  A. protein · B. lemak · C. sukrosa · D. amilum
+  Kunci: **C** · Gula diangkut sebagai sukrosa yang larut dan relatif tidak reaktif.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.FLOEM_2** — Kulit batang sebuah pohon dikupas melingkar. Beberapa minggu kemudian bagian di atas kupasan membengkak karena …
+  A. akar tumbuh di bagian itu · B. hasil fotosintesis menumpuk karena floem terputus · C. air menumpuk karena xilem terputus · D. sel kambium mati
+  Kunci: **B** · Floem berada di kulit batang, sehingga gula dari daun tertahan di atas kupasan.
+- [ ] **BIO.C26.F.TUMBUHAN.Q.FLOEM_3** — Pada musim berbuah, organ yang berperan sebagai penerima (sink) utama hasil fotosintesis adalah …
+  A. buah · B. daun dewasa · C. stomata · D. xilem
+  Kunci: **A** · Buah yang sedang berkembang menerima dan menyimpan banyak gula dari daun.
+
+## Sistem gerak manusia (BIO.C26.F.GERAK)
+
+Materi: 4 · Soal: 12
+
+- [ ] **BIO.C26.F.GERAK.Q.RANGKA_DAN_TULANG_1** — Tulang yang termasuk rangka aksial adalah …
+  A. tulang paha · B. tulang lengan atas · C. tulang betis · D. tulang belakang
+  Kunci: **D** · Rangka aksial adalah sumbu tubuh: tengkorak, tulang belakang, dan rusuk.
+- [ ] **BIO.C26.F.GERAK.Q.RANGKA_DAN_TULANG_2** — Sel darah merah dibentuk di …
+  A. sumsum merah tulang · B. tulang rawan · C. sendi · D. otot
+  Kunci: **A** · Sumsum merah di tulang pipih dan ujung tulang pipa adalah tempat pembentukan sel darah.
+- [ ] **BIO.C26.F.GERAK.Q.RANGKA_DAN_TULANG_3** — Proses pembentukan tulang keras dari tulang rawan disebut …
+  A. difusi · B. osifikasi · C. fermentasi · D. fotosintesis
+  Kunci: **B** · Pada osifikasi, osteoblas mengendapkan kalsium sehingga tulang rawan mengeras.
+- [ ] **BIO.C26.F.GERAK.Q.SENDI_1** — Hubungan tulang pada siku termasuk sendi …
+  A. putar · B. pelana · C. engsel · D. peluru
+  Kunci: **C** · Siku hanya bisa ditekuk dan diluruskan ke satu arah, seperti engsel pintu.
+- [ ] **BIO.C26.F.GERAK.Q.SENDI_2** — Sendi yang memungkinkan lengan berputar ke segala arah adalah sendi …
+  A. putar · B. peluru · C. engsel · D. pelana
+  Kunci: **B** · Kepala tulang lengan atas berbentuk bulat dan masuk ke lekukan gelang bahu.
+- [ ] **BIO.C26.F.GERAK.Q.SENDI_3** — Cairan sinovial pada sendi berfungsi untuk …
+  A. mengurangi gesekan antartulang · B. membentuk sel darah · C. mengikat otot ke tulang · D. menyimpan kalsium
+  Kunci: **A** · Cairan sinovial melumasi ujung-ujung tulang sehingga gerakan lancar.
+- [ ] **BIO.C26.F.GERAK.Q.OTOT_1** — Otot yang bekerja tanpa disadari dan terdapat pada dinding usus adalah …
+  A. otot rangka · B. otot lurik lengan · C. otot paha · D. otot polos
+  Kunci: **D** · Otot polos menyusun dinding organ dalam dan bekerja di luar kehendak.
+- [ ] **BIO.C26.F.GERAK.Q.OTOT_2** — Saat lengan diluruskan, otot yang berkontraksi adalah …
+  A. trisep · B. biseps · C. otot jantung · D. diafragma
+  Kunci: **A** · Trisep di belakang lengan atas menarik lengan bawah sehingga lengan lurus.
+- [ ] **BIO.C26.F.GERAK.Q.OTOT_3** — Rasa pegal setelah lari jauh berkaitan dengan …
+  A. berhentinya kerja aktin dan miosin · B. penumpukan asam laktat akibat kekurangan oksigen · C. berlebihnya oksigen di otot · D. bertambahnya kalsium tulang
+  Kunci: **B** · Saat oksigen tidak mencukupi, otot memperoleh energi secara anaerob yang menghasilkan asam laktat.
+- [ ] **BIO.C26.F.GERAK.Q.GANGGUAN_1** — Tulang belakang yang melengkung ke samping disebut …
+  A. kifosis · B. lordosis · C. osteoporosis · D. skoliosis
+  Kunci: **D** · Skoliosis adalah kelengkungan tulang belakang ke kiri atau ke kanan.
+- [ ] **BIO.C26.F.GERAK.Q.GANGGUAN_2** — Rakitis pada anak disebabkan kekurangan …
+  A. vitamin D · B. vitamin C · C. zat besi · D. serat
+  Kunci: **A** · Vitamin D dibutuhkan untuk menyerap kalsium; tanpanya tulang anak menjadi lunak dan bengkok.
+- [ ] **BIO.C26.F.GERAK.Q.GANGGUAN_3** — Upaya yang paling tepat untuk mencegah osteoporosis di usia tua adalah …
+  A. membawa beban berat di satu sisi tubuh · B. mencukupi kalsium dan vitamin D serta rutin berolahraga sejak muda · C. menghindari semua jenis olahraga · D. mengurangi minum susu
+  Kunci: **B** · Massa tulang dibangun sejak muda melalui asupan kalsium, vitamin D, dan latihan beban.
+
+## Sistem pertahanan tubuh (BIO.C26.F.IMUN)
+
+Materi: 4 · Soal: 12
+
+- [ ] **BIO.C26.F.IMUN.Q.PERTAHANAN_NONSPESIFIK_1** — Contoh pertahanan tubuh lapis pertama adalah …
+  A. sel T pembunuh · B. vaksin · C. kulit dan selaput lendir · D. antibodi
+  Kunci: **C** · Kulit dan selaput lendir menghalangi patogen masuk sebelum respons di dalam tubuh bekerja.
+- [ ] **BIO.C26.F.IMUN.Q.PERTAHANAN_NONSPESIFIK_2** — Sel darah putih yang menelan dan mencerna patogen disebut …
+  A. sel plasma · B. fagosit · C. trombosit · D. eritrosit
+  Kunci: **B** · Fagosit, seperti neutrofil dan makrofag, menelan patogen melalui fagositosis.
+- [ ] **BIO.C26.F.IMUN.Q.PERTAHANAN_NONSPESIFIK_3** — Daerah luka yang meradang tampak merah dan hangat karena …
+  A. pembuluh darah melebar akibat histamin · B. sel darah merah rusak · C. tidak ada aliran darah · D. antibodi menempel di kulit
+  Kunci: **A** · Pelebaran pembuluh membuat lebih banyak darah mengalir ke daerah luka, sehingga terasa hangat dan kemerahan.
+- [ ] **BIO.C26.F.IMUN.Q.PERTAHANAN_SPESIFIK_1** — Sel yang menghasilkan antibodi adalah …
+  A. sel T pembunuh · B. neutrofil · C. trombosit · D. sel plasma
+  Kunci: **D** · Limfosit B yang aktif berdiferensiasi menjadi sel plasma penghasil antibodi.
+- [ ] **BIO.C26.F.IMUN.Q.PERTAHANAN_SPESIFIK_2** — Respons imun yang lebih cepat saat terkena antigen yang sama untuk kedua kalinya disebabkan oleh …
+  A. sel memori · B. histamin · C. asam lambung · D. sel darah merah
+  Kunci: **A** · Sel memori sudah mengenali antigen sehingga langsung memicu produksi antibodi dalam jumlah besar.
+- [ ] **BIO.C26.F.IMUN.Q.PERTAHANAN_SPESIFIK_3** — Sel yang langsung menghancurkan sel tubuh yang terinfeksi virus adalah …
+  A. eritrosit · B. sel T pembunuh · C. sel B · D. sel plasma
+  Kunci: **B** · Sel T pembunuh mengenali sel yang menampilkan antigen virus dan menghancurkannya.
+- [ ] **BIO.C26.F.IMUN.Q.VAKSIN_1** — Bayi yang mendapat antibodi dari ASI memiliki kekebalan …
+  A. aktif buatan · B. pasif buatan · C. pasif alami · D. aktif alami
+  Kunci: **C** · Antibodi berasal dari ibu, bukan dibuat sendiri, dan diperoleh secara alami.
+- [ ] **BIO.C26.F.IMUN.Q.VAKSIN_2** — Vaksin melindungi tubuh karena …
+  A. memberikan antibodi siap pakai · B. merangsang pembentukan sel memori terhadap antigen tertentu · C. langsung membunuh semua bakteri · D. menggantikan sel darah putih
+  Kunci: **B** · Antigen dalam vaksin melatih sistem imun sehingga terbentuk sel memori tanpa sakit berat.
+- [ ] **BIO.C26.F.IMUN.Q.VAKSIN_3** — Suntikan serum antibisa ular memberikan kekebalan …
+  A. pasif buatan · B. aktif buatan · C. aktif alami · D. pasif alami
+  Kunci: **A** · Antibodi siap pakai disuntikkan dari luar, sehingga kekebalannya pasif dan buatan.
+- [ ] **BIO.C26.F.IMUN.Q.GANGGUAN_1** — Bersin-bersin setiap kali terkena debu adalah contoh …
+  A. AIDS · B. vaksinasi · C. alergi · D. autoimun
+  Kunci: **C** · Sistem imun bereaksi berlebihan terhadap debu yang sebenarnya tidak berbahaya.
+- [ ] **BIO.C26.F.IMUN.Q.GANGGUAN_2** — HIV melemahkan sistem imun karena menyerang …
+  A. sel otot · B. sel T pembantu · C. sel darah merah · D. trombosit
+  Kunci: **B** · Sel T pembantu mengoordinasi respons imun, sehingga kerusakannya melemahkan pertahanan tubuh.
+- [ ] **BIO.C26.F.IMUN.Q.GANGGUAN_3** — Lupus termasuk penyakit autoimun karena …
+  A. sistem imun menyerang jaringan tubuh sendiri · B. disebabkan virus HIV · C. merupakan reaksi terhadap debu · D. terjadi karena kekurangan vitamin
+  Kunci: **A** · Pada penyakit autoimun, sistem imun gagal membedakan sel sendiri dari benda asing.
+
+## Pola hereditas (BIO.C26.F.HEREDITAS)
+
+Materi: 4 · Soal: 12
+
+- [ ] **BIO.C26.F.HEREDITAS.Q.PENYIMPANGAN_SEMU_HUKUM_MENDEL_1** — Perbandingan fenotipe F₂ 9 : 7 terjadi pada peristiwa …
+  A. komplementer · B. polimeri · C. epistasis · D. kriptomeri
+  Kunci: **A** · Pada komplementer, sifat hanya muncul bila kedua gen dominan hadir bersama (9), sisanya (3 + 3 + 1 = 7) tidak.
+- [ ] **BIO.C26.F.HEREDITAS.Q.PENYIMPANGAN_SEMU_HUKUM_MENDEL_2** — Persilangan dihibrid menghasilkan F₂ dengan perbandingan 15 : 1. Peristiwa ini disebut …
+  A. komplementer · B. kriptomeri · C. pautan · D. polimeri
+  Kunci: **D** · Satu gen dominan saja sudah memunculkan sifat, sehingga hanya homozigot resesif ganda (1/16) yang berbeda.
+- [ ] **BIO.C26.F.HEREDITAS.Q.PENYIMPANGAN_SEMU_HUKUM_MENDEL_3** — Persilangan AaBb × AaBb dengan epistasis dominan menghasilkan 160 tanaman. Jumlah tanaman pada kelompok fenotipe yang paling sedikit adalah …
+  A. 120 · B. 40 · C. 10 · D. 30
+  Kunci: **C** · Perbandingan 12 : 3 : 1 berarti kelompok terkecil 1/16 × 160 = 10 tanaman.
+- [ ] **BIO.C26.F.HEREDITAS.Q.PAUTAN_DAN_PINDAH_SILANG_1** — Gen-gen yang terletak pada satu kromosom dan cenderung diwariskan bersama disebut …
+  A. epistasis · B. pautan · C. pindah silang · D. gagal berpisah
+  Kunci: **B** · Gen yang tertaut berada pada kromosom yang sama sehingga ikut berpindah bersama saat meiosis.
+- [ ] **BIO.C26.F.HEREDITAS.Q.PAUTAN_DAN_PINDAH_SILANG_2** — Dari 1.000 keturunan, terdapat 150 individu rekombinan. Nilai pindah silangnya adalah …
+  A. 30% · B. 1,5% · C. 15% · D. 85%
+  Kunci: **C** · Nilai pindah silang = 150/1.000 × 100% = 15%.
+- [ ] **BIO.C26.F.HEREDITAS.Q.PAUTAN_DAN_PINDAH_SILANG_3** — Pindah silang terjadi pada tahap …
+  A. metafase mitosis · B. anafase II meiosis · C. interfase · D. profase I meiosis
+  Kunci: **D** · Pada profase I, kromosom homolog berpasangan dan kromatidnya dapat saling bertukar segmen.
+- [ ] **BIO.C26.F.HEREDITAS.Q.SEKS_1** — Seorang ibu karier buta warna menikah dengan laki-laki normal. Peluang seorang anak laki-laki mereka buta warna adalah …
+  A. 0% · B. 100% · C. 50% · D. 25%
+  Kunci: **C** · Anak laki-laki menerima kromosom X dari ibu, dan separuh sel telur ibu membawa Xⁿ, sehingga peluangnya 50%.
+- [ ] **BIO.C26.F.HEREDITAS.Q.SEKS_2** — Laki-laki penderita hemofilia menikah dengan perempuan normal homozigot. Anak perempuan mereka …
+  A. 50% hemofilia · B. semuanya karier · C. semuanya hemofilia · D. semuanya normal homozigot
+  Kunci: **B** · Setiap anak perempuan menerima Xⁿ dari ayah dan Xᴺ dari ibu, sehingga semuanya XᴺXⁿ (karier).
+- [ ] **BIO.C26.F.HEREDITAS.Q.SEKS_3** — Jenis kelamin anak manusia ditentukan oleh …
+  A. kromosom kelamin yang dibawa sperma · B. kromosom kelamin yang dibawa sel telur · C. jumlah autosom · D. golongan darah ibu
+  Kunci: **A** · Sel telur selalu membawa X, sedangkan sperma membawa X atau Y.
+- [ ] **BIO.C26.F.HEREDITAS.Q.MANUSIA_1** — Ayah bergolongan darah A heterozigot dan ibu bergolongan darah B heterozigot. Golongan darah anak yang mungkin adalah …
+  A. A, B, AB, dan O · B. hanya A dan B · C. hanya AB · D. hanya O
+  Kunci: **A** · Persilangan Iᴬi × Iᴮi menghasilkan IᴬIᴮ, Iᴬi, Iᴮi, dan ii dengan peluang yang sama.
+- [ ] **BIO.C26.F.HEREDITAS.Q.MANUSIA_2** — Seorang anak bergolongan darah O. Kemungkinan genotipe kedua orang tuanya adalah …
+  A. IᴬIᴮ dan ii · B. IᴬIᴬ dan Iᴮi · C. IᴬIᴮ dan IᴬIᴮ · D. Iᴬi dan Iᴮi
+  Kunci: **D** · Anak O (ii) harus menerima alel i dari ayah dan ibu; di antara pilihan, hanya Iᴬi × Iᴮi yang keduanya membawa i.
+- [ ] **BIO.C26.F.HEREDITAS.Q.MANUSIA_3** — Dua orang tua normal memiliki anak albino. Kesimpulan yang tepat adalah …
+  A. hanya ayah yang pembawa · B. albino tertaut kromosom Y · C. albino bersifat resesif dan kedua orang tua pembawa · D. albino bersifat dominan
+  Kunci: **C** · Sifat yang muncul pada anak tetapi tidak tampak pada kedua orang tua adalah sifat resesif yang dibawa keduanya.
+
+## Mutasi (BIO.C26.F.MUTASI)
+
+Materi: 3 · Soal: 9
+
+- [ ] **BIO.C26.F.MUTASI.Q.MUTASI_GEN_1** — Penggantian satu basa nitrogen dengan basa lain pada DNA disebut …
+  A. delesi · B. translokasi · C. substitusi · D. insersi
+  Kunci: **C** · Substitusi menukar satu basa dengan basa lain tanpa mengubah panjang urutan DNA.
+- [ ] **BIO.C26.F.MUTASI.Q.MUTASI_GEN_2** — Mutasi yang paling mungkin mengubah banyak asam amino sekaligus adalah …
+  A. mutasi pada sel kulit · B. delesi satu basa di awal gen · C. substitusi yang menghasilkan kodon sinonim · D. substitusi di akhir gen
+  Kunci: **B** · Delesi satu basa menggeser kerangka baca, sehingga semua kodon sesudahnya berubah.
+- [ ] **BIO.C26.F.MUTASI.Q.MUTASI_GEN_3** — Anemia sel sabit disebabkan oleh …
+  A. substitusi satu basa pada gen hemoglobin · B. delesi kromosom · C. kelebihan kromosom 21 · D. infeksi virus
+  Kunci: **A** · Satu basa yang tertukar mengubah asam amino glutamat menjadi valin pada hemoglobin, sehingga sel darah merah berbentuk sabit.
+- [ ] **BIO.C26.F.MUTASI.Q.MUTASI_KROMOSOM_1** — Sindrom Down disebabkan oleh …
+  A. kekurangan kromosom X · B. delesi kromosom 5 · C. substitusi satu basa · D. kelebihan satu kromosom nomor 21
+  Kunci: **D** · Penderita sindrom Down memiliki tiga kromosom 21 (trisomi), sehingga jumlah kromosomnya 47.
+- [ ] **BIO.C26.F.MUTASI.Q.MUTASI_KROMOSOM_2** — Peristiwa gagal berpisahnya kromosom homolog saat meiosis disebut …
+  A. nondisjunction · B. pindah silang · C. inversi · D. pautan
+  Kunci: **A** · Nondisjunction membuat sel kelamin kelebihan atau kekurangan kromosom.
+- [ ] **BIO.C26.F.MUTASI.Q.MUTASI_KROMOSOM_3** — Semangka tanpa biji dibuat dengan memanfaatkan …
+  A. translokasi · B. poliploidi · C. aneuploidi · D. delesi
+  Kunci: **B** · Semangka triploid (3n) tidak dapat membentuk biji yang normal karena meiosisnya terganggu.
+- [ ] **BIO.C26.F.MUTASI.Q.PENYEBAB_1** — Yang termasuk mutagen fisik adalah …
+  A. sinar ultraviolet · B. asap rokok · C. virus hepatitis B · D. pestisida
+  Kunci: **A** · Sinar UV adalah radiasi, sehingga termasuk mutagen fisik; pilihan lain adalah mutagen kimia atau biologi.
+- [ ] **BIO.C26.F.MUTASI.Q.PENYEBAB_2** — Mutasi dianggap penting bagi evolusi karena …
+  A. selalu menguntungkan · B. tidak dapat diwariskan · C. menghentikan seleksi alam · D. menjadi sumber variasi genetik baru
+  Kunci: **D** · Variasi baru dari mutasi menjadi bahan yang diseleksi oleh alam.
+- [ ] **BIO.C26.F.MUTASI.Q.PENYEBAB_3** — Pemanfaatan mutasi yang menguntungkan bagi manusia adalah …
+  A. munculnya sindrom Down · B. kebalnya bakteri terhadap antibiotik · C. pembuatan varietas padi unggul melalui iradiasi · D. munculnya kanker kulit
+  Kunci: **C** · Iradiasi terkendali menghasilkan mutan yang kemudian diseleksi, misalnya padi yang lebih cepat panen.
+
 ## MAT.EKS (MAT.EKS)
 
 Materi: 12 · Soal: 38

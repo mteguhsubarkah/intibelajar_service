@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.Q.PERSAMAAN_LINGKARAN_2
+familyCode: MAT.C26.FPLUS.LINGKARAN.F.PERSAMAAN_LINGKARAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Lingkaran berpusat di O melalui titik (6, −8). Persamaannya adalah …
+  options:
+    - id: a
+      label: x² + y² = 28
+    - id: b
+      label: x² + y² = 100
+    - id: c
+      label: x² + y² = 10
+    - id: d
+      label: x² + y² = 14
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - x² + y² = 100
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN
+  feedback:
+    correct: r² = 6² + (−8)² = 100.
+    incorrect: Jawabannya x² + y² = 100. r² = 6² + (−8)² = 100.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

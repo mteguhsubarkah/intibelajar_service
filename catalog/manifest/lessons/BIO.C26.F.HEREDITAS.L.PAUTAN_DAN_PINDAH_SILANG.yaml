@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.L.PAUTAN_DAN_PINDAH_SILANG
+title: Pautan dan pindah silang
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.HEREDITAS.PAUTAN_DAN_PINDAH_SILANG
+blocks:
+  - type: heading
+    slide: 0
+    text: Pautan
+  - type: text
+    slide: 0
+    text: "**Pautan** (linkage) terjadi bila dua gen atau lebih terletak pada kromosom yang sama sehingga cenderung diwariskan bersama."
+  - type: text
+    slide: 0
+    text: Akibatnya, kombinasi seperti induk (parental) muncul lebih banyak daripada perkiraan hukum Mendel II.
+  - type: heading
+    slide: 1
+    text: Pindah silang
+  - type: text
+    slide: 1
+    text: "**Pindah silang** (crossing over) adalah pertukaran segmen kromatid kromosom homolog saat meiosis, yang menghasilkan kombinasi baru (rekombinan)."
+  - type: text
+    slide: 1
+    text: "**Nilai pindah silang** = jumlah rekombinan ÷ jumlah seluruh keturunan × 100%. Makin jauh jarak dua gen, makin besar peluang pindah silang."
+  - type: math
+    slide: 1
+    name: nilai pindah silang
+    expression: rekombinan ÷ total × 100%
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Nilai pindah silang tidak pernah lebih dari 50%.
+checks:
+  - question: BIO.C26.F.HEREDITAS.Q.PAUTAN_DAN_PINDAH_SILANG_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.HEREDITAS.S.PAUTAN_DAN_PINDAH_SILANG
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

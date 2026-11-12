@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.L.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+title: Hukum kekekalan massa (Lavoisier)
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+blocks:
+  - type: heading
+    slide: 0
+    text: Isi hukum Lavoisier
+  - type: text
+    slide: 0
+    text: "**Antoine Lavoisier**: dalam sistem tertutup, massa zat sebelum reaksi sama dengan massa zat sesudah reaksi."
+  - type: text
+    slide: 0
+    text: "Contoh: 12 g karbon yang terbakar sempurna dengan 32 g oksigen menghasilkan 44 g CO₂."
+  - type: math
+    slide: 0
+    name: Lavoisier
+    expression: massa pereaksi = massa hasil
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Sistem terbuka
+  - type: text
+    slide: 1
+    text: Jika gas hasil reaksi keluar ke udara (sistem terbuka), massa yang tertimbang berkurang, padahal massa total tetap.
+  - type: text
+    slide: 1
+    text: Sebaliknya, besi yang berkarat menjadi lebih berat karena mengikat oksigen dari udara.
+  - type: tip
+    slide: 1
+    text: "Hukum ini menjadi dasar penyetaraan reaksi: jumlah atom tiap unsur di ruas kiri dan kanan sama."
+checks:
+  - question: KIM.C26.E.HUKUMDASAR.Q.HUKUM_KEKEKALAN_MASSA_LAVOISIER_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.HUKUMDASAR.S.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

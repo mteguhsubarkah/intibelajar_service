@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL
+subject: KIM
+title: Wujud zat dan teori partikel
+subtitle: Susunan partikel padat, cair, dan gas, perubahan wujud, serta massa jenis
+phase: D
+availability: MAPPED
+bekal:
+  - sifat benda
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.D.PARTIKEL.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+    title: Wujud zat dan susunan partikel
+    subtitle: Padat, cair, dan gas menurut gerak dan jarak partikel
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-d-partikel-c1
+  - code: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+    title: Perubahan wujud zat
+    subtitle: Mencair, membeku, menguap, mengembun, menyublim, mengkristal
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-d-partikel-c2
+  - code: KIM.C26.D.PARTIKEL.MASSA_JENIS
+    title: Massa jenis
+    subtitle: ρ = m/V, terapung dan tenggelam
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 7
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-d-partikel-massajenis
+prerequisites:
+  - concept: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+    requires: KIM.C26.D.PARTIKEL.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+    kind: HARD
+  - concept: KIM.C26.D.PARTIKEL.MASSA_JENIS
+    requires: KIM.C26.D.PARTIKEL.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

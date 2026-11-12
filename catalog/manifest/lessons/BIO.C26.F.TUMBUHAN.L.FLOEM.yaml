@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.L.FLOEM
+title: Transpor hasil fotosintesis
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari sumber ke penerima
+  - type: text
+    slide: 0
+    text: Hasil fotosintesis diangkut dalam bentuk **sukrosa** melalui floem dari **sumber** (source, misalnya daun) ke **penerima** (sink, misalnya akar, buah, dan umbi).
+  - type: text
+    slide: 0
+    text: Proses ini disebut **translokasi** dan dapat berlangsung ke atas maupun ke bawah.
+  - type: math
+    slide: 0
+    name: arah
+    expression: sumber (daun) → penerima (buah, akar, umbi)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Bukti cincin batang
+  - type: text
+    slide: 1
+    text: Jika kulit batang dikupas melingkar sehingga floem terputus, bagian di atas kupasan membengkak karena gula menumpuk, sedangkan bagian bawah kekurangan makanan.
+  - type: text
+    slide: 1
+    text: Xilem di bagian kayu tetap utuh, sehingga daun tidak langsung layu.
+  - type: tip
+    slide: 1
+    text: Umbi kentang dan buah adalah sink yang menyimpan hasil translokasi.
+checks:
+  - question: BIO.C26.F.TUMBUHAN.Q.FLOEM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUHAN.S.FLOEM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

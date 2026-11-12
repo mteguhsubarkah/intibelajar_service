@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.Q.MUTASI_GEN_3
+familyCode: BIO.C26.F.MUTASI.F.MUTASI_GEN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.MUTASI.MUTASI_GEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Anemia sel sabit disebabkan oleh …
+  options:
+    - id: a
+      label: substitusi satu basa pada gen hemoglobin
+    - id: b
+      label: delesi kromosom
+    - id: c
+      label: kelebihan kromosom 21
+    - id: d
+      label: infeksi virus
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - substitusi satu basa pada gen hemoglobin
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.MUTASI.MUTASI_GEN
+  feedback:
+    correct: Satu basa yang tertukar mengubah asam amino glutamat menjadi valin pada hemoglobin, sehingga sel darah merah berbentuk sabit.
+    incorrect: Jawabannya substitusi satu basa pada gen hemoglobin. Satu basa yang tertukar mengubah asam amino glutamat menjadi valin pada hemoglobin, sehingga sel darah merah berbentuk sabit.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

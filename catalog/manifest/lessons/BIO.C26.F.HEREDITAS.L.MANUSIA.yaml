@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.L.MANUSIA
+title: Hereditas pada manusia
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.HEREDITAS.HEREDITAS_PADA_MANUSIA
+blocks:
+  - type: heading
+    slide: 0
+    text: Golongan darah ABO
+  - type: text
+    slide: 0
+    text: Golongan darah ABO ditentukan alel ganda Iᴬ, Iᴮ, dan i. Iᴬ dan Iᴮ **kodominan**, dan keduanya dominan terhadap i.
+  - type: text
+    slide: 0
+    text: "Genotipe: A = IᴬIᴬ atau Iᴬi; B = IᴮIᴮ atau Iᴮi; AB = IᴬIᴮ; O = ii."
+  - type: math
+    slide: 0
+    name: golongan AB
+    expression: IᴬIᴮ
+    highlight: true
+  - type: math
+    slide: 0
+    name: golongan O
+    expression: ii
+  - type: heading
+    slide: 1
+    text: Membaca peta silsilah
+  - type: text
+    slide: 1
+    text: "**Peta silsilah** (pedigree) menelusuri sifat dalam keluarga. Kotak = laki-laki, bulat = perempuan, simbol diarsir = penderita."
+  - type: text
+    slide: 1
+    text: Jika dua orang tua normal memiliki anak penderita, sifat itu resesif dan kedua orang tua adalah pembawa.
+  - type: tip
+    slide: 1
+    text: Albinisme diwariskan sebagai sifat resesif autosomal, sehingga dapat muncul pada anak laki-laki maupun perempuan.
+checks:
+  - question: BIO.C26.F.HEREDITAS.Q.MANUSIA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.HEREDITAS.S.MANUSIA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

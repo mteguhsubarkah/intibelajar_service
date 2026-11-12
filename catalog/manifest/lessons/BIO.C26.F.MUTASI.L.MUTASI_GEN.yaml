@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.L.MUTASI_GEN
+title: Mutasi gen
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.MUTASI.MUTASI_GEN
+blocks:
+  - type: heading
+    slide: 0
+    text: Perubahan basa DNA
+  - type: text
+    slide: 0
+    text: "**Mutasi** adalah perubahan materi genetik yang dapat diwariskan. **Mutasi gen** (mutasi titik) mengubah satu atau beberapa basa nitrogen DNA."
+  - type: text
+    slide: 0
+    text: "Jenisnya: **substitusi** (basa diganti), **insersi** (basa disisipkan), dan **delesi** (basa hilang)."
+  - type: heading
+    slide: 1
+    text: Akibat pada protein
+  - type: text
+    slide: 1
+    text: Substitusi dapat tidak berpengaruh (kodon baru menyandi asam amino yang sama), mengubah satu asam amino, atau membentuk kodon stop.
+  - type: text
+    slide: 1
+    text: Insersi dan delesi menggeser kerangka baca (**frameshift**), sehingga seluruh asam amino setelahnya bisa berubah.
+  - type: tip
+    slide: 1
+    text: Mutasi pada sel kelamin dapat diwariskan, sedangkan mutasi pada sel tubuh tidak.
+checks:
+  - question: BIO.C26.F.MUTASI.Q.MUTASI_GEN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.MUTASI.S.MUTASI_GEN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

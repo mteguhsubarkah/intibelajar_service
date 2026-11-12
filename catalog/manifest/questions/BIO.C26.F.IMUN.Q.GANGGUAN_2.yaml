@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.Q.GANGGUAN_2
+familyCode: BIO.C26.F.IMUN.F.GANGGUAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.IMUN.GANGGUAN_SISTEM_IMUN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: HIV melemahkan sistem imun karena menyerang …
+  options:
+    - id: a
+      label: sel otot
+    - id: b
+      label: sel T pembantu
+    - id: c
+      label: sel darah merah
+    - id: d
+      label: trombosit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - sel T pembantu
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.IMUN.GANGGUAN_SISTEM_IMUN
+  feedback:
+    correct: Sel T pembantu mengoordinasi respons imun, sehingga kerusakannya melemahkan pertahanan tubuh.
+    incorrect: Jawabannya sel T pembantu. Sel T pembantu mengoordinasi respons imun, sehingga kerusakannya melemahkan pertahanan tubuh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

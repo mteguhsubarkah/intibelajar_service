@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.Q.REAKSI_3
+familyCode: KIM.C26.F.GUGUS.F.REAKSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Reaksi C₂H₅Cl + NaOH → C₂H₅OH + NaCl termasuk reaksi …
+  options:
+    - id: a
+      label: eliminasi
+    - id: b
+      label: polimerisasi
+    - id: c
+      label: substitusi
+    - id: d
+      label: adisi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - substitusi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON
+  feedback:
+    correct: Atom Cl diganti oleh gugus –OH tanpa terbentuk ikatan rangkap.
+    incorrect: Jawabannya substitusi. Atom Cl diganti oleh gugus –OH tanpa terbentuk ikatan rangkap.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

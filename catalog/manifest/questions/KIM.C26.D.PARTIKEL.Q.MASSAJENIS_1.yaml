@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.Q.MASSAJENIS_1
+familyCode: KIM.C26.D.PARTIKEL.F.MASSAJENIS_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.PARTIKEL.MASSA_JENIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah balok bermassa 270 g bervolume 100 cm³. Massa jenisnya adalah …
+  options:
+    - id: a
+      label: 0,37 g/cm³
+    - id: b
+      label: 270 g/cm³
+    - id: c
+      label: 2,7 g/cm³
+    - id: d
+      label: 27 g/cm³
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 2,7 g/cm³
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.PARTIKEL.MASSA_JENIS
+  feedback:
+    correct: ρ = 270 g / 100 cm³ = 2,7 g/cm³, yaitu massa jenis aluminium.
+    incorrect: Jawabannya 2,7 g/cm³. ρ = 270 g / 100 cm³ = 2,7 g/cm³, yaitu massa jenis aluminium.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

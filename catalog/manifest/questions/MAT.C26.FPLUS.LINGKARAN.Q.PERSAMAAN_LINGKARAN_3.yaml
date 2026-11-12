@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.Q.PERSAMAAN_LINGKARAN_3
+familyCode: MAT.C26.FPLUS.LINGKARAN.F.PERSAMAAN_LINGKARAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Lingkaran memiliki diameter AB dengan A(1, 2) dan B(7, 10). Persamaannya adalah …
+  options:
+    - id: a
+      label: (x − 4)² + (y − 6)² = 25
+    - id: b
+      label: (x − 4)² + (y − 6)² = 100
+    - id: c
+      label: (x − 3)² + (y − 4)² = 25
+    - id: d
+      label: (x − 8)² + (y − 12)² = 25
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - (x − 4)² + (y − 6)² = 25
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN
+  feedback:
+    correct: Pusat adalah titik tengah AB, yaitu (4, 6), dan jari-jarinya setengah panjang AB = 10/2 = 5.
+    incorrect: Jawabannya (x − 4)² + (y − 6)² = 25. Pusat adalah titik tengah AB, yaitu (4, 6), dan jari-jarinya setengah panjang AB = 10/2 = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

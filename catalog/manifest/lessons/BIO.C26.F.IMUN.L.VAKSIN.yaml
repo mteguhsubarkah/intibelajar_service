@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.L.VAKSIN
+title: Imunisasi dan vaksin
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.IMUN.IMUNISASI_DAN_VAKSIN
+blocks:
+  - type: heading
+    slide: 0
+    text: Kekebalan aktif dan pasif
+  - type: text
+    slide: 0
+    text: "**Kekebalan aktif** terbentuk saat tubuh membuat antibodinya sendiri, baik karena sakit (alami) maupun karena **vaksinasi** (buatan)."
+  - type: text
+    slide: 0
+    text: "**Kekebalan pasif** berasal dari antibodi yang diterima dari luar, misalnya antibodi ibu lewat plasenta atau ASI (alami) dan suntikan serum antibodi (buatan)."
+  - type: heading
+    slide: 1
+    text: Cara kerja vaksin
+  - type: text
+    slide: 1
+    text: "**Vaksin** berisi antigen yang dilemahkan, dimatikan, atau bagiannya saja, sehingga merangsang pembentukan sel memori tanpa menimbulkan penyakit berat."
+  - type: text
+    slide: 1
+    text: Jika banyak orang divaksin, penularan terhambat dan orang yang tidak bisa divaksin ikut terlindungi (**kekebalan kelompok**).
+  - type: tip
+    slide: 1
+    text: Kekebalan pasif bekerja cepat tetapi tidak bertahan lama karena tidak membentuk sel memori.
+checks:
+  - question: BIO.C26.F.IMUN.Q.VAKSIN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.IMUN.S.VAKSIN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

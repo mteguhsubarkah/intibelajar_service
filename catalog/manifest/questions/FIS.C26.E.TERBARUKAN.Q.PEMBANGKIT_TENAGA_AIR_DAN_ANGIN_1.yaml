@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.Q.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_1
+familyCode: FIS.C26.E.TERBARUKAN.F.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan perubahan energi pada PLTA adalah …
+  options:
+    - id: a
+      label: potensial → kinetik → listrik
+    - id: b
+      label: kinetik → potensial → listrik
+    - id: c
+      label: kimia → panas → listrik
+    - id: d
+      label: listrik → kinetik → potensial
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - potensial → kinetik → listrik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+  feedback:
+    correct: Air di ketinggian memiliki energi potensial, berubah menjadi kinetik saat jatuh, lalu turbin dan generator mengubahnya menjadi listrik.
+    incorrect: Jawabannya potensial → kinetik → listrik. Air di ketinggian memiliki energi potensial, berubah menjadi kinetik saat jatuh, lalu turbin dan generator mengubahnya menjadi listrik.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

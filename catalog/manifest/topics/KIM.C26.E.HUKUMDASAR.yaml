@@ -1,0 +1,87 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR
+subject: KIM
+title: Hukum dasar kimia
+subtitle: Hukum Lavoisier, Proust, Dalton, Gay-Lussac, dan hipotesis Avogadro
+phase: E
+availability: MAPPED
+bekal:
+  - persamaan reaksi
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+    title: Hukum kekekalan massa (Lavoisier)
+    subtitle: Massa sebelum dan sesudah reaksi dalam sistem tertutup
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-hukumdasar-c1
+  - code: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+    title: Hukum perbandingan tetap (Proust)
+    subtitle: Perbandingan massa unsur dalam senyawa
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-hukumdasar-c2
+  - code: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON
+    title: Hukum perbandingan berganda (Dalton)
+    subtitle: Dua unsur yang membentuk lebih dari satu senyawa
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-hukumdasar-berganda
+  - code: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_VOLUME_DAN_AVOGADRO
+    title: Hukum perbandingan volume dan Avogadro
+    subtitle: Perbandingan volume gas sama dengan perbandingan koefisien
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-hukumdasar-volume
+prerequisites:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+    requires: KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+    kind: HARD
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON
+    requires: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+    kind: HARD
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_VOLUME_DAN_AVOGADRO
+    requires: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

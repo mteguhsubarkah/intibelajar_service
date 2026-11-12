@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.L.GANGGUAN
+title: Gangguan sistem gerak
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+blocks:
+  - type: heading
+    slide: 0
+    text: Kelainan tulang
+  - type: text
+    slide: 0
+    text: "**Osteoporosis**: tulang keropos karena kekurangan kalsium, sering pada lansia. **Rakitis**: tulang lunak dan bengkok karena kekurangan vitamin D pada anak."
+  - type: text
+    slide: 0
+    text: "Kelainan tulang belakang akibat sikap tubuh yang salah: **skoliosis** (melengkung ke samping), **kifosis** (bungkuk), dan **lordosis** (terlalu melengkung ke depan di bagian pinggang)."
+  - type: heading
+    slide: 1
+    text: Gangguan sendi dan otot
+  - type: text
+    slide: 1
+    text: "**Dislokasi**: sendi bergeser dari tempatnya. **Artritis**: radang sendi. **Kram**: otot berkontraksi terus-menerus."
+  - type: text
+    slide: 1
+    text: "Pencegahan: cukupi kalsium dan vitamin D, duduk dengan sikap tegak, berolahraga teratur, dan melakukan pemanasan sebelum berolahraga."
+  - type: tip
+    slide: 1
+    text: Membawa tas berat di satu bahu dalam waktu lama dapat memicu skoliosis.
+checks:
+  - question: BIO.C26.F.GERAK.Q.GANGGUAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.GERAK.S.GANGGUAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

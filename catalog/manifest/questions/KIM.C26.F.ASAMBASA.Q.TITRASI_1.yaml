@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.Q.TITRASI_1
+familyCode: KIM.C26.F.ASAMBASA.F.TITRASI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebanyak 20 mL HCl dititrasi dengan NaOH 0,1 M dan membutuhkan 30 mL NaOH. Konsentrasi HCl adalah …
+  options:
+    - id: a
+      label: 0,3 M
+    - id: b
+      label: 0,15 M
+    - id: c
+      label: 0,067 M
+    - id: d
+      label: 0,1 M
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 0,15 M
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+  feedback:
+    correct: "Va · Ma = Vb · Mb: 20 × Ma = 30 × 0,1, sehingga Ma = 0,15 M."
+    incorrect: "Jawabannya 0,15 M. Va · Ma = Vb · Mb: 20 × Ma = 30 × 0,1, sehingga Ma = 0,15 M."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

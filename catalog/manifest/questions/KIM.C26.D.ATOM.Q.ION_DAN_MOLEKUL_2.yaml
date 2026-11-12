@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM.Q.ION_DAN_MOLEKUL_2
+familyCode: KIM.C26.D.ATOM.F.ION_DAN_MOLEKUL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.ATOM.ION_DAN_MOLEKUL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Yang termasuk molekul unsur adalah …
+  options:
+    - id: a
+      label: H₂O
+    - id: b
+      label: CO₂
+    - id: c
+      label: NaCl
+    - id: d
+      label: O₂
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - O₂
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.ATOM.ION_DAN_MOLEKUL
+  feedback:
+    correct: O₂ tersusun dari dua atom yang sejenis, yaitu oksigen.
+    incorrect: Jawabannya O₂. O₂ tersusun dari dua atom yang sejenis, yaitu oksigen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

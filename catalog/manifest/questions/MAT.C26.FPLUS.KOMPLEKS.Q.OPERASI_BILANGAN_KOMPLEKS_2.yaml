@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.Q.OPERASI_BILANGAN_KOMPLEKS_2
+familyCode: MAT.C26.FPLUS.KOMPLEKS.F.OPERASI_BILANGAN_KOMPLEKS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KOMPLEKS.OPERASI_BILANGAN_KOMPLEKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: (2 + 3i)(1 − i) = …
+  options:
+    - id: a
+      label: 2 − 3i
+    - id: b
+      label: 5 + i
+    - id: c
+      label: −1 + i
+    - id: d
+      label: 5 − i
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 5 + i
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KOMPLEKS.OPERASI_BILANGAN_KOMPLEKS
+  feedback:
+    correct: 2 − 2i + 3i − 3i² = 2 + i + 3 = 5 + i, karena −3i² = 3.
+    incorrect: Jawabannya 5 + i. 2 − 2i + 3i − 3i² = 2 + i + 3 = 5 + i, karena −3i² = 3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

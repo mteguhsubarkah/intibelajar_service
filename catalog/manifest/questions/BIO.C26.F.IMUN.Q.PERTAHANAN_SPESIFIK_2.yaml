@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.Q.PERTAHANAN_SPESIFIK_2
+familyCode: BIO.C26.F.IMUN.F.PERTAHANAN_SPESIFIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Respons imun yang lebih cepat saat terkena antigen yang sama untuk kedua kalinya disebabkan oleh …
+  options:
+    - id: a
+      label: sel memori
+    - id: b
+      label: histamin
+    - id: c
+      label: asam lambung
+    - id: d
+      label: sel darah merah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sel memori
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK
+  feedback:
+    correct: Sel memori sudah mengenali antigen sehingga langsung memicu produksi antibodi dalam jumlah besar.
+    incorrect: Jawabannya sel memori. Sel memori sudah mengenali antigen sehingga langsung memicu produksi antibodi dalam jumlah besar.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

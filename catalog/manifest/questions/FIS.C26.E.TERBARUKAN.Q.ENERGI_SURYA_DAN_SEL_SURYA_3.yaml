@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.Q.ENERGI_SURYA_DAN_SEL_SURYA_3
+familyCode: FIS.C26.E.TERBARUKAN.F.ENERGI_SURYA_DAN_SEL_SURYA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rumah yang hanya memakai panel surya tetap membutuhkan baterai karena …
+  options:
+    - id: a
+      label: panel menghasilkan listrik bolak-balik
+    - id: b
+      label: baterai menaikkan efisiensi panel
+    - id: c
+      label: panel hanya bekerja saat hujan
+    - id: d
+      label: panel tidak menghasilkan listrik saat malam
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - panel tidak menghasilkan listrik saat malam
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA
+  feedback:
+    correct: Energi berlebih di siang hari disimpan di baterai untuk dipakai saat tidak ada cahaya.
+    incorrect: Jawabannya panel tidak menghasilkan listrik saat malam. Energi berlebih di siang hari disimpan di baterai untuk dipakai saat tidak ada cahaya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

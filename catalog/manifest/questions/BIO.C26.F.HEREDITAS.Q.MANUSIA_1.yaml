@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.Q.MANUSIA_1
+familyCode: BIO.C26.F.HEREDITAS.F.MANUSIA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.HEREDITAS.HEREDITAS_PADA_MANUSIA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ayah bergolongan darah A heterozigot dan ibu bergolongan darah B heterozigot. Golongan darah anak yang mungkin adalah …
+  options:
+    - id: a
+      label: A, B, AB, dan O
+    - id: b
+      label: hanya A dan B
+    - id: c
+      label: hanya AB
+    - id: d
+      label: hanya O
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - A, B, AB, dan O
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.HEREDITAS.HEREDITAS_PADA_MANUSIA
+  feedback:
+    correct: Persilangan Iᴬi × Iᴮi menghasilkan IᴬIᴮ, Iᴬi, Iᴮi, dan ii dengan peluang yang sama.
+    incorrect: Jawabannya A, B, AB, dan O. Persilangan Iᴬi × Iᴮi menghasilkan IᴬIᴮ, Iᴬi, Iᴮi, dan ii dengan peluang yang sama.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

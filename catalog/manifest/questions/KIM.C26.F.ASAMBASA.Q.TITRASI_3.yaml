@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.Q.TITRASI_3
+familyCode: KIM.C26.F.ASAMBASA.F.TITRASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Indikator fenolftalein pada titrasi asam dengan basa menandai titik akhir saat larutan …
+  options:
+    - id: a
+      label: berubah dari merah menjadi kuning
+    - id: b
+      label: tetap tak berwarna
+    - id: c
+      label: berubah menjadi biru
+    - id: d
+      label: berubah dari tak berwarna menjadi merah muda
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - berubah dari tak berwarna menjadi merah muda
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+  feedback:
+    correct: Fenolftalein tak berwarna dalam suasana asam dan merah muda saat larutan menjadi sedikit basa.
+    incorrect: Jawabannya berubah dari tak berwarna menjadi merah muda. Fenolftalein tak berwarna dalam suasana asam dan merah muda saat larutan menjadi sedikit basa.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

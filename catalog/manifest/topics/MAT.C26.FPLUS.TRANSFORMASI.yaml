@@ -1,0 +1,91 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TRANSFORMASI
+subject: MAT
+title: Transformasi geometri
+subtitle: Translasi, refleksi, rotasi, dilatasi, dan komposisinya dengan matriks
+phase: F+
+availability: MAPPED
+bekal:
+  - matriks
+  - koordinat Kartesius
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.FPLUS.TRANSFORMASI.TRANSLASI_DAN_REFLEKSI
+    title: Translasi dan refleksi
+    subtitle: Pergeseran dan pencerminan terhadap sumbu dan garis
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-transformasi-c1
+  - code: MAT.C26.FPLUS.TRANSFORMASI.ROTASI
+    title: Rotasi
+    subtitle: Perputaran terhadap titik asal dan pusat lain
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-transformasi-c2
+  - code: MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+    title: Dilatasi
+    subtitle: Perbesaran dengan faktor skala dan perubahan luas
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-transformasi-dilatasi
+  - code: MAT.C26.FPLUS.TRANSFORMASI.KOMPOSISI_TRANSFORMASI_DENGAN_MATRIKS
+    title: Komposisi transformasi dengan matriks
+    subtitle: Urutan komposisi dan determinan sebagai faktor luas
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-transformasi-komposisi
+prerequisites:
+  - concept: MAT.C26.FPLUS.TRANSFORMASI.ROTASI
+    requires: MAT.C26.FPLUS.TRANSFORMASI.TRANSLASI_DAN_REFLEKSI
+    kind: SOFT
+  - concept: MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+    requires: MAT.C26.FPLUS.TRANSFORMASI.TRANSLASI_DAN_REFLEKSI
+    kind: SOFT
+  - concept: MAT.C26.FPLUS.TRANSFORMASI.KOMPOSISI_TRANSFORMASI_DENGAN_MATRIKS
+    requires: MAT.C26.FPLUS.TRANSFORMASI.ROTASI
+    kind: HARD
+  - concept: MAT.C26.FPLUS.TRANSFORMASI.KOMPOSISI_TRANSFORMASI_DENGAN_MATRIKS
+    requires: MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

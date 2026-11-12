@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.Q.MUTASI_KROMOSOM_2
+familyCode: BIO.C26.F.MUTASI.F.MUTASI_KROMOSOM_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.MUTASI.MUTASI_KROMOSOM
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Peristiwa gagal berpisahnya kromosom homolog saat meiosis disebut …
+  options:
+    - id: a
+      label: nondisjunction
+    - id: b
+      label: pindah silang
+    - id: c
+      label: inversi
+    - id: d
+      label: pautan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - nondisjunction
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.MUTASI.MUTASI_KROMOSOM
+  feedback:
+    correct: Nondisjunction membuat sel kelamin kelebihan atau kekurangan kromosom.
+    incorrect: Jawabannya nondisjunction. Nondisjunction membuat sel kelamin kelebihan atau kekurangan kromosom.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

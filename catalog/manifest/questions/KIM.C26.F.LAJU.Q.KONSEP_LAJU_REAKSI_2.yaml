@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU.Q.KONSEP_LAJU_REAKSI_2
+familyCode: KIM.C26.F.LAJU.F.KONSEP_LAJU_REAKSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.LAJU.KONSEP_LAJU_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada reaksi 2SO₂ + O₂ → 2SO₃, jika laju berkurangnya O₂ adalah 0,1 M/s, laju terbentuknya SO₃ adalah …
+  options:
+    - id: a
+      label: 0,4 M/s
+    - id: b
+      label: 0,2 M/s
+    - id: c
+      label: 0,1 M/s
+    - id: d
+      label: 0,05 M/s
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 0,2 M/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.LAJU.KONSEP_LAJU_REAKSI
+  feedback:
+    correct: "Perbandingan koefisien O₂ : SO₃ = 1 : 2, sehingga laju SO₃ = 2 × 0,1 = 0,2 M/s."
+    incorrect: "Jawabannya 0,2 M/s. Perbandingan koefisien O₂ : SO₃ = 1 : 2, sehingga laju SO₃ = 2 × 0,1 = 0,2 M/s."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

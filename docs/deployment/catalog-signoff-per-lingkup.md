@@ -55,3 +55,19 @@ node --env-file=.env --import tsx scripts/catalog/status.ts
 - `--out` menyimpan snapshot rilis dan laporannya sebagai arsip.
 - Tidak perlu restart: API langsung melayani rilis baru.
 - Rollback: restore backup langkah 3 (lihat runbook).
+
+## Kelas per inti (sejak 12 November 2026)
+
+Setiap inti kini membawa kelasnya (`grade`: 7–12) di file bab, dan aplikasi mengelompokkan bab per kelas, bukan per fase.
+Kelas diatur di `scripts/catalog/pilot/grades.ts` dan diterapkan oleh `npm run catalog:pilot` ke semua bab, termasuk bab
+lama di luar konten pilot. Generator menolak inti terlihat yang belum punya kelas, dan lint menolak kelas di luar fase
+babnya (D 7–9, E 10, F dan F+ 11–12).
+
+- **Kelas termasuk isi yang ditinjau.** Hash lingkup ikut berubah, jadi sign-off lama untuk lingkup apa pun dilewati
+  (`DILEWATI … isinya berubah sejak ditandatangani`) sampai guru memeriksa penempatan kelasnya dan menandatangani ulang.
+  Selama itu produksi tetap memakai rilis lama; aplikasi otomatis kembali ke pengelompokan per fase bila rilis aktif
+  belum punya kelas.
+- **Yang diperiksa guru:** apakah tiap inti ada di kelas yang sama dengan buku dan ATP sekolah. Pembagian kelas di dalam
+  satu fase berbeda antarbuku; lembar tinjauan (`catalog:scope-sheet`) menampilkan kelas di samping tiap inti.
+- **Database:** kolom `concept.grade` ditambahkan oleh migrasi `0013-concept-grade`. Jalankan `npm run migrate` sebelum
+  menerbitkan rilis yang memuat kelas.

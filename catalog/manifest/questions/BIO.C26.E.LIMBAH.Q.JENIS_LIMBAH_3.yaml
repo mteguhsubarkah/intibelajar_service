@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.Q.JENIS_LIMBAH_3
+familyCode: BIO.C26.E.LIMBAH.F.JENIS_LIMBAH_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.LIMBAH.JENIS_LIMBAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Cara penanganan oli bekas bengkel yang tepat adalah …
+  options:
+    - id: a
+      label: dikumpulkan dan diserahkan ke pengelola limbah B3 berizin
+    - id: b
+      label: dibuang ke selokan
+    - id: c
+      label: dicampur sampah rumah tangga
+    - id: d
+      label: dibakar di tempat terbuka
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - dikumpulkan dan diserahkan ke pengelola limbah B3 berizin
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.LIMBAH.JENIS_LIMBAH
+  feedback:
+    correct: Oli bekas termasuk limbah B3 yang harus dikelola khusus agar tidak mencemari air dan tanah.
+    incorrect: Jawabannya dikumpulkan dan diserahkan ke pengelola limbah B3 berizin. Oli bekas termasuk limbah B3 yang harus dikelola khusus agar tidak mencemari air dan tanah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -55,6 +55,7 @@ concepts:
     unit: MAT.BAR.U1
     ordinal: 2
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -69,6 +70,7 @@ concepts:
     unit: MAT.BAR.U2
     ordinal: 3
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -83,6 +85,7 @@ concepts:
     unit: MAT.BAR.U2
     ordinal: 4
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -97,6 +100,7 @@ concepts:
     unit: MAT.BAR.U2
     ordinal: 5
     estimatedMinutes: 6
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -111,6 +115,7 @@ concepts:
     unit: MAT.BAR.U3
     ordinal: 6
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -125,6 +130,7 @@ concepts:
     unit: MAT.BAR.U3
     ordinal: 7
     estimatedMinutes: 6
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -139,6 +145,7 @@ concepts:
     unit: MAT.BAR.U3
     ordinal: 8
     estimatedMinutes: 7
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -153,6 +160,7 @@ concepts:
     unit: MAT.BAR.U4
     ordinal: 9
     estimatedMinutes: 8
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -167,6 +175,7 @@ concepts:
     unit: MAT.BAR.U4
     ordinal: 10
     estimatedMinutes: 10
+    grade: 10
     hidden: false
     capstone: false
     availability: READY

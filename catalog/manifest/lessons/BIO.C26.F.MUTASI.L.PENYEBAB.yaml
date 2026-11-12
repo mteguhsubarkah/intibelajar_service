@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.L.PENYEBAB
+title: Penyebab dan dampak mutasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Mutagen
+  - type: text
+    slide: 0
+    text: "Mutasi dapat terjadi secara spontan atau dipicu **mutagen**: fisik (sinar UV, sinar X, radiasi radioaktif), kimia (zat dalam asap rokok, pestisida tertentu), dan biologi (beberapa virus)."
+  - type: text
+    slide: 0
+    text: Paparan sinar UV berlebihan dapat merusak DNA sel kulit dan meningkatkan risiko kanker kulit.
+  - type: heading
+    slide: 1
+    text: Merugikan dan menguntungkan
+  - type: text
+    slide: 1
+    text: Sebagian besar mutasi netral atau merugikan, misalnya kanker dan penyakit genetik.
+  - type: text
+    slide: 1
+    text: Namun mutasi juga menjadi sumber **variasi** bagi evolusi dan dimanfaatkan dalam pemuliaan, misalnya varietas tanaman unggul hasil iradiasi.
+  - type: tip
+    slide: 1
+    text: Tabir surya mengurangi paparan UV yang dapat menyebabkan mutasi pada sel kulit.
+checks:
+  - question: BIO.C26.F.MUTASI.Q.PENYEBAB_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.MUTASI.S.PENYEBAB
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.OTOT_3
+familyCode: BIO.C26.F.GERAK.F.OTOT_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.OTOT_DAN_KONTRAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rasa pegal setelah lari jauh berkaitan dengan …
+  options:
+    - id: a
+      label: berhentinya kerja aktin dan miosin
+    - id: b
+      label: penumpukan asam laktat akibat kekurangan oksigen
+    - id: c
+      label: berlebihnya oksigen di otot
+    - id: d
+      label: bertambahnya kalsium tulang
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - penumpukan asam laktat akibat kekurangan oksigen
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.OTOT_DAN_KONTRAKSI
+  feedback:
+    correct: Saat oksigen tidak mencukupi, otot memperoleh energi secara anaerob yang menghasilkan asam laktat.
+    incorrect: Jawabannya penumpukan asam laktat akibat kekurangan oksigen. Saat oksigen tidak mencukupi, otot memperoleh energi secara anaerob yang menghasilkan asam laktat.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.Q.PENCEMARAN_LINGKUNGAN_3
+familyCode: BIO.C26.E.LIMBAH.F.PENCEMARAN_LINGKUNGAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Banyaknya larva capung di sungai menunjukkan bahwa air sungai …
+  options:
+    - id: a
+      label: tidak mengandung oksigen
+    - id: b
+      label: relatif bersih
+    - id: c
+      label: sangat tercemar
+    - id: d
+      label: mengandung limbah minyak
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - relatif bersih
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+  feedback:
+    correct: Larva capung membutuhkan air yang kaya oksigen, sehingga menjadi indikator air yang relatif bersih.
+    incorrect: Jawabannya relatif bersih. Larva capung membutuhkan air yang kaya oksigen, sehingga menjadi indikator air yang relatif bersih.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

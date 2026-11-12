@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.Q.ALKOHOL_DAN_ETER_3
+familyCode: KIM.C26.F.GUGUS.F.ALKOHOL_DAN_ETER_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.GUGUS.ALKOHOL_DAN_ETER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Cara membedakan 1-propanol dan metoksietana di laboratorium adalah dengan …
+  options:
+    - id: a
+      label: mencium baunya saja
+    - id: b
+      label: mengukur massanya
+    - id: c
+      label: melarutkannya dalam bensin
+    - id: d
+      label: mereaksikannya dengan logam natrium
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - mereaksikannya dengan logam natrium
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.GUGUS.ALKOHOL_DAN_ETER
+  feedback:
+    correct: Alkohol bereaksi dengan Na menghasilkan gas H₂, sedangkan eter tidak bereaksi.
+    incorrect: Jawabannya mereaksikannya dengan logam natrium. Alkohol bereaksi dengan Na menghasilkan gas H₂, sedangkan eter tidak bereaksi.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

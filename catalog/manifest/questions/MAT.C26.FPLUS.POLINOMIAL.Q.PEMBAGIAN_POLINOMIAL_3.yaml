@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL.Q.PEMBAGIAN_POLINOMIAL_3
+familyCode: MAT.C26.FPLUS.POLINOMIAL.F.PEMBAGIAN_POLINOMIAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Polinomial berderajat 4 dibagi x² − 1. Derajat tertinggi yang mungkin untuk sisanya adalah …
+  options:
+    - id: a
+      label: "1"
+    - id: b
+      label: "2"
+    - id: c
+      label: "3"
+    - id: d
+      label: "0"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "1"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL
+  feedback:
+    correct: Sisa harus berderajat lebih kecil dari pembagi yang berderajat 2, jadi paling tinggi berderajat 1.
+    incorrect: Jawabannya 1. Sisa harus berderajat lebih kecil dari pembagi yang berderajat 2, jadi paling tinggi berderajat 1.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

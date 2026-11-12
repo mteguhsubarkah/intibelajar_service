@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.RANGKA_DAN_TULANG_1
+familyCode: BIO.C26.F.GERAK.F.RANGKA_DAN_TULANG_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tulang yang termasuk rangka aksial adalah …
+  options:
+    - id: a
+      label: tulang paha
+    - id: b
+      label: tulang lengan atas
+    - id: c
+      label: tulang betis
+    - id: d
+      label: tulang belakang
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - tulang belakang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+  feedback:
+    correct: "Rangka aksial adalah sumbu tubuh: tengkorak, tulang belakang, dan rusuk."
+    incorrect: "Jawabannya tulang belakang. Rangka aksial adalah sumbu tubuh: tengkorak, tulang belakang, dan rusuk."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

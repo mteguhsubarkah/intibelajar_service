@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.Q.PERTAHANAN_NONSPESIFIK_2
+familyCode: BIO.C26.F.IMUN.F.PERTAHANAN_NONSPESIFIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sel darah putih yang menelan dan mencerna patogen disebut …
+  options:
+    - id: a
+      label: sel plasma
+    - id: b
+      label: fagosit
+    - id: c
+      label: trombosit
+    - id: d
+      label: eritrosit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - fagosit
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK
+  feedback:
+    correct: Fagosit, seperti neutrofil dan makrofag, menelan patogen melalui fagositosis.
+    incorrect: Jawabannya fagosit. Fagosit, seperti neutrofil dan makrofag, menelan patogen melalui fagositosis.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

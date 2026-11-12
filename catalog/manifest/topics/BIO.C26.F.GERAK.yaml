@@ -1,0 +1,87 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK
+subject: BIO
+title: Sistem gerak manusia
+subtitle: Rangka, sendi, otot, dan gangguan sistem gerak
+phase: F
+availability: MAPPED
+bekal:
+  - jaringan hewan
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+    title: Rangka dan tulang
+    subtitle: Fungsi rangka, rangka aksial dan apendikular, osifikasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-gerak-c1
+  - code: BIO.C26.F.GERAK.SENDI
+    title: Sendi
+    subtitle: Sinartrosis, amfiartrosis, dan jenis diartrosis
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-gerak-c2
+  - code: BIO.C26.F.GERAK.OTOT_DAN_KONTRAKSI
+    title: Otot dan kontraksi
+    subtitle: Jenis otot, kerja antagonis, aktin dan miosin
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-gerak-otot
+  - code: BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+    title: Gangguan sistem gerak
+    subtitle: Kelainan tulang, sendi, dan otot serta pencegahannya
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-gerak-gangguan
+prerequisites:
+  - concept: BIO.C26.F.GERAK.SENDI
+    requires: BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+    kind: HARD
+  - concept: BIO.C26.F.GERAK.OTOT_DAN_KONTRAKSI
+    requires: BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+    kind: SOFT
+  - concept: BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+    requires: BIO.C26.F.GERAK.OTOT_DAN_KONTRAKSI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

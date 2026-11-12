@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU.L.PENERAPAN
+title: Kimia hijau dan pembangunan berkelanjutan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA
+blocks:
+  - type: heading
+    slide: 0
+    text: Kimia hijau dan SDGs
+  - type: text
+    slide: 0
+    text: Kimia hijau mendukung **Tujuan Pembangunan Berkelanjutan (SDGs)**, misalnya air bersih, energi bersih, serta konsumsi dan produksi yang bertanggung jawab.
+  - type: text
+    slide: 0
+    text: "Contoh penerapannya: biodiesel dari minyak jelantah, plastik dari pati singkong, dan deterjen yang mudah terurai."
+  - type: heading
+    slide: 1
+    text: Menilai pilihan
+  - type: text
+    slide: 1
+    text: Saat memilih produk atau proses, nilai limbah yang dihasilkan, sifat bahayanya, sumber bahan baku, dan energi yang diperlukan.
+  - type: text
+    slide: 1
+    text: "Di rumah, prinsipnya juga bisa diterapkan: mengurangi plastik sekali pakai, memilah sampah, dan memakai bahan pembersih secukupnya."
+  - type: tip
+    slide: 1
+    text: Daur ulang tetap penting, tetapi mengurangi pemakaian lebih utama.
+checks:
+  - question: KIM.C26.E.HIJAU.Q.PENERAPAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.HIJAU.S.PENERAPAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

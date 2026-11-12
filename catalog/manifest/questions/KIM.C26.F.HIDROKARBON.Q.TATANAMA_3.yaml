@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.Q.TATANAMA_3
+familyCode: KIM.C26.F.HIDROKARBON.F.TATANAMA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.HIDROKARBON.TATA_NAMA_HIDROKARBON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rumus struktur 3-metil-1-butuna adalah …
+  options:
+    - id: a
+      label: H₂C=CH–CH(CH₃)–CH₃
+    - id: b
+      label: HC≡C–CH₂–CH₂–CH₃
+    - id: c
+      label: HC≡C–CH(CH₃)–CH₃
+    - id: d
+      label: CH₃–C≡C–CH(CH₃)₂
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - HC≡C–CH(CH₃)–CH₃
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.HIDROKARBON.TATA_NAMA_HIDROKARBON
+  feedback:
+    correct: Butuna dengan rangkap tiga di C-1, ditambah cabang metil di C-3.
+    incorrect: Jawabannya HC≡C–CH(CH₃)–CH₃. Butuna dengan rangkap tiga di C-1, ditambah cabang metil di C-3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

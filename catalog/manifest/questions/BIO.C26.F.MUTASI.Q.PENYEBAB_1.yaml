@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.Q.PENYEBAB_1
+familyCode: BIO.C26.F.MUTASI.F.PENYEBAB_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Yang termasuk mutagen fisik adalah …
+  options:
+    - id: a
+      label: sinar ultraviolet
+    - id: b
+      label: asap rokok
+    - id: c
+      label: virus hepatitis B
+    - id: d
+      label: pestisida
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sinar ultraviolet
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI
+  feedback:
+    correct: Sinar UV adalah radiasi, sehingga termasuk mutagen fisik; pilihan lain adalah mutagen kimia atau biologi.
+    incorrect: Jawabannya sinar ultraviolet. Sinar UV adalah radiasi, sehingga termasuk mutagen fisik; pilihan lain adalah mutagen kimia atau biologi.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

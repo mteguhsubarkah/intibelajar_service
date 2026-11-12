@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.Q.PERTAHANAN_NONSPESIFIK_3
+familyCode: BIO.C26.F.IMUN.F.PERTAHANAN_NONSPESIFIK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Daerah luka yang meradang tampak merah dan hangat karena …
+  options:
+    - id: a
+      label: pembuluh darah melebar akibat histamin
+    - id: b
+      label: sel darah merah rusak
+    - id: c
+      label: tidak ada aliran darah
+    - id: d
+      label: antibodi menempel di kulit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - pembuluh darah melebar akibat histamin
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK
+  feedback:
+    correct: Pelebaran pembuluh membuat lebih banyak darah mengalir ke daerah luka, sehingga terasa hangat dan kemerahan.
+    incorrect: Jawabannya pembuluh darah melebar akibat histamin. Pelebaran pembuluh membuat lebih banyak darah mengalir ke daerah luka, sehingga terasa hangat dan kemerahan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

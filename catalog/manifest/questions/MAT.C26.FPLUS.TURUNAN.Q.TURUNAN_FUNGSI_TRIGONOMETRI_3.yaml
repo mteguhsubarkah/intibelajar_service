@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN.Q.TURUNAN_FUNGSI_TRIGONOMETRI_3
+familyCode: MAT.C26.FPLUS.TURUNAN.F.TURUNAN_FUNGSI_TRIGONOMETRI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika f(x) = x² cos x, nilai f′(π) adalah …
+  options:
+    - id: a
+      label: 2π
+    - id: b
+      label: −π²
+    - id: c
+      label: "0"
+    - id: d
+      label: −2π
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - −2π
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+  feedback:
+    correct: "f′(x) = 2x cos x − x² sin x; di x = π: 2π(−1) − π² · 0 = −2π."
+    incorrect: "Jawabannya −2π. f′(x) = 2x cos x − x² sin x; di x = π: 2π(−1) − π² · 0 = −2π."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

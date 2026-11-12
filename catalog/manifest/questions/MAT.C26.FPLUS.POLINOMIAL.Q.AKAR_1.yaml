@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL.Q.AKAR_1
+familyCode: MAT.C26.FPLUS.POLINOMIAL.F.AKAR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.POLINOMIAL.AKAR_AKAR_DAN_HUBUNGAN_KOEFISIEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah akar-akar persamaan 2x³ − 6x² + x + 8 = 0 adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: −3
+    - id: c
+      label: "4"
+    - id: d
+      label: −4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "3"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.POLINOMIAL.AKAR_AKAR_DAN_HUBUNGAN_KOEFISIEN
+  feedback:
+    correct: x₁ + x₂ + x₃ = −b/a = −(−6)/2 = 3.
+    incorrect: Jawabannya 3. x₁ + x₂ + x₃ = −b/a = −(−6)/2 = 3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

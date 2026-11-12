@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLOID
+subject: KIM
+title: Sistem koloid
+subtitle: Jenis koloid, sifat-sifat koloid, serta pembuatan dan penerapannya
+phase: F
+availability: MAPPED
+bekal:
+  - larutan
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.KOLOID.SISTEM_DISPERSI_DAN_JENIS_KOLOID
+    title: Sistem dispersi dan jenis koloid
+    subtitle: Larutan, koloid, suspensi, dan jenis koloid
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-koloid-c1
+  - code: KIM.C26.F.KOLOID.SIFAT_KOLOID
+    title: Sifat koloid
+    subtitle: Efek Tyndall, gerak Brown, adsorpsi, koagulasi, dialisis
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-koloid-c2
+  - code: KIM.C26.F.KOLOID.PEMBUATAN_DAN_PENERAPAN_KOLOID
+    title: Pembuatan dan penerapan koloid
+    subtitle: Kondensasi, dispersi, dan pengemulsi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-koloid-pembuatan
+prerequisites:
+  - concept: KIM.C26.F.KOLOID.SIFAT_KOLOID
+    requires: KIM.C26.F.KOLOID.SISTEM_DISPERSI_DAN_JENIS_KOLOID
+    kind: HARD
+  - concept: KIM.C26.F.KOLOID.PEMBUATAN_DAN_PENERAPAN_KOLOID
+    requires: KIM.C26.F.KOLOID.SIFAT_KOLOID
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

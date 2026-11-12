@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM.Q.ATOM_DAN_PARTIKEL_PENYUSUNNYA_2
+familyCode: KIM.C26.D.ATOM.F.ATOM_DAN_PARTIKEL_PENYUSUNNYA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Atom karbon memiliki nomor atom 6 dan nomor massa 14. Jumlah neutronnya adalah …
+  options:
+    - id: a
+      label: "14"
+    - id: b
+      label: "20"
+    - id: c
+      label: "8"
+    - id: d
+      label: "6"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "8"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+  feedback:
+    correct: Neutron = 14 − 6 = 8.
+    incorrect: Jawabannya 8. Neutron = 14 − 6 = 8.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

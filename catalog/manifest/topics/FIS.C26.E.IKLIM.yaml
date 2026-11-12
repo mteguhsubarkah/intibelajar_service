@@ -1,0 +1,88 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM
+subject: FIS
+title: Pemanasan global dan perubahan iklim
+subtitle: Efek rumah kaca, bukti dan penyebab pemanasan global, dampak, mitigasi, dan adaptasi
+phase: E
+availability: MAPPED
+bekal:
+  - kalor
+  - radiasi
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.E.IKLIM.EFEK_RUMAH_KACA
+    title: Efek rumah kaca
+    subtitle: Gas rumah kaca dan radiasi inframerah
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-iklim-c1
+  - code: FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+    title: Bukti dan penyebab pemanasan global
+    subtitle: Data suhu, muka laut, dan emisi dari aktivitas manusia
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-iklim-c2
+  - code: FIS.C26.E.IKLIM.DAMPAK_PERUBAHAN_IKLIM
+    title: Dampak perubahan iklim
+    subtitle: Cuaca ekstrem, kenaikan muka laut, dan dampak pada kehidupan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-iklim-dampak
+  - code: FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI
+    title: Mitigasi dan adaptasi
+    subtitle: Mengurangi emisi dan menyesuaikan diri dengan dampak
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-iklim-mitigasi
+prerequisites:
+  - concept: FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+    requires: FIS.C26.E.IKLIM.EFEK_RUMAH_KACA
+    kind: HARD
+  - concept: FIS.C26.E.IKLIM.DAMPAK_PERUBAHAN_IKLIM
+    requires: FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+    kind: SOFT
+  - concept: FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI
+    requires: FIS.C26.E.IKLIM.DAMPAK_PERUBAHAN_IKLIM
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

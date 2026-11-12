@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LIMIT.Q.KONSEP_LIMIT_1
+familyCode: MAT.C26.FPLUS.LIMIT.F.KONSEP_LIMIT_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LIMIT.KONSEP_LIMIT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tabel f(x) untuk x = 2,9; 2,99; 2,999 adalah 5,8; 5,98; 5,998 dan untuk x = 3,1; 3,01; 3,001 adalah 6,2; 6,02; 6,002. Nilai lim x→3 f(x) adalah …
+  options:
+    - id: a
+      label: "6"
+    - id: b
+      label: 5,998
+    - id: c
+      label: "3"
+    - id: d
+      label: tidak ada
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "6"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LIMIT.KONSEP_LIMIT
+  feedback:
+    correct: Dari kiri dan dari kanan, nilai f(x) sama-sama mendekati 6.
+    incorrect: Jawabannya 6. Dari kiri dan dari kanan, nilai f(x) sama-sama mendekati 6.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

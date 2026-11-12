@@ -1,0 +1,71 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI
+subject: MAT
+title: Fungsi dan pemodelan
+subtitle: Fungsi rasional, model periodik trigonometri, dan memilih model dari data
+phase: F+
+availability: MAPPED
+bekal:
+  - fungsi
+  - trigonometri
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.FPLUS.FUNGSI.FUNGSI_RASIONAL_DAN_ASIMTOT
+    title: Fungsi rasional dan asimtot
+    subtitle: Daerah asal, asimtot tegak, dan asimtot datar
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-fungsi-c1
+  - code: MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI
+    title: Model periodik trigonometri
+    subtitle: Amplitudo, periode, dan garis tengah dari data berulang
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-fungsi-c2
+  - code: MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+    title: Memilih model fungsi dari data
+    subtitle: Selisih, rasio, dan pola untuk memilih model
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-fungsi-model
+prerequisites:
+  - concept: MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+    requires: MAT.C26.FPLUS.FUNGSI.FUNGSI_RASIONAL_DAN_ASIMTOT
+    kind: SOFT
+  - concept: MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+    requires: MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

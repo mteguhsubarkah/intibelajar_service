@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.HUKUM_KEKEKALAN_MASSA_LAVOISIER_2
+familyCode: KIM.C26.E.HUKUMDASAR.F.HUKUM_KEKEKALAN_MASSA_LAVOISIER_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kertas dibakar di udara terbuka sehingga abunya lebih ringan daripada kertas semula. Penjelasan yang tepat adalah …
+  options:
+    - id: a
+      label: abu lebih padat
+    - id: b
+      label: sebagian hasil reaksi berupa gas yang keluar ke udara
+    - id: c
+      label: massa hilang selama reaksi
+    - id: d
+      label: hukum kekekalan massa tidak berlaku
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - sebagian hasil reaksi berupa gas yang keluar ke udara
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+  feedback:
+    correct: CO₂ dan uap air hasil pembakaran keluar dari sistem, sehingga massa total tetap tetapi tidak ikut tertimbang.
+    incorrect: Jawabannya sebagian hasil reaksi berupa gas yang keluar ke udara. CO₂ dan uap air hasil pembakaran keluar dari sistem, sehingga massa total tetap tetapi tidak ikut tertimbang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

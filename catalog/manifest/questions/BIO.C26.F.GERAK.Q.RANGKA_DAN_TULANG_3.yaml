@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.RANGKA_DAN_TULANG_3
+familyCode: BIO.C26.F.GERAK.F.RANGKA_DAN_TULANG_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Proses pembentukan tulang keras dari tulang rawan disebut …
+  options:
+    - id: a
+      label: difusi
+    - id: b
+      label: osifikasi
+    - id: c
+      label: fermentasi
+    - id: d
+      label: fotosintesis
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - osifikasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+  feedback:
+    correct: Pada osifikasi, osteoblas mengendapkan kalsium sehingga tulang rawan mengeras.
+    incorrect: Jawabannya osifikasi. Pada osifikasi, osteoblas mengendapkan kalsium sehingga tulang rawan mengeras.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

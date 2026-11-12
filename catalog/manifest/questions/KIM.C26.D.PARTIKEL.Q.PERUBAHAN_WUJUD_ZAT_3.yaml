@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.Q.PERUBAHAN_WUJUD_ZAT_3
+familyCode: KIM.C26.D.PARTIKEL.F.PERUBAHAN_WUJUD_ZAT_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kapur barus di lemari lama-kelamaan habis tanpa meninggalkan cairan. Peristiwa ini adalah …
+  options:
+    - id: a
+      label: mengembun
+    - id: b
+      label: menyublim
+    - id: c
+      label: mencair
+    - id: d
+      label: membeku
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - menyublim
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+  feedback:
+    correct: Kapur barus berubah langsung dari padat menjadi gas tanpa melewati wujud cair.
+    incorrect: Jawabannya menyublim. Kapur barus berubah langsung dari padat menjadi gas tanpa melewati wujud cair.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

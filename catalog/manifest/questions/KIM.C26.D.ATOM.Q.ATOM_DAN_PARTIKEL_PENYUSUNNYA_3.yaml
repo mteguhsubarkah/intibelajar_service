@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM.Q.ATOM_DAN_PARTIKEL_PENYUSUNNYA_3
+familyCode: KIM.C26.D.ATOM.F.ATOM_DAN_PARTIKEL_PENYUSUNNYA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Atom netral oksigen memiliki 8 proton. Jumlah elektronnya adalah …
+  options:
+    - id: a
+      label: "16"
+    - id: b
+      label: "0"
+    - id: c
+      label: "4"
+    - id: d
+      label: "8"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "8"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+  feedback:
+    correct: Pada atom netral, jumlah elektron sama dengan jumlah proton.
+    incorrect: Jawabannya 8. Pada atom netral, jumlah elektron sama dengan jumlah proton.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

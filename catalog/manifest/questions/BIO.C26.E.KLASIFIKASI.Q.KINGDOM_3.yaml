@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.KLASIFIKASI.Q.KINGDOM_3
+familyCode: BIO.C26.E.KLASIFIKASI.F.KINGDOM_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.KLASIFIKASI.SISTEM_LIMA_KINGDOM_DAN_TIGA_DOMAIN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dasar pembagian makhluk hidup menjadi tiga domain adalah …
+  options:
+    - id: a
+      label: perbedaan RNA ribosom
+    - id: b
+      label: bentuk tubuh
+    - id: c
+      label: tempat hidup
+    - id: d
+      label: cara bergerak
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - perbedaan RNA ribosom
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.KLASIFIKASI.SISTEM_LIMA_KINGDOM_DAN_TIGA_DOMAIN
+  feedback:
+    correct: Carl Woese membandingkan urutan RNA ribosom dan menemukan tiga kelompok besar.
+    incorrect: Jawabannya perbedaan RNA ribosom. Carl Woese membandingkan urutan RNA ribosom dan menemukan tiga kelompok besar.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

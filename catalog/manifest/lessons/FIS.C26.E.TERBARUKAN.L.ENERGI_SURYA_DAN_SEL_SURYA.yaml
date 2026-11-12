@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.L.ENERGI_SURYA_DAN_SEL_SURYA
+title: Energi surya dan sel surya
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Sel surya
+  - type: text
+    slide: 0
+    text: "**Sel surya** (fotovoltaik) mengubah energi cahaya langsung menjadi energi listrik arus searah. Beberapa sel disusun menjadi panel surya."
+  - type: text
+    slide: 0
+    text: Daya keluarannya bergantung pada intensitas cahaya, luas panel, dan **efisiensi** panel.
+  - type: math
+    slide: 0
+    name: daya keluaran
+    expression: P = efisiensi × intensitas × luas
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Menghitung dan menilai
+  - type: text
+    slide: 1
+    text: "Contoh: panel seluas 2 m² menerima 1.000 W/m² dengan efisiensi 20%. Daya listriknya 0,20 × 1.000 × 2 = 400 W."
+  - type: text
+    slide: 1
+    text: "Kelebihan: bersih dan cocok untuk Indonesia yang tropis. Keterbatasan: tidak menghasilkan listrik di malam hari, sehingga perlu baterai atau jaringan listrik."
+  - type: tip
+    slide: 1
+    text: Efisiensi panel surya umumnya sekitar 15–22%.
+checks:
+  - question: FIS.C26.E.TERBARUKAN.Q.ENERGI_SURYA_DAN_SEL_SURYA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.TERBARUKAN.S.ENERGI_SURYA_DAN_SEL_SURYA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

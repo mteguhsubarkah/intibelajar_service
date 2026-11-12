@@ -91,6 +91,8 @@ test('backoffice worker: durable idempotent seed, lease fencing, recovery and no
     const seeded = f.store.read().manifest.topics.find(t => t.code.startsWith('MAT.CP25.'))!;
     assert.ok(seeded);
     f.store.change(undefined, 'edit', s => command(s, { ...topic(seeded.code), title: 'Editor sudah memperbaiki ini' }));
+    // Fase diubah ke E: kelas inti yang dulu 11–12 ikut menjadi kelas 10, sehingga draf tetap valid.
+    assert.ok(f.store.read().manifest.topics.find(t => t.code === seeded.code)!.concepts.every(x => x.grade === undefined || x.grade === 10));
     // A consciously retried job never replaces an editor's work.
     f.store.change(undefined, 'retry', s => { s.jobs[0]!.status = 'QUEUED'; s.jobs[0]!.attempts = 0; });
     const again = f.store.change(undefined, 'claim', s => claim(s, Date.now()))!;

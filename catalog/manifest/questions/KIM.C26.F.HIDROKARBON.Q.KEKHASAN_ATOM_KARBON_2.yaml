@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.Q.KEKHASAN_ATOM_KARBON_2
+familyCode: KIM.C26.F.HIDROKARBON.F.KEKHASAN_ATOM_KARBON_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada senyawa CH₃–C(CH₃)₂–CH₃, atom C yang mengikat empat atom C lain disebut atom C …
+  options:
+    - id: a
+      label: kuarterner
+    - id: b
+      label: primer
+    - id: c
+      label: sekunder
+    - id: d
+      label: tersier
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - kuarterner
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON
+  feedback:
+    correct: Atom C pusat terikat pada empat gugus CH₃, sehingga disebut C kuarterner.
+    incorrect: Jawabannya kuarterner. Atom C pusat terikat pada empat gugus CH₃, sehingga disebut C kuarterner.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

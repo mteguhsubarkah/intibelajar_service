@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLOID.L.PEMBUATAN
+title: Pembuatan dan penerapan koloid
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.KOLOID.PEMBUATAN_DAN_PENERAPAN_KOLOID
+blocks:
+  - type: heading
+    slide: 0
+    text: Kondensasi dan dispersi
+  - type: text
+    slide: 0
+    text: "Cara **kondensasi**: partikel kecil (ion atau molekul) digabung menjadi partikel koloid, misalnya hidrolisis FeCl₃ dalam air panas yang membentuk sol Fe(OH)₃."
+  - type: text
+    slide: 0
+    text: "Cara **dispersi**: partikel besar dipecah menjadi seukuran koloid, misalnya dengan penggilingan (mekanik), peptisasi, atau busur Bredig."
+  - type: heading
+    slide: 1
+    text: Pengemulsi dan penerapan
+  - type: text
+    slide: 1
+    text: "**Pengemulsi** menstabilkan emulsi. Sabun dan kuning telur (lesitin) membuat minyak dapat bercampur dengan air."
+  - type: text
+    slide: 1
+    text: Koloid banyak dipakai dalam makanan, kosmetik, obat, dan cat. Pengemulsi dalam mayones mencegah minyak dan cuka memisah.
+  - type: tip
+    slide: 1
+    text: Sabun membersihkan lemak karena satu ujung molekulnya suka air dan ujung lainnya suka minyak.
+checks:
+  - question: KIM.C26.F.KOLOID.Q.PEMBUATAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLOID.S.PEMBUATAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

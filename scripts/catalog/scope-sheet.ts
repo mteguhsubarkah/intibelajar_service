@@ -28,7 +28,7 @@ const lines = [`# Lembar tinjauan ${scopeText(scope)}`, '',
 for (const t of c.topics) {
   lines.push(`## ${t.title} (${t.code}) · Fase ${t.phase}`, '');
   for (const concept of t.concepts.filter(x => !x.hidden)) {
-    lines.push(`### Inti: ${concept.title}`, '');
+    lines.push(`### Inti: ${concept.title}${concept.grade ? ` · Kelas ${concept.grade}` : ''}`, '');
     for (const l of c.lessons.filter(x => x.concepts.includes(concept.code))) {
       lines.push(`- [ ] **Materi ${l.code}** — ${l.title}`);
       for (const slide of [...new Set(l.blocks.map(b => b.slide))].sort()) {

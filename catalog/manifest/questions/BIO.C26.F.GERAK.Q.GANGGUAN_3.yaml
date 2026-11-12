@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.GANGGUAN_3
+familyCode: BIO.C26.F.GERAK.F.GANGGUAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Upaya yang paling tepat untuk mencegah osteoporosis di usia tua adalah …
+  options:
+    - id: a
+      label: membawa beban berat di satu sisi tubuh
+    - id: b
+      label: mencukupi kalsium dan vitamin D serta rutin berolahraga sejak muda
+    - id: c
+      label: menghindari semua jenis olahraga
+    - id: d
+      label: mengurangi minum susu
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - mencukupi kalsium dan vitamin D serta rutin berolahraga sejak muda
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+  feedback:
+    correct: Massa tulang dibangun sejak muda melalui asupan kalsium, vitamin D, dan latihan beban.
+    incorrect: Jawabannya mencukupi kalsium dan vitamin D serta rutin berolahraga sejak muda. Massa tulang dibangun sejak muda melalui asupan kalsium, vitamin D, dan latihan beban.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM.L.UNSUR
+title: Lambang unsur dan tabel periodik sederhana
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.ATOM.LAMBANG_UNSUR_DAN_TABEL_PERIODIK_SEDERHA
+blocks:
+  - type: heading
+    slide: 0
+    text: Lambang unsur
+  - type: text
+    slide: 0
+    text: "Setiap unsur memiliki **lambang** satu atau dua huruf dengan huruf pertama kapital. Contoh: H (hidrogen), O (oksigen), Fe (besi, dari ferrum), Na (natrium)."
+  - type: text
+    slide: 0
+    text: Unsur dikelompokkan menjadi **logam** (mengilap, menghantar listrik), **nonlogam**, dan **metaloid** yang sifatnya di antara keduanya, seperti silikon.
+  - type: heading
+    slide: 1
+    text: Tabel periodik
+  - type: text
+    slide: 1
+    text: Pada **tabel periodik**, unsur diurutkan berdasarkan nomor atom. Baris disebut **periode**; kolom disebut **golongan**.
+  - type: text
+    slide: 1
+    text: Unsur dalam satu golongan memiliki sifat kimia yang mirip, misalnya natrium dan kalium sama-sama logam yang sangat reaktif.
+  - type: tip
+    slide: 1
+    text: Co (kobalt) adalah unsur, sedangkan CO (karbon monoksida) adalah senyawa.
+checks:
+  - question: KIM.C26.D.ATOM.Q.UNSUR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.ATOM.S.UNSUR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

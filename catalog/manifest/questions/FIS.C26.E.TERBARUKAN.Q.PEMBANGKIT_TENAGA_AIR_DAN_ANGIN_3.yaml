@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.Q.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_3
+familyCode: FIS.C26.E.TERBARUKAN.F.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika kecepatan angin naik dari 4 m/s menjadi 8 m/s, daya turbin angin menjadi …
+  options:
+    - id: a
+      label: 4 kali semula
+    - id: b
+      label: 16 kali semula
+    - id: c
+      label: 8 kali semula
+    - id: d
+      label: 2 kali semula
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 8 kali semula
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+  feedback:
+    correct: Daya sebanding v³, sehingga kecepatan dua kali lipat membuat daya menjadi 2³ = 8 kali.
+    incorrect: Jawabannya 8 kali semula. Daya sebanding v³, sehingga kecepatan dua kali lipat membuat daya menjadi 2³ = 8 kali.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

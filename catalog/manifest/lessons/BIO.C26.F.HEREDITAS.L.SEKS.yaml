@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.L.SEKS
+title: Penentuan jenis kelamin dan pautan seks
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+blocks:
+  - type: heading
+    slide: 0
+    text: Kromosom kelamin
+  - type: text
+    slide: 0
+    text: Pada manusia, perempuan memiliki kromosom kelamin **XX** dan laki-laki **XY**. Sel telur selalu membawa X, sedangkan sperma membawa X atau Y, sehingga peluang anak laki-laki atau perempuan 50%.
+  - type: text
+    slide: 0
+    text: "**Pautan seks** terjadi bila gen terletak pada kromosom kelamin, terutama kromosom X."
+  - type: heading
+    slide: 1
+    text: Buta warna dan hemofilia
+  - type: text
+    slide: 1
+    text: "**Buta warna** dan **hemofilia** disebabkan gen resesif tertaut X. Perempuan bisa normal, **karier** (XᴺXⁿ), atau penderita (XⁿXⁿ); laki-laki hanya normal (XᴺY) atau penderita (XⁿY)."
+  - type: text
+    slide: 1
+    text: "Karena itu penderita laki-laki lebih banyak: satu alel resesif di kromosom X sudah cukup."
+  - type: math
+    slide: 1
+    name: perempuan karier
+    expression: XᴺXⁿ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Ayah tidak menurunkan kromosom X kepada anak laki-lakinya.
+checks:
+  - question: BIO.C26.F.HEREDITAS.Q.SEKS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.HEREDITAS.S.SEKS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

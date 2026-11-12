@@ -1,0 +1,56 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.L.ALKANA_ALKENA_DAN_ALKUNA
+title: Alkana, alkena, dan alkuna
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+blocks:
+  - type: heading
+    slide: 0
+    text: Rumus umum
+  - type: text
+    slide: 0
+    text: "**Alkana** (ikatan tunggal, jenuh): CₙH₂ₙ₊₂, contohnya CH₄ dan C₃H₈."
+  - type: text
+    slide: 0
+    text: "**Alkena** (satu ikatan rangkap dua): CₙH₂ₙ, contohnya C₂H₄. **Alkuna** (satu ikatan rangkap tiga): CₙH₂ₙ₋₂, contohnya C₂H₂."
+  - type: math
+    slide: 0
+    name: alkana
+    expression: CₙH₂ₙ₊₂
+    highlight: true
+  - type: math
+    slide: 0
+    name: alkena
+    expression: CₙH₂ₙ
+  - type: math
+    slide: 0
+    name: alkuna
+    expression: CₙH₂ₙ₋₂
+  - type: heading
+    slide: 1
+    text: Sifat dan isomer
+  - type: text
+    slide: 1
+    text: Titik didih alkana naik seiring bertambahnya jumlah atom C. Alkena dan alkuna tidak jenuh, sehingga dapat mengalami reaksi adisi.
+  - type: text
+    slide: 1
+    text: "**Isomer** adalah senyawa dengan rumus molekul sama tetapi struktur berbeda. Contoh: C₄H₁₀ dapat berupa butana atau 2-metilpropana."
+  - type: tip
+    slide: 1
+    text: Alkana bercabang memiliki titik didih lebih rendah daripada alkana rantai lurus yang rumus molekulnya sama.
+checks:
+  - question: KIM.C26.F.HIDROKARBON.Q.ALKANA_ALKENA_DAN_ALKUNA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.HIDROKARBON.S.ALKANA_ALKENA_DAN_ALKUNA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

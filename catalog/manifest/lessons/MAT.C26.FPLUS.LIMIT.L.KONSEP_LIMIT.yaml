@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LIMIT.L.KONSEP_LIMIT
+title: Konsep limit
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.LIMIT.KONSEP_LIMIT
+blocks:
+  - type: heading
+    slide: 0
+    text: Mendekati, bukan sama dengan
+  - type: text
+    slide: 0
+    text: lim x→a f(x) = L berarti nilai f(x) makin dekat ke L ketika x makin dekat ke a, dari kiri maupun dari kanan.
+  - type: text
+    slide: 0
+    text: Nilai f(a) sendiri tidak harus ada. Yang dilihat adalah perilaku fungsi di sekitar a.
+  - type: math
+    slide: 0
+    name: notasi
+    expression: lim x→a f(x) = L
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Limit kiri dan kanan
+  - type: text
+    slide: 1
+    text: Limit ada jika **limit kiri** (x → a⁻) sama dengan **limit kanan** (x → a⁺).
+  - type: text
+    slide: 1
+    text: "Contoh fungsi tangga: mendekati x = 2 dari kiri bernilai 1 dan dari kanan bernilai 3, sehingga limitnya di x = 2 tidak ada."
+  - type: math
+    slide: 1
+    name: syarat ada
+    expression: lim x→a⁻ = lim x→a⁺
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tabel nilai x seperti 1,9; 1,99; 1,999 membantu menebak limit.
+checks:
+  - question: MAT.C26.FPLUS.LIMIT.Q.KONSEP_LIMIT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.LIMIT.S.KONSEP_LIMIT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

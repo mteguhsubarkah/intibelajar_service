@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.L.MASSAJENIS
+title: Massa jenis
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.PARTIKEL.MASSA_JENIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Pengertian massa jenis
+  - type: text
+    slide: 0
+    text: "**Massa jenis** (ρ) adalah massa zat per satuan volume: ρ = m/V. Satuannya kg/m³ atau g/cm³ (1 g/cm³ = 1.000 kg/m³)."
+  - type: text
+    slide: 0
+    text: Massa jenis air sekitar 1 g/cm³. Massa jenis adalah ciri khas suatu zat murni.
+  - type: math
+    slide: 0
+    name: massa jenis
+    expression: ρ = m / V
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Terapung dan tenggelam
+  - type: text
+    slide: 1
+    text: Benda yang massa jenisnya lebih kecil daripada zat cair akan **terapung**; yang lebih besar akan **tenggelam**.
+  - type: text
+    slide: 1
+    text: Volume benda tak beraturan dapat diukur dengan gelas ukur, yaitu dari selisih tinggi permukaan air sebelum dan sesudah benda dimasukkan.
+  - type: tip
+    slide: 1
+    text: Satu kilogram kapas dan satu kilogram besi sama berat, tetapi volume kapas jauh lebih besar.
+checks:
+  - question: KIM.C26.D.PARTIKEL.Q.MASSAJENIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.PARTIKEL.S.MASSAJENIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

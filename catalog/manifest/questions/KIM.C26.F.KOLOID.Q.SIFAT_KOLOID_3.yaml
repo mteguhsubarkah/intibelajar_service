@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLOID.Q.SIFAT_KOLOID_3
+familyCode: KIM.C26.F.KOLOID.F.SIFAT_KOLOID_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLOID.SIFAT_KOLOID
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Prinsip kerja mesin cuci darah (hemodialisis) adalah …
+  options:
+    - id: a
+      label: elektroforesis
+    - id: b
+      label: dialisis dengan selaput semipermeabel
+    - id: c
+      label: koagulasi darah
+    - id: d
+      label: efek Tyndall
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - dialisis dengan selaput semipermeabel
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLOID.SIFAT_KOLOID
+  feedback:
+    correct: Zat sisa berukuran kecil menembus selaput, sementara protein dan sel darah yang berukuran besar tertahan.
+    incorrect: Jawabannya dialisis dengan selaput semipermeabel. Zat sisa berukuran kecil menembus selaput, sementara protein dan sel darah yang berukuran besar tertahan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

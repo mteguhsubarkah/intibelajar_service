@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.Q.OPERASI_BILANGAN_KOMPLEKS_3
+familyCode: MAT.C26.FPLUS.KOMPLEKS.F.OPERASI_BILANGAN_KOMPLEKS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KOMPLEKS.OPERASI_BILANGAN_KOMPLEKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil 5/(2 + i) adalah …
+  options:
+    - id: a
+      label: 2 − i
+    - id: b
+      label: 2 + i
+    - id: c
+      label: 5/2 − 5i
+    - id: d
+      label: 10 − 5i
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2 − i
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KOMPLEKS.OPERASI_BILANGAN_KOMPLEKS
+  feedback:
+    correct: "Kalikan dengan sekawan 2 − i: 5(2 − i)/(4 + 1) = 2 − i."
+    incorrect: "Jawabannya 2 − i. Kalikan dengan sekawan 2 − i: 5(2 − i)/(4 + 1) = 2 − i."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

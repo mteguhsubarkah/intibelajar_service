@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU.Q.KONSEP_LAJU_REAKSI_3
+familyCode: KIM.C26.F.LAJU.F.KONSEP_LAJU_REAKSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.LAJU.KONSEP_LAJU_REAKSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Satuan laju reaksi yang tepat adalah …
+  options:
+    - id: a
+      label: M/s
+    - id: b
+      label: mol
+    - id: c
+      label: M
+    - id: d
+      label: s/M
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - M/s
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.LAJU.KONSEP_LAJU_REAKSI
+  feedback:
+    correct: Laju adalah perubahan konsentrasi (M) per satuan waktu (s).
+    incorrect: Jawabannya M/s. Laju adalah perubahan konsentrasi (M) per satuan waktu (s).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI.L.MODEL
+title: Memilih model fungsi dari data
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+blocks:
+  - type: heading
+    slide: 0
+    text: Ciri tiap model
+  - type: text
+    slide: 0
+    text: "**Linear**: selisih nilai y tetap untuk langkah x yang sama. **Kuadrat**: selisih keduanya tetap. **Eksponensial**: rasio nilai y berurutan tetap."
+  - type: text
+    slide: 0
+    text: "**Trigonometri**: nilai naik-turun berulang dengan periode tertentu. **Rasional**: mendekati suatu nilai tetapi tidak pernah mencapainya."
+  - type: math
+    slide: 0
+    name: linear
+    expression: selisih tetap
+    highlight: true
+  - type: math
+    slide: 0
+    name: eksponensial
+    expression: rasio tetap
+  - type: heading
+    slide: 1
+    text: Menguji model
+  - type: text
+    slide: 1
+    text: Hitung selisih atau rasio dari tabel, pilih model, lalu tentukan parameternya dari dua atau tiga titik.
+  - type: text
+    slide: 1
+    text: Periksa model dengan titik lain dan pertimbangkan batas wajarnya. Jumlah bakteri, misalnya, tidak bisa tumbuh eksponensial selamanya.
+  - type: tip
+    slide: 1
+    text: Model yang cocok dengan data belum tentu cocok untuk meramal jauh di luar rentang data.
+checks:
+  - question: MAT.C26.FPLUS.FUNGSI.Q.MODEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.FUNGSI.S.MODEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.L.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+title: Pembangkit tenaga air dan angin
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+blocks:
+  - type: heading
+    slide: 0
+    text: PLTA
+  - type: text
+    slide: 0
+    text: Air bendungan yang jatuh mengubah **energi potensial** menjadi energi kinetik yang memutar turbin dan generator.
+  - type: text
+    slide: 0
+    text: Daya listriknya P = η · ρ · Q · g · h, dengan Q debit air (m³/s), h tinggi jatuh air, dan η efisiensi pembangkit.
+  - type: math
+    slide: 0
+    name: daya PLTA
+    expression: P = η ρ Q g h
+    highlight: true
+  - type: heading
+    slide: 1
+    text: PLTB (bayu)
+  - type: text
+    slide: 1
+    text: Angin memutar baling-baling turbin; energi kinetik udara diubah menjadi energi listrik oleh generator.
+  - type: text
+    slide: 1
+    text: Dayanya sebanding dengan **pangkat tiga kecepatan angin**, sehingga angin dua kali lebih kencang memberi daya delapan kali lebih besar.
+  - type: math
+    slide: 1
+    name: daya angin
+    expression: P ∝ v³
+    highlight: true
+  - type: tip
+    slide: 1
+    text: PLTB Sidrap di Sulawesi Selatan adalah salah satu pembangkit tenaga bayu besar di Indonesia.
+checks:
+  - question: FIS.C26.E.TERBARUKAN.Q.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.TERBARUKAN.S.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -91,6 +91,7 @@ export interface Database {
     is_hidden: Generated<boolean>;
     is_capstone: Generated<boolean>;
     availability: string;
+    grade: number | null;
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
   };

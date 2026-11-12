@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.HUKUM_PERBANDINGAN_TETAP_PROUST_3
+familyCode: KIM.C26.E.HUKUMDASAR.F.HUKUM_PERBANDINGAN_TETAP_PROUST_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hukum Proust menyatakan bahwa …
+  options:
+    - id: a
+      label: dua unsur dapat membentuk lebih dari satu senyawa
+    - id: b
+      label: perbandingan massa unsur dalam suatu senyawa selalu tetap
+    - id: c
+      label: massa sebelum dan sesudah reaksi sama
+    - id: d
+      label: volume gas sebanding dengan jumlah molekul
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - perbandingan massa unsur dalam suatu senyawa selalu tetap
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+  feedback:
+    correct: Pilihan lain berturut-turut adalah hukum Lavoisier, hipotesis Avogadro, dan dasar hukum Dalton.
+    incorrect: Jawabannya perbandingan massa unsur dalam suatu senyawa selalu tetap. Pilihan lain berturut-turut adalah hukum Lavoisier, hipotesis Avogadro, dan dasar hukum Dalton.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

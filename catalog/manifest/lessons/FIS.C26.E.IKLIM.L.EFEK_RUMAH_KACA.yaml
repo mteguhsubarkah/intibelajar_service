@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.L.EFEK_RUMAH_KACA
+title: Efek rumah kaca
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.IKLIM.EFEK_RUMAH_KACA
+blocks:
+  - type: heading
+    slide: 0
+    text: Cara kerja efek rumah kaca
+  - type: text
+    slide: 0
+    text: Sinar Matahari, sebagian besar berupa cahaya tampak, menembus atmosfer dan memanaskan permukaan Bumi. Permukaan yang hangat memancarkan kembali energi sebagai **radiasi inframerah**.
+  - type: text
+    slide: 0
+    text: "**Gas rumah kaca** seperti CO₂, CH₄ (metana), N₂O, dan uap air menyerap sebagian inframerah itu lalu memancarkannya kembali ke segala arah, termasuk ke Bumi."
+  - type: math
+    slide: 0
+    name: gas rumah kaca
+    expression: CO₂, CH₄, N₂O, H₂O
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Alami dan berlebihan
+  - type: text
+    slide: 1
+    text: Efek rumah kaca alami membuat suhu rata-rata Bumi sekitar 15°C. Tanpa efek ini, suhunya sekitar −18°C.
+  - type: text
+    slide: 1
+    text: Masalahnya adalah **tambahan** gas rumah kaca dari aktivitas manusia, yang membuat lebih banyak energi tertahan sehingga suhu rata-rata naik.
+  - type: tip
+    slide: 1
+    text: Penipisan lapisan ozon adalah masalah lain, bukan penyebab utama efek rumah kaca.
+checks:
+  - question: FIS.C26.E.IKLIM.Q.EFEK_RUMAH_KACA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.IKLIM.S.EFEK_RUMAH_KACA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

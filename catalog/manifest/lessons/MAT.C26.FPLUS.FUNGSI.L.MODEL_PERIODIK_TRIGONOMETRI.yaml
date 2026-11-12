@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI.L.MODEL_PERIODIK_TRIGONOMETRI
+title: Model periodik trigonometri
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI
+blocks:
+  - type: heading
+    slide: 0
+    text: Bentuk umum model periodik
+  - type: text
+    slide: 0
+    text: Fenomena berulang seperti pasang surut, suhu harian, dan putaran roda dimodelkan dengan y = A sin(B(x − C)) + D.
+  - type: text
+    slide: 0
+    text: "**Amplitudo** |A| = setengah selisih nilai maksimum dan minimum; **garis tengah** y = D = rata-rata maksimum dan minimum; **periode** = 2π/B (atau 360°/B)."
+  - type: math
+    slide: 0
+    name: model
+    expression: y = A sin(B(x − C)) + D
+    highlight: true
+  - type: math
+    slide: 0
+    name: periode
+    expression: 2π / B
+  - type: heading
+    slide: 1
+    text: Membaca data
+  - type: text
+    slide: 1
+    text: "Contoh: tinggi air laut berkisar 1 m sampai 5 m dan berulang tiap 12 jam. Maka A = 2, D = 3, dan B = 2π/12 = π/6."
+  - type: text
+    slide: 1
+    text: C menggeser grafik mendatar sehingga puncak atau titik awalnya tepat pada waktu yang diketahui.
+  - type: math
+    slide: 1
+    name: amplitudo
+    expression: (maks − min)/2
+    highlight: true
+  - type: math
+    slide: 1
+    name: garis tengah
+    expression: (maks + min)/2
+  - type: tip
+    slide: 1
+    text: "Satuan periode mengikuti satuan x: jam, menit, atau hari."
+checks:
+  - question: MAT.C26.FPLUS.FUNGSI.Q.MODEL_PERIODIK_TRIGONOMETRI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.FUNGSI.S.MODEL_PERIODIK_TRIGONOMETRI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

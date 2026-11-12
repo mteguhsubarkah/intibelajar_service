@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.Q.PENYIMPANGAN_SEMU_HUKUM_MENDEL_1
+familyCode: BIO.C26.F.HEREDITAS.F.PENYIMPANGAN_SEMU_HUKUM_MENDEL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.HEREDITAS.PENYIMPANGAN_SEMU_HUKUM_MENDEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Perbandingan fenotipe F₂ 9 : 7 terjadi pada peristiwa …"
+  options:
+    - id: a
+      label: komplementer
+    - id: b
+      label: polimeri
+    - id: c
+      label: epistasis
+    - id: d
+      label: kriptomeri
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - komplementer
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.HEREDITAS.PENYIMPANGAN_SEMU_HUKUM_MENDEL
+  feedback:
+    correct: Pada komplementer, sifat hanya muncul bila kedua gen dominan hadir bersama (9), sisanya (3 + 3 + 1 = 7) tidak.
+    incorrect: Jawabannya komplementer. Pada komplementer, sifat hanya muncul bila kedua gen dominan hadir bersama (9), sisanya (3 + 3 + 1 = 7) tidak.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

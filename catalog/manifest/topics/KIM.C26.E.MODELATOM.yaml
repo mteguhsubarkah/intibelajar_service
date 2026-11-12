@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM
+subject: KIM
+title: Perkembangan model atom
+subtitle: Model Dalton sampai Bohr, konfigurasi elektron, dan elektron valensi
+phase: E
+availability: MAPPED
+bekal:
+  - atom, ion, dan molekul
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.E.MODELATOM.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD
+    title: Model atom Dalton, Thomson, Rutherford
+    subtitle: Percobaan dan kesimpulan tiap model
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-modelatom-c1
+  - code: KIM.C26.E.MODELATOM.MODEL_ATOM_BOHR
+    title: Model atom Bohr
+    subtitle: Kulit elektron, tingkat energi, dan warna nyala
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-modelatom-c2
+  - code: KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS
+    title: Konfigurasi elektron dan elektron valensi
+    subtitle: Pengisian kulit K, L, M dan elektron terluar
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-e-modelatom-konfigurasi
+prerequisites:
+  - concept: KIM.C26.E.MODELATOM.MODEL_ATOM_BOHR
+    requires: KIM.C26.E.MODELATOM.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD
+    kind: HARD
+  - concept: KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS
+    requires: KIM.C26.E.MODELATOM.MODEL_ATOM_BOHR
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

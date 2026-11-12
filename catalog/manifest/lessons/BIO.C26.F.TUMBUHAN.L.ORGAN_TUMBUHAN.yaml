@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.L.ORGAN_TUMBUHAN
+title: Organ tumbuhan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Akar, batang, daun
+  - type: text
+    slide: 0
+    text: "**Akar** menyerap air dan mineral serta menambatkan tumbuhan. Rambut akar memperluas permukaan penyerapan."
+  - type: text
+    slide: 0
+    text: "**Batang** menyangga tubuh dan menjadi jalur pengangkutan; **daun** adalah tempat utama fotosintesis dan penguapan."
+  - type: heading
+    slide: 1
+    text: Struktur daun
+  - type: text
+    slide: 1
+    text: Daun tersusun atas epidermis atas dan bawah, **jaringan palisade** (banyak kloroplas), **jaringan bunga karang** (banyak ruang antarsel), serta tulang daun berisi xilem dan floem.
+  - type: text
+    slide: 1
+    text: Stomata umumnya lebih banyak di epidermis bawah dan dijaga sel penjaga yang mengatur bukaannya.
+  - type: tip
+    slide: 1
+    text: Bunga, buah, dan biji adalah organ reproduksi generatif tumbuhan.
+checks:
+  - question: BIO.C26.F.TUMBUHAN.Q.ORGAN_TUMBUHAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUHAN.S.ORGAN_TUMBUHAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

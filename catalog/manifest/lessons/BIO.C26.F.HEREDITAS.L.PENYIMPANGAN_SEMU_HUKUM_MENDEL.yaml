@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.L.PENYIMPANGAN_SEMU_HUKUM_MENDEL
+title: Penyimpangan semu hukum Mendel
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.HEREDITAS.PENYIMPANGAN_SEMU_HUKUM_MENDEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Interaksi gen
+  - type: text
+    slide: 0
+    text: "Pada **penyimpangan semu**, perbandingan fenotipe F₂ tidak 9 : 3 : 3 : 1 karena gen-gen saling berinteraksi, tetapi pewarisan gennya tetap mengikuti Mendel."
+  - type: text
+    slide: 0
+    text: "**Epistasis–hipostasis**: satu gen menutupi ekspresi gen lain yang bukan alelnya, misalnya warna kulit biji gandum dengan F₂ 12 : 3 : 1."
+  - type: math
+    slide: 0
+    name: epistasis dominan
+    expression: "12 : 3 : 1"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Interaksi lain
+  - type: text
+    slide: 1
+    text: "**Kriptomeri** (bunga Linaria maroccana): 9 : 3 : 4. **Komplementer** (bunga Lathyrus odoratus): 9 : 7, karena warna muncul hanya jika kedua gen dominan hadir."
+  - type: text
+    slide: 1
+    text: "**Polimeri** (warna biji gandum merah): 15 : 1, karena beberapa gen menambah sifat yang sama."
+  - type: math
+    slide: 1
+    name: komplementer
+    expression: "9 : 7"
+    highlight: true
+  - type: math
+    slide: 1
+    name: polimeri
+    expression: "15 : 1"
+  - type: tip
+    slide: 1
+    text: Semua perbandingan ini tetap berjumlah 16 dari persilangan dihibrid.
+checks:
+  - question: BIO.C26.F.HEREDITAS.Q.PENYIMPANGAN_SEMU_HUKUM_MENDEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.HEREDITAS.S.PENYIMPANGAN_SEMU_HUKUM_MENDEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

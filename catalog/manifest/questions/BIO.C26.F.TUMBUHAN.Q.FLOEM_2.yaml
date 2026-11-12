@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.FLOEM_2
+familyCode: BIO.C26.F.TUMBUHAN.F.FLOEM_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kulit batang sebuah pohon dikupas melingkar. Beberapa minggu kemudian bagian di atas kupasan membengkak karena …
+  options:
+    - id: a
+      label: akar tumbuh di bagian itu
+    - id: b
+      label: hasil fotosintesis menumpuk karena floem terputus
+    - id: c
+      label: air menumpuk karena xilem terputus
+    - id: d
+      label: sel kambium mati
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - hasil fotosintesis menumpuk karena floem terputus
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS
+  feedback:
+    correct: Floem berada di kulit batang, sehingga gula dari daun tertahan di atas kupasan.
+    incorrect: Jawabannya hasil fotosintesis menumpuk karena floem terputus. Floem berada di kulit batang, sehingga gula dari daun tertahan di atas kupasan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU.Q.FAKTOR_2
+familyCode: KIM.C26.F.LAJU.F.FAKTOR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suatu reaksi berlangsung 2 kali lebih cepat setiap kenaikan suhu 10°C. Jika pada 20°C lajunya v, maka pada 50°C lajunya …
+  options:
+    - id: a
+      label: 6v
+    - id: b
+      label: 30v
+    - id: c
+      label: 8v
+    - id: d
+      label: 3v
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 8v
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU
+  feedback:
+    correct: Dari 20°C ke 50°C ada tiga kali kenaikan 10°C, sehingga laju menjadi 2³ = 8 kali.
+    incorrect: Jawabannya 8v. Dari 20°C ke 50°C ada tiga kali kenaikan 10°C, sehingga laju menjadi 2³ = 8 kali.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -147,7 +147,7 @@ async function upsertConcepts(tx: Tx, m: Manifest, topicId: Map<string, string>)
     if (removed.length) throw new PublishError('MISCONCEPTION_REMOVED', `Concept ${c.code} drops misconception ${removed.map(r => r.code).join(', ')}; codes are append-only`);
     const values = { topic_id: topicId.get(t.code)!, legacy_map_id: first(c.aliases, 'MAP'), title: c.title, subtitle: c.subtitle ?? null, definition: c.definition ?? null,
       objectives: json(c.objectives), misconceptions: json(c.misconceptions), unit_code: c.unit ?? null, ordinal: c.ordinal, estimated_minutes: c.estimatedMinutes,
-      is_hidden: c.hidden, is_capstone: c.capstone, availability: c.availability };
+      is_hidden: c.hidden, is_capstone: c.capstone, availability: c.availability, grade: c.grade ?? null };
     const row = await tx.insertInto('concept').values({ id: uuid(), code: c.code, ...values })
       .onConflict(oc => oc.column('code').doUpdateSet({ ...values, updated_at: sql`now()` })).returning('id').executeTakeFirstOrThrow();
     ids.set(c.code, row.id);

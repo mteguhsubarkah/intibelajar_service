@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.E.KLASIFIKASI.L.TATA_NAMA_BINOMIAL
+title: Tata nama binomial
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.KLASIFIKASI.TATA_NAMA_BINOMIAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Nama ganda Linnaeus
+  - type: text
+    slide: 0
+    text: "**Carolus Linnaeus** memperkenalkan **tata nama ganda (binomial nomenklatur)**: nama ilmiah terdiri atas dua kata, yaitu nama genus dan penunjuk spesies."
+  - type: text
+    slide: 0
+    text: "Contoh: Oryza sativa (padi) dan Homo sapiens (manusia)."
+  - type: heading
+    slide: 1
+    text: Aturan penulisan
+  - type: text
+    slide: 1
+    text: Huruf pertama nama genus kapital, penunjuk spesies huruf kecil semua, dan seluruh nama dicetak miring atau digarisbawahi terpisah.
+  - type: text
+    slide: 1
+    text: Nama ilmiah memakai bahasa Latin atau yang dilatinkan, sehingga berlaku sama di seluruh dunia.
+  - type: tip
+    slide: 1
+    text: Dua makhluk dengan kata pertama nama ilmiah yang sama berarti satu genus.
+checks:
+  - question: BIO.C26.E.KLASIFIKASI.Q.TATA_NAMA_BINOMIAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.KLASIFIKASI.S.TATA_NAMA_BINOMIAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

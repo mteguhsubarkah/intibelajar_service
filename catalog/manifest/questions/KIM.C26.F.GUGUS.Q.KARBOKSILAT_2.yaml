@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.Q.KARBOKSILAT_2
+familyCode: KIM.C26.F.GUGUS.F.KARBOKSILAT_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil reaksi asam propanoat dengan metanol adalah …
+  options:
+    - id: a
+      label: metil propanoat dan hidrogen
+    - id: b
+      label: metil propanoat dan air
+    - id: c
+      label: propil metanoat dan air
+    - id: d
+      label: asam metanoat dan propanol
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - metil propanoat dan air
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+  feedback:
+    correct: Pada esterifikasi, alkil dari alkohol (metil) dipadukan dengan nama asam (propanoat), dan air dilepas.
+    incorrect: Jawabannya metil propanoat dan air. Pada esterifikasi, alkil dari alkohol (metil) dipadukan dengan nama asam (propanoat), dan air dilepas.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

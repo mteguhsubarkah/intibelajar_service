@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.Q.SEKS_2
+familyCode: BIO.C26.F.HEREDITAS.F.SEKS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Laki-laki penderita hemofilia menikah dengan perempuan normal homozigot. Anak perempuan mereka …
+  options:
+    - id: a
+      label: 50% hemofilia
+    - id: b
+      label: semuanya karier
+    - id: c
+      label: semuanya hemofilia
+    - id: d
+      label: semuanya normal homozigot
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - semuanya karier
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+  feedback:
+    correct: Setiap anak perempuan menerima Xⁿ dari ayah dan Xᴺ dari ibu, sehingga semuanya XᴺXⁿ (karier).
+    incorrect: Jawabannya semuanya karier. Setiap anak perempuan menerima Xⁿ dari ayah dan Xᴺ dari ibu, sehingga semuanya XᴺXⁿ (karier).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

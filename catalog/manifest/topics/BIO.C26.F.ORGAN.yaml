@@ -17,6 +17,7 @@ concepts:
     misconceptions: []
     ordinal: 1
     estimatedMinutes: 4
+    grade: 11
     hidden: false
     capstone: false
     availability: READY
@@ -30,6 +31,7 @@ concepts:
     misconceptions: []
     ordinal: 2
     estimatedMinutes: 5
+    grade: 11
     hidden: false
     capstone: false
     availability: READY
@@ -43,6 +45,7 @@ concepts:
     misconceptions: []
     ordinal: 3
     estimatedMinutes: 5
+    grade: 11
     hidden: false
     capstone: false
     availability: READY
@@ -56,6 +59,7 @@ concepts:
     misconceptions: []
     ordinal: 4
     estimatedMinutes: 5
+    grade: 11
     hidden: false
     capstone: false
     availability: READY
@@ -69,6 +73,7 @@ concepts:
     misconceptions: []
     ordinal: 5
     estimatedMinutes: 5
+    grade: 11
     hidden: false
     capstone: false
     availability: READY
@@ -82,6 +87,7 @@ concepts:
     misconceptions: []
     ordinal: 6
     estimatedMinutes: 5
+    grade: 11
     hidden: false
     capstone: false
     availability: READY
@@ -95,6 +101,7 @@ concepts:
     misconceptions: []
     ordinal: 7
     estimatedMinutes: 5
+    grade: 11
     hidden: false
     capstone: true
     availability: READY

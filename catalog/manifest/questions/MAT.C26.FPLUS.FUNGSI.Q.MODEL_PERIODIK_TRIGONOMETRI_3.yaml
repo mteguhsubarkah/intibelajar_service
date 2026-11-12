@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI.Q.MODEL_PERIODIK_TRIGONOMETRI_3
+familyCode: MAT.C26.FPLUS.FUNGSI.F.MODEL_PERIODIK_TRIGONOMETRI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bianglala berdiameter 40 m dengan titik terendah 2 m di atas tanah berputar sekali tiap 10 menit. Garis tengah (D) model tinggi penumpang adalah …
+  options:
+    - id: a
+      label: 22 m
+    - id: b
+      label: 20 m
+    - id: c
+      label: 40 m
+    - id: d
+      label: 42 m
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 22 m
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI
+  feedback:
+    correct: Tinggi berkisar 2 m sampai 42 m, sehingga D = (2 + 42)/2 = 22 m.
+    incorrect: Jawabannya 22 m. Tinggi berkisar 2 m sampai 42 m, sehingga D = (2 + 42)/2 = 22 m.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

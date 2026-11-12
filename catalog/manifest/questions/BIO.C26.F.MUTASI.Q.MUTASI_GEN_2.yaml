@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.Q.MUTASI_GEN_2
+familyCode: BIO.C26.F.MUTASI.F.MUTASI_GEN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.MUTASI.MUTASI_GEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Mutasi yang paling mungkin mengubah banyak asam amino sekaligus adalah …
+  options:
+    - id: a
+      label: mutasi pada sel kulit
+    - id: b
+      label: delesi satu basa di awal gen
+    - id: c
+      label: substitusi yang menghasilkan kodon sinonim
+    - id: d
+      label: substitusi di akhir gen
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - delesi satu basa di awal gen
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.MUTASI.MUTASI_GEN
+  feedback:
+    correct: Delesi satu basa menggeser kerangka baca, sehingga semua kodon sesudahnya berubah.
+    incorrect: Jawabannya delesi satu basa di awal gen. Delesi satu basa menggeser kerangka baca, sehingga semua kodon sesudahnya berubah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

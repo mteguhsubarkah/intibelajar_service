@@ -10,7 +10,7 @@ export interface TopicRow { id: string; subject_id: string; code: string; legacy
   units: { code: string; title: string; goal?: string; ordinal: number }[] }
 export interface ConceptRow { id: string; topic_id: string; code: string; legacy_map_id: string | null; title: string; subtitle: string | null; definition: string | null;
   objectives: string[]; misconceptions: { code: string; description: string }[]; unit_code: string | null; ordinal: number; estimated_minutes: number;
-  availability: string; is_hidden: boolean; is_capstone: boolean }
+  availability: string; is_hidden: boolean; is_capstone: boolean; grade: number | null }
 export interface QuestionRow { id: string; code: string; legacy_item_id: string | null; visibility: string; revision_id: string; item_type: string; body: QuestionBody;
   difficulty: number; estimated_minutes: number; concepts: { conceptId: string; topicId: string; role: 'PRIMARY'|'SUPPORTING'; assessable: boolean }[];
   provenance?: { source?: string; note?: string; exam?: { name: string; year: number; number?: number } } | null }
@@ -26,6 +26,7 @@ export const topicView = (t: TopicRow) => ({
 export const conceptSummary = (c: ConceptRow) => ({
   id: c.id, topicId: c.topic_id, code: c.code, ...opt('legacyMapId', c.legacy_map_id), title: c.title, ...opt('subtitle', c.subtitle), ...opt('unitCode', c.unit_code),
   ordinal: c.ordinal, estimatedMinutes: c.estimated_minutes, availability: c.availability, isHidden: c.is_hidden, isCapstone: c.is_capstone,
+  ...(c.grade != null ? { grade: c.grade } : {}),
 });
 
 export const topicDetail = (t: TopicRow, concepts: ConceptRow[], edges: { conceptId: string; prerequisiteId: string; kind: string }[],

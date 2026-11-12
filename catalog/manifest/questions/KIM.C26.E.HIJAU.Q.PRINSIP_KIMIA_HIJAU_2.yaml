@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU.Q.PRINSIP_KIMIA_HIJAU_2
+familyCode: KIM.C26.E.HIJAU.F.PRINSIP_KIMIA_HIJAU_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Mengganti pelarut organik beracun dengan air dalam suatu proses adalah contoh prinsip …
+  options:
+    - id: a
+      label: pembuatan produk yang sulit terurai
+    - id: b
+      label: penggunaan pelarut yang lebih aman
+    - id: c
+      label: penggunaan bahan baku tak terbarukan
+    - id: d
+      label: peningkatan suhu reaksi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - penggunaan pelarut yang lebih aman
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+  feedback:
+    correct: Air tidak beracun dan tidak mudah terbakar, sehingga risiko bagi pekerja dan lingkungan berkurang.
+    incorrect: Jawabannya penggunaan pelarut yang lebih aman. Air tidak beracun dan tidak mudah terbakar, sehingga risiko bagi pekerja dan lingkungan berkurang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

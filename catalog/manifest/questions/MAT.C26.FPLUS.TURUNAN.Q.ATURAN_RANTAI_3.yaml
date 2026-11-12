@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN.Q.ATURAN_RANTAI_3
+familyCode: MAT.C26.FPLUS.TURUNAN.F.ATURAN_RANTAI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika f(x) = (x² + 1)⁵, nilai f′(1) adalah …
+  options:
+    - id: a
+      label: "32"
+    - id: b
+      label: "10"
+    - id: c
+      label: "160"
+    - id: d
+      label: "80"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "160"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+  feedback:
+    correct: f′(x) = 10x(x² + 1)⁴, sehingga f′(1) = 10 · 1 · 2⁴ = 160.
+    incorrect: Jawabannya 160. f′(x) = 10x(x² + 1)⁴, sehingga f′(1) = 10 · 1 · 2⁴ = 160.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

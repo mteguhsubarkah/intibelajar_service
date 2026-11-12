@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.E.KLASIFIKASI.L.KINGDOM
+title: Sistem lima kingdom dan tiga domain
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.KLASIFIKASI.SISTEM_LIMA_KINGDOM_DAN_TIGA_DOMAIN
+blocks:
+  - type: heading
+    slide: 0
+    text: Lima kingdom (Whittaker)
+  - type: text
+    slide: 0
+    text: "**Monera** (prokariota, misalnya bakteri), **Protista** (eukariota sederhana, misalnya amoeba dan alga), **Fungi** (jamur, heterotrof, dinding sel kitin), **Plantae** (berfotosintesis), dan **Animalia** (heterotrof, tanpa dinding sel)."
+  - type: text
+    slide: 0
+    text: "Dasar pengelompokannya: ada tidaknya membran inti, jumlah sel, dan cara memperoleh makanan."
+  - type: heading
+    slide: 1
+    text: Tiga domain (Woese)
+  - type: text
+    slide: 1
+    text: "Berdasarkan RNA ribosom, makhluk hidup dibagi menjadi tiga domain: **Bacteria**, **Archaea**, dan **Eukarya**."
+  - type: text
+    slide: 1
+    text: Archaea sering hidup di lingkungan ekstrem seperti sumber air panas, dan secara molekuler lebih dekat dengan Eukarya daripada dengan Bacteria.
+  - type: tip
+    slide: 1
+    text: Sistem klasifikasi berubah seiring bertambahnya data, terutama data molekuler.
+checks:
+  - question: BIO.C26.E.KLASIFIKASI.Q.KINGDOM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.KLASIFIKASI.S.KINGDOM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

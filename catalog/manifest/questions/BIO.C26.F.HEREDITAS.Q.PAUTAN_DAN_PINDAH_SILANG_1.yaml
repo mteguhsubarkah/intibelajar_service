@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.Q.PAUTAN_DAN_PINDAH_SILANG_1
+familyCode: BIO.C26.F.HEREDITAS.F.PAUTAN_DAN_PINDAH_SILANG_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.HEREDITAS.PAUTAN_DAN_PINDAH_SILANG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gen-gen yang terletak pada satu kromosom dan cenderung diwariskan bersama disebut …
+  options:
+    - id: a
+      label: epistasis
+    - id: b
+      label: pautan
+    - id: c
+      label: pindah silang
+    - id: d
+      label: gagal berpisah
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - pautan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.HEREDITAS.PAUTAN_DAN_PINDAH_SILANG
+  feedback:
+    correct: Gen yang tertaut berada pada kromosom yang sama sehingga ikut berpindah bersama saat meiosis.
+    incorrect: Jawabannya pautan. Gen yang tertaut berada pada kromosom yang sama sehingga ikut berpindah bersama saat meiosis.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.L.PERTAHANAN_SPESIFIK
+title: Pertahanan spesifik
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Limfosit B dan T
+  - type: text
+    slide: 0
+    text: "**Pertahanan spesifik** mengenali **antigen** tertentu dan bekerja melalui limfosit."
+  - type: text
+    slide: 0
+    text: "**Limfosit B** membentuk sel plasma yang menghasilkan **antibodi** (respons humoral). **Limfosit T** terdiri atas sel T pembantu dan sel T pembunuh yang menghancurkan sel terinfeksi (respons seluler)."
+  - type: math
+    slide: 0
+    name: antibodi
+    expression: dibuat oleh sel plasma (dari sel B)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Sel memori
+  - type: text
+    slide: 1
+    text: Setelah infeksi pertama, terbentuk **sel memori**. Jika antigen yang sama datang lagi, respons sekunder berlangsung lebih cepat dan lebih kuat.
+  - type: text
+    slide: 1
+    text: Inilah alasan seseorang biasanya tidak terkena cacar air dua kali.
+  - type: tip
+    slide: 1
+    text: Antibodi bekerja dengan menetralkan, menggumpalkan, atau menandai antigen agar mudah difagosit.
+checks:
+  - question: BIO.C26.F.IMUN.Q.PERTAHANAN_SPESIFIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.IMUN.S.PERTAHANAN_SPESIFIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

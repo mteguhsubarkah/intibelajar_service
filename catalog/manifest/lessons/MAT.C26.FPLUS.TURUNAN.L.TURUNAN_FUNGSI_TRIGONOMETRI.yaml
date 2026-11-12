@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN.L.TURUNAN_FUNGSI_TRIGONOMETRI
+title: Turunan fungsi trigonometri
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI
+blocks:
+  - type: heading
+    slide: 0
+    text: Turunan dasar
+  - type: text
+    slide: 0
+    text: "Dengan x dalam radian: (sin x)′ = cos x, (cos x)′ = −sin x, dan (tan x)′ = sec² x."
+  - type: text
+    slide: 0
+    text: "Dengan aturan rantai: (sin ax)′ = a cos ax dan (cos ax)′ = −a sin ax."
+  - type: math
+    slide: 0
+    name: sinus
+    expression: (sin x)′ = cos x
+    highlight: true
+  - type: math
+    slide: 0
+    name: kosinus
+    expression: (cos x)′ = −sin x
+  - type: heading
+    slide: 1
+    text: Menggabungkan aturan
+  - type: text
+    slide: 1
+    text: "Gabungkan dengan aturan perkalian atau rantai. Contoh: y = sin² x = (sin x)² memberi y′ = 2 sin x cos x = sin 2x."
+  - type: text
+    slide: 1
+    text: "Contoh lain: y = x sin x memberi y′ = sin x + x cos x."
+  - type: math
+    slide: 1
+    name: contoh
+    expression: (sin² x)′ = sin 2x
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tanda negatif muncul pada turunan kosinus, bukan pada turunan sinus.
+checks:
+  - question: MAT.C26.FPLUS.TURUNAN.Q.TURUNAN_FUNGSI_TRIGONOMETRI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.TURUNAN.S.TURUNAN_FUNGSI_TRIGONOMETRI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

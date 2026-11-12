@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.L.GANGGUAN
+title: Gangguan sistem imun
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.IMUN.GANGGUAN_SISTEM_IMUN
+blocks:
+  - type: heading
+    slide: 0
+    text: Alergi dan autoimun
+  - type: text
+    slide: 0
+    text: "**Alergi**: respons imun berlebihan terhadap zat yang sebenarnya tidak berbahaya (alergen), seperti debu atau udang, sehingga histamin dilepaskan."
+  - type: text
+    slide: 0
+    text: "**Autoimun**: sistem imun menyerang sel tubuh sendiri, misalnya pada lupus dan diabetes tipe 1."
+  - type: heading
+    slide: 1
+    text: Imunodefisiensi
+  - type: text
+    slide: 1
+    text: "**HIV** menyerang sel T pembantu, sehingga sistem imun melemah. Tahap lanjut infeksinya disebut **AIDS**, ketika tubuh mudah terserang infeksi lain."
+  - type: text
+    slide: 1
+    text: HIV menular lewat darah, hubungan seksual, dan dari ibu ke bayi; tidak menular lewat bersalaman atau berbagi alat makan.
+  - type: tip
+    slide: 1
+    text: Antihistamin meredakan gejala alergi dengan menghambat kerja histamin.
+checks:
+  - question: BIO.C26.F.IMUN.Q.GANGGUAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.IMUN.S.GANGGUAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

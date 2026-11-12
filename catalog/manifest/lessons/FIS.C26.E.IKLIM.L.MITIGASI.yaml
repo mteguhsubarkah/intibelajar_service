@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.L.MITIGASI
+title: Mitigasi dan adaptasi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Mitigasi
+  - type: text
+    slide: 0
+    text: "**Mitigasi** berarti mengurangi penyebab, yaitu menekan emisi gas rumah kaca. Contohnya beralih ke energi terbarukan, menghemat listrik, dan memakai transportasi umum."
+  - type: text
+    slide: 0
+    text: Menjaga dan menanam hutan, termasuk mangrove, menambah penyerapan karbon.
+  - type: heading
+    slide: 1
+    text: Adaptasi
+  - type: text
+    slide: 1
+    text: "**Adaptasi** berarti menyesuaikan diri dengan dampak yang sudah atau akan terjadi, misalnya membangun tanggul laut, menanam varietas padi tahan kekeringan, dan membuat sistem peringatan dini banjir."
+  - type: text
+    slide: 1
+    text: "Keduanya dibutuhkan: mitigasi memperlambat perubahan, adaptasi mengurangi kerugian."
+  - type: tip
+    slide: 1
+    text: "Tanyakan: apakah tindakan ini mengurangi emisi (mitigasi) atau mengurangi kerugian (adaptasi)?"
+checks:
+  - question: FIS.C26.E.IKLIM.Q.MITIGASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.IKLIM.S.MITIGASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

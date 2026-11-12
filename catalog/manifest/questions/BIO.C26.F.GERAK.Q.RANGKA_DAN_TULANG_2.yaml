@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.RANGKA_DAN_TULANG_2
+familyCode: BIO.C26.F.GERAK.F.RANGKA_DAN_TULANG_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sel darah merah dibentuk di …
+  options:
+    - id: a
+      label: sumsum merah tulang
+    - id: b
+      label: tulang rawan
+    - id: c
+      label: sendi
+    - id: d
+      label: otot
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - sumsum merah tulang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.RANGKA_DAN_TULANG
+  feedback:
+    correct: Sumsum merah di tulang pipih dan ujung tulang pipa adalah tempat pembentukan sel darah.
+    incorrect: Jawabannya sumsum merah tulang. Sumsum merah di tulang pipih dan ujung tulang pipa adalah tempat pembentukan sel darah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

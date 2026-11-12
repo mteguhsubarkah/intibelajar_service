@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.Q.PENYEBAB_2
+familyCode: BIO.C26.F.MUTASI.F.PENYEBAB_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Mutasi dianggap penting bagi evolusi karena …
+  options:
+    - id: a
+      label: selalu menguntungkan
+    - id: b
+      label: tidak dapat diwariskan
+    - id: c
+      label: menghentikan seleksi alam
+    - id: d
+      label: menjadi sumber variasi genetik baru
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - menjadi sumber variasi genetik baru
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI
+  feedback:
+    correct: Variasi baru dari mutasi menjadi bahan yang diseleksi oleh alam.
+    incorrect: Jawabannya menjadi sumber variasi genetik baru. Variasi baru dari mutasi menjadi bahan yang diseleksi oleh alam.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

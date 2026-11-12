@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.L.KARBOKSILAT
+title: Asam karboksilat dan ester
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+blocks:
+  - type: heading
+    slide: 0
+    text: Asam karboksilat dan ester
+  - type: text
+    slide: 0
+    text: "**Asam karboksilat** memiliki gugus **–COOH** dan nama berakhiran **-oat**; asam etanoat (asam asetat) adalah penyusun cuka. Senyawa ini bersifat asam lemah."
+  - type: text
+    slide: 0
+    text: "**Ester** memiliki gugus **–COO–** (R–COO–R′) dan banyak memberi aroma buah, misalnya etil butanoat yang beraroma nanas."
+  - type: math
+    slide: 0
+    name: asam karboksilat
+    expression: R–COOH
+    highlight: true
+  - type: math
+    slide: 0
+    name: ester
+    expression: R–COO–R′
+  - type: heading
+    slide: 1
+    text: Esterifikasi
+  - type: text
+    slide: 1
+    text: "Asam karboksilat bereaksi dengan alkohol (katalis asam) membentuk ester dan air: CH₃COOH + C₂H₅OH → CH₃COOC₂H₅ + H₂O."
+  - type: text
+    slide: 1
+    text: "Nama ester: nama alkil dari alkohol, lalu nama asam berakhiran -oat, misalnya etil etanoat."
+  - type: tip
+    slide: 1
+    text: Asam karboksilat dan ester dengan rumus molekul sama adalah isomer fungsi.
+checks:
+  - question: KIM.C26.F.GUGUS.Q.KARBOKSILAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.GUGUS.S.KARBOKSILAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

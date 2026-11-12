@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.Q.ENERGI_SURYA_DAN_SEL_SURYA_2
+familyCode: FIS.C26.E.TERBARUKAN.F.ENERGI_SURYA_DAN_SEL_SURYA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Panel surya seluas 1,5 m² menerima intensitas 800 W/m² dengan efisiensi 15%. Daya listriknya adalah …
+  options:
+    - id: a
+      label: 120 W
+    - id: b
+      label: 800 W
+    - id: c
+      label: 180 W
+    - id: d
+      label: 1.200 W
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 180 W
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA
+  feedback:
+    correct: P = 0,15 × 800 × 1,5 = 180 W.
+    incorrect: Jawabannya 180 W. P = 0,15 × 800 × 1,5 = 180 W.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

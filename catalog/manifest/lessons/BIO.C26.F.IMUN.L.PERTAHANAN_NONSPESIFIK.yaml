@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN.L.PERTAHANAN_NONSPESIFIK
+title: Pertahanan nonspesifik
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Dua lapis pertahanan
+  - type: text
+    slide: 0
+    text: "**Pertahanan nonspesifik** melawan semua jenis patogen tanpa membedakan. Lapis pertamanya: kulit, selaput lendir, rambut hidung, air mata, dan asam lambung."
+  - type: text
+    slide: 0
+    text: "Lapis keduanya: **fagositosis** oleh sel darah putih (neutrofil dan makrofag), **inflamasi** (peradangan), dan demam."
+  - type: heading
+    slide: 1
+    text: Inflamasi
+  - type: text
+    slide: 1
+    text: Saat jaringan terluka, sel melepas **histamin** yang melebarkan pembuluh darah. Daerah luka menjadi merah, hangat, bengkak, dan nyeri.
+  - type: text
+    slide: 1
+    text: Aliran darah yang meningkat membawa lebih banyak fagosit ke tempat infeksi.
+  - type: tip
+    slide: 1
+    text: Nanah adalah kumpulan sel darah putih yang mati bersama patogen dan sel rusak.
+checks:
+  - question: BIO.C26.F.IMUN.Q.PERTAHANAN_NONSPESIFIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.IMUN.S.PERTAHANAN_NONSPESIFIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

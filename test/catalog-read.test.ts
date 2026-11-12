@@ -53,6 +53,11 @@ test('Slice 1 public catalog read API', async t => {
     const topics = (await ok('/v1/topics')).items as { id: string; code: string }[];
     const tri = topics.find(x => x.code === 'MAT.TRI')!, eks = topics.find(x => x.code === 'MAT.EKS')!;
     const concepts = (await ok('/v1/concepts')).items as { id: string; code: string; legacyMapId?: string }[];
+    await t.test('every visible concept carries its grade (kelas) within its phase', () => {
+      const all = concepts as { code: string; isHidden?: boolean; grade?: number }[];
+      assert.equal(all.find(c => c.code === 'MAT.TRI.RADIAN')?.grade, 10);
+      assert.ok(all.filter(c => !c.isHidden).every(c => c.grade !== undefined && c.grade >= 7 && c.grade <= 12));
+    });
     const allQuestions = async (query = '', limit = 100) => {
       const items: { id: string; code: string; itemType: string; isCombined: boolean; topicIds: string[]; conceptIds: string[] }[] = [];
       let cursor: string | null = null;
@@ -79,7 +84,10 @@ test('Slice 1 public catalog read API', async t => {
       for (const id of await lessonIds()) await ok(`/v1/lessons/${id}`);
       const detail = await ok(`/v1/topics/${tri.id}`);
       assert.ok(detail.prerequisiteEdges.length > 0 && detail.units.length === 6);
-      assert.deepEqual(detail.relations.map((r: { toTopicId: string }) => r.toTopicId), [topics.find(x => x.code === 'MAT.VEK')!.id]);
+      // relasi keluar MAT.TRI persis seperti di manifest (bertambah bila kurikulum menambah bab lanjutan)
+      const out = fixture.topicRelations.relations.filter(r => r.from === 'MAT.TRI').map(r => topics.find(x => x.code === r.to)!.id);
+      assert.ok(out.includes(topics.find(x => x.code === 'MAT.VEK')!.id));
+      assert.deepEqual(detail.relations.map((r: { toTopicId: string }) => r.toTopicId).sort(), out.sort());
     });
 
     await t.test('legacy alias lookup: a known alias gives its concept, an unknown one gives an empty list', async () => {
