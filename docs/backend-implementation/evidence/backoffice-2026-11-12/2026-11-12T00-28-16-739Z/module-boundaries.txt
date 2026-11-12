@@ -1,0 +1,4 @@
+$ node scripts/check-boundaries.mjs
+Module table ownership and rubric boundaries passed
+
+Exit: 0

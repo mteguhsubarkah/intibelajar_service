@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-12T00:28:40.114Z",
+  "node": "v22.23.4",
+  "results": [
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "name": "module-boundaries",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "name": "browser-script-syntax",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "name": "report-script-syntax",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "name": "accounts-script-syntax",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "name": "accounts-tests",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "name": "backoffice-tests",
+      "exit": 0,
+      "pass": true
+    }
+  ]
+}
