@@ -1,0 +1,44 @@
+$ node --import tsx --test --test-concurrency=1 test/backoffice-accounts.test.ts
+TAP version 13
+# Subtest: backoffice akun: daftar, konfirmasi, hapus lewat jalur penghapusan BE, dan audit staf
+not ok 1 - backoffice akun: daftar, konfirmasi, hapus lewat jalur penghapusan BE, dan audit staf
+  ---
+  duration_ms: 1196.72784
+  type: 'test'
+  location: '/home/user/intibelajar_service/test/backoffice-accounts.test.ts:1:649'
+  failureType: 'testCodeFailure'
+  error: 'duplicate key value violates unique constraint "auth_identity_provider_subject_key"'
+  code: '23505'
+  name: 'error'
+  stack: |-
+    /home/user/intibelajar_service/node_modules/pg/lib/client.js:694:17
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async PostgresConnection.executeQuery (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/dialect/postgres/postgres-driver.js:95:49)
+    async file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/query-executor/query-executor-base.js:35:28
+    async DefaultConnectionProvider.provideConnection (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+    async DefaultQueryExecutor.executeQuery (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/query-executor/query-executor-base.js:34:16)
+    async InsertQueryBuilder.execute (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/query-builder/insert-query-builder.js:1106:24)
+    async TestContext.<anonymous> (/home/user/intibelajar_service/test/backoffice-accounts.test.ts:37:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+    PostgresConnection.executeQuery (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/dialect/postgres/postgres-driver.js:107:41)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/query-executor/query-executor-base.js:35:28
+    async DefaultConnectionProvider.provideConnection (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/driver/default-connection-provider.js:10:20)
+    async DefaultQueryExecutor.executeQuery (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/query-executor/query-executor-base.js:34:16)
+    async InsertQueryBuilder.execute (file:///home/user/intibelajar_service/node_modules/kysely/dist/esm/query-builder/insert-query-builder.js:1106:24)
+    async TestContext.<anonymous> (/home/user/intibelajar_service/test/backoffice-accounts.test.ts:37:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1719.313885
+
+Exit: 1

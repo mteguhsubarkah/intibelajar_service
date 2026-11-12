@@ -5,7 +5,9 @@ info:
   description: |
     Standalone loopback authoring server, accessed through SSH tunnel on port 8010
     or explicitly configured authenticated HTTPS reverse proxy under /backoffice/.
-    Separate from canonical /v1. Draft JSON workspace only; no learner access or publication endpoint.
+    Separate from canonical /v1. Draft JSON workspace; no publication endpoint. Learner accounts are reachable only through
+    /api/accounts*, which exist only when the server runs with BACKOFFICE_ACCOUNTS=true (QA cleanup), and every view or
+    deletion is written to audit_event as a STAFF actor.
     X-Backoffice-Key uses the local access-key file; Bearer Authorization remains supported locally.
     POST requires an exact configured Origin. Domain mode also requires same-host proxy HTTPS/user headers.
 servers:
@@ -154,6 +156,69 @@ paths:
         '401': {$ref: '#/components/responses/Error'}
         '403': {$ref: '#/components/responses/Error'}
         '409': {$ref: '#/components/responses/Error'}
+  /api/accounts:
+    get:
+      operationId: listAccounts
+      summary: 'QA: registered accounts (newest first, max 500). {enabled:false} unless BACKOFFICE_ACCOUNTS=true. Each call is audited.'
+      description: |
+        email is present only for email-link identities (decrypted); Google identities store no email, so emailNote explains it.
+        label is the exact text the admin must retype to delete the account.
+      responses:
+        '200':
+          description: Feature state and accounts.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [enabled]
+                properties:
+                  enabled: {type: boolean}
+                  staff: {type: string}
+                  accounts:
+                    type: array
+                    items:
+                      type: object
+                      required: [userId, role, label, methods, status, createdAt, deletable]
+                      properties:
+                        userId: {type: string, format: uuid}
+                        role: {type: string, enum: [STUDENT, GUARDIAN]}
+                        label: {type: string}
+                        displayName: {type: [string, 'null']}
+                        grade: {type: [integer, 'null']}
+                        methods: {type: array, items: {type: string, enum: [Google, Email]}}
+                        email: {type: [string, 'null']}
+                        emailNote: {type: [string, 'null']}
+                        status: {type: string}
+                        createdAt: {type: string, format: date-time}
+                        lastLoginAt: {type: [string, 'null'], format: date-time}
+                        deletable: {type: boolean}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+  /api/accounts/deletions:
+    post:
+      operationId: requestAccountDeletion
+      summary: 'QA: delete one student account through the same erasure pipeline as DELETE /v1/me (sessions revoked, worker erases data).'
+      parameters:
+        - $ref: '#/components/parameters/Origin'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [userId, confirm]
+              properties:
+                userId: {type: string, format: uuid}
+                confirm: {type: string, maxLength: 300, description: 'Must equal the account label (email, display name, or akun-<id prefix>).'}
+                revision: {type: integer, minimum: 0, description: 'Ignored; sent by the shared client helper.'}
+      responses:
+        '202': {description: 'Deletion queued: status DELETION_PENDING, requestedAt, completesBy, label.'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '422': {$ref: '#/components/responses/Error'}
 components:
   securitySchemes:
     AccessKeyHeader: {type: apiKey, in: header, name: X-Backoffice-Key, description: 'Keeps Authorization available for the Nginx Basic login.'}

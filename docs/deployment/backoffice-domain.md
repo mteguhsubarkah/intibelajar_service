@@ -1,6 +1,6 @@
 # Backoffice melalui https://intibelajar.com/backoffice/
 
-Domain access is an explicitly enabled, password-protected **development authoring** mode, not approval for a production staff system. All drafts, publication gates and privacy restrictions remain. No learner data is exposed. Workforce IdP/MFA and authenticated per-person audit remain production gates. Local SSH mode stays the default when BACKOFFICE_PUBLIC_ORIGIN is absent.
+Domain access is an explicitly enabled, password-protected **development authoring** mode, not approval for a production staff system. All drafts, publication gates and privacy restrictions remain. No learner data is exposed, except on the opt-in **Akun (QA)** page described at the end of this document (`BACKOFFICE_ACCOUNTS=true`). Workforce IdP/MFA and authenticated per-person audit remain production gates. Local SSH mode stays the default when BACKOFFICE_PUBLIC_ORIGIN is absent.
 
 ## 1. Prasyarat dan update kode
 
@@ -100,3 +100,53 @@ Logout studio menghapus key dalam aplikasi tetapi browser dapat menyimpan login 
 Tes `test/backoffice.test.ts` menambahkan kasus HTTPS/domain, header proxy login, sumber request loopback, Basic Authorization bersamaan access key, asset relatif untuk prefix, dan Origin mutation. Nginx snippet mengacu [HTTP Basic resmi Nginx](https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html) dan [proxy_pass](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass). Nginx/sertifikat/password di Ubuntu belum diubah atau diuji dari sesi lokal ini; lakukan nginx -t dan curl di atas pada server.
 
 Hasil lokal: verifikasi `2026-10-21T00-35-39-420Z` pada Node 24.19.0 lulus typecheck, module boundaries, syntax browser, dan 8/8 kelompok tes (termasuk OpenAPI). Evidence disimpan di `docs/backend-implementation/evidence/backoffice-2026-10-21/2026-10-21T00-35-39-420Z/`. Tidak ada perubahan ke origin/kontrak API siswa, database learner, atau publikasi katalog.
+
+## Halaman akun (QA): daftar dan hapus akun
+
+Untuk uji coba dengan akun email yang terbatas, backoffice bisa menampilkan daftar akun terdaftar dan menghapus akun siswa.
+Halaman ini **mati secara bawaan**. Selama `BACKOFFICE_ACCOUNTS` tidak diisi `true`, backoffice tidak tersambung ke
+database siswa sama sekali dan tab "Akun (QA)" hanya menampilkan petunjuk ini.
+
+Yang tampil per akun: nama, metode masuk (Google/Email), email, kelas, status, waktu daftar, dan terakhir masuk.
+
+- **Email hanya ada untuk akun tautan email** (tersimpan terenkripsi, didekripsi dengan `APP_KEY`). Akun Google sengaja
+  hanya menyimpan ID Google, tanpa email, jadi kenali dari nama, kelas, dan waktunya.
+- **Hapus akun** memakai jalur yang sama dengan "Hapus akun" milik siswa (`DELETE /v1/me`): akun ditandai
+  `DELETION_PENDING`, semua sesinya dicabut, lalu **`intibelajar-worker`** menghapus progres, riwayat, dan identitas
+  masuknya serta membuat `erasure_receipt`. Tidak ada `DELETE` langsung ke tabel. Admin wajib mengetik ulang email
+  (atau nama) akun sebelum tombol hapus aktif. Hanya akun siswa yang bisa dihapus dari sini.
+- **Audit:** setiap kali halaman dibuka (`STAFF_VIEWED_ACCOUNTS`) dan setiap penghapusan (`STAFF_DELETION_REQUESTED`)
+  dicatat di `audit_event` sebagai aktor `STAFF`, dengan nama user Basic Auth Nginx yang disimpan sebagai HMAC.
+
+### Menyalakan
+
+Backoffice memakai konfigurasi yang sama dengan API (`DATABASE_URL`, `APP_KEY`, dan lainnya). Tambahkan file `.env` API ke
+service backoffice. systemd membaca `EnvironmentFile` sebagai root, jadi `.env` tetap `chmod 600`:
+
+```bash
+sudo systemctl edit intibelajar-backoffice
+```
+
+```ini
+[Service]
+EnvironmentFile=/var/www/intibelajar_service/.env
+EnvironmentFile=/etc/intibelajar-backoffice.env
+```
+
+Lalu tambahkan satu baris di `/etc/intibelajar-backoffice.env`:
+
+```dotenv
+BACKOFFICE_ACCOUNTS=true
+```
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart intibelajar-backoffice
+journalctl -u intibelajar-backoffice -n 20 --no-pager   # harus ada: "Halaman akun aktif (BACKOFFICE_ACCOUNTS=true)"
+systemctl is-active intibelajar-worker                  # harus active; worker yang menyelesaikan penghapusan
+```
+
+### Mematikan
+
+Hapus baris `BACKOFFICE_ACCOUNTS=true`, lalu `sudo systemctl restart intibelajar-backoffice`. Matikan halaman ini setelah
+masa uji coba: ini bukan pengganti sistem staf produksi (IdP, MFA, peran, dan audit per orang tetap gerbang produksi).

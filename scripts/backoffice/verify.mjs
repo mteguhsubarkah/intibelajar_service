@@ -9,6 +9,8 @@ const checks = [
   ['module-boundaries', ['scripts/check-boundaries.mjs']],
   ['browser-script-syntax', ['--check', 'backoffice/app.js']],
   ['report-script-syntax', ['--check', 'backoffice/catalog-view.js']],
+  ['accounts-script-syntax', ['--check', 'backoffice/accounts-view.js']],
+  ['accounts-tests', ['--import', 'tsx', '--test', '--test-concurrency=1', 'test/backoffice-accounts.test.ts']],
   ['backoffice-tests', ['--import', 'tsx', '--test', '--test-concurrency=1', 'test/backoffice.test.ts', 'test/backoffice-view.test.ts']],
 ];
 const results = [];

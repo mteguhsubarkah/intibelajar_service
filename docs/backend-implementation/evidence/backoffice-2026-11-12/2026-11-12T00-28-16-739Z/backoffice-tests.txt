@@ -1,0 +1,109 @@
+$ node --import tsx --test --test-concurrency=1 test/backoffice.test.ts test/backoffice-view.test.ts
+TAP version 13
+# Subtest: subject and phase filter selects topics, cores, lessons, sources and cross-scope relations
+ok 1 - subject and phase filter selects topics, cores, lessons, sources and cross-scope relations
+  ---
+  duration_ms: 1.386719
+  type: 'test'
+  ...
+# Subtest: report separates subjects and levels, includes graph, all cores, and escapes authored text
+ok 2 - report separates subjects and levels, includes graph, all cores, and escapes authored text
+  ---
+  duration_ms: 13.860075
+  type: 'test'
+  ...
+# Subtest: large report retains every node and cross-page dependency without oversized graphs
+ok 3 - large report retains every node and cross-page dependency without oversized graphs
+  ---
+  duration_ms: 0.82464
+  type: 'test'
+  ...
+# Subtest: backoffice: explicit subject on create, retained on edit, unknown and reassignment rejected
+ok 4 - backoffice: explicit subject on create, retained on edit, unknown and reassignment rejected
+  ---
+  duration_ms: 1315.937865
+  type: 'test'
+  ...
+# Subtest: backoffice: auth, exact Host, CSRF Origin, private data and response headers
+ok 5 - backoffice: auth, exact Host, CSRF Origin, private data and response headers
+  ---
+  duration_ms: 1056.221946
+  type: 'test'
+  ...
+# Subtest: backoffice: reject cyclic and unknown references atomically, no revision lost
+ok 6 - backoffice: reject cyclic and unknown references atomically, no revision lost
+  ---
+  duration_ms: 1204.012385
+  type: 'test'
+  ...
+# Subtest: backoffice: exactly two lesson slides, preservation of canonical manifest and strict review gate
+ok 7 - backoffice: exactly two lesson slides, preservation of canonical manifest and strict review gate
+  ---
+  duration_ms: 2446.232989
+  type: 'test'
+  ...
+# Subtest: backoffice worker: durable idempotent seed, lease fencing, recovery and no overwrite of edits
+ok 8 - backoffice worker: durable idempotent seed, lease fencing, recovery and no overwrite of edits
+  ---
+  duration_ms: 1701.95749
+  type: 'test'
+  ...
+# Subtest: backoffice: failed mutation cannot partially persist, review cannot be supplied by client
+ok 9 - backoffice: failed mutation cannot partially persist, review cannot be supplied by client
+  ---
+  duration_ms: 1069.457921
+  type: 'test'
+  ...
+# Subtest: backoffice: structured lesson and later-slide checks cannot be silently flattened
+ok 10 - backoffice: structured lesson and later-slide checks cannot be silently flattened
+  ---
+  duration_ms: 832.329841
+  type: 'test'
+  ...
+# Subtest: backoffice: standalone OpenAPI 3.1 contract validates
+ok 11 - backoffice: standalone OpenAPI 3.1 contract validates
+  ---
+  duration_ms: 87.750086
+  type: 'test'
+  ...
+# Subtest: backoffice HTTPS proxy: exact domain, transport, authenticated proxy, separate access key and Origin
+ok 12 - backoffice HTTPS proxy: exact domain, transport, authenticated proxy, separate access key and Origin
+  ---
+  duration_ms: 965.198214
+  type: 'test'
+  ...
+# Subtest: backoffice: structured lesson blocks are editable, validated, and keep checks on their slides
+ok 13 - backoffice: structured lesson blocks are editable, validated, and keep checks on their slides
+  ---
+  duration_ms: 1053.720922
+  type: 'test'
+  ...
+# Subtest: backoffice: practice questions per core, key write-only in state, readable per question
+ok 14 - backoffice: practice questions per core, key write-only in state, readable per question
+  ---
+  duration_ms: 1251.320659
+  type: 'test'
+  ...
+# Subtest: backoffice: preview frame allowed only for the configured app origin
+ok 15 - backoffice: preview frame allowed only for the configured app origin
+  ---
+  duration_ms: 741.75692
+  type: 'test'
+  ...
+# Subtest: backoffice: animation code block is stored as data with limits, and projected to the learner API shape
+ok 16 - backoffice: animation code block is stored as data with limits, and projected to the learner API shape
+  ---
+  duration_ms: 1254.123285
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 15673.390122
+
+Exit: 0

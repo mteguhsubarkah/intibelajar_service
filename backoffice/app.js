@@ -1,7 +1,8 @@
 import { selectCatalog, reportHtml } from './catalog-view.js';
 import { createLessonEditor } from './lesson-editor.js';
 import { createPracticeEditor } from './practice-editor.js';
-/* Private authoring client: no external scripts, fonts, analytics or learner data. */
+import { createAccountsView } from './accounts-view.js';
+/* Private authoring client: no external scripts, fonts or analytics. Learner data only on the opt-in Akun (QA) tab. */
 let token = '', state, tab = 'overview';
 const $ = s => document.querySelector(s);
 const el = (tag, text, cls) => { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (cls) n.className = cls; return n; };
@@ -16,6 +17,8 @@ function show(name) {
   $('#pageTitle').textContent = $(`[data-tab="${name}"]`).textContent;
   if (name === 'graph' && state) graph();
   if (name === 'practice' && state) practiceEditor.render();
+  $('.global-filters').hidden = name === 'accounts';
+  if (name === 'accounts' && token) accountsView.load();
 }
 document.querySelectorAll('[data-tab]').forEach(n => n.onclick = () => show(n.dataset.tab));
 function row(host, title, note, onEdit) {
@@ -85,12 +88,13 @@ function renderCores(){
 $('#coreFilter').onchange=renderCores;$('#coreStatus').onchange=renderCores;
 async function load(){state=await api('state');render();}
 $('#loginForm').onsubmit=async e=>{e.preventDefault();token=new FormData(e.target).get('token');try{await load();e.target.reset();notice('Ruang kerja terbuka. Perubahan disimpan sebagai draf.');}catch(e){token='';notice(e.message,true);}};
-$('#logout').onclick=()=>{token='';state=undefined;$('#workspace').hidden=true;$('#login').hidden=false;notice('Studio terkunci.');};
-$('#refresh').onclick=()=>{if(token)load().catch(e=>notice(e.message,true));};
+$('#logout').onclick=()=>{token='';state=undefined;accountsView.clear();$('#workspace').hidden=true;$('#login').hidden=false;notice('Studio terkunci.');};
+$('#refresh').onclick=()=>{if(!token)return;load().catch(e=>notice(e.message,true));if(tab==='accounts')accountsView.load();};
 for(const [id,kind] of [['topicForm','topic'],['coreForm','core'],['relationForm','relation'],['prerequisiteForm','prerequisite']])$('#'+id).onsubmit=async e=>{e.preventDefault();const button=e.target.querySelector('button');button.disabled=true;try{await api('commands',{...Object.fromEntries(new FormData(e.target)),kind});await load();notice('Draf tersimpan. Belum dipublikasikan ke siswa.');}catch(e){notice(e.message,true);}finally{button.disabled=false;}};
 $('#importSeed').onclick=async()=>{try{await api('imports',{});await load();notice('Impor diantrekan. Jalankan worker lalu klik Muat ulang untuk melihat hasil.');}catch(e){notice(e.message,true);}};
 $('#export').onclick=async()=>{try{const r=await api('exports',{});$('#exportResult').textContent=`Folder server:\n${r.directory}\n\n${r.findings.length} temuan strict. Tinjau sebelum menggunakan catalog:publish.`;notice('Ekspor selesai; tidak ada publikasi.');}catch(e){notice(e.message,true);}};
 const lessonEditor=createLessonEditor({$,api,notice,getState:()=>state,reload:load});
+const accountsView=createAccountsView({$,el,api,notice});
 const practiceEditor=createPracticeEditor({$,api,notice,getState:()=>state,reload:load,visibleTopics:()=>visible().topics});
 function graph(){
   const svg=$('#graph');svg.replaceChildren();const ns='http://www.w3.org/2000/svg';const add=(tag,attrs,parent=svg)=>{const n=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,String(v));parent.append(n);return n;};
