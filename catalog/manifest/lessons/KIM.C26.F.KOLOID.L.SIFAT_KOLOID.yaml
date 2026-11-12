@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLOID.L.SIFAT_KOLOID
+title: Sifat koloid
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.KOLOID.SIFAT_KOLOID
+blocks:
+  - type: heading
+    slide: 0
+    text: Tyndall dan Brown
+  - type: text
+    slide: 0
+    text: "**Efek Tyndall**: berkas cahaya terlihat jelas saat melewati koloid karena dihamburkan partikel koloid, misalnya sorot lampu mobil di udara berkabut."
+  - type: text
+    slide: 0
+    text: "**Gerak Brown**: partikel koloid bergerak zig-zag karena ditumbuk partikel medium dari berbagai arah. Gerak ini membuat koloid tidak mengendap."
+  - type: heading
+    slide: 1
+    text: Adsorpsi, koagulasi, dialisis
+  - type: text
+    slide: 1
+    text: "**Adsorpsi**: permukaan partikel koloid menyerap ion atau zat lain, seperti norit yang menyerap racun di usus. **Koagulasi**: penggumpalan koloid, misalnya lateks yang menggumpal dengan asam format."
+  - type: text
+    slide: 1
+    text: "**Dialisis**: pemisahan ion pengganggu dari koloid dengan selaput semipermeabel, prinsip mesin cuci darah."
+  - type: tip
+    slide: 1
+    text: Penjernihan air dengan tawas memanfaatkan koagulasi dan adsorpsi.
+checks:
+  - question: KIM.C26.F.KOLOID.Q.SIFAT_KOLOID_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.KOLOID.S.SIFAT_KOLOID
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI
+subject: BIO
+title: Mutasi
+subtitle: Mutasi gen, mutasi kromosom, penyebab, dan dampaknya
+phase: F
+availability: MAPPED
+bekal:
+  - DNA dan kromosom
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.MUTASI.MUTASI_GEN
+    title: Mutasi gen
+    subtitle: Substitusi, insersi, delesi, dan pergeseran kerangka baca
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-mutasi-c1
+  - code: BIO.C26.F.MUTASI.MUTASI_KROMOSOM
+    title: Mutasi kromosom
+    subtitle: Perubahan struktur, aneuploidi, dan poliploidi
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-mutasi-c2
+  - code: BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI
+    title: Penyebab dan dampak mutasi
+    subtitle: Mutagen, dampak merugikan, dan pemanfaatan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-mutasi-penyebab
+prerequisites:
+  - concept: BIO.C26.F.MUTASI.MUTASI_KROMOSOM
+    requires: BIO.C26.F.MUTASI.MUTASI_GEN
+    kind: SOFT
+  - concept: BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI
+    requires: BIO.C26.F.MUTASI.MUTASI_GEN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

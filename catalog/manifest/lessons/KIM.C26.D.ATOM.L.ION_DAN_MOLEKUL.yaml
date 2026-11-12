@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM.L.ION_DAN_MOLEKUL
+title: Ion dan molekul
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.ATOM.ION_DAN_MOLEKUL
+blocks:
+  - type: heading
+    slide: 0
+    text: Ion
+  - type: text
+    slide: 0
+    text: "**Ion** terbentuk ketika atom melepas atau menerima elektron. Atom yang melepas elektron menjadi **kation** (positif), contohnya Na⁺; yang menerima elektron menjadi **anion** (negatif), contohnya Cl⁻."
+  - type: text
+    slide: 0
+    text: Garam dapur (NaCl) tersusun atas ion Na⁺ dan Cl⁻.
+  - type: math
+    slide: 0
+    name: kation
+    expression: melepas elektron → +
+    highlight: true
+  - type: math
+    slide: 0
+    name: anion
+    expression: menerima elektron → −
+  - type: heading
+    slide: 1
+    text: Molekul
+  - type: text
+    slide: 1
+    text: "**Molekul** adalah gabungan dua atom atau lebih. **Molekul unsur** tersusun dari atom sejenis (O₂, N₂), sedangkan **molekul senyawa** dari atom berbeda (H₂O, CO₂)."
+  - type: text
+    slide: 1
+    text: "Angka kecil di bawah lambang menunjukkan jumlah atomnya: H₂O terdiri atas 2 atom H dan 1 atom O."
+  - type: tip
+    slide: 1
+    text: Muatan ion ditulis di kanan atas lambang, misalnya Mg²⁺.
+checks:
+  - question: KIM.C26.D.ATOM.Q.ION_DAN_MOLEKUL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.ATOM.S.ION_DAN_MOLEKUL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

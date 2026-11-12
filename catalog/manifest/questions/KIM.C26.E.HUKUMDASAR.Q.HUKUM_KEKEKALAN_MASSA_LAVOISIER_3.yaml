@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.HUKUM_KEKEKALAN_MASSA_LAVOISIER_3
+familyCode: KIM.C26.E.HUKUMDASAR.F.HUKUM_KEKEKALAN_MASSA_LAVOISIER_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Logam magnesium 2,4 g dibakar dan menghasilkan 4,0 g magnesium oksida. Massa oksigen yang bereaksi adalah …
+  options:
+    - id: a
+      label: 1,6 g
+    - id: b
+      label: 6,4 g
+    - id: c
+      label: 4,0 g
+    - id: d
+      label: 2,4 g
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 1,6 g
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+  feedback:
+    correct: Massa oksigen = 4,0 − 2,4 = 1,6 g.
+    incorrect: Jawabannya 1,6 g. Massa oksigen = 4,0 − 2,4 = 1,6 g.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

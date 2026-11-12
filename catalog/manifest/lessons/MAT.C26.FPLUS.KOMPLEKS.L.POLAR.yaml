@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.L.POLAR
+title: Bentuk polar
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.KOMPLEKS.BENTUK_POLAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari kartesius ke polar
+  - type: text
+    slide: 0
+    text: Dengan r = |z| dan θ = arg z, bilangan kompleks dapat ditulis **z = r(cos θ + i sin θ)**, sering disingkat r cis θ.
+  - type: text
+    slide: 0
+    text: "Contoh: z = 1 + i memiliki r = √2 dan θ = 45°, jadi z = √2 cis 45°."
+  - type: math
+    slide: 0
+    name: bentuk polar
+    expression: z = r(cos θ + i sin θ)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kali dan pangkat dalam bentuk polar
+  - type: text
+    slide: 1
+    text: "Saat mengalikan, modulus **dikalikan** dan argumen **dijumlahkan**: r₁ cis θ₁ · r₂ cis θ₂ = r₁r₂ cis(θ₁ + θ₂)."
+  - type: text
+    slide: 1
+    text: "Akibatnya, menurut Teorema De Moivre: (r cis θ)ⁿ = rⁿ cis(nθ)."
+  - type: math
+    slide: 1
+    name: De Moivre
+    expression: (r cis θ)ⁿ = rⁿ cis nθ
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Perkalian dengan i sama dengan memutar titik 90° berlawanan arah jarum jam.
+checks:
+  - question: MAT.C26.FPLUS.KOMPLEKS.Q.POLAR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.KOMPLEKS.S.POLAR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

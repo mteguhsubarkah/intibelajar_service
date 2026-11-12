@@ -1,0 +1,88 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS
+subject: MAT
+title: Bilangan kompleks
+subtitle: Satuan imajiner, operasi, modulus, argumen, dan bentuk polar
+phase: F+
+availability: MAPPED
+bekal:
+  - akar kuadrat
+  - koordinat Kartesius
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.FPLUS.KOMPLEKS.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS
+    title: Bentuk dan bidang bilangan kompleks
+    subtitle: Satuan imajiner i, bagian real dan imajiner, bidang kompleks
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-kompleks-c1
+  - code: MAT.C26.FPLUS.KOMPLEKS.OPERASI_BILANGAN_KOMPLEKS
+    title: Operasi bilangan kompleks
+    subtitle: Jumlah, selisih, kali, dan bagi dengan sekawan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-kompleks-c2
+  - code: MAT.C26.FPLUS.KOMPLEKS.KONJUGAT_MODULUS_DAN_ARGUMEN
+    title: Konjugat, modulus, dan argumen
+    subtitle: Sekawan, jarak ke titik asal, dan sudut terhadap sumbu real
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-kompleks-konjugat
+  - code: MAT.C26.FPLUS.KOMPLEKS.BENTUK_POLAR
+    title: Bentuk polar
+    subtitle: r cis θ, perkalian, dan Teorema De Moivre
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-kompleks-polar
+prerequisites:
+  - concept: MAT.C26.FPLUS.KOMPLEKS.OPERASI_BILANGAN_KOMPLEKS
+    requires: MAT.C26.FPLUS.KOMPLEKS.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS
+    kind: HARD
+  - concept: MAT.C26.FPLUS.KOMPLEKS.KONJUGAT_MODULUS_DAN_ARGUMEN
+    requires: MAT.C26.FPLUS.KOMPLEKS.OPERASI_BILANGAN_KOMPLEKS
+    kind: HARD
+  - concept: MAT.C26.FPLUS.KOMPLEKS.BENTUK_POLAR
+    requires: MAT.C26.FPLUS.KOMPLEKS.KONJUGAT_MODULUS_DAN_ARGUMEN
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL.Q.AKAR_2
+familyCode: MAT.C26.FPLUS.POLINOMIAL.F.AKAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.POLINOMIAL.AKAR_AKAR_DAN_HUBUNGAN_KOEFISIEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil kali akar-akar x³ − 4x² + x + 6 = 0 adalah …
+  options:
+    - id: a
+      label: "6"
+    - id: b
+      label: "1"
+    - id: c
+      label: "4"
+    - id: d
+      label: −6
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - −6
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.POLINOMIAL.AKAR_AKAR_DAN_HUBUNGAN_KOEFISIEN
+  feedback:
+    correct: x₁x₂x₃ = −d/a = −6/1 = −6. Akarnya memang −1, 2, dan 3.
+    incorrect: Jawabannya −6. x₁x₂x₃ = −d/a = −6/1 = −6. Akarnya memang −1, 2, dan 3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

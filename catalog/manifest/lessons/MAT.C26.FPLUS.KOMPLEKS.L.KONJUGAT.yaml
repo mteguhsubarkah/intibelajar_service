@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.L.KONJUGAT
+title: Konjugat, modulus, dan argumen
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.KOMPLEKS.KONJUGAT_MODULUS_DAN_ARGUMEN
+blocks:
+  - type: heading
+    slide: 0
+    text: Sekawan dan modulus
+  - type: text
+    slide: 0
+    text: "**Sekawan** (konjugat) dari z = a + bi adalah z̄ = a − bi: cerminan z terhadap sumbu real."
+  - type: text
+    slide: 0
+    text: "**Modulus** |z| = √(a² + b²) adalah jarak titik z ke titik asal. Selalu berlaku z · z̄ = |z|²."
+  - type: math
+    slide: 0
+    name: sekawan
+    expression: z̄ = a − bi
+    highlight: true
+  - type: math
+    slide: 0
+    name: modulus
+    expression: "|z| = √(a² + b²)"
+  - type: heading
+    slide: 1
+    text: Argumen
+  - type: text
+    slide: 1
+    text: "**Argumen** arg z adalah sudut θ dari sumbu real positif ke garis yang menghubungkan titik asal dan z, dengan tan θ = b/a."
+  - type: text
+    slide: 1
+    text: Tentukan kuadrannya dari tanda a dan b. Misalnya z = −1 + i di kuadran II, jadi arg z = 135°, bukan −45°.
+  - type: math
+    slide: 1
+    name: argumen
+    expression: tan θ = b/a
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Periksa kuadran dulu sebelum mengambil nilai arctan.
+checks:
+  - question: MAT.C26.FPLUS.KOMPLEKS.Q.KONJUGAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.KOMPLEKS.S.KONJUGAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

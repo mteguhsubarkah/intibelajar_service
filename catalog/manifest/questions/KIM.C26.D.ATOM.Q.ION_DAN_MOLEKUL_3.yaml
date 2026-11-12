@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM.Q.ION_DAN_MOLEKUL_3
+familyCode: KIM.C26.D.ATOM.F.ION_DAN_MOLEKUL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.ATOM.ION_DAN_MOLEKUL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah atom dalam satu molekul glukosa C₆H₁₂O₆ adalah …
+  options:
+    - id: a
+      label: "18"
+    - id: b
+      label: "12"
+    - id: c
+      label: "24"
+    - id: d
+      label: "3"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "24"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.ATOM.ION_DAN_MOLEKUL
+  feedback:
+    correct: 6 atom C + 12 atom H + 6 atom O = 24 atom.
+    incorrect: Jawabannya 24. 6 atom C + 12 atom H + 6 atom O = 24 atom.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

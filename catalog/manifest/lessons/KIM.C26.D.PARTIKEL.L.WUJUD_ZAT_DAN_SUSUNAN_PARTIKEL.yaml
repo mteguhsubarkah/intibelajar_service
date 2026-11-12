@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.L.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+title: Wujud zat dan susunan partikel
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.PARTIKEL.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+blocks:
+  - type: heading
+    slide: 0
+    text: Tiga wujud zat
+  - type: text
+    slide: 0
+    text: Zat tersusun atas partikel yang selalu bergerak. Pada **zat padat** partikelnya rapat dan teratur, hanya bergetar di tempat; bentuk dan volumenya tetap.
+  - type: text
+    slide: 0
+    text: Pada **zat cair** partikel berdekatan tetapi dapat bergeser, sehingga volumenya tetap dan bentuknya mengikuti wadah. Pada **gas** partikel berjauhan dan bergerak bebas, sehingga bentuk dan volumenya mengikuti wadah.
+  - type: heading
+    slide: 1
+    text: Gaya tarik antarpartikel
+  - type: text
+    slide: 1
+    text: Gaya tarik antarpartikel paling kuat pada zat padat dan paling lemah pada gas.
+  - type: text
+    slide: 1
+    text: Karena jarak partikelnya besar, gas mudah dimampatkan, sedangkan zat cair dan padat hampir tidak bisa dimampatkan.
+  - type: tip
+    slide: 1
+    text: Bau parfum menyebar ke seluruh ruangan karena partikel gas bergerak bebas.
+checks:
+  - question: KIM.C26.D.PARTIKEL.Q.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.PARTIKEL.S.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

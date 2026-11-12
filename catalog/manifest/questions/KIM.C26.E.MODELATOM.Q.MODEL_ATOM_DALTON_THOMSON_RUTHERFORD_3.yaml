@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM.Q.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD_3
+familyCode: KIM.C26.E.MODELATOM.F.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.MODELATOM.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kelemahan model atom Dalton adalah …
+  options:
+    - id: a
+      label: tidak menjelaskan bahwa atom penyusun unsur
+    - id: b
+      label: menganggap atom sebagian besar ruang kosong
+    - id: c
+      label: menganggap elektron berada di kulit
+    - id: d
+      label: tidak dapat menjelaskan adanya elektron dan sifat listrik atom
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - tidak dapat menjelaskan adanya elektron dan sifat listrik atom
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.MODELATOM.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD
+  feedback:
+    correct: Dalton menganggap atom tidak bisa dibagi, padahal kemudian ditemukan elektron, proton, dan neutron.
+    incorrect: Jawabannya tidak dapat menjelaskan adanya elektron dan sifat listrik atom. Dalton menganggap atom tidak bisa dibagi, padahal kemudian ditemukan elektron, proton, dan neutron.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

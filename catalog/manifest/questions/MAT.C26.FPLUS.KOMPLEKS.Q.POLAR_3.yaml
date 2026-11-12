@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.Q.POLAR_3
+familyCode: MAT.C26.FPLUS.KOMPLEKS.F.POLAR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KOMPLEKS.BENTUK_POLAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai (1 + i)⁴ adalah …
+  options:
+    - id: a
+      label: −4i
+    - id: b
+      label: −4
+    - id: c
+      label: "4"
+    - id: d
+      label: 4i
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - −4
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KOMPLEKS.BENTUK_POLAR
+  feedback:
+    correct: 1 + i = √2 cis 45°, sehingga pangkat empatnya (√2)⁴ cis 180° = 4 · (−1) = −4.
+    incorrect: Jawabannya −4. 1 + i = √2 cis 45°, sehingga pangkat empatnya (√2)⁴ cis 180° = 4 · (−1) = −4.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

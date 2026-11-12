@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.Q.MINYAK_3
+familyCode: KIM.C26.F.HIDROKARBON.F.MINYAK_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.HIDROKARBON.MINYAK_BUMI_DAN_PEMBAKARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pembakaran sempurna 1 mol propana (C₃H₈) menghasilkan …
+  options:
+    - id: a
+      label: 1 mol CO₂ dan 1 mol H₂O
+    - id: b
+      label: 3 mol CO₂ dan 8 mol H₂O
+    - id: c
+      label: 3 mol CO₂ dan 4 mol H₂O
+    - id: d
+      label: 3 mol CO dan 4 mol H₂O
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 3 mol CO₂ dan 4 mol H₂O
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.HIDROKARBON.MINYAK_BUMI_DAN_PEMBAKARAN
+  feedback:
+    correct: Persamaan setaranya C₃H₈ + 5O₂ → 3CO₂ + 4H₂O.
+    incorrect: Jawabannya 3 mol CO₂ dan 4 mol H₂O. Persamaan setaranya C₃H₈ + 5O₂ → 3CO₂ + 4H₂O.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

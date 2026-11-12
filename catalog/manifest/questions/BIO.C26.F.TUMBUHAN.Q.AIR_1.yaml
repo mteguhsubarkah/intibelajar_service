@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.AIR_1
+familyCode: BIO.C26.F.TUMBUHAN.F.AIR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gaya utama yang menarik air dari akar ke daun pada pohon tinggi adalah …
+  options:
+    - id: a
+      label: gravitasi
+    - id: b
+      label: fotosintesis
+    - id: c
+      label: respirasi akar
+    - id: d
+      label: tarikan transpirasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - tarikan transpirasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+  feedback:
+    correct: Penguapan di daun menciptakan tarikan yang diteruskan sepanjang kolom air berkat kohesi.
+    incorrect: Jawabannya tarikan transpirasi. Penguapan di daun menciptakan tarikan yang diteruskan sepanjang kolom air berkat kohesi.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.GANGGUAN_1
+familyCode: BIO.C26.F.GERAK.F.GANGGUAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tulang belakang yang melengkung ke samping disebut …
+  options:
+    - id: a
+      label: kifosis
+    - id: b
+      label: lordosis
+    - id: c
+      label: osteoporosis
+    - id: d
+      label: skoliosis
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - skoliosis
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+  feedback:
+    correct: Skoliosis adalah kelengkungan tulang belakang ke kiri atau ke kanan.
+    incorrect: Jawabannya skoliosis. Skoliosis adalah kelengkungan tulang belakang ke kiri atau ke kanan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.L.ALDEHIDA_DAN_KETON
+title: Aldehida dan keton
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.GUGUS.ALDEHIDA_DAN_KETON
+blocks:
+  - type: heading
+    slide: 0
+    text: Aldehida dan keton
+  - type: text
+    slide: 0
+    text: "**Aldehida** memiliki gugus **–CHO** di ujung rantai dan nama IUPAC berakhiran **-al**, contohnya metanal (formaldehida) dan etanal."
+  - type: text
+    slide: 0
+    text: "**Keton** memiliki gugus karbonil **–CO–** di tengah rantai dan nama berakhiran **-on**, contohnya propanon (aseton)."
+  - type: math
+    slide: 0
+    name: aldehida
+    expression: R–CHO (-al)
+    highlight: true
+  - type: math
+    slide: 0
+    name: keton
+    expression: R–CO–R′ (-on)
+  - type: heading
+    slide: 1
+    text: Membedakan keduanya
+  - type: text
+    slide: 1
+    text: Aldehida dan keton dengan jumlah C sama adalah isomer fungsi, misalnya propanal dan propanon (C₃H₆O).
+  - type: text
+    slide: 1
+    text: Aldehida mudah dioksidasi sehingga memberi hasil positif pada **uji Tollens** (cermin perak) dan **uji Fehling** (endapan merah bata); keton tidak.
+  - type: tip
+    slide: 1
+    text: Formalin adalah larutan metanal sekitar 37%, dipakai untuk mengawetkan spesimen, bukan makanan.
+checks:
+  - question: KIM.C26.F.GUGUS.Q.ALDEHIDA_DAN_KETON_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.GUGUS.S.ALDEHIDA_DAN_KETON
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

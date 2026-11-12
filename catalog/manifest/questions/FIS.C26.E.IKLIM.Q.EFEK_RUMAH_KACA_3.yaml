@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.Q.EFEK_RUMAH_KACA_3
+familyCode: FIS.C26.E.IKLIM.F.EFEK_RUMAH_KACA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.IKLIM.EFEK_RUMAH_KACA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pernyataan yang tepat tentang efek rumah kaca adalah …
+  options:
+    - id: a
+      label: efek rumah kaca disebabkan oleh lubang ozon
+    - id: b
+      label: efek rumah kaca mendinginkan Bumi
+    - id: c
+      label: efek alaminya membuat Bumi layak huni, tetapi tambahan gas dari manusia menaikkan suhu
+    - id: d
+      label: efek rumah kaca seluruhnya disebabkan manusia
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - efek alaminya membuat Bumi layak huni, tetapi tambahan gas dari manusia menaikkan suhu
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.IKLIM.EFEK_RUMAH_KACA
+  feedback:
+    correct: Tanpa gas rumah kaca alami Bumi akan jauh lebih dingin; yang menjadi masalah adalah tambahan emisi dari aktivitas manusia.
+    incorrect: Jawabannya efek alaminya membuat Bumi layak huni, tetapi tambahan gas dari manusia menaikkan suhu. Tanpa gas rumah kaca alami Bumi akan jauh lebih dingin; yang menjadi masalah adalah tambahan emisi dari aktivitas manusia.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

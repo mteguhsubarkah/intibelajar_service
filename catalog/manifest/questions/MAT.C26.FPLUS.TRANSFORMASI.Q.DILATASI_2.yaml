@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TRANSFORMASI.Q.DILATASI_2
+familyCode: MAT.C26.FPLUS.TRANSFORMASI.F.DILATASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persegi seluas 5 cm² didilatasi dengan faktor skala −2. Luas bayangannya adalah …
+  options:
+    - id: a
+      label: 20 cm²
+    - id: b
+      label: 10 cm²
+    - id: c
+      label: −20 cm²
+    - id: d
+      label: 25 cm²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 20 cm²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+  feedback:
+    correct: Luas dikali k² = (−2)² = 4, sehingga 5 × 4 = 20 cm².
+    incorrect: Jawabannya 20 cm². Luas dikali k² = (−2)² = 4, sehingga 5 × 4 = 20 cm².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

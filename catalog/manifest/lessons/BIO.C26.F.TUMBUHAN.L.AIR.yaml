@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.L.AIR
+title: Transpor air dan hara
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+blocks:
+  - type: heading
+    slide: 0
+    text: Dari tanah ke daun
+  - type: text
+    slide: 0
+    text: Air masuk ke akar secara **osmosis**, lalu bergerak melewati korteks dan endodermis menuju xilem.
+  - type: text
+    slide: 0
+    text: Di xilem, air naik ke daun karena tarikan **transpirasi** (penguapan di daun), daya **kohesi** antarmolekul air, dan **adhesi** air pada dinding pembuluh.
+  - type: math
+    slide: 0
+    name: pendorong utama
+    expression: tarikan transpirasi
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Faktor transpirasi
+  - type: text
+    slide: 1
+    text: Transpirasi meningkat bila cahaya terang, suhu tinggi, angin kencang, dan kelembapan udara rendah.
+  - type: text
+    slide: 1
+    text: "**Tekanan akar** juga membantu, terlihat dari gutasi: tetesan air di tepi daun pada pagi hari."
+  - type: tip
+    slide: 1
+    text: Daun yang layu saat siang terik menunjukkan transpirasi lebih cepat daripada penyerapan air.
+checks:
+  - question: BIO.C26.F.TUMBUHAN.Q.AIR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUHAN.S.AIR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

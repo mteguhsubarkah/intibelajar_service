@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.Q.TITRASI_2
+familyCode: KIM.C26.F.ASAMBASA.F.TITRASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Volume NaOH 0,2 M yang diperlukan untuk menetralkan 10 mL H₂SO₄ 0,1 M adalah …
+  options:
+    - id: a
+      label: 20 mL
+    - id: b
+      label: 2 mL
+    - id: c
+      label: 10 mL
+    - id: d
+      label: 5 mL
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 10 mL
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+  feedback:
+    correct: "H₂SO₄ bervalensi 2: 10 × 0,1 × 2 = V × 0,2 × 1, sehingga V = 10 mL."
+    incorrect: "Jawabannya 10 mL. H₂SO₄ bervalensi 2: 10 × 0,1 × 2 = V × 0,2 × 1, sehingga V = 10 mL."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

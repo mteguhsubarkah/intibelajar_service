@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.Q.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL_1
+familyCode: KIM.C26.D.PARTIKEL.F.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.PARTIKEL.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Zat yang bentuknya berubah sesuai wadah tetapi volumenya tetap adalah zat …
+  options:
+    - id: a
+      label: gas
+    - id: b
+      label: plasma
+    - id: c
+      label: cair
+    - id: d
+      label: padat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - cair
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.PARTIKEL.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL
+  feedback:
+    correct: Partikel zat cair dapat bergeser tetapi tetap berdekatan, sehingga volumenya tidak berubah.
+    incorrect: Jawabannya cair. Partikel zat cair dapat bergeser tetapi tetap berdekatan, sehingga volumenya tidak berubah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

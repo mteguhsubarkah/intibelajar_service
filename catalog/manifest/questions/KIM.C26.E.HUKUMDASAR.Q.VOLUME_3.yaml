@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.VOLUME_3
+familyCode: KIM.C26.E.HUKUMDASAR.F.VOLUME_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_VOLUME_DAN_AVOGADRO
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pada reaksi C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(g), volume CO₂ yang dihasilkan dari 4 L propana adalah …
+  options:
+    - id: a
+      label: 20 L
+    - id: b
+      label: 16 L
+    - id: c
+      label: 12 L
+    - id: d
+      label: 3 L
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 12 L
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_VOLUME_DAN_AVOGADRO
+  feedback:
+    correct: "Perbandingan C₃H₈ : CO₂ = 1 : 3, sehingga 4 L propana menghasilkan 12 L CO₂."
+    incorrect: "Jawabannya 12 L. Perbandingan C₃H₈ : CO₂ = 1 : 3, sehingga 4 L propana menghasilkan 12 L CO₂."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

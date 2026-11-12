@@ -7,7 +7,8 @@
     "code": {
       "type": "string",
       "pattern": "^[A-Z]{3}(\\.[A-Z0-9][A-Z0-9_]*)*$",
-      "maxLength": 120
+      "maxLength": 64,
+      "description": "Kode katalog. Paling panjang 64 karakter, sama dengan batas kode di kontrak API (openapi.yaml)."
     },
     "subjectCode": {
       "type": "string",
@@ -499,6 +500,12 @@
           "type": "integer",
           "minimum": 1,
           "maximum": 60
+        },
+        "grade": {
+          "type": "integer",
+          "minimum": 7,
+          "maximum": 12,
+          "description": "Kelas tempat inti ini diajarkan (7–12), sesuai fase bab: D 7–9, E 10, F dan F+ 11–12."
         },
         "hidden": {
           "type": "boolean"

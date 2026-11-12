@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.Q.PH_ASAM_DAN_BASA_LEMAH_3
+familyCode: KIM.C26.F.ASAMBASA.F.PH_ASAM_DAN_BASA_LEMAH_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ASAMBASA.PH_ASAM_DAN_BASA_LEMAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: pH larutan NH₃ 0,01 M (Kb = 10⁻⁶) adalah …
+  options:
+    - id: a
+      label: "8"
+    - id: b
+      label: "12"
+    - id: c
+      label: "10"
+    - id: d
+      label: "4"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "10"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ASAMBASA.PH_ASAM_DAN_BASA_LEMAH
+  feedback:
+    correct: "[OH⁻] = √(10⁻⁶ × 10⁻²) = 10⁻⁴ M, pOH = 4, sehingga pH = 14 − 4 = 10."
+    incorrect: Jawabannya 10. [OH⁻] = √(10⁻⁶ × 10⁻²) = 10⁻⁴ M, pOH = 4, sehingga pH = 14 − 4 = 10.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,71 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA
+subject: KIM
+title: Asam–basa dan titrasi
+subtitle: Teori asam–basa, pH asam dan basa lemah, serta titrasi
+phase: F
+availability: MAPPED
+bekal:
+  - larutan elektrolit
+  - logaritma
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.ASAMBASA.TEORI_ASAM_BASA
+    title: Teori asam–basa
+    subtitle: Arrhenius, Brønsted–Lowry, Lewis, dan pasangan konjugasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-asambasa-c1
+  - code: KIM.C26.F.ASAMBASA.PH_ASAM_DAN_BASA_LEMAH
+    title: pH asam dan basa lemah
+    subtitle: Ka, Kb, dan menghitung pH
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-asambasa-c2
+  - code: KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+    title: Titrasi asam–basa
+    subtitle: Titik ekuivalen, indikator, dan kurva titrasi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-asambasa-titrasi
+prerequisites:
+  - concept: KIM.C26.F.ASAMBASA.PH_ASAM_DAN_BASA_LEMAH
+    requires: KIM.C26.F.ASAMBASA.TEORI_ASAM_BASA
+    kind: HARD
+  - concept: KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA
+    requires: KIM.C26.F.ASAMBASA.PH_ASAM_DAN_BASA_LEMAH
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

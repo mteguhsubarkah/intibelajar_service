@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.ORGAN_TUMBUHAN_1
+familyCode: BIO.C26.F.TUMBUHAN.F.ORGAN_TUMBUHAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bagian akar yang memperluas bidang penyerapan air adalah …
+  options:
+    - id: a
+      label: kambium
+    - id: b
+      label: endodermis
+    - id: c
+      label: rambut akar
+    - id: d
+      label: tudung akar
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - rambut akar
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+  feedback:
+    correct: Rambut akar adalah tonjolan sel epidermis yang menambah luas permukaan.
+    incorrect: Jawabannya rambut akar. Rambut akar adalah tonjolan sel epidermis yang menambah luas permukaan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

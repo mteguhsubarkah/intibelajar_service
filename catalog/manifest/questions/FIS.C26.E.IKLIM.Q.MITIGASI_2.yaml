@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.Q.MITIGASI_2
+familyCode: FIS.C26.E.IKLIM.F.MITIGASI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pembuatan sistem peringatan dini banjir termasuk …
+  options:
+    - id: a
+      label: penyebab pemanasan global
+    - id: b
+      label: efek rumah kaca alami
+    - id: c
+      label: adaptasi
+    - id: d
+      label: mitigasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - adaptasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI
+  feedback:
+    correct: Peringatan dini tidak mengurangi emisi, tetapi mengurangi kerugian akibat banjir.
+    incorrect: Jawabannya adaptasi. Peringatan dini tidak mengurangi emisi, tetapi mengurangi kerugian akibat banjir.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.Q.BENTUK_UMUM_DAN_PUSAT_JARI_JARI_2
+familyCode: MAT.C26.FPLUS.LINGKARAN.F.BENTUK_UMUM_DAN_PUSAT_JARI_JARI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LINGKARAN.BENTUK_UMUM_DAN_PUSAT_JARI_JARI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jari-jari lingkaran x² + y² − 4x + 6y − 12 = 0 adalah …
+  options:
+    - id: a
+      label: "5"
+    - id: b
+      label: √12
+    - id: c
+      label: "25"
+    - id: d
+      label: "1"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "5"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LINGKARAN.BENTUK_UMUM_DAN_PUSAT_JARI_JARI
+  feedback:
+    correct: r = √(16/4 + 36/4 + 12) = √(4 + 9 + 12) = 5.
+    incorrect: Jawabannya 5. r = √(16/4 + 36/4 + 12) = √(4 + 9 + 12) = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

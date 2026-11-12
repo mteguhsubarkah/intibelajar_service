@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.L.REAKSI
+title: Reaksi senyawa karbon
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON
+blocks:
+  - type: heading
+    slide: 0
+    text: Substitusi, adisi, eliminasi
+  - type: text
+    slide: 0
+    text: "**Substitusi**: satu atom atau gugus diganti yang lain, misalnya CH₄ + Cl₂ → CH₃Cl + HCl."
+  - type: text
+    slide: 0
+    text: "**Adisi**: ikatan rangkap terbuka dan atom bertambah, misalnya C₂H₄ + H₂ → C₂H₆. **Eliminasi**: ikatan tunggal menjadi rangkap dengan melepas molekul kecil, misalnya C₂H₅OH → C₂H₄ + H₂O."
+  - type: heading
+    slide: 1
+    text: Oksidasi alkohol
+  - type: text
+    slide: 1
+    text: Alkohol primer dioksidasi menjadi aldehida, lalu menjadi asam karboksilat. Alkohol sekunder dioksidasi menjadi keton.
+  - type: text
+    slide: 1
+    text: Alkohol tersier tidak mudah dioksidasi karena atom C yang mengikat –OH tidak memiliki atom H.
+  - type: math
+    slide: 1
+    name: alkohol primer
+    expression: → aldehida → asam karboksilat
+    highlight: true
+  - type: math
+    slide: 1
+    name: alkohol sekunder
+    expression: → keton
+  - type: tip
+    slide: 1
+    text: Adisi hanya terjadi pada senyawa berikatan rangkap; eliminasi justru membentuk ikatan rangkap.
+checks:
+  - question: KIM.C26.F.GUGUS.Q.REAKSI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.GUGUS.S.REAKSI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

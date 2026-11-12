@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.L.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+title: Bukti dan penyebab pemanasan global
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+blocks:
+  - type: heading
+    slide: 0
+    text: Bukti pemanasan global
+  - type: text
+    slide: 0
+    text: Pengukuran menunjukkan suhu rata-rata permukaan Bumi kini lebih dari 1°C di atas masa praindustri.
+  - type: text
+    slide: 0
+    text: "Bukti lainnya: gletser dan es laut Arktik menyusut, permukaan laut naik, dan gelombang panas makin sering."
+  - type: math
+    slide: 0
+    name: kenaikan suhu
+    expression: "> 1°C sejak praindustri"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Penyebab
+  - type: text
+    slide: 1
+    text: Penyebab utamanya adalah pembakaran **bahan bakar fosil** (batu bara, minyak, gas) yang melepaskan CO₂, serta **deforestasi** yang mengurangi penyerap CO₂.
+  - type: text
+    slide: 1
+    text: Peternakan, sawah, dan sampah organik menambah metana, sedangkan pupuk menambah N₂O.
+  - type: tip
+    slide: 1
+    text: Konsentrasi CO₂ di atmosfer kini jauh lebih tinggi daripada sebelum revolusi industri.
+checks:
+  - question: FIS.C26.E.IKLIM.Q.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.IKLIM.S.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

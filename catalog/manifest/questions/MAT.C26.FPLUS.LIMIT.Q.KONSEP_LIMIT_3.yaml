@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LIMIT.Q.KONSEP_LIMIT_3
+familyCode: MAT.C26.FPLUS.LIMIT.F.KONSEP_LIMIT_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LIMIT.KONSEP_LIMIT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fungsi g(x) = 3 untuk x < 0 dan g(x) = −3 untuk x ≥ 0. Pernyataan yang benar adalah …
+  options:
+    - id: a
+      label: lim x→0 g(x) = 3
+    - id: b
+      label: lim x→0 g(x) = −3
+    - id: c
+      label: lim x→0 g(x) tidak ada
+    - id: d
+      label: lim x→0 g(x) = 0
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - lim x→0 g(x) tidak ada
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LIMIT.KONSEP_LIMIT
+  feedback:
+    correct: Limit kiri 3 berbeda dengan limit kanan −3, jadi limit di x = 0 tidak ada.
+    incorrect: Jawabannya lim x→0 g(x) tidak ada. Limit kiri 3 berbeda dengan limit kanan −3, jadi limit di x = 0 tidak ada.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

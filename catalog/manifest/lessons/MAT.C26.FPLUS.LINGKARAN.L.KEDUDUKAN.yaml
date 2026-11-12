@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.L.KEDUDUKAN
+title: Kedudukan titik dan garis terhadap lingkaran
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.LINGKARAN.KEDUDUKAN_TITIK_DAN_GARIS_TERHADAP_LINGK
+blocks:
+  - type: heading
+    slide: 0
+    text: Kedudukan titik
+  - type: text
+    slide: 0
+    text: Substitusi titik (p, q) ke ruas kiri (x − a)² + (y − b)², lalu bandingkan hasilnya dengan r².
+  - type: text
+    slide: 0
+    text: "Lebih kecil dari r²: titik **di dalam**; sama dengan r²: **pada** lingkaran; lebih besar: **di luar**."
+  - type: math
+    slide: 0
+    name: di dalam
+    expression: (p − a)² + (q − b)² < r²
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Kedudukan garis
+  - type: text
+    slide: 1
+    text: Substitusi persamaan garis ke persamaan lingkaran sehingga terbentuk persamaan kuadrat satu variabel, lalu hitung diskriminannya D.
+  - type: text
+    slide: 1
+    text: "D > 0: garis **memotong** di dua titik; D = 0: garis **menyinggung**; D < 0: garis **tidak memotong**."
+  - type: math
+    slide: 1
+    name: menyinggung
+    expression: D = 0
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Cara lain: bandingkan jarak pusat ke garis dengan jari-jari."
+checks:
+  - question: MAT.C26.FPLUS.LINGKARAN.Q.KEDUDUKAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.LINGKARAN.S.KEDUDUKAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

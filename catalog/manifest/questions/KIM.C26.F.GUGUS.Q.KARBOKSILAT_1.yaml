@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.Q.KARBOKSILAT_1
+familyCode: KIM.C26.F.GUGUS.F.KARBOKSILAT_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Asam asetat dalam cuka memiliki nama IUPAC …
+  options:
+    - id: a
+      label: etil etanoat
+    - id: b
+      label: etanal
+    - id: c
+      label: asam etanoat
+    - id: d
+      label: asam metanoat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - asam etanoat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER
+  feedback:
+    correct: Asam asetat (CH₃COOH) memiliki dua atom C dengan gugus –COOH.
+    incorrect: Jawabannya asam etanoat. Asam asetat (CH₃COOH) memiliki dua atom C dengan gugus –COOH.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.Q.TEORI_ASAM_BASA_3
+familyCode: KIM.C26.F.ASAMBASA.F.TEORI_ASAM_BASA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.ASAMBASA.TEORI_ASAM_BASA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Basa konjugasi dari H₂SO₄ adalah …
+  options:
+    - id: a
+      label: SO₄²⁻
+    - id: b
+      label: H₃SO₄⁺
+    - id: c
+      label: H₂O
+    - id: d
+      label: HSO₄⁻
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - HSO₄⁻
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.ASAMBASA.TEORI_ASAM_BASA
+  feedback:
+    correct: "Basa konjugasi terbentuk setelah asam melepas satu H⁺: H₂SO₄ → HSO₄⁻."
+    incorrect: "Jawabannya HSO₄⁻. Basa konjugasi terbentuk setelah asam melepas satu H⁺: H₂SO₄ → HSO₄⁻."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.INTEGRAL.L.VOLUME
+title: Volume benda putar
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.INTEGRAL.VOLUME_BENDA_PUTAR
+blocks:
+  - type: heading
+    slide: 0
+    text: Metode cakram
+  - type: text
+    slide: 0
+    text: Daerah di bawah y = f(x) pada [a, b] yang diputar 360° mengelilingi sumbu x membentuk benda putar. Irisan tegaknya berupa cakram berjari-jari f(x).
+  - type: text
+    slide: 0
+    text: Volumenya **V = π ∫ₐᵇ [f(x)]² dx**.
+  - type: math
+    slide: 0
+    name: cakram (sumbu x)
+    expression: V = π ∫ₐᵇ f(x)² dx
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Metode cincin
+  - type: text
+    slide: 1
+    text: Jika daerah dibatasi dua kurva f(x) ≥ g(x) ≥ 0, irisannya berupa cincin, sehingga **V = π ∫ₐᵇ ([f(x)]² − [g(x)]²) dx**.
+  - type: text
+    slide: 1
+    text: Untuk perputaran mengelilingi sumbu y, gunakan rumus yang sama dengan x sebagai fungsi y.
+  - type: math
+    slide: 1
+    name: cincin
+    expression: V = π ∫ (f² − g²) dx
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kuadratkan setiap fungsi terlebih dahulu, baru kurangkan; (f − g)² tidak sama dengan f² − g².
+checks:
+  - question: MAT.C26.FPLUS.INTEGRAL.Q.VOLUME_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.INTEGRAL.S.VOLUME
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.Q.KEDUDUKAN_2
+familyCode: MAT.C26.FPLUS.LINGKARAN.F.KEDUDUKAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LINGKARAN.KEDUDUKAN_TITIK_DAN_GARIS_TERHADAP_LINGK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kedudukan garis y = x + 1 terhadap lingkaran x² + y² = 1 adalah …
+  options:
+    - id: a
+      label: melalui pusat
+    - id: b
+      label: memotong di dua titik
+    - id: c
+      label: menyinggung
+    - id: d
+      label: tidak memotong
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - memotong di dua titik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LINGKARAN.KEDUDUKAN_TITIK_DAN_GARIS_TERHADAP_LINGK
+  feedback:
+    correct: Substitusi memberi 2x² + 2x = 0 dengan D = 4 > 0, jadi ada dua titik potong, yaitu (0, 1) dan (−1, 0).
+    incorrect: Jawabannya memotong di dua titik. Substitusi memberi 2x² + 2x = 0 dengan D = 4 > 0, jadi ada dua titik potong, yaitu (0, 1) dan (−1, 0).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

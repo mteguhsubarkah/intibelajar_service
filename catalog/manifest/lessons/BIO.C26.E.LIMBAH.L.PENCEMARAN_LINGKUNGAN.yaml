@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.L.PENCEMARAN_LINGKUNGAN
+title: Pencemaran lingkungan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Pencemaran dan polutan
+  - type: text
+    slide: 0
+    text: "**Pencemaran** adalah masuknya zat, energi, atau makhluk hidup ke lingkungan sehingga kualitas lingkungan turun. Zat pencemarnya disebut **polutan**."
+  - type: text
+    slide: 0
+    text: "Jenisnya: pencemaran **air** (limbah industri, deterjen), **tanah** (plastik, pestisida), dan **udara** (asap kendaraan, pembakaran sampah)."
+  - type: heading
+    slide: 1
+    text: Eutrofikasi dan indikator
+  - type: text
+    slide: 1
+    text: "Limbah pupuk dan deterjen kaya fosfat memicu **eutrofikasi**: alga tumbuh berlebihan, lalu mati dan diuraikan bakteri, sehingga oksigen terlarut habis dan ikan mati."
+  - type: text
+    slide: 1
+    text: Kualitas air dapat dinilai dari kadar oksigen terlarut (DO), BOD, dan keberadaan hewan indikator seperti larva capung.
+  - type: math
+    slide: 1
+    name: BOD tinggi
+    expression: banyak bahan organik → oksigen cepat habis
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Lumut kerak jarang tumbuh di udara yang tercemar belerang dioksida.
+checks:
+  - question: BIO.C26.E.LIMBAH.Q.PENCEMARAN_LINGKUNGAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.LIMBAH.S.PENCEMARAN_LINGKUNGAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

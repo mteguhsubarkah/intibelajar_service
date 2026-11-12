@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.L.DAMPAK
+title: Dampak perubahan iklim
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.IKLIM.DAMPAK_PERUBAHAN_IKLIM
+blocks:
+  - type: heading
+    slide: 0
+    text: Dampak fisik
+  - type: text
+    slide: 0
+    text: "Suhu yang lebih tinggi mengubah pola cuaca: kemarau lebih panjang di satu tempat, hujan ekstrem dan banjir di tempat lain."
+  - type: text
+    slide: 0
+    text: Es daratan mencair dan air laut memuai, sehingga muka laut naik dan mengancam pesisir serta pulau-pulau kecil.
+  - type: heading
+    slide: 1
+    text: Dampak pada kehidupan
+  - type: text
+    slide: 1
+    text: Terumbu karang memutih saat laut terlalu hangat, panen terganggu, dan sebaran penyakit seperti demam berdarah bisa meluas.
+  - type: text
+    slide: 1
+    text: Sebagai negara kepulauan, Indonesia rentan terhadap banjir rob di pesisir, kekeringan, dan kebakaran hutan.
+  - type: tip
+    slide: 1
+    text: Perubahan iklim mencakup cuaca ekstrem, bukan hanya kenaikan suhu.
+checks:
+  - question: FIS.C26.E.IKLIM.Q.DAMPAK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.IKLIM.S.DAMPAK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

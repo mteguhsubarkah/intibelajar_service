@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.Q.MUTASI_GEN_1
+familyCode: BIO.C26.F.MUTASI.F.MUTASI_GEN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.MUTASI.MUTASI_GEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penggantian satu basa nitrogen dengan basa lain pada DNA disebut …
+  options:
+    - id: a
+      label: delesi
+    - id: b
+      label: translokasi
+    - id: c
+      label: substitusi
+    - id: d
+      label: insersi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - substitusi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.MUTASI.MUTASI_GEN
+  feedback:
+    correct: Substitusi menukar satu basa dengan basa lain tanpa mengubah panjang urutan DNA.
+    incorrect: Jawabannya substitusi. Substitusi menukar satu basa dengan basa lain tanpa mengubah panjang urutan DNA.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

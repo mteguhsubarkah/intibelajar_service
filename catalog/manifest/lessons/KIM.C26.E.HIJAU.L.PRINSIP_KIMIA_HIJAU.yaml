@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU.L.PRINSIP_KIMIA_HIJAU
+title: Prinsip kimia hijau
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+blocks:
+  - type: heading
+    slide: 0
+    text: Apa itu kimia hijau
+  - type: text
+    slide: 0
+    text: "**Kimia hijau** adalah cara merancang produk dan proses kimia yang mengurangi atau menghilangkan zat berbahaya. Paul Anastas dan John Warner merumuskan **12 prinsip** kimia hijau."
+  - type: text
+    slide: 0
+    text: "Prinsip pertama dan terpenting adalah **mencegah limbah**: lebih baik tidak menghasilkan limbah daripada mengolahnya setelah terbentuk."
+  - type: heading
+    slide: 1
+    text: Beberapa prinsip lain
+  - type: text
+    slide: 1
+    text: "Contoh prinsip lain: memakai bahan baku terbarukan, memilih pelarut dan bahan yang lebih aman, menghemat energi dengan reaksi pada suhu dan tekanan ruang, serta memakai katalis."
+  - type: text
+    slide: 1
+    text: Produk sebaiknya dirancang agar mudah terurai setelah dipakai, misalnya plastik biodegradable.
+  - type: tip
+    slide: 1
+    text: Prinsip kimia hijau berlaku dari laboratorium sekolah sampai industri.
+checks:
+  - question: KIM.C26.E.HIJAU.Q.PRINSIP_KIMIA_HIJAU_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.HIJAU.S.PRINSIP_KIMIA_HIJAU
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

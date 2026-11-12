@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI.Q.MODEL_3
+familyCode: MAT.C26.FPLUS.FUNGSI.F.MODEL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jumlah pengunjung taman selalu tinggi di akhir pekan dan rendah di tengah pekan, berulang tiap minggu. Model yang tepat adalah fungsi …
+  options:
+    - id: a
+      label: trigonometri dengan periode 7 hari
+    - id: b
+      label: linear naik
+    - id: c
+      label: eksponensial dengan rasio 7
+    - id: d
+      label: rasional dengan asimtot x = 7
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - trigonometri dengan periode 7 hari
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+  feedback:
+    correct: Pola naik-turun yang berulang setiap minggu adalah ciri model periodik dengan periode 7 hari.
+    incorrect: Jawabannya trigonometri dengan periode 7 hari. Pola naik-turun yang berulang setiap minggu adalah ciri model periodik dengan periode 7 hari.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

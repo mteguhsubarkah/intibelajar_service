@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.Q.ALKANA_ALKENA_DAN_ALKUNA_3
+familyCode: KIM.C26.F.HIDROKARBON.F.ALKANA_ALKENA_DAN_ALKUNA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Senyawa yang dapat mengalami reaksi adisi dengan H₂ adalah …
+  options:
+    - id: a
+      label: C₃H₆
+    - id: b
+      label: C₃H₈
+    - id: c
+      label: CH₄
+    - id: d
+      label: C₂H₆
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - C₃H₆
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+  feedback:
+    correct: C₃H₆ (propena) memiliki ikatan rangkap dua yang dapat dibuka oleh adisi; pilihan lain adalah alkana jenuh.
+    incorrect: Jawabannya C₃H₆. C₃H₆ (propena) memiliki ikatan rangkap dua yang dapat dibuka oleh adisi; pilihan lain adalah alkana jenuh.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

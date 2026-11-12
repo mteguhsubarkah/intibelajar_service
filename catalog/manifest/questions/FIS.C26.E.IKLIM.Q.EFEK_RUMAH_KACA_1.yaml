@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.Q.EFEK_RUMAH_KACA_1
+familyCode: FIS.C26.E.IKLIM.F.EFEK_RUMAH_KACA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.IKLIM.EFEK_RUMAH_KACA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Radiasi yang terutama diserap gas rumah kaca adalah …
+  options:
+    - id: a
+      label: inframerah yang dipancarkan permukaan Bumi
+    - id: b
+      label: cahaya tampak dari Matahari
+    - id: c
+      label: sinar ultraviolet dari Matahari
+    - id: d
+      label: gelombang radio
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - inframerah yang dipancarkan permukaan Bumi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.IKLIM.EFEK_RUMAH_KACA
+  feedback:
+    correct: Permukaan Bumi yang hangat memancarkan inframerah, dan radiasi itulah yang ditahan CO₂, metana, dan uap air.
+    incorrect: Jawabannya inframerah yang dipancarkan permukaan Bumi. Permukaan Bumi yang hangat memancarkan inframerah, dan radiasi itulah yang ditahan CO₂, metana, dan uap air.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

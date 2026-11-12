@@ -1,0 +1,71 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN
+subject: FIS
+title: Pembangkit energi terbarukan
+subtitle: Sel surya, tenaga air dan angin, panas bumi, dan bioenergi
+phase: E
+availability: MAPPED
+bekal:
+  - energi dan daya
+  - perubahan energi
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA
+    title: Energi surya dan sel surya
+    subtitle: Fotovoltaik, efisiensi, dan daya panel
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-terbarukan-c1
+  - code: FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+    title: Pembangkit tenaga air dan angin
+    subtitle: PLTA, PLTB, dan perubahan energinya
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-terbarukan-c2
+  - code: FIS.C26.E.TERBARUKAN.PANAS_BUMI_DAN_BIOENERGI
+    title: Panas bumi dan bioenergi
+    subtitle: PLTP, biogas, biodiesel, dan menilai pilihan energi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-terbarukan-panasbumi
+prerequisites:
+  - concept: FIS.C26.E.TERBARUKAN.PANAS_BUMI_DAN_BIOENERGI
+    requires: FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA
+    kind: SOFT
+  - concept: FIS.C26.E.TERBARUKAN.PANAS_BUMI_DAN_BIOENERGI
+    requires: FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

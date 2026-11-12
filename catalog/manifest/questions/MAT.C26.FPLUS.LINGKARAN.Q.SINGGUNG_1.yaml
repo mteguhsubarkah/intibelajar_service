@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.Q.SINGGUNG_1
+familyCode: MAT.C26.FPLUS.LINGKARAN.F.SINGGUNG_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_GARIS_SINGGUNG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan garis singgung lingkaran x² + y² = 25 di titik (3, 4) adalah …
+  options:
+    - id: a
+      label: 3x − 4y = 25
+    - id: b
+      label: 3x + 4y = 5
+    - id: c
+      label: 3x + 4y = 25
+    - id: d
+      label: 4x + 3y = 25
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 3x + 4y = 25
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_GARIS_SINGGUNG
+  feedback:
+    correct: Gunakan x₁x + y₁y = r² dengan (x₁, y₁) = (3, 4) dan r² = 25.
+    incorrect: Jawabannya 3x + 4y = 25. Gunakan x₁x + y₁y = r² dengan (x₁, y₁) = (3, 4) dan r² = 25.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

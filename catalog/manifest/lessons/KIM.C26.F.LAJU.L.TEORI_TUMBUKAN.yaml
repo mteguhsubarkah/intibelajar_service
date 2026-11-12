@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU.L.TEORI_TUMBUKAN
+title: Teori tumbukan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.LAJU.TEORI_TUMBUKAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Tumbukan efektif
+  - type: text
+    slide: 0
+    text: Reaksi terjadi jika partikel pereaksi **bertumbukan**. Tidak semua tumbukan menghasilkan reaksi; yang berhasil disebut **tumbukan efektif**.
+  - type: text
+    slide: 0
+    text: Tumbukan efektif terjadi bila partikel memiliki energi yang cukup, setidaknya sebesar **energi aktivasi (Ea)**, dan arah tumbukannya tepat.
+  - type: math
+    slide: 0
+    name: syarat
+    expression: energi ≥ Ea + arah tepat
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Diagram energi
+  - type: text
+    slide: 1
+    text: Energi aktivasi digambarkan sebagai bukit energi yang harus dilewati pereaksi sebelum menjadi produk.
+  - type: text
+    slide: 1
+    text: Makin rendah Ea, makin banyak tumbukan yang efektif, sehingga reaksi makin cepat.
+  - type: tip
+    slide: 1
+    text: Frekuensi tumbukan dan energi partikel adalah dua kunci untuk menjelaskan semua faktor laju.
+checks:
+  - question: KIM.C26.F.LAJU.Q.TEORI_TUMBUKAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.LAJU.S.TEORI_TUMBUKAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

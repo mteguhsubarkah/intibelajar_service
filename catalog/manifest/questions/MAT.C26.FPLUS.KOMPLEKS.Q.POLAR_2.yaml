@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.Q.POLAR_2
+familyCode: MAT.C26.FPLUS.KOMPLEKS.F.POLAR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KOMPLEKS.BENTUK_POLAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil 3 cis 40° × 2 cis 50° adalah …
+  options:
+    - id: a
+      label: 6i
+    - id: b
+      label: "6"
+    - id: c
+      label: 5 cis 90°
+    - id: d
+      label: 6 cis 2000°
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 6i
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KOMPLEKS.BENTUK_POLAR
+  feedback:
+    correct: Modulus 3 × 2 = 6 dan argumen 40° + 50° = 90°, sehingga hasilnya 6 cis 90° = 6i.
+    incorrect: Jawabannya 6i. Modulus 3 × 2 = 6 dan argumen 40° + 50° = 90°, sehingga hasilnya 6 cis 90° = 6i.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

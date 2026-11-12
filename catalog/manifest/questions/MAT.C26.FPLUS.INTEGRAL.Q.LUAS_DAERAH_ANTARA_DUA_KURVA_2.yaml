@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.INTEGRAL.Q.LUAS_DAERAH_ANTARA_DUA_KURVA_2
+familyCode: MAT.C26.FPLUS.INTEGRAL.F.LUAS_DAERAH_ANTARA_DUA_KURVA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.INTEGRAL.LUAS_DAERAH_ANTARA_DUA_KURVA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Luas daerah yang dibatasi y = 4 − x² dan sumbu x adalah …
+  options:
+    - id: a
+      label: 16/3 satuan luas
+    - id: b
+      label: 8 satuan luas
+    - id: c
+      label: 16 satuan luas
+    - id: d
+      label: 32/3 satuan luas
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 32/3 satuan luas
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.INTEGRAL.LUAS_DAERAH_ANTARA_DUA_KURVA
+  feedback:
+    correct: Kurva memotong sumbu x di x = ±2; ∫₋₂² (4 − x²) dx = 16 − 16/3 = 32/3.
+    incorrect: Jawabannya 32/3 satuan luas. Kurva memotong sumbu x di x = ±2; ∫₋₂² (4 − x²) dx = 16 − 16/3 = 32/3.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.L.PERSAMAAN_LINGKARAN
+title: Persamaan lingkaran
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Pusat dan jari-jari
+  - type: text
+    slide: 0
+    text: Lingkaran adalah himpunan titik yang berjarak sama (jari-jari r) dari pusat. Dengan rumus jarak, lingkaran berpusat (a, b) memenuhi **(x − a)² + (y − b)² = r²**.
+  - type: text
+    slide: 0
+    text: Jika pusatnya di titik asal, persamaannya menjadi x² + y² = r².
+  - type: math
+    slide: 0
+    name: pusat (a, b)
+    expression: (x − a)² + (y − b)² = r²
+    highlight: true
+  - type: math
+    slide: 0
+    name: pusat O
+    expression: x² + y² = r²
+  - type: heading
+    slide: 1
+    text: Menyusun persamaan
+  - type: text
+    slide: 1
+    text: Jika diketahui pusat dan satu titik pada lingkaran, jari-jarinya adalah jarak pusat ke titik itu.
+  - type: text
+    slide: 1
+    text: "Contoh: pusat (2, −1) melalui (5, 3) memberi r = √(3² + 4²) = 5, jadi (x − 2)² + (y + 1)² = 25."
+  - type: math
+    slide: 1
+    name: jari-jari
+    expression: r = jarak pusat ke titik
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Tanda di dalam kurung berlawanan dengan koordinat pusat.
+checks:
+  - question: MAT.C26.FPLUS.LINGKARAN.Q.PERSAMAAN_LINGKARAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.LINGKARAN.S.PERSAMAAN_LINGKARAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

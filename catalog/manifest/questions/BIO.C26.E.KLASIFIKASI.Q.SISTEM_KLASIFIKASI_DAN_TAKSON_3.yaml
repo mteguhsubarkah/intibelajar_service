@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.KLASIFIKASI.Q.SISTEM_KLASIFIKASI_DAN_TAKSON_3
+familyCode: BIO.C26.E.KLASIFIKASI.F.SISTEM_KLASIFIKASI_DAN_TAKSON_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.KLASIFIKASI.SISTEM_KLASIFIKASI_DAN_TAKSON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Kuda dan keledai dapat kawin dan menghasilkan bagal yang mandul. Hal ini menunjukkan kuda dan keledai …
+  options:
+    - id: a
+      label: berbeda filum
+    - id: b
+      label: berbeda spesies
+    - id: c
+      label: satu spesies
+    - id: d
+      label: berbeda kingdom
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - berbeda spesies
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.KLASIFIKASI.SISTEM_KLASIFIKASI_DAN_TAKSON
+  feedback:
+    correct: Anggota satu spesies menghasilkan keturunan fertil; bagal yang mandul menunjukkan induknya berbeda spesies.
+    incorrect: Jawabannya berbeda spesies. Anggota satu spesies menghasilkan keturunan fertil; bagal yang mandul menunjukkan induknya berbeda spesies.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

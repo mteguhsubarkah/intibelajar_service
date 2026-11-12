@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LIMIT.L.TAKHINGGA
+title: Limit di tak hingga
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.LIMIT.LIMIT_DI_TAK_HINGGA
+blocks:
+  - type: heading
+    slide: 0
+    text: Fungsi rasional di tak hingga
+  - type: text
+    slide: 0
+    text: Untuk x → ∞, bagi pembilang dan penyebut dengan pangkat tertinggi penyebut, karena 1/xⁿ → 0.
+  - type: text
+    slide: 0
+    text: "Hasilnya: derajat pembilang < penyebut → 0; derajat sama → perbandingan koefisien utama; derajat pembilang > penyebut → ∞ atau −∞."
+  - type: math
+    slide: 0
+    name: derajat sama
+    expression: a/b (koefisien utama)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Selisih akar
+  - type: text
+    slide: 1
+    text: Bentuk √(ax² + bx + c) − √(ax² + qx + r) untuk x → ∞ bernilai **(b − q)/(2√a)**.
+  - type: text
+    slide: 1
+    text: Rumus ini berasal dari perkalian sekawan dan hanya berlaku jika koefisien x² di kedua akar sama.
+  - type: math
+    slide: 1
+    name: selisih akar
+    expression: (b − q) / (2√a)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Limit di tak hingga menggambarkan asimtot datar grafik.
+checks:
+  - question: MAT.C26.FPLUS.LIMIT.Q.TAKHINGGA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.LIMIT.S.TAKHINGGA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

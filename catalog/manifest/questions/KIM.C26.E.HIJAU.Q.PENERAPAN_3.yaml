@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU.Q.PENERAPAN_3
+familyCode: KIM.C26.E.HIJAU.F.PENERAPAN_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Tindakan siswa di sekolah yang paling sesuai dengan prinsip pencegahan limbah adalah …
+  options:
+    - id: a
+      label: membawa botol minum isi ulang
+    - id: b
+      label: membakar sampah plastik di halaman
+    - id: c
+      label: membuang sisa larutan praktikum ke selokan
+    - id: d
+      label: membeli air dalam botol plastik setiap hari
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - membawa botol minum isi ulang
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA
+  feedback:
+    correct: Botol isi ulang mencegah sampah plastik terbentuk sejak awal; membakar sampah dan membuang larutan ke selokan justru mencemari.
+    incorrect: Jawabannya membawa botol minum isi ulang. Botol isi ulang mencegah sampah plastik terbentuk sejak awal; membakar sampah dan membuang larutan ke selokan justru mencemari.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,88 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL
+subject: MAT
+title: Polinomial
+subtitle: Operasi, pembagian, teorema sisa dan faktor, serta akar-akar polinomial
+phase: F+
+availability: MAPPED
+bekal:
+  - bentuk aljabar
+  - persamaan kuadrat
+aliases: []
+units: []
+concepts:
+  - code: MAT.C26.FPLUS.POLINOMIAL.BENTUK_DAN_OPERASI_POLINOMIAL
+    title: Bentuk dan operasi polinomial
+    subtitle: Derajat, koefisien, nilai, dan operasi polinomial
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-polinomial-c1
+  - code: MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL
+    title: Pembagian polinomial
+    subtitle: Hasil bagi dan sisa, cara bersusun dan Horner
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-polinomial-c2
+  - code: MAT.C26.FPLUS.POLINOMIAL.TEOREMA_SISA_DAN_FAKTOR
+    title: Teorema sisa dan faktor
+    subtitle: Sisa P(k) dan menemukan faktor
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-polinomial-sisa
+  - code: MAT.C26.FPLUS.POLINOMIAL.AKAR_AKAR_DAN_HUBUNGAN_KOEFISIEN
+    title: Akar-akar dan hubungan koefisien
+    subtitle: Akar polinomial dan rumus Vieta derajat tiga
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-fplus-polinomial-akar
+prerequisites:
+  - concept: MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL
+    requires: MAT.C26.FPLUS.POLINOMIAL.BENTUK_DAN_OPERASI_POLINOMIAL
+    kind: HARD
+  - concept: MAT.C26.FPLUS.POLINOMIAL.TEOREMA_SISA_DAN_FAKTOR
+    requires: MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL
+    kind: HARD
+  - concept: MAT.C26.FPLUS.POLINOMIAL.AKAR_AKAR_DAN_HUBUNGAN_KOEFISIEN
+    requires: MAT.C26.FPLUS.POLINOMIAL.TEOREMA_SISA_DAN_FAKTOR
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.L.JARINGAN_TUMBUHAN
+title: Jaringan tumbuhan
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.TUMBUHAN.JARINGAN_TUMBUHAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Meristem dan jaringan dewasa
+  - type: text
+    slide: 0
+    text: "**Jaringan meristem** terus membelah dan menyebabkan pertumbuhan: meristem apikal di ujung akar dan batang (tumbuh memanjang), kambium (tumbuh membesar)."
+  - type: text
+    slide: 0
+    text: "**Jaringan dewasa**: epidermis (pelindung), parenkim (pengisi dan penyimpan), jaringan penguat (kolenkim, sklerenkim), dan jaringan pengangkut (xilem, floem)."
+  - type: heading
+    slide: 1
+    text: Xilem dan floem
+  - type: text
+    slide: 1
+    text: "**Xilem** mengangkut air dan mineral dari akar ke daun. **Floem** mengangkut hasil fotosintesis dari daun ke seluruh bagian tumbuhan."
+  - type: text
+    slide: 1
+    text: Pada dikotil, xilem dan floem tersusun melingkar dengan kambium di antaranya; pada monokotil berkas pengangkutnya tersebar.
+  - type: tip
+    slide: 1
+    text: Stomata pada epidermis daun mengatur pertukaran gas dan penguapan air.
+checks:
+  - question: BIO.C26.F.TUMBUHAN.Q.JARINGAN_TUMBUHAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.TUMBUHAN.S.JARINGAN_TUMBUHAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

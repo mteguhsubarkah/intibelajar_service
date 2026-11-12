@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM.L.MODEL_ATOM_BOHR
+title: Model atom Bohr
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.MODELATOM.MODEL_ATOM_BOHR
+blocks:
+  - type: heading
+    slide: 0
+    text: Kulit elektron
+  - type: text
+    slide: 0
+    text: "**Bohr**: elektron mengelilingi inti pada lintasan (kulit) tertentu dengan energi tertentu, tanpa memancarkan energi."
+  - type: text
+    slide: 0
+    text: Kulit diberi nama K, L, M, N, dan seterusnya dari yang terdekat dengan inti. Kulit ke-n menampung paling banyak 2n² elektron.
+  - type: math
+    slide: 0
+    name: kapasitas kulit ke-n
+    expression: 2n²
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Loncatan elektron
+  - type: text
+    slide: 1
+    text: Elektron dapat berpindah ke kulit yang lebih tinggi bila menyerap energi, lalu kembali ke kulit lebih rendah sambil memancarkan cahaya.
+  - type: text
+    slide: 1
+    text: Inilah sebabnya setiap unsur memancarkan warna nyala yang khas, misalnya natrium berwarna kuning.
+  - type: tip
+    slide: 1
+    text: Model Bohr cocok untuk atom hidrogen, tetapi kurang tepat untuk atom berelektron banyak.
+checks:
+  - question: KIM.C26.E.MODELATOM.Q.MODEL_ATOM_BOHR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.MODELATOM.S.MODEL_ATOM_BOHR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

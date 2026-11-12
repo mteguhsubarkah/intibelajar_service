@@ -3969,6 +3969,11 @@ components:
           type: boolean
         isCapstone:
           type: boolean
+        grade:
+          type: integer
+          minimum: 7
+          maximum: 12
+          description: Kelas tempat inti diajarkan (7–12). Tidak ada bila katalog terbit belum menetapkannya; klien kembali ke pengelompokan per fase.
     ConceptList:
       type: object
       additionalProperties: false
@@ -4016,6 +4021,10 @@ components:
           type: boolean
         isCapstone:
           type: boolean
+        grade:
+          type: integer
+          minimum: 7
+          maximum: 12
         definition:
           type: string
           maxLength: 2000

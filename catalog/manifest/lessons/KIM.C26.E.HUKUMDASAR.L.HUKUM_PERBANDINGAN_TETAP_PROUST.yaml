@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.L.HUKUM_PERBANDINGAN_TETAP_PROUST
+title: Hukum perbandingan tetap (Proust)
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST
+blocks:
+  - type: heading
+    slide: 0
+    text: Isi hukum Proust
+  - type: text
+    slide: 0
+    text: "**Joseph Proust**: perbandingan massa unsur-unsur dalam suatu senyawa selalu tetap, dari mana pun asal senyawa itu."
+  - type: text
+    slide: 0
+    text: "Contoh: air selalu mengandung hidrogen dan oksigen dengan perbandingan massa 1 : 8."
+  - type: math
+    slide: 0
+    name: air
+    expression: "H : O = 1 : 8"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Menghitung dengan perbandingan
+  - type: text
+    slide: 1
+    text: Jika 4 g hidrogen direaksikan dengan 40 g oksigen, yang bereaksi hanya 4 g H dengan 32 g O, menghasilkan 36 g air.
+  - type: text
+    slide: 1
+    text: Sisa 8 g oksigen tidak bereaksi. Unsur yang habis lebih dulu menentukan jumlah hasil.
+  - type: tip
+    slide: 1
+    text: "Perbandingan massa dalam senyawa dapat dihitung dari Ar: dalam H₂O, (2 × 1) : 16 = 1 : 8."
+checks:
+  - question: KIM.C26.E.HUKUMDASAR.Q.HUKUM_PERBANDINGAN_TETAP_PROUST_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.HUKUMDASAR.S.HUKUM_PERBANDINGAN_TETAP_PROUST
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

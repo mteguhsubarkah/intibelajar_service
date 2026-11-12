@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.L.JENIS_LIMBAH
+title: Jenis limbah
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.LIMBAH.JENIS_LIMBAH
+blocks:
+  - type: heading
+    slide: 0
+    text: Organik dan anorganik
+  - type: text
+    slide: 0
+    text: Berdasarkan sifatnya, limbah dibagi menjadi **organik** (mudah terurai, seperti sisa makanan dan daun) dan **anorganik** (sulit terurai, seperti plastik, kaca, dan logam).
+  - type: text
+    slide: 0
+    text: Berdasarkan wujudnya, ada limbah padat, cair, dan gas.
+  - type: heading
+    slide: 1
+    text: Limbah B3
+  - type: text
+    slide: 1
+    text: "**Limbah B3** (bahan berbahaya dan beracun) bersifat mudah meledak, mudah terbakar, beracun, korosif, atau infeksius. Contohnya baterai bekas, oli bekas, lampu neon, dan limbah medis."
+  - type: text
+    slide: 1
+    text: Limbah B3 tidak boleh dicampur dengan sampah biasa dan harus diserahkan ke pengelola khusus.
+  - type: tip
+    slide: 1
+    text: Plastik dapat bertahan ratusan tahun dan pecah menjadi mikroplastik.
+checks:
+  - question: BIO.C26.E.LIMBAH.Q.JENIS_LIMBAH_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.LIMBAH.S.JENIS_LIMBAH
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

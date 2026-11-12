@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.L.DAURULANG
+title: Daur ulang dan pengelolaan limbah
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.LIMBAH.DAUR_ULANG_DAN_PENGELOLAAN_LIMBAH
+blocks:
+  - type: heading
+    slide: 0
+    text: Prinsip 3R
+  - type: text
+    slide: 0
+    text: "**Reduce** (mengurangi), **Reuse** (memakai ulang), dan **Recycle** (mendaur ulang). Urutannya menunjukkan prioritas: mengurangi paling utama."
+  - type: text
+    slide: 0
+    text: Pemilahan sampah dari rumah memudahkan daur ulang dan pengomposan.
+  - type: heading
+    slide: 1
+    text: Mengolah limbah
+  - type: text
+    slide: 1
+    text: Limbah organik diolah menjadi **kompos** atau pakan maggot (larva lalat tentara hitam). Limbah plastik, kertas, dan logam dikumpulkan di **bank sampah** untuk didaur ulang.
+  - type: text
+    slide: 1
+    text: Limbah cair diolah di **IPAL** (instalasi pengolahan air limbah) sebelum dibuang ke sungai.
+  - type: tip
+    slide: 1
+    text: Membakar sampah di tempat terbuka bukan pengelolaan; asapnya mencemari udara.
+checks:
+  - question: BIO.C26.E.LIMBAH.Q.DAURULANG_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.LIMBAH.S.DAURULANG
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

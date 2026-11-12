@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.GANGGUAN_2
+familyCode: BIO.C26.F.GERAK.F.GANGGUAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rakitis pada anak disebabkan kekurangan …
+  options:
+    - id: a
+      label: vitamin D
+    - id: b
+      label: vitamin C
+    - id: c
+      label: zat besi
+    - id: d
+      label: serat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - vitamin D
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK
+  feedback:
+    correct: Vitamin D dibutuhkan untuk menyerap kalsium; tanpanya tulang anak menjadi lunak dan bengkok.
+    incorrect: Jawabannya vitamin D. Vitamin D dibutuhkan untuk menyerap kalsium; tanpanya tulang anak menjadi lunak dan bengkok.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.Q.PANASBUMI_3
+familyCode: FIS.C26.E.TERBARUKAN.F.PANASBUMI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.TERBARUKAN.PANAS_BUMI_DAN_BIOENERGI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah pulau kecil terpencil yang cerah sepanjang tahun dan jauh dari gunung api paling cocok memakai …
+  options:
+    - id: a
+      label: pembangkit listrik tenaga panas bumi
+    - id: b
+      label: PLTA bendungan besar
+    - id: c
+      label: pembangkit listrik tenaga batu bara skala besar
+    - id: d
+      label: pembangkit listrik tenaga surya dengan baterai
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - pembangkit listrik tenaga surya dengan baterai
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.TERBARUKAN.PANAS_BUMI_DAN_BIOENERGI
+  feedback:
+    correct: Sinar Matahari melimpah dan panel dapat dipasang bertahap, sementara panas bumi dan bendungan besar butuh kondisi geologi atau sungai tertentu.
+    incorrect: Jawabannya pembangkit listrik tenaga surya dengan baterai. Sinar Matahari melimpah dan panel dapat dipasang bertahap, sementara panas bumi dan bendungan besar butuh kondisi geologi atau sungai tertentu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

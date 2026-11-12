@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL.Q.SISA_2
+familyCode: MAT.C26.FPLUS.POLINOMIAL.F.SISA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.POLINOMIAL.TEOREMA_SISA_DAN_FAKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika (x − 1) adalah faktor dari x³ + ax − 4, nilai a adalah …
+  options:
+    - id: a
+      label: "3"
+    - id: b
+      label: −3
+    - id: c
+      label: "4"
+    - id: d
+      label: "5"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - "3"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.POLINOMIAL.TEOREMA_SISA_DAN_FAKTOR
+  feedback:
+    correct: "Faktor (x − 1) berarti P(1) = 0: 1 + a − 4 = 0, sehingga a = 3."
+    incorrect: "Jawabannya 3. Faktor (x − 1) berarti P(1) = 0: 1 + a − 4 = 0, sehingga a = 3."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM.L.KONFIGURASI
+title: Konfigurasi elektron dan elektron valensi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS
+blocks:
+  - type: heading
+    slide: 0
+    text: Konfigurasi menurut kulit
+  - type: text
+    slide: 0
+    text: "**Konfigurasi elektron** disusun dengan mengisi kulit K (maksimum 2), lalu L (8), lalu M, dan seterusnya. Untuk unsur bernomor atom 1–20, kulit terluar diisi paling banyak 8 elektron."
+  - type: text
+    slide: 0
+    text: "Contoh: Na (11) = 2, 8, 1; Cl (17) = 2, 8, 7; Ca (20) = 2, 8, 8, 2."
+  - type: math
+    slide: 0
+    name: Na (11)
+    expression: 2, 8, 1
+    highlight: true
+  - type: math
+    slide: 0
+    name: Cl (17)
+    expression: 2, 8, 7
+  - type: heading
+    slide: 1
+    text: Elektron valensi
+  - type: text
+    slide: 1
+    text: "**Elektron valensi** adalah elektron di kulit terluar. Jumlahnya menentukan sifat kimia dan golongan unsur."
+  - type: text
+    slide: 1
+    text: Na memiliki 1 elektron valensi sehingga mudah melepasnya menjadi Na⁺; Cl memiliki 7 sehingga mudah menerima satu elektron menjadi Cl⁻.
+  - type: tip
+    slide: 1
+    text: Untuk golongan utama, nomor golongan sama dengan jumlah elektron valensi.
+checks:
+  - question: KIM.C26.E.MODELATOM.Q.KONFIGURASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.MODELATOM.S.KONFIGURASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

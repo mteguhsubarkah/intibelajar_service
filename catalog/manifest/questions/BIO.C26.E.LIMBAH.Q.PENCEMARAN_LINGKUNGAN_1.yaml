@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.Q.PENCEMARAN_LINGKUNGAN_1
+familyCode: BIO.C26.E.LIMBAH.F.PENCEMARAN_LINGKUNGAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Ledakan populasi alga di danau akibat limbah pupuk disebut …
+  options:
+    - id: a
+      label: biomagnifikasi
+    - id: b
+      label: fotosintesis
+    - id: c
+      label: reboisasi
+    - id: d
+      label: eutrofikasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - eutrofikasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+  feedback:
+    correct: Nutrien berlebih, terutama fosfat dan nitrat, menyuburkan alga secara berlebihan.
+    incorrect: Jawabannya eutrofikasi. Nutrien berlebih, terutama fosfat dan nitrat, menyuburkan alga secara berlebihan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

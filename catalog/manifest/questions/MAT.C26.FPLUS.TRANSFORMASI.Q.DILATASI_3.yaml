@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TRANSFORMASI.Q.DILATASI_3
+familyCode: MAT.C26.FPLUS.TRANSFORMASI.F.DILATASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bayangan titik (5, 3) oleh dilatasi berpusat (1, 1) dengan faktor skala 2 adalah …
+  options:
+    - id: a
+      label: (6, 4)
+    - id: b
+      label: (9, 5)
+    - id: c
+      label: (10, 6)
+    - id: d
+      label: (11, 7)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - (9, 5)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+  feedback:
+    correct: "Jarak dari pusat (4, 2) dikalikan 2 menjadi (8, 4), lalu ditambah pusat (1, 1): (9, 5)."
+    incorrect: "Jawabannya (9, 5). Jarak dari pusat (4, 2) dikalikan 2 menjadi (8, 4), lalu ditambah pusat (1, 1): (9, 5)."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

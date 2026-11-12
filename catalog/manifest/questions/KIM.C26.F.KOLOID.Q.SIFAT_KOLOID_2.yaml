@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLOID.Q.SIFAT_KOLOID_2
+familyCode: KIM.C26.F.KOLOID.F.SIFAT_KOLOID_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLOID.SIFAT_KOLOID
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pemberian norit untuk mengatasi sakit perut memanfaatkan sifat koloid …
+  options:
+    - id: a
+      label: adsorpsi
+    - id: b
+      label: koagulasi
+    - id: c
+      label: efek Tyndall
+    - id: d
+      label: gerak Brown
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - adsorpsi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLOID.SIFAT_KOLOID
+  feedback:
+    correct: Permukaan karbon aktif menyerap racun dan bakteri di saluran pencernaan.
+    incorrect: Jawabannya adsorpsi. Permukaan karbon aktif menyerap racun dan bakteri di saluran pencernaan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

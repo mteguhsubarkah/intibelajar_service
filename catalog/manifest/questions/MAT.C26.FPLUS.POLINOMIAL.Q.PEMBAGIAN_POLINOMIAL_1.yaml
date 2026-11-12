@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL.Q.PEMBAGIAN_POLINOMIAL_1
+familyCode: MAT.C26.FPLUS.POLINOMIAL.F.PEMBAGIAN_POLINOMIAL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sisa pembagian x³ − 4x + 2 oleh x − 2 adalah …
+  options:
+    - id: a
+      label: −2
+    - id: b
+      label: "10"
+    - id: c
+      label: "2"
+    - id: d
+      label: "0"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - "2"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL
+  feedback:
+    correct: Horner dengan k = 2 pada koefisien 1, 0, −4, 2 menghasilkan baris 1, 2, 0, 2; bilangan terakhir 2 adalah sisa.
+    incorrect: Jawabannya 2. Horner dengan k = 2 pada koefisien 1, 0, −4, 2 menghasilkan baris 1, 2, 0, 2; bilangan terakhir 2 adalah sisa.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

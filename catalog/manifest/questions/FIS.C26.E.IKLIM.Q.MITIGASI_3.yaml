@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.Q.MITIGASI_3
+familyCode: FIS.C26.E.IKLIM.F.MITIGASI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Menanam mangrove di pesisir disebut bermanfaat ganda karena …
+  options:
+    - id: a
+      label: hanya mengurangi emisi kendaraan
+    - id: b
+      label: menaikkan suhu laut
+    - id: c
+      label: mempercepat kenaikan muka laut
+    - id: d
+      label: menyerap karbon sekaligus melindungi pantai dari abrasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - menyerap karbon sekaligus melindungi pantai dari abrasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI
+  feedback:
+    correct: Mangrove menyimpan banyak karbon (mitigasi) dan meredam gelombang serta abrasi (adaptasi).
+    incorrect: Jawabannya menyerap karbon sekaligus melindungi pantai dari abrasi. Mangrove menyimpan banyak karbon (mitigasi) dan meredam gelombang serta abrasi (adaptasi).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.E.KLASIFIKASI.L.SISTEM_KLASIFIKASI_DAN_TAKSON
+title: Sistem klasifikasi dan takson
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.E.KLASIFIKASI.SISTEM_KLASIFIKASI_DAN_TAKSON
+blocks:
+  - type: heading
+    slide: 0
+    text: Mengapa diklasifikasikan
+  - type: text
+    slide: 0
+    text: "**Klasifikasi** mengelompokkan makhluk hidup berdasarkan persamaan dan perbedaan ciri, sehingga keanekaragamannya lebih mudah dipelajari."
+  - type: text
+    slide: 0
+    text: "**Takson** dari yang tertinggi: domain, kingdom, filum (divisio untuk tumbuhan), kelas, ordo, famili, genus, spesies."
+  - type: math
+    slide: 0
+    name: urutan takson
+    expression: kingdom → filum → kelas → ordo → famili → genus → spesies
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Makin rendah takson
+  - type: text
+    slide: 1
+    text: Makin rendah tingkat takson, makin banyak persamaan ciri anggotanya tetapi makin sedikit jumlah anggotanya.
+  - type: text
+    slide: 1
+    text: Spesies adalah kelompok yang anggotanya dapat kawin dan menghasilkan keturunan fertil.
+  - type: tip
+    slide: 1
+    text: Kucing rumah dan harimau satu famili (Felidae), tetapi berbeda genus.
+checks:
+  - question: BIO.C26.E.KLASIFIKASI.Q.SISTEM_KLASIFIKASI_DAN_TAKSON_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.E.KLASIFIKASI.S.SISTEM_KLASIFIKASI_DAN_TAKSON
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

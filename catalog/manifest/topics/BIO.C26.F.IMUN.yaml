@@ -1,0 +1,87 @@
+schemaVersion: 1
+code: BIO.C26.F.IMUN
+subject: BIO
+title: Sistem pertahanan tubuh
+subtitle: Pertahanan nonspesifik dan spesifik, vaksin, dan gangguan sistem imun
+phase: F
+availability: MAPPED
+bekal:
+  - sel darah
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK
+    title: Pertahanan nonspesifik
+    subtitle: Kulit, selaput lendir, fagositosis, dan inflamasi
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-imun-c1
+  - code: BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK
+    title: Pertahanan spesifik
+    subtitle: Limfosit B dan T, antibodi, dan sel memori
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-imun-c2
+  - code: BIO.C26.F.IMUN.IMUNISASI_DAN_VAKSIN
+    title: Imunisasi dan vaksin
+    subtitle: Kekebalan aktif dan pasif, cara kerja vaksin
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-imun-vaksin
+  - code: BIO.C26.F.IMUN.GANGGUAN_SISTEM_IMUN
+    title: Gangguan sistem imun
+    subtitle: Alergi, autoimun, HIV, dan AIDS
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-imun-gangguan
+prerequisites:
+  - concept: BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK
+    requires: BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK
+    kind: HARD
+  - concept: BIO.C26.F.IMUN.IMUNISASI_DAN_VAKSIN
+    requires: BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK
+    kind: HARD
+  - concept: BIO.C26.F.IMUN.GANGGUAN_SISTEM_IMUN
+    requires: BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

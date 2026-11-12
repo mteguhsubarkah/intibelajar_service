@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.POLINOMIAL.Q.BENTUK_DAN_OPERASI_POLINOMIAL_2
+familyCode: MAT.C26.FPLUS.POLINOMIAL.F.BENTUK_DAN_OPERASI_POLINOMIAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.POLINOMIAL.BENTUK_DAN_OPERASI_POLINOMIAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jika P(x) = 2x³ − x² + 3x − 4, nilai P(−1) adalah …
+  options:
+    - id: a
+      label: −10
+    - id: b
+      label: −2
+    - id: c
+      label: "2"
+    - id: d
+      label: −8
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −10
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.POLINOMIAL.BENTUK_DAN_OPERASI_POLINOMIAL
+  feedback:
+    correct: 2(−1)³ − (−1)² + 3(−1) − 4 = −2 − 1 − 3 − 4 = −10.
+    incorrect: Jawabannya −10. 2(−1)³ − (−1)² + 3(−1) − 4 = −2 − 1 − 3 − 4 = −10.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

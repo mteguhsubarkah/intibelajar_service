@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN.Q.ATURAN_RANTAI_1
+familyCode: MAT.C26.FPLUS.TURUNAN.F.ATURAN_RANTAI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Turunan y = (2x − 5)³ adalah …
+  options:
+    - id: a
+      label: 6(2x − 5)²
+    - id: b
+      label: 3(2x − 5)²
+    - id: c
+      label: 6(2x − 5)³
+    - id: d
+      label: 2(2x − 5)²
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 6(2x − 5)²
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+  feedback:
+    correct: 3(2x − 5)² dikalikan turunan bagian dalam 2, menjadi 6(2x − 5)².
+    incorrect: Jawabannya 6(2x − 5)². 3(2x − 5)² dikalikan turunan bagian dalam 2, menjadi 6(2x − 5)².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

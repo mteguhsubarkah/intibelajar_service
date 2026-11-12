@@ -11,6 +11,7 @@ import { FIS_TOPICS, FIS_RELATIONS } from './pilot/fis.js';
 import { KIM_TOPICS, KIM_RELATIONS } from './pilot/kim.js';
 import { BIO_TOPICS, BIO_RELATIONS } from './pilot/bio.js';
 import { PLANNED_TOPICS, PLANNED_RELATIONS } from './pilot/planned.js';
+import { gradeOf, staleOverrides } from './pilot/grades.js';
 
 // Usage: npm run catalog:pilot [-- --manifest catalog/manifest]
 // Menulis konten pilot (topik, inti, soal pilihan ganda, materi dua slide) ke manifest katalog.
@@ -24,6 +25,21 @@ const OURS = new Set([PILOT_DECISION, AUDIT_DECISION]);
 const TOPICS: PilotTopic[] = [...MAT_TOPICS, ...FIS_TOPICS, ...KIM_TOPICS, ...BIO_TOPICS, ...PLANNED_TOPICS];
 const EXISTING: PilotExisting[] = [...MAT_EXISTING, ...TRI_EXISTING];
 const RELATIONS = [...MAT_RELATIONS, ...FIS_RELATIONS, ...KIM_RELATIONS, ...BIO_RELATIONS, ...PLANNED_RELATIONS];
+
+/**
+ * Inti dengan kelasnya (7–12, scripts/catalog/pilot/grades.ts), disisipkan tepat sesudah estimatedMinutes supaya file
+ * YAML mudah dibaca. Inti tersembunyi (prasyarat jenjang sebelumnya) tidak diberi kelas.
+ */
+export function withGrades(topic: Topic, missing: string[] = []): Topic {
+  return { ...topic, concepts: topic.concepts.map(c => {
+    const { grade: _old, ...rest } = c, grade = c.hidden ? undefined : gradeOf(topic, c.code);
+    if (!c.hidden && grade === undefined) missing.push(c.code);
+    if (grade === undefined) return rest;
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(rest)) { out[k] = v; if (k === 'estimatedMinutes') out.grade = grade; }
+    return out as unknown as typeof c;
+  }) };
+}
 
 /** Alias MAP inti pilot; FE (src/data/intiverse.ts) memakai rumus yang sama untuk menautkan peta ke katalog. */
 export const aliasOf = (topic: string, core: string) =>
@@ -122,6 +138,7 @@ export function buildPilot() {
       prerequisites: t.edges.map(([from, to, kind]) => ({ concept: ref(to), requires: ref(from), kind: kind === 'H' ? 'HARD' as const : 'SOFT' as const })),
       review: review(['concepts', 'prerequisites'], t.evidence ?? ['inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)'], t.decision),
     });
+    topics[topics.length - 1] = withGrades(topics[topics.length - 1]!);
     for (const c of t.cores) {
       // inti PLANNED: belum ada materi, jadi belum boleh ada soal
       if (!c.slides) { if (c.q?.length) throw new Error(`${t.code} ${c.id}: soal tanpa materi`); continue; }
@@ -164,6 +181,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     for (const c of topic.concepts) if (EXISTING.some(e => e.concept === c.code)) c.availability = 'READY';
     writeFileSync(file, dump(topic));
   }
+  // Kelas per inti untuk SEMUA bab, termasuk bab lama di luar konten pilot (MAT.TRI, MAT.EKS, ...).
+  const missing: string[] = [], all: Topic[] = [];
+  for (const name of readdirSync(join(dir, 'topics'))) {
+    const file = join(dir, 'topics', name), before = readFileSync(file, 'utf8'), topic = withGrades(parse(before) as Topic, missing);
+    all.push(topic);
+    if (dump(topic) !== before) writeFileSync(file, dump(topic));
+  }
+  const stale = staleOverrides(all);
+  if (missing.length || stale.length) throw new Error([
+    ...(missing.length ? [`Inti tanpa kelas (tambahkan di scripts/catalog/pilot/grades.ts): ${missing.join(', ')}`] : []),
+    ...(stale.length ? [`Pengecualian kelas untuk inti yang tidak ada: ${stale.join(', ')}`] : [])].join('\n'));
   for (const q of questions) write('questions', q.code, q);
   for (const l of lessons) write('lessons', l.code, l);
 

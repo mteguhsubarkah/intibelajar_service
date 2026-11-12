@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.HUKUM_KEKEKALAN_MASSA_LAVOISIER_1
+familyCode: KIM.C26.E.HUKUMDASAR.F.HUKUM_KEKEKALAN_MASSA_LAVOISIER_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebanyak 5,6 g besi bereaksi tepat dengan 3,2 g belerang dalam sistem tertutup. Massa besi sulfida yang terbentuk adalah …
+  options:
+    - id: a
+      label: 5,6 g
+    - id: b
+      label: 17,9 g
+    - id: c
+      label: 8,8 g
+    - id: d
+      label: 2,4 g
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 8,8 g
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER
+  feedback:
+    correct: Menurut hukum kekekalan massa, 5,6 + 3,2 = 8,8 g.
+    incorrect: Jawabannya 8,8 g. Menurut hukum kekekalan massa, 5,6 + 3,2 = 8,8 g.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

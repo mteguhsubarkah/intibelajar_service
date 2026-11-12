@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.Q.REAKSI_2
+familyCode: KIM.C26.F.GUGUS.F.REAKSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Oksidasi 2-propanol menghasilkan …
+  options:
+    - id: a
+      label: propanal
+    - id: b
+      label: asam propanoat
+    - id: c
+      label: propena
+    - id: d
+      label: propanon
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - propanon
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON
+  feedback:
+    correct: 2-propanol adalah alkohol sekunder, sehingga oksidasinya menghasilkan keton.
+    incorrect: Jawabannya propanon. 2-propanol adalah alkohol sekunder, sehingga oksidasinya menghasilkan keton.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

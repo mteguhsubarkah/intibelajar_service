@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH.Q.DAURULANG_2
+familyCode: BIO.C26.E.LIMBAH.F.DAURULANG_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.E.LIMBAH.DAUR_ULANG_DAN_PENGELOLAAN_LIMBAH
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pengolahan sisa sayuran menjadi pupuk memanfaatkan proses …
+  options:
+    - id: a
+      label: pembakaran
+    - id: b
+      label: pelelehan
+    - id: c
+      label: sterilisasi
+    - id: d
+      label: pengomposan oleh mikroorganisme
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - pengomposan oleh mikroorganisme
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.E.LIMBAH.DAUR_ULANG_DAN_PENGELOLAAN_LIMBAH
+  feedback:
+    correct: Mikroorganisme menguraikan bahan organik menjadi kompos yang menyuburkan tanah.
+    incorrect: Jawabannya pengomposan oleh mikroorganisme. Mikroorganisme menguraikan bahan organik menjadi kompos yang menyuburkan tanah.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

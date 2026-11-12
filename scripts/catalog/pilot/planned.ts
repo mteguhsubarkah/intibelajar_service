@@ -11,15 +11,183 @@ import { SMA_MAT } from './sma-mat.js';
 import { SMA_FIS } from './sma-fis.js';
 import { SMA_KIM } from './sma-kim.js';
 import { SMA_BIO } from './sma-bio.js';
+import { SMA_MAT_LANJUT } from './sma-mat-lanjut.js';
+import { IPA_FIS_E } from './ipa-fis-e.js';
+import { KIMIA_LENGKAP } from './kimia-lengkap.js';
+import { BIOLOGI_LENGKAP } from './biologi-lengkap.js';
 
 /** Materi dan soal yang sudah ditulis, per "KODE_TOPIK:ID_INTI". Inti yang punya isi di sini menjadi READY. */
 const CONTENT: Record<string, Pick<PilotCore, 'slides' | 'q' | 'min'>> = {
   ...SMP_MAT, ...SMP_FIS, ...SMP_KIM, ...SMP_BIO, // prioritas 1: inti SMP
   ...SMA_MAT, ...SMA_FIS, ...SMA_KIM, ...SMA_BIO, // prioritas 2: celah SMA Fase E/F
+  ...SMA_MAT_LANJUT, ...IPA_FIS_E, ...KIMIA_LENGKAP, ...BIOLOGI_LENGKAP, // pemeriksaan per kelas 12 November 2026
 };
 
 const EV_FE = ["nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)", "dicatat sebagai \"peta saja\" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul"];
 const EV_NEW = ["inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)", "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"];
+
+/** Bab dari pemeriksaan per kelas (12 November 2026): ada di daftar isi buku siswa per kelas, belum ada di katalog. */
+const EV_GRADE = ["bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog", "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"];
+type Core = [string, string, string?, boolean?];
+const G = (code: string, subject: PilotTopic['subject'], phase: PilotTopic['phase'], title: string, subtitle: string, bekal: string[], cores: Core[], edges: PilotTopic['edges']): PilotTopic =>
+  ({ code, subject, phase, decision: 'D9', evidence: EV_GRADE, title, subtitle, bekal, edges,
+     cores: cores.map(([id, title, sub, capstone]) => ({ id, title, ...(sub ? { sub } : {}), ...(capstone ? { capstone } : {}) })) });
+
+const BY_GRADE: PilotTopic[] = [
+  // ---- Matematika Tingkat Lanjut kelas 11
+  G('MAT.C26.FPLUS.KOMPLEKS', 'MAT', 'F+', 'Bilangan kompleks', 'Satuan imajiner, operasi, modulus, argumen, dan bentuk polar', ['akar kuadrat', 'koordinat Kartesius'], [
+    ['C1', 'Bentuk dan bidang bilangan kompleks', 'Satuan imajiner i, bagian real dan imajiner, bidang kompleks'],
+    ['C2', 'Operasi bilangan kompleks', 'Jumlah, selisih, kali, dan bagi dengan sekawan'],
+    ['KONJUGAT', 'Konjugat, modulus, dan argumen', 'Sekawan, jarak ke titik asal, dan sudut terhadap sumbu real'],
+    ['POLAR', 'Bentuk polar', 'r cis θ, perkalian, dan Teorema De Moivre', true]],
+    [['C1', 'C2', 'H'], ['C2', 'KONJUGAT', 'H'], ['KONJUGAT', 'POLAR', 'H']]),
+  G('MAT.C26.FPLUS.POLINOMIAL', 'MAT', 'F+', 'Polinomial', 'Operasi, pembagian, teorema sisa dan faktor, serta akar-akar polinomial', ['bentuk aljabar', 'persamaan kuadrat'], [
+    ['C1', 'Bentuk dan operasi polinomial', 'Derajat, koefisien, nilai, dan operasi polinomial'],
+    ['C2', 'Pembagian polinomial', 'Hasil bagi dan sisa, cara bersusun dan Horner'],
+    ['SISA', 'Teorema sisa dan faktor', 'Sisa P(k) dan menemukan faktor'],
+    ['AKAR', 'Akar-akar dan hubungan koefisien', 'Akar polinomial dan rumus Vieta derajat tiga', true]],
+    [['C1', 'C2', 'H'], ['C2', 'SISA', 'H'], ['SISA', 'AKAR', 'H']]),
+  G('MAT.C26.FPLUS.TRANSFORMASI', 'MAT', 'F+', 'Transformasi geometri', 'Translasi, refleksi, rotasi, dilatasi, dan komposisinya dengan matriks', ['matriks', 'koordinat Kartesius'], [
+    ['C1', 'Translasi dan refleksi', 'Pergeseran dan pencerminan terhadap sumbu dan garis'],
+    ['C2', 'Rotasi', 'Perputaran terhadap titik asal dan pusat lain'],
+    ['DILATASI', 'Dilatasi', 'Perbesaran dengan faktor skala dan perubahan luas'],
+    ['KOMPOSISI', 'Komposisi transformasi dengan matriks', 'Urutan komposisi dan determinan sebagai faktor luas', true]],
+    [['C1', 'C2', 'S'], ['C1', 'DILATASI', 'S'], ['C2', 'KOMPOSISI', 'H'], ['DILATASI', 'KOMPOSISI', 'H']]),
+  G('MAT.C26.FPLUS.FUNGSI', 'MAT', 'F+', 'Fungsi dan pemodelan', 'Fungsi rasional, model periodik trigonometri, dan memilih model dari data', ['fungsi', 'trigonometri'], [
+    ['C1', 'Fungsi rasional dan asimtot', 'Daerah asal, asimtot tegak, dan asimtot datar'],
+    ['C2', 'Model periodik trigonometri', 'Amplitudo, periode, dan garis tengah dari data berulang'],
+    ['MODEL', 'Memilih model fungsi dari data', 'Selisih, rasio, dan pola untuk memilih model', true]],
+    [['C1', 'MODEL', 'S'], ['C2', 'MODEL', 'S']]),
+  // ---- Matematika Tingkat Lanjut kelas 12
+  G('MAT.C26.FPLUS.LINGKARAN', 'MAT', 'F+', 'Persamaan lingkaran', 'Persamaan lingkaran, bentuk umum, kedudukan titik dan garis, serta garis singgung', ['jarak dua titik', 'melengkapkan kuadrat'], [
+    ['C1', 'Persamaan lingkaran', 'Lingkaran dengan pusat dan jari-jari tertentu'],
+    ['C2', 'Bentuk umum dan pusat-jari-jari', 'Membaca pusat dan jari-jari dari bentuk umum'],
+    ['KEDUDUKAN', 'Kedudukan titik dan garis terhadap lingkaran', 'Di dalam, pada, di luar; memotong, menyinggung, tidak memotong'],
+    ['SINGGUNG', 'Persamaan garis singgung', 'Garis singgung di titik dan dengan gradien tertentu', true]],
+    [['C1', 'C2', 'H'], ['C2', 'KEDUDUKAN', 'H'], ['KEDUDUKAN', 'SINGGUNG', 'H']]),
+  G('MAT.C26.FPLUS.LIMIT', 'MAT', 'F+', 'Limit fungsi', 'Konsep limit, limit aljabar, limit di tak hingga, dan limit trigonometri', ['fungsi', 'faktorisasi'], [
+    ['C1', 'Konsep limit', 'Mendekati suatu nilai, limit kiri dan kanan'],
+    ['C2', 'Limit fungsi aljabar', 'Substitusi, faktorisasi, dan perkalian sekawan'],
+    ['TAKHINGGA', 'Limit di tak hingga', 'Fungsi rasional dan selisih akar untuk x → ∞'],
+    ['TRIGONOMETRI', 'Limit fungsi trigonometri', 'lim sin x / x = 1 dan bentuk turunannya', true]],
+    [['C1', 'C2', 'H'], ['C2', 'TAKHINGGA', 'S'], ['C2', 'TRIGONOMETRI', 'H']]),
+  G('MAT.C26.FPLUS.TURUNAN', 'MAT', 'F+', 'Turunan lanjut', 'Aturan rantai, turunan trigonometri, titik stasioner, dan kemonotonan', ['turunan dasar'], [
+    ['C1', 'Aturan rantai', 'Turunan fungsi komposisi dan bentuk pangkat'],
+    ['C2', 'Turunan fungsi trigonometri', 'Turunan sinus, kosinus, dan tangen'],
+    ['STASIONER', 'Titik stasioner dan kemonotonan', 'Fungsi naik dan turun, uji turunan kedua', true]],
+    [['C1', 'C2', 'H'], ['C1', 'STASIONER', 'S'], ['C2', 'STASIONER', 'S']]),
+  G('MAT.C26.FPLUS.INTEGRAL', 'MAT', 'F+', 'Integral lanjut', 'Integral substitusi, luas antara dua kurva, dan volume benda putar', ['antiturunan', 'integral tentu'], [
+    ['C1', 'Integral substitusi', 'Memisalkan u = g(x) untuk menyederhanakan integral'],
+    ['C2', 'Luas daerah antara dua kurva', 'Kurva atas dikurangi kurva bawah'],
+    ['VOLUME', 'Volume benda putar', 'Metode cakram dan cincin', true]],
+    [['C1', 'C2', 'S'], ['C2', 'VOLUME', 'H']]),
+  // ---- Fisika kelas 10
+  G('FIS.C26.E.IKLIM', 'FIS', 'E', 'Pemanasan global dan perubahan iklim', 'Efek rumah kaca, bukti dan penyebab pemanasan global, dampak, mitigasi, dan adaptasi', ['kalor', 'radiasi'], [
+    ['C1', 'Efek rumah kaca', 'Gas rumah kaca dan radiasi inframerah'],
+    ['C2', 'Bukti dan penyebab pemanasan global', 'Data suhu, muka laut, dan emisi dari aktivitas manusia'],
+    ['DAMPAK', 'Dampak perubahan iklim', 'Cuaca ekstrem, kenaikan muka laut, dan dampak pada kehidupan'],
+    ['MITIGASI', 'Mitigasi dan adaptasi', 'Mengurangi emisi dan menyesuaikan diri dengan dampak', true]],
+    [['C1', 'C2', 'H'], ['C2', 'DAMPAK', 'S'], ['DAMPAK', 'MITIGASI', 'S']]),
+  G('FIS.C26.E.TERBARUKAN', 'FIS', 'E', 'Pembangkit energi terbarukan', 'Sel surya, tenaga air dan angin, panas bumi, dan bioenergi', ['energi dan daya', 'perubahan energi'], [
+    ['C1', 'Energi surya dan sel surya', 'Fotovoltaik, efisiensi, dan daya panel'],
+    ['C2', 'Pembangkit tenaga air dan angin', 'PLTA, PLTB, dan perubahan energinya'],
+    ['PANASBUMI', 'Panas bumi dan bioenergi', 'PLTP, biogas, biodiesel, dan menilai pilihan energi', true]],
+    [['C1', 'PANASBUMI', 'S'], ['C2', 'PANASBUMI', 'S']]),
+  // ---- Kimia
+  G('KIM.C26.D.PARTIKEL', 'KIM', 'D', 'Wujud zat dan teori partikel', 'Susunan partikel padat, cair, dan gas, perubahan wujud, serta massa jenis', ['sifat benda'], [
+    ['C1', 'Wujud zat dan susunan partikel', 'Padat, cair, dan gas menurut gerak dan jarak partikel'],
+    ['C2', 'Perubahan wujud zat', 'Mencair, membeku, menguap, mengembun, menyublim, mengkristal'],
+    ['MASSAJENIS', 'Massa jenis', 'ρ = m/V, terapung dan tenggelam', true]],
+    [['C1', 'C2', 'H'], ['C1', 'MASSAJENIS', 'S']]),
+  G('KIM.C26.D.ATOM', 'KIM', 'D', 'Atom, ion, dan molekul', 'Partikel penyusun atom, ion dan molekul, serta lambang unsur', ['wujud zat'], [
+    ['C1', 'Atom dan partikel penyusunnya', 'Proton, neutron, elektron, nomor atom, dan nomor massa'],
+    ['C2', 'Ion dan molekul', 'Kation, anion, molekul unsur, dan molekul senyawa'],
+    ['UNSUR', 'Lambang unsur dan tabel periodik sederhana', 'Lambang unsur, logam dan nonlogam, golongan dan periode', true]],
+    [['C1', 'C2', 'H'], ['C1', 'UNSUR', 'S']]),
+  G('KIM.C26.E.HUKUMDASAR', 'KIM', 'E', 'Hukum dasar kimia', 'Hukum Lavoisier, Proust, Dalton, Gay-Lussac, dan hipotesis Avogadro', ['persamaan reaksi'], [
+    ['C1', 'Hukum kekekalan massa (Lavoisier)', 'Massa sebelum dan sesudah reaksi dalam sistem tertutup'],
+    ['C2', 'Hukum perbandingan tetap (Proust)', 'Perbandingan massa unsur dalam senyawa'],
+    ['BERGANDA', 'Hukum perbandingan berganda (Dalton)', 'Dua unsur yang membentuk lebih dari satu senyawa'],
+    ['VOLUME', 'Hukum perbandingan volume dan Avogadro', 'Perbandingan volume gas sama dengan perbandingan koefisien', true]],
+    [['C1', 'C2', 'H'], ['C2', 'BERGANDA', 'H'], ['C2', 'VOLUME', 'S']]),
+  G('KIM.C26.E.HIJAU', 'KIM', 'E', 'Kimia hijau dan pembangunan berkelanjutan', 'Prinsip kimia hijau, ekonomi atom, dan penerapannya', ['reaksi kimia'], [
+    ['C1', 'Prinsip kimia hijau', 'Mencegah limbah, bahan lebih aman, hemat energi, katalis'],
+    ['C2', 'Ekonomi atom', 'Persentase atom pereaksi yang menjadi produk'],
+    ['PENERAPAN', 'Kimia hijau dan pembangunan berkelanjutan', 'Contoh penerapan dan kaitannya dengan SDGs', true]],
+    [['C1', 'C2', 'S'], ['C1', 'PENERAPAN', 'S']]),
+  G('KIM.C26.E.MODELATOM', 'KIM', 'E', 'Perkembangan model atom', 'Model Dalton sampai Bohr, konfigurasi elektron, dan elektron valensi', ['atom, ion, dan molekul'], [
+    ['C1', 'Model atom Dalton, Thomson, Rutherford', 'Percobaan dan kesimpulan tiap model'],
+    ['C2', 'Model atom Bohr', 'Kulit elektron, tingkat energi, dan warna nyala'],
+    ['KONFIGURASI', 'Konfigurasi elektron dan elektron valensi', 'Pengisian kulit K, L, M dan elektron terluar', true]],
+    [['C1', 'C2', 'H'], ['C2', 'KONFIGURASI', 'H']]),
+  G('KIM.C26.F.HIDROKARBON', 'KIM', 'F', 'Hidrokarbon dan minyak bumi', 'Kekhasan atom karbon, alkana-alkena-alkuna, tata nama, dan minyak bumi', ['ikatan kovalen'], [
+    ['C1', 'Kekhasan atom karbon', 'Empat ikatan kovalen dan atom C primer sampai kuarterner'],
+    ['C2', 'Alkana, alkena, dan alkuna', 'Rumus umum, sifat, dan isomer'],
+    ['TATANAMA', 'Tata nama hidrokarbon', 'Rantai induk, penomoran, dan cabang menurut IUPAC'],
+    ['MINYAK', 'Minyak bumi dan pembakaran', 'Distilasi bertingkat, bilangan oktan, dan pembakaran', true]],
+    [['C1', 'C2', 'H'], ['C2', 'TATANAMA', 'H'], ['C2', 'MINYAK', 'S']]),
+  G('KIM.C26.F.LAJU', 'KIM', 'F', 'Laju reaksi', 'Pengertian laju, teori tumbukan, dan faktor yang memengaruhi laju', ['konsentrasi molar', 'persamaan reaksi'], [
+    ['C1', 'Konsep laju reaksi', 'Perubahan konsentrasi per satuan waktu'],
+    ['C2', 'Teori tumbukan', 'Tumbukan efektif dan energi aktivasi'],
+    ['FAKTOR', 'Faktor yang memengaruhi laju', 'Konsentrasi, luas permukaan, suhu, dan katalis', true]],
+    [['C1', 'C2', 'S'], ['C2', 'FAKTOR', 'H']]),
+  G('KIM.C26.F.KOLOID', 'KIM', 'F', 'Sistem koloid', 'Jenis koloid, sifat-sifat koloid, serta pembuatan dan penerapannya', ['larutan'], [
+    ['C1', 'Sistem dispersi dan jenis koloid', 'Larutan, koloid, suspensi, dan jenis koloid'],
+    ['C2', 'Sifat koloid', 'Efek Tyndall, gerak Brown, adsorpsi, koagulasi, dialisis'],
+    ['PEMBUATAN', 'Pembuatan dan penerapan koloid', 'Kondensasi, dispersi, dan pengemulsi', true]],
+    [['C1', 'C2', 'H'], ['C2', 'PEMBUATAN', 'S']]),
+  G('KIM.C26.F.ASAMBASA', 'KIM', 'F', 'Asam–basa dan titrasi', 'Teori asam–basa, pH asam dan basa lemah, serta titrasi', ['larutan elektrolit', 'logaritma'], [
+    ['C1', 'Teori asam–basa', 'Arrhenius, Brønsted–Lowry, Lewis, dan pasangan konjugasi'],
+    ['C2', 'pH asam dan basa lemah', 'Ka, Kb, dan menghitung pH'],
+    ['TITRASI', 'Titrasi asam–basa', 'Titik ekuivalen, indikator, dan kurva titrasi', true]],
+    [['C1', 'C2', 'H'], ['C2', 'TITRASI', 'S']]),
+  G('KIM.C26.F.GUGUS', 'KIM', 'F', 'Senyawa turunan alkana', 'Alkohol, eter, aldehida, keton, asam karboksilat, ester, dan reaksinya', ['hidrokarbon'], [
+    ['C1', 'Alkohol dan eter', 'Gugus –OH dan –O–, tata nama, dan isomer fungsi'],
+    ['C2', 'Aldehida dan keton', 'Gugus karbonil, uji Tollens dan Fehling'],
+    ['KARBOKSILAT', 'Asam karboksilat dan ester', 'Gugus –COOH dan –COO–, esterifikasi'],
+    ['REAKSI', 'Reaksi senyawa karbon', 'Substitusi, adisi, eliminasi, dan oksidasi alkohol', true]],
+    [['C1', 'C2', 'S'], ['C2', 'KARBOKSILAT', 'S'], ['KARBOKSILAT', 'REAKSI', 'S']]),
+  // ---- Biologi
+  G('BIO.C26.E.KLASIFIKASI', 'BIO', 'E', 'Klasifikasi makhluk hidup', 'Takson, tata nama binomial, lima kingdom, dan tiga domain', ['ciri makhluk hidup'], [
+    ['C1', 'Sistem klasifikasi dan takson', 'Tujuan klasifikasi dan urutan takson'],
+    ['C2', 'Tata nama binomial', 'Aturan penulisan nama ilmiah'],
+    ['KINGDOM', 'Sistem lima kingdom dan tiga domain', 'Monera sampai Animalia; Bacteria, Archaea, Eukarya', true]],
+    [['C1', 'C2', 'S'], ['C1', 'KINGDOM', 'H']]),
+  G('BIO.C26.E.LIMBAH', 'BIO', 'E', 'Pencemaran dan pengelolaan limbah', 'Pencemaran air, tanah, udara, jenis limbah, dan daur ulang', ['ekosistem'], [
+    ['C1', 'Pencemaran lingkungan', 'Polutan, eutrofikasi, dan indikator kualitas air'],
+    ['C2', 'Jenis limbah', 'Organik, anorganik, dan limbah B3'],
+    ['DAURULANG', 'Daur ulang dan pengelolaan limbah', 'Prinsip 3R, kompos, bank sampah, dan IPAL', true]],
+    [['C1', 'C2', 'S'], ['C2', 'DAURULANG', 'H']]),
+  G('BIO.C26.F.TUMBUHAN', 'BIO', 'F', 'Jaringan dan transpor pada tumbuhan', 'Jaringan dan organ tumbuhan, transpor air, hara, dan hasil fotosintesis', ['sel', 'fotosintesis'], [
+    ['C1', 'Jaringan tumbuhan', 'Meristem, jaringan dewasa, xilem, dan floem'],
+    ['C2', 'Organ tumbuhan', 'Akar, batang, dan struktur daun'],
+    ['AIR', 'Transpor air dan hara', 'Osmosis, transpirasi, kohesi, dan adhesi'],
+    ['FLOEM', 'Transpor hasil fotosintesis', 'Translokasi sukrosa dari sumber ke penerima', true]],
+    [['C1', 'C2', 'H'], ['C2', 'AIR', 'H'], ['AIR', 'FLOEM', 'S']]),
+  G('BIO.C26.F.GERAK', 'BIO', 'F', 'Sistem gerak manusia', 'Rangka, sendi, otot, dan gangguan sistem gerak', ['jaringan hewan'], [
+    ['C1', 'Rangka dan tulang', 'Fungsi rangka, rangka aksial dan apendikular, osifikasi'],
+    ['C2', 'Sendi', 'Sinartrosis, amfiartrosis, dan jenis diartrosis'],
+    ['OTOT', 'Otot dan kontraksi', 'Jenis otot, kerja antagonis, aktin dan miosin'],
+    ['GANGGUAN', 'Gangguan sistem gerak', 'Kelainan tulang, sendi, dan otot serta pencegahannya', true]],
+    [['C1', 'C2', 'H'], ['C1', 'OTOT', 'S'], ['OTOT', 'GANGGUAN', 'S']]),
+  G('BIO.C26.F.IMUN', 'BIO', 'F', 'Sistem pertahanan tubuh', 'Pertahanan nonspesifik dan spesifik, vaksin, dan gangguan sistem imun', ['sel darah'], [
+    ['C1', 'Pertahanan nonspesifik', 'Kulit, selaput lendir, fagositosis, dan inflamasi'],
+    ['C2', 'Pertahanan spesifik', 'Limfosit B dan T, antibodi, dan sel memori'],
+    ['VAKSIN', 'Imunisasi dan vaksin', 'Kekebalan aktif dan pasif, cara kerja vaksin'],
+    ['GANGGUAN', 'Gangguan sistem imun', 'Alergi, autoimun, HIV, dan AIDS', true]],
+    [['C1', 'C2', 'H'], ['C2', 'VAKSIN', 'H'], ['C2', 'GANGGUAN', 'S']]),
+  G('BIO.C26.F.HEREDITAS', 'BIO', 'F', 'Pola hereditas', 'Penyimpangan semu Mendel, pautan, pautan seks, dan hereditas manusia', ['hukum Mendel', 'meiosis'], [
+    ['C1', 'Penyimpangan semu hukum Mendel', 'Epistasis, kriptomeri, komplementer, dan polimeri'],
+    ['C2', 'Pautan dan pindah silang', 'Gen tertaut dan nilai pindah silang'],
+    ['SEKS', 'Penentuan jenis kelamin dan pautan seks', 'Kromosom XX/XY, buta warna, dan hemofilia'],
+    ['MANUSIA', 'Hereditas pada manusia', 'Golongan darah ABO dan peta silsilah', true]],
+    [['C1', 'C2', 'S'], ['C2', 'SEKS', 'S'], ['SEKS', 'MANUSIA', 'H']]),
+  G('BIO.C26.F.MUTASI', 'BIO', 'F', 'Mutasi', 'Mutasi gen, mutasi kromosom, penyebab, dan dampaknya', ['DNA dan kromosom'], [
+    ['C1', 'Mutasi gen', 'Substitusi, insersi, delesi, dan pergeseran kerangka baca'],
+    ['C2', 'Mutasi kromosom', 'Perubahan struktur, aneuploidi, dan poliploidi'],
+    ['PENYEBAB', 'Penyebab dan dampak mutasi', 'Mutagen, dampak merugikan, dan pemanfaatan', true]],
+    [['C1', 'C2', 'S'], ['C1', 'PENYEBAB', 'S']]),
+];
 
 const STRUCTURE: PilotTopic[] = [
   {
@@ -383,6 +551,7 @@ const STRUCTURE: PilotTopic[] = [
     ],
     edges: [["C1", "MEDANLISTRIK", "H"], ["MEDANLISTRIK", "POTENSIAL", "H"], ["POTENSIAL", "KAPASITOR", "S"], ["MEDANLISTRIK", "LORENTZ", "S"]],
   },
+  ...BY_GRADE,
 ];
 
 for (const key of Object.keys(CONTENT)) {
@@ -445,5 +614,34 @@ export const PLANNED_RELATIONS: PilotRelation[] = [
   { from: "MAT.KUA", to: "MAT.C26.FPLUS.KERUCUT", kind: "REQUIRES", label: "fungsi kuadrat → parabola", decision: 'D9' },
   { from: "FIS.C26.D.LISTRIK", to: "FIS.C26.F.MEDAN", kind: "REQUIRES", label: "Lintas Fase D ➔ F: listrik dan magnet SMP → medan listrik dan magnet", decision: 'D9' },
   { from: "FIS.C26.F.MEDAN", to: "FIS.C26.F.ELEKTRO", kind: "RELATED", label: "medan magnet ↔ induksi elektromagnetik", decision: 'D9' },
-  { from: "FIS.C26.D.ANTARIKSA", to: "FIS.C26.D.KEBUMIAN", kind: "RELATED", label: "Bumi sebagai planet ↔ struktur Bumi", decision: 'D9' },
+  { from: "FIS.C26.D.ANTARIKSA", to: "FIS.C26.D.KEBUMIAN", kind: "RELATED", label: "Bumi sebagai planet ↔ struktur Bumi", decision: 'D9' },  // pemeriksaan per kelas 12 November 2026
+  { from: "MAT.KUA", to: "MAT.C26.FPLUS.POLINOMIAL", kind: "REQUIRES", label: "persamaan kuadrat → polinomial berderajat tinggi", decision: 'D9' },
+  { from: "MAT.KUA", to: "MAT.C26.FPLUS.KOMPLEKS", kind: "RELATED", label: "diskriminan negatif → akar kompleks", decision: 'D9' },
+  { from: "MAT.MTX", to: "MAT.C26.FPLUS.TRANSFORMASI", kind: "REQUIRES", label: "perkalian matriks → komposisi transformasi", decision: 'D9' },
+  { from: "MAT.TRI", to: "MAT.C26.FPLUS.FUNGSI", kind: "REQUIRES", label: "grafik trigonometri → model periodik", decision: 'D9' },
+  { from: "MAT.CP25.F.LINGKARAN", to: "MAT.C26.FPLUS.LINGKARAN", kind: "REQUIRES", label: "unsur lingkaran → persamaan lingkaran", decision: 'D9' },
+  { from: "MAT.C26.FPLUS.LINGKARAN", to: "MAT.C26.FPLUS.KERUCUT", kind: "RELATED", label: "lingkaran sebagai irisan kerucut", decision: 'D9' },
+  { from: "MAT.C26.FPLUS.LIMIT", to: "MAT.KAL", kind: "REQUIRES", label: "limit → turunan sebagai laju sesaat", decision: 'D9' },
+  { from: "MAT.KAL", to: "MAT.C26.FPLUS.TURUNAN", kind: "REQUIRES", label: "aturan turunan dasar → aturan rantai dan trigonometri", decision: 'D9' },
+  { from: "MAT.KAL", to: "MAT.C26.FPLUS.INTEGRAL", kind: "REQUIRES", label: "integral tentu → luas dan volume benda putar", decision: 'D9' },
+  { from: "FIS.C26.E.ENERGI", to: "FIS.C26.E.TERBARUKAN", kind: "REQUIRES", label: "daya dan efisiensi → pembangkit energi terbarukan", decision: 'D9' },
+  { from: "FIS.C26.E.TERBARUKAN", to: "FIS.C26.E.IKLIM", kind: "RELATED", label: "energi terbarukan sebagai mitigasi perubahan iklim", decision: 'D9' },
+  { from: "KIM.C26.D.PARTIKEL", to: "KIM.C26.D.MATERI", kind: "REQUIRES", label: "teori partikel → klasifikasi dan perubahan materi", decision: 'D9' },
+  { from: "KIM.C26.D.ATOM", to: "KIM.C26.E.MODELATOM", kind: "REQUIRES", label: "Lintas Fase D ➔ E: atom dan ion SMP → model atom dan konfigurasi elektron", decision: 'D9' },
+  { from: "KIM.C26.E.MODELATOM", to: "KIM.C26.F.STRUKTUR", kind: "REQUIRES", label: "konfigurasi kulit → struktur elektron dan periodisitas", decision: 'D9' },
+  { from: "KIM.C26.E.HUKUMDASAR", to: "KIM.C26.E.STOIK", kind: "REQUIRES", label: "hukum dasar kimia → stoikiometri", decision: 'D9' },
+  { from: "KIM.C26.F.HIDROKARBON", to: "KIM.C26.F.GUGUS", kind: "REQUIRES", label: "hidrokarbon → senyawa turunan alkana", decision: 'D9' },
+  { from: "KIM.C26.F.HIDROKARBON", to: "KIM.C26.F.KARBON", kind: "REQUIRES", label: "rantai karbon → makromolekul", decision: 'D9' },
+  { from: "KIM.C26.F.LAJU", to: "KIM.C26.F.TERMOKIMIA", kind: "RELATED", label: "energi aktivasi ↔ diagram energi reaksi", decision: 'D9' },
+  { from: "KIM.C26.F.SETIMBANG", to: "KIM.C26.F.ASAMBASA", kind: "REQUIRES", label: "tetapan kesetimbangan → Ka, Kb, dan titrasi", decision: 'D9' },
+  { from: "KIM.C26.F.ELEKTROLIT", to: "KIM.C26.F.KOLOID", kind: "RELATED", label: "larutan sejati ↔ sistem koloid", decision: 'D9' },
+  { from: "BIO.C26.D.KLASIFIKASI", to: "BIO.C26.E.KLASIFIKASI", kind: "REQUIRES", label: "Lintas Fase D ➔ E: ciri makhluk hidup → takson dan kingdom", decision: 'D9' },
+  { from: "BIO.C26.E.KLASIFIKASI", to: "BIO.C26.E.BIODIVERSITAS", kind: "RELATED", label: "klasifikasi ↔ keanekaragaman hayati", decision: 'D9' },
+  { from: "BIO.C26.E.EKOSISTEM", to: "BIO.C26.E.LIMBAH", kind: "REQUIRES", label: "keseimbangan ekosistem → pencemaran dan limbah", decision: 'D9' },
+  { from: "BIO.C26.F.SEL", to: "BIO.C26.F.TUMBUHAN", kind: "REQUIRES", label: "sel dan transpor membran → jaringan dan transpor tumbuhan", decision: 'D9' },
+  { from: "BIO.C26.F.SEL", to: "BIO.C26.F.GERAK", kind: "REQUIRES", label: "sel dan jaringan → sistem gerak", decision: 'D9' },
+  { from: "BIO.C26.F.ORGAN", to: "BIO.C26.F.IMUN", kind: "RELATED", label: "sistem sirkulasi ↔ sistem pertahanan tubuh", decision: 'D9' },
+  { from: "BIO.C26.F.GENETIKA", to: "BIO.C26.F.HEREDITAS", kind: "REQUIRES", label: "pola pewarisan Mendel → penyimpangan dan pautan", decision: 'D9' },
+  { from: "BIO.C26.F.GENETIKA", to: "BIO.C26.F.MUTASI", kind: "REQUIRES", label: "DNA dan kromosom → mutasi", decision: 'D9' },
+  { from: "BIO.C26.F.MUTASI", to: "BIO.C26.F.EVOLUSI", kind: "REQUIRES", label: "mutasi sebagai sumber variasi → evolusi", decision: 'D9' },
 ];

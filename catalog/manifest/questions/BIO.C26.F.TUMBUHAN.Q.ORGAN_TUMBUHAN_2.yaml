@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.ORGAN_TUMBUHAN_2
+familyCode: BIO.C26.F.TUMBUHAN.F.ORGAN_TUMBUHAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jaringan daun yang paling banyak mengandung kloroplas adalah …
+  options:
+    - id: a
+      label: xilem
+    - id: b
+      label: jaringan palisade
+    - id: c
+      label: jaringan bunga karang
+    - id: d
+      label: epidermis
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - jaringan palisade
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN
+  feedback:
+    correct: Sel palisade tersusun rapat di bawah epidermis atas dan kaya kloroplas untuk menangkap cahaya.
+    incorrect: Jawabannya jaringan palisade. Sel palisade tersusun rapat di bawah epidermis atas dan kaya kloroplas untuk menangkap cahaya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

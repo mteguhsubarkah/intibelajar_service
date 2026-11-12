@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.L.BERGANDA
+title: Hukum perbandingan berganda (Dalton)
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON
+blocks:
+  - type: heading
+    slide: 0
+    text: Satu pasang unsur, beberapa senyawa
+  - type: text
+    slide: 0
+    text: Dua unsur dapat membentuk lebih dari satu senyawa, misalnya karbon dan oksigen membentuk CO dan CO₂.
+  - type: text
+    slide: 0
+    text: "**John Dalton**: jika massa salah satu unsur dibuat tetap, perbandingan massa unsur lainnya dalam senyawa-senyawa itu merupakan **bilangan bulat sederhana**."
+  - type: heading
+    slide: 1
+    text: Contoh CO dan CO₂
+  - type: text
+    slide: 1
+    text: "Untuk 12 g karbon: CO mengandung 16 g oksigen, sedangkan CO₂ mengandung 32 g oksigen."
+  - type: text
+    slide: 1
+    text: "Perbandingan oksigen pada CO : CO₂ = 16 : 32 = 1 : 2, yaitu bilangan bulat sederhana."
+  - type: math
+    slide: 1
+    name: "O pada CO : CO₂"
+    expression: "1 : 2"
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Samakan dulu massa salah satu unsur sebelum membandingkan unsur yang lain.
+checks:
+  - question: KIM.C26.E.HUKUMDASAR.Q.BERGANDA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.E.HUKUMDASAR.S.BERGANDA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

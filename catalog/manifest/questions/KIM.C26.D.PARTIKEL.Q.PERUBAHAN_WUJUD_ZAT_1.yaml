@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.Q.PERUBAHAN_WUJUD_ZAT_1
+familyCode: KIM.C26.D.PARTIKEL.F.PERUBAHAN_WUJUD_ZAT_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Butiran air di luar gelas berisi es terbentuk karena peristiwa …
+  options:
+    - id: a
+      label: penguapan air dari dalam gelas
+    - id: b
+      label: pembekuan air
+    - id: c
+      label: penyubliman es
+    - id: d
+      label: pengembunan uap air dari udara
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - pengembunan uap air dari udara
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+  feedback:
+    correct: Uap air di udara mendingin saat menyentuh permukaan gelas yang dingin, lalu berubah menjadi cair.
+    incorrect: Jawabannya pengembunan uap air dari udara. Uap air di udara mendingin saat menyentuh permukaan gelas yang dingin, lalu berubah menjadi cair.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

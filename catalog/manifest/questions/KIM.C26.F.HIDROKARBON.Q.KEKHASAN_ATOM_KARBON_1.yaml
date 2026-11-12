@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.Q.KEKHASAN_ATOM_KARBON_1
+familyCode: KIM.C26.F.HIDROKARBON.F.KEKHASAN_ATOM_KARBON_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Atom karbon dapat membentuk empat ikatan kovalen karena …
+  options:
+    - id: a
+      label: memiliki 4 kulit elektron
+    - id: b
+      label: bernomor atom 4
+    - id: c
+      label: memiliki 4 proton
+    - id: d
+      label: memiliki 4 elektron valensi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - memiliki 4 elektron valensi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON
+  feedback:
+    correct: Karbon (2, 4) membutuhkan 4 elektron lagi untuk stabil, sehingga membentuk 4 pasangan elektron bersama.
+    incorrect: Jawabannya memiliki 4 elektron valensi. Karbon (2, 4) membutuhkan 4 elektron lagi untuk stabil, sehingga membentuk 4 pasangan elektron bersama.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

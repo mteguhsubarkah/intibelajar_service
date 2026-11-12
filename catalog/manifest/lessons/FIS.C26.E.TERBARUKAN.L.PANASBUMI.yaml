@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: FIS.C26.E.TERBARUKAN.L.PANASBUMI
+title: Panas bumi dan bioenergi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - FIS.C26.E.TERBARUKAN.PANAS_BUMI_DAN_BIOENERGI
+blocks:
+  - type: heading
+    slide: 0
+    text: Panas bumi
+  - type: text
+    slide: 0
+    text: "**PLTP** memanfaatkan uap panas dari dalam Bumi untuk memutar turbin. Indonesia yang berada di jalur gunung api memiliki potensi panas bumi yang sangat besar."
+  - type: text
+    slide: 0
+    text: "Kelebihannya: dapat beroperasi siang dan malam tanpa bergantung cuaca."
+  - type: heading
+    slide: 1
+    text: Bioenergi dan menilai pilihan
+  - type: text
+    slide: 1
+    text: "**Bioenergi** berasal dari biomassa: biogas dari kotoran ternak, biodiesel dari minyak sawit, atau limbah pertanian. Karbonnya berasal dari tumbuhan yang baru tumbuh."
+  - type: text
+    slide: 1
+    text: Setiap sumber punya syarat lokasi dan dampak, sehingga pilihan energi dinilai dari ketersediaan, biaya, kestabilan pasokan, dan dampak lingkungannya.
+  - type: tip
+    slide: 1
+    text: Biomassa disebut terbarukan jika tanamannya ditanam kembali secara berkelanjutan.
+checks:
+  - question: FIS.C26.E.TERBARUKAN.Q.PANASBUMI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.E.TERBARUKAN.S.PANASBUMI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

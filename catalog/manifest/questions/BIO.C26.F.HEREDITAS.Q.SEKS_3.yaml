@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS.Q.SEKS_3
+familyCode: BIO.C26.F.HEREDITAS.F.SEKS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Jenis kelamin anak manusia ditentukan oleh …
+  options:
+    - id: a
+      label: kromosom kelamin yang dibawa sperma
+    - id: b
+      label: kromosom kelamin yang dibawa sel telur
+    - id: c
+      label: jumlah autosom
+    - id: d
+      label: golongan darah ibu
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - kromosom kelamin yang dibawa sperma
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+  feedback:
+    correct: Sel telur selalu membawa X, sedangkan sperma membawa X atau Y.
+    incorrect: Jawabannya kromosom kelamin yang dibawa sperma. Sel telur selalu membawa X, sedangkan sperma membawa X atau Y.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

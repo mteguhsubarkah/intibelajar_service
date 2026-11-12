@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN.Q.STASIONER_2
+familyCode: MAT.C26.FPLUS.TURUNAN.F.STASIONER_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TURUNAN.TITIK_STASIONER_DAN_KEMONOTONAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Titik stasioner f(x) = x³ − 12x terjadi di …
+  options:
+    - id: a
+      label: x = 2 saja
+    - id: b
+      label: x = 2 dan x = −2
+    - id: c
+      label: x = 0 dan x = 12
+    - id: d
+      label: x = 4 dan x = −4
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - x = 2 dan x = −2
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TURUNAN.TITIK_STASIONER_DAN_KEMONOTONAN
+  feedback:
+    correct: f′(x) = 3x² − 12 = 0 memberi x² = 4, jadi x = ±2.
+    incorrect: Jawabannya x = 2 dan x = −2. f′(x) = 3x² − 12 = 0 memberi x² = 4, jadi x = ±2.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

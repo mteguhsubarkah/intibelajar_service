@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.JARINGAN_TUMBUHAN_2
+familyCode: BIO.C26.F.TUMBUHAN.F.JARINGAN_TUMBUHAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.JARINGAN_TUMBUHAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Fungsi floem adalah …
+  options:
+    - id: a
+      label: mengangkut hasil fotosintesis ke seluruh tubuh tumbuhan
+    - id: b
+      label: mengangkut air dari akar
+    - id: c
+      label: melindungi permukaan daun
+    - id: d
+      label: memperkuat batang
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - mengangkut hasil fotosintesis ke seluruh tubuh tumbuhan
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.JARINGAN_TUMBUHAN
+  feedback:
+    correct: Floem membawa gula hasil fotosintesis dari daun ke bagian yang membutuhkan.
+    incorrect: Jawabannya mengangkut hasil fotosintesis ke seluruh tubuh tumbuhan. Floem membawa gula hasil fotosintesis dari daun ke bagian yang membutuhkan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

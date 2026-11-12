@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI.Q.MODEL_PERIODIK_TRIGONOMETRI_1
+familyCode: MAT.C26.FPLUS.FUNGSI.F.MODEL_PERIODIK_TRIGONOMETRI_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suhu sebuah ruangan berubah periodik antara 18°C dan 30°C. Amplitudo modelnya adalah …
+  options:
+    - id: a
+      label: 24°C
+    - id: b
+      label: 30°C
+    - id: c
+      label: 6°C
+    - id: d
+      label: 12°C
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - 6°C
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI
+  feedback:
+    correct: Amplitudo = (30 − 18)/2 = 6°C.
+    incorrect: Jawabannya 6°C. Amplitudo = (30 − 18)/2 = 6°C.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

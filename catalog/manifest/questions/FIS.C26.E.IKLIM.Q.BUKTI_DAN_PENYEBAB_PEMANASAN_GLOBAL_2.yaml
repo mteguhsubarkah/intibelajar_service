@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.Q.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_2
+familyCode: FIS.C26.E.IKLIM.F.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penebangan hutan mempercepat pemanasan global karena …
+  options:
+    - id: a
+      label: tanah menjadi lebih dingin
+    - id: b
+      label: oksigen di udara bertambah
+    - id: c
+      label: berkurangnya tumbuhan yang menyerap CO₂ lewat fotosintesis
+    - id: d
+      label: pohon menghasilkan metana
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - berkurangnya tumbuhan yang menyerap CO₂ lewat fotosintesis
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+  feedback:
+    correct: Pohon menyimpan karbon dan menyerap CO₂; deforestasi melepas karbon itu dan mengurangi penyerapannya.
+    incorrect: Jawabannya berkurangnya tumbuhan yang menyerap CO₂ lewat fotosintesis. Pohon menyimpan karbon dan menyerap CO₂; deforestasi melepas karbon itu dan mengurangi penyerapannya.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

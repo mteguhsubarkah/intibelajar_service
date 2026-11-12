@@ -1,0 +1,87 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON
+subject: KIM
+title: Hidrokarbon dan minyak bumi
+subtitle: Kekhasan atom karbon, alkana-alkena-alkuna, tata nama, dan minyak bumi
+phase: F
+availability: MAPPED
+bekal:
+  - ikatan kovalen
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON
+    title: Kekhasan atom karbon
+    subtitle: Empat ikatan kovalen dan atom C primer sampai kuarterner
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-hidrokarbon-c1
+  - code: KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+    title: Alkana, alkena, dan alkuna
+    subtitle: Rumus umum, sifat, dan isomer
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-hidrokarbon-c2
+  - code: KIM.C26.F.HIDROKARBON.TATA_NAMA_HIDROKARBON
+    title: Tata nama hidrokarbon
+    subtitle: Rantai induk, penomoran, dan cabang menurut IUPAC
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-hidrokarbon-tatanama
+  - code: KIM.C26.F.HIDROKARBON.MINYAK_BUMI_DAN_PEMBAKARAN
+    title: Minyak bumi dan pembakaran
+    subtitle: Distilasi bertingkat, bilangan oktan, dan pembakaran
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 11
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-f-hidrokarbon-minyak
+prerequisites:
+  - concept: KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+    requires: KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON
+    kind: HARD
+  - concept: KIM.C26.F.HIDROKARBON.TATA_NAMA_HIDROKARBON
+    requires: KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+    kind: HARD
+  - concept: KIM.C26.F.HIDROKARBON.MINYAK_BUMI_DAN_PEMBAKARAN
+    requires: KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

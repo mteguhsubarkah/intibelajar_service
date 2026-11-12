@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU.Q.FAKTOR_3
+familyCode: KIM.C26.F.LAJU.F.FAKTOR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Katalis mempercepat reaksi dengan cara …
+  options:
+    - id: a
+      label: menaikkan energi aktivasi
+    - id: b
+      label: memperbesar ΔH reaksi
+    - id: c
+      label: menambah konsentrasi pereaksi
+    - id: d
+      label: menurunkan energi aktivasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - menurunkan energi aktivasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU
+  feedback:
+    correct: Katalis menyediakan mekanisme lain dengan bukit energi lebih rendah, sehingga lebih banyak tumbukan efektif.
+    incorrect: Jawabannya menurunkan energi aktivasi. Katalis menyediakan mekanisme lain dengan bukit energi lebih rendah, sehingga lebih banyak tumbukan efektif.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

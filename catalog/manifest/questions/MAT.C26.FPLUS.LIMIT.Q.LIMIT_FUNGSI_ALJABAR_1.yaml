@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LIMIT.Q.LIMIT_FUNGSI_ALJABAR_1
+familyCode: MAT.C26.FPLUS.LIMIT.F.LIMIT_FUNGSI_ALJABAR_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LIMIT.LIMIT_FUNGSI_ALJABAR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai lim x→−1 (2x³ − x + 4) adalah …
+  options:
+    - id: a
+      label: −3
+    - id: b
+      label: "3"
+    - id: c
+      label: "5"
+    - id: d
+      label: "1"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - "3"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LIMIT.LIMIT_FUNGSI_ALJABAR
+  feedback:
+    correct: "Substitusi langsung: 2(−1)³ − (−1) + 4 = −2 + 1 + 4 = 3."
+    incorrect: "Jawabannya 3. Substitusi langsung: 2(−1)³ − (−1) + 4 = −2 + 1 + 4 = 3."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

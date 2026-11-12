@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.F.GUGUS.L.ALKOHOL_DAN_ETER
+title: Alkohol dan eter
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.GUGUS.ALKOHOL_DAN_ETER
+blocks:
+  - type: heading
+    slide: 0
+    text: Alkohol
+  - type: text
+    slide: 0
+    text: "**Alkohol** memiliki gugus fungsi **–OH** dengan rumus umum CₙH₂ₙ₊₁OH (R–OH). Contoh: metanol (CH₃OH) dan etanol (C₂H₅OH)."
+  - type: text
+    slide: 0
+    text: Nama IUPAC-nya berakhiran **-ol**, misalnya 2-propanol. Alkohol primer, sekunder, dan tersier dibedakan dari atom C yang mengikat –OH.
+  - type: math
+    slide: 0
+    name: alkohol
+    expression: R–OH (-ol)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Eter
+  - type: text
+    slide: 1
+    text: "**Eter** memiliki gugus **–O–** di antara dua gugus alkil (R–O–R′), contohnya dietil eter (C₂H₅–O–C₂H₅)."
+  - type: text
+    slide: 1
+    text: Alkohol dan eter dengan jumlah C sama adalah **isomer fungsi**. Alkohol bereaksi dengan logam Na, sedangkan eter tidak.
+  - type: math
+    slide: 1
+    name: eter
+    expression: R–O–R′
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Titik didih alkohol jauh lebih tinggi daripada eter yang setara karena alkohol membentuk ikatan hidrogen.
+checks:
+  - question: KIM.C26.F.GUGUS.Q.ALKOHOL_DAN_ETER_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.GUGUS.S.ALKOHOL_DAN_ETER
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

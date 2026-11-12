@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM
+subject: KIM
+title: Atom, ion, dan molekul
+subtitle: Partikel penyusun atom, ion dan molekul, serta lambang unsur
+phase: D
+availability: MAPPED
+bekal:
+  - wujud zat
+aliases: []
+units: []
+concepts:
+  - code: KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+    title: Atom dan partikel penyusunnya
+    subtitle: Proton, neutron, elektron, nomor atom, dan nomor massa
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 9
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-d-atom-c1
+  - code: KIM.C26.D.ATOM.ION_DAN_MOLEKUL
+    title: Ion dan molekul
+    subtitle: Kation, anion, molekul unsur, dan molekul senyawa
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 9
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-d-atom-c2
+  - code: KIM.C26.D.ATOM.LAMBANG_UNSUR_DAN_TABEL_PERIODIK_SEDERHA
+    title: Lambang unsur dan tabel periodik sederhana
+    subtitle: Lambang unsur, logam dan nonlogam, golongan dan periode
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 9
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: kim-d-atom-unsur
+prerequisites:
+  - concept: KIM.C26.D.ATOM.ION_DAN_MOLEKUL
+    requires: KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+    kind: HARD
+  - concept: KIM.C26.D.ATOM.LAMBANG_UNSUR_DAN_TABEL_PERIODIK_SEDERHA
+    requires: KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

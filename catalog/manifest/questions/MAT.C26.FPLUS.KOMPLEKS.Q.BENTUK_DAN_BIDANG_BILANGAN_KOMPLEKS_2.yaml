@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.Q.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS_2
+familyCode: MAT.C26.FPLUS.KOMPLEKS.F.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.KOMPLEKS.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nilai i²⁰²⁶ adalah …
+  options:
+    - id: a
+      label: −1
+    - id: b
+      label: "1"
+    - id: c
+      label: i
+    - id: d
+      label: −i
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - −1
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.KOMPLEKS.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS
+  feedback:
+    correct: 2026 = 4 · 506 + 2, sehingga i²⁰²⁶ = i² = −1.
+    incorrect: Jawabannya −1. 2026 = 4 · 506 + 2, sehingga i²⁰²⁶ = i² = −1.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.BERGANDA_2
+familyCode: KIM.C26.E.HUKUMDASAR.F.BERGANDA_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Belerang membentuk dua oksida. Oksida I mengandung 50% S, oksida II mengandung 40% S. Untuk massa belerang yang sama, perbandingan massa oksigen I : II adalah …"
+  options:
+    - id: a
+      label: "1 : 2"
+    - id: b
+      label: "3 : 2"
+    - id: c
+      label: "4 : 5"
+    - id: d
+      label: "2 : 3"
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - "2 : 3"
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON
+  feedback:
+    correct: "Oksida I: 50 g O per 50 g S (1 : 1). Oksida II: 60 g O per 40 g S (1,5 : 1). Perbandingan oksigennya 1 : 1,5 = 2 : 3, sesuai SO₂ dan SO₃."
+    incorrect: "Jawabannya 2 : 3. Oksida I: 50 g O per 50 g S (1 : 1). Oksida II: 60 g O per 40 g S (1,5 : 1). Perbandingan oksigennya 1 : 1,5 = 2 : 3, sesuai SO₂ dan SO₃."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

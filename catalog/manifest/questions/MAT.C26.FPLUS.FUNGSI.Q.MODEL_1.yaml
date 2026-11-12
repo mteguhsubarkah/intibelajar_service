@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI.Q.MODEL_1
+familyCode: MAT.C26.FPLUS.FUNGSI.F.MODEL_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Data y untuk x = 0, 1, 2, 3 adalah 5, 10, 20, 40. Model yang paling sesuai adalah …
+  options:
+    - id: a
+      label: kuadrat
+    - id: b
+      label: trigonometri
+    - id: c
+      label: eksponensial
+    - id: d
+      label: linear
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - eksponensial
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+  feedback:
+    correct: Rasio berurutannya tetap 2 (10/5 = 20/10 = 40/20), ciri pertumbuhan eksponensial.
+    incorrect: Jawabannya eksponensial. Rasio berurutannya tetap 2 (10/5 = 20/10 = 40/20), ciri pertumbuhan eksponensial.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

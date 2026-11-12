@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HUKUMDASAR.Q.BERGANDA_3
+familyCode: KIM.C26.E.HUKUMDASAR.F.BERGANDA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hukum perbandingan berganda berlaku untuk pasangan senyawa …
+  options:
+    - id: a
+      label: H₂O dan CO₂
+    - id: b
+      label: CH₄ dan NH₃
+    - id: c
+      label: H₂O dan H₂O₂
+    - id: d
+      label: NaCl dan KCl
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - H₂O dan H₂O₂
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON
+  feedback:
+    correct: H₂O dan H₂O₂ dibentuk oleh dua unsur yang sama, yaitu hidrogen dan oksigen.
+    incorrect: Jawabannya H₂O dan H₂O₂. H₂O dan H₂O₂ dibentuk oleh dua unsur yang sama, yaitu hidrogen dan oksigen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

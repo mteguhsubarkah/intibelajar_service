@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TRANSFORMASI.L.DILATASI
+title: Dilatasi
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.TRANSFORMASI.DILATASI
+blocks:
+  - type: heading
+    slide: 0
+    text: Dilatasi berpusat O
+  - type: text
+    slide: 0
+    text: "**Dilatasi** dengan pusat O dan faktor skala k memetakan (x, y) ke (kx, ky). Bentuk bayangan sebangun dengan aslinya, ukurannya berubah."
+  - type: text
+    slide: 0
+    text: "|k| > 1 memperbesar, |k| < 1 memperkecil, dan k negatif membuat bayangan berada di sisi berlawanan dari pusat."
+  - type: math
+    slide: 0
+    name: dilatasi [O, k]
+    expression: (x, y) → (kx, ky)
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Luas dan pusat lain
+  - type: text
+    slide: 1
+    text: Panjang sisi dikali |k|, sedangkan **luas dikali k²**. Segitiga seluas 6 satuan yang didilatasi dengan k = 3 menjadi seluas 54 satuan.
+  - type: text
+    slide: 1
+    text: "Untuk pusat P(a, b): (x, y) → (a + k(x − a), b + k(y − b))."
+  - type: math
+    slide: 1
+    name: luas bayangan
+    expression: k² × luas awal
+    highlight: true
+  - type: math
+    slide: 1
+    name: pusat P(a, b)
+    expression: (a + k(x − a), b + k(y − b))
+  - type: tip
+    slide: 1
+    text: Dilatasi dengan k = −1 sama dengan rotasi 180° terhadap pusatnya.
+checks:
+  - question: MAT.C26.FPLUS.TRANSFORMASI.Q.DILATASI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.TRANSFORMASI.S.DILATASI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.L.TATANAMA
+title: Tata nama hidrokarbon
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.HIDROKARBON.TATA_NAMA_HIDROKARBON
+blocks:
+  - type: heading
+    slide: 0
+    text: Langkah penamaan IUPAC
+  - type: text
+    slide: 0
+    text: Tentukan **rantai induk**, yaitu rantai karbon terpanjang (pada alkena dan alkuna harus memuat ikatan rangkap). Beri nomor dari ujung yang paling dekat dengan cabang atau ikatan rangkap.
+  - type: text
+    slide: 0
+    text: "Nama: nomor cabang–nama cabang + nama rantai induk. Contoh: CH₃–CH(CH₃)–CH₂–CH₃ adalah 2-metilbutana."
+  - type: heading
+    slide: 1
+    text: Alkena dan alkuna
+  - type: text
+    slide: 1
+    text: "Posisi ikatan rangkap ditulis sebelum nama induk: CH₂=CH–CH₂–CH₃ adalah 1-butena; CH₃–C≡C–CH₃ adalah 2-butuna."
+  - type: text
+    slide: 1
+    text: "Cabang yang sama ditulis dengan awalan di- atau tri-: CH₃–C(CH₃)₂–CH₃ adalah 2,2-dimetilpropana."
+  - type: tip
+    slide: 1
+    text: "Nama cabang: metil (–CH₃), etil (–C₂H₅), propil (–C₃H₇)."
+checks:
+  - question: KIM.C26.F.HIDROKARBON.Q.TATANAMA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.HIDROKARBON.S.TATANAMA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

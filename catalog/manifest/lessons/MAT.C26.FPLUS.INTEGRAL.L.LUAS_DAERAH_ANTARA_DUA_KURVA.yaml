@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.INTEGRAL.L.LUAS_DAERAH_ANTARA_DUA_KURVA
+title: Luas daerah antara dua kurva
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.INTEGRAL.LUAS_DAERAH_ANTARA_DUA_KURVA
+blocks:
+  - type: heading
+    slide: 0
+    text: Kurva atas dikurangi kurva bawah
+  - type: text
+    slide: 0
+    text: Luas daerah antara y = f(x) dan y = g(x) pada [a, b] dengan f(x) ≥ g(x) adalah **L = ∫ₐᵇ (f(x) − g(x)) dx**.
+  - type: text
+    slide: 0
+    text: Batas a dan b sering merupakan absis titik potong kedua kurva, yaitu penyelesaian f(x) = g(x).
+  - type: math
+    slide: 0
+    name: luas
+    expression: L = ∫ₐᵇ (f − g) dx
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Contoh
+  - type: text
+    slide: 1
+    text: "Daerah antara y = x dan y = x²: titik potong x² = x memberi x = 0 dan x = 1. Pada [0, 1] garis y = x berada di atas parabola."
+  - type: text
+    slide: 1
+    text: L = ∫₀¹ (x − x²) dx = ½ − ⅓ = 1/6 satuan luas.
+  - type: math
+    slide: 1
+    name: contoh
+    expression: ∫₀¹ (x − x²) dx = 1/6
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Gambar sketsa dulu untuk menentukan kurva mana yang di atas.
+checks:
+  - question: MAT.C26.FPLUS.INTEGRAL.Q.LUAS_DAERAH_ANTARA_DUA_KURVA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.INTEGRAL.S.LUAS_DAERAH_ANTARA_DUA_KURVA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

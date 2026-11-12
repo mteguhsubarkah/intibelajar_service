@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: KIM.C26.F.ASAMBASA.L.TEORI_ASAM_BASA
+title: Teori asam–basa
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.F.ASAMBASA.TEORI_ASAM_BASA
+blocks:
+  - type: heading
+    slide: 0
+    text: Teori Arrhenius
+  - type: text
+    slide: 0
+    text: "**Arrhenius**: asam menghasilkan ion H⁺ dalam air (HCl → H⁺ + Cl⁻), basa menghasilkan ion OH⁻ dalam air (NaOH → Na⁺ + OH⁻)."
+  - type: text
+    slide: 0
+    text: Teori ini terbatas pada larutan dalam air.
+  - type: heading
+    slide: 1
+    text: Brønsted–Lowry dan Lewis
+  - type: text
+    slide: 1
+    text: "**Brønsted–Lowry**: asam adalah donor proton (H⁺), basa adalah akseptor proton. Pada NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, air bertindak sebagai asam dan NH₃ sebagai basa."
+  - type: text
+    slide: 1
+    text: Pasangan yang berbeda satu H⁺ disebut **pasangan asam–basa konjugasi**, misalnya NH₄⁺/NH₃. Menurut **Lewis**, asam menerima pasangan elektron dan basa memberi pasangan elektron.
+  - type: math
+    slide: 1
+    name: pasangan konjugasi
+    expression: berbeda satu H⁺
+    highlight: true
+  - type: tip
+    slide: 1
+    text: "Air bersifat amfoter: dapat menjadi asam atau basa bergantung pasangannya."
+checks:
+  - question: KIM.C26.F.ASAMBASA.Q.TEORI_ASAM_BASA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.F.ASAMBASA.S.TEORI_ASAM_BASA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

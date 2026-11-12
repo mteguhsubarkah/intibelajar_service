@@ -14,6 +14,8 @@ export interface Misconception { code: string; description: string; example?: st
 export interface Concept {
   code: string; title: string; subtitle?: string; definition?: string; objectives: string[]; misconceptions: Misconception[];
   unit?: string; ordinal: number; estimatedMinutes: number; hidden: boolean; capstone: boolean; availability: 'READY'|'PLANNED';
+  /** Kelas tempat inti ini diajarkan (7–12). Harus masuk rentang fase babnya (GRADES_OF_PHASE). */
+  grade?: number;
   aliases: Alias[]; review?: Review;
 }
 export interface Prerequisite { concept: string; requires: string; kind: 'HARD'|'SOFT'; review?: Review }
@@ -88,7 +90,9 @@ export type Rule =
   | 'SCHEMA'|'FILE_NAME'|'KEY_IN_BODY'|'SIZE'|'CODE_DUPLICATE'|'REF_UNKNOWN'|'ALIAS_AMBIGUOUS'|'ALIAS_UNMAPPED_CONFLICT'
   | 'PREREQ_CYCLE'|'PREREQ_SELF'|'TOPIC_CYCLE'|'UNIT_UNKNOWN'|'QUESTION_NO_PRIMARY'|'STEP_CONCEPT_UNMAPPED'|'MISCONCEPTION_UNKNOWN'
   | 'EVALUATOR_SHAPE'|'OPTION_IDS'|'PRACTICE_NOT_DETERMINISTIC'|'CHECK_NOT_DETERMINISTIC'|'CHECK_PLACEMENT'|'UNREVIEWED'
-  | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET';
+  | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET'|'GRADE_PHASE';
+/** Kelas yang termasuk tiap fase Kurikulum Merdeka: D = SMP 7–9, E = kelas 10, F = kelas 11–12, F+ = Matematika Tingkat Lanjut 11–12. */
+export const GRADES_OF_PHASE: Record<Topic['phase'], number[]> = { D: [7, 8, 9], E: [10], F: [11, 12], 'F+': [11, 12] };
 export interface Finding { rule: Rule; severity: 'error'|'warning'; file: string; message: string }
 
 const KINDS = { release: 'release.yaml', subjects: 'subjects.yaml', topicRelations: 'topic-relations.yaml', sets: 'sets.yaml', unmapped: 'unmapped.yaml' } as const;
@@ -251,6 +255,8 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
     ref(subjects, 'subject', t.subject, file, `topic ${t.code}`);
     const units = new Set(t.units.map(u => u.code));
     for (const c of t.concepts) if (c.unit !== undefined && !units.has(c.unit)) add('UNIT_UNKNOWN', file, `concept ${c.code} is in unit ${c.unit}, which is not a unit of ${t.code}`);
+    for (const c of t.concepts) if (c.grade !== undefined && !GRADES_OF_PHASE[t.phase].includes(c.grade))
+      add('GRADE_PHASE', file, `concept ${c.code} is set to grade ${c.grade}, outside phase ${t.phase} (${GRADES_OF_PHASE[t.phase].join(', ')})`);
     for (const p of t.prerequisites) {
       ref(concepts, 'concept', p.concept, file, 'prerequisite');
       ref(concepts, 'concept', p.requires, file, `prerequisite of ${p.concept}`);

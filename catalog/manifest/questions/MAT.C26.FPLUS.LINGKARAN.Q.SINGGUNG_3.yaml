@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.Q.SINGGUNG_3
+familyCode: MAT.C26.FPLUS.LINGKARAN.F.SINGGUNG_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 3
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_GARIS_SINGGUNG
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan garis singgung lingkaran (x − 1)² + (y + 2)² = 10 di titik (2, 1) adalah …
+  options:
+    - id: a
+      label: x + 3y = 5
+    - id: b
+      label: x + 3y = 10
+    - id: c
+      label: 3x + y = 7
+    - id: d
+      label: x − 3y = −1
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - x + 3y = 5
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_GARIS_SINGGUNG
+  feedback:
+    correct: (2 − 1)(x − 1) + (1 + 2)(y + 2) = 10 menjadi x − 1 + 3y + 6 = 10, yaitu x + 3y = 5.
+    incorrect: Jawabannya x + 3y = 5. (2 − 1)(x − 1) + (1 + 2)(y + 2) = 10 menjadi x − 1 + 3y + 6 = 10, yaitu x + 3y = 5.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

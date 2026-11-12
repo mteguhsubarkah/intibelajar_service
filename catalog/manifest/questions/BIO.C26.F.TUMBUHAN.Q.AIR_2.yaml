@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.AIR_2
+familyCode: BIO.C26.F.TUMBUHAN.F.AIR_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Transpirasi paling cepat terjadi pada kondisi …
+  options:
+    - id: a
+      label: panas, berangin, dan udara kering
+    - id: b
+      label: gelap dan lembap
+    - id: c
+      label: dingin dan tanpa angin
+    - id: d
+      label: hujan lebat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - panas, berangin, dan udara kering
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+  feedback:
+    correct: Suhu tinggi, angin, dan udara kering memperbesar perbedaan uap air antara daun dan udara.
+    incorrect: Jawabannya panas, berangin, dan udara kering. Suhu tinggi, angin, dan udara kering memperbesar perbedaan uap air antara daun dan udara.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

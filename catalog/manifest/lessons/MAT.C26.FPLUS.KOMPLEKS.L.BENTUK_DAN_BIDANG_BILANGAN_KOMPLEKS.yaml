@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.KOMPLEKS.L.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS
+title: Bentuk dan bidang bilangan kompleks
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - MAT.C26.FPLUS.KOMPLEKS.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS
+blocks:
+  - type: heading
+    slide: 0
+    text: Satuan imajiner i
+  - type: text
+    slide: 0
+    text: Persamaan x² + 1 = 0 tidak punya penyelesaian bilangan real. Untuk itu didefinisikan **satuan imajiner i** dengan i² = −1.
+  - type: text
+    slide: 0
+    text: "**Bilangan kompleks** ditulis z = a + bi, dengan a **bagian real** (Re z) dan b **bagian imajiner** (Im z); a dan b bilangan real."
+  - type: math
+    slide: 0
+    name: satuan imajiner
+    expression: i² = −1
+    highlight: true
+  - type: math
+    slide: 0
+    name: bentuk kompleks
+    expression: z = a + bi
+  - type: heading
+    slide: 1
+    text: Bidang kompleks dan pangkat i
+  - type: text
+    slide: 1
+    text: "Bilangan z = a + bi digambar sebagai titik (a, b) pada **bidang kompleks**: sumbu mendatar real, sumbu tegak imajiner."
+  - type: text
+    slide: 1
+    text: "Pangkat i berulang tiap empat: i¹ = i, i² = −1, i³ = −i, i⁴ = 1. Jadi iⁿ cukup dilihat dari sisa pembagian n oleh 4."
+  - type: math
+    slide: 1
+    name: siklus
+    expression: i⁴ = 1
+    highlight: true
+  - type: tip
+    slide: 1
+    text: √(−9) = 3i karena (3i)² = 9i² = −9.
+checks:
+  - question: MAT.C26.FPLUS.KOMPLEKS.Q.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.FPLUS.KOMPLEKS.S.BENTUK_DAN_BIDANG_BILANGAN_KOMPLEKS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

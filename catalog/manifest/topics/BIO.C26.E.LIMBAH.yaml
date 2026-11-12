@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: BIO.C26.E.LIMBAH
+subject: BIO
+title: Pencemaran dan pengelolaan limbah
+subtitle: Pencemaran air, tanah, udara, jenis limbah, dan daur ulang
+phase: E
+availability: MAPPED
+bekal:
+  - ekosistem
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+    title: Pencemaran lingkungan
+    subtitle: Polutan, eutrofikasi, dan indikator kualitas air
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-limbah-c1
+  - code: BIO.C26.E.LIMBAH.JENIS_LIMBAH
+    title: Jenis limbah
+    subtitle: Organik, anorganik, dan limbah B3
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-limbah-c2
+  - code: BIO.C26.E.LIMBAH.DAUR_ULANG_DAN_PENGELOLAAN_LIMBAH
+    title: Daur ulang dan pengelolaan limbah
+    subtitle: Prinsip 3R, kompos, bank sampah, dan IPAL
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-limbah-daurulang
+prerequisites:
+  - concept: BIO.C26.E.LIMBAH.JENIS_LIMBAH
+    requires: BIO.C26.E.LIMBAH.PENCEMARAN_LINGKUNGAN
+    kind: SOFT
+  - concept: BIO.C26.E.LIMBAH.DAUR_ULANG_DAN_PENGELOLAAN_LIMBAH
+    requires: BIO.C26.E.LIMBAH.JENIS_LIMBAH
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

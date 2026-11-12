@@ -1,0 +1,88 @@
+schemaVersion: 1
+code: BIO.C26.F.HEREDITAS
+subject: BIO
+title: Pola hereditas
+subtitle: Penyimpangan semu Mendel, pautan, pautan seks, dan hereditas manusia
+phase: F
+availability: MAPPED
+bekal:
+  - hukum Mendel
+  - meiosis
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.F.HEREDITAS.PENYIMPANGAN_SEMU_HUKUM_MENDEL
+    title: Penyimpangan semu hukum Mendel
+    subtitle: Epistasis, kriptomeri, komplementer, dan polimeri
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-hereditas-c1
+  - code: BIO.C26.F.HEREDITAS.PAUTAN_DAN_PINDAH_SILANG
+    title: Pautan dan pindah silang
+    subtitle: Gen tertaut dan nilai pindah silang
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-hereditas-c2
+  - code: BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+    title: Penentuan jenis kelamin dan pautan seks
+    subtitle: Kromosom XX/XY, buta warna, dan hemofilia
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-hereditas-seks
+  - code: BIO.C26.F.HEREDITAS.HEREDITAS_PADA_MANUSIA
+    title: Hereditas pada manusia
+    subtitle: Golongan darah ABO dan peta silsilah
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 12
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-f-hereditas-manusia
+prerequisites:
+  - concept: BIO.C26.F.HEREDITAS.PAUTAN_DAN_PINDAH_SILANG
+    requires: BIO.C26.F.HEREDITAS.PENYIMPANGAN_SEMU_HUKUM_MENDEL
+    kind: SOFT
+  - concept: BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+    requires: BIO.C26.F.HEREDITAS.PAUTAN_DAN_PINDAH_SILANG
+    kind: SOFT
+  - concept: BIO.C26.F.HEREDITAS.HEREDITAS_PADA_MANUSIA
+    requires: BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

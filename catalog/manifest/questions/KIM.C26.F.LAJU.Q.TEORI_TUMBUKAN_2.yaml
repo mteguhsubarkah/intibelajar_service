@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.LAJU.Q.TEORI_TUMBUKAN_2
+familyCode: KIM.C26.F.LAJU.F.TEORI_TUMBUKAN_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.LAJU.TEORI_TUMBUKAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Energi aktivasi adalah …
+  options:
+    - id: a
+      label: energi minimum yang diperlukan agar tumbukan menghasilkan reaksi
+    - id: b
+      label: energi yang dilepas reaksi
+    - id: c
+      label: energi kinetik rata-rata partikel
+    - id: d
+      label: energi ikatan produk
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - energi minimum yang diperlukan agar tumbukan menghasilkan reaksi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.LAJU.TEORI_TUMBUKAN
+  feedback:
+    correct: Ea adalah batas energi yang harus dilampaui partikel yang bertumbukan.
+    incorrect: Jawabannya energi minimum yang diperlukan agar tumbukan menghasilkan reaksi. Ea adalah batas energi yang harus dilampaui partikel yang bertumbukan.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

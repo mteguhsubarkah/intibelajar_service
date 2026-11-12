@@ -1,0 +1,70 @@
+schemaVersion: 1
+code: BIO.C26.E.KLASIFIKASI
+subject: BIO
+title: Klasifikasi makhluk hidup
+subtitle: Takson, tata nama binomial, lima kingdom, dan tiga domain
+phase: E
+availability: MAPPED
+bekal:
+  - ciri makhluk hidup
+aliases: []
+units: []
+concepts:
+  - code: BIO.C26.E.KLASIFIKASI.SISTEM_KLASIFIKASI_DAN_TAKSON
+    title: Sistem klasifikasi dan takson
+    subtitle: Tujuan klasifikasi dan urutan takson
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-klasifikasi-c1
+  - code: BIO.C26.E.KLASIFIKASI.TATA_NAMA_BINOMIAL
+    title: Tata nama binomial
+    subtitle: Aturan penulisan nama ilmiah
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-klasifikasi-c2
+  - code: BIO.C26.E.KLASIFIKASI.SISTEM_LIMA_KINGDOM_DAN_TIGA_DOMAIN
+    title: Sistem lima kingdom dan tiga domain
+    subtitle: Monera sampai Animalia; Bacteria, Archaea, Eukarya
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: bio-e-klasifikasi-kingdom
+prerequisites:
+  - concept: BIO.C26.E.KLASIFIKASI.TATA_NAMA_BINOMIAL
+    requires: BIO.C26.E.KLASIFIKASI.SISTEM_KLASIFIKASI_DAN_TAKSON
+    kind: SOFT
+  - concept: BIO.C26.E.KLASIFIKASI.SISTEM_LIMA_KINGDOM_DAN_TIGA_DOMAIN
+    requires: BIO.C26.E.KLASIFIKASI.SISTEM_KLASIFIKASI_DAN_TAKSON
+    kind: HARD
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
+    - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.HIDROKARBON.Q.ALKANA_ALKENA_DAN_ALKUNA_1
+familyCode: KIM.C26.F.HIDROKARBON.F.ALKANA_ALKENA_DAN_ALKUNA_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rumus molekul alkana dengan 5 atom karbon adalah …
+  options:
+    - id: a
+      label: C₅H₈
+    - id: b
+      label: C₅H₁₄
+    - id: c
+      label: C₅H₁₂
+    - id: d
+      label: C₅H₁₀
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - C₅H₁₂
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA
+  feedback:
+    correct: CₙH₂ₙ₊₂ dengan n = 5 memberi C₅H₁₂.
+    incorrect: Jawabannya C₅H₁₂. CₙH₂ₙ₊₂ dengan n = 5 memberi C₅H₁₂.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

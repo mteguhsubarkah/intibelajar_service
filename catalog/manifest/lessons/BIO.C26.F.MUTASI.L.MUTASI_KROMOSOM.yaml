@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: BIO.C26.F.MUTASI.L.MUTASI_KROMOSOM
+title: Mutasi kromosom
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.MUTASI.MUTASI_KROMOSOM
+blocks:
+  - type: heading
+    slide: 0
+    text: Perubahan struktur kromosom
+  - type: text
+    slide: 0
+    text: "Mutasi kromosom mengubah struktur atau jumlah kromosom. Perubahan struktur: **delesi** (bagian hilang), **duplikasi** (bagian berulang), **inversi** (bagian terbalik), dan **translokasi** (bagian pindah ke kromosom lain)."
+  - type: text
+    slide: 0
+    text: "Contoh: sindrom cri du chat disebabkan delesi pada kromosom 5."
+  - type: heading
+    slide: 1
+    text: Perubahan jumlah kromosom
+  - type: text
+    slide: 1
+    text: "**Aneuploidi** adalah kelebihan atau kekurangan satu kromosom akibat **gagal berpisah** (nondisjunction) saat meiosis. Contoh: sindrom Down (trisomi 21, 47 kromosom) dan sindrom Turner (45, X)."
+  - type: text
+    slide: 1
+    text: "**Poliploidi** adalah kelipatan set kromosom (3n, 4n), yang dimanfaatkan untuk buah tanpa biji seperti semangka triploid."
+  - type: math
+    slide: 1
+    name: sindrom Down
+    expression: trisomi 21 (47 kromosom)
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Kolkisin dipakai untuk membuat tanaman poliploid.
+checks:
+  - question: BIO.C26.F.MUTASI.Q.MUTASI_KROMOSOM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.MUTASI.S.MUTASI_KROMOSOM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

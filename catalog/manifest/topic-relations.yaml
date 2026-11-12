@@ -974,3 +974,380 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.KUA
+    to: MAT.C26.FPLUS.POLINOMIAL
+    kind: REQUIRES
+    label: persamaan kuadrat → polinomial berderajat tinggi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.KUA
+    to: MAT.C26.FPLUS.KOMPLEKS
+    kind: RELATED
+    label: diskriminan negatif → akar kompleks
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.MTX
+    to: MAT.C26.FPLUS.TRANSFORMASI
+    kind: REQUIRES
+    label: perkalian matriks → komposisi transformasi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.TRI
+    to: MAT.C26.FPLUS.FUNGSI
+    kind: REQUIRES
+    label: grafik trigonometri → model periodik
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.CP25.F.LINGKARAN
+    to: MAT.C26.FPLUS.LINGKARAN
+    kind: REQUIRES
+    label: unsur lingkaran → persamaan lingkaran
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.FPLUS.LINGKARAN
+    to: MAT.C26.FPLUS.KERUCUT
+    kind: RELATED
+    label: lingkaran sebagai irisan kerucut
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.C26.FPLUS.LIMIT
+    to: MAT.KAL
+    kind: REQUIRES
+    label: limit → turunan sebagai laju sesaat
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.KAL
+    to: MAT.C26.FPLUS.TURUNAN
+    kind: REQUIRES
+    label: aturan turunan dasar → aturan rantai dan trigonometri
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: MAT.KAL
+    to: MAT.C26.FPLUS.INTEGRAL
+    kind: REQUIRES
+    label: integral tentu → luas dan volume benda putar
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.E.ENERGI
+    to: FIS.C26.E.TERBARUKAN
+    kind: REQUIRES
+    label: daya dan efisiensi → pembangkit energi terbarukan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.E.TERBARUKAN
+    to: FIS.C26.E.IKLIM
+    kind: RELATED
+    label: energi terbarukan sebagai mitigasi perubahan iklim
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.D.PARTIKEL
+    to: KIM.C26.D.MATERI
+    kind: REQUIRES
+    label: teori partikel → klasifikasi dan perubahan materi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.D.ATOM
+    to: KIM.C26.E.MODELATOM
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: atom dan ion SMP → model atom dan konfigurasi elektron"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.MODELATOM
+    to: KIM.C26.F.STRUKTUR
+    kind: REQUIRES
+    label: konfigurasi kulit → struktur elektron dan periodisitas
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.E.HUKUMDASAR
+    to: KIM.C26.E.STOIK
+    kind: REQUIRES
+    label: hukum dasar kimia → stoikiometri
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.HIDROKARBON
+    to: KIM.C26.F.GUGUS
+    kind: REQUIRES
+    label: hidrokarbon → senyawa turunan alkana
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.HIDROKARBON
+    to: KIM.C26.F.KARBON
+    kind: REQUIRES
+    label: rantai karbon → makromolekul
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.LAJU
+    to: KIM.C26.F.TERMOKIMIA
+    kind: RELATED
+    label: energi aktivasi ↔ diagram energi reaksi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.SETIMBANG
+    to: KIM.C26.F.ASAMBASA
+    kind: REQUIRES
+    label: tetapan kesetimbangan → Ka, Kb, dan titrasi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: KIM.C26.F.ELEKTROLIT
+    to: KIM.C26.F.KOLOID
+    kind: RELATED
+    label: larutan sejati ↔ sistem koloid
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.D.KLASIFIKASI
+    to: BIO.C26.E.KLASIFIKASI
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: ciri makhluk hidup → takson dan kingdom"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.E.KLASIFIKASI
+    to: BIO.C26.E.BIODIVERSITAS
+    kind: RELATED
+    label: klasifikasi ↔ keanekaragaman hayati
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.E.EKOSISTEM
+    to: BIO.C26.E.LIMBAH
+    kind: REQUIRES
+    label: keseimbangan ekosistem → pencemaran dan limbah
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.SEL
+    to: BIO.C26.F.TUMBUHAN
+    kind: REQUIRES
+    label: sel dan transpor membran → jaringan dan transpor tumbuhan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.SEL
+    to: BIO.C26.F.GERAK
+    kind: REQUIRES
+    label: sel dan jaringan → sistem gerak
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.ORGAN
+    to: BIO.C26.F.IMUN
+    kind: RELATED
+    label: sistem sirkulasi ↔ sistem pertahanan tubuh
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.GENETIKA
+    to: BIO.C26.F.HEREDITAS
+    kind: REQUIRES
+    label: pola pewarisan Mendel → penyimpangan dan pautan
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.GENETIKA
+    to: BIO.C26.F.MUTASI
+    kind: REQUIRES
+    label: DNA dan kromosom → mutasi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse
+  - from: BIO.C26.F.MUTASI
+    to: BIO.C26.F.EVOLUSI
+    kind: REQUIRES
+    label: mutasi sebagai sumber variasi → evolusi
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - hubungan antartopik dari peta referensi IntiVerse

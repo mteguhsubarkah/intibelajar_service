@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.AIR_3
+familyCode: BIO.C26.F.TUMBUHAN.F.AIR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Air masuk dari tanah ke dalam sel rambut akar melalui proses …
+  options:
+    - id: a
+      label: gutasi
+    - id: b
+      label: osmosis
+    - id: c
+      label: fotosintesis
+    - id: d
+      label: transpirasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - osmosis
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA
+  feedback:
+    correct: Air berpindah dari tanah yang lebih encer ke sel akar yang lebih pekat melalui membran.
+    incorrect: Jawabannya osmosis. Air berpindah dari tanah yang lebih encer ke sel akar yang lebih pekat melalui membran.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

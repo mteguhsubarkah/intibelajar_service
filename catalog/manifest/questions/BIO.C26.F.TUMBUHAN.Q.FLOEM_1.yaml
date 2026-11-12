@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.TUMBUHAN.Q.FLOEM_1
+familyCode: BIO.C26.F.TUMBUHAN.F.FLOEM_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Bentuk utama hasil fotosintesis yang diangkut melalui floem adalah …
+  options:
+    - id: a
+      label: protein
+    - id: b
+      label: lemak
+    - id: c
+      label: sukrosa
+    - id: d
+      label: amilum
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - sukrosa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS
+  feedback:
+    correct: Gula diangkut sebagai sukrosa yang larut dan relatif tidak reaktif.
+    incorrect: Jawabannya sukrosa. Gula diangkut sebagai sukrosa yang larut dan relatif tidak reaktif.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

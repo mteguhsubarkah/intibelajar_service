@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.L.OTOT
+title: Otot dan kontraksi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.GERAK.OTOT_DAN_KONTRAKSI
+blocks:
+  - type: heading
+    slide: 0
+    text: Jenis otot
+  - type: text
+    slide: 0
+    text: "Ada tiga jenis otot: **otot rangka** (lurik, sadar), **otot polos** (pada organ dalam, tidak sadar), dan **otot jantung** (lurik, tidak sadar)."
+  - type: text
+    slide: 0
+    text: "Otot rangka bekerja berpasangan secara **antagonis**: saat biseps berkontraksi lengan menekuk, saat trisep berkontraksi lengan lurus."
+  - type: heading
+    slide: 1
+    text: Mekanisme kontraksi
+  - type: text
+    slide: 1
+    text: Serabut otot berisi filamen **aktin** dan **miosin**. Saat kontraksi, aktin bergeser di antara miosin sehingga otot memendek (teori pergeseran filamen).
+  - type: text
+    slide: 1
+    text: Energinya berasal dari **ATP**. Bila oksigen kurang, terbentuk asam laktat yang dapat menyebabkan rasa lelah.
+  - type: tip
+    slide: 1
+    text: Otot hanya dapat menarik, tidak dapat mendorong; karena itu dibutuhkan pasangan antagonis.
+checks:
+  - question: BIO.C26.F.GERAK.Q.OTOT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.GERAK.S.OTOT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.F.KOLOID.Q.PEMBUATAN_1
+familyCode: KIM.C26.F.KOLOID.F.PEMBUATAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.F.KOLOID.PEMBUATAN_DAN_PENERAPAN_KOLOID
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pembuatan sol Fe(OH)₃ dengan meneteskan FeCl₃ ke air mendidih termasuk cara …
+  options:
+    - id: a
+      label: busur Bredig
+    - id: b
+      label: kondensasi
+    - id: c
+      label: dispersi mekanik
+    - id: d
+      label: peptisasi
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - kondensasi
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.F.KOLOID.PEMBUATAN_DAN_PENERAPAN_KOLOID
+  feedback:
+    correct: Ion Fe³⁺ bereaksi membentuk partikel Fe(OH)₃ yang bergabung sampai berukuran koloid.
+    incorrect: Jawabannya kondensasi. Ion Fe³⁺ bereaksi membentuk partikel Fe(OH)₃ yang bergabung sampai berukuran koloid.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

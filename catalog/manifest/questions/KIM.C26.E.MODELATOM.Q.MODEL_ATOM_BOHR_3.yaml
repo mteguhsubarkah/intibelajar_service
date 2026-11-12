@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.MODELATOM.Q.MODEL_ATOM_BOHR_3
+familyCode: KIM.C26.E.MODELATOM.F.MODEL_ATOM_BOHR_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.MODELATOM.MODEL_ATOM_BOHR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Warna nyala yang khas pada uji nyala logam dapat dijelaskan oleh model atom …
+  options:
+    - id: a
+      label: Thomson
+    - id: b
+      label: Rutherford
+    - id: c
+      label: Bohr
+    - id: d
+      label: Dalton
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - Bohr
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.MODELATOM.MODEL_ATOM_BOHR
+  feedback:
+    correct: Bohr menjelaskan bahwa energi elektron bertingkat, sehingga cahaya yang dipancarkan memiliki warna tertentu.
+    incorrect: Jawabannya Bohr. Bohr menjelaskan bahwa energi elektron bertingkat, sehingga cahaya yang dipancarkan memiliki warna tertentu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

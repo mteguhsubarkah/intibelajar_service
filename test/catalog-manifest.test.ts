@@ -58,6 +58,7 @@ const mutations: [Rule, (m: Manifest) => void][] = [
   ['LESSON_LINK', m => { delete q(m, 'MAT.TRI.Q.SOAL_MENARA').rubric.lessonFor!['MAT.TRI.SEGITIGA_SIKU_SIKU']; }],
   ['RECOMMEND', m => { q(m, 'MAT.TRI.Q.SOAL_MENARA').rubric.recommend![0]!.misconceptionCode = 'MEMAKAI_TABEL'; }],
   ['AUTHORED_TARGET', m => { m.authored![0]!.target = 'MAT.TRI.Q.TIDAK_ADA'; }],
+  ['GRADE_PHASE', m => { concept(m, 'MAT.TRI.RADIAN').grade = 7; }],
 ];
 for (const [i, [rule, mutate]] of mutations.entries()) test(`mutation ${i + 1}: ${rule} is detected, and only it`, () => {
   const m = structuredClone(base);

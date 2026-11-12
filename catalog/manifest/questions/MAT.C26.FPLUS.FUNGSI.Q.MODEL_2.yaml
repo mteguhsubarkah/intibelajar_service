@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.FUNGSI.Q.MODEL_2
+familyCode: MAT.C26.FPLUS.FUNGSI.F.MODEL_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Data y untuk x = 0, 1, 2, 3, 4 adalah 1, 4, 9, 16, 25. Selisih kedua data ini …
+  options:
+    - id: a
+      label: tetap 1, sehingga modelnya trigonometri
+    - id: b
+      label: tetap 2, sehingga modelnya kuadrat
+    - id: c
+      label: tetap 3, sehingga modelnya linear
+    - id: d
+      label: tidak tetap, sehingga modelnya eksponensial
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - tetap 2, sehingga modelnya kuadrat
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA
+  feedback:
+    correct: Selisih pertama 3, 5, 7, 9 dan selisih keduanya selalu 2, jadi datanya mengikuti fungsi kuadrat y = (x + 1)².
+    incorrect: Jawabannya tetap 2, sehingga modelnya kuadrat. Selisih pertama 3, 5, 7, 9 dan selisih keduanya selalu 2, jadi datanya mengikuti fungsi kuadrat y = (x + 1)².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

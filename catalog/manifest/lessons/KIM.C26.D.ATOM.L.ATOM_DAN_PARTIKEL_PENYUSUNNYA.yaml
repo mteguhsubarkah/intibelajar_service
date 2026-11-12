@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: KIM.C26.D.ATOM.L.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+title: Atom dan partikel penyusunnya
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - KIM.C26.D.ATOM.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+blocks:
+  - type: heading
+    slide: 0
+    text: Partikel subatom
+  - type: text
+    slide: 0
+    text: "**Atom** adalah partikel terkecil unsur yang masih memiliki sifat unsur itu. Inti atom berisi **proton** (bermuatan positif) dan **neutron** (tidak bermuatan); **elektron** (bermuatan negatif) bergerak mengelilingi inti."
+  - type: text
+    slide: 0
+    text: Atom netral memiliki jumlah proton sama dengan jumlah elektron.
+  - type: math
+    slide: 0
+    name: atom netral
+    expression: proton = elektron
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Nomor atom dan nomor massa
+  - type: text
+    slide: 1
+    text: "**Nomor atom** = jumlah proton; **nomor massa** = jumlah proton + neutron. Contoh: atom natrium memiliki 11 proton dan 12 neutron, jadi nomor massanya 23."
+  - type: text
+    slide: 1
+    text: Jumlah neutron = nomor massa − nomor atom.
+  - type: math
+    slide: 1
+    name: neutron
+    expression: nomor massa − nomor atom
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jumlah protonlah yang menentukan jenis unsur.
+checks:
+  - question: KIM.C26.D.ATOM.Q.ATOM_DAN_PARTIKEL_PENYUSUNNYA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: KIM.C26.D.ATOM.S.ATOM_DAN_PARTIKEL_PENYUSUNNYA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

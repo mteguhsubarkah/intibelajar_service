@@ -1,0 +1,43 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.L.SENDI
+title: Sendi
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - BIO.C26.F.GERAK.SENDI
+blocks:
+  - type: heading
+    slide: 0
+    text: Keleluasaan gerak sendi
+  - type: text
+    slide: 0
+    text: "**Sendi** adalah hubungan antartulang. Menurut keleluasaan geraknya ada **sinartrosis** (tidak dapat digerakkan, misalnya pada tengkorak), **amfiartrosis** (gerak terbatas, misalnya antar-ruas tulang belakang), dan **diartrosis** (gerak bebas)."
+  - type: text
+    slide: 0
+    text: Diartrosis dilumasi **cairan sinovial** sehingga gesekan berkurang.
+  - type: heading
+    slide: 1
+    text: Jenis diartrosis
+  - type: text
+    slide: 1
+    text: "**Sendi engsel**: gerak satu arah, misalnya siku dan lutut. **Sendi peluru**: gerak ke segala arah, misalnya bahu dan pangkal paha."
+  - type: text
+    slide: 1
+    text: "**Sendi putar**: tulang berputar pada tulang lain, misalnya antara tulang atlas dan tulang pemutar. **Sendi pelana**: gerak dua arah, misalnya pangkal ibu jari."
+  - type: tip
+    slide: 1
+    text: Ligamen menghubungkan tulang dengan tulang; tendon menghubungkan otot dengan tulang.
+checks:
+  - question: BIO.C26.F.GERAK.Q.SENDI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: BIO.C26.F.GERAK.S.SENDI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

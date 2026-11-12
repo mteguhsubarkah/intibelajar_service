@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: BIO.C26.F.GERAK.Q.SENDI_2
+familyCode: BIO.C26.F.GERAK.F.SENDI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: BIO.C26.F.GERAK.SENDI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sendi yang memungkinkan lengan berputar ke segala arah adalah sendi …
+  options:
+    - id: a
+      label: putar
+    - id: b
+      label: peluru
+    - id: c
+      label: engsel
+    - id: d
+      label: pelana
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - peluru
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - BIO.C26.F.GERAK.SENDI
+  feedback:
+    correct: Kepala tulang lengan atas berbentuk bulat dan masuk ke lekukan gelang bahu.
+    incorrect: Jawabannya peluru. Kepala tulang lengan atas berbentuk bulat dan masuk ke lekukan gelang bahu.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

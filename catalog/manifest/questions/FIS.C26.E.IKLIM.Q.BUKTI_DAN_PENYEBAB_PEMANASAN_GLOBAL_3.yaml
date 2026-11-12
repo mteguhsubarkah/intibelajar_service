@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.E.IKLIM.Q.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_3
+familyCode: FIS.C26.E.IKLIM.F.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Berikut yang merupakan bukti pemanasan global adalah …
+  options:
+    - id: a
+      label: suhu siang lebih tinggi daripada malam
+    - id: b
+      label: musim hujan terjadi setiap tahun
+    - id: c
+      label: Matahari terbit dari timur
+    - id: d
+      label: permukaan air laut rata-rata terus naik
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - permukaan air laut rata-rata terus naik
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL
+  feedback:
+    correct: Kenaikan muka laut terjadi karena air laut yang menghangat memuai dan es daratan mencair.
+    incorrect: Jawabannya permukaan air laut rata-rata terus naik. Kenaikan muka laut terjadi karena air laut yang menghangat memuai dan es daratan mencair.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

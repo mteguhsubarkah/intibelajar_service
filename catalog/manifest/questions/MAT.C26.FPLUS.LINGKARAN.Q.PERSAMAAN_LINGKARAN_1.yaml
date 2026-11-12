@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.LINGKARAN.Q.PERSAMAAN_LINGKARAN_1
+familyCode: MAT.C26.FPLUS.LINGKARAN.F.PERSAMAAN_LINGKARAN_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Persamaan lingkaran berpusat (−3, 4) dan berjari-jari 6 adalah …
+  options:
+    - id: a
+      label: (x + 3)² + (y − 4)² = 6
+    - id: b
+      label: (x − 3)² + (y − 4)² = 36
+    - id: c
+      label: (x + 3)² + (y − 4)² = 36
+    - id: d
+      label: (x − 3)² + (y + 4)² = 36
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - (x + 3)² + (y − 4)² = 36
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN
+  feedback:
+    correct: Substitusi a = −3, b = 4, dan r² = 36 ke (x − a)² + (y − b)² = r².
+    incorrect: Jawabannya (x + 3)² + (y − 4)² = 36. Substitusi a = −3, b = 4, dan r² = 36 ke (x − a)² + (y − b)² = r².
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

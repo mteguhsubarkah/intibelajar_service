@@ -65,6 +65,7 @@ concepts:
     unit: MAT.EKS.U1
     ordinal: 2
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -79,6 +80,7 @@ concepts:
     unit: MAT.EKS.U1
     ordinal: 3
     estimatedMinutes: 6
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -93,6 +95,7 @@ concepts:
     unit: MAT.EKS.U2
     ordinal: 4
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -107,6 +110,7 @@ concepts:
     unit: MAT.EKS.U2
     ordinal: 5
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -121,6 +125,7 @@ concepts:
     unit: MAT.EKS.U3
     ordinal: 6
     estimatedMinutes: 5
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -135,6 +140,7 @@ concepts:
     unit: MAT.EKS.U3
     ordinal: 7
     estimatedMinutes: 6
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -149,6 +155,7 @@ concepts:
     unit: MAT.EKS.U4
     ordinal: 8
     estimatedMinutes: 4
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -163,6 +170,7 @@ concepts:
     unit: MAT.EKS.U4
     ordinal: 9
     estimatedMinutes: 6
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -177,6 +185,7 @@ concepts:
     unit: MAT.EKS.U5
     ordinal: 10
     estimatedMinutes: 7
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -191,6 +200,7 @@ concepts:
     unit: MAT.EKS.U5
     ordinal: 11
     estimatedMinutes: 7
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -205,6 +215,7 @@ concepts:
     unit: MAT.EKS.U6
     ordinal: 12
     estimatedMinutes: 8
+    grade: 10
     hidden: false
     capstone: false
     availability: READY
@@ -219,6 +230,7 @@ concepts:
     unit: MAT.EKS.U6
     ordinal: 13
     estimatedMinutes: 10
+    grade: 10
     hidden: false
     capstone: false
     availability: READY

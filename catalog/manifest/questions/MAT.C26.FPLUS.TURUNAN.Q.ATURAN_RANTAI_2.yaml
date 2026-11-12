@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.TURUNAN.Q.ATURAN_RANTAI_2
+familyCode: MAT.C26.FPLUS.TURUNAN.F.ATURAN_RANTAI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Turunan y = √(4x + 1) adalah …
+  options:
+    - id: a
+      label: 1/(2√(4x + 1))
+    - id: b
+      label: 4√(4x + 1)
+    - id: c
+      label: 1/√(4x + 1)
+    - id: d
+      label: 2/√(4x + 1)
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 2/√(4x + 1)
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI
+  feedback:
+    correct: ½(4x + 1)^(−1/2) · 4 = 2/√(4x + 1).
+    incorrect: Jawabannya 2/√(4x + 1). ½(4x + 1)^(−1/2) · 4 = 2/√(4x + 1).
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

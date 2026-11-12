@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: KIM.C26.E.HIJAU.Q.PRINSIP_KIMIA_HIJAU_3
+familyCode: KIM.C26.E.HIJAU.F.PRINSIP_KIMIA_HIJAU_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Penggunaan katalis enzim pada suhu ruang mendukung kimia hijau karena …
+  options:
+    - id: a
+      label: menghemat energi dan mengurangi produk samping
+    - id: b
+      label: menaikkan jumlah limbah
+    - id: c
+      label: membutuhkan suhu sangat tinggi
+    - id: d
+      label: membuat reaksi menjadi lebih lambat
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - menghemat energi dan mengurangi produk samping
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU
+  feedback:
+    correct: Enzim bekerja spesifik pada kondisi ringan, sehingga energi dan limbah samping berkurang.
+    incorrect: Jawabannya menghemat energi dan mengurangi produk samping. Enzim bekerja spesifik pada kondisi ringan, sehingga energi dan limbah samping berkurang.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

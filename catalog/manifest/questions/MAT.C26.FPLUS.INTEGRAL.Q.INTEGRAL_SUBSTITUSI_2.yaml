@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.FPLUS.INTEGRAL.Q.INTEGRAL_SUBSTITUSI_2
+familyCode: MAT.C26.FPLUS.INTEGRAL.F.INTEGRAL_SUBSTITUSI_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.FPLUS.INTEGRAL.INTEGRAL_SUBSTITUSI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Hasil ∫cos(5x) dx adalah …
+  options:
+    - id: a
+      label: −(1/5) sin 5x + C
+    - id: b
+      label: sin 5x + C
+    - id: c
+      label: (1/5) sin 5x + C
+    - id: d
+      label: 5 sin 5x + C
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - (1/5) sin 5x + C
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.FPLUS.INTEGRAL.INTEGRAL_SUBSTITUSI
+  feedback:
+    correct: Misalkan u = 5x sehingga du = 5 dx; integralnya (1/5) sin 5x + C.
+    incorrect: Jawabannya (1/5) sin 5x + C. Misalkan u = 5x sehingga du = 5 dx; integralnya (1/5) sin 5x + C.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran
