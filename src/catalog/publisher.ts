@@ -37,6 +37,12 @@ const lessonContent = (l: Pick<Lesson, 'title'|'estimatedMinutes'|'blocks'|'chec
   title: l.title, estimatedMinutes: l.estimatedMinutes, blocks: l.blocks, checks: [...l.checks].sort((a, b) => a.ordinal - b.ordinal),
 });
 
+/** Rilis yang sedang dilayani ke siswa beserta snapshot manifestnya (dasar rilis per lingkup), atau null bila belum ada. */
+export async function currentRelease(db: DB): Promise<{ version: number; snapshot: Manifest } | null> {
+  const row = await db.selectFrom('curriculum_release').select(['version', 'snapshot']).where('is_current', '=', true).executeTakeFirst();
+  return row?.snapshot ? { version: row.version, snapshot: row.snapshot as unknown as Manifest } : null;
+}
+
 export async function publish(db: DB, m: Manifest): Promise<PublishResult> {
   // The publisher has no override: an unreviewed or invalid manifest is never published.
   const findings = lintManifest(m, { strict: true });
