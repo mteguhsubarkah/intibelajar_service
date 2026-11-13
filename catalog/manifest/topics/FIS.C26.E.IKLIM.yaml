@@ -86,3 +86,9 @@ review:
   evidence:
     - "bab baru dari pemeriksaan per kelas 12 November 2026: ada di daftar isi Buku Siswa Kurikulum Merdeka per kelas, belum ada di katalog"
     - "acuan: Buku Siswa Kurikulum Merdeka terbitan Pusbuk Kemendikbudristek (Matematika Tingkat Lanjut XI–XII, IPA VII–X, Kimia XI–XII, Biologi XI–XII) lewat rangkuman Ruangguru, Mamikos, Tirto, dan Gramedia karena PDF buku tidak dapat dibuka dari lingkungan pembuat; rentang fase Kepka BSKAP 046/H/KR/2025; kelas tiap inti di scripts/catalog/pilot/grades.ts"
+bookRefs:
+  - book: Capaian Pembelajaran Fisika Fase E (Kepka BSKAP 046/H/KR/2025)
+    edition: "2025"
+    section: elemen perubahan iklim
+    verification: CP_ONLY
+    note: Belum ada buku Fisika kelas X edisi CP 2025. Rumusan CP diambil dari kutipan pihak ketiga, belum dicek ke dokumen Kepka.

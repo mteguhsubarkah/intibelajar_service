@@ -67,3 +67,9 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+bookRefs:
+  - book: Buku Siswa Fisika Kelas XI (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf
+    chapter: Bab 4 Fluida
+    verification: VERIFIED

@@ -59,6 +59,8 @@ const mutations: [Rule, (m: Manifest) => void][] = [
   ['RECOMMEND', m => { q(m, 'MAT.TRI.Q.SOAL_MENARA').rubric.recommend![0]!.misconceptionCode = 'MEMAKAI_TABEL'; }],
   ['AUTHORED_TARGET', m => { m.authored![0]!.target = 'MAT.TRI.Q.TIDAK_ADA'; }],
   ['GRADE_PHASE', m => { concept(m, 'MAT.TRI.RADIAN').grade = 7; }],
+  ['BOOKREF', m => { tri(m).bookRefs = [{ book: 'Buku Siswa Matematika Kelas X', edition: '2022', verification: 'VERIFIED' }]; }],
+  ['BOOKREF', m => { tri(m).bookRefs = [{ book: 'CP Matematika Fase E', edition: '2025', chapter: 'Bab 4', verification: 'CP_ONLY' }]; }],
 ];
 for (const [i, [rule, mutate]] of mutations.entries()) test(`mutation ${i + 1}: ${rule} is detected, and only it`, () => {
   const m = structuredClone(base);

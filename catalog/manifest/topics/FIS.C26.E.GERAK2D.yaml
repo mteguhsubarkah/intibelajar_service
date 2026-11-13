@@ -83,3 +83,15 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+bookRefs:
+  - book: Capaian Pembelajaran Fisika Fase E (Kepka BSKAP 046/H/KR/2025)
+    edition: "2025"
+    section: elemen gerak dua dimensi
+    verification: CP_ONLY
+    note: Belum ada buku Fisika kelas X edisi CP 2025. Rumusan CP diambil dari kutipan pihak ketiga, belum dicek ke dokumen Kepka.
+  - book: Buku Siswa Fisika Kelas XI (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika-BS-KLS-XI.pdf
+    chapter: Bab 1 Vektor; Bab 2 Kinematika
+    verification: VERIFIED
+    note: Buku 2022 menaruh vektor dan kinematika di kelas XI; CP 2025 memindahkannya ke Fase E (kelas 10).

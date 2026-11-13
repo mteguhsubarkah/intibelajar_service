@@ -48,3 +48,12 @@ review:
   evidence:
     - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
     - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
+bookRefs:
+  - book: Buku Siswa IPA Kelas VII (SMP/MTs)
+    edition: edisi revisi
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VII_Rev.pdf
+    chapter: Bab I Hakikat Ilmu Sains dan Metode Ilmiah
+    section: D. Pengukuran
+    pages: "25"
+    verification: VERIFIED
+    note: Besaran dan satuan dibahas sebagai bagian dari subbab Pengukuran, bukan bab sendiri.

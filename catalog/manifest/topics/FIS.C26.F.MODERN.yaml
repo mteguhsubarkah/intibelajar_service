@@ -80,3 +80,27 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+bookRefs:
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 6 Pengantar
+    section: sistem elektronika, semikonduktor, gerbang logika
+    verification: VERIFIED
+    note: Untuk inti representasi biner dan logika; inti semikonduktor belum ada.
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 7 Relativitas
+    verification: VERIFIED
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 8 Gejala Kuantum
+    verification: VERIFIED
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 9 Fisika Inti dan Radioaktivitas
+    verification: VERIFIED
+    note: Di katalog, kuantum dan inti atom masih satu inti.

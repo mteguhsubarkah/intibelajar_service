@@ -64,3 +64,9 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+bookRefs:
+  - book: Capaian Pembelajaran Fisika Fase E (Kepka BSKAP 046/H/KR/2025)
+    edition: "2025"
+    section: elemen pengukuran
+    verification: CP_ONLY
+    note: Belum ada buku Fisika kelas X edisi CP 2025. Rumusan CP diambil dari kutipan pihak ketiga, belum dicek ke dokumen Kepka.
