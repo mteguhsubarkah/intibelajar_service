@@ -6,8 +6,11 @@ import { decrypt } from '../platform/crypto.js';
    Modul ini membaca tabel milik identity saja; profil, status belajar,
    dan penghapusan ada di privacy/staff.ts.
 
-   Email hanya ada untuk identitas EMAIL (terenkripsi AES-GCM). Identitas
-   Google sengaja hanya menyimpan "sub" Google, tanpa email.
+   Email hanya ada untuk identitas EMAIL dari tautan email (terenkripsi
+   AES-GCM). Identitas Google sengaja hanya menyimpan "sub" Google, tanpa
+   email; login Google juga menambah identitas EMAIL terverifikasi yang
+   hanya berisi HMAC alamatnya (email null), supaya tautan email ke alamat
+   yang sama masuk ke akun yang sama.
 ========================================================= */
 
 export interface StaffIdentity { provider: 'GOOGLE' | 'EMAIL'; email: string | null; emailVerified: boolean; lastLoginAt: string | null }

@@ -74,5 +74,22 @@ async function googleAccount(tx:Tx,config:Config,claims:{sub:string;email:string
  if(account.status!=='ACTIVE')fail(403,'ACCOUNT_UNAVAILABLE');
  if(account.learner_id)await checkSigninLearner(tx,account.learner_id);
  await tx.updateTable('auth_identity').set({last_login_at:sql<Date>`now()`}).where('provider','=','GOOGLE').where('subject','=',claims.sub).execute();
+ await linkVerifiedEmail(tx,account.id,emailSubject);
  return{userId:account.id,fresh};
+}
+
+/**
+ * Alamat yang sudah diverifikasi Google juga jadi identitas EMAIL terverifikasi milik akun ini, supaya tautan email ke
+ * alamat yang sama masuk ke akun ini, bukan membuat akun kedua (TC-AUTH-009). Yang disimpan hanya HMAC alamatnya
+ * (subject), bukan alamatnya: email Google tetap tidak disimpan. Alamat yang sudah dipakai akun lain dibiarkan; akun
+ * tidak pernah digabung otomatis. Kunci advisory untuk subject ini sudah dipegang googleAccount (sama dengan consumeEmail).
+ */
+async function linkVerifiedEmail(tx:Tx,userId:string,subject:string){
+ const existing=await tx.selectFrom('auth_identity').select(['user_id','email_verified']).where('provider','=','EMAIL').where('subject','=',subject).executeTakeFirst();
+ if(!existing){
+  await tx.insertInto('auth_identity').values({id:uuid(),user_id:userId,provider:'EMAIL',subject,email_verified:true,email_ciphertext:null,last_login_at:null})
+   .onConflict(oc=>oc.columns(['provider','subject']).doNothing()).execute();
+ }else if(existing.user_id===userId&&!existing.email_verified){
+  await tx.updateTable('auth_identity').set({email_verified:true}).where('provider','=','EMAIL').where('subject','=',subject).execute();
+ }
 }

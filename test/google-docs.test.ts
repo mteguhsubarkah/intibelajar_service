@@ -10,7 +10,7 @@ import {buildApp} from '../src/app.js';
 import {migrate} from '../src/migrate.js';
 import {contract} from '../src/platform/contract.js';
 import {createGoogleProvider,type GoogleProvider} from '../src/identity/google-provider.js';
-import {cookieName,createSession} from '../src/identity/service.js';
+import {cookieName,createSession,startEmail,sendEmail,consumeEmail} from '../src/identity/service.js';
 import {hash,hmac,uuid} from '../src/platform/crypto.js';
 import {consentedLearner} from './fixtures/learner.js';
 const logStream=new Writable({write(_c,_e,next){next();}});
@@ -127,6 +127,36 @@ test('Swagger and Google routes against PostgreSQL: fail closed, cookie binding,
     const current=(await app.inject({url:'/v1/auth/session',headers:{cookie:String(r.headers['set-cookie']).split(';')[0]!}})).json();
     if(verified)assert.equal(current.user.id,prior.userId);else assert.notEqual(current.user.id,prior.userId);
    }
+  });
+  const userOf=async(r:{headers:Record<string,unknown>})=>(await app.inject({url:'/v1/auth/session',headers:{cookie:String(r.headers['set-cookie']).split(';')[0]!}})).json().user.id as string;
+  const emailSubject=()=>hmac(config.key,'email:'+email).toString('hex');
+  await t.test('TC-AUTH-009: Google first, then an email link to the same address signs into the same account; the address is still not stored',async()=>{
+   subject='fixture-'+randomUUID();email=randomUUID()+'@example.invalid';
+   const r=await callback(await start());assert.equal(r.statusCode,302,r.body);
+   const googleUser=await userOf(r);
+   const linked=await db.selectFrom('auth_identity').selectAll().where('provider','=','EMAIL').where('subject','=',emailSubject()).executeTakeFirstOrThrow();
+   assert.equal(linked.user_id,googleUser);assert.equal(linked.email_verified,true);assert.equal(linked.email_ciphertext,null);
+   const viaEmail=await db.transaction().execute(async tx=>{
+    const s=await startEmail(tx,config,{route:'/profile',step:0});
+    const sent=await sendEmail(tx,config,s.session.raw,s.transaction,email);assert.ok(sent);
+    return consumeEmail(tx,config,s.session.raw,sent.link);
+   });
+   const owner=await db.selectFrom('auth_session').select('user_id').where('id','=',viaEmail.session.id).executeTakeFirstOrThrow();
+   assert.equal(owner.user_id,googleUser,'no second account');assert.equal(viaEmail.continuation.route,'/profile');
+   assert.equal((await callback(await start())).statusCode,302);
+   const ids=await db.selectFrom('auth_identity').select(['provider','email_ciphertext']).where('user_id','=',googleUser).execute();
+   assert.deepEqual(ids.map(i=>i.provider).sort(),['EMAIL','GOOGLE'],'repeat sign-in adds no duplicate identity');
+   assert.ok(ids.every(i=>i.email_ciphertext===null));
+  });
+  await t.test('an address already owned by another account is never taken over and accounts are never merged',async()=>{
+   subject='fixture-'+randomUUID();email=randomUUID()+'@example.invalid';
+   const googleUser=await userOf(await callback(await start()));
+   // A duplicate made before the fix: the email identity belongs to another account.
+   const other=await consentedLearner(db,config,{consent:false});
+   await db.updateTable('auth_identity').set({user_id:other.userId}).where('provider','=','EMAIL').where('subject','=',emailSubject()).execute();
+   const again=await callback(await start());assert.equal(again.statusCode,302,again.body);assert.equal(await userOf(again),googleUser);
+   const owner=await db.selectFrom('auth_identity').select('user_id').where('provider','=','EMAIL').where('subject','=',emailSubject()).executeTakeFirstOrThrow();
+   assert.equal(owner.user_id,other.userId);
   });
   await t.test('provider failure cannot create a user and consumes the callback attempt',async()=>{
    const s=await start();rejectProvider=true;
