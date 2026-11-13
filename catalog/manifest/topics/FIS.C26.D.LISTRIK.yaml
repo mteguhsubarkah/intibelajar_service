@@ -61,3 +61,11 @@ review:
   evidence:
     - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
     - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
+bookRefs:
+  - book: Buku Siswa IPA Kelas IX (SMP/MTs)
+    edition: revisi 2025 (ISBN 978-634-00-2430-2)
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_IX_Rev.pdf
+    chapter: Bab 5 Listrik, Magnet, dan Energi Alternatif
+    section: "A. Listrik: listrik statis (hlm. 120), daya listrik (hlm. 145)"
+    verification: VERIFIED
+    note: Bab 5, bukan Bab 4 (edisi 2022). Inti listrik statis, energi dan daya listrik, serta sumber energi alternatif belum ada di katalog.

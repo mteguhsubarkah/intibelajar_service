@@ -646,6 +646,12 @@
         },
         "review": {
           "$ref": "#/$defs/review"
+        },
+        "bookRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/bookRef"
+          }
         }
       }
     },
@@ -1545,6 +1551,61 @@
         },
         "review": {
           "$ref": "#/$defs/review"
+        }
+      }
+    },
+    "bookRef": {
+      "description": "Padanan bab katalog di buku teks atau dokumen kurikulum. Hanya metadata sumber: tidak mengubah kode inti, prasyarat, relasi, atau urutan, jadi pergantian edisi buku tidak merusak identitas inti.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "book",
+        "edition",
+        "verification"
+      ],
+      "properties": {
+        "book": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "description": "Nama buku atau dokumen, mis. 'Buku Siswa IPA Kelas VIII'."
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Edisi, mis. 'revisi 2024'."
+        },
+        "chapter": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "Nomor dan judul bab di edisi itu. Wajib kecuali verification CP_ONLY."
+        },
+        "section": {
+          "type": "string",
+          "maxLength": 240,
+          "description": "Subbab, bila padanannya subbab."
+        },
+        "pages": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 300
+        },
+        "verification": {
+          "enum": [
+            "VERIFIED",
+            "SNIPPET",
+            "CP_ONLY"
+          ],
+          "description": "VERIFIED: dicek ke isi atau daftar isi buku resmi. SNIPPET: baru dari cuplikan pencarian atau ringkasan pihak ketiga. CP_ONLY: hanya dari dokumen Capaian Pembelajaran, belum ada buku edisi itu."
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 400
         }
       }
     }

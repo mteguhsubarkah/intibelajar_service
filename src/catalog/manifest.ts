@@ -20,10 +20,15 @@ export interface Concept {
 }
 export interface Prerequisite { concept: string; requires: string; kind: 'HARD'|'SOFT'; review?: Review }
 export interface Unit { code: string; legacyId?: string; title: string; goal: string; ordinal: number }
+/** Padanan bab di buku teks atau dokumen CP. Metadata sumber saja: tidak menyentuh identitas inti atau relasi. */
+export interface BookRef {
+  book: string; edition: string; chapter?: string; section?: string; pages?: string; url?: string;
+  verification: 'VERIFIED'|'SNIPPET'|'CP_ONLY'; note?: string;
+}
 export interface Topic {
   schemaVersion: 1; code: string; subject: string; title: string; subtitle?: string; phase: 'D'|'E'|'F'|'F+';
   availability: 'MAPPED'|'PLANNED'; bekal: string[]; aliases: Alias[]; units: Unit[]; concepts: Concept[];
-  prerequisites: Prerequisite[]; review?: Review;
+  prerequisites: Prerequisite[]; review?: Review; bookRefs?: BookRef[];
 }
 export interface Option { id: string; label: string }
 export interface QuestionBody {
@@ -90,7 +95,7 @@ export type Rule =
   | 'SCHEMA'|'FILE_NAME'|'KEY_IN_BODY'|'SIZE'|'CODE_DUPLICATE'|'REF_UNKNOWN'|'ALIAS_AMBIGUOUS'|'ALIAS_UNMAPPED_CONFLICT'
   | 'PREREQ_CYCLE'|'PREREQ_SELF'|'TOPIC_CYCLE'|'UNIT_UNKNOWN'|'QUESTION_NO_PRIMARY'|'STEP_CONCEPT_UNMAPPED'|'MISCONCEPTION_UNKNOWN'
   | 'EVALUATOR_SHAPE'|'OPTION_IDS'|'PRACTICE_NOT_DETERMINISTIC'|'CHECK_NOT_DETERMINISTIC'|'CHECK_PLACEMENT'|'UNREVIEWED'
-  | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET'|'GRADE_PHASE';
+  | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET'|'GRADE_PHASE'|'BOOKREF';
 /** Kelas yang termasuk tiap fase Kurikulum Merdeka: D = SMP 7–9, E = kelas 10, F = kelas 11–12, F+ = Matematika Tingkat Lanjut 11–12. */
 export const GRADES_OF_PHASE: Record<Topic['phase'], number[]> = { D: [7, 8, 9], E: [10], F: [11, 12], 'F+': [11, 12] };
 export interface Finding { rule: Rule; severity: 'error'|'warning'; file: string; message: string }
@@ -261,6 +266,11 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
       ref(concepts, 'concept', p.concept, file, 'prerequisite');
       ref(concepts, 'concept', p.requires, file, `prerequisite of ${p.concept}`);
       if (p.concept === p.requires) add('PREREQ_SELF', file, `${p.concept} requires itself`);
+    }
+    // Rujukan buku menyebut bab; rujukan CP tidak punya bab atau halaman.
+    for (const [i, b] of (t.bookRefs ?? []).entries()) {
+      if (b.verification === 'CP_ONLY' && (b.chapter || b.pages)) add('BOOKREF', file, `bookRefs[${i}] is CP_ONLY, so it has no chapter or pages`);
+      if (b.verification !== 'CP_ONLY' && !b.chapter) add('BOOKREF', file, `bookRefs[${i}] (${b.verification}) needs a chapter`);
     }
   }
   for (const r of m.topicRelations.relations) {

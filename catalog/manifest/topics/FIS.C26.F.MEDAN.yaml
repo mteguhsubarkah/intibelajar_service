@@ -103,3 +103,15 @@ review:
   evidence:
     - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
     - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"
+bookRefs:
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 1 Listrik Statis
+    verification: VERIFIED
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 3 Kemagnetan
+    verification: VERIFIED
+    note: Untuk inti medan magnet dan gaya Lorentz.

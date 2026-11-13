@@ -86,3 +86,9 @@ review:
   evidence:
     - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
     - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"
+bookRefs:
+  - book: Buku Siswa IPA Kelas VII (SMP/MTs)
+    edition: edisi revisi
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VII_Rev.pdf
+    chapter: Bab 7 Bumi dan Tata Surya
+    verification: SNIPPET
