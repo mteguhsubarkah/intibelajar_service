@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.L.SEMI
+title: Semikonduktor
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MODERN.SEMIKONDUKTOR
+blocks:
+  - type: heading
+    slide: 0
+    text: Semikonduktor dan doping
+  - type: text
+    slide: 0
+    text: Daya hantar listrik semikonduktor (silikon, germanium) berada di antara konduktor dan isolator, dan bisa diatur dengan **doping**.
+  - type: text
+    slide: 0
+    text: Doping atom bervalensi 5 (mis. fosfor) menghasilkan **tipe-n** dengan pembawa mayoritas elektron. Doping atom bervalensi 3 (mis. boron) menghasilkan **tipe-p** dengan pembawa mayoritas hole.
+  - type: math
+    slide: 0
+    name: tipe-n
+    expression: valensi 5 → elektron
+    highlight: true
+  - type: math
+    slide: 0
+    name: tipe-p
+    expression: valensi 3 → hole
+  - type: heading
+    slide: 1
+    text: Dioda dan transistor
+  - type: text
+    slide: 1
+    text: "Sambungan p-n membentuk **dioda**: arus mengalir saat bias maju dan tertahan saat bias mundur, sehingga dioda dipakai sebagai **penyearah** arus bolak-balik."
+  - type: text
+    slide: 1
+    text: "**Transistor** dapat berfungsi sebagai penguat dan sebagai saklar. Saklar elektronik inilah dasar gerbang logika pada rangkaian digital."
+  - type: tip
+    slide: 1
+    text: "Bias maju: kutub positif sumber ke sisi p, kutub negatif ke sisi n."
+checks:
+  - question: FIS.C26.F.MODERN.Q.SEMI_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MODERN.S.SEMI
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

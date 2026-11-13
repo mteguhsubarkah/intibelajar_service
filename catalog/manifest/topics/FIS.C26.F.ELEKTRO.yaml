@@ -2,7 +2,7 @@ schemaVersion: 1
 code: FIS.C26.F.ELEKTRO
 subject: FIS
 title: Rangkaian & elektromagnetisme
-subtitle: Hukum Ohm, Kirchhoff, induksi
+subtitle: Hukum Ohm, Kirchhoff, induksi, arus bolak-balik, gelombang elektromagnetik
 phase: F
 availability: MAPPED
 bekal:
@@ -26,11 +26,24 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-f-elektro-c1
+  - code: FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
+    title: Hukum Kirchhoff
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 6
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-elektro-kirchhoff
   - code: FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
     title: Induksi elektromagnetik
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 3
     estimatedMinutes: 5
     grade: 12
     hidden: false
@@ -39,11 +52,24 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-f-elektro-c2
-  - code: FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
-    title: Hukum Kirchhoff
+  - code: FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK
+    title: Arus bolak-balik
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 4
+    estimatedMinutes: 6
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-elektro-ac
+  - code: FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK
+    title: Gelombang elektromagnetik
+    objectives: []
+    misconceptions: []
+    ordinal: 5
     estimatedMinutes: 6
     grade: 12
     hidden: false
@@ -51,10 +77,16 @@ concepts:
     availability: READY
     aliases:
       - ns: MAP
-        value: fis-f-elektro-kirchhoff
+        value: fis-f-elektro-em
 prerequisites:
   - concept: FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF
     requires: FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN
+    kind: SOFT
+  - concept: FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK
+    requires: FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
+    kind: SOFT
+  - concept: FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK
+    requires: FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK
     kind: SOFT
 review:
   status: PROPOSED
@@ -64,6 +96,7 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+    - "Tahap 2 audit Fisika (2026-11-13, docs/backlog.md FE): inti baru Arus bolak-balik dan Gelombang elektromagnetik (penutup bab baru) dari Fisika XII 2022 Bab 4 dan 5; urutan Hukum rangkaian, Hukum Kirchhoff, Induksi, Arus bolak-balik, Gelombang elektromagnetik. Hukum Kirchhoff bukan penutup lagi, jadi kini dihitung ke penguasaan bab."
 bookRefs:
   - book: Buku Siswa Fisika Kelas XII (SMA/MA)
     edition: "2022"
@@ -75,4 +108,16 @@ bookRefs:
     url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
     chapter: Bab 3 Kemagnetan
     verification: VERIFIED
-    note: Untuk inti induksi elektromagnetik; letak subbabnya belum dicek. Bab 4 Arus Bolak-Balik belum punya inti di katalog.
+    note: Untuk inti induksi elektromagnetik; letak subbabnya belum dicek.
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 4 Arus Bolak-Balik
+    verification: VERIFIED
+    note: Untuk inti Arus bolak-balik (Tahap 2).
+  - book: Buku Siswa Fisika Kelas XII (SMA/MA)
+    edition: "2022"
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
+    chapter: Bab 5 Gelombang Elektromagnetik
+    verification: VERIFIED
+    note: Untuk inti Gelombang elektromagnetik (Tahap 2).

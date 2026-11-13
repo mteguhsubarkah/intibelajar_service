@@ -1,3 +1,4 @@
+import type { BookRef } from '../../../src/catalog/manifest.js';
 // Konten pilot (MaFiKiBio): format tulis ringkas yang diubah scripts/catalog/pilot.ts menjadi file manifest.
 // Satu inti = satu konsep katalog, satu materi dua slide, dan beberapa soal pilihan ganda.
 
@@ -80,4 +81,22 @@ export interface PilotExisting {
   q: PilotQuestion[];
 }
 
-export interface PilotRelation { from: string; to: string; kind: 'REQUIRES' | 'RELATED'; label: string; decision?: string }
+export interface PilotRelation {
+  from: string; to: string; kind: 'REQUIRES' | 'RELATED'; label: string; decision?: string;
+  /** bukti review pengganti bawaan (untuk relasi baru yang bukan dari peta IntiVerse) */
+  evidence?: string[];
+  /** catatan review tambahan di belakang bukti (mis. alasan perubahan dari audit) */
+  notes?: string[];
+  /** field review tambahan selain kind dan label */
+  fields?: string[];
+}
+
+/** Tambahan per topik dari audit (mis. audit Fisika vs buku resmi 13 November 2026), ditempel generator menurut kode topik. */
+export interface PilotAudit {
+  /** padanan bab di buku teks atau dokumen CP (metadata sumber, lihat BookRef) */
+  bookRefs?: BookRef[];
+  /** catatan review tambahan di belakang bukti topik */
+  notes?: string[];
+  /** field review tambahan selain concepts dan prerequisites (mis. title) */
+  fields?: string[];
+}

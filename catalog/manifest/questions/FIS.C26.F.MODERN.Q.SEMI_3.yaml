@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.Q.SEMI_3
+familyCode: FIS.C26.F.MODERN.F.SEMI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MODERN.SEMIKONDUKTOR
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Komponen yang dapat bekerja sebagai saklar elektronik dan menjadi dasar gerbang logika adalah …
+  options:
+    - id: a
+      label: resistor
+    - id: b
+      label: transistor
+    - id: c
+      label: kapasitor
+    - id: d
+      label: induktor
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - transistor
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MODERN.SEMIKONDUKTOR
+  feedback:
+    correct: Transistor dapat menyambung dan memutus arus secara elektronik; kombinasi transistor membentuk gerbang logika.
+    incorrect: Jawabannya transistor. Transistor dapat menyambung dan memutus arus secara elektronik; kombinasi transistor membentuk gerbang logika.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

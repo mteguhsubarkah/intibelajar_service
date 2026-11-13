@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.STATIS_3
+familyCode: FIS.C26.D.LISTRIK.F.STATIS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.LISTRIK_STATIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Benda A menolak benda B, dan benda B menarik benda C. Jika C bermuatan positif, muatan benda A adalah …
+  options:
+    - id: a
+      label: positif
+    - id: b
+      label: negatif
+    - id: c
+      label: netral
+    - id: d
+      label: tidak dapat ditentukan
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - negatif
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.LISTRIK_STATIS
+  feedback:
+    correct: B menarik C yang positif, jadi B negatif. A menolak B, jadi A juga negatif.
+    incorrect: Jawabannya negatif. B menarik C yang positif, jadi B negatif. A menolak B, jadi A juga negatif.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -2,7 +2,7 @@ schemaVersion: 1
 code: FIS.C26.F.MODERN
 subject: FIS
 title: Fisika modern & teknologi digital
-subtitle: Kuantum, relativitas, inti, logika biner
+subtitle: Kuantum, semikonduktor, logika biner, relativitas, inti
 phase: F
 availability: MAPPED
 bekal:
@@ -26,11 +26,24 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-f-modern-c1
+  - code: FIS.C26.F.MODERN.SEMIKONDUKTOR
+    title: Semikonduktor
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-modern-semi
   - code: FIS.C26.F.MODERN.REPRESENTASI_BINER_DAN_LOGIKA
     title: Representasi biner & logika
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 3
     estimatedMinutes: 4
     grade: 12
     hidden: false
@@ -43,7 +56,7 @@ concepts:
     title: Relativitas khusus
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 4
     estimatedMinutes: 5
     grade: 12
     hidden: false
@@ -56,7 +69,7 @@ concepts:
     title: Peluruhan dan waktu paruh
     objectives: []
     misconceptions: []
-    ordinal: 4
+    ordinal: 5
     estimatedMinutes: 5
     grade: 12
     hidden: false
@@ -69,6 +82,9 @@ prerequisites:
   - concept: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
     requires: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
     kind: SOFT
+  - concept: FIS.C26.F.MODERN.REPRESENTASI_BINER_DAN_LOGIKA
+    requires: FIS.C26.F.MODERN.SEMIKONDUKTOR
+    kind: SOFT
 review:
   status: PROPOSED
   decision: D7
@@ -78,6 +94,7 @@ review:
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
     - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): prasyarat Relativitas khusus <- Kuantum dan inti atom dihapus; relativitas tidak butuh kuantum (Fisika XII 2022: Bab 7 Relativitas sebelum Bab 8 Gejala Kuantum)."
+    - "Tahap 2 audit Fisika (2026-11-13, docs/backlog.md FE): inti baru Semikonduktor (sebelum Representasi biner & logika) dari Fisika XII 2022 Bab 6 Pengantar (sistem elektronika, semikonduktor, gerbang logika)."
 bookRefs:
   - book: Buku Siswa Fisika Kelas XII (SMA/MA)
     edition: "2022"
@@ -85,7 +102,7 @@ bookRefs:
     chapter: Bab 6 Pengantar
     section: sistem elektronika, semikonduktor, gerbang logika
     verification: VERIFIED
-    note: Untuk inti representasi biner dan logika; inti semikonduktor belum ada.
+    note: Untuk inti Semikonduktor (Tahap 2) dan Representasi biner dan logika.
   - book: Buku Siswa Fisika Kelas XII (SMA/MA)
     edition: "2022"
     url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf

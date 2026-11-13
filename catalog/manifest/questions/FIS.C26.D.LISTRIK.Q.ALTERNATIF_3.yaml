@@ -1,0 +1,58 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.ALTERNATIF_3
+familyCode: FIS.C26.D.LISTRIK.F.ALTERNATIF_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.SUMBER_ENERGI_ALTERNATIF
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah panel surya menghasilkan daya 100 W selama 5 jam. Energi itu cukup untuk menyalakan sebuah lampu 10 W selama …
+  options:
+    - id: a
+      label: 500 jam
+    - id: b
+      label: 5 jam
+    - id: c
+      label: 10 jam
+    - id: d
+      label: 50 jam
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 50 jam
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.SUMBER_ENERGI_ALTERNATIF
+    - FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+  feedback:
+    correct: "Energi = 100 W × 5 jam = 500 Wh. Lampu 10 W menyala 500 : 10 = 50 jam."
+    incorrect: "Jawabannya 50 jam. Energi = 100 W × 5 jam = 500 Wh. Lampu 10 W menyala 500 : 10 = 50 jam."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

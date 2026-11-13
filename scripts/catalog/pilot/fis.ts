@@ -69,11 +69,11 @@ const GERAK2D: PilotTopic = {
       Q('Tanpa hambatan udara, sudut elevasi yang menghasilkan jangkauan mendatar paling jauh adalah …', ['30°', '45°', '60°', '90°'], 1, 'R sebanding dengan sin 2θ, yang bernilai maksimum 1 saat 2θ = 90°, yaitu θ = 45°.', 1),
     ], { capstone: true, min: 6 }),
   ],
-  edges: [['GLBB', 'C1', 'S'], ['C1', 'VEKTOR', 'S'], ['C1', 'C2', 'S']],
+  edges: [['GLBB', 'C1', 'S'], ['C1', 'VEKTOR', 'S'], ['C1', 'C2', 'S'], ['VEKTOR', 'C2', 'S']],
 };
 
 const ENERGI: PilotTopic = {
-  code: 'FIS.C26.E.ENERGI', subject: 'FIS', title: 'Energi alternatif & perubahan iklim', subtitle: 'Daya, efisiensi, dan pilihan energi', phase: 'E', alias: 'energi-alternatif',
+  code: 'FIS.C26.E.ENERGI', subject: 'FIS', title: 'Energi, daya, dan efisiensi', subtitle: 'Daya, efisiensi, dan pilihan energi', phase: 'E', alias: 'energi-alternatif',
   bekal: ['usaha dan energi', 'energi listrik'],
   cores: [
     C('C1', 'Daya dan efisiensi', [
@@ -83,22 +83,22 @@ const ENERGI: PilotTopic = {
       Q('Sebuah motor listrik mengangkat beban 50 kg setinggi 10 m dalam waktu 20 s (g = 10 m/s²). Daya motor adalah …', ['25 W', '100 W', '250 W', '5.000 W'], 2, 'W = mgh = 50 × 10 × 10 = 5.000 J. P = 5.000 / 20 = 250 W.'),
       Q('Sebuah lampu menerima daya listrik 60 W dan memancarkan cahaya 9 W. Efisiensi lampu adalah …', ['9%', '15%', '51%', '85%'], 1, 'η = 9 / 60 × 100% = 15%.', 1),
     ], { min: 4 }),
-    C('C2', 'Evaluasi pilihan energi', [
-      S('Terbarukan dan tidak terbarukan', ['Energi **terbarukan**: matahari, angin, air, panas bumi, biomassa. **Tidak terbarukan**: batu bara, minyak bumi, gas alam (bahan bakar fosil).', 'Pembakaran bahan bakar fosil melepaskan CO₂ yang memperkuat efek rumah kaca.'], [['fosil', 'menghasilkan CO₂']]),
-      S('Pilih sesuai kondisi', ['Setiap sumber punya syarat: PLTS butuh sinar matahari, PLTB butuh angin stabil, **PLTMH (mikrohidro)** butuh aliran sungai yang deras sepanjang tahun.', 'Pertimbangkan ketersediaan, biaya, dan dampak lingkungan.'], [['sungai deras', 'PLTMH']], 'Jawaban terbaik bergantung pada sumber daya yang benar-benar ada di lokasi.'),
-    ], [
-      Q('Sumber energi berikut yang termasuk energi terbarukan adalah …', ['batu bara', 'minyak bumi', 'gas alam', 'panas bumi'], 3, 'Panas bumi terus dihasilkan dari dalam bumi. Batu bara, minyak, dan gas adalah bahan bakar fosil.', 1, 'KM'),
-      Q('Sebuah desa terpencil di pegunungan memiliki sungai berarus deras sepanjang tahun dan belum terjangkau jaringan listrik. Pembangkit yang paling tepat adalah …', ['PLTU batu bara', 'PLTMH (mikrohidro)', 'PLTD solar', 'PLTN'], 1, 'Aliran sungai yang deras dan tetap cocok untuk mikrohidro: terbarukan, murah dioperasikan, dan sesuai skala desa.', 2, 'SNBT'),
-    ], { min: 4 }),
     C('NERACA', 'Neraca kebutuhan energi', [
       S('Energi listrik di rumah', ['Energi = daya × waktu: **W = P · t**. Dalam tagihan listrik dipakai satuan **kWh** (1 kWh = 1.000 W × 1 jam).', 'Contoh: 4 lampu 10 W menyala 10 jam = 400 Wh = 0,4 kWh.'], [['W', 'P · t'], ['1 kWh', '1.000 W × 1 jam']]),
       S('Menghitung biaya', ['Biaya = energi (kWh) × tarif per kWh.', 'Contoh: setrika 400 W, 30 menit sehari, 30 hari ⇒ 0,4 × 0,5 × 30 = 6 kWh. Dengan tarif Rp1.500/kWh ⇒ Rp9.000.'], [['biaya', 'kWh × tarif']], 'Ubah watt ke kilowatt dan menit ke jam sebelum mengalikan.'),
     ], [
       Q('Sebuah rumah memakai 4 lampu 10 W selama 10 jam sehari dan sebuah TV 100 W selama 5 jam sehari. Energi listrik yang dipakai per hari adalah …', ['0,5 kWh', '0,9 kWh', '1,4 kWh', '9 kWh'], 1, 'Lampu: 4 × 10 × 10 = 400 Wh. TV: 100 × 5 = 500 Wh. Total 900 Wh = 0,9 kWh.'),
       Q('Setrika 400 W dipakai 30 menit setiap hari selama 30 hari. Jika tarif listrik Rp1.500 per kWh, biaya pemakaian setrika adalah …', ['Rp6.000', 'Rp9.000', 'Rp18.000', 'Rp90.000'], 1, '0,4 kW × 0,5 jam × 30 hari = 6 kWh. Biaya = 6 × 1.500 = Rp9.000.'),
-    ], { capstone: true, min: 5 }),
+    ], { min: 5 }),
+    C('C2', 'Evaluasi pilihan energi', [
+      S('Terbarukan dan tidak terbarukan', ['Energi **terbarukan**: matahari, angin, air, panas bumi, biomassa. **Tidak terbarukan**: batu bara, minyak bumi, gas alam (bahan bakar fosil).', 'Pembakaran bahan bakar fosil melepaskan CO₂ yang memperkuat efek rumah kaca.'], [['fosil', 'menghasilkan CO₂']]),
+      S('Pilih sesuai kondisi', ['Setiap sumber punya syarat: PLTS butuh sinar matahari, PLTB butuh angin stabil, **PLTMH (mikrohidro)** butuh aliran sungai yang deras sepanjang tahun.', 'Pertimbangkan ketersediaan, biaya, dan dampak lingkungan.'], [['sungai deras', 'PLTMH']], 'Jawaban terbaik bergantung pada sumber daya yang benar-benar ada di lokasi.'),
+    ], [
+      Q('Sumber energi berikut yang termasuk energi terbarukan adalah …', ['batu bara', 'minyak bumi', 'gas alam', 'panas bumi'], 3, 'Panas bumi terus dihasilkan dari dalam bumi. Batu bara, minyak, dan gas adalah bahan bakar fosil.', 1, 'KM'),
+      Q('Sebuah desa terpencil di pegunungan memiliki sungai berarus deras sepanjang tahun dan belum terjangkau jaringan listrik. Pembangkit yang paling tepat adalah …', ['PLTU batu bara', 'PLTMH (mikrohidro)', 'PLTD solar', 'PLTN'], 1, 'Aliran sungai yang deras dan tetap cocok untuk mikrohidro: terbarukan, murah dioperasikan, dan sesuai skala desa.', 2, 'SNBT'),
+    ], { capstone: true, min: 4 }),
   ],
-  edges: [['C1', 'NERACA', 'S']],
+  edges: [['C1', 'NERACA', 'S'], ['NERACA', 'C2', 'S']],
 };
 
 const MEKANIKA: PilotTopic = {
@@ -134,7 +134,7 @@ const MEKANIKA: PilotTopic = {
       Q('Silinder pejal bermassa 4 kg dan berjari-jari 0,5 m (I = ½mR²) diberi torsi 2 N·m. Percepatan sudutnya adalah …', ['1 rad/s²', '2 rad/s²', '4 rad/s²', '8 rad/s²'], 2, 'I = ½ × 4 × 0,25 = 0,5 kg·m². α = τ / I = 2 / 0,5 = 4 rad/s².', 3),
     ], { capstone: true, min: 6 }),
   ],
-  edges: [['C1', 'IMPULS', 'S'], ['C1', 'ROTASI', 'S']],
+  edges: [['C1', 'IMPULS', 'S'], ['C1', 'ROTASI', 'S'], ['C2', 'ROTASI', 'S']],
 };
 
 const FLUIDA: PilotTopic = {
@@ -227,7 +227,7 @@ const GELOMBANG: PilotTopic = {
 };
 
 const ELEKTRO: PilotTopic = {
-  code: 'FIS.C26.F.ELEKTRO', subject: 'FIS', title: 'Rangkaian & elektromagnetisme', subtitle: 'Hukum Ohm, Kirchhoff, induksi', phase: 'F', alias: 'listrik',
+  code: 'FIS.C26.F.ELEKTRO', subject: 'FIS', title: 'Rangkaian & elektromagnetisme', subtitle: 'Hukum Ohm, Kirchhoff, induksi, arus bolak-balik, gelombang elektromagnetik', phase: 'F', alias: 'listrik',
   bekal: ['arus dan tegangan', 'magnet'],
   cores: [
     C('C1', 'Hukum rangkaian', [
@@ -237,6 +237,13 @@ const ELEKTRO: PilotTopic = {
       Q('Dua resistor 4 Ω dan 12 Ω disusun paralel. Hambatan penggantinya adalah …', ['3 Ω', '8 Ω', '16 Ω', '48 Ω'], 0, '1/Rₚ = 1/4 + 1/12 = 4/12, jadi Rₚ = 3 Ω.', 1),
       Q('Resistor 2 Ω dan 4 Ω disusun seri lalu dihubungkan ke baterai 12 V. Tegangan pada resistor 4 Ω adalah …', ['4 V', '6 V', '8 V', '12 V'], 2, 'Rₛ = 6 Ω, I = 12/6 = 2 A, V₄ = 2 × 4 = 8 V.'),
     ], { min: 5 }),
+    C('KIRCHHOFF', 'Hukum Kirchhoff', [
+      S('Hukum I: titik cabang', ['Jumlah arus yang **masuk** titik cabang sama dengan jumlah arus yang **keluar**: **ΣI masuk = ΣI keluar**.', 'Contoh: masuk 5 A dan 3 A, satu keluar 6 A ⇒ cabang lain keluar 2 A.'], [['Hukum I', 'ΣI masuk = ΣI keluar']]),
+      S('Hukum II: loop', ['Dalam satu loop tertutup: **Σε = ΣI · R**. Baterai yang dipasang berlawanan saling mengurangi.', 'Contoh: 12 V dan 6 V berlawanan, hambatan total 3 Ω ⇒ I = (12 − 6)/3 = 2 A.'], [['Hukum II', 'Σε = ΣIR']], 'Tentukan arah loop dulu, lalu konsisten dengan tandanya.'),
+    ], [
+      Q('Pada sebuah titik cabang, arus 5 A dan 3 A masuk, sedangkan satu arus 6 A keluar. Besar arus pada cabang keluar lainnya adalah …', ['2 A', '4 A', '8 A', '14 A'], 0, 'ΣI masuk = ΣI keluar: 5 + 3 = 6 + I, jadi I = 2 A.', 1),
+      Q('Dalam satu loop terdapat baterai 12 V dan 6 V yang dipasang berlawanan arah serta hambatan total 3 Ω. Kuat arus dalam loop adalah …', ['2 A', '3 A', '4 A', '6 A'], 0, 'GGL total 12 − 6 = 6 V. I = 6 / 3 = 2 A.'),
+    ], { min: 6 }),
     C('C2', 'Induksi elektromagnetik', [
       S('GGL induksi', ['Perubahan fluks magnet menimbulkan GGL: **ε = −N · ΔΦ / Δt** (Hukum Faraday). Tanda minus menunjukkan arah yang melawan perubahan (Hukum Lenz).', 'Contoh: 100 lilitan, ΔΦ = 0,02 Wb dalam 0,1 s ⇒ ε = 20 V.'], [['ε', 'N · ΔΦ / Δt']]),
       S('Transformator', ['Trafo mengubah tegangan bolak-balik: **Vₚ / Vₛ = Nₚ / Nₛ**. Ideal: **Vₚ · Iₚ = Vₛ · Iₛ**.', 'Contoh: Nₚ = 1.000, Nₛ = 200, Vₚ = 220 V ⇒ Vₛ = 44 V (trafo step-down).'], [['Vₚ / Vₛ', 'Nₚ / Nₛ']], 'Lilitan sekunder lebih sedikit berarti tegangan turun, arus naik.'),
@@ -244,19 +251,28 @@ const ELEKTRO: PilotTopic = {
       Q('Sebuah kumparan 100 lilitan mengalami perubahan fluks magnet 0,02 Wb dalam 0,1 s. Besar GGL induksi yang timbul adalah …', ['0,2 V', '2 V', '20 V', '200 V'], 2, 'ε = N · ΔΦ/Δt = 100 × 0,02 / 0,1 = 20 V.'),
       Q('Transformator ideal memiliki 1.000 lilitan primer dan 200 lilitan sekunder. Jika tegangan primer 220 V, tegangan sekundernya adalah …', ['22 V', '44 V', '440 V', '1.100 V'], 1, 'Vₛ = Vₚ × Nₛ/Nₚ = 220 × 200/1.000 = 44 V.', 1),
     ], { min: 5 }),
-    C('KIRCHHOFF', 'Hukum Kirchhoff', [
-      S('Hukum I: titik cabang', ['Jumlah arus yang **masuk** titik cabang sama dengan jumlah arus yang **keluar**: **ΣI masuk = ΣI keluar**.', 'Contoh: masuk 5 A dan 3 A, satu keluar 6 A ⇒ cabang lain keluar 2 A.'], [['Hukum I', 'ΣI masuk = ΣI keluar']]),
-      S('Hukum II: loop', ['Dalam satu loop tertutup: **Σε = ΣI · R**. Baterai yang dipasang berlawanan saling mengurangi.', 'Contoh: 12 V dan 6 V berlawanan, hambatan total 3 Ω ⇒ I = (12 − 6)/3 = 2 A.'], [['Hukum II', 'Σε = ΣIR']], 'Tentukan arah loop dulu, lalu konsisten dengan tandanya.'),
+    C('AC', 'Arus bolak-balik', [
+      S('Tegangan dan arus sinusoidal', ['Generator menghasilkan tegangan bolak-balik: **V = Vₘ sin ωt**, dengan **ω = 2πf**.', 'Alat ukur menunjukkan **nilai efektif**: **V_ef = Vₘ / √2**. Listrik PLN 220 V adalah nilai efektif dengan frekuensi 50 Hz.'], [['tegangan', 'V = Vₘ sin ωt'], ['efektif', 'V_ef = Vₘ / √2']]),
+      S('Rangkaian RLC seri', ['Induktor dan kapasitor menghambat arus bolak-balik: **X_L = ωL** dan **X_C = 1/(ωC)**.', 'Impedansi **Z = √(R² + (X_L − X_C)²)** dan **I = V / Z**. Resonansi terjadi saat **X_L = X_C**, sehingga Z = R dan arusnya paling besar.'], [['impedansi', 'Z = √(R² + (X_L − X_C)²)'], ['resonansi', 'X_L = X_C']], 'Contoh: R = 30 Ω, X_L = 60 Ω, X_C = 20 Ω ⇒ Z = √(30² + 40²) = 50 Ω.'),
     ], [
-      Q('Pada sebuah titik cabang, arus 5 A dan 3 A masuk, sedangkan satu arus 6 A keluar. Besar arus pada cabang keluar lainnya adalah …', ['2 A', '4 A', '8 A', '14 A'], 0, 'ΣI masuk = ΣI keluar: 5 + 3 = 6 + I, jadi I = 2 A.', 1),
-      Q('Dalam satu loop terdapat baterai 12 V dan 6 V yang dipasang berlawanan arah serta hambatan total 3 Ω. Kuat arus dalam loop adalah …', ['2 A', '3 A', '4 A', '6 A'], 0, 'GGL total 12 − 6 = 6 V. I = 6 / 3 = 2 A.'),
+      Q('Tegangan listrik PLN di rumah 220 V (nilai efektif). Tegangan maksimumnya kira-kira …', ['156 V', '220 V', '311 V', '440 V'], 2, 'Vₘ = V_ef × √2 = 220 × 1,41 ≈ 311 V.', 1),
+      Q('Rangkaian seri RLC memiliki R = 60 Ω, X_L = 120 Ω, dan X_C = 40 Ω, lalu dihubungkan ke tegangan efektif 100 V. Kuat arus efektifnya adalah …', ['0,5 A', '1 A', '1,25 A', '2 A'], 1, 'Z = √(60² + (120 − 40)²) = √(3.600 + 6.400) = 100 Ω, jadi I = 100/100 = 1 A.'),
+      Q('Resonansi pada rangkaian seri RLC terjadi jika …', ['reaktansi induktif sama dengan reaktansi kapasitif', 'hambatan sama dengan reaktansi induktif', 'hambatan resistor bernilai nol', 'frekuensi sumber dijadikan dua kali semula'], 0, 'Resonansi terjadi saat X_L = X_C, sehingga impedansi menjadi Z = R (paling kecil) dan arus paling besar.', 1),
+    ], { min: 6 }),
+    C('EM', 'Gelombang elektromagnetik', [
+      S('Medan yang merambat', ['Medan listrik yang berubah menimbulkan medan magnet, dan medan magnet yang berubah menimbulkan medan listrik. Keduanya merambat bersama sebagai **gelombang elektromagnetik**, saling tegak lurus dan tegak lurus arah rambat.', 'Gelombang elektromagnetik tidak memerlukan medium. Di ruang hampa cepat rambatnya **c = 3 × 10⁸ m/s**.'], [['cepat rambat', 'c = λ · f'], ['ruang hampa', 'c = 3 × 10⁸ m/s']]),
+      S('Spektrum dan kegunaannya', ['Urutan dari frekuensi terkecil: **gelombang radio, gelombang mikro, inframerah, cahaya tampak, ultraviolet, sinar-X, sinar gamma**.', 'Contoh kegunaan: gelombang radio untuk komunikasi, gelombang mikro untuk radar dan oven, inframerah untuk remote TV, sinar-X untuk foto tulang.'], undefined, 'Makin besar frekuensinya, makin pendek panjang gelombangnya dan makin besar energinya.'),
+    ], [
+      Q('Gelombang radio berfrekuensi 100 MHz merambat di udara dengan cepat rambat 3 × 10⁸ m/s. Panjang gelombangnya adalah …', ['0,3 m', '3 m', '30 m', '300 m'], 1, 'λ = c / f = 3 × 10⁸ / 10⁸ = 3 m.'),
+      Q('Urutan gelombang elektromagnetik dari frekuensi terkecil ke terbesar yang benar adalah …', ['radio, inframerah, ultraviolet, sinar-X', 'sinar-X, ultraviolet, inframerah, radio', 'inframerah, radio, sinar-X, ultraviolet', 'radio, ultraviolet, inframerah, sinar gamma'], 0, 'Urutan spektrum: radio, gelombang mikro, inframerah, cahaya tampak, ultraviolet, sinar-X, sinar gamma.'),
+      Q('Gelombang elektromagnetik yang dimanfaatkan untuk memotret struktur tulang adalah …', ['inframerah', 'sinar-X', 'gelombang mikro', 'ultraviolet'], 1, 'Sinar-X menembus jaringan lunak tetapi diserap tulang, sehingga bayangan tulang tampak pada foto rontgen.', 1),
     ], { capstone: true, min: 6 }),
   ],
-  edges: [['C1', 'KIRCHHOFF', 'S']],
+  edges: [['C1', 'KIRCHHOFF', 'S'], ['C2', 'AC', 'S'], ['C2', 'EM', 'S']],
 };
 
 const MODERN: PilotTopic = {
-  code: 'FIS.C26.F.MODERN', subject: 'FIS', title: 'Fisika modern & teknologi digital', subtitle: 'Kuantum, relativitas, inti, logika biner', phase: 'F', alias: 'fisika-modern',
+  code: 'FIS.C26.F.MODERN', subject: 'FIS', title: 'Fisika modern & teknologi digital', subtitle: 'Kuantum, semikonduktor, logika biner, relativitas, inti', phase: 'F', alias: 'fisika-modern',
   bekal: ['energi', 'gelombang cahaya'],
   cores: [
     C('C1', 'Kuantum dan inti atom', [
@@ -265,6 +281,14 @@ const MODERN: PilotTopic = {
     ], [
       Q('Energi sebuah foton sebanding dengan …', ['panjang gelombangnya', 'frekuensinya', 'intensitas cahaya', 'kecepatan cahaya saja'], 1, 'E = h · f: energi foton sebanding dengan frekuensi (dan berbanding terbalik dengan panjang gelombang).', 1, 'KM'),
       Q('Foton berenergi 5 eV mengenai logam yang fungsi kerjanya 2 eV. Energi kinetik maksimum elektron yang terlepas adalah …', ['2 eV', '3 eV', '5 eV', '7 eV'], 1, 'Ekₘₐₖₛ = 5 − 2 = 3 eV.'),
+    ], { min: 5 }),
+    C('SEMI', 'Semikonduktor', [
+      S('Semikonduktor dan doping', ['Daya hantar listrik semikonduktor (silikon, germanium) berada di antara konduktor dan isolator, dan bisa diatur dengan **doping**.', 'Doping atom bervalensi 5 (mis. fosfor) menghasilkan **tipe-n** dengan pembawa mayoritas elektron. Doping atom bervalensi 3 (mis. boron) menghasilkan **tipe-p** dengan pembawa mayoritas hole.'], [['tipe-n', 'valensi 5 → elektron'], ['tipe-p', 'valensi 3 → hole']]),
+      S('Dioda dan transistor', ['Sambungan p-n membentuk **dioda**: arus mengalir saat bias maju dan tertahan saat bias mundur, sehingga dioda dipakai sebagai **penyearah** arus bolak-balik.', '**Transistor** dapat berfungsi sebagai penguat dan sebagai saklar. Saklar elektronik inilah dasar gerbang logika pada rangkaian digital.'], undefined, 'Bias maju: kutub positif sumber ke sisi p, kutub negatif ke sisi n.'),
+    ], [
+      Q('Silikon didoping dengan fosfor yang bervalensi 5. Jenis semikonduktor dan pembawa muatan mayoritasnya adalah …', ['tipe-p, hole', 'tipe-n, elektron', 'tipe-n, hole', 'tipe-p, elektron'], 1, 'Atom bervalensi 5 menyumbang satu elektron bebas, sehingga terbentuk semikonduktor tipe-n dengan pembawa mayoritas elektron.'),
+      Q('Pada adaptor pengisi daya, komponen yang mengubah arus bolak-balik menjadi arus searah adalah dioda yang berfungsi sebagai …', ['penguat', 'penyearah', 'saklar', 'penyimpan muatan'], 1, 'Dioda hanya mengalirkan arus pada bias maju, sehingga arus bolak-balik disearahkan.', 1),
+      Q('Komponen yang dapat bekerja sebagai saklar elektronik dan menjadi dasar gerbang logika adalah …', ['resistor', 'transistor', 'kapasitor', 'induktor'], 1, 'Transistor dapat menyambung dan memutus arus secara elektronik; kombinasi transistor membentuk gerbang logika.', 1),
     ], { min: 5 }),
     C('C2', 'Representasi biner & logika', [
       S('Bilangan biner', ['Komputer menyimpan data dengan dua keadaan: 0 dan 1. Nilai posisi biner dari kanan: 1, 2, 4, 8, 16, …', 'Contoh: 1011₂ = 8 + 0 + 2 + 1 = 11.'], [['1011₂', '11']]),
@@ -288,7 +312,7 @@ const MODERN: PilotTopic = {
       Q('Sampel radioaktif 64 g meluruh menjadi 4 g dalam 20 hari. Waktu paruh unsur tersebut adalah …', ['4 hari', '5 hari', '10 hari', '16 hari'], 1, '64 → 4 g berarti 4 kali paruh. T = 20 / 4 = 5 hari.'),
     ], { capstone: true, min: 5 }),
   ],
-  edges: [['C1', 'RELATIVITAS', 'S'], ['C1', 'INTI', 'S']],
+  edges: [['C1', 'INTI', 'S'], ['SEMI', 'C2', 'S']],
 };
 
 export const FIS_TOPICS: PilotTopic[] = [UKUR, GERAK2D, ENERGI, MEKANIKA, FLUIDA, TERMAL, GELOMBANG, ELEKTRO, MODERN];

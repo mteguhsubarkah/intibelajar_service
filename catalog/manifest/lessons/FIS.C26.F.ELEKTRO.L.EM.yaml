@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.L.EM
+title: Gelombang elektromagnetik
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Medan yang merambat
+  - type: text
+    slide: 0
+    text: Medan listrik yang berubah menimbulkan medan magnet, dan medan magnet yang berubah menimbulkan medan listrik. Keduanya merambat bersama sebagai **gelombang elektromagnetik**, saling tegak lurus dan tegak lurus arah rambat.
+  - type: text
+    slide: 0
+    text: Gelombang elektromagnetik tidak memerlukan medium. Di ruang hampa cepat rambatnya **c = 3 × 10⁸ m/s**.
+  - type: math
+    slide: 0
+    name: cepat rambat
+    expression: c = λ · f
+    highlight: true
+  - type: math
+    slide: 0
+    name: ruang hampa
+    expression: c = 3 × 10⁸ m/s
+  - type: heading
+    slide: 1
+    text: Spektrum dan kegunaannya
+  - type: text
+    slide: 1
+    text: "Urutan dari frekuensi terkecil: **gelombang radio, gelombang mikro, inframerah, cahaya tampak, ultraviolet, sinar-X, sinar gamma**."
+  - type: text
+    slide: 1
+    text: "Contoh kegunaan: gelombang radio untuk komunikasi, gelombang mikro untuk radar dan oven, inframerah untuk remote TV, sinar-X untuk foto tulang."
+  - type: tip
+    slide: 1
+    text: Makin besar frekuensinya, makin pendek panjang gelombangnya dan makin besar energinya.
+checks:
+  - question: FIS.C26.F.ELEKTRO.Q.EM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.ELEKTRO.S.EM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

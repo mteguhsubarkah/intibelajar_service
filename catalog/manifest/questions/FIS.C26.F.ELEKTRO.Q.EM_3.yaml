@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.EM_3
+familyCode: FIS.C26.F.ELEKTRO.F.EM_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gelombang elektromagnetik yang dimanfaatkan untuk memotret struktur tulang adalah …
+  options:
+    - id: a
+      label: inframerah
+    - id: b
+      label: sinar-X
+    - id: c
+      label: gelombang mikro
+    - id: d
+      label: ultraviolet
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - sinar-X
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK
+  feedback:
+    correct: Sinar-X menembus jaringan lunak tetapi diserap tulang, sehingga bayangan tulang tampak pada foto rontgen.
+    incorrect: Jawabannya sinar-X. Sinar-X menembus jaringan lunak tetapi diserap tulang, sehingga bayangan tulang tampak pada foto rontgen.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

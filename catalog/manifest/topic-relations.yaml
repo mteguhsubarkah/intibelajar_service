@@ -573,19 +573,6 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
-  - from: FIS.C26.D.ENERGI
-    to: FIS.C26.E.IKLIM
-    kind: REQUIRES
-    label: "Lintas Fase D ➔ E: suhu dan perpindahan kalor SMP → efek rumah kaca dan pemanasan global"
-    source: CURRICULUM
-    review:
-      status: PROPOSED
-      decision: D9
-      fields:
-        - kind
-        - label
-      evidence:
-        - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): relasi baru; E.IKLIM mencantumkan kalor dan radiasi sebagai bekal; kalor ada di IPA VII Bab 3 Suhu, Kalor, dan Pemuaian."
   - from: FIS.C26.D.GERAK
     to: FIS.C26.F.FLUIDA
     kind: REQUIRES
@@ -977,6 +964,19 @@ relations:
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
         - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): RELATED jadi REQUIRES: induksi elektromagnetik butuh medan magnet."
+  - from: FIS.C26.D.ENERGI
+    to: FIS.C26.E.IKLIM
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: suhu dan perpindahan kalor SMP → efek rumah kaca dan pemanasan global"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): relasi baru; E.IKLIM mencantumkan kalor dan radiasi sebagai bekal; kalor ada di IPA VII Bab 3 Suhu, Kalor, dan Pemuaian."
   - from: FIS.C26.D.ANTARIKSA
     to: FIS.C26.D.KEBUMIAN
     kind: RELATED

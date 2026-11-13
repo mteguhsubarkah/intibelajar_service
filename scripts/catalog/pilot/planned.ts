@@ -285,12 +285,12 @@ const STRUCTURE: PilotTopic[] = [
     code: "FIS.C26.D.GERAK", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
     title: "Gerak, gaya, dan tekanan", subtitle: "Jarak, perpindahan, kelajuan, resultan gaya, inersia, dan tekanan", bekal: [],
     cores: [
-    { id: "C1", title: "Gerak dan gaya resultan" },
-    { id: "C2", title: "Tekanan" },
     { id: "KELAJUAN", title: "Jarak, perpindahan & kelajuan" },
+    { id: "C2", title: "Tekanan" },
+    { id: "C1", title: "Gerak dan gaya resultan" },
     { id: "RESULTAN", title: "Resultan gaya dan inersia", capstone: true },
     ],
-    edges: [["C1", "KELAJUAN", "S"], ["C1", "RESULTAN", "S"]],
+    edges: [["C1", "RESULTAN", "S"], ["KELAJUAN", "C1", "S"]],
   },
   {
     code: "FIS.C26.D.ENERGI", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
@@ -301,7 +301,7 @@ const STRUCTURE: PilotTopic[] = [
     { id: "PESAWAT", title: "Pesawat sederhana", sub: "Tuas, katrol, bidang miring, dan keuntungan mekanis" },
     { id: "KALOR", title: "Kalor jenis", capstone: true },
     ],
-    edges: [["C1", "KALOR", "S"], ["C1", "PESAWAT", "S"]],
+    edges: [["C1", "PESAWAT", "S"], ["C2", "KALOR", "S"]],
   },
   {
     code: "FIS.C26.D.GELOMBANG", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
@@ -315,13 +315,16 @@ const STRUCTURE: PilotTopic[] = [
   },
   {
     code: "FIS.C26.D.LISTRIK", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
-    title: "Kelistrikan & energi ramah lingkungan", subtitle: "Arus, rangkaian seri paralel, magnet, dan pembangkitan listrik", bekal: [],
+    title: "Kelistrikan & energi ramah lingkungan", subtitle: "Listrik statis, arus, rangkaian, energi dan daya listrik, magnet, dan energi alternatif", bekal: [],
     cores: [
+    { id: "STATIS", title: "Listrik statis" },
     { id: "C1", title: "Arus dan rangkaian" },
+    { id: "SERI_PARALEL", title: "Rangkaian seri dan paralel" },
+    { id: "DAYA", title: "Energi dan daya listrik" },
     { id: "C2", title: "Magnet & pembangkit listrik" },
-    { id: "SERI_PARALEL", title: "Rangkaian seri dan paralel", capstone: true },
+    { id: "ALTERNATIF", title: "Sumber energi alternatif", capstone: true },
     ],
-    edges: [["C1", "SERI_PARALEL", "S"]],
+    edges: [["C1", "SERI_PARALEL", "S"], ["STATIS", "C1", "S"], ["C1", "DAYA", "S"], ["DAYA", "ALTERNATIF", "S"], ["C2", "ALTERNATIF", "S"]],
   },
   {
     code: "KIM.C26.D.MATERI", subject: "KIM", phase: "D", decision: 'D9', evidence: EV_FE,
@@ -613,7 +616,10 @@ export const PLANNED_RELATIONS: PilotRelation[] = [
   { from: "MAT.STP", to: "MAT.C26.F.REGRESI", kind: "REQUIRES", label: "diagram pencar → korelasi dan regresi", decision: 'D9' },
   { from: "MAT.KUA", to: "MAT.C26.FPLUS.KERUCUT", kind: "REQUIRES", label: "fungsi kuadrat → parabola", decision: 'D9' },
   { from: "FIS.C26.D.LISTRIK", to: "FIS.C26.F.MEDAN", kind: "REQUIRES", label: "Lintas Fase D ➔ F: listrik dan magnet SMP → medan listrik dan magnet", decision: 'D9' },
-  { from: "FIS.C26.F.MEDAN", to: "FIS.C26.F.ELEKTRO", kind: "RELATED", label: "medan magnet ↔ induksi elektromagnetik", decision: 'D9' },
+  { from: "FIS.C26.F.MEDAN", to: "FIS.C26.F.ELEKTRO", kind: "REQUIRES", label: "medan magnet → induksi elektromagnetik", decision: 'D9',
+    notes: ["Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): RELATED jadi REQUIRES: induksi elektromagnetik butuh medan magnet."] },
+  { from: "FIS.C26.D.ENERGI", to: "FIS.C26.E.IKLIM", kind: "REQUIRES", label: "Lintas Fase D ➔ E: suhu dan perpindahan kalor SMP → efek rumah kaca dan pemanasan global", decision: 'D9',
+    evidence: ["Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): relasi baru; E.IKLIM mencantumkan kalor dan radiasi sebagai bekal; kalor ada di IPA VII Bab 3 Suhu, Kalor, dan Pemuaian."] },
   { from: "FIS.C26.D.ANTARIKSA", to: "FIS.C26.D.KEBUMIAN", kind: "RELATED", label: "Bumi sebagai planet ↔ struktur Bumi", decision: 'D9' },  // pemeriksaan per kelas 12 November 2026
   { from: "MAT.KUA", to: "MAT.C26.FPLUS.POLINOMIAL", kind: "REQUIRES", label: "persamaan kuadrat → polinomial berderajat tinggi", decision: 'D9' },
   { from: "MAT.KUA", to: "MAT.C26.FPLUS.KOMPLEKS", kind: "RELATED", label: "diskriminan negatif → akar kompleks", decision: 'D9' },

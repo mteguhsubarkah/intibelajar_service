@@ -748,19 +748,6 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.E.ENERGI.S.EVALUASI_PILIHAN_ENERGI
-    title: Latihan Evaluasi pilihan energi
-    origin: CONCEPT_LESSON
-    items:
-      - FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_1
-      - FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_2
-    review:
-      status: PROPOSED
-      decision: D7
-      fields:
-        - items
-      evidence:
-        - semua soal inti ini
   - code: FIS.C26.E.ENERGI.S.NERACA
     title: Latihan Neraca kebutuhan energi
     origin: CONCEPT_LESSON
@@ -768,6 +755,19 @@ sets:
       - FIS.C26.E.ENERGI.Q.NERACA_1
       - FIS.C26.E.ENERGI.Q.NERACA_2
       - FIS.C26.E.ENERGI.Q.NERACA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.E.ENERGI.S.EVALUASI_PILIHAN_ENERGI
+    title: Latihan Evaluasi pilihan energi
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_1
+      - FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_2
     review:
       status: PROPOSED
       decision: D7
@@ -962,19 +962,6 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.F.ELEKTRO.S.INDUKSI_ELEKTROMAGNETIK
-    title: Latihan Induksi elektromagnetik
-    origin: CONCEPT_LESSON
-    items:
-      - FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_1
-      - FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_2
-    review:
-      status: PROPOSED
-      decision: D7
-      fields:
-        - items
-      evidence:
-        - semua soal inti ini
   - code: FIS.C26.F.ELEKTRO.S.KIRCHHOFF
     title: Latihan Hukum Kirchhoff
     origin: CONCEPT_LESSON
@@ -989,12 +976,67 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: FIS.C26.F.ELEKTRO.S.INDUKSI_ELEKTROMAGNETIK
+    title: Latihan Induksi elektromagnetik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_1
+      - FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_2
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.ELEKTRO.S.AC
+    title: Latihan Arus bolak-balik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.ELEKTRO.Q.AC_1
+      - FIS.C26.F.ELEKTRO.Q.AC_2
+      - FIS.C26.F.ELEKTRO.Q.AC_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.ELEKTRO.S.EM
+    title: Latihan Gelombang elektromagnetik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.ELEKTRO.Q.EM_1
+      - FIS.C26.F.ELEKTRO.Q.EM_2
+      - FIS.C26.F.ELEKTRO.Q.EM_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: FIS.C26.F.MODERN.S.KUANTUM_DAN_INTI_ATOM
     title: Latihan Kuantum dan inti atom
     origin: CONCEPT_LESSON
     items:
       - FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_1
       - FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_2
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MODERN.S.SEMI
+    title: Latihan Semikonduktor
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MODERN.Q.SEMI_1
+      - FIS.C26.F.MODERN.Q.SEMI_2
+      - FIS.C26.F.MODERN.Q.SEMI_3
     review:
       status: PROPOSED
       decision: D7
@@ -2046,13 +2088,13 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.GERAK.S.GERAK_DAN_GAYA_RESULTAN
-    title: Latihan Gerak dan gaya resultan
+  - code: FIS.C26.D.GERAK.S.KELAJUAN
+    title: Latihan Jarak, perpindahan & kelajuan
     origin: CONCEPT_LESSON
     items:
-      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1
-      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2
-      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_3
+      - FIS.C26.D.GERAK.Q.KELAJUAN_1
+      - FIS.C26.D.GERAK.Q.KELAJUAN_2
+      - FIS.C26.D.GERAK.Q.KELAJUAN_3
     review:
       status: PROPOSED
       decision: D7
@@ -2074,13 +2116,13 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.GERAK.S.KELAJUAN
-    title: Latihan Jarak, perpindahan & kelajuan
+  - code: FIS.C26.D.GERAK.S.GERAK_DAN_GAYA_RESULTAN
+    title: Latihan Gerak dan gaya resultan
     origin: CONCEPT_LESSON
     items:
-      - FIS.C26.D.GERAK.Q.KELAJUAN_1
-      - FIS.C26.D.GERAK.Q.KELAJUAN_2
-      - FIS.C26.D.GERAK.Q.KELAJUAN_3
+      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1
+      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2
+      - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_3
     review:
       status: PROPOSED
       decision: D7
@@ -2200,6 +2242,20 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: FIS.C26.D.LISTRIK.S.STATIS
+    title: Latihan Listrik statis
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.LISTRIK.Q.STATIS_1
+      - FIS.C26.D.LISTRIK.Q.STATIS_2
+      - FIS.C26.D.LISTRIK.Q.STATIS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: FIS.C26.D.LISTRIK.S.ARUS_DAN_RANGKAIAN
     title: Latihan Arus dan rangkaian
     origin: CONCEPT_LESSON
@@ -2207,6 +2263,34 @@ sets:
       - FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_1
       - FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_2
       - FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.LISTRIK.S.SERI_PARALEL
+    title: Latihan Rangkaian seri dan paralel
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1
+      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_2
+      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.LISTRIK.S.DAYA
+    title: Latihan Energi dan daya listrik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.LISTRIK.Q.DAYA_1
+      - FIS.C26.D.LISTRIK.Q.DAYA_2
+      - FIS.C26.D.LISTRIK.Q.DAYA_3
     review:
       status: PROPOSED
       decision: D7
@@ -2228,13 +2312,13 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.LISTRIK.S.SERI_PARALEL
-    title: Latihan Rangkaian seri dan paralel
+  - code: FIS.C26.D.LISTRIK.S.ALTERNATIF
+    title: Latihan Sumber energi alternatif
     origin: CONCEPT_LESSON
     items:
-      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1
-      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_2
-      - FIS.C26.D.LISTRIK.Q.SERI_PARALEL_3
+      - FIS.C26.D.LISTRIK.Q.ALTERNATIF_1
+      - FIS.C26.D.LISTRIK.Q.ALTERNATIF_2
+      - FIS.C26.D.LISTRIK.Q.ALTERNATIF_3
     review:
       status: PROPOSED
       decision: D7

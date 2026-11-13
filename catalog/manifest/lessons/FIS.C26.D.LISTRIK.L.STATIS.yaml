@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.L.STATIS
+title: Listrik statis
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.LISTRIK.LISTRIK_STATIS
+blocks:
+  - type: heading
+    slide: 0
+    text: Muatan listrik
+  - type: text
+    slide: 0
+    text: Benda bermuatan listrik karena perpindahan elektron. Benda yang kelebihan elektron bermuatan negatif; benda yang kekurangan elektron bermuatan positif.
+  - type: text
+    slide: 0
+    text: Muatan sejenis tolak-menolak, muatan berlainan jenis tarik-menarik.
+  - type: math
+    slide: 0
+    name: muatan sejenis
+    expression: tolak-menolak
+    highlight: true
+  - type: math
+    slide: 0
+    name: muatan berlainan jenis
+    expression: tarik-menarik
+  - type: heading
+    slide: 1
+    text: Gaya listrik dan jarak
+  - type: text
+    slide: 1
+    text: Gaya tarik atau tolak antara dua muatan makin besar jika muatannya makin besar, dan makin kecil jika jaraknya makin jauh (Hukum Coulomb).
+  - type: text
+    slide: 1
+    text: "Gaya berbanding terbalik dengan kuadrat jarak: jika jarak dijadikan 2 kali, gaya menjadi ¼ kali."
+  - type: math
+    slide: 1
+    name: hukum Coulomb
+    expression: F = k × q₁ × q₂ / r²
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Menggosok penggaris plastik dengan kain wol memindahkan elektron, bukan menciptakan muatan baru.
+checks:
+  - question: FIS.C26.D.LISTRIK.Q.STATIS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.LISTRIK.S.STATIS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -2,15 +2,15 @@ schemaVersion: 1
 code: FIS.C26.D.LISTRIK
 subject: FIS
 title: Kelistrikan & energi ramah lingkungan
-subtitle: Arus, rangkaian seri paralel, magnet, dan pembangkitan listrik
+subtitle: Listrik statis, arus, rangkaian, energi dan daya listrik, magnet, dan energi alternatif
 phase: D
 availability: MAPPED
 bekal: []
 aliases: []
 units: []
 concepts:
-  - code: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
-    title: Arus dan rangkaian
+  - code: FIS.C26.D.LISTRIK.LISTRIK_STATIS
+    title: Listrik statis
     objectives: []
     misconceptions: []
     ordinal: 1
@@ -21,9 +21,9 @@ concepts:
     availability: READY
     aliases:
       - ns: MAP
-        value: fis-d-listrik-c1
-  - code: FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
-    title: Magnet & pembangkit listrik
+        value: fis-d-listrik-statis
+  - code: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+    title: Arus dan rangkaian
     objectives: []
     misconceptions: []
     ordinal: 2
@@ -34,7 +34,7 @@ concepts:
     availability: READY
     aliases:
       - ns: MAP
-        value: fis-d-listrik-c2
+        value: fis-d-listrik-c1
   - code: FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
     title: Rangkaian seri dan paralel
     objectives: []
@@ -43,14 +43,65 @@ concepts:
     estimatedMinutes: 5
     grade: 9
     hidden: false
-    capstone: true
+    capstone: false
     availability: READY
     aliases:
       - ns: MAP
         value: fis-d-listrik-seri-paralel
+  - code: FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+    title: Energi dan daya listrik
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    grade: 9
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-listrik-daya
+  - code: FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
+    title: Magnet & pembangkit listrik
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    grade: 9
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-listrik-c2
+  - code: FIS.C26.D.LISTRIK.SUMBER_ENERGI_ALTERNATIF
+    title: Sumber energi alternatif
+    objectives: []
+    misconceptions: []
+    ordinal: 6
+    estimatedMinutes: 5
+    grade: 9
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-listrik-alternatif
 prerequisites:
   - concept: FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL
     requires: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+    kind: SOFT
+  - concept: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+    requires: FIS.C26.D.LISTRIK.LISTRIK_STATIS
+    kind: SOFT
+  - concept: FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+    requires: FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN
+    kind: SOFT
+  - concept: FIS.C26.D.LISTRIK.SUMBER_ENERGI_ALTERNATIF
+    requires: FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+    kind: SOFT
+  - concept: FIS.C26.D.LISTRIK.SUMBER_ENERGI_ALTERNATIF
+    requires: FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK
     kind: SOFT
 review:
   status: PROPOSED
@@ -61,6 +112,7 @@ review:
   evidence:
     - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
     - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
+    - "Tahap 2 audit Fisika (2026-11-13, docs/backlog.md FE): inti baru Listrik statis, Energi dan daya listrik, dan Sumber energi alternatif (penutup baru) dari IPA IX rev 2025 Bab 5; urutan mengikuti buku. Rangkaian seri dan paralel kini dihitung ke penguasaan bab. Arus dan rangkaian juga memuat sedikit materi daya dan kWh: cek tumpang tindihnya."
 bookRefs:
   - book: Buku Siswa IPA Kelas IX (SMP/MTs)
     edition: revisi 2025 (ISBN 978-634-00-2430-2)
@@ -68,4 +120,4 @@ bookRefs:
     chapter: Bab 5 Listrik, Magnet, dan Energi Alternatif
     section: "A. Listrik: listrik statis (hlm. 120), daya listrik (hlm. 145)"
     verification: VERIFIED
-    note: Bab 5, bukan Bab 4 (edisi 2022). Inti listrik statis, energi dan daya listrik, serta sumber energi alternatif belum ada di katalog.
+    note: Bab 5, bukan Bab 4 (edisi 2022). Inti listrik statis, energi dan daya listrik, serta sumber energi alternatif ditambahkan di Tahap 2 audit (13 November 2026).
