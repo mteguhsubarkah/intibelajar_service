@@ -299,9 +299,9 @@ relations:
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
   - from: BIO.C26.E.EKOSISTEM
-    to: FIS.C26.E.ENERGI
+    to: FIS.C26.E.IKLIM
     kind: RELATED
-    label: siklus karbon ↔ energi dan iklim
+    label: siklus karbon ↔ pemanasan global dan perubahan iklim
     source: CURRICULUM
     review:
       status: PROPOSED
@@ -309,8 +309,10 @@ relations:
       fields:
         - kind
         - label
+        - to
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
+        - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): tujuan dipindah dari E.ENERGI (daya, efisiensi) ke E.IKLIM: siklus karbon terkait iklim."
   - from: MAT.C26.D.BILANGAN
     to: MAT.C26.D.RASIO
     kind: REQUIRES
@@ -571,6 +573,19 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
+  - from: FIS.C26.D.ENERGI
+    to: FIS.C26.E.IKLIM
+    kind: REQUIRES
+    label: "Lintas Fase D ➔ E: suhu dan perpindahan kalor SMP → efek rumah kaca dan pemanasan global"
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): relasi baru; E.IKLIM mencantumkan kalor dan radiasi sebagai bekal; kalor ada di IPA VII Bab 3 Suhu, Kalor, dan Pemuaian."
   - from: FIS.C26.D.GERAK
     to: FIS.C26.F.FLUIDA
     kind: REQUIRES
@@ -950,8 +965,8 @@ relations:
         - hubungan antartopik dari peta referensi IntiVerse
   - from: FIS.C26.F.MEDAN
     to: FIS.C26.F.ELEKTRO
-    kind: RELATED
-    label: medan magnet ↔ induksi elektromagnetik
+    kind: REQUIRES
+    label: medan magnet → induksi elektromagnetik
     source: CURRICULUM
     review:
       status: PROPOSED
@@ -961,6 +976,7 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
+        - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): RELATED jadi REQUIRES: induksi elektromagnetik butuh medan magnet."
   - from: FIS.C26.D.ANTARIKSA
     to: FIS.C26.D.KEBUMIAN
     kind: RELATED

@@ -63,11 +63,11 @@ concepts:
       - ns: MAP
         value: fis-d-energi-kalor
 prerequisites:
-  - concept: FIS.C26.D.ENERGI.KALOR_JENIS
-    requires: FIS.C26.D.ENERGI.USAHA_DAN_PERUBAHAN_ENERGI
-    kind: SOFT
   - concept: FIS.C26.D.ENERGI.PESAWAT_SEDERHANA
     requires: FIS.C26.D.ENERGI.USAHA_DAN_PERUBAHAN_ENERGI
+    kind: SOFT
+  - concept: FIS.C26.D.ENERGI.KALOR_JENIS
+    requires: FIS.C26.D.ENERGI.SUHU_DAN_PERPINDAHAN_KALOR
     kind: SOFT
 review:
   status: PROPOSED
@@ -78,6 +78,7 @@ review:
   evidence:
     - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
     - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
+    - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): prasyarat Kalor jenis (kelas 7) diganti dari Usaha & perubahan energi (kelas 8) ke Suhu & perpindahan kalor."
 bookRefs:
   - book: Buku Siswa IPA Kelas VII (SMP/MTs)
     edition: edisi revisi

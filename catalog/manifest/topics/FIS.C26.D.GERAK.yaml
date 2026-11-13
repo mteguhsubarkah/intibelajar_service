@@ -13,7 +13,7 @@ concepts:
     title: Gerak dan gaya resultan
     objectives: []
     misconceptions: []
-    ordinal: 1
+    ordinal: 3
     estimatedMinutes: 4
     grade: 7
     hidden: false
@@ -39,7 +39,7 @@ concepts:
     title: Jarak, perpindahan & kelajuan
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 1
     estimatedMinutes: 5
     grade: 7
     hidden: false
@@ -62,11 +62,11 @@ concepts:
       - ns: MAP
         value: fis-d-gerak-resultan
 prerequisites:
-  - concept: FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
-    requires: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
-    kind: SOFT
   - concept: FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
     requires: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    kind: SOFT
+  - concept: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    requires: FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
     kind: SOFT
 review:
   status: PROPOSED
@@ -77,6 +77,7 @@ review:
   evidence:
     - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
     - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
+    - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): kelas 7 gerak dulu, baru gaya (buku IPA VII Bab 4): Jarak, perpindahan & kelajuan jadi prasyarat Gerak dan gaya resultan, ordinal keduanya ditukar. Tekanan dan inti penutup tetap."
 bookRefs:
   - book: Buku Siswa IPA Kelas VII (SMP/MTs)
     edition: edisi revisi

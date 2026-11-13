@@ -75,6 +75,9 @@ prerequisites:
   - concept: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
     requires: FIS.C26.E.GERAK2D.KOMPONEN_GERAK
     kind: SOFT
+  - concept: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+    requires: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+    kind: SOFT
 review:
   status: PROPOSED
   decision: D7
@@ -83,6 +86,7 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+    - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): Gerak peluru ideal ditambah prasyarat Proyeksi vektor gerak (v0 cos θ dan v0 sin θ)."
 bookRefs:
   - book: Capaian Pembelajaran Fisika Fase E (Kepka BSKAP 046/H/KR/2025)
     edition: "2025"
