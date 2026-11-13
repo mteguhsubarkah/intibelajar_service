@@ -72,6 +72,9 @@ prerequisites:
   - concept: FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
     requires: FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
     kind: SOFT
+  - concept: FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
+    requires: FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN
+    kind: SOFT
 review:
   status: PROPOSED
   decision: D7
@@ -80,6 +83,7 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+    - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): Dinamika rotasi ditambah prasyarat Torsi dan keseimbangan."
 bookRefs:
   - book: Buku Siswa Fisika Kelas XI (SMA/MA)
     edition: "2022"

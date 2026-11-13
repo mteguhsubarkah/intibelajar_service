@@ -66,9 +66,6 @@ concepts:
       - ns: MAP
         value: fis-f-modern-inti
 prerequisites:
-  - concept: FIS.C26.F.MODERN.RELATIVITAS_KHUSUS
-    requires: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
-    kind: SOFT
   - concept: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
     requires: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
     kind: SOFT
@@ -80,6 +77,7 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+    - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): prasyarat Relativitas khusus <- Kuantum dan inti atom dihapus; relativitas tidak butuh kuantum (Fisika XII 2022: Bab 7 Relativitas sebelum Bab 8 Gejala Kuantum)."
 bookRefs:
   - book: Buku Siswa Fisika Kelas XII (SMA/MA)
     edition: "2022"

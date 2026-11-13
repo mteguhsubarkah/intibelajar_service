@@ -1,7 +1,7 @@
 schemaVersion: 1
 code: FIS.C26.E.ENERGI
 subject: FIS
-title: Energi alternatif & perubahan iklim
+title: Energi, daya, dan efisiensi
 subtitle: Daya, efisiensi, dan pilihan energi
 phase: E
 availability: MAPPED
@@ -30,11 +30,11 @@ concepts:
     title: Evaluasi pilihan energi
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 3
     estimatedMinutes: 4
     grade: 10
     hidden: false
-    capstone: false
+    capstone: true
     availability: READY
     aliases:
       - ns: MAP
@@ -43,11 +43,11 @@ concepts:
     title: Neraca kebutuhan energi
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 2
     estimatedMinutes: 5
     grade: 10
     hidden: false
-    capstone: true
+    capstone: false
     availability: READY
     aliases:
       - ns: MAP
@@ -56,14 +56,19 @@ prerequisites:
   - concept: FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
     requires: FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
     kind: SOFT
+  - concept: FIS.C26.E.ENERGI.EVALUASI_PILIHAN_ENERGI
+    requires: FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
+    kind: SOFT
 review:
   status: PROPOSED
   decision: D7
   fields:
     - concepts
     - prerequisites
+    - title
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+    - 'Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): judul dari "Energi alternatif & perubahan iklim" (tumpang tindih dengan E.IKLIM) jadi "Energi, daya, dan efisiensi"; urutan Daya, Neraca, Evaluasi; inti penutup pindah dari Neraca ke Evaluasi pilihan energi; Evaluasi butuh Neraca (SOFT).'
 bookRefs:
   - book: Capaian Pembelajaran Fisika Fase E (Kepka BSKAP 046/H/KR/2025)
     edition: "2025"
