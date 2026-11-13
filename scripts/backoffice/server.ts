@@ -19,11 +19,14 @@ const PROVIDER_LABEL = { GOOGLE: 'Google', EMAIL: 'Email' } as const;
 export function accountLabel(a: StaffAccount, l?: StaffLearner) {
   return a.identities.find(i => i.email)?.email ?? l?.displayName ?? 'akun-' + a.userId.slice(0, 8);
 }
+/** Identitas EMAIL tanpa alamat di akun Google = alamat Google yang ditautkan saat login Google, bukan tautan email. */
+const linkedByGoogle = (a: StaffAccount, i: StaffAccount['identities'][number]) =>
+  i.provider === 'EMAIL' && !i.email && i.emailVerified && a.identities.some(x => x.provider === 'GOOGLE');
 function accountView(a: StaffAccount, l?: StaffLearner) {
   const email = a.identities.find(i => i.email)?.email ?? null;
   const lastLoginAt = a.identities.map(i => i.lastLoginAt).filter((x): x is string => !!x).sort().at(-1) ?? null;
   return { userId: a.userId, role: a.role, label: accountLabel(a, l), displayName: l?.displayName ?? null, grade: l?.grade ?? null,
-    methods: a.identities.map(i => PROVIDER_LABEL[i.provider]), email,
+    methods: a.identities.map(i => linkedByGoogle(a, i) ? 'Email (dari Google)' : PROVIDER_LABEL[i.provider]), email,
     emailNote: email ? null : a.identities.some(i => i.provider === 'GOOGLE') ? 'Akun Google: email tidak disimpan' : a.trial ? 'Akun percobaan tamu' : null,
     status: l?.status ?? a.status, createdAt: a.createdAt, lastLoginAt, deletable: a.role === 'STUDENT' && l?.status !== 'DELETION_PENDING' };
 }

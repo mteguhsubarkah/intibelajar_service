@@ -34,6 +34,8 @@ test('backoffice akun: daftar, konfirmasi, hapus lewat jalur penghapusan BE, dan
     const google = await consentedLearner(db, config);
     await sql`update student_profile set display_name='QA Google', grade=10 where learner_id=${google.learnerId}`.execute(db);
     await db.insertInto('auth_identity').values({ id: uuid(), user_id: google.userId, provider: 'GOOGLE', subject: 'sub-' + uuid(), email_verified: true, email_ciphertext: null, last_login_at: new Date() }).execute();
+    // Login Google juga menautkan alamatnya sebagai identitas EMAIL (hanya HMAC, tanpa alamat).
+    await db.insertInto('auth_identity').values({ id: uuid(), user_id: google.userId, provider: 'EMAIL', subject: hmac(config.key, 'email:google-' + uuid() + '@example.com').toString('hex'), email_verified: true, email_ciphertext: null, last_login_at: null }).execute();
     const viaEmail = await consentedLearner(db, config), address = `qa+${uuid().replaceAll('-', '').slice(-12)}@example.com`; // UUIDv7: awalnya cap waktu, bagian akhirnya acak
     await db.insertInto('auth_identity').values({ id: uuid(), user_id: viaEmail.userId, provider: 'EMAIL', subject: hmac(config.key, 'email:' + address).toString('hex'),
       email_verified: true, email_ciphertext: encrypt(config.key, address), last_login_at: null }).execute();
@@ -49,7 +51,7 @@ test('backoffice akun: daftar, konfirmasi, hapus lewat jalur penghapusan BE, dan
     assert.equal(body.enabled, true); assert.equal(body.staff, 'ssh-lokal');
     const row = (id: string) => body.accounts.find(a => a.userId === id)!;
     assert.equal(row(google.userId).email, null); assert.match(String(row(google.userId).emailNote), /Google/);
-    assert.equal(row(google.userId).label, 'QA Google'); assert.deepEqual(row(google.userId).methods, ['Google']); assert.equal(row(google.userId).grade, 10);
+    assert.equal(row(google.userId).label, 'QA Google'); assert.deepEqual([...row(google.userId).methods as string[]].sort(), ['Email (dari Google)', 'Google']); assert.equal(row(google.userId).grade, 10);
     assert.equal(row(viaEmail.userId).email, address); assert.equal(row(viaEmail.userId).label, address); assert.equal(row(viaEmail.userId).deletable, true);
     assert.equal(row(guardianUser).deletable, false);
     assert.equal(await count(sql<{ n: number }>`select count(*)::int as n from audit_event where action='STAFF_VIEWED_ACCOUNTS' and actor_type='STAFF' and actor_ref=${hmac(config.key, 'actor:staff:ssh-lokal')}`), viewsBefore + 1);
