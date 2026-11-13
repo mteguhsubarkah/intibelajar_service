@@ -2,10 +2,10 @@ import { sql } from 'kysely';
 import type { Connection, Tx } from '../db.js';
 import type { Config } from '../config.js';
 import { decrypt, encrypt, uuid } from '../platform/crypto.js';
-import { EmailSendError, signinUrl, type EmailTransport } from './email-transport.js';
+import { EmailSendError, signinUrl, signupUrl, type EmailTransport } from './email-transport.js';
 
 /*
- * Outbox email masuk (migrasi 0010). Request login hanya mencatat email yang perlu dikirim, di transaksi yang sama
+ * Outbox email masuk (migrasi 0010) dan email verifikasi pendaftaran (migrasi 0014). Request login hanya mencatat email yang perlu dikirim, di transaksi yang sama
  * dengan tautannya, lalu menjawab 202; worker yang mengirim. Jadi:
  * - provider yang lambat atau mati tidak membuat request login gagal, dan tidak mengunci transaksi login;
  * - gagal sementara dicoba lagi dengan jeda (eksponensial + jitter) sampai max_attempts atau tautan kedaluwarsa;
@@ -22,7 +22,15 @@ export async function enqueueSignin(tx: Tx, config: Config, transactionId: strin
     on conflict (auth_transaction_id) do nothing`.execute(tx);
 }
 
-interface Leased { id: string; delivery_key: string; payload_ciphertext: Buffer; attempts: number; max_attempts: number; lease_token: string }
+/** Email verifikasi pendaftaran (migrasi 0014), di transaksi yang menyimpan permintaan daftar. Satu baris per permintaan. */
+export async function enqueueSignup(tx: Tx, config: Config, requestId: string, address: string, link: string) {
+  await sql`insert into email_outbox(id,signup_request_id,kind,delivery_key,payload_ciphertext,expires_at)
+    select ${uuid()},r.id,'SIGNUP',${'signup/' + requestId},${encrypt(config.key, JSON.stringify({ to: address, link }))},r.expires_at
+    from signup_request r where r.id=${requestId}
+    on conflict (signup_request_id) do nothing`.execute(tx);
+}
+
+interface Leased { id: string; kind: string; delivery_key: string; payload_ciphertext: Buffer; attempts: number; max_attempts: number; lease_token: string }
 export interface EmailTickResult { sent: number; retrying: number; failed: number }
 
 /** One pass: expire, recover lost leases, clean up, then send what is due (at most `batch`). Never throws for a single email. */
@@ -37,12 +45,15 @@ export async function emailTick(db: Connection, config: Config, transport: Email
       lease_token=null,lease_until=null,available_at=now(),last_error_code='LEASE_EXPIRED',updated_at=now()
     where status='SENDING' and lease_until<=now()`.execute(db);
   await sql`delete from email_outbox where status in ('SENT','FAILED','EXPIRED') and updated_at<now()-interval '7 days'`.execute(db);
+  // Expired sign-up requests: drop the encrypted username/email/hash now, the row after 7 days (cascades to its outbox row).
+  await sql`update signup_request set payload_ciphertext=null where expires_at<=now() and payload_ciphertext is not null`.execute(db);
+  await sql`delete from signup_request where expires_at<now()-interval '7 days'`.execute(db);
   if (!transport) return result;
   for (let i = 0; i < batch; i++) {
     const row = (await sql<Leased>`update email_outbox set status='SENDING',lease_token=${uuid()},lease_until=now()+${sql.raw(LEASE)},attempts=attempts+1,updated_at=now()
       where id=(select id from email_outbox where status='QUEUED' and available_at<=now() and expires_at>now() and attempts<max_attempts
         order by available_at limit 1 for update skip locked)
-      returning id,delivery_key,payload_ciphertext,attempts,max_attempts,lease_token`.execute(db)).rows[0];
+      returning id,kind,delivery_key,payload_ciphertext,attempts,max_attempts,lease_token`.execute(db)).rows[0];
     if (!row) break;
     const outcome = await deliver(config, transport, row);
     if (outcome === 'SENT') {
@@ -70,7 +81,8 @@ async function deliver(config: Config, transport: EmailTransport, row: Leased): 
   let payload: { to: string; link: string };
   try { payload = JSON.parse(decrypt(config.key, row.payload_ciphertext)); } catch { return { code: 'PAYLOAD_UNREADABLE', permanent: true }; }
   try {
-    await transport.send({ to: payload.to, url: signinUrl(config.origin, payload.link), deliveryKey: row.delivery_key });
+    const url = row.kind === 'SIGNUP' ? signupUrl(config.origin, payload.link) : signinUrl(config.origin, payload.link);
+    await transport.send({ to: payload.to, url, deliveryKey: row.delivery_key });
     return 'SENT';
   } catch (error) {
     return error instanceof EmailSendError ? { code: error.code, permanent: error.permanent } : { code: 'TRANSPORT_ERROR', permanent: false };

@@ -738,6 +738,119 @@ paths:
         '429':
           $ref: '#/components/responses/TooManyRequests'
 
+  /v1/auth/password/register:
+    post:
+      operationId: registerWithPassword
+      tags: [auth]
+      summary: Sign up with username, email and password (FEATURE_PASSWORD_AUTH). Sends a verification email; no account yet.
+      description: >
+        Validates the username (3-30 characters, a-z 0-9 . _, starting with a letter, stored lower-case) and the
+        password (8-128 characters with a letter and a digit, not the username), hashes the password (scrypt) and stores
+        the request encrypted for 24 hours. A verification link is emailed; the account is created only when it is
+        opened (verifyPasswordSignup). Always 202 for the address, so registered addresses are not revealed; a username
+        already in use is 409 USERNAME_TAKEN. VALIDATION_FAILED details name the field (fields) and, for the password,
+        the reason (PASSWORD_LENGTH, PASSWORD_WEAK, PASSWORD_IS_USERNAME). Off unless FEATURE_PASSWORD_AUTH=true.
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordRegisterRequest'
+      responses:
+        '202':
+          description: Accepted. A verification link is sent.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailLinkAccepted'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /v1/auth/password/verify:
+    post:
+      operationId: verifyPasswordSignup
+      tags: [auth]
+      summary: Open the sign-up verification link (by POST, so mail scanners cannot consume it); creates the account and signs in.
+      description: >
+        A new address becomes a new account (continuation /kenalan). An address that already has an account without a
+        password (email link or Google) gets the password added to that account. 409 ACCOUNT_EXISTS when that account
+        already has a password; 409 USERNAME_TAKEN when the username was taken after registering. Not bound to the
+        browser that registered: the link may be opened on another device.
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailVerifyRequest'
+      responses:
+        '200':
+          description: Signed in. The session cookie is set.
+          headers:
+            Set-Cookie:
+              $ref: '#/components/headers/SetSessionCookie'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailVerifyResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /v1/auth/password/login:
+    post:
+      operationId: signInWithPassword
+      tags: [auth]
+      summary: Sign in with username (or the account's email) and password (FEATURE_PASSWORD_AUTH).
+      description: >
+        A wrong username and a wrong password are the same 401 INVALID_CREDENTIALS and take the same time. Limited
+        per IP and per target account. The client confirms the session with GET /v1/auth/session before navigating.
+      security:
+        - {}
+        - sessionCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordLoginRequest'
+      responses:
+        '200':
+          description: Signed in. The session cookie is set.
+          headers:
+            Set-Cookie:
+              $ref: '#/components/headers/SetSessionCookie'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailVerifyResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
   /v1/auth/logout:
     post:
       operationId: logout
@@ -2824,7 +2937,7 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
     Unauthenticated:
-      description: UNAUTHENTICATED.
+      description: UNAUTHENTICATED, or INVALID_CREDENTIALS for a password sign-in.
       content:
         application/json:
           schema:
@@ -2851,7 +2964,7 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
     Conflict:
-      description: INVALID_STATE_TRANSITION, STALE_STATE_VERSION, IDEMPOTENCY_KEY_REUSED, IDEMPOTENCY_IN_PROGRESS, CONTENT_UNAVAILABLE, ALREADY_IMPORTED or ALREADY_REPORTED.
+      description: INVALID_STATE_TRANSITION, STALE_STATE_VERSION, IDEMPOTENCY_KEY_REUSED, IDEMPOTENCY_IN_PROGRESS, CONTENT_UNAVAILABLE, ALREADY_IMPORTED, ALREADY_REPORTED, USERNAME_TAKEN or ACCOUNT_EXISTS.
       headers:
         Retry-After:
           $ref: '#/components/headers/RetryAfter'
@@ -3147,6 +3260,9 @@ components:
         - ALREADY_REPORTED
         - SESSION_EXPIRED
         - LINK_EXPIRED
+        - USERNAME_TAKEN
+        - ACCOUNT_EXISTS
+        - INVALID_CREDENTIALS
         - PAYLOAD_TOO_LARGE
         - UNSUPPORTED_MEDIA_TYPE
         - RATE_LIMITED
@@ -3488,6 +3604,41 @@ components:
       properties:
         continuation:
           $ref: '#/components/schemas/Continuation'
+    PasswordRegisterRequest:
+      type: object
+      additionalProperties: false
+      required: [username, email, password]
+      properties:
+        username:
+          type: string
+          minLength: 1
+          maxLength: 64
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        password:
+          type: string
+          minLength: 1
+          maxLength: 256
+        continuation:
+          $ref: '#/components/schemas/LegacyContinuation'
+    PasswordLoginRequest:
+      type: object
+      additionalProperties: false
+      required: [username, password, continuation]
+      properties:
+        username:
+          type: string
+          minLength: 1
+          maxLength: 254
+          description: The username, or the email address of the account.
+        password:
+          type: string
+          minLength: 1
+          maxLength: 256
+        continuation:
+          $ref: '#/components/schemas/LegacyContinuation'
     Continuation:
       type: object
       additionalProperties: false

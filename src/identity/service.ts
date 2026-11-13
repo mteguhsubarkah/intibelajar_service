@@ -67,7 +67,7 @@ export async function eraseGuardianIdentity(tx: Tx, guardianId: string) {
   await sql`delete from auth_identity where user_id in (select id from app_user where guardian_id=${guardianId})`.execute(tx);
   await tx.deleteFrom('app_user').where('guardian_id','=',guardianId).execute();
 }
-export interface SyntheticMail { kind: 'signin' | 'consent'; token: string; transaction?: string }
+export interface SyntheticMail { kind: 'signin' | 'consent' | 'signup'; token: string; transaction?: string }
 // Test harness/local fixture transport only. No HTTP endpoint exposes this mailbox.
 export type Mailbox = Map<string, SyntheticMail[]>;
 export function deliver(mailbox: Mailbox, address: string, mail: SyntheticMail) {

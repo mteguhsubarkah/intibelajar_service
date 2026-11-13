@@ -41,6 +41,8 @@ export interface Database {
     email_ciphertext: Buffer | null;
     last_login_at: Date | null;
     created_at: Generated<Date>;
+    secret_hash: string | null;
+    username_ciphertext: Buffer | null;
   };
   auth_session: {
     id: string;
@@ -91,9 +93,9 @@ export interface Database {
     is_hidden: Generated<boolean>;
     is_capstone: Generated<boolean>;
     availability: string;
-    grade: number | null;
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
+    grade: number | null;
   };
   concept_evidence: {
     id: string;
@@ -216,7 +218,7 @@ export interface Database {
   };
   email_outbox: {
     id: string;
-    auth_transaction_id: string;
+    auth_transaction_id: string | null;
     kind: string;
     delivery_key: string;
     payload_ciphertext: Buffer | null;
@@ -231,6 +233,7 @@ export interface Database {
     last_error_code: string | null;
     created_at: Generated<Date>;
     updated_at: Generated<Date>;
+    signup_request_id: string | null;
   };
   erasure_receipt: {
     receipt_id: string;
@@ -486,6 +489,17 @@ export interface Database {
     question_revision_id: string;
     role: string;
     status: string;
+  };
+  signup_request: {
+    id: string;
+    link_hash: Buffer;
+    username_subject: string;
+    email_subject: string;
+    payload_ciphertext: Buffer | null;
+    continuation: unknown;
+    expires_at: Date;
+    consumed_at: Date | null;
+    created_at: Generated<Date>;
   };
   student_profile: {
     learner_id: string;

@@ -20,7 +20,9 @@ export const integrationBlockers = [
 export const features = Object.freeze({ aiDiagnosis: false, aiTutor: false, intake: false,
   legacyFacade: false, productAnalytics: false, streakFreeze: false, guestEvaluation: false,
   /** FEATURE_GUEST_TRIAL=true: a visitor of /coba gets a 24-hour trial account so the server grades them like a learner. */
-  guestTrial: false });
+  guestTrial: false,
+  /** FEATURE_PASSWORD_AUTH=true: daftar (username, password, email + email verifikasi) dan masuk dengan username + password. */
+  passwordAuth: false });
 const LOOPBACK = ['localhost', '127.0.0.1', '[::1]'];
 export function readConfig(env = process.env): Config {
   // Pilot: an explicit pair, NODE_ENV=production and RUNTIME_MODE=pilot. Every development-only integration keys on
@@ -57,9 +59,9 @@ export function readConfig(env = process.env): Config {
     if (!Number.isSafeInteger(value) || value < 1 || value > max) throw new Error(`Invalid ${name}`);
     return value;
   };
-  // Only the legacy facade (Slice 1 M7, synthetic data) and the /coba guest trial can be switched on; every other
+  // Only the legacy facade (Slice 1 M7, synthetic data), the /coba guest trial and password sign-up/sign-in can be switched on; every other
   // feature fails closed.
-  const switchable = ['FEATURE_LEGACY_FACADE', 'FEATURE_GUEST_TRIAL'];
+  const switchable = ['FEATURE_LEGACY_FACADE', 'FEATURE_GUEST_TRIAL', 'FEATURE_PASSWORD_AUTH'];
   for (const [name, value] of Object.entries(env)) if (/^FEATURE_/.test(name) && value !== 'false' && !(switchable.includes(name) && value === 'true'))
     throw new Error('Features cannot be enabled in this development foundation');
   if (env.HOST && env.HOST !== '127.0.0.1') throw new Error('Only loopback binding is supported');
@@ -108,5 +110,5 @@ export function readConfig(env = process.env): Config {
     origin: origin.origin, host: '127.0.0.1', port: integer('PORT', 8000, 65535), key,...(google?{google}:{}),...(guide?{guide}:{}),
     synthetic: env.SYNTHETIC_FIXTURES === 'true', selfConsent: env.SELF_ONBOARDING_CONSENT === 'true',...(email?{email}:{}), idleSeconds: integer('SESSION_IDLE_SECONDS', 604800, 604800),
     absoluteSeconds: integer('SESSION_ABSOLUTE_SECONDS', 2592000, 2592000),
-    features: Object.freeze({ ...features, aiDiagnosis:localAi,aiTutor:localTutor,intake:localOcr, legacyFacade: env.FEATURE_LEGACY_FACADE === 'true', guestTrial: env.FEATURE_GUEST_TRIAL === 'true' }) };
+    features: Object.freeze({ ...features, aiDiagnosis:localAi,aiTutor:localTutor,intake:localOcr, legacyFacade: env.FEATURE_LEGACY_FACADE === 'true', guestTrial: env.FEATURE_GUEST_TRIAL === 'true', passwordAuth: env.FEATURE_PASSWORD_AUTH === 'true' }) };
 }
