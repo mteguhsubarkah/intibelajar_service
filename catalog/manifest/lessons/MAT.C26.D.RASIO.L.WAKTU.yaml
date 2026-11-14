@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.L.WAKTU
+title: Konversi satuan waktu
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+blocks:
+  - type: heading
+    slide: 0
+    text: Tangga satuan waktu
+  - type: text
+    slide: 0
+    text: 1 jam = 60 menit dan 1 menit = 60 detik, jadi 1 jam = 3.600 detik.
+  - type: text
+    slide: 0
+    text: "Dari satuan besar ke satuan kecil dikali (jam ke menit: × 60). Dari satuan kecil ke satuan besar dibagi (menit ke jam: : 60)."
+  - type: math
+    slide: 0
+    name: 1 jam
+    expression: 60 menit = 3.600 detik
+    highlight: true
+  - type: math
+    slide: 0
+    name: jam ke menit
+    expression: × 60
+  - type: heading
+    slide: 1
+    text: Waktu dalam bentuk desimal
+  - type: text
+    slide: 1
+    text: "Hasil hitungan waktu sering berbentuk desimal atau pecahan jam: 0,1 jam = 0,1 × 60 = 6 menit; ¼ jam = 15 menit; 1,5 jam = 1 jam 30 menit."
+  - type: text
+    slide: 1
+    text: "Saat menghitung laju, pakai satuan waktu yang sama dengan satuan kecepatannya: kecepatan dalam km/jam berarti waktunya dalam jam."
+  - type: math
+    slide: 1
+    name: 0,1 jam
+    expression: 6 menit
+    highlight: true
+  - type: math
+    slide: 1
+    name: 1,5 jam
+    expression: 1 jam 30 menit
+  - type: tip
+    slide: 1
+    text: 1,5 jam bukan 1 jam 50 menit, karena 0,5 jam = 30 menit.
+checks:
+  - question: MAT.C26.D.RASIO.Q.WAKTU_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.RASIO.S.WAKTU
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

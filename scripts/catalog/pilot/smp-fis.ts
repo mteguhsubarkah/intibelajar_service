@@ -11,7 +11,7 @@ export const SMP_FIS: Record<string, Content> = {
   // ---------- Pengukuran dan kerja ilmiah ----------
   'FIS.C26.D.UKUR:C1': K([
     S('Besaran pokok dan turunan', ['Besaran pokok punya satuan SI dasar: panjang (meter), massa (kilogram), waktu (sekon), suhu (kelvin), kuat arus (ampere), jumlah zat (mol), intensitas cahaya (kandela).', 'Besaran turunan disusun dari besaran pokok, misalnya luas (m²), kecepatan (m/s), dan massa jenis (kg/m³).'], [['kecepatan', 'm/s'], ['massa jenis', 'kg/m³']]),
-    S('Konversi satuan', ['Pada tangga satuan km–hm–dam–m–dm–cm–mm, turun satu anak tangga berarti dikali 10.', 'Contoh: 2,5 km = 2.500 m; 72 km/jam = 72.000 m : 3.600 s = 20 m/s.'], [['km/jam → m/s', 'bagi 3,6']], 'Tuliskan satuan di setiap langkah supaya kesalahan konversi cepat terlihat.'),
+    S('Konversi satuan', ['Pada tangga satuan km–hm–dam–m–dm–cm–mm, turun satu anak tangga berarti dikali 10.', 'Contoh: 2,5 km = 2.500 m; 72 km/jam = 72.000 m : 3.600 s = 20 m/s.', 'Volume: 1 L = 1.000 mL, dan 1 mL sama dengan 1 cm³. Jadi air 20 mL bervolume 20 cm³.'], [['km/jam → m/s', 'bagi 3,6'], ['volume', '1 mL = 1 cm³']], 'Tuliskan satuan di setiap langkah supaya kesalahan konversi cepat terlihat.'),
   ], [
     Q('Kelompok besaran berikut yang semuanya besaran pokok adalah …', ['panjang, massa, waktu', 'panjang, luas, volume', 'massa, berat, gaya', 'suhu, kecepatan, waktu'], 0, 'Luas, volume, berat, gaya, dan kecepatan adalah besaran turunan.', 1),
     Q('Satuan SI untuk massa jenis adalah …', ['kg/m³', 'g/cm', 'N/m²', 'kg·m'], 0, 'Massa jenis = massa : volume, jadi satuannya kg/m³.', 1),

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.Q.WAKTU_2
+familyCode: MAT.C26.D.RASIO.F.WAKTU_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah perjalanan memakan waktu 0,2 jam. Dalam menit, waktunya …
+  options:
+    - id: a
+      label: 12 menit
+    - id: b
+      label: 20 menit
+    - id: c
+      label: 120 menit
+    - id: d
+      label: 32 menit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 12 menit
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+  feedback:
+    correct: 0,2 × 60 = 12 menit.
+    incorrect: Jawabannya 12 menit. 0,2 × 60 = 12 menit.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

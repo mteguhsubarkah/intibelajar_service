@@ -2,18 +2,32 @@ schemaVersion: 1
 code: MAT.C26.D.BILANGAN
 subject: MAT
 title: Bilangan dan operasi
-subtitle: Bilangan rasional, pangkat, akar, pecahan, dan notasi ilmiah
+subtitle: Bilangan bulat, bilangan rasional, pangkat, akar, pecahan, dan notasi ilmiah
 phase: D
 availability: MAPPED
 bekal: []
 aliases: []
 units: []
 concepts:
+  - code: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+    title: Operasi bilangan bulat
+    subtitle: Garis bilangan, menjumlah dan mengurangi bilangan negatif
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 4
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-d-bilangan-bulat
   - code: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
     title: Bilangan rasional & estimasi
     objectives: []
     misconceptions: []
-    ordinal: 1
+    ordinal: 2
     estimatedMinutes: 4
     grade: 7
     hidden: false
@@ -26,7 +40,7 @@ concepts:
     title: Pangkat, akar & notasi ilmiah
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 3
     estimatedMinutes: 5
     grade: 8
     hidden: false
@@ -39,7 +53,7 @@ concepts:
     title: Operasi pecahan
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 4
     estimatedMinutes: 5
     grade: 7
     hidden: false
@@ -52,7 +66,7 @@ concepts:
     title: Notasi ilmiah
     objectives: []
     misconceptions: []
-    ordinal: 4
+    ordinal: 5
     estimatedMinutes: 5
     grade: 8
     hidden: false
@@ -67,6 +81,9 @@ prerequisites:
     kind: SOFT
   - concept: MAT.C26.D.BILANGAN.NOTASI_ILMIAH
     requires: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+    kind: SOFT
+  - concept: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+    requires: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
     kind: SOFT
 review:
   status: PROPOSED

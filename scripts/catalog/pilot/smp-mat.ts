@@ -9,6 +9,15 @@ const K = (slides: [PilotSlide, PilotSlide], q: PilotQuestion[], min = 5): Conte
 
 export const SMP_MAT: Record<string, Content> = {
   // ---------- Bilangan dan operasi ----------
+  // Inti /coba (14 November 2026): soal suhu freezer memakai a − (−b), yang belum diajarkan inti Bilangan rasional & estimasi.
+  'MAT.C26.D.BILANGAN:BULAT': K([
+    S('Bilangan bulat di garis bilangan', ['Bilangan bulat terdiri dari bilangan negatif, nol, dan bilangan positif: …, −3, −2, −1, 0, 1, 2, 3, …', 'Di garis bilangan, makin ke kanan makin besar. Suhu −5 °C lebih dingin daripada 2 °C karena letaknya lebih ke kiri.'], [['urutan', '… < −2 < −1 < 0 < 1 < 2 < …']]),
+    S('Menjumlah dan mengurangi', ['Mengurangi bilangan negatif sama dengan menambah lawannya: a − (−b) = a + b. Menambah bilangan negatif sama dengan mengurangi: a + (−b) = a − b.', 'Selisih dua suhu = suhu tertinggi dikurangi suhu terendah. Dari −3 °C ke 4 °C, suhu naik 4 − (−3) = 7 °C.'], [['kurang negatif', 'a − (−b) = a + b'], ['tambah negatif', 'a + (−b) = a − b']], 'Bayangkan termometer: hitung langkah dari angka bawah ke angka atas.'),
+  ], [
+    Q('Hasil dari 8 − (−3) adalah …', ['11', '5', '−24', '24'], 0, '8 − (−3) = 8 + 3 = 11.', 1),
+    Q('Suhu pagi di puncak gunung −4 °C dan siang harinya 9 °C. Kenaikan suhunya adalah …', ['13 °C', '5 °C', '36 °C', '−36 °C'], 0, '9 − (−4) = 9 + 4 = 13 °C.'),
+    Q('Urutan bilangan −7, 2, 0, −1 dari yang terkecil adalah …', ['−7, −1, 0, 2', '−1, −7, 0, 2', '0, −1, 2, −7', '2, 0, −1, −7'], 0, 'Di garis bilangan, −7 paling kiri, lalu −1, 0, dan 2.', 1),
+  ], 4),
   'MAT.C26.D.BILANGAN:C1': K([
     S('Bilangan rasional', ['Bilangan **rasional** dapat ditulis a/b dengan a dan b bulat, b ≠ 0. Contoh: 3, −2, 0,5 = 1/2, 0,333… = 1/3.', 'Bilangan seperti √2 dan π **tidak rasional**: desimalnya tidak berakhir dan tidak berulang.', 'Untuk membandingkan, ubah ke bentuk yang sama. −3/4 = −0,75 lebih kecil dari −0,7 karena letaknya lebih jauh di kiri garis bilangan.'], [['bilangan rasional', 'a/b, dengan b ≠ 0']]),
     S('Estimasi', ['Estimasi berarti membulatkan dulu supaya hitungan cepat dan hasil akhir bisa dicek.', 'Contoh: 49,8 × 3,1 ≈ 50 × 3 = 150. Hasil tepatnya 154,38, dekat dengan estimasi, jadi masuk akal.'], [['estimasi', 'bulatkan, lalu hitung']], 'Bandingkan jawaban akhirmu dengan estimasi; kalau jauh berbeda, cek lagi hitungannya.'),
@@ -49,6 +58,15 @@ export const SMP_MAT: Record<string, Content> = {
     Q('Harga 4 pensil Rp10.000. Harga 10 pensil yang sama adalah …', ['Rp20.000', 'Rp25.000', 'Rp40.000', 'Rp4.000'], 1, 'Harga satu pensil Rp2.500, jadi 10 pensil Rp25.000.', 1),
     Q('Sebuah mobil menghabiskan 6 liter bensin untuk menempuh 72 km. Untuk menempuh 120 km dibutuhkan … liter.', ['8', '9', '10', '12'], 2, '72 km : 6 L = 12 km per liter, lalu 120 : 12 = 10 liter.'),
     Q('Pasangan besaran berikut yang merupakan perbandingan senilai adalah …', ['banyak pekerja dan lama pekerjaan selesai', 'kecepatan dan waktu tempuh untuk jarak yang sama', 'banyak barang dan total harga', 'banyak siswa dan jatah kue per siswa dari kue yang sama'], 2, 'Makin banyak barang, makin besar total harganya dengan perbandingan tetap. Pasangan lain berbalik nilai.', 1),
+  ], 4),
+  // Inti /coba (14 November 2026): soal peta ke sekolah menghasilkan waktu dalam jam desimal yang perlu diubah ke menit.
+  'MAT.C26.D.RASIO:WAKTU': K([
+    S('Tangga satuan waktu', ['1 jam = 60 menit dan 1 menit = 60 detik, jadi 1 jam = 3.600 detik.', 'Dari satuan besar ke satuan kecil dikali (jam ke menit: × 60). Dari satuan kecil ke satuan besar dibagi (menit ke jam: : 60).'], [['1 jam', '60 menit = 3.600 detik'], ['jam ke menit', '× 60']]),
+    S('Waktu dalam bentuk desimal', ['Hasil hitungan waktu sering berbentuk desimal atau pecahan jam: 0,1 jam = 0,1 × 60 = 6 menit; ¼ jam = 15 menit; 1,5 jam = 1 jam 30 menit.', 'Saat menghitung laju, pakai satuan waktu yang sama dengan satuan kecepatannya: kecepatan dalam km/jam berarti waktunya dalam jam.'], [['0,1 jam', '6 menit'], ['1,5 jam', '1 jam 30 menit']], '1,5 jam bukan 1 jam 50 menit, karena 0,5 jam = 30 menit.'),
+  ], [
+    Q('2,5 jam sama dengan …', ['150 menit', '250 menit', '125 menit', '90 menit'], 0, '2,5 × 60 = 150 menit.', 1),
+    Q('Sebuah perjalanan memakan waktu 0,2 jam. Dalam menit, waktunya …', ['12 menit', '20 menit', '120 menit', '32 menit'], 0, '0,2 × 60 = 12 menit.'),
+    Q('Rani berlari selama 45 menit. Dalam jam, waktunya …', ['0,75 jam', '0,45 jam', '1,5 jam', '4,5 jam'], 0, '45 : 60 = 0,75 jam.'),
   ], 4),
   'MAT.C26.D.RASIO:C2': K([
     S('Skala', ['Skala = jarak pada peta : jarak sebenarnya, dengan satuan yang sama.', 'Skala 1 : 200.000 berarti 1 cm pada peta mewakili 200.000 cm = 2 km.'], [['jarak sebenarnya', 'jarak peta × penyebut skala']]),

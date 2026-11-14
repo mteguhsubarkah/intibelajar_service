@@ -194,24 +194,26 @@ const BY_GRADE: PilotTopic[] = [
 const STRUCTURE: PilotTopic[] = [
   {
     code: "MAT.C26.D.BILANGAN", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,
-    title: "Bilangan dan operasi", subtitle: "Bilangan rasional, pangkat, akar, pecahan, dan notasi ilmiah", bekal: [],
+    title: "Bilangan dan operasi", subtitle: "Bilangan bulat, bilangan rasional, pangkat, akar, pecahan, dan notasi ilmiah", bekal: [],
     cores: [
+    { id: "BULAT", title: "Operasi bilangan bulat", sub: "Garis bilangan, menjumlah dan mengurangi bilangan negatif" },
     { id: "C1", title: "Bilangan rasional & estimasi" },
     { id: "C2", title: "Pangkat, akar & notasi ilmiah" },
     { id: "PECAHAN", title: "Operasi pecahan" },
     { id: "ILMIAH", title: "Notasi ilmiah", capstone: true },
     ],
-    edges: [["C1", "PECAHAN", "S"], ["C1", "ILMIAH", "S"]],
+    edges: [["C1", "PECAHAN", "S"], ["C1", "ILMIAH", "S"], ["BULAT", "C1", "S"]],
   },
   {
     code: "MAT.C26.D.RASIO", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,
-    title: "Rasio, skala, dan laju", subtitle: "Perbandingan senilai, berbalik nilai, skala, dan laju perubahan", bekal: [],
+    title: "Rasio, skala, dan laju", subtitle: "Perbandingan senilai, konversi satuan waktu, skala, laju, dan berbalik nilai", bekal: [],
     cores: [
     { id: "C1", title: "Perbandingan senilai" },
+    { id: "WAKTU", title: "Konversi satuan waktu", sub: "Jam, menit, detik, dan waktu dalam bentuk desimal" },
     { id: "C2", title: "Skala dan laju" },
     { id: "BERBALIK", title: "Perbandingan berbalik nilai", capstone: true },
     ],
-    edges: [["C1", "BERBALIK", "S"]],
+    edges: [["C1", "BERBALIK", "S"], ["WAKTU", "C2", "S"]],
   },
   {
     code: "MAT.C26.D.ALJABAR", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,

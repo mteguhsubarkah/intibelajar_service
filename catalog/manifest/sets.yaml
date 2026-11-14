@@ -1725,6 +1725,20 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: MAT.C26.D.BILANGAN.S.BULAT
+    title: Latihan Operasi bilangan bulat
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.BILANGAN.Q.BULAT_1
+      - MAT.C26.D.BILANGAN.Q.BULAT_2
+      - MAT.C26.D.BILANGAN.Q.BULAT_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: MAT.C26.D.BILANGAN.S.BILANGAN_RASIONAL_DAN_ESTIMASI
     title: Latihan Bilangan rasional & estimasi
     origin: CONCEPT_LESSON
@@ -1788,6 +1802,20 @@ sets:
       - MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_1
       - MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_2
       - MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.RASIO.S.WAKTU
+    title: Latihan Konversi satuan waktu
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.RASIO.Q.WAKTU_1
+      - MAT.C26.D.RASIO.Q.WAKTU_2
+      - MAT.C26.D.RASIO.Q.WAKTU_3
     review:
       status: PROPOSED
       decision: D7

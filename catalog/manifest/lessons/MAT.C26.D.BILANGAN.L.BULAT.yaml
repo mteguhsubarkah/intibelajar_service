@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: MAT.C26.D.BILANGAN.L.BULAT
+title: Operasi bilangan bulat
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Bilangan bulat di garis bilangan
+  - type: text
+    slide: 0
+    text: "Bilangan bulat terdiri dari bilangan negatif, nol, dan bilangan positif: …, −3, −2, −1, 0, 1, 2, 3, …"
+  - type: text
+    slide: 0
+    text: Di garis bilangan, makin ke kanan makin besar. Suhu −5 °C lebih dingin daripada 2 °C karena letaknya lebih ke kiri.
+  - type: math
+    slide: 0
+    name: urutan
+    expression: … < −2 < −1 < 0 < 1 < 2 < …
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Menjumlah dan mengurangi
+  - type: text
+    slide: 1
+    text: "Mengurangi bilangan negatif sama dengan menambah lawannya: a − (−b) = a + b. Menambah bilangan negatif sama dengan mengurangi: a + (−b) = a − b."
+  - type: text
+    slide: 1
+    text: Selisih dua suhu = suhu tertinggi dikurangi suhu terendah. Dari −3 °C ke 4 °C, suhu naik 4 − (−3) = 7 °C.
+  - type: math
+    slide: 1
+    name: kurang negatif
+    expression: a − (−b) = a + b
+    highlight: true
+  - type: math
+    slide: 1
+    name: tambah negatif
+    expression: a + (−b) = a − b
+  - type: tip
+    slide: 1
+    text: "Bayangkan termometer: hitung langkah dari angka bawah ke angka atas."
+checks:
+  - question: MAT.C26.D.BILANGAN.Q.BULAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.BILANGAN.S.BULAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

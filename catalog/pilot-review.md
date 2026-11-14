@@ -1078,8 +1078,17 @@ Materi: 3 · Soal: 7
 
 ## Bilangan dan operasi (MAT.C26.D.BILANGAN)
 
-Materi: 4 · Soal: 12
+Materi: 5 · Soal: 15
 
+- [ ] **MAT.C26.D.BILANGAN.Q.BULAT_1** — Hasil dari 8 − (−3) adalah …
+  A. 5 · B. −24 · C. 24 · D. 11
+  Kunci: **D** · 8 − (−3) = 8 + 3 = 11.
+- [ ] **MAT.C26.D.BILANGAN.Q.BULAT_2** — Suhu pagi di puncak gunung −4 °C dan siang harinya 9 °C. Kenaikan suhunya adalah …
+  A. 13 °C · B. 5 °C · C. 36 °C · D. −36 °C
+  Kunci: **A** · 9 − (−4) = 9 + 4 = 13 °C.
+- [ ] **MAT.C26.D.BILANGAN.Q.BULAT_3** — Urutan bilangan −7, 2, 0, −1 dari yang terkecil adalah …
+  A. 2, 0, −1, −7 · B. −7, −1, 0, 2 · C. −1, −7, 0, 2 · D. 0, −1, 2, −7
+  Kunci: **B** · Di garis bilangan, −7 paling kiri, lalu −1, 0, dan 2.
 - [ ] **MAT.C26.D.BILANGAN.Q.BILANGAN_RASIONAL_DAN_ESTIMASI_1** — Bilangan berikut yang **bukan** bilangan rasional adalah …
   A. −7 · B. √2 · C. 2/3 · D. 0,25
   Kunci: **B** · √2 tidak dapat ditulis sebagai pecahan a/b; desimalnya tidak berakhir dan tidak berulang. Bilangan lain dapat ditulis a/b.
@@ -1119,7 +1128,7 @@ Materi: 4 · Soal: 12
 
 ## Rasio, skala, dan laju (MAT.C26.D.RASIO)
 
-Materi: 3 · Soal: 9
+Materi: 4 · Soal: 12
 
 - [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_1** — Harga 4 pensil Rp10.000. Harga 10 pensil yang sama adalah …
   A. Rp20.000 · B. Rp25.000 · C. Rp40.000 · D. Rp4.000
@@ -1130,6 +1139,15 @@ Materi: 3 · Soal: 9
 - [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_3** — Pasangan besaran berikut yang merupakan perbandingan senilai adalah …
   A. banyak siswa dan jatah kue per siswa dari kue yang sama · B. banyak pekerja dan lama pekerjaan selesai · C. kecepatan dan waktu tempuh untuk jarak yang sama · D. banyak barang dan total harga
   Kunci: **D** · Makin banyak barang, makin besar total harganya dengan perbandingan tetap. Pasangan lain berbalik nilai.
+- [ ] **MAT.C26.D.RASIO.Q.WAKTU_1** — 2,5 jam sama dengan …
+  A. 250 menit · B. 125 menit · C. 90 menit · D. 150 menit
+  Kunci: **D** · 2,5 × 60 = 150 menit.
+- [ ] **MAT.C26.D.RASIO.Q.WAKTU_2** — Sebuah perjalanan memakan waktu 0,2 jam. Dalam menit, waktunya …
+  A. 12 menit · B. 20 menit · C. 120 menit · D. 32 menit
+  Kunci: **A** · 0,2 × 60 = 12 menit.
+- [ ] **MAT.C26.D.RASIO.Q.WAKTU_3** — Rani berlari selama 45 menit. Dalam jam, waktunya …
+  A. 4,5 jam · B. 0,75 jam · C. 0,45 jam · D. 1,5 jam
+  Kunci: **B** · 45 : 60 = 0,75 jam.
 - [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1** — Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …
   A. 20 km · B. 200 km · C. 2.000 km · D. 2 km
   Kunci: **A** · 4 × 500.000 = 2.000.000 cm = 20 km.

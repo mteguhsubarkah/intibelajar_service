@@ -33,11 +33,18 @@ blocks:
   - type: text
     slide: 1
     text: "Contoh: 2,5 km = 2.500 m; 72 km/jam = 72.000 m : 3.600 s = 20 m/s."
+  - type: text
+    slide: 1
+    text: "Volume: 1 L = 1.000 mL, dan 1 mL sama dengan 1 cm³. Jadi air 20 mL bervolume 20 cm³."
   - type: math
     slide: 1
     name: km/jam → m/s
     expression: bagi 3,6
     highlight: true
+  - type: math
+    slide: 1
+    name: volume
+    expression: 1 mL = 1 cm³
   - type: tip
     slide: 1
     text: Tuliskan satuan di setiap langkah supaya kesalahan konversi cepat terlihat.
