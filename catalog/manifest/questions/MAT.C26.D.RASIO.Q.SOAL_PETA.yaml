@@ -1,0 +1,174 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.Q.SOAL_PETA
+familyCode: MAT.C26.D.RASIO.F.SOAL_PETA
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: PETA
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:coba
+  note: Soal /coba Matematika SMP kelas 7. Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-peta
+concepts:
+  - concept: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: "Pada peta, jarak rumah Dika ke sekolah 6 cm dengan skala 1 : 50.000. Setiap pagi Dika diantar ayahnya naik motor dengan kecepatan tetap 30 km/jam. Berapa menit waktu perjalanan Dika ke sekolah?"
+  hints:
+    - step: 1
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      lead: "Skala 1 : 50.000 artinya 1 cm di peta = 50.000 cm aslinya. Ubah ke km dulu, lalu waktu = jarak : kecepatan."
+      note: "jarak asli = jarak peta × 50.000; 1 km = 100.000 cm; waktu = jarak : kecepatan"
+    - step: 2
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+      lead: "Hasilmu masih dalam jam. Ubah ke menit: 1 jam = 60 menit, jadi kalikan dengan 60."
+      note: 1 jam = 60 menit
+  answerFormat: NUMBER
+  answerExample: waktu = … menit
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 6
+    unit: menit
+    tolerance:
+      relative: 0.02
+      floor: 1
+    thousandsDot: true
+  acceptedForms:
+    - 6 menit
+    - "6 × 50.000 = 300.000 cm = 3 km; 3 : 30 = 0,1 jam; 0,1 × 60 = 6 menit"
+  solutionPaths:
+    - code: UTAMA
+      label: langkah per inti
+      steps:
+        - code: S1
+          description: "Jarak asli: 6 × 50.000 = 300.000 cm = 3 km"
+          concepts:
+            - code: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+              role: REQUIRED
+        - code: S2
+          description: "Waktu = jarak : kecepatan = 3 : 30 = 0,1 jam"
+          concepts:
+            - code: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+              role: REQUIRED
+        - code: S3
+          description: 0,1 jam × 60 = 6 menit
+          concepts:
+            - code: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 0.1
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+      misconceptionCode: MASIH_DALAM_JAM
+      explanation: 0,1 itu masih dalam jam. Soalnya minta menit, jadi kalikan 60.
+    - pattern:
+        kind: NUMERIC
+        value: 3
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      misconceptionCode: BERHENTI_DI_JARAK
+      explanation: "3 km itu jarak aslinya, sudah benar. Sekarang hitung waktunya: waktu = jarak : kecepatan."
+    - pattern:
+        kind: NUMERIC
+        value: 10
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      misconceptionCode: LAJU_TERBALIK
+      explanation: "Kebalik: waktu = jarak : kecepatan, bukan kecepatan : jarak."
+    - pattern:
+        kind: NUMERIC
+        value: 10000
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      misconceptionCode: JARAK_BELUM_KM
+      explanation: Jaraknya masih dalam cm. Ubah ke km dulu sebelum dibagi 30 km/jam.
+  finalAnswerEvidence:
+    - MAT.C26.D.RASIO.SKALA_DAN_LAJU
+    - MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+  lessonFor:
+    MAT.C26.D.RASIO.SKALA_DAN_LAJU: MAT.C26.D.RASIO.L.SKALA_DAN_LAJU
+    MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU: MAT.C26.D.RASIO.L.WAKTU
+  recommend:
+    - misconceptionCode: MASIH_DALAM_JAM
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+      keyFormula: 1 jam = 60 menit
+    - misconceptionCode: BERHENTI_DI_JARAK
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      keyFormula: "waktu = jarak : kecepatan"
+    - misconceptionCode: LAJU_TERBALIK
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      keyFormula: "waktu = jarak : kecepatan"
+    - misconceptionCode: JARAK_BELUM_KM
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      keyFormula: 1 km = 100.000 cm
+  feedback:
+    correct: "6 × 50.000 = 300.000 cm = 3 km. 3 : 30 = 0,1 jam = 6 menit."
+    incorrect: "Jawabannya 6 menit. Jarak asli 3 km, waktu 3 : 30 = 0,1 jam, lalu 0,1 × 60 = 6 menit."
+  workedSolution:
+    steps:
+      - title: Jarak asli dari skala
+        body: 6 × 50.000 = 300.000 cm = 3 km
+      - title: Waktu dari laju
+        body: "waktu = 3 km : 30 km/jam = 0,1 jam"
+      - title: Ubah ke menit
+        body: 0,1 jam × 60 menit per jam = 6 menit
+    after:
+      - "3 km : 30 km/jam = 0,1 jam = 6 menit"
+  cobaSteps:
+    - step: 1
+      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+      prompt: Waktu perjalanan = … jam
+      key: "0,1 jam (3 km : 30 km/jam)"
+      correct: "Pas, 3 km : 30 km/jam = 0,1 jam. Skala dan lajunya udah benar."
+      answer:
+        value: 0.1
+        tolerance:
+          relative: 0.02
+          floor: 0.1
+      partials:
+        - value: 3
+          explanation: "Jarak aslinya 3 km, pas. Sekarang waktunya: 3 : 30 = … jam?"
+        - value: 300000
+          explanation: "300.000 cm udah benar. Ubah ke km dulu: 1 km = 100.000 cm."
+        - value: 10
+          explanation: "Kebalik: waktu = jarak : kecepatan, jadi 3 : 30."
+        - value: 6
+          explanation: Itu sudah dalam menit. Di kotak ini tulis waktunya dalam jam dulu.
+    - step: 2
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+      prompt: 0,1 jam = … menit
+      key: 6 menit (0,1 × 60)
+      correct: Pas, 0,1 × 60 = 6 menit.
+      answer:
+        value: 6
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 0.1
+          tolerance:
+            relative: 0.02
+            floor: 0.1
+          explanation: Itu masih dalam jam. Kalikan 60.
+        - value: 600
+          explanation: 1 jam = 60 menit, bukan 6.000. Coba 0,1 × 60.
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "Soal /coba Matematika SMP: skala peta, laju, dan konversi jam ke menit dalam satu situasi sehari-hari. Kunci, pengecoh, dan bahasa perlu dicek guru Matematika."
+    - Pengecoh 0,1 (masih jam), 3 (berhenti di jarak), 10 (laju terbalik), 10.000 (jarak masih cm) diturunkan dari kesalahan umum soal skala dan kecepatan.
+    - Kotak Coba sekarang (cobaSteps) dinilai aturan angka; isian tanpa angka dinilai AI dengan key.

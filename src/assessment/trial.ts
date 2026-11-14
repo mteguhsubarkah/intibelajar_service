@@ -4,8 +4,9 @@ import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
 import { gradingSource } from '../catalog/grading-source.js';
 import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
-import { parseAnswerValue, unitKindOf, withinTolerance } from './evaluators/numeric-parse.js';
+import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
 import { fail } from '../platform/errors.js';
+import { judgeCobaStep } from './coba-steps.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
 // Public trial uses published content with an injected AI engine; no authored-response fallback.
@@ -47,7 +48,10 @@ interface TrialContext {
   hints: number; guideDone?: string[]; answerDone?: string[]; guideStreak?: { core: string | null; correct: number }; openedHint:boolean; solutionSeen:boolean; latestRun?: string; answer?:string; pending:Map<string,Promise<any>>;
   /** pertanyaan mini per inti + jawaban siswa: dinilai terhadap pertanyaan yang dibuat server, bukan kiriman browser */
   mini?: Map<string,{question:string;hint:string;key?:string}>;
+  /** hasil kotak "Coba sekarang" per soal, langkah, dan isian (isian yang sama tidak dinilai dua kali) */
+  steps?: Map<string, StepCheckResult>;
 }
+export interface StepCheckResult { correct: boolean; partial: boolean; feedback: string; judge: 'rule' | 'ai'; coreId: string }
 /*
  * Penilaian trial.
  * - Pilihan ganda: dinilai dengan kuncinya (deterministik, tanpa AI).
@@ -59,20 +63,20 @@ interface TrialContext {
  */
 /** values: bacaan angka hasil akhir; selain bacaan baku, "a/b/c" juga dibaca a/(b/c) (maksud "20/1/√3" = 20 dibagi 1/√3) */
 type FinalValue = { value: number; values: number[]; quote: string };
-const KEEP_WORDS = new Set(['akar', 'sqrt', 'meter', 'metre', 'derajat', 'detik', 'sekon', 'gram', 'menit']);
-export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>): FinalValue | null {
+const KEEP_WORDS = new Set(['akar', 'sqrt', 'meter', 'metre', 'derajat', 'detik', 'sekon', 'gram', 'menit', 'celsius', 'celcius', 'bakteri']);
+export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>, options: ParseOptions = {}): FinalValue | null {
   const last = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1);
   if (!last || !last.includes('=')) return null;
   for (const piece of last.split('=').at(-1)!.split('≈')) {
     const cleaned = piece.replace(/[a-zA-Z]{4,}/g, w => (KEEP_WORDS.has(w.toLowerCase()) ? w : ' ')).replace(/[,;.]\s*$/, '').replace(/\s+/g, ' ').trim();
     if (!cleaned) continue;
-    const v = parseAnswerValue(cleaned, kind);
+    const v = parseAnswerValue(cleaned, kind, options);
     if (v.kind !== 'value') continue;
     const values = [v.value];
     // pembagian bertingkat tanpa kurung: siswa yang menulis "20/1/√3" bermaksud 20 / (1/√3)
     const nested = cleaned.match(/^(.+?)\/(.+)\/(.+)$/);
     if (nested && !/[()]/.test(cleaned)) {
-      const alt = parseAnswerValue(`${nested[1]}/(${nested[2]}/${nested[3]})`, kind);
+      const alt = parseAnswerValue(`${nested[1]}/(${nested[2]}/${nested[3]})`, kind, options);
       if (alt.kind === 'value' && alt.value !== v.value) values.push(alt.value);
     }
     return { value: v.value, values, quote: piece.trim() };
@@ -89,7 +93,7 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   const key = i.source.rubric.answer;
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
   const text = response.text ?? '';
-  const got = finalValue(text, unitKindOf(key.unit));
+  const got = finalValue(text, unitKindOf(key.unit), { thousandsDot: key.thousandsDot === true });
   if (!got) return judged;
   const right = got.values.some(value => withinTolerance(value, key.value!, key.tolerance?.relative, key.tolerance?.floor));
   console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', bacaan: got.values.length, ai: judged.verdict }));
@@ -298,6 +302,48 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       // inti yang terbukti lewat pertanyaan mini tidak diajarkan ulang oleh IntiGuide
       if (graded.correct) c.guideDone = [...new Set([...(c.guideDone ?? c.answerDone ?? []), body.coreId])];
       return { question: asked.question, hint: asked.hint, correct: graded.correct, feedback: graded.feedback, ...(graded.because ? { because: graded.because } : {}) };
+    },
+    /*
+     * Kotak "Coba sekarang" di petunjuk /coba (satu inti). Aturan angka dan kata di rubric.cobaSteps memutuskan bila bisa;
+     * isian bebas dinilai AI (DeepSeek) dengan key langkah itu. Langkah yang benar menandai intinya selesai untuk IntiGuide.
+     */
+    async stepCheck(owner: string, body: { sessionId: string; questionId: string; step: number; reply: string }): Promise<StepCheckResult> {
+      const c = context(owner, body.sessionId), i = await item(c, body.questionId);
+      const step = i.source.rubric.cobaSteps?.find(s => s.step === body.step);
+      if (!step) return fail(404, 'NOT_FOUND');
+      const core = i.concepts.find(x => x.code === step.conceptCode);
+      if (!core) return fail(409, 'CONTENT_UNAVAILABLE');
+      const reply = body.reply.trim().slice(0, 300);
+      if (!reply) return fail(400, 'VALIDATION_FAILED');
+      c.openedHint = true;
+      c.steps ??= new Map();
+      const cacheKey = body.questionId + '\u0000' + step.step + '\u0000' + reply;
+      const cached = c.steps.get(cacheKey);
+      if (cached) return cached;
+      const coreId = core.legacyMapId ?? core.code, ref = { id: coreId, title: core.title };
+      const answer = (c.answer ?? '').slice(0, 1000);
+      const rule = judgeCobaStep(step, reply, { thousandsDot: i.source.rubric.answer.thousandsDot === true });
+      let result: StepCheckResult;
+      if (rule.kind === 'correct') result = { correct: true, partial: false, feedback: step.correct, judge: 'rule', coreId };
+      else if (rule.kind === 'partial') result = { correct: false, partial: true, feedback: rule.feedback, judge: 'rule', coreId };
+      else if (rule.kind === 'incorrect') {
+        // angkanya sudah diputuskan salah; tanggapan yang menyebut langkah siswa ditulis AI bila tersedia
+        let feedback = rule.feedback ?? 'Belum pas. Baca lagi rumus di atas, lalu coba lagi.';
+        if (rule.by === 'number' && ai.mini) {
+          try { feedback = (await ai.mini(i, { core: ref, answer, question: step.prompt, reply, key: step.key, decided: false }) as { feedback: string }).feedback || feedback; }
+          catch { /* tanggapan cadangan di atas */ }
+        }
+        result = { correct: false, partial: false, feedback, judge: 'rule', coreId };
+      } else {
+        if (!ai.mini) return fail(503, 'DEPENDENCY_UNAVAILABLE', { blockers: ['TRIAL_AI_PROVIDER_UNAVAILABLE'] });
+        const graded = await ai.mini(i, { core: ref, answer, question: step.prompt, reply, key: step.key }) as { correct: boolean; feedback: string };
+        result = { correct: graded.correct, partial: false, feedback: graded.correct ? graded.feedback || step.correct : graded.feedback, judge: 'ai', coreId };
+      }
+      console.log(JSON.stringify({ event: 'trial_step_check', step: step.step, hasil: result.correct ? 'benar' : result.partial ? 'hampir' : 'belum', judge: result.judge }));
+      if (result.correct) c.guideDone = [...new Set([...(c.guideDone ?? c.answerDone ?? []), coreId])];
+      if (c.steps.size >= 64) c.steps.delete(c.steps.keys().next().value!);
+      c.steps.set(cacheKey, result);
+      return result;
     },
     close() { contexts.clear(); }
   };

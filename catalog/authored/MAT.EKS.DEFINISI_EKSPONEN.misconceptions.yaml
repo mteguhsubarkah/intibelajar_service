@@ -1,0 +1,24 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: MAT.EKS.DEFINISI_EKSPONEN
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-nasi).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: PANGKAT_DIANGGAP_PERKALIAN
+    description: Perpangkatan dihitung sebagai perkalian basis dan pangkat
+    example: 2⁶ = 2 × 6 = 12
+    indicators:
+      - "soal-nasi: jawaban 12"
+  - code: BERHENTI_DI_PANGKAT
+    description: Banyak pembelahan dianggap jumlah bakteri
+    example: 6 kali membelah, lalu berhenti
+    indicators:
+      - "soal-nasi: jawaban 6"

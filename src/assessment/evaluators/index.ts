@@ -103,7 +103,7 @@ export function evaluateNumeric(input: EvaluationInput): Evaluation {
   // Graded from what the learner typed, never a pre-parsed number: evidence must quote a span of the
   // response (06 §2.4), and device and server must read the same text the same way.
   if (response.responseType !== 'TEXT' || typeof response.text !== 'string') return ungraded('UNREADABLE', 'unsupported-response');
-  const parsed = parseAnswerValue(response.text, unitKindOf(rubric.answer.unit));
+  const parsed = parseAnswerValue(response.text, unitKindOf(rubric.answer.unit), { thousandsDot: rubric.answer.thousandsDot === true });
   if (parsed.kind === 'unreadable') return ungraded('UNREADABLE', parsed.reason);
   const value = parsed.value;
   const start = response.text.length - response.text.trimStart().length, end = response.text.trimEnd().length;

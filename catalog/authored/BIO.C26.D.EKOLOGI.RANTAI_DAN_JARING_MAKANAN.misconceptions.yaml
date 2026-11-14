@@ -1,0 +1,19 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-sawah).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: ENERGI_PINDAH_UTUH
+    description: Energi dianggap pindah utuh ke tingkat trofik berikutnya
+    example: 10.000 kJ sampai ke elang
+    indicators:
+      - "soal-sawah: jawaban 10.000"

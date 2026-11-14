@@ -1,0 +1,24 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-freezer).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: MENGURANGI_NEGATIF_KELIRU
+    description: a − (−b) dihitung sebagai a − b
+    example: 37 − (−5) = 32
+    indicators:
+      - "soal-freezer: jawaban 32"
+  - code: SELISIH_NEGATIF
+    description: Selisih ditulis sebagai suhu rendah dikurangi suhu tinggi
+    example: −5 − 37 = −42
+    indicators:
+      - "soal-freezer: jawaban −42"

@@ -198,7 +198,11 @@ test('Slice 1 public catalog read API', async t => {
       const views = bodies.filter(b => b.url.startsWith('/v1/questions/'));
       for (const view of views) {
         const code = (view.body as { code: string }).code, q = fixture.questions.find(x => x.code === code)!;
-        for (const form of answerForms(q)) assert.ok(!view.text.includes(form), `${code} reveals its answer "${form}"`);
+        // with Indonesian thousands (answer.thousandsDot) a value form counts only as a whole number: "10.00" inside the
+        // given data "10.000 kJ" is not the key 10. Every other question keeps the plain substring check ("34.641" reveals 34.64).
+        const shows = (form: string) => q.rubric.answer.thousandsDot
+          ? new RegExp(`(?<![\\d.,])${form.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\d])`).test(view.text) : view.text.includes(form);
+        for (const form of answerForms(q)) assert.ok(!shows(form), `${code} reveals its answer "${form}"`);
       }
     });
 

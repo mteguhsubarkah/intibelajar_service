@@ -1,0 +1,153 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.Q.SOAL_BATU
+familyCode: KIM.C26.D.PARTIKEL.F.SOAL_BATU
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: BATU
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:coba
+  note: Soal /coba Kimia SMP kelas 7. Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-batu
+concepts:
+  - concept: KIM.C26.D.PARTIKEL.MASSA_JENIS
+    role: PRIMARY
+    assessable: true
+  - concept: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah batu bermassa 60 g dimasukkan ke gelas ukur berisi air, dan permukaan airnya naik 20 mL. Berapa massa jenis batu itu?
+  hints:
+    - step: 1
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      lead: "Air naik karena didorong batu. Jadi volume batu sama dengan kenaikan airnya. Setelah itu, massa jenis = massa : volume."
+      note: "volume batu = kenaikan air; ρ = m : V"
+    - step: 2
+      conceptCode: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+      lead: Massa jenis biasanya ditulis dalam g/cm³. 1 mL sama dengan 1 cm³, jadi 20 mL = 20 cm³.
+      note: 1 mL = 1 cm³
+  answerFormat: NUMBER
+  answerExample: ρ = … g/cm³
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 3
+    unit: g/cm³
+    tolerance:
+      relative: 0.02
+      floor: 1
+    thousandsDot: true
+  acceptedForms:
+    - 3 g/cm³
+    - "V = 20 mL = 20 cm³; ρ = 60 : 20 = 3 g/cm³"
+  solutionPaths:
+    - code: UTAMA
+      label: langkah per inti
+      steps:
+        - code: S1
+          description: Volume batu = kenaikan air = 20 mL
+          concepts:
+            - code: KIM.C26.D.PARTIKEL.MASSA_JENIS
+              role: REQUIRED
+        - code: S2
+          description: 20 mL = 20 cm³
+          concepts:
+            - code: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+              role: REQUIRED
+        - code: S3
+          description: "ρ = 60 : 20 = 3 g/cm³"
+          concepts:
+            - code: KIM.C26.D.PARTIKEL.MASSA_JENIS
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 1200
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      misconceptionCode: MASSA_DIKALI_VOLUME
+      explanation: Massa jenis = massa dibagi volume, bukan dikali.
+    - pattern:
+        kind: NUMERIC
+        value: 0.333
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      misconceptionCode: PEMBAGIAN_TERBALIK
+      explanation: "Kebalik: massa dibagi volume, jadi 60 : 20."
+    - pattern:
+        kind: NUMERIC
+        value: 20
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      misconceptionCode: BERHENTI_DI_VOLUME
+      explanation: "Volume batu 20 cm³ udah benar. Lanjut: massa jenis = 60 : 20."
+  finalAnswerEvidence:
+    - KIM.C26.D.PARTIKEL.MASSA_JENIS
+    - FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+  lessonFor:
+    KIM.C26.D.PARTIKEL.MASSA_JENIS: KIM.C26.D.PARTIKEL.L.MASSAJENIS
+    FIS.C26.D.UKUR.BESARAN_DAN_SATUAN: FIS.C26.D.UKUR.L.BESARAN_DAN_SATUAN
+  recommend:
+    - misconceptionCode: MASSA_DIKALI_VOLUME
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      keyFormula: "ρ = m : V"
+    - misconceptionCode: PEMBAGIAN_TERBALIK
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      keyFormula: volume batu = kenaikan air
+    - misconceptionCode: BERHENTI_DI_VOLUME
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      keyFormula: volume batu = kenaikan air
+  feedback:
+    correct: "Volume batu = 20 mL = 20 cm³. ρ = 60 : 20 = 3 g/cm³."
+    incorrect: "Jawabannya 3 g/cm³. Volume batu sama dengan kenaikan air, 20 mL = 20 cm³, lalu ρ = 60 : 20 = 3 g/cm³."
+  workedSolution:
+    steps:
+      - title: Volume batu
+        body: volume batu = kenaikan air = 20 mL = 20 cm³
+      - title: Massa jenis
+        body: "ρ = m : V = 60 : 20 = 3 g/cm³"
+    after:
+      - "ρ = 60 g : 20 cm³ = 3 g/cm³"
+  cobaSteps:
+    - step: 1
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      prompt: Volume batu = … mL
+      key: 20 mL (sama dengan kenaikan air)
+      correct: Pas, volume batu 20 mL, sama dengan kenaikan airnya.
+      answer:
+        value: 20
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 60
+          explanation: 60 itu massanya (gram), bukan volume. Volume batu = kenaikan air.
+    - step: 2
+      conceptCode: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
+      prompt: "60 g : 20 cm³ = … g/cm³"
+      key: 3 g/cm³
+      correct: "Pas, 60 : 20 = 3 g/cm³."
+      answer:
+        value: 3
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 1200
+          explanation: Massa jenis = massa dibagi volume, bukan dikali.
+        - value: 0.333
+          explanation: "Kebalik: massa dibagi volume, jadi 60 : 20."
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "Soal /coba Kimia SMP: volume benda tak beraturan dari kenaikan air, 1 mL = 1 cm³, dan ρ = m : V. Versi pendek (air naik 20 mL) atas permintaan pemilik produk, supaya tidak bingung volume awal dan akhir. Kunci, pengecoh, dan bahasa perlu dicek guru IPA."
+    - Pengecoh 1.200 (dikali), 0,33 (terbalik), 20 (berhenti di volume) diturunkan dari kesalahan umum massa jenis.

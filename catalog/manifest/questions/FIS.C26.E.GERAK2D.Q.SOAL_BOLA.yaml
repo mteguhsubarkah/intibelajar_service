@@ -123,6 +123,40 @@ rubric:
     after:
       - vᵧ = 20 × sin 30° = 10 m/s
       - t = 2 vᵧ / g = 2 s
+  cobaSteps:
+    - step: 1
+      conceptCode: FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK
+      prompt: "Komponen tegak dihitung pakai sin atau cos?"
+      key: "sin (vᵧ = v sin θ)"
+      correct: "Betul, vᵧ = v sin θ."
+      words:
+        correct: [sin, sinus, pakai sin, sin θ, v sin θ]
+        wrong:
+          - words: [cos, cosinus, kosinus, pakai cos]
+            explanation: "cos dipakai untuk komponen mendatar. Yang tegak pakai sin."
+    - step: 2
+      conceptCode: MAT.TRI.SUDUT_ISTIMEWA
+      prompt: "vᵧ = 20 × ½ = … m/s"
+      key: "10 m/s"
+      correct: "Pas, vᵧ = 10 m/s."
+      answer:
+        value: 10
+        tolerance: {relative: 0.02, floor: 1}
+      partials:
+        - value: 17.32
+          tolerance: {relative: 0.01, floor: 1}
+          explanation: "Itu 20 cos 30°. Komponen tegak pakai sin."
+    - step: 3
+      conceptCode: FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL
+      prompt: "t total = 2 × (10 : 10) = … s"
+      key: "2 s"
+      correct: "Pas, naik 1 s dan turun 1 s, total 2 s."
+      answer:
+        value: 2
+        tolerance: {relative: 0.02, floor: 1}
+      partials:
+        - value: 1
+          explanation: "Itu baru waktu naik. Turunnya butuh waktu yang sama."
 review:
   status: PROPOSED
   decision: D8
@@ -133,3 +167,4 @@ review:
   evidence:
     - "Soal /coba Fisika: satu situasi sehari-hari (tendangan bola) yang menyambungkan inti Fisika dengan Sudut Istimewa Matematika. Kunci, pengecoh, dan bahasa perlu dicek guru Fisika."
     - "Pengecoh 1 s (hanya waktu ke puncak), 3,46 s (memakai cos), 4 s (kecepatan tidak diuraikan) diturunkan dari kesalahan umum gerak parabola."
+    - "Kotak Coba sekarang (cobaSteps) untuk /coba terpandu: angka dan kata yang persis dinilai aturan, isian lain dinilai AI dengan key."

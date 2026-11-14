@@ -1,0 +1,29 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: KIM.C26.D.PARTIKEL.MASSA_JENIS
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-batu).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: MASSA_DIKALI_VOLUME
+    description: Massa jenis dihitung sebagai massa dikali volume
+    example: 60 × 20 = 1.200
+    indicators:
+      - "soal-batu: jawaban 1.200"
+  - code: PEMBAGIAN_TERBALIK
+    description: Massa jenis dihitung sebagai volume dibagi massa
+    example: "20 : 60 = 0,33"
+    indicators:
+      - "soal-batu: jawaban 0,33"
+  - code: BERHENTI_DI_VOLUME
+    description: Volume benda dianggap jawaban massa jenis
+    example: volume batu 20 cm³, lalu berhenti
+    indicators:
+      - "soal-batu: jawaban 20"

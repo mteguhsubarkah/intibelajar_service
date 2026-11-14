@@ -12,7 +12,8 @@ export interface TrialAi {
   /** streak: jawaban benar untuk inti aktif di percakapan ini (dari sesi trial); balasannya membawa streak berikutnya */
   tutor(item: TrialItem, messages: {from:string;text:string}[], answer: string, used: number, done?: string[], streak?: GuideStreak): Promise<{text:string;quick:string[];hintsUsed:number;coreProgress?:{active:string|null;done:string[];order?:string[]};visual?:import('../tutor/guide-visual.js').GuideVisual;streak?:GuideStreak}>;
   /** Pertanyaan mini di akhir materi satu inti (ask), atau penilaian jawabannya (grade). */
-  mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string;key?:string;previous?:string}): Promise<MiniQuestion|MiniGrade>;
+  mini?(item: TrialItem, input: {core:{id:string;title:string};answer:string;reason?:string;question?:string;reply?:string;key?:string;previous?:string;
+    /** keputusan aturan untuk kotak Coba sekarang: model hanya menulis tanggapan */ decided?:boolean}): Promise<MiniQuestion|MiniGrade>;
 }
 const unavailable = () => fail(503, 'DEPENDENCY_UNAVAILABLE', {blockers:['TRIAL_AI_PROVIDER_UNAVAILABLE']});
 /* Penyebab 503 penilaian dicatat tanpa isi jawaban: journalctl -u intibelajar-api | grep trial_ai_invalid */
@@ -148,7 +149,7 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       // soal pilihan ganda: pilihannya ikut, supaya pertanyaan mini merujuk soal yang sama dengan yang dilihat siswa
       const options=(item.source.body.options??[]).map((o:{label:string})=>o.label).filter(Boolean);
       const base={questionText:item.source.body.prompt+(options.length?'\nPilihan: '+options.join(' | '):''),answer:input.answer,core:input.core,others,steps,allSteps,hidden:last,...(input.previous?{previous:input.previous}:{})};
-      return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??'',...(input.key?{key:input.key}:{})},http) : miniQuestion(config,base,http);
+      return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??'',...(input.key?{key:input.key}:{}),...(input.decided!==undefined?{decided:input.decided}:{})},http) : miniQuestion(config,base,http);
     }
   };
 }

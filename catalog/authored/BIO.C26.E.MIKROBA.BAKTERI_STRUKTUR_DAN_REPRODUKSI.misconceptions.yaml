@@ -1,0 +1,19 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-nasi).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: JUMLAH_PEMBELAHAN_KELIRU
+    description: Banyak pembelahan dalam selang waktu dihitung keliru
+    example: 2⁵ = 32 atau 2⁷ = 128
+    indicators:
+      - "soal-nasi: jawaban 32 atau 128"

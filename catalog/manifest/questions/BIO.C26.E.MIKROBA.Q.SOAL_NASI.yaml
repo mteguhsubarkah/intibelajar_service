@@ -1,0 +1,160 @@
+schemaVersion: 1
+code: BIO.C26.E.MIKROBA.Q.SOAL_NASI
+familyCode: BIO.C26.E.MIKROBA.F.SOAL_NASI
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: NASI
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:coba
+  note: Soal /coba Biologi SMA kelas 10. Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-nasi
+concepts:
+  - concept: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.EKS.DEFINISI_EKSPONEN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Nasi sisa yang dibiarkan di suhu ruang ditumbuhi bakteri. Satu sel bakteri membelah diri menjadi dua setiap 20 menit. Jika semua sel terus membelah, berapa jumlah bakteri setelah 2 jam?
+  hints:
+    - step: 1
+      conceptCode: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+      lead: "Bakteri berkembang biak dengan pembelahan biner: satu sel jadi dua. Hitung dulu berapa kali pembelahan dalam 2 jam."
+      note: "jumlah pembelahan = 120 menit : 20 menit"
+    - step: 2
+      conceptCode: MAT.EKS.DEFINISI_EKSPONEN
+      lead: Setiap pembelahan jumlahnya dikali 2. Setelah n kali pembelahan, jumlahnya 1 × 2ⁿ.
+      note: N = 1 × 2ⁿ
+  answerFormat: NUMBER
+  answerExample: N = … sel
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 64
+    unit: sel
+    tolerance:
+      relative: 0.005
+      floor: 1
+  acceptedForms:
+    - 64 sel
+    - "120 : 20 = 6; N = 2⁶ = 64"
+  solutionPaths:
+    - code: UTAMA
+      label: langkah per inti
+      steps:
+        - code: S1
+          description: "2 jam = 120 menit, jadi 120 : 20 = 6 kali membelah"
+          concepts:
+            - code: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+              role: REQUIRED
+        - code: S2
+          description: N = 1 × 2⁶ = 64
+          concepts:
+            - code: MAT.EKS.DEFINISI_EKSPONEN
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 12
+      conceptCode: MAT.EKS.DEFINISI_EKSPONEN
+      misconceptionCode: PANGKAT_DIANGGAP_PERKALIAN
+      explanation: Bakteri berlipat dua, bukan bertambah 2. 2⁶ itu 2 × 2 × 2 × 2 × 2 × 2, bukan 2 × 6.
+    - pattern:
+        kind: NUMERIC
+        value: 6
+      conceptCode: MAT.EKS.DEFINISI_EKSPONEN
+      misconceptionCode: BERHENTI_DI_PANGKAT
+      explanation: 6 itu jumlah pembelahannya, udah benar. Jumlah bakterinya 2⁶.
+    - pattern:
+        kind: NUMERIC
+        value: 32
+      conceptCode: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+      misconceptionCode: JUMLAH_PEMBELAHAN_KELIRU
+      explanation: "Itu 2⁵. Dalam 2 jam ada 120 : 20 = 6 kali pembelahan."
+    - pattern:
+        kind: NUMERIC
+        value: 128
+      conceptCode: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+      misconceptionCode: JUMLAH_PEMBELAHAN_KELIRU
+      explanation: "Hitung lagi jumlah pembelahannya: 120 : 20 = 6, jadi 2⁶."
+  finalAnswerEvidence:
+    - BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    - MAT.EKS.DEFINISI_EKSPONEN
+  lessonFor:
+    BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI: BIO.C26.E.MIKROBA.L.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+    MAT.EKS.DEFINISI_EKSPONEN: MAT.EKS.L.DEFINISI_EKSPONEN
+  recommend:
+    - misconceptionCode: PANGKAT_DIANGGAP_PERKALIAN
+      conceptCode: MAT.EKS.DEFINISI_EKSPONEN
+      keyFormula: 2ⁿ = 2 × 2 × … × 2 (n kali)
+    - misconceptionCode: JUMLAH_PEMBELAHAN_KELIRU
+      conceptCode: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+      keyFormula: "jumlah pembelahan = waktu : waktu membelah"
+    - misconceptionCode: BERHENTI_DI_PANGKAT
+      conceptCode: MAT.EKS.DEFINISI_EKSPONEN
+      keyFormula: N = 1 × 2ⁿ
+  feedback:
+    correct: "120 : 20 = 6 kali membelah. N = 2⁶ = 64 sel."
+    incorrect: "Jawabannya 64 sel. Dalam 2 jam ada 120 : 20 = 6 kali pembelahan, jadi N = 2⁶ = 64."
+  workedSolution:
+    steps:
+      - title: Hitung pembelahan
+        body: "2 jam = 120 menit, 120 : 20 = 6 kali"
+      - title: Pakai eksponen
+        body: N = 1 × 2⁶ = 64 sel
+    after:
+      - N = 2⁶ = 64 sel
+  cobaSteps:
+    - step: 1
+      conceptCode: BIO.C26.E.MIKROBA.BAKTERI_STRUKTUR_DAN_REPRODUKSI
+      prompt: Jumlah pembelahan dalam 2 jam = … kali
+      key: "6 kali (120 menit : 20 menit)"
+      correct: "Pas, 120 : 20 = 6 kali membelah."
+      answer:
+        value: 6
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 120
+          explanation: 120 itu menitnya. Bagi dengan 20.
+        - value: 0.1
+          tolerance:
+            relative: 0.02
+            floor: 0.1
+          explanation: "Ubah 2 jam ke menit dulu: 120 menit."
+    - step: 2
+      conceptCode: MAT.EKS.DEFINISI_EKSPONEN
+      prompt: 2⁶ = …
+      key: "64"
+      correct: Pas, 2⁶ = 64.
+      answer:
+        value: 64
+        tolerance:
+          relative: 0.005
+          floor: 1
+      partials:
+        - value: 12
+          explanation: 2⁶ bukan 2 × 6. Itu 2 × 2 × 2 × 2 × 2 × 2.
+        - value: 32
+          explanation: Itu 2⁵. Kalikan 2 sekali lagi.
+        - value: 36
+          explanation: "Itu 6². Yang dicari 2⁶: angka 2 dikali sebanyak 6 kali."
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "Soal /coba Biologi SMA: pembelahan biner bakteri dan definisi eksponen; materi Definisi Eksponen sudah menulis 2⁵ bukan 2 × 5. Kunci, pengecoh, dan bahasa perlu dicek guru Biologi dan Matematika."
+    - Pengecoh 12 (2 × 6), 6 (berhenti di jumlah pembelahan), 32 dan 128 (jumlah pembelahan keliru).

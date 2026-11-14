@@ -1,0 +1,162 @@
+schemaVersion: 1
+code: FIS.C26.D.SUHU.Q.SOAL_FREEZER
+familyCode: FIS.C26.D.SUHU.F.SOAL_FREEZER
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: FREEZER
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:coba
+  note: Soal /coba Fisika SMP kelas 7. Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-freezer
+concepts:
+  - concept: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+    role: PRIMARY
+    assessable: true
+  - concept: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Suhu di dalam freezer kulkas −5 °C, sedangkan suhu tubuh manusia normal 310 K. Berapa selisih kedua suhu itu dalam °C?
+  hints:
+    - step: 1
+      conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+      lead: Samakan satuannya dulu. Jarak antarangka di skala kelvin dan Celsius sama, cuma titik nolnya geser 273.
+      note: °C = K − 273
+    - step: 2
+      conceptCode: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+      lead: Selisih = suhu yang lebih tinggi dikurangi suhu yang lebih rendah. Mengurangi bilangan negatif sama dengan menambah.
+      note: a − (−b) = a + b
+  answerFormat: NUMBER
+  answerExample: selisih = … °C
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 42
+    unit: °C
+    tolerance:
+      relative: 0.02
+      floor: 1
+  acceptedForms:
+    - 42 °C
+    - 310 K = 37 °C; 37 − (−5) = 42 °C
+  solutionPaths:
+    - code: UTAMA
+      label: langkah per inti
+      steps:
+        - code: S1
+          description: 310 K = 310 − 273 = 37 °C
+          concepts:
+            - code: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+              role: REQUIRED
+        - code: S2
+          description: Selisih = 37 − (−5) = 37 + 5 = 42 °C
+          concepts:
+            - code: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 32
+      conceptCode: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+      misconceptionCode: MENGURANGI_NEGATIF_KELIRU
+      explanation: "Ubah satuanmu udah benar (37 °C). Cek lagi: 37 dikurangi −5, bukan dikurangi 5."
+    - pattern:
+        kind: NUMERIC
+        value: -42
+      conceptCode: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+      misconceptionCode: SELISIH_NEGATIF
+      explanation: "Angkanya udah 42. Selisih ditulis positif: suhu tinggi dikurangi suhu rendah."
+    - pattern:
+        kind: NUMERIC
+        value: 315
+      conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+      misconceptionCode: SATUAN_SUHU_BELUM_DISAMAKAN
+      explanation: "Satuannya belum sama: 310 masih kelvin. Ubah ke °C dulu."
+    - pattern:
+        kind: NUMERIC
+        value: 305
+      conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+      misconceptionCode: SATUAN_SUHU_BELUM_DISAMAKAN
+      explanation: "Satuannya belum sama: 310 masih kelvin. Ubah ke °C dulu."
+    - pattern:
+        kind: NUMERIC
+        value: 37
+      conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+      misconceptionCode: SELISIH_BELUM_DIHITUNG
+      explanation: 37 °C itu suhu tubuh, udah benar. Sekarang cari selisihnya dengan −5 °C.
+  finalAnswerEvidence:
+    - FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+    - MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+  lessonFor:
+    FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR: FIS.C26.D.SUHU.L.SUHU
+    MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT: MAT.C26.D.BILANGAN.L.BULAT
+  recommend:
+    - misconceptionCode: MENGURANGI_NEGATIF_KELIRU
+      conceptCode: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+      keyFormula: a − (−b) = a + b
+    - misconceptionCode: SELISIH_NEGATIF
+      conceptCode: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+      keyFormula: selisih = suhu tinggi − suhu rendah
+    - misconceptionCode: SATUAN_SUHU_BELUM_DISAMAKAN
+      conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+      keyFormula: °C = K − 273
+    - misconceptionCode: SELISIH_BELUM_DIHITUNG
+      conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+      keyFormula: selisih = 37 − (−5)
+  feedback:
+    correct: 310 K = 37 °C. Selisih 37 − (−5) = 37 + 5 = 42 °C.
+    incorrect: Jawabannya 42 °C. 310 K = 37 °C, lalu 37 − (−5) = 37 + 5 = 42 °C.
+  workedSolution:
+    steps:
+      - title: Samakan satuan
+        body: 310 K = 310 − 273 = 37 °C
+      - title: Kurangi bilangan negatif
+        body: 37 − (−5) = 37 + 5 = 42 °C
+    after:
+      - 310 K = 37 °C, selisih dengan −5 °C = 42 °C
+  cobaSteps:
+    - step: 1
+      conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+      prompt: 310 K = … °C
+      key: 37 °C (310 − 273)
+      correct: Pas, 310 − 273 = 37 °C.
+      answer:
+        value: 37
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 583
+          explanation: Itu kalau ditambah. Dari kelvin ke °C dikurangi 273.
+    - step: 2
+      conceptCode: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+      prompt: 37 − (−5) = …
+      key: 42 (37 + 5)
+      correct: Pas, 37 − (−5) = 37 + 5 = 42.
+      answer:
+        value: 42
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 32
+          explanation: "Cek tandanya: 37 − (−5) itu sama dengan 37 + 5."
+        - value: -42
+          explanation: Angkanya udah 42. Selisih ditulis positif.
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "Soal /coba Fisika SMP: skala suhu kelvin–Celsius dan pengurangan bilangan negatif. Kunci, pengecoh, dan bahasa perlu dicek guru Fisika dan Matematika."
+    - Pengecoh 32 (−(−5) dibaca −5), −42 (urutan terbalik), 315/305 (satuan belum disamakan), 37 (berhenti di konversi) diturunkan dari kesalahan umum.

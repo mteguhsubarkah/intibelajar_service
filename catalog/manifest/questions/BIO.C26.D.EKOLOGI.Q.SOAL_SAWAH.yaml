@@ -1,0 +1,159 @@
+schemaVersion: 1
+code: BIO.C26.D.EKOLOGI.Q.SOAL_SAWAH
+familyCode: BIO.C26.D.EKOLOGI.F.SOAL_SAWAH
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: SAWAH
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:coba
+  note: Soal /coba Biologi SMP kelas 7. Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-sawah
+concepts:
+  - concept: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+    role: PRIMARY
+    assessable: true
+  - concept: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Di sawah terdapat rantai makanan padi → tikus → ular → elang. Energi yang tersimpan pada padi 10.000 kJ. Berapa energi yang sampai ke elang?
+  hints:
+    - step: 1
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      lead: "Energi mengalir satu arah dari produsen ke konsumen, dan berkurang setiap kali pindah. Hitung panahnya: berapa kali energi berpindah?"
+      note: jumlah perpindahan = jumlah panah
+    - step: 2
+      conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+      lead: Padi produsen, tikus konsumen I, ular konsumen II, elang konsumen III. Tiap naik satu tingkat, cuma sekitar 10% energi yang diteruskan.
+      note: energi berikutnya = 10% × energi sebelumnya
+  answerFormat: NUMBER
+  answerExample: energi di elang = … kJ
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 10
+    unit: kJ
+    tolerance:
+      relative: 0.02
+      floor: 1
+    thousandsDot: true
+  acceptedForms:
+    - 10 kJ
+    - 10.000 → 1.000 → 100 → 10 kJ
+  solutionPaths:
+    - code: UTAMA
+      label: langkah per inti
+      steps:
+        - code: S1
+          description: "Ada 3 panah: padi → tikus → ular → elang, jadi energi berpindah 3 kali"
+          concepts:
+            - code: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+              role: REQUIRED
+        - code: S2
+          description: "Tiap perpindahan 10%: 10.000 → 1.000 → 100 → 10 kJ"
+          concepts:
+            - code: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 1
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      misconceptionCode: PERPINDAHAN_DIHITUNG_PER_MAKHLUK
+      explanation: "Kamu menghitung 4 kali pindah. Hitung panahnya: padi → tikus → ular → elang ada 3 panah."
+    - pattern:
+        kind: NUMERIC
+        value: 100
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      misconceptionCode: PERPINDAHAN_KURANG
+      explanation: Itu baru sampai ular. Masih ada satu perpindahan lagi ke elang.
+    - pattern:
+        kind: NUMERIC
+        value: 1000
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      misconceptionCode: PERPINDAHAN_KURANG
+      explanation: Itu energi di tikus. Lanjutkan ke ular, lalu ke elang.
+    - pattern:
+        kind: NUMERIC
+        value: 10000
+      conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+      misconceptionCode: ENERGI_PINDAH_UTUH
+      explanation: Energi tidak pindah utuh. Tiap naik satu tingkat hanya sekitar 10% yang diteruskan.
+  finalAnswerEvidence:
+    - BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+    - BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+  lessonFor:
+    BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI: BIO.C26.D.EKOLOGI.L.INTERAKSI_DAN_ALIRAN_ENERGI
+    BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN: BIO.C26.D.EKOLOGI.L.JEJARING
+  recommend:
+    - misconceptionCode: PERPINDAHAN_DIHITUNG_PER_MAKHLUK
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      keyFormula: jumlah perpindahan = jumlah panah
+    - misconceptionCode: ENERGI_PINDAH_UTUH
+      conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+      keyFormula: energi berikutnya = 10% × energi sebelumnya
+    - misconceptionCode: PERPINDAHAN_KURANG
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      keyFormula: jumlah perpindahan = jumlah panah
+  feedback:
+    correct: Ada 3 panah. 10.000 → 1.000 → 100 → 10 kJ.
+    incorrect: "Jawabannya 10 kJ. Ada 3 panah, dan tiap perpindahan hanya sekitar 10%: 10.000 → 1.000 → 100 → 10 kJ."
+  workedSolution:
+    steps:
+      - title: Hitung panahnya
+        body: "padi → tikus → ular → elang: 3 panah, 3 kali pindah"
+      - title: Kurangi 10% tiap pindah
+        body: 10.000 → 1.000 → 100 → 10 kJ
+    after:
+      - energi di elang 10 kJ
+  cobaSteps:
+    - step: 1
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      prompt: Energi berpindah … kali
+      key: 3 kali (ada 3 panah)
+      correct: "Pas, ada 3 panah: padi → tikus → ular → elang."
+      answer:
+        value: 3
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 4
+          explanation: Ada 4 makhluk, tapi panahnya cuma 3. Energi pindah di tiap panah.
+    - step: 2
+      conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+      prompt: Energi yang sampai ke elang = … kJ
+      key: 10 kJ (10.000 → 1.000 → 100 → 10)
+      correct: Pas, 10.000 → 1.000 → 100 → 10 kJ.
+      answer:
+        value: 10
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 100
+          explanation: Itu baru sampai ular. Satu langkah lagi.
+        - value: 1000
+          explanation: Itu di tikus. Lanjutkan ke ular, lalu elang.
+        - value: 1
+          explanation: Panahnya cuma 3, jadi dikali 10% sebanyak 3 kali.
+        - value: 10000
+          explanation: Energi tidak pindah utuh. Tiap naik satu tingkat cuma sekitar 10%.
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "Soal /coba Biologi SMP: aliran energi dan hukum 10% pada rantai makanan; contoh rantainya sama dengan materi inti Rantai dan jaring makanan. Kunci, pengecoh, dan bahasa perlu dicek guru IPA."
+    - 'Untuk guru: teks soal tidak menyebut 10% (diajarkan di petunjuk dan materi). Bila perlu, tambahkan "anggap hanya 10% energi yang diteruskan".'
+    - 'Angka ribuan memakai titik (10.000), jadi answer.thousandsDot: "10.000" dibaca sepuluh ribu, bukan 10.'

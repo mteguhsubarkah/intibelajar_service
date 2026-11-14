@@ -1,0 +1,24 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-freezer).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: SATUAN_SUHU_BELUM_DISAMAKAN
+    description: Suhu kelvin dan Celsius dikurangkan tanpa diubah ke satuan yang sama
+    example: 310 − (−5) = 315
+    indicators:
+      - "soal-freezer: jawaban 315 atau 305"
+  - code: SELISIH_BELUM_DIHITUNG
+    description: Konversi kelvin ke Celsius dianggap jawaban akhir
+    example: 310 K = 37 °C, lalu berhenti
+    indicators:
+      - "soal-freezer: jawaban 37"

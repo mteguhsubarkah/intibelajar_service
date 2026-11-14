@@ -1,0 +1,29 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-peta).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: BERHENTI_DI_JARAK
+    description: Jarak asli dari skala dianggap jawaban waktu
+    example: 6 × 50.000 = 3 km, lalu berhenti
+    indicators:
+      - "soal-peta: jawaban 3"
+  - code: LAJU_TERBALIK
+    description: Waktu dihitung sebagai kecepatan dibagi jarak
+    example: "30 : 3 = 10"
+    indicators:
+      - "soal-peta: jawaban 10"
+  - code: JARAK_BELUM_KM
+    description: Jarak dalam cm langsung dibagi kecepatan dalam km/jam
+    example: "300.000 : 30 = 10.000"
+    indicators:
+      - "soal-peta: jawaban 10.000"
