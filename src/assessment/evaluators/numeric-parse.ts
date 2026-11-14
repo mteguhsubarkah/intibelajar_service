@@ -10,11 +10,18 @@ export type UnreadableReason =
   | 'empty' | 'no-number' | 'unsupported-operator' | 'malformed-number' | 'undefined-fraction' | 'root-without-radicand'
   | 'negative-root' | 'not-finite' | 'unknown-unit' | 'too-long' | 'missing-answer-key' | 'unsupported-response';
 
-/** Accepted units are those of the rubric's answer: length (m), angle (°), or none. */
-export type UnitKind = 'length' | 'angle' | 'time' | 'mass' | 'none';
+/**
+ * Accepted units are those of the rubric's answer: length (m), angle (°), time (s), mass (g), and for the SMP /coba
+ * questions minutes, °C, density (g/cm³), kJ and a count of cells; or none.
+ */
+export type UnitKind = 'length' | 'angle' | 'time' | 'mass' | 'minute' | 'celsius' | 'density' | 'energy' | 'cells' | 'none';
 export const unitKindOf = (unit: string | undefined): UnitKind =>
   unit === undefined ? 'none' : ['m', 'meter', 'metre'].includes(unit) ? 'length' : ['°', 'deg', 'derajat'].includes(unit) ? 'angle'
-    : ['s', 'sekon', 'detik'].includes(unit) ? 'time' : ['g', 'gram'].includes(unit) ? 'mass' : 'none';
+    : ['s', 'sekon', 'detik'].includes(unit) ? 'time' : ['g', 'gram'].includes(unit) ? 'mass'
+    : ['menit'].includes(unit) ? 'minute' : ['°C'].includes(unit) ? 'celsius' : ['g/cm³'].includes(unit) ? 'density'
+    : ['kJ'].includes(unit) ? 'energy' : ['sel'].includes(unit) ? 'cells' : 'none';
+/** thousandsDot: "10.000" is ten thousand (Indonesian notation, as in the question text). Off by default: "34.641" stays 34.641. */
+export interface ParseOptions { thousandsDot?: boolean }
 
 export type ParseOutcome = { kind: 'value'; value: number } | { kind: 'unreadable'; reason: UnreadableReason };
 
@@ -29,27 +36,53 @@ export function withinTolerance(value: number, expected: number, relative = RELA
 
 /** NFKC folds full-width digits and NBSP; zero-width characters and BOM are removed separately. */
 export function normalizeAnswerText(raw: string) {
-  return raw.normalize('NFKC').replace(/[​-‍﻿]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+  // U+2212 (minus sign) and the en dash are typed for negative numbers ("−5 °C").
+  return raw.normalize('NFKC').replace(/[​-‍﻿]/g, '').replace(/[−–]/g, '-').toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
 const LENGTH_UNITS = new Set(['m', 'meter', 'metre', 'mtr']);
 const ANGLE_UNITS = new Set(['derajat', 'deg']);
 // Units that are recognised, including ones that are rejected; longer alternatives first, \b on both sides.
-const UNIT_PATTERN = /\b(?:meter|metre|derajat|persen|sekon|detik|menit|radian|gram|liter|mtr|deg|rad|cm|mm|km|dm|kg|ml|jam|m|g|s|l)\b/g;
+const UNIT_PATTERN = /\b(?:gpercm3|celsius|bakteri|meter|metre|derajat|persen|sekon|detik|menit|radian|gram|liter|mtr|mnt|deg|rad|sel|cm|mm|km|dm|kg|kj|ml|jam|m|g|s|l)\b/g;
 const TIME_UNITS = new Set(['s', 'sekon', 'detik']);
 const MASS_UNITS = new Set(['g', 'gram']);
+const MINUTE_UNITS = new Set(['menit', 'mnt']);
+const CELSIUS_UNITS = new Set(['celsius']);
+const DENSITY_UNITS = new Set(['gpercm3']);
+const ENERGY_UNITS = new Set(['kj']);
+const CELL_UNITS = new Set(['sel', 'bakteri']);
 const accepted = (kind: UnitKind) => kind === 'length' ? LENGTH_UNITS : kind === 'angle' ? ANGLE_UNITS
-  : kind === 'time' ? TIME_UNITS : kind === 'mass' ? MASS_UNITS : new Set<string>();
+  : kind === 'time' ? TIME_UNITS : kind === 'mass' ? MASS_UNITS : kind === 'minute' ? MINUTE_UNITS : kind === 'celsius' ? CELSIUS_UNITS
+  : kind === 'density' ? DENSITY_UNITS : kind === 'energy' ? ENERGY_UNITS : kind === 'cells' ? CELL_UNITS : new Set<string>();
+/*
+ * A superscript right after a digit is a power ("2⁶" is 64); NFKC would otherwise turn it into "26".
+ * Superscripts after a letter (cm³, m/s²) are units and are left alone.
+ */
+const SUPERSCRIPT = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+export function powers(raw: string) {
+  return raw.replace(/(\d+)([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (_, base: string, sup: string) => {
+    const exponent = Number([...sup].map(c => SUPERSCRIPT.indexOf(c)).join(''));
+    const value = Number(base) ** exponent;
+    return exponent <= 12 && Number.isSafeInteger(value) ? `(${value})` : base + sup;
+  });
+}
+/*
+ * Compound units become one token before UNIT_PATTERN runs: "g/cm³" must not read as a division ("3 g/cm3" is not 3 / 3),
+ * and "°C" is a temperature, never an angle. NFKC has already turned ³ into 3.
+ */
+const compoundUnits = (text: string) => text
+  .replace(/\b(?:g|gr|gram)\s*\/\s*(?:cm3|ml)\b/g, ' gpercm3 ')
+  .replace(/°\s*c\b|\bderajat\s+cel[sc]ius\b|\bcelcius\b/g, ' celsius ');
 
-export function parseAnswerValue(raw: string, kind: UnitKind): ParseOutcome {
+export function parseAnswerValue(raw: string, kind: UnitKind, options: ParseOptions = {}): ParseOutcome {
   if (raw.length > MAX_INPUT_LENGTH) return { kind: 'unreadable', reason: 'too-long' };
-  const trimmed = normalizeAnswerText(raw).replace(/^\s*[a-z]\s*=\s*/, '').replace(/\.$/, '');
+  const trimmed = compoundUnits(normalizeAnswerText(powers(raw)).replace(/^\s*[a-z]\s*=\s*/, '').replace(/\.$/, '')).trim();
   if (trimmed.length === 0) return { kind: 'unreadable', reason: 'empty' };
   const units = stripUnits(trimmed, kind);
   if (!units.ok) return { kind: 'unreadable', reason: units.reason };
   // Spaces are kept: "20 3" must not become 203.
   const source = units.text.replace(/akar|sqrt/g, '√').replace(/[×·⋅]/g, '*').replace(/÷/g, '/');
-  const tokens = tokenize(source);
+  const tokens = tokenize(source, options);
   if (!tokens.ok) {
     if (tokens.reason === 'unsupported-operator' && !/\d/.test(source)) return { kind: 'unreadable', reason: 'no-number' };
     return { kind: 'unreadable', reason: tokens.reason };
@@ -63,7 +96,7 @@ function stripUnits(text: string, kind: UnitKind): { ok: true; text: string } | 
   const found = text.match(UNIT_PATTERN) ?? [];
   if (found.some(unit => !accepted(kind).has(unit))) return { ok: false, reason: 'unknown-unit' };
   const degree = text.includes('°');
-  if (degree && kind !== 'angle') return { ok: false, reason: 'unknown-unit' };
+  if (degree && kind !== 'angle' && kind !== 'celsius') return { ok: false, reason: 'unknown-unit' };
   const words = found.length > 0 ? text.replace(UNIT_PATTERN, ' ') : text;
   return { ok: true, text: degree ? words.replace(/°/g, ' ') : words };
 }
@@ -71,7 +104,7 @@ function stripUnits(text: string, kind: UnitKind): { ok: true; text: string } | 
 type Token = { kind: 'number'; value: number } | { kind: 'op'; op: '+' | '-' | '*' | '/' } | { kind: 'root' } | { kind: 'lparen' } | { kind: 'rparen' };
 const isDigit = (c: string | undefined) => c !== undefined && c >= '0' && c <= '9';
 
-function tokenize(source: string): { ok: true; tokens: Token[] } | { ok: false; reason: UnreadableReason } {
+function tokenize(source: string, options: ParseOptions = {}): { ok: true; tokens: Token[] } | { ok: false; reason: UnreadableReason } {
   const tokens: Token[] = [];
   for (let i = 0; i < source.length;) {
     const c = source[i]!;
@@ -83,7 +116,7 @@ function tokenize(source: string): { ok: true; tokens: Token[] } | { ok: false; 
     if (isDigit(c) || c === '.' || c === ',') {
       let end = i;
       while (end < source.length && (isDigit(source[end]) || source[end] === '.' || source[end] === ',')) end++;
-      const value = parseNumberToken(source.slice(i, end));
+      const value = parseNumberToken(source.slice(i, end), options);
       if (value === null) return { ok: false, reason: 'malformed-number' };
       tokens.push({ kind: 'number', value }); i = end; continue;
     }
@@ -100,8 +133,10 @@ function tokenize(source: string): { ok: true; tokens: Token[] } | { ok: false; 
 
 // One separator is a decimal; more than one are thousands; with both kinds, the last one is the decimal.
 // "34.641" is therefore 34.641, never 34641: the exact correct answer must not read as wrong.
-function parseNumberToken(token: string): number | null {
+function parseNumberToken(token: string, options: ParseOptions = {}): number | null {
   if (!/\d/.test(token)) return null;
+  // "0.333" stays a decimal: a thousands group never starts at 0
+  if (options.thousandsDot && /^[1-9]\d{0,2}(\.\d{3})+$/.test(token)) return Number(token.replace(/\./g, ''));
   const commas = [...token].filter(c => c === ',').length, dots = [...token].filter(c => c === '.').length;
   const decimal = commas > 0 && dots > 0 ? Math.max(token.lastIndexOf(','), token.lastIndexOf('.'))
     : commas + dots === 1 ? (commas === 1 ? token.indexOf(',') : token.indexOf('.')) : -1;

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.Q.WAKTU_1
+familyCode: MAT.C26.D.RASIO.F.WAKTU_1
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: 2,5 jam sama dengan …
+  options:
+    - id: a
+      label: 250 menit
+    - id: b
+      label: 125 menit
+    - id: c
+      label: 90 menit
+    - id: d
+      label: 150 menit
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 150 menit
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+  feedback:
+    correct: 2,5 × 60 = 150 menit.
+    incorrect: Jawabannya 150 menit. 2,5 × 60 = 150 menit.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

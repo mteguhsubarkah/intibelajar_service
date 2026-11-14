@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN.Q.GAS_2
+familyCode: FIS.C26.D.TEKANAN.F.GAS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.TEKANAN.TEKANAN_GAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Gas di dalam tabung tertutup bervolume 4 L bertekanan 1 atm. Jika volumenya ditekan menjadi 2 L pada suhu tetap, tekanannya menjadi …
+  options:
+    - id: a
+      label: 0,5 atm
+    - id: b
+      label: 2 atm
+    - id: c
+      label: 4 atm
+    - id: d
+      label: 8 atm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 2 atm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.TEKANAN.TEKANAN_GAS
+  feedback:
+    correct: "Hukum Boyle: 1 × 4 = P₂ × 2, jadi P₂ = 2 atm."
+    incorrect: "Jawabannya 2 atm. Hukum Boyle: 1 × 4 = P₂ × 2, jadi P₂ = 2 atm."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

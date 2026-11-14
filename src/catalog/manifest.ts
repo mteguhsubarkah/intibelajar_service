@@ -4,6 +4,7 @@ import { parse, stringify } from 'yaml';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { patternTokens } from './text-pattern.js';
+import { withinTolerance } from '../assessment/evaluators/numeric-parse.js';
 // Alias manifest (Slice 1 M1): the reviewed source of every catalog entity and every legacy identifier.
 // Pure: no database access. The publisher (M2) runs lintManifest(..., {strict:true}) before writing.
 
@@ -38,7 +39,7 @@ export interface QuestionBody {
 export interface Rubric {
   tutorLadder?: { hints: [string, string]; nodes: { ask: string; text: string; quick: string[] }[] };
   schemaVersion: 1; evaluator: 'option-v1'|'numeric-v1'|'tower-v1'|'ai-assisted-v1';
-  answer: { optionId?: string; value?: number; unit?: string; tolerance?: { relative: number; floor: number } };
+  answer: { optionId?: string; value?: number; unit?: string; tolerance?: { relative: number; floor: number }; thousandsDot?: boolean };
   acceptedForms: string[];
   solutionPaths: { code: string; label: string; steps: { code: string; description: string; patterns?: string[]; concepts: { code: string; role: 'REQUIRED'|'SUPPORTING' }[] }[] }[];
   misconceptionMap: { pattern: { kind: 'OPTION'|'NUMERIC'|'TEXT'; optionId?: string; value?: number; regex?: string; tokens?: string[] }; conceptCode: string; misconceptionCode: string; explanation: string }[];
@@ -49,6 +50,16 @@ export interface Rubric {
   recommend?: { conceptCode: string; misconceptionCode: string; keyFormula: string }[];
   feedback?: { correct?: string; incorrect?: string };
   workedSolution?: { steps: { title: string; body: string }[]; after: string[] };
+  /** Soal /coba: kunci kotak "Coba sekarang" per petunjuk. Privat: hanya penilai server yang membacanya. */
+  cobaSteps?: CobaStep[];
+}
+export interface CobaStep {
+  /** sama dengan body.hints[].step */
+  step: number; conceptCode: string; prompt: string; key: string; correct: string;
+  answer?: { value: number; tolerance?: { relative: number; floor: number } };
+  accept?: string[];
+  words?: { correct: string[]; wrong?: { words: string[]; explanation: string }[] };
+  partials?: { value: number; tolerance?: { relative: number; floor: number }; explanation: string }[];
 }
 export interface Question {
   schemaVersion: 1; code: string; familyCode: string; visibility: 'PUBLIC_PRACTICE'|'CATALOG'; origin: 'AUTHORED';
@@ -78,7 +89,7 @@ export interface UnmappedEntry { ns: Namespace; value: string; pattern?: boolean
 /** A hand-authored overlay (catalog/authored/), applied over extractor-owned entries at load time. */
 export interface Authored {
   schemaVersion: 1; kind: 'QUESTION_RUBRIC'|'CONCEPT_MISCONCEPTIONS'; target: string; provenance: { source: 'authored'; note?: string }; review: Review;
-  rubric?: Pick<Rubric, 'solutionPaths'|'misconceptionMap'|'lessonFor'|'recommend'|'tutorLadder'>; misconceptions?: Misconception[];
+  rubric?: Pick<Rubric, 'solutionPaths'|'misconceptionMap'|'lessonFor'|'recommend'|'tutorLadder'|'cobaSteps'>; misconceptions?: Misconception[];
 }
 export interface Manifest {
   release: Release;
@@ -95,7 +106,7 @@ export type Rule =
   | 'SCHEMA'|'FILE_NAME'|'KEY_IN_BODY'|'SIZE'|'CODE_DUPLICATE'|'REF_UNKNOWN'|'ALIAS_AMBIGUOUS'|'ALIAS_UNMAPPED_CONFLICT'
   | 'PREREQ_CYCLE'|'PREREQ_SELF'|'TOPIC_CYCLE'|'UNIT_UNKNOWN'|'QUESTION_NO_PRIMARY'|'STEP_CONCEPT_UNMAPPED'|'MISCONCEPTION_UNKNOWN'
   | 'EVALUATOR_SHAPE'|'OPTION_IDS'|'PRACTICE_NOT_DETERMINISTIC'|'CHECK_NOT_DETERMINISTIC'|'CHECK_PLACEMENT'|'UNREVIEWED'
-  | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET'|'GRADE_PHASE'|'BOOKREF';
+  | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET'|'GRADE_PHASE'|'BOOKREF'|'COBA_STEP';
 /** Kelas yang termasuk tiap fase Kurikulum Merdeka: D = SMP 7–9, E = kelas 10, F = kelas 11–12, F+ = Matematika Tingkat Lanjut 11–12. */
 export const GRADES_OF_PHASE: Record<Topic['phase'], number[]> = { D: [7, 8, 9], E: [10], F: [11, 12], 'F+': [11, 12] };
 export interface Finding { rule: Rule; severity: 'error'|'warning'; file: string; message: string }
@@ -336,6 +347,21 @@ export function lintManifest(m: Manifest, { strict = false } = {}): Finding[] {
       mustBeMapped(r.conceptCode, 'recommend');
       if (!q.rubric.misconceptionMap.some(x => x.misconceptionCode === r.misconceptionCode))
         add('RECOMMEND', file, `recommend names ${r.misconceptionCode}, which no misconception pattern of this question produces`);
+    }
+    // Soal /coba: setiap kotak Coba sekarang menempel pada satu petunjuk dengan inti yang sama, dan punya cara dinilai.
+    const cobaSteps = q.rubric.cobaSteps ?? [];
+    if (new Set(cobaSteps.map(s => s.step)).size !== cobaSteps.length) add('COBA_STEP', file, 'cobaSteps: one entry per hint step');
+    for (const s of cobaSteps) {
+      mustBeMapped(s.conceptCode, `cobaSteps step ${s.step}`);
+      const hint = q.body.hints.find(h => h.step === s.step);
+      if (!hint) add('COBA_STEP', file, `cobaSteps step ${s.step} has no body.hints entry with that step`);
+      else if (hint.conceptCode !== s.conceptCode) add('COBA_STEP', file, `cobaSteps step ${s.step} is on ${s.conceptCode}, but its hint is on ${hint.conceptCode}`);
+      if (s.answer === undefined && !s.words && !s.accept) add('COBA_STEP', file, `cobaSteps step ${s.step} needs answer, accept or words, or only the AI could grade it`);
+      if (s.partials?.length && s.answer === undefined) add('COBA_STEP', file, `cobaSteps step ${s.step} has partials but no answer value`);
+      for (const p of s.partials ?? []) if (s.answer && withinTolerance(p.value, s.answer.value, s.answer.tolerance?.relative, s.answer.tolerance?.floor))
+        add('COBA_STEP', file, `cobaSteps step ${s.step}: partial ${p.value} is within the tolerance of the answer ${s.answer.value}`);
+      const right = new Set((s.words?.correct ?? []).map(w => w.toLowerCase()));
+      for (const w of (s.words?.wrong ?? []).flatMap(x => x.words)) if (right.has(w.toLowerCase())) add('COBA_STEP', file, `cobaSteps step ${s.step}: "${w}" is listed as both correct and wrong`);
     }
     const recommends = (q.rubric.recommend ?? []).map(r => r.misconceptionCode);
     if (new Set(recommends).size !== recommends.length) add('RECOMMEND', file, 'one recommendation per misconception code');

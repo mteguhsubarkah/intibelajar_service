@@ -1,0 +1,100 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN
+subject: FIS
+title: Tekanan zat dan penerapannya
+subtitle: Tekanan pada zat padat, zat cair, dan gas, serta penerapannya dalam teknologi dan makhluk hidup
+phase: D
+availability: MAPPED
+bekal:
+  - gaya
+  - luas bidang
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.TEKANAN.TEKANAN_ZAT_PADAT
+    title: Tekanan zat padat
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    grade: 8
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-tekanan-padat
+  - code: FIS.C26.D.TEKANAN.TEKANAN_ZAT_CAIR
+    title: Tekanan zat cair
+    subtitle: Tekanan hidrostatis, Hukum Pascal, dan Hukum Archimedes
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 8
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-tekanan-cair
+  - code: FIS.C26.D.TEKANAN.TEKANAN_GAS
+    title: Tekanan gas
+    subtitle: Tekanan udara dan tekanan gas di ruang tertutup
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 8
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-tekanan-gas
+  - code: FIS.C26.D.TEKANAN.PENERAPAN_TEKANAN_ZAT
+    title: Penerapan tekanan zat
+    subtitle: Hidrolik, kapal selam, tekanan darah, dan pengangkutan air pada tumbuhan
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    grade: 8
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-tekanan-penerapan
+prerequisites:
+  - concept: FIS.C26.D.TEKANAN.TEKANAN_ZAT_CAIR
+    requires: FIS.C26.D.TEKANAN.TEKANAN_ZAT_PADAT
+    kind: SOFT
+  - concept: FIS.C26.D.TEKANAN.TEKANAN_GAS
+    requires: FIS.C26.D.TEKANAN.TEKANAN_ZAT_PADAT
+    kind: SOFT
+  - concept: FIS.C26.D.TEKANAN.PENERAPAN_TEKANAN_ZAT
+    requires: FIS.C26.D.TEKANAN.TEKANAN_ZAT_CAIR
+    kind: SOFT
+  - concept: FIS.C26.D.TEKANAN.PENERAPAN_TEKANAN_ZAT
+    requires: FIS.C26.D.TEKANAN.TEKANAN_GAS
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari Tahap 3 audit Fisika 14 November 2026 (docs/backlog.md FE): struktur bab mengikuti Buku Siswa IPA Kurikulum Merdeka"
+    - inti yang pindah ke bab ini ditulis ulang sebagai inti baru; inti lamanya disembunyikan di bab asal (kode inti tidak bisa pindah bab)
+    - "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): bab baru. Isi inti Tekanan lama (D.GERAK) dipakai ulang dan dipecah per subbab; soal lama tidak dipindah (kode soal baru)."
+bookRefs:
+  - book: Buku Siswa IPA Kelas VIII (SMP/MTs)
+    edition: revisi 2024
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VIII_Rev.pdf
+    chapter: Bab IV Teknologi Penerapan Tekanan pada Zat
+    section: A. Tekanan pada Zat Padat (108); B. Tekanan pada Zat Cair (110); C. Tekanan Gas (122); D. Penerapan Tekanan Zat (124)
+    pages: "105"
+    verification: VERIFIED
+    note: Satu bab dengan 4 subbab; tiap subbab menjadi satu inti (Tahap 3).

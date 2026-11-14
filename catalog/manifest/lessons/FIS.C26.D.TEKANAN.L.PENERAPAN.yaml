@@ -1,0 +1,48 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN.L.PENERAPAN
+title: Penerapan tekanan zat
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.D.TEKANAN.PENERAPAN_TEKANAN_ZAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Teknologi dari tekanan zat
+  - type: text
+    slide: 0
+    text: "Dongkrak dan rem hidrolik memakai Hukum Pascal: gaya kecil pada penghisap kecil menghasilkan gaya besar pada penghisap besar."
+  - type: text
+    slide: 0
+    text: Kapal laut, kapal selam, dan balon udara memakai gaya apung. Kapal selam menyelam dengan mengisi tangki pemberat dengan air dan naik dengan mengosongkannya.
+  - type: math
+    slide: 0
+    name: dongkrak hidrolik
+    expression: F₁ = F₂ × A₁ / A₂
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Tekanan pada makhluk hidup
+  - type: text
+    slide: 1
+    text: "Jantung memompa darah sehingga darah menekan dinding pembuluh. Tekanan darah ditulis seperti 120/80 mmHg: angka atas sistol (jantung memompa), angka bawah diastol (jantung mengendur)."
+  - type: text
+    slide: 1
+    text: Pada tumbuhan, air naik dari akar ke daun karena tekanan akar, kapilaritas pembuluh kayu, dan tarikan dari penguapan di daun (transpirasi).
+  - type: tip
+    slide: 1
+    text: Tekanan darah diukur dengan tensimeter (sfigmomanometer).
+checks:
+  - question: FIS.C26.D.TEKANAN.Q.PENERAPAN_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.TEKANAN.S.PENERAPAN
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

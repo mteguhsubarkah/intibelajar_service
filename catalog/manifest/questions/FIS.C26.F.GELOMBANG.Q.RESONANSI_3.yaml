@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.Q.RESONANSI_3
+familyCode: FIS.C26.F.GELOMBANG.F.RESONANSI_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.GELOMBANG.RESONANSI_BUNYI
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Resonansi pertama kolom udara dengan sebuah garpu tala terjadi saat panjang kolom udara 20 cm. Panjang gelombang bunyi garpu tala adalah …
+  options:
+    - id: a
+      label: 20 cm
+    - id: b
+      label: 40 cm
+    - id: c
+      label: 60 cm
+    - id: d
+      label: 80 cm
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 80 cm
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.GELOMBANG.RESONANSI_BUNYI
+  feedback:
+    correct: "Resonansi pertama: L = λ/4, jadi λ = 4 × 20 = 80 cm."
+    incorrect: "Jawabannya 80 cm. Resonansi pertama: L = λ/4, jadi λ = 4 × 20 = 80 cm."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

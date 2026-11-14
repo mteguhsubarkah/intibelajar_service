@@ -75,15 +75,14 @@ export async function verifySignup(tx: Tx, config: Config, link: string) {
     if (verified && !existing.email_verified) await tx.updateTable('auth_identity').set({ email_verified: true }).where('provider', '=', 'EMAIL').where('subject', '=', mailSubject).execute();
   } else {
     userId = uuid(); fresh = true;
-    const learner = await createPendingLearner(tx);
+    // Self-onboarding: the username just chosen pre-fills the profile name, so /kenalan does not ask for it again (still
+    // editable there; the account becomes active only when /kenalan saves name + kelas). With guardian consent nothing
+    // personal is stored before consent, so the name stays empty.
+    const learner = await createPendingLearner(tx, config.selfConsent ? payload.username : null);
     await tx.insertInto('app_user').values({ id: userId, role: 'STUDENT', learner_id: learner, guardian_id: null, status: 'ACTIVE' }).execute();
     // Synthetic transport never establishes a verified email; a link delivered by the real sender does.
     await tx.insertInto('auth_identity').values({ id: uuid(), user_id: userId, provider: 'EMAIL', subject: mailSubject, email_verified: verified,
       email_ciphertext: encrypt(config.key, payload.email), last_login_at: null }).execute();
-    // Self-onboarding: the username just chosen pre-fills the profile name, so /kenalan does not ask for it again (still
-    // editable there; the account becomes active only when /kenalan saves name + kelas). With guardian consent nothing
-    // personal is stored before consent, so the name stays empty.
-    if (config.selfConsent) await tx.updateTable('student_profile').set({ display_name: payload.username }).where('learner_id', '=', learner).execute();
   }
   const account = await tx.selectFrom('app_user').selectAll().where('id', '=', userId).executeTakeFirstOrThrow();
   if (account.status !== 'ACTIVE') fail(403, 'ACCOUNT_UNAVAILABLE');

@@ -1,0 +1,19 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-peta).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: MASIH_DALAM_JAM
+    description: Hasil dalam jam dianggap sudah jawaban menit
+    example: 0,1 jam ditulis 0,1 menit
+    indicators:
+      - "soal-peta: jawaban 0,1"

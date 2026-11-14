@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.L.OPTIK
+title: Alat optik
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.D.GELOMBANG.ALAT_OPTIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Mata dan cacat mata
+  - type: text
+    slide: 0
+    text: Lensa mata membentuk bayangan nyata, terbalik, dan diperkecil di retina. Lensa mata dapat menebal atau memipih (berakomodasi) agar benda dekat dan jauh terlihat jelas.
+  - type: text
+    slide: 0
+    text: Rabun jauh (miopi) dibantu lensa cekung; rabun dekat (hipermetropi) dibantu lensa cembung.
+  - type: math
+    slide: 0
+    name: miopi
+    expression: lensa cekung
+    highlight: true
+  - type: math
+    slide: 0
+    name: hipermetropi
+    expression: lensa cembung
+  - type: heading
+    slide: 1
+    text: Lup, kamera, dan mikroskop
+  - type: text
+    slide: 1
+    text: "Lup adalah lensa cembung; benda diletakkan di antara lensa dan titik fokusnya sehingga tampak bayangan maya, tegak, dan diperbesar. Perbesaran lup untuk mata tidak berakomodasi: M = 25 cm : f."
+  - type: text
+    slide: 1
+    text: "Kamera membentuk bayangan nyata, terbalik, dan diperkecil pada sensor. Mikroskop memakai dua lensa cembung: objektif dan okuler."
+  - type: math
+    slide: 1
+    name: perbesaran lup
+    expression: M = 25 / f
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Pada rumus lup, f ditulis dalam cm.
+checks:
+  - question: FIS.C26.D.GELOMBANG.Q.OPTIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.GELOMBANG.S.OPTIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

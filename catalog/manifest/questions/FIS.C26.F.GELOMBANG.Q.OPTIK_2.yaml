@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.Q.OPTIK_2
+familyCode: FIS.C26.F.GELOMBANG.F.OPTIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Seseorang hanya dapat membaca dengan jelas paling dekat pada jarak 50 cm. Agar dapat membaca pada jarak 25 cm, ia memerlukan kacamata …
+  options:
+    - id: a
+      label: 2 dioptri berlensa cembung
+    - id: b
+      label: 2 dioptri berlensa cekung
+    - id: c
+      label: 4 dioptri berlensa cembung
+    - id: d
+      label: 0,5 dioptri berlensa cembung
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 2 dioptri berlensa cembung
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK
+  feedback:
+    correct: P = 100/25 − 100/50 = 4 − 2 = 2 dioptri; positif berarti lensa cembung.
+    incorrect: Jawabannya 2 dioptri berlensa cembung. P = 100/25 − 100/50 = 4 − 2 = 2 dioptri; positif berarti lensa cembung.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

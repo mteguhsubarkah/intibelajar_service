@@ -794,6 +794,10 @@
                   "minimum": 0
                 }
               }
+            },
+            "thousandsDot": {
+              "type": "boolean",
+              "description": "Titik di antara kelompok tiga angka dibaca ribuan (10.000 = sepuluh ribu), seperti di teks soal. Untuk soal yang datanya memakai titik ribuan."
             }
           }
         },
@@ -1081,6 +1085,134 @@
               }
             }
           }
+        },
+        "cobaSteps": {
+          "description": "Soal /coba: kunci kotak Coba sekarang per petunjuk (privat, hanya untuk penilai server). Angka dan kata yang persis dinilai aturan; isian bebas dinilai AI dengan key.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "step",
+              "conceptCode",
+              "prompt",
+              "key",
+              "correct"
+            ],
+            "properties": {
+              "step": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Sama dengan body.hints[].step: petunjuk yang memuat kotak Coba sekarang ini."
+              },
+              "conceptCode": {
+                "$ref": "#/$defs/code"
+              },
+              "prompt": {
+                "$ref": "#/$defs/shortText",
+                "description": "Pertanyaan kotak Coba sekarang, sama dengan yang tampil di aplikasi. Dikirim ke penilai AI."
+              },
+              "key": {
+                "$ref": "#/$defs/shortText",
+                "description": "Jawaban benar dalam kata-kata singkat, untuk penilai AI. Tidak pernah dikirim ke browser."
+              },
+              "correct": {
+                "$ref": "#/$defs/shortText",
+                "description": "Tanggapan saat aturan menyatakan benar."
+              },
+              "answer": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "tolerance": {
+                    "$ref": "#/$defs/rubric/properties/answer/properties/tolerance"
+                  }
+                }
+              },
+              "accept": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 8,
+                "items": {
+                  "$ref": "#/$defs/shortText"
+                },
+                "description": "Bentuk lain yang benar (mis. 20√3), dicocokkan tanpa spasi dan huruf besar."
+              },
+              "words": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "correct"
+                ],
+                "properties": {
+                  "correct": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 12,
+                    "items": {
+                      "$ref": "#/$defs/shortText"
+                    }
+                  },
+                  "wrong": {
+                    "type": "array",
+                    "maxItems": 8,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "words",
+                        "explanation"
+                      ],
+                      "properties": {
+                        "words": {
+                          "type": "array",
+                          "minItems": 1,
+                          "maxItems": 12,
+                          "items": {
+                            "$ref": "#/$defs/shortText"
+                          }
+                        },
+                        "explanation": {
+                          "$ref": "#/$defs/shortText"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "partials": {
+                "type": "array",
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "value",
+                    "explanation"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "number"
+                    },
+                    "tolerance": {
+                      "$ref": "#/$defs/rubric/properties/answer/properties/tolerance"
+                    },
+                    "explanation": {
+                      "$ref": "#/$defs/shortText"
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -1147,6 +1279,9 @@
             },
             "tutorLadder": {
               "$ref": "#/$defs/rubric/properties/tutorLadder"
+            },
+            "cobaSteps": {
+              "$ref": "#/$defs/rubric/properties/cobaSteps"
             }
           }
         },

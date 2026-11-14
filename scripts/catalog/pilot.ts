@@ -105,11 +105,16 @@ export function buildPilot() {
   for (const t of TOPICS) {
     const own = new Map<string, string>();
     for (const c of t.cores) {
-      const code = `${t.code}.${slug(c.title)}`;
+      const code = `${t.code}.${slug(c.codeFrom ?? c.title)}`;
       if ([...own.values()].includes(code)) throw new Error(`${t.code}: dua inti bernama ${c.title}`);
       own.set(c.id, code);
     }
     codes.set(t.code, own);
+    // Inti tersembunyi: hanya penanda di manifest (publisher menyembunyikannya), jadi tanpa isi, penutup, atau prasyarat.
+    const hidden = new Set(t.cores.filter(c => c.hidden).map(c => c.id));
+    for (const c of t.cores) if (c.hidden && (c.slides || c.q?.length || c.capstone)) throw new Error(`${t.code} ${c.id}: inti tersembunyi tidak boleh punya materi, soal, atau penutup`);
+    if (t.cores.findIndex(c => c.hidden) >= 0 && t.cores.slice(t.cores.findIndex(c => c.hidden)).some(c => !c.hidden)) throw new Error(`${t.code}: inti tersembunyi ditulis di akhir daftar`);
+    for (const [from, to] of t.edges) if (hidden.has(from) || hidden.has(to)) throw new Error(`${t.code}: prasyarat ${from} → ${to} memakai inti tersembunyi`);
   }
   const resolver = (topic: string | null) => (ref: string) => {
     const [t, id] = ref.includes(':') ? ref.split(':') as [string, string] : ref.includes('.') ? [null, ref] : [topic, ref];
@@ -133,7 +138,7 @@ export function buildPilot() {
       bekal: t.bekal, aliases: t.alias ? [{ ns: 'TOPIC', value: t.alias }] : [], units: [],
       concepts: t.cores.map((c, i) => ({
         code: ref(c.id), title: c.title, ...(c.sub ? { subtitle: c.sub } : {}), objectives: [], misconceptions: [],
-        ordinal: i + 1, estimatedMinutes: c.min ?? 5, hidden: false, capstone: !!c.capstone, availability: c.slides ? 'READY' as const : 'PLANNED' as const,
+        ordinal: i + 1, estimatedMinutes: c.min ?? 5, hidden: !!c.hidden, capstone: !!c.capstone, availability: c.slides ? 'READY' as const : 'PLANNED' as const,
         aliases: [{ ns: 'MAP' as const, value: aliasOf(t.code, c.id) }],
       })),
       prerequisites: t.edges.map(([from, to, kind]) => ({ concept: ref(to), requires: ref(from), kind: kind === 'H' ? 'HARD' as const : 'SOFT' as const })),
@@ -145,7 +150,7 @@ export function buildPilot() {
     for (const c of t.cores) {
       // inti PLANNED: belum ada materi, jadi belum boleh ada soal
       if (!c.slides) { if (c.q?.length) throw new Error(`${t.code} ${c.id}: soal tanpa materi`); continue; }
-      const key = slug(c.id === 'C1' || c.id === 'C2' ? c.title : c.id), concept = ref(c.id);
+      const key = slug(c.id === 'C1' || c.id === 'C2' ? c.codeFrom ?? c.title : c.id), concept = ref(c.id);
       const qs = [...(c.q ?? []), ...extra(`${t.code}:${c.id}`)].map((q, i) => question(t.code, concept, key, i + 1, q, ref));
       const [l, s] = lesson(t.code, concept, key, c.title, c.min ?? 5, c.slides, qs);
       questions.push(...qs); lessons.push(l); sets.push(s);

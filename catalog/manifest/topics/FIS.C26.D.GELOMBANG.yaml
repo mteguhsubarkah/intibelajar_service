@@ -2,7 +2,7 @@ schemaVersion: 1
 code: FIS.C26.D.GELOMBANG
 subject: FIS
 title: Getaran, bunyi, dan cahaya
-subtitle: Getaran, gelombang, bunyi, optik, serta pemantulan dan pembiasan cahaya
+subtitle: Getaran, gelombang, bunyi, pemantulan dan pembiasan cahaya, serta alat optik
 phase: D
 availability: MAPPED
 bekal: []
@@ -22,8 +22,8 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-d-gelombang-c1
-  - code: FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
-    title: Bunyi dan optik
+  - code: FIS.C26.D.GELOMBANG.BUNYI_DAN_PEMANTULANNYA
+    title: Bunyi dan pemantulannya
     objectives: []
     misconceptions: []
     ordinal: 2
@@ -34,7 +34,7 @@ concepts:
     availability: READY
     aliases:
       - ns: MAP
-        value: fis-d-gelombang-c2
+        value: fis-d-gelombang-bunyi
   - code: FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
     title: Pemantulan & pembiasan cahaya
     objectives: []
@@ -43,14 +43,46 @@ concepts:
     estimatedMinutes: 5
     grade: 8
     hidden: false
-    capstone: true
+    capstone: false
     availability: READY
     aliases:
       - ns: MAP
         value: fis-d-gelombang-cahaya
+  - code: FIS.C26.D.GELOMBANG.ALAT_OPTIK
+    title: Alat optik
+    subtitle: Mata, cacat mata, lup, kamera, dan mikroskop
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 6
+    grade: 8
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-gelombang-optik
+  - code: FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+    title: Bunyi dan optik
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: true
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gelombang-c2
 prerequisites:
+  - concept: FIS.C26.D.GELOMBANG.BUNYI_DAN_PEMANTULANNYA
+    requires: FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG
+    kind: SOFT
   - concept: FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
     requires: FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG
+    kind: SOFT
+  - concept: FIS.C26.D.GELOMBANG.ALAT_OPTIK
+    requires: FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA
     kind: SOFT
 review:
   status: PROPOSED
@@ -61,6 +93,7 @@ review:
   evidence:
     - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
     - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
+    - 'Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti gabungan "Bunyi dan optik" dipecah jadi Bunyi dan pemantulannya serta Alat optik (penutup baru); inti lama disembunyikan.'
 bookRefs:
   - book: Buku Siswa IPA Kelas VIII (SMP/MTs)
     edition: revisi 2024

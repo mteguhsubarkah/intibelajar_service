@@ -1,0 +1,64 @@
+schemaVersion: 1
+code: FIS.C26.F.GELOMBANG.L.OPTIK
+title: Lensa dan alat optik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Lensa
+  - type: text
+    slide: 0
+    text: "Persamaan lensa: **1/f = 1/s + 1/s′**. Lensa cembung f positif. s′ positif berarti bayangan nyata di belakang lensa."
+  - type: text
+    slide: 0
+    text: "Contoh: s = 30 cm, f = 20 cm ⇒ s′ = 60 cm."
+  - type: math
+    slide: 0
+    name: 1/f
+    expression: 1/s + 1/s′
+    highlight: true
+  - type: math
+    slide: 0
+    name: perbesaran
+    expression: M = s′ / s
+  - type: tip
+    slide: 0
+    text: Pakai satuan yang sama (cm) untuk s, s′, dan f.
+  - type: heading
+    slide: 1
+    text: Alat optik
+  - type: text
+    slide: 1
+    text: "**Mata**: titik dekat normal 25 cm. Penderita rabun dekat dibantu lensa cembung berkekuatan P = 100/25 − 100/PP dioptri (PP titik dekatnya dalam cm)."
+  - type: text
+    slide: 1
+    text: "**Lup**: perbesaran tanpa akomodasi M = 25/f. **Mikroskop**: perbesaran total M = M objektif × M okuler."
+  - type: math
+    slide: 1
+    name: kacamata rabun dekat
+    expression: P = 100/25 − 100/PP
+    highlight: true
+  - type: math
+    slide: 1
+    name: lup
+    expression: M = 25 / f
+  - type: tip
+    slide: 1
+    text: "Kekuatan lensa dalam dioptri: P = 1/f dengan f dalam meter."
+checks:
+  - question: FIS.C26.F.GELOMBANG.Q.OPTIK_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.GELOMBANG.S.OPTIK
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

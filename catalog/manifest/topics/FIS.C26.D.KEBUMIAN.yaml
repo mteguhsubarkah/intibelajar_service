@@ -86,12 +86,13 @@ review:
   evidence:
     - inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)
     - "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"
+    - "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): acuan Struktur Bumi kelas 8 = bahan revisi Mei 2025, Bab 6 Struktur Bumi dan Perkembangannya."
 bookRefs:
   - book: Buku Siswa IPA Kelas VIII (SMP/MTs)
     edition: bahan revisi Mei 2025
     chapter: Bab 6 Struktur Bumi dan Perkembangannya
     verification: VERIFIED
-    note: Tidak ada di IPA VIII revisi 2024 (buku berakhir di Bab VII Tanah bagi Kehidupan Berkelanjutan). Edisi berbeda; edisi acuan kelas 8 belum diputuskan. Konsep tetap dipertahankan di peta.
+    note: Edisi acuan kelas 8 untuk bab ini (diputuskan 14 November 2026). Tidak ada di IPA VIII revisi 2024 (buku berakhir di Bab VII Tanah bagi Kehidupan Berkelanjutan).
   - book: Buku Siswa IPA Kelas VIII (SMP/MTs)
     edition: "2021"
     chapter: Bab 6 Struktur Bumi dan Perkembangannya

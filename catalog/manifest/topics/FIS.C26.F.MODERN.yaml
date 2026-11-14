@@ -2,7 +2,7 @@ schemaVersion: 1
 code: FIS.C26.F.MODERN
 subject: FIS
 title: Fisika modern & teknologi digital
-subtitle: Kuantum, semikonduktor, logika biner, relativitas, inti
+subtitle: Semikonduktor, logika biner, relativitas, kuantum, inti atom dan radioaktivitas
 phase: F
 availability: MAPPED
 bekal:
@@ -13,24 +13,11 @@ aliases:
     value: fisika-modern
 units: []
 concepts:
-  - code: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
-    title: Kuantum dan inti atom
-    objectives: []
-    misconceptions: []
-    ordinal: 1
-    estimatedMinutes: 5
-    grade: 12
-    hidden: false
-    capstone: false
-    availability: READY
-    aliases:
-      - ns: MAP
-        value: fis-f-modern-c1
   - code: FIS.C26.F.MODERN.SEMIKONDUKTOR
     title: Semikonduktor
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 1
     estimatedMinutes: 5
     grade: 12
     hidden: false
@@ -43,7 +30,7 @@ concepts:
     title: Representasi biner & logika
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 2
     estimatedMinutes: 4
     grade: 12
     hidden: false
@@ -56,7 +43,7 @@ concepts:
     title: Relativitas khusus
     objectives: []
     misconceptions: []
-    ordinal: 4
+    ordinal: 3
     estimatedMinutes: 5
     grade: 12
     hidden: false
@@ -65,11 +52,37 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-f-modern-relativitas
+  - code: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
+    title: Gejala kuantum
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-modern-c1
+  - code: FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
+    title: Inti atom dan energi ikat
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    grade: 12
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-modern-inti-atom
   - code: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
     title: Peluruhan dan waktu paruh
     objectives: []
     misconceptions: []
-    ordinal: 5
+    ordinal: 6
     estimatedMinutes: 5
     grade: 12
     hidden: false
@@ -79,11 +92,11 @@ concepts:
       - ns: MAP
         value: fis-f-modern-inti
 prerequisites:
-  - concept: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
-    requires: FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM
-    kind: SOFT
   - concept: FIS.C26.F.MODERN.REPRESENTASI_BINER_DAN_LOGIKA
     requires: FIS.C26.F.MODERN.SEMIKONDUKTOR
+    kind: SOFT
+  - concept: FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH
+    requires: FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
     kind: SOFT
 review:
   status: PROPOSED
@@ -95,6 +108,7 @@ review:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
     - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): prasyarat Relativitas khusus <- Kuantum dan inti atom dihapus; relativitas tidak butuh kuantum (Fisika XII 2022: Bab 7 Relativitas sebelum Bab 8 Gejala Kuantum)."
     - "Tahap 2 audit Fisika (2026-11-13, docs/backlog.md FE): inti baru Semikonduktor (sebelum Representasi biner & logika) dari Fisika XII 2022 Bab 6 Pengantar (sistem elektronika, semikonduktor, gerbang logika)."
+    - 'Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti "Kuantum dan inti atom" hanya berisi foton dan efek fotolistrik, jadi judulnya kini "Gejala kuantum" (kode tetap); ditambah inti Inti atom dan energi ikat. Urutan ikut Fisika XII: Bab 6 (semikonduktor, logika), 7 relativitas, 8 kuantum, 9 inti.'
 bookRefs:
   - book: Buku Siswa Fisika Kelas XII (SMA/MA)
     edition: "2022"
@@ -113,9 +127,10 @@ bookRefs:
     url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
     chapter: Bab 8 Gejala Kuantum
     verification: VERIFIED
+    note: Untuk inti Gejala kuantum.
   - book: Buku Siswa Fisika Kelas XII (SMA/MA)
     edition: "2022"
     url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf
     chapter: Bab 9 Fisika Inti dan Radioaktivitas
     verification: VERIFIED
-    note: Di katalog, kuantum dan inti atom masih satu inti.
+    note: Untuk inti Inti atom dan energi ikat (Tahap 3) dan Peluruhan dan waktu paruh.

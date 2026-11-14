@@ -109,12 +109,13 @@ test('Slice 2 overlays: applied over the extracted tower question, reviewed on t
   assert.ok(concept(base, 'MAT.TRI.SUDUT_ISTIMEWA').misconceptions.some(m => m.code === 'TAN30_BUKAN_SETENGAH'));
   assert.ok(!concept(extracted, 'MAT.TRI.SUDUT_ISTIMEWA').misconceptions.some(m => m.code === 'TAN30_BUKAN_SETENGAH'));
   // Every overlay is an open proposal: the draft lints clean, strict lint refuses each one by name.
-  // three tower overlays (S2-D1) plus four misconception overlays for the /coba Fisika and Kimia questions (D8)
+  // three tower overlays (S2-D1) plus misconception overlays for the /coba questions (D8): four for Fisika and Kimia SMA,
+  // nine for the SMP questions and Biologi SMA
   assert.equal(base.authored!.filter(a => a.review.decision === 'S2-D1').length, 3);
-  assert.equal(base.authored!.filter(a => a.review.decision === 'D8').length, 4);
+  assert.equal(base.authored!.filter(a => a.review.decision === 'D8').length, 13);
   assert.ok(base.authored!.every(a => a.review.status === 'PROPOSED' && a.provenance.source === 'authored'));
   const strict = lintManifest(base, { strict: true }).filter(f => f.file.startsWith('authored/'));
-  assert.deepEqual(strict.map(f => f.rule), Array(7).fill('UNREVIEWED'));
+  assert.deepEqual(strict.map(f => f.rule), Array(16).fill('UNREVIEWED'));
 });
 
 test('D3 stays open: the synthetic funnel lesson exercises lessonFor in memory only and is refused by strict lint', () => {

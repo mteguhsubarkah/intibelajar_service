@@ -13,7 +13,9 @@ review:
     - recommend
     - lessonFor
     - tutorLadder
+    - cobaSteps
   evidence:
+    - "cobaSteps (kotak Coba sekarang di /coba terpandu): kata yang persis dan angka dinilai aturan, isian bebas dinilai AI dengan key. Perlu dicek guru Matematika."
     - "Step patterns: S1 from analysis.ts demoCoreEvidence (20 on top of the fraction names the sides), S2 'tan 30' (analysis.ts branch 4 accepted tan with 20, x or √3; D1 needs the ratio with its angle), S3 from the special value and the result forms in coba.ts SOLUTION."
     - "Misconceptions: sin and cos (analysis.ts branches 1–2, existing codes MEMAKAI_SIN, MEMAKAI_COS), tan 30 = 1/2 (branch 3), and the inverted equation tan 30 = x/20 (plan 05 §1.2; on DEFINISI_SIN_COS_TAN because T13 is not mapped on this question and stays unrouted, D5 open)."
     - lessonFor follows the coreId each analysis.ts branch routes to (perbandingan-trig, sudut-istimewa, sudut-depresi-elevasi). If D3 approves the funnel lesson, DEFINISI_SIN_COS_TAN may point to it instead.
@@ -139,3 +141,36 @@ rubric:
         quick:
           - Hubungkan soal dengan inti
           - Kasih petunjuk
+  cobaSteps:
+    - step: 1
+      conceptCode: MAT.TRI.SEGITIGA_SIKU_SIKU
+      prompt: "Sisi miringnya diketahui atau tidak?"
+      key: "tidak (yang diketahui hanya tinggi menara, yaitu sisi depan, dan sudut 30°)"
+      correct: "Betul, sisi miring tidak diketahui. Jadi pilih perbandingan yang tidak memakainya."
+      words:
+        correct: [tidak, nggak, ngga, gak, enggak, engga, belum, tdk, ga, tidak diketahui, tidak tahu sisi miringnya]
+        wrong:
+          - words: [ya, iya, diketahui, tahu]
+            explanation: "Cek lagi: yang diketahui cuma tinggi menara (sisi depan). Sisi miring tidak ada di soal."
+    - step: 2
+      conceptCode: MAT.TRI.DEFINISI_SIN_COS_TAN
+      prompt: "Perbandingan yang dipakai: …"
+      key: "tan (depan : samping)"
+      correct: "Betul, tan = depan : samping."
+      words:
+        correct: [tan, tangen, tan 30, tan 30°, tangen 30]
+        wrong:
+          - words: [sin, sinus, cos, cosinus, kosinus]
+            explanation: "sin dan cos butuh sisi miring. Yang kamu punya depan dan samping."
+    - step: 3
+      conceptCode: MAT.TRI.SUDUT_ISTIMEWA
+      prompt: "x = 20 : (1/√3) = …"
+      key: "20√3 ≈ 34,6 m"
+      correct: "Pas, x = 20√3 ≈ 34,6 m."
+      answer:
+        value: 34.641016
+        tolerance: {relative: 0.005, floor: 1}
+      partials:
+        - value: 11.547
+          tolerance: {relative: 0.01, floor: 1}
+          explanation: "Kebalik: dibagi 1/√3 sama dengan dikali √3."

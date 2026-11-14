@@ -2,7 +2,7 @@ schemaVersion: 1
 code: MAT.C26.D.RASIO
 subject: MAT
 title: Rasio, skala, dan laju
-subtitle: Perbandingan senilai, berbalik nilai, skala, dan laju perubahan
+subtitle: Perbandingan senilai, konversi satuan waktu, skala, laju, dan berbalik nilai
 phase: D
 availability: MAPPED
 bekal: []
@@ -22,11 +22,25 @@ concepts:
     aliases:
       - ns: MAP
         value: mat-d-rasio-c1
+  - code: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+    title: Konversi satuan waktu
+    subtitle: Jam, menit, detik, dan waktu dalam bentuk desimal
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 4
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-d-rasio-waktu
   - code: MAT.C26.D.RASIO.SKALA_DAN_LAJU
     title: Skala dan laju
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 3
     estimatedMinutes: 5
     grade: 7
     hidden: false
@@ -39,7 +53,7 @@ concepts:
     title: Perbandingan berbalik nilai
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 4
     estimatedMinutes: 5
     grade: 7
     hidden: false
@@ -51,6 +65,9 @@ concepts:
 prerequisites:
   - concept: MAT.C26.D.RASIO.PERBANDINGAN_BERBALIK_NILAI
     requires: MAT.C26.D.RASIO.PERBANDINGAN_SENILAI
+    kind: SOFT
+  - concept: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+    requires: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
     kind: SOFT
 review:
   status: PROPOSED

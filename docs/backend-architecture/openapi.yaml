@@ -511,6 +511,39 @@ paths:
         "503":
           $ref: "#/components/responses/Unavailable"
       description: Grading always uses the question the server wrote for this core and answer, never one sent by the browser. Provider failure returns HTTP 503; no deterministic fallback. No account, mastery or durable progress.
+  /v1/trial/steps/check:
+    post:
+      operationId: publicTrialStepCheckPost
+      tags:
+        - Public trial
+      summary: "Anonymous public trial: grade one \"Coba sekarang\" box in a hint (one core)"
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TrialStepCheckRequest"
+      responses:
+        "200":
+          description: The reply graded against the question's private rubric.cobaSteps entry for that hint step. `judge` is `rule` when the catalogued number or word decided, `ai` when the free-text reply was graded by the AI provider with the step key. A correct step marks its core done for IntiGuide in this trial.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrialStepCheckReply"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+      description: The step key never leaves the server. Numbers and exact catalogued words are graded by rule (no AI); only replies the rule cannot decide need the provider, and provider failure then returns HTTP 503. No account, mastery or durable progress.
   # ------------------------------------------------------------------ auth
   /v1/auth/session:
     get:
@@ -6288,6 +6321,49 @@ components:
               type: string
               minLength: 1
               maxLength: 500
+    TrialStepCheckRequest:
+      type: object
+      required: [sessionId, questionId, step, reply]
+      additionalProperties: false
+      properties:
+        sessionId:
+          type: string
+          minLength: 1
+          maxLength: 64
+        questionId:
+          type: string
+          minLength: 1
+          maxLength: 128
+        step:
+          type: integer
+          minimum: 1
+          maximum: 8
+          description: The hint step (body.hints[].step) whose "Coba sekarang" box is answered.
+        reply:
+          type: string
+          minLength: 1
+          maxLength: 300
+    TrialStepCheckReply:
+      type: object
+      required: [correct, partial, feedback, judge, coreId]
+      additionalProperties: false
+      properties:
+        correct:
+          type: boolean
+        partial:
+          type: boolean
+          description: A catalogued half-way answer (e.g. the distance before converting to time).
+        feedback:
+          type: string
+          minLength: 1
+          maxLength: 400
+        judge:
+          type: string
+          enum: [rule, ai]
+        coreId:
+          type: string
+          minLength: 1
+          maxLength: 64
     TrialMiniCheckReply:
       type: object
       required: [question, hint]

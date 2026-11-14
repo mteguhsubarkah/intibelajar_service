@@ -102,15 +102,22 @@ const ENERGI: PilotTopic = {
 };
 
 const MEKANIKA: PilotTopic = {
-  code: 'FIS.C26.F.MEKANIKA', subject: 'FIS', title: 'Dinamika, momentum & keseimbangan', subtitle: 'Hukum Newton, impuls, torsi, rotasi', phase: 'F', alias: 'dinamika',
+  code: 'FIS.C26.F.MEKANIKA', subject: 'FIS', title: 'Dinamika, momentum & keseimbangan', subtitle: 'Hukum Newton, impuls dan momentum, torsi, rotasi', phase: 'F', alias: 'dinamika',
   bekal: ['gerak lurus', 'vektor gaya'],
   cores: [
-    C('C1', 'Hukum Newton & momentum', [
+    C('C1', 'Hukum Newton dan sistem benda', [
       S('ΣF = m · a', ['Hukum II Newton: percepatan sebanding dengan gaya total dan berbanding terbalik dengan massa: **ΣF = m · a**.', 'Contoh: 20 N pada benda 4 kg di lantai licin ⇒ a = 5 m/s².'], [['ΣF', 'm · a']]),
       S('Sistem benda terhubung', ['Untuk benda yang dihubungkan tali, hitung dulu percepatan **seluruh sistem**: a = F / (m₁ + m₂). Lalu tinjau satu benda untuk mencari tegangan tali.', 'Contoh: 2 kg dan 3 kg ditarik 20 N ⇒ a = 4 m/s² ⇒ tegangan tali yang menarik balok 2 kg = 2 × 4 = 8 N.'], [['a sistem', 'F / Σm'], ['T', 'm₁ · a']], 'Pilih benda yang gayanya paling sedikit untuk mencari tegangan tali.'),
     ], [
       Q('Gaya 20 N bekerja pada benda bermassa 4 kg di atas lantai licin. Percepatan benda adalah …', ['0,2 m/s²', '5 m/s²', '16 m/s²', '80 m/s²'], 1, 'a = F / m = 20 / 4 = 5 m/s².', 1),
       Q('Balok A (2 kg) dan balok B (3 kg) dihubungkan tali di lantai licin. Balok B ditarik dengan gaya 20 N sehingga keduanya bergerak bersama. Tegangan tali penghubung adalah …', ['4 N', '8 N', '12 N', '20 N'], 1, 'a = 20 / (2 + 3) = 4 m/s². Tali menarik balok A: T = 2 × 4 = 8 N.'),
+    ], { min: 5, codeFrom: 'Hukum Newton & momentum' }),
+    C('IMPULS', 'Impuls dan momentum', [
+      S('Impuls mengubah momentum', ['Momentum **p = m · v** (vektor). Impuls **I = F · Δt = Δp = m(v₂ − v₁)**.', 'Perhatikan arah: bola yang berbalik arah mengalami perubahan kecepatan yang besar.'], [['p', 'm · v'], ['I', 'F · Δt = m(v₂ − v₁)']]),
+      S('Kekekalan momentum', ['Saat tumbukan tanpa gaya luar: **m₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′**. Jika menyatu: (m₁ + m₂)v′.', 'Contoh: 2 kg bergerak 6 m/s menumbuk 4 kg diam lalu menyatu ⇒ v′ = 12/6 = 2 m/s.'], [['tumbukan', 'Σp sebelum = Σp sesudah']], 'Tetapkan arah positif dulu; kecepatan berlawanan arah diberi tanda negatif.'),
+    ], [
+      Q('Bola bermassa 0,5 kg bergerak 10 m/s, lalu dipukul sehingga berbalik arah dengan kecepatan 20 m/s. Besar impuls yang diberikan pemukul adalah …', ['5 N·s', '10 N·s', '15 N·s', '30 N·s'], 2, 'Arah awal positif: I = 0,5 × (−20 − 10) = −15 N·s. Besarnya 15 N·s.'),
+      Q('Balok 2 kg yang bergerak 6 m/s menumbuk balok 4 kg yang diam. Setelah tumbukan keduanya menyatu. Kecepatan kedua balok setelah tumbukan adalah …', ['1 m/s', '2 m/s', '3 m/s', '4 m/s'], 1, 'Kekekalan momentum: 2 × 6 = (2 + 4)v′, jadi v′ = 2 m/s.'),
     ], { min: 5 }),
     C('C2', 'Torsi dan keseimbangan', [
       S('Torsi = gaya × lengan', ['Torsi (momen gaya) membuat benda berputar: **τ = F · r · sin θ**. Jika gaya tegak lurus lengan, τ = F · r.', 'Contoh: 10 N tegak lurus kunci inggris 0,2 m ⇒ τ = 2 N·m.'], [['τ', 'F · r · sin θ']]),
@@ -118,13 +125,6 @@ const MEKANIKA: PilotTopic = {
     ], [
       Q('Gaya 10 N dikerjakan tegak lurus pada ujung kunci inggris yang berjarak 0,2 m dari poros. Torsi yang dihasilkan adalah …', ['0,02 N·m', '2 N·m', '10,2 N·m', '50 N·m'], 1, 'τ = F × r = 10 × 0,2 = 2 N·m.', 1),
       Q('Seorang anak bermassa 30 kg duduk 2 m dari poros jungkat-jungkit. Agar seimbang, anak bermassa 40 kg harus duduk pada jarak … dari poros di sisi lain.', ['1 m', '1,5 m', '2 m', '2,67 m'], 1, 'Στ = 0: 30 × 2 = 40 × x, jadi x = 1,5 m.'),
-    ], { min: 5 }),
-    C('IMPULS', 'Impuls dan momentum', [
-      S('Impuls mengubah momentum', ['Momentum **p = m · v** (vektor). Impuls **I = F · Δt = Δp = m(v₂ − v₁)**.', 'Perhatikan arah: bola yang berbalik arah mengalami perubahan kecepatan yang besar.'], [['p', 'm · v'], ['I', 'F · Δt = m(v₂ − v₁)']]),
-      S('Kekekalan momentum', ['Saat tumbukan tanpa gaya luar: **m₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′**. Jika menyatu: (m₁ + m₂)v′.', 'Contoh: 2 kg bergerak 6 m/s menumbuk 4 kg diam lalu menyatu ⇒ v′ = 12/6 = 2 m/s.'], [['tumbukan', 'Σp sebelum = Σp sesudah']], 'Tetapkan arah positif dulu; kecepatan berlawanan arah diberi tanda negatif.'),
-    ], [
-      Q('Bola bermassa 0,5 kg bergerak 10 m/s, lalu dipukul sehingga berbalik arah dengan kecepatan 20 m/s. Besar impuls yang diberikan pemukul adalah …', ['5 N·s', '10 N·s', '15 N·s', '30 N·s'], 2, 'Arah awal positif: I = 0,5 × (−20 − 10) = −15 N·s. Besarnya 15 N·s.'),
-      Q('Balok 2 kg yang bergerak 6 m/s menumbuk balok 4 kg yang diam. Setelah tumbukan keduanya menyatu. Kecepatan kedua balok setelah tumbukan adalah …', ['1 m/s', '2 m/s', '3 m/s', '4 m/s'], 1, 'Kekekalan momentum: 2 × 6 = (2 + 4)v′, jadi v′ = 2 m/s.'),
     ], { min: 5 }),
     C('ROTASI', 'Dinamika rotasi', [
       S('Hukum Newton untuk rotasi', ['**τ = I · α**: torsi menghasilkan percepatan sudut. I adalah momen inersia, makin besar makin sulit diputar.', 'Silinder pejal: I = ½mR². Contoh: m = 4 kg, R = 0,5 m ⇒ I = 0,5 kg·m²; τ = 2 N·m ⇒ α = 4 rad/s².'], [['τ', 'I · α'], ['silinder pejal', 'I = ½mR²']]),
@@ -198,7 +198,7 @@ const TERMAL: PilotTopic = {
 };
 
 const GELOMBANG: PilotTopic = {
-  code: 'FIS.C26.F.GELOMBANG', subject: 'FIS', title: 'Gelombang dan penerapannya', subtitle: 'Interferensi, resonansi, optik, Doppler', phase: 'F', alias: 'gelombang',
+  code: 'FIS.C26.F.GELOMBANG', subject: 'FIS', title: 'Gelombang dan penerapannya', subtitle: 'Interferensi, resonansi bunyi, lensa dan alat optik, Doppler', phase: 'F', alias: 'gelombang',
   bekal: ['getaran', 'cepat rambat'],
   cores: [
     C('C1', 'Superposisi & interferensi', [
@@ -208,12 +208,21 @@ const GELOMBANG: PilotTopic = {
       Q('Sebuah gelombang memiliki frekuensi 50 Hz dan panjang gelombang 2 m. Cepat rambat gelombang adalah …', ['25 m/s', '52 m/s', '100 m/s', '200 m/s'], 2, 'v = λf = 2 × 50 = 100 m/s.', 1),
       Q('Pada percobaan celah ganda, jarak antarcelah 0,2 mm dan layar berjarak 1 m. Jarak terang pertama dari terang pusat 3 mm. Panjang gelombang cahaya adalah …', ['300 nm', '450 nm', '600 nm', '750 nm'], 2, 'λ = d · y / L = (0,2 × 10⁻³)(3 × 10⁻³)/1 = 6 × 10⁻⁷ m = 600 nm.', 3),
     ], { min: 5 }),
-    C('C2', 'Resonansi dan optik', [
+    C('RESONANSI', 'Resonansi bunyi', [
       S('Pipa organa', ['Pipa **terbuka** (kedua ujung terbuka): fₙ = n · v / 2L. Pipa **tertutup**: f = (2n − 1) · v / 4L, hanya harmonik ganjil.', 'Contoh: pipa terbuka 50 cm, v = 340 m/s ⇒ nada dasar 340 Hz.'], [['terbuka', 'f₁ = v / 2L'], ['tertutup', 'f₁ = v / 4L']]),
-      S('Lensa', ['Persamaan lensa: **1/f = 1/s + 1/s′**. Lensa cembung f positif. s′ positif berarti bayangan nyata di belakang lensa.', 'Contoh: s = 30 cm, f = 20 cm ⇒ s′ = 60 cm.'], [['1/f', '1/s + 1/s′'], ['perbesaran', 'M = s′ / s']], 'Pakai satuan yang sama (cm) untuk s, s′, dan f.'),
+      S('Dawai dan resonansi', ['Dawai yang kedua ujungnya terikat bergetar dengan **fₙ = n · v / 2L**. Senar yang ditegangkan lebih kencang membuat v lebih besar sehingga nadanya lebih tinggi.', '**Resonansi**: benda ikut bergetar bila frekuensi alaminya sama dengan frekuensi sumber. Kolom udara di atas air beresonansi dengan garpu tala saat panjangnya L = λ/4, 3λ/4, 5λ/4, …'], [['dawai', 'fₙ = n · v / 2L'], ['resonansi kolom udara', 'L = (2n − 1) · λ / 4']], 'Resonansi pertama kolom udara terjadi pada seperempat panjang gelombang.'),
     ], [
       Q('Pipa organa terbuka panjangnya 50 cm. Jika cepat rambat bunyi 340 m/s, frekuensi nada dasarnya adalah …', ['170 Hz', '340 Hz', '680 Hz', '1.360 Hz'], 1, 'f₁ = v / 2L = 340 / (2 × 0,5) = 340 Hz.'),
+      Q('Senar gitar sepanjang 0,5 m bergetar dengan cepat rambat gelombang 200 m/s. Frekuensi nada dasarnya adalah …', ['100 Hz', '200 Hz', '400 Hz', '800 Hz'], 1, 'f₁ = v / 2L = 200 / (2 × 0,5) = 200 Hz.'),
+      Q('Resonansi pertama kolom udara dengan sebuah garpu tala terjadi saat panjang kolom udara 20 cm. Panjang gelombang bunyi garpu tala adalah …', ['20 cm', '40 cm', '60 cm', '80 cm'], 3, 'Resonansi pertama: L = λ/4, jadi λ = 4 × 20 = 80 cm.'),
+    ], { min: 5 }),
+    C('OPTIK', 'Lensa dan alat optik', [
+      S('Lensa', ['Persamaan lensa: **1/f = 1/s + 1/s′**. Lensa cembung f positif. s′ positif berarti bayangan nyata di belakang lensa.', 'Contoh: s = 30 cm, f = 20 cm ⇒ s′ = 60 cm.'], [['1/f', '1/s + 1/s′'], ['perbesaran', 'M = s′ / s']], 'Pakai satuan yang sama (cm) untuk s, s′, dan f.'),
+      S('Alat optik', ['**Mata**: titik dekat normal 25 cm. Penderita rabun dekat dibantu lensa cembung berkekuatan P = 100/25 − 100/PP dioptri (PP titik dekatnya dalam cm).', '**Lup**: perbesaran tanpa akomodasi M = 25/f. **Mikroskop**: perbesaran total M = M objektif × M okuler.'], [['kacamata rabun dekat', 'P = 100/25 − 100/PP'], ['lup', 'M = 25 / f']], 'Kekuatan lensa dalam dioptri: P = 1/f dengan f dalam meter.'),
+    ], [
       Q('Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 20 cm. Jarak bayangan dari lensa adalah …', ['12 cm', '24 cm', '50 cm', '60 cm'], 3, '1/s′ = 1/20 − 1/30 = 1/60, jadi s′ = 60 cm (nyata).'),
+      Q('Seseorang hanya dapat membaca dengan jelas paling dekat pada jarak 50 cm. Agar dapat membaca pada jarak 25 cm, ia memerlukan kacamata …', ['2 dioptri berlensa cembung', '2 dioptri berlensa cekung', '4 dioptri berlensa cembung', '0,5 dioptri berlensa cembung'], 0, 'P = 100/25 − 100/50 = 4 − 2 = 2 dioptri; positif berarti lensa cembung.'),
+      Q('Sebuah mikroskop memiliki perbesaran lensa objektif 10 kali dan lensa okuler 15 kali. Perbesaran total mikroskop adalah …', ['25 kali', '150 kali', '1,5 kali', '5 kali'], 1, 'M = M objektif × M okuler = 10 × 15 = 150 kali.', 1, 'KM'),
     ], { min: 5 }),
     C('DOPPLER', 'Efek Doppler', [
       S('Frekuensi berubah karena gerak', ['Saat sumber bunyi dan pendengar saling mendekat, frekuensi yang terdengar **lebih tinggi**; saat menjauh, **lebih rendah**.', '**fₚ = (v ± vₚ) / (v ∓ vₛ) · fₛ**.'], [['fₚ', '(v ± vₚ)/(v ∓ vₛ) · fₛ']]),
@@ -222,8 +231,9 @@ const GELOMBANG: PilotTopic = {
       Q('Ambulans membunyikan sirene 680 Hz sambil bergerak mendekati pendengar yang diam dengan kecepatan 20 m/s. Jika cepat rambat bunyi 340 m/s, frekuensi yang didengar adalah …', ['640 Hz', '680 Hz', '720 Hz', '722,5 Hz'], 3, 'fₚ = 340 / (340 − 20) × 680 = 340/320 × 680 = 722,5 Hz.', 3),
       Q('Ketika sumber bunyi bergerak menjauhi pendengar yang diam, frekuensi yang didengar …', ['lebih tinggi dari frekuensi sumber', 'lebih rendah dari frekuensi sumber', 'sama dengan frekuensi sumber', 'menjadi nol'], 1, 'Saat menjauh, gelombang yang sampai ke pendengar lebih renggang, sehingga frekuensinya lebih rendah.', 1, 'KM'),
     ], { capstone: true, min: 6 }),
+    { id: 'C2', title: 'Resonansi dan optik', hidden: true },
   ],
-  edges: [['C1', 'DOPPLER', 'S']],
+  edges: [['C1', 'RESONANSI', 'S'], ['C1', 'DOPPLER', 'S'], ['C1', 'OPTIK', 'S']],
 };
 
 const ELEKTRO: PilotTopic = {
@@ -272,16 +282,9 @@ const ELEKTRO: PilotTopic = {
 };
 
 const MODERN: PilotTopic = {
-  code: 'FIS.C26.F.MODERN', subject: 'FIS', title: 'Fisika modern & teknologi digital', subtitle: 'Kuantum, semikonduktor, logika biner, relativitas, inti', phase: 'F', alias: 'fisika-modern',
+  code: 'FIS.C26.F.MODERN', subject: 'FIS', title: 'Fisika modern & teknologi digital', subtitle: 'Semikonduktor, logika biner, relativitas, kuantum, inti atom dan radioaktivitas', phase: 'F', alias: 'fisika-modern',
   bekal: ['energi', 'gelombang cahaya'],
   cores: [
-    C('C1', 'Kuantum dan inti atom', [
-      S('Cahaya sebagai paket energi', ['Cahaya terdiri dari foton dengan energi **E = h · f** (h tetapan Planck). Energi foton sebanding dengan frekuensinya.'], [['E', 'h · f']]),
-      S('Efek fotolistrik', ['Elektron lepas dari logam hanya jika energi foton lebih besar dari fungsi kerja W₀: **Ekₘₐₖₛ = h·f − W₀**.', 'Contoh: foton 5 eV pada logam W₀ = 2 eV ⇒ Ek maksimum 3 eV. Intensitas hanya menambah jumlah elektron, bukan energinya.'], [['Ekₘₐₖₛ', 'h · f − W₀']], 'Frekuensi menentukan apakah elektron lepas; intensitas menentukan berapa banyak.'),
-    ], [
-      Q('Energi sebuah foton sebanding dengan …', ['panjang gelombangnya', 'frekuensinya', 'intensitas cahaya', 'kecepatan cahaya saja'], 1, 'E = h · f: energi foton sebanding dengan frekuensi (dan berbanding terbalik dengan panjang gelombang).', 1, 'KM'),
-      Q('Foton berenergi 5 eV mengenai logam yang fungsi kerjanya 2 eV. Energi kinetik maksimum elektron yang terlepas adalah …', ['2 eV', '3 eV', '5 eV', '7 eV'], 1, 'Ekₘₐₖₛ = 5 − 2 = 3 eV.'),
-    ], { min: 5 }),
     C('SEMI', 'Semikonduktor', [
       S('Semikonduktor dan doping', ['Daya hantar listrik semikonduktor (silikon, germanium) berada di antara konduktor dan isolator, dan bisa diatur dengan **doping**.', 'Doping atom bervalensi 5 (mis. fosfor) menghasilkan **tipe-n** dengan pembawa mayoritas elektron. Doping atom bervalensi 3 (mis. boron) menghasilkan **tipe-p** dengan pembawa mayoritas hole.'], [['tipe-n', 'valensi 5 → elektron'], ['tipe-p', 'valensi 3 → hole']]),
       S('Dioda dan transistor', ['Sambungan p-n membentuk **dioda**: arus mengalir saat bias maju dan tertahan saat bias mundur, sehingga dioda dipakai sebagai **penyearah** arus bolak-balik.', '**Transistor** dapat berfungsi sebagai penguat dan sebagai saklar. Saklar elektronik inilah dasar gerbang logika pada rangkaian digital.'], undefined, 'Bias maju: kutub positif sumber ke sisi p, kutub negatif ke sisi n.'),
@@ -304,6 +307,21 @@ const MODERN: PilotTopic = {
       Q('Sebuah pesawat bergerak dengan kecepatan 0,6c. Menurut awak pesawat, perjalanan berlangsung 8 tahun. Menurut pengamat di bumi, perjalanan itu berlangsung …', ['6,4 tahun', '8 tahun', '10 tahun', '12,5 tahun'], 2, 'γ = 1/√(1 − 0,36) = 1,25. Δt = 1,25 × 8 = 10 tahun.', 3),
       Q('Sebuah batang yang panjangnya 5 m bergerak searah panjangnya dengan kecepatan 0,8c. Panjang batang menurut pengamat diam adalah …', ['3 m', '4 m', '5 m', '8,3 m'], 0, '√(1 − 0,64) = 0,6, jadi L = 5 × 0,6 = 3 m.'),
     ], { min: 5 }),
+    C('C1', 'Gejala kuantum', [
+      S('Cahaya sebagai paket energi', ['Cahaya terdiri dari foton dengan energi **E = h · f** (h tetapan Planck). Energi foton sebanding dengan frekuensinya.'], [['E', 'h · f']]),
+      S('Efek fotolistrik', ['Elektron lepas dari logam hanya jika energi foton lebih besar dari fungsi kerja W₀: **Ekₘₐₖₛ = h·f − W₀**.', 'Contoh: foton 5 eV pada logam W₀ = 2 eV ⇒ Ek maksimum 3 eV. Intensitas hanya menambah jumlah elektron, bukan energinya.'], [['Ekₘₐₖₛ', 'h · f − W₀']], 'Frekuensi menentukan apakah elektron lepas; intensitas menentukan berapa banyak.'),
+    ], [
+      Q('Energi sebuah foton sebanding dengan …', ['panjang gelombangnya', 'frekuensinya', 'intensitas cahaya', 'kecepatan cahaya saja'], 1, 'E = h · f: energi foton sebanding dengan frekuensi (dan berbanding terbalik dengan panjang gelombang).', 1, 'KM'),
+      Q('Foton berenergi 5 eV mengenai logam yang fungsi kerjanya 2 eV. Energi kinetik maksimum elektron yang terlepas adalah …', ['2 eV', '3 eV', '5 eV', '7 eV'], 1, 'Ekₘₐₖₛ = 5 − 2 = 3 eV.'),
+    ], { min: 5, codeFrom: 'Kuantum dan inti atom' }),
+    C('INTI_ATOM', 'Inti atom dan energi ikat', [
+      S('Susunan inti atom', ['Inti atom tersusun atas proton dan neutron (nukleon). Pada notasi ᴬ_Z X, Z adalah nomor atom (jumlah proton) dan A nomor massa (proton + neutron), jadi jumlah neutron **N = A − Z**.', '**Isotop** adalah atom dengan nomor atom sama tetapi nomor massa berbeda, misalnya karbon-12 dan karbon-14.'], [['jumlah neutron', 'N = A − Z']]),
+      S('Defek massa dan energi ikat', ['Massa inti selalu sedikit lebih kecil daripada jumlah massa nukleon penyusunnya. Selisihnya disebut **defek massa** Δm.', 'Defek massa setara dengan **energi ikat** inti: **E = Δm × 931,5 MeV** (Δm dalam satuan massa atom, u). Makin besar energi ikat per nukleon, makin stabil inti itu.'], [['energi ikat', 'E = Δm × 931,5 MeV'], ['defek massa', 'Δm = (Z·mₚ + N·mₙ) − m inti']], '1 u defek massa setara dengan 931,5 MeV.'),
+    ], [
+      Q('Inti uranium-235 memiliki nomor atom 92. Jumlah neutron dalam inti tersebut adalah …', ['92', '143', '235', '327'], 1, 'N = A − Z = 235 − 92 = 143.', 1, 'KM'),
+      Q('Defek massa suatu inti adalah 0,03 u. Energi ikat inti tersebut kira-kira …', ['0,03 MeV', '27,9 MeV', '931,5 MeV', '2.795 MeV'], 1, 'E = 0,03 × 931,5 = 27,945 MeV, kira-kira 27,9 MeV.'),
+      Q('Karbon-12 dan karbon-14 disebut isotop karena keduanya memiliki …', ['jumlah neutron yang sama', 'jumlah proton yang sama tetapi jumlah neutron berbeda', 'nomor massa yang sama', 'jumlah elektron yang berbeda'], 1, 'Isotop: nomor atom (jumlah proton) sama, nomor massa berbeda karena jumlah neutronnya berbeda.', 1, 'KM'),
+    ], { min: 5 }),
     C('INTI', 'Peluruhan dan waktu paruh', [
       S('Waktu paruh', ['Setiap **waktu paruh** T, jumlah inti radioaktif tinggal setengahnya: **N = N₀ · (1/2)^(t/T)**.', 'Contoh: T = 2 jam, setelah 6 jam (3 kali paruh) tersisa 1/8 bagian.'], [['N', 'N₀ (1/2)^(t/T)']]),
       S('Mencari waktu paruh', ['Hitung berapa kali dibagi dua, lalu bagi waktunya.', 'Contoh: 64 g menjadi 4 g = 64 → 32 → 16 → 8 → 4 (4 kali). Dalam 20 hari ⇒ T = 5 hari.'], [['64 → 4 g', '4 kali paruh']], 'Penerapan: penanggalan karbon-14, kedokteran nuklir, PLTN.'),
@@ -312,7 +330,7 @@ const MODERN: PilotTopic = {
       Q('Sampel radioaktif 64 g meluruh menjadi 4 g dalam 20 hari. Waktu paruh unsur tersebut adalah …', ['4 hari', '5 hari', '10 hari', '16 hari'], 1, '64 → 4 g berarti 4 kali paruh. T = 20 / 4 = 5 hari.'),
     ], { capstone: true, min: 5 }),
   ],
-  edges: [['C1', 'INTI', 'S'], ['SEMI', 'C2', 'S']],
+  edges: [['SEMI', 'C2', 'S'], ['INTI_ATOM', 'INTI', 'S']],
 };
 
 export const FIS_TOPICS: PilotTopic[] = [UKUR, GERAK2D, ENERGI, MEKANIKA, FLUIDA, TERMAL, GELOMBANG, ELEKTRO, MODERN];

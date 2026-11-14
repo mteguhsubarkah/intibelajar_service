@@ -18,14 +18,6 @@ export const AUDIT: Record<string, PilotAudit> = {
   "FIS.C26.D.ENERGI": {
     "bookRefs": [
       {
-        "book": "Buku Siswa IPA Kelas VII (SMP/MTs)",
-        "edition": "edisi revisi",
-        "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VII_Rev.pdf",
-        "chapter": "Bab 3 Suhu, Kalor, dan Pemuaian",
-        "verification": "SNIPPET",
-        "note": "Untuk inti kelas 7 (suhu, perpindahan kalor, kalor jenis)."
-      },
-      {
         "book": "Buku Siswa IPA Kelas VIII (SMP/MTs)",
         "edition": "revisi 2024",
         "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VIII_Rev.pdf",
@@ -35,7 +27,8 @@ export const AUDIT: Record<string, PilotAudit> = {
       }
     ],
     "notes": [
-      "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): prasyarat Kalor jenis (kelas 7) diganti dari Usaha & perubahan energi (kelas 8) ke Suhu & perpindahan kalor."
+      "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): prasyarat Kalor jenis (kelas 7) diganti dari Usaha & perubahan energi (kelas 8) ke Suhu & perpindahan kalor.",
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): suhu, perpindahan kalor, dan kalor jenis (kelas 7) pindah ke bab baru D.SUHU; dua inti itu disembunyikan di sini. Bab ini kini kelas 8 saja dengan penutup Pesawat sederhana."
     ]
   },
   "FIS.C26.D.GELOMBANG": {
@@ -48,6 +41,9 @@ export const AUDIT: Record<string, PilotAudit> = {
         "verification": "SNIPPET",
         "note": "Judul bab persis belum dicek."
       }
+    ],
+    "notes": [
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti gabungan \"Bunyi dan optik\" dipecah jadi Bunyi dan pemantulannya serta Alat optik (penutup baru); inti lama disembunyikan."
     ]
   },
   "FIS.C26.D.GERAK": {
@@ -59,20 +55,11 @@ export const AUDIT: Record<string, PilotAudit> = {
         "chapter": "Bab 4 Gerak dan Gaya",
         "verification": "SNIPPET",
         "note": "Untuk inti kelas 7."
-      },
-      {
-        "book": "Buku Siswa IPA Kelas VIII (SMP/MTs)",
-        "edition": "revisi 2024",
-        "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VIII_Rev.pdf",
-        "chapter": "Bab IV Teknologi Penerapan Tekanan pada Zat",
-        "section": "A. Tekanan pada Zat Padat (108); B. Tekanan pada Zat Cair (110); C. Tekanan Gas (122); D. Penerapan Tekanan Zat (124)",
-        "pages": "105",
-        "verification": "VERIFIED",
-        "note": "Untuk inti Tekanan (kelas 8). Di buku, tekanan jadi bab sendiri dengan 4 subbab; di katalog masih satu inti di bab ini."
       }
     ],
     "notes": [
-      "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): kelas 7 gerak dulu, baru gaya (buku IPA VII Bab 4): Jarak, perpindahan & kelajuan jadi prasyarat Gerak dan gaya resultan, ordinal keduanya ditukar. Tekanan dan inti penutup tetap."
+      "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): kelas 7 gerak dulu, baru gaya (buku IPA VII Bab 4): Jarak, perpindahan & kelajuan jadi prasyarat Gerak dan gaya resultan, ordinal keduanya ditukar. Tekanan dan inti penutup tetap.",
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): Tekanan pindah ke bab baru D.TEKANAN (4 subbab buku jadi 4 inti); inti Tekanan di sini disembunyikan. Inti \"Gerak dan gaya resultan\" berisi jenis gaya dan gaya berat, jadi judulnya kini \"Gaya dan berat benda\" (kode tetap, progres aman)."
     ]
   },
   "FIS.C26.D.KEBUMIAN": {
@@ -82,7 +69,7 @@ export const AUDIT: Record<string, PilotAudit> = {
         "edition": "bahan revisi Mei 2025",
         "chapter": "Bab 6 Struktur Bumi dan Perkembangannya",
         "verification": "VERIFIED",
-        "note": "Tidak ada di IPA VIII revisi 2024 (buku berakhir di Bab VII Tanah bagi Kehidupan Berkelanjutan). Edisi berbeda; edisi acuan kelas 8 belum diputuskan. Konsep tetap dipertahankan di peta."
+        "note": "Edisi acuan kelas 8 untuk bab ini (diputuskan 14 November 2026). Tidak ada di IPA VIII revisi 2024 (buku berakhir di Bab VII Tanah bagi Kehidupan Berkelanjutan)."
       },
       {
         "book": "Buku Siswa IPA Kelas VIII (SMP/MTs)",
@@ -91,6 +78,9 @@ export const AUDIT: Record<string, PilotAudit> = {
         "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA-BS-KLS-VIII.pdf",
         "verification": "SNIPPET"
       }
+    ],
+    "notes": [
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): acuan Struktur Bumi kelas 8 = bahan revisi Mei 2025, Bab 6 Struktur Bumi dan Perkembangannya."
     ]
   },
   "FIS.C26.D.LISTRIK": {
@@ -253,6 +243,9 @@ export const AUDIT: Record<string, PilotAudit> = {
         "chapter": "Bab 5 Gelombang, Bunyi dan Cahaya",
         "verification": "VERIFIED"
       }
+    ],
+    "notes": [
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti gabungan \"Resonansi dan optik\" dipecah jadi Resonansi bunyi serta Lensa dan alat optik; inti lama disembunyikan. Penutup tetap Efek Doppler."
     ]
   },
   "FIS.C26.F.MEDAN": {
@@ -286,7 +279,8 @@ export const AUDIT: Record<string, PilotAudit> = {
       }
     ],
     "notes": [
-      "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): Dinamika rotasi ditambah prasyarat Torsi dan keseimbangan."
+      "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): Dinamika rotasi ditambah prasyarat Torsi dan keseimbangan.",
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti \"Hukum Newton & momentum\" hanya berisi hukum Newton, jadi judulnya kini \"Hukum Newton dan sistem benda\" (kode tetap); momentum ada di Impuls dan momentum. Urutan ikut Bab 3: Newton, momentum, torsi, rotasi."
     ]
   },
   "FIS.C26.F.MODERN": {
@@ -312,7 +306,8 @@ export const AUDIT: Record<string, PilotAudit> = {
         "edition": "2022",
         "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf",
         "chapter": "Bab 8 Gejala Kuantum",
-        "verification": "VERIFIED"
+        "verification": "VERIFIED",
+        "note": "Untuk inti Gejala kuantum."
       },
       {
         "book": "Buku Siswa Fisika Kelas XII (SMA/MA)",
@@ -320,12 +315,13 @@ export const AUDIT: Record<string, PilotAudit> = {
         "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Fisika_BS_KLS_XII.pdf",
         "chapter": "Bab 9 Fisika Inti dan Radioaktivitas",
         "verification": "VERIFIED",
-        "note": "Di katalog, kuantum dan inti atom masih satu inti."
+        "note": "Untuk inti Inti atom dan energi ikat (Tahap 3) dan Peluruhan dan waktu paruh."
       }
     ],
     "notes": [
       "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): prasyarat Relativitas khusus <- Kuantum dan inti atom dihapus; relativitas tidak butuh kuantum (Fisika XII 2022: Bab 7 Relativitas sebelum Bab 8 Gejala Kuantum).",
-      "Tahap 2 audit Fisika (2026-11-13, docs/backlog.md FE): inti baru Semikonduktor (sebelum Representasi biner & logika) dari Fisika XII 2022 Bab 6 Pengantar (sistem elektronika, semikonduktor, gerbang logika)."
+      "Tahap 2 audit Fisika (2026-11-13, docs/backlog.md FE): inti baru Semikonduktor (sebelum Representasi biner & logika) dari Fisika XII 2022 Bab 6 Pengantar (sistem elektronika, semikonduktor, gerbang logika).",
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti \"Kuantum dan inti atom\" hanya berisi foton dan efek fotolistrik, jadi judulnya kini \"Gejala kuantum\" (kode tetap); ditambah inti Inti atom dan energi ikat. Urutan ikut Fisika XII: Bab 6 (semikonduktor, logika), 7 relativitas, 8 kuantum, 9 inti."
     ]
   },
   "FIS.C26.F.TERMAL": {
@@ -345,6 +341,38 @@ export const AUDIT: Record<string, PilotAudit> = {
         "verification": "VERIFIED",
         "note": "Gas ideal belum dicek di subbab."
       }
+    ]
+  },
+  "FIS.C26.D.TEKANAN": {
+    "bookRefs": [
+      {
+        "book": "Buku Siswa IPA Kelas VIII (SMP/MTs)",
+        "edition": "revisi 2024",
+        "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VIII_Rev.pdf",
+        "chapter": "Bab IV Teknologi Penerapan Tekanan pada Zat",
+        "section": "A. Tekanan pada Zat Padat (108); B. Tekanan pada Zat Cair (110); C. Tekanan Gas (122); D. Penerapan Tekanan Zat (124)",
+        "pages": "105",
+        "verification": "VERIFIED",
+        "note": "Satu bab dengan 4 subbab; tiap subbab menjadi satu inti (Tahap 3)."
+      }
+    ],
+    "notes": [
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): bab baru. Isi inti Tekanan lama (D.GERAK) dipakai ulang dan dipecah per subbab; soal lama tidak dipindah (kode soal baru)."
+    ]
+  },
+  "FIS.C26.D.SUHU": {
+    "bookRefs": [
+      {
+        "book": "Buku Siswa IPA Kelas VII (SMP/MTs)",
+        "edition": "edisi revisi",
+        "url": "https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VII_Rev.pdf",
+        "chapter": "Bab 3 Suhu, Kalor, dan Pemuaian",
+        "verification": "SNIPPET",
+        "note": "Subbab Pemuaian belum dijadikan inti: menunggu keputusan sisa Tahap 2."
+      }
+    ],
+    "notes": [
+      "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): bab baru dari D.ENERGI. Materi dan soal inti Suhu & perpindahan kalor serta Kalor jenis dipakai ulang dengan kode baru; progres di inti lama tidak ikut pindah."
     ]
   }
 };

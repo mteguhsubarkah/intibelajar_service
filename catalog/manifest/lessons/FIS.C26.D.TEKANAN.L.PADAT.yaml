@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN.L.PADAT
+title: Tekanan zat padat
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.TEKANAN.TEKANAN_ZAT_PADAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Tekanan = gaya per luas
+  - type: text
+    slide: 0
+    text: "Tekanan adalah besar gaya yang bekerja pada setiap satuan luas bidang tekan. Satuannya pascal: 1 Pa = 1 N/m²."
+  - type: text
+    slide: 0
+    text: Untuk gaya yang sama, makin kecil luas bidang tekan, makin besar tekanannya.
+  - type: math
+    slide: 0
+    name: tekanan
+    expression: P = F / A
+    highlight: true
+  - type: math
+    slide: 0
+    name: 1 pascal
+    expression: 1 N/m²
+  - type: heading
+    slide: 1
+    text: Memperbesar atau memperkecil tekanan
+  - type: text
+    slide: 1
+    text: Pisau tajam, paku runcing, dan jarum memperkecil luas bidang tekan supaya tekanannya besar.
+  - type: text
+    slide: 1
+    text: Ban truk yang lebar, sepatu salju, dan pondasi bangunan memperbesar luas bidang tekan supaya tekanannya kecil dan tidak mudah ambles.
+  - type: tip
+    slide: 1
+    text: "Ubah cm² ke m² dulu: 1 cm² = 0,0001 m²."
+checks:
+  - question: FIS.C26.D.TEKANAN.Q.PADAT_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.TEKANAN.S.PADAT
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

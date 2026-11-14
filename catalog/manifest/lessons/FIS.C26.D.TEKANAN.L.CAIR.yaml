@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN.L.CAIR
+title: Tekanan zat cair
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.TEKANAN.TEKANAN_ZAT_CAIR
+blocks:
+  - type: heading
+    slide: 0
+    text: Tekanan hidrostatis
+  - type: text
+    slide: 0
+    text: "Zat cair yang diam menekan ke segala arah. Tekanannya bertambah dengan kedalaman: P = ρ × g × h."
+  - type: text
+    slide: 0
+    text: Pada kedalaman yang sama di zat cair yang sama, tekanannya sama besar, apa pun bentuk wadahnya.
+  - type: math
+    slide: 0
+    name: tekanan hidrostatis
+    expression: P = ρ × g × h
+    highlight: true
+  - type: tip
+    slide: 0
+    text: Kedalaman h diukur dari permukaan zat cair ke titik yang ditanya.
+  - type: heading
+    slide: 1
+    text: Hukum Pascal dan Archimedes
+  - type: text
+    slide: 1
+    text: "**Hukum Pascal**: tekanan pada zat cair di ruang tertutup diteruskan sama besar ke segala arah, sehingga F₁ / A₁ = F₂ / A₂."
+  - type: text
+    slide: 1
+    text: "**Hukum Archimedes**: benda yang tercelup mendapat gaya ke atas sebesar berat zat cair yang dipindahkannya. Benda terapung bila massa jenisnya lebih kecil daripada massa jenis zat cair."
+  - type: math
+    slide: 1
+    name: Hukum Pascal
+    expression: F₁ / A₁ = F₂ / A₂
+    highlight: true
+  - type: math
+    slide: 1
+    name: gaya apung
+    expression: Fa = ρ × g × V tercelup
+checks:
+  - question: FIS.C26.D.TEKANAN.Q.CAIR_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.TEKANAN.S.CAIR
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

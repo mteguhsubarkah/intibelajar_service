@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.Q.INTI_ATOM_2
+familyCode: FIS.C26.F.MODERN.F.INTI_ATOM_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Defek massa suatu inti adalah 0,03 u. Energi ikat inti tersebut kira-kira …
+  options:
+    - id: a
+      label: 0,03 MeV
+    - id: b
+      label: 27,9 MeV
+    - id: c
+      label: 931,5 MeV
+    - id: d
+      label: 2.795 MeV
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 27,9 MeV
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
+  feedback:
+    correct: E = 0,03 × 931,5 = 27,945 MeV, kira-kira 27,9 MeV.
+    incorrect: Jawabannya 27,9 MeV. E = 0,03 × 931,5 = 27,945 MeV, kira-kira 27,9 MeV.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -2,7 +2,7 @@ schemaVersion: 1
 code: FIS.C26.F.MEKANIKA
 subject: FIS
 title: Dinamika, momentum & keseimbangan
-subtitle: Hukum Newton, impuls, torsi, rotasi
+subtitle: Hukum Newton, impuls dan momentum, torsi, rotasi
 phase: F
 availability: MAPPED
 bekal:
@@ -14,7 +14,7 @@ aliases:
 units: []
 concepts:
   - code: FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM
-    title: Hukum Newton & momentum
+    title: Hukum Newton dan sistem benda
     objectives: []
     misconceptions: []
     ordinal: 1
@@ -26,8 +26,8 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-f-mekanika-c1
-  - code: FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN
-    title: Torsi dan keseimbangan
+  - code: FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
+    title: Impuls dan momentum
     objectives: []
     misconceptions: []
     ordinal: 2
@@ -38,9 +38,9 @@ concepts:
     availability: READY
     aliases:
       - ns: MAP
-        value: fis-f-mekanika-c2
-  - code: FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM
-    title: Impuls dan momentum
+        value: fis-f-mekanika-impuls
+  - code: FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN
+    title: Torsi dan keseimbangan
     objectives: []
     misconceptions: []
     ordinal: 3
@@ -51,7 +51,7 @@ concepts:
     availability: READY
     aliases:
       - ns: MAP
-        value: fis-f-mekanika-impuls
+        value: fis-f-mekanika-c2
   - code: FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI
     title: Dinamika rotasi
     objectives: []
@@ -84,6 +84,7 @@ review:
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
     - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): Dinamika rotasi ditambah prasyarat Torsi dan keseimbangan."
+    - 'Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti "Hukum Newton & momentum" hanya berisi hukum Newton, jadi judulnya kini "Hukum Newton dan sistem benda" (kode tetap); momentum ada di Impuls dan momentum. Urutan ikut Bab 3: Newton, momentum, torsi, rotasi.'
 bookRefs:
   - book: Buku Siswa Fisika Kelas XI (SMA/MA)
     edition: "2022"

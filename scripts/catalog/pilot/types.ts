@@ -42,6 +42,16 @@ export interface PilotCore {
   min?: number;
   capstone?: boolean;
   /**
+   * Judul asal kode. Kode konsep (dan kode materi/soal inti C1/C2) dibentuk dari judul; isi ini dengan judul lama bila
+   * judulnya diganti, supaya kode, progres siswa, dan soal tidak berubah (mis. Tahap 3 audit Fisika).
+   */
+  codeFrom?: string;
+  /**
+   * Inti lama yang disembunyikan (mis. dipindah ke bab lain atau dipecah; kode inti tidak bisa pindah bab). Tetap ada di
+   * manifest agar publisher menyembunyikannya, tanpa materi, soal, prasyarat, atau kelas. Tulis di akhir daftar inti.
+   */
+  hidden?: boolean;
+  /**
    * Materi dua slide. Inti tanpa materi (dan tanpa soal) ditulis PLANNED: posisinya sudah ada di kurikulum,
    * isinya belum. Begitu slides dan soal diisi, inti menjadi READY pada pembangkitan berikutnya.
    */

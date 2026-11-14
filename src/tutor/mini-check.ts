@@ -101,9 +101,10 @@ export function numericVerdict(key:string|undefined,reply:string):boolean|null{
  const k=numberOf(key),r=numberOf(reply);
  return k===null||r===null?null:withinTolerance(r,k,0.01,0.01);
 }
-export async function miniGrade(config:Config['guide'],input:MiniInput&{question:string;reply:string;key?:string},http:typeof fetch=fetch):Promise<MiniGrade>{
+/** decided: keputusan benar/salah yang sudah diambil aturan (kotak Coba sekarang /coba); model hanya menulis tanggapannya. */
+export async function miniGrade(config:Config['guide'],input:MiniInput&{question:string;reply:string;key?:string;decided?:boolean},http:typeof fetch=fetch):Promise<MiniGrade>{
  const started=Date.now();
- const decided=numericVerdict(input.key,input.reply);
+ const decided=input.decided??numericVerdict(input.key,input.reply);
  const v=await run(config,GRADE,{...context(input),pertanyaanMini:input.question,jawabanPertanyaanMini:input.reply.slice(0,500),
   ...(input.key?{kunciJawaban:input.key}:{}),...(decided!==null?{penilaianAngka:decided?'benar':'salah'}:{})},http);
  let feedback=clean(v?.tanggapan,400);

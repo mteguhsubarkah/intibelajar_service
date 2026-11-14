@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.F.MODERN.L.INTI_ATOM
+title: Inti atom dan energi ikat
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
+blocks:
+  - type: heading
+    slide: 0
+    text: Susunan inti atom
+  - type: text
+    slide: 0
+    text: Inti atom tersusun atas proton dan neutron (nukleon). Pada notasi ᴬ_Z X, Z adalah nomor atom (jumlah proton) dan A nomor massa (proton + neutron), jadi jumlah neutron **N = A − Z**.
+  - type: text
+    slide: 0
+    text: "**Isotop** adalah atom dengan nomor atom sama tetapi nomor massa berbeda, misalnya karbon-12 dan karbon-14."
+  - type: math
+    slide: 0
+    name: jumlah neutron
+    expression: N = A − Z
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Defek massa dan energi ikat
+  - type: text
+    slide: 1
+    text: Massa inti selalu sedikit lebih kecil daripada jumlah massa nukleon penyusunnya. Selisihnya disebut **defek massa** Δm.
+  - type: text
+    slide: 1
+    text: "Defek massa setara dengan **energi ikat** inti: **E = Δm × 931,5 MeV** (Δm dalam satuan massa atom, u). Makin besar energi ikat per nukleon, makin stabil inti itu."
+  - type: math
+    slide: 1
+    name: energi ikat
+    expression: E = Δm × 931,5 MeV
+    highlight: true
+  - type: math
+    slide: 1
+    name: defek massa
+    expression: Δm = (Z·mₚ + N·mₙ) − m inti
+  - type: tip
+    slide: 1
+    text: 1 u defek massa setara dengan 931,5 MeV.
+checks:
+  - question: FIS.C26.F.MODERN.Q.INTI_ATOM_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.MODERN.S.INTI_ATOM
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

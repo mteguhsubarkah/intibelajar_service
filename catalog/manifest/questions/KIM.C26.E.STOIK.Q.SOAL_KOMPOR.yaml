@@ -109,6 +109,29 @@ rubric:
         body: "CH₄ : CO₂ = 1 : 1 → 1 mol CO₂ × 44 g/mol = 44 g"
     after:
       - 1 mol CH₄ → 1 mol CO₂ = 44 g
+  cobaSteps:
+    - step: 1
+      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+      prompt: "mol CH₄ = 16 : 16 = …"
+      key: "1 mol"
+      correct: "Pas, 16 g CH₄ = 1 mol."
+      answer:
+        value: 1
+        tolerance: {relative: 0.02, floor: 1}
+      partials:
+        - value: 16
+          explanation: "16 itu massanya. Bagi dengan Mr CH₄ = 16."
+    - step: 2
+      conceptCode: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
+      prompt: "massa CO₂ = 1 × 44 = … g"
+      key: "44 g"
+      correct: "Pas, 1 mol CO₂ × 44 = 44 g."
+      answer:
+        value: 44
+        tolerance: {relative: 0.02, floor: 1}
+      partials:
+        - value: 88
+          explanation: "Koefisien CO₂ cuma 1, bukan 2."
 review:
   status: PROPOSED
   decision: D8
@@ -120,3 +143,4 @@ review:
     - "Soal /coba Kimia memberikan persamaan reaksi setara dan kondisi pembakaran sempurna dengan oksigen berlebih. Yang dinilai adalah mol/massa molar dan perhitungan dari koefisien yang diberikan, bukan kemampuan menyetarakan reaksi."
     - "https://openstax.org/books/chemistry-2e/pages/4-3-reaction-stoichiometry"
     - "Pengecoh 16 g (massa dianggap tetap), 28 g (Mr CO₂ keliru), 88 g (koefisien salah baca) diturunkan dari kesalahan umum stoikiometri."
+    - "Kotak Coba sekarang (cobaSteps) untuk /coba terpandu: angka dinilai aturan, isian tanpa angka dinilai AI dengan key."

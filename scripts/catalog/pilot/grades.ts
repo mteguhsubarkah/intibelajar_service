@@ -34,8 +34,9 @@ export const GRADES: Record<string, Placement> = {
   'MAT.C26.FPLUS.LINGKARAN': 12, 'MAT.C26.FPLUS.LIMIT': 12, 'MAT.C26.FPLUS.TURUNAN': 12, 'MAT.C26.FPLUS.INTEGRAL': 12,
   // ---------------- Fisika (IPA SMP, IPA X, Fisika XI–XII) ----------------
   'FIS.C26.D.UKUR': 7, 'FIS.C26.D.ANTARIKSA': 7,
-  'FIS.C26.D.GERAK': { all: 7, TEKANAN: 8 },
-  'FIS.C26.D.ENERGI': { all: 8, SUHU_DAN_PERPINDAHAN_KALOR: 7, KALOR_JENIS: 7 }, // VII suhu & kalor; VIII usaha & pesawat sederhana
+  'FIS.C26.D.SUHU': 7, 'FIS.C26.D.GERAK': 7, // VII Bab 3 Suhu, Kalor, dan Pemuaian; VII Bab 4 Gerak dan Gaya
+  'FIS.C26.D.TEKANAN': 8, // VIII rev 2024 Bab IV Teknologi Penerapan Tekanan pada Zat
+  'FIS.C26.D.ENERGI': 8, // VIII Bab III usaha, energi, dan pesawat sederhana (suhu & kalor pindah ke D.SUHU, Tahap 3)
   'FIS.C26.D.GELOMBANG': 8, 'FIS.C26.D.KEBUMIAN': 8,
   'FIS.C26.D.LISTRIK': 9, // IX: listrik, magnet, dan sumber energi alternatif
   'FIS.C26.E.UKUR': 10, 'FIS.C26.E.GERAK2D': 10, 'FIS.C26.E.ENERGI': 10, 'FIS.C26.E.IKLIM': 10, 'FIS.C26.E.TERBARUKAN': 10,

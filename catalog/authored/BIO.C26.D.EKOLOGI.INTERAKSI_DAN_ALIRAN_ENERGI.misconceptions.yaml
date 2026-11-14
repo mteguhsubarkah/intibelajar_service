@@ -1,0 +1,24 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-sawah).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: PERPINDAHAN_DIHITUNG_PER_MAKHLUK
+    description: Jumlah perpindahan energi dihitung dari jumlah makhluk, bukan jumlah panah
+    example: 4 makhluk → dikali 10% empat kali
+    indicators:
+      - "soal-sawah: jawaban 1"
+  - code: PERPINDAHAN_KURANG
+    description: Perpindahan energi berhenti sebelum konsumen puncak
+    example: energi di tikus atau ular dianggap energi elang
+    indicators:
+      - "soal-sawah: jawaban 1.000 atau 100"
