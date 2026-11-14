@@ -420,7 +420,7 @@ Materi: 4 · Soal: 13
   A. 5 m · B. 10 m · C. 20 m · D. 40 m
   Kunci: **B** · Gerak vertikal seperti jatuh bebas: 20 = ½ × 10 × t² ⇒ t = 2 s. Gerak mendatar GLB: x = 5 × 2 = 10 m.
 
-## Energi alternatif & perubahan iklim (FIS.C26.E.ENERGI)
+## Energi, daya, dan efisiensi (FIS.C26.E.ENERGI)
 
 Materi: 3 · Soal: 7
 
@@ -430,12 +430,6 @@ Materi: 3 · Soal: 7
 - [ ] **FIS.C26.E.ENERGI.Q.DAYA_DAN_EFISIENSI_2** — Sebuah lampu menerima daya listrik 60 W dan memancarkan cahaya 9 W. Efisiensi lampu adalah …
   A. 9% · B. 15% · C. 51% · D. 85%
   Kunci: **B** · η = 9 / 60 × 100% = 15%.
-- [ ] **FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_1** — Sumber energi berikut yang termasuk energi terbarukan adalah …
-  A. batu bara · B. minyak bumi · C. gas alam · D. panas bumi
-  Kunci: **D** · Panas bumi terus dihasilkan dari dalam bumi. Batu bara, minyak, dan gas adalah bahan bakar fosil.
-- [ ] **FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_2** — Sebuah desa terpencil di pegunungan memiliki sungai berarus deras sepanjang tahun dan belum terjangkau jaringan listrik. Pembangkit yang paling tepat adalah …
-  A. PLTU batu bara · B. PLTMH (mikrohidro) · C. PLTD solar · D. PLTN
-  Kunci: **B** · Aliran sungai yang deras dan tetap cocok untuk mikrohidro: terbarukan, murah dioperasikan, dan sesuai skala desa.
 - [ ] **FIS.C26.E.ENERGI.Q.NERACA_1** — Sebuah rumah memakai 4 lampu 10 W selama 10 jam sehari dan sebuah TV 100 W selama 5 jam sehari. Energi listrik yang dipakai per hari adalah …
   A. 0,5 kWh · B. 0,9 kWh · C. 1,4 kWh · D. 9 kWh
   Kunci: **B** · Lampu: 4 × 10 × 10 = 400 Wh. TV: 100 × 5 = 500 Wh. Total 900 Wh = 0,9 kWh.
@@ -445,6 +439,12 @@ Materi: 3 · Soal: 7
 - [ ] **FIS.C26.E.ENERGI.Q.NERACA_3** — Panel surya menerima daya cahaya 1.000 W dengan efisiensi 20% dan bekerja 5 jam sehari. Energi listrik yang dihasilkan per hari adalah …
   A. 0,2 kWh · B. 1 kWh · C. 4 kWh · D. 5 kWh
   Kunci: **B** · Daya listrik = 20% × 1.000 W = 200 W. Energi = 0,2 kW × 5 jam = 1 kWh.
+- [ ] **FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_1** — Sumber energi berikut yang termasuk energi terbarukan adalah …
+  A. batu bara · B. minyak bumi · C. gas alam · D. panas bumi
+  Kunci: **D** · Panas bumi terus dihasilkan dari dalam bumi. Batu bara, minyak, dan gas adalah bahan bakar fosil.
+- [ ] **FIS.C26.E.ENERGI.Q.EVALUASI_PILIHAN_ENERGI_2** — Sebuah desa terpencil di pegunungan memiliki sungai berarus deras sepanjang tahun dan belum terjangkau jaringan listrik. Pembangkit yang paling tepat adalah …
+  A. PLTU batu bara · B. PLTMH (mikrohidro) · C. PLTD solar · D. PLTN
+  Kunci: **B** · Aliran sungai yang deras dan tetap cocok untuk mikrohidro: terbarukan, murah dioperasikan, dan sesuai skala desa.
 
 ## Dinamika, momentum & keseimbangan (FIS.C26.F.MEKANIKA)
 
@@ -561,7 +561,7 @@ Materi: 3 · Soal: 7
 
 ## Rangkaian & elektromagnetisme (FIS.C26.F.ELEKTRO)
 
-Materi: 3 · Soal: 7
+Materi: 5 · Soal: 13
 
 - [ ] **FIS.C26.F.ELEKTRO.Q.HUKUM_RANGKAIAN_1** — Dua resistor 4 Ω dan 12 Ω disusun paralel. Hambatan penggantinya adalah …
   A. 3 Ω · B. 8 Ω · C. 16 Ω · D. 48 Ω
@@ -569,12 +569,6 @@ Materi: 3 · Soal: 7
 - [ ] **FIS.C26.F.ELEKTRO.Q.HUKUM_RANGKAIAN_2** — Resistor 2 Ω dan 4 Ω disusun seri lalu dihubungkan ke baterai 12 V. Tegangan pada resistor 4 Ω adalah …
   A. 4 V · B. 6 V · C. 8 V · D. 12 V
   Kunci: **C** · Rₛ = 6 Ω, I = 12/6 = 2 A, V₄ = 2 × 4 = 8 V.
-- [ ] **FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_1** — Sebuah kumparan 100 lilitan mengalami perubahan fluks magnet 0,02 Wb dalam 0,1 s. Besar GGL induksi yang timbul adalah …
-  A. 0,2 V · B. 2 V · C. 20 V · D. 200 V
-  Kunci: **C** · ε = N · ΔΦ/Δt = 100 × 0,02 / 0,1 = 20 V.
-- [ ] **FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_2** — Transformator ideal memiliki 1.000 lilitan primer dan 200 lilitan sekunder. Jika tegangan primer 220 V, tegangan sekundernya adalah …
-  A. 22 V · B. 44 V · C. 440 V · D. 1.100 V
-  Kunci: **B** · Vₛ = Vₚ × Nₛ/Nₚ = 220 × 200/1.000 = 44 V.
 - [ ] **FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_1** — Pada sebuah titik cabang, arus 5 A dan 3 A masuk, sedangkan satu arus 6 A keluar. Besar arus pada cabang keluar lainnya adalah …
   A. 2 A · B. 4 A · C. 8 A · D. 14 A
   Kunci: **A** · ΣI masuk = ΣI keluar: 5 + 3 = 6 + I, jadi I = 2 A.
@@ -584,10 +578,34 @@ Materi: 3 · Soal: 7
 - [ ] **FIS.C26.F.ELEKTRO.Q.KIRCHHOFF_3** — Baterai 12 V dengan hambatan dalam 1 Ω dihubungkan ke dua resistor 6 Ω dan 3 Ω yang disusun paralel. Kuat arus yang keluar dari baterai adalah …
   A. 2 A · B. 3 A · C. 4 A · D. 6 A
   Kunci: **C** · Rₚ = 6 × 3/(6 + 3) = 2 Ω. Hukum II Kirchhoff: 12 = I(2 + 1), jadi I = 4 A.
+- [ ] **FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_1** — Sebuah kumparan 100 lilitan mengalami perubahan fluks magnet 0,02 Wb dalam 0,1 s. Besar GGL induksi yang timbul adalah …
+  A. 0,2 V · B. 2 V · C. 20 V · D. 200 V
+  Kunci: **C** · ε = N · ΔΦ/Δt = 100 × 0,02 / 0,1 = 20 V.
+- [ ] **FIS.C26.F.ELEKTRO.Q.INDUKSI_ELEKTROMAGNETIK_2** — Transformator ideal memiliki 1.000 lilitan primer dan 200 lilitan sekunder. Jika tegangan primer 220 V, tegangan sekundernya adalah …
+  A. 22 V · B. 44 V · C. 440 V · D. 1.100 V
+  Kunci: **B** · Vₛ = Vₚ × Nₛ/Nₚ = 220 × 200/1.000 = 44 V.
+- [ ] **FIS.C26.F.ELEKTRO.Q.AC_1** — Tegangan listrik PLN di rumah 220 V (nilai efektif). Tegangan maksimumnya kira-kira …
+  A. 156 V · B. 220 V · C. 311 V · D. 440 V
+  Kunci: **C** · Vₘ = V_ef × √2 = 220 × 1,41 ≈ 311 V.
+- [ ] **FIS.C26.F.ELEKTRO.Q.AC_2** — Rangkaian seri RLC memiliki R = 60 Ω, X_L = 120 Ω, dan X_C = 40 Ω, lalu dihubungkan ke tegangan efektif 100 V. Kuat arus efektifnya adalah …
+  A. 0,5 A · B. 1 A · C. 1,25 A · D. 2 A
+  Kunci: **B** · Z = √(60² + (120 − 40)²) = √(3.600 + 6.400) = 100 Ω, jadi I = 100/100 = 1 A.
+- [ ] **FIS.C26.F.ELEKTRO.Q.AC_3** — Resonansi pada rangkaian seri RLC terjadi jika …
+  A. reaktansi induktif sama dengan reaktansi kapasitif · B. hambatan sama dengan reaktansi induktif · C. hambatan resistor bernilai nol · D. frekuensi sumber dijadikan dua kali semula
+  Kunci: **A** · Resonansi terjadi saat X_L = X_C, sehingga impedansi menjadi Z = R (paling kecil) dan arus paling besar.
+- [ ] **FIS.C26.F.ELEKTRO.Q.EM_1** — Gelombang radio berfrekuensi 100 MHz merambat di udara dengan cepat rambat 3 × 10⁸ m/s. Panjang gelombangnya adalah …
+  A. 0,3 m · B. 3 m · C. 30 m · D. 300 m
+  Kunci: **B** · λ = c / f = 3 × 10⁸ / 10⁸ = 3 m.
+- [ ] **FIS.C26.F.ELEKTRO.Q.EM_2** — Urutan gelombang elektromagnetik dari frekuensi terkecil ke terbesar yang benar adalah …
+  A. radio, inframerah, ultraviolet, sinar-X · B. sinar-X, ultraviolet, inframerah, radio · C. inframerah, radio, sinar-X, ultraviolet · D. radio, ultraviolet, inframerah, sinar gamma
+  Kunci: **A** · Urutan spektrum: radio, gelombang mikro, inframerah, cahaya tampak, ultraviolet, sinar-X, sinar gamma.
+- [ ] **FIS.C26.F.ELEKTRO.Q.EM_3** — Gelombang elektromagnetik yang dimanfaatkan untuk memotret struktur tulang adalah …
+  A. inframerah · B. sinar-X · C. gelombang mikro · D. ultraviolet
+  Kunci: **B** · Sinar-X menembus jaringan lunak tetapi diserap tulang, sehingga bayangan tulang tampak pada foto rontgen.
 
 ## Fisika modern & teknologi digital (FIS.C26.F.MODERN)
 
-Materi: 4 · Soal: 8
+Materi: 5 · Soal: 11
 
 - [ ] **FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_1** — Energi sebuah foton sebanding dengan …
   A. panjang gelombangnya · B. frekuensinya · C. intensitas cahaya · D. kecepatan cahaya saja
@@ -595,6 +613,15 @@ Materi: 4 · Soal: 8
 - [ ] **FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_2** — Foton berenergi 5 eV mengenai logam yang fungsi kerjanya 2 eV. Energi kinetik maksimum elektron yang terlepas adalah …
   A. 2 eV · B. 3 eV · C. 5 eV · D. 7 eV
   Kunci: **B** · Ekₘₐₖₛ = 5 − 2 = 3 eV.
+- [ ] **FIS.C26.F.MODERN.Q.SEMI_1** — Silikon didoping dengan fosfor yang bervalensi 5. Jenis semikonduktor dan pembawa muatan mayoritasnya adalah …
+  A. tipe-p, hole · B. tipe-n, elektron · C. tipe-n, hole · D. tipe-p, elektron
+  Kunci: **B** · Atom bervalensi 5 menyumbang satu elektron bebas, sehingga terbentuk semikonduktor tipe-n dengan pembawa mayoritas elektron.
+- [ ] **FIS.C26.F.MODERN.Q.SEMI_2** — Pada adaptor pengisi daya, komponen yang mengubah arus bolak-balik menjadi arus searah adalah dioda yang berfungsi sebagai …
+  A. penguat · B. penyearah · C. saklar · D. penyimpan muatan
+  Kunci: **B** · Dioda hanya mengalirkan arus pada bias maju, sehingga arus bolak-balik disearahkan.
+- [ ] **FIS.C26.F.MODERN.Q.SEMI_3** — Komponen yang dapat bekerja sebagai saklar elektronik dan menjadi dasar gerbang logika adalah …
+  A. resistor · B. transistor · C. kapasitor · D. induktor
+  Kunci: **B** · Transistor dapat menyambung dan memutus arus secara elektronik; kombinasi transistor membentuk gerbang logika.
 - [ ] **FIS.C26.F.MODERN.Q.REPRESENTASI_BINER_DAN_LOGIKA_1** — Bilangan biner 1011 jika diubah ke bilangan desimal adalah …
   A. 9 · B. 11 · C. 13 · D. 1011
   Kunci: **B** · 1×8 + 0×4 + 1×2 + 1×1 = 11.
@@ -1329,24 +1356,6 @@ Materi: 2 · Soal: 6
 
 Materi: 4 · Soal: 12
 
-- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1** — Gaya yang membuat bola yang menggelinding di lantai lama-kelamaan berhenti adalah …
-  A. gaya listrik · B. gaya gesek · C. gaya magnet · D. gaya pegas
-  Kunci: **B** · Gaya gesek antara bola dan lantai melawan arah gerak sehingga bola melambat.
-- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2** — Sebuah benda bermassa 5 kg berada di Bumi (g = 10 m/s²). Beratnya adalah …
-  A. 500 N · B. 5 N · C. 50 N · D. 0,5 N
-  Kunci: **C** · w = m × g = 5 × 10 = 50 N.
-- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_3** — Massa seorang astronaut 60 kg. Di Bulan, yang gravitasinya 1/6 gravitasi Bumi, massanya …
-  A. 360 kg · B. 0 kg · C. 10 kg · D. 60 kg
-  Kunci: **D** · Massa tidak berubah di mana pun; yang berubah adalah beratnya.
-- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_1** — Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
-  A. 400 Pa · B. 200,5 Pa · C. 40 Pa · D. 100 Pa
-  Kunci: **A** · P = F / A = 200 : 0,5 = 400 Pa.
-- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_2** — Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
-  A. 200 Pa · B. 5.000 Pa · C. 2.000 Pa · D. 20.000 Pa
-  Kunci: **D** · P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
-- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_3** — Dinding bendungan dibuat makin tebal di bagian bawah karena …
-  A. agar ikan tidak dapat lewat · B. air di bagian bawah lebih hangat · C. tekanan air makin besar di tempat yang makin dalam · D. air di bagian bawah lebih ringan
-  Kunci: **C** · Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
 - [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_1** — Budi berjalan 300 m ke timur, lalu 400 m ke utara. Besar perpindahannya adalah …
   A. 500 m · B. 100 m · C. 350 m · D. 700 m
   Kunci: **A** · Perpindahan adalah garis lurus dari awal ke akhir: √(300² + 400²) = 500 m. Jaraknya 700 m.
@@ -1356,6 +1365,24 @@ Materi: 4 · Soal: 12
 - [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_3** — Mobil menempuh 60 km pada jam pertama dan 40 km pada jam kedua. Kelajuan rata-ratanya adalah …
   A. 40 km/jam · B. 60 km/jam · C. 50 km/jam · D. 100 km/jam
   Kunci: **C** · Jarak total 100 km dalam 2 jam, jadi 100 : 2 = 50 km/jam.
+- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_1** — Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
+  A. 400 Pa · B. 200,5 Pa · C. 40 Pa · D. 100 Pa
+  Kunci: **A** · P = F / A = 200 : 0,5 = 400 Pa.
+- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_2** — Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
+  A. 200 Pa · B. 5.000 Pa · C. 2.000 Pa · D. 20.000 Pa
+  Kunci: **D** · P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
+- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_3** — Dinding bendungan dibuat makin tebal di bagian bawah karena …
+  A. agar ikan tidak dapat lewat · B. air di bagian bawah lebih hangat · C. tekanan air makin besar di tempat yang makin dalam · D. air di bagian bawah lebih ringan
+  Kunci: **C** · Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
+- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1** — Gaya yang membuat bola yang menggelinding di lantai lama-kelamaan berhenti adalah …
+  A. gaya listrik · B. gaya gesek · C. gaya magnet · D. gaya pegas
+  Kunci: **B** · Gaya gesek antara bola dan lantai melawan arah gerak sehingga bola melambat.
+- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_2** — Sebuah benda bermassa 5 kg berada di Bumi (g = 10 m/s²). Beratnya adalah …
+  A. 500 N · B. 5 N · C. 50 N · D. 0,5 N
+  Kunci: **C** · w = m × g = 5 × 10 = 50 N.
+- [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_3** — Massa seorang astronaut 60 kg. Di Bulan, yang gravitasinya 1/6 gravitasi Bumi, massanya …
+  A. 360 kg · B. 0 kg · C. 10 kg · D. 60 kg
+  Kunci: **D** · Massa tidak berubah di mana pun; yang berubah adalah beratnya.
 - [ ] **FIS.C26.D.GERAK.Q.RESULTAN_1** — Dua anak mendorong lemari ke kanan dengan gaya 40 N dan 35 N, sedangkan gaya gesek 25 N bekerja ke kiri. Resultan gayanya adalah …
   A. 75 N ke kanan · B. 50 N ke kiri · C. 100 N ke kanan · D. 50 N ke kanan
   Kunci: **D** · 40 + 35 − 25 = 50 N ke kanan.
@@ -1441,8 +1468,17 @@ Materi: 3 · Soal: 9
 
 ## Kelistrikan & energi ramah lingkungan (FIS.C26.D.LISTRIK)
 
-Materi: 3 · Soal: 9
+Materi: 6 · Soal: 18
 
+- [ ] **FIS.C26.D.LISTRIK.Q.STATIS_1** — Penggaris plastik digosok dengan kain wol sehingga penggaris bermuatan negatif. Yang terjadi adalah …
+  A. proton berpindah dari penggaris ke kain wol · B. elektron berpindah dari penggaris ke kain wol · C. muatan negatif tercipta karena gesekan · D. elektron berpindah dari kain wol ke penggaris
+  Kunci: **D** · Benda menjadi negatif karena menerima elektron. Proton tidak berpindah, dan muatan tidak diciptakan.
+- [ ] **FIS.C26.D.LISTRIK.Q.STATIS_2** — Dua muatan listrik saling tarik-menarik dengan gaya F. Jika jarak kedua muatan dijadikan 2 kali semula, gayanya menjadi …
+  A. ¼ F · B. ½ F · C. 2 F · D. 4 F
+  Kunci: **A** · Gaya Coulomb berbanding terbalik dengan kuadrat jarak: (1/2)² = ¼, jadi gayanya ¼ F.
+- [ ] **FIS.C26.D.LISTRIK.Q.STATIS_3** — Benda A menolak benda B, dan benda B menarik benda C. Jika C bermuatan positif, muatan benda A adalah …
+  A. positif · B. negatif · C. netral · D. tidak dapat ditentukan
+  Kunci: **B** · B menarik C yang positif, jadi B negatif. A menolak B, jadi A juga negatif.
 - [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_1** — Tegangan 12 V dipasang pada hambatan 4 Ω. Kuat arus yang mengalir adalah …
   A. 16 A · B. 3 A · C. 48 A · D. 0,33 A
   Kunci: **B** · I = V / R = 12 : 4 = 3 A.
@@ -1452,15 +1488,6 @@ Materi: 3 · Soal: 9
 - [ ] **FIS.C26.D.LISTRIK.Q.ARUS_DAN_RANGKAIAN_3** — Cara memasang voltmeter untuk mengukur tegangan sebuah lampu adalah …
   A. seri dengan lampu · B. di sembarang tempat · C. hanya di dekat baterai · D. paralel dengan lampu
   Kunci: **D** · Voltmeter mengukur beda potensial di antara dua titik, jadi dipasang paralel.
-- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_1** — Dua kutub utara magnet didekatkan. Keduanya akan …
-  A. tolak-menolak · B. diam saja · C. berubah kutub · D. tarik-menarik
-  Kunci: **A** · Kutub senama saling tolak-menolak.
-- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_2** — Alat yang mengubah energi gerak menjadi energi listrik adalah …
-  A. motor listrik · B. setrika listrik · C. baterai · D. generator
-  Kunci: **D** · Generator memanfaatkan induksi elektromagnetik dari gerak.
-- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_3** — Sebuah transformator memiliki 200 lilitan primer dan 1.000 lilitan sekunder. Jika tegangan primernya 220 V, tegangan sekundernya adalah …
-  A. 4.400 V · B. 44 V · C. 1.100 V · D. 220 V
-  Kunci: **C** · Vs = Vp × Ns / Np = 220 × 1.000 : 200 = 1.100 V.
 - [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_1** — Dua hambatan 6 Ω dan 3 Ω disusun seri. Hambatan penggantinya adalah …
   A. 9 Ω · B. 2 Ω · C. 18 Ω · D. 3 Ω
   Kunci: **A** · Rs = 6 + 3 = 9 Ω.
@@ -1470,6 +1497,33 @@ Materi: 3 · Soal: 9
 - [ ] **FIS.C26.D.LISTRIK.Q.SERI_PARALEL_3** — Lampu-lampu di rumah dipasang paralel karena …
   A. agar kabel lebih hemat · B. agar kuat arus di semua lampu sama · C. agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus · D. agar hambatan totalnya besar
   Kunci: **C** · Pada rangkaian paralel setiap cabang mendapat tegangan sumber penuh dan bekerja sendiri-sendiri.
+- [ ] **FIS.C26.D.LISTRIK.Q.DAYA_1** — Sebuah setrika 350 W dipakai 2 jam setiap hari. Energi listrik yang dipakai selama 30 hari adalah …
+  A. 21 kWh · B. 210 kWh · C. 0,7 kWh · D. 2,1 kWh
+  Kunci: **A** · 350 × 2 × 30 = 21.000 Wh = 21 kWh.
+- [ ] **FIS.C26.D.LISTRIK.Q.DAYA_2** — Lampu bertuliskan 60 W/220 V dipasang pada tegangan 220 V. Kuat arus yang mengalir pada lampu adalah …
+  A. 3,67 A · B. 13.200 A · C. 0,027 A · D. 0,27 A
+  Kunci: **D** · I = P / V = 60 : 220 ≈ 0,27 A.
+- [ ] **FIS.C26.D.LISTRIK.Q.DAYA_3** — Pemakaian energi listrik sebuah rumah dalam sebulan 120 kWh dengan tarif Rp1.500 per kWh. Biaya listrik bulan itu adalah …
+  A. Rp18.000 · B. Rp1.620 · C. Rp180.000 · D. Rp1.800.000
+  Kunci: **C** · Biaya = 120 × Rp1.500 = Rp180.000.
+- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_1** — Dua kutub utara magnet didekatkan. Keduanya akan …
+  A. tolak-menolak · B. diam saja · C. berubah kutub · D. tarik-menarik
+  Kunci: **A** · Kutub senama saling tolak-menolak.
+- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_2** — Alat yang mengubah energi gerak menjadi energi listrik adalah …
+  A. motor listrik · B. setrika listrik · C. baterai · D. generator
+  Kunci: **D** · Generator memanfaatkan induksi elektromagnetik dari gerak.
+- [ ] **FIS.C26.D.LISTRIK.Q.MAGNET_DAN_PEMBANGKIT_LISTRIK_3** — Sebuah transformator memiliki 200 lilitan primer dan 1.000 lilitan sekunder. Jika tegangan primernya 220 V, tegangan sekundernya adalah …
+  A. 4.400 V · B. 44 V · C. 1.100 V · D. 220 V
+  Kunci: **C** · Vs = Vp × Ns / Np = 220 × 1.000 : 200 = 1.100 V.
+- [ ] **FIS.C26.D.LISTRIK.Q.ALTERNATIF_1** — Perubahan energi pada pembangkit listrik tenaga air (PLTA) yang benar adalah …
+  A. energi panas → energi potensial → energi listrik · B. energi potensial → energi kinetik → energi listrik · C. energi kimia → energi panas → energi listrik · D. energi cahaya → energi listrik
+  Kunci: **B** · Air di bendungan menyimpan energi potensial, berubah menjadi energi kinetik saat mengalir, lalu memutar turbin dan generator menjadi energi listrik.
+- [ ] **FIS.C26.D.LISTRIK.Q.ALTERNATIF_2** — Sumber energi berikut yang tidak dapat diperbarui adalah …
+  A. angin · B. cahaya matahari · C. batu bara · D. biomassa
+  Kunci: **C** · Batu bara adalah bahan bakar fosil yang terbentuk jutaan tahun, jadi tidak dapat diperbarui.
+- [ ] **FIS.C26.D.LISTRIK.Q.ALTERNATIF_3** — Sebuah panel surya menghasilkan daya 100 W selama 5 jam. Energi itu cukup untuk menyalakan sebuah lampu 10 W selama …
+  A. 500 jam · B. 5 jam · C. 10 jam · D. 50 jam
+  Kunci: **D** · Energi = 100 W × 5 jam = 500 Wh. Lampu 10 W menyala 500 : 10 = 50 jam.
 
 ## Klasifikasi dan sifat materi (KIM.C26.D.MATERI)
 

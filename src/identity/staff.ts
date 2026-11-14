@@ -10,17 +10,21 @@ import { decrypt } from '../platform/crypto.js';
    AES-GCM). Identitas Google sengaja hanya menyimpan "sub" Google, tanpa
    email; login Google juga menambah identitas EMAIL terverifikasi yang
    hanya berisi HMAC alamatnya (email null), supaya tautan email ke alamat
-   yang sama masuk ke akun yang sama.
+   yang sama masuk ke akun yang sama. Identitas PASSWORD (daftar dengan
+   username) menyimpan username terenkripsi dan hash password; hash tidak
+   pernah dibaca di sini.
 ========================================================= */
 
-export interface StaffIdentity { provider: 'GOOGLE' | 'EMAIL'; email: string | null; emailVerified: boolean; lastLoginAt: string | null }
+export interface StaffIdentity { provider: 'GOOGLE' | 'EMAIL' | 'PASSWORD'; email: string | null; emailVerified: boolean; lastLoginAt: string | null;
+  /** username untuk identitas PASSWORD (terenkripsi di DB); null untuk yang lain */
+  username: string | null }
 export interface StaffAccount {
   userId: string; role: 'STUDENT' | 'GUARDIAN'; status: string; learnerId: string | null;
   createdAt: string; trial: boolean; identities: StaffIdentity[];
 }
 
 /* Kunci yang sudah dirotasi atau data rusak tidak boleh menjatuhkan seluruh daftar. */
-function readEmail(key: Buffer, value: Buffer | null) {
+function readSecret(key: Buffer, value: Buffer | null) {
   if (!value) return null;
   try { return decrypt(key, value); } catch { return null; }
 }
@@ -30,14 +34,14 @@ export async function staffAccounts(db: Connection, key: Buffer, { userId, limit
   if (userId) query = query.where('id', '=', userId);
   const users = await query.execute();
   if (!users.length) return [];
-  const identities = await db.selectFrom('auth_identity').select(['user_id', 'provider', 'email_verified', 'email_ciphertext', 'last_login_at'])
+  const identities = await db.selectFrom('auth_identity').select(['user_id', 'provider', 'email_verified', 'email_ciphertext', 'username_ciphertext', 'last_login_at'])
     .where('user_id', 'in', users.map(u => u.id)).execute();
   return users.map(u => ({
     userId: u.id, role: u.role as StaffAccount['role'], status: u.status, learnerId: u.learner_id,
     createdAt: u.created_at.toISOString(), trial: u.trial_expires_at !== null,
     identities: identities.filter(i => i.user_id === u.id).map(i => ({
-      provider: i.provider as StaffIdentity['provider'], email: readEmail(key, i.email_ciphertext), emailVerified: i.email_verified,
-      lastLoginAt: i.last_login_at ? i.last_login_at.toISOString() : null,
+      provider: i.provider as StaffIdentity['provider'], email: readSecret(key, i.email_ciphertext), emailVerified: i.email_verified,
+      lastLoginAt: i.last_login_at ? i.last_login_at.toISOString() : null, username: readSecret(key, i.username_ciphertext),
     })),
   }));
 }

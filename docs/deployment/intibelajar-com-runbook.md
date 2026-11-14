@@ -151,6 +151,7 @@ Update ini membawa migrasi baru: `0009` (self-onboarding), `0010` (email outbox)
 | `EMAIL_PROVIDER=resend`, `RESEND_API_KEY`, `EMAIL_FROM` | email login sungguhan lewat outbox; worker yang mengirim | domain pengirim harus terverifikasi di Resend |
 | `SELF_ONBOARDING_CONSENT=true` | username + kelas langsung mengaktifkan akun | memberi izin data, AI, dan gambar **otomatis**: **ditolak di mode pilot** (server tidak mau start) |
 | `FEATURE_GUEST_TRIAL=true` | tamu `/coba` mendapat akun percobaan 24 jam | izin juga otomatis: **ditolak di mode pilot** |
+| `FEATURE_PASSWORD_AUTH=true` | daftar di `/daftar` (username, email, password, ulangi password) dengan email verifikasi, lalu masuk dengan username/email + password di `/masuk` | butuh email sungguhan (`EMAIL_PROVIDER` dkk.) dan migrasi `0014`; FE dibuild dengan `VITE_PASSWORD_SIGNIN=true`. Mati: endpoint menjawab 403 `FEATURE_DISABLED` |
 | `GRADING_LOG` | **jangan diisi di server**: mencetak potongan jawaban ke journal | |
 
 DeepSeek tidak akan aktif di server: kode hanya mengizinkannya pada database lokal sintetis `intibelajar_local_dev`.

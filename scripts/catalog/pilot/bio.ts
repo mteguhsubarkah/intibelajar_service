@@ -223,5 +223,6 @@ export const BIO_RELATIONS: PilotRelation[] = [
   { from: 'BIO.C26.F.GENETIKA', to: 'BIO.C26.F.BIOTEK', kind: 'REQUIRES', label: 'DNA dan gen → rekayasa genetika' },
   { from: 'BIO.C26.E.MIKROBA', to: 'BIO.C26.F.BIOTEK', kind: 'REQUIRES', label: 'bakteri dan plasmid → DNA rekombinan' },
   { from: 'BIO.C26.F.SEL', to: 'KIM.C26.F.KARBON', kind: 'RELATED', label: 'enzim dan biomolekul ↔ senyawa karbon' },
-  { from: 'BIO.C26.E.EKOSISTEM', to: 'FIS.C26.E.ENERGI', kind: 'RELATED', label: 'siklus karbon ↔ energi dan iklim' },
+  { from: 'BIO.C26.E.EKOSISTEM', to: 'FIS.C26.E.IKLIM', kind: 'RELATED', label: 'siklus karbon ↔ pemanasan global dan perubahan iklim', fields: ['to'],
+    notes: ['Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): tujuan dipindah dari E.ENERGI (daya, efisiensi) ke E.IKLIM: siklus karbon terkait iklim.'] },
 ];

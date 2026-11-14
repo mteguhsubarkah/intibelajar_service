@@ -1,0 +1,14 @@
+DELETE FROM email_outbox WHERE kind = 'SIGNUP';
+ALTER TABLE email_outbox DROP CONSTRAINT email_outbox_owner;
+ALTER TABLE email_outbox DROP CONSTRAINT email_outbox_delivery_key_check;
+ALTER TABLE email_outbox ADD CONSTRAINT email_outbox_delivery_key_check CHECK (delivery_key ~ '^signin/[0-9a-f-]{36}$');
+ALTER TABLE email_outbox DROP CONSTRAINT email_outbox_kind_check;
+ALTER TABLE email_outbox ADD CONSTRAINT email_outbox_kind_check CHECK (kind IN ('SIGNIN'));
+ALTER TABLE email_outbox DROP COLUMN signup_request_id;
+ALTER TABLE email_outbox ALTER COLUMN auth_transaction_id SET NOT NULL;
+DROP TABLE signup_request;
+DELETE FROM auth_identity WHERE provider = 'PASSWORD';
+ALTER TABLE auth_identity DROP CONSTRAINT auth_identity_password_secret;
+ALTER TABLE auth_identity DROP COLUMN secret_hash, DROP COLUMN username_ciphertext;
+ALTER TABLE auth_identity DROP CONSTRAINT auth_identity_provider_check;
+ALTER TABLE auth_identity ADD CONSTRAINT auth_identity_provider_check CHECK (provider IN ('GOOGLE','EMAIL'));

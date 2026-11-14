@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.L.DAYA
+title: Energi dan daya listrik
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Daya pada label alat
+  - type: text
+    slide: 0
+    text: Label "60 W/220 V" berarti alat memakai daya 60 watt jika dipasang pada tegangan 220 volt.
+  - type: text
+    slide: 0
+    text: "Daya adalah energi listrik yang dipakai setiap detik: P = V × I. Energi yang dipakai selama waktu t: W = P × t."
+  - type: math
+    slide: 0
+    name: daya
+    expression: P = V × I
+    highlight: true
+  - type: math
+    slide: 0
+    name: energi
+    expression: W = P × t
+  - type: heading
+    slide: 1
+    text: Energi dan biaya listrik
+  - type: text
+    slide: 1
+    text: "PLN menghitung energi dalam kWh: daya (kW) × lama pemakaian (jam). Biaya = energi (kWh) × tarif per kWh."
+  - type: text
+    slide: 1
+    text: "Contoh: lampu 20 W menyala 10 jam sehari selama 30 hari ⇒ 20 × 10 × 30 = 6.000 Wh = 6 kWh."
+  - type: math
+    slide: 1
+    name: energi
+    expression: kWh = kW × jam
+    highlight: true
+  - type: math
+    slide: 1
+    name: biaya
+    expression: kWh × tarif
+  - type: tip
+    slide: 1
+    text: "Hemat energi: matikan alat yang tidak dipakai dan pilih alat berdaya kecil untuk fungsi yang sama."
+checks:
+  - question: FIS.C26.D.LISTRIK.Q.DAYA_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.LISTRIK.S.DAYA
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

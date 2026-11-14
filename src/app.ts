@@ -19,6 +19,7 @@ import { telemetry } from './platform/telemetry.js';
 import type { Span } from '@opentelemetry/api';
 import type { SpanProcessor } from '@opentelemetry/sdk-trace-base';
 import * as identity from './identity/service.js';
+import * as passwordAccount from './identity/password-account.js';
 import * as privacy from './privacy/service.js';
 import {saveMailbox} from './development/mailbox.js';
 import {verifyMigrations} from './migrate.js';
@@ -234,6 +235,33 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   // Accepted is 202, even for unknown/expired transactions; account enumeration stays impossible.
   route('POST','/v1/auth/email/verify','public',async(req,reply)=>{
     const result=await db.transaction().execute(tx=>identity.consumeEmail(tx,config,req.sessionToken,(req.body as {token:string}).token));
+    reply.header('Set-Cookie',identity.cookie(result.session.raw,config.absoluteSeconds));return {continuation:result.continuation};
+  });
+  // Daftar dan masuk dengan username + password (FEATURE_PASSWORD_AUTH; identity/password-account.ts). Batas /v1/auth/*
+  // per IP (20 per jam) tetap berlaku; di atasnya batas per alamat (daftar) dan per akun yang dituju (masuk).
+  const perHour=(key:string,max:number)=>{const time=Date.now(),state=limits.get(key),next=!state||state.until<=time?{count:0,until:time+3600000}:state;
+    next.count++;limits.set(key,next);if(next.count>max)fail(429,'RATE_LIMITED');};
+  route('POST','/v1/auth/password/register','public',async(req,reply)=>{
+    if(!config.features.passwordAuth)fail(403,'FEATURE_DISABLED');
+    const b=req.body as {username:string;email:string;password:string;continuation?:{targetPath:string;step:number}};
+    const target=b.continuation?.targetPath??'/home';if(!privacyRoute(target))fail(400,'VALIDATION_FAILED');
+    perHour('signup:'+hash(b.email.trim().toLowerCase()).toString('hex'),5);
+    const prepared=await passwordAccount.prepareSignup(config,{username:b.username,email:b.email,password:b.password,continuation:{route:target,step:b.continuation?.step??0}});
+    const sent=await db.transaction().execute(tx=>passwordAccount.register(tx,config,prepared));
+    if(!identity.deliveredForReal(config,sent.address)){identity.deliver(mailbox,sent.address,{kind:'signup',token:sent.link});saveMailbox(config,mailbox);}
+    reply.status(202);return {accepted:true};
+  });
+  route('POST','/v1/auth/password/verify','public',async(req,reply)=>{
+    if(!config.features.passwordAuth)fail(403,'FEATURE_DISABLED');
+    const result=await db.transaction().execute(tx=>passwordAccount.verifySignup(tx,config,(req.body as {token:string}).token));
+    reply.header('Set-Cookie',identity.cookie(result.session.raw,config.absoluteSeconds));return {continuation:result.continuation};
+  });
+  route('POST','/v1/auth/password/login','public',async(req,reply)=>{
+    if(!config.features.passwordAuth)fail(403,'FEATURE_DISABLED');
+    const b=req.body as {username:string;password:string;continuation:{targetPath:string;step:number}};
+    if(!privacyRoute(b.continuation.targetPath))fail(400,'VALIDATION_FAILED');
+    perHour(passwordAccount.loginKey(b.username),10);
+    const result=await passwordAccount.passwordLogin(db,config,b.username,b.password,{route:b.continuation.targetPath,step:b.continuation.step});
     reply.header('Set-Cookie',identity.cookie(result.session.raw,config.absoluteSeconds));return {continuation:result.continuation};
   });
   route('POST','/v1/auth/logout','session',async(req,reply)=>{

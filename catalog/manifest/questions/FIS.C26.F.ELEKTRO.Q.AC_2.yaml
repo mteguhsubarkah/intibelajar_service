@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.AC_2
+familyCode: FIS.C26.F.ELEKTRO.F.AC_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Rangkaian seri RLC memiliki R = 60 Ω, X_L = 120 Ω, dan X_C = 40 Ω, lalu dihubungkan ke tegangan efektif 100 V. Kuat arus efektifnya adalah …
+  options:
+    - id: a
+      label: 0,5 A
+    - id: b
+      label: 1 A
+    - id: c
+      label: 1,25 A
+    - id: d
+      label: 2 A
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: b
+  acceptedForms:
+    - 1 A
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK
+  feedback:
+    correct: Z = √(60² + (120 − 40)²) = √(3.600 + 6.400) = 100 Ω, jadi I = 100/100 = 1 A.
+    incorrect: Jawabannya 1 A. Z = √(60² + (120 − 40)²) = √(3.600 + 6.400) = 100 Ω, jadi I = 100/100 = 1 A.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

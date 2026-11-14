@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.STATIS_2
+familyCode: FIS.C26.D.LISTRIK.F.STATIS_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.LISTRIK_STATIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Dua muatan listrik saling tarik-menarik dengan gaya F. Jika jarak kedua muatan dijadikan 2 kali semula, gayanya menjadi …
+  options:
+    - id: a
+      label: ¼ F
+    - id: b
+      label: ½ F
+    - id: c
+      label: 2 F
+    - id: d
+      label: 4 F
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - ¼ F
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.LISTRIK_STATIS
+  feedback:
+    correct: "Gaya Coulomb berbanding terbalik dengan kuadrat jarak: (1/2)² = ¼, jadi gayanya ¼ F."
+    incorrect: "Jawabannya ¼ F. Gaya Coulomb berbanding terbalik dengan kuadrat jarak: (1/2)² = ¼, jadi gayanya ¼ F."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

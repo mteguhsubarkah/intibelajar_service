@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.AC_3
+familyCode: FIS.C26.F.ELEKTRO.F.AC_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Resonansi pada rangkaian seri RLC terjadi jika …
+  options:
+    - id: a
+      label: reaktansi induktif sama dengan reaktansi kapasitif
+    - id: b
+      label: hambatan sama dengan reaktansi induktif
+    - id: c
+      label: hambatan resistor bernilai nol
+    - id: d
+      label: frekuensi sumber dijadikan dua kali semula
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - reaktansi induktif sama dengan reaktansi kapasitif
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK
+  feedback:
+    correct: Resonansi terjadi saat X_L = X_C, sehingga impedansi menjadi Z = R (paling kecil) dan arus paling besar.
+    incorrect: Jawabannya reaktansi induktif sama dengan reaktansi kapasitif. Resonansi terjadi saat X_L = X_C, sehingga impedansi menjadi Z = R (paling kecil) dan arus paling besar.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

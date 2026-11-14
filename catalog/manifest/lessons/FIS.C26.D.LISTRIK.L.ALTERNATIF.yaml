@@ -1,0 +1,52 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.L.ALTERNATIF
+title: Sumber energi alternatif
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.LISTRIK.SUMBER_ENERGI_ALTERNATIF
+blocks:
+  - type: heading
+    slide: 0
+    text: Energi terbarukan
+  - type: text
+    slide: 0
+    text: Bahan bakar fosil (minyak bumi, batu bara, gas alam) tidak dapat diperbarui, dan pembakarannya menghasilkan gas karbon dioksida.
+  - type: text
+    slide: 0
+    text: "Sumber energi alternatif bersifat terbarukan: cahaya matahari, angin, air, panas bumi, dan biomassa."
+  - type: heading
+    slide: 1
+    text: Pembangkit listrik dan perubahan energinya
+  - type: text
+    slide: 1
+    text: "PLTS: energi cahaya → energi listrik (sel surya). PLTB: energi kinetik angin → energi listrik. PLTA: energi potensial air → energi kinetik → energi listrik. PLTP: panas bumi → uap → energi listrik."
+  - type: text
+    slide: 1
+    text: "Kecuali PLTS, pembangkit itu memutar generator: kumparan dan magnet mengubah energi gerak menjadi energi listrik."
+  - type: math
+    slide: 1
+    name: PLTA
+    expression: potensial → kinetik → listrik
+    highlight: true
+  - type: math
+    slide: 1
+    name: PLTS
+    expression: cahaya → listrik
+  - type: tip
+    slide: 1
+    text: "Pilih sumber energi sesuai kondisi daerah: sungai deras untuk mikrohidro, sinar matahari melimpah untuk PLTS."
+checks:
+  - question: FIS.C26.D.LISTRIK.Q.ALTERNATIF_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.LISTRIK.S.ALTERNATIF
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.L.AC
+title: Arus bolak-balik
+estimatedMinutes: 6
+aliases: []
+concepts:
+  - FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK
+blocks:
+  - type: heading
+    slide: 0
+    text: Tegangan dan arus sinusoidal
+  - type: text
+    slide: 0
+    text: "Generator menghasilkan tegangan bolak-balik: **V = Vₘ sin ωt**, dengan **ω = 2πf**."
+  - type: text
+    slide: 0
+    text: "Alat ukur menunjukkan **nilai efektif**: **V_ef = Vₘ / √2**. Listrik PLN 220 V adalah nilai efektif dengan frekuensi 50 Hz."
+  - type: math
+    slide: 0
+    name: tegangan
+    expression: V = Vₘ sin ωt
+    highlight: true
+  - type: math
+    slide: 0
+    name: efektif
+    expression: V_ef = Vₘ / √2
+  - type: heading
+    slide: 1
+    text: Rangkaian RLC seri
+  - type: text
+    slide: 1
+    text: "Induktor dan kapasitor menghambat arus bolak-balik: **X_L = ωL** dan **X_C = 1/(ωC)**."
+  - type: text
+    slide: 1
+    text: Impedansi **Z = √(R² + (X_L − X_C)²)** dan **I = V / Z**. Resonansi terjadi saat **X_L = X_C**, sehingga Z = R dan arusnya paling besar.
+  - type: math
+    slide: 1
+    name: impedansi
+    expression: Z = √(R² + (X_L − X_C)²)
+    highlight: true
+  - type: math
+    slide: 1
+    name: resonansi
+    expression: X_L = X_C
+  - type: tip
+    slide: 1
+    text: "Contoh: R = 30 Ω, X_L = 60 Ω, X_C = 20 Ω ⇒ Z = √(30² + 40²) = 50 Ω."
+checks:
+  - question: FIS.C26.F.ELEKTRO.Q.AC_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.F.ELEKTRO.S.AC
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

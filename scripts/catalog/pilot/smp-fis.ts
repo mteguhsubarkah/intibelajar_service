@@ -141,6 +141,31 @@ export const SMP_FIS: Record<string, Content> = {
     Q('Dua hambatan 6 Ω dan 3 Ω disusun paralel. Hambatan penggantinya adalah …', ['9 Ω', '2 Ω', '4,5 Ω', '0,5 Ω'], 1, '1/Rp = 1/6 + 1/3 = 3/6, jadi Rp = 2 Ω.'),
     Q('Lampu-lampu di rumah dipasang paralel karena …', ['agar kuat arus di semua lampu sama', 'agar setiap lampu mendapat tegangan penuh dan tetap menyala jika satu lampu putus', 'agar hambatan totalnya besar', 'agar kabel lebih hemat'], 1, 'Pada rangkaian paralel setiap cabang mendapat tegangan sumber penuh dan bekerja sendiri-sendiri.'),
   ]),
+  // Tahap 2 audit Fisika (13 November 2026): IPA IX revisi 2025 Bab 5, subbab A Listrik (listrik statis hlm. 120, daya listrik hlm. 145)
+  'FIS.C26.D.LISTRIK:STATIS': K([
+    S('Muatan listrik', ['Benda bermuatan listrik karena perpindahan elektron. Benda yang kelebihan elektron bermuatan negatif; benda yang kekurangan elektron bermuatan positif.', 'Muatan sejenis tolak-menolak, muatan berlainan jenis tarik-menarik.'], [['muatan sejenis', 'tolak-menolak'], ['muatan berlainan jenis', 'tarik-menarik']]),
+    S('Gaya listrik dan jarak', ['Gaya tarik atau tolak antara dua muatan makin besar jika muatannya makin besar, dan makin kecil jika jaraknya makin jauh (Hukum Coulomb).', 'Gaya berbanding terbalik dengan kuadrat jarak: jika jarak dijadikan 2 kali, gaya menjadi ¼ kali.'], [['hukum Coulomb', 'F = k × q₁ × q₂ / r²']], 'Menggosok penggaris plastik dengan kain wol memindahkan elektron, bukan menciptakan muatan baru.'),
+  ], [
+    Q('Penggaris plastik digosok dengan kain wol sehingga penggaris bermuatan negatif. Yang terjadi adalah …', ['elektron berpindah dari kain wol ke penggaris', 'proton berpindah dari penggaris ke kain wol', 'elektron berpindah dari penggaris ke kain wol', 'muatan negatif tercipta karena gesekan'], 0, 'Benda menjadi negatif karena menerima elektron. Proton tidak berpindah, dan muatan tidak diciptakan.', 1),
+    Q('Dua muatan listrik saling tarik-menarik dengan gaya F. Jika jarak kedua muatan dijadikan 2 kali semula, gayanya menjadi …', ['¼ F', '½ F', '2 F', '4 F'], 0, 'Gaya Coulomb berbanding terbalik dengan kuadrat jarak: (1/2)² = ¼, jadi gayanya ¼ F.'),
+    Q('Benda A menolak benda B, dan benda B menarik benda C. Jika C bermuatan positif, muatan benda A adalah …', ['positif', 'negatif', 'netral', 'tidak dapat ditentukan'], 1, 'B menarik C yang positif, jadi B negatif. A menolak B, jadi A juga negatif.'),
+  ]),
+  'FIS.C26.D.LISTRIK:DAYA': K([
+    S('Daya pada label alat', ['Label "60 W/220 V" berarti alat memakai daya 60 watt jika dipasang pada tegangan 220 volt.', 'Daya adalah energi listrik yang dipakai setiap detik: P = V × I. Energi yang dipakai selama waktu t: W = P × t.'], [['daya', 'P = V × I'], ['energi', 'W = P × t']]),
+    S('Energi dan biaya listrik', ['PLN menghitung energi dalam kWh: daya (kW) × lama pemakaian (jam). Biaya = energi (kWh) × tarif per kWh.', 'Contoh: lampu 20 W menyala 10 jam sehari selama 30 hari ⇒ 20 × 10 × 30 = 6.000 Wh = 6 kWh.'], [['energi', 'kWh = kW × jam'], ['biaya', 'kWh × tarif']], 'Hemat energi: matikan alat yang tidak dipakai dan pilih alat berdaya kecil untuk fungsi yang sama.'),
+  ], [
+    Q('Sebuah setrika 350 W dipakai 2 jam setiap hari. Energi listrik yang dipakai selama 30 hari adalah …', ['2,1 kWh', '21 kWh', '210 kWh', '0,7 kWh'], 1, '350 × 2 × 30 = 21.000 Wh = 21 kWh.'),
+    Q('Lampu bertuliskan 60 W/220 V dipasang pada tegangan 220 V. Kuat arus yang mengalir pada lampu adalah …', ['0,27 A', '3,67 A', '13.200 A', '0,027 A'], 0, 'I = P / V = 60 : 220 ≈ 0,27 A.'),
+    Q('Pemakaian energi listrik sebuah rumah dalam sebulan 120 kWh dengan tarif Rp1.500 per kWh. Biaya listrik bulan itu adalah …', ['Rp18.000', 'Rp1.620', 'Rp180.000', 'Rp1.800.000'], 2, 'Biaya = 120 × Rp1.500 = Rp180.000.', 1),
+  ]),
+  'FIS.C26.D.LISTRIK:ALTERNATIF': K([
+    S('Energi terbarukan', ['Bahan bakar fosil (minyak bumi, batu bara, gas alam) tidak dapat diperbarui, dan pembakarannya menghasilkan gas karbon dioksida.', 'Sumber energi alternatif bersifat terbarukan: cahaya matahari, angin, air, panas bumi, dan biomassa.']),
+    S('Pembangkit listrik dan perubahan energinya', ['PLTS: energi cahaya → energi listrik (sel surya). PLTB: energi kinetik angin → energi listrik. PLTA: energi potensial air → energi kinetik → energi listrik. PLTP: panas bumi → uap → energi listrik.', 'Kecuali PLTS, pembangkit itu memutar generator: kumparan dan magnet mengubah energi gerak menjadi energi listrik.'], [['PLTA', 'potensial → kinetik → listrik'], ['PLTS', 'cahaya → listrik']], 'Pilih sumber energi sesuai kondisi daerah: sungai deras untuk mikrohidro, sinar matahari melimpah untuk PLTS.'),
+  ], [
+    Q('Perubahan energi pada pembangkit listrik tenaga air (PLTA) yang benar adalah …', ['energi potensial → energi kinetik → energi listrik', 'energi kimia → energi panas → energi listrik', 'energi cahaya → energi listrik', 'energi panas → energi potensial → energi listrik'], 0, 'Air di bendungan menyimpan energi potensial, berubah menjadi energi kinetik saat mengalir, lalu memutar turbin dan generator menjadi energi listrik.', 1),
+    Q('Sumber energi berikut yang tidak dapat diperbarui adalah …', ['angin', 'cahaya matahari', 'batu bara', 'biomassa'], 2, 'Batu bara adalah bahan bakar fosil yang terbentuk jutaan tahun, jadi tidak dapat diperbarui.', 1),
+    { ...Q('Sebuah panel surya menghasilkan daya 100 W selama 5 jam. Energi itu cukup untuk menyalakan sebuah lampu 10 W selama …', ['5 jam', '10 jam', '50 jam', '500 jam'], 2, 'Energi = 100 W × 5 jam = 500 Wh. Lampu 10 W menyala 500 : 10 = 50 jam.'), also: ['DAYA'] },
+  ]),
   // ---------- Bumi dan tata surya ----------
   'FIS.C26.D.ANTARIKSA:C1': K([
     S('Anggota tata surya', ['Matahari adalah pusat tata surya. Delapan planetnya: Merkurius, Venus, Bumi, Mars (planet dalam, berbatuan) serta Yupiter, Saturnus, Uranus, Neptunus (planet luar, raksasa).', 'Anggota lain: planet kerdil, satelit, asteroid (sebagian besar di sabuk antara Mars dan Yupiter), dan komet.'], [['planet terbesar', 'Yupiter']]),

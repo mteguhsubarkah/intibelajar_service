@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.F.ELEKTRO.Q.EM_2
+familyCode: FIS.C26.F.ELEKTRO.F.EM_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Urutan gelombang elektromagnetik dari frekuensi terkecil ke terbesar yang benar adalah …
+  options:
+    - id: a
+      label: radio, inframerah, ultraviolet, sinar-X
+    - id: b
+      label: sinar-X, ultraviolet, inframerah, radio
+    - id: c
+      label: inframerah, radio, sinar-X, ultraviolet
+    - id: d
+      label: radio, ultraviolet, inframerah, sinar gamma
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - radio, inframerah, ultraviolet, sinar-X
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK
+  feedback:
+    correct: "Urutan spektrum: radio, gelombang mikro, inframerah, cahaya tampak, ultraviolet, sinar-X, sinar gamma."
+    incorrect: "Jawabannya radio, inframerah, ultraviolet, sinar-X. Urutan spektrum: radio, gelombang mikro, inframerah, cahaya tampak, ultraviolet, sinar-X, sinar gamma."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

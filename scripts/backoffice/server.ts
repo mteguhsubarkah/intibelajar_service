@@ -14,7 +14,7 @@ import { staffDeletion, staffLearners, staffViewedAccounts, type StaffLearner } 
 /* Halaman akun (BACKOFFICE_ACCOUNTS=true): daftar akun dan hapus akun untuk uji coba QA. Tanpa flag, backoffice tetap
    tidak tersambung ke database siswa. Lihat docs/deployment/backoffice-domain.md bagian "Halaman akun". */
 export interface AccountsAccess { db: DB; config: Config }
-const PROVIDER_LABEL = { GOOGLE: 'Google', EMAIL: 'Email' } as const;
+const PROVIDER_LABEL = { GOOGLE: 'Google', EMAIL: 'Email', PASSWORD: 'Username & password' } as const;
 /** Teks yang harus diketik ulang admin sebelum menghapus: email, lalu nama, lalu potongan id. */
 export function accountLabel(a: StaffAccount, l?: StaffLearner) {
   return a.identities.find(i => i.email)?.email ?? l?.displayName ?? 'akun-' + a.userId.slice(0, 8);
@@ -26,7 +26,7 @@ function accountView(a: StaffAccount, l?: StaffLearner) {
   const email = a.identities.find(i => i.email)?.email ?? null;
   const lastLoginAt = a.identities.map(i => i.lastLoginAt).filter((x): x is string => !!x).sort().at(-1) ?? null;
   return { userId: a.userId, role: a.role, label: accountLabel(a, l), displayName: l?.displayName ?? null, grade: l?.grade ?? null,
-    methods: a.identities.map(i => linkedByGoogle(a, i) ? 'Email (dari Google)' : PROVIDER_LABEL[i.provider]), email,
+    methods: a.identities.map(i => linkedByGoogle(a, i) ? 'Email (dari Google)' : i.provider === 'PASSWORD' && i.username ? `Username & password (${i.username})` : PROVIDER_LABEL[i.provider]), email,
     emailNote: email ? null : a.identities.some(i => i.provider === 'GOOGLE') ? 'Akun Google: email tidak disimpan' : a.trial ? 'Akun percobaan tamu' : null,
     status: l?.status ?? a.status, createdAt: a.createdAt, lastLoginAt, deletable: a.role === 'STUDENT' && l?.status !== 'DELETION_PENDING' };
 }

@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.LISTRIK.Q.DAYA_3
+familyCode: FIS.C26.D.LISTRIK.F.DAYA_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Pemakaian energi listrik sebuah rumah dalam sebulan 120 kWh dengan tarif Rp1.500 per kWh. Biaya listrik bulan itu adalah …
+  options:
+    - id: a
+      label: Rp18.000
+    - id: b
+      label: Rp1.620
+    - id: c
+      label: Rp180.000
+    - id: d
+      label: Rp1.800.000
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: c
+  acceptedForms:
+    - Rp180.000
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK
+  feedback:
+    correct: Biaya = 120 × Rp1.500 = Rp180.000.
+    incorrect: Jawabannya Rp180.000. Biaya = 120 × Rp1.500 = Rp180.000.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -12,6 +12,7 @@ import { KIM_TOPICS, KIM_RELATIONS } from './pilot/kim.js';
 import { BIO_TOPICS, BIO_RELATIONS } from './pilot/bio.js';
 import { PLANNED_TOPICS, PLANNED_RELATIONS } from './pilot/planned.js';
 import { gradeOf, staleOverrides } from './pilot/grades.js';
+import { AUDIT } from './pilot/fis-audit.js';
 
 // Usage: npm run catalog:pilot [-- --manifest catalog/manifest]
 // Menulis konten pilot (topik, inti, soal pilihan ganda, materi dua slide) ke manifest katalog.
@@ -136,7 +137,9 @@ export function buildPilot() {
         aliases: [{ ns: 'MAP' as const, value: aliasOf(t.code, c.id) }],
       })),
       prerequisites: t.edges.map(([from, to, kind]) => ({ concept: ref(to), requires: ref(from), kind: kind === 'H' ? 'HARD' as const : 'SOFT' as const })),
-      review: review(['concepts', 'prerequisites'], t.evidence ?? ['inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)'], t.decision),
+      review: review([...new Set(['concepts', 'prerequisites', ...(AUDIT[t.code]?.fields ?? [])])],
+        [...(t.evidence ?? ['inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)']), ...(AUDIT[t.code]?.notes ?? [])], t.decision),
+      ...(AUDIT[t.code]?.bookRefs ? { bookRefs: AUDIT[t.code]!.bookRefs } : {}),
     });
     topics[topics.length - 1] = withGrades(topics[topics.length - 1]!);
     for (const c of t.cores) {
@@ -205,8 +208,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
   const relFile = join(dir, 'topic-relations.yaml'), rel = parse(readFileSync(relFile, 'utf8')) as { relations: { from: string; to: string; review?: Review }[] };
   const kept = rel.relations.filter(r => !OURS.has(r.review?.decision ?? ''));
-  rel.relations = [...kept, ...RELATIONS.filter(r => !kept.some(k => k.from === r.from && k.to === r.to)).map(({ decision, ...r }) => ({
-    ...r, source: 'CURRICULUM', review: review(['kind', 'label'], ['hubungan antartopik dari peta referensi IntiVerse'], decision) }))];
+  rel.relations = [...kept, ...RELATIONS.filter(r => !kept.some(k => k.from === r.from && k.to === r.to)).map(({ decision, evidence, notes, fields, ...r }) => ({
+    ...r, source: 'CURRICULUM', review: review([...new Set(['kind', 'label', ...(fields ?? [])])],
+      [...(evidence ?? ['hubungan antartopik dari peta referensi IntiVerse']), ...(notes ?? [])], decision) }))];
   writeFileSync(relFile, dump(rel));
 
   const releaseFile = join(dir, 'release.yaml'), release = parse(readFileSync(releaseFile, 'utf8')) as { version: number; decisions: { id: string; status: string; summary: string }[] };

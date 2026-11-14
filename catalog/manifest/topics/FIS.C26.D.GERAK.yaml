@@ -9,32 +9,6 @@ bekal: []
 aliases: []
 units: []
 concepts:
-  - code: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
-    title: Gerak dan gaya resultan
-    objectives: []
-    misconceptions: []
-    ordinal: 3
-    estimatedMinutes: 4
-    grade: 7
-    hidden: false
-    capstone: false
-    availability: READY
-    aliases:
-      - ns: MAP
-        value: fis-d-gerak-c1
-  - code: FIS.C26.D.GERAK.TEKANAN
-    title: Tekanan
-    objectives: []
-    misconceptions: []
-    ordinal: 2
-    estimatedMinutes: 5
-    grade: 8
-    hidden: false
-    capstone: false
-    availability: READY
-    aliases:
-      - ns: MAP
-        value: fis-d-gerak-c2
   - code: FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN
     title: Jarak, perpindahan & kelajuan
     objectives: []
@@ -48,6 +22,32 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-d-gerak-kelajuan
+  - code: FIS.C26.D.GERAK.TEKANAN
+    title: Tekanan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 8
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-gerak-c2
+  - code: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    title: Gerak dan gaya resultan
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-gerak-c1
   - code: FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
     title: Resultan gaya dan inersia
     objectives: []

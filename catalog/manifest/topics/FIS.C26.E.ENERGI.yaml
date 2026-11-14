@@ -26,19 +26,6 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-e-energi-c1
-  - code: FIS.C26.E.ENERGI.EVALUASI_PILIHAN_ENERGI
-    title: Evaluasi pilihan energi
-    objectives: []
-    misconceptions: []
-    ordinal: 3
-    estimatedMinutes: 4
-    grade: 10
-    hidden: false
-    capstone: true
-    availability: READY
-    aliases:
-      - ns: MAP
-        value: fis-e-energi-c2
   - code: FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
     title: Neraca kebutuhan energi
     objectives: []
@@ -52,6 +39,19 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-e-energi-neraca
+  - code: FIS.C26.E.ENERGI.EVALUASI_PILIHAN_ENERGI
+    title: Evaluasi pilihan energi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 4
+    grade: 10
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-e-energi-c2
 prerequisites:
   - concept: FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI
     requires: FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI
