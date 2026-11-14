@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.GELOMBANG.Q.OPTIK_2
+familyCode: FIS.C26.D.GELOMBANG.F.OPTIK_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.GELOMBANG.ALAT_OPTIK
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah lup memiliki jarak fokus 5 cm. Perbesaran lup untuk mata yang tidak berakomodasi adalah …
+  options:
+    - id: a
+      label: 20 kali
+    - id: b
+      label: 125 kali
+    - id: c
+      label: 0,2 kali
+    - id: d
+      label: 5 kali
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: d
+  acceptedForms:
+    - 5 kali
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.GELOMBANG.ALAT_OPTIK
+  feedback:
+    correct: "M = 25 : f = 25 : 5 = 5 kali."
+    incorrect: "Jawabannya 5 kali. M = 25 : f = 25 : 5 = 5 kali."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

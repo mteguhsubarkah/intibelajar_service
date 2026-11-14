@@ -1,6 +1,6 @@
 schemaVersion: 1
-code: FIS.C26.D.GERAK.Q.TEKANAN_1
-familyCode: FIS.C26.D.GERAK.F.TEKANAN_1
+code: FIS.C26.F.GELOMBANG.Q.OPTIK_3
+familyCode: FIS.C26.F.GELOMBANG.F.OPTIK_3
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
@@ -12,37 +12,37 @@ provenance:
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.GERAK.TEKANAN
+  - concept: FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
+  prompt: Sebuah mikroskop memiliki perbesaran lensa objektif 10 kali dan lensa okuler 15 kali. Perbesaran total mikroskop adalah …
   options:
     - id: a
-      label: 400 Pa
+      label: 25 kali
     - id: b
-      label: 200,5 Pa
+      label: 150 kali
     - id: c
-      label: 40 Pa
+      label: 1,5 kali
     - id: d
-      label: 100 Pa
+      label: 5 kali
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
-    - 400 Pa
+    - 150 kali
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.GERAK.TEKANAN
+    - FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK
   feedback:
-    correct: "P = F / A = 200 : 0,5 = 400 Pa."
-    incorrect: "Jawabannya 400 Pa. P = F / A = 200 : 0,5 = 400 Pa."
+    correct: M = M objektif × M okuler = 10 × 15 = 150 kali.
+    incorrect: Jawabannya 150 kali. M = M objektif × M okuler = 10 × 15 = 150 kali.
 review:
   status: PROPOSED
   decision: D7

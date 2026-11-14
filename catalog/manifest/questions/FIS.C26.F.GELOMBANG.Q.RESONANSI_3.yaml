@@ -1,6 +1,6 @@
 schemaVersion: 1
-code: FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_2
-familyCode: FIS.C26.F.GELOMBANG.F.RESONANSI_DAN_OPTIK_2
+code: FIS.C26.F.GELOMBANG.Q.RESONANSI_3
+familyCode: FIS.C26.F.GELOMBANG.F.RESONANSI_3
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
@@ -12,21 +12,21 @@ provenance:
   note: Gaya soal Ujian Nasional SMA (kisi-kisi UN 2015–2019); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+  - concept: FIS.C26.F.GELOMBANG.RESONANSI_BUNYI
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 20 cm. Jarak bayangan dari lensa adalah …
+  prompt: Resonansi pertama kolom udara dengan sebuah garpu tala terjadi saat panjang kolom udara 20 cm. Panjang gelombang bunyi garpu tala adalah …
   options:
     - id: a
-      label: 12 cm
+      label: 20 cm
     - id: b
-      label: 24 cm
+      label: 40 cm
     - id: c
-      label: 50 cm
-    - id: d
       label: 60 cm
+    - id: d
+      label: 80 cm
   hints: []
   answerFormat: OPTION
 rubric:
@@ -35,14 +35,14 @@ rubric:
   answer:
     optionId: d
   acceptedForms:
-    - 60 cm
+    - 80 cm
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+    - FIS.C26.F.GELOMBANG.RESONANSI_BUNYI
   feedback:
-    correct: 1/s′ = 1/20 − 1/30 = 1/60, jadi s′ = 60 cm (nyata).
-    incorrect: Jawabannya 60 cm. 1/s′ = 1/20 − 1/30 = 1/60, jadi s′ = 60 cm (nyata).
+    correct: "Resonansi pertama: L = λ/4, jadi λ = 4 × 20 = 80 cm."
+    incorrect: "Jawabannya 80 cm. Resonansi pertama: L = λ/4, jadi λ = 4 × 20 = 80 cm."
 review:
   status: PROPOSED
   decision: D7

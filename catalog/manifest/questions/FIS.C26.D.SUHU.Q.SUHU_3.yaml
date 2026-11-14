@@ -1,48 +1,48 @@
 schemaVersion: 1
-code: FIS.C26.D.ENERGI.Q.KALOR_3
-familyCode: FIS.C26.D.ENERGI.F.KALOR_3
+code: FIS.C26.D.SUHU.Q.SUHU_3
+familyCode: FIS.C26.D.SUHU.F.SUHU_3
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
 contextTag: PILOT
-difficulty: 1
+difficulty: 2
 estimatedMinutes: 2
 provenance:
   source: authored:pilot
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.ENERGI.KALOR_JENIS
+  - concept: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Es yang sedang melebur pada 0 °C terus dipanaskan. Selama proses melebur, suhunya …
+  prompt: Angin laut pada siang hari terjadi karena …
   options:
     - id: a
-      label: tetap 0 °C sampai semua es mencair
+      label: radiasi dari Bulan
     - id: b
-      label: turun
+      label: konduksi kalor oleh air
     - id: c
-      label: naik lalu turun
+      label: konduksi kalor oleh tanah
     - id: d
-      label: naik dengan cepat
+      label: konveksi udara dari laut ke darat
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: d
   acceptedForms:
-    - tetap 0 °C sampai semua es mencair
+    - konveksi udara dari laut ke darat
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.ENERGI.KALOR_JENIS
+    - FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
   feedback:
-    correct: Kalor dipakai untuk mengubah wujud, bukan menaikkan suhu, sampai semua es mencair.
-    incorrect: Jawabannya tetap 0 °C sampai semua es mencair. Kalor dipakai untuk mengubah wujud, bukan menaikkan suhu, sampai semua es mencair.
+    correct: Daratan lebih cepat panas, udara di atasnya naik, lalu udara laut yang lebih sejuk mengalir ke darat (konveksi).
+    incorrect: Jawabannya konveksi udara dari laut ke darat. Daratan lebih cepat panas, udara di atasnya naik, lalu udara laut yang lebih sejuk mengalir ke darat (konveksi).
 review:
   status: PROPOSED
   decision: D7

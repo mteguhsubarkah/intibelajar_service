@@ -1,0 +1,59 @@
+schemaVersion: 1
+code: FIS.C26.D.SUHU
+subject: FIS
+title: Suhu dan kalor
+subtitle: Suhu, termometer, perpindahan kalor, kalor jenis, dan perubahan wujud
+phase: D
+availability: MAPPED
+bekal:
+  - besaran dan satuan
+aliases: []
+units: []
+concepts:
+  - code: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+    title: Suhu & perpindahan kalor
+    objectives: []
+    misconceptions: []
+    ordinal: 1
+    estimatedMinutes: 5
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-suhu-suhu
+  - code: FIS.C26.D.SUHU.KALOR_JENIS
+    title: Kalor jenis
+    objectives: []
+    misconceptions: []
+    ordinal: 2
+    estimatedMinutes: 5
+    grade: 7
+    hidden: false
+    capstone: true
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-d-suhu-kalor
+prerequisites:
+  - concept: FIS.C26.D.SUHU.KALOR_JENIS
+    requires: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
+    kind: SOFT
+review:
+  status: PROPOSED
+  decision: D9
+  fields:
+    - concepts
+    - prerequisites
+  evidence:
+    - "bab baru dari Tahap 3 audit Fisika 14 November 2026 (docs/backlog.md FE): struktur bab mengikuti Buku Siswa IPA Kurikulum Merdeka"
+    - inti yang pindah ke bab ini ditulis ulang sebagai inti baru; inti lamanya disembunyikan di bab asal (kode inti tidak bisa pindah bab)
+    - "Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): bab baru dari D.ENERGI. Materi dan soal inti Suhu & perpindahan kalor serta Kalor jenis dipakai ulang dengan kode baru; progres di inti lama tidak ikut pindah."
+bookRefs:
+  - book: Buku Siswa IPA Kelas VII (SMP/MTs)
+    edition: edisi revisi
+    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VII_Rev.pdf
+    chapter: Bab 3 Suhu, Kalor, dan Pemuaian
+    verification: SNIPPET
+    note: "Subbab Pemuaian belum dijadikan inti: menunggu keputusan sisa Tahap 2."

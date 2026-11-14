@@ -456,12 +456,6 @@ Materi: 4 · Soal: 9
 - [ ] **FIS.C26.F.MEKANIKA.Q.HUKUM_NEWTON_DAN_MOMENTUM_2** — Balok A (2 kg) dan balok B (3 kg) dihubungkan tali di lantai licin. Balok B ditarik dengan gaya 20 N sehingga keduanya bergerak bersama. Tegangan tali penghubung adalah …
   A. 4 N · B. 8 N · C. 12 N · D. 20 N
   Kunci: **B** · a = 20 / (2 + 3) = 4 m/s². Tali menarik balok A: T = 2 × 4 = 8 N.
-- [ ] **FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_1** — Gaya 10 N dikerjakan tegak lurus pada ujung kunci inggris yang berjarak 0,2 m dari poros. Torsi yang dihasilkan adalah …
-  A. 0,02 N·m · B. 2 N·m · C. 10,2 N·m · D. 50 N·m
-  Kunci: **B** · τ = F × r = 10 × 0,2 = 2 N·m.
-- [ ] **FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_2** — Seorang anak bermassa 30 kg duduk 2 m dari poros jungkat-jungkit. Agar seimbang, anak bermassa 40 kg harus duduk pada jarak … dari poros di sisi lain.
-  A. 1 m · B. 1,5 m · C. 2 m · D. 2,67 m
-  Kunci: **B** · Στ = 0: 30 × 2 = 40 × x, jadi x = 1,5 m.
 - [ ] **FIS.C26.F.MEKANIKA.Q.IMPULS_1** — Bola bermassa 0,5 kg bergerak 10 m/s, lalu dipukul sehingga berbalik arah dengan kecepatan 20 m/s. Besar impuls yang diberikan pemukul adalah …
   A. 5 N·s · B. 10 N·s · C. 15 N·s · D. 30 N·s
   Kunci: **C** · Arah awal positif: I = 0,5 × (−20 − 10) = −15 N·s. Besarnya 15 N·s.
@@ -471,6 +465,12 @@ Materi: 4 · Soal: 9
 - [ ] **FIS.C26.F.MEKANIKA.Q.IMPULS_3** — Gaya tetap 10 N bekerja pada benda 2 kg yang mula-mula diam selama 3 s di lantai licin. Kecepatan akhir benda adalah …
   A. 5 m/s · B. 15 m/s · C. 30 m/s · D. 60 m/s
   Kunci: **B** · Impuls = F · Δt = 30 N·s = Δp = 2 × v, jadi v = 15 m/s. Sama dengan a = F/m = 5 m/s² selama 3 s.
+- [ ] **FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_1** — Gaya 10 N dikerjakan tegak lurus pada ujung kunci inggris yang berjarak 0,2 m dari poros. Torsi yang dihasilkan adalah …
+  A. 0,02 N·m · B. 2 N·m · C. 10,2 N·m · D. 50 N·m
+  Kunci: **B** · τ = F × r = 10 × 0,2 = 2 N·m.
+- [ ] **FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_2** — Seorang anak bermassa 30 kg duduk 2 m dari poros jungkat-jungkit. Agar seimbang, anak bermassa 40 kg harus duduk pada jarak … dari poros di sisi lain.
+  A. 1 m · B. 1,5 m · C. 2 m · D. 2,67 m
+  Kunci: **B** · Στ = 0: 30 × 2 = 40 × x, jadi x = 1,5 m.
 - [ ] **FIS.C26.F.MEKANIKA.Q.ROTASI_1** — Seorang penari berputar dengan kecepatan sudut 2 putaran/s. Ia merapatkan lengan sehingga momen inersianya menjadi setengah semula. Kecepatan sudutnya menjadi …
   A. 1 putaran/s · B. 2 putaran/s · C. 4 putaran/s · D. 8 putaran/s
   Kunci: **C** · I₁ω₁ = I₂ω₂: I × 2 = ½I × ω₂, jadi ω₂ = 4 putaran/s.
@@ -535,7 +535,7 @@ Materi: 3 · Soal: 7
 
 ## Gelombang dan penerapannya (FIS.C26.F.GELOMBANG)
 
-Materi: 3 · Soal: 7
+Materi: 4 · Soal: 11
 
 - [ ] **FIS.C26.F.GELOMBANG.Q.SUPERPOSISI_DAN_INTERFERENSI_1** — Sebuah gelombang memiliki frekuensi 50 Hz dan panjang gelombang 2 m. Cepat rambat gelombang adalah …
   A. 25 m/s · B. 52 m/s · C. 100 m/s · D. 200 m/s
@@ -543,12 +543,24 @@ Materi: 3 · Soal: 7
 - [ ] **FIS.C26.F.GELOMBANG.Q.SUPERPOSISI_DAN_INTERFERENSI_2** — Pada percobaan celah ganda, jarak antarcelah 0,2 mm dan layar berjarak 1 m. Jarak terang pertama dari terang pusat 3 mm. Panjang gelombang cahaya adalah …
   A. 300 nm · B. 450 nm · C. 600 nm · D. 750 nm
   Kunci: **C** · λ = d · y / L = (0,2 × 10⁻³)(3 × 10⁻³)/1 = 6 × 10⁻⁷ m = 600 nm.
-- [ ] **FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_1** — Pipa organa terbuka panjangnya 50 cm. Jika cepat rambat bunyi 340 m/s, frekuensi nada dasarnya adalah …
+- [ ] **FIS.C26.F.GELOMBANG.Q.RESONANSI_1** — Pipa organa terbuka panjangnya 50 cm. Jika cepat rambat bunyi 340 m/s, frekuensi nada dasarnya adalah …
   A. 170 Hz · B. 340 Hz · C. 680 Hz · D. 1.360 Hz
   Kunci: **B** · f₁ = v / 2L = 340 / (2 × 0,5) = 340 Hz.
-- [ ] **FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_2** — Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 20 cm. Jarak bayangan dari lensa adalah …
+- [ ] **FIS.C26.F.GELOMBANG.Q.RESONANSI_2** — Senar gitar sepanjang 0,5 m bergetar dengan cepat rambat gelombang 200 m/s. Frekuensi nada dasarnya adalah …
+  A. 100 Hz · B. 200 Hz · C. 400 Hz · D. 800 Hz
+  Kunci: **B** · f₁ = v / 2L = 200 / (2 × 0,5) = 200 Hz.
+- [ ] **FIS.C26.F.GELOMBANG.Q.RESONANSI_3** — Resonansi pertama kolom udara dengan sebuah garpu tala terjadi saat panjang kolom udara 20 cm. Panjang gelombang bunyi garpu tala adalah …
+  A. 20 cm · B. 40 cm · C. 60 cm · D. 80 cm
+  Kunci: **D** · Resonansi pertama: L = λ/4, jadi λ = 4 × 20 = 80 cm.
+- [ ] **FIS.C26.F.GELOMBANG.Q.OPTIK_1** — Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 20 cm. Jarak bayangan dari lensa adalah …
   A. 12 cm · B. 24 cm · C. 50 cm · D. 60 cm
   Kunci: **D** · 1/s′ = 1/20 − 1/30 = 1/60, jadi s′ = 60 cm (nyata).
+- [ ] **FIS.C26.F.GELOMBANG.Q.OPTIK_2** — Seseorang hanya dapat membaca dengan jelas paling dekat pada jarak 50 cm. Agar dapat membaca pada jarak 25 cm, ia memerlukan kacamata …
+  A. 2 dioptri berlensa cembung · B. 2 dioptri berlensa cekung · C. 4 dioptri berlensa cembung · D. 0,5 dioptri berlensa cembung
+  Kunci: **A** · P = 100/25 − 100/50 = 4 − 2 = 2 dioptri; positif berarti lensa cembung.
+- [ ] **FIS.C26.F.GELOMBANG.Q.OPTIK_3** — Sebuah mikroskop memiliki perbesaran lensa objektif 10 kali dan lensa okuler 15 kali. Perbesaran total mikroskop adalah …
+  A. 25 kali · B. 150 kali · C. 1,5 kali · D. 5 kali
+  Kunci: **B** · M = M objektif × M okuler = 10 × 15 = 150 kali.
 - [ ] **FIS.C26.F.GELOMBANG.Q.DOPPLER_1** — Ambulans membunyikan sirene 680 Hz sambil bergerak mendekati pendengar yang diam dengan kecepatan 20 m/s. Jika cepat rambat bunyi 340 m/s, frekuensi yang didengar adalah …
   A. 640 Hz · B. 680 Hz · C. 720 Hz · D. 722,5 Hz
   Kunci: **D** · fₚ = 340 / (340 − 20) × 680 = 340/320 × 680 = 722,5 Hz.
@@ -605,14 +617,8 @@ Materi: 5 · Soal: 13
 
 ## Fisika modern & teknologi digital (FIS.C26.F.MODERN)
 
-Materi: 5 · Soal: 11
+Materi: 6 · Soal: 14
 
-- [ ] **FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_1** — Energi sebuah foton sebanding dengan …
-  A. panjang gelombangnya · B. frekuensinya · C. intensitas cahaya · D. kecepatan cahaya saja
-  Kunci: **B** · E = h · f: energi foton sebanding dengan frekuensi (dan berbanding terbalik dengan panjang gelombang).
-- [ ] **FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_2** — Foton berenergi 5 eV mengenai logam yang fungsi kerjanya 2 eV. Energi kinetik maksimum elektron yang terlepas adalah …
-  A. 2 eV · B. 3 eV · C. 5 eV · D. 7 eV
-  Kunci: **B** · Ekₘₐₖₛ = 5 − 2 = 3 eV.
 - [ ] **FIS.C26.F.MODERN.Q.SEMI_1** — Silikon didoping dengan fosfor yang bervalensi 5. Jenis semikonduktor dan pembawa muatan mayoritasnya adalah …
   A. tipe-p, hole · B. tipe-n, elektron · C. tipe-n, hole · D. tipe-p, elektron
   Kunci: **B** · Atom bervalensi 5 menyumbang satu elektron bebas, sehingga terbentuk semikonduktor tipe-n dengan pembawa mayoritas elektron.
@@ -634,6 +640,21 @@ Materi: 5 · Soal: 11
 - [ ] **FIS.C26.F.MODERN.Q.RELATIVITAS_2** — Sebuah batang yang panjangnya 5 m bergerak searah panjangnya dengan kecepatan 0,8c. Panjang batang menurut pengamat diam adalah …
   A. 3 m · B. 4 m · C. 5 m · D. 8,3 m
   Kunci: **A** · √(1 − 0,64) = 0,6, jadi L = 5 × 0,6 = 3 m.
+- [ ] **FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_1** — Energi sebuah foton sebanding dengan …
+  A. panjang gelombangnya · B. frekuensinya · C. intensitas cahaya · D. kecepatan cahaya saja
+  Kunci: **B** · E = h · f: energi foton sebanding dengan frekuensi (dan berbanding terbalik dengan panjang gelombang).
+- [ ] **FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_2** — Foton berenergi 5 eV mengenai logam yang fungsi kerjanya 2 eV. Energi kinetik maksimum elektron yang terlepas adalah …
+  A. 2 eV · B. 3 eV · C. 5 eV · D. 7 eV
+  Kunci: **B** · Ekₘₐₖₛ = 5 − 2 = 3 eV.
+- [ ] **FIS.C26.F.MODERN.Q.INTI_ATOM_1** — Inti uranium-235 memiliki nomor atom 92. Jumlah neutron dalam inti tersebut adalah …
+  A. 92 · B. 143 · C. 235 · D. 327
+  Kunci: **B** · N = A − Z = 235 − 92 = 143.
+- [ ] **FIS.C26.F.MODERN.Q.INTI_ATOM_2** — Defek massa suatu inti adalah 0,03 u. Energi ikat inti tersebut kira-kira …
+  A. 0,03 MeV · B. 27,9 MeV · C. 931,5 MeV · D. 2.795 MeV
+  Kunci: **B** · E = 0,03 × 931,5 = 27,945 MeV, kira-kira 27,9 MeV.
+- [ ] **FIS.C26.F.MODERN.Q.INTI_ATOM_3** — Karbon-12 dan karbon-14 disebut isotop karena keduanya memiliki …
+  A. jumlah neutron yang sama · B. jumlah proton yang sama tetapi jumlah neutron berbeda · C. nomor massa yang sama · D. jumlah elektron yang berbeda
+  Kunci: **B** · Isotop: nomor atom (jumlah proton) sama, nomor massa berbeda karena jumlah neutronnya berbeda.
 - [ ] **FIS.C26.F.MODERN.Q.INTI_1** — Suatu unsur radioaktif memiliki waktu paruh 2 jam. Setelah 6 jam, bagian yang tersisa adalah …
   A. 1/3 · B. 1/4 · C. 1/6 · D. 1/8
   Kunci: **D** · 6 jam = 3 waktu paruh, jadi tersisa (1/2)³ = 1/8.
@@ -1352,9 +1373,32 @@ Materi: 2 · Soal: 6
   A. 120,2 cm · B. 120,3 cm · C. 120,4 cm · D. 361 cm
   Kunci: **B** · Rata-ratanya (120,2 + 120,4 + 120,3) : 3 = 120,3 cm.
 
-## Gerak, gaya, dan tekanan (FIS.C26.D.GERAK)
+## Suhu dan kalor (FIS.C26.D.SUHU)
 
-Materi: 4 · Soal: 12
+Materi: 2 · Soal: 6
+
+- [ ] **FIS.C26.D.SUHU.Q.SUHU_1** — Suhu 27 °C dalam skala Kelvin adalah …
+  A. 246 K · B. 300 K · C. 273 K · D. 327 K
+  Kunci: **B** · K = 27 + 273 = 300 K.
+- [ ] **FIS.C26.D.SUHU.Q.SUHU_2** — Gagang panci dari logam terasa panas saat panci dipanaskan karena perpindahan kalor secara …
+  A. radiasi · B. evaporasi · C. konduksi · D. konveksi
+  Kunci: **C** · Kalor merambat melalui logam tanpa logamnya berpindah, yaitu konduksi.
+- [ ] **FIS.C26.D.SUHU.Q.SUHU_3** — Angin laut pada siang hari terjadi karena …
+  A. radiasi dari Bulan · B. konduksi kalor oleh air · C. konduksi kalor oleh tanah · D. konveksi udara dari laut ke darat
+  Kunci: **D** · Daratan lebih cepat panas, udara di atasnya naik, lalu udara laut yang lebih sejuk mengalir ke darat (konveksi).
+- [ ] **FIS.C26.D.SUHU.Q.KALOR_1** — Kalor yang diperlukan untuk memanaskan 2 kg air dari 25 °C menjadi 75 °C (c = 4.200 J/kg°C) adalah …
+  A. 8.400 J · B. 420.000 J · C. 210.000 J · D. 630.000 J
+  Kunci: **B** · Q = 2 × 4.200 × (75 − 25) = 420.000 J.
+- [ ] **FIS.C26.D.SUHU.Q.KALOR_2** — Pada siang hari, pantai terasa lebih sejuk daripada daratan di sekitarnya terutama karena …
+  A. udara di laut lebih tipis · B. pasir tidak menyerap kalor · C. kalor jenis air besar sehingga air lambat panas · D. air memantulkan semua cahaya Matahari
+  Kunci: **C** · Air membutuhkan banyak kalor untuk naik suhunya, jadi permukaan laut tetap relatif sejuk.
+- [ ] **FIS.C26.D.SUHU.Q.KALOR_3** — Es yang sedang melebur pada 0 °C terus dipanaskan. Selama proses melebur, suhunya …
+  A. turun · B. naik lalu turun · C. naik dengan cepat · D. tetap 0 °C sampai semua es mencair
+  Kunci: **D** · Kalor dipakai untuk mengubah wujud, bukan menaikkan suhu, sampai semua es mencair.
+
+## Gerak dan gaya (FIS.C26.D.GERAK)
+
+Materi: 3 · Soal: 9
 
 - [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_1** — Budi berjalan 300 m ke timur, lalu 400 m ke utara. Besar perpindahannya adalah …
   A. 500 m · B. 100 m · C. 350 m · D. 700 m
@@ -1365,15 +1409,6 @@ Materi: 4 · Soal: 12
 - [ ] **FIS.C26.D.GERAK.Q.KELAJUAN_3** — Mobil menempuh 60 km pada jam pertama dan 40 km pada jam kedua. Kelajuan rata-ratanya adalah …
   A. 40 km/jam · B. 60 km/jam · C. 50 km/jam · D. 100 km/jam
   Kunci: **C** · Jarak total 100 km dalam 2 jam, jadi 100 : 2 = 50 km/jam.
-- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_1** — Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
-  A. 400 Pa · B. 200,5 Pa · C. 40 Pa · D. 100 Pa
-  Kunci: **A** · P = F / A = 200 : 0,5 = 400 Pa.
-- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_2** — Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
-  A. 200 Pa · B. 5.000 Pa · C. 2.000 Pa · D. 20.000 Pa
-  Kunci: **D** · P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
-- [ ] **FIS.C26.D.GERAK.Q.TEKANAN_3** — Dinding bendungan dibuat makin tebal di bagian bawah karena …
-  A. agar ikan tidak dapat lewat · B. air di bagian bawah lebih hangat · C. tekanan air makin besar di tempat yang makin dalam · D. air di bagian bawah lebih ringan
-  Kunci: **C** · Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
 - [ ] **FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1** — Gaya yang membuat bola yang menggelinding di lantai lama-kelamaan berhenti adalah …
   A. gaya listrik · B. gaya gesek · C. gaya magnet · D. gaya pegas
   Kunci: **B** · Gaya gesek antara bola dan lantai melawan arah gerak sehingga bola melambat.
@@ -1393,9 +1428,50 @@ Materi: 4 · Soal: 12
   A. 80 m/s² · B. 5 m/s² · C. 0,2 m/s² · D. 24 m/s²
   Kunci: **B** · a = ΣF / m = 20 : 4 = 5 m/s².
 
-## Usaha, energi, dan kalor (FIS.C26.D.ENERGI)
+## Tekanan zat dan penerapannya (FIS.C26.D.TEKANAN)
 
 Materi: 4 · Soal: 12
+
+- [ ] **FIS.C26.D.TEKANAN.Q.PADAT_1** — Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …
+  A. 200,5 Pa · B. 40 Pa · C. 100 Pa · D. 400 Pa
+  Kunci: **D** · P = F / A = 200 : 0,5 = 400 Pa.
+- [ ] **FIS.C26.D.TEKANAN.Q.PADAT_2** — Sebuah balok beratnya 60 N dapat diletakkan dengan sisi seluas 0,2 m² atau sisi seluas 0,05 m² menempel di lantai. Tekanan terbesar yang dapat diberikan balok pada lantai adalah …
+  A. 1.200 Pa · B. 12 Pa · C. 3 Pa · D. 300 Pa
+  Kunci: **A** · Tekanan terbesar terjadi pada luas terkecil: P = 60 : 0,05 = 1.200 Pa.
+- [ ] **FIS.C26.D.TEKANAN.Q.PADAT_3** — Ban truk dibuat lebar dan jumlahnya banyak. Tujuannya adalah …
+  A. memperbesar tekanan truk pada jalan · B. memperkecil tekanan pada jalan agar ban tidak mudah ambles · C. menambah berat truk · D. menghilangkan gaya gesek
+  Kunci: **B** · Luas bidang tekan yang besar membuat tekanan kecil, sehingga ban tidak mudah ambles ke tanah atau aspal.
+- [ ] **FIS.C26.D.TEKANAN.Q.CAIR_1** — Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …
+  A. 20.000 Pa · B. 200 Pa · C. 5.000 Pa · D. 2.000 Pa
+  Kunci: **A** · P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.
+- [ ] **FIS.C26.D.TEKANAN.Q.CAIR_2** — Sebuah benda bervolume 0,002 m³ tercelup seluruhnya di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²). Gaya apung yang dialami benda adalah …
+  A. 200 N · B. 0,2 N · C. 2 N · D. 20 N
+  Kunci: **D** · Fa = ρ × g × V = 1.000 × 10 × 0,002 = 20 N.
+- [ ] **FIS.C26.D.TEKANAN.Q.CAIR_3** — Dinding bendungan dibuat makin tebal di bagian bawah karena …
+  A. agar ikan tidak dapat lewat · B. air di bagian bawah lebih hangat · C. tekanan air makin besar di tempat yang makin dalam · D. air di bagian bawah lebih ringan
+  Kunci: **C** · Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
+- [ ] **FIS.C26.D.TEKANAN.Q.GAS_1** — Tekanan udara di permukaan laut 76 cmHg. Perkiraan tekanan udara di sebuah kota yang terletak 500 m di atas permukaan laut adalah …
+  A. 26 cmHg · B. 81 cmHg · C. 71 cmHg · D. 76 cmHg
+  Kunci: **C** · Tekanan turun sekitar 1 cmHg setiap naik 100 m: 76 − 5 = 71 cmHg.
+- [ ] **FIS.C26.D.TEKANAN.Q.GAS_2** — Gas di dalam tabung tertutup bervolume 4 L bertekanan 1 atm. Jika volumenya ditekan menjadi 2 L pada suhu tetap, tekanannya menjadi …
+  A. 0,5 atm · B. 2 atm · C. 4 atm · D. 8 atm
+  Kunci: **B** · Hukum Boyle: 1 × 4 = P₂ × 2, jadi P₂ = 2 atm.
+- [ ] **FIS.C26.D.TEKANAN.Q.GAS_3** — Telinga terasa berdenging saat pesawat naik atau saat mendaki gunung karena …
+  A. tekanan udara di luar makin kecil daripada tekanan di dalam telinga · B. suhu udara di luar makin panas · C. kadar oksigen di udara bertambah · D. suara mesin terdengar makin keras
+  Kunci: **A** · Di tempat tinggi tekanan udara luar mengecil, sedangkan tekanan di dalam telinga tengah belum menyesuaikan, sehingga gendang telinga terdorong ke luar.
+- [ ] **FIS.C26.D.TEKANAN.Q.PENERAPAN_1** — Dongkrak hidrolik memiliki penghisap kecil seluas 10 cm² dan penghisap besar seluas 500 cm². Gaya yang harus diberikan pada penghisap kecil untuk mengangkat mobil seberat 10.000 N adalah …
+  A. 50 N · B. 200 N · C. 2.000 N · D. 500.000 N
+  Kunci: **B** · F₁ / A₁ = F₂ / A₂: F₁ = 10.000 × 10 : 500 = 200 N.
+- [ ] **FIS.C26.D.TEKANAN.Q.PENERAPAN_2** — Agar kapal selam dapat menyelam, yang dilakukan adalah …
+  A. memperbesar baling-baling kapal · B. mengosongkan tangki pemberat dari air · C. mengisi tangki pemberat dengan air sehingga beratnya lebih besar daripada gaya apung · D. memanaskan udara di dalam kapal
+  Kunci: **C** · Air di tangki pemberat menambah berat kapal; saat berat lebih besar daripada gaya apung, kapal tenggelam.
+- [ ] **FIS.C26.D.TEKANAN.Q.PENERAPAN_3** — Hasil pengukuran tekanan darah seseorang 120/80 mmHg. Angka 120 menunjukkan …
+  A. jumlah denyut nadi per menit · B. suhu tubuh · C. tekanan saat jantung mengendur (diastol) · D. tekanan saat jantung memompa darah keluar (sistol)
+  Kunci: **D** · Angka atas adalah tekanan sistol, yaitu saat bilik jantung berkontraksi memompa darah.
+
+## Usaha, energi, dan pesawat sederhana (FIS.C26.D.ENERGI)
+
+Materi: 2 · Soal: 6
 
 - [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_1** — Gaya 50 N memindahkan kotak sejauh 4 m searah gaya. Usaha yang dilakukan adalah …
   A. 12,5 J · B. 54 J · C. 46 J · D. 200 J
@@ -1406,15 +1482,6 @@ Materi: 4 · Soal: 12
 - [ ] **FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_3** — Perubahan energi pada senter yang menyala adalah …
   A. panas → kimia → listrik · B. kimia → listrik → cahaya dan panas · C. listrik → kimia → cahaya · D. cahaya → listrik → kimia
   Kunci: **B** · Baterai menyimpan energi kimia, diubah menjadi energi listrik, lalu lampu mengubahnya menjadi cahaya dan panas.
-- [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_1** — Suhu 27 °C dalam skala Kelvin adalah …
-  A. 327 K · B. 246 K · C. 300 K · D. 273 K
-  Kunci: **C** · K = 27 + 273 = 300 K.
-- [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_2** — Gagang panci dari logam terasa panas saat panci dipanaskan karena perpindahan kalor secara …
-  A. evaporasi · B. konduksi · C. konveksi · D. radiasi
-  Kunci: **B** · Kalor merambat melalui logam tanpa logamnya berpindah, yaitu konduksi.
-- [ ] **FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_3** — Angin laut pada siang hari terjadi karena …
-  A. konveksi udara dari laut ke darat · B. radiasi dari Bulan · C. konduksi kalor oleh air · D. konduksi kalor oleh tanah
-  Kunci: **A** · Daratan lebih cepat panas, udara di atasnya naik, lalu udara laut yang lebih sejuk mengalir ke darat (konveksi).
 - [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_1** — Linggis dengan lengan beban 20 cm dan lengan kuasa 100 cm dipakai untuk mengangkat batu seberat 500 N. Gaya kuasa yang diperlukan adalah …
   A. 25 N · B. 250 N · C. 100 N · D. 2.500 N
   Kunci: **C** · 500 × 20 = F × 100, jadi F = 100 N.
@@ -1424,19 +1491,10 @@ Materi: 4 · Soal: 12
 - [ ] **FIS.C26.D.ENERGI.Q.PESAWAT_3** — Bidang miring sepanjang 5 m dengan tinggi 1 m dipakai untuk menaikkan peti seberat 1.000 N. Jika gesekan diabaikan, gaya minimal yang diperlukan adalah …
   A. 200 N · B. 1.000 N · C. 500 N · D. 5.000 N
   Kunci: **A** · KM = 5 : 1 = 5, jadi F = 1.000 : 5 = 200 N.
-- [ ] **FIS.C26.D.ENERGI.Q.KALOR_1** — Kalor yang diperlukan untuk memanaskan 2 kg air dari 25 °C menjadi 75 °C (c = 4.200 J/kg°C) adalah …
-  A. 630.000 J · B. 8.400 J · C. 420.000 J · D. 210.000 J
-  Kunci: **C** · Q = 2 × 4.200 × (75 − 25) = 420.000 J.
-- [ ] **FIS.C26.D.ENERGI.Q.KALOR_2** — Pada siang hari, pantai terasa lebih sejuk daripada daratan di sekitarnya terutama karena …
-  A. pasir tidak menyerap kalor · B. kalor jenis air besar sehingga air lambat panas · C. air memantulkan semua cahaya Matahari · D. udara di laut lebih tipis
-  Kunci: **B** · Air membutuhkan banyak kalor untuk naik suhunya, jadi permukaan laut tetap relatif sejuk.
-- [ ] **FIS.C26.D.ENERGI.Q.KALOR_3** — Es yang sedang melebur pada 0 °C terus dipanaskan. Selama proses melebur, suhunya …
-  A. tetap 0 °C sampai semua es mencair · B. turun · C. naik lalu turun · D. naik dengan cepat
-  Kunci: **A** · Kalor dipakai untuk mengubah wujud, bukan menaikkan suhu, sampai semua es mencair.
 
 ## Getaran, bunyi, dan cahaya (FIS.C26.D.GELOMBANG)
 
-Materi: 3 · Soal: 9
+Materi: 4 · Soal: 12
 
 - [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_1** — Sebuah bandul bergetar 30 kali dalam 15 sekon. Frekuensinya adalah …
   A. 15 Hz · B. 2 Hz · C. 0,5 Hz · D. 45 Hz
@@ -1447,15 +1505,15 @@ Materi: 3 · Soal: 9
 - [ ] **FIS.C26.D.GELOMBANG.Q.GETARAN_DAN_GELOMBANG_3** — Contoh gelombang longitudinal adalah …
   A. gelombang pada tali yang digoyangkan · B. gelombang cahaya · C. riak pada permukaan air · D. gelombang bunyi di udara
   Kunci: **D** · Bunyi merambat sebagai rapatan dan renggangan yang searah dengan arah rambatnya.
-- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_1** — Astronaut di Bulan tidak dapat saling mendengar suara tanpa radio karena …
-  A. bunyi memerlukan medium untuk merambat · B. frekuensi suaranya terlalu tinggi · C. gravitasi Bulan kecil · D. suhunya terlalu dingin
-  Kunci: **A** · Bulan hampir tidak memiliki udara, sedangkan bunyi butuh medium.
-- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_2** — Sonar kapal menerima bunyi pantul 2 sekon setelah dipancarkan. Cepat rambat bunyi di air 1.500 m/s. Kedalaman laut adalah …
-  A. 750 m · B. 6.000 m · C. 3.000 m · D. 1.500 m
-  Kunci: **D** · d = v × t : 2 = 1.500 × 2 : 2 = 1.500 m.
-- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_3** — Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …
-  A. datar · B. silinder saja · C. cekung · D. cembung
-  Kunci: **C** · Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
+- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_1** — Astronaut di Bulan tidak dapat saling mendengar suara tanpa radio karena …
+  A. gravitasi Bulan kecil · B. suhunya terlalu dingin · C. bunyi memerlukan medium untuk merambat · D. frekuensi suaranya terlalu tinggi
+  Kunci: **C** · Bulan hampir tidak memiliki udara, sedangkan bunyi butuh medium.
+- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_2** — Sonar kapal menerima bunyi pantul 2 sekon setelah dipancarkan. Cepat rambat bunyi di air 1.500 m/s. Kedalaman laut adalah …
+  A. 3.000 m · B. 1.500 m · C. 750 m · D. 6.000 m
+  Kunci: **B** · d = v × t : 2 = 1.500 × 2 : 2 = 1.500 m.
+- [ ] **FIS.C26.D.GELOMBANG.Q.BUNYI_3** — Kelelawar dapat terbang di tempat gelap tanpa menabrak karena memanfaatkan pantulan bunyi …
+  A. ultrasonik · B. yang frekuensinya di bawah 20 Hz · C. infrasonik · D. audiosonik
+  Kunci: **A** · Kelelawar memancarkan bunyi ultrasonik (di atas 20.000 Hz) lalu menangkap pantulannya untuk mengetahui letak benda.
 - [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_1** — Sinar datang membentuk sudut 35° terhadap garis normal sebuah cermin datar. Besar sudut pantulnya adalah …
   A. 35° · B. 55° · C. 70° · D. 145°
   Kunci: **A** · Sudut pantul sama dengan sudut datang, keduanya diukur dari garis normal.
@@ -1465,6 +1523,15 @@ Materi: 3 · Soal: 9
 - [ ] **FIS.C26.D.GELOMBANG.Q.CAHAYA_3** — Benda diletakkan 30 cm di depan lensa cembung yang jarak fokusnya 10 cm. Jarak bayangannya adalah …
   A. 7,5 cm · B. 40 cm · C. 15 cm · D. 20 cm
   Kunci: **C** · 1/s′ = 1/10 − 1/30 = 2/30, jadi s′ = 15 cm.
+- [ ] **FIS.C26.D.GELOMBANG.Q.OPTIK_1** — Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …
+  A. cekung · B. cembung · C. datar · D. silinder saja
+  Kunci: **A** · Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
+- [ ] **FIS.C26.D.GELOMBANG.Q.OPTIK_2** — Sebuah lup memiliki jarak fokus 5 cm. Perbesaran lup untuk mata yang tidak berakomodasi adalah …
+  A. 20 kali · B. 125 kali · C. 0,2 kali · D. 5 kali
+  Kunci: **D** · M = 25 : f = 25 : 5 = 5 kali.
+- [ ] **FIS.C26.D.GELOMBANG.Q.OPTIK_3** — Bayangan yang dibentuk lensa mata pada retina bersifat …
+  A. nyata, tegak, diperbesar · B. maya, tegak, diperbesar · C. nyata, terbalik, diperkecil · D. maya, terbalik, sama besar
+  Kunci: **C** · Lensa mata adalah lensa cembung dan benda berada jauh di depannya, sehingga bayangannya nyata, terbalik, dan diperkecil.
 
 ## Kelistrikan & energi ramah lingkungan (FIS.C26.D.LISTRIK)
 

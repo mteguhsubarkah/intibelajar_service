@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN.Q.PADAT_2
+familyCode: FIS.C26.D.TEKANAN.F.PADAT_2
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 2
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.TEKANAN.TEKANAN_ZAT_PADAT
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebuah balok beratnya 60 N dapat diletakkan dengan sisi seluas 0,2 m² atau sisi seluas 0,05 m² menempel di lantai. Tekanan terbesar yang dapat diberikan balok pada lantai adalah …
+  options:
+    - id: a
+      label: 1.200 Pa
+    - id: b
+      label: 12 Pa
+    - id: c
+      label: 3 Pa
+    - id: d
+      label: 300 Pa
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - 1.200 Pa
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.TEKANAN.TEKANAN_ZAT_PADAT
+  feedback:
+    correct: "Tekanan terbesar terjadi pada luas terkecil: P = 60 : 0,05 = 1.200 Pa."
+    incorrect: "Jawabannya 1.200 Pa. Tekanan terbesar terjadi pada luas terkecil: P = 60 : 0,05 = 1.200 Pa."
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

@@ -1,48 +1,48 @@
 schemaVersion: 1
-code: FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_3
-familyCode: FIS.C26.D.GELOMBANG.F.BUNYI_DAN_OPTIK_3
+code: FIS.C26.F.MODERN.Q.INTI_ATOM_1
+familyCode: FIS.C26.F.MODERN.F.INTI_ATOM_1
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
 contextTag: PILOT
-difficulty: 2
+difficulty: 1
 estimatedMinutes: 2
 provenance:
   source: authored:pilot
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+  - concept: FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …
+  prompt: Inti uranium-235 memiliki nomor atom 92. Jumlah neutron dalam inti tersebut adalah …
   options:
     - id: a
-      label: datar
+      label: "92"
     - id: b
-      label: silinder saja
+      label: "143"
     - id: c
-      label: cekung
+      label: "235"
     - id: d
-      label: cembung
+      label: "327"
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: c
+    optionId: b
   acceptedForms:
-    - cekung
+    - "143"
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+    - FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
   feedback:
-    correct: Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
-    incorrect: Jawabannya cekung. Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.
+    correct: N = A − Z = 235 − 92 = 143.
+    incorrect: Jawabannya 143. N = A − Z = 235 − 92 = 143.
 review:
   status: PROPOSED
   decision: D7

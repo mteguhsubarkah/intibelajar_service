@@ -1,10 +1,10 @@
 schemaVersion: 1
-code: FIS.C26.F.GELOMBANG.L.RESONANSI_DAN_OPTIK
-title: Resonansi dan optik
+code: FIS.C26.F.GELOMBANG.L.RESONANSI
+title: Resonansi bunyi
 estimatedMinutes: 5
 aliases: []
 concepts:
-  - FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+  - FIS.C26.F.GELOMBANG.RESONANSI_BUNYI
 blocks:
   - type: heading
     slide: 0
@@ -26,31 +26,31 @@ blocks:
     expression: f₁ = v / 4L
   - type: heading
     slide: 1
-    text: Lensa
+    text: Dawai dan resonansi
   - type: text
     slide: 1
-    text: "Persamaan lensa: **1/f = 1/s + 1/s′**. Lensa cembung f positif. s′ positif berarti bayangan nyata di belakang lensa."
+    text: Dawai yang kedua ujungnya terikat bergetar dengan **fₙ = n · v / 2L**. Senar yang ditegangkan lebih kencang membuat v lebih besar sehingga nadanya lebih tinggi.
   - type: text
     slide: 1
-    text: "Contoh: s = 30 cm, f = 20 cm ⇒ s′ = 60 cm."
+    text: "**Resonansi**: benda ikut bergetar bila frekuensi alaminya sama dengan frekuensi sumber. Kolom udara di atas air beresonansi dengan garpu tala saat panjangnya L = λ/4, 3λ/4, 5λ/4, …"
   - type: math
     slide: 1
-    name: 1/f
-    expression: 1/s + 1/s′
+    name: dawai
+    expression: fₙ = n · v / 2L
     highlight: true
   - type: math
     slide: 1
-    name: perbesaran
-    expression: M = s′ / s
+    name: resonansi kolom udara
+    expression: L = (2n − 1) · λ / 4
   - type: tip
     slide: 1
-    text: Pakai satuan yang sama (cm) untuk s, s′, dan f.
+    text: Resonansi pertama kolom udara terjadi pada seperempat panjang gelombang.
 checks:
-  - question: FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_1
+  - question: FIS.C26.F.GELOMBANG.Q.RESONANSI_1
     ordinal: 0
     slideIndex: 1
     required: true
-practiceSet: FIS.C26.F.GELOMBANG.S.RESONANSI_DAN_OPTIK
+practiceSet: FIS.C26.F.GELOMBANG.S.RESONANSI
 review:
   status: PROPOSED
   decision: D7

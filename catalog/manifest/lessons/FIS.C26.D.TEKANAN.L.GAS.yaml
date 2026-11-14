@@ -1,0 +1,57 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN.L.GAS
+title: Tekanan gas
+estimatedMinutes: 5
+aliases: []
+concepts:
+  - FIS.C26.D.TEKANAN.TEKANAN_GAS
+blocks:
+  - type: heading
+    slide: 0
+    text: Tekanan udara
+  - type: text
+    slide: 0
+    text: Udara memiliki berat, sehingga menekan permukaan Bumi. Tekanan udara di permukaan laut sekitar 1 atm (76 cmHg, kira-kira 101.300 Pa) dan diukur dengan barometer.
+  - type: text
+    slide: 0
+    text: "Makin tinggi suatu tempat, makin tipis udaranya sehingga tekanan udaranya makin kecil: turun sekitar 1 cmHg setiap naik 100 m."
+  - type: math
+    slide: 0
+    name: 1 atm
+    expression: 76 cmHg ≈ 101.300 Pa
+    highlight: true
+  - type: math
+    slide: 0
+    name: ketinggian
+    expression: turun ±1 cmHg tiap naik 100 m
+  - type: heading
+    slide: 1
+    text: Tekanan gas di ruang tertutup
+  - type: text
+    slide: 1
+    text: Gas dalam wadah tertutup menekan dinding wadah karena partikelnya terus bergerak dan menumbuk dinding.
+  - type: text
+    slide: 1
+    text: Pada suhu tetap, makin kecil volume gas, makin besar tekanannya (Hukum Boyle). Itu sebabnya pompa sepeda terasa makin berat saat ditekan.
+  - type: math
+    slide: 1
+    name: Hukum Boyle
+    expression: P₁ × V₁ = P₂ × V₂
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Hukum Boyle hanya berlaku bila suhu dan jumlah gas tetap.
+checks:
+  - question: FIS.C26.D.TEKANAN.Q.GAS_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: FIS.C26.D.TEKANAN.S.GAS
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

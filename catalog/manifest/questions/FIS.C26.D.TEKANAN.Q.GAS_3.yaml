@@ -1,0 +1,54 @@
+schemaVersion: 1
+code: FIS.C26.D.TEKANAN.Q.GAS_3
+familyCode: FIS.C26.D.TEKANAN.F.GAS_3
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: MULTIPLE_CHOICE
+contextTag: PILOT
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:pilot
+  note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
+aliases: []
+concepts:
+  - concept: FIS.C26.D.TEKANAN.TEKANAN_GAS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Telinga terasa berdenging saat pesawat naik atau saat mendaki gunung karena …
+  options:
+    - id: a
+      label: tekanan udara di luar makin kecil daripada tekanan di dalam telinga
+    - id: b
+      label: suhu udara di luar makin panas
+    - id: c
+      label: kadar oksigen di udara bertambah
+    - id: d
+      label: suara mesin terdengar makin keras
+  hints: []
+  answerFormat: OPTION
+rubric:
+  schemaVersion: 1
+  evaluator: option-v1
+  answer:
+    optionId: a
+  acceptedForms:
+    - tekanan udara di luar makin kecil daripada tekanan di dalam telinga
+  solutionPaths: []
+  misconceptionMap: []
+  finalAnswerEvidence:
+    - FIS.C26.D.TEKANAN.TEKANAN_GAS
+  feedback:
+    correct: Di tempat tinggi tekanan udara luar mengecil, sedangkan tekanan di dalam telinga tengah belum menyesuaikan, sehingga gendang telinga terdorong ke luar.
+    incorrect: Jawabannya tekanan udara di luar makin kecil daripada tekanan di dalam telinga. Di tempat tinggi tekanan udara luar mengecil, sedangkan tekanan di dalam telinga tengah belum menyesuaikan, sehingga gendang telinga terdorong ke luar.
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - soal pilot ditulis penulis konten; kunci dan pembahasan perlu dicek guru mata pelajaran

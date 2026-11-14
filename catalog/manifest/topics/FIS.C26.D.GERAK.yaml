@@ -1,8 +1,8 @@
 schemaVersion: 1
 code: FIS.C26.D.GERAK
 subject: FIS
-title: Gerak, gaya, dan tekanan
-subtitle: Jarak, perpindahan, kelajuan, resultan gaya, inersia, dan tekanan
+title: Gerak dan gaya
+subtitle: Jarak, perpindahan, kelajuan, gaya dan berat, resultan gaya, dan inersia
 phase: D
 availability: MAPPED
 bekal: []
@@ -22,24 +22,11 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-d-gerak-kelajuan
-  - code: FIS.C26.D.GERAK.TEKANAN
-    title: Tekanan
+  - code: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
+    title: Gaya dan berat benda
     objectives: []
     misconceptions: []
     ordinal: 2
-    estimatedMinutes: 5
-    grade: 8
-    hidden: false
-    capstone: false
-    availability: READY
-    aliases:
-      - ns: MAP
-        value: fis-d-gerak-c2
-  - code: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
-    title: Gerak dan gaya resultan
-    objectives: []
-    misconceptions: []
-    ordinal: 3
     estimatedMinutes: 4
     grade: 7
     hidden: false
@@ -52,7 +39,7 @@ concepts:
     title: Resultan gaya dan inersia
     objectives: []
     misconceptions: []
-    ordinal: 4
+    ordinal: 3
     estimatedMinutes: 5
     grade: 7
     hidden: false
@@ -61,6 +48,18 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-d-gerak-resultan
+  - code: FIS.C26.D.GERAK.TEKANAN
+    title: Tekanan
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 5
+    hidden: true
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-d-gerak-c2
 prerequisites:
   - concept: FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA
     requires: FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN
@@ -78,6 +77,7 @@ review:
     - nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)
     - dicatat sebagai "peta saja" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul
     - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): kelas 7 gerak dulu, baru gaya (buku IPA VII Bab 4): Jarak, perpindahan & kelajuan jadi prasyarat Gerak dan gaya resultan, ordinal keduanya ditukar. Tekanan dan inti penutup tetap."
+    - 'Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): Tekanan pindah ke bab baru D.TEKANAN (4 subbab buku jadi 4 inti); inti Tekanan di sini disembunyikan. Inti "Gerak dan gaya resultan" berisi jenis gaya dan gaya berat, jadi judulnya kini "Gaya dan berat benda" (kode tetap, progres aman).'
 bookRefs:
   - book: Buku Siswa IPA Kelas VII (SMP/MTs)
     edition: edisi revisi
@@ -85,11 +85,3 @@ bookRefs:
     chapter: Bab 4 Gerak dan Gaya
     verification: SNIPPET
     note: Untuk inti kelas 7.
-  - book: Buku Siswa IPA Kelas VIII (SMP/MTs)
-    edition: revisi 2024
-    url: https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/IPA_BS_KLS_VIII_Rev.pdf
-    chapter: Bab IV Teknologi Penerapan Tekanan pada Zat
-    section: A. Tekanan pada Zat Padat (108); B. Tekanan pada Zat Cair (110); C. Tekanan Gas (122); D. Penerapan Tekanan Zat (124)
-    pages: "105"
-    verification: VERIFIED
-    note: Untuk inti Tekanan (kelas 8). Di buku, tekanan jadi bab sendiri dengan 4 subbab; di katalog masih satu inti di bab ini.

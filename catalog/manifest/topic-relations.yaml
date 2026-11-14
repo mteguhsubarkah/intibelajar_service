@@ -573,10 +573,10 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
-  - from: FIS.C26.D.GERAK
+  - from: FIS.C26.D.TEKANAN
     to: FIS.C26.F.FLUIDA
     kind: REQUIRES
-    label: "Lintas Fase D ➔ F: Gaya & tekanan SMP menuju Fluida Statis & Dinamis"
+    label: "Lintas Fase D ➔ F: Tekanan zat SMP menuju Fluida Statis & Dinamis"
     source: CURRICULUM
     review:
       status: PROPOSED
@@ -586,10 +586,24 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
-  - from: FIS.C26.D.ENERGI
+        - "Tahap 3 audit Fisika (2026-11-14): tekanan pindah dari D.GERAK ke bab D.TEKANAN, jadi relasi ke Fluida ikut pindah."
+  - from: FIS.C26.D.GERAK
+    to: FIS.C26.D.TEKANAN
+    kind: REQUIRES
+    label: Gaya menjadi bekal tekanan (P = F / A)
+    source: CURRICULUM
+    review:
+      status: PROPOSED
+      decision: D9
+      fields:
+        - kind
+        - label
+      evidence:
+        - "Tahap 3 audit Fisika (2026-11-14): tekanan didefinisikan sebagai gaya per luas, jadi bab Gerak dan gaya (kelas 7) menjadi bekal bab Tekanan (kelas 8)"
+  - from: FIS.C26.D.SUHU
     to: FIS.C26.F.TERMAL
     kind: REQUIRES
-    label: "Lintas Fase D ➔ F: Kalor SMP menuju Termodinamika SMA"
+    label: "Lintas Fase D ➔ F: Suhu dan kalor SMP menuju Kalor dan termodinamika SMA"
     source: CURRICULUM
     review:
       status: PROPOSED
@@ -599,6 +613,7 @@ relations:
         - label
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
+        - "Tahap 3 audit Fisika (2026-11-14): suhu dan kalor pindah dari D.ENERGI ke bab D.SUHU, jadi relasi ke F.TERMAL ikut pindah."
   - from: FIS.C26.D.GELOMBANG
     to: FIS.C26.F.GELOMBANG
     kind: REQUIRES
@@ -964,7 +979,7 @@ relations:
       evidence:
         - hubungan antartopik dari peta referensi IntiVerse
         - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): RELATED jadi REQUIRES: induksi elektromagnetik butuh medan magnet."
-  - from: FIS.C26.D.ENERGI
+  - from: FIS.C26.D.SUHU
     to: FIS.C26.E.IKLIM
     kind: REQUIRES
     label: "Lintas Fase D ➔ E: suhu dan perpindahan kalor SMP → efek rumah kaca dan pemanasan global"
@@ -977,6 +992,7 @@ relations:
         - label
       evidence:
         - "Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): relasi baru; E.IKLIM mencantumkan kalor dan radiasi sebagai bekal; kalor ada di IPA VII Bab 3 Suhu, Kalor, dan Pemuaian."
+        - "Tahap 3 (2026-11-14): asal relasi pindah dari D.ENERGI ke bab baru D.SUHU."
   - from: FIS.C26.D.ANTARIKSA
     to: FIS.C26.D.KEBUMIAN
     kind: RELATED

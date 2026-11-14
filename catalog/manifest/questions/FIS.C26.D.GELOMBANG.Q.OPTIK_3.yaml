@@ -1,48 +1,48 @@
 schemaVersion: 1
-code: FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_2
-familyCode: FIS.C26.D.ENERGI.F.SUHU_DAN_PERPINDAHAN_KALOR_2
+code: FIS.C26.D.GELOMBANG.Q.OPTIK_3
+familyCode: FIS.C26.D.GELOMBANG.F.OPTIK_3
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
 contextTag: PILOT
-difficulty: 1
+difficulty: 2
 estimatedMinutes: 2
 provenance:
   source: authored:pilot
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.ENERGI.SUHU_DAN_PERPINDAHAN_KALOR
+  - concept: FIS.C26.D.GELOMBANG.ALAT_OPTIK
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Gagang panci dari logam terasa panas saat panci dipanaskan karena perpindahan kalor secara …
+  prompt: Bayangan yang dibentuk lensa mata pada retina bersifat …
   options:
     - id: a
-      label: evaporasi
+      label: nyata, tegak, diperbesar
     - id: b
-      label: konduksi
+      label: maya, tegak, diperbesar
     - id: c
-      label: konveksi
+      label: nyata, terbalik, diperkecil
     - id: d
-      label: radiasi
+      label: maya, terbalik, sama besar
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: c
   acceptedForms:
-    - konduksi
+    - nyata, terbalik, diperkecil
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.ENERGI.SUHU_DAN_PERPINDAHAN_KALOR
+    - FIS.C26.D.GELOMBANG.ALAT_OPTIK
   feedback:
-    correct: Kalor merambat melalui logam tanpa logamnya berpindah, yaitu konduksi.
-    incorrect: Jawabannya konduksi. Kalor merambat melalui logam tanpa logamnya berpindah, yaitu konduksi.
+    correct: Lensa mata adalah lensa cembung dan benda berada jauh di depannya, sehingga bayangannya nyata, terbalik, dan diperkecil.
+    incorrect: Jawabannya nyata, terbalik, diperkecil. Lensa mata adalah lensa cembung dan benda berada jauh di depannya, sehingga bayangannya nyata, terbalik, dan diperkecil.
 review:
   status: PROPOSED
   decision: D7

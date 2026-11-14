@@ -776,24 +776,11 @@ sets:
       evidence:
         - semua soal inti ini
   - code: FIS.C26.F.MEKANIKA.S.HUKUM_NEWTON_DAN_MOMENTUM
-    title: Latihan Hukum Newton & momentum
+    title: Latihan Hukum Newton dan sistem benda
     origin: CONCEPT_LESSON
     items:
       - FIS.C26.F.MEKANIKA.Q.HUKUM_NEWTON_DAN_MOMENTUM_1
       - FIS.C26.F.MEKANIKA.Q.HUKUM_NEWTON_DAN_MOMENTUM_2
-    review:
-      status: PROPOSED
-      decision: D7
-      fields:
-        - items
-      evidence:
-        - semua soal inti ini
-  - code: FIS.C26.F.MEKANIKA.S.TORSI_DAN_KESEIMBANGAN
-    title: Latihan Torsi dan keseimbangan
-    origin: CONCEPT_LESSON
-    items:
-      - FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_1
-      - FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_2
     review:
       status: PROPOSED
       decision: D7
@@ -808,6 +795,19 @@ sets:
       - FIS.C26.F.MEKANIKA.Q.IMPULS_1
       - FIS.C26.F.MEKANIKA.Q.IMPULS_2
       - FIS.C26.F.MEKANIKA.Q.IMPULS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MEKANIKA.S.TORSI_DAN_KESEIMBANGAN
+    title: Latihan Torsi dan keseimbangan
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_1
+      - FIS.C26.F.MEKANIKA.Q.TORSI_DAN_KESEIMBANGAN_2
     review:
       status: PROPOSED
       decision: D7
@@ -922,12 +922,27 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.F.GELOMBANG.S.RESONANSI_DAN_OPTIK
-    title: Latihan Resonansi dan optik
+  - code: FIS.C26.F.GELOMBANG.S.RESONANSI
+    title: Latihan Resonansi bunyi
     origin: CONCEPT_LESSON
     items:
-      - FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_1
-      - FIS.C26.F.GELOMBANG.Q.RESONANSI_DAN_OPTIK_2
+      - FIS.C26.F.GELOMBANG.Q.RESONANSI_1
+      - FIS.C26.F.GELOMBANG.Q.RESONANSI_2
+      - FIS.C26.F.GELOMBANG.Q.RESONANSI_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.GELOMBANG.S.OPTIK
+    title: Latihan Lensa dan alat optik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.GELOMBANG.Q.OPTIK_1
+      - FIS.C26.F.GELOMBANG.Q.OPTIK_2
+      - FIS.C26.F.GELOMBANG.Q.OPTIK_3
     review:
       status: PROPOSED
       decision: D7
@@ -1017,19 +1032,6 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.F.MODERN.S.KUANTUM_DAN_INTI_ATOM
-    title: Latihan Kuantum dan inti atom
-    origin: CONCEPT_LESSON
-    items:
-      - FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_1
-      - FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_2
-    review:
-      status: PROPOSED
-      decision: D7
-      fields:
-        - items
-      evidence:
-        - semua soal inti ini
   - code: FIS.C26.F.MODERN.S.SEMI
     title: Latihan Semikonduktor
     origin: CONCEPT_LESSON
@@ -1063,6 +1065,33 @@ sets:
     items:
       - FIS.C26.F.MODERN.Q.RELATIVITAS_1
       - FIS.C26.F.MODERN.Q.RELATIVITAS_2
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MODERN.S.KUANTUM_DAN_INTI_ATOM
+    title: Latihan Gejala kuantum
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_1
+      - FIS.C26.F.MODERN.Q.KUANTUM_DAN_INTI_ATOM_2
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.F.MODERN.S.INTI_ATOM
+    title: Latihan Inti atom dan energi ikat
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.F.MODERN.Q.INTI_ATOM_1
+      - FIS.C26.F.MODERN.Q.INTI_ATOM_2
+      - FIS.C26.F.MODERN.Q.INTI_ATOM_3
     review:
       status: PROPOSED
       decision: D7
@@ -2088,6 +2117,34 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: FIS.C26.D.SUHU.S.SUHU
+    title: Latihan Suhu & perpindahan kalor
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.SUHU.Q.SUHU_1
+      - FIS.C26.D.SUHU.Q.SUHU_2
+      - FIS.C26.D.SUHU.Q.SUHU_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.SUHU.S.KALOR
+    title: Latihan Kalor jenis
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.SUHU.Q.KALOR_1
+      - FIS.C26.D.SUHU.Q.KALOR_2
+      - FIS.C26.D.SUHU.Q.KALOR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: FIS.C26.D.GERAK.S.KELAJUAN
     title: Latihan Jarak, perpindahan & kelajuan
     origin: CONCEPT_LESSON
@@ -2102,22 +2159,8 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.GERAK.S.TEKANAN
-    title: Latihan Tekanan
-    origin: CONCEPT_LESSON
-    items:
-      - FIS.C26.D.GERAK.Q.TEKANAN_1
-      - FIS.C26.D.GERAK.Q.TEKANAN_2
-      - FIS.C26.D.GERAK.Q.TEKANAN_3
-    review:
-      status: PROPOSED
-      decision: D7
-      fields:
-        - items
-      evidence:
-        - semua soal inti ini
   - code: FIS.C26.D.GERAK.S.GERAK_DAN_GAYA_RESULTAN
-    title: Latihan Gerak dan gaya resultan
+    title: Latihan Gaya dan berat benda
     origin: CONCEPT_LESSON
     items:
       - FIS.C26.D.GERAK.Q.GERAK_DAN_GAYA_RESULTAN_1
@@ -2144,13 +2187,13 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.ENERGI.S.USAHA_DAN_PERUBAHAN_ENERGI
-    title: Latihan Usaha & perubahan energi
+  - code: FIS.C26.D.TEKANAN.S.PADAT
+    title: Latihan Tekanan zat padat
     origin: CONCEPT_LESSON
     items:
-      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_1
-      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_2
-      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_3
+      - FIS.C26.D.TEKANAN.Q.PADAT_1
+      - FIS.C26.D.TEKANAN.Q.PADAT_2
+      - FIS.C26.D.TEKANAN.Q.PADAT_3
     review:
       status: PROPOSED
       decision: D7
@@ -2158,13 +2201,55 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.ENERGI.S.SUHU_DAN_PERPINDAHAN_KALOR
-    title: Latihan Suhu & perpindahan kalor
+  - code: FIS.C26.D.TEKANAN.S.CAIR
+    title: Latihan Tekanan zat cair
     origin: CONCEPT_LESSON
     items:
-      - FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_1
-      - FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_2
-      - FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_3
+      - FIS.C26.D.TEKANAN.Q.CAIR_1
+      - FIS.C26.D.TEKANAN.Q.CAIR_2
+      - FIS.C26.D.TEKANAN.Q.CAIR_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.TEKANAN.S.GAS
+    title: Latihan Tekanan gas
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.TEKANAN.Q.GAS_1
+      - FIS.C26.D.TEKANAN.Q.GAS_2
+      - FIS.C26.D.TEKANAN.Q.GAS_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.TEKANAN.S.PENERAPAN
+    title: Latihan Penerapan tekanan zat
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.TEKANAN.Q.PENERAPAN_1
+      - FIS.C26.D.TEKANAN.Q.PENERAPAN_2
+      - FIS.C26.D.TEKANAN.Q.PENERAPAN_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.ENERGI.S.USAHA_DAN_PERUBAHAN_ENERGI
+    title: Latihan Usaha & perubahan energi
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_1
+      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_2
+      - FIS.C26.D.ENERGI.Q.USAHA_DAN_PERUBAHAN_ENERGI_3
     review:
       status: PROPOSED
       decision: D7
@@ -2186,20 +2271,6 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.ENERGI.S.KALOR
-    title: Latihan Kalor jenis
-    origin: CONCEPT_LESSON
-    items:
-      - FIS.C26.D.ENERGI.Q.KALOR_1
-      - FIS.C26.D.ENERGI.Q.KALOR_2
-      - FIS.C26.D.ENERGI.Q.KALOR_3
-    review:
-      status: PROPOSED
-      decision: D7
-      fields:
-        - items
-      evidence:
-        - semua soal inti ini
   - code: FIS.C26.D.GELOMBANG.S.GETARAN_DAN_GELOMBANG
     title: Latihan Getaran dan gelombang
     origin: CONCEPT_LESSON
@@ -2214,13 +2285,13 @@ sets:
         - items
       evidence:
         - semua soal inti ini
-  - code: FIS.C26.D.GELOMBANG.S.BUNYI_DAN_OPTIK
-    title: Latihan Bunyi dan optik
+  - code: FIS.C26.D.GELOMBANG.S.BUNYI
+    title: Latihan Bunyi dan pemantulannya
     origin: CONCEPT_LESSON
     items:
-      - FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_1
-      - FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_2
-      - FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_3
+      - FIS.C26.D.GELOMBANG.Q.BUNYI_1
+      - FIS.C26.D.GELOMBANG.Q.BUNYI_2
+      - FIS.C26.D.GELOMBANG.Q.BUNYI_3
     review:
       status: PROPOSED
       decision: D7
@@ -2235,6 +2306,20 @@ sets:
       - FIS.C26.D.GELOMBANG.Q.CAHAYA_1
       - FIS.C26.D.GELOMBANG.Q.CAHAYA_2
       - FIS.C26.D.GELOMBANG.Q.CAHAYA_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: FIS.C26.D.GELOMBANG.S.OPTIK
+    title: Latihan Alat optik
+    origin: CONCEPT_LESSON
+    items:
+      - FIS.C26.D.GELOMBANG.Q.OPTIK_1
+      - FIS.C26.D.GELOMBANG.Q.OPTIK_2
+      - FIS.C26.D.GELOMBANG.Q.OPTIK_3
     review:
       status: PROPOSED
       decision: D7

@@ -1,48 +1,48 @@
 schemaVersion: 1
-code: FIS.C26.D.ENERGI.Q.KALOR_2
-familyCode: FIS.C26.D.ENERGI.F.KALOR_2
+code: FIS.C26.D.TEKANAN.Q.PENERAPAN_3
+familyCode: FIS.C26.D.TEKANAN.F.PENERAPAN_3
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
 contextTag: PILOT
-difficulty: 2
+difficulty: 1
 estimatedMinutes: 2
 provenance:
   source: authored:pilot
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.ENERGI.KALOR_JENIS
+  - concept: FIS.C26.D.TEKANAN.PENERAPAN_TEKANAN_ZAT
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Pada siang hari, pantai terasa lebih sejuk daripada daratan di sekitarnya terutama karena …
+  prompt: Hasil pengukuran tekanan darah seseorang 120/80 mmHg. Angka 120 menunjukkan …
   options:
     - id: a
-      label: pasir tidak menyerap kalor
+      label: jumlah denyut nadi per menit
     - id: b
-      label: kalor jenis air besar sehingga air lambat panas
+      label: suhu tubuh
     - id: c
-      label: air memantulkan semua cahaya Matahari
+      label: tekanan saat jantung mengendur (diastol)
     - id: d
-      label: udara di laut lebih tipis
+      label: tekanan saat jantung memompa darah keluar (sistol)
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: b
+    optionId: d
   acceptedForms:
-    - kalor jenis air besar sehingga air lambat panas
+    - tekanan saat jantung memompa darah keluar (sistol)
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.ENERGI.KALOR_JENIS
+    - FIS.C26.D.TEKANAN.PENERAPAN_TEKANAN_ZAT
   feedback:
-    correct: Air membutuhkan banyak kalor untuk naik suhunya, jadi permukaan laut tetap relatif sejuk.
-    incorrect: Jawabannya kalor jenis air besar sehingga air lambat panas. Air membutuhkan banyak kalor untuk naik suhunya, jadi permukaan laut tetap relatif sejuk.
+    correct: Angka atas adalah tekanan sistol, yaitu saat bilik jantung berkontraksi memompa darah.
+    incorrect: Jawabannya tekanan saat jantung memompa darah keluar (sistol). Angka atas adalah tekanan sistol, yaitu saat bilik jantung berkontraksi memompa darah.
 review:
   status: PROPOSED
   decision: D7

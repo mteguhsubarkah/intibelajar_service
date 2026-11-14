@@ -24,6 +24,8 @@ const CONTENT: Record<string, Pick<PilotCore, 'slides' | 'q' | 'min'>> = {
 };
 
 const EV_FE = ["nama inti dan prasyarat mengikuti peta referensi IntiVerse (src/data/intiverse-reference.json)", "dicatat sebagai \"peta saja\" oleh audit kesenjangan materi 10 November 2026; materi dan soal menyusul"];
+/** Bab baru dari Tahap 3 audit Fisika (struktur bab mengikuti buku resmi). */
+const EV_T3 = ["bab baru dari Tahap 3 audit Fisika 14 November 2026 (docs/backlog.md FE): struktur bab mengikuti Buku Siswa IPA Kurikulum Merdeka", "inti yang pindah ke bab ini ditulis ulang sebagai inti baru; inti lamanya disembunyikan di bab asal (kode inti tidak bisa pindah bab)"];
 const EV_NEW = ["inti baru usulan audit kesenjangan materi 10 November 2026 (belum ada di peta FE maupun katalog)", "acuan: Kepka BSKAP 046/H/KR/2025; Panduan Mata Pelajaran BSKAP 2025 (Matematika, IPA, Fisika, Kimia, Biologi)"];
 
 /** Bab dari pemeriksaan per kelas (12 November 2026): ada di daftar isi buku siswa per kelas, belum ada di katalog. */
@@ -281,37 +283,62 @@ const STRUCTURE: PilotTopic[] = [
     ],
     edges: [["C1", "C2", "S"]],
   },
+  // Tahap 3 audit Fisika (14 November 2026): kode inti tidak bisa pindah bab, jadi inti yang pindah atau dipecah ditulis
+  // ulang sebagai inti baru dan inti lamanya disembunyikan (hidden, di akhir daftar). Inti yang hanya ganti judul memakai
+  // codeFrom agar kode, soal, dan progres siswa tetap.
+  {
+    code: "FIS.C26.D.SUHU", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_T3,
+    title: "Suhu dan kalor", subtitle: "Suhu, termometer, perpindahan kalor, kalor jenis, dan perubahan wujud", bekal: ["besaran dan satuan"],
+    cores: [
+    { id: "SUHU", title: "Suhu & perpindahan kalor" },
+    { id: "KALOR", title: "Kalor jenis", capstone: true },
+    ],
+    edges: [["SUHU", "KALOR", "S"]],
+  },
   {
     code: "FIS.C26.D.GERAK", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
-    title: "Gerak, gaya, dan tekanan", subtitle: "Jarak, perpindahan, kelajuan, resultan gaya, inersia, dan tekanan", bekal: [],
+    title: "Gerak dan gaya", subtitle: "Jarak, perpindahan, kelajuan, gaya dan berat, resultan gaya, dan inersia", bekal: [],
     cores: [
     { id: "KELAJUAN", title: "Jarak, perpindahan & kelajuan" },
-    { id: "C2", title: "Tekanan" },
-    { id: "C1", title: "Gerak dan gaya resultan" },
+    { id: "C1", title: "Gaya dan berat benda", codeFrom: "Gerak dan gaya resultan" },
     { id: "RESULTAN", title: "Resultan gaya dan inersia", capstone: true },
+    { id: "C2", title: "Tekanan", hidden: true },
     ],
     edges: [["C1", "RESULTAN", "S"], ["KELAJUAN", "C1", "S"]],
   },
   {
+    code: "FIS.C26.D.TEKANAN", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_T3,
+    title: "Tekanan zat dan penerapannya", subtitle: "Tekanan pada zat padat, zat cair, dan gas, serta penerapannya dalam teknologi dan makhluk hidup", bekal: ["gaya", "luas bidang"],
+    cores: [
+    { id: "PADAT", title: "Tekanan zat padat" },
+    { id: "CAIR", title: "Tekanan zat cair", sub: "Tekanan hidrostatis, Hukum Pascal, dan Hukum Archimedes" },
+    { id: "GAS", title: "Tekanan gas", sub: "Tekanan udara dan tekanan gas di ruang tertutup" },
+    { id: "PENERAPAN", title: "Penerapan tekanan zat", sub: "Hidrolik, kapal selam, tekanan darah, dan pengangkutan air pada tumbuhan", capstone: true },
+    ],
+    edges: [["PADAT", "CAIR", "S"], ["PADAT", "GAS", "S"], ["CAIR", "PENERAPAN", "S"], ["GAS", "PENERAPAN", "S"]],
+  },
+  {
     code: "FIS.C26.D.ENERGI", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
-    title: "Usaha, energi, dan kalor", subtitle: "Usaha, perubahan energi, suhu, perpindahan kalor, dan kalor jenis", bekal: [],
+    title: "Usaha, energi, dan pesawat sederhana", subtitle: "Usaha, perubahan energi, dan pesawat sederhana", bekal: [],
     cores: [
     { id: "C1", title: "Usaha & perubahan energi" },
-    { id: "C2", title: "Suhu & perpindahan kalor" },
-    { id: "PESAWAT", title: "Pesawat sederhana", sub: "Tuas, katrol, bidang miring, dan keuntungan mekanis" },
-    { id: "KALOR", title: "Kalor jenis", capstone: true },
+    { id: "PESAWAT", title: "Pesawat sederhana", sub: "Tuas, katrol, bidang miring, dan keuntungan mekanis", capstone: true },
+    { id: "C2", title: "Suhu & perpindahan kalor", hidden: true },
+    { id: "KALOR", title: "Kalor jenis", hidden: true },
     ],
-    edges: [["C1", "PESAWAT", "S"], ["C2", "KALOR", "S"]],
+    edges: [["C1", "PESAWAT", "S"]],
   },
   {
     code: "FIS.C26.D.GELOMBANG", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
-    title: "Getaran, bunyi, dan cahaya", subtitle: "Getaran, gelombang, bunyi, optik, serta pemantulan dan pembiasan cahaya", bekal: [],
+    title: "Getaran, bunyi, dan cahaya", subtitle: "Getaran, gelombang, bunyi, pemantulan dan pembiasan cahaya, serta alat optik", bekal: [],
     cores: [
     { id: "C1", title: "Getaran dan gelombang" },
-    { id: "C2", title: "Bunyi dan optik" },
-    { id: "CAHAYA", title: "Pemantulan & pembiasan cahaya", capstone: true },
+    { id: "BUNYI", title: "Bunyi dan pemantulannya" },
+    { id: "CAHAYA", title: "Pemantulan & pembiasan cahaya" },
+    { id: "OPTIK", title: "Alat optik", sub: "Mata, cacat mata, lup, kamera, dan mikroskop", capstone: true },
+    { id: "C2", title: "Bunyi dan optik", hidden: true },
     ],
-    edges: [["C1", "CAHAYA", "S"]],
+    edges: [["C1", "BUNYI", "S"], ["C1", "CAHAYA", "S"], ["CAHAYA", "OPTIK", "S"]],
   },
   {
     code: "FIS.C26.D.LISTRIK", subject: "FIS", phase: "D", decision: 'D9', evidence: EV_FE,
@@ -562,7 +589,8 @@ for (const key of Object.keys(CONTENT)) {
   if (!STRUCTURE.some(t => t.code === code && t.cores.some(c => c.id === id))) throw new Error(`materi untuk inti yang tidak ada: ${key}`);
 }
 export const PLANNED_TOPICS: PilotTopic[] = STRUCTURE.map(t => ({ ...t, cores: t.cores.map(c => {
-  const key = `${t.code}:${c.id}`, add = CONTENT[key];
+  // Inti tersembunyi (Tahap 3 audit Fisika) tidak membawa isi lagi; isinya dipakai ulang oleh inti barunya.
+  const key = `${t.code}:${c.id}`, add = c.hidden ? undefined : CONTENT[key];
   return { ...c, ...add, ...(add?.q ? { q: spread(key, add.q) } : {}) };
 }) }));
 
@@ -587,8 +615,12 @@ export const PLANNED_RELATIONS: PilotRelation[] = [
   { from: "FIS.C26.D.UKUR", to: "FIS.C26.E.UKUR", kind: "REQUIRES", label: "Lintas Fase D ➔ E: Pengukuran SMP menuju Ketidakpastian & Analisis Data SMA", decision: 'D9' },
   { from: "FIS.C26.D.GERAK", to: "FIS.C26.E.GERAK2D", kind: "REQUIRES", label: "Lintas Fase D ➔ E: Gerak lurus SMP menuju Gerak Dua Dimensi SMA", decision: 'D9' },
   { from: "FIS.C26.D.ENERGI", to: "FIS.C26.E.ENERGI", kind: "REQUIRES", label: "Lintas Fase D ➔ E: Usaha & energi SMP menuju Energi Alternatif SMA", decision: 'D9' },
-  { from: "FIS.C26.D.GERAK", to: "FIS.C26.F.FLUIDA", kind: "REQUIRES", label: "Lintas Fase D ➔ F: Gaya & tekanan SMP menuju Fluida Statis & Dinamis", decision: 'D9' },
-  { from: "FIS.C26.D.ENERGI", to: "FIS.C26.F.TERMAL", kind: "REQUIRES", label: "Lintas Fase D ➔ F: Kalor SMP menuju Termodinamika SMA", decision: 'D9' },
+  { from: "FIS.C26.D.TEKANAN", to: "FIS.C26.F.FLUIDA", kind: "REQUIRES", label: "Lintas Fase D ➔ F: Tekanan zat SMP menuju Fluida Statis & Dinamis", decision: 'D9',
+    notes: ["Tahap 3 audit Fisika (2026-11-14): tekanan pindah dari D.GERAK ke bab D.TEKANAN, jadi relasi ke Fluida ikut pindah."] },
+  { from: "FIS.C26.D.GERAK", to: "FIS.C26.D.TEKANAN", kind: "REQUIRES", label: "Gaya menjadi bekal tekanan (P = F / A)", decision: 'D9',
+    evidence: ["Tahap 3 audit Fisika (2026-11-14): tekanan didefinisikan sebagai gaya per luas, jadi bab Gerak dan gaya (kelas 7) menjadi bekal bab Tekanan (kelas 8)"] },
+  { from: "FIS.C26.D.SUHU", to: "FIS.C26.F.TERMAL", kind: "REQUIRES", label: "Lintas Fase D ➔ F: Suhu dan kalor SMP menuju Kalor dan termodinamika SMA", decision: 'D9',
+    notes: ["Tahap 3 audit Fisika (2026-11-14): suhu dan kalor pindah dari D.ENERGI ke bab D.SUHU, jadi relasi ke F.TERMAL ikut pindah."] },
   { from: "FIS.C26.D.GELOMBANG", to: "FIS.C26.F.GELOMBANG", kind: "REQUIRES", label: "Lintas Fase D ➔ F: Getaran & bunyi SMP menuju Gelombang & Efek Doppler", decision: 'D9' },
   { from: "FIS.C26.D.LISTRIK", to: "FIS.C26.F.ELEKTRO", kind: "REQUIRES", label: "Lintas Fase D ➔ F: Rangkaian SMP menuju Elektromagnetisme & Kirchhoff", decision: 'D9' },
   { from: "KIM.C26.D.MATERI", to: "KIM.C26.D.ZAT", kind: "REQUIRES", label: "Sifat materi mendukung kajian zat aditif", decision: 'D9' },
@@ -618,8 +650,9 @@ export const PLANNED_RELATIONS: PilotRelation[] = [
   { from: "FIS.C26.D.LISTRIK", to: "FIS.C26.F.MEDAN", kind: "REQUIRES", label: "Lintas Fase D ➔ F: listrik dan magnet SMP → medan listrik dan magnet", decision: 'D9' },
   { from: "FIS.C26.F.MEDAN", to: "FIS.C26.F.ELEKTRO", kind: "REQUIRES", label: "medan magnet → induksi elektromagnetik", decision: 'D9',
     notes: ["Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): RELATED jadi REQUIRES: induksi elektromagnetik butuh medan magnet."] },
-  { from: "FIS.C26.D.ENERGI", to: "FIS.C26.E.IKLIM", kind: "REQUIRES", label: "Lintas Fase D ➔ E: suhu dan perpindahan kalor SMP → efek rumah kaca dan pemanasan global", decision: 'D9',
-    evidence: ["Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): relasi baru; E.IKLIM mencantumkan kalor dan radiasi sebagai bekal; kalor ada di IPA VII Bab 3 Suhu, Kalor, dan Pemuaian."] },
+  { from: "FIS.C26.D.SUHU", to: "FIS.C26.E.IKLIM", kind: "REQUIRES", label: "Lintas Fase D ➔ E: suhu dan perpindahan kalor SMP → efek rumah kaca dan pemanasan global", decision: 'D9',
+    evidence: ["Tahap 1 audit Fisika (2026-11-13, docs/backlog.md FE): relasi baru; E.IKLIM mencantumkan kalor dan radiasi sebagai bekal; kalor ada di IPA VII Bab 3 Suhu, Kalor, dan Pemuaian."],
+    notes: ["Tahap 3 (2026-11-14): asal relasi pindah dari D.ENERGI ke bab baru D.SUHU."] },
   { from: "FIS.C26.D.ANTARIKSA", to: "FIS.C26.D.KEBUMIAN", kind: "RELATED", label: "Bumi sebagai planet ↔ struktur Bumi", decision: 'D9' },  // pemeriksaan per kelas 12 November 2026
   { from: "MAT.KUA", to: "MAT.C26.FPLUS.POLINOMIAL", kind: "REQUIRES", label: "persamaan kuadrat → polinomial berderajat tinggi", decision: 'D9' },
   { from: "MAT.KUA", to: "MAT.C26.FPLUS.KOMPLEKS", kind: "RELATED", label: "diskriminan negatif → akar kompleks", decision: 'D9' },

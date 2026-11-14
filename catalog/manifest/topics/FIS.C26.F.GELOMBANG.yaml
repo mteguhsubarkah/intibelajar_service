@@ -2,7 +2,7 @@ schemaVersion: 1
 code: FIS.C26.F.GELOMBANG
 subject: FIS
 title: Gelombang dan penerapannya
-subtitle: Interferensi, resonansi, optik, Doppler
+subtitle: Interferensi, resonansi bunyi, lensa dan alat optik, Doppler
 phase: F
 availability: MAPPED
 bekal:
@@ -26,8 +26,8 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-f-gelombang-c1
-  - code: FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
-    title: Resonansi dan optik
+  - code: FIS.C26.F.GELOMBANG.RESONANSI_BUNYI
+    title: Resonansi bunyi
     objectives: []
     misconceptions: []
     ordinal: 2
@@ -38,12 +38,25 @@ concepts:
     availability: READY
     aliases:
       - ns: MAP
-        value: fis-f-gelombang-c2
+        value: fis-f-gelombang-resonansi
+  - code: FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK
+    title: Lensa dan alat optik
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 11
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: fis-f-gelombang-optik
   - code: FIS.C26.F.GELOMBANG.EFEK_DOPPLER
     title: Efek Doppler
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 4
     estimatedMinutes: 6
     grade: 11
     hidden: false
@@ -52,8 +65,26 @@ concepts:
     aliases:
       - ns: MAP
         value: fis-f-gelombang-doppler
+  - code: FIS.C26.F.GELOMBANG.RESONANSI_DAN_OPTIK
+    title: Resonansi dan optik
+    objectives: []
+    misconceptions: []
+    ordinal: 5
+    estimatedMinutes: 5
+    hidden: true
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: fis-f-gelombang-c2
 prerequisites:
+  - concept: FIS.C26.F.GELOMBANG.RESONANSI_BUNYI
+    requires: FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+    kind: SOFT
   - concept: FIS.C26.F.GELOMBANG.EFEK_DOPPLER
+    requires: FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
+    kind: SOFT
+  - concept: FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK
     requires: FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI
     kind: SOFT
 review:
@@ -64,6 +95,7 @@ review:
     - prerequisites
   evidence:
     - inti dan urutan mengikuti peta referensi IntiVerse (Kurikulum Merdeka)
+    - 'Tahap 3 audit Fisika (2026-11-14, docs/backlog.md FE): inti gabungan "Resonansi dan optik" dipecah jadi Resonansi bunyi serta Lensa dan alat optik; inti lama disembunyikan. Penutup tetap Efek Doppler.'
 bookRefs:
   - book: Buku Siswa Fisika Kelas XI (SMA/MA)
     edition: "2022"

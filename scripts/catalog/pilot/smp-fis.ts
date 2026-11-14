@@ -34,14 +34,6 @@ export const SMP_FIS: Record<string, Content> = {
     Q('Sebuah benda bermassa 5 kg berada di Bumi (g = 10 m/s²). Beratnya adalah …', ['5 N', '50 N', '0,5 N', '500 N'], 1, 'w = m × g = 5 × 10 = 50 N.', 1),
     Q('Massa seorang astronaut 60 kg. Di Bulan, yang gravitasinya 1/6 gravitasi Bumi, massanya …', ['10 kg', '60 kg', '360 kg', '0 kg'], 1, 'Massa tidak berubah di mana pun; yang berubah adalah beratnya.'),
   ], 4),
-  'FIS.C26.D.GERAK:C2': K([
-    S('Tekanan zat padat', ['Tekanan = gaya : luas bidang tekan, satuannya pascal (1 Pa = 1 N/m²).', 'Pisau yang tajam memotong lebih mudah karena luas bidang tekannya kecil, sehingga tekanannya besar.'], [['tekanan', 'P = F / A']]),
-    S('Tekanan zat cair dan gas', ['Tekanan hidrostatis bertambah dengan kedalaman: P = ρ × g × h. Karena itu dinding bendungan dibuat makin tebal ke bawah.', 'Tekanan udara makin kecil di tempat yang makin tinggi.'], [['tekanan hidrostatis', 'P = ρ × g × h']], 'Kedalaman h diukur dari permukaan zat cair.'),
-  ], [
-    Q('Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …', ['100 Pa', '400 Pa', '200,5 Pa', '40 Pa'], 1, 'P = F / A = 200 : 0,5 = 400 Pa.', 1),
-    Q('Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …', ['2.000 Pa', '20.000 Pa', '200 Pa', '5.000 Pa'], 1, 'P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.'),
-    Q('Dinding bendungan dibuat makin tebal di bagian bawah karena …', ['air di bagian bawah lebih hangat', 'tekanan air makin besar di tempat yang makin dalam', 'air di bagian bawah lebih ringan', 'agar ikan tidak dapat lewat'], 1, 'Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.', 1),
-  ]),
   'FIS.C26.D.GERAK:KELAJUAN': K([
     S('Jarak dan perpindahan', ['**Jarak** adalah panjang lintasan yang ditempuh (skalar). **Perpindahan** adalah perubahan posisi dari awal ke akhir, beserta arahnya (vektor).', 'Lari satu putaran lapangan 400 m: jaraknya 400 m, tetapi perpindahannya 0 karena kembali ke titik awal.'], [['jarak', 'panjang lintasan'], ['perpindahan', 'posisi akhir − posisi awal']]),
     S('Kelajuan dan kecepatan', ['Kelajuan rata-rata = jarak total : waktu total. Kecepatan rata-rata = perpindahan : waktu.', 'Gerak lurus beraturan (GLB): kelajuan tetap. Gerak lurus berubah beraturan (GLBB): kelajuan berubah secara teratur.'], [['kelajuan rata-rata', 'jarak total : waktu total']], 'Kelajuan rata-rata bukan rata-rata dari beberapa kelajuan; hitung dari jarak total dan waktu total.'),
@@ -58,6 +50,39 @@ export const SMP_FIS: Record<string, Content> = {
     Q('Penumpang terdorong ke depan saat bus mengerem mendadak. Peristiwa ini merupakan contoh …', ['hukum I Newton (inersia)', 'hukum III Newton', 'gaya gravitasi', 'tekanan udara'], 0, 'Tubuh penumpang cenderung tetap bergerak ke depan walaupun bus melambat.', 1),
     Q('Resultan gaya 20 N bekerja pada benda bermassa 4 kg. Percepatan benda adalah …', ['80 m/s²', '5 m/s²', '0,2 m/s²', '24 m/s²'], 1, 'a = ΣF / m = 20 : 4 = 5 m/s².'),
   ]),
+  // ---------- Tekanan zat dan penerapannya (Tahap 3 audit Fisika: IPA VIII rev 2024 Bab IV, 4 subbab) ----------
+  'FIS.C26.D.TEKANAN:PADAT': K([
+    S('Tekanan = gaya per luas', ['Tekanan adalah besar gaya yang bekerja pada setiap satuan luas bidang tekan. Satuannya pascal: 1 Pa = 1 N/m².', 'Untuk gaya yang sama, makin kecil luas bidang tekan, makin besar tekanannya.'], [['tekanan', 'P = F / A'], ['1 pascal', '1 N/m²']]),
+    S('Memperbesar atau memperkecil tekanan', ['Pisau tajam, paku runcing, dan jarum memperkecil luas bidang tekan supaya tekanannya besar.', 'Ban truk yang lebar, sepatu salju, dan pondasi bangunan memperbesar luas bidang tekan supaya tekanannya kecil dan tidak mudah ambles.'], undefined, 'Ubah cm² ke m² dulu: 1 cm² = 0,0001 m².'),
+  ], [
+    Q('Gaya 200 N bekerja pada bidang seluas 0,5 m². Tekanannya adalah …', ['100 Pa', '400 Pa', '200,5 Pa', '40 Pa'], 1, 'P = F / A = 200 : 0,5 = 400 Pa.', 1),
+    Q('Sebuah balok beratnya 60 N dapat diletakkan dengan sisi seluas 0,2 m² atau sisi seluas 0,05 m² menempel di lantai. Tekanan terbesar yang dapat diberikan balok pada lantai adalah …', ['300 Pa', '1.200 Pa', '12 Pa', '3 Pa'], 1, 'Tekanan terbesar terjadi pada luas terkecil: P = 60 : 0,05 = 1.200 Pa.'),
+    Q('Ban truk dibuat lebar dan jumlahnya banyak. Tujuannya adalah …', ['memperbesar tekanan truk pada jalan', 'memperkecil tekanan pada jalan agar ban tidak mudah ambles', 'menambah berat truk', 'menghilangkan gaya gesek'], 1, 'Luas bidang tekan yang besar membuat tekanan kecil, sehingga ban tidak mudah ambles ke tanah atau aspal.', 1),
+  ]),
+  'FIS.C26.D.TEKANAN:CAIR': K([
+    S('Tekanan hidrostatis', ['Zat cair yang diam menekan ke segala arah. Tekanannya bertambah dengan kedalaman: P = ρ × g × h.', 'Pada kedalaman yang sama di zat cair yang sama, tekanannya sama besar, apa pun bentuk wadahnya.'], [['tekanan hidrostatis', 'P = ρ × g × h']], 'Kedalaman h diukur dari permukaan zat cair ke titik yang ditanya.'),
+    S('Hukum Pascal dan Archimedes', ['**Hukum Pascal**: tekanan pada zat cair di ruang tertutup diteruskan sama besar ke segala arah, sehingga F₁ / A₁ = F₂ / A₂.', '**Hukum Archimedes**: benda yang tercelup mendapat gaya ke atas sebesar berat zat cair yang dipindahkannya. Benda terapung bila massa jenisnya lebih kecil daripada massa jenis zat cair.'], [['Hukum Pascal', 'F₁ / A₁ = F₂ / A₂'], ['gaya apung', 'Fa = ρ × g × V tercelup']]),
+  ], [
+    Q('Tekanan hidrostatis pada kedalaman 2 m di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²) adalah …', ['2.000 Pa', '20.000 Pa', '200 Pa', '5.000 Pa'], 1, 'P = ρgh = 1.000 × 10 × 2 = 20.000 Pa.'),
+    Q('Sebuah benda bervolume 0,002 m³ tercelup seluruhnya di dalam air (ρ = 1.000 kg/m³, g = 10 m/s²). Gaya apung yang dialami benda adalah …', ['2 N', '20 N', '200 N', '0,2 N'], 1, 'Fa = ρ × g × V = 1.000 × 10 × 0,002 = 20 N.'),
+    Q('Dinding bendungan dibuat makin tebal di bagian bawah karena …', ['air di bagian bawah lebih hangat', 'tekanan air makin besar di tempat yang makin dalam', 'air di bagian bawah lebih ringan', 'agar ikan tidak dapat lewat'], 1, 'Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.', 1),
+  ]),
+  'FIS.C26.D.TEKANAN:GAS': K([
+    S('Tekanan udara', ['Udara memiliki berat, sehingga menekan permukaan Bumi. Tekanan udara di permukaan laut sekitar 1 atm (76 cmHg, kira-kira 101.300 Pa) dan diukur dengan barometer.', 'Makin tinggi suatu tempat, makin tipis udaranya sehingga tekanan udaranya makin kecil: turun sekitar 1 cmHg setiap naik 100 m.'], [['1 atm', '76 cmHg ≈ 101.300 Pa'], ['ketinggian', 'turun ±1 cmHg tiap naik 100 m']]),
+    S('Tekanan gas di ruang tertutup', ['Gas dalam wadah tertutup menekan dinding wadah karena partikelnya terus bergerak dan menumbuk dinding.', 'Pada suhu tetap, makin kecil volume gas, makin besar tekanannya (Hukum Boyle). Itu sebabnya pompa sepeda terasa makin berat saat ditekan.'], [['Hukum Boyle', 'P₁ × V₁ = P₂ × V₂']], 'Hukum Boyle hanya berlaku bila suhu dan jumlah gas tetap.'),
+  ], [
+    Q('Tekanan udara di permukaan laut 76 cmHg. Perkiraan tekanan udara di sebuah kota yang terletak 500 m di atas permukaan laut adalah …', ['81 cmHg', '71 cmHg', '76 cmHg', '26 cmHg'], 1, 'Tekanan turun sekitar 1 cmHg setiap naik 100 m: 76 − 5 = 71 cmHg.'),
+    Q('Gas di dalam tabung tertutup bervolume 4 L bertekanan 1 atm. Jika volumenya ditekan menjadi 2 L pada suhu tetap, tekanannya menjadi …', ['0,5 atm', '2 atm', '4 atm', '8 atm'], 1, 'Hukum Boyle: 1 × 4 = P₂ × 2, jadi P₂ = 2 atm.'),
+    Q('Telinga terasa berdenging saat pesawat naik atau saat mendaki gunung karena …', ['tekanan udara di luar makin kecil daripada tekanan di dalam telinga', 'suhu udara di luar makin panas', 'kadar oksigen di udara bertambah', 'suara mesin terdengar makin keras'], 0, 'Di tempat tinggi tekanan udara luar mengecil, sedangkan tekanan di dalam telinga tengah belum menyesuaikan, sehingga gendang telinga terdorong ke luar.', 1),
+  ]),
+  'FIS.C26.D.TEKANAN:PENERAPAN': K([
+    S('Teknologi dari tekanan zat', ['Dongkrak dan rem hidrolik memakai Hukum Pascal: gaya kecil pada penghisap kecil menghasilkan gaya besar pada penghisap besar.', 'Kapal laut, kapal selam, dan balon udara memakai gaya apung. Kapal selam menyelam dengan mengisi tangki pemberat dengan air dan naik dengan mengosongkannya.'], [['dongkrak hidrolik', 'F₁ = F₂ × A₁ / A₂']]),
+    S('Tekanan pada makhluk hidup', ['Jantung memompa darah sehingga darah menekan dinding pembuluh. Tekanan darah ditulis seperti 120/80 mmHg: angka atas sistol (jantung memompa), angka bawah diastol (jantung mengendur).', 'Pada tumbuhan, air naik dari akar ke daun karena tekanan akar, kapilaritas pembuluh kayu, dan tarikan dari penguapan di daun (transpirasi).'], undefined, 'Tekanan darah diukur dengan tensimeter (sfigmomanometer).'),
+  ], [
+    Q('Dongkrak hidrolik memiliki penghisap kecil seluas 10 cm² dan penghisap besar seluas 500 cm². Gaya yang harus diberikan pada penghisap kecil untuk mengangkat mobil seberat 10.000 N adalah …', ['50 N', '200 N', '2.000 N', '500.000 N'], 1, 'F₁ / A₁ = F₂ / A₂: F₁ = 10.000 × 10 : 500 = 200 N.'),
+    Q('Agar kapal selam dapat menyelam, yang dilakukan adalah …', ['mengosongkan tangki pemberat dari air', 'mengisi tangki pemberat dengan air sehingga beratnya lebih besar daripada gaya apung', 'memanaskan udara di dalam kapal', 'memperbesar baling-baling kapal'], 1, 'Air di tangki pemberat menambah berat kapal; saat berat lebih besar daripada gaya apung, kapal tenggelam.', 1),
+    Q('Hasil pengukuran tekanan darah seseorang 120/80 mmHg. Angka 120 menunjukkan …', ['tekanan saat jantung mengendur (diastol)', 'tekanan saat jantung memompa darah keluar (sistol)', 'jumlah denyut nadi per menit', 'suhu tubuh'], 1, 'Angka atas adalah tekanan sistol, yaitu saat bilik jantung berkontraksi memompa darah.', 1),
+  ], 6),
   // ---------- Usaha, energi, dan kalor ----------
   'FIS.C26.D.ENERGI:C1': K([
     S('Usaha', ['Usaha dilakukan jika gaya memindahkan benda searah gaya: W = F × s, satuannya joule (J).', 'Mendorong tembok yang tidak bergeser: usahanya 0 walaupun terasa lelah.'], [['usaha', 'W = F × s']]),
@@ -67,7 +92,7 @@ export const SMP_FIS: Record<string, Content> = {
     Q('Energi potensial buah kelapa bermassa 2 kg pada ketinggian 10 m (g = 10 m/s²) adalah …', ['20 J', '200 J', '100 J', '2.000 J'], 1, 'Ep = m × g × h = 2 × 10 × 10 = 200 J.'),
     Q('Perubahan energi pada senter yang menyala adalah …', ['kimia → listrik → cahaya dan panas', 'listrik → kimia → cahaya', 'cahaya → listrik → kimia', 'panas → kimia → listrik'], 0, 'Baterai menyimpan energi kimia, diubah menjadi energi listrik, lalu lampu mengubahnya menjadi cahaya dan panas.'),
   ]),
-  'FIS.C26.D.ENERGI:C2': K([
+  'FIS.C26.D.SUHU:SUHU': K([
     S('Suhu dan termometer', ['Suhu menyatakan derajat panas suatu benda. Skala Kelvin: K = °C + 273.', 'Pada tekanan 1 atm, air membeku pada 0 °C (273 K) dan mendidih pada 100 °C (373 K).'], [['Celsius ke Kelvin', 'K = °C + 273']]),
     S('Tiga cara perpindahan kalor', ['**Konduksi**: kalor merambat melalui zat tanpa zatnya berpindah (sendok yang ujungnya panas).', '**Konveksi**: kalor berpindah bersama aliran zat (air mendidih, angin laut). **Radiasi**: tanpa medium (panas Matahari).'], [['konduksi', 'merambat'], ['konveksi', 'mengalir'], ['radiasi', 'memancar']], 'Konduksi menempel, konveksi mengalir, radiasi memancar.'),
   ], [
@@ -83,7 +108,7 @@ export const SMP_FIS: Record<string, Content> = {
     Q('Keuntungan mekanis sebuah katrol tetap tunggal adalah …', ['1', '2', '0,5', 'bergantung pada beban'], 0, 'Katrol tetap hanya membelokkan arah gaya, jadi gaya kuasa sama dengan beban.', 1),
     Q('Bidang miring sepanjang 5 m dengan tinggi 1 m dipakai untuk menaikkan peti seberat 1.000 N. Jika gesekan diabaikan, gaya minimal yang diperlukan adalah …', ['5.000 N', '200 N', '1.000 N', '500 N'], 1, 'KM = 5 : 1 = 5, jadi F = 1.000 : 5 = 200 N.'),
   ]),
-  'FIS.C26.D.ENERGI:KALOR': K([
+  'FIS.C26.D.SUHU:KALOR': K([
     S('Kalor dan kalor jenis', ['Kalor yang diperlukan untuk menaikkan suhu: Q = m × c × ΔT.', 'Kalor jenis (c) menunjukkan seberapa sulit suatu zat dipanaskan. Kalor jenis air besar (4.200 J/kg°C), sehingga air lambat panas dan lambat dingin.'], [['kalor', 'Q = m × c × ΔT']]),
     S('Perubahan wujud', ['Saat zat mencair atau mendidih, suhunya tetap walaupun kalor terus diberikan; kalor dipakai untuk mengubah wujud.', 'Kalor perubahan wujud: Q = m × L, dengan L kalor lebur atau kalor uap.'], [['perubahan wujud', 'Q = m × L']], 'Pada grafik suhu terhadap waktu, bagian yang mendatar menandakan perubahan wujud.'),
   ], [
@@ -100,14 +125,22 @@ export const SMP_FIS: Record<string, Content> = {
     Q('Gelombang dengan panjang gelombang 2 m dan frekuensi 5 Hz memiliki cepat rambat …', ['10 m/s', '2,5 m/s', '0,4 m/s', '7 m/s'], 0, 'v = λ × f = 2 × 5 = 10 m/s.', 1),
     Q('Contoh gelombang longitudinal adalah …', ['gelombang bunyi di udara', 'gelombang pada tali yang digoyangkan', 'gelombang cahaya', 'riak pada permukaan air'], 0, 'Bunyi merambat sebagai rapatan dan renggangan yang searah dengan arah rambatnya.'),
   ]),
-  'FIS.C26.D.GELOMBANG:C2': K([
-    S('Bunyi', ['Bunyi adalah gelombang longitudinal yang memerlukan medium, sehingga tidak dapat merambat di ruang hampa.', 'Tinggi nada ditentukan frekuensi; kuat bunyi ditentukan amplitudo. Telinga manusia mendengar 20–20.000 Hz (audiosonik).'], [['audiosonik', '20 – 20.000 Hz']]),
-    S('Pantulan bunyi dan alat optik', ['Gema dan sonar memanfaatkan pantulan bunyi: kedalaman = v × t : 2.', 'Mata, lup, dan kamera membentuk bayangan dengan lensa. Rabun jauh (miopi) dibantu lensa cekung, rabun dekat (hipermetropi) dibantu lensa cembung.'], [['kedalaman sonar', 'd = v × t / 2']], 'Waktu sonar dibagi 2 karena bunyi berangkat lalu kembali.'),
+  'FIS.C26.D.GELOMBANG:BUNYI': K([
+    S('Bunyi', ['Bunyi adalah gelombang longitudinal yang memerlukan medium, sehingga tidak dapat merambat di ruang hampa.', 'Tinggi nada ditentukan frekuensi; kuat bunyi ditentukan amplitudo. Telinga manusia mendengar 20–20.000 Hz (audiosonik); di bawahnya infrasonik, di atasnya ultrasonik.'], [['audiosonik', '20 – 20.000 Hz']]),
+    S('Pantulan bunyi', ['Bunyi pantul dapat memperkuat bunyi asli (pantulan dari dinding dekat), menimbulkan gaung (sebagian bersamaan dengan bunyi asli), atau gema (terdengar jelas setelah bunyi asli selesai).', 'Sonar dan USG memanfaatkan pantulan bunyi ultrasonik untuk mengukur jarak atau melihat bagian dalam tubuh.'], [['kedalaman sonar', 'd = v × t / 2']], 'Waktu sonar dibagi 2 karena bunyi berangkat lalu kembali.'),
   ], [
     Q('Astronaut di Bulan tidak dapat saling mendengar suara tanpa radio karena …', ['bunyi memerlukan medium untuk merambat', 'frekuensi suaranya terlalu tinggi', 'gravitasi Bulan kecil', 'suhunya terlalu dingin'], 0, 'Bulan hampir tidak memiliki udara, sedangkan bunyi butuh medium.', 1),
     Q('Sonar kapal menerima bunyi pantul 2 sekon setelah dipancarkan. Cepat rambat bunyi di air 1.500 m/s. Kedalaman laut adalah …', ['3.000 m', '1.500 m', '750 m', '6.000 m'], 1, 'd = v × t : 2 = 1.500 × 2 : 2 = 1.500 m.'),
-    Q('Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …', ['cekung', 'cembung', 'datar', 'silinder saja'], 0, 'Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.'),
+    Q('Kelelawar dapat terbang di tempat gelap tanpa menabrak karena memanfaatkan pantulan bunyi …', ['infrasonik', 'audiosonik', 'ultrasonik', 'yang frekuensinya di bawah 20 Hz'], 2, 'Kelelawar memancarkan bunyi ultrasonik (di atas 20.000 Hz) lalu menangkap pantulannya untuk mengetahui letak benda.', 1),
   ]),
+  'FIS.C26.D.GELOMBANG:OPTIK': K([
+    S('Mata dan cacat mata', ['Lensa mata membentuk bayangan nyata, terbalik, dan diperkecil di retina. Lensa mata dapat menebal atau memipih (berakomodasi) agar benda dekat dan jauh terlihat jelas.', 'Rabun jauh (miopi) dibantu lensa cekung; rabun dekat (hipermetropi) dibantu lensa cembung.'], [['miopi', 'lensa cekung'], ['hipermetropi', 'lensa cembung']]),
+    S('Lup, kamera, dan mikroskop', ['Lup adalah lensa cembung; benda diletakkan di antara lensa dan titik fokusnya sehingga tampak bayangan maya, tegak, dan diperbesar. Perbesaran lup untuk mata tidak berakomodasi: M = 25 cm : f.', 'Kamera membentuk bayangan nyata, terbalik, dan diperkecil pada sensor. Mikroskop memakai dua lensa cembung: objektif dan okuler.'], [['perbesaran lup', 'M = 25 / f']], 'Pada rumus lup, f ditulis dalam cm.'),
+  ], [
+    Q('Penderita rabun jauh (miopi) dibantu dengan kacamata berlensa …', ['cekung', 'cembung', 'datar', 'silinder saja'], 0, 'Lensa cekung menyebarkan cahaya sehingga bayangan benda jauh jatuh tepat di retina.'),
+    Q('Sebuah lup memiliki jarak fokus 5 cm. Perbesaran lup untuk mata yang tidak berakomodasi adalah …', ['5 kali', '20 kali', '125 kali', '0,2 kali'], 0, 'M = 25 : f = 25 : 5 = 5 kali.'),
+    Q('Bayangan yang dibentuk lensa mata pada retina bersifat …', ['maya, tegak, diperbesar', 'nyata, terbalik, diperkecil', 'maya, terbalik, sama besar', 'nyata, tegak, diperbesar'], 1, 'Lensa mata adalah lensa cembung dan benda berada jauh di depannya, sehingga bayangannya nyata, terbalik, dan diperkecil.'),
+  ], 6),
   'FIS.C26.D.GELOMBANG:CAHAYA': K([
     S('Pemantulan cahaya', ['Hukum pemantulan: sudut datang = sudut pantul, keduanya diukur dari garis normal.', 'Cermin datar membentuk bayangan maya, tegak, dan sama besar. Cermin cembung (spion) selalu membentuk bayangan maya, tegak, diperkecil.'], [['hukum pemantulan', 'sudut datang = sudut pantul']]),
     S('Pembiasan cahaya', ['Cahaya dibelokkan saat melewati dua medium dengan kerapatan berbeda: pensil tampak patah di dalam air, kolam tampak lebih dangkal.', 'Untuk lensa dan cermin lengkung berlaku 1/f = 1/s + 1/s′.'], [['lensa dan cermin lengkung', '1/f = 1/s + 1/s′']], 'Dari medium renggang ke rapat (udara → air), sinar dibelokkan mendekati garis normal.'),

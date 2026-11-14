@@ -1,48 +1,48 @@
 schemaVersion: 1
-code: FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_1
-familyCode: FIS.C26.D.GELOMBANG.F.BUNYI_DAN_OPTIK_1
+code: FIS.C26.D.TEKANAN.Q.GAS_2
+familyCode: FIS.C26.D.TEKANAN.F.GAS_2
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
 contextTag: PILOT
-difficulty: 1
+difficulty: 2
 estimatedMinutes: 2
 provenance:
   source: authored:pilot
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+  - concept: FIS.C26.D.TEKANAN.TEKANAN_GAS
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Astronaut di Bulan tidak dapat saling mendengar suara tanpa radio karena …
+  prompt: Gas di dalam tabung tertutup bervolume 4 L bertekanan 1 atm. Jika volumenya ditekan menjadi 2 L pada suhu tetap, tekanannya menjadi …
   options:
     - id: a
-      label: bunyi memerlukan medium untuk merambat
+      label: 0,5 atm
     - id: b
-      label: frekuensi suaranya terlalu tinggi
+      label: 2 atm
     - id: c
-      label: gravitasi Bulan kecil
+      label: 4 atm
     - id: d
-      label: suhunya terlalu dingin
+      label: 8 atm
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: a
+    optionId: b
   acceptedForms:
-    - bunyi memerlukan medium untuk merambat
+    - 2 atm
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+    - FIS.C26.D.TEKANAN.TEKANAN_GAS
   feedback:
-    correct: Bulan hampir tidak memiliki udara, sedangkan bunyi butuh medium.
-    incorrect: Jawabannya bunyi memerlukan medium untuk merambat. Bulan hampir tidak memiliki udara, sedangkan bunyi butuh medium.
+    correct: "Hukum Boyle: 1 × 4 = P₂ × 2, jadi P₂ = 2 atm."
+    incorrect: "Jawabannya 2 atm. Hukum Boyle: 1 × 4 = P₂ × 2, jadi P₂ = 2 atm."
 review:
   status: PROPOSED
   decision: D7

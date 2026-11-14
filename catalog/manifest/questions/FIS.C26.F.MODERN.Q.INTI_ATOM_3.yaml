@@ -1,48 +1,48 @@
 schemaVersion: 1
-code: FIS.C26.D.GELOMBANG.Q.BUNYI_DAN_OPTIK_2
-familyCode: FIS.C26.D.GELOMBANG.F.BUNYI_DAN_OPTIK_2
+code: FIS.C26.F.MODERN.Q.INTI_ATOM_3
+familyCode: FIS.C26.F.MODERN.F.INTI_ATOM_3
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
 contextTag: PILOT
-difficulty: 2
+difficulty: 1
 estimatedMinutes: 2
 provenance:
   source: authored:pilot
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+  - concept: FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Sonar kapal menerima bunyi pantul 2 sekon setelah dipancarkan. Cepat rambat bunyi di air 1.500 m/s. Kedalaman laut adalah …
+  prompt: Karbon-12 dan karbon-14 disebut isotop karena keduanya memiliki …
   options:
     - id: a
-      label: 750 m
+      label: jumlah neutron yang sama
     - id: b
-      label: 6.000 m
+      label: jumlah proton yang sama tetapi jumlah neutron berbeda
     - id: c
-      label: 3.000 m
+      label: nomor massa yang sama
     - id: d
-      label: 1.500 m
+      label: jumlah elektron yang berbeda
   hints: []
   answerFormat: OPTION
 rubric:
   schemaVersion: 1
   evaluator: option-v1
   answer:
-    optionId: d
+    optionId: b
   acceptedForms:
-    - 1.500 m
+    - jumlah proton yang sama tetapi jumlah neutron berbeda
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.GELOMBANG.BUNYI_DAN_OPTIK
+    - FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT
   feedback:
-    correct: "d = v × t : 2 = 1.500 × 2 : 2 = 1.500 m."
-    incorrect: "Jawabannya 1.500 m. d = v × t : 2 = 1.500 × 2 : 2 = 1.500 m."
+    correct: "Isotop: nomor atom (jumlah proton) sama, nomor massa berbeda karena jumlah neutronnya berbeda."
+    incorrect: "Jawabannya jumlah proton yang sama tetapi jumlah neutron berbeda. Isotop: nomor atom (jumlah proton) sama, nomor massa berbeda karena jumlah neutronnya berbeda."
 review:
   status: PROPOSED
   decision: D7

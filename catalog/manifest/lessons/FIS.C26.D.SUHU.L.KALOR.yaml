@@ -1,10 +1,10 @@
 schemaVersion: 1
-code: FIS.C26.D.ENERGI.L.KALOR
+code: FIS.C26.D.SUHU.L.KALOR
 title: Kalor jenis
 estimatedMinutes: 5
 aliases: []
 concepts:
-  - FIS.C26.D.ENERGI.KALOR_JENIS
+  - FIS.C26.D.SUHU.KALOR_JENIS
 blocks:
   - type: heading
     slide: 0
@@ -38,11 +38,11 @@ blocks:
     slide: 1
     text: Pada grafik suhu terhadap waktu, bagian yang mendatar menandakan perubahan wujud.
 checks:
-  - question: FIS.C26.D.ENERGI.Q.KALOR_1
+  - question: FIS.C26.D.SUHU.Q.KALOR_1
     ordinal: 0
     slideIndex: 1
     required: true
-practiceSet: FIS.C26.D.ENERGI.S.KALOR
+practiceSet: FIS.C26.D.SUHU.S.KALOR
 review:
   status: PROPOSED
   decision: D7

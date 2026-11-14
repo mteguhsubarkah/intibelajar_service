@@ -1,6 +1,6 @@
 schemaVersion: 1
-code: FIS.C26.D.ENERGI.Q.SUHU_DAN_PERPINDAHAN_KALOR_1
-familyCode: FIS.C26.D.ENERGI.F.SUHU_DAN_PERPINDAHAN_KALOR_1
+code: FIS.C26.D.TEKANAN.Q.CAIR_3
+familyCode: FIS.C26.D.TEKANAN.F.CAIR_3
 visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
@@ -12,21 +12,21 @@ provenance:
   note: Gaya asesmen Kurikulum Merdeka (Capaian Pembelajaran 2022/2024); disusun ulang untuk IntiBelajar, bukan salinan soal resmi.
 aliases: []
 concepts:
-  - concept: FIS.C26.D.ENERGI.SUHU_DAN_PERPINDAHAN_KALOR
+  - concept: FIS.C26.D.TEKANAN.TEKANAN_ZAT_CAIR
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Suhu 27 °C dalam skala Kelvin adalah …
+  prompt: Dinding bendungan dibuat makin tebal di bagian bawah karena …
   options:
     - id: a
-      label: 327 K
+      label: agar ikan tidak dapat lewat
     - id: b
-      label: 246 K
+      label: air di bagian bawah lebih hangat
     - id: c
-      label: 300 K
+      label: tekanan air makin besar di tempat yang makin dalam
     - id: d
-      label: 273 K
+      label: air di bagian bawah lebih ringan
   hints: []
   answerFormat: OPTION
 rubric:
@@ -35,14 +35,14 @@ rubric:
   answer:
     optionId: c
   acceptedForms:
-    - 300 K
+    - tekanan air makin besar di tempat yang makin dalam
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
-    - FIS.C26.D.ENERGI.SUHU_DAN_PERPINDAHAN_KALOR
+    - FIS.C26.D.TEKANAN.TEKANAN_ZAT_CAIR
   feedback:
-    correct: K = 27 + 273 = 300 K.
-    incorrect: Jawabannya 300 K. K = 27 + 273 = 300 K.
+    correct: Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
+    incorrect: Jawabannya tekanan air makin besar di tempat yang makin dalam. Tekanan hidrostatis sebanding dengan kedalaman, jadi bagian bawah menahan tekanan terbesar.
 review:
   status: PROPOSED
   decision: D7
