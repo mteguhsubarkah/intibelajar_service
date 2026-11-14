@@ -94,7 +94,12 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
   const text = response.text ?? '';
   const got = finalValue(text, unitKindOf(key.unit), { thousandsDot: key.thousandsDot === true });
-  if (!got) return judged;
+  if (!got) {
+    // angka polos tanpa "=" ("0,1", "10.000 kJ"): penilai numeric-v1 katalog membacanya sendiri dan memutuskan bila tegas
+    const decisive = i.source.rubric.evaluator === 'numeric-v1' && fixed && (fixed.verdict === 'CORRECT' || fixed.verdict === 'INCORRECT');
+    if (!decisive) return judged;
+    return fixed!.verdict === 'CORRECT' && judged.verdict === 'CORRECT' ? judged : fixed!;
+  }
   const right = got.values.some(value => withinTolerance(value, key.value!, key.tolerance?.relative, key.tolerance?.floor));
   console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', bacaan: got.values.length, ai: judged.verdict }));
   if (right) {
@@ -103,6 +108,17 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
     // benar menurut angka: tanda salah dari AI tidak berlaku lagi
     return { ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
       evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation;
+  }
+  // Pengecoh yang dicatat di rubrik (angka hasil akhir sama dengan pola NUMERIC): penjelasan katalog yang sudah ditinjau
+  // dipakai, bukan tebakan AI. Inti lain tetap memakai bukti dari AI.
+  const trap = i.source.rubric.misconceptionMap.find(m => m.pattern.kind === 'NUMERIC' && typeof m.pattern.value === 'number'
+    && got.values.some(value => withinTolerance(value, m.pattern.value!, key.tolerance?.relative, key.tolerance?.floor)));
+  if (trap && i.concepts.some(c => c.code === trap.conceptCode)) {
+    const at = text.lastIndexOf(got.quote);
+    return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, misconceptionCode: trap.misconceptionCode,
+      evidence: [...judged.evidence.filter(e => e.conceptCode !== trap.conceptCode && e.classification !== 'MISCONCEPTION_EVIDENCED'), { conceptCode: trap.conceptCode,
+        classification: 'MISCONCEPTION_EVIDENCED', rationale: trap.explanation, misconceptionCode: trap.misconceptionCode,
+        refs: at >= 0 ? [{ kind: 'SPAN', start: at, end: at + got.quote.length, quote: got.quote }] : [], uncertaintyReasons: [] }] } as Evaluation;
   }
   if (judged.verdict === 'INCORRECT' && judged.evidence.some(e => e.classification === 'MISCONCEPTION_EVIDENCED')) return judged;
   // salah menurut angka, padahal AI tidak menemukan yang salah: hasil akhirnya yang ditandai, pada inti langkah "hitung" terakhir

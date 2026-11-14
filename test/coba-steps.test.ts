@@ -133,3 +133,23 @@ test('trial route steps/check follows the contract; the key never reaches the br
     assert.equal((await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1, reply: 'x'.repeat(301) } })).statusCode, 400);
   } finally { await app.close(); }
 });
+
+test('trial check: a catalogued trap keeps its reviewed explanation, and a bare number is graded by the catalog, not the AI', async () => {
+  // an AI that marks every answer correct without evidence: the rubric must still decide
+  const lenient = {
+    evaluate: async () => ({ verdict: 'CORRECT', reason: null, value: null, misconceptionCode: null, evidence: [], revealedAnswer: null }) as any,
+    tutor: async () => ({ text: '', quick: [], hintsUsed: 0 }),
+  };
+  const s = trialAssessment(load, lenient);
+  const check = (itemId: string, answer: string) => s.check('browser-c', { sessionId: 'c', itemId, answer });
+  const bare = await check('soal-peta', '0,1');
+  assert.equal(bare.correct, false, 'a bare 0,1 is still hours');
+  assert.equal(bare.items?.find((x: any) => x.id === 'mat-d-rasio-waktu')?.reason, '0,1 itu masih dalam jam. Soalnya minta menit, jadi kalikan 60.');
+  const worked = await check('soal-sawah', '10.000 × 10% = 1.000\n1.000 × 10% = 100\nenergi elang = 10.000 kJ');
+  assert.equal(worked.correct, false);
+  const gap = worked.items?.find((x: any) => x.state === 'gap');
+  assert.deepEqual({ id: gap?.id, reason: gap?.reason, quote: gap?.quote }, { id: 'bio-d-ekologi-jejaring', reason: 'Energi tidak pindah utuh. Tiap naik satu tingkat hanya sekitar 10% yang diteruskan.', quote: '10.000 kJ' });
+  assert.equal((await check('soal-sawah', '10.000 → 1.000 → 100 → 10 kJ')).correct, true);
+  assert.equal((await check('soal-freezer', '310 − 273 = 37\n37 − (−5) = 42 °C')).correct, true);
+  assert.equal((await check('soal-batu', '60 : 20 = 3 g/cm³')).correct, true);
+});
