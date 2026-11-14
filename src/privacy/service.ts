@@ -10,10 +10,11 @@ export const purposes=['LEARNING_DATA','AI_PROCESSING','IMAGE_UPLOAD','PRODUCT_A
 export const policyVersion='synthetic-dev-v1';
 export const policyText='SIMULASI DEVELOPMENT — hanya identitas dan data sintetis. Persetujuan ini bukan persetujuan produksi yang sah. Tidak ada panggilan AI, unggahan gambar, atau analitik eksternal. Guardian sintetis memilih setiap tujuan secara terpisah. Teks produksi menunggu persetujuan penasihat hukum.';
 export const policyHash=hash(policyText);
-export async function createPendingLearner(tx:Tx) {
+/** displayName: an optional pre-filled profile name (password sign-up under self-consent: the chosen username). */
+export async function createPendingLearner(tx:Tx,displayName:string|null=null) {
   const id=uuid();
   await sql`insert into learner(id,status,age_band,age_band_source,consent_deadline_at) values (${id},'PENDING_CONSENT','UNKNOWN','SELF_DECLARED',now()+interval '7 days')`.execute(tx);
-  await tx.insertInto('student_profile').values({learner_id:id,display_name:null,grade:null}).execute();return id;
+  await tx.insertInto('student_profile').values({learner_id:id,display_name:displayName,grade:null}).execute();return id;
 }
 export async function checkSigninLearner(tx:Tx,id:string) {await lockLearner(tx,id);}
 export async function authorizeMutation<T>(tx:Tx,p:Principal,run:()=>Promise<T>) {
