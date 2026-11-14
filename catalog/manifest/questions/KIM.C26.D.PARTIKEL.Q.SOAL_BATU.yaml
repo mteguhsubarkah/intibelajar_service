@@ -26,7 +26,7 @@ body:
   hints:
     - step: 1
       conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
-      lead: "Air naik karena didorong batu. Jadi volume batu sama dengan kenaikan airnya. Setelah itu, massa jenis = massa : volume."
+      lead: "Kenaikan air merupakan volume dari benda yang dimasukkan. Untuk menentukan massa jenis sebuah benda, kita dapat menggunakan persamaan massa jenis = massa : volume."
       note: "volume batu = kenaikan air; ρ = m : V"
     - step: 2
       conceptCode: FIS.C26.D.UKUR.BESARAN_DAN_SATUAN
