@@ -210,10 +210,12 @@ const STRUCTURE: PilotTopic[] = [
     cores: [
     { id: "C1", title: "Perbandingan senilai" },
     { id: "WAKTU", title: "Konversi satuan waktu", sub: "Jam, menit, detik, dan waktu dalam bentuk desimal" },
-    { id: "C2", title: "Skala dan laju" },
+    // "Skala dan laju" dipecah dua (permintaan pemilik produk, /coba SMP): kode inti lama tetap milik Skala.
+    { id: "C2", title: "Skala", codeFrom: "Skala dan laju", sub: "Perbandingan jarak pada peta dengan jarak sebenarnya" },
+    { id: "LAJU", title: "Laju (kecepatan)", sub: "Kecepatan = jarak tempuh : waktu tempuh" },
     { id: "BERBALIK", title: "Perbandingan berbalik nilai", capstone: true },
     ],
-    edges: [["C1", "BERBALIK", "S"], ["WAKTU", "C2", "S"]],
+    edges: [["C1", "BERBALIK", "S"], ["WAKTU", "LAJU", "S"], ["C2", "LAJU", "S"]],
   },
   {
     code: "MAT.C26.D.ALJABAR", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,

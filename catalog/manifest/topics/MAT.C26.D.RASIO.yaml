@@ -37,7 +37,8 @@ concepts:
       - ns: MAP
         value: mat-d-rasio-waktu
   - code: MAT.C26.D.RASIO.SKALA_DAN_LAJU
-    title: Skala dan laju
+    title: Skala
+    subtitle: Perbandingan jarak pada peta dengan jarak sebenarnya
     objectives: []
     misconceptions: []
     ordinal: 3
@@ -49,11 +50,25 @@ concepts:
     aliases:
       - ns: MAP
         value: mat-d-rasio-c2
+  - code: MAT.C26.D.RASIO.LAJU_KECEPATAN
+    title: Laju (kecepatan)
+    subtitle: "Kecepatan = jarak tempuh : waktu tempuh"
+    objectives: []
+    misconceptions: []
+    ordinal: 4
+    estimatedMinutes: 4
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: READY
+    aliases:
+      - ns: MAP
+        value: mat-d-rasio-laju
   - code: MAT.C26.D.RASIO.PERBANDINGAN_BERBALIK_NILAI
     title: Perbandingan berbalik nilai
     objectives: []
     misconceptions: []
-    ordinal: 4
+    ordinal: 5
     estimatedMinutes: 5
     grade: 7
     hidden: false
@@ -66,8 +81,11 @@ prerequisites:
   - concept: MAT.C26.D.RASIO.PERBANDINGAN_BERBALIK_NILAI
     requires: MAT.C26.D.RASIO.PERBANDINGAN_SENILAI
     kind: SOFT
-  - concept: MAT.C26.D.RASIO.SKALA_DAN_LAJU
+  - concept: MAT.C26.D.RASIO.LAJU_KECEPATAN
     requires: MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU
+    kind: SOFT
+  - concept: MAT.C26.D.RASIO.LAJU_KECEPATAN
+    requires: MAT.C26.D.RASIO.SKALA_DAN_LAJU
     kind: SOFT
 review:
   status: PROPOSED

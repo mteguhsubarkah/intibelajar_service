@@ -321,19 +321,21 @@ test('tower substitution identifies special-angle misconception in the next clau
  assert.equal(evaluateTower(input(tower,text('tan 30 = 20/x, x = 20/(1/2), x = 20√3'))).verdict,'CORRECT');
 });
 
-test('/coba SMP dan Biologi SMA (D8): satuan menit, °C, g/cm³, kJ, sel; titik ribuan; pangkat superskrip', () => {
+test('/coba SMP dan Biologi SMA (D8): satuan km/jam, °C, g/cm³, kali, sel; titik ribuan; pangkat superskrip', () => {
   const verdict = (code: string, t: string) => {
     const r = evaluateNumeric(input(question(code), text(t)));
     return r.verdict === 'INCORRECT' ? `INCORRECT:${r.misconceptionCode}` : r.verdict === 'UNREADABLE' ? `UNREADABLE:${r.reason}` : r.verdict;
   };
   const peta = 'MAT.C26.D.RASIO.Q.SOAL_PETA', freezer = 'FIS.C26.D.SUHU.Q.SOAL_FREEZER', batu = 'KIM.C26.D.PARTIKEL.Q.SOAL_BATU',
     sawah = 'BIO.C26.D.EKOLOGI.Q.SOAL_SAWAH', nasi = 'BIO.C26.E.MIKROBA.Q.SOAL_NASI';
-  for (const t of ['6', '6 menit', '6 mnt']) assert.equal(verdict(peta, t), 'CORRECT', t);
-  assert.equal(verdict(peta, '0,1'), 'INCORRECT:MASIH_DALAM_JAM');
-  // thousandsDot: "10.000" adalah sepuluh ribu (jarak masih cm), bukan 10 (laju terbalik)
-  assert.equal(verdict(peta, '10.000'), 'INCORRECT:JARAK_BELUM_KM');
-  assert.equal(verdict(peta, '10'), 'INCORRECT:LAJU_TERBALIK');
-  assert.equal(verdict(peta, '6 jam'), 'UNREADABLE:unknown-unit');
+  for (const t of ['30', '30 km/jam', '30 km / jam', '30 km/j']) assert.equal(verdict(peta, t), 'CORRECT', t);
+  // thousandsDot: "3.000.000" adalah tiga juta (jarak masih cm), bukan 3
+  assert.equal(verdict(peta, '3.000.000 km/jam'), 'INCORRECT:JARAK_BELUM_KM');
+  assert.equal(verdict(peta, '60'), 'INCORRECT:BERHENTI_DI_JARAK');
+  assert.equal(verdict(peta, '120 km/jam'), 'INCORRECT:LAJU_DIKALI_WAKTU');
+  assert.equal(verdict(peta, '0,03'), 'INCORRECT:LAJU_TERBALIK');
+  assert.equal(verdict(peta, '6'), 'INCORRECT:SKALA_DIABAIKAN');
+  assert.equal(verdict(peta, '30 menit'), 'UNREADABLE:unknown-unit');
   for (const t of ['42', '42 °C', '42°C', '42 ℃', '42 derajat celcius', '42°']) assert.equal(verdict(freezer, t), 'CORRECT', t);
   assert.equal(verdict(freezer, '−42 °C'), 'INCORRECT:SELISIH_NEGATIF');
   assert.equal(verdict(freezer, '32 °C'), 'INCORRECT:MENGURANGI_NEGATIF_KELIRU');
@@ -343,11 +345,11 @@ test('/coba SMP dan Biologi SMA (D8): satuan menit, °C, g/cm³, kJ, sel; titik 
   assert.equal(verdict(batu, '1 g/cm³'), 'INCORRECT:null');
   assert.equal(verdict(batu, '0,33 g/cm³'), 'INCORRECT:PEMBAGIAN_TERBALIK');
   assert.equal(verdict(batu, '1.200'), 'INCORRECT:MASSA_DIKALI_VOLUME');
-  for (const t of ['10', '10 kJ', '10 kj']) assert.equal(verdict(sawah, t), 'CORRECT', t);
-  // jebakan utama: energi pindah utuh ditulis dengan titik ribuan
-  assert.equal(verdict(sawah, '10.000 kJ'), 'INCORRECT:ENERGI_PINDAH_UTUH');
-  assert.equal(verdict(sawah, '1.000 kJ'), 'INCORRECT:PERPINDAHAN_KURANG');
-  assert.equal(verdict(sawah, '1 kJ'), 'INCORRECT:PERPINDAHAN_DIHITUNG_PER_MAKHLUK');
+  for (const t of ['3', '3 kali', '3 perpindahan']) assert.equal(verdict(sawah, t), 'CORRECT', t);
+  assert.equal(verdict(sawah, '4 kali'), 'INCORRECT:PERPINDAHAN_DIHITUNG_PER_MAKHLUK');
+  assert.equal(verdict(sawah, '2'), 'INCORRECT:PERPINDAHAN_KURANG');
+  // "2 kali 3" (perkalian) tidak pernah terbaca sebagai 2 kali
+  assert.equal(verdict(sawah, '2 kali 3'), 'UNREADABLE:malformed-number');
   for (const t of ['64', '64 sel', '64 bakteri', '2⁶']) assert.equal(verdict(nasi, t), 'CORRECT', t);
   assert.equal(verdict(nasi, '12'), 'INCORRECT:PANGKAT_DIANGGAP_PERKALIAN');
   assert.equal(verdict(nasi, '2⁵'), 'INCORRECT:JUMLAH_PEMBELAHAN_KELIRU');

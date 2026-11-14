@@ -55,19 +55,22 @@ test('step value: the last number after "=", units and words around it are ignor
 });
 
 test('Coba sekarang rules: key, half-way answers, wrong numbers, exact words; free text is left to the AI', () => {
-  assert.equal(kind('soal-peta', 1, '0,1 jam'), 'correct');
-  assert.equal(kind('soal-peta', 1, '3 km'), 'partial');
-  assert.equal(kind('soal-peta', 1, '300.000 cm'), 'partial');
-  assert.equal(kind('soal-peta', 1, '6 menit'), 'partial');
-  assert.equal(kind('soal-peta', 1, '0,5'), 'incorrect');
-  assert.equal(kind('soal-peta', 2, '6'), 'correct');
-  assert.equal(kind('soal-peta', 2, 'enam menit'), 'undecided');
+  assert.equal(kind('soal-peta', 1, '60 km'), 'correct');
+  assert.equal(kind('soal-peta', 1, '12 × 500.000 = 6.000.000 cm'), 'partial');
+  assert.equal(kind('soal-peta', 1, '600 km'), 'partial');
+  assert.equal(kind('soal-peta', 1, '50'), 'incorrect');
+  assert.equal(kind('soal-peta', 2, '60 : 2 = 30 km/jam'), 'correct');
+  assert.equal(kind('soal-peta', 2, '60 × 2 = 120'), 'partial');
+  assert.equal(kind('soal-peta', 2, 'tiga puluh'), 'undecided');
   assert.equal(kind('soal-freezer', 1, '37 °C'), 'correct');
   assert.equal(kind('soal-freezer', 2, '37 − (−5) = 32'), 'partial');
   assert.equal(kind('soal-batu', 1, '20 mL'), 'correct');
   assert.equal(kind('soal-batu', 2, '60 × 20 = 1.200'), 'partial');
-  assert.equal(kind('soal-sawah', 2, '10.000 kJ'), 'partial', '10.000 is ten thousand here, not the key 10');
-  assert.equal(kind('soal-sawah', 2, '10 kJ'), 'correct');
+  assert.equal(kind('soal-sawah', 1, 'Padi'), 'correct');
+  assert.equal(kind('soal-sawah', 1, 'tikus'), 'incorrect');
+  assert.equal(kind('soal-sawah', 1, 'yang tumbuhan itu'), 'undecided');
+  assert.equal(kind('soal-sawah', 2, '2 kali'), 'correct');
+  assert.equal(kind('soal-sawah', 2, '3'), 'partial');
   assert.equal(kind('soal-nasi', 2, '2 × 6 = 12'), 'partial');
   assert.equal(kind('soal-menara', 1, 'Tidak.'), 'correct');
   assert.equal(kind('soal-menara', 1, 'iya'), 'incorrect');
@@ -125,10 +128,10 @@ test('trial route steps/check follows the contract; the key never reaches the br
   const ai = { evaluate: async (i: TrialItem, response: Parameters<typeof evaluate>[0]['response']) => evaluate({ ...i.source, response }), tutor: async () => ({ text: '', quick: [], hintsUsed: 0 }) };
   registerTrialRoutes(app, null as unknown as Connection, trialAssessment(load, ai));
   try {
-    const r = await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1, reply: '0,1 jam' } });
+    const r = await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1, reply: '60 km' } });
     assert.equal(r.statusCode, 200, r.body);
-    assert.deepEqual(r.json(), { correct: true, partial: false, feedback: 'Pas, 3 km : 30 km/jam = 0,1 jam. Skala dan lajunya udah benar.', judge: 'rule', coreId: 'mat-d-rasio-c2' });
-    assert.doesNotMatch(r.body, /key|0,1 jam \(/);
+    assert.deepEqual(r.json(), { correct: true, partial: false, feedback: 'Pas, 12 × 500.000 = 6.000.000 cm = 60 km.', judge: 'rule', coreId: 'mat-d-rasio-c2' });
+    assert.doesNotMatch(r.body, /key|60 km \(/);
     assert.equal((await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1 } })).statusCode, 400);
     assert.equal((await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1, reply: 'x'.repeat(301) } })).statusCode, 400);
   } finally { await app.close(); }
@@ -142,14 +145,15 @@ test('trial check: a catalogued trap keeps its reviewed explanation, and a bare 
   };
   const s = trialAssessment(load, lenient);
   const check = (itemId: string, answer: string) => s.check('browser-c', { sessionId: 'c', itemId, answer });
-  const bare = await check('soal-peta', '0,1');
-  assert.equal(bare.correct, false, 'a bare 0,1 is still hours');
-  assert.equal(bare.items?.find((x: any) => x.id === 'mat-d-rasio-waktu')?.reason, '0,1 itu masih dalam jam. Soalnya minta menit, jadi kalikan 60.');
-  const worked = await check('soal-sawah', '10.000 × 10% = 1.000\n1.000 × 10% = 100\nenergi elang = 10.000 kJ');
+  const bare = await check('soal-peta', '60');
+  assert.equal(bare.correct, false, 'a bare 60 is still the distance');
+  assert.equal(bare.items?.find((x: any) => x.id === 'mat-d-rasio-laju')?.reason, '60 km itu jarak aslinya, sudah benar. Sekarang hitung kecepatannya: v = s : t.');
+  const worked = await check('soal-peta', '12 × 500.000 = 6.000.000 cm\nv = 6.000.000 : 2 = 3.000.000 km/jam');
   assert.equal(worked.correct, false);
   const gap = worked.items?.find((x: any) => x.state === 'gap');
-  assert.deepEqual({ id: gap?.id, reason: gap?.reason, quote: gap?.quote }, { id: 'bio-d-ekologi-jejaring', reason: 'Energi tidak pindah utuh. Tiap naik satu tingkat hanya sekitar 10% yang diteruskan.', quote: '10.000 kJ' });
-  assert.equal((await check('soal-sawah', '10.000 → 1.000 → 100 → 10 kJ')).correct, true);
+  assert.deepEqual({ id: gap?.id, reason: gap?.reason, quote: gap?.quote }, { id: 'mat-d-rasio-c2', reason: 'Jaraknya masih dalam cm (6.000.000 cm). Ubah ke km dulu: 1 km = 100.000 cm.', quote: '3.000.000 km/jam' });
+  assert.equal((await check('soal-sawah', '4 kali')).correct, false);
+  assert.equal((await check('soal-sawah', 'padi → tikus → ular → elang = 3 kali')).correct, true);
   assert.equal((await check('soal-freezer', '310 − 273 = 37\n37 − (−5) = 42 °C')).correct, true);
   assert.equal((await check('soal-batu', '60 : 20 = 3 g/cm³')).correct, true);
 });

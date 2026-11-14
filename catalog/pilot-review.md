@@ -1128,7 +1128,7 @@ Materi: 5 · Soal: 15
 
 ## Rasio, skala, dan laju (MAT.C26.D.RASIO)
 
-Materi: 4 · Soal: 12
+Materi: 5 · Soal: 15
 
 - [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_1** — Harga 4 pensil Rp10.000. Harga 10 pensil yang sama adalah …
   A. Rp20.000 · B. Rp25.000 · C. Rp40.000 · D. Rp4.000
@@ -1151,12 +1151,21 @@ Materi: 4 · Soal: 12
 - [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1** — Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …
   A. 20 km · B. 200 km · C. 2.000 km · D. 2 km
   Kunci: **A** · 4 × 500.000 = 2.000.000 cm = 20 km.
-- [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_2** — Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …
-  A. 12 liter/menit · B. 960 liter/menit · C. 16 liter/menit · D. 15 liter/menit
-  Kunci: **D** · Debit = volume : waktu = 120 : 8 = 15 liter per menit.
-- [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_3** — Jarak sebenarnya 15 km digambar 5 cm pada sebuah denah. Skala denah tersebut adalah …
-  A. 1 : 3.000 · B. 1 : 30.000 · C. 1 : 300.000 · D. 1 : 3.000.000
-  Kunci: **C** · 15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000.
+- [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_2** — Jarak sebenarnya 15 km digambar 5 cm pada sebuah denah. Skala denah tersebut adalah …
+  A. 1 : 3.000.000 · B. 1 : 3.000 · C. 1 : 30.000 · D. 1 : 300.000
+  Kunci: **D** · 15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000.
+- [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_3** — Pada peta berskala 1 : 250.000, jarak dua desa 6 cm. Jarak sebenarnya kedua desa adalah …
+  A. 150 km · B. 1.500 km · C. 15 km · D. 1,5 km
+  Kunci: **C** · 6 × 250.000 = 1.500.000 cm = 15 km.
+- [ ] **MAT.C26.D.RASIO.Q.LAJU_1** — Ani berjalan 6 km dalam 2 jam. Kecepatan Ani adalah …
+  A. 12 km/jam · B. 4 km/jam · C. 8 km/jam · D. 3 km/jam
+  Kunci: **D** · v = 6 : 2 = 3 km/jam.
+- [ ] **MAT.C26.D.RASIO.Q.LAJU_2** — Sepeda motor menempuh 120 km dalam 3 jam. Kecepatan rata-ratanya adalah …
+  A. 40 km/jam · B. 360 km/jam · C. 30 km/jam · D. 0,025 km/jam
+  Kunci: **A** · v = 120 : 3 = 40 km/jam.
+- [ ] **MAT.C26.D.RASIO.Q.LAJU_3** — Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …
+  A. 16 liter/menit · B. 15 liter/menit · C. 12 liter/menit · D. 960 liter/menit
+  Kunci: **B** · Debit = volume : waktu = 120 : 8 = 15 liter per menit.
 - [ ] **MAT.C26.D.RASIO.Q.BERBALIK_1** — Suatu pekerjaan selesai oleh 8 orang dalam 15 hari. Jika dikerjakan 12 orang, pekerjaan selesai dalam … hari.
   A. 22,5 · B. 10 · C. 12 · D. 18
   Kunci: **B** · 8 × 15 = 120 hari-kerja; 120 : 12 = 10 hari.

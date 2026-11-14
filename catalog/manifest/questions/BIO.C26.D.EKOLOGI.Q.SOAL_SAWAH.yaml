@@ -14,138 +14,119 @@ aliases:
   - ns: ITEM
     value: soal-sawah
 concepts:
-  - concept: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+  - concept: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
     role: PRIMARY
     assessable: true
-  - concept: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+  - concept: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Di sawah terdapat rantai makanan padi → tikus → ular → elang. Energi yang tersimpan pada padi 10.000 kJ. Berapa energi yang sampai ke elang?
+  prompt: Di sawah terdapat rantai makanan padi → tikus → ular → elang. Ada berapa kali perpindahan energi dalam rantai makanan tersebut?
   hints:
     - step: 1
-      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
-      lead: "Energi mengalir satu arah dari produsen ke konsumen, dan berkurang setiap kali pindah. Hitung panahnya: berapa kali energi berpindah?"
-      note: jumlah perpindahan = jumlah panah
-    - step: 2
       conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
-      lead: Padi produsen, tikus konsumen I, ular konsumen II, elang konsumen III. Tiap naik satu tingkat, cuma sekitar 10% energi yang diteruskan.
-      note: energi berikutnya = 10% × energi sebelumnya
+      lead: Di rantai makanan, produsen adalah makhluk hidup yang membuat makanannya sendiri, biasanya tumbuhan. Yang memakan produsen disebut konsumen I, yang memakan konsumen I disebut konsumen II, begitu seterusnya.
+      note: produsen → konsumen I → konsumen II → konsumen III
+    - step: 2
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      lead: Energi mengalir satu arah, dari produsen ke konsumen. Setiap kali energi pindah dari produsen ke konsumen I, atau dari satu konsumen ke konsumen berikutnya, itu dihitung 1 perpindahan energi.
+      note: 1 panah = 1 perpindahan energi
   answerFormat: NUMBER
-  answerExample: energi di elang = … kJ
+  answerExample: … kali
 rubric:
   schemaVersion: 1
   evaluator: numeric-v1
   answer:
-    value: 10
-    unit: kJ
+    value: 3
+    unit: kali
     tolerance:
       relative: 0.02
       floor: 1
-    thousandsDot: true
   acceptedForms:
-    - 10 kJ
-    - 10.000 → 1.000 → 100 → 10 kJ
+    - 3 kali
+    - "padi → tikus, tikus → ular, ular → elang: 3 perpindahan"
   solutionPaths:
     - code: UTAMA
       label: langkah per inti
       steps:
         - code: S1
-          description: "Ada 3 panah: padi → tikus → ular → elang, jadi energi berpindah 3 kali"
-          concepts:
-            - code: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
-              role: REQUIRED
-        - code: S2
-          description: "Tiap perpindahan 10%: 10.000 → 1.000 → 100 → 10 kJ"
+          description: Padi produsen; tikus konsumen I; ular konsumen II; elang konsumen III
           concepts:
             - code: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+              role: REQUIRED
+        - code: S2
+          description: Ada 3 panah, jadi energi berpindah 3 kali
+          concepts:
+            - code: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
               role: REQUIRED
   misconceptionMap:
     - pattern:
         kind: NUMERIC
-        value: 1
+        value: 4
       conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
       misconceptionCode: PERPINDAHAN_DIHITUNG_PER_MAKHLUK
-      explanation: "Kamu menghitung 4 kali pindah. Hitung panahnya: padi → tikus → ular → elang ada 3 panah."
+      explanation: Ada 4 makhluk, tapi panahnya cuma 3. Energi berpindah di setiap panah.
     - pattern:
         kind: NUMERIC
-        value: 100
+        value: 2
       conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
       misconceptionCode: PERPINDAHAN_KURANG
-      explanation: Itu baru sampai ular. Masih ada satu perpindahan lagi ke elang.
-    - pattern:
-        kind: NUMERIC
-        value: 1000
-      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
-      misconceptionCode: PERPINDAHAN_KURANG
-      explanation: Itu energi di tikus. Lanjutkan ke ular, lalu ke elang.
-    - pattern:
-        kind: NUMERIC
-        value: 10000
-      conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
-      misconceptionCode: ENERGI_PINDAH_UTUH
-      explanation: Energi tidak pindah utuh. Tiap naik satu tingkat hanya sekitar 10% yang diteruskan.
+      explanation: Hitung lagi panahnya dari padi sampai elang, jangan berhenti di ular.
   finalAnswerEvidence:
-    - BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
     - BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
+    - BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
   lessonFor:
-    BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI: BIO.C26.D.EKOLOGI.L.INTERAKSI_DAN_ALIRAN_ENERGI
     BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN: BIO.C26.D.EKOLOGI.L.JEJARING
+    BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI: BIO.C26.D.EKOLOGI.L.INTERAKSI_DAN_ALIRAN_ENERGI
   recommend:
     - misconceptionCode: PERPINDAHAN_DIHITUNG_PER_MAKHLUK
       conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
-      keyFormula: jumlah perpindahan = jumlah panah
-    - misconceptionCode: ENERGI_PINDAH_UTUH
-      conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
-      keyFormula: energi berikutnya = 10% × energi sebelumnya
+      keyFormula: 1 panah = 1 perpindahan energi
     - misconceptionCode: PERPINDAHAN_KURANG
       conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
-      keyFormula: jumlah perpindahan = jumlah panah
+      keyFormula: 1 panah = 1 perpindahan energi
   feedback:
-    correct: Ada 3 panah. 10.000 → 1.000 → 100 → 10 kJ.
-    incorrect: "Jawabannya 10 kJ. Ada 3 panah, dan tiap perpindahan hanya sekitar 10%: 10.000 → 1.000 → 100 → 10 kJ."
+    correct: "Padi → tikus, tikus → ular, ular → elang: energi berpindah 3 kali."
+    incorrect: Jawabannya 3 kali. Ada 3 panah (padi → tikus, tikus → ular, ular → elang), dan setiap panah satu perpindahan energi.
   workedSolution:
     steps:
+      - title: Kenali produsen dan konsumen
+        body: padi produsen, tikus konsumen I, ular konsumen II, elang konsumen III
       - title: Hitung panahnya
-        body: "padi → tikus → ular → elang: 3 panah, 3 kali pindah"
-      - title: Kurangi 10% tiap pindah
-        body: 10.000 → 1.000 → 100 → 10 kJ
+        body: "padi → tikus, tikus → ular, ular → elang: 3 perpindahan energi"
     after:
-      - energi di elang 10 kJ
+      - 3 panah, jadi 3 kali perpindahan energi
   cobaSteps:
     - step: 1
-      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
-      prompt: Energi berpindah … kali
-      key: 3 kali (ada 3 panah)
-      correct: "Pas, ada 3 panah: padi → tikus → ular → elang."
-      answer:
-        value: 3
-        tolerance:
-          relative: 0.02
-          floor: 1
-      partials:
-        - value: 4
-          explanation: Ada 4 makhluk, tapi panahnya cuma 3. Energi pindah di tiap panah.
-    - step: 2
       conceptCode: BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN
-      prompt: Energi yang sampai ke elang = … kJ
-      key: 10 kJ (10.000 → 1.000 → 100 → 10)
-      correct: Pas, 10.000 → 1.000 → 100 → 10 kJ.
+      prompt: Produsen di rantai ini adalah …
+      key: padi (membuat makanannya sendiri)
+      correct: "Betul, padi produsennya: ia membuat makanannya sendiri."
+      words:
+        correct:
+          - padi
+          - tanaman padi
+          - pohon padi
+        wrong:
+          - words:
+              - tikus
+              - ular
+              - elang
+            explanation: Itu konsumen, karena ia memakan makhluk lain. Produsen membuat makanannya sendiri.
+    - step: 2
+      conceptCode: BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI
+      prompt: Dari padi sampai ular, energi berpindah … kali
+      key: 2 kali (padi → tikus, tikus → ular)
+      correct: "Pas, padi → tikus dan tikus → ular: 2 kali."
       answer:
-        value: 10
+        value: 2
         tolerance:
           relative: 0.02
           floor: 1
       partials:
-        - value: 100
-          explanation: Itu baru sampai ular. Satu langkah lagi.
-        - value: 1000
-          explanation: Itu di tikus. Lanjutkan ke ular, lalu elang.
-        - value: 1
-          explanation: Panahnya cuma 3, jadi dikali 10% sebanyak 3 kali.
-        - value: 10000
-          explanation: Energi tidak pindah utuh. Tiap naik satu tingkat cuma sekitar 10%.
+        - value: 3
+          explanation: "Hitung panahnya dari padi sampai ular saja: padi → tikus → ular."
 review:
   status: PROPOSED
   decision: D8
@@ -154,6 +135,5 @@ review:
     - rubric
     - concepts
   evidence:
-    - "Soal /coba Biologi SMP: aliran energi dan hukum 10% pada rantai makanan; contoh rantainya sama dengan materi inti Rantai dan jaring makanan. Kunci, pengecoh, dan bahasa perlu dicek guru IPA."
-    - 'Untuk guru: teks soal tidak menyebut 10% (diajarkan di petunjuk dan materi). Bila perlu, tambahkan "anggap hanya 10% energi yang diteruskan".'
-    - 'Angka ribuan memakai titik (10.000), jadi answer.thousandsDot: "10.000" dibaca sepuluh ribu, bukan 10.'
+    - "Soal /coba Biologi SMP: produsen-konsumen dan perpindahan energi pada rantai makanan; contoh rantainya sama dengan materi inti Rantai dan jaring makanan. Yang ditanya banyaknya perpindahan energi, tanpa menghitung kJ (permintaan pemilik produk: lebih ringan untuk kelas 7). Kunci, pengecoh, dan bahasa perlu dicek guru IPA."
+    - Pengecoh 4 (menghitung makhluk, bukan panah) dan 2 (berhenti di ular).

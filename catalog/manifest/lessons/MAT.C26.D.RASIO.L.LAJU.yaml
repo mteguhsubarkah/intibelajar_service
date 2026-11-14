@@ -1,0 +1,53 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.L.LAJU
+title: Laju (kecepatan)
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.RASIO.LAJU_KECEPATAN
+blocks:
+  - type: heading
+    slide: 0
+    text: Arti laju
+  - type: text
+    slide: 0
+    text: "**Laju** atau **kecepatan** (simbolnya v) menunjukkan seberapa jauh sesuatu bergerak dalam waktu tertentu."
+  - type: text
+    slide: 0
+    text: "Kecepatan = jarak tempuh (s) dibagi waktu tempuh (t), ditulis v = s : t."
+  - type: math
+    slide: 0
+    name: kecepatan
+    expression: "v = s : t"
+    highlight: true
+  - type: heading
+    slide: 1
+    text: Satuan kecepatan
+  - type: text
+    slide: 1
+    text: "Satuan kecepatan mengikuti satuan jarak dan waktunya: km dan jam menjadi km/jam, meter dan detik menjadi m/s."
+  - type: text
+    slide: 1
+    text: "Contoh: bus menempuh 90 km dalam 2 jam, jadi v = 90 : 2 = 45 km/jam."
+  - type: math
+    slide: 1
+    name: 90 km dalam 2 jam
+    expression: 45 km/jam
+    highlight: true
+  - type: tip
+    slide: 1
+    text: Jarak dibagi waktu, bukan waktu dibagi jarak.
+checks:
+  - question: MAT.C26.D.RASIO.Q.LAJU_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.RASIO.S.LAJU
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran
