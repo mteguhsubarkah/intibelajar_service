@@ -5,7 +5,7 @@ visibility: PUBLIC_PRACTICE
 origin: AUTHORED
 itemType: MULTIPLE_CHOICE
 contextTag: PILOT
-difficulty: 1
+difficulty: 2
 estimatedMinutes: 2
 provenance:
   source: authored:pilot
@@ -17,16 +17,16 @@ concepts:
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …
+  prompt: Jarak sebenarnya 15 km digambar 5 cm pada sebuah denah. Skala denah tersebut adalah …
   options:
     - id: a
-      label: 12 liter/menit
+      label: "1 : 3.000.000"
     - id: b
-      label: 960 liter/menit
+      label: "1 : 3.000"
     - id: c
-      label: 16 liter/menit
+      label: "1 : 30.000"
     - id: d
-      label: 15 liter/menit
+      label: "1 : 300.000"
   hints: []
   answerFormat: OPTION
 rubric:
@@ -35,14 +35,14 @@ rubric:
   answer:
     optionId: d
   acceptedForms:
-    - 15 liter/menit
+    - "1 : 300.000"
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
     - MAT.C26.D.RASIO.SKALA_DAN_LAJU
   feedback:
-    correct: "Debit = volume : waktu = 120 : 8 = 15 liter per menit."
-    incorrect: "Jawabannya 15 liter/menit. Debit = volume : waktu = 120 : 8 = 15 liter per menit."
+    correct: "15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000."
+    incorrect: "Jawabannya 1 : 300.000. 15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000."
 review:
   status: PROPOSED
   decision: D7

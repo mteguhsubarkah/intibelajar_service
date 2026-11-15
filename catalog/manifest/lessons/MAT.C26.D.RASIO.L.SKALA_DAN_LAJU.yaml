@@ -1,6 +1,6 @@
 schemaVersion: 1
 code: MAT.C26.D.RASIO.L.SKALA_DAN_LAJU
-title: Skala dan laju
+title: Skala
 estimatedMinutes: 5
 aliases: []
 concepts:
@@ -8,13 +8,13 @@ concepts:
 blocks:
   - type: heading
     slide: 0
-    text: Skala
+    text: Arti skala
   - type: text
     slide: 0
-    text: "Skala = jarak pada peta : jarak sebenarnya, dengan satuan yang sama."
+    text: "**Skala** adalah perbandingan jarak pada peta dengan jarak sebenarnya, dalam satuan yang sama."
   - type: text
     slide: 0
-    text: "Skala 1 : 200.000 berarti 1 cm pada peta mewakili 200.000 cm = 2 km."
+    text: "Skala 1 : 200.000 artinya 1 cm pada peta sama dengan 200.000 cm di dunia nyata."
   - type: math
     slide: 0
     name: jarak sebenarnya
@@ -22,21 +22,25 @@ blocks:
     highlight: true
   - type: heading
     slide: 1
-    text: Laju
+    text: Ubah ke satuan yang ditanya
   - type: text
     slide: 1
-    text: Laju membandingkan dua besaran yang satuannya berbeda, misalnya kecepatan (km/jam), debit (liter/menit), atau harga per kg.
+    text: "Jarak peta × penyebut skala masih dalam cm. Kalau yang ditanya km, ubah dulu: 1 km = 100.000 cm."
   - type: text
     slide: 1
-    text: Motor menempuh 90 km dalam 2 jam, jadi lajunya 45 km/jam.
+    text: "Contoh: 4 cm × 500.000 = 2.000.000 cm = 20 km."
   - type: math
     slide: 1
-    name: kecepatan
-    expression: "jarak : waktu"
+    name: 1 km
+    expression: 100.000 cm
     highlight: true
+  - type: math
+    slide: 1
+    name: cm ke km
+    expression: dibagi 100.000
   - type: tip
     slide: 1
-    text: "Samakan satuan dulu: km ↔ cm (1 km = 100.000 cm), menit ↔ jam."
+    text: "Hitung nolnya baik-baik: 100.000 punya lima nol."
 checks:
   - question: MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1
     ordinal: 0

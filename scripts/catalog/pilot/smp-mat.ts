@@ -69,13 +69,21 @@ export const SMP_MAT: Record<string, Content> = {
     Q('Rani berlari selama 45 menit. Dalam jam, waktunya …', ['0,75 jam', '0,45 jam', '1,5 jam', '4,5 jam'], 0, '45 : 60 = 0,75 jam.'),
   ], 4),
   'MAT.C26.D.RASIO:C2': K([
-    S('Skala', ['Skala = jarak pada peta : jarak sebenarnya, dengan satuan yang sama.', 'Skala 1 : 200.000 berarti 1 cm pada peta mewakili 200.000 cm = 2 km.'], [['jarak sebenarnya', 'jarak peta × penyebut skala']]),
-    S('Laju', ['Laju membandingkan dua besaran yang satuannya berbeda, misalnya kecepatan (km/jam), debit (liter/menit), atau harga per kg.', 'Motor menempuh 90 km dalam 2 jam, jadi lajunya 45 km/jam.'], [['kecepatan', 'jarak : waktu']], 'Samakan satuan dulu: km ↔ cm (1 km = 100.000 cm), menit ↔ jam.'),
+    S('Arti skala', ['**Skala** adalah perbandingan jarak pada peta dengan jarak sebenarnya, dalam satuan yang sama.', 'Skala 1 : 200.000 artinya 1 cm pada peta sama dengan 200.000 cm di dunia nyata.'], [['jarak sebenarnya', 'jarak peta × penyebut skala']]),
+    S('Ubah ke satuan yang ditanya', ['Jarak peta × penyebut skala masih dalam cm. Kalau yang ditanya km, ubah dulu: 1 km = 100.000 cm.', 'Contoh: 4 cm × 500.000 = 2.000.000 cm = 20 km.'], [['1 km', '100.000 cm'], ['cm ke km', 'dibagi 100.000']], 'Hitung nolnya baik-baik: 100.000 punya lima nol.'),
   ], [
     Q('Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …', ['2 km', '20 km', '200 km', '2.000 km'], 1, '4 × 500.000 = 2.000.000 cm = 20 km.', 1),
-    Q('Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …', ['15 liter/menit', '12 liter/menit', '960 liter/menit', '16 liter/menit'], 0, 'Debit = volume : waktu = 120 : 8 = 15 liter per menit.', 1),
     Q('Jarak sebenarnya 15 km digambar 5 cm pada sebuah denah. Skala denah tersebut adalah …', ['1 : 3.000', '1 : 30.000', '1 : 300.000', '1 : 3.000.000'], 2, '15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000.'),
+    Q('Pada peta berskala 1 : 250.000, jarak dua desa 6 cm. Jarak sebenarnya kedua desa adalah …', ['15 km', '1,5 km', '150 km', '1.500 km'], 0, '6 × 250.000 = 1.500.000 cm = 15 km.'),
   ]),
+  'MAT.C26.D.RASIO:LAJU': K([
+    S('Arti laju', ['**Laju** atau **kecepatan** (simbolnya v) menunjukkan seberapa jauh sesuatu bergerak dalam waktu tertentu.', 'Kecepatan = jarak tempuh (s) dibagi waktu tempuh (t), ditulis v = s : t.'], [['kecepatan', 'v = s : t']]),
+    S('Satuan kecepatan', ['Satuan kecepatan mengikuti satuan jarak dan waktunya: km dan jam menjadi km/jam, meter dan detik menjadi m/s.', 'Contoh: bus menempuh 90 km dalam 2 jam, jadi v = 90 : 2 = 45 km/jam.'], [['90 km dalam 2 jam', '45 km/jam']], 'Jarak dibagi waktu, bukan waktu dibagi jarak.'),
+  ], [
+    Q('Ani berjalan 6 km dalam 2 jam. Kecepatan Ani adalah …', ['3 km/jam', '12 km/jam', '4 km/jam', '8 km/jam'], 0, 'v = 6 : 2 = 3 km/jam.', 1),
+    Q('Sepeda motor menempuh 120 km dalam 3 jam. Kecepatan rata-ratanya adalah …', ['40 km/jam', '360 km/jam', '30 km/jam', '0,025 km/jam'], 0, 'v = 120 : 3 = 40 km/jam.'),
+    Q('Sebuah keran mengisi 120 liter air dalam 8 menit. Debit air keran adalah …', ['15 liter/menit', '12 liter/menit', '960 liter/menit', '16 liter/menit'], 0, 'Debit = volume : waktu = 120 : 8 = 15 liter per menit.'),
+  ], 4),
   'MAT.C26.D.RASIO:BERBALIK': K([
     S('Satu naik, satu turun', ['Dua besaran **berbalik nilai** jika yang satu bertambah, yang lain berkurang, dan hasil kalinya tetap.', 'Contoh: 6 pekerja selesai dalam 10 hari (6 × 10 = 60 hari-kerja). Dengan 12 pekerja, selesai dalam 60 : 12 = 5 hari.'], [['berbalik nilai', 'a₁ × b₁ = a₂ × b₂']]),
     S('Membedakan dari senilai', ['Cek hasil kalinya. Kecepatan × waktu = jarak tetap; banyak orang × jatah per orang = jumlah barang tetap.', 'Kalau hasil baginya yang tetap, berarti senilai.'], [['senilai', 'hasil bagi tetap'], ['berbalik nilai', 'hasil kali tetap']], 'Senilai: bagi tetap. Berbalik nilai: kali tetap.'),

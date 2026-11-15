@@ -1824,12 +1824,26 @@ sets:
       evidence:
         - semua soal inti ini
   - code: MAT.C26.D.RASIO.S.SKALA_DAN_LAJU
-    title: Latihan Skala dan laju
+    title: Latihan Skala
     origin: CONCEPT_LESSON
     items:
       - MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1
       - MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_2
       - MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
+  - code: MAT.C26.D.RASIO.S.LAJU
+    title: Latihan Laju (kecepatan)
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.RASIO.Q.LAJU_1
+      - MAT.C26.D.RASIO.Q.LAJU_2
+      - MAT.C26.D.RASIO.Q.LAJU_3
     review:
       status: PROPOSED
       decision: D7

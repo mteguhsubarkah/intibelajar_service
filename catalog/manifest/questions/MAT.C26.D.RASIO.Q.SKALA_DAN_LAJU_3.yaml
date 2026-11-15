@@ -17,16 +17,16 @@ concepts:
     assessable: true
 body:
   schemaVersion: 1
-  prompt: Jarak sebenarnya 15 km digambar 5 cm pada sebuah denah. Skala denah tersebut adalah …
+  prompt: "Pada peta berskala 1 : 250.000, jarak dua desa 6 cm. Jarak sebenarnya kedua desa adalah …"
   options:
     - id: a
-      label: "1 : 3.000"
+      label: 150 km
     - id: b
-      label: "1 : 30.000"
+      label: 1.500 km
     - id: c
-      label: "1 : 300.000"
+      label: 15 km
     - id: d
-      label: "1 : 3.000.000"
+      label: 1,5 km
   hints: []
   answerFormat: OPTION
 rubric:
@@ -35,14 +35,14 @@ rubric:
   answer:
     optionId: c
   acceptedForms:
-    - "1 : 300.000"
+    - 15 km
   solutionPaths: []
   misconceptionMap: []
   finalAnswerEvidence:
     - MAT.C26.D.RASIO.SKALA_DAN_LAJU
   feedback:
-    correct: "15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000."
-    incorrect: "Jawabannya 1 : 300.000. 15 km = 1.500.000 cm; 1.500.000 : 5 = 300.000, jadi skalanya 1 : 300.000."
+    correct: 6 × 250.000 = 1.500.000 cm = 15 km.
+    incorrect: Jawabannya 15 km. 6 × 250.000 = 1.500.000 cm = 15 km.
 review:
   status: PROPOSED
   decision: D7
