@@ -1,0 +1,29 @@
+schemaVersion: 1
+kind: CONCEPT_MISCONCEPTIONS
+target: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+provenance:
+  source: authored
+  note: Untuk rubrik numeric-v1 soal /coba (soal-peta).
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - misconceptions
+  evidence:
+    - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
+misconceptions:
+  - code: CM_BELUM_KE_KM
+    description: Hasil dalam cm ditulis sebagai km tanpa diubah
+    example: 6.000.000 cm ditulis 6.000.000 km
+    indicators:
+      - "soal-peta: jawaban 6.000.000"
+  - code: BERHENTI_DI_METER
+    description: Konversi berhenti di meter, belum sampai km
+    example: 6.000.000 cm = 60.000 m
+    indicators:
+      - "soal-peta: jawaban 60.000"
+  - code: SALAH_HITUNG_NOL
+    description: Banyak nol pada pembagi konversi keliru
+    example: "6.000.000 : 10.000 = 600"
+    indicators:
+      - "soal-peta: jawaban 600 atau 6"

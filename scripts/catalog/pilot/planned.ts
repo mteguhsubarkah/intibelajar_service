@@ -206,16 +206,18 @@ const STRUCTURE: PilotTopic[] = [
   },
   {
     code: "MAT.C26.D.RASIO", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,
-    title: "Rasio, skala, dan laju", subtitle: "Perbandingan senilai, konversi satuan waktu, skala, laju, dan berbalik nilai", bekal: [],
+    title: "Rasio, skala, dan laju", subtitle: "Perbandingan senilai, konversi satuan waktu dan panjang, skala, laju, dan berbalik nilai", bekal: [],
     cores: [
     { id: "C1", title: "Perbandingan senilai" },
     { id: "WAKTU", title: "Konversi satuan waktu", sub: "Jam, menit, detik, dan waktu dalam bentuk desimal" },
+    // Tangga satuan panjang (km … mm). Aslinya materi SD (Fase C), dipakai ulang di kelas 7 untuk skala; guru memeriksa penempatannya.
+    { id: "PANJANG", title: "Konversi satuan panjang", sub: "km, hm, dam, m, dm, cm, mm" },
     // "Skala dan laju" dipecah dua (permintaan pemilik produk, /coba SMP): kode inti lama tetap milik Skala.
     { id: "C2", title: "Skala", codeFrom: "Skala dan laju", sub: "Perbandingan jarak pada peta dengan jarak sebenarnya" },
     { id: "LAJU", title: "Laju (kecepatan)", sub: "Kecepatan = jarak tempuh : waktu tempuh" },
     { id: "BERBALIK", title: "Perbandingan berbalik nilai", capstone: true },
     ],
-    edges: [["C1", "BERBALIK", "S"], ["WAKTU", "LAJU", "S"], ["C2", "LAJU", "S"]],
+    edges: [["C1", "BERBALIK", "S"], ["WAKTU", "LAJU", "S"], ["C2", "LAJU", "S"], ["PANJANG", "C2", "S"]],
   },
   {
     code: "MAT.C26.D.ALJABAR", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,

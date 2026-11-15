@@ -68,6 +68,14 @@ export const SMP_MAT: Record<string, Content> = {
     Q('Sebuah perjalanan memakan waktu 0,2 jam. Dalam menit, waktunya …', ['12 menit', '20 menit', '120 menit', '32 menit'], 0, '0,2 × 60 = 12 menit.'),
     Q('Rani berlari selama 45 menit. Dalam jam, waktunya …', ['0,75 jam', '0,45 jam', '1,5 jam', '4,5 jam'], 0, '45 : 60 = 0,75 jam.'),
   ], 4),
+  'MAT.C26.D.RASIO:PANJANG': K([
+    S('Tangga satuan panjang', ['Urutan satuan panjang dari besar ke kecil: km, hm, dam, m, dm, cm, mm.', 'Turun satu anak tangga dikali 10, naik satu anak tangga dibagi 10. Jadi 1 km = 1.000 m dan 1 m = 100 cm.'], [['1 km', '1.000 m'], ['1 m', '100 cm']]),
+    S('Dari cm ke km', ['Dari cm ke km naik 5 anak tangga, jadi dibagi 100.000.', 'Contoh: 250.000 cm = 250.000 : 100.000 = 2,5 km.'], [['1 km', '100.000 cm'], ['cm ke km', 'dibagi 100.000']], 'Hitung anak tangganya dulu, baru tentukan dikali atau dibagi.'),
+  ], [
+    Q('3,5 km sama dengan …', ['3.500 m', '350 m', '35.000 m', '35 m'], 0, '1 km = 1.000 m, jadi 3,5 × 1.000 = 3.500 m.', 1),
+    Q('450.000 cm sama dengan …', ['4,5 km', '45 km', '0,45 km', '450 km'], 0, '450.000 : 100.000 = 4,5 km.'),
+    Q('Panjang pita 2,4 m. Dalam cm, panjangnya …', ['240 cm', '24 cm', '2.400 cm', '0,24 cm'], 0, '1 m = 100 cm, jadi 2,4 × 100 = 240 cm.'),
+  ], 4),
   'MAT.C26.D.RASIO:C2': K([
     S('Arti skala', ['**Skala** adalah perbandingan jarak pada peta dengan jarak sebenarnya, dalam satuan yang sama.', 'Skala 1 : 200.000 artinya 1 cm pada peta sama dengan 200.000 cm di dunia nyata.'], [['jarak sebenarnya', 'jarak peta × penyebut skala']]),
     S('Ubah ke satuan yang ditanya', ['Jarak peta × penyebut skala masih dalam cm. Kalau yang ditanya km, ubah dulu: 1 km = 100.000 cm.', 'Contoh: 4 cm × 500.000 = 2.000.000 cm = 20 km.'], [['1 km', '100.000 cm'], ['cm ke km', 'dibagi 100.000']], 'Hitung nolnya baik-baik: 100.000 punya lima nol.'),

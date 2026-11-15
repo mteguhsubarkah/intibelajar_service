@@ -3,7 +3,7 @@ kind: CONCEPT_MISCONCEPTIONS
 target: MAT.C26.D.RASIO.SKALA_DAN_LAJU
 provenance:
   source: authored
-  note: Untuk rubrik numeric-v1 soal /coba (soal-peta, soal-peta versi lama (tanya waktu)).
+  note: Untuk rubrik numeric-v1 soal /coba (soal-peta versi lama (tanya waktu), soal-peta).
 review:
   status: PROPOSED
   decision: D8
@@ -12,16 +12,6 @@ review:
   evidence:
     - Kesalahan umum yang dipakai sebagai pengecoh soal /coba; kode dan kalimat perlu dicek guru.
 misconceptions:
-  - code: JARAK_BELUM_KM
-    description: Jarak asli dalam cm langsung dipakai tanpa diubah ke km
-    example: "6.000.000 : 2 = 3.000.000"
-    indicators:
-      - "soal-peta: jawaban 3.000.000"
-  - code: SKALA_DIABAIKAN
-    description: Jarak pada peta dipakai sebagai jarak sebenarnya
-    example: "12 : 2 = 6"
-    indicators:
-      - "soal-peta: jawaban 6"
   - code: BERHENTI_DI_JARAK
     description: Jarak asli dari skala dianggap sudah jawaban akhir
     example: jarak asli 3 km, lalu berhenti
@@ -32,3 +22,13 @@ misconceptions:
     example: "30 : 3 = 10"
     indicators:
       - "soal-peta versi lama (tanya waktu): jawaban 10"
+  - code: JARAK_BELUM_KM
+    description: Jarak asli dalam cm langsung dipakai tanpa diubah ke km
+    example: "300.000 : 30 = 10.000"
+    indicators:
+      - "soal-peta versi lama (tanya waktu): jawaban 10.000"
+  - code: SKALA_DIABAIKAN
+    description: Jarak pada peta dipakai sebagai jarak sebenarnya
+    example: 12 cm dianggap 12 km
+    indicators:
+      - "soal-peta: jawaban 12"

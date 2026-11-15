@@ -17,150 +17,144 @@ concepts:
   - concept: MAT.C26.D.RASIO.SKALA_DAN_LAJU
     role: PRIMARY
     assessable: true
-  - concept: MAT.C26.D.RASIO.LAJU_KECEPATAN
+  - concept: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
     role: PRIMARY
     assessable: true
 body:
   schemaVersion: 1
-  prompt: "Pada peta, jarak rumah Dika ke rumah neneknya 12 cm dengan skala 1 : 500.000. Dika dan keluarganya naik bus dan sampai dalam waktu 2 jam. Berapa kecepatan rata-rata bus itu dalam km/jam?"
+  prompt: "Pada peta, jarak rumah Dika ke rumah neneknya 12 cm dengan skala 1 : 500.000. Berapa jarak sebenarnya rumah Dika ke rumah neneknya dalam km?"
   hints:
     - step: 1
       conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
-      lead: "Skala adalah perbandingan jarak pada peta dengan jarak aslinya. Skala 1 : 500.000 artinya 1 cm di peta sama dengan 500.000 cm di dunia nyata. Karena kecepatannya ditanyakan dalam km/jam, ubah jaraknya ke km dulu."
-      note: jarak asli = jarak di peta × penyebut skala; 1 km = 100.000 cm
+      lead: "Skala adalah perbandingan jarak pada peta dengan jarak aslinya. Skala 1 : 500.000 artinya 1 cm di peta sama dengan 500.000 cm di dunia nyata."
+      note: jarak asli = jarak di peta × penyebut skala
     - step: 2
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      lead: Laju atau kecepatan (v) menunjukkan seberapa jauh sesuatu bergerak dalam waktu tertentu. Kecepatan = jarak tempuh (s) dibagi waktu tempuh (t).
-      note: "v = s : t"
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      lead: "Satuan panjang bertingkat: km, hm, dam, m, dm, cm, mm. Turun satu anak tangga dikali 10, naik satu anak tangga dibagi 10. Karena yang ditanya dalam km, ubah cm ke km."
+      note: 1 km = 100.000 cm; cm ke km dibagi 100.000
   answerFormat: NUMBER
-  answerExample: v = … km/jam
+  answerExample: jarak sebenarnya = … km
 rubric:
   schemaVersion: 1
   evaluator: numeric-v1
   answer:
-    value: 30
-    unit: km/jam
+    value: 60
+    unit: km
     tolerance:
       relative: 0.02
       floor: 1
     thousandsDot: true
   acceptedForms:
-    - 30 km/jam
-    - "12 × 500.000 = 6.000.000 cm = 60 km; v = 60 : 2 = 30 km/jam"
+    - 60 km
+    - 12 × 500.000 = 6.000.000 cm = 60 km
   solutionPaths:
     - code: UTAMA
       label: langkah per inti
       steps:
         - code: S1
-          description: "Jarak asli: 12 × 500.000 = 6.000.000 cm = 60 km"
+          description: "Jarak asli: 12 × 500.000 = 6.000.000 cm"
           concepts:
             - code: MAT.C26.D.RASIO.SKALA_DAN_LAJU
               role: REQUIRED
         - code: S2
-          description: "Kecepatan = jarak : waktu = 60 : 2 = 30 km/jam"
+          description: "6.000.000 cm : 100.000 = 60 km"
           concepts:
-            - code: MAT.C26.D.RASIO.LAJU_KECEPATAN
+            - code: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
               role: REQUIRED
   misconceptionMap:
     - pattern:
         kind: NUMERIC
-        value: 3000000
-      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
-      misconceptionCode: JARAK_BELUM_KM
-      explanation: "Jaraknya masih dalam cm (6.000.000 cm). Ubah ke km dulu: 1 km = 100.000 cm."
+        value: 6000000
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      misconceptionCode: CM_BELUM_KE_KM
+      explanation: "Itu masih dalam cm. Ubah ke km dulu: dibagi 100.000."
+    - pattern:
+        kind: NUMERIC
+        value: 60000
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      misconceptionCode: BERHENTI_DI_METER
+      explanation: Itu masih dalam meter. Dari m ke km dibagi 1.000 lagi.
+    - pattern:
+        kind: NUMERIC
+        value: 600
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      misconceptionCode: SALAH_HITUNG_NOL
+      explanation: "Cek lagi nolnya: dari cm ke km dibagi 100.000 (lima nol)."
     - pattern:
         kind: NUMERIC
         value: 6
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      misconceptionCode: SALAH_HITUNG_NOL
+      explanation: "Cek lagi nolnya: dari cm ke km dibagi 100.000 (lima nol)."
+    - pattern:
+        kind: NUMERIC
+        value: 12
       conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
       misconceptionCode: SKALA_DIABAIKAN
       explanation: 12 cm itu jarak di peta. Kalikan dulu dengan 500.000 supaya dapat jarak aslinya.
-    - pattern:
-        kind: NUMERIC
-        value: 60
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      misconceptionCode: BERHENTI_DI_JARAK
-      explanation: "60 km itu jarak aslinya, sudah benar. Sekarang hitung kecepatannya: v = s : t."
-    - pattern:
-        kind: NUMERIC
-        value: 120
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      misconceptionCode: LAJU_DIKALI_WAKTU
-      explanation: Kecepatan = jarak dibagi waktu, bukan dikali.
-    - pattern:
-        kind: NUMERIC
-        value: 0.0333
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      misconceptionCode: LAJU_TERBALIK
-      explanation: "Kebalik: kecepatan = jarak dibagi waktu, jadi 60 : 2."
   finalAnswerEvidence:
     - MAT.C26.D.RASIO.SKALA_DAN_LAJU
-    - MAT.C26.D.RASIO.LAJU_KECEPATAN
+    - MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
   lessonFor:
     MAT.C26.D.RASIO.SKALA_DAN_LAJU: MAT.C26.D.RASIO.L.SKALA_DAN_LAJU
-    MAT.C26.D.RASIO.LAJU_KECEPATAN: MAT.C26.D.RASIO.L.LAJU
+    MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG: MAT.C26.D.RASIO.L.PANJANG
   recommend:
-    - misconceptionCode: JARAK_BELUM_KM
-      conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
-      keyFormula: 1 km = 100.000 cm
+    - misconceptionCode: CM_BELUM_KE_KM
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      keyFormula: cm ke km dibagi 100.000
     - misconceptionCode: SKALA_DIABAIKAN
       conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
       keyFormula: jarak asli = jarak peta × penyebut skala
-    - misconceptionCode: BERHENTI_DI_JARAK
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      keyFormula: "v = s : t"
-    - misconceptionCode: LAJU_DIKALI_WAKTU
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      keyFormula: "v = s : t"
-    - misconceptionCode: LAJU_TERBALIK
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      keyFormula: "v = s : t"
+    - misconceptionCode: BERHENTI_DI_METER
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      keyFormula: 1 km = 100.000 cm
+    - misconceptionCode: SALAH_HITUNG_NOL
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      keyFormula: 1 km = 100.000 cm
   feedback:
-    correct: "Jarak asli 12 × 500.000 cm = 60 km, lalu v = 60 km : 2 jam = 30 km/jam."
-    incorrect: "Jawabannya 30 km/jam. Jarak asli 12 × 500.000 cm = 60 km, lalu v = 60 km : 2 jam = 30 km/jam."
+    correct: Jarak asli 12 × 500.000 cm = 6.000.000 cm, lalu dibagi 100.000 jadi 60 km.
+    incorrect: Jawabannya 60 km. Jarak asli 12 × 500.000 cm = 6.000.000 cm, lalu dibagi 100.000 jadi 60 km.
   workedSolution:
     steps:
       - title: Jarak asli dari skala
-        body: 12 cm × 500.000 = 6.000.000 cm = 60 km
-      - title: Kecepatan
-        body: "v = s : t = 60 km : 2 jam = 30 km/jam"
+        body: 12 cm × 500.000 = 6.000.000 cm
+      - title: Ubah ke km
+        body: "6.000.000 cm : 100.000 = 60 km"
     after:
-      - "v = 60 km : 2 jam = 30 km/jam"
+      - 12 cm di peta = 60 km aslinya
   cobaSteps:
     - step: 1
       conceptCode: MAT.C26.D.RASIO.SKALA_DAN_LAJU
-      prompt: Jarak asli = … km
-      key: 60 km (12 × 500.000 = 6.000.000 cm)
-      correct: Pas, 12 × 500.000 = 6.000.000 cm = 60 km.
+      prompt: Jarak asli = … cm
+      key: 6.000.000 cm (12 × 500.000)
+      correct: Pas, 12 × 500.000 = 6.000.000 cm.
+      answer:
+        value: 6000000
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 60
+          explanation: Itu sudah dalam km. Di kotak ini tulis dulu dalam cm.
+        - value: 12
+          explanation: 12 cm itu jarak di peta. Kalikan dengan 500.000.
+    - step: 2
+      conceptCode: MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+      prompt: 6.000.000 cm = … km
+      key: 60 km (dibagi 100.000)
+      correct: "Pas, 6.000.000 : 100.000 = 60 km."
       answer:
         value: 60
         tolerance:
           relative: 0.02
           floor: 1
       partials:
-        - value: 6000000
-          explanation: "6.000.000 cm udah benar. Ubah ke km dulu: 1 km = 100.000 cm."
+        - value: 60000
+          explanation: Itu dalam meter. Dari m ke km dibagi 1.000 lagi.
         - value: 600
-          explanation: "Cek lagi nolnya: 1 km = 100.000 cm (lima nol)."
+          explanation: "Cek lagi nolnya: dari cm ke km dibagi 100.000 (lima nol)."
         - value: 6
-          explanation: "Cek lagi nolnya: 1 km = 100.000 cm (lima nol)."
-    - step: 2
-      conceptCode: MAT.C26.D.RASIO.LAJU_KECEPATAN
-      prompt: "v = 60 km : 2 jam = … km/jam"
-      key: 30 km/jam
-      correct: "Pas, 60 : 2 = 30 km/jam."
-      answer:
-        value: 30
-        tolerance:
-          relative: 0.02
-          floor: 1
-      partials:
-        - value: 120
-          explanation: Kecepatan = jarak dibagi waktu, bukan dikali.
-        - value: 0.0333
-          tolerance:
-            relative: 0.1
-            floor: 0.1
-          explanation: "Kebalik: jarak dibagi waktu, jadi 60 : 2."
+          explanation: "Cek lagi nolnya: dari cm ke km dibagi 100.000 (lima nol)."
 review:
   status: PROPOSED
   decision: D8
@@ -169,6 +163,6 @@ review:
     - rubric
     - concepts
   evidence:
-    - "Soal /coba Matematika SMP: skala peta dan laju (v = s : t). Yang ditanya kecepatan, bukan waktu, dan tanpa konversi jam ke menit (permintaan pemilik produk: lebih ringan untuk kelas 7). Kunci, pengecoh, dan bahasa perlu dicek guru Matematika."
-    - Pengecoh 3.000.000 (jarak masih cm), 6 (skala diabaikan), 60 (berhenti di jarak), 120 (dikali waktu), 0,03 (terbalik).
-    - Kotak Coba sekarang (cobaSteps) dinilai aturan angka; isian tanpa angka dinilai AI dengan key.
+    - "Soal /coba Matematika SMP: skala peta lalu konversi satuan panjang (cm ke km). Yang ditanya jarak sebenarnya dalam km (permintaan pemilik produk, 15 November 2026). Kunci, pengecoh, dan bahasa perlu dicek guru Matematika."
+    - Pengecoh 6.000.000 (masih cm), 60.000 (berhenti di meter), 600 dan 6 (salah hitung nol), 12 (skala diabaikan).
+    - Inti Konversi satuan panjang aslinya materi SD (Fase C) yang dipakai ulang di kelas 7; guru memeriksa penempatannya.

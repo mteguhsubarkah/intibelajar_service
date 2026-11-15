@@ -5,7 +5,7 @@ import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } fro
 import { gradingSource } from '../catalog/grading-source.js';
 import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
 import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
-import { fail } from '../platform/errors.js';
+import { ApiError, fail } from '../platform/errors.js';
 import { judgeCobaStep } from './coba-steps.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
@@ -83,6 +83,20 @@ export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>, op
   }
   return null;
 }
+/*
+ * Jawaban yang benar menurut angka hasil akhirnya membuktikan inti hasil akhir (rubric.finalAnswerEvidence), seperti
+ * penilai numeric-v1. Tanpa ini, AI yang tidak menulis bukti membuat diagnosis jatuh ke "perjelas langkahmu"
+ * padahal jawabannya benar.
+ */
+function proven(e: Evaluation, i: TrialItem, text: string, quote?: string): Evaluation {
+  const need = i.source.rubric.finalAnswerEvidence.filter(code => i.concepts.some(c => c.code === code)
+    && !e.evidence.some(x => x.conceptCode === code && x.classification === 'UNDERSTANDING_DEMONSTRATED'));
+  if (!need.length) return e;
+  const at = quote ? text.lastIndexOf(quote) : -1;
+  const refs = quote && at >= 0 ? [{ kind: 'SPAN' as const, start: at, end: at + quote.length, quote }] : [];
+  return { ...e, evidence: [...e.evidence.filter(x => !need.includes(x.conceptCode)),
+    ...need.map(code => ({ conceptCode: code, classification: 'UNDERSTANDING_DEMONSTRATED' as const, rationale: 'Hasil akhirmu benar.', refs, uncertaintyReasons: [] }))] } as Evaluation;
+}
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
   // soal milik siswa (ai-assisted-v1) tidak punya penilai deterministik: hanya AI yang menilai.
   // (Tanpa penjaga ini, setiap diagnosis /tanya gagal "No deterministic evaluator".)
@@ -98,16 +112,16 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
     // angka polos tanpa "=" ("0,1", "10.000 kJ"): penilai numeric-v1 katalog membacanya sendiri dan memutuskan bila tegas
     const decisive = i.source.rubric.evaluator === 'numeric-v1' && fixed && (fixed.verdict === 'CORRECT' || fixed.verdict === 'INCORRECT');
     if (!decisive) return judged;
-    return fixed!.verdict === 'CORRECT' && judged.verdict === 'CORRECT' ? judged : fixed!;
+    return fixed!.verdict === 'CORRECT' && judged.verdict === 'CORRECT' ? proven(judged, i, text) : fixed!;
   }
   const right = got.values.some(value => withinTolerance(value, key.value!, key.tolerance?.relative, key.tolerance?.floor));
   console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', bacaan: got.values.length, ai: judged.verdict }));
   if (right) {
-    if (judged.verdict === 'CORRECT') return judged;
+    if (judged.verdict === 'CORRECT') return proven(judged, i, text, got.quote);
     if (fixed?.verdict === 'CORRECT') return fixed;
     // benar menurut angka: tanda salah dari AI tidak berlaku lagi
-    return { ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
-      evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation;
+    return proven({ ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
+      evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation, i, text, got.quote);
   }
   // Pengecoh yang dicatat di rubrik (angka hasil akhir sama dengan pola NUMERIC): penjelasan katalog yang sudah ditinjau
   // dipakai, bukan tebakan AI. Inti lain tetap memakai bukti dari AI.
@@ -360,6 +374,24 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       if (c.steps.size >= 64) c.steps.delete(c.steps.keys().next().value!);
       c.steps.set(cacheKey, result);
       return result;
+    },
+    /*
+     * Soal /coba mana yang benar-benar ada di rilis katalog aktif, dengan teks soalnya (body publik) dan langkah
+     * Coba sekarang yang punya kunci. Aplikasi memakai ini supaya soal yang belum terbit, atau versinya berbeda dengan
+     * yang tampil, tidak dibuka (tanpa ini siswa mendapat 404 atau dinilai dengan kunci versi lain).
+     */
+    async items(ids: string[]): Promise<{ items: { id: string; available: boolean; prompt?: string; steps?: number[] }[] }> {
+      const wanted = [...new Set(ids.map(id => id.trim()).filter(id => /^[a-z0-9-]{1,64}$/.test(id)))].slice(0, 16);
+      const items = await Promise.all(wanted.map(async id => {
+        try {
+          const i = await load(id);
+          return { id, available: true, prompt: i.source.body.prompt, steps: (i.source.rubric.cobaSteps ?? []).map(s => s.step) };
+        } catch (e) {
+          if (e instanceof ApiError && (e.status === 404 || e.status === 409)) return { id, available: false };
+          throw e;
+        }
+      }));
+      return { items };
     },
     close() { contexts.clear(); }
   };

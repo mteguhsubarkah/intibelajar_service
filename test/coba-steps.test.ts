@@ -55,13 +55,12 @@ test('step value: the last number after "=", units and words around it are ignor
 });
 
 test('Coba sekarang rules: key, half-way answers, wrong numbers, exact words; free text is left to the AI', () => {
-  assert.equal(kind('soal-peta', 1, '60 km'), 'correct');
-  assert.equal(kind('soal-peta', 1, '12 × 500.000 = 6.000.000 cm'), 'partial');
-  assert.equal(kind('soal-peta', 1, '600 km'), 'partial');
+  assert.equal(kind('soal-peta', 1, '12 × 500.000 = 6.000.000 cm'), 'correct');
+  assert.equal(kind('soal-peta', 1, '60 km'), 'partial');
   assert.equal(kind('soal-peta', 1, '50'), 'incorrect');
-  assert.equal(kind('soal-peta', 2, '60 : 2 = 30 km/jam'), 'correct');
-  assert.equal(kind('soal-peta', 2, '60 × 2 = 120'), 'partial');
-  assert.equal(kind('soal-peta', 2, 'tiga puluh'), 'undecided');
+  assert.equal(kind('soal-peta', 2, '6.000.000 : 100.000 = 60 km'), 'correct');
+  assert.equal(kind('soal-peta', 2, '60.000'), 'partial');
+  assert.equal(kind('soal-peta', 2, 'enam puluh'), 'undecided');
   assert.equal(kind('soal-freezer', 1, '37 °C'), 'correct');
   assert.equal(kind('soal-freezer', 2, '37 − (−5) = 32'), 'partial');
   assert.equal(kind('soal-batu', 1, '20 mL'), 'correct');
@@ -128,10 +127,10 @@ test('trial route steps/check follows the contract; the key never reaches the br
   const ai = { evaluate: async (i: TrialItem, response: Parameters<typeof evaluate>[0]['response']) => evaluate({ ...i.source, response }), tutor: async () => ({ text: '', quick: [], hintsUsed: 0 }) };
   registerTrialRoutes(app, null as unknown as Connection, trialAssessment(load, ai));
   try {
-    const r = await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1, reply: '60 km' } });
+    const r = await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1, reply: '6.000.000 cm' } });
     assert.equal(r.statusCode, 200, r.body);
-    assert.deepEqual(r.json(), { correct: true, partial: false, feedback: 'Pas, 12 × 500.000 = 6.000.000 cm = 60 km.', judge: 'rule', coreId: 'mat-d-rasio-c2' });
-    assert.doesNotMatch(r.body, /key|60 km \(/);
+    assert.deepEqual(r.json(), { correct: true, partial: false, feedback: 'Pas, 12 × 500.000 = 6.000.000 cm.', judge: 'rule', coreId: 'mat-d-rasio-c2' });
+    assert.doesNotMatch(r.body, /key|cm \(12/);
     assert.equal((await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1 } })).statusCode, 400);
     assert.equal((await app.inject({ method: 'POST', url: '/v1/trial/steps/check', payload: { sessionId: 's', questionId: 'soal-peta', step: 1, reply: 'x'.repeat(301) } })).statusCode, 400);
   } finally { await app.close(); }
@@ -145,15 +144,40 @@ test('trial check: a catalogued trap keeps its reviewed explanation, and a bare 
   };
   const s = trialAssessment(load, lenient);
   const check = (itemId: string, answer: string) => s.check('browser-c', { sessionId: 'c', itemId, answer });
-  const bare = await check('soal-peta', '60');
-  assert.equal(bare.correct, false, 'a bare 60 is still the distance');
-  assert.equal(bare.items?.find((x: any) => x.id === 'mat-d-rasio-laju')?.reason, '60 km itu jarak aslinya, sudah benar. Sekarang hitung kecepatannya: v = s : t.');
-  const worked = await check('soal-peta', '12 × 500.000 = 6.000.000 cm\nv = 6.000.000 : 2 = 3.000.000 km/jam');
+  const bare = await check('soal-peta', '6.000.000');
+  assert.equal(bare.correct, false, 'a bare 6.000.000 is still centimetres');
+  assert.equal(bare.items?.find((x: any) => x.id === 'mat-d-rasio-panjang')?.reason, 'Itu masih dalam cm. Ubah ke km dulu: dibagi 100.000.');
+  const worked = await check('soal-peta', '12 × 500.000 = 6.000.000 cm\njarak = 6.000.000 : 100 = 60.000');
   assert.equal(worked.correct, false);
   const gap = worked.items?.find((x: any) => x.state === 'gap');
-  assert.deepEqual({ id: gap?.id, reason: gap?.reason, quote: gap?.quote }, { id: 'mat-d-rasio-c2', reason: 'Jaraknya masih dalam cm (6.000.000 cm). Ubah ke km dulu: 1 km = 100.000 cm.', quote: '3.000.000 km/jam' });
+  assert.deepEqual({ id: gap?.id, reason: gap?.reason, quote: gap?.quote }, { id: 'mat-d-rasio-panjang', reason: 'Itu masih dalam meter. Dari m ke km dibagi 1.000 lagi.', quote: '60.000' });
+  // jawaban benar membuktikan inti hasil akhir walau AI tidak menulis bukti: diagnosis langsung "kuat"
+  const right = await check('soal-peta', '12 × 500.000 = 6.000.000 cm = 60 km');
+  assert.equal(right.correct, true);
+  assert.deepEqual(right.items?.map((x: any) => x.state), ['ok', 'ok']);
+  const diag = await s.diagnose('browser-c', { sessionId: 'c', questionId: 'soal-peta', rawText: '6.000.000 cm = 60 km', responseMode: null });
+  assert.equal(diag.status, 'completed');
+  assert.equal(diag.assessment.tone, 'kuat');
   assert.equal((await check('soal-sawah', '4 kali')).correct, false);
   assert.equal((await check('soal-sawah', 'padi → tikus → ular → elang = 3 kali')).correct, true);
   assert.equal((await check('soal-freezer', '310 − 273 = 37\n37 − (−5) = 42 °C')).correct, true);
   assert.equal((await check('soal-batu', '60 : 20 = 3 g/cm³')).correct, true);
+});
+
+test('trial items: which /coba questions are in the active release, with their public prompt and Coba sekarang steps', async () => {
+  const s = trialAssessment(async (alias: string) => { if (alias === 'soal-tidak-ada') throw new ApiError(404, 'NOT_FOUND'); return load(alias); },
+    { evaluate: async () => { throw new Error('no grading'); }, tutor: async () => ({ text: '', quick: [], hintsUsed: 0 }) });
+  const r = await s.items(['soal-peta', 'soal-tidak-ada', 'BAD ID', 'soal-peta']);
+  assert.deepEqual(r.items.map(i => [i.id, i.available, i.steps]), [['soal-peta', true, [1, 2]], ['soal-tidak-ada', false, undefined]]);
+  assert.match(r.items[0]!.prompt!, /^Pada peta, jarak rumah Dika ke rumah neneknya 12 cm/);
+  assert.doesNotMatch(JSON.stringify(r), /6\.000\.000|key|misconception/i, 'never rubric content');
+  const app = Fastify();
+  app.setErrorHandler((e, _req, reply) => reply.code(e instanceof ApiError ? e.status : 500).send({ code: e instanceof ApiError ? e.code : 'INTERNAL' }));
+  registerTrialRoutes(app, null as unknown as Connection, s);
+  try {
+    const res = await app.inject({ method: 'GET', url: '/v1/trial/items?ids=soal-peta,soal-tidak-ada' });
+    assert.equal(res.statusCode, 200, res.body);
+    assert.equal(res.json().items.length, 2);
+    assert.equal((await app.inject({ method: 'GET', url: '/v1/trial/items' })).statusCode, 400);
+  } finally { await app.close(); }
 });

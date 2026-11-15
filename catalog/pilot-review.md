@@ -1128,7 +1128,7 @@ Materi: 5 · Soal: 15
 
 ## Rasio, skala, dan laju (MAT.C26.D.RASIO)
 
-Materi: 5 · Soal: 15
+Materi: 6 · Soal: 18
 
 - [ ] **MAT.C26.D.RASIO.Q.PERBANDINGAN_SENILAI_1** — Harga 4 pensil Rp10.000. Harga 10 pensil yang sama adalah …
   A. Rp20.000 · B. Rp25.000 · C. Rp40.000 · D. Rp4.000
@@ -1148,6 +1148,15 @@ Materi: 5 · Soal: 15
 - [ ] **MAT.C26.D.RASIO.Q.WAKTU_3** — Rani berlari selama 45 menit. Dalam jam, waktunya …
   A. 4,5 jam · B. 0,75 jam · C. 0,45 jam · D. 1,5 jam
   Kunci: **B** · 45 : 60 = 0,75 jam.
+- [ ] **MAT.C26.D.RASIO.Q.PANJANG_1** — 3,5 km sama dengan …
+  A. 3.500 m · B. 350 m · C. 35.000 m · D. 35 m
+  Kunci: **A** · 1 km = 1.000 m, jadi 3,5 × 1.000 = 3.500 m.
+- [ ] **MAT.C26.D.RASIO.Q.PANJANG_2** — 450.000 cm sama dengan …
+  A. 45 km · B. 0,45 km · C. 450 km · D. 4,5 km
+  Kunci: **D** · 450.000 : 100.000 = 4,5 km.
+- [ ] **MAT.C26.D.RASIO.Q.PANJANG_3** — Panjang pita 2,4 m. Dalam cm, panjangnya …
+  A. 2.400 cm · B. 0,24 cm · C. 240 cm · D. 24 cm
+  Kunci: **C** · 1 m = 100 cm, jadi 2,4 × 100 = 240 cm.
 - [ ] **MAT.C26.D.RASIO.Q.SKALA_DAN_LAJU_1** — Jarak dua kota pada peta 4 cm dengan skala 1 : 500.000. Jarak sebenarnya adalah …
   A. 20 km · B. 200 km · C. 2.000 km · D. 2 km
   Kunci: **A** · 4 × 500.000 = 2.000.000 cm = 20 km.
