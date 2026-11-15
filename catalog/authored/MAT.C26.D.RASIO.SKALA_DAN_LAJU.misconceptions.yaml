@@ -3,7 +3,7 @@ kind: CONCEPT_MISCONCEPTIONS
 target: MAT.C26.D.RASIO.SKALA_DAN_LAJU
 provenance:
   source: authored
-  note: Untuk rubrik numeric-v1 soal /coba (soal-peta).
+  note: Untuk rubrik numeric-v1 soal /coba (soal-peta, soal-peta versi lama (tanya waktu)).
 review:
   status: PROPOSED
   decision: D8
@@ -22,3 +22,13 @@ misconceptions:
     example: "12 : 2 = 6"
     indicators:
       - "soal-peta: jawaban 6"
+  - code: BERHENTI_DI_JARAK
+    description: Jarak asli dari skala dianggap sudah jawaban akhir
+    example: jarak asli 3 km, lalu berhenti
+    indicators:
+      - "soal-peta versi lama (tanya waktu): jawaban 3"
+  - code: LAJU_TERBALIK
+    description: Laju dihitung terbalik (kecepatan dibagi jarak)
+    example: "30 : 3 = 10"
+    indicators:
+      - "soal-peta versi lama (tanya waktu): jawaban 10"
