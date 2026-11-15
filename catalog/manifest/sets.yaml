@@ -1823,6 +1823,20 @@ sets:
         - items
       evidence:
         - semua soal inti ini
+  - code: MAT.C26.D.RASIO.S.PANJANG
+    title: Latihan Konversi satuan panjang
+    origin: CONCEPT_LESSON
+    items:
+      - MAT.C26.D.RASIO.Q.PANJANG_1
+      - MAT.C26.D.RASIO.Q.PANJANG_2
+      - MAT.C26.D.RASIO.Q.PANJANG_3
+    review:
+      status: PROPOSED
+      decision: D7
+      fields:
+        - items
+      evidence:
+        - semua soal inti ini
   - code: MAT.C26.D.RASIO.S.SKALA_DAN_LAJU
     title: Latihan Skala
     origin: CONCEPT_LESSON

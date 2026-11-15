@@ -1,0 +1,61 @@
+schemaVersion: 1
+code: MAT.C26.D.RASIO.L.PANJANG
+title: Konversi satuan panjang
+estimatedMinutes: 4
+aliases: []
+concepts:
+  - MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG
+blocks:
+  - type: heading
+    slide: 0
+    text: Tangga satuan panjang
+  - type: text
+    slide: 0
+    text: "Urutan satuan panjang dari besar ke kecil: km, hm, dam, m, dm, cm, mm."
+  - type: text
+    slide: 0
+    text: Turun satu anak tangga dikali 10, naik satu anak tangga dibagi 10. Jadi 1 km = 1.000 m dan 1 m = 100 cm.
+  - type: math
+    slide: 0
+    name: 1 km
+    expression: 1.000 m
+    highlight: true
+  - type: math
+    slide: 0
+    name: 1 m
+    expression: 100 cm
+  - type: heading
+    slide: 1
+    text: Dari cm ke km
+  - type: text
+    slide: 1
+    text: Dari cm ke km naik 5 anak tangga, jadi dibagi 100.000.
+  - type: text
+    slide: 1
+    text: "Contoh: 250.000 cm = 250.000 : 100.000 = 2,5 km."
+  - type: math
+    slide: 1
+    name: 1 km
+    expression: 100.000 cm
+    highlight: true
+  - type: math
+    slide: 1
+    name: cm ke km
+    expression: dibagi 100.000
+  - type: tip
+    slide: 1
+    text: Hitung anak tangganya dulu, baru tentukan dikali atau dibagi.
+checks:
+  - question: MAT.C26.D.RASIO.Q.PANJANG_1
+    ordinal: 0
+    slideIndex: 1
+    required: true
+practiceSet: MAT.C26.D.RASIO.S.PANJANG
+review:
+  status: PROPOSED
+  decision: D7
+  fields:
+    - blocks
+    - concepts
+  evidence:
+    - materi dua slide pilot; isi perlu dicek guru mata pelajaran

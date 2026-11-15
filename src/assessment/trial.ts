@@ -5,8 +5,8 @@ import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } fro
 import { gradingSource } from '../catalog/grading-source.js';
 import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
 import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
-import { fail } from '../platform/errors.js';
-import { judgeCobaStep } from './coba-steps.js';
+import { ApiError, fail } from '../platform/errors.js';
+import { judgeCobaStep, stepValue } from './coba-steps.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
 // Public trial uses published content with an injected AI engine; no authored-response fallback.
@@ -83,6 +83,20 @@ export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>, op
   }
   return null;
 }
+/*
+ * Jawaban yang benar menurut angka hasil akhirnya membuktikan inti hasil akhir (rubric.finalAnswerEvidence), seperti
+ * penilai numeric-v1. Tanpa ini, AI yang tidak menulis bukti membuat diagnosis jatuh ke "perjelas langkahmu"
+ * padahal jawabannya benar.
+ */
+function proven(e: Evaluation, i: TrialItem, text: string, quote?: string): Evaluation {
+  const need = i.source.rubric.finalAnswerEvidence.filter(code => i.concepts.some(c => c.code === code)
+    && !e.evidence.some(x => x.conceptCode === code && x.classification === 'UNDERSTANDING_DEMONSTRATED'));
+  if (!need.length) return e;
+  const at = quote ? text.lastIndexOf(quote) : -1;
+  const refs = quote && at >= 0 ? [{ kind: 'SPAN' as const, start: at, end: at + quote.length, quote }] : [];
+  return { ...e, evidence: [...e.evidence.filter(x => !need.includes(x.conceptCode)),
+    ...need.map(code => ({ conceptCode: code, classification: 'UNDERSTANDING_DEMONSTRATED' as const, rationale: 'Hasil akhirmu benar.', refs, uncertaintyReasons: [] }))] } as Evaluation;
+}
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
   // soal milik siswa (ai-assisted-v1) tidak punya penilai deterministik: hanya AI yang menilai.
   // (Tanpa penjaga ini, setiap diagnosis /tanya gagal "No deterministic evaluator".)
@@ -94,32 +108,43 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
   const text = response.text ?? '';
   const got = finalValue(text, unitKindOf(key.unit), { thousandsDot: key.thousandsDot === true });
+  /* pengecoh katalog yang cocok dengan angka hasil akhir: penjelasan yang sudah ditinjau, angkanya disorot */
+  const trapOf = (values: number[], quote: string) => {
+    const trap = i.source.rubric.misconceptionMap.find(m => m.pattern.kind === 'NUMERIC' && typeof m.pattern.value === 'number'
+      && values.some(value => withinTolerance(value, m.pattern.value!, key.tolerance?.relative, key.tolerance?.floor)));
+    if (!trap || !i.concepts.some(c => c.code === trap.conceptCode)) return null;
+    const at = text.lastIndexOf(quote);
+    return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, misconceptionCode: trap.misconceptionCode,
+      evidence: [...judged.evidence.filter(e => e.conceptCode !== trap.conceptCode && e.classification !== 'MISCONCEPTION_EVIDENCED'), { conceptCode: trap.conceptCode,
+        classification: 'MISCONCEPTION_EVIDENCED', rationale: trap.explanation, misconceptionCode: trap.misconceptionCode,
+        refs: at >= 0 && quote ? [{ kind: 'SPAN', start: at, end: at + quote.length, quote }] : [], uncertaintyReasons: [] }] } as Evaluation;
+  };
   if (!got) {
+    // Hasil akhir dengan satuan lain ("= 6.000.000 cm" untuk kunci dalam km): angkanya hanya dicocokkan dengan pengecoh.
+    // Jalur ini tidak pernah memberi benar (60 m bukan 60 km); selain pengecoh, keputusan tetap seperti sebelumnya.
+    const last = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1) ?? '';
+    const loose = last.includes('=') ? stepValue(last, { thousandsDot: key.thousandsDot === true }) : null;
+    const quote = last.split(/[=≈]/).at(-1)?.trim() ?? '';
+    const looseTrap = loose !== null ? trapOf([loose], quote) : null;
+    if (looseTrap) return looseTrap;
     // angka polos tanpa "=" ("0,1", "10.000 kJ"): penilai numeric-v1 katalog membacanya sendiri dan memutuskan bila tegas
     const decisive = i.source.rubric.evaluator === 'numeric-v1' && fixed && (fixed.verdict === 'CORRECT' || fixed.verdict === 'INCORRECT');
     if (!decisive) return judged;
-    return fixed!.verdict === 'CORRECT' && judged.verdict === 'CORRECT' ? judged : fixed!;
+    return fixed!.verdict === 'CORRECT' && judged.verdict === 'CORRECT' ? proven(judged, i, text) : fixed!;
   }
   const right = got.values.some(value => withinTolerance(value, key.value!, key.tolerance?.relative, key.tolerance?.floor));
   console.log(JSON.stringify({ event: 'grade_final_value', hasil: right ? 'benar' : 'salah', bacaan: got.values.length, ai: judged.verdict }));
   if (right) {
-    if (judged.verdict === 'CORRECT') return judged;
+    if (judged.verdict === 'CORRECT') return proven(judged, i, text, got.quote);
     if (fixed?.verdict === 'CORRECT') return fixed;
     // benar menurut angka: tanda salah dari AI tidak berlaku lagi
-    return { ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
-      evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation;
+    return proven({ ...judged, verdict: 'CORRECT', reason: null, misconceptionCode: null, clarification: undefined,
+      evidence: judged.evidence.map(e => e.classification === 'MISCONCEPTION_EVIDENCED' ? { ...e, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] } : e) } as Evaluation, i, text, got.quote);
   }
   // Pengecoh yang dicatat di rubrik (angka hasil akhir sama dengan pola NUMERIC): penjelasan katalog yang sudah ditinjau
   // dipakai, bukan tebakan AI. Inti lain tetap memakai bukti dari AI.
-  const trap = i.source.rubric.misconceptionMap.find(m => m.pattern.kind === 'NUMERIC' && typeof m.pattern.value === 'number'
-    && got.values.some(value => withinTolerance(value, m.pattern.value!, key.tolerance?.relative, key.tolerance?.floor)));
-  if (trap && i.concepts.some(c => c.code === trap.conceptCode)) {
-    const at = text.lastIndexOf(got.quote);
-    return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, misconceptionCode: trap.misconceptionCode,
-      evidence: [...judged.evidence.filter(e => e.conceptCode !== trap.conceptCode && e.classification !== 'MISCONCEPTION_EVIDENCED'), { conceptCode: trap.conceptCode,
-        classification: 'MISCONCEPTION_EVIDENCED', rationale: trap.explanation, misconceptionCode: trap.misconceptionCode,
-        refs: at >= 0 ? [{ kind: 'SPAN', start: at, end: at + got.quote.length, quote: got.quote }] : [], uncertaintyReasons: [] }] } as Evaluation;
-  }
+  const trap = trapOf(got.values, got.quote);
+  if (trap) return trap;
   if (judged.verdict === 'INCORRECT' && judged.evidence.some(e => e.classification === 'MISCONCEPTION_EVIDENCED')) return judged;
   // salah menurut angka, padahal AI tidak menemukan yang salah: hasil akhirnya yang ditandai, pada inti langkah "hitung" terakhir
   const path = i.source.rubric.solutionPaths?.[0];
@@ -360,6 +385,24 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       if (c.steps.size >= 64) c.steps.delete(c.steps.keys().next().value!);
       c.steps.set(cacheKey, result);
       return result;
+    },
+    /*
+     * Soal /coba mana yang benar-benar ada di rilis katalog aktif, dengan teks soalnya (body publik) dan langkah
+     * Coba sekarang yang punya kunci. Aplikasi memakai ini supaya soal yang belum terbit, atau versinya berbeda dengan
+     * yang tampil, tidak dibuka (tanpa ini siswa mendapat 404 atau dinilai dengan kunci versi lain).
+     */
+    async items(ids: string[]): Promise<{ items: { id: string; available: boolean; prompt?: string; steps?: number[] }[] }> {
+      const wanted = [...new Set(ids.map(id => id.trim()).filter(id => /^[a-z0-9-]{1,64}$/.test(id)))].slice(0, 16);
+      const items = await Promise.all(wanted.map(async id => {
+        try {
+          const i = await load(id);
+          return { id, available: true, prompt: i.source.body.prompt, steps: (i.source.rubric.cobaSteps ?? []).map(s => s.step) };
+        } catch (e) {
+          if (e instanceof ApiError && (e.status === 404 || e.status === 409)) return { id, available: false };
+          throw e;
+        }
+      }));
+      return { items };
     },
     close() { contexts.clear(); }
   };

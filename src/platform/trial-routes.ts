@@ -39,4 +39,5 @@ export function registerTrialRoutes(app: FastifyInstance, db: Connection,
   register('POST', 'tutor', (id, req) => trial.tutor(id, req.body as any));
   register('POST', 'mini-check', (id, req) => trial.miniCheck(id, req.body as any));
   register('POST', 'steps/check', (id, req) => trial.stepCheck(id, req.body as any));
+  register('GET', 'items', (_id, req) => trial.items(String((req.query as { ids?: string }).ids ?? '').split(',')));
 }

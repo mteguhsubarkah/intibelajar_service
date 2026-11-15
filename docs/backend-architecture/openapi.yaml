@@ -511,6 +511,36 @@ paths:
         "503":
           $ref: "#/components/responses/Unavailable"
       description: Grading always uses the question the server wrote for this core and answer, never one sent by the browser. Provider failure returns HTTP 503; no deterministic fallback. No account, mastery or durable progress.
+  /v1/trial/items:
+    get:
+      operationId: publicTrialItemsGet
+      tags:
+        - Public trial
+      summary: "Anonymous public trial: which /coba questions exist in the active catalog release"
+      security: []
+      parameters:
+        - name: ids
+          in: query
+          required: true
+          description: Comma-separated ITEM aliases (at most 16 are read).
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 600
+      responses:
+        "200":
+          description: Per alias, whether it resolves in the active release; when it does, its public prompt and the hint steps that have a "Coba sekarang" key. The app opens only questions whose prompt matches the text it shows.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrialItemsReply"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+      description: Read-only. Never returns rubric content (keys, distractors, step keys); prompt is the learner-facing body.
   /v1/trial/steps/check:
     post:
       operationId: publicTrialStepCheckPost
@@ -6321,6 +6351,34 @@ components:
               type: string
               minLength: 1
               maxLength: 500
+    TrialItemsReply:
+      type: object
+      required: [items]
+      additionalProperties: false
+      properties:
+        items:
+          type: array
+          maxItems: 16
+          items:
+            type: object
+            required: [id, available]
+            additionalProperties: false
+            properties:
+              id:
+                type: string
+                minLength: 1
+                maxLength: 64
+              available:
+                type: boolean
+              prompt:
+                type: string
+                maxLength: 4000
+              steps:
+                type: array
+                maxItems: 8
+                items:
+                  type: integer
+                  minimum: 1
     TrialStepCheckRequest:
       type: object
       required: [sessionId, questionId, step, reply]

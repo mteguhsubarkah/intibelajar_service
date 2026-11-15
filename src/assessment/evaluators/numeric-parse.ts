@@ -12,14 +12,14 @@ export type UnreadableReason =
 
 /**
  * Accepted units are those of the rubric's answer: length (m), angle (°), time (s), mass (g), and for the SMP /coba
- * questions minutes, °C, density (g/cm³), kJ, a count of cells, speed (km/jam) and a number of times (kali); or none.
+ * questions minutes, °C, density (g/cm³), kJ, a count of cells, speed (km/jam), a number of times (kali) and kilometres; or none.
  */
-export type UnitKind = 'length' | 'angle' | 'time' | 'mass' | 'minute' | 'celsius' | 'density' | 'energy' | 'cells' | 'speed' | 'times' | 'none';
+export type UnitKind = 'length' | 'angle' | 'time' | 'mass' | 'minute' | 'celsius' | 'density' | 'energy' | 'cells' | 'speed' | 'times' | 'km' | 'none';
 export const unitKindOf = (unit: string | undefined): UnitKind =>
   unit === undefined ? 'none' : ['m', 'meter', 'metre'].includes(unit) ? 'length' : ['°', 'deg', 'derajat'].includes(unit) ? 'angle'
     : ['s', 'sekon', 'detik'].includes(unit) ? 'time' : ['g', 'gram'].includes(unit) ? 'mass'
     : ['menit'].includes(unit) ? 'minute' : ['°C'].includes(unit) ? 'celsius' : ['g/cm³'].includes(unit) ? 'density'
-    : ['kJ'].includes(unit) ? 'energy' : ['sel'].includes(unit) ? 'cells' : ['km/jam'].includes(unit) ? 'speed' : ['kali'].includes(unit) ? 'times' : 'none';
+    : ['kJ'].includes(unit) ? 'energy' : ['sel'].includes(unit) ? 'cells' : ['km/jam'].includes(unit) ? 'speed' : ['kali'].includes(unit) ? 'times' : ['km'].includes(unit) ? 'km' : 'none';
 /** thousandsDot: "10.000" is ten thousand (Indonesian notation, as in the question text). Off by default: "34.641" stays 34.641. */
 export interface ParseOptions { thousandsDot?: boolean }
 
@@ -43,7 +43,7 @@ export function normalizeAnswerText(raw: string) {
 const LENGTH_UNITS = new Set(['m', 'meter', 'metre', 'mtr']);
 const ANGLE_UNITS = new Set(['derajat', 'deg']);
 // Units that are recognised, including ones that are rejected; longer alternatives first, \b on both sides.
-const UNIT_PATTERN = /\b(?:kmperjam|perpindahan|gpercm3|celsius|bakteri|kali|meter|metre|derajat|persen|sekon|detik|menit|radian|gram|liter|mtr|mnt|deg|rad|sel|cm|mm|km|dm|kg|kj|ml|jam|m|g|s|l)\b/g;
+const UNIT_PATTERN = /\b(?:kilometer|kmperjam|perpindahan|gpercm3|celsius|bakteri|kali|meter|metre|derajat|persen|sekon|detik|menit|radian|gram|liter|mtr|mnt|deg|rad|sel|cm|mm|km|dm|kg|kj|ml|jam|m|g|s|l)\b/g;
 const TIME_UNITS = new Set(['s', 'sekon', 'detik']);
 const MASS_UNITS = new Set(['g', 'gram']);
 const MINUTE_UNITS = new Set(['menit', 'mnt']);
@@ -53,10 +53,11 @@ const ENERGY_UNITS = new Set(['kj']);
 const CELL_UNITS = new Set(['sel', 'bakteri']);
 const SPEED_UNITS = new Set(['kmperjam']);
 const TIMES_UNITS = new Set(['kali', 'perpindahan']);
+const KM_UNITS = new Set(['km', 'kilometer']);
 const accepted = (kind: UnitKind) => kind === 'length' ? LENGTH_UNITS : kind === 'angle' ? ANGLE_UNITS
   : kind === 'time' ? TIME_UNITS : kind === 'mass' ? MASS_UNITS : kind === 'minute' ? MINUTE_UNITS : kind === 'celsius' ? CELSIUS_UNITS
   : kind === 'density' ? DENSITY_UNITS : kind === 'energy' ? ENERGY_UNITS : kind === 'cells' ? CELL_UNITS
-  : kind === 'speed' ? SPEED_UNITS : kind === 'times' ? TIMES_UNITS : new Set<string>();
+  : kind === 'speed' ? SPEED_UNITS : kind === 'times' ? TIMES_UNITS : kind === 'km' ? KM_UNITS : new Set<string>();
 /*
  * A superscript right after a digit is a power ("2⁶" is 64); NFKC would otherwise turn it into "26".
  * Superscripts after a letter (cm³, m/s²) are units and are left alone.
@@ -80,7 +81,8 @@ const compoundUnits = (text: string) => text
 
 export function parseAnswerValue(raw: string, kind: UnitKind, options: ParseOptions = {}): ParseOutcome {
   if (raw.length > MAX_INPUT_LENGTH) return { kind: 'unreadable', reason: 'too-long' };
-  const trimmed = compoundUnits(normalizeAnswerText(powers(raw)).replace(/^\s*[a-z]\s*=\s*/, '').replace(/\.$/, '')).trim();
+  // "60km", "3g/cm3": satuan yang menempel pada angka dipisah dulu supaya terbaca seperti "60 km"
+  const trimmed = compoundUnits(normalizeAnswerText(powers(raw)).replace(/^\s*[a-z]\s*=\s*/, '').replace(/\.$/, '').replace(/(\d)([a-z°])/g, '$1 $2')).trim();
   if (trimmed.length === 0) return { kind: 'unreadable', reason: 'empty' };
   const units = stripUnits(trimmed, kind);
   if (!units.ok) return { kind: 'unreadable', reason: units.reason };
