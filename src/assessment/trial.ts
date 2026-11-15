@@ -6,7 +6,7 @@ import { gradingSource } from '../catalog/grading-source.js';
 import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
 import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
 import { ApiError, fail } from '../platform/errors.js';
-import { judgeCobaStep } from './coba-steps.js';
+import { judgeCobaStep, stepValue } from './coba-steps.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
 // Public trial uses published content with an injected AI engine; no authored-response fallback.
@@ -108,7 +108,25 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
   const text = response.text ?? '';
   const got = finalValue(text, unitKindOf(key.unit), { thousandsDot: key.thousandsDot === true });
+  /* pengecoh katalog yang cocok dengan angka hasil akhir: penjelasan yang sudah ditinjau, angkanya disorot */
+  const trapOf = (values: number[], quote: string) => {
+    const trap = i.source.rubric.misconceptionMap.find(m => m.pattern.kind === 'NUMERIC' && typeof m.pattern.value === 'number'
+      && values.some(value => withinTolerance(value, m.pattern.value!, key.tolerance?.relative, key.tolerance?.floor)));
+    if (!trap || !i.concepts.some(c => c.code === trap.conceptCode)) return null;
+    const at = text.lastIndexOf(quote);
+    return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, misconceptionCode: trap.misconceptionCode,
+      evidence: [...judged.evidence.filter(e => e.conceptCode !== trap.conceptCode && e.classification !== 'MISCONCEPTION_EVIDENCED'), { conceptCode: trap.conceptCode,
+        classification: 'MISCONCEPTION_EVIDENCED', rationale: trap.explanation, misconceptionCode: trap.misconceptionCode,
+        refs: at >= 0 && quote ? [{ kind: 'SPAN', start: at, end: at + quote.length, quote }] : [], uncertaintyReasons: [] }] } as Evaluation;
+  };
   if (!got) {
+    // Hasil akhir dengan satuan lain ("= 6.000.000 cm" untuk kunci dalam km): angkanya hanya dicocokkan dengan pengecoh.
+    // Jalur ini tidak pernah memberi benar (60 m bukan 60 km); selain pengecoh, keputusan tetap seperti sebelumnya.
+    const last = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1) ?? '';
+    const loose = last.includes('=') ? stepValue(last, { thousandsDot: key.thousandsDot === true }) : null;
+    const quote = last.split(/[=≈]/).at(-1)?.trim() ?? '';
+    const looseTrap = loose !== null ? trapOf([loose], quote) : null;
+    if (looseTrap) return looseTrap;
     // angka polos tanpa "=" ("0,1", "10.000 kJ"): penilai numeric-v1 katalog membacanya sendiri dan memutuskan bila tegas
     const decisive = i.source.rubric.evaluator === 'numeric-v1' && fixed && (fixed.verdict === 'CORRECT' || fixed.verdict === 'INCORRECT');
     if (!decisive) return judged;
@@ -125,15 +143,8 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   }
   // Pengecoh yang dicatat di rubrik (angka hasil akhir sama dengan pola NUMERIC): penjelasan katalog yang sudah ditinjau
   // dipakai, bukan tebakan AI. Inti lain tetap memakai bukti dari AI.
-  const trap = i.source.rubric.misconceptionMap.find(m => m.pattern.kind === 'NUMERIC' && typeof m.pattern.value === 'number'
-    && got.values.some(value => withinTolerance(value, m.pattern.value!, key.tolerance?.relative, key.tolerance?.floor)));
-  if (trap && i.concepts.some(c => c.code === trap.conceptCode)) {
-    const at = text.lastIndexOf(got.quote);
-    return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, misconceptionCode: trap.misconceptionCode,
-      evidence: [...judged.evidence.filter(e => e.conceptCode !== trap.conceptCode && e.classification !== 'MISCONCEPTION_EVIDENCED'), { conceptCode: trap.conceptCode,
-        classification: 'MISCONCEPTION_EVIDENCED', rationale: trap.explanation, misconceptionCode: trap.misconceptionCode,
-        refs: at >= 0 ? [{ kind: 'SPAN', start: at, end: at + got.quote.length, quote: got.quote }] : [], uncertaintyReasons: [] }] } as Evaluation;
-  }
+  const trap = trapOf(got.values, got.quote);
+  if (trap) return trap;
   if (judged.verdict === 'INCORRECT' && judged.evidence.some(e => e.classification === 'MISCONCEPTION_EVIDENCED')) return judged;
   // salah menurut angka, padahal AI tidak menemukan yang salah: hasil akhirnya yang ditandai, pada inti langkah "hitung" terakhir
   const path = i.source.rubric.solutionPaths?.[0];

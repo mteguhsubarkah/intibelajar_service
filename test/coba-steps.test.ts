@@ -151,6 +151,13 @@ test('trial check: a catalogued trap keeps its reviewed explanation, and a bare 
   assert.equal(worked.correct, false);
   const gap = worked.items?.find((x: any) => x.state === 'gap');
   assert.deepEqual({ id: gap?.id, reason: gap?.reason, quote: gap?.quote }, { id: 'mat-d-rasio-panjang', reason: 'Itu masih dalam meter. Dari m ke km dibagi 1.000 lagi.', quote: '60.000' });
+  // hasil akhir bersatuan lain (cm untuk kunci km): pengecoh tetap dikenali (jalur ini tidak pernah memberi benar)
+  const cm = await check('soal-peta', '12 × 500.000 = 6.000.000 cm');
+  assert.equal(cm.correct, false);
+  assert.equal(cm.items?.find((x: any) => x.state === 'gap')?.reason, 'Itu masih dalam cm. Ubah ke km dulu: dibagi 100.000.');
+  assert.equal(cm.items?.find((x: any) => x.state === 'gap')?.quote, '6.000.000 cm');
+  // tanpa spasi antara angka dan satuan tetap terbaca
+  assert.equal((await check('soal-peta', '6.000.000 cm = 60km')).correct, true);
   // jawaban benar membuktikan inti hasil akhir walau AI tidak menulis bukti: diagnosis langsung "kuat"
   const right = await check('soal-peta', '12 × 500.000 = 6.000.000 cm = 60 km');
   assert.equal(right.correct, true);

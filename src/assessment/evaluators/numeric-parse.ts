@@ -81,7 +81,8 @@ const compoundUnits = (text: string) => text
 
 export function parseAnswerValue(raw: string, kind: UnitKind, options: ParseOptions = {}): ParseOutcome {
   if (raw.length > MAX_INPUT_LENGTH) return { kind: 'unreadable', reason: 'too-long' };
-  const trimmed = compoundUnits(normalizeAnswerText(powers(raw)).replace(/^\s*[a-z]\s*=\s*/, '').replace(/\.$/, '')).trim();
+  // "60km", "3g/cm3": satuan yang menempel pada angka dipisah dulu supaya terbaca seperti "60 km"
+  const trimmed = compoundUnits(normalizeAnswerText(powers(raw)).replace(/^\s*[a-z]\s*=\s*/, '').replace(/\.$/, '').replace(/(\d)([a-z°])/g, '$1 $2')).trim();
   if (trimmed.length === 0) return { kind: 'unreadable', reason: 'empty' };
   const units = stripUnits(trimmed, kind);
   if (!units.ok) return { kind: 'unreadable', reason: units.reason };
