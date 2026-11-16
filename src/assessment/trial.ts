@@ -1,4 +1,4 @@
-import type { TrialAi } from './trial-ai.js';
+import { confusedText, type TrialAi } from './trial-ai.js';
 import type { GradingSource } from '../catalog/grading-source.js';
 import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
@@ -97,13 +97,31 @@ function proven(e: Evaluation, i: TrialItem, text: string, quote?: string): Eval
   return { ...e, evidence: [...e.evidence.filter(x => !need.includes(x.conceptCode)),
     ...need.map(code => ({ conceptCode: code, classification: 'UNDERSTANDING_DEMONSTRATED' as const, rationale: 'Hasil akhirmu benar.', refs, uncertaintyReasons: [] }))] } as Evaluation;
 }
+/*
+ * Jawaban yang cuma menyatakan bingung / belum tahu caranya ("bingung ah gatau", tombol "Belum tahu caranya") tidak boleh
+ * berujung galat hanya karena penilai AI tidak tersedia: belum ada langkah yang bisa dinilai, jadi hasilnya sudah pasti.
+ * Belum dinilai, tidak ada inti yang salah, dan inti pertama soal menjadi tempat mulai (sama dengan hasil AI untuk bingung).
+ */
+const confusedResponse = (r: StudentResponse) => (r.responseType === 'TEXT' && confusedText(r.text ?? '')) || (r.responseType === 'SELF_REPORT' && r.selfReport === 'DONT_KNOW');
+export function confusedWithoutAi(i: TrialItem): Evaluation {
+  const start = i.concepts.find(c => c.legacyMapId) ?? i.concepts[0];
+  return { confused: true, verdict: 'NOT_GRADED', reason: 'insufficient-working', value: null, misconceptionCode: null, revealedAnswer: null,
+    evidence: i.concepts.map(c => ({ conceptCode: c.code, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'],
+      rationale: c === start ? 'Nggak apa-apa. Mulai dari inti ini dulu: pelajari konsepnya, lalu coba langkah pertamanya.' : 'Belum kelihatan dari jawaban ini.' })) } as Evaluation;
+}
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
   // soal milik siswa (ai-assisted-v1) tidak punya penilai deterministik: hanya AI yang menilai.
   // (Tanpa penjaga ini, setiap diagnosis /tanya gagal "No deterministic evaluator".)
   let fixed: Evaluation | null = null;
   try { fixed = evaluate({ ...i.source, response }); } catch { fixed = null; }
   if (response.responseType === 'OPTION' && fixed) return fixed;
-  const judged = await ai.evaluate(i, response, retry);
+  let judged: Evaluation;
+  try { judged = await ai.evaluate(i, response, retry); }
+  catch (e) {
+    if (!(e instanceof ApiError && e.status === 503 && confusedResponse(response))) throw e;
+    console.warn(JSON.stringify({ event: 'trial_ai_fallback', reason: 'confused' }));
+    return confusedWithoutAi(i);
+  }
   const key = i.source.rubric.answer;
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
   const text = response.text ?? '';
