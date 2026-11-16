@@ -182,3 +182,31 @@ test('trial mini check: after a correction that is still wrong, the same core ge
   const graded = await s.miniCheck('browser-n', { ...mini, round: 1, reply: 'depan' });
   assert.equal(graded.question, 'Pertanyaan 2', 'grading uses that round\'s question');
 });
+
+test('trial: jawaban "bingung" tetap dirangkul walau penilai AI tidak tersedia; jawaban lain tetap 503', async () => {
+  const { fail } = await import('../src/platform/errors.js');
+  const down = { ...fixtureAi, evaluate: async () => fail(503, 'DEPENDENCY_UNAVAILABLE', { blockers: ['TRIAL_AI_PROVIDER_UNAVAILABLE'] }) };
+  const s = trialAssessment(load, down as any);
+  const confused = await s.diagnose('browser-bingung-1', { ...body, rawText: 'bingung ah gatau' });
+  assert.equal(confused.status, 'completed');
+  assert.equal(confused.assessment.title, 'Nggak apa-apa kalau masih bingung.');
+  assert.equal(confused.assessment.gap.label, 'Mulai dari inti ini');
+  assert.match(confused.assessment.gap.reason, /^Nggak apa-apa\. Mulai dari inti ini dulu/);
+  assert.ok(confused.items.length > 0 && confused.items.every((x: { state: string }) => x.state === 'rest'), 'tidak ada inti yang ditandai salah atau dikuasai');
+  // tombol "Belum tahu caranya" (jawaban kosong, responseMode blank) lewat jalur yang sama
+  const blank = await s.diagnose('browser-bingung-2', { ...body, rawText: '', responseMode: 'blank' });
+  assert.equal(blank.assessment.title, 'Nggak apa-apa kalau masih bingung.');
+  // jawaban berisi langkah tidak ditebak tanpa AI: tetap galat 503 seperti sebelumnya
+  for (const rawText of ['sin 30 = 20/x', 'bingung, tapi x = 40', 'jawabannya yang B kayaknya']) {
+    await assert.rejects(s.diagnose('browser-bingung-3', { ...body, rawText }), (e: unknown) => e instanceof ApiError && e.status === 503, rawText);
+  }
+});
+
+test('trial: soal katalog tanpa urutan pilihan lama memakai urutan pilihan katalog (latihan inti tamu)', async () => {
+  const { optionOrderOf } = await import('../src/assessment/trial.js');
+  const i = await load('soal-menara');
+  const withOptions = { ...i.source, body: { ...i.source.body, options: [{ id: 'o-a', label: 'A' }, { id: 'o-b', label: 'B' }] } } as any;
+  assert.deepEqual(optionOrderOf(null, withOptions), ['o-a', 'o-b'], 'urutan GET /v1/questions/{id}');
+  assert.deepEqual(optionOrderOf(['o-b', 'o-a'], withOptions), ['o-b', 'o-a'], 'soal /coba lama tetap memakai urutan tetapnya');
+  assert.equal(optionOrderOf(null, { ...i.source, body: { ...i.source.body, options: undefined } } as any), null, 'soal isian tanpa pilihan');
+});
