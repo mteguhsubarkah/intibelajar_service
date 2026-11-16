@@ -13,7 +13,8 @@ import { hash, stable, uuid } from '../platform/crypto.js';
 // It never creates an account, consent, mastery or permanent response record.
 export interface TrialItem {
   revisionId: string; source: GradingSource; optionOrder: string[] | null;
-  concepts: { code: string; title: string; legacyMapId: string | null; route: string }[];
+  /** grade: kelas inti di katalog (7–12), untuk menyesuaikan pertanyaan mini dengan tingkat siswa */
+  concepts: { code: string; title: string; legacyMapId: string | null; route: string; grade?: number | null }[];
 }
 /*
  * Urutan pilihan yang dilihat siswa, untuk jawaban "pilihan ke-i". Soal /coba lama punya urutan tetap (alias ITEM);
@@ -39,7 +40,7 @@ export async function loadTrialItem(db: Connection, alias: string, revisionId?: 
     const code = source.rubric.lessonFor?.[c.code];
     const lesson = (code ? await lessonFor(db, release, { lessonCode: code, conceptId: c.id }) : null)
       ?? await lessonFor(db, release, { conceptId: c.id });
-    return { code: c.code, title: c.title, legacyMapId: c.legacyMapId, route: lesson?.routeSlug ?? '' };
+    return { code: c.code, title: c.title, legacyMapId: c.legacyMapId, route: lesson?.routeSlug ?? '', grade: c.grade ?? null };
   }));
   return { revisionId: anchor.revisionId, source, concepts, optionOrder: optionOrderOf(item.legacyOptionOrder, source) };
 }

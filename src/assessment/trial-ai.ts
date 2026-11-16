@@ -26,6 +26,10 @@ const invalid = (reason: string, status?: number) => console.warn(JSON.stringify
  * Jawaban yang hanya menyatakan bingung / belum tahu caranya: kata-kata kebingungan tanpa angka, tanda "=", atau rumus.
  * Cadangan bila model tidak mengisi "bingung".
  */
+/** "SMP kelas 7" / "SMA kelas 11" dari kelas inti katalog; tanpa kelas: tidak dikirim. */
+export function levelOf(grade: number | null | undefined) {
+  return grade && grade >= 7 && grade <= 12 ? `${grade <= 9 ? 'SMP' : 'SMA'} kelas ${grade}` : undefined;
+}
 export function confusedText(raw: string) {
   const t = raw.toLowerCase().normalize('NFKC').trim();
   if (!t || /[0-9=√]/.test(t) || t.length > 160) return false;
@@ -148,7 +152,9 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       const allSteps=paths.flatMap(p=>p.steps).map(s=>s.description);
       // soal pilihan ganda: pilihannya ikut, supaya pertanyaan mini merujuk soal yang sama dengan yang dilihat siswa
       const options=(item.source.body.options??[]).map((o:{label:string})=>o.label).filter(Boolean);
-      const base={questionText:item.source.body.prompt+(options.length?'\nPilihan: '+options.join(' | '):''),answer:input.answer,core:input.core,others,steps,allSteps,hidden:last,...(input.previous?{previous:input.previous}:{})};
+      // tingkat siswa dari kelas inti di katalog: pertanyaan mini untuk SMP dibuat lebih sederhana (lihat ASK di mini-check)
+      const level=levelOf(item.concepts.find(c=>(c.legacyMapId??c.code)===input.core.id)?.grade ?? Math.min(...item.concepts.map(c=>c.grade ?? 99)));
+      const base={questionText:item.source.body.prompt+(options.length?'\nPilihan: '+options.join(' | '):''),answer:input.answer,core:input.core,others,steps,allSteps,hidden:last,...(input.previous?{previous:input.previous}:{}),...(level?{level}:{})};
       return input.question!==undefined ? miniGrade(config,{...base,question:input.question,reply:input.reply??'',...(input.key?{key:input.key}:{}),...(input.decided!==undefined?{decided:input.decided}:{})},http) : miniQuestion(config,base,http);
     }
   };
