@@ -125,8 +125,8 @@ export async function loopAnchor(db: Connection, questionId: string) {
 
 /** Concepts mapped on a revision, with what recommendations need (no rubric). */
 export async function mappedConcepts(db: Connection, revisionId: string) {
-  return (await sql<{ id: string; code: string; title: string; legacyMapId: string | null; role: 'PRIMARY' | 'SUPPORTING'; assessable: boolean; ordinal: number; minutes: number }>`
-    select c.id, c.code, c.title, c.legacy_map_id as "legacyMapId", qc.role, qc.assessable, c.ordinal, c.estimated_minutes as minutes
+  return (await sql<{ id: string; code: string; title: string; legacyMapId: string | null; role: 'PRIMARY' | 'SUPPORTING'; assessable: boolean; ordinal: number; minutes: number; grade: number | null }>`
+    select c.id, c.code, c.title, c.legacy_map_id as "legacyMapId", qc.role, qc.assessable, c.ordinal, c.estimated_minutes as minutes, c.grade
     from question_concept qc join concept c on c.id = qc.concept_id where qc.question_revision_id = ${revisionId} order by c.ordinal, c.code`.execute(db)).rows;
 }
 

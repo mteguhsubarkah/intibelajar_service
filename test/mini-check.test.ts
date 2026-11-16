@@ -19,7 +19,8 @@ test('mini question: built from the question and its correct solution, about one
 });
 test('mini grade: a correct reply carries the reason for "Kamu sudah kuasai ini karena …"',async()=>{
  const g=await miniGrade(config,{...input,question:'sisi apa?',reply:'drpan'},(async()=>envelope({yangBenar:'depan',benar:true,tanggapan:'Betul, tinggi menara berhadapan dengan sudut 30°.',karena:'karena kamu tahu tinggi menara adalah sisi depan dari sudut 30°.'})) as typeof fetch);
- assert.deepEqual(g,{correct:true,feedback:'Betul, tinggi menara berhadapan dengan sudut 30°.',because:'kamu tahu tinggi menara adalah sisi depan dari sudut 30°'});
+ // layar menulis "Tepat! Sekarang kamu menguasai inti ini.": pujian di awal tanggapan dibuang supaya tidak dobel
+ assert.deepEqual(g,{correct:true,feedback:'Tinggi menara berhadapan dengan sudut 30°.',because:'kamu tahu tinggi menara adalah sisi depan dari sudut 30°'});
  const wrong=await miniGrade(config,{...input,question:'sisi apa?',reply:'miring'},(async()=>envelope({yangBenar:'depan',benar:false,tanggapan:'Hampir. Sisi miring itu yang terpanjang.',karena:'x'})) as typeof fetch);
  assert.equal(wrong.correct,false);assert.equal(wrong.because,'');
 });
@@ -57,4 +58,14 @@ test('mini grade: a number answer is decided by its value ("akar 3" is not tan 3
   return envelope({yangBenar:'1/√3',benar:true,tanggapan:'Tepat, kamu benar menyebut nilai tan 30° berkaitan dengan akar 3.',karena:'kamu tahu tan 30°'});}) as typeof fetch);
  assert.equal(g.correct,false);assert.equal(g.because,'');assert.doesNotMatch(g.feedback,/Tepat/);
  assert.equal(sent.kunciJawaban,'1/√3');assert.equal(sent.penilaianAngka,'salah');
+});
+
+test('mini check: tingkat siswa (SMP kelas 7) ikut ke model; tanggapan benar tanpa pujian di depan',async()=>{
+ const { levelOf } = await import('../src/assessment/trial-ai.js');
+ assert.equal(levelOf(7),'SMP kelas 7');assert.equal(levelOf(11),'SMA kelas 11');assert.equal(levelOf(null),undefined);
+ let ctx:any;
+ await miniQuestion(config,{...input,level:'SMP kelas 7'},(async(_u,o)=>{ctx=JSON.parse(JSON.parse(String(o?.body)).messages[1].content);return envelope({pertanyaan:'Skala 1 : 500.000 artinya 1 cm di peta sama dengan berapa cm aslinya?',petunjuk:'Lihat angka di belakang titik dua.',kunci:'500000'});}) as typeof fetch);
+ assert.equal(ctx.tingkat,'SMP kelas 7');
+ const g=await miniGrade(config,{...input,level:'SMP kelas 7',question:'q',reply:'6.000.000',key:'6000000'},(async()=>envelope({yangBenar:'6.000.000',benar:true,tanggapan:'Pas, 12 × 500.000 = 6.000.000 cm.',karena:'kamu bisa mengubah jarak peta ke jarak asli'})) as typeof fetch);
+ assert.equal(g.feedback,'12 × 500.000 = 6.000.000 cm.');
 });
