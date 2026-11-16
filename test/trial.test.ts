@@ -201,3 +201,12 @@ test('trial: jawaban "bingung" tetap dirangkul walau penilai AI tidak tersedia; 
     await assert.rejects(s.diagnose('browser-bingung-3', { ...body, rawText }), (e: unknown) => e instanceof ApiError && e.status === 503, rawText);
   }
 });
+
+test('trial: soal katalog tanpa urutan pilihan lama memakai urutan pilihan katalog (latihan inti tamu)', async () => {
+  const { optionOrderOf } = await import('../src/assessment/trial.js');
+  const i = await load('soal-menara');
+  const withOptions = { ...i.source, body: { ...i.source.body, options: [{ id: 'o-a', label: 'A' }, { id: 'o-b', label: 'B' }] } } as any;
+  assert.deepEqual(optionOrderOf(null, withOptions), ['o-a', 'o-b'], 'urutan GET /v1/questions/{id}');
+  assert.deepEqual(optionOrderOf(['o-b', 'o-a'], withOptions), ['o-b', 'o-a'], 'soal /coba lama tetap memakai urutan tetapnya');
+  assert.equal(optionOrderOf(null, { ...i.source, body: { ...i.source.body, options: undefined } } as any), null, 'soal isian tanpa pilihan');
+});

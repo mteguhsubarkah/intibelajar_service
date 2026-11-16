@@ -15,6 +15,13 @@ export interface TrialItem {
   revisionId: string; source: GradingSource; optionOrder: string[] | null;
   concepts: { code: string; title: string; legacyMapId: string | null; route: string }[];
 }
+/*
+ * Urutan pilihan yang dilihat siswa, untuk jawaban "pilihan ke-i". Soal /coba lama punya urutan tetap (alias ITEM);
+ * soal katalog lain (latihan inti tamu) tampil dengan urutan pilihan katalog, sama dengan GET /v1/questions/{id}.
+ */
+export function optionOrderOf(legacy: string[] | null, source: GradingSource): string[] | null {
+  return legacy ?? (source.body.options?.length ? source.body.options.map(o => o.id) : null);
+}
 export async function loadTrialItem(db: Connection, alias: string, revisionId?: string): Promise<TrialItem> {
   const release = await currentRelease(db);
   if (!release) return fail(409, 'CONTENT_UNAVAILABLE');
@@ -34,7 +41,7 @@ export async function loadTrialItem(db: Connection, alias: string, revisionId?: 
       ?? await lessonFor(db, release, { conceptId: c.id });
     return { code: c.code, title: c.title, legacyMapId: c.legacyMapId, route: lesson?.routeSlug ?? '' };
   }));
-  return { revisionId: anchor.revisionId, source, concepts, optionOrder: item.legacyOptionOrder };
+  return { revisionId: anchor.revisionId, source, concepts, optionOrder: optionOrderOf(item.legacyOptionOrder, source) };
 }
 /** For a gap only: the quoted part of the learner's own answer (an evidence span), so the client can highlight it. */
 function gapQuote(e: Evaluation['evidence'][number] | undefined) {
