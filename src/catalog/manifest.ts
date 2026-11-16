@@ -108,7 +108,14 @@ export type Rule =
   | 'EVALUATOR_SHAPE'|'OPTION_IDS'|'PRACTICE_NOT_DETERMINISTIC'|'CHECK_NOT_DETERMINISTIC'|'CHECK_PLACEMENT'|'UNREVIEWED'
   | 'PATTERN'|'LESSON_LINK'|'RECOMMEND'|'AUTHORED_TARGET'|'GRADE_PHASE'|'BOOKREF'|'COBA_STEP';
 /** Kelas yang termasuk tiap fase Kurikulum Merdeka: D = SMP 7–9, E = kelas 10, F = kelas 11–12, F+ = Matematika Tingkat Lanjut 11–12. */
-export const GRADES_OF_PHASE: Record<Topic['phase'], number[]> = { D: [7, 8, 9], E: [10], F: [11, 12], 'F+': [11, 12] };
+/**
+ * Kelas yang boleh dipakai inti di bab fase tertentu. Fase E juga boleh kelas 11: buku teks edisi revisi menaruh sebagian
+ * isi Fase E di kelas XI (Matematika X edisi revisi 2023 memindahkan Vektor dan trigonometri lanjut ke Matematika Tingkat
+ * Lanjut XI; Kinematika di Fisika XI; Stoikiometri di Kimia XI). Kelas inti mengikuti buku; fase tetap struktur katalog.
+ */
+export const GRADES_OF_PHASE: Record<Topic['phase'], number[]> = { D: [7, 8, 9], E: [10, 11], F: [11, 12], 'F+': [11, 12] };
+/** Kelas bawaan sebuah fase (tanpa pengecualian buku): dipakai saat fase bab diganti di backoffice. */
+export const NATURAL_GRADES_OF_PHASE: Record<Topic['phase'], number[]> = { D: [7, 8, 9], E: [10], F: [11, 12], 'F+': [11, 12] };
 export interface Finding { rule: Rule; severity: 'error'|'warning'; file: string; message: string }
 
 const KINDS = { release: 'release.yaml', subjects: 'subjects.yaml', topicRelations: 'topic-relations.yaml', sets: 'sets.yaml', unmapped: 'unmapped.yaml' } as const;
