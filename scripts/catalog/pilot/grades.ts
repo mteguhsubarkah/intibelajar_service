@@ -7,6 +7,9 @@
 // pencarian (Ruangguru, Mamikos, Tirto, detikEdu, Gramedia) karena PDF buku.kemdikbud.go.id tidak bisa dibuka dari
 // lingkungan pembuatnya; dan rentang fase Kepka BSKAP 046/H/KR/2025. Pembagian antarkelas di dalam satu fase berbeda
 // antarbuku dan antarsekolah (ATP), jadi guru mapel memeriksanya saat sign-off per lingkup.
+//
+// Sejak 16 November 2026 kelas mengikuti daftar bab dokumen kurikulum yang sudah diaudit (buku teks utama s.d. edisi
+// revisi 2025), sama dengan susunan bab per kelas di aplikasi (frontend src/data/bookChapters.ts).
 import { GRADES_OF_PHASE, type Topic } from '../../../src/catalog/manifest.js';
 
 /** Per bab: satu kelas untuk semua inti, atau kelas bawaan + pengecualian per akhiran kode inti. */
@@ -16,13 +19,19 @@ export const GRADES: Record<string, Placement> = {
   // ---------------- Matematika SMP (Fase D) ----------------
   'MAT.C26.D.BILANGAN': { all: 7, PANGKAT_AKAR_DAN_NOTASI_ILMIAH: 8, NOTASI_ILMIAH: 8 }, // VIII: bilangan berpangkat
   'MAT.C26.D.RASIO': 7,
-  'MAT.C26.D.ALJABAR': 7, // VII: bentuk aljabar, persamaan & pertidaksamaan linear satu variabel
+  // VII Bab 4 bentuk aljabar; VIII Bab 3 persamaan & pertidaksamaan linear satu variabel (Matematika VIII, Tohir dkk. 2022)
+  'MAT.C26.D.ALJABAR': { all: 7, PERSAMAAN_DAN_PERTIDAKSAMAAN: 8, PERSAMAAN_LINEAR_SATU_VARIABEL: 8 },
   'MAT.C26.D.FUNGSI': { all: 8, SISTEM_PERSAMAAN_LINEAR: 9, ELIMINASI_DAN_SUBSTITUSI_SPLDV: 9 }, // VIII relasi-fungsi-garis; IX SPLDV
   'MAT.C26.D.GEOMETRI': { all: 7, TEOREMA_PYTHAGORAS: 8, KONGRUEN_DAN_SEBANGUN: 9 },
-  'MAT.C26.D.PENGUKURAN': { all: 8, TRANSFORMASI_KOORDINAT: 9 },
+  'MAT.C26.D.PENGUKURAN': { all: 9, BUSUR_DAN_JURING_LINGKARAN: 8 }, // IX Bab 2 bangun ruang, Bab 3 transformasi geometri
   'MAT.C26.D.DATA': { all: 8, PELUANG_DAN_FREKUENSI_RELATIF: 9, SAMPEL_REPRESENTATIF: 9 },
   // ---------------- Matematika SMA ----------------
-  'MAT.EKS': 10, 'MAT.BAR': 10, 'MAT.VEK': 10, 'MAT.TRI': 10, 'MAT.SPL': 10, 'MAT.KUA': 10, 'MAT.STP': 10, 'MAT.C26.E.SPLTV': 10,
+  'MAT.EKS': 10, 'MAT.BAR': 10, 'MAT.SPL': 10, 'MAT.KUA': 10, 'MAT.STP': 10, 'MAT.C26.E.SPLTV': 10,
+  // Matematika X edisi revisi 2023: Vektor pindah ke Matematika Tingkat Lanjut XI (Bab IV); trigonometri lanjut ke
+  // Matematika Tingkat Lanjut XI Bab III Fungsi Trigonometri. Perbandingan trigonometri tetap X Bab 3.
+  'MAT.VEK': 11,
+  'MAT.TRI': { all: 10, RADIAN: 11, LINGKARAN_SATUAN: 11, KUADRAN_TANDA: 11, SUDUT_BERELASI: 11, GRAFIK_SIN_COS_TAN: 11, PERIODE_AMPLITUDO: 11,
+    IDENTITAS_DASAR: 11, PERSAMAAN_SEDERHANA: 11, PERSAMAAN_DENGAN_IDENTITAS: 11, ATURAN_SINUS: 11, ATURAN_COSINUS: 11, LUAS_SEGITIGA: 11 },
   'MAT.INV': { all: 11, TRANSFORMASI_FUNGSI: 12 }, // XI: komposisi & invers; XII: transformasi fungsi
   'MAT.CP25.F.LINGKARAN': 11,
   'MAT.C26.F.REGRESI': 11, // XI semester 2: statistika (regresi, korelasi)
@@ -39,14 +48,17 @@ export const GRADES: Record<string, Placement> = {
   'FIS.C26.D.ENERGI': 8, // VIII Bab III usaha, energi, dan pesawat sederhana (suhu & kalor pindah ke D.SUHU, Tahap 3)
   'FIS.C26.D.GELOMBANG': 8, 'FIS.C26.D.KEBUMIAN': 8,
   'FIS.C26.D.LISTRIK': 9, // IX: listrik, magnet, dan sumber energi alternatif
-  'FIS.C26.E.UKUR': 10, 'FIS.C26.E.GERAK2D': 10, 'FIS.C26.E.ENERGI': 10, 'FIS.C26.E.IKLIM': 10, 'FIS.C26.E.TERBARUKAN': 10,
+  'FIS.C26.E.UKUR': 10, 'FIS.C26.E.ENERGI': 10, 'FIS.C26.E.IKLIM': 10, 'FIS.C26.E.TERBARUKAN': 10,
+  'FIS.C26.E.GERAK2D': 11, // Fisika XI Bab 2 Kinematika (GLB, GLBB, gerak parabola)
   'FIS.C26.F.MEKANIKA': 11, 'FIS.C26.F.FLUIDA': 11, 'FIS.C26.F.GELOMBANG': 11, 'FIS.C26.F.TERMAL': 11,
   'FIS.C26.F.MEDAN': 12, 'FIS.C26.F.ELEKTRO': 12, 'FIS.C26.F.MODERN': 12,
   // ---------------- Kimia ----------------
   'KIM.C26.D.PARTIKEL': 7, // VII bab 2: zat dan perubahannya (wujud zat, model partikel, kerapatan)
   'KIM.C26.D.MATERI': { all: 8, PERUBAHAN_DAN_PEMISAHAN: 7 }, // VIII bab 5: unsur, senyawa, campuran; VII bab 2: perubahan fisika dan kimia
   'KIM.C26.D.ATOM': 9, 'KIM.C26.D.REAKSI': 9, 'KIM.C26.D.ZAT': 9, // IX: reaksi kimia, zat aditif & adiktif
-  'KIM.C26.E.ATOM': 10, 'KIM.C26.E.STOIK': 10, 'KIM.C26.E.HUKUMDASAR': 10, 'KIM.C26.E.HIJAU': 10, 'KIM.C26.E.MODELATOM': 10,
+  'KIM.C26.E.ATOM': 10, 'KIM.C26.E.HUKUMDASAR': 10, 'KIM.C26.E.HIJAU': 10, 'KIM.C26.E.MODELATOM': 10,
+  // Kimia XI Bab 3 Stoikiometri (mol, pereaksi pembatas); penyetaraan reaksi tetap IPA X Bab IV Hukum Dasar Kimia
+  'KIM.C26.E.STOIK': { all: 11, MENYETARAKAN_REAKSI: 10 },
   'KIM.C26.F.STRUKTUR': 11, 'KIM.C26.F.HIDROKARBON': 11, 'KIM.C26.F.TERMOKIMIA': 11, 'KIM.C26.F.LAJU': 11,
   'KIM.C26.F.SETIMBANG': { all: 11, ASAM_BASA_DAN_PH: 12, HIDROLISIS_DAN_PENYANGGA: 12 },
   'KIM.C26.F.ELEKTROLIT': 12, 'KIM.C26.F.KOLIGATIF': 12, 'KIM.C26.F.KOLOID': 12, 'KIM.C26.F.ASAMBASA': 12,
@@ -58,7 +70,8 @@ export const GRADES: Record<string, Placement> = {
   'BIO.C26.E.BIODIVERSITAS': 10, 'BIO.C26.E.EKOSISTEM': 10, 'BIO.C26.E.MIKROBA': 10, 'BIO.C26.E.KLASIFIKASI': 10, 'BIO.C26.E.LIMBAH': 10,
   'BIO.C26.F.SEL': { all: 11, ENZIM_DAN_METABOLISME: 12, RESPIRASI_SEL_DAN_ATP: 12, FOTOSINTESIS_DAN_ANABOLISME: 12 },
   'BIO.C26.F.ORGAN': 11, 'BIO.C26.F.TUMBUHAN': 11, 'BIO.C26.F.GERAK': 11, 'BIO.C26.F.IMUN': 11,
-  'BIO.C26.F.TUMBUH': 12, 'BIO.C26.F.GENETIKA': 12, 'BIO.C26.F.HEREDITAS': 12, 'BIO.C26.F.MUTASI': 12,
+  'BIO.C26.F.TUMBUH': 11, // Biologi XI Bab 8 Tumbuh Kembang Makhluk Hidup
+  'BIO.C26.F.GENETIKA': 12, 'BIO.C26.F.HEREDITAS': 12, 'BIO.C26.F.MUTASI': 12,
   'BIO.C26.F.EVOLUSI': 12, 'BIO.C26.F.BIOTEK': 12,
 };
 

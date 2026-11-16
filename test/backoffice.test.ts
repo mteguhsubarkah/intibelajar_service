@@ -93,6 +93,10 @@ test('backoffice worker: durable idempotent seed, lease fencing, recovery and no
     f.store.change(undefined, 'edit', s => command(s, { ...topic(seeded.code), title: 'Editor sudah memperbaiki ini' }));
     // Fase diubah ke E: kelas inti yang dulu 11–12 ikut menjadi kelas 10, sehingga draf tetap valid.
     assert.ok(f.store.read().manifest.topics.find(t => t.code === seeded.code)!.concepts.every(x => x.grade === undefined || x.grade === 10));
+    // Tanpa ganti fase (edit judul), kelas buku yang sah di Fase E (kelas 11, mis. Vektor) tidak direset ke 10.
+    f.store.change(undefined, 'kelas buku', s => { s.manifest.topics.find(t => t.code === seeded.code)!.concepts[0]!.grade = 11; });
+    f.store.change(undefined, 'edit judul', s => command(s, { ...topic(seeded.code), title: 'Editor sudah memperbaiki ini' }));
+    assert.equal(f.store.read().manifest.topics.find(t => t.code === seeded.code)!.concepts[0]!.grade, 11);
     // A consciously retried job never replaces an editor's work.
     f.store.change(undefined, 'retry', s => { s.jobs[0]!.status = 'QUEUED'; s.jobs[0]!.attempts = 0; });
     const again = f.store.change(undefined, 'claim', s => claim(s, Date.now()))!;

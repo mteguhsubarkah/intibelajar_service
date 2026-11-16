@@ -55,7 +55,9 @@ test('Slice 1 public catalog read API', async t => {
     const concepts = (await ok('/v1/concepts')).items as { id: string; code: string; legacyMapId?: string }[];
     await t.test('every visible concept carries its grade (kelas) within its phase', () => {
       const all = concepts as { code: string; isHidden?: boolean; grade?: number }[];
-      assert.equal(all.find(c => c.code === 'MAT.TRI.RADIAN')?.grade, 10);
+      // kelas mengikuti buku: perbandingan trigonometri kelas 10, radian (Matematika Tingkat Lanjut XI) kelas 11
+      assert.equal(all.find(c => c.code === 'MAT.TRI.SUDUT_ISTIMEWA')?.grade, 10);
+      assert.equal(all.find(c => c.code === 'MAT.TRI.RADIAN')?.grade, 11);
       assert.ok(all.filter(c => !c.isHidden).every(c => c.grade !== undefined && c.grade >= 7 && c.grade <= 12));
     });
     const allQuestions = async (query = '', limit = 100) => {

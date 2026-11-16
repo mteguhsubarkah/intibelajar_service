@@ -61,7 +61,9 @@ node --env-file=.env --import tsx scripts/catalog/status.ts
 Setiap inti kini membawa kelasnya (`grade`: 7–12) di file bab, dan aplikasi mengelompokkan bab per kelas, bukan per fase.
 Kelas diatur di `scripts/catalog/pilot/grades.ts` dan diterapkan oleh `npm run catalog:pilot` ke semua bab, termasuk bab
 lama di luar konten pilot. Generator menolak inti terlihat yang belum punya kelas, dan lint menolak kelas di luar fase
-babnya (D 7–9, E 10, F dan F+ 11–12).
+babnya (D 7–9, E 10–11, F dan F+ 11–12). Fase E boleh kelas 11 karena buku edisi revisi menaruh sebagian isi
+Fase E di kelas XI (Vektor dan trigonometri lanjut di Matematika Tingkat Lanjut XI, Kinematika di Fisika XI, Stoikiometri
+di Kimia XI). Sejak 16 November 2026 kelas tiap inti mengikuti daftar bab dokumen kurikulum yang sudah diaudit.
 
 - **Kelas termasuk isi yang ditinjau.** Hash lingkup ikut berubah, jadi sign-off lama untuk lingkup apa pun dilewati
   (`DILEWATI … isinya berubah sejak ditandatangani`) sampai guru memeriksa penempatan kelasnya dan menandatangani ulang.

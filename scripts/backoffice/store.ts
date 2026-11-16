@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { GRADES_OF_PHASE, lintManifest, loadManifest, writeManifest, type LessonBlock, type Manifest, type Question, type Review } from '../../src/catalog/manifest.js';
+import { GRADES_OF_PHASE, NATURAL_GRADES_OF_PHASE, lintManifest, loadManifest, writeManifest, type LessonBlock, type Manifest, type Question, type Review } from '../../src/catalog/manifest.js';
 
 export class OfficeError extends Error {
   constructor(readonly status: number, message: string, readonly details?: unknown) { super(message); }
@@ -223,8 +223,9 @@ export function command(s: State, input: Record<string, unknown>) {
     if (!['D','E','F','F+'].includes(phase)) throw new OfficeError(422, 'Fase tidak valid');
     upsert(m.topics, { ...(old ?? { schemaVersion: 1, subject: 'MAT', availability: 'PLANNED', bekal: [], aliases: [], units: [], concepts: [], prerequisites: [] }),
       code: c, subject, title: str(input.title, 240), phase: phase as 'E', review: proposed(evidence) }, x => x.code);
-    // Fase berubah: kelas inti yang tidak lagi masuk fase itu disesuaikan (fase satu kelas) atau dikosongkan untuk ditetapkan ulang.
-    const grades = GRADES_OF_PHASE[phase as 'E'];
+    // Fase berubah: kelas inti yang tidak lagi masuk kelas bawaan fase itu disesuaikan (fase satu kelas) atau dikosongkan untuk
+    // ditetapkan ulang. Tanpa ganti fase (mis. edit judul) kelas buku yang sah tetap (Fase E boleh kelas 11, lihat GRADES_OF_PHASE).
+    const grades = old && old.phase !== phase ? NATURAL_GRADES_OF_PHASE[phase as 'E'] : GRADES_OF_PHASE[phase as 'E'];
     for (const x of m.topics.find(t => t.code === c)!.concepts) if (x.grade !== undefined && !grades.includes(x.grade)) {
       if (grades.length === 1) x.grade = grades[0]; else delete x.grade;
     }
