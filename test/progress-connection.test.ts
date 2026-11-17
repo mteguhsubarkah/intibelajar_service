@@ -55,7 +55,10 @@ test('connected progress/import/tutor on PostgreSQL preserve consent, ownership 
    do{const page:any=(await xc('GET','/v1/questions?limit=100'+(cursor?'&cursor='+encodeURIComponent(cursor):''))).body;question=page.items.find((q:any)=>q.code===authored.code);cursor=page.nextCursor;}while(!question&&cursor);assert.ok(question);
    const solve=async()=>{const s=(await xc('POST','/v1/learning-sessions',{kind:'PRACTICE',origin:'BANK',withLesson:false,spec:{questionIds:[question.id]}})).body;
     const result=await xc('POST','/v1/learning-sessions/'+s.id+'/attempts',{expectedStateVersion:s.stateVersion,response:{responseType:'OPTION',optionId:authored.rubric.answer.optionId}});assert.equal(result.status,201,JSON.stringify(result.body));assert.equal(result.body.attempt.verdict,'CORRECT');};
-   await solve();const first=(await xc('GET','/v1/me/stats')).body;assert.ok(first.xpTotal>=10);
+   const soal=(b:any)=>b.today.missions.find((m:any)=>m.code==='SOAL').done;
+   await solve();const first=(await xc('GET','/v1/me/stats')).body;assert.ok(first.xpTotal>=10);assert.equal(soal(first),1);
+   // TC-RUN-006: mengulang soal yang sudah pernah benar tidak menambah XP soal dan tidak menambah misi "Kerjakan 2 soal"
+   await solve();const again=(await xc('GET','/v1/me/stats')).body;assert.equal(again.xpTotal,first.xpTotal);assert.equal(soal(again),1);
    assert.equal((await xc('GET','/v1/me/stats')).body.xpTotal,first.xpTotal);
    await sql`delete from mastery_state where learner_id=${x.learnerId}`.execute(db);await sql`delete from learner_stats where learner_id=${x.learnerId}`.execute(db);await sql`delete from progress_event where learner_id=${x.learnerId}`.execute(db);
    assert.deepEqual((await xc('GET','/v1/me/stats')).body,first);
