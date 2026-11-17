@@ -10,7 +10,7 @@ export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Da
  const attempts=new Map(learning.attempts.map(a=>[a.id,a])),revisions=new Map(catalog.revisions.map(r=>[r.id,r]));
  const imported=(await sql<any>`select payload from progress_event where learner_id=${id} and type='DEVICE_HISTORY_IMPORTED'`.execute(tx)).rows;
  const completed=await completedConcepts(tx,id);
- const views:any[]=[];const activeDates=new Set<string>();let dailyCorrect=0,dailyCombined=0,dailyLessons=0,dailyRefresh=0,reviewMission=false;const today=day(now,timezone);
+ const views:any[]=[];const activeDates=new Set<string>(),solvedFamilies=new Set<string>();let dailyCorrect=0,dailyCombined=0,dailyLessons=0,dailyRefresh=0,reviewMission=false;const today=day(now,timezone);
  const dayStart=new Date(Date.parse(today+'T00:00:00Z')-({'Asia/Jakarta':7,'Asia/Makassar':8,'Asia/Jayapura':9}[timezone]??7)*3600000);
  const event=async(key:string,type:string,at:Date,session:string|null,payload:Record<string,unknown>={},xp=0)=>{
   await sql`insert into progress_event(id,learner_id,session_id,event_key,type,xp_delta,payload,local_date,occurred_at)
@@ -22,7 +22,10 @@ export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Da
   const eligible=a.source==='LIVE'&&a.kind!=='QUICK_CHECK'&&a.assistance!=='SOLUTION'&&a.response_type!=='SELF_REPORT'&&es.some(e=>['DETERMINISTIC','EDUCATOR'].includes(e.source));
   if(eligible){activeDates.add(day(at,timezone));if(a.verdict==='CORRECT'){
    await event('xp:family:'+r.family_code,'XP_AWARDED',at,a.session_id,{rule:r.combined?'SOAL_GABUNGAN':'SOAL_BENAR'},r.combined?20:10);
-   if(day(at,timezone)===today){dailyCorrect++;if(r.combined)dailyCombined++;}
+   // Misi "Kerjakan 2 soal"/"soal gabungan" hanya menghitung soal yang PERTAMA KALI benar hari ini, sama dengan XP soal:
+   // mengulang soal yang sudah pernah benar tidak menambah misi, jadi tidak membuka XP misi harian (TC-RUN-006).
+   const first=!solvedFamilies.has(r.family_code);solvedFamilies.add(r.family_code);
+   if(first&&day(at,timezone)===today){dailyCorrect++;if(r.combined)dailyCombined++;}
   }}
   if(a.source==='LIVE'&&a.graded_at)await event('attempt:'+a.id,'ATTEMPT_GRADED',at,a.session_id);
  }
