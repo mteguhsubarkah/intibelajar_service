@@ -2046,6 +2046,16 @@ paths:
           required: false
           schema:
             $ref: "#/components/schemas/Phase"
+        - name: stage
+          in: query
+          required: false
+          description: Jenjang. SMP = fase D; SMA = fase E, F, F+.
+          schema: {type: string, enum: [SMP, SMA]}
+        - name: grade
+          in: query
+          required: false
+          description: Kelas 7–12. Soal cocok bila salah satu intinya tercatat di kelas ini; soal yang intinya belum punya kelas tetap ikut.
+          schema: {type: integer, minimum: 7, maximum: 12}
         - name: topicId
           in: query
           required: false
