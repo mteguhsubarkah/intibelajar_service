@@ -162,7 +162,9 @@ export function practiceList(
       (!f.coreCount ||
         (f.coreCount === "4+"
           ? i.coreCount >= 4
-          : i.coreCount === Number(f.coreCount))) &&
+          : f.coreCount === "2+" /* soal gabungan: dua inti atau lebih */
+            ? i.coreCount >= 2
+            : i.coreCount === Number(f.coreCount))) &&
       (!query ||
         [
           i.question.promptPreview,
