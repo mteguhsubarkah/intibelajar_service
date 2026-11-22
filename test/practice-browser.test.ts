@@ -136,7 +136,7 @@ test("learner question bank filters before paging and keeps owned immutable hist
     await t.test(
       "exact core counts, query and status filters apply before paging",
       async () => {
-        for (const count of ["1", "2", "3", "4+"]) {
+        for (const count of ["1", "2", "3", "4+", "2+"]) {
           const full = await get(
             "/v1/me/questions?topicId=" +
               candidate.question.topicIds[0] +
@@ -146,7 +146,7 @@ test("learner question bank filters before paging and keeps owned immutable hist
           );
           assert.ok(
             full.items.every((i: any) =>
-              count === "4+" ? i.coreCount >= 4 : i.coreCount === Number(count),
+              count === "4+" ? i.coreCount >= 4 : count === "2+" ? i.coreCount >= 2 : i.coreCount === Number(count),
             ),
           );
           const collected: any[] = [];
