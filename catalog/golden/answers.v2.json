@@ -265,7 +265,8 @@
         },
         {
           "typed": "20 x √3",
-          "verdict": "CORRECT"
+          "verdict": "UNREADABLE",
+          "reason": "unsupported-operator"
         },
         {
           "typed": "3,4e1",

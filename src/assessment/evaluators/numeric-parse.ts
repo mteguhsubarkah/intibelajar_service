@@ -34,19 +34,10 @@ export function withinTolerance(value: number, expected: number, relative = RELA
   return Math.abs(value - expected) <= relative * Math.max(Math.abs(expected), floor);
 }
 
-/**
- * Huruf x/X dipakai siswa sebagai tanda kali di antara dua angka ("1x2", "1 X 2", "20x√3", "3 x akar 2"): dibaca "×".
- * Variabel x tidak berubah ("x = 20 / tan 30", "3x + 2", "2x"): sisi kirinya harus angka/√/kurung tutup dan sisi kanannya
- * angka/√/kurung buka/"akar". Laporan QA 22 Nov 2026.
- */
-export function timesX(raw: string) {
-  return raw.replace(/([\d)²³½√π])\s*[xX]\s*(?=[\d(√π]|akar)/g, '$1×');
-}
-
 /** NFKC folds full-width digits and NBSP; zero-width characters and BOM are removed separately. */
 export function normalizeAnswerText(raw: string) {
   // U+2212 (minus sign) and the en dash are typed for negative numbers ("−5 °C").
-  return timesX(raw.normalize('NFKC')).replace(/[​-‍﻿]/g, '').replace(/[−–]/g, '-').toLowerCase().replace(/\s+/g, ' ').trim();
+  return raw.normalize('NFKC').replace(/[​-‍﻿]/g, '').replace(/[−–]/g, '-').toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
 const LENGTH_UNITS = new Set(['m', 'meter', 'metre', 'mtr']);

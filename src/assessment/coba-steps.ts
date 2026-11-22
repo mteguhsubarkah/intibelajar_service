@@ -1,5 +1,5 @@
 import type { CobaStep } from '../catalog/manifest.js';
-import { parseAnswerValue, powers, withinTolerance, type ParseOptions, timesX } from './evaluators/numeric-parse.js';
+import { parseAnswerValue, powers, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
 
 /*
  * Kotak "Coba sekarang" di petunjuk /coba: satu jawaban pendek untuk satu inti.
@@ -20,10 +20,10 @@ const CHUNK = /[0-9.,√()+\-*/ ]*\d[0-9.,√()+\-*/ ]*/g;
 
 /** Angka hasil akhir dari jawaban pendek, mis. "3 km : 30 km/jam = 0,1 jam" → 0,1; "10.000 → 1.000 → 100 → 10 kJ" → 10. */
 export function stepValue(reply: string, options: ParseOptions = {}): number | null {
-  let t = powers(timesX(reply.normalize('NFC')))
+  let t = powers(reply.normalize('NFC'))
     .replace(/(\d+)\s*\^\s*(\d{1,2})\b/g, (_, b: string, e: string) => String(Number(b) ** Number(e)))
     .replace(/[−–]/g, '-').replace(/½/g, '(1/2)').replace(/[×·⋅]/g, '*').replace(/[÷:]/g, '/')
-    .replace(/akar|sqrt/gi, '√').replace(/[₀-₉]/g, '').replace(/([A-Za-z])\d+/g, '$1').replace(SUPERSCRIPTS, '');
+    .replace(/[₀-₉]/g, '').replace(/([A-Za-z])\d+/g, '$1').replace(SUPERSCRIPTS, '').replace(/akar|sqrt/gi, '√');
   const last = t.split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1) ?? '';
   t = last.split(/[=≈]/).at(-1) ?? '';
   const chunk = (t.match(CHUNK) ?? []).at(-1);

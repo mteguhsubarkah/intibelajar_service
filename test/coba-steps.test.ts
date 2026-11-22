@@ -188,16 +188,3 @@ test('trial items: which /coba questions are in the active release, with their p
     assert.equal((await app.inject({ method: 'GET', url: '/v1/trial/items' })).statusCode, 400);
   } finally { await app.close(); }
 });
-
-test('QA 22 Nov: x/X between numbers is multiplication; spaces around √ do not matter; variable x stays', async () => {
-  const { stepValue } = await import('../src/assessment/coba-steps.js');
-  const { finalValue } = await import('../src/assessment/trial.js');
-  const { timesX } = await import('../src/assessment/evaluators/numeric-parse.js');
-  const { findQuote } = await import('../src/assessment/trial-ai.js');
-  for (const t of ['1x2', '1 x 2', '1X2', '1 X 2', '1×2']) assert.equal(stepValue(t), 2, t);
-  for (const t of ['= 20x√3', '= 20 X √3', '= 20 x akar 3', '= 20√ 3']) assert.ok(Math.abs(finalValue(t, 'none')!.value - 20 * Math.sqrt(3)) < 1e-9, t);
-  for (const t of ['3√2', '3√ 2', '3 √ 2', '3 akar 2', '3akar2']) assert.ok(Math.abs(stepValue(t)! - 3 * Math.SQRT2) < 1e-9, t);
-  for (const t of ['x = 20 / tan 30', '3x + 2 = 8', '2x = 6', 'tan 30 = x / 20']) assert.equal(timesX(t), t, t);
-  assert.equal(findQuote('x = 1x2 = 2', '1 × 2')?.quote, '1x2');
-  assert.equal(findQuote('v = 20X√3', '20 × √3')?.quote, '20X√3');
-});

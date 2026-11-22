@@ -45,9 +45,7 @@ export function findQuote(text: string, quote: string): { start: number; end: nu
     for (let k = 0; k < s.length;) {
       if (s.slice(k, k + 4).toLowerCase() === 'akar') { chars.push('√'); from.push(k); to.push(k + 4); k += 4; continue; }
       const ch = s[k]!;
-      // x/X di antara dua angka = tanda kali ("1x2" cocok dengan kutipan "1 × 2")
-      const times = /[xX]/.test(ch) && /[\d)²³½√π]\s*$/.test(s.slice(0, k)) && /^\s*(?:[\d(√π]|akar)/i.test(s.slice(k + 1));
-      if (!/\s/.test(ch)) { chars.push(times ? '×' : ({ '*': '×', '·': '×', ':': '/', '÷': '/' } as Record<string, string>)[ch] ?? ch.toLowerCase()); from.push(k); to.push(k + 1); }
+      if (!/\s/.test(ch)) { chars.push(({ '*': '×', '·': '×', ':': '/', '÷': '/' } as Record<string, string>)[ch] ?? ch.toLowerCase()); from.push(k); to.push(k + 1); }
       k++;
     }
     return { str: chars.join(''), from, to };

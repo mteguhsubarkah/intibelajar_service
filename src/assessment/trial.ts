@@ -4,7 +4,7 @@ import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
 import { gradingSource } from '../catalog/grading-source.js';
 import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
-import { parseAnswerValue, timesX, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
+import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
 import { ApiError, fail } from '../platform/errors.js';
 import { judgeCobaStep, stepValue } from './coba-steps.js';
 import { specialAngleSlips } from './special-angles.js';
@@ -75,7 +75,7 @@ export interface StepCheckResult { correct: boolean; partial: boolean; feedback:
 type FinalValue = { value: number; values: number[]; quote: string };
 const KEEP_WORDS = new Set(['akar', 'sqrt', 'meter', 'metre', 'derajat', 'detik', 'sekon', 'gram', 'menit', 'celsius', 'celcius', 'bakteri']);
 export function finalValue(text: string, kind: ReturnType<typeof unitKindOf>, options: ParseOptions = {}): FinalValue | null {
-  const last = timesX(text).split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1);
+  const last = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1);
   if (!last || !last.includes('=')) return null;
   for (const piece of last.split('=').at(-1)!.split('≈')) {
     const cleaned = piece.replace(/[a-zA-Z]{4,}/g, w => (KEEP_WORDS.has(w.toLowerCase()) ? w : ' ')).replace(/[,;.]\s*$/, '').replace(/\s+/g, ' ').trim();

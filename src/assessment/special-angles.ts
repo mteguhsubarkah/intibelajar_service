@@ -1,4 +1,3 @@
-import { timesX } from './evaluators/numeric-parse.js';
 /*
  * Nilai sudut istimewa yang ditulis siswa ("sin 30° = ½", "20 × cos 30° = 20 × ½"), dibaca tanpa AI.
  * Penilai AI pernah menerima "cos 30° = ½" sebagai benar dan menolak "tan 30° = 1/√3" (QA TC-PANDU-044/053/058);
@@ -13,7 +12,7 @@ const TABLE: Record<'sin' | 'cos' | 'tan', Record<number, number>> = {
 
 /** Ekspresi angka sederhana: 0,5 · ½ · √3/2 · 1/√3 · 2√3 · (1/2) · 3:4. Selain itu null. */
 export function numberOf(raw: string): number | null {
-  const s = timesX(raw).replace(/½/g, '(1/2)').replace(/¼/g, '(1/4)').replace(/¾/g, '(3/4)').normalize('NFKC').replace(/⁄/g, '/').replace(/\s+/g, '').replace(/akar/gi, '√').replace(/[×·*]/g, '*').replace(/[:÷]/g, '/').replace(/[−–]/g, '-')
+  const s = raw.replace(/½/g, '(1/2)').replace(/¼/g, '(1/4)').replace(/¾/g, '(3/4)').normalize('NFKC').replace(/⁄/g, '/').replace(/\s+/g, '').replace(/akar/gi, '√').replace(/[×·*]/g, '*').replace(/[:÷]/g, '/').replace(/[−–]/g, '-')
     .replace(/(\d),(\d)/g, '$1.$2');
   if (!s || !/^[-0-9.()/*+√]+$/.test(s)) return null;
   let k = 0;
@@ -65,7 +64,7 @@ const compact = (s: string) => s.replace(/\s+/g, '');
  */
 export function specialAngleSlips(text: string): AngleSlip[] {
   const out: AngleSlip[] = [];
-  for (const line of timesX(text).split(/\r?\n/)) {
+  for (const line of text.split(/\r?\n/)) {
     const parts = line.split(/=|≈/);
     for (let n = 0; n + 1 < parts.length; n++) {
       const a = parts[n]!, b = parts[n + 1]!;
