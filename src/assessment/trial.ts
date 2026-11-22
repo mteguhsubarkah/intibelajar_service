@@ -7,6 +7,8 @@ import { evaluate, type Evaluation, type StudentResponse } from './evaluators/in
 import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
 import { ApiError, fail } from '../platform/errors.js';
 import { judgeCobaStep, stepValue } from './coba-steps.js';
+import { specialAngleSlips } from './special-angles.js';
+import { findQuote } from './trial-ai.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
 // Public trial uses published content with an injected AI engine; no authored-response fallback.
@@ -117,6 +119,44 @@ export function confusedWithoutAi(i: TrialItem): Evaluation {
     evidence: i.concepts.map(c => ({ conceptCode: c.code, classification: 'INSUFFICIENT_EVIDENCE', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'],
       rationale: c === start ? 'Nggak apa-apa. Mulai dari inti ini dulu: pelajari konsepnya, lalu coba langkah pertamanya.' : 'Belum kelihatan dari jawaban ini.' })) } as Evaluation;
 }
+/* siswa menyatakan jawabannya belum selesai */
+const UNFINISHED = /\b(?:bingung|binggung|lanjut(?:nya)?|gimana|bagaimana\s+lagi|habis\s+itu|selanjutnya|belum\s+selesai|ga\s*tau|gatau|nggak\s+tau)\b|\?\s*$/i;
+/* pengecoh yang berarti "berhenti di hasil antara yang benar" */
+const STOPPED = /^BERHENTI_|_BELUM_DIHITUNG$/;
+/**
+ * Jawaban setengah jadi: tidak ada inti yang "perlu diperkuat" kecuali penilai menemukan kesalahan nyata di langkah yang sudah
+ * ditulis. Hasilnya NOT_GRADED supaya diagnose memakai jalur "Kamu sudah di jalur yang benar" + langkah berikutnya.
+ */
+function partial(judged: Evaluation, shown?: Evaluation['evidence'][number]): Evaluation {
+  const evidence = judged.evidence.filter(e => e.conceptCode !== shown?.conceptCode);
+  const realGap = evidence.some(e => e.classification === 'MISCONCEPTION_EVIDENCED');
+  if (realGap) return { ...judged, verdict: 'INCORRECT', reason: null, evidence: shown ? [...evidence, shown] : evidence } as Evaluation;
+  return { ...judged, verdict: 'NOT_GRADED', reason: 'insufficient-working', misconceptionCode: null, clarification: undefined,
+    evidence: shown ? [...evidence, shown] : evidence } as Evaluation;
+}
+/**
+ * Nilai sudut istimewa yang tertulis ("cos 30° = ½") diputuskan tabel, bukan AI: salah → Sudut Istimewa "perlu diperkuat"
+ * dengan nilai itu disorot; benar → tanda salah dari AI untuk inti itu dicabut (QA TC-PANDU-044/053/058).
+ */
+export function withSpecialAngles(judged: Evaluation, i: TrialItem, text: string): Evaluation {
+  const special = i.concepts.find(c => /SUDUT_ISTIMEWA/.test(c.code));
+  const slips = special ? specialAngleSlips(text) : [];
+  if (!special || !slips.length || judged.verdict === 'CORRECT') return judged;
+  const wrong = slips.find(s => !s.right);
+  const others = judged.evidence.filter(e => e.conceptCode !== special.code);
+  const mine = judged.evidence.find(e => e.conceptCode === special.code);
+  if (wrong) {
+    const span = findQuote(text, wrong.written);
+    return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, evidence: [...others, { conceptCode: special.code, classification: 'MISCONCEPTION_EVIDENCED',
+      rationale: `Nilai ${wrong.fn} ${wrong.angle}° yang kamu tulis belum tepat. Coba ingat lagi nilai sudut istimewa itu, ya.`,
+      refs: span ? [{ kind: 'SPAN', start: span.start, end: span.end, quote: span.quote }] : [], uncertaintyReasons: [] }] } as Evaluation;
+  }
+  if (mine?.classification !== 'MISCONCEPTION_EVIDENCED') return judged;
+  const ok = slips[0]!, span = findQuote(text, ok.written);
+  const evidence = [...others, { conceptCode: special.code, classification: 'UNDERSTANDING_DEMONSTRATED' as const,
+    rationale: `Kamu sudah memakai nilai ${ok.fn} ${ok.angle}° dengan tepat.`, refs: span ? [{ kind: 'SPAN' as const, start: span.start, end: span.end, quote: span.quote }] : [], uncertaintyReasons: [] }];
+  return { ...judged, evidence } as Evaluation;
+}
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
   // soal milik siswa (ai-assisted-v1) tidak punya penilai deterministik: hanya AI yang menilai.
   // (Tanpa penjaga ini, setiap diagnosis /tanya gagal "No deterministic evaluator".)
@@ -130,9 +170,12 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
     console.warn(JSON.stringify({ event: 'trial_ai_fallback', reason: 'confused' }));
     return confusedWithoutAi(i);
   }
+  if (response.responseType === 'TEXT') judged = withSpecialAngles(judged, i, response.text ?? '');
   const key = i.source.rubric.answer;
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
   const text = response.text ?? '';
+  /* siswa bilang belum selesai ("…, habis itu bingung", "lanjutnya gimana"): tanpa kesalahan nyata, bukan "hasil akhir salah" */
+  const unfinished = UNFINISHED.test(text);
   const got = finalValue(text, unitKindOf(key.unit), { thousandsDot: key.thousandsDot === true });
   /* pengecoh katalog yang cocok dengan angka hasil akhir: penjelasan yang sudah ditinjau, angkanya disorot */
   const trapOf = (values: number[], quote: string) => {
@@ -140,10 +183,20 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
       && values.some(value => withinTolerance(value, m.pattern.value!, key.tolerance?.relative, key.tolerance?.floor)));
     if (!trap || !i.concepts.some(c => c.code === trap.conceptCode)) return null;
     const at = text.lastIndexOf(quote);
+    const refs = at >= 0 && quote ? [{ kind: 'SPAN' as const, start: at, end: at + quote.length, quote }] : [];
+    // Pengecoh "berhenti di hasil antara yang benar" (kode BERHENTI_…/…_BELUM_DIHITUNG dan penjelasan katalognya "udah benar"):
+    // intinya terlihat, bukan "perlu diperkuat" (QA TC-PANDU-024/031). Langkah berikutnya dipilih di diagnose.
+    // "Itu masih dalam meter" (BERHENTI_DI_METER) tetap kesalahan karena penjelasannya tidak menyebut benar.
+    if (STOPPED.test(trap.misconceptionCode) && /\b(?:udah|sudah) benar\b/i.test(trap.explanation)) return partial(judged, { conceptCode: trap.conceptCode,
+      classification: 'UNDERSTANDING_DEMONSTRATED', rationale: trap.explanation, refs, uncertaintyReasons: [] });
+    // Angka sama dengan pengecoh tapi tulisannya menunjukkan inti itu dipakai benar (mis. "20 × sin 30°" dengan nilai sin 30° yang
+    // salah menghasilkan angka yang sama dengan "pakai cos"): sebab salahnya di tempat lain, pengecoh tidak dipakai (TC-PANDU-053).
+    if (judged.evidence.some(e => e.conceptCode === trap.conceptCode && e.classification === 'UNDERSTANDING_DEMONSTRATED')) return null;
+    // Inti lain yang ditandai salah oleh penilai tetap ditandai (beberapa kesalahan sekaligus, TC-PANDU-058).
     return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, misconceptionCode: trap.misconceptionCode,
-      evidence: [...judged.evidence.filter(e => e.conceptCode !== trap.conceptCode && e.classification !== 'MISCONCEPTION_EVIDENCED'), { conceptCode: trap.conceptCode,
+      evidence: [...judged.evidence.filter(e => e.conceptCode !== trap.conceptCode), { conceptCode: trap.conceptCode,
         classification: 'MISCONCEPTION_EVIDENCED', rationale: trap.explanation, misconceptionCode: trap.misconceptionCode,
-        refs: at >= 0 && quote ? [{ kind: 'SPAN', start: at, end: at + quote.length, quote }] : [], uncertaintyReasons: [] }] } as Evaluation;
+        refs, uncertaintyReasons: [] }] } as Evaluation;
   };
   if (!got) {
     // Hasil akhir dengan satuan lain ("= 6.000.000 cm" untuk kunci dalam km): angkanya hanya dicocokkan dengan pengecoh.
@@ -172,6 +225,8 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   const trap = trapOf(got.values, got.quote);
   if (trap) return trap;
   if (judged.verdict === 'INCORRECT' && judged.evidence.some(e => e.classification === 'MISCONCEPTION_EVIDENCED')) return judged;
+  // belum selesai dan penilai tidak menemukan yang salah: bukan "hasil akhir salah", tapi langkah yang belum dilanjutkan
+  if (unfinished) return partial(judged);
   // salah menurut angka, padahal AI tidak menemukan yang salah: hasil akhirnya yang ditandai, pada inti langkah "hitung" terakhir
   const path = i.source.rubric.solutionPaths?.[0];
   const concept = path?.steps.at(-1)?.concepts[0]?.code ?? i.concepts.at(-1)?.code;
@@ -251,7 +306,11 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       if (!supported && result.verdict === 'NOT_GRADED' && result.evidence.length && !unrelated && !misconception) {
         const mapped = i.concepts.filter(x => x.legacyMapId);
         const shown = (code: string) => result.evidence.find(e => e.conceptCode === code)?.classification === 'UNDERSTANDING_DEMONSTRATED';
-        const missing = mapped.find(x => !shown(x.code));
+        // langkah berikutnya mengikuti urutan langkah penyelesaian soal (bila ada), bukan urutan inti di katalog:
+        // "volume batu = 20 mL, lanjutnya gimana" → langkah berikutnya mengubah satuan, baru massa jenis (TC-PANDU-031)
+        const order = (i.source.rubric.solutionPaths?.[0]?.steps ?? []).flatMap(st => st.concepts.map(c => c.code));
+        const rank = (code: string) => { const k = order.indexOf(code); return k < 0 ? order.length : k; };
+        const missing = [...mapped].sort((a, b) => rank(a.code) - rank(b.code)).find(x => !shown(x.code));
         if (missing) {
           const started = mapped.some(x => shown(x.code));
           const reason = result.evidence.find(e => e.conceptCode === missing.code)?.rationale?.trim()

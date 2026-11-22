@@ -56,7 +56,7 @@ export function findQuote(text: string, quote: string): { start: number; end: nu
   const start = t.from[at]!, end = t.to[at + n.length - 1]!;
   return { start, end, quote: text.slice(start, end) };
 }
-/** Provider sees only the public question, public core labels and student response; no answer keys or rubric. */
+/** Provider sees the public question, core labels, the reference solution steps per core (langkahAcuan) and the student response. */
 export function trialDeepSeek(db: Connection, config: Config['guide'], http: typeof fetch = fetch): TrialAi {
   return {
     async evaluate(item, response, retry) {
@@ -71,6 +71,10 @@ Hitung sendiri nilai akhir siswa sebelum memutuskan. 20/√3 (sekitar 11,5) BUKA
 Bila ada "koreksi", siswa sedang memperbaiki jawabannya untuk soal yang sama (koreksi ke-N, "jawabanSebelumnya" adalah jawaban yang dinilai sebelumnya). Nilai jawaban yang baru dengan teliti dan tandai inti yang MASIH salah; reason untuk inti yang sudah diperbaiki boleh mengakui perbaikannya.
 Konsisten: bila reason mengatakan bagian itu sudah benar, state WAJIB ok (bukan rest) dengan quote bagian itu, disalin persis dari jawaban siswa. rest hanya untuk langkah yang memang belum ada di jawaban.
 Untuk gap, quote HANYA bagian yang salah (mis. "1/√3 * 20"), jangan mengutip baris yang sudah benar. Nilai hasil akhir dan caranya: tulisan tanpa kurung seperti "20/1/√3" yang hasil akhirnya benar (20√3) dibaca sebagai 20/(1/√3), bukan kesalahan.
+langkahAcuan berisi langkah penyelesaian yang benar; tiap langkah milik satu inti. Pakai untuk menentukan inti mana yang benar atau salah, tapi JANGAN menyebut hasil akhir atau angka jawaban dari langkahAcuan di reason.
+Tandai gap HANYA pada inti tempat kesalahan PERTAMA KALI terjadi. Bila langkah inti lain dikerjakan dengan cara yang benar tetapi angkanya ikut salah karena memakai hasil keliru dari langkah sebelumnya, inti itu ok (sebut caranya sudah benar), bukan gap. Contoh: volume salah dikonversi lalu ρ = m : V dipakai benar → gap hanya di konversi satuan; Mr salah lalu perbandingan koefisien benar → gap hanya di mol/massa molar; sisi depan dan samping tertukar lalu tan dan nilai tan 30° benar → gap hanya di segitiga siku-siku.
+Nilai sudut istimewa (selalu benar bila sesuai): sin30=cos60=½, cos30=sin60=√3/2, tan30=1/√3=√3/3, tan45=1, tan60=√3, sin45=cos45=√2/2, sin0=cos90=0, cos0=sin90=1. cos30 BUKAN ½.
+bingung=true HANYA bila tidak ada langkah sama sekali. Bila siswa sudah menulis langkah lalu bilang bingung atau belum selesai ("…, terus bingung", "lanjutnya gimana"), bingung=false: nilai langkah yang sudah ada (ok atau gap), inti yang belum dikerjakan rest dengan ajakan melanjutkan, dan correct=null bila belum ada yang salah.
 Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langsung ke siswa dengan kata "kamu", maksimal 25 kata, ramah dan menyemangati. Untuk ok: sebut apa yang sudah benar ("Dari jawabanmu, kamu sudah ..."). Untuk gap: mulai dari yang sudah benar bila ada, lalu satu arah perbaikan yang mengajak ("Coba cek lagi ..., ya."). Untuk rest: sebut langkah yang belum ada sebagai ajakan ("Langkah ini belum ada di jawabanmu. Coba mulai dari ..."). DILARANG memakai kata "siswa", "bukti", atau kalimat "tidak ada bukti".`;
       let result: Response;
       try {
@@ -80,6 +84,7 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
           body:JSON.stringify({model:config.model,thinking:{type:'disabled'},max_tokens:1800,stream:false,response_format:{type:'json_object'},messages:[
             {role:'system',content:system},
             {role:'user',content:JSON.stringify({question:{prompt:item.source.body.prompt,options:item.source.body.options},concepts:item.concepts.map(c=>({code:c.code,title:c.title})),response,
+              langkahAcuan:(item.source.rubric.solutionPaths?.[0]?.steps??[]).map(st=>({inti:st.concepts.map(c=>c.code),langkah:st.description})),
               ...(retry?{koreksi:{ke:retry.correction,jawabanSebelumnya:retry.previous.slice(0,1000)}}:{})})}
           ]})
         });
@@ -117,7 +122,11 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
       }
       for (const c of item.concepts) if (!seen.has(c.code)) { adjusted.push('missing_item'); evidence.push({conceptCode:c.code,classification:'INSUFFICIENT_EVIDENCE',rationale:'Belum kelihatan dari jawaban ini.',refs:[],uncertaintyReasons:['INCOMPLETE_WORK']}); }
       // bingung / belum tahu caranya tanpa langkah: belum ada yang salah, jadi tidak ada inti "perlu diperkuat"
-      const confused = value.bingung === true || (response.responseType === 'TEXT' && confusedText(text)) || (response.responseType === 'SELF_REPORT' && response.selfReport === 'DONT_KNOW');
+      // "bingung" dari model hanya dipakai bila belum ada langkah (angka, "=", atau √): "tan 30° = 20 / x, terus bingung"
+      // tetap dinilai langkahnya (QA TC-PANDU-049)
+      const hasWork = response.responseType === 'TEXT' && /[0-9=√]/.test(text);
+      if (value.bingung === true && hasWork) adjusted.push('bingung_with_work');
+      const confused = (value.bingung === true && !hasWork) || (response.responseType === 'TEXT' && confusedText(text)) || (response.responseType === 'SELF_REPORT' && response.selfReport === 'DONT_KNOW');
       if (confused) {
         if (value.correct === true) { invalid('correct_but_confused'); return unavailable(); }
         if (value.correct === false) adjusted.push('confused_marked_wrong');
