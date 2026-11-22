@@ -23,6 +23,8 @@ export type QuestionStatus =
 export interface PracticeFilter {
   subjectCode?: string;
   phase?: string;
+  grade?: number | string;
+  stage?: "SMP" | "SMA";
   topicId?: string;
   conceptId?: string;
   coreCount?: string;
@@ -136,11 +138,20 @@ export function practiceList(
   const topics = c.topics.filter(
     (t) =>
       (!f.subjectCode || t.subject_id === subject?.id) &&
-      (!f.phase || t.phase === f.phase),
+      (!f.phase || t.phase === f.phase) &&
+      (!f.stage || (f.stage === "SMP" ? t.phase === "D" : t.phase !== "D")),
   );
   const topicIds = new Set(topics.map((t) => t.id));
+  /* kelas: salah satu inti soal tercatat di kelas itu; soal yang intinya belum punya kelas tetap ikut */
+  const grade = f.grade === undefined || f.grade === "" ? null : Number(f.grade);
+  const gradeOf = new Map(c.concepts.map((x) => [x.id, x.grade ?? null]));
+  const inGrade = (ids: string[]) => {
+    if (grade === null) return true;
+    const known = ids.map((id) => gradeOf.get(id)).filter((g): g is number => typeof g === "number");
+    return !known.length || known.includes(grade);
+  };
   const scoped = data.items.filter((i) =>
-    i.question.topicIds.some((id) => topicIds.has(id)),
+    i.question.topicIds.some((id) => topicIds.has(id)) && inGrade(i.question.conceptIds),
   );
   const attempted = scoped.filter((i) => i.progress.attemptCount > 0);
   const summary = {

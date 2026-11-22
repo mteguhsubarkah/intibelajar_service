@@ -168,6 +168,19 @@ test("learner question bank filters before paging and keeps owned immutable hist
             full.items.map((i: any) => i.question.id),
           );
         }
+        /* kelas: setiap soal punya inti di kelas itu, atau intinya belum punya kelas */
+        const grades = new Map((await sql<{ id: string; grade: number | null }>`select id, grade from concept`.execute(db)).rows.map((r) => [r.id, r.grade]));
+        for (const g of [7, 8, 9, 10, 11, 12]) {
+          const byGrade = await get("/v1/me/questions?grade=" + g + "&limit=100");
+          assert.ok(byGrade.items.every((i: any) => {
+            const known = i.question.conceptIds.map((id: string) => grades.get(id)).filter((x: unknown) => typeof x === "number");
+            return !known.length || known.includes(g);
+          }));
+        }
+        assert.equal((await as("GET", "/v1/me/questions?grade=6")).status, 400);
+        const smp = await get("/v1/me/questions?stage=SMP&limit=100"), sma = await get("/v1/me/questions?stage=SMA&limit=100"), all = await get("/v1/me/questions?limit=100");
+        assert.equal(smp.total + sma.total, all.total);
+        assert.equal((await as("GET", "/v1/me/questions?stage=SD")).status, 400);
         const found = await get(
           "/v1/me/questions?q=" +
             encodeURIComponent(candidate.question.promptPreview.slice(0, 15)),
