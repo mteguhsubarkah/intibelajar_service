@@ -176,7 +176,11 @@ const REWRITTEN_AFTER_V1 = new Set(['MAT.TRI.Q.SUDUT_ISTIMEWA_C1']);
 test('golden v2 carries the v1 numeric section unchanged, and every v1 option item except deliberately rewritten ones', () => {
   const v1 = readGolden('catalog/golden/answers.v1.json');
   assert.equal(golden.schemaVersion, 2);
-  assert.deepEqual(golden.numeric, v1.numeric);
+  // Perubahan numerik yang disengaja sesudah v1: "x" di antara dua angka dibaca tanda kali (QA 22 Nov 2026).
+  const READ_AS_TIMES = new Set(['20 x √3']);
+  const strip = (n: typeof v1.numeric) => n.map(e => ({ ...e, cases: e.cases.filter(c => !READ_AS_TIMES.has(c.typed)) }));
+  assert.deepEqual(strip(golden.numeric), strip(v1.numeric));
+  for (const t of READ_AS_TIMES) assert.ok(golden.numeric.some(e => e.cases.some(c => c.typed === t && c.verdict === 'CORRECT')), t);
   for (const old of v1.options) {
     const now = golden.options.find(x => x.question === old.question);
     assert.ok(now, `${old.question} is still in the golden file`);
