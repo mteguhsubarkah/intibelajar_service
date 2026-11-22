@@ -30,7 +30,7 @@ export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Da
   if(a.source==='LIVE'&&a.graded_at)await event('attempt:'+a.id,'ATTEMPT_GRADED',at,a.session_id);
  }
  for(const c of catalog.concepts){
-  const es=evidence.filter(e=>e.concept_id===c.id),facts:Fact[]=es.flatMap(e=>{const a=attempts.get(e.attempt_id);return a?[{id:e.id,attemptId:a.id,sessionId:a.session_id,at:new Date(a.submitted_at),classification:e.classification,mastery:e.mastery_eligible,transfer:e.transfer_eligible,family:e.question_family_code,context:e.context_tag,kind:a.kind}]:[];});
+  const es=evidence.filter(e=>e.concept_id===c.id),facts:Fact[]=es.flatMap(e=>{const a=attempts.get(e.attempt_id);return a?[{id:e.id,attemptId:a.id,sessionId:a.session_id,at:new Date(a.submitted_at),classification:e.classification,mastery:e.mastery_eligible,transfer:e.transfer_eligible,family:e.question_family_code,context:e.context_tag,kind:a.kind,reasons:e.eligibility_reasons??[]}]:[];});
   facts.sort((a,b)=>a.at.getTime()-b.at.getTime()||a.attemptId.localeCompare(b.attemptId));
   const lessons=learning.lessons.filter(l=>l.concept_id===c.id),completed=lessons.filter(l=>l.status==='COMPLETED'),liveCompleted=completed.filter(l=>l.origin!=='DEVICE_IMPORT');
   const visited=learning.sessions.some(s=>s.focus_concept_id===c.id)||lessons.length>0||learning.attempts.some(a=>revisions.get(a.question_revision_id)?.concepts.includes(c.id));
