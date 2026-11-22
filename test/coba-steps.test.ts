@@ -188,3 +188,12 @@ test('trial items: which /coba questions are in the active release, with their p
     assert.equal((await app.inject({ method: 'GET', url: '/v1/trial/items' })).statusCode, 400);
   } finally { await app.close(); }
 });
+
+test('QA 22 Nov: when the rule is unsure ("1x2", "20 x √3") it does not guess; the AI decides', async () => {
+  const { stepValue, judgeCobaStep } = await import('../src/assessment/coba-steps.js');
+  for (const t of ['1x2', '1 X 2', '20x√3', '20 x akar 3', '2 kali 3']) assert.equal(stepValue(t), null, t);
+  for (const t of ['1 × 2', '1*2', '20√3', '3√ 2', '3 akar 2', '6 kali', '60 km']) assert.notEqual(stepValue(t), null, t);
+  const step = { step: 1, conceptCode: 'X', prompt: 'p', key: 'k', correct: 'ok', answer: { value: 2 } } as any;
+  assert.deepEqual(judgeCobaStep(step, '1x2'), { kind: 'undecided' });
+  assert.deepEqual(judgeCobaStep(step, '1 × 2'), { kind: 'correct' });
+});
