@@ -7,7 +7,8 @@ import { parseAnswerValue, powers, withinTolerance, type ParseOptions } from './
  * - angka hasil akhir siswa (bagian terakhir sesudah "=") sama dengan kunci → benar; sama dengan jawaban setengah jalan → hampir;
  *   angka lain → belum (tanggapannya boleh ditulis AI, keputusannya tetap aturan);
  * - kata yang persis sama dengan daftar benar/salah → benar/belum.
- * Selain itu (kalimat, kata lain, angka yang ditulis huruf) keputusannya diserahkan ke AI dengan key: "undecided".
+ * Selain itu (kalimat, kata lain, angka yang ditulis huruf, huruf di antara angka seperti "1x2") keputusannya diserahkan
+ * ke AI dengan key: "undecided". Aturan hanya memutuskan bila angkanya terbaca pasti; bila ragu, tidak menebak.
  */
 export type StepRule =
   | { kind: 'correct' }
@@ -20,6 +21,10 @@ const CHUNK = /[0-9.,√()+\-*/ ]*\d[0-9.,√()+\-*/ ]*/g;
 
 /** Angka hasil akhir dari jawaban pendek, mis. "3 km : 30 km/jam = 0,1 jam" → 0,1; "10.000 → 1.000 → 100 → 10 kJ" → 10. */
 export function stepValue(reply: string, options: ParseOptions = {}): number | null {
+  // Ragu → AI: huruf/kata di antara dua angka ("1x2", "20 x √3", "2 kali 3") bisa berarti apa saja. Aturan tidak menebak
+  // (dulu "1x2" terbaca 1 lalu dinilai salah); keputusannya diserahkan ke AI lewat "undecided" (QA 22 Nov 2026).
+  const rawLast = reply.normalize('NFKC').replace(/akar|sqrt/gi, '√').split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1) ?? '';
+  if (/[\d)√]\s*[A-Za-z]+\s*[\d(√]/.test(rawLast.split(/[=≈]/).at(-1) ?? '')) return null;
   let t = powers(reply.normalize('NFC'))
     .replace(/(\d+)\s*\^\s*(\d{1,2})\b/g, (_, b: string, e: string) => String(Number(b) ** Number(e)))
     .replace(/[−–]/g, '-').replace(/½/g, '(1/2)').replace(/[×·⋅]/g, '*').replace(/[÷:]/g, '/')
