@@ -210,3 +210,41 @@ test('trial: soal katalog tanpa urutan pilihan lama memakai urutan pilihan katal
   assert.deepEqual(optionOrderOf(['o-b', 'o-a'], withOptions), ['o-b', 'o-a'], 'soal /coba lama tetap memakai urutan tetapnya');
   assert.equal(optionOrderOf(null, { ...i.source, body: { ...i.source.body, options: undefined } } as any), null, 'soal isian tanpa pilihan');
 });
+
+test('QA 21 Nov: special-angle values, catalog traps and half-finished answers (TC-PANDU-024/031/044/053/058)', async () => {
+  const { gradeTrial } = await import('../src/assessment/trial.js');
+  const text = (t: string) => ({ schemaVersion: 1, responseType: 'TEXT', text: t, inputMode: 'TYPED' }) as any;
+  // penilai tiruan: keadaan tiap inti seperti yang dikembalikan DeepSeek di produksi
+  const judge = (verdict: string, states: Record<string, 'ok' | 'gap' | 'rest'>) => ({ ...fixtureAi, evaluate: async (i: TrialItem) => ({ verdict, reason: verdict === 'NOT_GRADED' ? 'insufficient-working' : null,
+    value: null, misconceptionCode: null, revealedAnswer: null,
+    evidence: i.concepts.map(c => { const s = Object.entries(states).find(([k]) => c.code.includes(k))?.[1] ?? 'rest';
+      return { conceptCode: c.code, classification: s === 'ok' ? 'UNDERSTANDING_DEMONSTRATED' : s === 'gap' ? 'MISCONCEPTION_EVIDENCED' : 'INSUFFICIENT_EVIDENCE', rationale: s, refs: [], uncertaintyReasons: s === 'rest' ? ['INCOMPLETE_WORK'] : [] }; }) }) as any });
+  const state = (e: { evidence: { conceptCode: string; classification: string }[] }, part: string) => e.evidence.find(x => x.conceptCode.includes(part))?.classification;
+
+  const bola = await load('soal-bola');
+  // 053: sin dipakai benar, nilai sin 30° salah → Sudut Istimewa, bukan pengecoh "pakai cos" (angkanya kebetulan sama)
+  const r53 = await gradeTrial(judge('INCORRECT', { PROYEKSI: 'ok', PELURU: 'ok' }), bola, text('vᵧ = 20 × sin 30° = 20 × √3/2 = 17,3 m/s\nt = 2 × 17,3 : 10 = 3,46 s'));
+  assert.equal(state(r53, 'SUDUT_ISTIMEWA'), 'MISCONCEPTION_EVIDENCED');
+  assert.equal(state(r53, 'PROYEKSI'), 'UNDERSTANDING_DEMONSTRATED');
+  // 058: tiga kesalahan sekaligus — pakai cos (penilai), cos 30° = ½ (tabel), hanya waktu naik (pengecoh)
+  const r58 = await gradeTrial(judge('INCORRECT', { PROYEKSI: 'gap', SUDUT_ISTIMEWA: 'ok' }), bola, text('vᵧ = 20 × cos 30° = 20 × ½ = 10 m/s\nt = 10 : 10 = 1 s'));
+  assert.deepEqual(['PROYEKSI', 'SUDUT_ISTIMEWA', 'PELURU'].map(k => state(r58, k)), ['MISCONCEPTION_EVIDENCED', 'MISCONCEPTION_EVIDENCED', 'MISCONCEPTION_EVIDENCED']);
+
+  // 044: nilai tan 30° = 1/√3 benar → tanda salah dari penilai untuk Sudut Istimewa dicabut
+  const menara = await load('soal-menara');
+  const r44 = await gradeTrial(judge('INCORRECT', { SEGITIGA: 'gap', SUDUT_ISTIMEWA: 'gap' }), menara, text('tan 30° = 1/√3\ntan 30° = x / 20\nx = 20 × 1/√3 ≈ 11,5 m'));
+  assert.equal(state(r44, 'SUDUT_ISTIMEWA'), 'UNDERSTANDING_DEMONSTRATED');
+  assert.equal(state(r44, 'SEGITIGA'), 'MISCONCEPTION_EVIDENCED');
+
+  // 031 / 024: berhenti di hasil antara yang benar → "sudah di jalur yang benar", langkah berikutnya menurut urutan penyelesaian
+  const s = trialAssessment(load, judge('NOT_GRADED', {}));
+  const batu = await s.diagnose('qa-batu', { sessionId: 'qa-batu', questionId: 'soal-batu', rawText: 'volume batu = 20 mL, lanjutnya gimana', responseMode: null });
+  assert.equal(batu.assessment.title, 'Kamu sudah di jalur yang benar. Tinggal lanjutkan.');
+  assert.ok(!batu.items.some((x: { state: string }) => x.state === 'gap'), 'tidak ada inti "perlu diperkuat"');
+  const freezer = await s.diagnose('qa-freezer', { sessionId: 'qa-freezer', questionId: 'soal-freezer', rawText: '310 − 273 = 37 °C, habis itu bingung', responseMode: null });
+  assert.equal(freezer.assessment.title, 'Kamu sudah di jalur yang benar. Tinggal lanjutkan.');
+  assert.ok(!freezer.items.some((x: { state: string }) => x.state === 'gap'));
+  const done = (await load('soal-freezer')).concepts;
+  assert.equal(freezer.assessment.gap.name, done.find(c => c.code.includes('OPERASI_BILANGAN_BULAT'))!.title, 'langkah berikutnya: selisih suhu');
+  assert.equal(batu.assessment.gap.name, (await load('soal-batu')).concepts.find(c => c.code.includes('BESARAN_DAN_SATUAN'))!.title, 'langkah berikutnya: ubah mL ke cm³');
+});
