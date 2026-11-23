@@ -7,7 +7,12 @@ export interface Fact {id:string;attemptId:string;sessionId:string;at:Date;class
  * dari bukti yang memenuhi syarat penguasaan (INV-10).
  */
 const NOT_KENAL=['FORMATIVE_CHECK','NOT_ASSESSABLE'];
-export function masteryPolicy(input:Fact[],visited:boolean,lesson:boolean,now:Date){
+/*
+ * Tingkat inti (uiTier): -1 belum, 0 Dicoba, 1 Kenal (benar 1 soal), 2 Mahir (latihan inti tuntas: semua soalnya benar,
+ * tercatat CORE_COMPLETED), 3 Pro (DEMONSTRATED: benar di soal baru lintas sesi/hari). Satu jawaban benar saja tidak
+ * pernah langsung Mahir, walaupun soalnya soal transfer.
+ */
+export function masteryPolicy(input:Fact[],visited:boolean,lesson:boolean,now:Date,coreDone=false){
  const facts=[...input].sort((a,b)=>a.at.getTime()-b.at.getTime()||a.attemptId.localeCompare(b.attemptId));
  const m=facts.filter(e=>e.mastery),t=m.filter(e=>e.transfer);let demonstrated:Date|null=null,review=false;
  for(let i=0;i<t.length;i++){
@@ -19,7 +24,7 @@ export function masteryPolicy(input:Fact[],visited:boolean,lesson:boolean,now:Da
  const correct=m.filter(e=>e.classification==='UNDERSTANDING_DEMONSTRATED').length,total=t.filter(e=>e.classification==='UNDERSTANDING_DEMONSTRATED').length;
  let streak=0;for(let i=t.length-1;i>=0&&t[i]!.classification==='UNDERSTANDING_DEMONSTRATED'&&streak<3;i--)streak++;
  const kenal=facts.some(e=>e.classification==='UNDERSTANDING_DEMONSTRATED'&&!(e.reasons??[]).some(r=>NOT_KENAL.includes(r)));
- const tier=demonstrated?3:correct?total?2:1:kenal?1:(facts.length||visited||lesson)?0:-1,last=m.at(-1)?.at;
+ const tier=demonstrated?3:coreDone?2:(correct||kenal)?1:(facts.length||visited||lesson)?0:-1,last=m.at(-1)?.at;
  const stale=tier>=2&&!!last&&now.getTime()-last.getTime()>14*86400000;
  return{status:demonstrated?'DEMONSTRATED':m.length?'DEVELOPING':'NOT_ASSESSED',uiTier:tier,exploration:visited||facts.length||lesson?'VISITED':'UNVISITED',lessonComplete:lesson,
  practiced:m.some(e=>['PRACTICE','TRANSFER'].includes(e.kind)),transferStreak:streak,transferCorrectTotal:total,qualifyingContexts:streak?new Set(t.slice(-streak).map(e=>e.context)).size:0,
