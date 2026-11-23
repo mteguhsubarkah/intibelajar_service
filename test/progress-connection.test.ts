@@ -11,6 +11,11 @@ test('mastery-v1 K05, contradictions, decay and non-eligible facts',()=>{
  assert.equal(p([...facts,wrong]).status,'DEMONSTRATED');assert.equal(p([...facts,wrong]).needsReviewReason,'CONTRADICTION');
  assert.equal(p([...facts,wrong,{...wrong,attemptId:'4',at:new Date('2026-01-05')}]).status,'DEVELOPING');
  assert.equal(p(facts,new Date('2026-02-01')).needsReviewReason,'STALE_14D');
+ // Kenal: benar 1 soal, juga bila dinilai AI atau kuncinya pernah tampil (bukan bukti penguasaan); tidak dari cek singkat materi
+ const ai={...facts[0]!,mastery:false,transfer:false,kind:'PRACTICE',reasons:['AI_ONLY']};
+ assert.equal(p([ai]).uiTier,1);assert.equal(p([ai]).status,'NOT_ASSESSED');
+ assert.equal(p([{...ai,reasons:['SOLUTION_SEEN','AI_ONLY']}]).uiTier,1);assert.equal(p([{...ai,reasons:['FORMATIVE_CHECK']}]).uiTier,0);
+ assert.equal(p([{...ai,classification:'MISCONCEPTION_EVIDENCED'}]).uiTier,0);
 });
 test('connected progress/import/tutor on PostgreSQL preserve consent, ownership and no imported evidence',async t=>{
  const config=readConfig({...JSON.parse(readFileSync('.local/test-env.json','utf8')),FEATURE_LEGACY_FACADE:'true'});assert.match(new URL(config.databaseUrl).pathname,/_test$/);const db=connect(config.databaseUrl);await migrate(db);
