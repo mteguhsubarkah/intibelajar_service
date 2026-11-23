@@ -52,6 +52,28 @@ function weekCompare(events:{localDate:string;type:string}[],timezone:string,now
     return{activeDays:new Set(es.map(e=>e.localDate)).size,activities:es.length,mahir:es.filter(e=>e.type==='CORE_COMPLETED').length};};
   return{thisWeek:win(0,6),lastWeek:win(7,13)};
 }
+/**
+ * Latihan soal per minggu (7 hari lokal terakhir vs 7 hari sebelumnya), per soal yang dikerjakan di jendela itu:
+ * benar mandiri (benar tanpa bantuan, tanpa salah sebelumnya di minggu itu), benar dengan bantuan, benar setelah
+ * diulang, masih meleset (jawaban terakhir salah). Hanya jawaban langsung yang sudah dinilai; cek singkat materi tidak.
+ */
+function practiceWeek(attempts:Iterable<any>,revisions:{id:string;family_code:string}[],timezone:string,now=new Date()){
+  const tz=timezone||'Asia/Jakarta',fam=new Map(revisions.map(r=>[r.id,r.family_code]));
+  const local=(d:Date)=>d.toLocaleDateString('en-CA',{timeZone:tz});
+  const today=new Date(local(now)+'T00:00:00Z');
+  const back=(n:number)=>{const d=new Date(today);d.setUTCDate(today.getUTCDate()-n);return d.toISOString().slice(0,10);};
+  const graded=[...attempts].filter(a=>a.source==='LIVE'&&a.kind!=='QUICK_CHECK'&&(a.verdict==='CORRECT'||a.verdict==='INCORRECT'))
+    .sort((a,b)=>new Date(a.submitted_at).getTime()-new Date(b.submitted_at).getTime());
+  const win=(from:number,to:number)=>{
+    const lo=back(to),hi=back(from),by=new Map<string,any[]>();
+    for(const a of graded){const d=local(new Date(a.submitted_at));if(d<lo||d>hi)continue;const k=fam.get(a.question_revision_id)??a.question_revision_id;by.set(k,[...(by.get(k)??[]),a]);}
+    const out={tried:0,mandiri:0,bantuan:0,diulang:0,meleset:0};
+    for(const list of by.values()){out.tried++;const last=list.at(-1)!;
+      if(last.verdict!=='CORRECT')out.meleset++;else if(list.slice(0,-1).some((a:any)=>a.verdict==='INCORRECT'))out.diulang++;else if(last.assistance!=='NONE')out.bantuan++;else out.mandiri++;}
+    return out;
+  };
+  return{thisWeek:win(0,6),lastWeek:win(7,13)};
+}
 function lastDays(events:{localDate:string;xpDelta:number}[],timezone:string,now=new Date()){
   const today=now.toLocaleDateString('en-CA',{timeZone:timezone||'Asia/Jakarta'});
   const base=new Date(today+'T00:00:00Z');
@@ -310,7 +332,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   });
   route('GET','/v1/me/progress','student',async req=>{const{projection:p,profile,events}=await projected(req);
     return{user:{id:req.principal!.userId,displayName:profile.displayName??'Pelajar'},cores:p.views.filter(v=>v.legacyMapId).map(v=>({id:v.legacyMapId,exploration:v.exploration,
-      understandingDemonstrated:(p.evidence.filter(e=>e.concept_id===v.conceptId && e.mastery_eligible).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime())[0]?.classification==='UNDERSTANDING_DEMONSTRATED'),mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,coreCompleted:p.completed.has(v.conceptId),transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),days:lastDays(events,profile.timezone),week:weekCompare(events,profile.timezone),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
+      understandingDemonstrated:(p.evidence.filter(e=>e.concept_id===v.conceptId && e.mastery_eligible).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime())[0]?.classification==='UNDERSTANDING_DEMONSTRATED'),mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,coreCompleted:p.completed.has(v.conceptId),transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),days:lastDays(events,profile.timezone),week:(()=>{const w=weekCompare(events,profile.timezone),pr=practiceWeek(p.attempts.values(),p.catalog.revisions,profile.timezone);return{thisWeek:{...w.thisWeek,practice:pr.thisWeek},lastWeek:{...w.lastWeek,practice:pr.lastWeek}};})(),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
   route('POST','/v1/me/core-completions','student',async(req,reply)=>send(reply,await learnerCommand(req,'POST /v1/me/core-completions',req.body,async tx=>{
     const id=req.principal!.learnerId!;await privacy.requireConsent(tx,id,['LEARNING_DATA']);const p=await privacy.profile(tx,id);
     return{status:200,body:await completeCore(tx,id,p.timezone,req.body as {coreId:string;score:number;total:number})};

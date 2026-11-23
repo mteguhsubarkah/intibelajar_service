@@ -3315,6 +3315,17 @@ components:
         activeDays: { type: integer, minimum: 0, maximum: 7 }
         activities: { type: integer, minimum: 0 }
         mahir: { type: integer, minimum: 0 }
+        practice:
+          type: object
+          description: Questions answered in the window, by outcome of the last answer (independent / with help / after retry / still wrong).
+          additionalProperties: false
+          required: [tried, mandiri, bantuan, diulang, meleset]
+          properties:
+            tried: { type: integer, minimum: 0 }
+            mandiri: { type: integer, minimum: 0 }
+            bantuan: { type: integer, minimum: 0 }
+            diulang: { type: integer, minimum: 0 }
+            meleset: { type: integer, minimum: 0 }
     LocalDate:
       type: string
       format: date
