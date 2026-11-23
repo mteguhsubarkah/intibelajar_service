@@ -29,6 +29,7 @@ export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Da
   }}
   if(a.source==='LIVE'&&a.graded_at)await event('attempt:'+a.id,'ATTEMPT_GRADED',at,a.session_id);
  }
+ const cands:{alias:string;title:string;startTier:number;startReview:boolean;last:number;correctToday:boolean;completedToday:boolean}[]=[];
  for(const c of catalog.concepts){
   const es=evidence.filter(e=>e.concept_id===c.id),facts:Fact[]=es.flatMap(e=>{const a=attempts.get(e.attempt_id);return a?[{id:e.id,attemptId:a.id,sessionId:a.session_id,at:new Date(a.submitted_at),classification:e.classification,mastery:e.mastery_eligible,transfer:e.transfer_eligible,family:e.question_family_code,context:e.context_tag,kind:a.kind,reasons:e.eligibility_reasons??[]}]:[];});
   facts.sort((a,b)=>a.at.getTime()-b.at.getTime()||a.attemptId.localeCompare(b.attemptId));
@@ -41,7 +42,10 @@ export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Da
    on conflict(learner_id,concept_id) do update set exploration=excluded.exploration,status=excluded.status,lesson_complete=excluded.lesson_complete,practiced=excluded.practiced,transfer_streak=excluded.transfer_streak,transfer_correct_total=excluded.transfer_correct_total,qualifying_contexts=excluded.qualifying_contexts,needs_review=excluded.needs_review,needs_review_reason=excluded.needs_review_reason,ui_tier=excluded.ui_tier,demonstrated_at=excluded.demonstrated_at,last_practiced_at=excluded.last_practiced_at,updated_at=now(),version=mastery_state.version+1`.execute(tx);
   // Replay every historical prefix so first-tier awards survive a projection rebuild after contradiction.
   const reached=new Map<number,Fact>();for(let n=1;n<=facts.length;n++){const f=facts.slice(0,n),p=masteryPolicy(f,visited,completed.length>0,f.at(-1)!.at,(coreDoneAt.get(c.id)??Infinity)<=f.at(-1)!.at.getTime());for(let tier=1;tier<=p.uiTier;tier++)if(!reached.has(tier))reached.set(tier,f.at(-1)!);}
-  if(masteryPolicy(facts.filter(f=>f.at<dayStart),visited,false,dayStart).needsReview)reviewMission=true;
+  const start=masteryPolicy(facts.filter(f=>f.at<dayStart),visited,false,dayStart,(coreDoneAt.get(c.id)??Infinity)<dayStart.getTime());
+  if(start.needsReview)reviewMission=true;
+  if(c.alias)cands.push({alias:c.alias,title:c.title,startTier:start.uiTier,startReview:start.needsReview,last:facts.at(-1)?.at.getTime()??0,
+   correctToday:facts.some(f=>f.at>=dayStart&&f.classification==='UNDERSTANDING_DEMONSTRATED'),completedToday:(coreDoneAt.get(c.id)??0)>=dayStart.getTime()});
   for(let n=1;n<facts.length;n++){const f=facts[n]!,prior=masteryPolicy(facts.slice(0,n),visited,false,f.at);if(f.mastery&&f.classification==='UNDERSTANDING_DEMONSTRATED'&&prior.needsReview){await event('xp:SEGARKAN:'+c.id+':'+day(f.at,timezone),'XP_AWARDED',f.at,f.sessionId,{conceptId:c.id,rule:'SEGARKAN'},5);if(day(f.at,timezone)===today)dailyRefresh++;}}
   for(const[tier,f]of reached)await event('xp:NAIK_TINGKAT:'+c.id+':'+tier,'XP_AWARDED',f.at,f.sessionId,{conceptId:c.id,rule:'NAIK_TINGKAT'},15);
   for(const l of liveCompleted){const at=new Date(l.completed_at);activeDates.add(day(at,timezone));await event('lesson:'+l.id,'LESSON_COMPLETED',at,l.session_id,{conceptId:c.id});}
@@ -54,7 +58,21 @@ export async function rebuildProgress(tx:Tx,id:string,timezone:string,now=new Da
  for(const d of activeDates)await event('streak:'+d,'STREAK_EXTENDED',new Date(d+'T12:00:00Z'),null);
  const days=[...activeDates].sort();let longest=0,current=0,prev='';for(const d of days){current=prev&&Date.parse(d)-Date.parse(prev)===86400000?current+1:1;longest=Math.max(longest,current);prev=d;}
  if(!prev||Date.parse(today)-Date.parse(prev)>86400000)current=0;
- const missions=[{code:'SOAL',title:'Kerjakan 2 soal',done:Math.min(2,dailyCorrect),target:2},reviewMission?{code:'SEGARKAN',title:'Segarkan 1 inti yang goyah',done:Math.min(1,dailyRefresh),target:1}:{code:'GABUNGAN',title:'Coba 1 soal gabungan',done:Math.min(1,dailyCombined),target:1},{code:'BARU',title:'Pelajari 1 inti baru',done:Math.min(1,dailyLessons),target:1}];
+ /*
+  * Misi hari ini dipilih dari keadaan inti siswa saat hari dimulai (tetap sepanjang hari):
+  * 1) inti goyah → segarkan; selain itu inti Kenal → tuntaskan latihan intinya (jadi Mahir); selain itu inti baru.
+  * 2) inti Mahir dari hari sebelumnya → kokohkan (benar lagi hari ini, menuju Pro); selain itu 1 soal gabungan (persiapan ujian).
+  * 3) kebiasaan harian: 2 soal benar. Misi pertama yang paling ringan menjaga semangat (Duolingo Daily Quests).
+  */
+ const recent=(a:{last:number},b:{last:number})=>b.last-a.last,cut=(t:string)=>t.length>60?t.slice(0,59)+'…':t;
+ const review=cands.filter(x=>x.startReview).sort(recent)[0],kenal=cands.filter(x=>x.startTier===1).sort(recent)[0];
+ const strong=cands.filter(x=>x.startTier===2&&!x.startReview&&x.last<dayStart.getTime()).sort(recent)[0];
+ const first=review?{code:'SEGARKAN',title:'Segarkan '+cut(review.title),done:review.correctToday?1:0,target:1,coreAlias:review.alias}
+  :kenal?{code:'MAHIR',title:'Tuntaskan latihan inti '+cut(kenal.title),done:kenal.completedToday?1:0,target:1,coreAlias:kenal.alias}
+  :{code:'BARU',title:'Pelajari 1 inti baru',done:Math.min(1,dailyLessons),target:1};
+ const second=strong?{code:'PRO',title:'Kokohkan '+cut(strong.title),done:strong.correctToday?1:0,target:1,coreAlias:strong.alias}
+  :{code:'GABUNGAN',title:'Coba 1 soal gabungan',done:Math.min(1,dailyCombined),target:1};
+ const missions=[first,second,{code:'SOAL',title:'Kerjakan 2 soal',done:Math.min(2,dailyCorrect),target:2}];
  const allDone=missions.every(m=>m.done>=m.target);for(const m of missions)if(m.done>=m.target)await event('mission:'+today+':'+m.code,'MISSION_COMPLETED',now,null,{code:m.code});
  if(allDone)await event('xp:MISI_HARIAN:'+today,'XP_AWARDED',now,null,{rule:'MISI_HARIAN'},30);
  const xp=Number((await sql<any>`select coalesce(sum(xp_delta),0) as total from progress_event where learner_id=${id}`.execute(tx)).rows[0].total);
