@@ -44,6 +44,14 @@ import{readOwnPhoto}from'./assessment/own-photo.js';
 
 declare module 'fastify' { interface FastifyRequest { principal?: identity.Principal; sessionToken?:string; safeSpan?:Span } }
 /** 7 hari terakhir siswa (zona waktunya), terlama dulu: banyak aktivitas dan XP per hari dari SEMUA progress event. */
+/** Minggu ini (7 hari lokal terakhir) dibanding 7 hari sebelumnya: hari aktif, jumlah aktivitas, inti yang naik ke Mahir. */
+function weekCompare(events:{localDate:string;type:string}[],timezone:string,now=new Date()){
+  const today=new Date(now.toLocaleDateString('en-CA',{timeZone:timezone||'Asia/Jakarta'})+'T00:00:00Z');
+  const back=(n:number)=>{const d=new Date(today);d.setUTCDate(today.getUTCDate()-n);return d.toISOString().slice(0,10);};
+  const win=(from:number,to:number)=>{const lo=back(to),hi=back(from),es=events.filter(e=>e.localDate>=lo&&e.localDate<=hi);
+    return{activeDays:new Set(es.map(e=>e.localDate)).size,activities:es.length,mahir:es.filter(e=>e.type==='CORE_COMPLETED').length};};
+  return{thisWeek:win(0,6),lastWeek:win(7,13)};
+}
 function lastDays(events:{localDate:string;xpDelta:number}[],timezone:string,now=new Date()){
   const today=now.toLocaleDateString('en-CA',{timeZone:timezone||'Asia/Jakarta'});
   const base=new Date(today+'T00:00:00Z');
@@ -302,7 +310,7 @@ export async function buildApp(config:Config=readConfig(),options:{db?:DB;logStr
   });
   route('GET','/v1/me/progress','student',async req=>{const{projection:p,profile,events}=await projected(req);
     return{user:{id:req.principal!.userId,displayName:profile.displayName??'Pelajar'},cores:p.views.filter(v=>v.legacyMapId).map(v=>({id:v.legacyMapId,exploration:v.exploration,
-      understandingDemonstrated:(p.evidence.filter(e=>e.concept_id===v.conceptId && e.mastery_eligible).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime())[0]?.classification==='UNDERSTANDING_DEMONSTRATED'),mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,coreCompleted:p.completed.has(v.conceptId),transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),days:lastDays(events,profile.timezone),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
+      understandingDemonstrated:(p.evidence.filter(e=>e.concept_id===v.conceptId && e.mastery_eligible).sort((a,b)=>new Date(p.attempts.get(b.attempt_id)!.submitted_at).getTime()-new Date(p.attempts.get(a.attempt_id)!.submitted_at).getTime())[0]?.classification==='UNDERSTANDING_DEMONSTRATED'),mastery:v.uiTier<1?'NOT_ASSESSED':v.status,lessonComplete:v.lessonComplete,coreCompleted:p.completed.has(v.conceptId),transferCorrect:v.transferCorrectTotal,...(v.lastPracticedAt?{lastPracticedAt:v.lastPracticedAt}:{})})),activities:events.slice(0,20).map(e=>({id:e.id,title:e.title,at:e.occurredAt})),days:lastDays(events,profile.timezone),week:weekCompare(events,profile.timezone),xp:p.stats.xpTotal,streakDays:p.stats.currentStreakDays};});
   route('POST','/v1/me/core-completions','student',async(req,reply)=>send(reply,await learnerCommand(req,'POST /v1/me/core-completions',req.body,async tx=>{
     const id=req.principal!.learnerId!;await privacy.requireConsent(tx,id,['LEARNING_DATA']);const p=await privacy.profile(tx,id);
     return{status:200,body:await completeCore(tx,id,p.timezone,req.body as {coreId:string;score:number;total:number})};

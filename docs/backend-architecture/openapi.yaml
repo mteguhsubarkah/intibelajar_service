@@ -3307,6 +3307,14 @@ components:
     Timestamp:
       type: string
       format: date-time
+    WeekSummary:
+      type: object
+      additionalProperties: false
+      required: [activeDays, activities, mahir]
+      properties:
+        activeDays: { type: integer, minimum: 0, maximum: 7 }
+        activities: { type: integer, minimum: 0 }
+        mahir: { type: integer, minimum: 0 }
     LocalDate:
       type: string
       format: date
@@ -5655,6 +5663,13 @@ components:
         streakDays:
           type: integer
           minimum: 0
+        week:
+          type: object
+          description: The last 7 local days compared with the 7 before them (active days, activity count, cores newly Mahir).
+          required: [thisWeek, lastWeek]
+          properties:
+            thisWeek: { $ref: '#/components/schemas/WeekSummary' }
+            lastWeek: { $ref: '#/components/schemas/WeekSummary' }
         days:
           type: array
           description: The learner's last 7 local days, oldest first, today last. Activity count and XP per day, from all progress events (not only the 20 in `activities`).
@@ -5851,10 +5866,13 @@ components:
                 properties:
                   code:
                     type: string
-                    enum: [SOAL, SEGARKAN, GABUNGAN, BARU]
+                    enum: [SOAL, SEGARKAN, GABUNGAN, BARU, MAHIR, PRO]
                   title:
                     type: string
                     maxLength: 80
+                  coreAlias:
+                    type: string
+                    description: The core this mission is about (SEGARKAN, MAHIR, PRO), for a direct link.
                   done:
                     type: integer
                     minimum: 0
