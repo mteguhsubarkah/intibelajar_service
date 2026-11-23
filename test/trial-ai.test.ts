@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {trialDeepSeek} from '../src/assessment/trial-ai.js';
+import {trialDeepSeek, canonicalText} from "../src/assessment/trial-ai.js";
 import {trialAssessment,type TrialItem} from '../src/assessment/trial.js';
 import {draftManifest} from './fixtures/catalog.js';
 const manifest=draftManifest();
@@ -20,7 +20,7 @@ test('trial diagnosis calls DeepSeek with public context, maps special-angle err
   calls++;assert.equal(String(url),'https://api.deepseek.com/chat/completions');
   const body=JSON.parse(String(options?.body));assert.equal(body.model,config.model);assert.equal(body.response_format.type,'json_object');
   assert.ok(!JSON.stringify(body).includes('PRIVATE_KEY'));assert.ok(!JSON.stringify(body).includes('PRIVATE_EXAMPLE'));assert.ok(!JSON.stringify(body).includes('test-secret'));
-  assert.equal(JSON.parse(body.messages[1].content).response.text,raw);
+  assert.equal(JSON.parse(body.messages[1].content).response.text,canonicalText(raw));assert.equal(body.temperature,0);
   return envelope({correct:false,items:item.concepts.map(c=>({code:c.code,state:c.legacyMapId==='tri-f'?'gap':'ok',quote:c.legacyMapId==='tri-f'?'1/2':'tan 30',reason:c.legacyMapId==='tri-f'?'Nilai sudut istimewa pada pembagian belum sesuai.':'Hubungan sisi terlihat tepat.'}))});
  });
  const service=trialAssessment(async()=>item,ai);

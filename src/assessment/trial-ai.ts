@@ -35,6 +35,14 @@ export function confusedText(raw: string) {
   if (!t || /[0-9=√]/.test(t) || t.length > 160) return false;
   return /\b(?:(?:n?g+a+k?|tidak|tdk|belum|blm|gk)\s*(?:ta+u+|tahu|ngerti|paham|bisa|mudeng)|gatau|gatahu|bingung|nyerah)\b/.test(t);
 }
+/**
+ * Jawaban yang sama dengan spasi berbeda ("x/20" vs "x / 20") dikirim ke penilai dalam bentuk yang sama, supaya
+ * penilaiannya tidak berbeda (QA TC-PANDU-045/049). Kutipan AI tetap dicari di teks asli (findQuote mengabaikan spasi).
+ */
+export function canonicalText(t: string) {
+  return t.replace(/[ \t]*([/×÷*=+^:])[ \t]*/g, ' $1 ').replace(/[ \t]{2,}/g, ' ').replace(/[ \t]+$/gm, '');
+}
+const canonicalResponse = <T extends { text?: string }>(r: T): T => (typeof r.text === 'string' ? { ...r, text: canonicalText(r.text) } : r);
 export function findQuote(text: string, quote: string): { start: number; end: number; quote: string } | null {
   const q = quote.trim();
   if (!q) return null;
@@ -81,9 +89,9 @@ Gaya reason: kamu sedang mengajari siswa, bukan guru yang memeriksa. Tulis langs
         result = await http('https://api.deepseek.com/chat/completions', {
           method:'POST',signal:AbortSignal.timeout(25000),
           headers:{'Content-Type':'application/json',Authorization:'Bearer '+config.apiKey},
-          body:JSON.stringify({model:config.model,thinking:{type:'disabled'},max_tokens:1800,stream:false,response_format:{type:'json_object'},messages:[
+          body:JSON.stringify({model:config.model,thinking:{type:'disabled'},temperature:0,max_tokens:1800,stream:false,response_format:{type:'json_object'},messages:[
             {role:'system',content:system},
-            {role:'user',content:JSON.stringify({question:{prompt:item.source.body.prompt,options:item.source.body.options},concepts:item.concepts.map(c=>({code:c.code,title:c.title})),response,
+            {role:'user',content:JSON.stringify({question:{prompt:item.source.body.prompt,options:item.source.body.options},concepts:item.concepts.map(c=>({code:c.code,title:c.title})),response:canonicalResponse(response),
               langkahAcuan:(item.source.rubric.solutionPaths?.[0]?.steps??[]).map(st=>({inti:st.concepts.map(c=>c.code),langkah:st.description})),
               ...(retry?{koreksi:{ke:retry.correction,jawabanSebelumnya:retry.previous.slice(0,1000)}}:{})})}
           ]})

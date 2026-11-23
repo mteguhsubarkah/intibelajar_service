@@ -7,7 +7,7 @@ import { evaluate, type Evaluation, type StudentResponse } from './evaluators/in
 import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
 import { ApiError, fail } from '../platform/errors.js';
 import { judgeCobaStep, stepValue } from './coba-steps.js';
-import { specialAngleSlips } from './special-angles.js';
+import { specialAngleSlips, specialAngleUses } from './special-angles.js';
 import { findQuote } from './trial-ai.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
@@ -140,7 +140,9 @@ function partial(judged: Evaluation, shown?: Evaluation['evidence'][number]): Ev
  */
 export function withSpecialAngles(judged: Evaluation, i: TrialItem, text: string): Evaluation {
   const special = i.concepts.find(c => /SUDUT_ISTIMEWA/.test(c.code));
-  const slips = special ? specialAngleSlips(text) : [];
+  const written = special ? specialAngleSlips(text) : [];
+  /* tanpa "f θ = nilai": nilai benar yang dipakai di baris lain tetap bukti (TC-PANDU-044) */
+  const slips = written.length ? written : special ? specialAngleUses(text) : [];
   if (!special || !slips.length || judged.verdict === 'CORRECT') return judged;
   const wrong = slips.find(s => !s.right);
   const others = judged.evidence.filter(e => e.conceptCode !== special.code);
