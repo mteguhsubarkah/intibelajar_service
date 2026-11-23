@@ -13,8 +13,10 @@ const NEG = /(^|\s)(tidak|bukan|tak|belum)(\s|$)/;
 /* "gatau", "bingung": belum menjawab, bukan jawaban salah (soal tetap bisa dijawab) */
 const DONT_KNOW = /^(g+a+k? ?ta+h?u+|gk ?tau|nggak? ?ta+h?u+|ngga ?ta+h?u+|tidak tahu|tdk tahu|belum tahu|blm tau|bingung|entah|lupa|\?+|-+)$/;
 
+/* titik ribuan ala Indonesia: "13.000" = "13000", "1.000.000" = "1000000" ("0.500" dibiarkan) */
+const THOUSANDS = /(?<![\d.,])([1-9]\d{0,2})((?:\.\d{3})+)(?![\d.]*\d)/g;
 export function normalizeOptionText(raw: string) {
-  return raw.normalize('NFKC').replace(/[​-‍﻿]/g, '').toLowerCase()
+  return raw.normalize('NFKC').replace(THOUSANDS, (_m, head: string, rest: string) => head + rest.replace(/\./g, '')).replace(/[​-‍﻿]/g, '').toLowerCase()
     .replace(/[−–—]/g, '-').replace(/[×·⋅]/g, 'x').replace(/÷/g, '/')
     .replace(/(\d),(\d)/g, '$1.$2').replace(/\s+/g, ' ').trim().replace(/[.。]+$/, '').trim();
 }
