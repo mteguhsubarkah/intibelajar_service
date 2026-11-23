@@ -16,6 +16,9 @@ test('mastery-v1 K05, contradictions, decay and non-eligible facts',()=>{
  assert.equal(p([ai]).uiTier,1);assert.equal(p([ai]).status,'NOT_ASSESSED');
  assert.equal(p([{...ai,reasons:['SOLUTION_SEEN','AI_ONLY']}]).uiTier,1);assert.equal(p([{...ai,reasons:['FORMATIVE_CHECK']}]).uiTier,0);
  assert.equal(p([{...ai,classification:'MISCONCEPTION_EVIDENCED'}]).uiTier,0);
+ // Mahir hanya dari latihan inti tuntas (CORE_COMPLETED), bukan dari 1 jawaban transfer yang benar
+ assert.equal(p([facts[0]!]).uiTier,1);assert.equal(masteryPolicy([facts[0]!],true,false,new Date('2026-01-04'),true).uiTier,2);
+ assert.equal(masteryPolicy([],true,false,new Date('2026-01-04'),true).uiTier,2);
 });
 test('connected progress/import/tutor on PostgreSQL preserve consent, ownership and no imported evidence',async t=>{
  const config=readConfig({...JSON.parse(readFileSync('.local/test-env.json','utf8')),FEATURE_LEGACY_FACADE:'true'});assert.match(new URL(config.databaseUrl).pathname,/_test$/);const db=connect(config.databaseUrl);await migrate(db);
