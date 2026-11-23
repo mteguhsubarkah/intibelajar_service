@@ -85,3 +85,26 @@ export function specialAngleSlips(text: string): AngleSlip[] {
   }
   return out;
 }
+
+/**
+ * Nilai sudut istimewa yang dipakai tanpa ditulis "f θ = nilai", mis. "tan 30° = x / 20" lalu "x = 20 × 1/√3"
+ * (QA TC-PANDU-044). Hanya bilangan tak bulat (pecahan, akar, desimal) yang cocok dengan nilai sudut yang disebut di
+ * jawaban; bilangan bulat tidak dihitung supaya "20" atau "1" tidak dianggap nilai tan 45°.
+ */
+export function specialAngleUses(text: string): AngleSlip[] {
+  const named = new Set<string>();
+  for (const m of text.matchAll(new RegExp(TRIG.source, 'gi'))) named.add(m[1]!.toLowerCase() + ':' + Number(m[2]));
+  if (!named.size) return [];
+  const out: AngleSlip[] = [];
+  const TOKEN = /(?:\d+(?:[.,]\d+)?\s*\/\s*√?\s*\d+(?:[.,]\d+)?|√\s*\d+\s*\/\s*\d+|\d*\s*√\s*\d+|[½¼¾]|\d+[.,]\d+)/g;
+  for (const m of text.matchAll(TOKEN)) {
+    const v = numberOf(m[0]);
+    if (v === null || Number.isInteger(v)) continue;
+    for (const key of named) {
+      const [fn, a] = key.split(':') as [AngleSlip['fn'], string];
+      const truth = TABLE[fn]?.[Number(a)];
+      if (truth !== undefined && Math.abs(v - truth) <= 0.02 * Math.max(1, Math.abs(truth))) out.push({ fn, angle: Number(a), written: m[0], right: true });
+    }
+  }
+  return out;
+}

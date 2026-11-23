@@ -248,3 +248,13 @@ test('QA 21 Nov: special-angle values, catalog traps and half-finished answers (
   assert.equal(freezer.assessment.gap.name, done.find(c => c.code.includes('OPERASI_BILANGAN_BULAT'))!.title, 'langkah berikutnya: selisih suhu');
   assert.equal(batu.assessment.gap.name, (await load('soal-batu')).concepts.find(c => c.code.includes('BESARAN_DAN_SATUAN'))!.title, 'langkah berikutnya: ubah mL ke cm³');
 });
+
+test('special angle value used on another line counts (TC-PANDU-044); spacing does not change the text sent to AI (TC-PANDU-045/049)', async () => {
+  const { specialAngleUses } = await import('../src/assessment/special-angles.js');
+  const { canonicalText } = await import('../src/assessment/trial-ai.js');
+  const uses = specialAngleUses('depan = x, samping = 20 m\ntan 30° = x / 20\nx = 20 × 1/√3 ≈ 11,5 m');
+  assert.ok(uses.some(u => u.fn === 'tan' && u.angle === 30 && u.right));
+  assert.equal(specialAngleUses('tan 30° = x / 20\nx = 20 × 10').length, 0, 'integers never count');
+  assert.equal(specialAngleUses('x = 20 × 1/√3').length, 0, 'no trig named, no claim');
+  assert.equal(canonicalText('tan 30° = x/20'), canonicalText('tan 30°  =  x / 20'));
+});
