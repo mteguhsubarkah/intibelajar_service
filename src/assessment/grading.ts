@@ -6,7 +6,6 @@ import { conceptLabels } from '../catalog/interface.js';
 import { evaluate, type CandidateEvidence, type Evaluation, type StudentResponse } from './evaluators/index.js';
 import { reportOf } from './disputes.js';
 import { isGibberish, logTier, mergeGrades, type AiGrader } from './ai-grader.js';
-import { matchOption } from './evaluators/option-text.js';
 // Inline deterministic grading (Slice 1 M6; 06 §2.3 step 1, §5). One completed GRADING run per attempt,
 // one evidence row per mapped concept, with mastery and transfer eligibility decided and explained here.
 // Exposure facts come from the learning module, which owns attempts and assistance events.
@@ -89,9 +88,14 @@ const AI_DAILY_LIMIT = Number(process.env.AI_GRADE_DAILY_LIMIT ?? 300);
 async function tiered(tx: Tx, req: GradeRequest, source: Awaited<ReturnType<typeof gradingSource>>, ruled: Evaluation) {
   const plain = { evaluation: ruled, aiCodes: new Set<string>(), engine: 'DETERMINISTIC' as 'DETERMINISTIC' | 'AI_ASSISTED', support: undefined as string | undefined };
   const text = req.response.responseType === 'TEXT' ? req.response.text ?? '' : '';
-  const unmatched = source.rubric.evaluator === 'option-v1' && !!text && !!source.body.options?.length
-    && matchOption(source.body.options.map(o => o.label), text).index < 0;
-  const decided = (ruled.verdict === 'CORRECT' || ruled.verdict === 'INCORRECT') && !unmatched;
+  // Jawaban ketikan untuk soal pilihan: aturan hanya memotong jalan bila jawabannya cocok dengan kunci. Selain itu
+  // (tidak cocok pilihan mana pun, atau cocok dengan pilihan lain) benar/salahnya diputuskan AI, bukan aturan format.
+  const typedOption = source.rubric.evaluator === 'option-v1' && !!text && !!source.body.options?.length;
+  const decided = (ruled.verdict === 'CORRECT' || ruled.verdict === 'INCORRECT') && !(typedOption && ruled.verdict !== 'CORRECT');
+  // AI tidak tersedia untuk jawaban yang harus diputuskan AI: belum dinilai (boleh kirim lagi), bukan salah.
+  const notYet = { ...plain, evaluation: { ...ruled, verdict: 'UNREADABLE' as const, reason: 'empty' as const, misconceptionCode: null, evidence: [], revealedAnswer: null },
+    support: 'Penilai jawaban sedang sibuk, jadi jawabanmu belum dinilai. Kirim lagi sebentar lagi, ya.' };
+  const fallback = () => (decided ? plain : notYet);
   const single = source.concepts.filter(c => c.assessable).length <= 1;
   if (single && decided && ruled.verdict === 'CORRECT') { logTier('rule', source.revisionId); return plain; }
   // kosong atau ketikan acak: tidak nyambung, tanpa AI. "gatau"/"bingung" tetap ke AI supaya siswa dirangkul.
@@ -100,12 +104,13 @@ async function tiered(tx: Tx, req: GradeRequest, source: Awaited<ReturnType<type
     // tidak nyambung: belum terbaca (soal tetap terbuka, tidak dihitung salah)
     return text.trim() ? { ...plain, evaluation: { ...ruled, verdict: 'UNREADABLE' as const, reason: 'empty' as const, misconceptionCode: null, evidence: [], revealedAnswer: null } } : plain;
   }
+  // tanpa izin AI_PROCESSING (atau impor perangkat): aturan saja, sesuai pilihan siswa
   if (!req.ai || req.source !== 'LIVE') return plain;
   const used = Number((await sql<{ n: string }>`select count(*) as n from diagnosis_run where learner_id = ${req.learnerId}
     and engine = 'AI_ASSISTED' and purpose = 'GRADING' and created_at > now() - interval '24 hours'`.execute(tx)).rows[0]?.n ?? 0);
-  if (used >= AI_DAILY_LIMIT) { logTier('rule-fallback', source.revisionId); return plain; }
+  if (used >= AI_DAILY_LIMIT) { logTier('rule-fallback', source.revisionId); return fallback(); }
   const graded = await req.ai.grade(source, req.response).catch(() => null);
-  if (!graded) { logTier('rule-fallback', source.revisionId); return plain; }
+  if (!graded) { logTier('rule-fallback', source.revisionId); return fallback(); }
   const merged = mergeGrades(ruled, graded, text, decided);
   return { ...merged, engine: 'AI_ASSISTED' as const, support: merged.evaluation.verdict === 'UNREADABLE' ? graded.support : undefined };
 }
