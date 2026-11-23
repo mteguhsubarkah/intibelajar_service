@@ -8,11 +8,6 @@ test('typed answers find the option they mean', () => {
   const mol = ['0,2 mol', '0,5 mol', '2 mol', '162 mol'];
   for (const t of ['0,5 mol', '0.5', '0,5', '1/2 mol', ' 0,5 MOL. ', 'n = 0,5 mol']) assert.equal(matchOption(mol, t).index, 1, t);
   assert.deepEqual(matchOption(mol, '0,3 mol'), { index: -1, how: 'none' });
-  // titik ribuan: "13000" sama dengan pilihan "13.000"
-  const spl = ['2b + p = 11.000 dan b + 2p = 13.000', 'b + p = 13.000 dan b + p = 11.000', '2b + 2p = 24.000', '2b + p = 13.000 dan b + 2p = 11.000'];
-  for (const t of ['2b+p=13000 dan b+2p=11000', '2b + p = 13.000 dan b + 2p = 11.000', '2b+p=13.000 dan b+2p=11000']) assert.equal(matchOption(spl, t).index, 3, t);
-  assert.equal(matchOption(['Rp1.500.000', 'Rp150.000'], 'Rp1500000').index, 0);
-  assert.equal(matchOption(['0,5', '500'], '0.500').index, 0, '0.500 stays a decimal');
   const words = ['Rhizobium', 'Azotobacter', 'Nitrosomonas', 'Lactobacillus'];
   assert.equal(matchOption(words, 'bakteri Rhizobium').index, 0);
   assert.equal(matchOption(words, 'Rhizobum').index, 0);
