@@ -159,6 +159,31 @@ export function withSpecialAngles(judged: Evaluation, i: TrialItem, text: string
     rationale: `Kamu sudah memakai nilai ${ok.fn} ${ok.angle}° dengan tepat.`, refs: span ? [{ kind: 'SPAN' as const, start: span.start, end: span.end, quote: span.quote }] : [], uncertaintyReasons: [] }];
   return { ...judged, evidence } as Evaluation;
 }
+/**
+ * Langkah yang cocok dengan pola langkah di kunci soal (tower-v1: "20 / x", "tan 30") membuktikan intinya tanpa AI, apa pun
+ * spasinya. Penilai AI tidak selalu menjawab sama untuk teks yang sama (temperature 0 pun tidak menjamin), dan pernah menilai
+ * "tan 30° = 20 / x, terus bingung" dengan semua inti "belum terlihat" sementara "20/x" dinilai sudah kuat (QA TC-PANDU-049).
+ * Bukti pola hanya menaikkan inti yang dinilai "belum terlihat"; tanda salah dari AI tidak diubah. Sama dengan golden T05/T10.
+ */
+export function withMatchedSteps(judged: Evaluation, i: TrialItem, fixed: Evaluation | null): Evaluation {
+  if (i.source.rubric.evaluator !== 'tower-v1' || !fixed || judged.confused) return judged;
+  const shown = fixed.evidence.filter(e => e.classification === 'UNDERSTANDING_DEMONSTRATED' && e.refs.some(r => r.kind === 'SPAN'));
+  if (!shown.length) return judged;
+  let changed = false;
+  const evidence = judged.evidence.map(e => {
+    const match = e.classification === 'INSUFFICIENT_EVIDENCE' ? shown.find(x => x.conceptCode === e.conceptCode) : undefined;
+    if (!match) return e;
+    changed = true;
+    const ref = match.refs.find(r => r.kind === 'SPAN');
+    const title = i.concepts.find(c => c.code === e.conceptCode)?.title ?? 'inti ini';
+    const quote = ref && ref.kind === 'SPAN' ? ref.quote : '';
+    return { ...e, classification: 'UNDERSTANDING_DEMONSTRATED' as const, refs: match.refs, uncertaintyReasons: [],
+      rationale: quote ? `Dari jawabanmu, kamu sudah memakai ${title} dengan tepat di "${quote}".` : `Dari jawabanmu, kamu sudah memakai ${title} dengan tepat.` };
+  });
+  if (!changed) return judged;
+  console.log(JSON.stringify({ event: 'trial_steps_from_rubric', concepts: evidence.length }));
+  return { ...judged, evidence } as Evaluation;
+}
 export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }): Promise<Evaluation> {
   // soal milik siswa (ai-assisted-v1) tidak punya penilai deterministik: hanya AI yang menilai.
   // (Tanpa penjaga ini, setiap diagnosis /tanya gagal "No deterministic evaluator".)
@@ -172,7 +197,7 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
     console.warn(JSON.stringify({ event: 'trial_ai_fallback', reason: 'confused' }));
     return confusedWithoutAi(i);
   }
-  if (response.responseType === 'TEXT') judged = withSpecialAngles(judged, i, response.text ?? '');
+  if (response.responseType === 'TEXT') judged = withMatchedSteps(withSpecialAngles(judged, i, response.text ?? ''), i, fixed);
   const key = i.source.rubric.answer;
   if (response.responseType !== 'TEXT' || typeof key?.value !== 'number') return judged;
   const text = response.text ?? '';

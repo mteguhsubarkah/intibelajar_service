@@ -258,3 +258,37 @@ test('special angle value used on another line counts (TC-PANDU-044); spacing do
   assert.equal(specialAngleUses('x = 20 × 1/√3').length, 0, 'no trig named, no claim');
   assert.equal(canonicalText('tan 30° = x/20'), canonicalText('tan 30°  =  x / 20'));
 });
+
+test('TC-PANDU-049: "tan 30° = 20 / x, terus bingung" dinilai sama dengan "20/x" walau AI menjawab semua inti belum terlihat', async () => {
+  const { gradeTrial } = await import('../src/assessment/trial.js');
+  const menara = await load('soal-menara');
+  const text = (t: string) => ({ schemaVersion: 1, responseType: 'TEXT', text: t, inputMode: 'TYPED' }) as any;
+  // AI yang kadang menilai jawaban setengah jadi ini "belum ada langkah" (semua inti belum terlihat)
+  const allRest = { ...fixtureAi, evaluate: async (i: TrialItem) => ({ verdict: 'NOT_GRADED', reason: 'insufficient-working', value: null, misconceptionCode: null, revealedAnswer: null,
+    evidence: i.concepts.map(c => ({ conceptCode: c.code, classification: 'INSUFFICIENT_EVIDENCE', rationale: 'Langkah ini belum ada di jawabanmu.', refs: [], uncertaintyReasons: ['INCOMPLETE_WORK'] })) }) as any };
+  const state = (e: { evidence: { conceptCode: string; classification: string }[] }, part: string) => e.evidence.find(x => x.conceptCode.includes(part))?.classification;
+  const variants = ['tan 30° = 20 / x, terus bingung', 'tan 30° = 20/x, terus bingung', 'tan 30° = 20 /x, terus bingung', 'tan 30°=20/ x, terus bingung'];
+  const results = await Promise.all(variants.map(t => gradeTrial(allRest, menara, text(t))));
+  for (const [k, r] of results.entries()) {
+    assert.equal(r.verdict, 'NOT_GRADED', variants[k]);
+    assert.equal(state(r, 'SEGITIGA'), 'UNDERSTANDING_DEMONSTRATED', variants[k]);
+    assert.equal(state(r, 'DEFINISI'), 'UNDERSTANDING_DEMONSTRATED', variants[k]);
+    assert.equal(state(r, 'SUDUT_ISTIMEWA'), 'INSUFFICIENT_EVIDENCE', variants[k]);
+    const seg = r.evidence.find(x => x.conceptCode.includes('SEGITIGA'))!;
+    assert.ok(seg.refs.length === 1 && variants[k]!.includes((seg.refs[0] as { quote: string }).quote), 'sorotan dari teks asli');
+  }
+  // tanda salah dari AI tidak diubah oleh pola langkah
+  const gapAi = { ...fixtureAi, evaluate: async (i: TrialItem) => ({ verdict: 'INCORRECT', reason: null, value: null, misconceptionCode: null, revealedAnswer: null,
+    evidence: i.concepts.map(c => ({ conceptCode: c.code, classification: c.code.includes('DEFINISI') ? 'MISCONCEPTION_EVIDENCED' : 'INSUFFICIENT_EVIDENCE', rationale: 'x', refs: [], uncertaintyReasons: [] })) }) as any };
+  assert.equal(state(await gradeTrial(gapAi, menara, text('tan 30° = 20 / x, terus bingung')), 'DEFINISI'), 'MISCONCEPTION_EVIDENCED');
+  // diagnosis: sama untuk semua variasi spasi, "di jalur yang benar", langkah berikutnya Sudut Istimewa
+  const s = trialAssessment(load, allRest);
+  const titles = new Set<string>(), next = new Set<string>();
+  for (const [k, t] of variants.entries()) {
+    const d = await s.diagnose('qa-049-' + k, { sessionId: 'qa-049-' + k, questionId: 'soal-menara', rawText: t, responseMode: null });
+    titles.add(d.assessment.title); next.add(d.assessment.gap?.name);
+    assert.ok(!d.items.some((x: { state: string }) => x.state === 'gap'), 'tidak ada inti "perlu diperkuat"');
+  }
+  assert.deepEqual([...titles], ['Kamu sudah di jalur yang benar. Tinggal lanjutkan.']);
+  assert.deepEqual([...next], [menara.concepts.find(c => c.code.includes('SUDUT_ISTIMEWA'))!.title]);
+});
