@@ -67,8 +67,9 @@ test('nullable AI verdict: unrelated text asks for clarification, unfinished wor
  assert.equal(start.status,'completed');assert.equal(start.assessment.tone,'gap');assert.equal(start.assessment.title,'Nggak apa-apa kalau masih bingung.');
  assert.equal(start.items.filter((x:any)=>x.state==='gap').length,0);assert.ok(start.items.every((x:any)=>x.state==='rest'));assert.equal(start.assessment.gap.mapId,item.concepts[0]!.legacyMapId);assert.ok(!start.items.some((x:any)=>x.state==='ok'));assert.equal(start.claimToken,undefined);
  // setengah jalan: inti yang sudah ditulis ok, inti pertama yang belum ada jadi langkah berikutnya
- const first=item.concepts[0]!.code,text='tan 30 = 20/x';
- const half=trialAssessment(async()=>item,trialDeepSeek(null as any,config,async()=>envelope({correct:null,clarification:'Lanjutkan sampai x.',items:item.concepts.map(c=>c.code===first?{code:c.code,state:'ok',quote:'tan 30',reason:'Sudah memilih perbandingan yang tepat.'}:{code:c.code,state:'rest',quote:'',reason:'Hitung nilai x dari persamaan ini.'})})));
+ // (hanya langkah pertama "20/x"; "tan 30 = 20/x" sudah menunjukkan dua inti menurut pola langkah kunci, lihat TC-PANDU-049)
+ const first=item.concepts[0]!.code,text='depan 20, samping x, jadi 20/x';
+ const half=trialAssessment(async()=>item,trialDeepSeek(null as any,config,async()=>envelope({correct:null,clarification:'Lanjutkan sampai x.',items:item.concepts.map(c=>c.code===first?{code:c.code,state:'ok',quote:'20/x',reason:'Sudah menamai sisi depan dan samping.'}:{code:c.code,state:'rest',quote:'',reason:'Hitung nilai x dari persamaan ini.'})})));
  const partial=await half.diagnose('owner',{sessionId:'half',questionId:'soal-menara',rawText:text,responseMode:null});
  assert.equal(partial.status,'completed');assert.equal(partial.assessment.title,'Kamu sudah di jalur yang benar. Tinggal lanjutkan.');
  assert.equal(partial.items.find((x:any)=>x.state==='ok').id,item.concepts[0]!.legacyMapId);
