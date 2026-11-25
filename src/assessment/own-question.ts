@@ -76,6 +76,8 @@ export async function matchOwnQuestion(config:Config['guide'],question:string,co
 }
 /** Own questions are assessed as transient inputs, never resolved as public question aliases. */
 export function ownQuestionService(db:Connection,config:Config['guide'],http:typeof fetch=fetch){
+ // satu penilai untuk semua soal milik siswa: jawaban yang sama untuk soal yang sama dinilai sama (gradeConsistently)
+ const ownAi=trialDeepSeek(db,config,http);
  const cache=outlineCache<{entries:{id:string;relation:string}[];scope:OwnScope}>();
  const solutions=outlineCache<OwnSolution>();
  /* pertanyaan mini yang sudah diajukan, per siswa + soal + inti + putaran: dinilai terhadap pertanyaan itu, bukan kiriman browser */
@@ -124,7 +126,7 @@ export function ownQuestionService(db:Connection,config:Config['guide'],http:typ
    if(!m.cores.length)return {diagnosisRunId:uuid(),status:'insufficient_evidence',clarification:m.questionScope.message};
    const revisionId=uuid();
    const item:TrialItem={revisionId,optionOrder:null,concepts:await Promise.all(m.cores.map(async c=>({code:c.code,title:c.title,legacyMapId:c.mapId,route:await ownLesson(db,m.release,c.id)}))),source:{revisionId,itemType:'FREE_RESPONSE',familyCode:'OWN',contextTag:'PRIVATE',body:{schemaVersion:1,prompt:text,hints:[],answerFormat:'TEXT'},rubric:{schemaVersion:1,evaluator:'ai-assisted-v1',answer:{},acceptedForms:[],solutionPaths:[],misconceptionMap:[],finalAnswerEvidence:[]},concepts:m.cores.map(c=>({id:c.id,code:c.code,role:'PRIMARY',assessable:true}))}};
-   const service=trialAssessment(async()=>item,trialDeepSeek(db,config,http));
+   const service=trialAssessment(async()=>item,ownAi);
    // koreksi: penilai diberi tahu ini koreksi ke berapa dan jawaban sebelumnya (sama dengan soal /coba)
    const retry=body.correction?{correction:body.correction,previous:(body.previousAnswer??'').slice(0,1000)}:undefined;
    try{return await service.diagnose('own',{sessionId:body.sessionId,questionId:'own',rawText:body.rawText,responseMode:null,hintOpened:body.hintOpened,...(retry?{retry}:{})});}finally{service.close();}

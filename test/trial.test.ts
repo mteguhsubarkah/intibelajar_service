@@ -292,3 +292,63 @@ test('TC-PANDU-049: "tan 30° = 20 / x, terus bingung" dinilai sama dengan "20/x
   assert.deepEqual([...titles], ['Kamu sudah di jalur yang benar. Tinggal lanjutkan.']);
   assert.deepEqual([...next], [menara.concepts.find(c => c.code.includes('SUDUT_ISTIMEWA'))!.title]);
 });
+
+test('jawaban yang sama dinilai sama di sesi/tab lain walau AI berubah-ubah; gagal tidak disimpan; sorotan ikut teks baru (TC-AIQ-004/007, TC-PANDU-028)', async () => {
+  const { gradeConsistently } = await import('../src/assessment/trial.js');
+  const menara = await load('soal-menara');
+  const text = (t: string) => ({ schemaVersion: 1, responseType: 'TEXT', text: t, inputMode: 'TYPED' }) as any;
+  // AI yang menjawab berbeda tiap kali: panggilan ke-1 menandai Segitiga salah, ke-2 menandai Definisi salah, dst.
+  let calls = 0, fail = false;
+  const flaky = { ...fixtureAi, evaluate: async (i: TrialItem) => {
+    calls++;
+    if (fail) { fail = false; throw new ApiError(503, 'DEPENDENCY_UNAVAILABLE'); }
+    const wrong = i.concepts[calls % 2]!.code;
+    return { verdict: 'INCORRECT', reason: null, value: null, misconceptionCode: null, revealedAnswer: null,
+      evidence: i.concepts.map(c => ({ conceptCode: c.code, classification: c.code === wrong ? 'MISCONCEPTION_EVIDENCED' : 'INSUFFICIENT_EVIDENCE', rationale: 'x',
+        refs: c.code === wrong ? [{ kind: 'SPAN', start: 0, end: 6, quote: 'cos 30' }] : [], uncertaintyReasons: [] })) } as any; } };
+  const a = await gradeConsistently(flaky, menara, text('cos 30 = 20/x\nx = 40'));
+  const b = await gradeConsistently(flaky, menara, text('cos 30  =  20 / x\nx  =  40'));
+  assert.equal(calls, 1, 'jawaban yang sama (beda spasi) tidak dinilai ulang');
+  assert.deepEqual(b.evidence.map(e => e.classification), a.evidence.map(e => e.classification));
+  const span = b.evidence.find(e => e.refs.length)!.refs[0] as { start: number; end: number; quote: string };
+  assert.equal('cos 30  =  20 / x\nx  =  40'.slice(span.start, span.end), span.quote, 'sorotan menunjuk teks jawaban yang baru');
+  // lewat layanan /coba: dua sesi (dua tab penyamaran) mendapat hasil yang sama
+  const s = trialAssessment(load, flaky);
+  const r1 = await s.diagnose('tab-a', { sessionId: 'a', questionId: 'soal-menara', rawText: 'tan 30 = x/20', responseMode: null });
+  const r2 = await s.diagnose('tab-b', { sessionId: 'b', questionId: 'soal-menara', rawText: 'tan 30 = x / 20', responseMode: null });
+  assert.deepEqual(r2.items.map((x: { state: string }) => x.state), r1.items.map((x: { state: string }) => x.state));
+  // penilai gagal: tidak disimpan, permintaan berikutnya dinilai lagi
+  fail = true;
+  await assert.rejects(gradeConsistently(flaky, menara, text('sin 30 = 20/x')));
+  const after = calls;
+  await gradeConsistently(flaky, menara, text('sin 30 = 20/x'));
+  assert.equal(calls, after + 1);
+  // soal milik siswa: revisi acak tiap permintaan, tapi teks soal dan intinya sama → hasil sama
+  const own = (rev: string) => ({ ...menara, revisionId: rev, source: { ...menara.source, revisionId: rev, familyCode: 'OWN' } }) as TrialItem;
+  const before = calls;
+  const o1 = await gradeConsistently(flaky, own('r1'), text('tan 30 = 20/x, x = 40'));
+  const o2 = await gradeConsistently(flaky, own('r2'), text('tan 30 = 20/x, x = 40'));
+  assert.equal(calls, before + 1);
+  assert.deepEqual(o2.evidence.map(e => e.classification), o1.evidence.map(e => e.classification));
+  // koreksi berbeda = penilaian baru
+  await gradeConsistently(flaky, menara, text('cos 30 = 20/x\nx = 40'), { correction: 1, previous: 'sin 30 = 20/x' });
+  assert.equal(calls, before + 2);
+});
+
+test('jawaban akhir saja untuk soal menara: semua penulisan benar dinilai benar walau AI bilang salah (TC-AIQ-003)', async () => {
+  const { gradeTrial } = await import('../src/assessment/trial.js');
+  const menara = await load('soal-menara');
+  const text = (t: string) => ({ schemaVersion: 1, responseType: 'TEXT', text: t, inputMode: 'TYPED' }) as any;
+  const says = (verdict: string) => ({ ...fixtureAi, evaluate: async (i: TrialItem) => ({ verdict, reason: verdict === 'NOT_GRADED' ? 'insufficient-working' : null, value: null, misconceptionCode: null, revealedAnswer: null,
+    evidence: i.concepts.map(c => ({ conceptCode: c.code, classification: verdict === 'INCORRECT' ? 'MISCONCEPTION_EVIDENCED' : 'INSUFFICIENT_EVIDENCE', rationale: 'x', refs: [], uncertaintyReasons: [] })) }) as any });
+  for (const answer of ['34,6 m', '34.6 m', '20 akar 3', '20√3', '20*sqrt(3)', '20 √3 m']) {
+    for (const ai of [says('INCORRECT'), says('NOT_GRADED')]) {
+      const r = await gradeTrial(ai, menara, text(answer));
+      assert.equal(r.verdict, 'CORRECT', answer);
+      assert.ok(!r.evidence.some(e => e.classification === 'MISCONCEPTION_EVIDENCED'), answer);
+    }
+  }
+  // nilai akhir yang salah tetap keputusan penilai
+  assert.equal((await gradeTrial(says('INCORRECT'), menara, text('40'))).verdict, 'INCORRECT');
+  assert.equal((await gradeTrial(says('NOT_GRADED'), menara, text('11,5 m'))).verdict, 'NOT_GRADED');
+});
