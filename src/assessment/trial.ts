@@ -3,12 +3,12 @@ import type { GradingSource } from '../catalog/grading-source.js';
 import type { Connection } from '../db.js';
 import { currentRelease, legacyItem, loopAnchor, mappedConcepts, lessonFor } from '../catalog/interface.js';
 import { gradingSource } from '../catalog/grading-source.js';
-import { evaluate, type Evaluation, type StudentResponse } from './evaluators/index.js';
+import { evaluate, type Evaluation, type EvidenceRef, type StudentResponse } from './evaluators/index.js';
 import { parseAnswerValue, unitKindOf, withinTolerance, type ParseOptions } from './evaluators/numeric-parse.js';
 import { ApiError, fail } from '../platform/errors.js';
 import { judgeCobaStep, stepValue } from './coba-steps.js';
 import { specialAngleSlips, specialAngleUses } from './special-angles.js';
-import { findQuote } from './trial-ai.js';
+import { canonicalText, findQuote } from './trial-ai.js';
 import { hash, stable, uuid } from '../platform/crypto.js';
 
 // Public trial uses published content with an injected AI engine; no authored-response fallback.
@@ -233,6 +233,10 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
     const quote = last.split(/[=≈]/).at(-1)?.trim() ?? '';
     const looseTrap = loose !== null ? trapOf([loose], quote) : null;
     if (looseTrap) return looseTrap;
+    // Jawaban yang hanya berisi nilai akhir ("20 akar 3", "34,6 m", "20*sqrt(3)") untuk soal tower-v1: nilai yang benar
+    // diputuskan penilai katalog, bukan AI, supaya semua penulisan dinilai sama (QA TC-AIQ-003). Nilai salah tetap ke AI.
+    const bareValue = parseAnswerValue(text.trim(), unitKindOf(key.unit), { thousandsDot: key.thousandsDot === true }).kind === 'value';
+    if (i.source.rubric.evaluator === 'tower-v1' && bareValue && fixed?.verdict === 'CORRECT') return judged.verdict === 'CORRECT' ? proven(judged, i, text) : fixed;
     // angka polos tanpa "=" ("0,1", "10.000 kJ"): penilai numeric-v1 katalog membacanya sendiri dan memutuskan bila tegas
     const decisive = i.source.rubric.evaluator === 'numeric-v1' && fixed && (fixed.verdict === 'CORRECT' || fixed.verdict === 'INCORRECT');
     if (!decisive) return judged;
@@ -262,6 +266,52 @@ export async function gradeTrial(ai: TrialAi, i: TrialItem, response: StudentRes
   if (concept) evidence.push({ conceptCode: concept, classification: 'MISCONCEPTION_EVIDENCED', rationale: 'Langkahmu sudah jalan, tapi hasil akhirnya belum sama dengan yang dicari. Hitung lagi bagian yang disorot, ya.',
     refs: start >= 0 ? [{ kind: 'SPAN', start, end: start + got.quote.length, quote: got.quote }] : [], uncertaintyReasons: [] });
   return { ...judged, verdict: 'INCORRECT', reason: null, clarification: undefined, evidence } as Evaluation;
+}
+/*
+ * Jawaban yang sama untuk soal yang sama mendapat penilaian yang sama, di tab, perangkat, atau akun mana pun
+ * (QA TC-AIQ-004/007, TC-PANDU-028/049, TC-TANYA-028). Penilai AI tidak selalu menjawab sama walau temperature 0, jadi
+ * hasil pertama disimpan di server: kunci = soal (revisi katalog; untuk soal milik siswa, teks soal + intinya) + jawaban
+ * yang spasinya disamakan + koreksi ke berapa dan jawaban sebelumnya. 12 jam, maks. 5.000 jawaban per penilai. Hanya hasil
+ * yang berhasil yang disimpan; kegagalan penilai dicoba lagi pada permintaan berikutnya. Sorotan dihitung ulang pada
+ * teks jawaban yang baru ("20/x" dan "20 / x" menyorot bagian yang sama).
+ */
+const GRADE_TTL = 12 * 60 * 60 * 1000, GRADE_MAX = 5000;
+type GradeEntry = { at: number; text: string; value: Promise<Evaluation> };
+const gradeCaches = new WeakMap<TrialAi, Map<string, GradeEntry>>();
+const sameText = (t: string) => canonicalText(t.normalize('NFKC').replace(/\r\n?/g, '\n')).trim();
+export function gradeKey(i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }) {
+  const question = i.source.familyCode === 'OWN'
+    ? { prompt: sameText(i.source.body.prompt), concepts: i.concepts.map(c => c.code) }
+    : { revision: i.revisionId };
+  const answer = response.responseType === 'TEXT' ? { text: sameText(response.text ?? '') }
+    : response.responseType === 'OPTION' ? { option: response.optionId } : { self: response.selfReport };
+  return hash(stable({ question, answer, retry: retry ? { n: retry.correction, previous: sameText(retry.previous) } : null })).toString('hex');
+}
+/** sorotan hasil yang disimpan, dipindah ke teks jawaban yang sekarang (spasi boleh beda); yang tidak ketemu dilepas */
+function rebase(e: Evaluation, text: string): Evaluation {
+  const evidence = e.evidence.map(x => ({ ...x, refs: x.refs.flatMap((r): EvidenceRef[] => {
+    if (r.kind !== 'SPAN') return [r];
+    const at = findQuote(text, r.quote);
+    return at ? [{ kind: 'SPAN', start: at.start, end: at.end, quote: at.quote }] : [];
+  }) }));
+  return { ...e, evidence } as Evaluation;
+}
+export async function gradeConsistently(ai: TrialAi, i: TrialItem, response: StudentResponse, retry?: { correction: number; previous: string }, now = Date.now): Promise<Evaluation> {
+  let cache = gradeCaches.get(ai);
+  if (!cache) { cache = new Map(); gradeCaches.set(ai, cache); }
+  const key = gradeKey(i, response, retry), text = response.responseType === 'TEXT' ? response.text ?? '' : '';
+  const hit = cache.get(key);
+  if (hit && now() - hit.at < GRADE_TTL) {
+    const result = await hit.value;
+    console.log(JSON.stringify({ event: 'trial_grade_reused' }));
+    return response.responseType === 'TEXT' && text !== hit.text ? rebase(result, text) : result;
+  }
+  const value = gradeTrial(ai, i, response, retry);
+  cache.delete(key);
+  cache.set(key, { at: now(), text, value });
+  while (cache.size > GRADE_MAX) cache.delete(cache.keys().next().value!);
+  try { return await value; }
+  catch (e) { if (cache.get(key)?.value === value) cache.delete(key); throw e; }
 }
 export function trialAssessment(load: (alias: string, revision?: string) => Promise<TrialItem>,
   ai: TrialAi, now = Date.now, proof?: (input: {owner:string;session:string;questionId:string;revisionId:string;text:string;hintUsed:boolean;solutionSeen:boolean}) => string | undefined) {
@@ -299,7 +349,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       const pending=c.pending.get(fingerprint);
       if(pending)return pending;
       const work=(async()=>{
-      const result = await gradeTrial(ai, i, response, body.retry);
+      const result = await gradeConsistently(ai, i, response, body.retry, now);
       c.answer = response.text?.slice(0,1000) ?? '';
       const id = uuid();
       const demonstrated = result.evidence.find(e => e.classification === 'UNDERSTANDING_DEMONSTRATED');
@@ -387,7 +437,7 @@ export function trialAssessment(load: (alias: string, revision?: string) => Prom
       // koreksi soal tadi: penilai diberi tahu ini koreksi ke berapa dan jawaban yang dinilai sebelumnya
       const retry = body.kind === 'retry_original' && response.responseType === 'TEXT' ? { correction: body.correction ?? 1, previous: c.answer ?? '' } : undefined;
       if (retry) console.log(JSON.stringify({ event: 'trial_retry_check', correction: retry.correction }));
-      const r = await gradeTrial(ai, i, response, retry);
+      const r = await gradeConsistently(ai, i, response, retry, now);
       if(response.responseType==='TEXT')c.answer=response.text?.slice(0,1000) ?? '';
       const correct = r.verdict === 'CORRECT' ? true : r.verdict === 'INCORRECT' ? false : null;
       const option = r.revealedAnswer && 'optionId' in r.revealedAnswer ? r.revealedAnswer.optionId : undefined;
