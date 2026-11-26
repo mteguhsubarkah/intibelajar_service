@@ -1,0 +1,1779 @@
+{
+ "schemaVersion": 1,
+ "source": "FE src/data/bookChapters.ts @ 003027b",
+ "books": [
+  {
+   "key": "MAT7",
+   "grade": 7,
+   "title": "Matematika Kelas VII",
+   "source": "Dicky Susanto dkk., Pusat Perbukuan, 2022 (ISBN 978-602-244-883-9)",
+   "ipa": false
+  },
+  {
+   "key": "IPA7",
+   "grade": 7,
+   "title": "IPA Kelas VII (Edisi Revisi)",
+   "source": "Victoriani Inabuy dkk., Pusat Perbukuan, 2023 (ISBN 978-623-118-457-3, jil. 1)",
+   "ipa": true
+  },
+  {
+   "key": "MAT8",
+   "grade": 8,
+   "title": "Matematika Kelas VIII",
+   "source": "Mohammad Tohir dkk., Pusat Perbukuan, 2022 (ISBN 978-602-427-919-6)",
+   "ipa": false
+  },
+  {
+   "key": "IPA8",
+   "grade": 8,
+   "title": "IPA Kelas VIII (Edisi Revisi)",
+   "source": "Okky Fajar Tri Maryana dkk., Pusat Perbukuan, 2024 (ISBN 978-623-388-560-7, jil. 2)",
+   "ipa": true
+  },
+  {
+   "key": "MAT9",
+   "grade": 9,
+   "title": "Matematika Kelas IX",
+   "source": "Yosep Dwi Kristanto dkk., Pusat Perbukuan, 2022 (ISBN 978-602-427-918-9)",
+   "ipa": false
+  },
+  {
+   "key": "IPA9",
+   "grade": 9,
+   "title": "IPA Kelas IX (Edisi Revisi)",
+   "source": "Cece Sutia dkk., Pusat Perbukuan Kemendikdasmen, 2025 (ISBN 978-634-00-2430-2)",
+   "ipa": true
+  },
+  {
+   "key": "MAT10",
+   "grade": 10,
+   "title": "Matematika Kelas X (Edisi Revisi)",
+   "source": "Dicky Susanto dkk., Pusat Perbukuan, 2023 (ISBN 978-623-118-558-7, jil. 1)",
+   "ipa": false
+  },
+  {
+   "key": "IPA10",
+   "grade": 10,
+   "title": "IPA Kelas X (Edisi Revisi)",
+   "source": "Niken Resminingpuri Krisdianti dkk., Pusat Perbukuan, 2023 (ISBN 978-623-118-461-0, jil. 1)",
+   "ipa": true
+  },
+  {
+   "key": "MAT11",
+   "grade": 11,
+   "title": "Matematika Kelas XI",
+   "source": "Dicky Susanto dkk., Pusat Perbukuan, 2021 (ISBN 978-602-244-789-5, jil. 2)",
+   "ipa": false
+  },
+  {
+   "key": "MATL11",
+   "grade": 11,
+   "title": "Matematika Tingkat Lanjut Kelas XI (Edisi Revisi)",
+   "source": "Yosep Dwi Kristanto dkk., Pusat Perbukuan, 2024 (ISBN 978-623-388-335-1, jil. 1)",
+   "ipa": false
+  },
+  {
+   "key": "FIS11",
+   "grade": 11,
+   "title": "Fisika Kelas XI",
+   "source": "Marianna Magdalena Radjawane dkk., Pusat Perbukuan, 2022 (ISBN 978-623-472-721-0, jil. 1)",
+   "ipa": false
+  },
+  {
+   "key": "KIM11",
+   "grade": 11,
+   "title": "Kimia Kelas XI",
+   "source": "Munasprianto Ramli dkk., Pusat Perbukuan, 2022 (ISBN 978-602-427-923-3, jil. 1)",
+   "ipa": false
+  },
+  {
+   "key": "BIO11",
+   "grade": 11,
+   "title": "Biologi Kelas XI",
+   "source": "Rini Solihat dkk., Pusat Perbukuan, 2022 (ISBN 978-602-427-893-9, jil. 1)",
+   "ipa": false
+  },
+  {
+   "key": "MAT12",
+   "grade": 12,
+   "title": "Matematika Kelas XII",
+   "source": "Mohammad Tohir, Ahmad Choirul Anam, Ibnu Taufiq, Pusat Perbukuan, 2022 (ISBN 978-602-244-738-2, jil. 3)",
+   "ipa": false
+  },
+  {
+   "key": "MATL12",
+   "grade": 12,
+   "title": "Matematika Tingkat Lanjut Kelas XII (Edisi Revisi)",
+   "source": "Sri Adi Widodo dkk., Pusat Perbukuan Kemendikdasmen, 2025 (ISBN 978-634-00-3296-3, jil. 2)",
+   "ipa": false
+  },
+  {
+   "key": "FIS12",
+   "grade": 12,
+   "title": "Fisika Kelas XII",
+   "source": "Lia Laela Sarah & Irma Rahma Suwarma, Pusat Perbukuan, 2022 (ISBN 978-623-472-722-7, jil. 2)",
+   "ipa": false
+  },
+  {
+   "key": "KIM12",
+   "grade": 12,
+   "title": "Kimia Kelas XII",
+   "source": "Galuh Yuliani, Hanhan Dianhar, Aang Suhendar, Pusat Perbukuan, 2022 (ISBN 978-602-427-968-4, jil. 2)",
+   "ipa": false
+  },
+  {
+   "key": "BIO12",
+   "grade": 12,
+   "title": "Biologi Kelas XII",
+   "source": "Shilviani Dewi dkk., Pusat Perbukuan, 2022 (ISBN 978-602-427-958-5, jil. 2)",
+   "ipa": false
+  }
+ ],
+ "chapters": [
+  {
+   "id": "MAT7.1",
+   "book": "MAT7",
+   "grade": 7,
+   "no": "Bab 1",
+   "title": "Bilangan Bulat",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.BILANGAN.BILANGAN_BULAT_DAN_GARIS_BILANGAN",
+    "MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT",
+    "MAT.C26.D.BILANGAN.PERKALIAN_DAN_PEMBAGIAN_BILANGAN_BULAT"
+   ]
+  },
+  {
+   "id": "MAT7.2",
+   "book": "MAT7",
+   "grade": 7,
+   "no": "Bab 2",
+   "title": "Bilangan Rasional",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI",
+    "MAT.C26.D.BILANGAN.OPERASI_PECAHAN"
+   ]
+  },
+  {
+   "id": "MAT7.3",
+   "book": "MAT7",
+   "grade": 7,
+   "no": "Bab 3",
+   "title": "Rasio",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.RASIO.PERBANDINGAN_SENILAI",
+    "MAT.C26.D.RASIO.KONVERSI_SATUAN_WAKTU",
+    "MAT.C26.D.RASIO.KONVERSI_SATUAN_PANJANG",
+    "MAT.C26.D.RASIO.SKALA_DAN_LAJU",
+    "MAT.C26.D.RASIO.LAJU_KECEPATAN",
+    "MAT.C26.D.RASIO.PERBANDINGAN_BERBALIK_NILAI"
+   ]
+  },
+  {
+   "id": "MAT7.4",
+   "book": "MAT7",
+   "grade": 7,
+   "no": "Bab 4",
+   "title": "Bentuk Aljabar",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.ALJABAR.POLA_DAN_BENTUK_EKUIVALEN"
+   ]
+  },
+  {
+   "id": "MAT7.5",
+   "book": "MAT7",
+   "grade": 7,
+   "no": "Bab 5",
+   "title": "Kesebangunan",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.GEOMETRI.SUDUT_DAN_KESEBANGUNAN"
+   ]
+  },
+  {
+   "id": "MAT7.6",
+   "book": "MAT7",
+   "grade": 7,
+   "no": "Bab 6",
+   "title": "Data dan Diagram",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": []
+  },
+  {
+   "id": "IPA7.1",
+   "book": "IPA7",
+   "grade": 7,
+   "no": "Bab I",
+   "title": "Hakikat Ilmu Sains dan Metode Ilmiah",
+   "field": "Terpadu",
+   "label": "IPA Terpadu",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.UKUR.BESARAN_DAN_SATUAN",
+    "FIS.C26.D.UKUR.VARIABEL_DAN_BUKTI"
+   ]
+  },
+  {
+   "id": "IPA7.2",
+   "book": "IPA7",
+   "grade": 7,
+   "no": "Bab II",
+   "title": "Zat dan Perubahannya",
+   "field": "Kimia",
+   "label": "IPA Terpadu (Kimia)",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.D.PARTIKEL.WUJUD_ZAT_DAN_SUSUNAN_PARTIKEL",
+    "KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT",
+    "KIM.C26.D.PARTIKEL.MASSA_JENIS",
+    "KIM.C26.D.MATERI.PERUBAHAN_DAN_PEMISAHAN"
+   ]
+  },
+  {
+   "id": "IPA7.3",
+   "book": "IPA7",
+   "grade": 7,
+   "no": "Bab III",
+   "title": "Suhu, Kalor, dan Pemuaian",
+   "field": "Fisika",
+   "label": "IPA Terpadu (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR",
+    "FIS.C26.D.SUHU.KALOR_JENIS"
+   ]
+  },
+  {
+   "id": "IPA7.4",
+   "book": "IPA7",
+   "grade": 7,
+   "no": "Bab IV",
+   "title": "Gerak dan Gaya",
+   "field": "Fisika",
+   "label": "IPA Terpadu (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.GERAK.JARAK_PERPINDAHAN_DAN_KELAJUAN",
+    "FIS.C26.D.GERAK.GERAK_DAN_GAYA_RESULTAN",
+    "FIS.C26.D.GERAK.RESULTAN_GAYA_DAN_INERSIA"
+   ]
+  },
+  {
+   "id": "IPA7.5",
+   "book": "IPA7",
+   "grade": 7,
+   "no": "Bab V",
+   "title": "Karakteristik dan Klasifikasi Makhluk Hidup",
+   "field": "Biologi",
+   "label": "IPA Terpadu (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.D.KLASIFIKASI.CIRI_KEHIDUPAN",
+    "BIO.C26.D.KLASIFIKASI.KLASIFIKASI_BERDASARKAN_KARAKTER"
+   ]
+  },
+  {
+   "id": "IPA7.6",
+   "book": "IPA7",
+   "grade": 7,
+   "no": "Bab VI",
+   "title": "Ekologi dan Pelestarian Lingkungan",
+   "field": "Biologi",
+   "label": "IPA Terpadu (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.D.EKOLOGI.INTERAKSI_DAN_ALIRAN_ENERGI",
+    "BIO.C26.D.EKOLOGI.RANTAI_DAN_JARING_MAKANAN",
+    "BIO.C26.D.EKOLOGI.PERUBAHAN_LINGKUNGAN"
+   ]
+  },
+  {
+   "id": "IPA7.7",
+   "book": "IPA7",
+   "grade": 7,
+   "no": "Bab VII",
+   "title": "Bumi dan Tata Surya",
+   "field": "Terpadu",
+   "label": "IPA Terpadu",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.ANTARIKSA.SISTEM_TATA_SURYA",
+    "FIS.C26.D.ANTARIKSA.ROTASI_DAN_REVOLUSI_BUMI",
+    "FIS.C26.D.ANTARIKSA.GERAK_BULAN_DAN_FASENYA",
+    "FIS.C26.D.ANTARIKSA.GERHANA_MATAHARI_DAN_BULAN"
+   ]
+  },
+  {
+   "id": "MAT8.1",
+   "book": "MAT8",
+   "grade": 8,
+   "no": "Bab 1",
+   "title": "Bilangan Berpangkat",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.BILANGAN.PANGKAT_AKAR_DAN_NOTASI_ILMIAH",
+    "MAT.C26.D.BILANGAN.NOTASI_ILMIAH"
+   ]
+  },
+  {
+   "id": "MAT8.2",
+   "book": "MAT8",
+   "grade": 8,
+   "no": "Bab 2",
+   "title": "Teorema Pythagoras",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.GEOMETRI.TEOREMA_PYTHAGORAS"
+   ]
+  },
+  {
+   "id": "MAT8.3",
+   "book": "MAT8",
+   "grade": 8,
+   "no": "Bab 3",
+   "title": "Persamaan Linier dan Pertidaksamaan Linier Satu Variabel",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.ALJABAR.PERSAMAAN_DAN_PERTIDAKSAMAAN",
+    "MAT.C26.D.ALJABAR.PERSAMAAN_LINEAR_SATU_VARIABEL"
+   ]
+  },
+  {
+   "id": "MAT8.4",
+   "book": "MAT8",
+   "grade": 8,
+   "no": "Bab 4",
+   "title": "Relasi dan Fungsi",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.FUNGSI.FUNGSI_DAN_GRAFIK"
+   ]
+  },
+  {
+   "id": "MAT8.5",
+   "book": "MAT8",
+   "grade": 8,
+   "no": "Bab 5",
+   "title": "Persamaan Garis Lurus",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": []
+  },
+  {
+   "id": "MAT8.6",
+   "book": "MAT8",
+   "grade": 8,
+   "no": "Bab 6",
+   "title": "Statistika",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.DATA.SAMPEL_DAN_UKURAN_PEMUSATAN"
+   ]
+  },
+  {
+   "id": "IPA8.1",
+   "book": "IPA8",
+   "grade": 8,
+   "no": "Bab I",
+   "title": "Sistem Pencernaan dan Peredaran Darah",
+   "field": "Biologi",
+   "label": "IPA Terpadu (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.D.ORGAN.SEL_SAMPAI_ORGANISME",
+    "BIO.C26.D.ORGAN.FUNGSI_DAN_GANGGUAN_SISTEM",
+    "BIO.C26.D.ORGAN.PENCERNAAN_DAN_PENYERAPAN",
+    "BIO.C26.D.ORGAN.SISTEM_PEREDARAN_DARAH"
+   ]
+  },
+  {
+   "id": "IPA8.2",
+   "book": "IPA8",
+   "grade": 8,
+   "no": "Bab II",
+   "title": "Sistem Pernapasan dan Ekskresi",
+   "field": "Biologi",
+   "label": "IPA Terpadu (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.D.ORGAN.SISTEM_PERNAPASAN",
+    "BIO.C26.D.ORGAN.EKSKRESI_DAN_KESEIMBANGAN_CAIRAN"
+   ]
+  },
+  {
+   "id": "IPA8.3",
+   "book": "IPA8",
+   "grade": 8,
+   "no": "Bab III",
+   "title": "Memanfaatkan Usaha, Energi, dan Pesawat Sederhana",
+   "field": "Fisika",
+   "label": "IPA Terpadu (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.ENERGI.USAHA_DAN_PERUBAHAN_ENERGI",
+    "FIS.C26.D.ENERGI.PESAWAT_SEDERHANA"
+   ]
+  },
+  {
+   "id": "IPA8.4",
+   "book": "IPA8",
+   "grade": 8,
+   "no": "Bab IV",
+   "title": "Teknologi Penerapan Tekanan pada Zat",
+   "field": "Fisika",
+   "label": "IPA Terpadu (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.TEKANAN.TEKANAN_ZAT_PADAT",
+    "FIS.C26.D.TEKANAN.TEKANAN_ZAT_CAIR",
+    "FIS.C26.D.TEKANAN.TEKANAN_GAS",
+    "FIS.C26.D.TEKANAN.PENERAPAN_TEKANAN_ZAT"
+   ]
+  },
+  {
+   "id": "IPA8.5",
+   "book": "IPA8",
+   "grade": 8,
+   "no": "Bab V",
+   "title": "Manfaat Gelombang dan Cahaya bagi Manusia",
+   "field": "Fisika",
+   "label": "IPA Terpadu (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.GELOMBANG.GETARAN_DAN_GELOMBANG",
+    "FIS.C26.D.GELOMBANG.BUNYI_DAN_PEMANTULANNYA",
+    "FIS.C26.D.GELOMBANG.PEMANTULAN_DAN_PEMBIASAN_CAHAYA",
+    "FIS.C26.D.GELOMBANG.ALAT_OPTIK"
+   ]
+  },
+  {
+   "id": "IPA8.6",
+   "book": "IPA8",
+   "grade": 8,
+   "no": "Bab VI",
+   "title": "Pemisahan Campuran di Sekitar Kita",
+   "field": "Kimia",
+   "label": "IPA Terpadu (Kimia)",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.D.MATERI.UNSUR_SENYAWA_DAN_CAMPURAN",
+    "KIM.C26.D.MATERI.METODE_PEMISAHAN_CAMPURAN"
+   ]
+  },
+  {
+   "id": "IPA8.7",
+   "book": "IPA8",
+   "grade": 8,
+   "no": "Bab VII",
+   "title": "Tanah bagi Kehidupan Berkelanjutan",
+   "field": "Terpadu",
+   "label": "IPA Terpadu",
+   "subject": "BIO",
+   "concepts": []
+  },
+  {
+   "id": "MAT9.1",
+   "book": "MAT9",
+   "grade": 9,
+   "no": "Bab 1",
+   "title": "Sistem Persamaan Linear Dua Variabel",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.FUNGSI.SISTEM_PERSAMAAN_LINEAR",
+    "MAT.C26.D.FUNGSI.ELIMINASI_DAN_SUBSTITUSI_SPLDV"
+   ]
+  },
+  {
+   "id": "MAT9.2",
+   "book": "MAT9",
+   "grade": 9,
+   "no": "Bab 2",
+   "title": "Bangun Ruang",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.PENGUKURAN.JARING_JARING_DAN_LUAS_PERMUKAAN",
+    "MAT.C26.D.PENGUKURAN.LUAS_VOLUME_DAN_SKALA"
+   ]
+  },
+  {
+   "id": "MAT9.3",
+   "book": "MAT9",
+   "grade": 9,
+   "no": "Bab 3",
+   "title": "Transformasi Geometri",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.PENGUKURAN.TRANSFORMASI_KOORDINAT",
+    "MAT.C26.D.GEOMETRI.KONGRUEN_DAN_SEBANGUN"
+   ]
+  },
+  {
+   "id": "MAT9.4",
+   "book": "MAT9",
+   "grade": 9,
+   "no": "Bab 4",
+   "title": "Peluang dan Pemilihan Sampel",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.D.DATA.PELUANG_DAN_FREKUENSI_RELATIF",
+    "MAT.C26.D.DATA.SAMPEL_REPRESENTATIF"
+   ]
+  },
+  {
+   "id": "IPA9.1",
+   "book": "IPA9",
+   "grade": 9,
+   "no": "Bab 1",
+   "title": "Sistem Koordinasi dan Homeostasis Tubuh Manusia",
+   "field": "Biologi",
+   "label": "IPA Terpadu (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.D.KOORDINASI.SISTEM_SARAF_DAN_INDRA",
+    "BIO.C26.D.KOORDINASI.SISTEM_HORMON",
+    "BIO.C26.D.KOORDINASI.HOMEOSTASIS"
+   ]
+  },
+  {
+   "id": "IPA9.2",
+   "book": "IPA9",
+   "grade": 9,
+   "no": "Bab 2",
+   "title": "Zat Aditif dan Zat Adiktif",
+   "field": "Kimia",
+   "label": "IPA Terpadu (Kimia)",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.D.ZAT.FUNGSI_ZAT_ADITIF",
+    "KIM.C26.D.ZAT.RISIKO_ZAT_ADIKTIF"
+   ]
+  },
+  {
+   "id": "IPA9.3",
+   "book": "IPA9",
+   "grade": 9,
+   "no": "Bab 3",
+   "title": "Sistem Reproduksi Manusia",
+   "field": "Biologi",
+   "label": "IPA Terpadu (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.D.KOORDINASI.REPRODUKSI_DAN_KESEHATAN_REPRODUKSI"
+   ]
+  },
+  {
+   "id": "IPA9.4",
+   "book": "IPA9",
+   "grade": 9,
+   "no": "Bab 4",
+   "title": "Pewarisan Sifat dan Bioteknologi",
+   "field": "Biologi",
+   "label": "IPA Terpadu (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.D.GENETIKA.GEN_DAN_VARIASI",
+    "BIO.C26.D.GENETIKA.GENOTIPE_DAN_FENOTIPE",
+    "BIO.C26.D.GENETIKA.FERMENTASI"
+   ]
+  },
+  {
+   "id": "IPA9.5",
+   "book": "IPA9",
+   "grade": 9,
+   "no": "Bab 5",
+   "title": "Listrik, Magnet, dan Energi Alternatif",
+   "field": "Fisika",
+   "label": "IPA Terpadu (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.D.LISTRIK.LISTRIK_STATIS",
+    "FIS.C26.D.LISTRIK.ARUS_DAN_RANGKAIAN",
+    "FIS.C26.D.LISTRIK.RANGKAIAN_SERI_DAN_PARALEL",
+    "FIS.C26.D.LISTRIK.ENERGI_DAN_DAYA_LISTRIK",
+    "FIS.C26.D.LISTRIK.MAGNET_DAN_PEMBANGKIT_LISTRIK",
+    "FIS.C26.D.LISTRIK.SUMBER_ENERGI_ALTERNATIF"
+   ]
+  },
+  {
+   "id": "IPA9.6",
+   "book": "IPA9",
+   "grade": 9,
+   "no": "Bab 6",
+   "title": "Isu-Isu Lingkungan",
+   "field": "Terpadu",
+   "label": "IPA Terpadu",
+   "subject": "BIO",
+   "concepts": []
+  },
+  {
+   "id": "MAT10.1",
+   "book": "MAT10",
+   "grade": 10,
+   "no": "Bab 1",
+   "title": "Eksponen",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.EKS.DEFINISI_EKSPONEN",
+    "MAT.EKS.SIFAT_SIFAT_EKSPONEN",
+    "MAT.EKS.BENTUK_AKAR",
+    "MAT.EKS.EKSPONEN_RASIONAL",
+    "MAT.EKS.FUNGSI_EKSPONEN",
+    "MAT.EKS.GRAFIK_FUNGSI_EKSPONEN",
+    "MAT.EKS.DEFINISI_LOGARITMA",
+    "MAT.EKS.SIFAT_SIFAT_LOGARITMA",
+    "MAT.EKS.PERSAMAAN_EKSPONEN",
+    "MAT.EKS.PERSAMAAN_LOGARITMA",
+    "MAT.EKS.PENERAPAN",
+    "MAT.EKS.SOAL_KONTEKSTUAL"
+   ]
+  },
+  {
+   "id": "MAT10.2",
+   "book": "MAT10",
+   "grade": 10,
+   "no": "Bab 2",
+   "title": "Barisan dan Deret",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.BAR.POLA_BILANGAN",
+    "MAT.BAR.BARISAN_ARITMETIKA",
+    "MAT.BAR.BARISAN_GEOMETRI",
+    "MAT.BAR.SUKU_TENGAH_SISIPAN",
+    "MAT.BAR.DERET_ARITMETIKA",
+    "MAT.BAR.DERET_GEOMETRI",
+    "MAT.BAR.DERET_GEOMETRI_TAK_HINGGA",
+    "MAT.BAR.PENERAPAN",
+    "MAT.BAR.SOAL_KONTEKSTUAL"
+   ]
+  },
+  {
+   "id": "MAT10.3",
+   "book": "MAT10",
+   "grade": 10,
+   "no": "Bab 3",
+   "title": "Perbandingan Trigonometri",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.TRI.UKURAN_SUDUT",
+    "MAT.TRI.SEGITIGA_SIKU_SIKU",
+    "MAT.TRI.DEFINISI_SIN_COS_TAN",
+    "MAT.TRI.ENAM_RASIO_TRIGONOMETRI",
+    "MAT.TRI.SUDUT_ISTIMEWA",
+    "MAT.TRI.SUDUT_ELEVASI_DEPRESI",
+    "MAT.TRI.MENCARI_SISI_YANG_BELUM_DIKETAHUI",
+    "MAT.TRI.SOAL_KONTEKSTUAL"
+   ]
+  },
+  {
+   "id": "MAT10.4",
+   "book": "MAT10",
+   "grade": 10,
+   "no": "Bab 4",
+   "title": "Sistem Persamaan dan Pertidaksamaan Linear",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.E.SPLTV.MODEL_SPLTV_DARI_MASALAH",
+    "MAT.C26.E.SPLTV.ELIMINASI_DAN_SUBSTITUSI_SPLTV",
+    "MAT.C26.E.SPLTV.HIMPUNAN_SOLUSI_DAN_INTERPRETASINYA",
+    "MAT.SPL.PERSAMAAN_GARIS_BATAS",
+    "MAT.SPL.IRISAN_KENDALA",
+    "MAT.SPL.BATAS_TERBUKA_DAN_TERTUTUP",
+    "MAT.SPL.VARIABEL_DAN_MODEL_KENDALA"
+   ]
+  },
+  {
+   "id": "MAT10.5",
+   "book": "MAT10",
+   "grade": 10,
+   "no": "Bab 5",
+   "title": "Persamaan dan Fungsi Kuadrat",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.KUA.BENTUK_DAN_KOEFISIEN_KUADRAT",
+    "MAT.KUA.FAKTORISASI_DAN_AKAR",
+    "MAT.KUA.RUMUS_KUADRAT_DAN_DISKRIMINAN",
+    "MAT.KUA.MELENGKAPKAN_KUADRAT_DAN_PUNCAK",
+    "MAT.KUA.PEMODELAN_KUADRAT"
+   ]
+  },
+  {
+   "id": "MAT10.6",
+   "book": "MAT10",
+   "grade": 10,
+   "no": "Bab 6",
+   "title": "Representasi dan Interpretasi Data",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.STP.HISTOGRAM_DAN_DOT_PLOT",
+    "MAT.STP.KUARTIL_DAN_IQR",
+    "MAT.STP.MEMBACA_BOX_PLOT",
+    "MAT.STP.DIAGRAM_PENCAR",
+    "MAT.STP.MENGEVALUASI_LAPORAN_DATA"
+   ]
+  },
+  {
+   "id": "MAT10.7",
+   "book": "MAT10",
+   "grade": 10,
+   "no": "Bab 7",
+   "title": "Peluang",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": []
+  },
+  {
+   "id": "IPA10.1",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab I",
+   "title": "Sistem Pengukuran dalam Kerja Ilmiah",
+   "field": "Fisika",
+   "label": "IPA (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.E.UKUR.KETIDAKPASTIAN_PENGUKURAN",
+    "FIS.C26.E.UKUR.ANGKA_PENTING_DAN_PELAPORAN",
+    "FIS.C26.E.UKUR.GRAFIK_DAN_MODEL"
+   ]
+  },
+  {
+   "id": "IPA10.2",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab II",
+   "title": "Virus dan Peranannya",
+   "field": "Biologi",
+   "label": "IPA (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.E.MIKROBA.STRUKTUR_DAN_REPLIKASI_VIRUS"
+   ]
+  },
+  {
+   "id": "IPA10.3",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab III",
+   "title": "Struktur Atom: Fakta di Balik Materi",
+   "field": "Kimia",
+   "label": "IPA (Kimia)",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.E.MODELATOM.MODEL_ATOM_DALTON_THOMSON_RUTHERFORD",
+    "KIM.C26.E.MODELATOM.MODEL_ATOM_BOHR",
+    "KIM.C26.E.MODELATOM.KONFIGURASI_ELEKTRON_DAN_ELEKTRON_VALENS",
+    "KIM.C26.E.ATOM.ATOM_ION_DAN_MOLEKUL",
+    "KIM.C26.E.ATOM.NOMOR_ATOM_DAN_ISOTOP"
+   ]
+  },
+  {
+   "id": "IPA10.4",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab IV",
+   "title": "Hukum Dasar Kimia di Sekitar Kita",
+   "field": "Kimia",
+   "label": "IPA (Kimia)",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.E.ATOM.RUMUS_KIMIA",
+    "KIM.C26.E.STOIK.MENYETARAKAN_REAKSI",
+    "KIM.C26.E.HUKUMDASAR.HUKUM_KEKEKALAN_MASSA_LAVOISIER",
+    "KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_TETAP_PROUST",
+    "KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_BERGANDA_DALTON",
+    "KIM.C26.E.HUKUMDASAR.HUKUM_PERBANDINGAN_VOLUME_DAN_AVOGADRO"
+   ]
+  },
+  {
+   "id": "IPA10.5",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab V",
+   "title": "Kimia Hijau dalam Pembangunan Berkelanjutan 2030",
+   "field": "Kimia",
+   "label": "IPA (Kimia)",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.E.HIJAU.PRINSIP_KIMIA_HIJAU",
+    "KIM.C26.E.HIJAU.EKONOMI_ATOM",
+    "KIM.C26.E.HIJAU.KIMIA_HIJAU_DAN_PEMBANGUNAN_BERKELANJUTA"
+   ]
+  },
+  {
+   "id": "IPA10.6",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab VI",
+   "title": "Keanekaragaman Makhluk Hidup, Interaksi, dan Peranannya di Alam",
+   "field": "Biologi",
+   "label": "IPA (Biologi)",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.E.BIODIVERSITAS.TINGKAT_KEANEKARAGAMAN",
+    "BIO.C26.E.BIODIVERSITAS.STRATEGI_KONSERVASI",
+    "BIO.C26.E.BIODIVERSITAS.KUNCI_DETERMINASI",
+    "BIO.C26.E.KLASIFIKASI.SISTEM_KLASIFIKASI_DAN_TAKSON",
+    "BIO.C26.E.KLASIFIKASI.TATA_NAMA_BINOMIAL",
+    "BIO.C26.E.KLASIFIKASI.SISTEM_LIMA_KINGDOM_DAN_TIGA_DOMAIN",
+    "BIO.C26.E.EKOSISTEM.JARING_MAKANAN_DAN_POPULASI",
+    "BIO.C26.E.EKOSISTEM.SIKLUS_KARBON_DAN_LINGKUNGAN",
+    "BIO.C26.E.EKOSISTEM.FAKTOR_PEMBATAS_POPULASI"
+   ]
+  },
+  {
+   "id": "IPA10.7",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab VII",
+   "title": "Energi Terbarukan",
+   "field": "Fisika",
+   "label": "IPA (Fisika)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.E.ENERGI.DAYA_DAN_EFISIENSI",
+    "FIS.C26.E.ENERGI.NERACA_KEBUTUHAN_ENERGI",
+    "FIS.C26.E.ENERGI.EVALUASI_PILIHAN_ENERGI",
+    "FIS.C26.E.TERBARUKAN.ENERGI_SURYA_DAN_SEL_SURYA",
+    "FIS.C26.E.TERBARUKAN.PEMBANGKIT_TENAGA_AIR_DAN_ANGIN",
+    "FIS.C26.E.TERBARUKAN.PANAS_BUMI_DAN_BIOENERGI"
+   ]
+  },
+  {
+   "id": "IPA10.8",
+   "book": "IPA10",
+   "grade": 10,
+   "no": "Bab VIII",
+   "title": "Perubahan Iklim",
+   "field": "Terpadu",
+   "label": "IPA (proyek terpadu)",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.E.IKLIM.EFEK_RUMAH_KACA",
+    "FIS.C26.E.IKLIM.BUKTI_DAN_PENYEBAB_PEMANASAN_GLOBAL",
+    "FIS.C26.E.IKLIM.DAMPAK_PERUBAHAN_IKLIM",
+    "FIS.C26.E.IKLIM.MITIGASI_DAN_ADAPTASI"
+   ]
+  },
+  {
+   "id": "MAT11.1",
+   "book": "MAT11",
+   "grade": 11,
+   "no": "Bab 1",
+   "title": "Komposisi Fungsi dan Fungsi Invers",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.INV.DOMAIN_KODOMAIN_DAN_RANGE",
+    "MAT.INV.KOMPOSISI_FUNGSI",
+    "MAT.INV.FUNGSI_SATU_SATU",
+    "MAT.INV.MENENTUKAN_DAN_MEMERIKSA_INVERS"
+   ]
+  },
+  {
+   "id": "MAT11.2",
+   "book": "MAT11",
+   "grade": 11,
+   "no": "Bab 2",
+   "title": "Lingkaran",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.CP25.F.LINGKARAN.UNSUR_DAN_SUDUT_LINGKARAN",
+    "MAT.CP25.F.LINGKARAN.HUBUNGAN_SUDUT_DAN_BUSUR",
+    "MAT.CP25.F.LINGKARAN.MASALAH_GEOMETRI_LINGKARAN"
+   ]
+  },
+  {
+   "id": "MAT11.3",
+   "book": "MAT11",
+   "grade": 11,
+   "no": "Bab 3",
+   "title": "Statistika",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.F.REGRESI.KOEFISIEN_KORELASI",
+    "MAT.C26.F.REGRESI.GARIS_REGRESI_LINEAR",
+    "MAT.C26.F.REGRESI.PREDIKSI_DAN_BATASNYA",
+    "MAT.C26.F.REGRESI.KORELASI_BUKAN_SEBAB_AKIBAT"
+   ]
+  },
+  {
+   "id": "MATL11.1",
+   "book": "MATL11",
+   "grade": 11,
+   "no": "Bab I",
+   "title": "Matriks",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.MTX.ELEMEN_ORDO_DAN_KESAMAAN",
+    "MAT.MTX.JENIS_MATRIKS_DAN_TRANSPOSE",
+    "MAT.MTX.PENJUMLAHAN_DAN_SKALAR",
+    "MAT.MTX.PERKALIAN_MATRIKS",
+    "MAT.MTX.DETERMINAN_MATRIKS_2_2",
+    "MAT.MTX.INVERS_MATRIKS_2_2"
+   ]
+  },
+  {
+   "id": "MATL11.2",
+   "book": "MATL11",
+   "grade": 11,
+   "no": "Bab II",
+   "title": "Polinomial",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.FPLUS.POLINOMIAL.BENTUK_DAN_OPERASI_POLINOMIAL",
+    "MAT.C26.FPLUS.POLINOMIAL.PEMBAGIAN_POLINOMIAL",
+    "MAT.C26.FPLUS.POLINOMIAL.TEOREMA_SISA_DAN_FAKTOR",
+    "MAT.C26.FPLUS.POLINOMIAL.AKAR_AKAR_DAN_HUBUNGAN_KOEFISIEN"
+   ]
+  },
+  {
+   "id": "MATL11.3",
+   "book": "MATL11",
+   "grade": 11,
+   "no": "Bab III",
+   "title": "Fungsi Trigonometri",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.TRI.RADIAN",
+    "MAT.TRI.LINGKARAN_SATUAN",
+    "MAT.TRI.KUADRAN_TANDA",
+    "MAT.TRI.SUDUT_BERELASI",
+    "MAT.TRI.GRAFIK_SIN_COS_TAN",
+    "MAT.TRI.PERIODE_AMPLITUDO",
+    "MAT.TRI.IDENTITAS_DASAR",
+    "MAT.TRI.PERSAMAAN_SEDERHANA",
+    "MAT.TRI.PERSAMAAN_DENGAN_IDENTITAS",
+    "MAT.TRI.ATURAN_SINUS",
+    "MAT.TRI.ATURAN_COSINUS",
+    "MAT.TRI.LUAS_SEGITIGA"
+   ]
+  },
+  {
+   "id": "MATL11.4",
+   "book": "MATL11",
+   "grade": 11,
+   "no": "Bab IV",
+   "title": "Vektor",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.VEK.KONSEP_DASAR_VEKTOR",
+    "MAT.VEK.NOTASI_VEKTOR",
+    "MAT.VEK.VEKTOR_DI_KOORDINAT",
+    "MAT.VEK.PANJANG_VEKTOR",
+    "MAT.VEK.KESAMAAN_VEKTOR",
+    "MAT.VEK.VEKTOR_SATUAN",
+    "MAT.VEK.PENJUMLAHAN_VEKTOR",
+    "MAT.VEK.PENGURANGAN_VEKTOR",
+    "MAT.VEK.SIFAT_OPERASI_VEKTOR",
+    "MAT.VEK.PERKALIAN_SKALAR",
+    "MAT.VEK.SIFAT_PERKALIAN_SKALAR",
+    "MAT.VEK.RESULTAN_VEKTOR",
+    "MAT.VEK.PERKALIAN_TITIK",
+    "MAT.VEK.SUDUT_ANTAR_VEKTOR",
+    "MAT.VEK.PENERAPAN_VEKTOR",
+    "MAT.VEK.SOAL_KONTEKSTUAL"
+   ]
+  },
+  {
+   "id": "MATL11.5",
+   "book": "MATL11",
+   "grade": 11,
+   "no": "Bab V",
+   "title": "Transformasi Geometri",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.FPLUS.TRANSFORMASI.TRANSLASI_DAN_REFLEKSI",
+    "MAT.C26.FPLUS.TRANSFORMASI.ROTASI",
+    "MAT.C26.FPLUS.TRANSFORMASI.DILATASI",
+    "MAT.C26.FPLUS.TRANSFORMASI.KOMPOSISI_TRANSFORMASI_DENGAN_MATRIKS",
+    "MAT.MTX.MATRIKS_TRANSFORMASI_GEOMETRI"
+   ]
+  },
+  {
+   "id": "MATL11.6",
+   "book": "MATL11",
+   "grade": 11,
+   "no": "Bab VI",
+   "title": "Fungsi dan Pemodelannya",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.FPLUS.FUNGSI.FUNGSI_RASIONAL_DAN_ASIMTOT",
+    "MAT.C26.FPLUS.FUNGSI.MODEL_PERIODIK_TRIGONOMETRI",
+    "MAT.C26.FPLUS.FUNGSI.MEMILIH_MODEL_FUNGSI_DARI_DATA"
+   ]
+  },
+  {
+   "id": "FIS11.1",
+   "book": "FIS11",
+   "grade": 11,
+   "no": "Bab 1",
+   "title": "Vektor",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": []
+  },
+  {
+   "id": "FIS11.2",
+   "book": "FIS11",
+   "grade": 11,
+   "no": "Bab 2",
+   "title": "Kinematika",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.E.GERAK2D.GERAK_LURUS_GLB_DAN_GLBB",
+    "FIS.C26.E.GERAK2D.KOMPONEN_GERAK",
+    "FIS.C26.E.GERAK2D.PROYEKSI_VEKTOR_GERAK",
+    "FIS.C26.E.GERAK2D.GERAK_PELURU_IDEAL"
+   ]
+  },
+  {
+   "id": "FIS11.3",
+   "book": "FIS11",
+   "grade": 11,
+   "no": "Bab 3",
+   "title": "Dinamika Gerak Partikel",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.MEKANIKA.HUKUM_NEWTON_DAN_MOMENTUM",
+    "FIS.C26.F.MEKANIKA.IMPULS_DAN_MOMENTUM",
+    "FIS.C26.F.MEKANIKA.TORSI_DAN_KESEIMBANGAN",
+    "FIS.C26.F.MEKANIKA.DINAMIKA_ROTASI"
+   ]
+  },
+  {
+   "id": "FIS11.4",
+   "book": "FIS11",
+   "grade": 11,
+   "no": "Bab 4",
+   "title": "Fluida",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.FLUIDA.TEKANAN_DAN_GAYA_APUNG",
+    "FIS.C26.F.FLUIDA.HUKUM_PASCAL",
+    "FIS.C26.F.FLUIDA.KONTINUITAS_DAN_BERNOULLI"
+   ]
+  },
+  {
+   "id": "FIS11.5",
+   "book": "FIS11",
+   "grade": 11,
+   "no": "Bab 5",
+   "title": "Gelombang, Bunyi dan Cahaya",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.GELOMBANG.SUPERPOSISI_DAN_INTERFERENSI",
+    "FIS.C26.F.GELOMBANG.RESONANSI_BUNYI",
+    "FIS.C26.F.GELOMBANG.EFEK_DOPPLER",
+    "FIS.C26.F.GELOMBANG.LENSA_DAN_ALAT_OPTIK"
+   ]
+  },
+  {
+   "id": "FIS11.6",
+   "book": "FIS11",
+   "grade": 11,
+   "no": "Bab 6",
+   "title": "Kalor",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.TERMAL.KALOR_DAN_PERUBAHAN_WUJUD"
+   ]
+  },
+  {
+   "id": "FIS11.7",
+   "book": "FIS11",
+   "grade": 11,
+   "no": "Bab 7",
+   "title": "Termodinamika",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.TERMAL.HUKUM_I_TERMODINAMIKA",
+    "FIS.C26.F.TERMAL.MESIN_KALOR_DAN_BATAS_EFISIENSI"
+   ]
+  },
+  {
+   "id": "KIM11.1",
+   "book": "KIM11",
+   "grade": 11,
+   "no": "Bab 1",
+   "title": "Struktur Atom dan Sistem Periodik Unsur",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.STRUKTUR.STRUKTUR_ELEKTRON_DAN_PERIODIK",
+    "KIM.C26.F.STRUKTUR.TREN_PERIODIK"
+   ]
+  },
+  {
+   "id": "KIM11.2",
+   "book": "KIM11",
+   "grade": 11,
+   "no": "Bab 2",
+   "title": "Ikatan Kimia",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.STRUKTUR.IKATAN_DAN_GAYA_ANTARMOLEKUL",
+    "KIM.C26.F.STRUKTUR.BENTUK_MOLEKUL_DAN_KEPOLARAN"
+   ]
+  },
+  {
+   "id": "KIM11.3",
+   "book": "KIM11",
+   "grade": 11,
+   "no": "Bab 3",
+   "title": "Stoikiometri",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR",
+    "KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI",
+    "KIM.C26.E.STOIK.PEREAKSI_PEMBATAS_DAN_HASIL"
+   ]
+  },
+  {
+   "id": "KIM11.4",
+   "book": "KIM11",
+   "grade": 11,
+   "no": "Bab 4",
+   "title": "Hidrokarbon",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.HIDROKARBON.KEKHASAN_ATOM_KARBON",
+    "KIM.C26.F.HIDROKARBON.ALKANA_ALKENA_DAN_ALKUNA",
+    "KIM.C26.F.HIDROKARBON.TATA_NAMA_HIDROKARBON",
+    "KIM.C26.F.HIDROKARBON.MINYAK_BUMI_DAN_PEMBAKARAN"
+   ]
+  },
+  {
+   "id": "KIM11.5",
+   "book": "KIM11",
+   "grade": 11,
+   "no": "Bab 5",
+   "title": "Termokimia",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.TERMOKIMIA.ENTALPI_REAKSI",
+    "KIM.C26.F.TERMOKIMIA.HUKUM_HESS"
+   ]
+  },
+  {
+   "id": "KIM11.6",
+   "book": "KIM11",
+   "grade": 11,
+   "no": "Bab 6",
+   "title": "Kinetika Kimia",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.LAJU.KONSEP_LAJU_REAKSI",
+    "KIM.C26.F.LAJU.TEORI_TUMBUKAN",
+    "KIM.C26.F.LAJU.FAKTOR_YANG_MEMENGARUHI_LAJU",
+    "KIM.C26.F.TERMOKIMIA.LAJU_DAN_ENERGI_AKTIVASI",
+    "KIM.C26.F.TERMOKIMIA.HUKUM_LAJU_DARI_DATA"
+   ]
+  },
+  {
+   "id": "KIM11.7",
+   "book": "KIM11",
+   "grade": 11,
+   "no": "Bab 7",
+   "title": "Kesetimbangan Kimia",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.SETIMBANG.KESETIMBANGAN_DINAMIS",
+    "KIM.C26.F.SETIMBANG.KONSTANTA_KESETIMBANGAN"
+   ]
+  },
+  {
+   "id": "BIO11.1",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 1",
+   "title": "Menjelajah Sel",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.SEL.ORGANEL_SEL"
+   ]
+  },
+  {
+   "id": "BIO11.2",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 2",
+   "title": "Pergerakan Zat melalui Membran Sel",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.SEL.TRANSPORT_MEMBRAN"
+   ]
+  },
+  {
+   "id": "BIO11.3",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 3",
+   "title": "Proses Pengaturan pada Tumbuhan",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.TUMBUHAN.JARINGAN_TUMBUHAN",
+    "BIO.C26.F.TUMBUHAN.ORGAN_TUMBUHAN",
+    "BIO.C26.F.TUMBUHAN.TRANSPOR_AIR_DAN_HARA",
+    "BIO.C26.F.TUMBUHAN.TRANSPOR_HASIL_FOTOSINTESIS"
+   ]
+  },
+  {
+   "id": "BIO11.4",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 4",
+   "title": "Transpor dan Pertukaran Zat pada Manusia",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.ORGAN.STRUKTUR_DAN_FUNGSI_JARINGAN",
+    "BIO.C26.F.ORGAN.SISTEM_PENCERNAAN",
+    "BIO.C26.F.ORGAN.SISTEM_SIRKULASI",
+    "BIO.C26.F.ORGAN.SISTEM_RESPIRASI",
+    "BIO.C26.F.ORGAN.SISTEM_EKSKRESI"
+   ]
+  },
+  {
+   "id": "BIO11.5",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 5",
+   "title": "Sistem Pertahanan Tubuh terhadap Penyakit",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.IMUN.PERTAHANAN_NONSPESIFIK",
+    "BIO.C26.F.IMUN.PERTAHANAN_SPESIFIK",
+    "BIO.C26.F.IMUN.IMUNISASI_DAN_VAKSIN",
+    "BIO.C26.F.IMUN.GANGGUAN_SISTEM_IMUN"
+   ]
+  },
+  {
+   "id": "BIO11.6",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 6",
+   "title": "Mobilitas pada Manusia",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.ORGAN.SISTEM_KOORDINASI",
+    "BIO.C26.F.GERAK.RANGKA_DAN_TULANG",
+    "BIO.C26.F.GERAK.SENDI",
+    "BIO.C26.F.GERAK.OTOT_DAN_KONTRAKSI",
+    "BIO.C26.F.GERAK.GANGGUAN_SISTEM_GERAK"
+   ]
+  },
+  {
+   "id": "BIO11.7",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 7",
+   "title": "Hormon dalam Reproduksi Manusia",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.ORGAN.SISTEM_REPRODUKSI"
+   ]
+  },
+  {
+   "id": "BIO11.8",
+   "book": "BIO11",
+   "grade": 11,
+   "no": "Bab 8",
+   "title": "Tumbuh Kembang Makhluk Hidup",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.TUMBUH.DIFERENSIASI_DAN_SPESIALISASI_SEL",
+    "BIO.C26.F.TUMBUH.PERTUMBUHAN_TUMBUHAN_DAN_HORMONNYA",
+    "BIO.C26.F.TUMBUH.PERTUMBUHAN_DAN_PERKEMBANGAN_HEWAN",
+    "BIO.C26.F.TUMBUH.EKSPERIMEN_PERTUMBUHAN"
+   ]
+  },
+  {
+   "id": "MAT12.1",
+   "book": "MAT12",
+   "grade": 12,
+   "no": "Bab 1",
+   "title": "Transformasi Fungsi",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.INV.TRANSFORMASI_FUNGSI"
+   ]
+  },
+  {
+   "id": "MAT12.2",
+   "book": "MAT12",
+   "grade": 12,
+   "no": "Bab 2",
+   "title": "Busur dan Juring Lingkaran",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": []
+  },
+  {
+   "id": "MAT12.3",
+   "book": "MAT12",
+   "grade": 12,
+   "no": "Bab 3",
+   "title": "Kombinatorik",
+   "field": "Matematika",
+   "label": "Matematika",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.CP25.F.PELUANG.PERMUTASI_DAN_KOMBINASI",
+    "MAT.CP25.F.PELUANG.KEJADIAN_MAJEMUK_DAN_HARAPAN",
+    "MAT.CP25.F.PELUANG.PELUANG_BERSYARAT"
+   ]
+  },
+  {
+   "id": "MATL12.1",
+   "book": "MATL12",
+   "grade": 12,
+   "no": "Bab 1",
+   "title": "Lingkaran, Elips, dan Garis Singgung Lingkaran",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_LINGKARAN",
+    "MAT.C26.FPLUS.LINGKARAN.BENTUK_UMUM_DAN_PUSAT_JARI_JARI",
+    "MAT.C26.FPLUS.LINGKARAN.KEDUDUKAN_TITIK_DAN_GARIS_TERHADAP_LINGK",
+    "MAT.C26.FPLUS.LINGKARAN.PERSAMAAN_GARIS_SINGGUNG",
+    "MAT.C26.FPLUS.KERUCUT.PARABOLA",
+    "MAT.C26.FPLUS.KERUCUT.ELIPS",
+    "MAT.C26.FPLUS.KERUCUT.HIPERBOLA"
+   ]
+  },
+  {
+   "id": "MATL12.2",
+   "book": "MATL12",
+   "grade": 12,
+   "no": "Bab 2",
+   "title": "Turunan Fungsi",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.FPLUS.LIMIT.KONSEP_LIMIT",
+    "MAT.C26.FPLUS.LIMIT.LIMIT_FUNGSI_ALJABAR",
+    "MAT.C26.FPLUS.LIMIT.LIMIT_DI_TAK_HINGGA",
+    "MAT.C26.FPLUS.LIMIT.LIMIT_FUNGSI_TRIGONOMETRI",
+    "MAT.KAL.LAJU_PERUBAHAN_RATA_RATA",
+    "MAT.KAL.TURUNAN_SBG_LAJU_SESAAT",
+    "MAT.KAL.ATURAN_TURUNAN_FUNGSI",
+    "MAT.KAL.GARIS_SINGGUNG_DAN_OPTIMASI",
+    "MAT.C26.FPLUS.TURUNAN.ATURAN_RANTAI",
+    "MAT.C26.FPLUS.TURUNAN.TURUNAN_FUNGSI_TRIGONOMETRI",
+    "MAT.C26.FPLUS.TURUNAN.TITIK_STASIONER_DAN_KEMONOTONAN"
+   ]
+  },
+  {
+   "id": "MATL12.3",
+   "book": "MATL12",
+   "grade": 12,
+   "no": "Bab 3",
+   "title": "Integral",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.KAL.ANTITURUNAN_DAN_KONSTANTA",
+    "MAT.KAL.INTEGRAL_TENTU_DAN_LUAS",
+    "MAT.C26.FPLUS.INTEGRAL.INTEGRAL_SUBSTITUSI",
+    "MAT.C26.FPLUS.INTEGRAL.LUAS_DAERAH_ANTARA_DUA_KURVA",
+    "MAT.C26.FPLUS.INTEGRAL.VOLUME_BENDA_PUTAR"
+   ]
+  },
+  {
+   "id": "MATL12.4",
+   "book": "MATL12",
+   "grade": 12,
+   "no": "Bab 4",
+   "title": "Analisis Data dan Peluang",
+   "field": "Matematika Lanjut",
+   "label": "Matematika Lanjut",
+   "subject": "MAT",
+   "concepts": [
+    "MAT.C26.FPLUS.DISTRIBUSI.VARIABEL_ACAK_BINOMIAL",
+    "MAT.C26.FPLUS.DISTRIBUSI.RATAAN_DAN_SIMPANGAN_BAKU_DISTRIBUSI",
+    "MAT.C26.FPLUS.DISTRIBUSI.DISTRIBUSI_NORMAL"
+   ]
+  },
+  {
+   "id": "FIS12.1",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 1",
+   "title": "Listrik Statis",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.MEDAN.MUATAN_DAN_HUKUM_COULOMB",
+    "FIS.C26.F.MEDAN.MEDAN_LISTRIK",
+    "FIS.C26.F.MEDAN.POTENSIAL_DAN_ENERGI_POTENSIAL_LISTRIK",
+    "FIS.C26.F.MEDAN.KAPASITOR"
+   ]
+  },
+  {
+   "id": "FIS12.2",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 2",
+   "title": "Listrik Arus Searah",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.ELEKTRO.HUKUM_RANGKAIAN",
+    "FIS.C26.F.ELEKTRO.HUKUM_KIRCHHOFF"
+   ]
+  },
+  {
+   "id": "FIS12.3",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 3",
+   "title": "Kemagnetan",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.MEDAN.MEDAN_MAGNET_DAN_GAYA_LORENTZ",
+    "FIS.C26.F.ELEKTRO.INDUKSI_ELEKTROMAGNETIK"
+   ]
+  },
+  {
+   "id": "FIS12.4",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 4",
+   "title": "Arus Bolak-Balik",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.ELEKTRO.ARUS_BOLAK_BALIK"
+   ]
+  },
+  {
+   "id": "FIS12.5",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 5",
+   "title": "Gelombang Elektromagnetik",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.ELEKTRO.GELOMBANG_ELEKTROMAGNETIK"
+   ]
+  },
+  {
+   "id": "FIS12.6",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 6",
+   "title": "Pengantar Instrumentasi Digital",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.MODERN.SEMIKONDUKTOR",
+    "FIS.C26.F.MODERN.REPRESENTASI_BINER_DAN_LOGIKA"
+   ]
+  },
+  {
+   "id": "FIS12.7",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 7",
+   "title": "Relativitas",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.MODERN.RELATIVITAS_KHUSUS"
+   ]
+  },
+  {
+   "id": "FIS12.8",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 8",
+   "title": "Gejala Kuantum",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.MODERN.KUANTUM_DAN_INTI_ATOM"
+   ]
+  },
+  {
+   "id": "FIS12.9",
+   "book": "FIS12",
+   "grade": 12,
+   "no": "Bab 9",
+   "title": "Inti Atom dan Iptek Nuklir",
+   "field": "Fisika",
+   "label": "Fisika",
+   "subject": "FIS",
+   "concepts": [
+    "FIS.C26.F.MODERN.INTI_ATOM_DAN_ENERGI_IKAT",
+    "FIS.C26.F.MODERN.PELURUHAN_DAN_WAKTU_PARUH"
+   ]
+  },
+  {
+   "id": "KIM12.1",
+   "book": "KIM12",
+   "grade": 12,
+   "no": "Bab I",
+   "title": "Larutan dan Koloid",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.ASAMBASA.TEORI_ASAM_BASA",
+    "KIM.C26.F.ASAMBASA.PH_ASAM_DAN_BASA_LEMAH",
+    "KIM.C26.F.ASAMBASA.TITRASI_ASAM_BASA",
+    "KIM.C26.F.SETIMBANG.ASAM_BASA_DAN_PH",
+    "KIM.C26.F.SETIMBANG.HIDROLISIS_DAN_PENYANGGA",
+    "KIM.C26.F.KOLIGATIF.MOLALITAS_DAN_FRAKSI_MOL",
+    "KIM.C26.F.KOLIGATIF.PENURUNAN_TEKANAN_UAP",
+    "KIM.C26.F.KOLIGATIF.KENAIKAN_TITIK_DIDIH_DAN_PENURUNAN_TITIK",
+    "KIM.C26.F.KOLIGATIF.TEKANAN_OSMOSIS",
+    "KIM.C26.F.KOLIGATIF.FAKTOR_VAN_T_HOFF",
+    "KIM.C26.F.KOLOID.SISTEM_DISPERSI_DAN_JENIS_KOLOID",
+    "KIM.C26.F.KOLOID.SIFAT_KOLOID",
+    "KIM.C26.F.KOLOID.PEMBUATAN_DAN_PENERAPAN_KOLOID"
+   ]
+  },
+  {
+   "id": "KIM12.2",
+   "book": "KIM12",
+   "grade": 12,
+   "no": "Bab II",
+   "title": "Elektrokimia",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.ELEKTROLIT.IONISASI_DAN_DISOSIASI",
+    "KIM.C26.F.ELEKTROLIT.ELEKTROLIT_KUAT_LEMAH_DAN_NONELEKTROLIT",
+    "KIM.C26.F.ELEKTROLIT.DAYA_HANTAR_LISTRIK_LARUTAN",
+    "KIM.C26.F.REDOKS.BILANGAN_OKSIDASI_DAN_REAKSI_REDOKS",
+    "KIM.C26.F.REDOKS.PENYETARAAN_REAKSI_REDOKS",
+    "KIM.C26.F.REDOKS.SEL_VOLTA_DAN_POTENSIAL_SEL",
+    "KIM.C26.F.REDOKS.ELEKTROLISIS_DAN_HUKUM_FARADAY",
+    "KIM.C26.F.REDOKS.KOROSI_DAN_PENCEGAHANNYA"
+   ]
+  },
+  {
+   "id": "KIM12.3",
+   "book": "KIM12",
+   "grade": 12,
+   "no": "Bab III",
+   "title": "Gugus Fungsi dalam Senyawa Karbon",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.KARBON.STRUKTUR_DAN_GUGUS_FUNGSI",
+    "KIM.C26.F.KARBON.ISOMER_DAN_GUGUS_FUNGSI",
+    "KIM.C26.F.GUGUS.ALKOHOL_DAN_ETER",
+    "KIM.C26.F.GUGUS.ALDEHIDA_DAN_KETON",
+    "KIM.C26.F.GUGUS.ASAM_KARBOKSILAT_DAN_ESTER",
+    "KIM.C26.F.GUGUS.REAKSI_SENYAWA_KARBON"
+   ]
+  },
+  {
+   "id": "KIM12.4",
+   "book": "KIM12",
+   "grade": 12,
+   "no": "Bab IV",
+   "title": "Makromolekul Organik",
+   "field": "Kimia",
+   "label": "Kimia",
+   "subject": "KIM",
+   "concepts": [
+    "KIM.C26.F.KARBON.BIOMOLEKUL",
+    "KIM.C26.F.KARBON.POLIMERISASI_DAN_STRUKTUR_BAHAN"
+   ]
+  },
+  {
+   "id": "BIO12.1",
+   "book": "BIO12",
+   "grade": 12,
+   "no": "Bab 1",
+   "title": "Enzim dan Metabolisme",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.SEL.ENZIM_DAN_METABOLISME",
+    "BIO.C26.F.SEL.RESPIRASI_SEL_DAN_ATP",
+    "BIO.C26.F.SEL.FOTOSINTESIS_DAN_ANABOLISME"
+   ]
+  },
+  {
+   "id": "BIO12.2",
+   "book": "BIO12",
+   "grade": 12,
+   "no": "Bab 2",
+   "title": "Genetika dan Pewarisan Sifat",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.GENETIKA.DNA_GEN_DAN_KROMOSOM",
+    "BIO.C26.F.GENETIKA.TRANSKRIPSI_DAN_TRANSLASI",
+    "BIO.C26.F.GENETIKA.MITOSIS_DAN_MEIOSIS",
+    "BIO.C26.F.GENETIKA.POLA_PEWARISAN",
+    "BIO.C26.F.HEREDITAS.PENYIMPANGAN_SEMU_HUKUM_MENDEL",
+    "BIO.C26.F.HEREDITAS.PAUTAN_DAN_PINDAH_SILANG",
+    "BIO.C26.F.HEREDITAS.PENENTUAN_JENIS_KELAMIN_DAN_PAUTAN_SEKS",
+    "BIO.C26.F.HEREDITAS.HEREDITAS_PADA_MANUSIA",
+    "BIO.C26.F.MUTASI.MUTASI_GEN",
+    "BIO.C26.F.MUTASI.MUTASI_KROMOSOM",
+    "BIO.C26.F.MUTASI.PENYEBAB_DAN_DAMPAK_MUTASI"
+   ]
+  },
+  {
+   "id": "BIO12.3",
+   "book": "BIO12",
+   "grade": 12,
+   "no": "Bab 3",
+   "title": "Evolusi",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.EVOLUSI.VARIASI_DALAM_POPULASI",
+    "BIO.C26.F.EVOLUSI.SELEKSI_ALAM_DAN_ADAPTASI",
+    "BIO.C26.F.EVOLUSI.BUKTI_EVOLUSI",
+    "BIO.C26.F.EVOLUSI.SPESIASI_DAN_KEANEKARAGAMAN"
+   ]
+  },
+  {
+   "id": "BIO12.4",
+   "book": "BIO12",
+   "grade": 12,
+   "no": "Bab 4",
+   "title": "Inovasi Bioteknologi",
+   "field": "Biologi",
+   "label": "Biologi",
+   "subject": "BIO",
+   "concepts": [
+    "BIO.C26.F.BIOTEK.REKAYASA_DAN_ANALISIS_DNA",
+    "BIO.C26.F.BIOTEK.PRINSIP_PCR",
+    "BIO.C26.F.BIOTEK.EVALUASI_MANFAAT_DAN_DAMPAK"
+   ]
+  }
+ ]
+}

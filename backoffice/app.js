@@ -2,6 +2,7 @@ import { selectCatalog, reportHtml } from './catalog-view.js';
 import { createLessonEditor } from './lesson-editor.js';
 import { createPracticeEditor } from './practice-editor.js';
 import { createAccountsView } from './accounts-view.js';
+import { GRADES, BOOK_SUBJECTS, gradeChapters, bookReportHtml } from './book-view.js';
 /* Private authoring client: no external scripts, fonts or analytics. Learner data only on the opt-in Akun (QA) tab. */
 let token = '', state, tab = 'overview';
 const $ = s => document.querySelector(s);
@@ -17,7 +18,8 @@ function show(name) {
   $('#pageTitle').textContent = $(`[data-tab="${name}"]`).textContent;
   if (name === 'graph' && state) graph();
   if (name === 'practice' && state) practiceEditor.render();
-  $('.global-filters').hidden = name === 'accounts';
+  $('.global-filters').hidden = name === 'accounts' || name === 'book';
+  if (name === 'book' && state) renderBook();
   if (name === 'accounts' && token) accountsView.load();
 }
 document.querySelectorAll('[data-tab]').forEach(n => n.onclick = () => show(n.dataset.tab));
@@ -64,6 +66,7 @@ function render() {
   $('#importSeed').disabled = Boolean($('#subjectFilter').value && $('#subjectFilter').value !== 'MAT') || ['D','F+'].includes($('#phaseFilter').value);
   $('#filterSummary').textContent = `${view.topics.length} dari ${state.topics.length} topik · filter berlaku di semua tab. Hubungan lintas filter tetap ditandai.`;
   if(tab==='graph')graph();
+  if(tab==='book')renderBook();
 }
 function lessonsOf(code){return state.lessons.filter(l=>l.concepts.includes(code));}
 function practiceOf(code){return state.practice.filter(q=>q.concepts.includes(code));}
@@ -128,4 +131,71 @@ $('#exportPdf').onclick=()=>{
   report.document.open();report.document.write(html);report.document.close();
   report.addEventListener('load',()=>{report.focus();report.print();},{once:true});
   notice('Pratinjau dibuka. Pilih Simpan sebagai PDF pada dialog cetak. Pilih Semua pelajaran dan Semua jenjang untuk laporan lengkap.');
+};
+
+/* ---------- Bab per kelas: bab buku kelas 7–12 dengan inti berurutan ---------- */
+let bookGrade = 7, bookSubject = '';
+const bookOpen = new Set();
+function chip(text, cls) { return el('span', text, 'chip ' + cls); }
+function coreLine(c) {
+  const li = el('li'), line = el('div', undefined, 'core-line');
+  line.append(el('span', c.title, 'name')); if (c.core) line.append(el('code', c.code));
+  const chips = el('span', undefined, 'chips');
+  chips.append(chip(c.status.label, c.status.key === 'ready' ? 'ok' : c.status.key));
+  if (c.core) chips.append(chip(c.lesson ? `Materi · ${c.slides} slide` : 'Belum ada materi', c.lesson ? 'ok' : 'warn'), chip(c.practice ? `Latihan · ${c.practice} soal` : 'Belum ada latihan', c.practice ? 'ok' : 'warn'));
+  line.append(chips);
+  if (c.core && c.topic) {
+    const acts = el('span', undefined, 'acts');
+    const m = el('button', c.lesson ? 'Materi' : 'Buat materi'); m.onclick = () => { show('lessons'); c.lesson ? lessonEditor.open(c.lesson) : lessonEditor.forCore(c.topic, c.core); };
+    const p = el('button', 'Latihan'); p.onclick = () => { show('practice'); practiceEditor.openFor(c.topic, c.code); };
+    const e = el('button', 'Edit inti'); e.onclick = () => coreEdit(c.topic, c.core);
+    acts.append(m, p, e); line.append(acts);
+  }
+  li.append(line); return li;
+}
+function chapterBlock(id, title, tag, cores, emptyText) {
+  const d = el('details'); d.open = bookOpen.has(id); d.ontoggle = () => { d.open ? bookOpen.add(id) : bookOpen.delete(id); };
+  const sm = el('summary'), ready = cores.filter(c => c.status.key === 'ready').length;
+  sm.append(el('b', title)); if (tag) sm.append(el('span', tag, 'tag'));
+  sm.append(el('span', cores.length ? `${cores.length} inti · ${ready} siap` : 'belum ada inti', 'count'));
+  d.append(sm);
+  if (cores.length) { const ol = el('ol', undefined, 'book-cores'); for (const c of cores) ol.append(coreLine(c)); d.append(ol); }
+  else d.append(el('p', emptyText, 'book-empty'));
+  return d;
+}
+function renderBook() {
+  if (!state) return;
+  const grades = $('#bookGrades'); grades.replaceChildren();
+  for (const g of GRADES) { const b = el('button', `Kelas ${g}`); b.type = 'button'; b.setAttribute('aria-pressed', String(g === bookGrade)); b.onclick = () => { bookGrade = g; renderBook(); }; grades.append(b); }
+  populate($('#bookSubject'), BOOK_SUBJECTS); $('#bookSubject').value = bookSubject;
+  const list = $('#bookList'); list.replaceChildren();
+  if (!state.bookChapters) { list.append(el('p', 'Susunan bab belum ada di server. Jalankan npm run catalog:book-chapters (lihat docs/deployment/backoffice-domain.md).', 'warn-box')); $('#bookSummary').textContent = ''; return; }
+  const v = gradeChapters(state, bookGrade, bookSubject);
+  $('#bookSummary').textContent = `Kelas ${bookGrade}: ${v.totals.chapters} bab · ${v.totals.cores} inti · ${v.totals.ready} siap · ${v.totals.noLesson} belum ada materi · ${v.totals.noPractice} belum ada latihan` + (v.totals.missing ? ` · ${v.totals.missing} inti belum ada di draf studio (draf lebih lama dari manifest repo)` : '') + ` · sumber: ${state.bookChapters.source}`;
+  for (const b of v.books) {
+    const card = el('section', undefined, 'book-card');
+    card.append(el('h3', b.title), el('p', b.source, 'muted'));
+    for (const ch of b.chapters) card.append(chapterBlock(ch.id, `${ch.no}: ${ch.title}`, ch.label, ch.cores, 'Belum ada inti di katalog untuk bab ini (di aplikasi tampil "sedang disiapkan").'));
+    list.append(card);
+  }
+  if (v.extras.length) {
+    const card = el('section', undefined, 'book-card');
+    card.append(el('h3', 'Inti tambahan'), el('p', `Inti katalog kelas ${bookGrade} yang belum masuk bab buku mana pun. Di aplikasi tampil sesudah bab buku.`, 'muted'));
+    for (const e of v.extras) card.append(chapterBlock(`extra:${e.topic.code}:${bookGrade}`, e.topic.title, e.topic.code, e.cores, ''));
+    list.append(card);
+  }
+  if (!v.books.length && !v.extras.length) list.append(el('p', 'Tidak ada bab untuk pilihan ini.', 'muted'));
+  $('#bookExpand').textContent = list.querySelectorAll('details:not([open])').length ? 'Buka semua bab' : 'Tutup semua bab';
+}
+$('#bookSubject').onchange = () => { bookSubject = $('#bookSubject').value; renderBook(); };
+$('#bookExpand').onclick = () => {
+  const all = [...$('#bookList').querySelectorAll('details')], open = all.some(d => !d.open);
+  for (const d of all) d.open = open;
+  $('#bookExpand').textContent = open ? 'Tutup semua bab' : 'Buka semua bab';
+};
+$('#bookPdf').onclick = () => {
+  const report = window.open('', '_blank'); if (!report) { notice('Izinkan popup untuk membuka pratinjau PDF.', true); return; }
+  report.document.open(); report.document.write(bookReportHtml(state, [bookGrade], bookSubject, new URL('report.css', location.href).href)); report.document.close();
+  report.addEventListener('load', () => { report.focus(); report.print(); }, { once: true });
+  notice('Pratinjau dibuka. Pilih Simpan sebagai PDF pada dialog cetak.');
 };

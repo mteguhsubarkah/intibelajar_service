@@ -35,6 +35,7 @@
     "catalog:signoff-scope": "tsx scripts/catalog/signoff-scope.ts",
     "catalog:scope-sheet": "tsx scripts/catalog/scope-sheet.ts",
     "catalog:release": "tsx scripts/catalog/release.ts",
+    "catalog:book-chapters": "tsx scripts/catalog/book-chapters.ts",
     "catalog:status": "tsx scripts/catalog/status.ts",
     "catalog:golden": "tsx scripts/catalog/golden.ts",
     "catalog:bundle-check": "tsx scripts/catalog/check-bundle-keys.ts",
