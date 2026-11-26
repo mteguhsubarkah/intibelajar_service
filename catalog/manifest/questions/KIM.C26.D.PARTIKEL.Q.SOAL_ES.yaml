@@ -1,0 +1,126 @@
+schemaVersion: 1
+code: KIM.C26.D.PARTIKEL.Q.SOAL_ES
+familyCode: KIM.C26.D.PARTIKEL.F.SOAL_ES
+visibility: PUBLIC_PRACTICE
+origin: AUTHORED
+itemType: NUMERIC
+contextTag: ES
+difficulty: 1
+estimatedMinutes: 2
+provenance:
+  source: authored:coba
+  note: Soal /coba Kimia SMP kelas 7 (menggantikan soal batu di /coba). Disusun untuk IntiBelajar, bukan salinan soal resmi.
+aliases:
+  - ns: ITEM
+    value: soal-es
+concepts:
+  - concept: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+    role: PRIMARY
+    assessable: true
+  - concept: KIM.C26.D.PARTIKEL.MASSA_JENIS
+    role: PRIMARY
+    assessable: true
+body:
+  schemaVersion: 1
+  prompt: Sebongkah es bermassa 90 g mencair seluruhnya menjadi air. Jika massa jenis air 1 g/cm³, berapa volume air yang terbentuk?
+  hints:
+    - step: 1
+      conceptCode: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+      lead: "Mencair adalah perubahan wujud dari padat ke cair, partikelnya tidak bertambah atau berkurang. Jadi massa air sama dengan massa es."
+      note: massa sebelum = massa sesudah berubah wujud
+    - step: 2
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      lead: "Dari inti 1, massa airnya 90 g. Massa jenis = massa : volume, jadi volume = massa : massa jenis."
+      note: "V = m : ρ"
+  answerFormat: NUMBER
+  answerExample: V = … cm³
+rubric:
+  schemaVersion: 1
+  evaluator: numeric-v1
+  answer:
+    value: 90
+    unit: cm³
+    tolerance:
+      relative: 0.02
+      floor: 1
+    thousandsDot: true
+  acceptedForms:
+    - 90 cm³
+    - 90 mL
+    - "massa air = 90 g; V = 90 : 1 = 90 cm³"
+  solutionPaths:
+    - code: UTAMA
+      label: langkah per inti
+      steps:
+        - code: S1
+          description: Massa air = massa es = 90 g (massa tetap saat mencair)
+          concepts:
+            - code: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+              role: REQUIRED
+        - code: S2
+          description: "V = m : ρ = 90 : 1 = 90 cm³"
+          concepts:
+            - code: KIM.C26.D.PARTIKEL.MASSA_JENIS
+              role: REQUIRED
+  misconceptionMap:
+    - pattern:
+        kind: NUMERIC
+        value: 0.011
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      misconceptionCode: PEMBAGIAN_TERBALIK
+      explanation: "Kebalik: volume = massa dibagi massa jenis, jadi 90 : 1."
+  finalAnswerEvidence:
+    - KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+    - KIM.C26.D.PARTIKEL.MASSA_JENIS
+  lessonFor:
+    KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT: KIM.C26.D.PARTIKEL.L.PERUBAHAN_WUJUD_ZAT
+    KIM.C26.D.PARTIKEL.MASSA_JENIS: KIM.C26.D.PARTIKEL.L.MASSAJENIS
+  recommend:
+    - misconceptionCode: PEMBAGIAN_TERBALIK
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      keyFormula: "V = m : ρ"
+  feedback:
+    correct: "Massa air = massa es = 90 g. V = 90 : 1 = 90 cm³."
+    incorrect: "Jawabannya 90 cm³. Saat mencair massanya tetap 90 g, lalu V = m : ρ = 90 : 1 = 90 cm³."
+  workedSolution:
+    steps:
+      - title: Massa tetap saat mencair
+        body: massa air = massa es = 90 g
+      - title: Volume dari massa jenis
+        body: "V = m : ρ = 90 : 1 = 90 cm³"
+    after:
+      - "90 g air dengan ρ = 1 g/cm³ → V = 90 cm³"
+  cobaSteps:
+    - step: 1
+      conceptCode: KIM.C26.D.PARTIKEL.PERUBAHAN_WUJUD_ZAT
+      prompt: Massa air setelah es mencair = … g
+      key: 90 g (massa tetap saat berubah wujud)
+      correct: Pas, massa air tetap 90 g karena partikelnya tidak hilang saat mencair.
+      answer:
+        value: 90
+        tolerance:
+          relative: 0.02
+          floor: 1
+    - step: 2
+      conceptCode: KIM.C26.D.PARTIKEL.MASSA_JENIS
+      prompt: "V = 90 : 1 = … cm³"
+      key: 90 cm³
+      correct: "Pas, V = 90 : 1 = 90 cm³."
+      answer:
+        value: 90
+        tolerance:
+          relative: 0.02
+          floor: 1
+      partials:
+        - value: 0.011
+          explanation: "Kebalik: volume = massa dibagi massa jenis, jadi 90 : 1."
+review:
+  status: PROPOSED
+  decision: D8
+  fields:
+    - body
+    - rubric
+    - concepts
+  evidence:
+    - "26 Nov 2026: pengganti soal batu di /coba Kimia SMP atas permintaan pemilik produk, supaya kedua inti dari bab kimia yang sama (Wujud zat dan teori partikel, kelas 7): perubahan wujud (massa tetap) dan massa jenis."
+    - "Pengecoh 0,011 (90 : 1 dibalik) diturunkan dari kesalahan umum massa jenis. Kunci dan bahasa perlu dicek guru IPA."

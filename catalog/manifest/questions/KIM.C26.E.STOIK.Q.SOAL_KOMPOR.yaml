@@ -14,6 +14,9 @@ aliases:
   - ns: ITEM
     value: soal-kompor
 concepts:
+  - concept: KIM.C26.E.ATOM.RUMUS_KIMIA
+    role: PRIMARY
+    assessable: true
   - concept: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
     role: PRIMARY
     assessable: true
@@ -29,12 +32,16 @@ body:
     Ar C = 12, H = 1, O = 16.
   hints:
     - step: 1
-      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
-      lead: Gram belum bisa langsung dibandingkan. Ubah ke mol dulu.
-      note: mol = massa / Mr.
+      conceptCode: KIM.C26.E.ATOM.RUMUS_KIMIA
+      lead: "Rumus kimia menunjukkan jumlah tiap atom: CH₄ berisi 1 atom C dan 4 atom H. Ar adalah massa relatif satu atom, dan Mr adalah jumlah Ar semua atom dalam rumus."
+      note: Mr = jumlah (indeks × Ar)
     - step: 2
+      conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
+      lead: "Mol adalah satuan jumlah partikel, seperti lusin untuk barang. Zat sebanyak Mr gram berisi tepat 1 mol, jadi mol = massa : Mr."
+      note: mol = massa / Mr.
+    - step: 3
       conceptCode: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
-      lead: Gunakan koefisien pada persamaan yang sudah setara untuk membandingkan mol.
+      lead: "Koefisien pada persamaan setara adalah perbandingan mol zat yang bereaksi dan terbentuk. Mol zat yang dicari = (koefisiennya : koefisien zat yang diketahui) × mol yang diketahui."
   answerFormat: NUMBER
   answerExample: massa CO₂ = … g
 rubric:
@@ -53,6 +60,11 @@ rubric:
     - code: MOL
       label: ubah ke mol, gunakan koefisien yang diberikan, hitung massa hasil
       steps:
+        - code: S0
+          description: "Mr CH₄ = 12 + 4 × 1 = 16; Mr CO₂ = 12 + 2 × 16 = 44"
+          concepts:
+            - code: KIM.C26.E.ATOM.RUMUS_KIMIA
+              role: REQUIRED
         - code: S1
           description: "mol CH₄ = 16 / 16 = 1 mol"
           concepts:
@@ -83,9 +95,11 @@ rubric:
       misconceptionCode: KOEFISIEN_SALAH_BACA
       explanation: "Koefisien CO₂ di reaksi setara adalah 1, sama dengan CH₄. Angka 2 milik O₂ dan H₂O."
   finalAnswerEvidence:
+    - KIM.C26.E.ATOM.RUMUS_KIMIA
     - KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
     - KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
   lessonFor:
+    KIM.C26.E.ATOM.RUMUS_KIMIA: KIM.C26.E.ATOM.L.RUMUS_KIMIA
     KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR: KIM.C26.E.STOIK.L.MOL_DAN_MASSA_MOLAR
     KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI: KIM.C26.E.STOIK.L.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
   recommend:
@@ -111,6 +125,17 @@ rubric:
       - 1 mol CH₄ → 1 mol CO₂ = 44 g
   cobaSteps:
     - step: 1
+      conceptCode: KIM.C26.E.ATOM.RUMUS_KIMIA
+      prompt: "Mr CH₄ = 12 + 4 × 1 = …"
+      key: "16"
+      correct: "Pas, Mr CH₄ = 12 + 4 = 16."
+      answer:
+        value: 16
+        tolerance: {relative: 0.02, floor: 1}
+      partials:
+        - value: 13
+          explanation: "Ada 4 atom H, jadi 4 × 1, bukan 1 × 1."
+    - step: 2
       conceptCode: KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR
       prompt: "mol CH₄ = 16 : 16 = …"
       key: "1 mol"
@@ -121,7 +146,7 @@ rubric:
       partials:
         - value: 16
           explanation: "16 itu massanya. Bagi dengan Mr CH₄ = 16."
-    - step: 2
+    - step: 3
       conceptCode: KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI
       prompt: "massa CO₂ = 1 × 44 = … g"
       key: "44 g"
@@ -143,4 +168,5 @@ review:
     - "Soal /coba Kimia memberikan persamaan reaksi setara dan kondisi pembakaran sempurna dengan oksigen berlebih. Yang dinilai adalah mol/massa molar dan perhitungan dari koefisien yang diberikan, bukan kemampuan menyetarakan reaksi."
     - "https://openstax.org/books/chemistry-2e/pages/4-3-reaction-stoichiometry"
     - "Pengecoh 16 g (massa dianggap tetap), 28 g (Mr CO₂ keliru), 88 g (koefisien salah baca) diturunkan dari kesalahan umum stoikiometri."
+    - "26 Nov 2026: dipecah jadi 3 inti atas permintaan pemilik produk: rumus kimia (Ar, Mr), konsep mol, lalu perbandingan koefisien secara umum."
     - "Kotak Coba sekarang (cobaSteps) untuk /coba terpandu: angka dinilai aturan, isian tanpa angka dinilai AI dengan key."

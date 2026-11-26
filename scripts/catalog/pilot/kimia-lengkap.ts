@@ -20,7 +20,7 @@ export const KIMIA_LENGKAP: Record<string, Content> = {
   ]),
   'KIM.C26.D.PARTIKEL:C2': K([
     S('Enam perubahan wujud', ['**Mencair** (padat → cair) dan **menguap** (cair → gas) memerlukan kalor. **Membeku** (cair → padat) dan **mengembun** (gas → cair) melepaskan kalor.', '**Menyublim** (padat → gas langsung) memerlukan kalor, sedangkan **mengkristal** atau deposisi (gas → padat) melepaskan kalor.']),
-    S('Contoh sehari-hari', ['Kapur barus yang mengecil di lemari adalah peristiwa menyublim. Embun pada gelas berisi es adalah uap air yang mengembun.', 'Selama mencair atau mendidih, suhu zat murni tetap walaupun kalor terus diberikan.'], undefined, 'Perubahan wujud adalah perubahan fisika: zatnya tetap sama.'),
+    S('Contoh sehari-hari', ['Kapur barus yang mengecil di lemari adalah peristiwa menyublim. Embun pada gelas berisi es adalah uap air yang mengembun.', 'Selama mencair atau mendidih, suhu zat murni tetap walaupun kalor terus diberikan.', 'Saat berubah wujud, jumlah partikelnya tetap, jadi **massanya juga tetap**. Es 90 g yang mencair menjadi air 90 g.'], undefined, 'Perubahan wujud adalah perubahan fisika: zatnya tetap sama.'),
   ], [
     Q('Butiran air di luar gelas berisi es terbentuk karena peristiwa …', ['pengembunan uap air dari udara', 'penguapan air dari dalam gelas', 'pembekuan air', 'penyubliman es'], 0, 'Uap air di udara mendingin saat menyentuh permukaan gelas yang dingin, lalu berubah menjadi cair.', 1),
     Q('Perubahan wujud berikut yang melepaskan kalor adalah …', ['membeku', 'mencair', 'menguap', 'menyublim'], 0, 'Saat membeku, partikel melepas energi sehingga dapat tersusun lebih rapat.'),

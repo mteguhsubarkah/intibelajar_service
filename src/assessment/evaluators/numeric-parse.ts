@@ -12,13 +12,13 @@ export type UnreadableReason =
 
 /**
  * Accepted units are those of the rubric's answer: length (m), angle (°), time (s), mass (g), and for the SMP /coba
- * questions minutes, °C, density (g/cm³), kJ, a count of cells, speed (km/jam), a number of times (kali) and kilometres; or none.
+ * questions minutes, °C, density (g/cm³), volume (cm³ or mL), kJ, a count of cells, speed (km/jam), a number of times (kali) and kilometres; or none.
  */
-export type UnitKind = 'length' | 'angle' | 'time' | 'mass' | 'minute' | 'celsius' | 'density' | 'energy' | 'cells' | 'speed' | 'times' | 'km' | 'none';
+export type UnitKind = 'length' | 'angle' | 'time' | 'mass' | 'minute' | 'celsius' | 'density' | 'volume' | 'energy' | 'cells' | 'speed' | 'times' | 'km' | 'none';
 export const unitKindOf = (unit: string | undefined): UnitKind =>
   unit === undefined ? 'none' : ['m', 'meter', 'metre'].includes(unit) ? 'length' : ['°', 'deg', 'derajat'].includes(unit) ? 'angle'
     : ['s', 'sekon', 'detik'].includes(unit) ? 'time' : ['g', 'gram'].includes(unit) ? 'mass'
-    : ['menit'].includes(unit) ? 'minute' : ['°C'].includes(unit) ? 'celsius' : ['g/cm³'].includes(unit) ? 'density'
+    : ['menit'].includes(unit) ? 'minute' : ['°C'].includes(unit) ? 'celsius' : ['g/cm³'].includes(unit) ? 'density' : ['cm³', 'mL'].includes(unit) ? 'volume'
     : ['kJ'].includes(unit) ? 'energy' : ['sel'].includes(unit) ? 'cells' : ['km/jam'].includes(unit) ? 'speed' : ['kali'].includes(unit) ? 'times' : ['km'].includes(unit) ? 'km' : 'none';
 /** thousandsDot: "10.000" is ten thousand (Indonesian notation, as in the question text). Off by default: "34.641" stays 34.641. */
 export interface ParseOptions { thousandsDot?: boolean }
@@ -43,12 +43,13 @@ export function normalizeAnswerText(raw: string) {
 const LENGTH_UNITS = new Set(['m', 'meter', 'metre', 'mtr']);
 const ANGLE_UNITS = new Set(['derajat', 'deg']);
 // Units that are recognised, including ones that are rejected; longer alternatives first, \b on both sides.
-const UNIT_PATTERN = /\b(?:kilometer|kmperjam|perpindahan|gpercm3|celsius|bakteri|kali|meter|metre|derajat|persen|sekon|detik|menit|radian|gram|liter|mtr|mnt|deg|rad|sel|cm|mm|km|dm|kg|kj|ml|jam|m|g|s|l)\b/g;
+const UNIT_PATTERN = /\b(?:kilometer|kmperjam|perpindahan|gpercm3|cmkubik|celsius|bakteri|kali|meter|metre|derajat|persen|sekon|detik|menit|radian|gram|liter|mtr|mnt|deg|rad|sel|cm|mm|km|dm|kg|kj|ml|jam|m|g|s|l)\b/g;
 const TIME_UNITS = new Set(['s', 'sekon', 'detik']);
 const MASS_UNITS = new Set(['g', 'gram']);
 const MINUTE_UNITS = new Set(['menit', 'mnt']);
 const CELSIUS_UNITS = new Set(['celsius']);
 const DENSITY_UNITS = new Set(['gpercm3']);
+const VOLUME_UNITS = new Set(['cmkubik', 'ml']);
 const ENERGY_UNITS = new Set(['kj']);
 const CELL_UNITS = new Set(['sel', 'bakteri']);
 const SPEED_UNITS = new Set(['kmperjam']);
@@ -56,7 +57,7 @@ const TIMES_UNITS = new Set(['kali', 'perpindahan']);
 const KM_UNITS = new Set(['km', 'kilometer']);
 const accepted = (kind: UnitKind) => kind === 'length' ? LENGTH_UNITS : kind === 'angle' ? ANGLE_UNITS
   : kind === 'time' ? TIME_UNITS : kind === 'mass' ? MASS_UNITS : kind === 'minute' ? MINUTE_UNITS : kind === 'celsius' ? CELSIUS_UNITS
-  : kind === 'density' ? DENSITY_UNITS : kind === 'energy' ? ENERGY_UNITS : kind === 'cells' ? CELL_UNITS
+  : kind === 'density' ? DENSITY_UNITS : kind === 'volume' ? VOLUME_UNITS : kind === 'energy' ? ENERGY_UNITS : kind === 'cells' ? CELL_UNITS
   : kind === 'speed' ? SPEED_UNITS : kind === 'times' ? TIMES_UNITS : kind === 'km' ? KM_UNITS : new Set<string>();
 /*
  * A superscript right after a digit is a power ("2⁶" is 64); NFKC would otherwise turn it into "26".
@@ -76,6 +77,7 @@ export function powers(raw: string) {
  */
 const compoundUnits = (text: string) => text
   .replace(/\b(?:g|gr|gram)\s*\/\s*(?:cm3|ml)\b/g, ' gpercm3 ')
+  .replace(/\bcm\s*3\b/g, ' cmkubik ')
   .replace(/\bkm\s*\/\s*(?:jam|j)\b/g, ' kmperjam ')
   .replace(/°\s*c\b|\bderajat\s+cel[sc]ius\b|\bcelcius\b/g, ' celsius ');
 

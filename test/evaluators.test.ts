@@ -75,6 +75,7 @@ test('/coba Fisika and Kimia (D8): time and mass units are read, each distractor
     assert.equal(result.verdict, 'CORRECT', t);
     // The balanced equation is given: a correct mass must not award independent balancing mastery.
     assert.deepEqual(result.evidence.filter(e => e.classification === 'UNDERSTANDING_DEMONSTRATED').map(e => e.conceptCode), [
+      'KIM.C26.E.ATOM.RUMUS_KIMIA',
       'KIM.C26.E.STOIK.MOL_DAN_MASSA_MOLAR',
       'KIM.C26.E.STOIK.PERHITUNGAN_DARI_PERSAMAAN_REAKSI',
     ]);

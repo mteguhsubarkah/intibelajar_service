@@ -28,7 +28,7 @@ const load = async (alias: string): Promise<TrialItem> => {
 };
 
 test('every /coba question has a Coba sekarang key for each hint', () => {
-  for (const alias of ['soal-menara', 'soal-bola', 'soal-kompor', 'soal-peta', 'soal-freezer', 'soal-batu', 'soal-sawah', 'soal-nasi']) {
+  for (const alias of ['soal-menara', 'soal-bola', 'soal-kompor', 'soal-peta', 'soal-freezer', 'soal-batu', 'soal-es', 'soal-sawah', 'soal-nasi']) {
     const q = byAlias(alias);
     assert.deepEqual(q.rubric.cobaSteps?.map(s => s.step), q.body.hints.map(h => h.step), alias);
   }
@@ -81,7 +81,12 @@ test('Coba sekarang rules: key, half-way answers, wrong numbers, exact words; fr
   assert.equal(kind('soal-menara', 3, '20 : √3 = 11,55'), 'partial');
   assert.equal(kind('soal-bola', 1, 'sin'), 'correct');
   assert.equal(kind('soal-bola', 2, '17,32'), 'partial');
-  assert.equal(kind('soal-kompor', 2, '44 g'), 'correct');
+  assert.equal(kind('soal-kompor', 1, '16'), 'correct');
+  assert.equal(kind('soal-kompor', 1, '12 + 1 = 13'), 'partial');
+  assert.equal(kind('soal-kompor', 2, '1 mol'), 'correct');
+  assert.equal(kind('soal-kompor', 3, '44 g'), 'correct');
+  assert.equal(kind('soal-es', 1, '90 g'), 'correct');
+  assert.equal(kind('soal-es', 2, '90 : 1 = 90 cm³'), 'correct');
 });
 
 test('trial steps/check: rule decides without AI, free text goes to the AI with the key, a pass ticks the core for IntiGuide', async () => {

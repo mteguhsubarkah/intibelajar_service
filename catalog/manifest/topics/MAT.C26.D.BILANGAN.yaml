@@ -9,12 +9,26 @@ bekal: []
 aliases: []
 units: []
 concepts:
-  - code: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
-    title: Operasi bilangan bulat
-    subtitle: Garis bilangan, menjumlah dan mengurangi bilangan negatif
+  - code: MAT.C26.D.BILANGAN.BILANGAN_BULAT_DAN_GARIS_BILANGAN
+    title: Bilangan bulat dan garis bilangan
+    subtitle: Bilangan negatif, nol, positif; membandingkan dan mengurutkan
     objectives: []
     misconceptions: []
     ordinal: 1
+    estimatedMinutes: 5
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-bilangan-garis
+  - code: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+    title: Penjumlahan dan pengurangan bilangan bulat
+    subtitle: Menjumlah dan mengurangi bilangan negatif, selisih dua bilangan
+    objectives: []
+    misconceptions: []
+    ordinal: 2
     estimatedMinutes: 4
     grade: 7
     hidden: false
@@ -23,11 +37,25 @@ concepts:
     aliases:
       - ns: MAP
         value: mat-d-bilangan-bulat
+  - code: MAT.C26.D.BILANGAN.PERKALIAN_DAN_PEMBAGIAN_BILANGAN_BULAT
+    title: Perkalian dan pembagian bilangan bulat
+    subtitle: Aturan tanda hasil kali dan hasil bagi
+    objectives: []
+    misconceptions: []
+    ordinal: 3
+    estimatedMinutes: 5
+    grade: 7
+    hidden: false
+    capstone: false
+    availability: PLANNED
+    aliases:
+      - ns: MAP
+        value: mat-d-bilangan-kalibagi
   - code: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
     title: Bilangan rasional & estimasi
     objectives: []
     misconceptions: []
-    ordinal: 2
+    ordinal: 4
     estimatedMinutes: 4
     grade: 7
     hidden: false
@@ -40,7 +68,7 @@ concepts:
     title: Pangkat, akar & notasi ilmiah
     objectives: []
     misconceptions: []
-    ordinal: 3
+    ordinal: 5
     estimatedMinutes: 5
     grade: 8
     hidden: false
@@ -53,7 +81,7 @@ concepts:
     title: Operasi pecahan
     objectives: []
     misconceptions: []
-    ordinal: 4
+    ordinal: 6
     estimatedMinutes: 5
     grade: 7
     hidden: false
@@ -66,7 +94,7 @@ concepts:
     title: Notasi ilmiah
     objectives: []
     misconceptions: []
-    ordinal: 5
+    ordinal: 7
     estimatedMinutes: 5
     grade: 8
     hidden: false
@@ -83,6 +111,12 @@ prerequisites:
     requires: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
     kind: SOFT
   - concept: MAT.C26.D.BILANGAN.BILANGAN_RASIONAL_DAN_ESTIMASI
+    requires: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+    kind: SOFT
+  - concept: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
+    requires: MAT.C26.D.BILANGAN.BILANGAN_BULAT_DAN_GARIS_BILANGAN
+    kind: SOFT
+  - concept: MAT.C26.D.BILANGAN.PERKALIAN_DAN_PEMBAGIAN_BILANGAN_BULAT
     requires: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
     kind: SOFT
 review:

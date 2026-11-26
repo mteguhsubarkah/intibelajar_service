@@ -24,6 +24,9 @@ blocks:
   - type: text
     slide: 1
     text: Selama mencair atau mendidih, suhu zat murni tetap walaupun kalor terus diberikan.
+  - type: text
+    slide: 1
+    text: Saat berubah wujud, jumlah partikelnya tetap, jadi **massanya juga tetap**. Es 90 g yang mencair menjadi air 90 g.
   - type: tip
     slide: 1
     text: "Perubahan wujud adalah perubahan fisika: zatnya tetap sama."

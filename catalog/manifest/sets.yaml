@@ -1726,7 +1726,7 @@ sets:
       evidence:
         - semua soal inti ini
   - code: MAT.C26.D.BILANGAN.S.BULAT
-    title: Latihan Operasi bilangan bulat
+    title: Latihan Penjumlahan dan pengurangan bilangan bulat
     origin: CONCEPT_LESSON
     items:
       - MAT.C26.D.BILANGAN.Q.BULAT_1

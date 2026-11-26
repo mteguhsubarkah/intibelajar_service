@@ -26,11 +26,11 @@ body:
   hints:
     - step: 1
       conceptCode: FIS.C26.D.SUHU.SUHU_DAN_PERPINDAHAN_KALOR
-      lead: Jarak antarangka di skala kelvin dan Celsius sama, cuma titik nolnya geser 273. Jadi angka pada skala kelvin selalu 273 lebih besar daripada Celsius. Di soal ditanyakan dalam °C, jadi samakan satuannya dulu.
+      lead: "Angka kelvin selalu 273 lebih besar daripada angka Celsius. Jadi ubah dulu ke °C dengan mengurangi 273."
       note: °C = K − 273
     - step: 2
       conceptCode: MAT.C26.D.BILANGAN.OPERASI_BILANGAN_BULAT
-      lead: Selisih = suhu yang lebih tinggi dikurangi suhu yang lebih rendah. Mengurangi suatu bilangan dengan bilangan negatif sama seperti menambahkan bilangan positifnya.
+      lead: "Dari inti 1, suhu tubuh 37 °C, jadi tinggal hitung selisihnya dengan −5 °C. Mengurangi bilangan negatif sama dengan menambah bilangan positifnya."
       note: a − (−b) = a + b
   answerFormat: NUMBER
   answerExample: selisih = … °C
