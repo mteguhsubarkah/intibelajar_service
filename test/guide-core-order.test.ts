@@ -21,7 +21,12 @@ function itemOf(alias:string):TrialItem{
   source:{revisionId:q.code,itemType:q.itemType,body:q.body,rubric:q.rubric,familyCode:q.familyCode,contextTag:q.contextTag,concepts:q.concepts.map(c=>({id:c.concept,code:c.concept,role:c.role,assessable:c.assessable}))},
   concepts:concepts.map(c=>({code:c.code,title:c.title,legacyMapId:c.aliases.find(a=>a.ns==='MAP')?.value??null,route:'lesson'}))};
 }
-const kompor=itemOf('soal-kompor'),bola=itemOf('soal-bola');
+const komporKatalog=itemOf('soal-kompor'),bola=itemOf('soal-bola');
+/* tes percakapan di bawah memakai bentuk dua inti (mol -> perhitungan); soal kompor di katalog kini diawali Rumus kimia (Mr) */
+const RUMUS='KIM.C26.E.ATOM.RUMUS_KIMIA';
+const kompor:TrialItem={...komporKatalog,concepts:komporKatalog.concepts.filter(c=>c.code!==RUMUS),
+ source:{...komporKatalog.source,concepts:komporKatalog.source.concepts.filter(c=>c.code!==RUMUS),
+  rubric:{...komporKatalog.source.rubric,solutionPaths:komporKatalog.source.rubric.solutionPaths.map(p=>({...p,steps:p.steps.filter(st=>!st.concepts.some(c=>c.code===RUMUS))}))}}};
 const envelope=(data:unknown)=>Response.json({choices:[{message:{content:typeof data==='string'?data:JSON.stringify(data)}}]});
 const contextOf=(body:any)=>JSON.parse(body.messages[1].content.replace('Konteks belajar: ',''));
 
@@ -31,7 +36,9 @@ test('the core order comes from the question key: bola vektor -> sudut istimewa 
  assert.deepEqual(b.map(c=>c.id),['fis-e-gerak2d-vektor','tri-f','fis-e-gerak2d-c2']);
  assert.match(b[0]!.step!,/vᵧ = v sin 30°/);assert.match(b[1]!.step!,/sin 30° = ½/);
  assert.equal(b[2]!.step,null);assert.equal(b[2]!.final,true);assert.ok(!JSON.stringify(b).includes('2 s'),'the final step never reaches the model');
- // soal kompor memberikan persamaan setaranya: dua inti, mol lalu perhitungan
+ // soal kompor di katalog: rumus kimia (Mr) -> mol -> perhitungan
+ assert.deepEqual(orderedGuideCores(komporKatalog.concepts,komporKatalog.source.rubric.solutionPaths).map(c=>c.id),['kim-e-atom-c2','kim-e-stoik-c1','kim-e-stoik-c2']);
+ // bentuk dua inti: mol lalu perhitungan
  const k=orderedGuideCores(kompor.concepts,kompor.source.rubric.solutionPaths);
  assert.deepEqual(k.map(c=>c.id),['kim-e-stoik-c1','kim-e-stoik-c2']);
  assert.match(k[0]!.step!,/mol CH₄ = 16 \/ 16 = 1 mol/);assert.equal(k[1]!.step,null);assert.equal(k[1]!.final,true);

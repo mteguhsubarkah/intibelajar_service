@@ -196,13 +196,16 @@ const STRUCTURE: PilotTopic[] = [
     code: "MAT.C26.D.BILANGAN", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,
     title: "Bilangan dan operasi", subtitle: "Bilangan bulat, bilangan rasional, pangkat, akar, pecahan, dan notasi ilmiah", bekal: [],
     cores: [
-    { id: "BULAT", title: "Operasi bilangan bulat", sub: "Garis bilangan, menjumlah dan mengurangi bilangan negatif" },
+    // 26 Nov 2026: dipecah mengikuti Buku Siswa Matematika VII Bab 1 Bilangan Bulat; BULAT tetap kodenya (codeFrom)
+    { id: "GARIS", title: "Bilangan bulat dan garis bilangan", sub: "Bilangan negatif, nol, positif; membandingkan dan mengurutkan" },
+    { id: "BULAT", title: "Penjumlahan dan pengurangan bilangan bulat", codeFrom: "Operasi bilangan bulat", sub: "Menjumlah dan mengurangi bilangan negatif, selisih dua bilangan" },
+    { id: "KALIBAGI", title: "Perkalian dan pembagian bilangan bulat", sub: "Aturan tanda hasil kali dan hasil bagi" },
     { id: "C1", title: "Bilangan rasional & estimasi" },
     { id: "C2", title: "Pangkat, akar & notasi ilmiah" },
     { id: "PECAHAN", title: "Operasi pecahan" },
     { id: "ILMIAH", title: "Notasi ilmiah", capstone: true },
     ],
-    edges: [["C1", "PECAHAN", "S"], ["C1", "ILMIAH", "S"], ["BULAT", "C1", "S"]],
+    edges: [["C1", "PECAHAN", "S"], ["C1", "ILMIAH", "S"], ["BULAT", "C1", "S"], ["GARIS", "BULAT", "S"], ["BULAT", "KALIBAGI", "S"]],
   },
   {
     code: "MAT.C26.D.RASIO", subject: "MAT", phase: "D", decision: 'D9', evidence: EV_FE,

@@ -23,7 +23,8 @@ const CHUNK = /[0-9.,√()+\-*/ ]*\d[0-9.,√()+\-*/ ]*/g;
 export function stepValue(reply: string, options: ParseOptions = {}): number | null {
   // Ragu → AI: huruf/kata di antara dua angka ("1x2", "20 x √3", "2 kali 3") bisa berarti apa saja. Aturan tidak menebak
   // (dulu "1x2" terbaca 1 lalu dinilai salah); keputusannya diserahkan ke AI lewat "undecided" (QA 22 Nov 2026).
-  const rawLast = reply.normalize('NFKC').replace(/akar|sqrt/gi, '√').split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1) ?? '';
+  // satuan berpangkat ("90 cm³", "m/s²") bukan perkalian: pangkat sesudah huruf dibuang dulu sebelum NFKC mengubahnya jadi angka
+  const rawLast = reply.replace(/([A-Za-z])[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, '$1').normalize('NFKC').replace(/akar|sqrt/gi, '√').split(/\r?\n/).map(l => l.trim()).filter(Boolean).at(-1) ?? '';
   if (/[\d)√]\s*[A-Za-z]+\s*[\d(√]/.test(rawLast.split(/[=≈]/).at(-1) ?? '')) return null;
   let t = powers(reply.normalize('NFC'))
     .replace(/(\d+)\s*\^\s*(\d{1,2})\b/g, (_, b: string, e: string) => String(Number(b) ** Number(e)))
