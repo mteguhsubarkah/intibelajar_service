@@ -150,3 +150,16 @@ systemctl is-active intibelajar-worker                  # harus active; worker y
 
 Hapus baris `BACKOFFICE_ACCOUNTS=true`, lalu `sudo systemctl restart intibelajar-backoffice`. Matikan halaman ini setelah
 masa uji coba: ini bukan pengganti sistem staf produksi (IdP, MFA, peran, dan audit per orang tetap gerbang produksi).
+
+## Tab "Bab per kelas"
+
+Tab ini menampilkan bab buku teks kelas 7–12 dengan inti berurutan (sama dengan tab Jelajah di aplikasi siswa), beserta
+status inti, materi, dan latihan di draf studio, plus tombol ke editor materi dan latihan. Susunan babnya dibaca dari
+`catalog/book-chapters.json`, salinan `src/data/bookChapters.ts` di repo FE. Setiap kali bab buku di FE berubah:
+
+```bash
+FRONTEND_DIR=../intibelajar npm run catalog:book-chapters   # tulis ulang catalog/book-chapters.json, lalu commit
+```
+
+`test/book-chapters.test.ts` gagal bila ada kode inti di bab buku yang tidak ada di manifest. Inti yang berlabel
+"Belum ada di draf studio" ada di manifest repo tetapi belum di draf studio (draf dibuat sekali dari manifest repo).

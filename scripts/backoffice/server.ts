@@ -13,6 +13,13 @@ import { staffDeletion, staffLearners, staffViewedAccounts, type StaffLearner } 
 
 /* Halaman akun (BACKOFFICE_ACCOUNTS=true): daftar akun dan hapus akun untuk uji coba QA. Tanpa flag, backoffice tetap
    tidak tersambung ke database siswa. Lihat docs/deployment/backoffice-domain.md bagian "Halaman akun". */
+/* Bab buku per kelas 7–12 (disalin dari FE oleh npm run catalog:book-chapters) untuk tab "Bab per kelas"; dibaca tiap
+   permintaan supaya salinan baru langsung terlihat. Tanpa berkas: tab menampilkan pesan, bukan galat. */
+const BOOK_CHAPTERS_FILE = new URL('../../catalog/book-chapters.json', import.meta.url);
+function bookChapters(): unknown {
+  return existsSync(BOOK_CHAPTERS_FILE) ? JSON.parse(readFileSync(BOOK_CHAPTERS_FILE, 'utf8')) : null;
+}
+
 export interface AccountsAccess { db: DB; config: Config }
 const PROVIDER_LABEL = { GOOGLE: 'Google', EMAIL: 'Email', PASSWORD: 'Username & password' } as const;
 /** Teks yang harus diketik ulang admin sebelum menghapus: email, lalu nama, lalu potongan id. */
@@ -72,7 +79,7 @@ export function buildBackoffice(store: Store, token: string, port = 8010, public
       return reply.code((e as {statusCode:number}).statusCode).send({message:'Body tidak valid / terlalu besar'});
     return reply.code(500).send({ message: 'Gagal menyimpan draf; tidak ada publikasi dilakukan' });
   });
-  for (const [url, file, type] of [['/', 'index.html', 'text/html'], ['/app.js', 'app.js', 'text/javascript'], ['/catalog-view.js','catalog-view.js','text/javascript'], ['/lesson-editor.js','lesson-editor.js','text/javascript'], ['/practice-editor.js','practice-editor.js','text/javascript'], ['/animation-templates.js','animation-templates.js','text/javascript'], ['/accounts-view.js','accounts-view.js','text/javascript'], ['/report.css','report.css','text/css'], ['/style.css', 'style.css', 'text/css'], ['/openapi.yaml', 'openapi.yaml', 'application/yaml']])
+  for (const [url, file, type] of [['/', 'index.html', 'text/html'], ['/app.js', 'app.js', 'text/javascript'], ['/catalog-view.js','catalog-view.js','text/javascript'], ['/lesson-editor.js','lesson-editor.js','text/javascript'], ['/practice-editor.js','practice-editor.js','text/javascript'], ['/animation-templates.js','animation-templates.js','text/javascript'], ['/accounts-view.js','accounts-view.js','text/javascript'], ['/book-view.js','book-view.js','text/javascript'], ['/report.css','report.css','text/css'], ['/style.css', 'style.css', 'text/css'], ['/openapi.yaml', 'openapi.yaml', 'application/yaml']])
     app.get(url!, async (_req, reply) => reply.type(type!).send(readFileSync(new URL(`../../backoffice/${file}`, import.meta.url), 'utf8')));
   app.get('/api/state', async () => {
     const s = store.read();
@@ -84,7 +91,7 @@ export function buildBackoffice(store: Store, token: string, port = 8010, public
       itemType: q.itemType, editable: EDITABLE_EVALUATORS.has(q.rubric.evaluator), prompt: q.body.prompt, options: (q.body.options ?? []).map(o => o.label),
       difficulty: q.difficulty, estimatedMinutes: q.estimatedMinutes, review: q.review?.status ?? null }));
     return { revision: s.revision, topics, lessons, topicRelations, subjects, practice, previewUrl: `${preview}/pratinjau/materi`, sources: s.sources, jobs: s.jobs,
-      findings: lintManifest(s.manifest, { strict: true }), audit: s.audit.slice(-30) };
+      findings: lintManifest(s.manifest, { strict: true }), audit: s.audit.slice(-30), bookChapters: bookChapters() };
   });
   app.get('/api/questions/:code', async req => {
     const q = store.read().manifest.questions.find(x => x.code === (req.params as { code: string }).code);
