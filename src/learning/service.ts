@@ -289,13 +289,24 @@ export function learningService(key: Buffer, engine: DiagnosisEngine | null = nu
       return { status: 201, body: await sessionView(tx, await reload(tx, id, learnerId)) };
     },
 
-    async submitAttempt(tx: Tx, learnerId: string, sessionId: string, body: { expectedStateVersion: number; response: StudentResponse; sessionItemId?: string }) {
+    async submitAttempt(tx: Tx, learnerId: string, sessionId: string, body: { expectedStateVersion: number; response: StudentResponse; sessionItemId?: string; hintOpened?: boolean }) {
       const response: StudentResponse = { ...body.response, schemaVersion: 1, inputMode: 'TYPED' };
       const selfReport = response.responseType === 'SELF_REPORT' ? response.selfReport : undefined;
       const { l } = await guard(tx, learnerId, sessionId, body.expectedStateVersion,
         { type: 'SUBMIT_ATTEMPT', itemId: body.sessionItemId, verdict: 'CORRECT', ...(selfReport ? { selfReport } : {}) });
-      if (l.anchor) return loopAttempt(tx, learnerId, l, response);
+      if (l.anchor) {
+        if (body.hintOpened === true) await this.clientHint(tx, learnerId, sessionId);
+        return loopAttempt(tx, learnerId, l, response);
+      }
       const item = l.items.find(i => i.id === nextItem(l.ctx)!.id)!;
+      // QA TC-PROGB-007: Petunjuk latihan dibuka di perangkat (materi inti), jadi browser yang melaporkannya. Dicatat
+      // sebelum penilaian supaya jawaban ini tersimpan "dengan bantuan" (HINT), bukan "bisa sendiri".
+      if (body.hintOpened === true) {
+        const family = (await revisionFacts(tx, [item.question_revision_id])).get(item.question_revision_id)!.familyCode;
+        await sql`insert into assistance_event(id, learner_id, session_id, question_family_code, type, source, dedupe_key)
+          values (${uuid()}, ${learnerId}, ${sessionId}, ${family}, 'HINT_SHOWN', 'CLIENT_REPORTED', ${'hint-client:' + sessionId + ':' + family})
+          on conflict (learner_id, dedupe_key) do nothing`.execute(tx);
+      }
       return answer(tx, learnerId, l, { revisionId: item.question_revision_id, kind: item.role, itemId: item.id, response },
         verdict => ({ type: 'SUBMIT_ATTEMPT', itemId: item.id, verdict }));
     },

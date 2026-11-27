@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';import {sql} from 'kysely';
-import {matchOwnQuestion,ownQuestionService} from '../src/assessment/own-question.js';
+import {matchOwnQuestion,ownQuestionService,sameQuestionKey} from '../src/assessment/own-question.js';
 import {ownCatalog,type OwnCore} from '../src/catalog/own-catalog.js';
 import {readConfig} from '../src/config.js';import {connect} from '../src/db.js';import {migrate} from '../src/migrate.js';
 import {publish} from '../src/catalog/publisher.js';import {reviewedFixture} from './fixtures/catalog.js';
@@ -11,6 +11,7 @@ const envelope=(v:unknown)=>Response.json({choices:[{message:{content:JSON.strin
 test('own mapping is AI selection constrained to catalog, not keyword expansion or learner mastery',async()=>{
  const picked=await matchOwnQuestion(guide,'tentukan cos30',[core],async(_url,options)=>{
   const p=JSON.parse(String(options?.body));assert.equal(p.response_format.type,'json_object');assert.equal(p.model,guide.model);
+  assert.equal(p.temperature,0,'pemetaan inti memakai temperature 0 supaya soal yang sama tidak berganti inti (QA TC-TANYA-027)');
   const data=JSON.parse(p.messages[1].content);assert.deepEqual(data.catalog,[{mapId:'tri-f',title:core.title,description:core.description,subject:'matematika',topic:'trigonometri'}]);assert.equal(data.question,'tentukan cos30');
   return envelope({cores:[{id:'tri-f',relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]});
  });assert.deepEqual(picked.outline,[{core,relation:'Nilai cos 30 derajat menggunakan nilai sudut istimewa.'}]);assert.deepEqual(picked.scope,{status:'IN_CATALOG',subject:null,message:''});
@@ -57,6 +58,8 @@ test('typed question diagnoses through AI without catalog alias lookup, fake XP,
   assert.deepEqual(hint1,hint2);assert.equal(calls,1);assert.equal(hint1.items[0]?.title,catalog.cores.find(c=>c.mapId==='tri-f')?.title);
   assert.match(hint1.items[0]!.relation,/cos 30/);validateResponse('/v1/own/hints','POST',200,hint1);assert.equal(hint1.scope.status,'IN_CATALOG');
   assert.deepEqual((await service.map('Tentukan nilai cos30','learner-a')).cores,['tri-f']);assert.equal(calls,1);
+  // QA TC-TANYA-027: salinan foto (baris baru, spasi, huruf besar, titik akhir) memakai pemetaan yang sama dengan ketikan
+  assert.deepEqual((await service.map('TENTUKAN  nilai\ncos30 .','learner-a')).cores,['tri-f']);assert.equal(calls,1,'teks foto yang sama tidak memanggil AI lagi');
   const result:any=await service.diagnose({questionText:'Tentukan nilai cos30',rawText:'√3/2',sessionId:'own-typed',hintOpened:false},'learner-a');
   assert.equal(result.status,'completed');assert.equal(result.assessment.tone,'kuat');assert.deepEqual(result.items.map((i:any)=>i.id),['tri-f']);assert.equal(result.claimToken,undefined);assert.equal(calls,2);
   validateResponse('/v1/own/diagnosis','POST',200,result);assert.deepEqual(await counts(),before);
@@ -97,4 +100,13 @@ test('own question: the AI solves it first, the mini question comes from the cor
   assert.deepEqual(seen.filter(x=>x[0]==='evaluate').at(-1)[1].koreksi,{ke:2,jawabanSebelumnya:'cos 30 = 1'});
   validateRequest('/v1/own/diagnosis','POST',{body:{questionText:'q',rawText:'a',sessionId:'s',hintOpened:false,correction:1,previousAnswer:'b'},query:{},headers:{}} as any);
  }finally{await db.destroy();}
+});
+
+test('QA TC-TANYA-027: soal foto dan ketik yang sama punya kunci pemetaan yang sama, soal berbeda tidak',()=>{
+ const typed='Sebuah tiang bendera setinggi 10 m. Dari titik A di tanah, puncak tiang terlihat dengan sudut elevasi 30°. Tentukan jarak A ke kaki tiang.';
+ const photo='Sebuah tiang bendera setinggi 10 m.\nDari titik A di tanah, puncak tiang terlihat dengan sudut elevasi 30 °.\nTentukan jarak A ke kaki tiang.';
+ assert.equal(sameQuestionKey(photo),sameQuestionKey(typed));
+ assert.equal(sameQuestionKey('Tentukan nilai cos30'),sameQuestionKey('tentukan  nilai cos30.'));
+ assert.notEqual(sameQuestionKey(typed),sameQuestionKey(typed.replace('30°','60°')));
+ assert.notEqual(sameQuestionKey('Tentukan nilai cos30'),sameQuestionKey('Tentukan nilai cos 30'),'beda isi tetap beda kunci (spasi di dalam suku tidak ditebak)');
 });

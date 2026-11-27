@@ -5142,6 +5142,9 @@ components:
           $ref: '#/components/schemas/StudentResponseInput'
         sessionItemId:
           $ref: '#/components/schemas/Uuid'
+        hintOpened:
+          type: boolean
+          description: Petunjuk soal ini dibuka di perangkat sebelum menjawab; jawaban dicatat dengan bantuan (HINT).
     QuickCheckAnswerRequest:
       type: object
       additionalProperties: false

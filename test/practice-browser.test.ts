@@ -289,6 +289,25 @@ test("learner question bank filters before paging and keeps owned immutable hist
       },
     );
     await t.test(
+      "QA TC-PROGB-007: a correct answer after opening Petunjuk is stored with assistance, never as bisa sendiri",
+      async () => {
+        const all = await get("/v1/me/questions?limit=100");
+        const other = all.items.find((i: any) => i.question.id !== candidate.question.id && !i.progress.attemptCount &&
+          fixture.questions.find((q) => q.code === i.question.code)?.rubric.answer.optionId);
+        assert.ok(other, "a fresh option question");
+        const q = fixture.questions.find((x) => x.code === other.question.code)!;
+        const opened = await as("POST", "/v1/learning-sessions", { kind: "PRACTICE", origin: "BANK", withLesson: false, spec: { questionIds: [other.question.id] } });
+        assert.equal(opened.status, 201, JSON.stringify(opened.body));
+        const r = await as("POST", `/v1/learning-sessions/${opened.body.id}/attempts`,
+          { expectedStateVersion: opened.body.stateVersion, response: { responseType: "OPTION", optionId: q.rubric.answer.optionId }, hintOpened: true });
+        assert.equal(r.status, 201, JSON.stringify(r.body));
+        assert.equal(r.body.attempt.verdict, "CORRECT");
+        assert.equal(r.body.attempt.assistance, "HINT");
+        const page = await get("/v1/me/questions?scope=history");
+        assert.equal(page.items.find((i: any) => i.question.id === other.question.id).progress.status, "ASSISTED");
+      },
+    );
+    await t.test(
       "active question resumes across devices and stale cursors fail closed",
       async () => {
         const opened = await as("POST", "/v1/learning-sessions", {
