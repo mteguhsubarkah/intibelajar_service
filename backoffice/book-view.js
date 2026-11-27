@@ -2,6 +2,14 @@
    berurutan seperti di bab. Modul murni: dipakai tab "Bab per kelas" dan laporan cetaknya, tanpa DOM. */
 export const GRADES = [7, 8, 9, 10, 11, 12];
 export const BOOK_SUBJECTS = [['', 'Semua pelajaran'], ['MAT', 'Matematika'], ['FIS', 'Fisika'], ['KIM', 'Kimia'], ['BIO', 'Biologi']];
+const SCIENCE = [['FIS', 'Fisika'], ['KIM', 'Kimia'], ['BIO', 'Biologi']];
+const ROMAN = { 10: 'X', 11: 'XI', 12: 'XII' };
+/* Label bab di SMA = nama mapelnya saja (Fisika/Kimia/Biologi), bukan "IPA (…)"; SMP tetap "IPA Terpadu (…)". */
+function smaLabel(ch) {
+  if (ch.grade < 10 || !/^IPA/.test(ch.label)) return ch.label;
+  const name = SCIENCE.find(([code]) => code === ch.subject)?.[1] ?? ch.label;
+  return ch.field === 'Terpadu' ? `${name} · proyek` : name;
+}
 
 /**
  * status inti di draf studio: Siap (READY), Segera (PLANNED), Disembunyikan (hidden). "Belum ada di draf studio": kode ada di
@@ -29,11 +37,16 @@ export function gradeChapters(state, grade, subject = '') {
     return { code, title: c?.title ?? code, core: c, topic: topicOf.get(code) ?? null, status: coreStatus(c), lesson,
       slides: lesson ? Math.max(...lesson.blocks.map(b => b.slide)) + 1 : 0, practice: c ? practiceOf(code) : 0 };
   };
-  const books = book.books.filter(b => b.grade === grade).map(b => ({
-    ...b,
-    chapters: book.chapters.filter(ch => ch.book === b.key && (!subject || ch.subject === subject))
-      .map(ch => ({ ...ch, cores: ch.concepts.map(core) })),
-  })).filter(b => b.chapters.length);
+  const books = book.books.filter(b => b.grade === grade).flatMap(b => {
+    const chapters = book.chapters.filter(ch => ch.book === b.key && (!subject || ch.subject === subject))
+      .map(ch => ({ ...ch, label: smaLabel(ch), cores: ch.concepts.map(core) }));
+    // SMA: mapel terpisah. Buku IPA kelas X dipecah per mapel (Fisika, Kimia, Biologi); nomor bab tetap seperti di bukunya.
+    if (grade >= 10 && b.ipa) return SCIENCE.map(([code, name]) => ({
+      ...b, key: `${b.key}:${code}`, title: `${name} Kelas ${ROMAN[grade]}`, source: `Nomor bab mengikuti buku ${b.title} · ${b.source}`,
+      chapters: chapters.filter(ch => ch.subject === code),
+    }));
+    return [{ ...b, chapters }];
+  }).filter(b => b.chapters.length);
   const mapped = new Set(book.chapters.flatMap(ch => ch.concepts));
   const extras = [];
   for (const t of state.topics) {

@@ -36,6 +36,14 @@ test('Bab per kelas view: kelas 7 Matematika, Bab 1 Bilangan Bulat berurutan, st
   const ipa = gradeChapters(state, 7, 'KIM');
   assert.ok(ipa.books.every((b: any) => b.chapters.every((ch: any) => ch.subject === 'KIM')));
   assert.ok(ipa.books[0].chapters[0].label.startsWith('IPA Terpadu'));
+  // SMA: tidak ada pengelompokan atau label "IPA"; kelas 10 terpisah Fisika, Kimia, Biologi (SMP tetap IPA Terpadu)
+  for (const g of [10, 11, 12]) for (const b of gradeChapters(state, g).books) {
+    assert.ok(!/^IPA/.test(b.title), `kelas ${g}: ${b.title}`);
+    for (const ch of b.chapters) assert.ok(!ch.label.includes('IPA'), `kelas ${g}: ${ch.no} ${ch.label}`);
+  }
+  assert.deepEqual(gradeChapters(state, 10).books.map((b: any) => b.title), ['Matematika Kelas X (Edisi Revisi)', 'Fisika Kelas X', 'Kimia Kelas X', 'Biologi Kelas X']);
+  assert.ok(gradeChapters(state, 10, 'KIM').books.every((b: any) => b.chapters.every((ch: any) => ch.label === 'Kimia')));
+  assert.ok(gradeChapters(state, 8).books.some((b: any) => b.chapters.some((ch: any) => ch.label.startsWith('IPA Terpadu'))));
   // inti tambahan: berkelas sama, tidak di bab mana pun
   const mapped = new Set(book.chapters.flatMap((ch: any) => ch.concepts));
   for (const g of [7, 8, 9, 10, 11, 12]) for (const e of gradeChapters(state, g).extras) for (const c of e.cores) assert.ok(!mapped.has(c.code) && c.core.grade === g);
